@@ -2,33 +2,33 @@ set @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 set @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 set @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
-drop schema if exists `blog`;
+drop schema if exists `spark`;
 
-create schema if not exists `blog` default character set utf8mb4 collate utf8mb4_general_ci;
+create schema if not exists `spark` default character set utf8mb4 collate utf8mb4_general_ci;
 
-use `blog`;
+use `spark`;
 
-drop table if exists `blog`.`TEXT`;
+drop table if exists `spark`.`TEXT`;
 
-create table if not exists `blog`.`TEXT`(
+create table if not exists `spark`.`TEXT`(
     `Id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
     `Slug` TEXT NULL,
     `Text` TEXT NULL,
     primary key( `Id` )
     ) engine = InnoDB;
 
-drop table if exists `blog`.`SECTION`;
+drop table if exists `spark`.`SECTION`;
 
-create table if not exists `blog`.`SECTION`(
+create table if not exists `spark`.`SECTION`(
     `Id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
     `Name` TEXT NULL,
     `Slug` TEXT NULL,
     primary key( `Id` )
     ) engine = InnoDB;
 
-drop table if exists `blog`.`ARTICLE`;
+drop table if exists `spark`.`ARTICLE`;
 
-create table if not exists `blog`.`ARTICLE`(
+create table if not exists `spark`.`ARTICLE`(
     `Id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
     `Title` TEXT NULL,
     `Slug` TEXT NULL,
@@ -39,9 +39,9 @@ create table if not exists `blog`.`ARTICLE`(
     primary key( `Id` )
     ) engine = InnoDB;
 
-drop table if exists `blog`.`CONTACT`;
+drop table if exists `spark`.`CONTACT`;
 
-create table if not exists `blog`.`CONTACT`(
+create table if not exists `spark`.`CONTACT`(
     `Id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
     `Name` TEXT NULL,
     `Email` TEXT NULL,
@@ -50,9 +50,9 @@ create table if not exists `blog`.`CONTACT`(
     primary key( `Id` )
     ) engine = InnoDB;
 
-drop table if exists `blog`.`USER`;
+drop table if exists `spark`.`USER`;
 
-create table if not exists `blog`.`USER`(
+create table if not exists `spark`.`USER`(
     `Id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
     `Email` TEXT NULL,
     `Pseudonym` TEXT NULL,

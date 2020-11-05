@@ -19,7 +19,7 @@ define( 'DatabaseHost', 'localhost' );
 
 if ( GetServerName() === 'localhost' )
 {
-    define( 'DatabaseName', 'blog' );
+    define( 'DatabaseName', 'spark' );
     define( 'DatabaseUserName', 'root' );
     define( 'DatabasePassword', 'root' );
 }

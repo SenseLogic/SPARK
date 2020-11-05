@@ -172,8 +172,6 @@
                     form_data
                     );
 
-                console.dir( request );
-
                 if ( request.status === 200 )
                 {
                     GetElementById( "thanks-text" ).RemoveClass( "hidden" );
