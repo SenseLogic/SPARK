@@ -21,12 +21,6 @@ copy ..\..\..\TOOL\PHOENIX\SAMPLE\CODE\CONTROLLER\disconnect_user_controller.phx
 copy ..\..\..\TOOL\PHOENIX\SAMPLE\CODE\CONTROLLER\get_captcha_image_controller.phx CODE\CONTROLLER\
 copy ..\..\..\TOOL\PHOENIX\SAMPLE\CODE\CONTROLLER\view_controller.phx CODE\CONTROLLER\
 copy ..\..\..\TOOL\PHOENIX\SAMPLE\CODE\FRAMEWORK\*.* CODE\FRAMEWORK\
-copy ..\..\..\TOOL\PHOENIX\SAMPLE\CODE\MODEL\contact.phx CODE\MODEL\
-copy ..\..\..\TOOL\PHOENIX\SAMPLE\CODE\MODEL\contact_model.phx CODE\MODEL\
-copy ..\..\..\TOOL\PHOENIX\SAMPLE\CODE\MODEL\session.phx CODE\MODEL\
-copy ..\..\..\TOOL\PHOENIX\SAMPLE\CODE\MODEL\text.phx CODE\MODEL\
-copy ..\..\..\TOOL\PHOENIX\SAMPLE\CODE\MODEL\text_model.phx CODE\MODEL\
-copy ..\..\..\TOOL\PHOENIX\SAMPLE\CODE\MODEL\user.phx CODE\MODEL\
 copy ..\..\..\TOOL\PHOENIX\SAMPLE\CODE\MODEL\user_model.phx CODE\MODEL\
 copy ..\..\..\TOOL\PHOENIX\SAMPLE\DATABASE\administration.bt DATABASE\
 copy ..\..\..\TOOL\PHOENIX\SAMPLE\DATABASE\api.bt DATABASE\
