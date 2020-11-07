@@ -1,5 +1,3 @@
 # Credits
 
-Thanks to :
-
-*   Freepik and Flaticon.com for the free drawing used in the logo.
+Thanks to Freepik, Pixel Perfect, Kiranhastry and Flaticon.com for the free icons used in the project template.
