@@ -2,11 +2,11 @@
 
 # Spark
 
-Phoenix starter project.
+Phoenix microframework and project template.
 
 ## Version
 
-0.1
+1.0
 
 ## Author
 
