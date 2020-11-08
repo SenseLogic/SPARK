@@ -25,16 +25,13 @@ git clone https://github.com/senselogic/RESYNC.git
 git clone https://github.com/senselogic/SPARK.git
 git clone https://github.com/senselogic/VISTA.git
 call make.bat
-pause
 mkdir ..\SITE
 mkdir ..\SITE\TEST
 robocopy /MIR SPARK\PROJECT ../SITE/TEST/TEST_SITE
 cd ..\SITE\TEST\TEST_SITE
 call update.bat
-pause
 cd DATABASE
 call make.bat
-pause
 cd ..\CODE
 call make.bat
 cd

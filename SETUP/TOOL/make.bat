@@ -1,5 +1,6 @@
 dmd --version
 go version
+pause
 cd BASIL
 git pull origin master
 dmd -m64 -L/Brepro basil.d
