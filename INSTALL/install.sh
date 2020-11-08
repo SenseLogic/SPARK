@@ -15,6 +15,7 @@ go version
 node --version
 npm --version
 stylus --version
+mkdir ~/PROJECT
 cp -R ./ ~/PROJECT
 cd ~/PROJECT
 pwd

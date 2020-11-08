@@ -22,7 +22,7 @@ if ( GetServerName() === 'localhost' )
 {
     define( 'DatabaseName', 'spark' );
     define( 'DatabaseUserName', 'root' );
-    define( 'DatabasePassword', 'root' );
+    define( 'DatabasePassword', '<~IsLinux<>root~>' );
 }
 else
 {
