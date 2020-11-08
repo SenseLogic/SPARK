@@ -31,9 +31,12 @@ mkdir ..\SITE\TEST
 robocopy /MIR SPARK\PROJECT ../SITE/TEST/TEST_SITE
 cd ..\SITE\TEST\TEST_SITE
 call update.bat
+pause
 cd DATABASE
 call make.bat
+pause
 cd ..\CODE
 call make.bat
+cd
 echo === Open localhost in a web browser ===
 pause

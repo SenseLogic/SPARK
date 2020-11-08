@@ -20,7 +20,7 @@ cp -R ./ ~/PROJECT
 cd ~/PROJECT
 pwd
 ls
-echo === Hit enter ===
+echo === Press enter ===
 read key
 cd TOOL
 git clone https://github.com/senselogic/BASIL.git
@@ -35,15 +35,20 @@ chmod +x SPARK/PROJECT/update.sh
 chmod +x SPARK/PROJECT/DATABASE/make.sh
 chmod +x SPARK/PROJECT/CODE/make.sh
 ./make.sh
-echo === Hit enter ===
+echo === Press enter ===
 read key
 mkdir -p ../SITE/TEST
 cp -R SPARK/PROJECT ../SITE/TEST/TEST_SITE
 cd ../SITE/TEST/TEST_SITE
 ./update.sh
+echo === Press enter ===
+read key
 cd DATABASE
 ./make.sh
+echo === Press enter ===
+read key
 cd ../CODE
 ./make.sh
+pwd
 echo === Open localhost:8080 in a web browser ===
 ./run.sh
