@@ -6,7 +6,7 @@ wget -c https://golang.org/dl/go1.15.4.linux-amd64.tar.gz
 sudo tar -C /usr/local -xvzf go1.15.4.linux-amd64.tar.gz
 rm go1.15.4.linux-amd64.tar.gz
 export PATH=$PATH:/usr/local/go/bin
-sudo apt install git dmd mysql-server mysql-client php php-mysql php-gd
+sudo apt install git
 sudo npm install -g npm
 sudo npm install -g stylus
 git --version
