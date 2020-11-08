@@ -13,7 +13,7 @@ Phoenix microframework and project template.
 * Install [Golang](https://golang.org/dl/)
 * Install [Node.js](https://nodejs.org/en/download/)
 * Install [Wampserver](https://www.wampserver.com/)
-* Run the `install.bat` script of the `SETUP` folder from a command shell.
+* Run the `install.bat` script of the `SETUP` folder.
 * SPARK and its dependencies are now installed in `%UserProfile%\PROJECT`.
 
 ## For Linux
@@ -34,7 +34,7 @@ sudo apt install mysql-server mysql-client php php-mysql php-gd
 sudo mysql_secure_installation
 ```
 
-* Run the `install.sh` script of the `SETUP` folder from a command shell.
+* Run the `install.sh` script of the `SETUP` folder.
 * SPARK and its dependencies are now installed in `~/PROJECT`.
 
 ## Version
