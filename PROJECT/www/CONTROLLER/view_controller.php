@@ -105,6 +105,9 @@ class VIEW_CONTROLLER
         return
             str_replace(
                 [
+                    '<',
+                    '>',
+                    '&',
                     '[nbsp]',
                     '[br]',
                     '[p]',
@@ -144,6 +147,9 @@ class VIEW_CONTROLLER
                     '[/violet]'
                 ],
                 [
+                    '&lt;',
+                    '&gt;',
+                    '&amp;',
                     '&nbsp;',
                     '<br/>',
                     '<p>',
