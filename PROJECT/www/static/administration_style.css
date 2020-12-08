@@ -118,7 +118,7 @@ a {
   text-decoration: none;
 }
 a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 a:not([href]),
 a:not([href]):hover {
@@ -461,6 +461,9 @@ textarea:focus {
   border-radius: 0.625rem;
   background-color: #fff;
   padding: 0.9375rem;
+}
+.page-section + .page-section {
+  margin-top: 0.9375rem;
 }
 .form-container {
   display: grid;

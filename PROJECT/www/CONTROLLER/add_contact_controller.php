@@ -56,7 +56,7 @@ class ADD_CONTACT_CONTROLLER extends CONTROLLER
             'contact@spark.com',
             'contact@spark.com',
             'Contact request from ' . $email . ' about Spark',
-            'Name : ' . $name . '\nEmail : ' . $email . '\nMessage : ' . $message . '\n'
+            "Name : " . $name . "\nEmail : " . $email . "\nMessage : " . $message . "\n"
             );
     }
 }

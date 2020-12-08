@@ -46,3 +46,8 @@ function PrintRequest(
     PrintLine( 'SESSION : ' .. json_encode( _SESSION, JSON_PRETTY_PRINT ) );
     PrintLine( 'SERVER : ' .. json_encode( _SERVER, JSON_PRETTY_PRINT ) );
 }
+
+// -- STATEMENTS
+
+ini_set( 'log_errors', 1 );
+ini_set( 'error_log', 'error.log' );

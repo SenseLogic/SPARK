@@ -370,6 +370,20 @@ function GetBrowserLocation(
         }
     }
 
+    if ( !location.IsFound )
+    {
+        if ( isset( _SERVER[ 'GEOIP_LATITUDE' ] )
+             && isset( _SERVER[ 'GEOIP_LONGITUDE' ] )
+             && isset( _SERVER[ 'GEOIP_COUNTRY_CODE' ] ) )
+        {
+            location.Latitude = _SERVER[ 'GEOIP_LATITUDE' ];
+            location.Longitude = _SERVER[ 'GEOIP_LONGITUDE' ];
+            location.CountryCode = _SERVER[ 'GEOIP_COUNTRY_CODE' ];
+            location.TimeZone = 'Europe/Brussels';
+            location.IsFound = true;
+        }
+    }
+
     return location;
 }
 
