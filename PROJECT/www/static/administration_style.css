@@ -529,20 +529,7 @@ textarea:focus {
   justify-content: center;
   align-items: center;
 }
-.form-button,
-.disconnect-button,
-.connect-button,
-.view-button,
-.edit-button,
-.remove-button,
-.add-button,
-.cancel-button,
-.apply-button,
-.text-button,
-.section-button,
-.article-button,
-.contact-button,
-.user-button {
+.form-button {
   display: inline-block;
   border: none;
   width: 1.5rem;
