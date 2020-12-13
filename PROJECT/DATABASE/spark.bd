@@ -4,6 +4,7 @@ TEXT
 
 USER
 
-    Email Pseudonym Password IsAdministrator
+    Email Pseudonym Password Role
 
-        root@root.com ~ root ~ xyz ~ true
+        administrator@spark.com ~ administrator ~ xyz ~ administrator
+        editor@spark.com ~ editor ~ xyz ~ editor

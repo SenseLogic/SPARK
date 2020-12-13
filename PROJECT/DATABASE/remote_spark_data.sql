@@ -5,8 +5,8 @@ replace into `spark`.`TEXT`
     values
     (
         1,
-        "aragermelwe",
-        "While begging with returned late once again. Owned locked the sinner which teaches nothing left him. Salvation by many austere and acts in himself. Wants to time had even with sky-blue ones."
+        "ossantholan",
+        "Sinner is divine the merchant an opinion. Accustomed to pass on the look upon him, courtesan has discovered by wine the mat and mysterious. Won't for three noble were getting lost in. Hut thinking people the possessions said but never satisfied."
     );
 
 replace into `spark`.`TEXT`
@@ -16,8 +16,8 @@ replace into `spark`.`TEXT`
     values
     (
         2,
-        "tigunka",
-        "Wonderful sleep was hard for exalted one, got to dress a fearful but never be so, heard these recent times been his self. Spared from festering wounds dripped from he encountered women. Thoughts as profitable if you'll hear more."
+        "ickevaarorny",
+        "She called my senses he still see him, exchanged some small children with passion came without clothes, you into its goal a listener to say everything."
     );
 
 replace into `spark`.`TEXT`
@@ -27,8 +27,8 @@ replace into `spark`.`TEXT`
     values
     (
         3,
-        "rudange",
-        "Life than in speaking she him but also fear, smiled too if it that your great pity. It as clearly as shining his ear, senses it's enough space for me exclaimed. Himself all very day strive downwards to them."
+        "imoparnelli",
+        "Tell us also god it against myself in you, source spring from horror in fine clothes, sir the school of noble and penance."
     );
 
 replace into `spark`.`TEXT`
@@ -38,8 +38,8 @@ replace into `spark`.`TEXT`
     values
     (
         4,
-        "onotchlowa",
-        "According to if only flee from that, finding means of boars of day the banana-trees. Kindly he observed him something on it. Body and full height when it importance."
+        "rougeraldyu",
+        "Smiled at your kindness of sounded sweet. Ate other faces of worry or third-hand information, everything can fast he has seen it, name the river laughed and others a farewell."
     );
 
 replace into `spark`.`TEXT`
@@ -49,8 +49,8 @@ replace into `spark`.`TEXT`
     values
     (
         5,
-        "ilpadiog",
-        "Speaking she has nothing when I said, shimmered his hut were thoughts his actions. Occasionally they were in a perfected one, any other turned into this whole world colourful canopy. Laughed just ready to pile on that you."
+        "antafal",
+        "Looking proudly and everyone can learn love my pilgrimage, you'll find peace but not always renew it says, exchanged humorous banter with nothing to burn."
     );
 
 replace into `spark`.`SECTION`
@@ -60,8 +60,8 @@ replace into `spark`.`SECTION`
     values
     (
         1,
-        "Hounsell",
-        "hounsell"
+        "Luwemba",
+        "luwemba"
     );
 
 replace into `spark`.`SECTION`
@@ -71,8 +71,8 @@ replace into `spark`.`SECTION`
     values
     (
         2,
-        "Mcclellan",
-        "mcclellan"
+        "Sibincic",
+        "sibincic"
     );
 
 replace into `spark`.`SECTION`
@@ -82,8 +82,8 @@ replace into `spark`.`SECTION`
     values
     (
         3,
-        "Vargas",
-        "vargas"
+        "Makarenko",
+        "makarenko"
     );
 
 replace into `spark`.`ARTICLE`
@@ -93,72 +93,72 @@ replace into `spark`.`ARTICLE`
     values
     (
         1,
-        "Broke loose embraced him smiled silently spoke to.",
-        "broke-loose-embraced-him-smiled-silently-spoke-to",
-        "Merchant had soon I'll stop him who have followed it, conducted him how did the forest, life away thousands a heron's death. Black eyes fixed in perfumed waters.",
-        "surfer.jpg",
-        "train.mp4",
-        "hounsell"
-    );
-
-replace into `spark`.`ARTICLE`
-    (
-        `Id`, `Title`, `Slug`, `Text`, `Image`, `Video`, `SectionSlug`
-    )
-    values
-    (
-        2,
-        "Teachings perfectly connected without any given.",
-        "teachings-perfectly-connected-without-any-given",
-        "Boy himself anymore to do, come from festering wounds dripped from this time. Continued what has for children were brothers.",
-        "beach.jpg",
-        "train.mp4",
-        "vargas"
-    );
-
-replace into `spark`.`ARTICLE`
-    (
-        `Id`, `Title`, `Slug`, `Text`, `Image`, `Video`, `SectionSlug`
-    )
-    values
-    (
-        3,
-        "Turned black and moon ran incessantly hit.",
-        "turned-black-and-moon-ran-incessantly-hit",
-        "They won't hit him shines brightly the bondage of light. Saw mankind going back hour sped swiftly along, times but instead he bent down on water.",
-        "surfer.jpg",
-        "train.mp4",
-        "mcclellan"
-    );
-
-replace into `spark`.`ARTICLE`
-    (
-        `Id`, `Title`, `Slug`, `Text`, `Image`, `Video`, `SectionSlug`
-    )
-    values
-    (
-        4,
-        "I've already carries the blue.",
-        "i-ve-already-carries-the-blue",
-        "Soon stop him of lustre saw his being, smiling oneness spoke we want to judge another person's life.",
-        "surfer.jpg",
-        "train.mp4",
-        "mcclellan"
-    );
-
-replace into `spark`.`ARTICLE`
-    (
-        `Id`, `Title`, `Slug`, `Text`, `Image`, `Video`, `SectionSlug`
-    )
-    values
-    (
-        5,
-        "Must know my son and my self.",
-        "must-know-my-son-and-my-self",
-        "Purpose to discover its drawing so venerable one. Fasting what wisdom like you, I'm sitting here following him safe. Life knew the silence wearing fine clothes.",
-        "beach.jpg",
+        "Others tell this despair emerged more warmly.",
+        "others-tell-this-despair-emerged-more-warmly",
+        "Way that his advice he lay down his skin, fear with none of been hearing. Since all agony of meditation.",
+        "palm_tree.jpg",
         "bus.mp4",
-        "vargas"
+        "makarenko"
+    );
+
+replace into `spark`.`ARTICLE`
+    (
+        `Id`, `Title`, `Slug`, `Text`, `Image`, `Video`, `SectionSlug`
+    )
+    values
+    (
+        2,
+        "At other thousand voices.",
+        "at-other-thousand-voices",
+        "Want back right place saw anything to do. Entire world not going back inside, previous life hardly perceived the sleep.",
+        "beach.jpg",
+        "train.mp4",
+        "makarenko"
+    );
+
+replace into `spark`.`ARTICLE`
+    (
+        `Id`, `Title`, `Slug`, `Text`, `Image`, `Video`, `SectionSlug`
+    )
+    values
+    (
+        3,
+        "Moderate living strongly tasted power.",
+        "moderate-living-strongly-tasted-power",
+        "Love nobody may go through her friend's face, other and shameful despair this realization.",
+        "surfer.jpg",
+        "bus.mp4",
+        "luwemba"
+    );
+
+replace into `spark`.`ARTICLE`
+    (
+        `Id`, `Title`, `Slug`, `Text`, `Image`, `Video`, `SectionSlug`
+    )
+    values
+    (
+        4,
+        "Way into word give you force him.",
+        "way-into-word-give-you-force-him",
+        "Put him my friend is. Life from myself nor thinking, greed from now stopped as your riches. Now stopped fighting his bare shins.",
+        "surfer.jpg",
+        "bus.mp4",
+        "sibincic"
+    );
+
+replace into `spark`.`ARTICLE`
+    (
+        `Id`, `Title`, `Slug`, `Text`, `Image`, `Video`, `SectionSlug`
+    )
+    values
+    (
+        5,
+        "Questions but like a dead face.",
+        "questions-but-like-a-dead-face",
+        "Speaking still turning but I can wait. Somehow happened occasionally dreaming at me myself that teachings, beautiful are you you're able to save him without stirring.",
+        "palm_tree.jpg",
+        "train.mp4",
+        "luwemba"
     );
 
 replace into `spark`.`ARTICLE`
@@ -168,12 +168,12 @@ replace into `spark`.`ARTICLE`
     values
     (
         6,
-        "Simply thus childlike face.",
-        "simply-thus-childlike-face",
-        "Soul which separated and gamblers with them, leapt in tears as well had grown old ferryman. Where it necessary to new rules.",
-        "palm_tree.jpg",
+        "Opened the fragrant he honoured his friend.",
+        "opened-the-fragrant-he-honoured-his-friend",
+        "Today had gathered dust of writing important thing, smiled tiredly shook himself the less wondrous teachings. First kiss your hospitality my purchase had perceived it.",
+        "beach.jpg",
         "train.mp4",
-        "hounsell"
+        "makarenko"
     );
 
 replace into `spark`.`ARTICLE`
@@ -183,12 +183,12 @@ replace into `spark`.`ARTICLE`
     values
     (
         7,
-        "Pilgrims and clearly and kept on hers.",
-        "pilgrims-and-clearly-and-kept-on-hers",
-        "That you've already as dust was dead, stayed for expressing this for wealth the paper and stupid. Lust covetousness sloth and changed their end in heat.",
+        "Hut in my path.",
+        "hut-in-my-path",
+        "In circles we be possessed, wisdom like only to cheat him said quietly. Soon saw corpses stretched out comforting mild full the end.",
         "beach.jpg",
-        "train.mp4",
-        "mcclellan"
+        "bus.mp4",
+        "sibincic"
     );
 
 replace into `spark`.`ARTICLE`
@@ -198,12 +198,12 @@ replace into `spark`.`ARTICLE`
     values
     (
         8,
-        "Of thirst and on earth.",
-        "of-thirst-and-on-earth",
-        "Man when playing with mockery had wanted to earthly things. Haven't you well ordered well rested strangely clear voice, yet this past rose bid his shadow. Thus simply thus new riches pursued the verse.",
-        "beach.jpg",
+        "Asked his calm the cycle.",
+        "asked-his-calm-the-cycle",
+        "Ablutions nor thirst tiredness lay here thought, blind love as all secrets. Down in all vices through him orders to enlightenment.",
+        "surfer.jpg",
         "bus.mp4",
-        "mcclellan"
+        "sibincic"
     );
 
 replace into `spark`.`ARTICLE`
@@ -213,12 +213,12 @@ replace into `spark`.`ARTICLE`
     values
     (
         9,
-        "Occasionally he live it.",
-        "occasionally-he-live-it",
-        "And images and business of, it's a passion but you say. Travellers and uniform law and images any given.",
-        "surfer.jpg",
+        "Write the always seems I think.",
+        "write-the-always-seems-i-think",
+        "Looking up he said I sir the flying bird, teachings I envy you not going nowhere. Down closely lust had wanted for himself. Wouldn't want to get our exercises staying in himself.",
+        "palm_tree.jpg",
         "bus.mp4",
-        "vargas"
+        "luwemba"
     );
 
 replace into `spark`.`ARTICLE`
@@ -228,12 +228,12 @@ replace into `spark`.`ARTICLE`
     values
     (
         10,
-        "Travellers of any goals for him.",
-        "travellers-of-any-goals-for-him",
-        "Behold here thought thus deeply. Bid his sickness before had thought to kiss. Takes everyone can stand and noble promises.",
-        "beach.jpg",
-        "train.mp4",
-        "vargas"
+        "Image the time ago.",
+        "image-the-time-ago",
+        "Knew everything is but many other better for fifteen days, ate with great vomiting he on foot.",
+        "surfer.jpg",
+        "bus.mp4",
+        "luwemba"
     );
 
 replace into `spark`.`CONTACT`
@@ -243,10 +243,10 @@ replace into `spark`.`CONTACT`
     values
     (
         1,
-        "Stasney",
-        "alexi.ettson@gmail.com",
-        "Fatessan",
-        "2001-07-03 08:49:00"
+        "Godden",
+        "florette.mcneil@live.com",
+        "Olwirekasu",
+        "2000-05-18 18:12:09"
     );
 
 replace into `spark`.`CONTACT`
@@ -256,10 +256,10 @@ replace into `spark`.`CONTACT`
     values
     (
         2,
-        "Kwee",
-        "ezmeralda.perina@outlook.com",
-        "Boyereu",
-        "2001-06-12 13:08:18"
+        "Scherer",
+        "ladonna.gentzler@yahoo.com",
+        "Cyndila",
+        "2014-06-26 22:49:54"
     );
 
 replace into `spark`.`CONTACT`
@@ -269,10 +269,10 @@ replace into `spark`.`CONTACT`
     values
     (
         3,
-        "Gareis",
-        "asghar.baskin@outlook.com",
-        "Jepaddilkowa",
-        "2005-12-04 06:32:16"
+        "Ridley",
+        "prudi.colantonio@mail.com",
+        "Liziadel",
+        "2008-07-23 20:52:49"
     );
 
 replace into `spark`.`CONTACT`
@@ -282,10 +282,10 @@ replace into `spark`.`CONTACT`
     values
     (
         4,
-        "Wojciechowski",
-        "karoly.clinckett@yahoo.com",
-        "Akekapy",
-        "2001-12-19 09:17:32"
+        "Simmonds",
+        "hortense.staples@gmail.com",
+        "Zdenkahumyu",
+        "2014-08-01 14:00:43"
     );
 
 replace into `spark`.`CONTACT`
@@ -295,74 +295,74 @@ replace into `spark`.`CONTACT`
     values
     (
         5,
-        "Lawther",
-        "torrie.moriyama@live.com",
-        "Negestyf",
-        "2007-12-28 23:42:14"
+        "Zauner",
+        "riaz.silva@outlook.com",
+        "Oholawedelu",
+        "2012-08-28 02:08:32"
     );
 
 replace into `spark`.`USER`
     (
-        `Id`, `Email`, `Pseudonym`, `Password`, `IsAdministrator`
+        `Id`, `Email`, `Pseudonym`, `Password`, `Role`
     )
     values
     (
         1,
-        "root@root.com",
-        "root",
+        "administrator@spark.com",
+        "administrator",
         "xyz",
-        1
+        "administrator"
     );
 
 replace into `spark`.`USER`
     (
-        `Id`, `Email`, `Pseudonym`, `Password`, `IsAdministrator`
+        `Id`, `Email`, `Pseudonym`, `Password`, `Role`
     )
     values
     (
         2,
-        "tybi.endrys@gmail.com",
-        "tybiendrys",
-        "many2D:h",
-        1
+        "editor@spark.com",
+        "editor",
+        "xyz",
+        "editor"
     );
 
 replace into `spark`.`USER`
     (
-        `Id`, `Email`, `Pseudonym`, `Password`, `IsAdministrator`
+        `Id`, `Email`, `Pseudonym`, `Password`, `Role`
     )
     values
     (
         3,
-        "mabelle.lashmit@mail.com",
-        "mabellelashmit",
-        "d2e@aHnescu",
-        0
+        "ashly.lamirande@gmail.com",
+        "ashlylamirande",
+        "w1:elaOh",
+        "Darelleria"
     );
 
 replace into `spark`.`USER`
     (
-        `Id`, `Email`, `Pseudonym`, `Password`, `IsAdministrator`
+        `Id`, `Email`, `Pseudonym`, `Password`, `Role`
     )
     values
     (
         4,
-        "simone.keenemoore@mail.com",
-        "simonekeenemoore",
-        "atit^0ejS",
-        0
+        "asnat.pieroway@live.com",
+        "asnatpieroway",
+        "0ockwyN/s",
+        "Leodoralacyz"
     );
 
 replace into `spark`.`USER`
     (
-        `Id`, `Email`, `Pseudonym`, `Password`, `IsAdministrator`
+        `Id`, `Email`, `Pseudonym`, `Password`, `Role`
     )
     values
     (
         5,
-        "othilie.foss@outlook.com",
-        "othiliefoss",
-        "u-n5drybLeh",
-        1
+        "davis.loh@outlook.com",
+        "davisloh",
+        "X8vinu+",
+        "Unstindobar"
     );
 

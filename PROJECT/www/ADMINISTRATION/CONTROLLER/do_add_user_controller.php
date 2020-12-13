@@ -15,9 +15,9 @@ class DO_ADD_USER_CONTROLLER extends CONTROLLER
          $email = GetPostValue( 'Email' );
          $pseudonym = GetPostValue( 'Pseudonym' );
          $password = GetPostValue( 'Password' );
-         $is_administrator = GetPostValue( 'IsAdministrator' );
+         $role = GetPostValue( 'Role' );
 
-        AddDatabaseUser( $email, $pseudonym, $password, $is_administrator );
+        AddDatabaseUser( $email, $pseudonym, $password, $role );
 
         Redirect( '/admin/user' );
     }

@@ -15,6 +15,7 @@ class DISCONNECT_USER_CONTROLLER extends CONTROLLER
         parent::__construct( $language_code );
 
         $this->Session->UserIsConnected = false;
+        $this->Session->UserRole = '';
         $this->Session->Store();
 
         Redirect( $this->Session->Path );

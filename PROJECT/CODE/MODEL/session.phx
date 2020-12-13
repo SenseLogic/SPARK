@@ -9,7 +9,7 @@ class SESSION
         .Message = FindSessionValue( 'Message', '' );
         .User = FindSessionValue( 'User', null );
         .UserIsConnected = FindSessionValue( 'UserIsConnected', false );
-        .UserHasSubscribed = FindSessionValue( 'UserHasSubscribed', false );
+        .UserRole = FindSessionValue( 'UserRole', '' );
         .Captcha = FindSessionValue( 'Captcha', '' );
     }
 
@@ -22,7 +22,7 @@ class SESSION
         SetSessionValue( 'Message', .Message );
         SetSessionValue( 'User', .User );
         SetSessionValue( 'UserIsConnected', .UserIsConnected );
-        SetSessionValue( 'UserHasSubscribed', .UserHasSubscribed );
+        SetSessionValue( 'UserRole', .UserRole );
         SetSessionValue( 'Captcha', .Captcha );
     }
 }

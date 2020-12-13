@@ -12,7 +12,7 @@
                 Password
             </div>
             <div class="form-column-name sortable-grid-column">
-                Is Administrator
+                Role
             </div>
             <div class="form-column-name sortable-grid-column">
                 Action
@@ -28,7 +28,7 @@
                     <% user.Password %>
                 </div>
                 <div class="sortable-grid-cell">
-                    <% user.IsAdministrator %>
+                    <% user.Role %>
                 </div>
                 <div class="form-centered sortable-grid-cell">
                     <a class="form-button view-button" href="/admin/user/view/<% user.Id %>">

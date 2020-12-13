@@ -51,7 +51,7 @@ create table if not exists `spark`.`USER`(
     `Email` TEXT NULL,
     `Pseudonym` TEXT NULL,
     `Password` TEXT NULL,
-    `IsAdministrator` TINYINT UNSIGNED NULL,
+    `Role` TEXT NULL,
     primary key( `Id` )
     ) engine = InnoDB;
 

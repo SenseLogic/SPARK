@@ -9,7 +9,7 @@ class SESSION
         $this->Message = FindSessionValue( 'Message', '' );
         $this->User = FindSessionValue( 'User', null );
         $this->UserIsConnected = FindSessionValue( 'UserIsConnected', false );
-        $this->UserHasSubscribed = FindSessionValue( 'UserHasSubscribed', false );
+        $this->UserRole = FindSessionValue( 'UserRole', '' );
         $this->Captcha = FindSessionValue( 'Captcha', '' );
     }
 
@@ -22,7 +22,7 @@ class SESSION
         SetSessionValue( 'Message', $this->Message );
         SetSessionValue( 'User', $this->User );
         SetSessionValue( 'UserIsConnected', $this->UserIsConnected );
-        SetSessionValue( 'UserHasSubscribed', $this->UserHasSubscribed );
+        SetSessionValue( 'UserRole', $this->UserRole );
         SetSessionValue( 'Captcha', $this->Captcha );
     }
 }

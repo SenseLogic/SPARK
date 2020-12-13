@@ -21,7 +21,7 @@ if ( GetServerName() === 'localhost' )
 {
     define( 'DatabaseName', 'spark' );
     define( 'DatabaseUserName', 'root' );
-    define( 'DatabasePassword', 'root' );
+    define( 'DatabasePassword', '' );
 }
 else
 {
@@ -66,6 +66,7 @@ function Route(
             }
             else if ( $it_is_post_request )
             {
+                 $path = '/admin/text';
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_connect_user_controller.php';
             }
             else
@@ -428,7 +429,7 @@ function Route(
                       && HasPostValue( 'Email' )
                       && HasPostValue( 'Pseudonym' )
                       && HasPostValue( 'Password' )
-                      && HasPostValue( 'IsAdministrator' ) )
+                      && HasPostValue( 'Role' ) )
             {
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_add_user_controller.php';
             }
@@ -457,7 +458,7 @@ function Route(
                       && HasPostValue( 'Email' )
                       && HasPostValue( 'Pseudonym' )
                       && HasPostValue( 'Password' )
-                      && HasPostValue( 'IsAdministrator' ) )
+                      && HasPostValue( 'Role' ) )
             {
                  $user_id = $path_value_array[ 3 ];
 

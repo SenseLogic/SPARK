@@ -22,10 +22,10 @@
                     <input class="form-input" name="Password" type="text" value="<?php echo htmlspecialchars( $this->User->Password ); ?>" readonly/>
                 </div>
                 <div class="form-field-name">
-                    Is Administrator :
+                    Role :
                 </div>
                 <div>
-                    <input class="form-input" name="IsAdministrator" type="text" value="<?php echo htmlspecialchars( $this->User->IsAdministrator ); ?>" readonly/>
+                    <input class="form-input" name="Role" type="text" value="<?php echo htmlspecialchars( $this->User->Role ); ?>" readonly/>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="/admin/user">
                 </a>

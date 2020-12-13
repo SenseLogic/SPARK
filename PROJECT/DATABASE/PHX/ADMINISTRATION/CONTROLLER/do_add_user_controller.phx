@@ -15,9 +15,9 @@ class DO_ADD_USER_CONTROLLER extends CONTROLLER
         var email = GetPostValue( 'Email' );
         var pseudonym = GetPostValue( 'Pseudonym' );
         var password = GetPostValue( 'Password' );
-        var is_administrator = GetPostValue( 'IsAdministrator' );
+        var role = GetPostValue( 'Role' );
 
-        AddDatabaseUser( email, pseudonym, password, is_administrator );
+        AddDatabaseUser( email, pseudonym, password, role );
 
         Redirect( '/admin/user' );
     }

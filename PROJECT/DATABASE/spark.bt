@@ -67,6 +67,7 @@ function Route(
             }
             else if ( it_is_post_request )
             {
+                var path = '/admin/text';
                 import 'ADMINISTRATION/CONTROLLER/do_connect_user_controller.php';
             }
             else

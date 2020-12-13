@@ -25,6 +25,7 @@ class CONNECT_USER_CONTROLLER extends CONTROLLER
         {
             .Session.User = user;
             .Session.UserIsConnected = true;
+            .Session.UserRole = user.Role;
         }
 
         .Session.Store();

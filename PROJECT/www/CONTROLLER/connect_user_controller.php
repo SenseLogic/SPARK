@@ -25,6 +25,7 @@ class CONNECT_USER_CONTROLLER extends CONTROLLER
         {
             $this->Session->User = $user;
             $this->Session->UserIsConnected = true;
+            $this->Session->UserRole = $user->Role;
         }
 
         $this->Session->Store();

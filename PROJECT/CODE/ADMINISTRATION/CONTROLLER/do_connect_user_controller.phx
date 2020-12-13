@@ -8,6 +8,7 @@ import '../../MODEL/user_model.php';
 class DO_CONNECT_USER_CONTROLLER extends CONTROLLER
 {
     method constructor(
+        string path
         )
     {
         parent::constructor();
@@ -25,13 +26,14 @@ class DO_CONNECT_USER_CONTROLLER extends CONTROLLER
         else
         {
             .Session.UserIsConnected = true;
+            .Session.UserRole = user.Role;
             .Session.Store();
 
-            Redirect( '/admin/text' );
+            Redirect( path );
         }
     }
 }
 
 // -- STATEMENTS
 
-var do_connect_user_controller = new DO_CONNECT_USER_CONTROLLER();
+var do_connect_user_controller = new DO_CONNECT_USER_CONTROLLER( var path );

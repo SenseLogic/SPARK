@@ -10,7 +10,7 @@
             email_field,
             pseudonym_field,
             password_field,
-            is_administrator_field;
+            role_field;
 
         it_is_valid_add_user_form = true;
 
@@ -18,7 +18,7 @@
         email_field = add_user_form.Email;
         pseudonym_field = add_user_form.Pseudonym;
         password_field = add_user_form.Password;
-        is_administrator_field = add_user_form.IsAdministrator;
+        role_field = add_user_form.Role;
 
         if ( email_field.value !== "" )
         {
@@ -53,13 +53,13 @@
             it_is_valid_add_user_form = false;
         }
 
-        if ( is_administrator_field.value !== "" )
+        if ( role_field.value !== "" )
         {
-            is_administrator_field.classList.remove( "form-field-error" );
+            role_field.classList.remove( "form-field-error" );
         }
         else
         {
-            is_administrator_field.classList.add( "form-field-error" );
+            role_field.classList.add( "form-field-error" );
 
             it_is_valid_add_user_form = false;
         }
@@ -90,10 +90,10 @@
                     <input class="form-input" name="Password" type="text"/>
                 </div>
                 <div class="form-field-name">
-                    Is Administrator :
+                    Role :
                 </div>
                 <div>
-                    <input class="form-input" name="IsAdministrator" type="text"/>
+                    <input class="form-input" name="Role" type="text"/>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="/admin/user">
                 </a>

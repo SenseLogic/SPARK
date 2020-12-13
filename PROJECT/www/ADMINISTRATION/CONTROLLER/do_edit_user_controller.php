@@ -16,9 +16,9 @@ class DO_EDIT_USER_CONTROLLER extends CONTROLLER
          $email = GetPostValue( 'Email' );
          $pseudonym = GetPostValue( 'Pseudonym' );
          $password = GetPostValue( 'Password' );
-         $is_administrator = GetPostValue( 'IsAdministrator' );
+         $role = GetPostValue( 'Role' );
 
-        SetDatabaseUser( $user_id, $email, $pseudonym, $password, $is_administrator );
+        SetDatabaseUser( $user_id, $email, $pseudonym, $password, $role );
 
         Redirect( '/admin/user' );
     }

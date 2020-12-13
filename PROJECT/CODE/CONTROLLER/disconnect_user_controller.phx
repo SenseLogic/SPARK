@@ -15,6 +15,7 @@ class DISCONNECT_USER_CONTROLLER extends CONTROLLER
         parent::constructor( language_code );
 
         .Session.UserIsConnected = false;
+        .Session.UserRole = '';
         .Session.Store();
 
         Redirect( .Session.Path );

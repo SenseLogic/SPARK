@@ -275,6 +275,10 @@ function GetBrowserName(
     {
         return 'Netscape';
     }
+    else if ( strpos( user_agent, 'like Gecko' ) !== false )
+    {
+        return 'Internet Explorer';
+    }
     else
     {
         return 'Unknown';

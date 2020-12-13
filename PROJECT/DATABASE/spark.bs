@@ -36,4 +36,4 @@ spark
         Email : STRING
         Pseudonym : STRING
         Password : STRING
-        IsAdministrator : BOOL
+        Role : STRING

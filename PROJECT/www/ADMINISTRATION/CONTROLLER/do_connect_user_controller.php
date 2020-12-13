@@ -8,6 +8,7 @@ require_once __DIR__ . '/' . '../../MODEL/user_model.php';
 class DO_CONNECT_USER_CONTROLLER extends CONTROLLER
 {
     function __construct(
+        string $path
         )
     {
         parent::__construct();
@@ -25,13 +26,14 @@ class DO_CONNECT_USER_CONTROLLER extends CONTROLLER
         else
         {
             $this->Session->UserIsConnected = true;
+            $this->Session->UserRole = $user->Role;
             $this->Session->Store();
 
-            Redirect( '/admin/text' );
+            Redirect( $path );
         }
     }
 }
 
 // -- STATEMENTS
 
- $do_connect_user_controller = new DO_CONNECT_USER_CONTROLLER();
+ $do_connect_user_controller = new DO_CONNECT_USER_CONTROLLER(  $path );
