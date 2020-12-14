@@ -333,23 +333,15 @@ function GetBrowserLocation(
     location.TimeZone = '';
     location.IsFound = false;
 
-    try
+    if ( isset( _SERVER[ 'GEOIP_LATITUDE' ] )
+         && isset( _SERVER[ 'GEOIP_LONGITUDE' ] )
+         && isset( _SERVER[ 'GEOIP_COUNTRY_CODE' ] ) )
     {
-        var geographic_data = json_decode( file_get_contents( 'http://www.geoplugin.net/json.gp?ip=' .. browser_address ) );
-
-        if ( geographic_data !== null
-             && property_exists( geographic_data, 'geoplugin_status' )
-             && geographic_data.geoplugin_status !== 404 )
-        {
-            location.Latitude = geographic_data.geoplugin_latitude;
-            location.Longitude = geographic_data.geoplugin_longitude;
-            location.CountryCode = geographic_data.geoplugin_countryCode;
-            location.TimeZone = geographic_data.geoplugin_timezone;
-            location.IsFound = true;
-        }
-    }
-    catch ( Exception var exception )
-    {
+        location.Latitude = _SERVER[ 'GEOIP_LATITUDE' ];
+        location.Longitude = _SERVER[ 'GEOIP_LONGITUDE' ];
+        location.CountryCode = _SERVER[ 'GEOIP_COUNTRY_CODE' ];
+        location.TimeZone = GetTimeZoneFromCountryCode( location.CountryCode, location.Longitude );
+        location.IsFound = true;
     }
 
     if ( !location.IsFound )
@@ -376,15 +368,23 @@ function GetBrowserLocation(
 
     if ( !location.IsFound )
     {
-        if ( isset( _SERVER[ 'GEOIP_LATITUDE' ] )
-             && isset( _SERVER[ 'GEOIP_LONGITUDE' ] )
-             && isset( _SERVER[ 'GEOIP_COUNTRY_CODE' ] ) )
+        try
         {
-            location.Latitude = _SERVER[ 'GEOIP_LATITUDE' ];
-            location.Longitude = _SERVER[ 'GEOIP_LONGITUDE' ];
-            location.CountryCode = _SERVER[ 'GEOIP_COUNTRY_CODE' ];
-            location.TimeZone = 'Europe/Brussels';
-            location.IsFound = true;
+            var geographic_data = json_decode( file_get_contents( 'http://www.geoplugin.net/json.gp?ip=' .. browser_address ) );
+
+            if ( geographic_data !== null
+                 && property_exists( geographic_data, 'geoplugin_status' )
+                 && geographic_data.geoplugin_status !== 404 )
+            {
+                location.Latitude = geographic_data.geoplugin_latitude;
+                location.Longitude = geographic_data.geoplugin_longitude;
+                location.CountryCode = geographic_data.geoplugin_countryCode;
+                location.TimeZone = geographic_data.geoplugin_timezone;
+                location.IsFound = true;
+            }
+        }
+        catch ( Exception var exception )
+        {
         }
     }
 
