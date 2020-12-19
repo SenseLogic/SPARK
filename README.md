@@ -14,7 +14,7 @@ Phoenix microframework and project template.
 * Install [Node.js](https://nodejs.org/en/download/)
 * Install [Wampserver](https://www.wampserver.com/)
 * Run the `install.bat` script of the `SETUP` folder.
-* SPARK and its dependencies are now installed in `%UserProfile%\PROJECT`.
+* Spark and its dependencies are now installed in `%UserProfile%\PROJECT`.
 
 ## For Linux
 
@@ -35,7 +35,7 @@ sudo mysql_secure_installation
 ```
 
 * Run the `install.sh` script of the `SETUP` folder.
-* SPARK and its dependencies are now installed in `~/PROJECT`.
+* Spark and its dependencies are now installed in `~/PROJECT`.
 
 ## Version
 
