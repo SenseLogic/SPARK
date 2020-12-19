@@ -9,16 +9,16 @@ CREATE TABLE `ARTICLE` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `ARTICLE` (`Id`, `Title`, `Slug`, `Text`, `Image`, `Video`, `SectionSlug`) VALUES
-(1, 'Others tell this despair emerged more warmly.', 'others-tell-this-despair-emerged-more-warmly', 'Way that his advice he lay down his skin, fear with none of been hearing. Since all agony of meditation.', 'palm_tree.jpg', 'bus.mp4', 'makarenko'),
-(2, 'At other thousand voices.', 'at-other-thousand-voices', 'Want back right place saw anything to do. Entire world not going back inside, previous life hardly perceived the sleep.', 'beach.jpg', 'train.mp4', 'makarenko'),
-(3, 'Moderate living strongly tasted power.', 'moderate-living-strongly-tasted-power', 'Love nobody may go through her friend\'s face, other and shameful despair this realization.', 'surfer.jpg', 'bus.mp4', 'luwemba'),
-(4, 'Way into word give you force him.', 'way-into-word-give-you-force-him', 'Put him my friend is. Life from myself nor thinking, greed from now stopped as your riches. Now stopped fighting his bare shins.', 'surfer.jpg', 'bus.mp4', 'sibincic'),
-(5, 'Questions but like a dead face.', 'questions-but-like-a-dead-face', 'Speaking still turning but I can wait. Somehow happened occasionally dreaming at me myself that teachings, beautiful are you you\'re able to save him without stirring.', 'palm_tree.jpg', 'train.mp4', 'luwemba'),
-(6, 'Opened the fragrant he honoured his friend.', 'opened-the-fragrant-he-honoured-his-friend', 'Today had gathered dust of writing important thing, smiled tiredly shook himself the less wondrous teachings. First kiss your hospitality my purchase had perceived it.', 'beach.jpg', 'train.mp4', 'makarenko'),
-(7, 'Hut in my path.', 'hut-in-my-path', 'In circles we be possessed, wisdom like only to cheat him said quietly. Soon saw corpses stretched out comforting mild full the end.', 'beach.jpg', 'bus.mp4', 'sibincic'),
-(8, 'Asked his calm the cycle.', 'asked-his-calm-the-cycle', 'Ablutions nor thirst tiredness lay here thought, blind love as all secrets. Down in all vices through him orders to enlightenment.', 'surfer.jpg', 'bus.mp4', 'sibincic'),
-(9, 'Write the always seems I think.', 'write-the-always-seems-i-think', 'Looking up he said I sir the flying bird, teachings I envy you not going nowhere. Down closely lust had wanted for himself. Wouldn\'t want to get our exercises staying in himself.', 'palm_tree.jpg', 'bus.mp4', 'luwemba'),
-(10, 'Image the time ago.', 'image-the-time-ago', 'Knew everything is but many other better for fifteen days, ate with great vomiting he on foot.', 'surfer.jpg', 'bus.mp4', 'luwemba');
+(1, 'Example hadn\'t been lucky she admitted.', 'example-hadn-t-been-lucky-she-admitted', 'Non-eternal things most wretched people, anxiety in learning and making poetry. Did many pilgrims do so. Should this all possible without money.', 'beach.jpg', 'bus.mp4', 'diogo'),
+(2, 'Forgive me since that surpassed him out badly.', 'forgive-me-since-that-surpassed-him-out-badly', 'Before read for hours he helped him with hunger, have received among them up impetuously hunting for worshipped river.', 'surfer.jpg', 'bus.mp4', 'diogo'),
+(3, 'Taught you insist upon.', 'taught-you-insist-upon', 'Talking she crouched for two from another time. Did you abandon your birth and tenderness his shadow, learned from himself in blissfulness of having no use. Slowly become wiser has a prince among these are smiling.', 'beach.jpg', 'bus.mp4', 'vakili'),
+(4, 'Don\'t know love a mouth.', 'don-t-know-love-a-mouth', 'Evening with sky-blue ones from it, whom he spoke one wants. Previous lives of thought taking this hour.', 'palm_tree.jpg', 'train.mp4', 'vakili'),
+(5, 'Being given her so irrefutably.', 'being-given-her-so-irrefutably', 'Aren\'t capable of their refuge to belong to, aren\'t you like a lot, o he also lives the young wishes of love. Aren\'t you shackle and shoes bracelets clanged.', 'surfer.jpg', 'train.mp4', 'coulombe'),
+(6, 'Merchant had stirred in teachings be taken away.', 'merchant-had-stirred-in-teachings-be-taken-away', 'Body definitely not belong to. Placed two from myself yesterday greeting me here now shadow.', 'surfer.jpg', 'train.mp4', 'vakili'),
+(7, 'My purchase had died.', 'my-purchase-had-died', 'Meditation of treasures full he wrestled in beautiful things. Kindly spoke the story about a large city, quietly flowing to win the meantime and since all conceptions. Today he found blissfulness of merciless self-denial.', 'beach.jpg', 'bus.mp4', 'vakili'),
+(8, 'Won\'t be his decision in memory.', 'won-t-be-his-decision-in-memory', 'Knew from time would too much wisdom, her side of coconut-milk he dreamt. Worry in this even doubted in memory, then have had wanted for a moment flash.', 'palm_tree.jpg', 'train.mp4', 'diogo'),
+(9, 'Thinking fasting which people and happy in words.', 'thinking-fasting-which-people-and-happy-in-words', 'Nothing of veneration by its palm-trees, what women nodded for yours, bid him apart not brought his religious devotion his companion. Bent over freezing hips and dust of thoughts.', 'beach.jpg', 'train.mp4', 'diogo'),
+(10, 'Two colours no time.', 'two-colours-no-time', 'Easily thus venerable teacher and a, so friend would advise him leave he found.', 'surfer.jpg', 'train.mp4', 'vakili');
 
 CREATE TABLE `CONTACT` (
   `Id` INT UNSIGNED NOT NULL AUTO_INCREMENT, 
@@ -29,11 +29,11 @@ CREATE TABLE `CONTACT` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `CONTACT` (`Id`, `Name`, `Email`, `Message`, `DateTime`) VALUES
-(1, 'Godden', 'florette.mcneil@live.com', 'Olwirekasu', '2000-05-18 18:12:09'),
-(2, 'Scherer', 'ladonna.gentzler@yahoo.com', 'Cyndila', '2014-06-26 22:49:54'),
-(3, 'Ridley', 'prudi.colantonio@mail.com', 'Liziadel', '2008-07-23 20:52:49'),
-(4, 'Simmonds', 'hortense.staples@gmail.com', 'Zdenkahumyu', '2014-08-01 14:00:43'),
-(5, 'Zauner', 'riaz.silva@outlook.com', 'Oholawedelu', '2012-08-28 02:08:32');
+(1, 'Pilip', 'torcac.blancoalonso@yahoo.com', 'Ivaniu', '2010-12-14 08:37:38'),
+(2, 'Glaszczak', 'goldi.karibian@outlook.com', 'Phylysatok', '2014-11-05 16:50:05'),
+(3, 'Karademir', 'kevin.gomm@mail.com', 'Oosetu', '2014-06-11 13:20:02'),
+(4, 'Majors', 'gudrun.gamarnik@gmail.com', 'Errille', '2011-09-16 23:25:08'),
+(5, 'Borek', 'engin.brummitt@outlook.com', 'Aldesjalacid', '2003-08-09 13:00:04');
 
 CREATE TABLE `SECTION` (
   `Id` INT UNSIGNED NOT NULL AUTO_INCREMENT, 
@@ -42,9 +42,9 @@ CREATE TABLE `SECTION` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `SECTION` (`Id`, `Name`, `Slug`) VALUES
-(1, 'Luwemba', 'luwemba'),
-(2, 'Sibincic', 'sibincic'),
-(3, 'Makarenko', 'makarenko');
+(1, 'Diogo', 'diogo'),
+(2, 'Coulombe', 'coulombe'),
+(3, 'Vakili', 'vakili');
 
 CREATE TABLE `TEXT` (
   `Id` INT UNSIGNED NOT NULL AUTO_INCREMENT, 
@@ -53,11 +53,11 @@ CREATE TABLE `TEXT` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `TEXT` (`Id`, `Slug`, `Text`) VALUES
-(1, 'ossantholan', 'Sinner is divine the merchant an opinion. Accustomed to pass on the look upon him, courtesan has discovered by wine the mat and mysterious. Won\'t for three noble were getting lost in. Hut thinking people the possessions said but never satisfied.'),
-(2, 'ickevaarorny', 'She called my senses he still see him, exchanged some small children with passion came without clothes, you into its goal a listener to say everything.'),
-(3, 'imoparnelli', 'Tell us also god it against myself in you, source spring from horror in fine clothes, sir the school of noble and penance.'),
-(4, 'rougeraldyu', 'Smiled at your kindness of sounded sweet. Ate other faces of worry or third-hand information, everything can fast he has seen it, name the river laughed and others a farewell.'),
-(5, 'antafal', 'Looking proudly and everyone can learn love my pilgrimage, you\'ll find peace but not always renew it says, exchanged humorous banter with nothing to burn.');
+(1, 'ombillomarab', 'Pleasure all resistance and have achieved it, indignant he remembered the mother\'s boy himself. Suddenly he ate only hide from men talked.'),
+(2, 'ilsolecu', 'Image of writing important thing he not search was, spared him above them found something on shoulder. Turned gray for rather they all suffering, in themselves physicians trying so thus deeply.'),
+(3, 'patevra', 'Face bore the salvation and right here from foolishness. For little of pain through your direction, I\'m able to what path my faith in memory, he\'s doing lots of filth he reside in everything.'),
+(4, 'arthiu', 'Oldest one not lack clothes are like, as possible that school of slight grooves an ending. Willingness to despise it when my father.'),
+(5, 'loseripomip', 'Face was ailing when his power he embraced him. Putting me which these people accustomed to occupy them. Farewell from that I like oil in memory, failed to devour him conducted his solid staff. Still lacks completeness roundness oneness spoke eagerly.');
 
 CREATE TABLE `USER` (
   `Id` INT UNSIGNED NOT NULL AUTO_INCREMENT, 
@@ -70,9 +70,9 @@ CREATE TABLE `USER` (
 INSERT INTO `USER` (`Id`, `Email`, `Pseudonym`, `Password`, `Role`) VALUES
 (1, 'administrator@spark.com', 'administrator', 'xyz', 'administrator'),
 (2, 'editor@spark.com', 'editor', 'xyz', 'editor'),
-(3, 'ashly.lamirande@gmail.com', 'ashlylamirande', 'w1:elaOh', 'Darelleria'),
-(4, 'asnat.pieroway@live.com', 'asnatpieroway', '0ockwyN/s', 'Leodoralacyz'),
-(5, 'davis.loh@outlook.com', 'davisloh', 'X8vinu+', 'Unstindobar');
+(3, 'core.lin@gmail.com', 'corelin', 'b6aH?uecav', 'Baumarthy'),
+(4, 'bernd.frie@mail.com', 'berndfrie', 'Sacke,pf1a', 'Urakunonkre'),
+(5, 'claudetta.stclairholmes@live.com', 'claudettastclairholmes', 'tVavin;s8i', 'Andiedbemil');
 
 ALTER TABLE `ARTICLE`
   ADD PRIMARY KEY (`Id`);

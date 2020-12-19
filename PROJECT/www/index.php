@@ -2,13 +2,14 @@
 
 require_once __DIR__ . '/' . 'FRAMEWORK/error.php';
 require_once __DIR__ . '/' . 'FRAMEWORK/global.php';
+require_once __DIR__ . '/' . 'FRAMEWORK/random.php';
 require_once __DIR__ . '/' . 'FRAMEWORK/text.php';
 require_once __DIR__ . '/' . 'FRAMEWORK/path.php';
 require_once __DIR__ . '/' . 'FRAMEWORK/file.php';
 require_once __DIR__ . '/' . 'FRAMEWORK/date.php';
-require_once __DIR__ . '/' . 'FRAMEWORK/language.php';
 require_once __DIR__ . '/' . 'FRAMEWORK/request.php';
 require_once __DIR__ . '/' . 'FRAMEWORK/session.php';
+require_once __DIR__ . '/' . 'FRAMEWORK/language.php';
 require_once __DIR__ . '/' . 'FRAMEWORK/database.php';
 require_once __DIR__ . '/' . 'FRAMEWORK/captcha.php';
 require_once __DIR__ . '/' . 'FRAMEWORK/mail.php';
@@ -21,7 +22,7 @@ if ( GetServerName() === 'localhost' )
 {
     define( 'DatabaseName', 'spark' );
     define( 'DatabaseUserName', 'root' );
-    define( 'DatabasePassword', '' );
+    define( 'DatabasePassword', 'root' );
 }
 else
 {

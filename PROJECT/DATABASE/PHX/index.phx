@@ -2,13 +2,14 @@
 
 import 'FRAMEWORK/error.php';
 import 'FRAMEWORK/global.php';
+import 'FRAMEWORK/random.php';
 import 'FRAMEWORK/text.php';
 import 'FRAMEWORK/path.php';
 import 'FRAMEWORK/file.php';
 import 'FRAMEWORK/date.php';
-import 'FRAMEWORK/language.php';
 import 'FRAMEWORK/request.php';
 import 'FRAMEWORK/session.php';
+import 'FRAMEWORK/language.php';
 import 'FRAMEWORK/database.php';
 import 'FRAMEWORK/captcha.php';
 import 'FRAMEWORK/mail.php';
@@ -21,7 +22,7 @@ if ( GetServerName() === 'localhost' )
 {
     define( 'DatabaseName', 'spark' );
     define( 'DatabaseUserName', 'root' );
-    define( 'DatabasePassword', '' );
+    define( 'DatabasePassword', 'root' );
 }
 else
 {

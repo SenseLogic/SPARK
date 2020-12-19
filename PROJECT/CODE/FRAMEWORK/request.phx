@@ -243,46 +243,47 @@ function GetServerAddress(
 function GetBrowserName(
     )
 {
-    var user_agent = _SERVER[ 'HTTP_USER_AGENT' ];
-    var part_array = explode( '/', str_replace( ' ', '/', user_agent ) );
+    if ( isset( _SERVER[ 'HTTP_USER_AGENT' ] ) )
+    {
+        var user_agent = _SERVER[ 'HTTP_USER_AGENT' ];
+        var part_array = explode( '/', str_replace( ' ', '/', user_agent ) );
 
-    if ( in_array( 'Edge', part_array ) )
-    {
-        return 'Edge';
+        if ( in_array( 'Edge', part_array ) )
+        {
+            return 'Edge';
+        }
+        else if ( in_array( 'MSIE', part_array )
+                  && !in_array( 'Opera', part_array ) )
+        {
+            return 'Internet Explorer';
+        }
+        else if ( in_array( 'Firefox', part_array ) )
+        {
+            return 'Firefox';
+        }
+        else if ( in_array( 'Chrome', part_array ) )
+        {
+            return 'Chrome';
+        }
+        else if ( in_array( 'Safari', part_array ) )
+        {
+            return 'Safari';
+        }
+        else if ( in_array( 'Opera', part_array ) )
+        {
+            return 'Opera';
+        }
+        else if ( in_array( 'Netscape', part_array ) )
+        {
+            return 'Netscape';
+        }
+        else if ( strpos( user_agent, 'like Gecko' ) !== false )
+        {
+            return 'Internet Explorer';
+        }
     }
-    else if ( in_array( 'MSIE', part_array )
-              && !in_array( 'Opera', part_array ) )
-    {
-        return 'Internet Explorer';
-    }
-    else if ( in_array( 'Firefox', part_array ) )
-    {
-        return 'Firefox';
-    }
-    else if ( in_array( 'Chrome', part_array ) )
-    {
-        return 'Chrome';
-    }
-    else if ( in_array( 'Safari', part_array ) )
-    {
-        return 'Safari';
-    }
-    else if ( in_array( 'Opera', part_array ) )
-    {
-        return 'Opera';
-    }
-    else if ( in_array( 'Netscape', part_array ) )
-    {
-        return 'Netscape';
-    }
-    else if ( strpos( user_agent, 'like Gecko' ) !== false )
-    {
-        return 'Internet Explorer';
-    }
-    else
-    {
-        return 'Unknown';
-    }
+
+    return 'Unknown';
 }
 
 // ~~
@@ -314,10 +315,8 @@ function GetBrowserAddress(
     {
         return _SERVER[ 'REMOTE_ADDR' ];
     }
-    else
-    {
-        return '0.0.0.0';
-    }
+
+    return '0.0.0.0';
 }
 
 // ~~
@@ -337,10 +336,10 @@ function GetBrowserLocation(
          && isset( _SERVER[ 'GEOIP_LONGITUDE' ] )
          && isset( _SERVER[ 'GEOIP_COUNTRY_CODE' ] ) )
     {
-        location.Latitude = _SERVER[ 'GEOIP_LATITUDE' ];
-        location.Longitude = _SERVER[ 'GEOIP_LONGITUDE' ];
+        location.Latitude = ( float )_SERVER[ 'GEOIP_LATITUDE' ];
+        location.Longitude = ( float )_SERVER[ 'GEOIP_LONGITUDE' ];
         location.CountryCode = _SERVER[ 'GEOIP_COUNTRY_CODE' ];
-        location.TimeZone = GetTimeZoneFromCountryCode( location.CountryCode, location.Longitude );
+        location.TimeZone = GetTimeZoneFromLocation( location.Latitude, location.Longitude, location.CountryCode );
         location.IsFound = true;
     }
 
@@ -354,8 +353,8 @@ function GetBrowserLocation(
                  && property_exists( geographic_data, 'status' )
                  && geographic_data.status === 'success' )
             {
-                location.Latitude = geographic_data.lat;
-                location.Longitude = geographic_data.lon;
+                location.Latitude = ( float )geographic_data.lat;
+                location.Longitude = ( float )geographic_data.lon;
                 location.CountryCode = geographic_data.countryCode;
                 location.TimeZone = geographic_data.timezone;
                 location.IsFound = true;
@@ -376,8 +375,8 @@ function GetBrowserLocation(
                  && property_exists( geographic_data, 'geoplugin_status' )
                  && geographic_data.geoplugin_status !== 404 )
             {
-                location.Latitude = geographic_data.geoplugin_latitude;
-                location.Longitude = geographic_data.geoplugin_longitude;
+                location.Latitude = ( float )geographic_data.geoplugin_latitude;
+                location.Longitude = ( float )geographic_data.geoplugin_longitude;
                 location.CountryCode = geographic_data.geoplugin_countryCode;
                 location.TimeZone = geographic_data.geoplugin_timezone;
                 location.IsFound = true;
