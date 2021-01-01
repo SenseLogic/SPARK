@@ -123,9 +123,9 @@ function GetTimeZoneFromLocation(
     string country_code
     )
 {
-    var time_shift = round( max( min( longitude / 15.0, 12.0 ), -12.0 ) );
+    var time_shift = max( min( ( int )round( longitude / 15.0 ), 12 ), -12 );
 
-    if ( time_shift === 12 )
+    if ( time_shift >= 12 )
     {
         time_shift = -12;
     }
@@ -666,7 +666,6 @@ function GetTimeZoneFromLocation(
         case 9 : return 'Asia/Tokyo';
         case 10 : return 'Australia/Brisbane';
         case 11 : return 'Pacific/Noumea';
-        case 12 : return 'Pacific/Funafuti';
     }
 
     return '';
