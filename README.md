@@ -19,19 +19,19 @@ Spark is implemented in the [Phoenix](https://github.com/senselogic/PHOENIX) lan
 
 The project template uses the following tools :
 
-* [Phoenix](https://github.com/senselogic/PHOENIX)
-    * to compile the Phoenix scripts into human-readable PHP code;
 * [Basil](https://github.com/senselogic/BASIL)
     * to design the database schema and test data, and generate the SQL initialization scripts;
     * to generate the request routing, database access, REST API and administration website code.
+* [Cyclone](https://github.com/senselogic/CYCLONE)
+    * to update the database schema and data on the development system.
+* [Phoenix](https://github.com/senselogic/PHOENIX)
+    * to compile the Phoenix scripts into human-readable PHP code;
 * [Vista](https://github.com/senselogic/VISTA)
     * as the Stylus and JavaScript front-end framework for the administration website.
 * [Stylus](https://github.com/stylus/stylus)
     * to compile the Stylus scripts into CSS code.
 * [Resync](https://github.com/senselogic/RESYNC)
     * to update the website code and data on the development system.
-* [Cyclone](https://github.com/senselogic/CYCLONE)
-    * to update the database schema and data on the development system.
 
 ## Installation
 
