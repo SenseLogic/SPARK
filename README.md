@@ -23,7 +23,7 @@ using simple and efficient code which can be understood just by itself, with the
 The project template uses the following tools :
 
 * [Basil](https://github.com/senselogic/BASIL)
-    * to design the database schema and data, and generate the SQL scripts;
+    * to design the SQL database schema and data, and generate the initialisation scripts;
     * to generate the routing, database access, REST API and administration website code.
 * [Vista](https://github.com/senselogic/VISTA)
     * to use as the default CSS and JavaScript framework for the administration website.
