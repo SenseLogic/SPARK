@@ -25,9 +25,9 @@ The project template uses the following tools :
     * to design the database schema and test data, and generate the SQL initialization scripts;
     * to generate the request routing, database access, REST API and administration website code.
 * [Vista](https://github.com/senselogic/VISTA)
-    * as the CSS and JavaScript front-end framework for the administration website.
+    * as the Stylus and JavaScript front-end framework for the administration website.
 * [Stylus](https://github.com/stylus/stylus)
-    * as the CSS preprocessor.
+    * to compile the Stylus scripts into CSS code.
 * [Resync](https://github.com/senselogic/RESYNC)
     * to update the website code and data on the development system.
 * [Cyclone](https://github.com/senselogic/CYCLONE)
