@@ -22,12 +22,15 @@ using simple and efficient code which can be understood just by itself, with the
 
 The project template uses the following tools :
 
-* [Basil](https://github.com/senselogic/BASIL) :
-    * to design the SQL database schema and data;
-    * to generate efficient routing, database access, REST API and administration website code.
-* [Vista](https://github.com/senselogic/VISTA) : as the default CSS and JavaScript framework for the administration website.
-* [Resync](https://github.com/senselogic/RESYNC) : to update the website code and data on the development system.
-* [Cyclone](https://github.com/senselogic/CYCLONE) : to update the database schema and data on the development system.
+* [Basil](https://github.com/senselogic/BASIL)
+    * to design the database schema and data, and generate the SQL scripts;
+    * to generate the routing, database access, REST API and administration website code.
+* [Vista](https://github.com/senselogic/VISTA)
+    * to use as the default CSS and JavaScript framework for the administration website.
+* [Resync](https://github.com/senselogic/RESYNC)
+    * To update the website code and data on the development system.
+* [Cyclone](https://github.com/senselogic/CYCLONE)
+    * To update the database schema and data on the development system.
 
 ## Installation
 
