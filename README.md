@@ -4,6 +4,31 @@
 
 Phoenix microframework and project template.
 
+## Goals
+
+### Efficiency
+
+Contrarily to huge frameworks like Laravel and Symphony which provide dozens of classes to manage both the web and database requests, Spark is simply a small
+collection of reusable procedural functions wrapping and extending the PHP standard library in order to improve its ease of use.
+
+### Readability
+
+Spark is implemented in the [Phoenix](https://github.com/senselogic/PHOENIX) language, which allows to develop PHP code with a concise and readable JavaScript-like syntax.
+
+Moreover, all the framework code follows the rules specified in the [Coda](https://github.com/senselogic/CODA) coding standard, which requires that each component is implemented
+using simple and efficient code which can be understood just by itself, with the least possible amount of comments.
+
+## Dependencies
+
+The project template uses the following tools :
+
+* [Basil](https://github.com/senselogic/BASIL) :
+    * to design the SQL database schema and data;
+    * to generate efficient routing, database access, REST API and administration website code.
+* [Vista](https://github.com/senselogic/VISTA) : as the default CSS and JavaScript framework for the administration website.
+* [Resync](https://github.com/senselogic/RESYNC) : to update the website code and data on the development system.
+* [Cyclone](https://github.com/senselogic/CYCLONE) : to update the database schema and data on the development system.
+
 ## Installation
 
 ## For Windows
