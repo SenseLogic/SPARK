@@ -96,3 +96,30 @@ function RemoveSuffix(
         return text;
     }
 }
+
+// ~~
+
+function GetShortenedText(
+    string text,
+    int maximum_character_count,
+    string separator = '...'
+    )
+{
+    var text_character_count = strlen( text );
+
+    if ( text_character_count <= maximum_character_count )
+    {
+        return text;
+    }
+    else
+    {
+        var separator_character_count = strlen( separator );
+        var first_character_count = ( int )( ( maximum_character_count - separator_character_count ) / 2 );
+        var last_character_count = maximum_character_count - first_character_count - separator_character_count;
+
+        return
+            substr( text, 0, first_character_count )
+            .. separator
+            .. substr( text, text_character_count - last_character_count, last_character_count );
+    }
+}
