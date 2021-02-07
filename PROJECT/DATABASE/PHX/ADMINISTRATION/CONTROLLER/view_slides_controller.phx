@@ -1,0 +1,26 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/slide_model.php';
+
+// -- TYPES
+
+class VIEW_SLIDES_CONTROLLER extends CONTROLLER
+{
+    method constructor(
+        )
+    {
+        parent::constructor();
+
+        .Title = 'View slides';
+        .SlideArray = GetDatabaseSlideArray();
+
+        SetSessionValue( 'PreviousPage', GetRequest() );
+
+        import '../VIEW/view_slides_view.php';
+    }
+}
+
+// -- STATEMENTS
+
+var view_slides_controller = new VIEW_SLIDES_CONTROLLER();

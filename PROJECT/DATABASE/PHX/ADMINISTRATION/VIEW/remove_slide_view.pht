@@ -1,0 +1,50 @@
+<? include 'BLOCK/page_header_block.php' ?>
+<div>
+    <div class="page-section form-section">
+        <form class="form-centered" action="/admin/slide/remove/<% .Slide.Id %>" method="post">
+            <div class="form-container">
+                <div class="form-field-name">
+                    Text :
+                </div>
+                <div>
+                    <textarea class="form-textarea" name="Text" readonly><% .Slide.Text %></textarea>
+                </div>
+                <div class="form-field-name">
+                    Image :
+                </div>
+                <div>
+                    <input class="form-input" name="Image" type="text" value="<% .Slide.Image %>" readonly/>
+                    <div class="form-upload-container">
+                        <img class="form-upload-image" src="/upload/image/<% .Slide.Image %>" onerror="this.src='/upload/image/missing_image.svg'"/>
+                    </div>
+                </div>
+                <div class="form-field-name">
+                    Video :
+                </div>
+                <div>
+                    <input class="form-input" name="Video" type="text" value="<% .Slide.Video %>" readonly/>
+                    <div class="form-upload-container">
+                        <video class="form-upload-video" src="/upload/video/<% .Slide.Video %>" type="video/mp4" onerror="this.src='/upload/video/missing_video.mp4'"></video>
+                    </div>
+                </div>
+                <div class="form-field-name">
+                    Has Video :
+                </div>
+                <div>
+                    <input class="form-input" name="HasVideo" type="text" value="<% .Slide.HasVideo %>" readonly/>
+                </div>
+                <div class="form-field-name">
+                    Number :
+                </div>
+                <div>
+                    <input class="form-input" name="Number" type="text" value="<% .Slide.Number %>" readonly/>
+                </div>
+                <a class="justify-self-start form-button form-button-large cancel-button" href="/admin/slide">
+                </a>
+                <button class="justify-self-end form-button-large form-button form-button-large remove-button" type="submit">
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<? include 'BLOCK/page_footer_block.php' ?>

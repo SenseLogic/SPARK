@@ -1,0 +1,29 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/slide_model.php';
+
+// -- TYPES
+
+class DO_ADD_SLIDE_CONTROLLER extends CONTROLLER
+{
+    method constructor(
+        )
+    {
+        parent::constructor();
+
+        var text = GetPostValue( 'Text' );
+        var image = GetPostValue( 'Image' );
+        var video = GetPostValue( 'Video' );
+        var has_video = GetPostValue( 'HasVideo' );
+        var number = GetPostValue( 'Number' );
+
+        AddDatabaseSlide( text, image, video, has_video, number );
+
+        Redirect( '/admin/slide' );
+    }
+}
+
+// -- STATEMENTS
+
+var do_add_slide_controller = new DO_ADD_SLIDE_CONTROLLER();

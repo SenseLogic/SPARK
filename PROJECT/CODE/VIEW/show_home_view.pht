@@ -1,0 +1,3 @@
+<div class="container-extended view" data-view-name="home">
+    <? import 'BLOCK/slide_list_block.php'; ?>
+</div>

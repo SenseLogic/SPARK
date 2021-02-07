@@ -1,0 +1,56 @@
+<? include 'BLOCK/page_header_block.php' ?>
+<div>
+    <div class="page-section form-section">
+        <div class="form-container table-container product-table sortable-grid">
+            <div class="form-column-name sortable-grid-column">
+                Name
+            </div>
+            <div class="form-column-name sortable-grid-column">
+                Slug
+            </div>
+            <div class="form-column-name sortable-grid-column">
+                Text
+            </div>
+            <div class="form-column-name sortable-grid-column">
+                Image
+            </div>
+            <div class="form-column-name sortable-grid-column">
+                Video
+            </div>
+            <div class="form-column-name sortable-grid-column">
+                Action
+            </div>
+            <? foreach ( var product; .ProductArray ) { ?>
+                <div class="sortable-grid-cell">
+                    <% product.Name %>
+                </div>
+                <div class="sortable-grid-cell">
+                    <% product.Slug %>
+                </div>
+                <div class="sortable-grid-cell">
+                    <% product.Text %>
+                </div>
+                <div class="sortable-grid-cell">
+                    <% product.Image %>
+                </div>
+                <div class="sortable-grid-cell">
+                    <% product.Video %>
+                </div>
+                <div class="form-centered sortable-grid-cell">
+                    <a class="form-button view-button" href="/admin/product/view/<% product.Id %>">
+                    </a>
+                    <a class="form-button edit-button" href="/admin/product/edit/<% product.Id %>">
+                    </a>
+                    <a class="form-button remove-button" href="/admin/product/remove/<% product.Id %>">
+                    </a>
+                </div>
+            <? } ?>
+            <div class="form-extended form-centered sortable-grid-footer">
+                <a class="form-button form-button-large add-button" href="/admin/product/add">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<? import '../../FRAMEWORK/sortable_grid.php'; ?>
+<? include 'BLOCK/page_footer_block.php' ?>

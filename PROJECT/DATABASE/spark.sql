@@ -17,25 +17,27 @@ create table if not exists `spark`.`TEXT`(
     primary key( `Id` )
     ) engine = InnoDB;
 
-drop table if exists `spark`.`SECTION`;
+drop table if exists `spark`.`SLIDE`;
 
-create table if not exists `spark`.`SECTION`(
+create table if not exists `spark`.`SLIDE`(
     `Id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    `Name` TEXT NULL,
-    `Slug` TEXT NULL,
+    `Text` TEXT NULL,
+    `Image` TEXT NULL,
+    `Video` TEXT NULL,
+    `HasVideo` TINYINT UNSIGNED NULL,
+    `Number` INT NULL,
     primary key( `Id` )
     ) engine = InnoDB;
 
-drop table if exists `spark`.`ARTICLE`;
+drop table if exists `spark`.`PRODUCT`;
 
-create table if not exists `spark`.`ARTICLE`(
+create table if not exists `spark`.`PRODUCT`(
     `Id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    `Title` TEXT NULL,
+    `Name` TEXT NULL,
     `Slug` TEXT NULL,
     `Text` TEXT NULL,
     `Image` TEXT NULL,
     `Video` TEXT NULL,
-    `SectionSlug` TEXT NULL,
     primary key( `Id` )
     ) engine = InnoDB;
 

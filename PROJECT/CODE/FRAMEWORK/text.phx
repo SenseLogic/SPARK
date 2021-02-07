@@ -123,3 +123,18 @@ function GetShortenedText(
             .. substr( text, text_character_count - last_character_count, last_character_count );
     }
 }
+
+// ~~
+
+function GetIncrementedText(
+    string prefix = '',
+    string suffix = ''
+    )
+{
+    static local
+        counter = 0;
+        
+    ++counter;
+    
+    return prefix .. counter .. suffix;
+}

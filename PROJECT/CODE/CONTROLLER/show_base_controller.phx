@@ -1,8 +1,8 @@
 // -- IMPORTS
 
 import 'view_controller.php';
-import '../MODEL/article_model.php';
-import '../MODEL/section_model.php';
+import '../MODEL/product_model.php';
+import '../MODEL/slide_model.php';
 import '../MODEL/text_model.php';
 
 // -- TYPES
@@ -10,17 +10,20 @@ import '../MODEL/text_model.php';
 class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
 {
     method constructor(
-        string language_code
+        string language_code,
+        string view_name
         )
     {
         parent::constructor( language_code );
 
-        .SectionArray = GetDatabaseSectionArray();
-        .ArticleArray = GetDatabaseArticleArray();
+        .SlideArray = GetDatabaseSlideArray();
+        .ProductArray = GetDatabaseProductArray();
 
         .Captcha = GetCaptchaText( 6 );
         .Session.Captcha = .Captcha;
         .Session.Store();
+
+        .ViewName = view_name;
 
         import '../VIEW/show_base_view.php';
     }
@@ -28,4 +31,4 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
-var show_base_controller = new SHOW_BASE_CONTROLLER( var language_code );
+var show_base_controller = new SHOW_BASE_CONTROLLER( var language_code, var view_name );

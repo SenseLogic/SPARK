@@ -1,0 +1,30 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/product_model.php';
+
+// -- TYPES
+
+class DO_EDIT_PRODUCT_CONTROLLER extends CONTROLLER
+{
+    method constructor(
+        int product_id
+        )
+    {
+        parent::constructor();
+
+        var name = GetPostValue( 'Name' );
+        var slug = GetPostValue( 'Slug' );
+        var text = GetPostValue( 'Text' );
+        var image = GetPostValue( 'Image' );
+        var video = GetPostValue( 'Video' );
+
+        SetDatabaseProduct( product_id, name, slug, text, image, video );
+
+        Redirect( '/admin/product' );
+    }
+}
+
+// -- STATEMENTS
+
+var do_edit_product_controller = new DO_EDIT_PRODUCT_CONTROLLER( var product_id );

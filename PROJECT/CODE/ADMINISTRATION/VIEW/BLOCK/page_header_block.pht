@@ -15,14 +15,14 @@
                         </a>
                     </div>
                     <div class="page-menu-item">
-                        <a href="/admin/section">
-                            <span class="form-button form-button-large section-button">
+                        <a href="/admin/slide">
+                            <span class="form-button form-button-large slide-button">
                             </span>
                         </a>
                     </div>
                     <div class="page-menu-item">
-                        <a href="/admin/article">
-                            <span class="form-button form-button-large article-button">
+                        <a href="/admin/product">
+                            <span class="form-button form-button-large product-button">
                             </span>
                         </a>
                     </div>

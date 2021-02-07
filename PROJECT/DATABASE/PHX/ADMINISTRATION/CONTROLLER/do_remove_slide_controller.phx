@@ -1,0 +1,24 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/slide_model.php';
+
+// -- TYPES
+
+class DO_REMOVE_SLIDE_CONTROLLER extends CONTROLLER
+{
+    method constructor(
+        int slide_id
+        )
+    {
+        parent::constructor();
+
+        RemoveDatabaseSlideById( slide_id );
+
+        Redirect( '/admin/slide' );
+    }
+}
+
+// -- STATEMENTS
+
+var do_remove_slide_controller = new DO_REMOVE_SLIDE_CONTROLLER( var slide_id );

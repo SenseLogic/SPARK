@@ -1,8 +1,8 @@
 <?php // -- IMPORTS
 
 require_once __DIR__ . '/' . 'view_controller.php';
-require_once __DIR__ . '/' . '../MODEL/article_model.php';
-require_once __DIR__ . '/' . '../MODEL/section_model.php';
+require_once __DIR__ . '/' . '../MODEL/product_model.php';
+require_once __DIR__ . '/' . '../MODEL/slide_model.php';
 require_once __DIR__ . '/' . '../MODEL/text_model.php';
 
 // -- TYPES
@@ -10,17 +10,20 @@ require_once __DIR__ . '/' . '../MODEL/text_model.php';
 class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
 {
     function __construct(
-        string $language_code
+        string $language_code,
+        string $view_name
         )
     {
         parent::__construct( $language_code );
 
-        $this->SectionArray = GetDatabaseSectionArray();
-        $this->ArticleArray = GetDatabaseArticleArray();
+        $this->SlideArray = GetDatabaseSlideArray();
+        $this->ProductArray = GetDatabaseProductArray();
 
         $this->Captcha = GetCaptchaText( 6 );
         $this->Session->Captcha = $this->Captcha;
         $this->Session->Store();
+
+        $this->ViewName = $view_name;
 
         require_once __DIR__ . '/' . '../VIEW/show_base_view.php';
     }
@@ -28,4 +31,4 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $show_base_controller = new SHOW_BASE_CONTROLLER(  $language_code );
+ $show_base_controller = new SHOW_BASE_CONTROLLER(  $language_code,  $view_name );

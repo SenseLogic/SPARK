@@ -1,0 +1,25 @@
+<style file="../../STYLE/slide_list.styl">
+    MakeCarouselStripValue( 6, 1, "slide-list-" );
+    MakeCarouselStripPerpetualAnimationValue( 6, 1, 3000, 500, "slide-list-" );
+    MakeCarouselSlideValue( 6, "slide-list-" );
+</style>
+<div class="carousel">
+    <? foreach ( var slide; .SlideArray ) { ?>
+        <div class="height-100vh slide-list-carousel-strip-6-1 slide-list-carousel-strip-perpetual-animation-6-1-3000-500 strip">
+            <div class="height-100vh slide-list-carousel-slide">
+                <div>
+                    <img class="object-fit-cover" src="/upload/image/<# slide.Image #>"/>
+                </div>
+                <? if ( slide.Video !== '' ) { ?>
+                    <div>
+                        <video class="object-fit-cover" src="/upload/video/<# slide.Video #>" autoplay loop>
+                        </video>
+                    </div>
+                <? } ?>
+                <div class="display-flex justify-content-center align-items-center">
+                    <h1><% slide.Text %></h1>
+                </div>
+            </div>
+        </div>
+    <? } ?>
+</div>

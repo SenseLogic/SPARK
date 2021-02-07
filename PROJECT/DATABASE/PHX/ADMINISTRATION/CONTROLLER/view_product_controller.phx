@@ -1,0 +1,26 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/product_model.php';
+
+// -- TYPES
+
+class VIEW_PRODUCT_CONTROLLER extends CONTROLLER
+{
+    method constructor(
+        int product_id
+        )
+    {
+        parent::constructor();
+
+        .Title = 'View a product';
+        .Product = GetDatabaseProductById( product_id );
+        .PreviousPage = GetSessionValue( 'PreviousPage' );
+
+        import '../VIEW/view_product_view.php';
+    }
+}
+
+// -- STATEMENTS
+
+var view_product_controller = new VIEW_PRODUCT_CONTROLLER( var product_id );

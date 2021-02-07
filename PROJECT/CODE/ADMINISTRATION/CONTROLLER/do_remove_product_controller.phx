@@ -1,0 +1,24 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/product_model.php';
+
+// -- TYPES
+
+class DO_REMOVE_PRODUCT_CONTROLLER extends CONTROLLER
+{
+    method constructor(
+        int product_id
+        )
+    {
+        parent::constructor();
+
+        RemoveDatabaseProductById( product_id );
+
+        Redirect( '/admin/product' );
+    }
+}
+
+// -- STATEMENTS
+
+var do_remove_product_controller = new DO_REMOVE_PRODUCT_CONTROLLER( var product_id );

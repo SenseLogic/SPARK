@@ -354,49 +354,49 @@ textarea:focus {
 }
 .page-menu {
   grid-area: 1/1/span 2;
-  padding: 0.9375rem;
+  padding: 15px;
   display: flex;
   background-image: linear-gradient(to right, #29323c 0%, #485563 100%);
-  width: 4.5rem;
+  width: 72px;
 }
 .page-menu-item {
-  margin-top: 0.625rem;
+  margin-top: 10px;
 }
 .page-menu-title {
-  margin-left: 0.3125rem;
-  font-size: 1.25rem;
+  margin-left: 5px;
+  font-size: 20px;
   color: #fff;
 }
 .page-title {
   grid-area: 1/2;
-  padding: 0.9375rem;
+  padding: 15px;
   text-align: center;
   background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);
 }
 .page-title-content {
-  font-size: 1.75rem;
+  font-size: 28px;
   color: #fff;
 }
 .page-body {
   grid-area: 2/2;
-  padding: 0.9375rem;
+  padding: 15px;
   background-image: linear-gradient(to top, #fdfbfb 0%, #ebedee 100%);
 }
 .page-body-content {
   color: #222;
 }
 .page-section {
-  border-radius: 0.625rem;
+  border-radius: 10px;
   background-color: #fff;
-  padding: 0.9375rem;
+  padding: 15px;
 }
 .page-section + .page-section {
-  margin-top: 0.9375rem;
+  margin-top: 15px;
 }
 .form-container {
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-gap: 0.9375rem;
+  grid-gap: 15px;
   justify-content: center;
   align-items: flex-start;
   width: 100%;
@@ -410,35 +410,35 @@ textarea:focus {
 .form-input {
   display: block;
   border: 1px solid #ccc;
-  border-radius: 0.3125rem;
-  padding: 0.3125rem;
+  border-radius: 5px;
+  padding: 5px;
   width: 100%;
 }
 .form-textarea {
   display: block;
   border: 1px solid #ccc;
-  border-radius: 0.3125rem;
-  padding: 0.3125rem;
+  border-radius: 5px;
+  padding: 5px;
   width: 100%;
-  height: 2.25rem;
-  min-height: 2.25rem;
+  height: 36px;
+  min-height: 36px;
   overflow: hidden;
 }
 .form-upload-container {
   display: flex;
   align-items: center;
-  margin-top: 0.5rem;
+  margin-top: 8px;
 }
 .form-upload-image,
 .form-upload-video {
-  border-radius: 0.3125rem;
+  border-radius: 5px;
   width: auto;
   max-width: 80%;
-  height: 12.5rem;
+  height: 200px;
 }
 .form-upload-icon {
-  margin-left: 0.25rem;
-  height: 1rem;
+  margin-left: 4px;
+  height: 16px;
 }
 .form-upload-file {
   height: 0;
@@ -447,7 +447,7 @@ textarea:focus {
 }
 .form-field-name {
   font-weight: bold;
-  padding-top: 0.3125rem;
+  padding-top: 5px;
 }
 .form-column-name {
   font-weight: bold;
@@ -460,15 +460,15 @@ textarea:focus {
 .form-button {
   display: inline-block;
   border: none;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 24px;
+  height: 24px;
 }
 .form-button + .form-button {
-  margin-left: 0.3125rem;
+  margin-left: 5px;
 }
 .form-button-large {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 40px;
+  height: 40px;
 }
 .disconnect-button {
   background: url("/static/image/icon/admin/disconnect_icon.svg") no-repeat center center;
@@ -512,12 +512,12 @@ textarea:focus {
   background: url("/static/image/icon/admin/text_icon.svg") no-repeat center center;
   background-size: contain;
 }
-.section-button {
-  background: url("/static/image/icon/admin/section_icon.svg") no-repeat center center;
+.slide-button {
+  background: url("/static/image/icon/admin/slide_icon.svg") no-repeat center center;
   background-size: contain;
 }
-.article-button {
-  background: url("/static/image/icon/admin/article_icon.svg") no-repeat center center;
+.product-button {
+  background: url("/static/image/icon/admin/product_icon.svg") no-repeat center center;
   background-size: contain;
 }
 .contact-button {
