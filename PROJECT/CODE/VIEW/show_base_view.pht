@@ -66,11 +66,11 @@
                 {
                     if ( element.dataset.viewName === ViewName )
                     {
-                        element.RemoveClass( "display-none" );
+                        element.RemoveClass( "display-hidden" );
                     }
                     else
                     {
-                        element.AddClass( "display-none" );
+                        element.AddClass( "display-hidden" );
                     }
                 }
                 );

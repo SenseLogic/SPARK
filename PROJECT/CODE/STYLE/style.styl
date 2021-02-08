@@ -3,18 +3,16 @@
 @import "VISTA/vista_reset.styl"
 @import "VISTA/vista.styl"
 
-// -- CLASSES
-
-MakeDisplayNone();
-
 // -- CONSTANTS
 
 BlackColor = #000000;
-BlackGrayColor = #202020;
-DarkGrayColor = #404040;
-GrayColor = #808080;
+DarkestGrayColor = #202020;
+DarkerGrayColor = #404040;
+DarkGrayColor = #808080;
+GrayColor = #A0A0A0;
 LightGrayColor = #C0C0C0;
-WhiteGrayColor = #E0E0E0;
+LighterGrayColor = #F0F0F0;
+LightestGrayColor = #F8F8F8;
 WhiteColor = #FFFFFF;
 RedColor = #FF0000;
 BlueColor = #0000FF;
@@ -111,10 +109,11 @@ sup
 // -- CLASSES
 
 MakeContainerExtended();
-MakeContainerMarginedValue( 20px, LargeContainerMarginMap, above-40em above-60em above-80em above-100em above-120em, -large );
-MakeContainerMarginedValue( 20px, NarrowContainerMarginMap, above-40em above-60em above-80em above-100em above-120em, -narrow );
+MakeContainerMarginedValue( 20px, LargeContainerMarginMap, above-40em above-60em above-80em above-100em above-120em, , "-large" );
+MakeContainerMarginedValue( 20px, NarrowContainerMarginMap, above-40em above-60em above-80em above-100em above-120em, , "-narrow" );
 MakeDisplayNone();
 MakeDisplayFlex();
+MakeDisplayHidden();
 MakeFlexDirectionRow();
 MakeFlexDirectionColumn();
 MakeFlexGrowValue( 1 );
@@ -145,24 +144,26 @@ MakeFontSizeValue( 20, 1px, "px" );
 MakeFontSizeValue( 24, 1px, "px" );
 MakeFontWeightValueRange( 100, 100, 9 );
 MakeTextColorValue( "black", BlackColor );
-MakeTextColorValue( "black-gray", BlackGrayColor );
+MakeTextColorValue( "darkest-gray", DarkestGrayColor );
+MakeTextColorValue( "darker-gray", DarkerGrayColor );
 MakeTextColorValue( "dark-gray", DarkGrayColor );
 MakeTextColorValue( "gray", GrayColor );
 MakeTextColorValue( "light-gray", LightGrayColor );
-MakeTextColorValue( "white-gray", WhiteGrayColor );
+MakeTextColorValue( "lighter-gray", LighterGrayColor );
+MakeTextColorValue( "lightest-gray", LightestGrayColor );
 MakeTextColorValue( "white", WhiteColor );
 MakeTextColorValue( "red", RedColor );
 MakeTextColorValue( "blue", BlueColor );
 MakeBackgroundColorValue( "black", BlackColor );
-MakeBackgroundColorValue( "black-gray", BlackGrayColor );
+MakeBackgroundColorValue( "darkest-gray", DarkestGrayColor );
+MakeBackgroundColorValue( "darker-gray", DarkerGrayColor );
 MakeBackgroundColorValue( "dark-gray", DarkGrayColor );
 MakeBackgroundColorValue( "gray", GrayColor );
 MakeBackgroundColorValue( "light-gray", LightGrayColor );
-MakeBackgroundColorValue( "white-gray", WhiteGrayColor );
+MakeBackgroundColorValue( "lighter-gray", LighterGrayColor );
+MakeBackgroundColorValue( "lightest-gray", LightestGrayColor );
 MakeBackgroundColorValue( "white", WhiteColor );
 MakeBackgroundColorValue( "red", RedColor );
-MakeBackgroundColorValue( "blue", BlueColor );
-MakeBackgroundColorValue( "white", WhiteColor );
 MakeBackgroundColorValue( "blue", BlueColor );
 MakeObjectFitCover();
 MakeCarousel();
@@ -172,10 +173,6 @@ MakeCarousel();
 @import "font.styl";
 @import "home.styl";
 @import "slide_list.styl";
-
-// ~~
-
-MakeDisplayNone();
 
 // ~~
 

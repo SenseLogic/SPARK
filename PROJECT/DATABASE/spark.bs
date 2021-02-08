@@ -27,7 +27,10 @@ spark
 
         Id : UINT32 | key, unique, incremented
         Name : STRING
+        Company : STRING
         Email : STRING
+        Phone : STRING
+        Subject : STRING
         Message : STRING | is_text
         DateTime : DATETIME | now, descending
 

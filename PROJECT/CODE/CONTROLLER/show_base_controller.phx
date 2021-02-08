@@ -15,6 +15,7 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
         )
     {
         parent::constructor( language_code );
+        .ViewName = view_name;
 
         .SlideArray = GetDatabaseSlideArray();
         .ProductArray = GetDatabaseProductArray();
@@ -22,8 +23,6 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
         .Captcha = GetCaptchaText( 6 );
         .Session.Captcha = .Captcha;
         .Session.Store();
-
-        .ViewName = view_name;
 
         import '../VIEW/show_base_view.php';
     }

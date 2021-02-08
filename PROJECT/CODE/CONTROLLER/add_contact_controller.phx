@@ -9,7 +9,10 @@ class ADD_CONTACT_CONTROLLER extends CONTROLLER
 {
     method constructor(
         string name,
+        string company,
         string email,
+        string phone,
+        string subject,
         string message,
         string captcha
         )
@@ -18,8 +21,8 @@ class ADD_CONTACT_CONTROLLER extends CONTROLLER
 
         if ( IsValidCaptcha( captcha, .Session.Captcha ) )
         {
-            AddDatabaseContact( name, email, message );
-            .SendEmails( name, email, message );
+            AddDatabaseContact( name, company, email, phone, subject, message );
+            .SendEmails( name, company, email, phone, subject, message );
 
             SetStatus( 200 );
         }
@@ -45,7 +48,7 @@ class ADD_CONTACT_CONTROLLER extends CONTROLLER
             'contact@spark.com',
             email,
             'spark.com',
-            "Hi,\n\nThanks for your interest in Spark :)\n\nBest regards,\n\nThe Spark team\n"
+            "Hi,\n\nThank you for your interest in Spark :)\n\nBest regards,\n\nThe Spark team\n"
             );
 
         SendEmail(
@@ -56,11 +59,16 @@ class ADD_CONTACT_CONTROLLER extends CONTROLLER
             'contact@spark.com',
             'contact@spark.com',
             'Contact request from ' .. email .. ' about Spark',
-            "Name : " .. name .. "\nEmail : " .. email .. "\nMessage : " .. message .. "\n"
+            "Name : " .. name
+            .. "\nCompany : " .. company
+            .. "\nEmail : " .. email
+            .. "\nPhone : " .. phone
+            .. "\nSubject : " .. subject
+            .. "\nMessage : " .. message .. "\n"
             );
     }
 }
 
 // -- STATEMENTS
 
-var add_contact_controller = new ADD_CONTACT_CONTROLLER( var name, var email, var message, var captcha );
+var add_contact_controller = new ADD_CONTACT_CONTROLLER( var name, var company, var email, var phone, var subject, var message, var captcha );

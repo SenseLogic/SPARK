@@ -1,4 +1,4 @@
-<style>
+<style file="../../STYLE/header_menu.styl">
     .header-menu-button
     {
         border-radius: 8px;
@@ -15,10 +15,10 @@
     }
 </style>
 <div>
-    <button class="header-menu-button selected" data-view-name="home" onclick="SelectView( this )">
+    <button class="header-menu-button" data-view-name="home" onclick="SelectView( this )">
         Home
     </button>
-    <button class="header-menu-button"  data-view-name="contact" onclick="SelectView( this )">
+    <button class="header-menu-button" data-view-name="contact" onclick="SelectView( this )">
         Contact
     </button>
 </div>
@@ -26,11 +26,11 @@
     // -- STATEMENTS
 
     AddEventListener(
-        "set-view",
+        "update-view",
         function (
             )
         {
-            GetElements( ".header-menu-block-view-button" ).Iterate(
+            GetElements( ".header-menu-button" ).Iterate(
                 function (
                     element
                     )
