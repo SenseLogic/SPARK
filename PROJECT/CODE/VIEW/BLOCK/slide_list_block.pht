@@ -1,4 +1,4 @@
-<style file="../../STYLE/slide_list.styl">
+<style file="slide_list.styl">
     MakeCarouselStripValue( 6, 1, "slide-list-" );
     MakeCarouselStripPerpetualAnimationValue( 6, 1, 3000, 500, "slide-list-" );
     MakeCarouselSlideValue( 6, "slide-list-" );

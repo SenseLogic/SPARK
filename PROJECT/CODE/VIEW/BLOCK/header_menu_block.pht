@@ -1,4 +1,4 @@
-<style file="../../STYLE/header_menu.styl">
+<style file="header_menu.styl">
     .header-menu-button
     {
         border-radius: 8px;

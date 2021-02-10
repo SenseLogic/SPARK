@@ -1,4 +1,4 @@
-<style file="../../STYLE/footer_menu.styl">
+<style file="footer_menu.styl">
     .footer-menu-button
     {
         padding: 8px 16px;
