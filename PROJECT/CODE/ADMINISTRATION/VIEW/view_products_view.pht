@@ -18,6 +18,9 @@
                 Video
             </div>
             <div class="form-column-name sortable-grid-column">
+                Category Slug
+            </div>
+            <div class="form-column-name sortable-grid-column">
                 Action
             </div>
             <? foreach ( var product; .ProductArray ) { ?>
@@ -35,6 +38,9 @@
                 </div>
                 <div class="sortable-grid-cell">
                     <% product.Video %>
+                </div>
+                <div class="sortable-grid-cell">
+                    <% product.CategorySlug %>
                 </div>
                 <div class="form-centered sortable-grid-cell">
                     <a class="form-button view-button" href="/admin/product/view/<% product.Id %>">

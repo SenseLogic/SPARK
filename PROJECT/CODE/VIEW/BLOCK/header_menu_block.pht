@@ -1,26 +1,41 @@
 <style file="header_menu.styl">
+    .header-menu
+    {
+        z-index: 100;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 8px;
+        display: flex;
+        align-items: center;
+        background-color: rgba( 255, 255, 255, 0.4 );
+    }
+
     .header-menu-button
     {
         border-radius: 8px;
+        margin-right: 8px;
         padding: 5px 10px;
-        background-color: #CCCCCC;
+        background-color: #444444;
         color: #FFFFFF;
+        cursor: pointer;
     }
 
     .header-menu-button:hover,
     .header-menu-button.selected
     {
-        background-color: #444444;
+        background-color: #CCCCCC;
         color: #000000;
     }
 </style>
-<div>
-    <button class="header-menu-button" data-view-name="home" onclick="SelectView( this )">
+<div class="header-menu">
+    <div class="header-menu-button" data-view-name="home" onclick="SelectView( this )">
         Home
-    </button>
-    <button class="header-menu-button" data-view-name="contact" onclick="SelectView( this )">
+    </div>
+    <div class="header-menu-button" data-view-name="contact" onclick="SelectView( this )">
         Contact
-    </button>
+    </div>
 </div>
 <script>
     // -- STATEMENTS

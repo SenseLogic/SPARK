@@ -1,36 +1,51 @@
-<style>
-    .header-menu-button
-    {
-        border-radius: 8px;
-        padding: 5px 10px;
-        background-color: #CCCCCC;
-        color: #FFFFFF;
-    }
 
-    .header-menu-button:hover,
-    .header-menu-button.selected
-    {
-        background-color: #444444;
-        color: #000000;
-    }
-</style>
-<div>
-    <button class="header-menu-button selected" data-view-name="home" onclick="SelectView( this )">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="header-menu">
+    <div class="header-menu-button" data-view-name="home" onclick="SelectView( this )">
         Home
-    </button>
-    <button class="header-menu-button"  data-view-name="contact" onclick="SelectView( this )">
+    </div>
+    <div class="header-menu-button" data-view-name="contact" onclick="SelectView( this )">
         Contact
-    </button>
+    </div>
 </div>
 <script>
     // -- STATEMENTS
 
     AddEventListener(
-        "set-view",
+        "update-view",
         function (
             )
         {
-            GetElements( ".header-menu-block-view-button" ).Iterate(
+            GetElements( ".header-menu-button" ).Iterate(
                 function (
                     element
                     )

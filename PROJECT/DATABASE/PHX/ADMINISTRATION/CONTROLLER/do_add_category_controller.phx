@@ -1,0 +1,29 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/category_model.php';
+
+// -- TYPES
+
+class DO_ADD_CATEGORY_CONTROLLER extends CONTROLLER
+{
+    method constructor(
+        )
+    {
+        parent::constructor();
+
+        var name = GetPostValue( 'Name' );
+        var slug = GetPostValue( 'Slug' );
+        var text = GetPostValue( 'Text' );
+        var image = GetPostValue( 'Image' );
+        var number = GetPostValue( 'Number' );
+
+        AddDatabaseCategory( name, slug, text, image, number );
+
+        Redirect( '/admin/category' );
+    }
+}
+
+// -- STATEMENTS
+
+var do_add_category_controller = new DO_ADD_CATEGORY_CONTROLLER();

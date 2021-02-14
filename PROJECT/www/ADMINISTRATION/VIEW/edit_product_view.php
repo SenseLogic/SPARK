@@ -11,7 +11,8 @@
             slug_field,
             text_field,
             image_field,
-            video_field;
+            video_field,
+            category_slug_field;
 
         it_is_valid_edit_product_form = true;
 
@@ -21,6 +22,7 @@
         text_field = edit_product_form.Text;
         image_field = edit_product_form.Image;
         video_field = edit_product_form.Video;
+        category_slug_field = edit_product_form.CategorySlug;
 
         if ( name_field.value !== "" )
         {
@@ -77,6 +79,17 @@
             it_is_valid_edit_product_form = false;
         }
 
+        if ( category_slug_field.value !== "" )
+        {
+            category_slug_field.classList.remove( "form-field-error" );
+        }
+        else
+        {
+            category_slug_field.classList.add( "form-field-error" );
+
+            it_is_valid_edit_product_form = false;
+        }
+
         return it_is_valid_edit_product_form;
     }
 </script>
@@ -125,6 +138,12 @@
                             <img class="form-upload-icon" src="/static/image/icon/admin/upload_icon.svg"/><input id="file" class="form-upload-file" type="file" accept="video/mp4" onchange="HandleVideoFileInputChangeEvent( this )"/>
                         </label>
                     </div>
+                </div>
+                <div class="form-field-name">
+                    Category Slug :
+                </div>
+                <div>
+                    <input class="form-input" name="CategorySlug" type="text" value="<?php echo htmlspecialchars( $this->Product->CategorySlug ); ?>"/>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="/admin/product">
                 </a>

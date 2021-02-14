@@ -15,8 +15,8 @@
                         </a>
                     </div>
                     <div class="page-menu-item">
-                        <a href="/admin/slide">
-                            <span class="form-button form-button-large slide-button">
+                        <a href="/admin/category">
+                            <span class="form-button form-button-large category-button">
                             </span>
                         </a>
                     </div>

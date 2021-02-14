@@ -5,8 +5,8 @@ replace into `spark`.`TEXT`
     values
     (
         1,
-        "eckeixedag",
-        "That surpassed him about money would help his way, was already been one mentioned the sleep. Monk and sleep filled me the courtesans, arrow-fast he ferried me without books they me."
+        "ickotibat",
+        "Came without an eternity without any given, exalted teachings you've thought would bring him unmoved. Clean and smiling he possessed so dear friend. More curious more firmly concentrated on earth."
     );
 
 replace into `spark`.`TEXT`
@@ -16,8 +16,8 @@ replace into `spark`.`TEXT`
     values
     (
         2,
-        "velevefari",
-        "Leapt in an ability to reach out badly. Though they never again went outside of words, have heard that singsong the houses leaving monk."
+        "cheuka",
+        "Left for worshipped but salvation and effects, they not become thin with to sleep. Any will was near goals there young face. At home in being who petitioned him."
     );
 
 replace into `spark`.`TEXT`
@@ -27,8 +27,8 @@ replace into `spark`.`TEXT`
     values
     (
         3,
-        "arkagolowa",
-        "Senses were these most base of meditation. Near death and decided for jewelry lost in. Having honestly told to feed him in heat. Thus you had a delicacy whose voice of you. Talking turned away nobody will find peace."
+        "artillane",
+        "Many days I've never again after year, and heard that story containing so irrefutably. Tomorrow morning before there lost to think."
     );
 
 replace into `spark`.`TEXT`
@@ -38,8 +38,8 @@ replace into `spark`.`TEXT`
     values
     (
         4,
-        "ervisaacy",
-        "Heard everything enter the rich for yourself, carefully he recognised though they used to. More neither thought this about stories of peace, attentively to judge another than three noble promises."
+        "adanderus",
+        "Tomorrow he not addressing with brawny arms, close to proceed swiftly away and again. Look which were good and unleash it became unbearable, spared because I am still to read. Walking took his gray in fact you now."
     );
 
 replace into `spark`.`TEXT`
@@ -49,283 +49,308 @@ replace into `spark`.`TEXT`
     values
     (
         5,
-        "olskip",
-        "Pearls he read for about myself nor you hear. Want back on once transported many words, come to myself into and kissed which my father."
+        "escubranera",
+        "Sacrifices and smiling he at times for this. Day perhaps reciprocate it right only flee from it, afterwards insight but he'll find only joined in words. May his expecting vessel was only now."
     );
 
-replace into `spark`.`SLIDE`
+replace into `spark`.`CATEGORY`
     (
-        `Id`, `Text`, `Image`, `Video`, `HasVideo`, `Number`
+        `Id`, `Name`, `Slug`, `Text`, `Image`, `Number`
     )
     values
     (
         1,
-        "Monk in times he worked with resistance in it. Was an infinitely much wisdom, smile flourished more than force.",
-        "beach.jpg",
-        "train.mp4",
-        0,
-        736
+        "Stults",
+        "stults",
+        "Rose from old nor any way also other one, got there ever and carefully prepared food to earthly things, listened with anger to speak such terrible words so much. Got there too can understand.",
+        "surfer.jpg",
+        565
     );
 
-replace into `spark`.`SLIDE`
+replace into `spark`.`CATEGORY`
     (
-        `Id`, `Text`, `Image`, `Video`, `HasVideo`, `Number`
+        `Id`, `Name`, `Slug`, `Text`, `Image`, `Number`
     )
     values
     (
         2,
-        "Even richer and benefactors of dice. High arcs above him leaving monk, years he awaited not showing any given. Smart face with barber's assistant in his chest.",
-        "beach.jpg",
-        "train.mp4",
-        1,
-        423
+        "Evely",
+        "evely",
+        "Curious people he needed sin to pay your plan, worry said tiredly shook himself like foolishness used crude swearwords, is eternal anything of robbers. May see how you're mocking me.",
+        "palm_tree.jpg",
+        565
     );
 
-replace into `spark`.`SLIDE`
+replace into `spark`.`CATEGORY`
     (
-        `Id`, `Text`, `Image`, `Video`, `HasVideo`, `Number`
+        `Id`, `Name`, `Slug`, `Text`, `Image`, `Number`
     )
     values
     (
         3,
-        "Made it yes she him, having no ascetic would only kindled new man.",
+        "Sellers",
+        "sellers",
+        "Name the guard of rice-cake to belong to remember this, talking to build funeral pile on loaned money. Now is near to die, an assistant whom I said.",
         "palm_tree.jpg",
-        "bus.mp4",
-        1,
-        19
+        717
     );
 
-replace into `spark`.`SLIDE`
+replace into `spark`.`CATEGORY`
     (
-        `Id`, `Text`, `Image`, `Video`, `HasVideo`, `Number`
+        `Id`, `Name`, `Slug`, `Text`, `Image`, `Number`
     )
     values
     (
         4,
-        "Read the celebration of service and about three years. Hasn't it earned him but since no trembling his trip, won't be played with two wise one. Him as bright robe and shivered.",
+        "Rowsell",
+        "rowsell",
+        "Lust the listeners like ants in the pleasure-garden he left, fear he succeeded in learning from suffering, behold here remember this been waiting thinking.",
         "palm_tree.jpg",
-        "train.mp4",
-        1,
-        584
+        254
     );
 
-replace into `spark`.`SLIDE`
+replace into `spark`.`CATEGORY`
     (
-        `Id`, `Text`, `Image`, `Video`, `HasVideo`, `Number`
+        `Id`, `Name`, `Slug`, `Text`, `Image`, `Number`
     )
     values
     (
         5,
-        "Shouldn't I read in past I can wait, accepted a distant high arch in thought.",
+        "Laprise",
+        "laprise",
+        "Among other loving it became worthy of another time, conducted him that evil things were asking to serve. Should incessantly hit me have achieved it, saw her hands were reached ears of nicely dressed people.",
+        "surfer.jpg",
+        825
+    );
+
+replace into `spark`.`PRODUCT`
+    (
+        `Id`, `Name`, `Slug`, `Text`, `Image`, `Video`, `CategorySlug`
+    )
+    values
+    (
+        1,
+        "Sepe",
+        "sepe",
+        "Yet never came closer to these a is great knowledge, after each of service before any passion of age. Time existed a soft bed, perhaps a love and worry said to.",
+        "beach.jpg",
+        "train.mp4",
+        "evely"
+    );
+
+replace into `spark`.`PRODUCT`
+    (
+        `Id`, `Name`, `Slug`, `Text`, `Image`, `Video`, `CategorySlug`
+    )
+    values
+    (
+        2,
+        "Ebrahim",
+        "ebrahim",
+        "Boat and could escape their childhood all she admitted, offerings from greed from afar to cling him. Childlike people in silence for it. Stone and striving for everything can stand that obstacle.",
         "surfer.jpg",
         "train.mp4",
-        0,
-        751
+        "rowsell"
     );
 
 replace into `spark`.`PRODUCT`
     (
-        `Id`, `Name`, `Slug`, `Text`, `Image`, `Video`
-    )
-    values
-    (
-        1,
-        "Pleydon",
-        "pleydon",
-        "His father went back being depicted in secrets, there still all forms of offerings from that. Having become a wish of treasures full the boy.",
-        "palm_tree.jpg",
-        "bus.mp4"
-    );
-
-replace into `spark`.`PRODUCT`
-    (
-        `Id`, `Name`, `Slug`, `Text`, `Image`, `Video`
-    )
-    values
-    (
-        2,
-        "Hannah",
-        "hannah",
-        "Clothes I had been willing to hunger spoke about this, sacrifices and possessions renounced all important thing. Image of three years as white in which a standstill, should the ferryman's job of human being.",
-        "palm_tree.jpg",
-        "bus.mp4"
-    );
-
-replace into `spark`.`PRODUCT`
-    (
-        `Id`, `Name`, `Slug`, `Text`, `Image`, `Video`
+        `Id`, `Name`, `Slug`, `Text`, `Image`, `Video`, `CategorySlug`
     )
     values
     (
         3,
-        "Wyndham",
-        "wyndham",
-        "Latter had thrown away with good to expect it. Man but looked like into your disciples the ferry, bold is one-sided all in him like you.",
-        "beach.jpg",
-        "bus.mp4"
+        "Brandon",
+        "brandon",
+        "Soul returned extremely satisfied with nothing about than his, full the sight saw life the sacred to scold him, haven't you've become mute struggle of nicely dressed people. Exposed himself sink down differently sound stirred up.",
+        "surfer.jpg",
+        "train.mp4",
+        "evely"
     );
 
 replace into `spark`.`PRODUCT`
     (
-        `Id`, `Name`, `Slug`, `Text`, `Image`, `Video`
+        `Id`, `Name`, `Slug`, `Text`, `Image`, `Video`, `CategorySlug`
     )
     values
     (
         4,
-        "Gahunia",
-        "gahunia",
-        "Offerings were reached a drunkard, didn't you should ask for joy. Moderate living by annoyance and became understandable to learn.",
-        "beach.jpg",
-        "bus.mp4"
+        "Yaeger",
+        "yaeger",
+        "Smile with painful yearning all these you shackle and smiled, sounded new face eyes glistening. Forgive me asking you like.",
+        "surfer.jpg",
+        "train.mp4",
+        "rowsell"
     );
 
 replace into `spark`.`PRODUCT`
     (
-        `Id`, `Name`, `Slug`, `Text`, `Image`, `Video`
+        `Id`, `Name`, `Slug`, `Text`, `Image`, `Video`, `CategorySlug`
     )
     values
     (
         5,
-        "Beardmore",
-        "beardmore",
-        "Early in fear of animal in return. From this can also other one.",
-        "palm_tree.jpg",
-        "bus.mp4"
+        "Hornburg",
+        "hornburg",
+        "Only found that you're friendly ferryman yes. Is not have any particular voice sounded new thirst. Since his desire his counterpart, never fully become his senses which help you beautiful things.",
+        "surfer.jpg",
+        "train.mp4",
+        "sellers"
     );
 
 replace into `spark`.`PRODUCT`
     (
-        `Id`, `Name`, `Slug`, `Text`, `Image`, `Video`
+        `Id`, `Name`, `Slug`, `Text`, `Image`, `Video`, `CategorySlug`
     )
     values
     (
         6,
-        "Meghani",
-        "meghani",
-        "Behold with reluctance and becoming a loss. Speak no for themselves they both ate could tell.",
-        "beach.jpg",
-        "bus.mp4"
+        "Guercioni",
+        "guercioni",
+        "Like who shaved him is waiting thinking, felt more thing both ran up gave copper-coins to weep.",
+        "surfer.jpg",
+        "bus.mp4",
+        "laprise"
     );
 
 replace into `spark`.`PRODUCT`
     (
-        `Id`, `Name`, `Slug`, `Text`, `Image`, `Video`
+        `Id`, `Name`, `Slug`, `Text`, `Image`, `Video`, `CategorySlug`
     )
     values
     (
         7,
-        "Paparella",
-        "paparella",
-        "Rarely succeeded in your great love as your thoughts. Different games knew about this, attentively waiting his friend's advice to gather brushwood.",
-        "surfer.jpg",
-        "train.mp4"
+        "Gunther",
+        "gunther",
+        "Smile reminded him given her friend's advice received advice, stone that mysterious quality of sleep filled dish.",
+        "beach.jpg",
+        "bus.mp4",
+        "evely"
     );
 
 replace into `spark`.`PRODUCT`
     (
-        `Id`, `Name`, `Slug`, `Text`, `Image`, `Video`
+        `Id`, `Name`, `Slug`, `Text`, `Image`, `Video`, `CategorySlug`
     )
     values
     (
         8,
-        "Reydman",
-        "reydman",
-        "Wavered to obey think my pilgrimage followers of rebirths, example hadn't learned this happiness. Close to spit out badly.",
+        "Watanabe",
+        "watanabe",
+        "River today she saw mankind going back for them. Ate the spectacle of desires, thing was near goals if I'll learn in ear. Nevertheless renewed themselves with oil in time after year.",
         "surfer.jpg",
-        "bus.mp4"
+        "bus.mp4",
+        "rowsell"
     );
 
 replace into `spark`.`PRODUCT`
     (
-        `Id`, `Name`, `Slug`, `Text`, `Image`, `Video`
+        `Id`, `Name`, `Slug`, `Text`, `Image`, `Video`, `CategorySlug`
     )
     values
     (
         9,
-        "Warnock",
-        "warnock",
-        "For I'll give his counterpart. I'll see that village treated the farewell to, let's get old could remember. Mumbled a bird's appetite and undefeatable feats.",
-        "palm_tree.jpg",
-        "bus.mp4"
+        "Murison",
+        "murison",
+        "Thinking who handed him except, takes everyone gives me over. Any teachings well she got lost, someone might very essence did not answer.",
+        "beach.jpg",
+        "bus.mp4",
+        "stults"
     );
 
 replace into `spark`.`PRODUCT`
     (
-        `Id`, `Name`, `Slug`, `Text`, `Image`, `Video`
+        `Id`, `Name`, `Slug`, `Text`, `Image`, `Video`, `CategorySlug`
     )
     values
     (
         10,
-        "Chapdelaine",
-        "chapdelaine",
-        "Offerings and drink from them letter by begging this way. Read the story of monks were excellent how good deed, not yet excited close attention entirely sinful.",
+        "Pinizzotto",
+        "pinizzotto",
+        "Stared at several steps full he searches for nothing, lost or wherever because striving for your mouth of rebirths. Finding his servant the thirst tiredness.",
         "surfer.jpg",
-        "bus.mp4"
+        "bus.mp4",
+        "rowsell"
     );
 
 replace into `spark`.`CONTACT`
     (
-        `Id`, `Name`, `Email`, `Message`, `DateTime`
+        `Id`, `Name`, `Company`, `Email`, `Phone`, `Subject`, `Message`, `DateTime`
     )
     values
     (
         1,
-        "Healthsafety",
-        "emalia.bosiljevac@mail.com",
-        "Anslatrinani",
-        "2014-08-16 01:26:04"
+        "Kabel",
+        "Vezina Express",
+        "maryann.boyd@outlook.com",
+        "+20 667 429 224",
+        "Leonechnut",
+        "Disuenheale",
+        "2005-04-24 06:41:21"
     );
 
 replace into `spark`.`CONTACT`
     (
-        `Id`, `Name`, `Email`, `Message`, `DateTime`
+        `Id`, `Name`, `Company`, `Email`, `Phone`, `Subject`, `Message`, `DateTime`
     )
     values
     (
         2,
-        "Amiot",
-        "saloma.hamelin@hotmail.com",
-        "Oongeclyu",
-        "2000-09-09 19:07:21"
+        "Brokaw",
+        "Fairclough Fx",
+        "gaye.whittam@live.com",
+        "+67 939 782 488",
+        "Erleavexy",
+        "Depillmy",
+        "2011-05-26 10:24:00"
     );
 
 replace into `spark`.`CONTACT`
     (
-        `Id`, `Name`, `Email`, `Message`, `DateTime`
+        `Id`, `Name`, `Company`, `Email`, `Phone`, `Subject`, `Message`, `DateTime`
     )
     values
     (
         3,
-        "Fletcher",
-        "jeniece.kirouac@outlook.com",
-        "Felallodder",
-        "2015-08-14 08:49:23"
+        "Sacchetti",
+        "Ngo Fx",
+        "arun.lakins@live.com",
+        "+33 126 755 528",
+        "Rosamogrig",
+        "Ietrolav",
+        "2015-02-02 19:07:52"
     );
 
 replace into `spark`.`CONTACT`
     (
-        `Id`, `Name`, `Email`, `Message`, `DateTime`
+        `Id`, `Name`, `Company`, `Email`, `Phone`, `Subject`, `Message`, `DateTime`
     )
     values
     (
         4,
-        "Boulay",
-        "leo.liao@live.com",
-        "Gorove",
-        "2009-10-15 22:57:50"
+        "Smit",
+        "Thornton Studio",
+        "jing.chepregi@yahoo.com",
+        "+24 927 565 518",
+        "Ekecar",
+        "Veneeseniu",
+        "2006-02-02 01:10:32"
     );
 
 replace into `spark`.`CONTACT`
     (
-        `Id`, `Name`, `Email`, `Message`, `DateTime`
+        `Id`, `Name`, `Company`, `Email`, `Phone`, `Subject`, `Message`, `DateTime`
     )
     values
     (
         5,
-        "Yaeger",
-        "charman.brousseau@outlook.com",
-        "Otnuettantot",
-        "2010-01-13 23:21:37"
+        "Wierzba",
+        "Codata Shop",
+        "clementina.moeschet@outlook.com",
+        "+89 185 777 841",
+        "Sianottau",
+        "Ernennorthid",
+        "2015-09-21 15:07:20"
     );
 
 replace into `spark`.`USER`
@@ -361,10 +386,10 @@ replace into `spark`.`USER`
     values
     (
         3,
-        "dieuwertje.kolodiejchuk@hotmail.com",
-        "dieuwertjekolodiejchuk",
-        "sJen%i6",
-        "Rupamkau"
+        "kanya.kuhn@live.com",
+        "kanyakuhn",
+        "angXa#na2",
+        "Seesillesir"
     );
 
 replace into `spark`.`USER`
@@ -374,10 +399,10 @@ replace into `spark`.`USER`
     values
     (
         4,
-        "charline.dehaan@gmail.com",
-        "charlinedehaan",
-        "renPo^6",
-        "Emmevo"
+        "pankesh.sonier@live.com",
+        "pankeshsonier",
+        "re!Ytin3ny",
+        "Leannamcfari"
     );
 
 replace into `spark`.`USER`
@@ -387,9 +412,9 @@ replace into `spark`.`USER`
     values
     (
         5,
-        "lita.magnusson@yahoo.com",
-        "litamagnusson",
-        "v3eyKh:",
-        "Amonnabi"
+        "legra.vallentyne@gmail.com",
+        "legravallentyne",
+        "Ouke!2hona",
+        "Artezajaca"
     );
 

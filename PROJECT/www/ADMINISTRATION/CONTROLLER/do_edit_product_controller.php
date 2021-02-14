@@ -18,8 +18,9 @@ class DO_EDIT_PRODUCT_CONTROLLER extends CONTROLLER
          $text = GetPostValue( 'Text' );
          $image = GetPostValue( 'Image' );
          $video = GetPostValue( 'Video' );
+         $category_slug = GetPostValue( 'CategorySlug' );
 
-        SetDatabaseProduct( $product_id, $name, $slug, $text, $image, $video );
+        SetDatabaseProduct( $product_id, $name, $slug, $text, $image, $video, $category_slug );
 
         Redirect( '/admin/product' );
     }

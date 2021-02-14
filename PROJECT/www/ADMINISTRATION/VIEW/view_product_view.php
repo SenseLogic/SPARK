@@ -38,6 +38,12 @@
                     <video class="form-upload-video" src="/upload/video/<?php echo htmlspecialchars( $this->Product->Video ); ?>" type="video/mp4" onerror="this.src='/upload/video/missing_video.mp4'"></video>
                 </div>
             </div>
+            <div class="form-field-name">
+                Category Slug :
+            </div>
+            <div>
+                    <input class="form-input" name="CategorySlug" type="text" value="<?php echo htmlspecialchars( $this->Product->CategorySlug ); ?>" readonly/>
+            </div>
             <a class="justify-self-start form-button form-button-large cancel-button" href="<?php echo htmlspecialchars( $this->PreviousPage ); ?>">
             </a>
         </div>

@@ -1,0 +1,56 @@
+<? include 'BLOCK/page_header_block.php' ?>
+<div>
+    <div class="page-section form-section">
+        <div class="form-container table-container category-table sortable-grid">
+            <div class="form-column-name sortable-grid-column">
+                Name
+            </div>
+            <div class="form-column-name sortable-grid-column">
+                Slug
+            </div>
+            <div class="form-column-name sortable-grid-column">
+                Text
+            </div>
+            <div class="form-column-name sortable-grid-column">
+                Image
+            </div>
+            <div class="form-column-name sortable-grid-column">
+                Number
+            </div>
+            <div class="form-column-name sortable-grid-column">
+                Action
+            </div>
+            <? foreach ( var category; .CategoryArray ) { ?>
+                <div class="sortable-grid-cell">
+                    <% category.Name %>
+                </div>
+                <div class="sortable-grid-cell">
+                    <% category.Slug %>
+                </div>
+                <div class="sortable-grid-cell">
+                    <% category.Text %>
+                </div>
+                <div class="sortable-grid-cell">
+                    <% category.Image %>
+                </div>
+                <div class="sortable-grid-cell">
+                    <% category.Number %>
+                </div>
+                <div class="form-centered sortable-grid-cell">
+                    <a class="form-button view-button" href="/admin/category/view/<% category.Id %>">
+                    </a>
+                    <a class="form-button edit-button" href="/admin/category/edit/<% category.Id %>">
+                    </a>
+                    <a class="form-button remove-button" href="/admin/category/remove/<% category.Id %>">
+                    </a>
+                </div>
+            <? } ?>
+            <div class="form-extended form-centered sortable-grid-footer">
+                <a class="form-button form-button-large add-button" href="/admin/category/add">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<? import '../../FRAMEWORK/sortable_grid.php'; ?>
+<? include 'BLOCK/page_footer_block.php' ?>

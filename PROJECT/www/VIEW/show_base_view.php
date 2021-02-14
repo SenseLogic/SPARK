@@ -48,8 +48,9 @@
     <?php require __DIR__ . '/' . 'show_products_view.php'; ?>
     <?php require __DIR__ . '/' . 'show_product_view.php'; ?>
     <?php require __DIR__ . '/' . 'show_contact_view.php'; ?>
-    <?php require __DIR__ . '/' . 'show_terms_view.php'; ?>
+    <?php require __DIR__ . '/' . 'show_legal_notice_view.php'; ?>
     <?php require __DIR__ . '/' . 'BLOCK/footer_menu_block.php'; ?>
+    <?php require __DIR__ . '/' . 'BLOCK/cookie_consent_banner_block.php'; ?>
 </div>
 <script>
     // -- STATEMENTS
@@ -66,11 +67,11 @@
                 {
                     if ( element.dataset.viewName === ViewName )
                     {
-                        element.RemoveClass( "display-none" );
+                        element.RemoveClass( "display-hidden" );
                     }
                     else
                     {
-                        element.AddClass( "display-none" );
+                        element.AddClass( "display-hidden" );
                     }
                 }
                 );

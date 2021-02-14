@@ -1,4 +1,6 @@
 RewriteEngine On
+#RewriteCond %{HTTPS} off
+#RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=307,L,NE,QSA]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_URI} !^.*\.(css|gif|jpg|webp|js|mp4|webm|png|svg|ico)$ [NC]
 RewriteRule ^(.*)$ index.php

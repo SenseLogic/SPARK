@@ -9,10 +9,28 @@
                     <input class="form-input" name="Name" type="text" value="<% .Contact.Name %>" readonly/>
             </div>
             <div class="form-field-name">
+                Company :
+            </div>
+            <div>
+                    <input class="form-input" name="Company" type="text" value="<% .Contact.Company %>" readonly/>
+            </div>
+            <div class="form-field-name">
                 Email :
             </div>
             <div>
                     <input class="form-input" name="Email" type="text" value="<% .Contact.Email %>" readonly/>
+            </div>
+            <div class="form-field-name">
+                Phone :
+            </div>
+            <div>
+                    <input class="form-input" name="Phone" type="text" value="<% .Contact.Phone %>" readonly/>
+            </div>
+            <div class="form-field-name">
+                Subject :
+            </div>
+            <div>
+                    <input class="form-input" name="Subject" type="text" value="<% .Contact.Subject %>" readonly/>
             </div>
             <div class="form-field-name">
                 Message :

@@ -13,11 +13,14 @@ class DO_ADD_CONTACT_CONTROLLER extends CONTROLLER
         parent::__construct();
 
          $name = GetPostValue( 'Name' );
+         $company = GetPostValue( 'Company' );
          $email = GetPostValue( 'Email' );
+         $phone = GetPostValue( 'Phone' );
+         $subject = GetPostValue( 'Subject' );
          $message = GetPostValue( 'Message' );
          $date_time = GetPostValue( 'DateTime' );
 
-        AddDatabaseContact( $name, $email, $message, $date_time );
+        AddDatabaseContact( $name, $company, $email, $phone, $subject, $message, $date_time );
 
         Redirect( '/admin/contact' );
     }

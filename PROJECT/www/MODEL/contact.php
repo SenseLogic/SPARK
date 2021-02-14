@@ -3,7 +3,7 @@
 function GetDatabaseContactArray(
     )
 {
-     $statement = GetDatabaseStatement( 'select Id, Name, Email, Message, DateTime from CONTACT order by DateTime desc' );
+     $statement = GetDatabaseStatement( 'select Id, Name, Company, Email, Phone, Subject, Message, DateTime from CONTACT order by DateTime desc' );
 
     if ( !$statement->execute() )
     {
@@ -27,7 +27,7 @@ function GetDatabaseContactById(
     int $id
     )
 {
-     $statement = GetDatabaseStatement( 'select Id, Name, Email, Message, DateTime from CONTACT where Id = ? limit 1' );
+     $statement = GetDatabaseStatement( 'select Id, Name, Company, Email, Phone, Subject, Message, DateTime from CONTACT where Id = ? limit 1' );
     $statement->bindParam( 1, $id, PDO::PARAM_INT );
 
     if ( !$statement->execute() )
@@ -45,14 +45,20 @@ function GetDatabaseContactById(
 
 function AddDatabaseContact(
     string $name,
+    string $company,
     string $email,
+    string $phone,
+    string $subject,
     string $message
     )
 {
-     $statement = GetDatabaseStatement( 'insert into CONTACT ( Name, Email, Message, DateTime ) values ( ?, ?, ?, now() )' );
+     $statement = GetDatabaseStatement( 'insert into CONTACT ( Name, Company, Email, Phone, Subject, Message, DateTime ) values ( ?, ?, ?, ?, ?, ?, now() )' );
     $statement->bindParam( 1, $name, PDO::PARAM_STR );
-    $statement->bindParam( 2, $email, PDO::PARAM_STR );
-    $statement->bindParam( 3, $message, PDO::PARAM_STR );
+    $statement->bindParam( 2, $company, PDO::PARAM_STR );
+    $statement->bindParam( 3, $email, PDO::PARAM_STR );
+    $statement->bindParam( 4, $phone, PDO::PARAM_STR );
+    $statement->bindParam( 5, $subject, PDO::PARAM_STR );
+    $statement->bindParam( 6, $message, PDO::PARAM_STR );
 
     if ( !$statement->execute() )
     {
@@ -67,17 +73,23 @@ function AddDatabaseContact(
 function SetDatabaseContact(
     int $id,
     string $name,
+    string $company,
     string $email,
+    string $phone,
+    string $subject,
     string $message,
     string $date_time
     )
 {
-     $statement = GetDatabaseStatement( 'update CONTACT set Name = ?, Email = ?, Message = ?, DateTime = ? where Id = ?' );
+     $statement = GetDatabaseStatement( 'update CONTACT set Name = ?, Company = ?, Email = ?, Phone = ?, Subject = ?, Message = ?, DateTime = ? where Id = ?' );
     $statement->bindParam( 1, $name, PDO::PARAM_STR );
-    $statement->bindParam( 2, $email, PDO::PARAM_STR );
-    $statement->bindParam( 3, $message, PDO::PARAM_STR );
-    $statement->bindParam( 4, $date_time, PDO::PARAM_STR );
-    $statement->bindParam( 5, $id, PDO::PARAM_INT );
+    $statement->bindParam( 2, $company, PDO::PARAM_STR );
+    $statement->bindParam( 3, $email, PDO::PARAM_STR );
+    $statement->bindParam( 4, $phone, PDO::PARAM_STR );
+    $statement->bindParam( 5, $subject, PDO::PARAM_STR );
+    $statement->bindParam( 6, $message, PDO::PARAM_STR );
+    $statement->bindParam( 7, $date_time, PDO::PARAM_STR );
+    $statement->bindParam( 8, $id, PDO::PARAM_INT );
 
     if ( !$statement->execute() )
     {

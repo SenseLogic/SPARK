@@ -18,6 +18,9 @@
                 Video
             </div>
             <div class="form-column-name sortable-grid-column">
+                Category Slug
+            </div>
+            <div class="form-column-name sortable-grid-column">
                 Action
             </div>
             <?php foreach ( $this->ProductArray as  $product ) { ?>
@@ -35,6 +38,9 @@
                 </div>
                 <div class="sortable-grid-cell">
                     <?php echo htmlspecialchars( $product->Video ); ?>
+                </div>
+                <div class="sortable-grid-cell">
+                    <?php echo htmlspecialchars( $product->CategorySlug ); ?>
                 </div>
                 <div class="form-centered sortable-grid-cell">
                     <a class="form-button view-button" href="/admin/product/view/<?php echo htmlspecialchars( $product->Id ); ?>">

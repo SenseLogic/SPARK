@@ -3,7 +3,7 @@
 function GetDatabaseProductArray(
     )
 {
-     $statement = GetDatabaseStatement( 'select Id, Name, Slug, Text, Image, Video from PRODUCT' );
+     $statement = GetDatabaseStatement( 'select Id, Name, Slug, Text, Image, Video, CategorySlug from PRODUCT' );
 
     if ( !$statement->execute() )
     {
@@ -27,7 +27,7 @@ function GetDatabaseProductById(
     int $id
     )
 {
-     $statement = GetDatabaseStatement( 'select Id, Name, Slug, Text, Image, Video from PRODUCT where Id = ? limit 1' );
+     $statement = GetDatabaseStatement( 'select Id, Name, Slug, Text, Image, Video, CategorySlug from PRODUCT where Id = ? limit 1' );
     $statement->bindParam( 1, $id, PDO::PARAM_INT );
 
     if ( !$statement->execute() )
@@ -48,15 +48,17 @@ function AddDatabaseProduct(
     string $slug,
     string $text,
     string $image,
-    string $video
+    string $video,
+    string $category_slug
     )
 {
-     $statement = GetDatabaseStatement( 'insert into PRODUCT ( Name, Slug, Text, Image, Video ) values ( ?, ?, ?, ?, ? )' );
+     $statement = GetDatabaseStatement( 'insert into PRODUCT ( Name, Slug, Text, Image, Video, CategorySlug ) values ( ?, ?, ?, ?, ?, ? )' );
     $statement->bindParam( 1, $name, PDO::PARAM_STR );
     $statement->bindParam( 2, $slug, PDO::PARAM_STR );
     $statement->bindParam( 3, $text, PDO::PARAM_STR );
     $statement->bindParam( 4, $image, PDO::PARAM_STR );
     $statement->bindParam( 5, $video, PDO::PARAM_STR );
+    $statement->bindParam( 6, $category_slug, PDO::PARAM_STR );
 
     if ( !$statement->execute() )
     {
@@ -74,16 +76,18 @@ function SetDatabaseProduct(
     string $slug,
     string $text,
     string $image,
-    string $video
+    string $video,
+    string $category_slug
     )
 {
-     $statement = GetDatabaseStatement( 'update PRODUCT set Name = ?, Slug = ?, Text = ?, Image = ?, Video = ? where Id = ?' );
+     $statement = GetDatabaseStatement( 'update PRODUCT set Name = ?, Slug = ?, Text = ?, Image = ?, Video = ?, CategorySlug = ? where Id = ?' );
     $statement->bindParam( 1, $name, PDO::PARAM_STR );
     $statement->bindParam( 2, $slug, PDO::PARAM_STR );
     $statement->bindParam( 3, $text, PDO::PARAM_STR );
     $statement->bindParam( 4, $image, PDO::PARAM_STR );
     $statement->bindParam( 5, $video, PDO::PARAM_STR );
-    $statement->bindParam( 6, $id, PDO::PARAM_INT );
+    $statement->bindParam( 6, $category_slug, PDO::PARAM_STR );
+    $statement->bindParam( 7, $id, PDO::PARAM_INT );
 
     if ( !$statement->execute() )
     {

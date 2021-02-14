@@ -9,7 +9,10 @@ class ADD_CONTACT_CONTROLLER extends CONTROLLER
 {
     function __construct(
         string $name,
+        string $company,
         string $email,
+        string $phone,
+        string $subject,
         string $message,
         string $captcha
         )
@@ -18,8 +21,8 @@ class ADD_CONTACT_CONTROLLER extends CONTROLLER
 
         if ( IsValidCaptcha( $captcha, $this->Session->Captcha ) )
         {
-            AddDatabaseContact( $name, $email, $message );
-            $this->SendEmails( $name, $email, $message );
+            AddDatabaseContact( $name, $company, $email, $phone, $subject, $message );
+            $this->SendEmails( $name, $company, $email, $phone, $subject, $message );
 
             SetStatus( 200 );
         }
@@ -45,7 +48,7 @@ class ADD_CONTACT_CONTROLLER extends CONTROLLER
             'contact@spark.com',
             $email,
             'spark.com',
-            "Hi,\n\nThanks for your interest in Spark :)\n\nBest regards,\n\nThe Spark team\n"
+            "Hi,\n\nThank you for your interest in Spark :)\n\nBest regards,\n\nThe Spark team\n"
             );
 
         SendEmail(
@@ -56,11 +59,16 @@ class ADD_CONTACT_CONTROLLER extends CONTROLLER
             'contact@spark.com',
             'contact@spark.com',
             'Contact request from ' . $email . ' about Spark',
-            "Name : " . $name . "\nEmail : " . $email . "\nMessage : " . $message . "\n"
+            "Name : " . $name
+            . "\nCompany : " . company
+            . "\nEmail : " . $email
+            . "\nPhone : " . phone
+            . "\nSubject : " . subject
+            . "\nMessage : " . $message . "\n"
             );
     }
 }
 
 // -- STATEMENTS
 
- $add_contact_controller = new ADD_CONTACT_CONTROLLER(  $name,  $email,  $message,  $captcha );
+ $add_contact_controller = new ADD_CONTACT_CONTROLLER(  $name,  $company,  $email,  $phone,  $subject,  $message,  $captcha );

@@ -1,0 +1,26 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/category_model.php';
+
+// -- TYPES
+
+class VIEW_CATEGORY_CONTROLLER extends CONTROLLER
+{
+    method constructor(
+        int category_id
+        )
+    {
+        parent::constructor();
+
+        .Title = 'View a category';
+        .Category = GetDatabaseCategoryById( category_id );
+        .PreviousPage = GetSessionValue( 'PreviousPage' );
+
+        import '../VIEW/view_category_view.php';
+    }
+}
+
+// -- STATEMENTS
+
+var view_category_controller = new VIEW_CATEGORY_CONTROLLER( var category_id );

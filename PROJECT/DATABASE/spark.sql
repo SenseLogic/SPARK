@@ -17,14 +17,14 @@ create table if not exists `spark`.`TEXT`(
     primary key( `Id` )
     ) engine = InnoDB;
 
-drop table if exists `spark`.`SLIDE`;
+drop table if exists `spark`.`CATEGORY`;
 
-create table if not exists `spark`.`SLIDE`(
+create table if not exists `spark`.`CATEGORY`(
     `Id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `Name` TEXT NULL,
+    `Slug` TEXT NULL,
     `Text` TEXT NULL,
     `Image` TEXT NULL,
-    `Video` TEXT NULL,
-    `HasVideo` TINYINT UNSIGNED NULL,
     `Number` INT NULL,
     primary key( `Id` )
     ) engine = InnoDB;
@@ -38,6 +38,7 @@ create table if not exists `spark`.`PRODUCT`(
     `Text` TEXT NULL,
     `Image` TEXT NULL,
     `Video` TEXT NULL,
+    `CategorySlug` TEXT NULL,
     primary key( `Id` )
     ) engine = InnoDB;
 
@@ -46,7 +47,10 @@ drop table if exists `spark`.`CONTACT`;
 create table if not exists `spark`.`CONTACT`(
     `Id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
     `Name` TEXT NULL,
+    `Company` TEXT NULL,
     `Email` TEXT NULL,
+    `Phone` TEXT NULL,
+    `Subject` TEXT NULL,
     `Message` TEXT NULL,
     `DateTime` DATETIME NULL,
     primary key( `Id` )

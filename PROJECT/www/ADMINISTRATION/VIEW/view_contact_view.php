@@ -9,10 +9,28 @@
                     <input class="form-input" name="Name" type="text" value="<?php echo htmlspecialchars( $this->Contact->Name ); ?>" readonly/>
             </div>
             <div class="form-field-name">
+                Company :
+            </div>
+            <div>
+                    <input class="form-input" name="Company" type="text" value="<?php echo htmlspecialchars( $this->Contact->Company ); ?>" readonly/>
+            </div>
+            <div class="form-field-name">
                 Email :
             </div>
             <div>
                     <input class="form-input" name="Email" type="text" value="<?php echo htmlspecialchars( $this->Contact->Email ); ?>" readonly/>
+            </div>
+            <div class="form-field-name">
+                Phone :
+            </div>
+            <div>
+                    <input class="form-input" name="Phone" type="text" value="<?php echo htmlspecialchars( $this->Contact->Phone ); ?>" readonly/>
+            </div>
+            <div class="form-field-name">
+                Subject :
+            </div>
+            <div>
+                    <input class="form-input" name="Subject" type="text" value="<?php echo htmlspecialchars( $this->Contact->Subject ); ?>" readonly/>
             </div>
             <div class="form-field-name">
                 Message :

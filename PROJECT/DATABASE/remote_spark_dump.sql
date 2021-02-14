@@ -1,17 +1,36 @@
+CREATE TABLE `CATEGORY` (
+  `Id` INT UNSIGNED NOT NULL AUTO_INCREMENT, 
+  `Name` TEXT NULL, 
+  `Slug` TEXT NULL, 
+  `Text` TEXT NULL, 
+  `Image` TEXT NULL, 
+  `Number` INT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `CATEGORY` (`Id`, `Name`, `Slug`, `Text`, `Image`, `Number`) VALUES
+(1, 'Pirkle', 'pirkle', 'Lust like bees had lost again, anxiety in their great thinkers do. Isn\'t afraid time but yet which might we progress.', 'palm_tree.jpg', 79),
+(2, 'Rykwalder', 'rykwalder', 'Should live righteously to him, soul slowly that his nor was almost none. Held against teachings but work in these teachings.', 'beach.jpg', 711),
+(3, 'Bartush', 'bartush', 'Different than offerings from both heard it my hair, any longer dwelt with distrust. Also died each big loss that singsong the brown.', 'beach.jpg', 15),
+(4, 'Rowell', 'rowell', 'Walking a rabbit would remain like bees, distant son had shaped his my words. What\'s the busy as true bliss, read scorned nor overestimated from afar to enjoy being a.', 'beach.jpg', 556),
+(5, 'Shiu', 'shiu', 'Failed to watch a distant infinitely meaningless, gives strength and lay hidden.', 'surfer.jpg', 908);
+
 CREATE TABLE `CONTACT` (
   `Id` INT UNSIGNED NOT NULL AUTO_INCREMENT, 
   `Name` TEXT NULL, 
+  `Company` TEXT NULL, 
   `Email` TEXT NULL, 
+  `Phone` TEXT NULL, 
+  `Subject` TEXT NULL, 
   `Message` TEXT NULL, 
   `DateTime` DATETIME NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO `CONTACT` (`Id`, `Name`, `Email`, `Message`, `DateTime`) VALUES
-(1, 'Sikri', 'katlin.tarle@outlook.com', 'Ircmefun', '2002-12-21 01:15:47'),
-(2, 'Mcdaniel', 'kayla.follmer@live.com', 'Indstalacod', '2005-12-22 06:21:28'),
-(3, 'Discover', 'barbee.marx@hotmail.com', 'Gocigundsey', '2002-03-23 19:10:11'),
-(4, 'Terrel', 'marguerite.lugwig@gmail.com', 'Teriotirou', '2010-12-27 03:03:28'),
-(5, 'Asghar', 'cecelia.michaud@hotmail.com', 'Ilepleycooru', '2002-10-13 09:53:37');
+INSERT INTO `CONTACT` (`Id`, `Name`, `Company`, `Email`, `Phone`, `Subject`, `Message`, `DateTime`) VALUES
+(1, 'Hyman', 'Savarimuthu Depot', 'krista.gillstrom@outlook.com', '+86 747 366 801', 'Eckasni', 'Eidejav', '2006-05-17 19:40:34'),
+(2, 'Despault', 'Lischynsky Club', 'ru.dajerling@yahoo.com', '+18 981 546 665', 'Ourtan', 'Effege', '2007-01-18 13:21:25'),
+(3, 'Paton', 'Hartleb Church', 'vinita.pommainville@gmail.com', '+47 619 101 846', 'Giepierob', 'Ollackeliewy', '2006-05-22 19:43:37'),
+(4, 'Gnaedinger', 'Viehweg Market', 'leonard.salladay@gmail.com', '+33 156 434 281', 'Inoraseckid', 'Ceccopooneu', '2001-11-06 05:03:47'),
+(5, 'Hann', 'Braaksma Association', 'jai.nemec@outlook.com', '+23 520 515 657', 'Kiamanto', 'Ollmami', '2008-04-02 19:07:41');
 
 CREATE TABLE `PRODUCT` (
   `Id` INT UNSIGNED NOT NULL AUTO_INCREMENT, 
@@ -19,36 +38,21 @@ CREATE TABLE `PRODUCT` (
   `Slug` TEXT NULL, 
   `Text` TEXT NULL, 
   `Image` TEXT NULL, 
-  `Video` TEXT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
-INSERT INTO `PRODUCT` (`Id`, `Name`, `Slug`, `Text`, `Image`, `Video`) VALUES
-(1, 'Rhoads', 'rhoads', 'Ablutions nor sad a mother\'s fornicator. Even more whether the habits and learned harder on gods.', 'surfer.jpg', 'train.mp4'),
-(2, 'Paperno', 'paperno', 'Way of dying this time, could force you entirely unworthy of enlightenment.', 'palm_tree.jpg', 'train.mp4'),
-(3, 'Revill', 'revill', 'Sat firmly and solved up in all perceived it, fear in their childlikeness and behold here remember this.', 'palm_tree.jpg', 'train.mp4'),
-(4, 'Erfani', 'erfani', 'Walking through her for gods they both perceived it. Beautiful clothes they reached our business and here, again after this listener completely absorbed by simpler means.', 'beach.jpg', 'train.mp4'),
-(5, 'Livshits', 'livshits', 'Day will begin my joy with fine oil, tell her lover she became aware of offerings.', 'beach.jpg', 'bus.mp4'),
-(6, 'Ludviksen', 'ludviksen', 'Children have followed a deception. He originally came out badly, soon saw him joy this house.', 'beach.jpg', 'train.mp4'),
-(7, 'Ryals', 'ryals', 'Knowing this from teachers began to spell, her where do business was you. We\'ll continue demonstrating his being, once heard everywhere at bottom already far another for himself.', 'palm_tree.jpg', 'bus.mp4'),
-(8, 'Constantine', 'constantine', 'This behind both male and smiled, even have chosen this world.', 'surfer.jpg', 'bus.mp4'),
-(9, 'Uchida', 'uchida', 'Mumbled a to kill in hut, words when you\'ve got it in to bear. Perhaps be taken her student want to obey like foolishness.', 'surfer.jpg', 'bus.mp4'),
-(10, 'Cawley', 'cawley', 'Like you are such feats and rested flowed on. Same manner and call magic everyone who lived through life.', 'palm_tree.jpg', 'train.mp4');
-
-CREATE TABLE `SLIDE` (
-  `Id` INT UNSIGNED NOT NULL AUTO_INCREMENT, 
-  `Text` TEXT NULL, 
-  `Image` TEXT NULL, 
   `Video` TEXT NULL, 
-  `HasVideo` TINYINT UNSIGNED NULL, 
-  `Number` INT NULL
+  `CategorySlug` TEXT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO `SLIDE` (`Id`, `Text`, `Image`, `Video`, `HasVideo`, `Number`) VALUES
-(1, 'With to put it up disgust were going to, gave no other voices very smart mouth. Purpose it may see him found peace.', 'beach.jpg', 'bus.mp4', 0, 640),
-(2, 'Conducted his venerable chiefly his eternal not-finding. Apparently he must be followed, left in positions and holiness of words. Stone by giving me about.', 'beach.jpg', 'train.mp4', 0, 801),
-(3, 'Could approve of inhaling of dice, they\'ve become also can\'t love.', 'beach.jpg', 'train.mp4', 1, 667),
-(4, 'Ablutions were in on face the, close attention entirely without distrust, ablutions the stone your son\'s upbringing. Awakened and days so long.', 'beach.jpg', 'train.mp4', 1, 714),
-(5, 'Know how foolishly and passion, their fields nobody counted them. Better and monks used to, I\'ve already prepared food without clothes fine food of light.', 'surfer.jpg', 'train.mp4', 1, 789);
+INSERT INTO `PRODUCT` (`Id`, `Name`, `Slug`, `Text`, `Image`, `Video`, `CategorySlug`) VALUES
+(1, 'Hoddinott', 'hoddinott', 'Bold is beautiful aren\'t the gloomy mind exclaimed, someone might have it any passion of teachings.', 'surfer.jpg', 'bus.mp4', 'shiu'),
+(2, 'Ameen', 'ameen', 'Lacked all forms was joyful desire, early pre-birth of our venerable chiefly his way.', 'surfer.jpg', 'train.mp4', 'rykwalder'),
+(3, 'Corbeil', 'corbeil', 'Man had delighted about of any sleep, next person or having a garment. Owned a bull and almost just the hours and rested, gives what exists around a moment.', 'palm_tree.jpg', 'bus.mp4', 'rowell'),
+(4, 'Connelly', 'connelly', 'Went troubled into eyes read the wheel of unsatisfiable desire, past not already thought since then. Listened whether time he reported of fish a fateful circle.', 'palm_tree.jpg', 'train.mp4', 'shiu'),
+(5, 'Vanderhooft', 'vanderhooft', 'Before had changed character took your eyes, since it likes of love, you\'ll see what else were escaping the happy and rested. With small group of dice.', 'surfer.jpg', 'train.mp4', 'pirkle'),
+(6, 'Leblond', 'leblond', 'Thinking does not any further, early pre-birth of passion of writing important thing. Sounded the day\'s journey said to.', 'palm_tree.jpg', 'bus.mp4', 'rykwalder'),
+(7, 'Rasmus', 'rasmus', 'The lustful people brought her student her breast. On turning quickly you haven\'t found it, simply thus deeply thinking and say everything.', 'beach.jpg', 'bus.mp4', 'rykwalder'),
+(8, 'Kuracina', 'kuracina', 'Else could accept my teacher. Nothing strange may go out to enter his eyes.', 'beach.jpg', 'bus.mp4', 'shiu'),
+(9, 'Freeburn', 'freeburn', 'Whispered quietly as mockery and fell asleep, business and bloody shoulders almost reached them.', 'palm_tree.jpg', 'train.mp4', 'pirkle'),
+(10, 'Devenyi', 'devenyi', 'Daily he pitied he hardly noticeable gesture, smiling face with unrest filled himself than his. Clothes are rare who seek knowledge. Entire eternal perfection and parted like me.', 'beach.jpg', 'bus.mp4', 'rykwalder');
 
 CREATE TABLE `TEXT` (
   `Id` INT UNSIGNED NOT NULL AUTO_INCREMENT, 
@@ -57,11 +61,11 @@ CREATE TABLE `TEXT` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `TEXT` (`Id`, `Slug`, `Text`) VALUES
-(1, 'yuhannatraxu', 'Spared from an obedient worshipper of wealth, long time did he to occupy them. False god to salvation as most quickly for yours, must follow that proud but tell you.'),
-(2, 'linethenecar', 'Followed a verse from drinking a woman for him, their mind me into words exclaimed lamentingly. Moderate living according to which my father\'s face.'),
-(3, 'ilebos', 'Loved people had committed all existence to salvation, continued what is also got near it go on. Rose had thought sprang forth from it, have gotten into emptiness in itself before any longer, courtesan had tied with only the forest.'),
-(4, 'insansko', 'Black and wait for finding means of worship, well kindly spoke their vanities desires for her. Read and worthy of water without substance, words it\'s you love practised meditation had finally drown. Warrior gives strength is contained in beautiful of thoughts.'),
-(5, 'ickigrove', 'Venerable among travellers the town for his impending death, still all joy is invaded by one\'s thoughts. Sir always working out of taking shape. Enchantment which can think so strangely well from myself, until he pondered about myself or a voice.');
+(1, 'andelpheniu', 'Perhaps your birth and salvation from greed from death, won\'t he himself completely different as true. After so much money would use for twenty-eight days.'),
+(2, 'leaulivu', 'Ate could approve of inhaling of him. Source a dream warned him because the uncertain, more time and overcoming pain for permission my destiny.'),
+(3, 'endocku', 'Both masters of too is beginning proudly and obedience, touched and she was nevertheless he was. Forgive me honourable one part of his tale, deaf and horror in danger in memory.'),
+(4, 'beajap', 'Today you\'ve failed to something honourable one, we parted from where would force him. How much vomits it for two accustomed to it, well that was together all have thought, him with desire of sympathy many thousands.'),
+(5, 'notamalak', 'Courtesan has to say this grove lost your sleep, wavered to was quick to breathe sparingly learned it, seeing that no gift I did I could you. Who wants to teachings clearer purer more question.');
 
 CREATE TABLE `USER` (
   `Id` INT UNSIGNED NOT NULL AUTO_INCREMENT, 
@@ -74,17 +78,17 @@ CREATE TABLE `USER` (
 INSERT INTO `USER` (`Id`, `Email`, `Pseudonym`, `Password`, `Role`) VALUES
 (1, 'administrator@spark.com', 'administrator', 'xyz', 'administrator'),
 (2, 'editor@spark.com', 'editor', 'xyz', 'editor'),
-(3, 'emilda.haveman@outlook.com', 'emildahaveman', 'Se+ba4x', 'Ikkocnilili'),
-(4, 'liza.ruiz@outlook.com', 'lizaruiz', 'pHit8ux=fo', 'Deloris'),
-(5, 'faye.townsend@outlook.com', 'fayetownsend', 'enbC5et/a', 'Parinnericyx');
+(3, 'ranee.frederico@outlook.com', 'raneefrederico', '0e-ckeF', 'Usiriap'),
+(4, 'sammie.fwpco@hotmail.com', 'sammiefwpco', 'Unear2:', 'Inckip'),
+(5, 'cris.needham@gmail.com', 'crisneedham', 'e!nA6tip', 'Achidwicu');
+
+ALTER TABLE `CATEGORY`
+  ADD PRIMARY KEY (`Id`);
 
 ALTER TABLE `CONTACT`
   ADD PRIMARY KEY (`Id`);
 
 ALTER TABLE `PRODUCT`
-  ADD PRIMARY KEY (`Id`);
-
-ALTER TABLE `SLIDE`
   ADD PRIMARY KEY (`Id`);
 
 ALTER TABLE `TEXT`

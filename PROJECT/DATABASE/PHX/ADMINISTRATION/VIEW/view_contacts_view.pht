@@ -6,7 +6,16 @@
                 Name
             </div>
             <div class="form-column-name sortable-grid-column">
+                Company
+            </div>
+            <div class="form-column-name sortable-grid-column">
                 Email
+            </div>
+            <div class="form-column-name sortable-grid-column">
+                Phone
+            </div>
+            <div class="form-column-name sortable-grid-column">
+                Subject
             </div>
             <div class="form-column-name sortable-grid-column">
                 Message
@@ -22,7 +31,16 @@
                     <% contact.Name %>
                 </div>
                 <div class="sortable-grid-cell">
+                    <% contact.Company %>
+                </div>
+                <div class="sortable-grid-cell">
                     <% contact.Email %>
+                </div>
+                <div class="sortable-grid-cell">
+                    <% contact.Phone %>
+                </div>
+                <div class="sortable-grid-cell">
+                    <% contact.Subject %>
                 </div>
                 <div class="sortable-grid-cell">
                     <% contact.Message %>

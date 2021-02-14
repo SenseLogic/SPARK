@@ -8,7 +8,10 @@
             edit_contact_form,
             it_is_valid_edit_contact_form,
             name_field,
+            company_field,
             email_field,
+            phone_field,
+            subject_field,
             message_field,
             date_time_field;
 
@@ -16,7 +19,10 @@
 
         edit_contact_form = document.EditContactForm;
         name_field = edit_contact_form.Name;
+        company_field = edit_contact_form.Company;
         email_field = edit_contact_form.Email;
+        phone_field = edit_contact_form.Phone;
+        subject_field = edit_contact_form.Subject;
         message_field = edit_contact_form.Message;
         date_time_field = edit_contact_form.DateTime;
 
@@ -31,6 +37,17 @@
             it_is_valid_edit_contact_form = false;
         }
 
+        if ( company_field.value !== "" )
+        {
+            company_field.classList.remove( "form-field-error" );
+        }
+        else
+        {
+            company_field.classList.add( "form-field-error" );
+
+            it_is_valid_edit_contact_form = false;
+        }
+
         if ( email_field.value !== "" )
         {
             email_field.classList.remove( "form-field-error" );
@@ -38,6 +55,28 @@
         else
         {
             email_field.classList.add( "form-field-error" );
+
+            it_is_valid_edit_contact_form = false;
+        }
+
+        if ( phone_field.value !== "" )
+        {
+            phone_field.classList.remove( "form-field-error" );
+        }
+        else
+        {
+            phone_field.classList.add( "form-field-error" );
+
+            it_is_valid_edit_contact_form = false;
+        }
+
+        if ( subject_field.value !== "" )
+        {
+            subject_field.classList.remove( "form-field-error" );
+        }
+        else
+        {
+            subject_field.classList.add( "form-field-error" );
 
             it_is_valid_edit_contact_form = false;
         }
@@ -78,10 +117,28 @@
                     <input class="form-input" name="Name" type="text" value="<?php echo htmlspecialchars( $this->Contact->Name ); ?>"/>
                 </div>
                 <div class="form-field-name">
+                    Company :
+                </div>
+                <div>
+                    <input class="form-input" name="Company" type="text" value="<?php echo htmlspecialchars( $this->Contact->Company ); ?>"/>
+                </div>
+                <div class="form-field-name">
                     Email :
                 </div>
                 <div>
                     <input class="form-input" name="Email" type="text" value="<?php echo htmlspecialchars( $this->Contact->Email ); ?>"/>
+                </div>
+                <div class="form-field-name">
+                    Phone :
+                </div>
+                <div>
+                    <input class="form-input" name="Phone" type="text" value="<?php echo htmlspecialchars( $this->Contact->Phone ); ?>"/>
+                </div>
+                <div class="form-field-name">
+                    Subject :
+                </div>
+                <div>
+                    <input class="form-input" name="Subject" type="text" value="<?php echo htmlspecialchars( $this->Contact->Subject ); ?>"/>
                 </div>
                 <div class="form-field-name">
                     Message :

@@ -1,0 +1,50 @@
+MakeCarousel( "category-" );
+MakeCarouselStripValue( 6, 1, "category-" );
+MakeCarouselSlideValue( 6, "category-" );
+
+// ~~
+
+.category-carousel-strip-6-1
+{
+    height: 100vh;
+}
+
+.category-carousel-slide
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-position: center center;
+    background-size: cover;
+}
+
+.category-carousel-slide-text
+{
+    max-width: 40rem;
+    font-size: 2rem;
+    color: white;
+}
+
+.category-carousel-arrow
+{
+    font-size: 4rem;
+    color: white;
+    cursor: pointer;
+}
+
+.category-carousel-left-arrow
+{
+    position: absolute;
+    top: 50%;
+    left: 4rem;
+    transform: translateY( -50% );
+}
+
+.category-carousel-right-arrow
+{
+    position: absolute;
+    top: 50%;
+    right: 4rem;
+    transform: translateY( -50% );
+}

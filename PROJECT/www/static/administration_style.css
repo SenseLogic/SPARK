@@ -512,8 +512,8 @@ textarea:focus {
   background: url("/static/image/icon/admin/text_icon.svg") no-repeat center center;
   background-size: contain;
 }
-.slide-button {
-  background: url("/static/image/icon/admin/slide_icon.svg") no-repeat center center;
+.category-button {
+  background: url("/static/image/icon/admin/category_icon.svg") no-repeat center center;
   background-size: contain;
 }
 .product-button {
@@ -531,8 +531,8 @@ textarea:focus {
 .text-table {
   grid-template-columns: repeat(3, auto);
 }
-.section-table {
-  grid-template-columns: repeat(3, auto);
+.category-table {
+  grid-template-columns: repeat(6, auto);
 }
 .article-table {
   grid-template-columns: repeat(7, auto);

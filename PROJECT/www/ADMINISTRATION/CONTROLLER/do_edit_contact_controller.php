@@ -14,11 +14,14 @@ class DO_EDIT_CONTACT_CONTROLLER extends CONTROLLER
         parent::__construct();
 
          $name = GetPostValue( 'Name' );
+         $company = GetPostValue( 'Company' );
          $email = GetPostValue( 'Email' );
+         $phone = GetPostValue( 'Phone' );
+         $subject = GetPostValue( 'Subject' );
          $message = GetPostValue( 'Message' );
          $date_time = GetPostValue( 'DateTime' );
 
-        SetDatabaseContact( $contact_id, $name, $email, $message, $date_time );
+        SetDatabaseContact( $contact_id, $name, $company, $email, $phone, $subject, $message, $date_time );
 
         Redirect( '/admin/contact' );
     }

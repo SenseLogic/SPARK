@@ -6,12 +6,13 @@ spark
         Slug : STRING | indexed
         Text : STRING | is_text
 
-    SLIDE | sorted, dropped, count 5
+    CATEGORY | sorted, dropped, count 5
 
         Id : UINT32 | key, unique, incremented
+        Name : STRING
+        Slug : STRING = "{{Name:slug_case}}"
         Text : STRING = "{{english 2 4 5 10}}" | is_text
         Image : STRING = "beach.jpg|palm_tree.jpg|surfer.jpg" | is_image
-        Video : STRING = "train.mp4|bus.mp4" | is_video
         Number : INT32 | ascending
 
     PRODUCT | dropped, count 10
@@ -22,6 +23,7 @@ spark
         Text : STRING = "{{english 2 4 5 10}}" | is_text
         Image : STRING = "beach.jpg|palm_tree.jpg|surfer.jpg" | is_image
         Video : STRING = "train.mp4|bus.mp4" | is_video
+        CategorySlug : CATEGORY.Slug
 
     CONTACT | sorted, count 5
 

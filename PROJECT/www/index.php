@@ -177,79 +177,79 @@ function Route(
             }
         }
         else if ( $path_value_count >= 2
-                  && $path_value_array[ 1 ] === 'slide' )
+                  && $path_value_array[ 1 ] === 'category' )
         {
             if ( $it_is_get_request
                  && $path_value_count === 2 )
             {
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_slides_controller.php';
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_categories_controller.php';
             }
             else if ( $it_is_get_request
                       && $path_value_count === 3
                       && $path_value_array[ 2 ] === 'add' )
             {
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/add_slide_controller.php';
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/add_category_controller.php';
             }
             else if ( $it_is_post_request
                       && $path_value_count === 3
                       && $path_value_array[ 2 ] === 'add'
+                      && HasPostValue( 'Name' )
+                      && HasPostValue( 'Slug' )
                       && HasPostValue( 'Text' )
                       && HasPostValue( 'Image' )
-                      && HasPostValue( 'Video' )
-                      && HasPostValue( 'HasVideo' )
                       && HasPostValue( 'Number' ) )
             {
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_add_slide_controller.php';
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_add_category_controller.php';
             }
             else if ( $it_is_get_request
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'view'
                       && IsId( $path_value_array[ 3 ] ) )
             {
-                 $slide_id = $path_value_array[ 3 ];
+                 $category_id = $path_value_array[ 3 ];
 
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_slide_controller.php';
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_category_controller.php';
             }
             else if ( $it_is_get_request
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'edit'
                       && IsId( $path_value_array[ 3 ] ) )
             {
-                 $slide_id = $path_value_array[ 3 ];
+                 $category_id = $path_value_array[ 3 ];
 
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/edit_slide_controller.php';
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/edit_category_controller.php';
             }
             else if ( $it_is_post_request
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'edit'
                       && IsId( $path_value_array[ 3 ] )
+                      && HasPostValue( 'Name' )
+                      && HasPostValue( 'Slug' )
                       && HasPostValue( 'Text' )
                       && HasPostValue( 'Image' )
-                      && HasPostValue( 'Video' )
-                      && HasPostValue( 'HasVideo' )
                       && HasPostValue( 'Number' ) )
             {
-                 $slide_id = $path_value_array[ 3 ];
+                 $category_id = $path_value_array[ 3 ];
 
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_edit_slide_controller.php';
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_edit_category_controller.php';
             }
             else if ( $it_is_get_request
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'remove'
                       && IsId( $path_value_array[ 3 ] ) )
             {
-                 $slide_id = $path_value_array[ 3 ];
+                 $category_id = $path_value_array[ 3 ];
 
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/remove_slide_controller.php';
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/remove_category_controller.php';
             }
             else if ( $it_is_post_request
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'remove'
                       && IsId( $path_value_array[ 3 ] ) )
             {
-                 $slide_id = $path_value_array[ 3 ];
+                 $category_id = $path_value_array[ 3 ];
 
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_remove_slide_controller.php';
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_remove_category_controller.php';
             }
             else
             {
@@ -277,7 +277,8 @@ function Route(
                       && HasPostValue( 'Slug' )
                       && HasPostValue( 'Text' )
                       && HasPostValue( 'Image' )
-                      && HasPostValue( 'Video' ) )
+                      && HasPostValue( 'Video' )
+                      && HasPostValue( 'CategorySlug' ) )
             {
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_add_product_controller.php';
             }
@@ -307,7 +308,8 @@ function Route(
                       && HasPostValue( 'Slug' )
                       && HasPostValue( 'Text' )
                       && HasPostValue( 'Image' )
-                      && HasPostValue( 'Video' ) )
+                      && HasPostValue( 'Video' )
+                      && HasPostValue( 'CategorySlug' ) )
             {
                  $product_id = $path_value_array[ 3 ];
 
@@ -354,7 +356,10 @@ function Route(
                       && $path_value_count === 3
                       && $path_value_array[ 2 ] === 'add'
                       && HasPostValue( 'Name' )
+                      && HasPostValue( 'Company' )
                       && HasPostValue( 'Email' )
+                      && HasPostValue( 'Phone' )
+                      && HasPostValue( 'Subject' )
                       && HasPostValue( 'Message' )
                       && HasPostValue( 'DateTime' ) )
             {
@@ -383,7 +388,10 @@ function Route(
                       && $path_value_array[ 2 ] === 'edit'
                       && IsId( $path_value_array[ 3 ] )
                       && HasPostValue( 'Name' )
+                      && HasPostValue( 'Company' )
                       && HasPostValue( 'Email' )
+                      && HasPostValue( 'Phone' )
+                      && HasPostValue( 'Subject' )
                       && HasPostValue( 'Message' )
                       && HasPostValue( 'DateTime' ) )
             {
@@ -506,14 +514,18 @@ function Route(
             {
                 require_once __DIR__ . '/' . 'CONTROLLER/get_captcha_image_controller.php';
             }
-            else if ( $path_value_count == 1 )
+            else if ( $path_value_count == 1
+                      && ( $path_value_array[ 0 ] === 'home'
+                           || $path_value_array[ 0 ] === 'products'
+                           || $path_value_array[ 0 ] === 'contact'
+                           || $path_value_array[ 0 ] === 'legal-terms' ) )
             {
                  $view_name = $path_value_array[ 0 ];
                 require_once __DIR__ . '/' . 'CONTROLLER/show_base_controller.php';
             }
             else if ( $path_value_count == 0 )
             {
-                 $view_name = "home";
+                 $view_name = 'home';
                 require_once __DIR__ . '/' . 'CONTROLLER/show_base_controller.php';
             }
             else
@@ -526,12 +538,18 @@ function Route(
             if ( $path_value_count === 1
                  && $path_value_array[ 0 ] === 'contact'
                  && HasPostValue( 'Name' )
+                 && HasPostValue( 'Company' )
                  && HasPostValue( 'Email' )
+                 && HasPostValue( 'Phone' )
+                 && HasPostValue( 'Subject' )
                  && HasPostValue( 'Message' )
                  && HasPostValue( 'Captcha' ) )
             {
                  $name = GetPostValue( 'Name' );
+                 $company = GetPostValue( 'Company' );
                  $email = GetPostValue( 'Email' );
+                 $phone = GetPostValue( 'Phone' );
+                 $subject = GetPostValue( 'Subject' );
                  $message = GetPostValue( 'Message' );
                  $captcha = GetPostValue( 'Captcha' );
 

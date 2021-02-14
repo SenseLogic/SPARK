@@ -18,8 +18,9 @@ class DO_EDIT_PRODUCT_CONTROLLER extends CONTROLLER
         var text = GetPostValue( 'Text' );
         var image = GetPostValue( 'Image' );
         var video = GetPostValue( 'Video' );
+        var category_slug = GetPostValue( 'CategorySlug' );
 
-        SetDatabaseProduct( product_id, name, slug, text, image, video );
+        SetDatabaseProduct( product_id, name, slug, text, image, video, category_slug );
 
         Redirect( '/admin/product' );
     }
