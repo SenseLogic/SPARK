@@ -24,6 +24,7 @@ echo === Press enter ===
 read key
 cd TOOL
 git clone https://github.com/senselogic/BASIL.git
+git clone https://github.com/senselogic/CHYLE.git
 git clone https://github.com/senselogic/CYCLONE.git
 git clone https://github.com/senselogic/GENERIS.git
 git clone https://github.com/senselogic/PHOENIX.git

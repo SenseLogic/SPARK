@@ -6,6 +6,10 @@ cd BASIL
 git pull origin master
 dmd -m64 basil.d
 cd ..
+cd CHYLE
+git pull origin master
+dmd -m64 chyle.d
+cd ..
 cd GENERIS
 git pull origin master
 dmd -m64 generis.d
