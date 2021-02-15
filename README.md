@@ -8,12 +8,13 @@ Phoenix microframework and project template.
 
 ### Simplicity and efficiency
 
-Contrarily to huge frameworks like Laravel and Symphony which provide dozens of classes to manage both the web and database requests, Spark is simply a small
-collection of reusable procedural functions wrapping and extending the PHP standard library in order to improve its ease of use.
+Unlike huge frameworks like Laravel and Symphony which provide dozens of classes to manage both the web and database requests,
+Spark is just a small collection of reusable procedural functions wrapping and extending the PHP standard library in order to improve its ease of use.
 
 ### Readability and conciseness
 
-Spark is implemented in the [Phoenix](https://github.com/senselogic/PHOENIX) language, which allows to develop PHP code with a readable and concise JavaScript-like syntax.
+Spark is implemented in the [Phoenix](https://github.com/senselogic/PHOENIX) language,
+which allows to develop modular PHP code with a readable and concise JavaScript-like syntax.
 
 ## Dependencies
 
