@@ -68,7 +68,7 @@ sudo mysql_secure_installation
 
 ## Version
 
-1.0
+0.4
 
 ## Author
 
