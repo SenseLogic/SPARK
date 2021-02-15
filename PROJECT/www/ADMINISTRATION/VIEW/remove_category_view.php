@@ -4,16 +4,16 @@
         <form class="form-centered" action="/admin/category/remove/<?php echo htmlspecialchars( $this->Category->Id ); ?>" method="post">
             <div class="form-container">
                 <div class="form-field-name">
-                    Name :
-                </div>
-                <div>
-                    <input class="form-input" name="Name" type="text" value="<?php echo htmlspecialchars( $this->Category->Name ); ?>" readonly/>
-                </div>
-                <div class="form-field-name">
                     Slug :
                 </div>
                 <div>
                     <input class="form-input" name="Slug" type="text" value="<?php echo htmlspecialchars( $this->Category->Slug ); ?>" readonly/>
+                </div>
+                <div class="form-field-name">
+                    Name :
+                </div>
+                <div>
+                    <input class="form-input" name="Name" type="text" value="<?php echo htmlspecialchars( $this->Category->Name ); ?>" readonly/>
                 </div>
                 <div class="form-field-name">
                     Text :

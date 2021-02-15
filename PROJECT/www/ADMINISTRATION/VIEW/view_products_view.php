@@ -3,10 +3,10 @@
     <div class="page-section form-section">
         <div class="form-container table-container product-table sortable-grid">
             <div class="form-column-name sortable-grid-column">
-                Name
+                Slug
             </div>
             <div class="form-column-name sortable-grid-column">
-                Slug
+                Name
             </div>
             <div class="form-column-name sortable-grid-column">
                 Text
@@ -25,10 +25,10 @@
             </div>
             <?php foreach ( $this->ProductArray as  $product ) { ?>
                 <div class="sortable-grid-cell">
-                    <?php echo htmlspecialchars( $product->Name ); ?>
+                    <?php echo htmlspecialchars( $product->Slug ); ?>
                 </div>
                 <div class="sortable-grid-cell">
-                    <?php echo htmlspecialchars( $product->Slug ); ?>
+                    <?php echo htmlspecialchars( $product->Name ); ?>
                 </div>
                 <div class="sortable-grid-cell">
                     <?php echo htmlspecialchars( $product->Text ); ?>

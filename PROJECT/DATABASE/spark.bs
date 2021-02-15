@@ -9,8 +9,8 @@ spark
     CATEGORY | sorted, dropped, count 5
 
         Id : UINT32 | key, unique, incremented
-        Name : STRING
         Slug : STRING = "{{Name:slug_case}}"
+        Name : STRING
         Text : STRING = "{{english 2 4 5 10}}" | is_text
         Image : STRING = "beach.jpg|palm_tree.jpg|surfer.jpg" | is_image
         Number : INT32 | ascending
@@ -18,8 +18,8 @@ spark
     PRODUCT | dropped, count 10
 
         Id : UINT32 | key, unique, incremented
-        Name : STRING
         Slug : STRING = "{{Name:slug_case}}"
+        Name : STRING
         Text : STRING = "{{english 2 4 5 10}}" | is_text
         Image : STRING = "beach.jpg|palm_tree.jpg|surfer.jpg" | is_image
         Video : STRING = "train.mp4|bus.mp4" | is_video

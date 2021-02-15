@@ -17,8 +17,8 @@ drop table if exists `spark`.`CATEGORY`;
 
 create table if not exists `spark`.`CATEGORY`(
     `Id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    `Name` TEXT NULL,
     `Slug` TEXT NULL,
+    `Name` TEXT NULL,
     `Text` TEXT NULL,
     `Image` TEXT NULL,
     `Number` INT NULL,
@@ -29,8 +29,8 @@ drop table if exists `spark`.`PRODUCT`;
 
 create table if not exists `spark`.`PRODUCT`(
     `Id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    `Name` TEXT NULL,
     `Slug` TEXT NULL,
+    `Name` TEXT NULL,
     `Text` TEXT NULL,
     `Image` TEXT NULL,
     `Video` TEXT NULL,

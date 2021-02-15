@@ -3,16 +3,16 @@
     <div class="page-section form-section">
         <div class="form-container">
             <div class="form-field-name">
-                Name :
-            </div>
-            <div>
-                    <input class="form-input" name="Name" type="text" value="<% .Category.Name %>" readonly/>
-            </div>
-            <div class="form-field-name">
                 Slug :
             </div>
             <div>
                     <input class="form-input" name="Slug" type="text" value="<% .Category.Slug %>" readonly/>
+            </div>
+            <div class="form-field-name">
+                Name :
+            </div>
+            <div>
+                    <input class="form-input" name="Name" type="text" value="<% .Category.Name %>" readonly/>
             </div>
             <div class="form-field-name">
                 Text :

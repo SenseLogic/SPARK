@@ -77,7 +77,7 @@
 <div id="cookie-consent-banner-container" class="cookie-consent-banner-container">
     <div class="cookie-consent-banner-text">
         We use cookies on our website to provide you with the best possible online experience.
-        <a href="/legal-terms" target="_blank">More information</a>
+        <a href="/legal-notice" target="_blank">More information</a>
     </div>
     <div class="cookie-consent-banner-button-container">
         <div class="cookie-consent-banner-button cookie-consent-banner-accept-button" onclick="HandleCookieConsentBannerAgreeButtonClickEvent()">

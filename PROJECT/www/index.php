@@ -193,8 +193,8 @@ function Route(
             else if ( $it_is_post_request
                       && $path_value_count === 3
                       && $path_value_array[ 2 ] === 'add'
-                      && HasPostValue( 'Name' )
                       && HasPostValue( 'Slug' )
+                      && HasPostValue( 'Name' )
                       && HasPostValue( 'Text' )
                       && HasPostValue( 'Image' )
                       && HasPostValue( 'Number' ) )
@@ -223,8 +223,8 @@ function Route(
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'edit'
                       && IsId( $path_value_array[ 3 ] )
-                      && HasPostValue( 'Name' )
                       && HasPostValue( 'Slug' )
+                      && HasPostValue( 'Name' )
                       && HasPostValue( 'Text' )
                       && HasPostValue( 'Image' )
                       && HasPostValue( 'Number' ) )
@@ -273,8 +273,8 @@ function Route(
             else if ( $it_is_post_request
                       && $path_value_count === 3
                       && $path_value_array[ 2 ] === 'add'
-                      && HasPostValue( 'Name' )
                       && HasPostValue( 'Slug' )
+                      && HasPostValue( 'Name' )
                       && HasPostValue( 'Text' )
                       && HasPostValue( 'Image' )
                       && HasPostValue( 'Video' )
@@ -304,8 +304,8 @@ function Route(
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'edit'
                       && IsId( $path_value_array[ 3 ] )
-                      && HasPostValue( 'Name' )
                       && HasPostValue( 'Slug' )
+                      && HasPostValue( 'Name' )
                       && HasPostValue( 'Text' )
                       && HasPostValue( 'Image' )
                       && HasPostValue( 'Video' )
@@ -518,7 +518,7 @@ function Route(
                       && ( $path_value_array[ 0 ] === 'home'
                            || $path_value_array[ 0 ] === 'products'
                            || $path_value_array[ 0 ] === 'contact'
-                           || $path_value_array[ 0 ] === 'legal-terms' ) )
+                           || $path_value_array[ 0 ] === 'legal-notice' ) )
             {
                  $view_name = $path_value_array[ 0 ];
                 require_once __DIR__ . '/' . 'CONTROLLER/show_base_controller.php';

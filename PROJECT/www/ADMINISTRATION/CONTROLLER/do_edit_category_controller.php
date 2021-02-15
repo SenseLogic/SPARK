@@ -13,13 +13,13 @@ class DO_EDIT_CATEGORY_CONTROLLER extends CONTROLLER
     {
         parent::__construct();
 
-         $name = GetPostValue( 'Name' );
          $slug = GetPostValue( 'Slug' );
+         $name = GetPostValue( 'Name' );
          $text = GetPostValue( 'Text' );
          $image = GetPostValue( 'Image' );
          $number = GetPostValue( 'Number' );
 
-        SetDatabaseCategory( $category_id, $name, $slug, $text, $image, $number );
+        SetDatabaseCategory( $category_id, $slug, $name, $text, $image, $number );
 
         Redirect( '/admin/category' );
     }

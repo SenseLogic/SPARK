@@ -12,13 +12,13 @@ class DO_ADD_CATEGORY_CONTROLLER extends CONTROLLER
     {
         parent::__construct();
 
-         $name = GetPostValue( 'Name' );
          $slug = GetPostValue( 'Slug' );
+         $name = GetPostValue( 'Name' );
          $text = GetPostValue( 'Text' );
          $image = GetPostValue( 'Image' );
          $number = GetPostValue( 'Number' );
 
-        AddDatabaseCategory( $name, $slug, $text, $image, $number );
+        AddDatabaseCategory( $slug, $name, $text, $image, $number );
 
         Redirect( '/admin/category' );
     }

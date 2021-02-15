@@ -7,8 +7,8 @@
         var
             add_product_form,
             it_is_valid_add_product_form,
-            name_field,
             slug_field,
+            name_field,
             text_field,
             image_field,
             video_field,
@@ -17,23 +17,12 @@
         it_is_valid_add_product_form = true;
 
         add_product_form = document.AddProductForm;
-        name_field = add_product_form.Name;
         slug_field = add_product_form.Slug;
+        name_field = add_product_form.Name;
         text_field = add_product_form.Text;
         image_field = add_product_form.Image;
         video_field = add_product_form.Video;
         category_slug_field = add_product_form.CategorySlug;
-
-        if ( name_field.value !== "" )
-        {
-            name_field.classList.remove( "form-field-error" );
-        }
-        else
-        {
-            name_field.classList.add( "form-field-error" );
-
-            it_is_valid_add_product_form = false;
-        }
 
         if ( slug_field.value !== "" )
         {
@@ -42,6 +31,17 @@
         else
         {
             slug_field.classList.add( "form-field-error" );
+
+            it_is_valid_add_product_form = false;
+        }
+
+        if ( name_field.value !== "" )
+        {
+            name_field.classList.remove( "form-field-error" );
+        }
+        else
+        {
+            name_field.classList.add( "form-field-error" );
 
             it_is_valid_add_product_form = false;
         }
@@ -98,16 +98,16 @@
         <form class="form-centered" name="AddProductForm" onsubmit="return IsValidAddProductForm()" action="/admin/product/add" method="post">
             <div class="form-container">
                 <div class="form-field-name">
-                    Name :
-                </div>
-                <div>
-                    <input class="form-input" name="Name" type="text"/>
-                </div>
-                <div class="form-field-name">
                     Slug :
                 </div>
                 <div>
                     <input class="form-input" name="Slug" type="text"/>
+                </div>
+                <div class="form-field-name">
+                    Name :
+                </div>
+                <div>
+                    <input class="form-input" name="Name" type="text"/>
                 </div>
                 <div class="form-field-name">
                     Text :

@@ -12,13 +12,13 @@ class DO_ADD_CATEGORY_CONTROLLER extends CONTROLLER
     {
         parent::constructor();
 
-        var name = GetPostValue( 'Name' );
         var slug = GetPostValue( 'Slug' );
+        var name = GetPostValue( 'Name' );
         var text = GetPostValue( 'Text' );
         var image = GetPostValue( 'Image' );
         var number = GetPostValue( 'Number' );
 
-        AddDatabaseCategory( name, slug, text, image, number );
+        AddDatabaseCategory( slug, name, text, image, number );
 
         Redirect( '/admin/category' );
     }

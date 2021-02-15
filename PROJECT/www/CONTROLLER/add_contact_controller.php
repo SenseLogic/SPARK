@@ -36,8 +36,11 @@ class ADD_CONTACT_CONTROLLER extends CONTROLLER
 
     function SendEmails(
         string $name,
+        string $company,
         string $email,
-        string $message
+        string $phone,
+        string $subject,
+        string $message,
         )
     {
         SendEmail(
@@ -60,10 +63,10 @@ class ADD_CONTACT_CONTROLLER extends CONTROLLER
             'contact@spark.com',
             'Contact request from ' . $email . ' about Spark',
             "Name : " . $name
-            . "\nCompany : " . company
+            . "\nCompany : " . $company
             . "\nEmail : " . $email
-            . "\nPhone : " . phone
-            . "\nSubject : " . subject
+            . "\nPhone : " . $phone
+            . "\nSubject : " . $subject
             . "\nMessage : " . $message . "\n"
             );
     }

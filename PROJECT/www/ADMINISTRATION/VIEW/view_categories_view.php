@@ -3,10 +3,10 @@
     <div class="page-section form-section">
         <div class="form-container table-container category-table sortable-grid">
             <div class="form-column-name sortable-grid-column">
-                Name
+                Slug
             </div>
             <div class="form-column-name sortable-grid-column">
-                Slug
+                Name
             </div>
             <div class="form-column-name sortable-grid-column">
                 Text
@@ -22,10 +22,10 @@
             </div>
             <?php foreach ( $this->CategoryArray as  $category ) { ?>
                 <div class="sortable-grid-cell">
-                    <?php echo htmlspecialchars( $category->Name ); ?>
+                    <?php echo htmlspecialchars( $category->Slug ); ?>
                 </div>
                 <div class="sortable-grid-cell">
-                    <?php echo htmlspecialchars( $category->Slug ); ?>
+                    <?php echo htmlspecialchars( $category->Name ); ?>
                 </div>
                 <div class="sortable-grid-cell">
                     <?php echo htmlspecialchars( $category->Text ); ?>

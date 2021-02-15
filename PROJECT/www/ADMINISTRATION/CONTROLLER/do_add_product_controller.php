@@ -12,14 +12,14 @@ class DO_ADD_PRODUCT_CONTROLLER extends CONTROLLER
     {
         parent::__construct();
 
-         $name = GetPostValue( 'Name' );
          $slug = GetPostValue( 'Slug' );
+         $name = GetPostValue( 'Name' );
          $text = GetPostValue( 'Text' );
          $image = GetPostValue( 'Image' );
          $video = GetPostValue( 'Video' );
          $category_slug = GetPostValue( 'CategorySlug' );
 
-        AddDatabaseProduct( $name, $slug, $text, $image, $video, $category_slug );
+        AddDatabaseProduct( $slug, $name, $text, $image, $video, $category_slug );
 
         Redirect( '/admin/product' );
     }

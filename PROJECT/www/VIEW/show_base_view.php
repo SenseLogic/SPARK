@@ -29,7 +29,7 @@
     {
         window.SetScrollTop( 0 );
         ViewName = view_name;
-        SetRoute( "/" + ViewName + "/" );
+        SetRoute( "/<?php echo $this->LanguageCode; ?>/" + view_name + "/" );
         UpdateView();
     }
 

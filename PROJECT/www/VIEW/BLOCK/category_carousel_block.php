@@ -49,12 +49,11 @@
 
 
 
-
 <div id="category-carousel" class="category-carousel">
-    <div id="category-carousel-strip" class="category-carousel-strip-6-1">
+    <div id="category-carousel-strip" class="category-carousel-strip">
     <?php  for (  $category_index = 0; $category_index <= $this->CategoryCount; ++$category_index ) { ?>
         <?php  $category = $this->CategoryArray[ $category_index % $this->CategoryCount ]; ?>
-        <div class="category-carousel-slide-6 category-carousel-slide" style="background-image: url( '/upload/image/<?php echo $category->Image; ?>' )">
+        <div class="category-carousel-slide" style="background-image: url( '/upload/image/<?php echo $category->Image; ?>' )">
             <div class="category-carousel-slide-text">
                 <?php echo htmlspecialchars( $category->Text ); ?>
             </div>

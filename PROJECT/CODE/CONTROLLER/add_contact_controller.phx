@@ -36,8 +36,11 @@ class ADD_CONTACT_CONTROLLER extends CONTROLLER
 
     method SendEmails(
         string name,
+        string company,
         string email,
-        string message
+        string phone,
+        string subject,
+        string message,
         )
     {
         SendEmail(

@@ -15,7 +15,16 @@
                 <input id="name" name="Name" type="text" placeholder="Name"/>
             </div>
             <div>
+                <input id="company" name="Company" type="text" placeholder="Company"/>
+            </div>
+            <div>
                 <input id="email" name="Email" type="text" placeholder="Email"/>
+            </div>
+            <div>
+                <input id="phone" name="Phone" type="text" placeholder="Phone"/>
+            </div>
+            <div>
+                <input id="subject" name="Subject" type="text" placeholder="Subject"/>
             </div>
             <div>
                 <input id="message" name="Message" type="text" placeholder="Message"/>
@@ -49,8 +58,8 @@
             email_field,
             it_is_valid_add_contact_form,
             message_field,
-            subject_field,
-            consent_field;
+            phone_field,
+            subject_field;
 
         it_is_valid_add_contact_form = true;
 
@@ -58,9 +67,9 @@
         name_field = add_contact_form.Name;
         company_field = add_contact_form.Company;
         email_field = add_contact_form.Email;
+        phone_field = add_contact_form.Phone;
         subject_field = add_contact_form.Subject;
         message_field = add_contact_form.Message;
-        consent_field = add_contact_form.Consent;
         captcha_field = add_contact_form.Captcha;
 
         if ( name_field.value !== "" )
@@ -97,6 +106,17 @@
             it_is_valid_add_contact_form = false;
         }
 
+        if ( phone_field.value !== "" )
+        {
+            phone_field.classList.remove( "invalid" );
+        }
+        else
+        {
+            phone_field.classList.add( "invalid" );
+
+            it_is_valid_add_contact_form = false;
+        }
+
         if ( subject_field.value !== "" )
         {
             subject_field.classList.remove( "invalid" );
@@ -115,17 +135,6 @@
         else
         {
             message_field.classList.add( "invalid" );
-
-            it_is_valid_add_contact_form = false;
-        }
-
-        if ( consent_field.value !== "" )
-        {
-            consent_field.classList.remove( "invalid" );
-        }
-        else
-        {
-            consent_field.classList.add( "invalid" );
 
             it_is_valid_add_contact_form = false;
         }

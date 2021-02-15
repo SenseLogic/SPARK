@@ -7,8 +7,8 @@
         var
             edit_category_form,
             it_is_valid_edit_category_form,
-            name_field,
             slug_field,
+            name_field,
             text_field,
             image_field,
             number_field;
@@ -16,22 +16,11 @@
         it_is_valid_edit_category_form = true;
 
         edit_category_form = document.EditCategoryForm;
-        name_field = edit_category_form.Name;
         slug_field = edit_category_form.Slug;
+        name_field = edit_category_form.Name;
         text_field = edit_category_form.Text;
         image_field = edit_category_form.Image;
         number_field = edit_category_form.Number;
-
-        if ( name_field.value !== "" )
-        {
-            name_field.classList.remove( "form-field-error" );
-        }
-        else
-        {
-            name_field.classList.add( "form-field-error" );
-
-            it_is_valid_edit_category_form = false;
-        }
 
         if ( slug_field.value !== "" )
         {
@@ -40,6 +29,17 @@
         else
         {
             slug_field.classList.add( "form-field-error" );
+
+            it_is_valid_edit_category_form = false;
+        }
+
+        if ( name_field.value !== "" )
+        {
+            name_field.classList.remove( "form-field-error" );
+        }
+        else
+        {
+            name_field.classList.add( "form-field-error" );
 
             it_is_valid_edit_category_form = false;
         }
@@ -85,16 +85,16 @@
         <form class="form-centered" name="EditCategoryForm" onsubmit="return IsValidEditCategoryForm()" action="/admin/category/edit/<?php echo htmlspecialchars( $this->Category->Id ); ?>" method="post">
             <div class="form-container">
                 <div class="form-field-name">
-                    Name :
-                </div>
-                <div>
-                    <input class="form-input" name="Name" type="text" value="<?php echo htmlspecialchars( $this->Category->Name ); ?>"/>
-                </div>
-                <div class="form-field-name">
                     Slug :
                 </div>
                 <div>
                     <input class="form-input" name="Slug" type="text" value="<?php echo htmlspecialchars( $this->Category->Slug ); ?>"/>
+                </div>
+                <div class="form-field-name">
+                    Name :
+                </div>
+                <div>
+                    <input class="form-input" name="Name" type="text" value="<?php echo htmlspecialchars( $this->Category->Name ); ?>"/>
                 </div>
                 <div class="form-field-name">
                     Text :
