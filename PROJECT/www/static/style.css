@@ -361,70 +361,70 @@ sup {
   margin-right: auto;
   margin-left: auto;
 }
-.container-margined-large {
+.large-container-margined {
   margin-left: 20px;
   margin-right: 20px;
 }
 @media (min-width: 40em) {
-  .container-margined-large {
+  .large-container-margined {
     margin-left: 40px;
     margin-right: 40px;
   }
 }
 @media (min-width: 60em) {
-  .container-margined-large {
+  .large-container-margined {
     margin-left: 80px;
     margin-right: 80px;
   }
 }
 @media (min-width: 80em) {
-  .container-margined-large {
+  .large-container-margined {
     margin-left: 120px;
     margin-right: 120px;
   }
 }
 @media (min-width: 100em) {
-  .container-margined-large {
+  .large-container-margined {
     margin-left: 160px;
     margin-right: 160px;
   }
 }
 @media (min-width: 120em) {
-  .container-margined-large {
+  .large-container-margined {
     margin-left: 200px;
     margin-right: 200px;
   }
 }
-.container-margined-narrow {
+.narrow-container-margined {
   margin-left: 20px;
   margin-right: 20px;
 }
 @media (min-width: 40em) {
-  .container-margined-narrow {
+  .narrow-container-margined {
     margin-left: 80px;
     margin-right: 80px;
   }
 }
 @media (min-width: 60em) {
-  .container-margined-narrow {
+  .narrow-container-margined {
     margin-left: 120px;
     margin-right: 120px;
   }
 }
 @media (min-width: 80em) {
-  .container-margined-narrow {
+  .narrow-container-margined {
     margin-left: 160px;
     margin-right: 160px;
   }
 }
 @media (min-width: 100em) {
-  .container-margined-narrow {
+  .narrow-container-margined {
     margin-left: 200px;
     margin-right: 200px;
   }
 }
 @media (min-width: 120em) {
-  .container-margined-narrow {
+  .narrow-container-margined {
     margin-left: 240px;
     margin-right: 240px;
   }
@@ -835,6 +835,9 @@ sup {
   top: 50%;
   right: 4rem;
   transform: translateY(-50%);
+}
+.add-contact-form-captcha-image {
+  height: 3rem;
 }
 .invalid {
   outline: #f00 solid 1px;

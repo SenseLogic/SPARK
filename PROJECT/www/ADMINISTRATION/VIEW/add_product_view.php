@@ -123,7 +123,7 @@
                     <div class="form-upload-container">
                         <img class="form-upload-image" src="" onerror="this.src='/upload/image/missing_image.svg'"/>
                         <label class="form-upload-button">
-                            <img class="form-upload-icon" src="/static/image/icon/admin/upload_icon.svg"/><input id="file" class="form-upload-file" type="file" accept="image/jpeg, image/png, image/webp, image/gif, image/svg" onchange="HandleImageFileInputChangeEvent( this )"/>
+                            <img class="form-upload-icon" src="/static/image/admin/upload_icon.svg"/><input id="file" class="form-upload-file" type="file" accept="image/jpeg, image/png, image/webp, image/gif, image/svg" onchange="HandleImageFileInputChangeEvent( this )"/>
                         </label>
                     </div>
                 </div>
@@ -135,7 +135,7 @@
                     <div class="form-upload-container">
                         <video class="form-upload-video" src="" type="video/mp4" onerror="this.src='/upload/video/missing_video.mp4'"></video>
                         <label class="form-upload-button">
-                            <img class="form-upload-icon" src="/static/image/icon/admin/upload_icon.svg"/><input id="file" class="form-upload-file" type="file" accept="video/mp4" onchange="HandleVideoFileInputChangeEvent( this )"/>
+                            <img class="form-upload-icon" src="/static/image/admin/upload_icon.svg"/><input id="file" class="form-upload-file" type="file" accept="video/mp4" onchange="HandleVideoFileInputChangeEvent( this )"/>
                         </label>
                     </div>
                 </div>
