@@ -1,6 +1,6 @@
 <style file="category_carousel.styl">
     MakeCarousel( "category-" );
-    MakeCarouselStrip( "category-" );
+    MakeCarouselStrip( 1, 1, "category-" );
 
     // ~~
 
