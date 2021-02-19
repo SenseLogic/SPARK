@@ -6,10 +6,10 @@ git pull origin master
 dmd -m64 -L/Brepro basil.d
 del basil.obj
 cd ..
-cd CHYLE
+cd CYLUS
 git pull origin master
-dmd -m64 -L/Brepro chyle.d
-del chyle.obj
+dmd -m64 -L/Brepro cylus.d
+del cylus.obj
 cd ..
 cd GENERIS
 git pull origin master
