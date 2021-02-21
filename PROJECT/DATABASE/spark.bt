@@ -7,7 +7,7 @@ import 'FRAMEWORK/random.php';
 import 'FRAMEWORK/text.php';
 import 'FRAMEWORK/path.php';
 import 'FRAMEWORK/file.php';
-import 'FRAMEWORK/date.php';
+import 'FRAMEWORK/time.php';
 import 'FRAMEWORK/request.php';
 import 'FRAMEWORK/session.php';
 import 'FRAMEWORK/language.php';

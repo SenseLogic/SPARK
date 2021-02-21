@@ -6,7 +6,7 @@ require_once __DIR__ . '/' . 'FRAMEWORK/random.php';
 require_once __DIR__ . '/' . 'FRAMEWORK/text.php';
 require_once __DIR__ . '/' . 'FRAMEWORK/path.php';
 require_once __DIR__ . '/' . 'FRAMEWORK/file.php';
-require_once __DIR__ . '/' . 'FRAMEWORK/date.php';
+require_once __DIR__ . '/' . 'FRAMEWORK/time.php';
 require_once __DIR__ . '/' . 'FRAMEWORK/request.php';
 require_once __DIR__ . '/' . 'FRAMEWORK/session.php';
 require_once __DIR__ . '/' . 'FRAMEWORK/language.php';

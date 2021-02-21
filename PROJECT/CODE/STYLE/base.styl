@@ -1,0 +1,168 @@
+// -- IMPORTS
+
+@import "VISTA/vista_reset.styl"
+@import "VISTA/vista.styl"
+
+// -- CONSTANTS
+
+BlackColor = #000000;
+DarkestGrayColor = #202020;
+DarkerGrayColor = #404040;
+DarkGrayColor = #808080;
+GrayColor = #A0A0A0;
+LightGrayColor = #C0C0C0;
+LighterGrayColor = #F0F0F0;
+LightestGrayColor = #F8F8F8;
+WhiteColor = #FFFFFF;
+RedColor = #FF0000;
+BlueColor = #0000FF;
+
+// ~~
+
+LargeContainerMarginMap = {
+    above-40em: 40px,
+    above-60em: 80px,
+    above-80em: 120px,
+    above-100em: 160px,
+    above-120em: 200px
+};
+
+// ~~
+
+NarrowContainerMarginMap = {
+    above-40em: 80px,
+    above-60em: 120px,
+    above-80em: 160px,
+    above-100em: 200px,
+    above-120em: 240px
+};
+
+// -- ELEMENTS
+
+html
+{
+    font-size: 1rem;
+}
+
++Media( above-90em )
+{
+    html
+    {
+        font-size: 1.1rem;
+    }
+}
+
++Media( above-100em )
+{
+    html
+    {
+        font-size: 1.2rem;
+    }
+}
+
++Media( above-110em )
+{
+    html
+    {
+        font-size: 1.3rem;
+    }
+}
+
++Media( above-120em )
+{
+    html
+    {
+        font-size: 1.4rem;
+    }
+}
+
+html
+{
+    height: 100%;
+    min-height: 100%;
+}
+
+body
+{
+    height: 100%;
+    min-height: 100%;
+    background-color: WhiteColor;
+}
+
+body,
+body *,
+button,
+input,
+textarea
+{
+    font-family: "Ubuntu", sans-serif !important;
+}
+
+sup
+{
+    position: relative;
+    font-size: 0.5em;
+    top: -0.7em;
+    vertical-align: baseline;
+}
+
+// -- CLASSES
+
+MakeContainerExtended();
+MakeContainerMarginedValue( 20px, LargeContainerMarginMap, above-40em above-60em above-80em above-100em above-120em, "large-" );
+MakeContainerMarginedValue( 20px, NarrowContainerMarginMap, above-40em above-60em above-80em above-100em above-120em, "narrow-" );
+MakeDisplayNone();
+MakeDisplayFlex();
+MakeDisplayHidden();
+MakeFlexDirectionRow();
+MakeFlexDirectionColumn();
+MakeFlexGrowValue( 1 );
+MakeJustifyContentStart();
+MakeJustifyContentCenter();
+MakeJustifyContentSpaceBetween();
+MakeJustifyContentEnd();
+MakeAlignItemsStart();
+MakeAlignItemsCenter();
+MakeAlignItemsEnd();
+MakeMarginLateralValue( 8, 1px, "px" );
+MakeMarginLateralValue( 16, 1px, "px" );
+MakeMarginVerticalValue( 8, 1px, "px" );
+MakeMarginVerticalValue( 16, 1px, "px" );
+MakePaddingLateralValue( 8, 1px, "px" );
+MakePaddingLateralValue( 16, 1px, "px" );
+MakePaddingVerticalValue( 8, 1px, "px" );
+MakePaddingVerticalValue( 16, 1px, "px" );
+MakeHeightAuto();
+MakeHeightValue( 100, 1%, "\%" );
+MakeHeightAuto();
+MakeMinHeightValue( 100, 1vh, "vh" );
+MakeWidthValue( 100, 1%, "\%" );
+MakeFractionalWidthValueRange( 12 );
+MakeFontSizeValue( 12, 1px, "px" );
+MakeFontSizeValue( 16, 1px, "px" );
+MakeFontSizeValue( 20, 1px, "px" );
+MakeFontSizeValue( 24, 1px, "px" );
+MakeFontWeightValueRange( 100, 100, 9 );
+MakeTextColorValue( "black", BlackColor );
+MakeTextColorValue( "darkest-gray", DarkestGrayColor );
+MakeTextColorValue( "darker-gray", DarkerGrayColor );
+MakeTextColorValue( "dark-gray", DarkGrayColor );
+MakeTextColorValue( "gray", GrayColor );
+MakeTextColorValue( "light-gray", LightGrayColor );
+MakeTextColorValue( "lighter-gray", LighterGrayColor );
+MakeTextColorValue( "lightest-gray", LightestGrayColor );
+MakeTextColorValue( "white", WhiteColor );
+MakeTextColorValue( "red", RedColor );
+MakeTextColorValue( "blue", BlueColor );
+MakeBackgroundColorValue( "black", BlackColor );
+MakeBackgroundColorValue( "darkest-gray", DarkestGrayColor );
+MakeBackgroundColorValue( "darker-gray", DarkerGrayColor );
+MakeBackgroundColorValue( "dark-gray", DarkGrayColor );
+MakeBackgroundColorValue( "gray", GrayColor );
+MakeBackgroundColorValue( "light-gray", LightGrayColor );
+MakeBackgroundColorValue( "lighter-gray", LighterGrayColor );
+MakeBackgroundColorValue( "lightest-gray", LightestGrayColor );
+MakeBackgroundColorValue( "white", WhiteColor );
+MakeBackgroundColorValue( "red", RedColor );
+MakeBackgroundColorValue( "blue", BlueColor );
+MakeObjectFitCover();

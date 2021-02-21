@@ -9,6 +9,14 @@ function SetTimeZone(
 
 // ~~
 
+function GetTimeZone(
+    )
+{
+    return date_default_timezone_get();
+}
+
+// ~~
+
 function GetCurrentTimestamp(
     )
 {
