@@ -1,5 +1,6 @@
 #/CODE/FRAMEWORK/*.ph?
 /CODE/STYLE/VISTA/vista*.*
+/DATABASE/*.sql
 /www/php.log
 /www/FRAMEWORK/*.*
 /www/static/script/vista*.*

@@ -5,22 +5,22 @@ import '../../MODEL/category_model.php';
 
 // -- TYPES
 
-class VIEW_CATEGORYS_CONTROLLER extends CONTROLLER
+class VIEW_CATEGORIES_CONTROLLER extends CONTROLLER
 {
     method constructor(
         )
     {
         parent::constructor();
 
-        .Title = 'View categorys';
+        .Title = 'View categories';
         .CategoryArray = GetDatabaseCategoryArray();
 
         SetSessionValue( 'PreviousPage', GetRequest() );
 
-        import '../VIEW/view_categorys_view.php';
+        import '../VIEW/view_categories_view.php';
     }
 }
 
 // -- STATEMENTS
 
-var view_categorys_controller = new VIEW_CATEGORIES_CONTROLLER();
+var view_categories_controller = new VIEW_CATEGORIES_CONTROLLER();

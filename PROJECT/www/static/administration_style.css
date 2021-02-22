@@ -534,11 +534,11 @@ textarea:focus {
 .category-table {
   grid-template-columns: repeat(6, auto);
 }
-.article-table {
+.product-table {
   grid-template-columns: repeat(7, auto);
 }
 .contact-table {
-  grid-template-columns: repeat(5, auto);
+  grid-template-columns: repeat(8, auto);
 }
 .user-table {
   grid-template-columns: repeat(5, auto);

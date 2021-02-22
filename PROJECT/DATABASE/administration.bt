@@ -187,25 +187,25 @@ import '../../MODEL/{#variable#}_model.php';
 
 // -- TYPES
 
-class VIEW_{#type#}S_CONTROLLER extends CONTROLLER
+class VIEW_<~Plural<>{#type#}~>_CONTROLLER extends CONTROLLER
 {
     method constructor(
         )
     {
         parent::constructor();
 
-        .Title = 'View {#locution#}s';
+        .Title = 'View <~Plural<>{#locution#}~>';
         .{#attribute#}Array = GetDatabase{#attribute#}Array();
 
         SetSessionValue( 'PreviousPage', GetRequest() );
 
-        import '../VIEW/view_{#variable#}s_view.php';
+        import '../VIEW/view_<~Plural<>{#variable#}~>_view.php';
     }
 }
 
 // -- STATEMENTS
 
-var view_{#variable#}s_controller = new VIEW_<~Plural<>{#type#}~>_CONTROLLER();
+var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CONTROLLER();
 %%PHX/ADMINISTRATION/VIEW/add_{#variable#}_view.pht
 <? include 'BLOCK/page_header_block.php' ?>
 <script>

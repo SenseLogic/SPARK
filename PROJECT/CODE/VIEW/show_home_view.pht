@@ -1,3 +1,5 @@
+<style file="home.styl">
+</style>
 <div class="container-extended view" data-view-name="home">
     <? import 'BLOCK/category_carousel_block.php'; ?>
 </div>
