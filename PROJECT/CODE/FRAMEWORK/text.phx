@@ -133,8 +133,123 @@ function GetIncrementedText(
 {
     static local
         counter = 0;
-        
+
     ++counter;
-    
+
     return prefix .. counter .. suffix;
+}
+
+// ~~
+
+function GetBareText(
+    string text
+    )
+{
+    return
+        str_replace(
+            [
+                '[nbsp]',
+                '[br]',
+                '[div]',
+                '[div[',
+                '[/div]',
+                '[span]',
+                '[span[',
+                '[/span]',
+                '[p]',
+                '[p[',
+                '[/p]',
+                '[ul]',
+                '[ul[',
+                '[/ul]',
+                '[li]',
+                '[li[',
+                '[/li]',
+                '[a[',
+                '[/a]',
+                '[color[',
+                '[/color]',
+                ']]',
+                '[b]',
+                '[/b]',
+                '[i]',
+                '[/i]'
+            ],
+            '',
+            text
+            );
+}
+
+// ~~
+
+function GetProcessedText(
+    string text
+    )
+{
+    return
+        str_replace(
+            [
+                '<',
+                '>',
+                '&',
+                '[nbsp]',
+                '[br]',
+                '[div]',
+                '[div[',
+                '[/div]',
+                '[span]',
+                '[span[',
+                '[/span]',
+                '[p]',
+                '[p[',
+                '[/p]',
+                '[ul]',
+                '[ul[',
+                '[/ul]',
+                '[li]',
+                '[li[',
+                '[/li]',
+                '[a[',
+                '[/a]',
+                '[color[',
+                '[/color]',
+                ']]',
+                '[b]',
+                '[/b]',
+                '[i]',
+                '[/i]'
+            ],
+            [
+                '&lt;',
+                '&gt;',
+                '&amp;',
+                '&nbsp;',
+                '<br/>',
+                '<div>',
+                '<div class="',
+                '</div>',
+                '<span>',
+                '<span class="',
+                '</span>',
+                '<p>',
+                '<p class="',
+                '</p>',
+                '<ul>',
+                '<ul class="',
+                '</ul>',
+                '<li>',
+                '<li class="',
+                '</li>',
+                '<a href="',
+                '</a>',
+                '<span class="text-color-',
+                '</span>',
+                '">',
+                '<b>',
+                '</b>',
+                '<i>',
+                '</i>'
+            ],
+            text
+            );
 }
