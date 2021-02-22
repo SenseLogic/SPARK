@@ -8,7 +8,7 @@ Phoenix microframework and project template.
 
 ### Simplicity and efficiency
 
-Unlike huge frameworks like Laravel and Symphony which provide dozens of classes to manage both the web and database requests,
+Unlike huge frameworks like Laravel and Symphony which provide extensive lists of classes to manage both the web and database requests,
 Spark is just a small collection of reusable procedural functions wrapping and extending the PHP standard library in order to improve its ease of use.
 
 ### Readability and conciseness
