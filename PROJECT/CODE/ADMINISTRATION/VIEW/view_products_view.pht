@@ -1,4 +1,4 @@
-<? include 'BLOCK/page_header_block.php' ?>
+<? include 'BLOCK/page_header_block.php'; ?>
 <div>
     <div class="page-section form-section">
         <div class="form-container table-container product-table sortable-grid">
@@ -18,7 +18,7 @@
                 Video
             </div>
             <div class="form-column-name sortable-grid-column">
-                Category Slug
+                Department Slug
             </div>
             <div class="form-column-name sortable-grid-column">
                 Action
@@ -40,7 +40,7 @@
                     <% product.Video %>
                 </div>
                 <div class="sortable-grid-cell">
-                    <% product.CategorySlug %>
+                    <% product.DepartmentSlug %>
                 </div>
                 <div class="form-centered sortable-grid-cell">
                     <a class="form-button view-button" href="/admin/product/view/<% product.Id %>">
@@ -59,4 +59,4 @@
     </div>
 </div>
 <? import '../../FRAMEWORK/sortable_grid.php'; ?>
-<? include 'BLOCK/page_footer_block.php' ?>
+<? include 'BLOCK/page_footer_block.php'; ?>

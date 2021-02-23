@@ -12,11 +12,17 @@
                         <a href="/admin/text">
                             <span class="form-button form-button-large text-button">
                             </span>
+                            <span class="form-button-tooltip">
+                                Text
+                            </span>
                         </a>
                     </div>
                     <div class="page-menu-item">
-                        <a href="/admin/category">
-                            <span class="form-button form-button-large category-button">
+                        <a href="/admin/department">
+                            <span class="form-button form-button-large department-button">
+                            </span>
+                            <span class="form-button-tooltip">
+                                Department
                             </span>
                         </a>
                     </div>
@@ -24,11 +30,17 @@
                         <a href="/admin/product">
                             <span class="form-button form-button-large product-button">
                             </span>
+                            <span class="form-button-tooltip">
+                                Product
+                            </span>
                         </a>
                     </div>
                     <div class="page-menu-item">
                         <a href="/admin/contact">
                             <span class="form-button form-button-large contact-button">
+                            </span>
+                            <span class="form-button-tooltip">
+                                Contact
                             </span>
                         </a>
                     </div>
@@ -37,12 +49,18 @@
                             <a href="/admin/user">
                                 <span class="form-button form-button-large user-button">
                                 </span>
+                                <span class="form-button-tooltip">
+                                    User
+                                </span>
                             </a>
                         </div>
                     <?php } ?>
                     <div class="page-menu-item">
                         <a href="/admin/disconnect">
                             <span class="form-button form-button-large disconnect-button">
+                            </span>
+                            <span class="form-button-tooltip">
+                                Disconnect
                             </span>
                         </a>
                     </div>

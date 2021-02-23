@@ -44,24 +44,24 @@ class ADD_CONTACT_CONTROLLER extends CONTROLLER
         )
     {
         SendEmail(
-            'mail.spark.com',
+            'mail.spark-project.com',
             25,
-            'contact@spark.com',
+            'contact@spark-project.com',
             'xyz',
-            'contact@spark.com',
+            'contact@spark-project.com',
             email,
-            'spark.com',
-            "Hi,\n\nThank you for your interest in Spark :)\n\nBest regards,\n\nThe Spark team\n"
+            'spark-project.com',
+            "Hi,\n\nThank you for your interest in Spark Project :)\n\nBest regards,\n\nThe Spark Project team\n"
             );
 
         SendEmail(
-            'mail.spark.com',
+            'mail.spark-project.com',
             25,
-            'contact@spark.com',
+            'contact@spark-project.com',
             'xyz',
-            'contact@spark.com',
-            'contact@spark.com',
-            'Contact request from ' .. email .. ' about Spark',
+            'contact@spark-project.com',
+            'contact@spark-project.com',
+            'Contact request from ' .. email .. ' about Spark Project',
             "Name : " .. name
             .. "\nCompany : " .. company
             .. "\nEmail : " .. email

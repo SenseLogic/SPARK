@@ -12,7 +12,7 @@
             text_field,
             image_field,
             video_field,
-            category_slug_field;
+            department_slug_field;
 
         it_is_valid_edit_product_form = true;
 
@@ -22,7 +22,7 @@
         text_field = edit_product_form.Text;
         image_field = edit_product_form.Image;
         video_field = edit_product_form.Video;
-        category_slug_field = edit_product_form.CategorySlug;
+        department_slug_field = edit_product_form.DepartmentSlug;
 
         if ( slug_field.value !== "" )
         {
@@ -79,13 +79,13 @@
             it_is_valid_edit_product_form = false;
         }
 
-        if ( category_slug_field.value !== "" )
+        if ( department_slug_field.value !== "" )
         {
-            category_slug_field.classList.remove( "form-field-error" );
+            department_slug_field.classList.remove( "form-field-error" );
         }
         else
         {
-            category_slug_field.classList.add( "form-field-error" );
+            department_slug_field.classList.add( "form-field-error" );
 
             it_is_valid_edit_product_form = false;
         }
@@ -119,9 +119,9 @@
                     Image :
                 </div>
                 <div>
-                    <input class="form-input" name="Image" type="text" value="<?php echo htmlspecialchars( $this->Product->Image ); ?>" oninput="HandleImageNameInputChangeEvent( this )"/>
+                    <input class="form-input" name="Image" type="text" value="<?php echo htmlspecialchars( $this->Product->Image ); ?>" oninput="HandleImagePathInputChangeEvent( this )"/>
                     <div class="form-upload-container">
-                        <img class="form-upload-image" src="/upload/image/<?php echo htmlspecialchars( $this->Product->Image ); ?>" onerror="this.src='/upload/image/missing_image.svg'"/>
+                        <img class="form-upload-image" src="<?php echo htmlspecialchars( $this->Product->Image ); ?>" onerror="this.src='/static/image/admin/missing_image.svg'"/>
                         <label class="form-upload-button">
                             <img class="form-upload-icon" src="/static/image/admin/upload_icon.svg"/><input id="file" class="form-upload-file" type="file" accept="image/jpeg, image/png, image/webp, image/gif, image/svg" onchange="HandleImageFileInputChangeEvent( this )"/>
                         </label>
@@ -131,19 +131,19 @@
                     Video :
                 </div>
                 <div>
-                    <input class="form-input" name="Video" type="text" value="<?php echo htmlspecialchars( $this->Product->Video ); ?>" oninput="HandleVideoNameInputChangeEvent( this )"/>
+                    <input class="form-input" name="Video" type="text" value="<?php echo htmlspecialchars( $this->Product->Video ); ?>" oninput="HandleVideoPathInputChangeEvent( this )"/>
                     <div class="form-upload-container">
-                        <video class="form-upload-video" src="/upload/video/<?php echo htmlspecialchars( $this->Product->Video ); ?>" type="video/mp4" onerror="this.src='/upload/video/missing_video.mp4'"></video>
+                        <video class="form-upload-video" src="<?php echo htmlspecialchars( $this->Product->Video ); ?>" type="video/mp4" onerror="this.src='/static/video/admin/missing_video.mp4'"></video>
                         <label class="form-upload-button">
                             <img class="form-upload-icon" src="/static/image/admin/upload_icon.svg"/><input id="file" class="form-upload-file" type="file" accept="video/mp4" onchange="HandleVideoFileInputChangeEvent( this )"/>
                         </label>
                     </div>
                 </div>
                 <div class="form-field-name">
-                    Category Slug :
+                    Department Slug :
                 </div>
                 <div>
-                    <input class="form-input" name="CategorySlug" type="text" value="<?php echo htmlspecialchars( $this->Product->CategorySlug ); ?>"/>
+                    <input class="form-input" name="DepartmentSlug" type="text" value="<?php echo htmlspecialchars( $this->Product->DepartmentSlug ); ?>"/>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="/admin/product">
                 </a>

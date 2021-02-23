@@ -27,7 +27,7 @@
                 <div>
                     <input class="form-input" name="Image" type="text" value="<?php echo htmlspecialchars( $this->Product->Image ); ?>" readonly/>
                     <div class="form-upload-container">
-                        <img class="form-upload-image" src="/upload/image/<?php echo htmlspecialchars( $this->Product->Image ); ?>" onerror="this.src='/upload/image/missing_image.svg'"/>
+                        <img class="form-upload-image" src="<?php echo htmlspecialchars( $this->Product->Image ); ?>" onerror="this.src='/static/image/admin/missing_image.svg'"/>
                     </div>
                 </div>
                 <div class="form-field-name">
@@ -36,14 +36,14 @@
                 <div>
                     <input class="form-input" name="Video" type="text" value="<?php echo htmlspecialchars( $this->Product->Video ); ?>" readonly/>
                     <div class="form-upload-container">
-                        <video class="form-upload-video" src="/upload/video/<?php echo htmlspecialchars( $this->Product->Video ); ?>" type="video/mp4" onerror="this.src='/upload/video/missing_video.mp4'"></video>
+                        <video class="form-upload-video" src="<?php echo htmlspecialchars( $this->Product->Video ); ?>" type="video/mp4" onerror="this.src='/static/video/admin/missing_video.mp4'"></video>
                     </div>
                 </div>
                 <div class="form-field-name">
-                    Category Slug :
+                    Department Slug :
                 </div>
                 <div>
-                    <input class="form-input" name="CategorySlug" type="text" value="<?php echo htmlspecialchars( $this->Product->CategorySlug ); ?>" readonly/>
+                    <input class="form-input" name="DepartmentSlug" type="text" value="<?php echo htmlspecialchars( $this->Product->DepartmentSlug ); ?>" readonly/>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="/admin/product">
                 </a>

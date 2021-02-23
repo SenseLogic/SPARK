@@ -2,7 +2,7 @@
 
 import 'view_controller.php';
 import '../MODEL/product_model.php';
-import '../MODEL/category_model.php';
+import '../MODEL/department_model.php';
 import '../MODEL/text_model.php';
 
 // -- TYPES
@@ -17,8 +17,8 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
         parent::constructor( language_code );
         .ViewName = view_name;
 
-        .CategoryArray = GetDatabaseCategoryArray();
-        .CategoryCount = count( .CategoryArray );
+        .DepartmentArray = GetDatabaseDepartmentArray();
+        .DepartmentCount = count( .DepartmentArray );
         .ProductArray = GetDatabaseProductArray();
         .ProductCount = count( .ProductArray );
 

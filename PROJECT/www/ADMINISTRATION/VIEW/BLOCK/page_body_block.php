@@ -4,20 +4,20 @@
 <script src="/static/script/vista_animation.js"></script>
 <script src="/static/script/vista_request.js"></script>
 <script>
-    function HandleImageNameInputChangeEvent(
+    function HandleImagePathInputChangeEvent(
         path_element
         )
     {
-        path_element.nextElementSibling.firstElementChild.src = "/upload/image/" + path_element.value;
+        path_element.nextElementSibling.firstElementChild.src = path_element.value;
     }
 
     // ~~
 
-    function HandleVideoNameInputChangeEvent(
+    function HandleVideoPathInputChangeEvent(
         path_element
         )
     {
-        path_element.nextElementSibling.firstElementChild.src = "/upload/video/" + path_element.value;
+        path_element.nextElementSibling.firstElementChild.src = path_element.value;
     }
 
     // ~~
@@ -40,7 +40,7 @@
             if ( request.status === 201 )
             {
                 file_path = GetJsonObject( request.response );
-                file_element.parentElement.previousElementSibling.src = "/upload/image/" + file_path;
+                file_element.parentElement.previousElementSibling.src = file_path;
                 file_element.parentElement.parentElement.previousElementSibling.value = file_path;
             }
         }
@@ -66,7 +66,7 @@
             if ( request.status === 201 )
             {
                 file_path = GetJsonObject( request.response );
-                file_element.parentElement.previousElementSibling.src = "/upload/video/" + file_path;
+                file_element.parentElement.previousElementSibling.src = file_path;
                 file_element.parentElement.parentElement.previousElementSibling.value = file_path;
             }
         }

@@ -1,0 +1,43 @@
+<? include 'BLOCK/page_header_block.php'; ?>
+<div>
+    <div class="page-section form-section">
+        <div class="form-container">
+            <div class="form-field-name">
+                Slug :
+            </div>
+            <div>
+                    <input class="form-input" name="Slug" type="text" value="<% .Department.Slug %>" readonly/>
+            </div>
+            <div class="form-field-name">
+                Name :
+            </div>
+            <div>
+                    <input class="form-input" name="Name" type="text" value="<% .Department.Name %>" readonly/>
+            </div>
+            <div class="form-field-name">
+                Text :
+            </div>
+            <div>
+                    <textarea class="form-textarea" name="Text" readonly><% .Department.Text %></textarea>
+            </div>
+            <div class="form-field-name">
+                Image :
+            </div>
+            <div>
+                <input class="form-input" name="Image" type="text" value="<% .Department.Image %>" readonly/>
+                <div class="form-upload-container">
+                    <img class="form-upload-image" src="<% .Department.Image %>" onerror="this.src='/static/image/admin/missing_image.svg'"/>
+                </div>
+            </div>
+            <div class="form-field-name">
+                Number :
+            </div>
+            <div>
+                    <input class="form-input" name="Number" type="text" value="<% .Department.Number %>" readonly/>
+            </div>
+            <a class="justify-self-start form-button form-button-large cancel-button" href="<% .PreviousPage %>">
+            </a>
+        </div>
+    </div>
+</div>
+<? include 'BLOCK/page_footer_block.php'; ?>

@@ -1,0 +1,23 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/department_model.php';
+
+// -- TYPES
+
+class ADD_DEPARTMENT_CONTROLLER extends CONTROLLER
+{
+    method constructor(
+        )
+    {
+        parent::constructor();
+
+        .Title = 'Add a department';
+
+        import '../VIEW/add_department_view.php';
+    }
+}
+
+// -- STATEMENTS
+
+var add_department_controller = new ADD_DEPARTMENT_CONTROLLER();

@@ -17,9 +17,9 @@ class DO_ADD_PRODUCT_CONTROLLER extends CONTROLLER
          $text = GetPostValue( 'Text' );
          $image = GetPostValue( 'Image' );
          $video = GetPostValue( 'Video' );
-         $category_slug = GetPostValue( 'CategorySlug' );
+         $department_slug = GetPostValue( 'DepartmentSlug' );
 
-        AddDatabaseProduct( $slug, $name, $text, $image, $video, $category_slug );
+        AddDatabaseProduct( $slug, $name, $text, $image, $video, $department_slug );
 
         Redirect( '/admin/product' );
     }

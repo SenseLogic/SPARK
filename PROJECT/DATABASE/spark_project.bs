@@ -1,0 +1,45 @@
+spark-project
+
+    TEXT | dropped, count 5
+
+        Id : UINT32 | key, unique, incremented
+        Slug : STRING | indexed
+        Text : STRING | is_text
+
+    DEPARTMENT | sorted, dropped, count 5
+
+        Id : UINT32 | key, unique, incremented
+        Slug : STRING = "{{Name:slug_case}}"
+        Name : STRING
+        Text : STRING = "{{english 2 4 5 10}}" | is_text
+        Image : STRING = "/static/image/test/beach.jpg|/static/image/test/palm_tree.jpg|/static/image/test/surfer.jpg" | is_image
+        Number : INT32 | ascending
+
+    PRODUCT | dropped, count 10
+
+        Id : UINT32 | key, unique, incremented
+        Slug : STRING = "{{Name:slug_case}}"
+        Name : STRING
+        Text : STRING = "{{english 2 4 5 10}}" | is_text
+        Image : STRING = "/static/image/test/beach.jpg|/static/image/test/palm_tree.jpg|/static/image/test/surfer.jpg" | is_image
+        Video : STRING = "/static/video/test/train.mp4|/static/video/test/bus.mp4" | is_video
+        DepartmentSlug : DEPARTMENT.Slug
+
+    CONTACT | sorted, count 5
+
+        Id : UINT32 | key, unique, incremented
+        Name : STRING
+        Company : STRING
+        Email : STRING
+        Phone : STRING
+        Subject : STRING
+        Message : STRING | is_text
+        DateTime : DATETIME | now, descending
+
+    USER | sorted, dropped, count 5
+
+        Id : UINT32 | key, unique, incremented, ascending, mapped
+        Email : STRING
+        Pseudonym : STRING
+        Password : STRING
+        Role : STRING

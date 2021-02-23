@@ -2,7 +2,7 @@
 
 require_once __DIR__ . '/' . 'view_controller.php';
 require_once __DIR__ . '/' . '../MODEL/product_model.php';
-require_once __DIR__ . '/' . '../MODEL/category_model.php';
+require_once __DIR__ . '/' . '../MODEL/department_model.php';
 require_once __DIR__ . '/' . '../MODEL/text_model.php';
 
 // -- TYPES
@@ -17,8 +17,8 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
         parent::__construct( $language_code );
         $this->ViewName = $view_name;
 
-        $this->CategoryArray = GetDatabaseCategoryArray();
-        $this->CategoryCount = count( $this->CategoryArray );
+        $this->DepartmentArray = GetDatabaseDepartmentArray();
+        $this->DepartmentCount = count( $this->DepartmentArray );
         $this->ProductArray = GetDatabaseProductArray();
         $this->ProductCount = count( $this->ProductArray );
 

@@ -21,7 +21,7 @@ class UPLOAD_VIDEO_CONTROLLER extends CONTROLLER
             if ( MoveUploadedFile( $source_file_path, $target_file_path ) )
             {
                 SetStatus( 201 );
-                SetJsonResponse( $target_file_name );
+                SetJsonResponse( '/upload/video/' . $target_file_name );
             }
             else
             {

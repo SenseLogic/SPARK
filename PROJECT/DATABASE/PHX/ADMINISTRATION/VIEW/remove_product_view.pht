@@ -1,4 +1,4 @@
-<? include 'BLOCK/page_header_block.php' ?>
+<? include 'BLOCK/page_header_block.php'; ?>
 <div>
     <div class="page-section form-section">
         <form class="form-centered" action="/admin/product/remove/<% .Product.Id %>" method="post">
@@ -27,7 +27,7 @@
                 <div>
                     <input class="form-input" name="Image" type="text" value="<% .Product.Image %>" readonly/>
                     <div class="form-upload-container">
-                        <img class="form-upload-image" src="/upload/image/<% .Product.Image %>" onerror="this.src='/upload/image/missing_image.svg'"/>
+                        <img class="form-upload-image" src="<% .Product.Image %>" onerror="this.src='/static/image/admin/missing_image.svg'"/>
                     </div>
                 </div>
                 <div class="form-field-name">
@@ -36,14 +36,14 @@
                 <div>
                     <input class="form-input" name="Video" type="text" value="<% .Product.Video %>" readonly/>
                     <div class="form-upload-container">
-                        <video class="form-upload-video" src="/upload/video/<% .Product.Video %>" type="video/mp4" onerror="this.src='/upload/video/missing_video.mp4'"></video>
+                        <video class="form-upload-video" src="<% .Product.Video %>" type="video/mp4" onerror="this.src='/static/video/admin/missing_video.mp4'"></video>
                     </div>
                 </div>
                 <div class="form-field-name">
-                    Category Slug :
+                    Department Slug :
                 </div>
                 <div>
-                    <input class="form-input" name="CategorySlug" type="text" value="<% .Product.CategorySlug %>" readonly/>
+                    <input class="form-input" name="DepartmentSlug" type="text" value="<% .Product.DepartmentSlug %>" readonly/>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="/admin/product">
                 </a>
@@ -53,4 +53,4 @@
         </form>
     </div>
 </div>
-<? include 'BLOCK/page_footer_block.php' ?>
+<? include 'BLOCK/page_footer_block.php'; ?>

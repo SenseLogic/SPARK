@@ -4,10 +4,10 @@
             <h2><% product.Name %></h2>
             <p><% product.Text %></p>
             <div>
-                <img src="/upload/image/<# product.Image #>"/>
+                <img src="<# product.Image #>"/>
             </div>
             <div>
-                <video src="/upload/video/<# product.Video #>" autoplay loop>
+                <video src="<# product.Video #>" autoplay loop>
                 </video>
             </div>
         </div>

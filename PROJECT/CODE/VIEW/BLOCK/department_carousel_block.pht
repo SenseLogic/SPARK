@@ -1,0 +1,103 @@
+<style file="department_carousel.styl">
+    MakeCarousel( "department-" );
+    MakeCarouselStrip( 1, 1, "department-" );
+
+    // ~~
+
+    .department-carousel-strip
+    {
+        height: 100vh;
+    }
+
+    .department-carousel-slide
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    .department-carousel-slide-text
+    {
+        max-width: 40rem;
+        font-size: 2rem;
+        color: white;
+    }
+
+    .department-carousel-arrow
+    {
+        font-size: 4rem;
+        color: white;
+        cursor: pointer;
+    }
+
+    .department-carousel-left-arrow
+    {
+        position: absolute;
+        top: 50%;
+        left: 4rem;
+        transform: translateY( -50% );
+    }
+
+    .department-carousel-right-arrow
+    {
+        position: absolute;
+        top: 50%;
+        right: 4rem;
+        transform: translateY( -50% );
+    }
+</style>
+<div id="department-carousel" class="department-carousel">
+    <div id="department-carousel-strip" class="department-carousel-strip">
+    <?  for ( var department_index = 0; department_index <= .DepartmentCount; ++department_index ) { ?>
+        <? var department = .DepartmentArray[ department_index % .DepartmentCount ]; ?>
+        <div class="department-carousel-slide" style="background-image: url( '<# department.Image #>' )">
+            <div class="department-carousel-slide-text">
+                <% department.Text %>
+            </div>
+        </div>
+    <? } ?>
+    </div>
+    <div id="department-carousel-left-arrow" class="department-carousel-arrow department-carousel-left-arrow">
+        &lt;
+    </div>
+    <div id="department-carousel-right-arrow" class="department-carousel-arrow department-carousel-right-arrow">
+        &gt;
+    </div>
+</div>
+<script>
+    var department_carousel
+        = new CAROUSEL(
+              GetElementById( "department-carousel" ),
+              GetElementById( "department-carousel-strip" ),
+              0.0,
+              6,
+              1,
+              3.0,
+              0.5
+              );
+
+    GetElementById( "department-carousel-left-arrow" ).AddEventListener(
+        "click",
+        function (
+            )
+        {
+            department_carousel.StopAutomaticAnimation();
+            department_carousel.ShowPriorSlide();
+        }
+        );
+
+    GetElementById( "department-carousel-right-arrow" ).AddEventListener(
+        "click",
+        function (
+            )
+        {
+            department_carousel.StopAutomaticAnimation();
+            department_carousel.ShowNextSlide();
+        }
+        );
+
+    department_carousel.StartAutomaticAnimation();
+</script>

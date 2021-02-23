@@ -1,0 +1,26 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/department_model.php';
+
+// -- TYPES
+
+class VIEW_DEPARTMENT_CONTROLLER extends CONTROLLER
+{
+    method constructor(
+        int department_id
+        )
+    {
+        parent::constructor();
+
+        .Title = 'View a department';
+        .Department = GetDatabaseDepartmentById( department_id );
+        .PreviousPage = GetSessionValue( 'PreviousPage' );
+
+        import '../VIEW/view_department_view.php';
+    }
+}
+
+// -- STATEMENTS
+
+var view_department_controller = new VIEW_DEPARTMENT_CONTROLLER( var department_id );

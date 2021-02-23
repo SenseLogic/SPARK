@@ -1,21 +1,21 @@
 Web
-    http://www.spark.com
+    http://www.spark-project.com
 
 Admin
-    http://www.spark.com/admin/
+    http://www.spark-project.com/admin/
         root / xyz
 
 FTP
-    spark.com
+    spark-project.com
         root / xyz
             FTP / port 21 / explicit TLS encryption
 
 DataBase
-    http://www.spark.com/phpmyadmin/
+    http://www.spark-project.com/phpmyadmin/
         host: localhost
-        user: spark
+        user: spark-project
         password: xyz
-        database: spark
+        database: spark-project
 
 Email
-    contact@spark.com / xyz
+    contact@spark-project.com / xyz

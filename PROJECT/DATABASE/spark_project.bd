@@ -1,0 +1,10 @@
+TEXT
+
+    Slug Text
+
+USER
+
+    Email Pseudonym Password Role
+
+        administrator@spark-project.com ~ administrator ~ xyz ~ administrator
+        editor@spark-project.com ~ editor ~ xyz ~ editor

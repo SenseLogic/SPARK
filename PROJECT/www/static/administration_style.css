@@ -470,6 +470,19 @@ textarea:focus {
   width: 40px;
   height: 40px;
 }
+.form-button-tooltip {
+  display: none;
+  position: absolute;
+}
+.form-button:hover + .form-button-tooltip {
+  display: inline-block;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin-left: 15px;
+  padding: 8px 15px 8px 10px;
+  background-color: #475462;
+  color: #fff;
+}
 .disconnect-button {
   background: url("/static/image/admin/disconnect_icon.svg") no-repeat center center;
   background-size: contain;
@@ -512,8 +525,8 @@ textarea:focus {
   background: url("/static/image/admin/text_icon.svg") no-repeat center center;
   background-size: contain;
 }
-.category-button {
-  background: url("/static/image/admin/category_icon.svg") no-repeat center center;
+.department-button {
+  background: url("/static/image/admin/department_icon.svg") no-repeat center center;
   background-size: contain;
 }
 .product-button {
@@ -531,7 +544,7 @@ textarea:focus {
 .text-table {
   grid-template-columns: repeat(3, auto);
 }
-.category-table {
+.department-table {
   grid-template-columns: repeat(6, auto);
 }
 .product-table {

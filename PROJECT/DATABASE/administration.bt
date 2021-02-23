@@ -207,7 +207,7 @@ class VIEW_<~Plural<>{#type#}~>_CONTROLLER extends CONTROLLER
 
 var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CONTROLLER();
 %%PHX/ADMINISTRATION/VIEW/add_{#variable#}_view.pht
-<? include 'BLOCK/page_header_block.php' ?>
+<? include 'BLOCK/page_header_block.php'; ?>
 <script>
     // -- FUNCTIONS
 
@@ -245,16 +245,16 @@ $>
                     {%title%} :
                 </div>
                 <div><~{%is_image%}<>
-                    <input class="form-input" name="{%attribute%}" type="text" oninput="HandleImageNameInputChangeEvent( this )"/>
+                    <input class="form-input" name="{%attribute%}" type="text" oninput="HandleImagePathInputChangeEvent( this )"/>
                     <div class="form-upload-container">
-                        <img class="form-upload-image" src="" onerror="this.src='/upload/image/missing_image.svg'"/>
+                        <img class="form-upload-image" src="" onerror="this.src='/static/image/admin/missing_image.svg'"/>
                         <label class="form-upload-button">
                             <img class="form-upload-icon" src="/static/image/admin/upload_icon.svg"/><input id="file" class="form-upload-file" type="file" accept="image/jpeg, image/png, image/webp, image/gif, image/svg" onchange="HandleImageFileInputChangeEvent( this )"/>
                         </label>
                     </div><><~{%is_video%}<>
-                    <input class="form-input" name="{%attribute%}" type="text" oninput="HandleVideoNameInputChangeEvent( this )"/>
+                    <input class="form-input" name="{%attribute%}" type="text" oninput="HandleVideoPathInputChangeEvent( this )"/>
                     <div class="form-upload-container">
-                        <video class="form-upload-video" src="" type="video/mp4" onerror="this.src='/upload/video/missing_video.mp4'"></video>
+                        <video class="form-upload-video" src="" type="video/mp4" onerror="this.src='/static/video/admin/missing_video.mp4'"></video>
                         <label class="form-upload-button">
                             <img class="form-upload-icon" src="/static/image/admin/upload_icon.svg"/><input id="file" class="form-upload-file" type="file" accept="video/mp4" onchange="HandleVideoFileInputChangeEvent( this )"/>
                         </label>
@@ -270,9 +270,9 @@ $>
         </form>
     </div>
 </div>
-<? include 'BLOCK/page_footer_block.php' ?>
+<? include 'BLOCK/page_footer_block.php'; ?>
 %%PHX/ADMINISTRATION/VIEW/edit_{#variable#}_view.pht
-<? include 'BLOCK/page_header_block.php' ?>
+<? include 'BLOCK/page_header_block.php'; ?>
 <script>
     // -- FUNCTIONS
 
@@ -310,16 +310,16 @@ $>
                     {%title%} :
                 </div>
                 <div><~{%is_image%}<>
-                    <input class="form-input" name="{%attribute%}" type="text" value="<\% .{#attribute#}.{%attribute%} %\>" oninput="HandleImageNameInputChangeEvent( this )"/>
+                    <input class="form-input" name="{%attribute%}" type="text" value="<\% .{#attribute#}.{%attribute%} %\>" oninput="HandleImagePathInputChangeEvent( this )"/>
                     <div class="form-upload-container">
-                        <img class="form-upload-image" src="/upload/image/<\% .{#attribute#}.{%attribute%} %\>" onerror="this.src='/upload/image/missing_image.svg'"/>
+                        <img class="form-upload-image" src="<\% .{#attribute#}.{%attribute%} %\>" onerror="this.src='/static/image/admin/missing_image.svg'"/>
                         <label class="form-upload-button">
                             <img class="form-upload-icon" src="/static/image/admin/upload_icon.svg"/><input id="file" class="form-upload-file" type="file" accept="image/jpeg, image/png, image/webp, image/gif, image/svg" onchange="HandleImageFileInputChangeEvent( this )"/>
                         </label>
                     </div><><~{%is_video%}<>
-                    <input class="form-input" name="{%attribute%}" type="text" value="<\% .{#attribute#}.{%attribute%} %\>" oninput="HandleVideoNameInputChangeEvent( this )"/>
+                    <input class="form-input" name="{%attribute%}" type="text" value="<\% .{#attribute#}.{%attribute%} %\>" oninput="HandleVideoPathInputChangeEvent( this )"/>
                     <div class="form-upload-container">
-                        <video class="form-upload-video" src="/upload/video/<\% .{#attribute#}.{%attribute%} %\>" type="video/mp4" onerror="this.src='/upload/video/missing_video.mp4'"></video>
+                        <video class="form-upload-video" src="<\% .{#attribute#}.{%attribute%} %\>" type="video/mp4" onerror="this.src='/static/video/admin/missing_video.mp4'"></video>
                         <label class="form-upload-button">
                             <img class="form-upload-icon" src="/static/image/admin/upload_icon.svg"/><input id="file" class="form-upload-file" type="file" accept="video/mp4" onchange="HandleVideoFileInputChangeEvent( this )"/>
                         </label>
@@ -335,9 +335,9 @@ $>
         </form>
     </div>
 </div>
-<? include 'BLOCK/page_footer_block.php' ?>
+<? include 'BLOCK/page_footer_block.php'; ?>
 %%PHX/ADMINISTRATION/VIEW/remove_{#variable#}_view.pht
-<? include 'BLOCK/page_header_block.php' ?>
+<? include 'BLOCK/page_header_block.php'; ?>
 <div>
     <div class="page-section form-section">
         <form class="form-centered" action="/admin/{#style#}/remove/<\% .{#attribute#}.Id %\>" method="post">
@@ -348,11 +348,11 @@ $>
                 <div><~{%is_image%}<>
                     <input class="form-input" name="{%attribute%}" type="text" value="<\% .{#attribute#}.{%attribute%} %\>" readonly/>
                     <div class="form-upload-container">
-                        <img class="form-upload-image" src="/upload/image/<\% .{#attribute#}.{%attribute%} %\>" onerror="this.src='/upload/image/missing_image.svg'"/>
+                        <img class="form-upload-image" src="<\% .{#attribute#}.{%attribute%} %\>" onerror="this.src='/static/image/admin/missing_image.svg'"/>
                     </div><><~{%is_video%}<>
                     <input class="form-input" name="{%attribute%}" type="text" value="<\% .{#attribute#}.{%attribute%} %\>" readonly/>
                     <div class="form-upload-container">
-                        <video class="form-upload-video" src="/upload/video/<\% .{#attribute#}.{%attribute%} %\>" type="video/mp4" onerror="this.src='/upload/video/missing_video.mp4'"></video>
+                        <video class="form-upload-video" src="<\% .{#attribute#}.{%attribute%} %\>" type="video/mp4" onerror="this.src='/static/video/admin/missing_video.mp4'"></video>
                     </div><><~{%is_text%}<>
                     <textarea class="form-textarea" name="{%attribute%}" readonly><\% .{#attribute#}.{%attribute%} %\></textarea><>
                     <input class="form-input" name="{%attribute%}" type="text" value="<\% .{#attribute#}.{%attribute%} %\>" readonly/>~>~>~>
@@ -365,9 +365,9 @@ $>
         </form>
     </div>
 </div>
-<? include 'BLOCK/page_footer_block.php' ?>
+<? include 'BLOCK/page_footer_block.php'; ?>
 %%PHX/ADMINISTRATION/VIEW/view_{#variable#}_view.pht
-<? include 'BLOCK/page_header_block.php' ?>
+<? include 'BLOCK/page_header_block.php'; ?>
 <div>
     <div class="page-section form-section">
         <div class="form-container"><$
@@ -377,11 +377,11 @@ $>
             <div><~{%is_image%}<>
                 <input class="form-input" name="{%attribute%}" type="text" value="<\% .{#attribute#}.{%attribute%} %\>" readonly/>
                 <div class="form-upload-container">
-                    <img class="form-upload-image" src="/upload/image/<\% .{#attribute#}.{%attribute%} %\>" onerror="this.src='/upload/image/missing_image.svg'"/>
+                    <img class="form-upload-image" src="<\% .{#attribute#}.{%attribute%} %\>" onerror="this.src='/static/image/admin/missing_image.svg'"/>
                 </div><><~{%is_video%}<>
                 <input class="form-input" name="{%attribute%}" type="text" value="<\% .{#attribute#}.{%attribute%} %\>" readonly/>
                 <div class="form-upload-container">
-                    <video class="form-upload-video" src="/upload/video/<\% .{#attribute#}.{%attribute%} %\>" type="video/mp4" onerror="this.src='/upload/video/missing_video.mp4'"></video>
+                    <video class="form-upload-video" src="<\% .{#attribute#}.{%attribute%} %\>" type="video/mp4" onerror="this.src='/static/video/admin/missing_video.mp4'"></video>
                 </div><><~{%is_text%}<>
                     <textarea class="form-textarea" name="{%attribute%}" readonly><\% .{#attribute#}.{%attribute%} %\></textarea><>
                     <input class="form-input" name="{%attribute%}" type="text" value="<\% .{#attribute#}.{%attribute%} %\>" readonly/>~>~>~>
@@ -391,9 +391,9 @@ $>
         </div>
     </div>
 </div>
-<? include 'BLOCK/page_footer_block.php' ?>
+<? include 'BLOCK/page_footer_block.php'; ?>
 %%PHX/ADMINISTRATION/VIEW/view_<~Plural<>{#variable#}~>_view.pht
-<? include 'BLOCK/page_header_block.php' ?>
+<? include 'BLOCK/page_header_block.php'; ?>
 <div>
     <div class="page-section form-section">
         <div class="form-container table-container {#style#}-table sortable-grid"><$
@@ -424,5 +424,5 @@ $>
     </div>
 </div>
 <? import '../../FRAMEWORK/sortable_grid.php'; ?>
-<? include 'BLOCK/page_footer_block.php' ?>
+<? include 'BLOCK/page_footer_block.php'; ?>
 #>

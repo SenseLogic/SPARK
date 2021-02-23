@@ -20,7 +20,7 @@ define( 'DatabaseHost', 'localhost' );
 
 if ( GetServerName() === 'localhost' )
 {
-    define( 'DatabaseName', 'spark' );
+    define( 'DatabaseName', 'spark-project' );
     define( 'DatabaseUserName', 'root' );
     define( 'DatabasePassword', '' );
 }
@@ -177,18 +177,18 @@ function Route(
             }
         }
         else if ( $path_value_count >= 2
-                  && $path_value_array[ 1 ] === 'category' )
+                  && $path_value_array[ 1 ] === 'department' )
         {
             if ( $it_is_get_request
                  && $path_value_count === 2 )
             {
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_categories_controller.php';
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_departments_controller.php';
             }
             else if ( $it_is_get_request
                       && $path_value_count === 3
                       && $path_value_array[ 2 ] === 'add' )
             {
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/add_category_controller.php';
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/add_department_controller.php';
             }
             else if ( $it_is_post_request
                       && $path_value_count === 3
@@ -199,25 +199,25 @@ function Route(
                       && HasPostValue( 'Image' )
                       && HasPostValue( 'Number' ) )
             {
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_add_category_controller.php';
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_add_department_controller.php';
             }
             else if ( $it_is_get_request
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'view'
                       && IsId( $path_value_array[ 3 ] ) )
             {
-                 $category_id = $path_value_array[ 3 ];
+                 $department_id = $path_value_array[ 3 ];
 
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_category_controller.php';
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_department_controller.php';
             }
             else if ( $it_is_get_request
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'edit'
                       && IsId( $path_value_array[ 3 ] ) )
             {
-                 $category_id = $path_value_array[ 3 ];
+                 $department_id = $path_value_array[ 3 ];
 
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/edit_category_controller.php';
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/edit_department_controller.php';
             }
             else if ( $it_is_post_request
                       && $path_value_count === 4
@@ -229,27 +229,27 @@ function Route(
                       && HasPostValue( 'Image' )
                       && HasPostValue( 'Number' ) )
             {
-                 $category_id = $path_value_array[ 3 ];
+                 $department_id = $path_value_array[ 3 ];
 
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_edit_category_controller.php';
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_edit_department_controller.php';
             }
             else if ( $it_is_get_request
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'remove'
                       && IsId( $path_value_array[ 3 ] ) )
             {
-                 $category_id = $path_value_array[ 3 ];
+                 $department_id = $path_value_array[ 3 ];
 
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/remove_category_controller.php';
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/remove_department_controller.php';
             }
             else if ( $it_is_post_request
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'remove'
                       && IsId( $path_value_array[ 3 ] ) )
             {
-                 $category_id = $path_value_array[ 3 ];
+                 $department_id = $path_value_array[ 3 ];
 
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_remove_category_controller.php';
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_remove_department_controller.php';
             }
             else
             {
@@ -278,7 +278,7 @@ function Route(
                       && HasPostValue( 'Text' )
                       && HasPostValue( 'Image' )
                       && HasPostValue( 'Video' )
-                      && HasPostValue( 'CategorySlug' ) )
+                      && HasPostValue( 'DepartmentSlug' ) )
             {
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_add_product_controller.php';
             }
@@ -309,7 +309,7 @@ function Route(
                       && HasPostValue( 'Text' )
                       && HasPostValue( 'Image' )
                       && HasPostValue( 'Video' )
-                      && HasPostValue( 'CategorySlug' ) )
+                      && HasPostValue( 'DepartmentSlug' ) )
             {
                  $product_id = $path_value_array[ 3 ];
 

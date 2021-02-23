@@ -1,0 +1,29 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/department_model.php';
+
+// -- TYPES
+
+class DO_ADD_DEPARTMENT_CONTROLLER extends CONTROLLER
+{
+    method constructor(
+        )
+    {
+        parent::constructor();
+
+        var slug = GetPostValue( 'Slug' );
+        var name = GetPostValue( 'Name' );
+        var text = GetPostValue( 'Text' );
+        var image = GetPostValue( 'Image' );
+        var number = GetPostValue( 'Number' );
+
+        AddDatabaseDepartment( slug, name, text, image, number );
+
+        Redirect( '/admin/department' );
+    }
+}
+
+// -- STATEMENTS
+
+var do_add_department_controller = new DO_ADD_DEPARTMENT_CONTROLLER();

@@ -229,6 +229,23 @@ MakeFontWeightRange( 100, 100, 9 );
     height: 40px;
 }
 
+.form-button-tooltip
+{
+    display: none;
+    position: absolute;
+}
+
+.form-button:hover + .form-button-tooltip
+{
+    display: inline-block;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-left: 15px;
+    padding: 8px 15px 8px 10px;
+    background-color: #475462;
+    color: #FFFFFF;
+}
+
 .disconnect-button
 {
     background: url(/static/image/admin/disconnect_icon.svg) no-repeat center center;
