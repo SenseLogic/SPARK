@@ -1,4 +1,4 @@
-<?php require __DIR__ . '/' . 'BLOCK/page_header_block.php' ?>
+<?php require __DIR__ . '/' . 'BLOCK/page_header_block.php'; ?>
 <div>
     <div class="page-section form-section">
         <form class="form-centered" action="/admin/text/remove/<?php echo htmlspecialchars( $this->Text->Id ); ?>" method="post">
@@ -23,4 +23,4 @@
         </form>
     </div>
 </div>
-<?php require __DIR__ . '/' . 'BLOCK/page_footer_block.php' ?>
+<?php require __DIR__ . '/' . 'BLOCK/page_footer_block.php'; ?>

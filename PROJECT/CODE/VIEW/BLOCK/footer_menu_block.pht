@@ -1,5 +1,5 @@
-<style file="footer_menu.styl">
-    .footer-menu-button
+<style file="footer_menu_block.styl">
+    .footer-menu-block-button
     {
         padding: 8px 16px;
         background-color: #CCCCCC;
@@ -7,7 +7,7 @@
     }
 </style>
 <div class=">
-    <button class="footer-menu-button" data-view-name="legal-notice" onclick="SelectView( this )">
+    <button class="footer-menu-block-button" data-view-name="legal-notice" onclick="SelectView( this )">
         Legal Notice
     </button>
 </div>

@@ -1,14 +1,14 @@
-MakeCarousel( "department-" );
-MakeCarouselStrip( 1, 1, "department-" );
+MakeCarousel( "department-", "-block" );
+MakeCarouselStrip( 1, 1, "department-", "-block" );
 
 // ~~
 
-.department-carousel-strip
+.department-carousel-block-strip
 {
     height: 100vh;
 }
 
-.department-carousel-slide
+.department-carousel-block-slide
 {
     display: flex;
     justify-content: center;
@@ -18,21 +18,21 @@ MakeCarouselStrip( 1, 1, "department-" );
     background-size: cover;
 }
 
-.department-carousel-slide-text
+.department-carousel-block-slide-text
 {
     max-width: 40rem;
     font-size: 2rem;
     color: white;
 }
 
-.department-carousel-arrow
+.department-carousel-block-arrow
 {
     font-size: 4rem;
     color: white;
     cursor: pointer;
 }
 
-.department-carousel-left-arrow
+.department-carousel-block-left-arrow
 {
     position: absolute;
     top: 50%;
@@ -40,7 +40,7 @@ MakeCarouselStrip( 1, 1, "department-" );
     transform: translateY( -50% );
 }
 
-.department-carousel-right-arrow
+.department-carousel-block-right-arrow
 {
     position: absolute;
     top: 50%;

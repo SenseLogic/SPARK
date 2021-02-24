@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <?php require __DIR__ . '/' . 'page_head_block.php' ?>
+        <?php require __DIR__ . '/' . 'page_head_block.php'; ?>
     </head>
     <body>
-        <?php require __DIR__ . '/' . 'page_body_block.php' ?>
+        <?php require __DIR__ . '/' . 'page_body_block.php'; ?>
         <div class="container-extended page-container">
             <div class="page-menu">
                 <div class="page-menu-content">

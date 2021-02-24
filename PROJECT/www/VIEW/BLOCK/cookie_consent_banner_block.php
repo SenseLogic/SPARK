@@ -74,16 +74,16 @@
 
 
 
-<div id="cookie-consent-banner-container" class="cookie-consent-banner-container">
-    <div class="cookie-consent-banner-text">
+<div id="cookie-consent-banner-block-container" class="cookie-consent-banner-block-container">
+    <div class="cookie-consent-banner-block-text">
         We use cookies on our website to provide you with the best possible online experience.
         <a href="/legal-notice" target="_blank">More information</a>
     </div>
-    <div class="cookie-consent-banner-button-container">
-        <div class="cookie-consent-banner-button cookie-consent-banner-accept-button" onclick="HandleCookieConsentBannerAgreeButtonClickEvent()">
+    <div class="cookie-consent-banner-block-button-container">
+        <div class="cookie-consent-banner-block-button cookie-consent-banner-block-accept-button" onclick="HandleCookieConsentBannerAgreeButtonClickEvent()">
             Accept
         </div>
-        <div class="cookie-consent-banner-button cookie-consent-banner-decline-button" onclick="HandleCookieConsentBannerDisacceptButtonClickEvent()">
+        <div class="cookie-consent-banner-block-button cookie-consent-banner-block-decline-button" onclick="HandleCookieConsentBannerDisacceptButtonClickEvent()">
             Decline
         </div>
     </div>
@@ -180,7 +180,7 @@
 
     // -- STATEMENTS
 
-    CookieConsentBannerContainerElement = GetElementById( "cookie-consent-banner-container" );
+    CookieConsentBannerContainerElement = GetElementById( "cookie-consent-banner-block-container" );
 
     // RemoveCookieConsent();
 

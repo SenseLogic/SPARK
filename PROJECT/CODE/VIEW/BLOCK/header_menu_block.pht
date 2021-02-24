@@ -1,5 +1,5 @@
-<style file="header_menu.styl">
-    .header-menu
+<style file="header_menu_block.styl">
+    .header-menu-block
     {
         z-index: 100;
         position: fixed;
@@ -12,7 +12,7 @@
         background-color: rgba( 255, 255, 255, 0.4 );
     }
 
-    .header-menu-button
+    .header-menu-block-button
     {
         border-radius: 8px;
         margin-right: 8px;
@@ -22,18 +22,18 @@
         cursor: pointer;
     }
 
-    .header-menu-button:hover,
-    .header-menu-button.selected
+    .header-menu-block-button:hover,
+    .header-menu-block-button.selected
     {
         background-color: #CCCCCC;
         color: #000000;
     }
 </style>
-<div class="header-menu">
-    <div class="header-menu-button" data-view-name="home" onclick="SelectView( this )">
+<div class="header-menu-block">
+    <div class="header-menu-block-button" data-view-name="home" onclick="SelectView( this )">
         Home
     </div>
-    <div class="header-menu-button" data-view-name="contact" onclick="SelectView( this )">
+    <div class="header-menu-block-button" data-view-name="contact" onclick="SelectView( this )">
         Contact
     </div>
 </div>
@@ -45,7 +45,7 @@
         function (
             )
         {
-            GetElements( ".header-menu-button" ).Iterate(
+            GetElements( ".header-menu-block-button" ).Iterate(
                 function (
                     element
                     )

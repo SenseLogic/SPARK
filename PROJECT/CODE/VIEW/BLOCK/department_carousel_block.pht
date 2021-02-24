@@ -1,15 +1,15 @@
-<style file="department_carousel.styl">
-    MakeCarousel( "department-" );
-    MakeCarouselStrip( 1, 1, "department-" );
+<style file="department_carousel_block.styl">
+    MakeCarousel( "department-", "-block" );
+    MakeCarouselStrip( 1, 1, "department-", "-block" );
 
     // ~~
 
-    .department-carousel-strip
+    .department-carousel-block-strip
     {
         height: 100vh;
     }
 
-    .department-carousel-slide
+    .department-carousel-block-slide
     {
         display: flex;
         justify-content: center;
@@ -19,21 +19,21 @@
         background-size: cover;
     }
 
-    .department-carousel-slide-text
+    .department-carousel-block-slide-text
     {
         max-width: 40rem;
         font-size: 2rem;
         color: white;
     }
 
-    .department-carousel-arrow
+    .department-carousel-block-arrow
     {
         font-size: 4rem;
         color: white;
         cursor: pointer;
     }
 
-    .department-carousel-left-arrow
+    .department-carousel-block-left-arrow
     {
         position: absolute;
         top: 50%;
@@ -41,7 +41,7 @@
         transform: translateY( -50% );
     }
 
-    .department-carousel-right-arrow
+    .department-carousel-block-right-arrow
     {
         position: absolute;
         top: 50%;
@@ -49,29 +49,29 @@
         transform: translateY( -50% );
     }
 </style>
-<div id="department-carousel" class="department-carousel">
-    <div id="department-carousel-strip" class="department-carousel-strip">
+<div id="department-carousel-block" class="department-carousel-block">
+    <div id="department-carousel-block-strip" class="department-carousel-block-strip">
     <?  for ( var department_index = 0; department_index <= .DepartmentCount; ++department_index ) { ?>
         <? var department = .DepartmentArray[ department_index % .DepartmentCount ]; ?>
-        <div class="department-carousel-slide" style="background-image: url( '<# department.Image #>' )">
-            <div class="department-carousel-slide-text">
+        <div class="department-carousel-block-slide" style="background-image: url( '<# department.Image #>' )">
+            <div class="department-carousel-block-slide-text">
                 <% department.Text %>
             </div>
         </div>
     <? } ?>
     </div>
-    <div id="department-carousel-left-arrow" class="department-carousel-arrow department-carousel-left-arrow">
+    <div id="department-carousel-block-left-arrow" class="department-carousel-block-arrow department-carousel-block-left-arrow">
         &lt;
     </div>
-    <div id="department-carousel-right-arrow" class="department-carousel-arrow department-carousel-right-arrow">
+    <div id="department-carousel-block-right-arrow" class="department-carousel-block-arrow department-carousel-block-right-arrow">
         &gt;
     </div>
 </div>
 <script>
     var department_carousel
         = new CAROUSEL(
-              GetElementById( "department-carousel" ),
-              GetElementById( "department-carousel-strip" ),
+              GetElementById( "department-carousel-block" ),
+              GetElementById( "department-carousel-block-strip" ),
               0.0,
               6,
               1,
@@ -79,7 +79,7 @@
               0.5
               );
 
-    GetElementById( "department-carousel-left-arrow" ).AddEventListener(
+    GetElementById( "department-carousel-block-left-arrow" ).AddEventListener(
         "click",
         function (
             )
@@ -89,7 +89,7 @@
         }
         );
 
-    GetElementById( "department-carousel-right-arrow" ).AddEventListener(
+    GetElementById( "department-carousel-block-right-arrow" ).AddEventListener(
         "click",
         function (
             )

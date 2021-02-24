@@ -1,3 +1,51 @@
+@font-face {
+  font-family: 'Ubuntu';
+  src: url("ubuntu_light.woff2") format('woff2'), url("ubuntu_light.woff") format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Ubuntu';
+  src: url("ubuntu_light_italic.woff2") format('woff2'), url("ubuntu_light_italic.woff") format('woff');
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Ubuntu';
+  src: url("ubuntu_regular.woff2") format('woff2'), url("ubuntu_regular.woff") format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Ubuntu';
+  src: url("ubuntu_regular_italic.woff2") format('woff2'), url("ubuntu_regular_italic.woff") format('woff');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Ubuntu';
+  src: url("ubuntu_medium.woff2") format('woff2'), url("ubuntu_medium.woff") format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Ubuntu';
+  src: url("ubuntu_medium_italic.woff2") format('woff2'), url("ubuntu_medium_italic.woff") format('woff');
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Ubuntu';
+  src: url("ubuntu_bold.woff2") format('woff2'), url("ubuntu_bold.woff") format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Ubuntu';
+  src: url("ubuntu_bold_italic.woff2") format('woff2'), url("ubuntu_bold_italic.woff") format('woff');
+  font-weight: 700;
+  font-style: italic;
+}
 @charset "UTF-8";
 *,
 *::before,
@@ -659,55 +707,7 @@ sup {
 .object-fit-cover {
   object-fit: cover;
 }
-@font-face {
-  font-family: 'Ubuntu';
-  src: url("ubuntu_light.woff2") format('woff2'), url("ubuntu_light.woff") format('woff');
-  font-weight: 300;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Ubuntu';
-  src: url("ubuntu_light_italic.woff2") format('woff2'), url("ubuntu_light_italic.woff") format('woff');
-  font-weight: 300;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'Ubuntu';
-  src: url("ubuntu_regular.woff2") format('woff2'), url("ubuntu_regular.woff") format('woff');
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Ubuntu';
-  src: url("ubuntu_regular_italic.woff2") format('woff2'), url("ubuntu_regular_italic.woff") format('woff');
-  font-weight: 400;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'Ubuntu';
-  src: url("ubuntu_medium.woff2") format('woff2'), url("ubuntu_medium.woff") format('woff');
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Ubuntu';
-  src: url("ubuntu_medium_italic.woff2") format('woff2'), url("ubuntu_medium_italic.woff") format('woff');
-  font-weight: 500;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'Ubuntu';
-  src: url("ubuntu_bold.woff2") format('woff2'), url("ubuntu_bold.woff") format('woff');
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Ubuntu';
-  src: url("ubuntu_bold_italic.woff2") format('woff2'), url("ubuntu_bold_italic.woff") format('woff');
-  font-weight: 700;
-  font-style: italic;
-}
-.header-menu {
+.header-menu-block {
   z-index: 100;
   position: fixed;
   top: 0;
@@ -718,7 +718,7 @@ sup {
   align-items: center;
   background-color: rgba(255,255,255,0.4);
 }
-.header-menu-button {
+.header-menu-block-button {
   border-radius: 8px;
   margin-right: 8px;
   padding: 5px 10px;
@@ -726,17 +726,17 @@ sup {
   color: #fff;
   cursor: pointer;
 }
-.header-menu-button:hover,
-.header-menu-button.selected {
+.header-menu-block-button:hover,
+.header-menu-block-button.selected {
   background-color: #ccc;
   color: #000;
 }
-.footer-menu-button {
+.footer-menu-block-button {
   padding: 8px 16px;
   background-color: #ccc;
   color: #fff;
 }
-.cookie-consent-banner-container {
+.cookie-consent-banner-block-container {
   z-index: 1000;
   position: fixed;
   bottom: 0;
@@ -757,25 +757,25 @@ sup {
   background-color: #fff;
   box-shadow: 0 5px 10px rgba(128,128,128,0.5);
 }
-.cookie-consent-banner-container.hidden {
+.cookie-consent-banner-block-container.hidden {
   display: none;
 }
-.cookie-consent-banner-container a,
-.cookie-consent-banner-container a:visited {
+.cookie-consent-banner-block-container a,
+.cookie-consent-banner-block-container a:visited {
   color: #444;
   text-decoration: underline;
 }
-.cookie-consent-banner-text {
+.cookie-consent-banner-block-text {
   color: #444;
   text-align: center;
 }
-.cookie-consent-banner-button-container {
+.cookie-consent-banner-block-button-container {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 20px;
 }
-.cookie-consent-banner-button {
+.cookie-consent-banner-block-button {
   border-radius: 5px;
   margin-left: 5px;
   margin-right: 5px;
@@ -784,30 +784,30 @@ sup {
   cursor: pointer;
   transition: all 0.25s ease;
 }
-.cookie-consent-banner-button:hover {
+.cookie-consent-banner-block-button:hover {
   transform: scale(1.05);
 }
-.cookie-consent-banner-accept-button {
+.cookie-consent-banner-block-accept-button {
   background-color: #f00;
 }
-.cookie-consent-banner-decline-button {
+.cookie-consent-banner-block-decline-button {
   background-color: #ccc;
 }
-.department-carousel {
+.department-carousel-block {
   position: relative;
   overflow-x: hidden;
 }
-.department-carousel-strip {
+.department-carousel-block-strip {
   display: flex;
   position: relative;
   left: 0;
   margin: 0;
   width: 100%;
 }
-.department-carousel-strip {
+.department-carousel-block-strip {
   height: 100vh;
 }
-.department-carousel-slide {
+.department-carousel-block-slide {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -815,29 +815,29 @@ sup {
   background-position: center center;
   background-size: cover;
 }
-.department-carousel-slide-text {
+.department-carousel-block-slide-text {
   max-width: 40rem;
   font-size: 2rem;
   color: #fff;
 }
-.department-carousel-arrow {
+.department-carousel-block-arrow {
   font-size: 4rem;
   color: #fff;
   cursor: pointer;
 }
-.department-carousel-left-arrow {
+.department-carousel-block-left-arrow {
   position: absolute;
   top: 50%;
   left: 4rem;
   transform: translateY(-50%);
 }
-.department-carousel-right-arrow {
+.department-carousel-block-right-arrow {
   position: absolute;
   top: 50%;
   right: 4rem;
   transform: translateY(-50%);
 }
-.add-contact-form-captcha-image {
+.add-contact-form-block-captcha-image {
   height: 3rem;
 }
 .invalid {
