@@ -1,6 +1,6 @@
 <style file="department_carousel.styl">
-    MakeCarousel( "department-", "" );
-    MakeCarouselStrip( 1, 1, "department-", "" );
+    MakeCarousel( "department-" );
+    MakeCarouselStrip( 1, 1, "department-" );
 
     // ~~
 
