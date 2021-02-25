@@ -1,4 +1,4 @@
-<? include 'BLOCK/page_header_block.php'; ?>
+<? include 'BLOCK/page_header.php'; ?>
 <div class="page-section form-section">
     <form class="form-centered" name="ConnectUser" action="/admin" method="post">
         <div class="form-container form-container-small">
@@ -17,4 +17,4 @@
         </div>
     </form>
 </div>
-<? include 'BLOCK/page_footer_block.php'; ?>
+<? include 'BLOCK/page_footer.php'; ?>

@@ -1,4 +1,4 @@
-<? include 'BLOCK/page_header_block.php'; ?>
+<? include 'BLOCK/page_header.php'; ?>
 <script>
     // -- FUNCTIONS
 
@@ -160,4 +160,4 @@
         </form>
     </div>
 </div>
-<? include 'BLOCK/page_footer_block.php'; ?>
+<? include 'BLOCK/page_footer.php'; ?>

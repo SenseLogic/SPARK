@@ -1,5 +1,5 @@
 <style file="show_home_view.styl">
 </style>
 <div class="container-extended view" data-view-name="home">
-    <? import 'BLOCK/department_carousel_block.php'; ?>
+    <? import 'BLOCK/department_carousel.php'; ?>
 </div>

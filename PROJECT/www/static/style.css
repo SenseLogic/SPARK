@@ -707,7 +707,7 @@ sup {
 .object-fit-cover {
   object-fit: cover;
 }
-.header-menu-block {
+.header-menu {
   z-index: 100;
   position: fixed;
   top: 0;
@@ -718,7 +718,7 @@ sup {
   align-items: center;
   background-color: rgba(255,255,255,0.4);
 }
-.header-menu-block-button {
+.header-menu-button {
   border-radius: 8px;
   margin-right: 8px;
   padding: 5px 10px;
@@ -726,17 +726,17 @@ sup {
   color: #fff;
   cursor: pointer;
 }
-.header-menu-block-button:hover,
-.header-menu-block-button.selected {
+.header-menu-button:hover,
+.header-menu-button.selected {
   background-color: #ccc;
   color: #000;
 }
-.footer-menu-block-button {
+.footer-menu-button {
   padding: 8px 16px;
   background-color: #ccc;
   color: #fff;
 }
-.cookie-consent-banner-block-container {
+.cookie-consent-banner-container {
   z-index: 1000;
   position: fixed;
   bottom: 0;
@@ -757,25 +757,25 @@ sup {
   background-color: #fff;
   box-shadow: 0 5px 10px rgba(128,128,128,0.5);
 }
-.cookie-consent-banner-block-container.hidden {
+.cookie-consent-banner-container.hidden {
   display: none;
 }
-.cookie-consent-banner-block-container a,
-.cookie-consent-banner-block-container a:visited {
+.cookie-consent-banner-container a,
+.cookie-consent-banner-container a:visited {
   color: #444;
   text-decoration: underline;
 }
-.cookie-consent-banner-block-text {
+.cookie-consent-banner-text {
   color: #444;
   text-align: center;
 }
-.cookie-consent-banner-block-button-container {
+.cookie-consent-banner-button-container {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 20px;
 }
-.cookie-consent-banner-block-button {
+.cookie-consent-banner-button {
   border-radius: 5px;
   margin-left: 5px;
   margin-right: 5px;
@@ -784,30 +784,30 @@ sup {
   cursor: pointer;
   transition: all 0.25s ease;
 }
-.cookie-consent-banner-block-button:hover {
+.cookie-consent-banner-button:hover {
   transform: scale(1.05);
 }
-.cookie-consent-banner-block-accept-button {
+.cookie-consent-banner-accept-button {
   background-color: #f00;
 }
-.cookie-consent-banner-block-decline-button {
+.cookie-consent-banner-decline-button {
   background-color: #ccc;
 }
-.department-carousel-block {
+.department-carousel {
   position: relative;
   overflow-x: hidden;
 }
-.department-carousel-block-strip {
+.department-carousel-strip {
   display: flex;
   position: relative;
   left: 0;
   margin: 0;
   width: 100%;
 }
-.department-carousel-block-strip {
+.department-carousel-strip {
   height: 100vh;
 }
-.department-carousel-block-slide {
+.department-carousel-slide {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -815,29 +815,29 @@ sup {
   background-position: center center;
   background-size: cover;
 }
-.department-carousel-block-slide-text {
+.department-carousel-slide-text {
   max-width: 40rem;
   font-size: 2rem;
   color: #fff;
 }
-.department-carousel-block-arrow {
+.department-carousel-arrow {
   font-size: 4rem;
   color: #fff;
   cursor: pointer;
 }
-.department-carousel-block-left-arrow {
+.department-carousel-left-arrow {
   position: absolute;
   top: 50%;
   left: 4rem;
   transform: translateY(-50%);
 }
-.department-carousel-block-right-arrow {
+.department-carousel-right-arrow {
   position: absolute;
   top: 50%;
   right: 4rem;
   transform: translateY(-50%);
 }
-.add-contact-form-block-captcha-image {
+.add-contact-form-captcha-image {
   height: 3rem;
 }
 .invalid {

@@ -49,29 +49,29 @@
 
 
 
-<div id="department-carousel-block" class="department-carousel-block">
-    <div id="department-carousel-block-strip" class="department-carousel-block-strip">
+<div id="department-carousel" class="department-carousel">
+    <div id="department-carousel-strip" class="department-carousel-strip">
     <?php  for (  $department_index = 0; $department_index <= $this->DepartmentCount; ++$department_index ) { ?>
         <?php  $department = $this->DepartmentArray[ $department_index % $this->DepartmentCount ]; ?>
-        <div class="department-carousel-block-slide" style="background-image: url( '<?php echo $department->Image; ?>' )">
-            <div class="department-carousel-block-slide-text">
+        <div class="department-carousel-slide" style="background-image: url( '<?php echo $department->Image; ?>' )">
+            <div class="department-carousel-slide-text">
                 <?php echo htmlspecialchars( $department->Text ); ?>
             </div>
         </div>
     <?php } ?>
     </div>
-    <div id="department-carousel-block-left-arrow" class="department-carousel-block-arrow department-carousel-block-left-arrow">
+    <div id="department-carousel-left-arrow" class="department-carousel-arrow department-carousel-left-arrow">
         &lt;
     </div>
-    <div id="department-carousel-block-right-arrow" class="department-carousel-block-arrow department-carousel-block-right-arrow">
+    <div id="department-carousel-right-arrow" class="department-carousel-arrow department-carousel-right-arrow">
         &gt;
     </div>
 </div>
 <script>
     var department_carousel
         = new CAROUSEL(
-              GetElementById( "department-carousel-block" ),
-              GetElementById( "department-carousel-block-strip" ),
+              GetElementById( "department-carousel" ),
+              GetElementById( "department-carousel-strip" ),
               0.0,
               6,
               1,
@@ -79,7 +79,7 @@
               0.5
               );
 
-    GetElementById( "department-carousel-block-left-arrow" ).AddEventListener(
+    GetElementById( "department-carousel-left-arrow" ).AddEventListener(
         "click",
         function (
             )
@@ -89,7 +89,7 @@
         }
         );
 
-    GetElementById( "department-carousel-block-right-arrow" ).AddEventListener(
+    GetElementById( "department-carousel-right-arrow" ).AddEventListener(
         "click",
         function (
             )

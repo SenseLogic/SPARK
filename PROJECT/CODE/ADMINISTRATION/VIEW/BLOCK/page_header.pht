@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <? include 'page_head_block.php'; ?>
+        <? include 'page_head.php'; ?>
     </head>
     <body>
-        <? include 'page_body_block.php'; ?>
+        <? include 'page_body.php'; ?>
         <div class="container-extended page-container">
             <div class="page-menu">
                 <div class="page-menu-content">

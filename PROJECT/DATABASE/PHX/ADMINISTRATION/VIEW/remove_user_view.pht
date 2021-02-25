@@ -1,4 +1,4 @@
-<? include 'BLOCK/page_header_block.php'; ?>
+<? include 'BLOCK/page_header.php'; ?>
 <div>
     <div class="page-section form-section">
         <form class="form-centered" action="/admin/user/remove/<% .User.Id %>" method="post">
@@ -35,4 +35,4 @@
         </form>
     </div>
 </div>
-<? include 'BLOCK/page_footer_block.php'; ?>
+<? include 'BLOCK/page_footer.php'; ?>

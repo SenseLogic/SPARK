@@ -1,4 +1,4 @@
-<?php require __DIR__ . '/' . 'BLOCK/page_header_block.php'; ?>
+<?php require __DIR__ . '/' . 'BLOCK/page_header.php'; ?>
 <div>
     <div class="page-section form-section">
         <div class="form-container table-container text-table sortable-grid">
@@ -35,4 +35,4 @@
     </div>
 </div>
 <?php require_once __DIR__ . '/' . '../../FRAMEWORK/sortable_grid.php'; ?>
-<?php require __DIR__ . '/' . 'BLOCK/page_footer_block.php'; ?>
+<?php require __DIR__ . '/' . 'BLOCK/page_footer.php'; ?>

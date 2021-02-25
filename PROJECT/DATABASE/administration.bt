@@ -207,7 +207,7 @@ class VIEW_<~Plural<>{#type#}~>_CONTROLLER extends CONTROLLER
 
 var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CONTROLLER();
 %%PHX/ADMINISTRATION/VIEW/add_{#variable#}_view.pht
-<? include 'BLOCK/page_header_block.php'; ?>
+<? include 'BLOCK/page_header.php'; ?>
 <script>
     // -- FUNCTIONS
 
@@ -270,9 +270,9 @@ $>
         </form>
     </div>
 </div>
-<? include 'BLOCK/page_footer_block.php'; ?>
+<? include 'BLOCK/page_footer.php'; ?>
 %%PHX/ADMINISTRATION/VIEW/edit_{#variable#}_view.pht
-<? include 'BLOCK/page_header_block.php'; ?>
+<? include 'BLOCK/page_header.php'; ?>
 <script>
     // -- FUNCTIONS
 
@@ -335,9 +335,9 @@ $>
         </form>
     </div>
 </div>
-<? include 'BLOCK/page_footer_block.php'; ?>
+<? include 'BLOCK/page_footer.php'; ?>
 %%PHX/ADMINISTRATION/VIEW/remove_{#variable#}_view.pht
-<? include 'BLOCK/page_header_block.php'; ?>
+<? include 'BLOCK/page_header.php'; ?>
 <div>
     <div class="page-section form-section">
         <form class="form-centered" action="/admin/{#style#}/remove/<\% .{#attribute#}.Id %\>" method="post">
@@ -365,9 +365,9 @@ $>
         </form>
     </div>
 </div>
-<? include 'BLOCK/page_footer_block.php'; ?>
+<? include 'BLOCK/page_footer.php'; ?>
 %%PHX/ADMINISTRATION/VIEW/view_{#variable#}_view.pht
-<? include 'BLOCK/page_header_block.php'; ?>
+<? include 'BLOCK/page_header.php'; ?>
 <div>
     <div class="page-section form-section">
         <div class="form-container"><$
@@ -391,9 +391,9 @@ $>
         </div>
     </div>
 </div>
-<? include 'BLOCK/page_footer_block.php'; ?>
+<? include 'BLOCK/page_footer.php'; ?>
 %%PHX/ADMINISTRATION/VIEW/view_<~Plural<>{#variable#}~>_view.pht
-<? include 'BLOCK/page_header_block.php'; ?>
+<? include 'BLOCK/page_header.php'; ?>
 <div>
     <div class="page-section form-section">
         <div class="form-container table-container {#style#}-table sortable-grid"><$
@@ -424,5 +424,5 @@ $>
     </div>
 </div>
 <? import '../../FRAMEWORK/sortable_grid.php'; ?>
-<? include 'BLOCK/page_footer_block.php'; ?>
+<? include 'BLOCK/page_footer.php'; ?>
 #>

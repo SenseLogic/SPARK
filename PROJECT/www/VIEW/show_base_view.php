@@ -168,7 +168,7 @@
 
 
 
-<?php require __DIR__ . '/' . 'BLOCK/page_header_block.php'; ?>
+<?php require __DIR__ . '/' . 'BLOCK/page_header.php'; ?>
 <script>
     // -- VARIABLES
 
@@ -213,14 +213,14 @@
     }
 </script>
 <div>
-    <?php require __DIR__ . '/' . 'BLOCK/header_menu_block.php'; ?>
+    <?php require __DIR__ . '/' . 'BLOCK/header_menu.php'; ?>
     <?php require __DIR__ . '/' . 'show_home_view.php'; ?>
     <?php require __DIR__ . '/' . 'show_products_view.php'; ?>
     <?php require __DIR__ . '/' . 'show_product_view.php'; ?>
     <?php require __DIR__ . '/' . 'show_contact_view.php'; ?>
     <?php require __DIR__ . '/' . 'show_legal_notice_view.php'; ?>
-    <?php require __DIR__ . '/' . 'BLOCK/footer_menu_block.php'; ?>
-    <?php require __DIR__ . '/' . 'BLOCK/cookie_consent_banner_block.php'; ?>
+    <?php require __DIR__ . '/' . 'BLOCK/footer_menu.php'; ?>
+    <?php require __DIR__ . '/' . 'BLOCK/cookie_consent_banner.php'; ?>
 </div>
 <script>
     // -- STATEMENTS
@@ -252,4 +252,4 @@
     UpdateView();
     window.AddEventListener( "resize", UpdateView );
 </script>
-<?php require __DIR__ . '/' . 'BLOCK/page_footer_block.php'; ?>
+<?php require __DIR__ . '/' . 'BLOCK/page_footer.php'; ?>

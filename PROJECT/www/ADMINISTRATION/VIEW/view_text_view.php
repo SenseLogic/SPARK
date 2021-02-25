@@ -1,4 +1,4 @@
-<?php require __DIR__ . '/' . 'BLOCK/page_header_block.php'; ?>
+<?php require __DIR__ . '/' . 'BLOCK/page_header.php'; ?>
 <div>
     <div class="page-section form-section">
         <div class="form-container">
@@ -19,4 +19,4 @@
         </div>
     </div>
 </div>
-<?php require __DIR__ . '/' . 'BLOCK/page_footer_block.php'; ?>
+<?php require __DIR__ . '/' . 'BLOCK/page_footer.php'; ?>

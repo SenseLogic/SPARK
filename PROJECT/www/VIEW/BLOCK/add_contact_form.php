@@ -30,9 +30,9 @@
         </div>
         <div>
             <input name="Captcha" type="text" placeholder="Captcha"/>
-            <img class="add-contact-form-block-captcha-image" src="/captcha"/>
+            <img class="add-contact-form-captcha-image" src="/captcha"/>
         </div>
-        <button id="add-contact-form-block-send-button">
+        <button id="add-contact-form-send-button">
             Send
         </button>
         <div id="thanks-text" class="display-hidden">
@@ -190,7 +190,7 @@
 
     // -- STATEMENTS
 
-    GetElementById( "add-contact-form-block-send-button" ).AddEventListener(
+    GetElementById( "add-contact-form-send-button" ).AddEventListener(
         "click",
         function (
             event

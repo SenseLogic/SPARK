@@ -1,5 +1,5 @@
-<style file="cookie_consent_banner_block.styl">
-    .cookie-consent-banner-block-container
+<style file="cookie_consent_banner.styl">
+    .cookie-consent-banner-container
     {
         z-index: 1000;
         position: fixed;
@@ -22,25 +22,25 @@
         box-shadow: 0 5px 10px rgba( 128, 128, 128, 0.5 );
     }
 
-    .cookie-consent-banner-block-container.hidden
+    .cookie-consent-banner-container.hidden
     {
         display: none;
     }
 
-    .cookie-consent-banner-block-container a,
-    .cookie-consent-banner-block-container a:visited
+    .cookie-consent-banner-container a,
+    .cookie-consent-banner-container a:visited
     {
         color: #444444;
         text-decoration: underline;
     }
 
-    .cookie-consent-banner-block-text
+    .cookie-consent-banner-text
     {
         color: #444444;
         text-align: center;
     }
 
-    .cookie-consent-banner-block-button-container
+    .cookie-consent-banner-button-container
     {
         display: flex;
         justify-content: center;
@@ -48,7 +48,7 @@
         margin-top: 20px;
     }
 
-    .cookie-consent-banner-block-button
+    .cookie-consent-banner-button
     {
         border-radius: 5px;
         margin-left: 5px;
@@ -59,31 +59,31 @@
         transition: all 0.25s ease;
     }
 
-    .cookie-consent-banner-block-button:hover
+    .cookie-consent-banner-button:hover
     {
         transform: scale( 1.05 );
     }
 
-    .cookie-consent-banner-block-accept-button
+    .cookie-consent-banner-accept-button
     {
         background-color: #FF0000;
     }
 
-    .cookie-consent-banner-block-decline-button
+    .cookie-consent-banner-decline-button
     {
         background-color: #CCCCCC;
     }
 </style>
-<div id="cookie-consent-banner-block-container" class="cookie-consent-banner-block-container">
-    <div class="cookie-consent-banner-block-text">
+<div id="cookie-consent-banner-container" class="cookie-consent-banner-container">
+    <div class="cookie-consent-banner-text">
         We use cookies on our website to provide you with the best possible online experience.
         <a href="/legal-notice" target="_blank">More information</a>
     </div>
-    <div class="cookie-consent-banner-block-button-container">
-        <div class="cookie-consent-banner-block-button cookie-consent-banner-block-accept-button" onclick="HandleCookieConsentBannerAgreeButtonClickEvent()">
+    <div class="cookie-consent-banner-button-container">
+        <div class="cookie-consent-banner-button cookie-consent-banner-accept-button" onclick="HandleCookieConsentBannerAgreeButtonClickEvent()">
             Accept
         </div>
-        <div class="cookie-consent-banner-block-button cookie-consent-banner-block-decline-button" onclick="HandleCookieConsentBannerDisacceptButtonClickEvent()">
+        <div class="cookie-consent-banner-button cookie-consent-banner-decline-button" onclick="HandleCookieConsentBannerDisacceptButtonClickEvent()">
             Decline
         </div>
     </div>
@@ -180,7 +180,7 @@
 
     // -- STATEMENTS
 
-    CookieConsentBannerContainerElement = GetElementById( "cookie-consent-banner-block-container" );
+    CookieConsentBannerContainerElement = GetElementById( "cookie-consent-banner-container" );
 
     // RemoveCookieConsent();
 
