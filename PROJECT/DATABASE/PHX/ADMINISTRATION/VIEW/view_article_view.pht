@@ -1,0 +1,46 @@
+<? include 'BLOCK/page_header.php'; ?>
+<div>
+    <div class="page-section form-section">
+        <div class="form-container">
+            <div class="form-field-name">
+                Slug :
+            </div>
+            <div>
+                    <input class="form-input" name="Slug" type="text" value="<% .Article.Slug %>" readonly/>
+            </div>
+            <div class="form-field-name">
+                Name :
+            </div>
+            <div>
+                    <input class="form-input" name="Name" type="text" value="<% .Article.Name %>" readonly/>
+            </div>
+            <div class="form-field-name">
+                Text :
+            </div>
+            <div>
+                    <textarea class="form-textarea" name="Text" readonly><% .Article.Text %></textarea>
+            </div>
+            <div class="form-field-name">
+                Image :
+            </div>
+            <div>
+                <input class="form-input" name="Image" type="text" value="<% .Article.Image %>" readonly/>
+                <div class="form-upload-container">
+                    <img class="form-upload-image" src="<% .Article.Image %>" onerror="this.src='/static/image/admin/missing_image.svg'"/>
+                </div>
+            </div>
+            <div class="form-field-name">
+                Video :
+            </div>
+            <div>
+                <input class="form-input" name="Video" type="text" value="<% .Article.Video %>" readonly/>
+                <div class="form-upload-container">
+                    <video class="form-upload-video" src="<% .Article.Video %>" type="video/mp4" onerror="this.src='/static/video/admin/missing_video.mp4'"></video>
+                </div>
+            </div>
+            <a class="justify-self-start form-button form-button-large cancel-button" href="<% .PreviousPage %>">
+            </a>
+        </div>
+    </div>
+</div>
+<? include 'BLOCK/page_footer.php'; ?>

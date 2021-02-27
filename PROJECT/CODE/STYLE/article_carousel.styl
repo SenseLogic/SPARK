@@ -1,0 +1,49 @@
+MakeCarousel( "article-" );
+MakeCarouselStrip( 1, 1, "article-" );
+
+// ~~
+
+.article-carousel-strip
+{
+    height: 100vh;
+}
+
+.article-carousel-slide
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-position: center center;
+    background-size: cover;
+}
+
+.article-carousel-slide-text
+{
+    max-width: 40rem;
+    font-size: 2rem;
+    color: white;
+}
+
+.article-carousel-arrow
+{
+    font-size: 4rem;
+    color: white;
+    cursor: pointer;
+}
+
+.article-carousel-left-arrow
+{
+    position: absolute;
+    top: 50%;
+    left: 4rem;
+    transform: translateY( -50% );
+}
+
+.article-carousel-right-arrow
+{
+    position: absolute;
+    top: 50%;
+    right: 4rem;
+    transform: translateY( -50% );
+}

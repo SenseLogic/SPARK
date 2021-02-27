@@ -1,0 +1,15 @@
+<div>
+    <? foreach ( var article; .ArticleArray ) { ?>
+        <div>
+            <h2><% article.Name %></h2>
+            <p><% article.Text %></p>
+            <div>
+                <img src="<# article.Image #>"/>
+            </div>
+            <div>
+                <video src="<# article.Video #>" autoplay loop>
+                </video>
+            </div>
+        </div>
+    <? } ?>
+</div>

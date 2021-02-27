@@ -191,7 +191,7 @@ function Route(
             }
             else if ( path_value_count == 1
                       && ( path_value_array[ 0 ] === 'home'
-                           || path_value_array[ 0 ] === 'products'
+                           || path_value_array[ 0 ] === 'articles'
                            || path_value_array[ 0 ] === 'contact'
                            || path_value_array[ 0 ] === 'legal-notice' ) )
             {

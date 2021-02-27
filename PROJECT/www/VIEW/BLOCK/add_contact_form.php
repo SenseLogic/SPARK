@@ -8,7 +8,12 @@
 
 
 
-<div>
+
+
+
+
+
+<div class="add-contact-form">
     <form name="AddContactForm">
         <div>
             <input id="name" name="Name" type="text" placeholder="Name"/>
@@ -17,10 +22,10 @@
             <input id="company" name="Company" type="text" placeholder="Company"/>
         </div>
         <div>
-            <input id="email" name="Email" type="text" placeholder="Email"/>
+            <input id="email" name="Email" type="email" placeholder="Email"/>
         </div>
         <div>
-            <input id="phone" name="Phone" type="text" placeholder="Phone"/>
+            <input id="phone" name="Phone" type="tel" placeholder="Phone"/>
         </div>
         <div>
             <input id="subject" name="Subject" type="text" placeholder="Subject"/>
@@ -154,6 +159,24 @@
 
     // ~~
 
+    function ClearContactForm(
+        )
+    {
+        var
+            add_contact_form;
+
+        add_contact_form = document.AddContactForm;
+        add_contact_form.Name.value = "";
+        add_contact_form.Company.value = "";
+        add_contact_form.Email.value = "";
+        add_contact_form.Phone.value = "";
+        add_contact_form.Subject.value = "";
+        add_contact_form.Message.value = "";
+        add_contact_form.Captcha.value = "";
+    }
+
+    // ~~
+
     async function HandleAddContactButtonClickEvent(
         )
     {
@@ -183,6 +206,7 @@
 
             if ( request.status === 200 )
             {
+                ClearContactForm();
                 GetElementById( "thanks-text" ).RemoveClass( "display-hidden" );
             }
         }

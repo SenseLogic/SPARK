@@ -525,12 +525,8 @@ textarea:focus {
   background: url("/static/image/admin/text_icon.svg") no-repeat center center;
   background-size: contain;
 }
-.department-button {
-  background: url("/static/image/admin/department_icon.svg") no-repeat center center;
-  background-size: contain;
-}
-.product-button {
-  background: url("/static/image/admin/product_icon.svg") no-repeat center center;
+.article-button {
+  background: url("/static/image/admin/article_icon.svg") no-repeat center center;
   background-size: contain;
 }
 .contact-button {
@@ -544,10 +540,7 @@ textarea:focus {
 .text-table {
   grid-template-columns: repeat(3, auto);
 }
-.department-table {
-  grid-template-columns: repeat(6, auto);
-}
-.product-table {
+.article-table {
   grid-template-columns: repeat(7, auto);
 }
 .contact-table {

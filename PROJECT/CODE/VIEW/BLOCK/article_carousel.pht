@@ -1,0 +1,103 @@
+<style file="article_carousel.styl">
+    MakeCarousel( "article-" );
+    MakeCarouselStrip( 1, 1, "article-" );
+
+    // ~~
+
+    .article-carousel-strip
+    {
+        height: 100vh;
+    }
+
+    .article-carousel-slide
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    .article-carousel-slide-text
+    {
+        max-width: 40rem;
+        font-size: 2rem;
+        color: white;
+    }
+
+    .article-carousel-arrow
+    {
+        font-size: 4rem;
+        color: white;
+        cursor: pointer;
+    }
+
+    .article-carousel-left-arrow
+    {
+        position: absolute;
+        top: 50%;
+        left: 4rem;
+        transform: translateY( -50% );
+    }
+
+    .article-carousel-right-arrow
+    {
+        position: absolute;
+        top: 50%;
+        right: 4rem;
+        transform: translateY( -50% );
+    }
+</style>
+<div id="article-carousel" class="article-carousel">
+    <div id="article-carousel-strip" class="article-carousel-strip">
+    <?  for ( var article_index = 0; article_index <= .ArticleCount; ++article_index ) { ?>
+        <? var article = .ArticleArray[ article_index % .ArticleCount ]; ?>
+        <div class="article-carousel-slide" style="background-image: url( '<# article.Image #>' )">
+            <div class="article-carousel-slide-text">
+                <% article.Text %>
+            </div>
+        </div>
+    <? } ?>
+    </div>
+    <div id="article-carousel-left-arrow" class="article-carousel-arrow article-carousel-left-arrow">
+        &lt;
+    </div>
+    <div id="article-carousel-right-arrow" class="article-carousel-arrow article-carousel-right-arrow">
+        &gt;
+    </div>
+</div>
+<script>
+    var article_carousel
+        = new CAROUSEL(
+              GetElementById( "article-carousel" ),
+              GetElementById( "article-carousel-strip" ),
+              0.0,
+              6,
+              1,
+              3.0,
+              0.5
+              );
+
+    GetElementById( "article-carousel-left-arrow" ).AddEventListener(
+        "click",
+        function (
+            )
+        {
+            article_carousel.StopAutomaticAnimation();
+            article_carousel.ShowPriorSlide();
+        }
+        );
+
+    GetElementById( "article-carousel-right-arrow" ).AddEventListener(
+        "click",
+        function (
+            )
+        {
+            article_carousel.StopAutomaticAnimation();
+            article_carousel.ShowNextSlide();
+        }
+        );
+
+    article_carousel.StartAutomaticAnimation();
+</script>

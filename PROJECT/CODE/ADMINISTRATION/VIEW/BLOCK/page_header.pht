@@ -18,20 +18,11 @@
                         </a>
                     </div>
                     <div class="page-menu-item">
-                        <a href="/admin/department">
-                            <span class="form-button form-button-large department-button">
+                        <a href="/admin/article">
+                            <span class="form-button form-button-large article-button">
                             </span>
                             <span class="form-button-tooltip">
-                                Department
-                            </span>
-                        </a>
-                    </div>
-                    <div class="page-menu-item">
-                        <a href="/admin/product">
-                            <span class="form-button form-button-large product-button">
-                            </span>
-                            <span class="form-button-tooltip">
-                                Product
+                                Article
                             </span>
                         </a>
                     </div>
