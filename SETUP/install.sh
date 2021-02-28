@@ -26,6 +26,7 @@ cd TOOL
 git clone https://github.com/senselogic/BASIL.git
 git clone https://github.com/senselogic/CYLUS.git
 git clone https://github.com/senselogic/CYCLONE.git
+git clone https://github.com/senselogic/FLEX.git
 git clone https://github.com/senselogic/GENERIS.git
 git clone https://github.com/senselogic/PHOENIX.git
 git clone https://github.com/senselogic/RESYNC.git

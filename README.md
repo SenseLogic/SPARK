@@ -20,6 +20,8 @@ which allows to develop modular PHP code with a readable and concise JavaScript-
 
 The project template uses the following tools :
 
+* [Flex](https://github.com/senselogic/FLEX)
+    * to fix the project and table names.
 * [Basil](https://github.com/senselogic/BASIL)
     * to design the database schema and test data, and generate the SQL initialization scripts;
     * to generate the request routing, database access, REST API and administration website code.
@@ -31,7 +33,7 @@ The project template uses the following tools :
     * as the Stylus and JavaScript front-end framework for the administration website.
 * [Stylus](https://github.com/stylus/stylus)
     * to compile the Stylus scripts into CSS code.
-* [Refit](https://github.com/refit/refit)
+* [Cylus](https://github.com/cylus/cylus)
     * to find unused and missing CSS classes.
 * [Resync](https://github.com/senselogic/RESYNC)
     * to update the website code and data on the development system.

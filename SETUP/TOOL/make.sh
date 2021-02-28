@@ -10,6 +10,10 @@ cd CYLUS
 git pull origin master
 dmd -m64 cylus.d
 cd ..
+cd FLEX
+git pull origin master
+dmd -m64 flex.d
+cd ..
 cd GENERIS
 git pull origin master
 dmd -m64 generis.d

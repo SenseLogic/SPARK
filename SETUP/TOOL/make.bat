@@ -11,6 +11,11 @@ git pull origin master
 dmd -m64 -L/Brepro cylus.d
 del cylus.obj
 cd ..
+cd FLEX
+git pull origin master
+dmd -m64 -L/Brepro flex.d
+del flex.obj
+cd ..
 cd GENERIS
 git pull origin master
 dmd -m64 -L/Brepro generis.d
