@@ -31,7 +31,7 @@ The project template uses the following tools :
     * as the Stylus and JavaScript front-end framework for the administration website.
 * [Stylus](https://github.com/stylus/stylus)
     * to compile the Stylus scripts into CSS code.
-* [Cylus](https://github.com/cylus/cylus)
+* [Refit](https://github.com/refit/refit)
     * to find unused and missing CSS classes.
 * [Resync](https://github.com/senselogic/RESYNC)
     * to update the website code and data on the development system.
