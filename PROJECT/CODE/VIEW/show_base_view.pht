@@ -1,9 +1,4 @@
 <style file="show_base_view.styl">
-    // -- IMPORTS
-
-    @import "VISTA/vista_reset.styl"
-    @import "VISTA/vista.styl"
-
     // -- CONSTANTS
 
     BlackColor = #000000;

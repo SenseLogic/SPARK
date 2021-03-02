@@ -163,11 +163,6 @@
 
 
 
-
-
-
-
-
 <?php require __DIR__ . '/' . 'BLOCK/page_header.php'; ?>
 <script>
     // -- VARIABLES
