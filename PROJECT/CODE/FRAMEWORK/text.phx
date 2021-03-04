@@ -27,6 +27,15 @@ function GetHexatridecimalText(
 
 // ~~
 
+function GetQuotedText(
+    string text
+    )
+{
+    return addslashes( text );
+}
+
+// ~~
+
 function HasPrefix(
     string text,
     string prefix
