@@ -108,6 +108,175 @@ function RemoveSuffix(
 
 // ~~
 
+function GetLowerCaseText(
+    string text
+    )
+{
+    return strtolower( text );
+}
+
+// ~~
+
+function GetUpperCaseText(
+    string text
+    )
+{
+    return strtoupper( text );
+}
+
+// ~~
+
+function GetCapitalCaseText(
+    string text
+    )
+{
+    if ( count( text ) <= 1 )
+    {
+        return strtoupper( text );
+    }
+    else
+    {
+        return strtoupper( text[ 0 ] ) .. strtolower( substr( text, 1 ) );
+    }
+}
+
+// ~~
+
+function GetTitleCaseText(
+    string text,
+    bool prior_character_is_letter = false,
+    bool separator_characters_are_kept = true
+    )
+{
+    var title_case_text = "";
+
+    foreach ( var character; mb_str_split( text ) )
+    {
+        var lower_case_character = strtolower( character );
+        var upper_case_character = strtoupper( character );
+
+        if ( lower_case_character !== upper_case_character )
+        {
+            if ( prior_character_is_letter )
+            {
+                title_case_text ..= lower_case_character;
+            }
+            else
+            {
+                title_case_text ..= upper_case_character;
+            }
+
+            prior_character_is_letter = true;
+        }
+        else
+        {
+            if ( ( character >= '0'
+                   && character <= '9' )
+                 || separator_characters_are_kept )
+            {
+                title_case_text ..= character;
+            }
+
+            prior_character_is_letter = false;
+        }
+    }
+
+    return title_case_text;
+}
+
+// ~~
+
+function GetPascalCaseText(
+    string text,
+    bool prior_character_is_letter = false
+    )
+{
+    return GetTitleCaseText( text, false, false );
+}
+
+// ~~
+
+function GetCamelCaseText(
+    string text
+    )
+{
+    return GetTitleCaseText( text, true, false );
+}
+
+// ~~
+
+function GetSnakeCaseText(
+    string text,
+    string separator_character = "_"
+    )
+{
+    var snake_case_text = "";
+    var prior_character_is_digit = false;
+    var prior_character_is_lower_case_letter = false;
+
+    foreach ( var character; mb_str_split( text ) )
+    {
+        if ( character >= '0'
+             && character <= '9' )
+        {
+            if ( !prior_character_is_digit )
+            {
+                snake_case_text ..= separator_character;
+            }
+
+            prior_character_is_digit = true;
+        }
+        else
+        {
+            var lower_case_character = strtolower( character );
+            var upper_case_character = strtoupper( character );
+
+            if ( lower_case_character !== upper_case_character )
+            {
+                if ( character === lower_case_character )
+                {
+                    var prior_character_is_lower_case_letter = true;
+                }
+                else if ( character === upper_case_character )
+                {
+                    if ( prior_character_is_lower_case_letter
+                         || prior_character_is_digit )
+                    {
+                        snake_case_text ..= separator_character;
+                    }
+
+                    prior_character_is_lower_case_letter = false;
+                }
+
+                character = lower_case_character;
+            }
+            else
+            {
+                character = "";
+                prior_character_is_lower_case_letter = true;
+            }
+
+            prior_character_is_digit = false;
+        }
+
+        snake_case_text ..= character;
+    }
+
+    return snake_case_text;
+}
+
+// ~~
+
+function GetKebabCaseText(
+    string text
+    )
+{
+    return GetSnakeCaseText( text, '-' );
+}
+
+
+// ~~
+
 function GetShortenedText(
     string text,
     int maximum_character_count,
