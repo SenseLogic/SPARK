@@ -34,5 +34,4 @@
         </div>
     </div>
 </div>
-<? import '../../FRAMEWORK/sortable_grid.php'; ?>
 <? include 'BLOCK/page_footer.php'; ?>
