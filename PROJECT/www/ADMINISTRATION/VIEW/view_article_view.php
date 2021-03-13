@@ -6,13 +6,13 @@
                 Slug :
             </div>
             <div>
-                    <input class="form-input" name="Slug" type="text" value="<?php echo htmlspecialchars( $this->Article->Slug ); ?>" readonly/>
+                    <input class="form-input" name="Slug" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Article->Slug ) ); ?>" readonly/>
             </div>
             <div class="form-field-name">
                 Name :
             </div>
             <div>
-                    <input class="form-input" name="Name" type="text" value="<?php echo htmlspecialchars( $this->Article->Name ); ?>" readonly/>
+                    <input class="form-input" name="Name" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Article->Name ) ); ?>" readonly/>
             </div>
             <div class="form-field-name">
                 Text :

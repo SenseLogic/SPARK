@@ -7,7 +7,7 @@
                     Slug :
                 </div>
                 <div>
-                    <input class="form-input" name="Slug" type="text" value="<?php echo htmlspecialchars( $this->Text->Slug ); ?>" readonly/>
+                    <input class="form-input" name="Slug" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Text->Slug ) ); ?>" readonly/>
                 </div>
                 <div class="form-field-name">
                     Text :

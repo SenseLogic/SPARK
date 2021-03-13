@@ -16,16 +16,16 @@ import 'FRAMEWORK/mail.php';
 
 // -- CONSTANTS
 
-define( 'DatabaseHost', 'localhost' );
-
 if ( GetServerName() === 'localhost' )
 {
+    define( 'DatabaseHost', 'localhost' );
     define( 'DatabaseName', 'spark-project' );
     define( 'DatabaseUserName', 'root' );
-    define( 'DatabasePassword', '' );
+    define( 'DatabasePassword', 'root' );
 }
 else
 {
+    define( 'DatabaseHost', 'localhost' );
     define( 'DatabaseName', '???' );
     define( 'DatabaseUserName', '???' );
     define( 'DatabasePassword', '???' );

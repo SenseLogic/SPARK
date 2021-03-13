@@ -19,16 +19,16 @@
             </div>
             <? foreach ( var user; .UserArray ) { ?>
                 <div class="sortable-grid-cell">
-                    <% user.Email %>
+                    <% GetValueText( user.Email ) %>
                 </div>
                 <div class="sortable-grid-cell">
-                    <% user.Pseudonym %>
+                    <% GetValueText( user.Pseudonym ) %>
                 </div>
                 <div class="sortable-grid-cell">
-                    <% user.Password %>
+                    <% GetValueText( user.Password ) %>
                 </div>
                 <div class="sortable-grid-cell">
-                    <% user.Role %>
+                    <% GetValueText( user.Role ) %>
                 </div>
                 <div class="form-centered sortable-grid-cell">
                     <a class="form-button view-button" href="/admin/user/view/<% user.Id %>">

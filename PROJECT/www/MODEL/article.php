@@ -68,6 +68,31 @@ function AddDatabaseArticle(
 
 // ~~
 
+function PutDatabaseArticle(
+    string $slug,
+    string $name,
+    string $text,
+    string $image,
+    string $video
+    )
+{
+     $statement = GetDatabaseStatement( 'replace into ARTICLE ( Slug, Name, Text, Image, Video ) values ( ?, ?, ?, ?, ? )' );
+    $statement->bindParam( 1, $slug, PDO::PARAM_STR );
+    $statement->bindParam( 2, $name, PDO::PARAM_STR );
+    $statement->bindParam( 3, $text, PDO::PARAM_STR );
+    $statement->bindParam( 4, $image, PDO::PARAM_STR );
+    $statement->bindParam( 5, $video, PDO::PARAM_STR );
+
+    if ( !$statement->execute() )
+    {
+        var_dump( $statement->errorInfo() );
+    }
+
+    return GetDatabaseAddedId( $statement );
+}
+
+// ~~
+
 function SetDatabaseArticle(
     int $id,
     string $slug,

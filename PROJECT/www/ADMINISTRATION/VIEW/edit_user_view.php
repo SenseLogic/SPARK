@@ -75,25 +75,25 @@
                     Email :
                 </div>
                 <div>
-                    <input class="form-input" name="Email" type="text" value="<?php echo htmlspecialchars( $this->User->Email ); ?>"/>
+                    <input class="form-input" name="Email" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->User->Email ) ); ?>"/>
                 </div>
                 <div class="form-field-name">
                     Pseudonym :
                 </div>
                 <div>
-                    <input class="form-input" name="Pseudonym" type="text" value="<?php echo htmlspecialchars( $this->User->Pseudonym ); ?>"/>
+                    <input class="form-input" name="Pseudonym" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->User->Pseudonym ) ); ?>"/>
                 </div>
                 <div class="form-field-name">
                     Password :
                 </div>
                 <div>
-                    <input class="form-input" name="Password" type="text" value="<?php echo htmlspecialchars( $this->User->Password ); ?>"/>
+                    <input class="form-input" name="Password" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->User->Password ) ); ?>"/>
                 </div>
                 <div class="form-field-name">
                     Role :
                 </div>
                 <div>
-                    <input class="form-input" name="Role" type="text" value="<?php echo htmlspecialchars( $this->User->Role ); ?>"/>
+                    <input class="form-input" name="Role" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->User->Role ) ); ?>"/>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="/admin/user">
                 </a>

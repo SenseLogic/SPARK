@@ -28,25 +28,25 @@
             </div>
             <?php foreach ( $this->ContactArray as  $contact ) { ?>
                 <div class="sortable-grid-cell">
-                    <?php echo htmlspecialchars( $contact->Name ); ?>
+                    <?php echo htmlspecialchars( GetValueText( $contact->Name ) ); ?>
                 </div>
                 <div class="sortable-grid-cell">
-                    <?php echo htmlspecialchars( $contact->Company ); ?>
+                    <?php echo htmlspecialchars( GetValueText( $contact->Company ) ); ?>
                 </div>
                 <div class="sortable-grid-cell">
-                    <?php echo htmlspecialchars( $contact->Email ); ?>
+                    <?php echo htmlspecialchars( GetValueText( $contact->Email ) ); ?>
                 </div>
                 <div class="sortable-grid-cell">
-                    <?php echo htmlspecialchars( $contact->Phone ); ?>
+                    <?php echo htmlspecialchars( GetValueText( $contact->Phone ) ); ?>
                 </div>
                 <div class="sortable-grid-cell">
-                    <?php echo htmlspecialchars( $contact->Subject ); ?>
+                    <?php echo htmlspecialchars( GetValueText( $contact->Subject ) ); ?>
                 </div>
                 <div class="sortable-grid-cell">
-                    <?php echo htmlspecialchars( $contact->Message ); ?>
+                    <?php echo htmlspecialchars( GetValueText( $contact->Message ) ); ?>
                 </div>
                 <div class="sortable-grid-cell">
-                    <?php echo htmlspecialchars( $contact->DateTime ); ?>
+                    <?php echo htmlspecialchars( GetValueText( $contact->DateTime ) ); ?>
                 </div>
                 <div class="form-centered sortable-grid-cell">
                     <a class="form-button view-button" href="/admin/contact/view/<?php echo htmlspecialchars( $contact->Id ); ?>">

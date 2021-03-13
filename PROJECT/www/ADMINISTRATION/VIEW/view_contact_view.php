@@ -6,31 +6,31 @@
                 Name :
             </div>
             <div>
-                    <input class="form-input" name="Name" type="text" value="<?php echo htmlspecialchars( $this->Contact->Name ); ?>" readonly/>
+                    <input class="form-input" name="Name" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Contact->Name ) ); ?>" readonly/>
             </div>
             <div class="form-field-name">
                 Company :
             </div>
             <div>
-                    <input class="form-input" name="Company" type="text" value="<?php echo htmlspecialchars( $this->Contact->Company ); ?>" readonly/>
+                    <input class="form-input" name="Company" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Contact->Company ) ); ?>" readonly/>
             </div>
             <div class="form-field-name">
                 Email :
             </div>
             <div>
-                    <input class="form-input" name="Email" type="text" value="<?php echo htmlspecialchars( $this->Contact->Email ); ?>" readonly/>
+                    <input class="form-input" name="Email" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Contact->Email ) ); ?>" readonly/>
             </div>
             <div class="form-field-name">
                 Phone :
             </div>
             <div>
-                    <input class="form-input" name="Phone" type="text" value="<?php echo htmlspecialchars( $this->Contact->Phone ); ?>" readonly/>
+                    <input class="form-input" name="Phone" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Contact->Phone ) ); ?>" readonly/>
             </div>
             <div class="form-field-name">
                 Subject :
             </div>
             <div>
-                    <input class="form-input" name="Subject" type="text" value="<?php echo htmlspecialchars( $this->Contact->Subject ); ?>" readonly/>
+                    <input class="form-input" name="Subject" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Contact->Subject ) ); ?>" readonly/>
             </div>
             <div class="form-field-name">
                 Message :
@@ -42,7 +42,7 @@
                 Date Time :
             </div>
             <div>
-                    <input class="form-input" name="DateTime" type="text" value="<?php echo htmlspecialchars( $this->Contact->DateTime ); ?>" readonly/>
+                    <input class="form-input" name="DateTime" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Contact->DateTime ) ); ?>" readonly/>
             </div>
             <a class="justify-self-start form-button form-button-large cancel-button" href="<?php echo htmlspecialchars( $this->PreviousPage ); ?>">
             </a>

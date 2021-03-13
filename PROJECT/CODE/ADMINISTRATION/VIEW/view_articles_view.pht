@@ -22,19 +22,19 @@
             </div>
             <? foreach ( var article; .ArticleArray ) { ?>
                 <div class="sortable-grid-cell">
-                    <% article.Slug %>
+                    <% GetValueText( article.Slug ) %>
                 </div>
                 <div class="sortable-grid-cell">
-                    <% article.Name %>
+                    <% GetValueText( article.Name ) %>
                 </div>
                 <div class="sortable-grid-cell">
-                    <% article.Text %>
+                    <% GetValueText( article.Text ) %>
                 </div>
                 <div class="sortable-grid-cell">
-                    <% article.Image %>
+                    <% GetValueText( article.Image ) %>
                 </div>
                 <div class="sortable-grid-cell">
-                    <% article.Video %>
+                    <% GetValueText( article.Video ) %>
                 </div>
                 <div class="form-centered sortable-grid-cell">
                     <a class="form-button view-button" href="/admin/article/view/<% article.Id %>">

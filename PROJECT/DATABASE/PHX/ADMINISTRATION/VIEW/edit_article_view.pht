@@ -88,13 +88,13 @@
                     Slug :
                 </div>
                 <div>
-                    <input class="form-input" name="Slug" type="text" value="<% .Article.Slug %>"/>
+                    <input class="form-input" name="Slug" type="text" value="<% GetValueText( .Article.Slug ) %>"/>
                 </div>
                 <div class="form-field-name">
                     Name :
                 </div>
                 <div>
-                    <input class="form-input" name="Name" type="text" value="<% .Article.Name %>"/>
+                    <input class="form-input" name="Name" type="text" value="<% GetValueText( .Article.Name ) %>"/>
                 </div>
                 <div class="form-field-name">
                     Text :

@@ -88,13 +88,13 @@
                     Slug :
                 </div>
                 <div>
-                    <input class="form-input" name="Slug" type="text" value="<?php echo htmlspecialchars( $this->Article->Slug ); ?>"/>
+                    <input class="form-input" name="Slug" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Article->Slug ) ); ?>"/>
                 </div>
                 <div class="form-field-name">
                     Name :
                 </div>
                 <div>
-                    <input class="form-input" name="Name" type="text" value="<?php echo htmlspecialchars( $this->Article->Name ); ?>"/>
+                    <input class="form-input" name="Name" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Article->Name ) ); ?>"/>
                 </div>
                 <div class="form-field-name">
                     Text :

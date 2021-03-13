@@ -70,6 +70,33 @@ function AddDatabaseContact(
 
 // ~~
 
+function PutDatabaseContact(
+    string name,
+    string company,
+    string email,
+    string phone,
+    string subject,
+    string message
+    )
+{
+    var statement = GetDatabaseStatement( 'replace into CONTACT ( Name, Company, Email, Phone, Subject, Message, DateTime ) values ( ?, ?, ?, ?, ?, ?, now() )' );
+    statement.bindParam( 1, name, PDO::PARAM_STR );
+    statement.bindParam( 2, company, PDO::PARAM_STR );
+    statement.bindParam( 3, email, PDO::PARAM_STR );
+    statement.bindParam( 4, phone, PDO::PARAM_STR );
+    statement.bindParam( 5, subject, PDO::PARAM_STR );
+    statement.bindParam( 6, message, PDO::PARAM_STR );
+
+    if ( !statement.execute() )
+    {
+        var_dump( statement.errorInfo() );
+    }
+
+    return GetDatabaseAddedId( statement );
+}
+
+// ~~
+
 function SetDatabaseContact(
     int id,
     string name,

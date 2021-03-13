@@ -19,16 +19,16 @@
             </div>
             <?php foreach ( $this->UserArray as  $user ) { ?>
                 <div class="sortable-grid-cell">
-                    <?php echo htmlspecialchars( $user->Email ); ?>
+                    <?php echo htmlspecialchars( GetValueText( $user->Email ) ); ?>
                 </div>
                 <div class="sortable-grid-cell">
-                    <?php echo htmlspecialchars( $user->Pseudonym ); ?>
+                    <?php echo htmlspecialchars( GetValueText( $user->Pseudonym ) ); ?>
                 </div>
                 <div class="sortable-grid-cell">
-                    <?php echo htmlspecialchars( $user->Password ); ?>
+                    <?php echo htmlspecialchars( GetValueText( $user->Password ) ); ?>
                 </div>
                 <div class="sortable-grid-cell">
-                    <?php echo htmlspecialchars( $user->Role ); ?>
+                    <?php echo htmlspecialchars( GetValueText( $user->Role ) ); ?>
                 </div>
                 <div class="form-centered sortable-grid-cell">
                     <a class="form-button view-button" href="/admin/user/view/<?php echo htmlspecialchars( $user->Id ); ?>">

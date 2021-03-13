@@ -13,10 +13,10 @@
             </div>
             <?php foreach ( $this->TextArray as  $text ) { ?>
                 <div class="sortable-grid-cell">
-                    <?php echo htmlspecialchars( $text->Slug ); ?>
+                    <?php echo htmlspecialchars( GetValueText( $text->Slug ) ); ?>
                 </div>
                 <div class="sortable-grid-cell">
-                    <?php echo htmlspecialchars( $text->Text ); ?>
+                    <?php echo htmlspecialchars( GetValueText( $text->Text ) ); ?>
                 </div>
                 <div class="form-centered sortable-grid-cell">
                     <a class="form-button view-button" href="/admin/text/view/<?php echo htmlspecialchars( $text->Id ); ?>">

@@ -22,19 +22,19 @@
             </div>
             <?php foreach ( $this->ArticleArray as  $article ) { ?>
                 <div class="sortable-grid-cell">
-                    <?php echo htmlspecialchars( $article->Slug ); ?>
+                    <?php echo htmlspecialchars( GetValueText( $article->Slug ) ); ?>
                 </div>
                 <div class="sortable-grid-cell">
-                    <?php echo htmlspecialchars( $article->Name ); ?>
+                    <?php echo htmlspecialchars( GetValueText( $article->Name ) ); ?>
                 </div>
                 <div class="sortable-grid-cell">
-                    <?php echo htmlspecialchars( $article->Text ); ?>
+                    <?php echo htmlspecialchars( GetValueText( $article->Text ) ); ?>
                 </div>
                 <div class="sortable-grid-cell">
-                    <?php echo htmlspecialchars( $article->Image ); ?>
+                    <?php echo htmlspecialchars( GetValueText( $article->Image ) ); ?>
                 </div>
                 <div class="sortable-grid-cell">
-                    <?php echo htmlspecialchars( $article->Video ); ?>
+                    <?php echo htmlspecialchars( GetValueText( $article->Video ) ); ?>
                 </div>
                 <div class="form-centered sortable-grid-cell">
                     <a class="form-button view-button" href="/admin/article/view/<?php echo htmlspecialchars( $article->Id ); ?>">

@@ -1,0 +1,10 @@
+[13-Mar-2021 17:44:05 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: could not find driver in /home/eric/data/WORK/PROJECT/TOOL/SPARK/PROJECT/www/FRAMEWORK/database.php:15
+Stack trace:
+#0 /home/eric/data/WORK/PROJECT/TOOL/SPARK/PROJECT/www/FRAMEWORK/database.php(15): PDO->__construct('mysql:host=loca...', 'root', 'root')
+#1 /home/eric/data/WORK/PROJECT/TOOL/SPARK/PROJECT/www/FRAMEWORK/database.php(46): GetDatabaseConnection()
+#2 /home/eric/data/WORK/PROJECT/TOOL/SPARK/PROJECT/www/MODEL/text.php(6): GetDatabaseStatement('select Id, Slug...')
+#3 /home/eric/data/WORK/PROJECT/TOOL/SPARK/PROJECT/www/CONTROLLER/view_controller.php(20): GetDatabaseTextArray()
+#4 /home/eric/data/WORK/PROJECT/TOOL/SPARK/PROJECT/www/CONTROLLER/show_base_controller.php(16): VIEW_CONTROLLER->__construct('en')
+#5 /home/eric/data/WORK/PROJECT/TOOL/SPARK/PROJECT/www/CONTROLLER/show_base_controller.php(32): SHOW_BASE_CONTROLLER->__construct('en', 'home')
+#6 /home/eric/data/WORK/PROJECT/TOOL/SPARK/PROJECT/www/index.php(447): require_once('/home/eric/data...')
+#7 /home/eric/data/WORK/PROJ in /home/eric/data/WORK/PROJECT/TOOL/SPARK/PROJECT/www/FRAMEWORK/database.php on line 15

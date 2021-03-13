@@ -346,6 +346,18 @@ textarea:focus {
 .justify-self-end {
   justify-self: flex-end;
 }
+.sortable-grid-column {
+  user-select: none;
+  cursor: pointer;
+}
+.sortable-grid-column.order-is-ascending:after {
+  position: absolute;
+  content: "\00a0\25B2";
+}
+.sortable-grid-column.order-is-descending:after {
+  position: absolute;
+  content: "\00a0\25BC";
+}
 .page-container {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -354,8 +366,8 @@ textarea:focus {
 }
 .page-menu {
   grid-area: 1/1/span 2;
-  padding: 15px;
   display: flex;
+  padding: 15px;
   background-image: linear-gradient(to right, #29323c 0%, #485563 100%);
   width: 72px;
 }

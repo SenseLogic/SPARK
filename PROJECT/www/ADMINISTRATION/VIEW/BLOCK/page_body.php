@@ -2,6 +2,7 @@
 <script src="/static/script/vista_element.js"></script>
 <script src="/static/script/vista_animation.js"></script>
 <script src="/static/script/vista_request.js"></script>
+<script src="/static/script/vista_sortable_grid.js"></script>
 <script>
     function HandleImagePathInputChangeEvent(
         path_element
@@ -70,4 +71,7 @@
             }
         }
     }
+</script>
+<script defer>
+    InitializeSortableGridColumns();
 </script>

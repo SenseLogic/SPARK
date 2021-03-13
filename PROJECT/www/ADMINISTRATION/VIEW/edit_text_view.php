@@ -49,7 +49,7 @@
                     Slug :
                 </div>
                 <div>
-                    <input class="form-input" name="Slug" type="text" value="<?php echo htmlspecialchars( $this->Text->Slug ); ?>"/>
+                    <input class="form-input" name="Slug" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Text->Slug ) ); ?>"/>
                 </div>
                 <div class="form-field-name">
                     Text :

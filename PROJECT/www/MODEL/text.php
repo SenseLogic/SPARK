@@ -62,6 +62,25 @@ function AddDatabaseText(
 
 // ~~
 
+function PutDatabaseText(
+    string $slug,
+    string $text
+    )
+{
+     $statement = GetDatabaseStatement( 'replace into TEXT ( Slug, Text ) values ( ?, ? )' );
+    $statement->bindParam( 1, $slug, PDO::PARAM_STR );
+    $statement->bindParam( 2, $text, PDO::PARAM_STR );
+
+    if ( !$statement->execute() )
+    {
+        var_dump( $statement->errorInfo() );
+    }
+
+    return GetDatabaseAddedId( $statement );
+}
+
+// ~~
+
 function SetDatabaseText(
     int $id,
     string $slug,

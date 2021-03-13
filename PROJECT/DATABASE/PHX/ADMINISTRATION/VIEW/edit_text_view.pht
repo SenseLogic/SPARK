@@ -49,7 +49,7 @@
                     Slug :
                 </div>
                 <div>
-                    <input class="form-input" name="Slug" type="text" value="<% .Text.Slug %>"/>
+                    <input class="form-input" name="Slug" type="text" value="<% GetValueText( .Text.Slug ) %>"/>
                 </div>
                 <div class="form-field-name">
                     Text :
