@@ -1,7 +1,7 @@
-#CODE/FRAMEWORK/*.ph?
-CODE/STYLE/VISTA/vista*.*
-DATABASE/*.sql
-www/error.log
-www/php.log
-www/FRAMEWORK/*.*
-www/static/script/vista*.*
+#/CODE/FRAMEWORK/*.ph?
+/CODE/STYLE/VISTA/vista*.*
+/DATABASE/*.sql
+/www/error.log
+/www/php.log
+/www/FRAMEWORK/*.*
+/www/static/script/vista*.*
