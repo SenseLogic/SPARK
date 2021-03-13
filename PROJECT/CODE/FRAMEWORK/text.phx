@@ -9,6 +9,23 @@ function GetCharacterCount(
 
 // ~~
 
+function GetValueText(
+    value
+    )
+{
+    if ( is_array( value )
+         || is_object( value ) )
+    {
+        return json_encode( value );
+    }
+    else
+    {
+        return strval( value );
+    }
+}
+
+// ~~
+
 function GetHexadecimalText(
     int integer
     )

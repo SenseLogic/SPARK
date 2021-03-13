@@ -36,8 +36,9 @@ class DO_ADD_{#type#}_CONTROLLER extends CONTROLLER
         )
     {
         parent::constructor();
-<$
-        var {%variable%} = GetPostValue( '{%attribute%}' );$>
+<$<~{%is_scalar%}<>
+        var {%variable%} = GetPostValue( '{%attribute%}' );<>
+        var {%variable%} = GetJsonObject( GetPostValue( '{%attribute%}' ) );~>$>
 
         AddDatabase{#attribute#}( <${%variable%}<~!{%is_last%}<>, ~>$> );
 
@@ -89,8 +90,9 @@ class DO_EDIT_{#type#}_CONTROLLER extends CONTROLLER
         )
     {
         parent::constructor();
-<$
-        var {%variable%} = GetPostValue( '{%attribute%}' );$>
+<$<~{%is_scalar%}<>
+        var {%variable%} = GetPostValue( '{%attribute%}' );<>
+        var {%variable%} = GetJsonObject( GetPostValue( '{%attribute%}' ) );~>$>
 
         SetDatabase{#attribute#}( {#variable#}_id, <${%variable%}<~!{%is_last%}<>, ~>$> );
 
@@ -325,7 +327,7 @@ $>
                         </label>
                     </div><><~{%is_text%}<>
                     <textarea class="form-textarea" name="{%attribute%}"><\% .{#attribute#}.{%attribute%} %\></textarea><>
-                    <input class="form-input" name="{%attribute%}" type="text" value="<\% .{#attribute#}.{%attribute%} %\>"/>~>~>~>
+                    <input class="form-input" name="{%attribute%}" type="text" value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>"/>~>~>~>
                 </div>$>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="/admin/{#style#}">
                 </a>
@@ -355,7 +357,7 @@ $>
                         <video class="form-upload-video" src="<\% .{#attribute#}.{%attribute%} %\>" type="video/mp4" onerror="this.src='/static/video/admin/missing_video.mp4'"></video>
                     </div><><~{%is_text%}<>
                     <textarea class="form-textarea" name="{%attribute%}" readonly><\% .{#attribute#}.{%attribute%} %\></textarea><>
-                    <input class="form-input" name="{%attribute%}" type="text" value="<\% .{#attribute#}.{%attribute%} %\>" readonly/>~>~>~>
+                    <input class="form-input" name="{%attribute%}" type="text" value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" readonly/>~>~>~>
                 </div>$>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="/admin/{#style#}">
                 </a>
@@ -384,7 +386,7 @@ $>
                     <video class="form-upload-video" src="<\% .{#attribute#}.{%attribute%} %\>" type="video/mp4" onerror="this.src='/static/video/admin/missing_video.mp4'"></video>
                 </div><><~{%is_text%}<>
                     <textarea class="form-textarea" name="{%attribute%}" readonly><\% .{#attribute#}.{%attribute%} %\></textarea><>
-                    <input class="form-input" name="{%attribute%}" type="text" value="<\% .{#attribute#}.{%attribute%} %\>" readonly/>~>~>~>
+                    <input class="form-input" name="{%attribute%}" type="text" value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" readonly/>~>~>~>
             </div>$>
             <a class="justify-self-start form-button form-button-large cancel-button" href="<\% .PreviousPage %\>">
             </a>
@@ -405,7 +407,7 @@ $>
             </div>
             <? foreach ( var {#variable#}; .{#attribute#}Array ) { ?><$
                 <div class="sortable-grid-cell">
-                    <\% {#variable#}.{%attribute%} %\>
+                    <\% GetValueText( {#variable#}.{%attribute%} ) %\>
                 </div>$>
                 <div class="form-centered sortable-grid-cell">
                     <a class="form-button view-button" href="/admin/{#style#}/view/<\% {#variable#}.Id %\>">
