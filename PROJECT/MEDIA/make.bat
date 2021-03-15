@@ -1,2 +1,2 @@
-for %%f in (upload\image\*.jpg) do ..\..\..\..\TOOL\IMAGE_MAGICK\convert %%f -quality 90 ..\www\upload\image\%%~nf.jpg
+for %%f in (static\image\test\*.jpg) do ..\..\..\..\TOOL\IMAGE_MAGICK\convert %%f -quality 90 ..\www\static\image\test\%%~nf.jpg
 pause
