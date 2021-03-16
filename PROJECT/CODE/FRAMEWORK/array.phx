@@ -1,0 +1,175 @@
+// -- FUNCTIONS
+
+function IsEmpty(
+    array &array_
+    )
+{
+    return empty( array_ );
+}
+
+// ~~
+
+function JoinArray(
+    array &array_,
+    string separator
+    )
+{
+    return implode( separator, array_ );
+}
+
+// ~~
+
+function GetKeys(
+    array &array_
+    )
+{
+    return array_keys( array_ );
+}
+
+// ~~
+
+function HasKey(
+    array &array_,
+    key
+    )
+{
+    return array_key_exists( key, array_ );
+}
+
+// ~~
+
+function HasValue(
+    array &array_,
+    value
+    )
+{
+    return in_array( value, array_, true );
+}
+
+// ~~
+
+function SortArrayByKey(
+    array &array_,
+    key_comparison_function
+    )
+{
+    uksort( array_, key_comparison_function );
+}
+
+// ~~
+
+function SortArrayByAscendingNaturalKey(
+    array &array_
+    )
+{
+    ksort( array_, SORT_NATURAL );
+}
+
+// ~~
+
+function SortArrayByDescendingNaturalKey(
+    array &array_
+    )
+{
+    krsort( array_, SORT_NATURAL );
+}
+
+// ~~
+
+function SortArrayByAscendingNumericKey(
+    array &array_
+    )
+{
+    ksort( array_, SORT_NUMERIC );
+}
+
+// ~~
+
+function SortArrayByDescendingNumericKey(
+    array &array_
+    )
+{
+    krsort( array_, SORT_NUMERIC );
+}
+
+// ~~
+
+function SortArrayByAscendingTextualKey(
+    array &array_
+    )
+{
+    ksort( array_, SORT_STRING );
+}
+
+// ~~
+
+function SortArrayByDescendingTextualKey(
+    array &array_
+    )
+{
+    krsort( array_, SORT_STRING );
+}
+
+// ~~
+
+function SortArrayByValue(
+    array &array_,
+    value_comparison_function
+    )
+{
+    usort( array_, value_comparison_function );
+}
+
+// ~~
+
+function SortArrayByAscendingNaturalValue(
+    array &array_
+    )
+{
+    sort( array_, SORT_NATURAL );
+}
+
+// ~~
+
+function SortArrayByDescendingNaturalValue(
+    array &array_
+    )
+{
+    rsort( array_, SORT_NATURAL );
+}
+
+// ~~
+
+function SortArrayByAscendingNumericValue(
+    array &array_
+    )
+{
+    sort( array_, SORT_NUMERIC );
+}
+
+// ~~
+
+function SortArrayByDescendingNumericValue(
+    array &array_
+    )
+{
+    rsort( array_, SORT_NUMERIC );
+}
+
+// ~~
+
+function SortArrayByAscendingTextualValue(
+    array &array_
+    )
+{
+    sort( array_, SORT_STRING );
+}
+
+// ~~
+
+function SortArrayByDescendingTextualValue(
+    array &array_
+    )
+{
+    rsort( array_, SORT_STRING );
+}

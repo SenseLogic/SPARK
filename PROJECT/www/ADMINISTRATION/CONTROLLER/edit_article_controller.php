@@ -8,7 +8,7 @@ require_once __DIR__ . '/' . '../../MODEL/article_model.php';
 class EDIT_ARTICLE_CONTROLLER extends CONTROLLER
 {
     function __construct(
-        int $article_id
+        $article_id
         )
     {
         parent::__construct();

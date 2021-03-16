@@ -8,7 +8,7 @@ import '../../MODEL/contact_model.php';
 class DO_EDIT_CONTACT_CONTROLLER extends CONTROLLER
 {
     method constructor(
-        int contact_id
+        contact_id
         )
     {
         parent::constructor();

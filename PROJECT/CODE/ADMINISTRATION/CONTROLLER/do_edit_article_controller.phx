@@ -8,7 +8,7 @@ import '../../MODEL/article_model.php';
 class DO_EDIT_ARTICLE_CONTROLLER extends CONTROLLER
 {
     method constructor(
-        int article_id
+        article_id
         )
     {
         parent::constructor();

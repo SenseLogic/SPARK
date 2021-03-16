@@ -1,0 +1,9 @@
+// -- FUNCTIONS
+
+function HasProperty(
+    object &object_,
+    string property_name
+    )
+{
+    return property_exists( object_, property_name );
+}

@@ -87,30 +87,6 @@ function IsDeleteRequest(
 
 // ~~
 
-function IsId(
-    value
-    )
-{
-    return
-        is_numeric( value )
-        && value == ( int ) value
-        && value > 0;
-}
-
-// ~~
-
-function IsUuid(
-    value
-    )
-{
-    return
-        is_string( value )
-        && strlen( value ) === 36
-        && preg_match( '/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/', value ) === 1;
-}
-
-// ~~
-
 function GetQuery(
     )
 {

@@ -9,6 +9,41 @@ function GetCharacterCount(
 
 // ~~
 
+function IsInteger(
+    value
+    )
+{
+    return
+        is_numeric( value )
+        && value == ( int ) value;
+}
+
+// ~~
+
+function IsNatural(
+    value
+    )
+{
+    return
+        is_numeric( value )
+        && value == ( int ) value
+        && value > 0;
+}
+
+// ~~
+
+function IsUuid(
+    value
+    )
+{
+    return
+        is_string( value )
+        && strlen( value ) === 36
+        && preg_match( '/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/', value ) === 1;
+}
+
+// ~~
+
 function GetValueText(
     value
     )
@@ -291,7 +326,6 @@ function GetKebabCaseText(
     return GetSnakeCaseText( text, '-' );
 }
 
-
 // ~~
 
 function GetShortenedText(
@@ -447,4 +481,25 @@ function GetProcessedText(
             ],
             text
             );
+}
+
+// ~~
+
+function SplitText(
+    string text,
+    string separator
+    )
+{
+    return explode( separator, text );
+}
+
+// ~~
+
+function ReplaceText(
+    string text,
+    old_text,
+    new_text
+    )
+{
+    return str_replace( old_text, new_text, text );
 }

@@ -8,7 +8,7 @@ require_once __DIR__ . '/' . '../../MODEL/user_model.php';
 class VIEW_USER_CONTROLLER extends CONTROLLER
 {
     function __construct(
-        int $user_id
+        $user_id
         )
     {
         parent::__construct();

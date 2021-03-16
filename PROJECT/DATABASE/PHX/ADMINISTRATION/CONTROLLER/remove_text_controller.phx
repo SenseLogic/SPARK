@@ -8,7 +8,7 @@ import '../../MODEL/text_model.php';
 class REMOVE_TEXT_CONTROLLER extends CONTROLLER
 {
     method constructor(
-        int text_id
+        text_id
         )
     {
         parent::constructor();

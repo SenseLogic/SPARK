@@ -126,8 +126,7 @@ function Route(
             }
             else if ( it_is_get_request
                       && path_value_count === 4
-                      && path_value_array[ 2 ] === 'view'
-                      && IsId( path_value_array[ 3 ] ) )
+                      && path_value_array[ 2 ] === 'view' )
             {
                 var text_id = path_value_array[ 3 ];
 
@@ -135,8 +134,7 @@ function Route(
             }
             else if ( it_is_get_request
                       && path_value_count === 4
-                      && path_value_array[ 2 ] === 'edit'
-                      && IsId( path_value_array[ 3 ] ) )
+                      && path_value_array[ 2 ] === 'edit' )
             {
                 var text_id = path_value_array[ 3 ];
 
@@ -145,7 +143,6 @@ function Route(
             else if ( it_is_post_request
                       && path_value_count === 4
                       && path_value_array[ 2 ] === 'edit'
-                      && IsId( path_value_array[ 3 ] )
                       && HasPostValue( 'Slug' )
                       && HasPostValue( 'Text' ) )
             {
@@ -155,8 +152,7 @@ function Route(
             }
             else if ( it_is_get_request
                       && path_value_count === 4
-                      && path_value_array[ 2 ] === 'remove'
-                      && IsId( path_value_array[ 3 ] ) )
+                      && path_value_array[ 2 ] === 'remove' )
             {
                 var text_id = path_value_array[ 3 ];
 
@@ -164,8 +160,7 @@ function Route(
             }
             else if ( it_is_post_request
                       && path_value_count === 4
-                      && path_value_array[ 2 ] === 'remove'
-                      && IsId( path_value_array[ 3 ] ) )
+                      && path_value_array[ 2 ] === 'remove' )
             {
                 var text_id = path_value_array[ 3 ];
 
@@ -203,8 +198,7 @@ function Route(
             }
             else if ( it_is_get_request
                       && path_value_count === 4
-                      && path_value_array[ 2 ] === 'view'
-                      && IsId( path_value_array[ 3 ] ) )
+                      && path_value_array[ 2 ] === 'view' )
             {
                 var article_id = path_value_array[ 3 ];
 
@@ -212,8 +206,7 @@ function Route(
             }
             else if ( it_is_get_request
                       && path_value_count === 4
-                      && path_value_array[ 2 ] === 'edit'
-                      && IsId( path_value_array[ 3 ] ) )
+                      && path_value_array[ 2 ] === 'edit' )
             {
                 var article_id = path_value_array[ 3 ];
 
@@ -222,7 +215,6 @@ function Route(
             else if ( it_is_post_request
                       && path_value_count === 4
                       && path_value_array[ 2 ] === 'edit'
-                      && IsId( path_value_array[ 3 ] )
                       && HasPostValue( 'Slug' )
                       && HasPostValue( 'Name' )
                       && HasPostValue( 'Text' )
@@ -235,8 +227,7 @@ function Route(
             }
             else if ( it_is_get_request
                       && path_value_count === 4
-                      && path_value_array[ 2 ] === 'remove'
-                      && IsId( path_value_array[ 3 ] ) )
+                      && path_value_array[ 2 ] === 'remove' )
             {
                 var article_id = path_value_array[ 3 ];
 
@@ -244,8 +235,7 @@ function Route(
             }
             else if ( it_is_post_request
                       && path_value_count === 4
-                      && path_value_array[ 2 ] === 'remove'
-                      && IsId( path_value_array[ 3 ] ) )
+                      && path_value_array[ 2 ] === 'remove' )
             {
                 var article_id = path_value_array[ 3 ];
 
@@ -285,8 +275,7 @@ function Route(
             }
             else if ( it_is_get_request
                       && path_value_count === 4
-                      && path_value_array[ 2 ] === 'view'
-                      && IsId( path_value_array[ 3 ] ) )
+                      && path_value_array[ 2 ] === 'view' )
             {
                 var contact_id = path_value_array[ 3 ];
 
@@ -294,8 +283,7 @@ function Route(
             }
             else if ( it_is_get_request
                       && path_value_count === 4
-                      && path_value_array[ 2 ] === 'edit'
-                      && IsId( path_value_array[ 3 ] ) )
+                      && path_value_array[ 2 ] === 'edit' )
             {
                 var contact_id = path_value_array[ 3 ];
 
@@ -304,7 +292,6 @@ function Route(
             else if ( it_is_post_request
                       && path_value_count === 4
                       && path_value_array[ 2 ] === 'edit'
-                      && IsId( path_value_array[ 3 ] )
                       && HasPostValue( 'Name' )
                       && HasPostValue( 'Company' )
                       && HasPostValue( 'Email' )
@@ -319,8 +306,7 @@ function Route(
             }
             else if ( it_is_get_request
                       && path_value_count === 4
-                      && path_value_array[ 2 ] === 'remove'
-                      && IsId( path_value_array[ 3 ] ) )
+                      && path_value_array[ 2 ] === 'remove' )
             {
                 var contact_id = path_value_array[ 3 ];
 
@@ -328,8 +314,7 @@ function Route(
             }
             else if ( it_is_post_request
                       && path_value_count === 4
-                      && path_value_array[ 2 ] === 'remove'
-                      && IsId( path_value_array[ 3 ] ) )
+                      && path_value_array[ 2 ] === 'remove' )
             {
                 var contact_id = path_value_array[ 3 ];
 
@@ -366,8 +351,7 @@ function Route(
             }
             else if ( it_is_get_request
                       && path_value_count === 4
-                      && path_value_array[ 2 ] === 'view'
-                      && IsId( path_value_array[ 3 ] ) )
+                      && path_value_array[ 2 ] === 'view' )
             {
                 var user_id = path_value_array[ 3 ];
 
@@ -375,8 +359,7 @@ function Route(
             }
             else if ( it_is_get_request
                       && path_value_count === 4
-                      && path_value_array[ 2 ] === 'edit'
-                      && IsId( path_value_array[ 3 ] ) )
+                      && path_value_array[ 2 ] === 'edit' )
             {
                 var user_id = path_value_array[ 3 ];
 
@@ -385,7 +368,6 @@ function Route(
             else if ( it_is_post_request
                       && path_value_count === 4
                       && path_value_array[ 2 ] === 'edit'
-                      && IsId( path_value_array[ 3 ] )
                       && HasPostValue( 'Email' )
                       && HasPostValue( 'Pseudonym' )
                       && HasPostValue( 'Password' )
@@ -397,8 +379,7 @@ function Route(
             }
             else if ( it_is_get_request
                       && path_value_count === 4
-                      && path_value_array[ 2 ] === 'remove'
-                      && IsId( path_value_array[ 3 ] ) )
+                      && path_value_array[ 2 ] === 'remove' )
             {
                 var user_id = path_value_array[ 3 ];
 
@@ -406,8 +387,7 @@ function Route(
             }
             else if ( it_is_post_request
                       && path_value_count === 4
-                      && path_value_array[ 2 ] === 'remove'
-                      && IsId( path_value_array[ 3 ] ) )
+                      && path_value_array[ 2 ] === 'remove' )
             {
                 var user_id = path_value_array[ 3 ];
 

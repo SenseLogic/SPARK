@@ -126,47 +126,42 @@ function Route(
             }
             else if ( it_is_get_request
                       && path_value_count === 4
-                      && path_value_array[ 2 ] === 'view'
-                      && IsId( path_value_array[ 3 ] ) )
+                      && path_value_array[ 2 ] === 'view' )
             {
-                var {#variable#}_id = path_value_array[ 3 ];
+                var {#variable#}_{#key_variable#} = path_value_array[ 3 ];
 
                 import 'ADMINISTRATION/CONTROLLER/view_{#variable#}_controller.php';
             }
             else if ( it_is_get_request
                       && path_value_count === 4
-                      && path_value_array[ 2 ] === 'edit'
-                      && IsId( path_value_array[ 3 ] ) )
+                      && path_value_array[ 2 ] === 'edit' )
             {
-                var {#variable#}_id = path_value_array[ 3 ];
+                var {#variable#}_{#key_variable#} = path_value_array[ 3 ];
 
                 import 'ADMINISTRATION/CONTROLLER/edit_{#variable#}_controller.php';
             }
             else if ( it_is_post_request
                       && path_value_count === 4
-                      && path_value_array[ 2 ] === 'edit'
-                      && IsId( path_value_array[ 3 ] )<$
+                      && path_value_array[ 2 ] === 'edit'<$
                       && HasPostValue( '{%attribute%}' )$> )
             {
-                var {#variable#}_id = path_value_array[ 3 ];
+                var {#variable#}_{#key_variable#} = path_value_array[ 3 ];
 
                 import 'ADMINISTRATION/CONTROLLER/do_edit_{#variable#}_controller.php';
             }
             else if ( it_is_get_request
                       && path_value_count === 4
-                      && path_value_array[ 2 ] === 'remove'
-                      && IsId( path_value_array[ 3 ] ) )
+                      && path_value_array[ 2 ] === 'remove' )
             {
-                var {#variable#}_id = path_value_array[ 3 ];
+                var {#variable#}_{#key_variable#} = path_value_array[ 3 ];
 
                 import 'ADMINISTRATION/CONTROLLER/remove_{#variable#}_controller.php';
             }
             else if ( it_is_post_request
                       && path_value_count === 4
-                      && path_value_array[ 2 ] === 'remove'
-                      && IsId( path_value_array[ 3 ] ) )
+                      && path_value_array[ 2 ] === 'remove' )
             {
-                var {#variable#}_id = path_value_array[ 3 ];
+                var {#variable#}_{#key_variable#} = path_value_array[ 3 ];
 
                 import 'ADMINISTRATION/CONTROLLER/do_remove_{#variable#}_controller.php';
             }

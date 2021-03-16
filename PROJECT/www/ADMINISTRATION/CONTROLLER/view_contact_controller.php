@@ -8,7 +8,7 @@ require_once __DIR__ . '/' . '../../MODEL/contact_model.php';
 class VIEW_CONTACT_CONTROLLER extends CONTROLLER
 {
     function __construct(
-        int $contact_id
+        $contact_id
         )
     {
         parent::__construct();
