@@ -1,2 +1,2 @@
-<div class="container-extended view" data-view-name="legal-notice">
+<div class="container-extended view display-hidden" data-view-name="legal-notice">
 </div>

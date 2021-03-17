@@ -7,6 +7,8 @@ require_once __DIR__ . '/' . '../../MODEL/article_model.php';
 
 class VIEW_ARTICLES_CONTROLLER extends CONTROLLER
 {
+    // -- CONSTRUCTORS
+
     function __construct(
         )
     {

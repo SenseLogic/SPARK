@@ -7,6 +7,8 @@ require_once __DIR__ . '/' . '../../MODEL/contact_model.php';
 
 class REMOVE_CONTACT_CONTROLLER extends CONTROLLER
 {
+    // -- CONSTRUCTORS
+
     function __construct(
         $contact_id
         )

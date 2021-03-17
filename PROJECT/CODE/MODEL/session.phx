@@ -2,6 +2,8 @@
 
 class SESSION
 {
+    // -- CONSTRUCTORS
+
     method constructor(
         )
     {
@@ -13,7 +15,7 @@ class SESSION
         .Captcha = FindSessionValue( 'Captcha', '' );
     }
 
-    // ~~
+    // -- OPERATIONS
 
     method Store(
         )

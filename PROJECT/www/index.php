@@ -4,6 +4,7 @@ require_once __DIR__ . '/' . 'FRAMEWORK/error.php';
 require_once __DIR__ . '/' . 'FRAMEWORK/global.php';
 require_once __DIR__ . '/' . 'FRAMEWORK/random.php';
 require_once __DIR__ . '/' . 'FRAMEWORK/text.php';
+require_once __DIR__ . '/' . 'FRAMEWORK/route.php';
 require_once __DIR__ . '/' . 'FRAMEWORK/path.php';
 require_once __DIR__ . '/' . 'FRAMEWORK/file.php';
 require_once __DIR__ . '/' . 'FRAMEWORK/time.php';
@@ -16,12 +17,14 @@ require_once __DIR__ . '/' . 'FRAMEWORK/mail.php';
 
 // -- CONSTANTS
 
+define( 'DefaultLanguageCode', 'en' );
+
 if ( GetServerName() === 'localhost' )
 {
     define( 'DatabaseHost', 'localhost' );
     define( 'DatabaseName', 'spark-project' );
     define( 'DatabaseUserName', 'root' );
-    define( 'DatabasePassword', 'root' );
+    define( 'DatabasePassword', '' );
 }
 else
 {
@@ -43,7 +46,7 @@ function Route(
 
     if ( $language_code === '' )
     {
-        $language_code = GetBrowserLanguageCode( $language_code_array, 'en' );
+        $language_code = GetBrowserLanguageCode( $language_code_array, DefaultLanguageCode );
     }
 
      $path_value_count = count( $path_value_array );
@@ -418,12 +421,12 @@ function Route(
                            || $path_value_array[ 0 ] === 'contact'
                            || $path_value_array[ 0 ] === 'legal-notice' ) )
             {
-                 $view_name = $path_value_array[ 0 ];
+                 $view_route = $path_value_array[ 0 ];
                 require_once __DIR__ . '/' . 'CONTROLLER/show_base_controller.php';
             }
             else if ( $path_value_count == 0 )
             {
-                 $view_name = 'home';
+                 $view_route = 'home';
                 require_once __DIR__ . '/' . 'CONTROLLER/show_base_controller.php';
             }
             else

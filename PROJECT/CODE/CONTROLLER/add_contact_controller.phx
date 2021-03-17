@@ -7,6 +7,8 @@ import '../MODEL/contact_model.php';
 
 class ADD_CONTACT_CONTROLLER extends CONTROLLER
 {
+    // -- CONSTRUCTORS
+
     method constructor(
         string name,
         string company,
@@ -32,7 +34,7 @@ class ADD_CONTACT_CONTROLLER extends CONTROLLER
         }
     }
 
-    // ~~
+    // -- OPERATIONS
 
     method SendEmails(
         string name,

@@ -6,6 +6,8 @@ require_once __DIR__ . '/' . 'controller.php';
 
 class SHOW_ERROR_CONTROLLER extends CONTROLLER
 {
+    // -- CONSTRUCTORS
+
     function __construct(
         )
     {

@@ -6,6 +6,8 @@ import 'controller.php';
 
 class CONNECT_USER_CONTROLLER extends CONTROLLER
 {
+    // -- CONSTRUCTORS
+
     method constructor(
         )
     {

@@ -6,6 +6,8 @@ import 'controller.php';
 
 class SHOW_ERROR_CONTROLLER extends CONTROLLER
 {
+    // -- CONSTRUCTORS
+
     method constructor(
         )
     {

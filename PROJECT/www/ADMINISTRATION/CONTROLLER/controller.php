@@ -6,6 +6,8 @@ require_once __DIR__ . '/' . '../../MODEL/session.php';
 
 class CONTROLLER
 {
+    // -- CONSTRUCTORS
+
     function __construct(
         )
     {

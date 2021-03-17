@@ -7,6 +7,8 @@ require_once __DIR__ . '/' . '../../MODEL/text_model.php';
 
 class DO_ADD_TEXT_CONTROLLER extends CONTROLLER
 {
+    // -- CONSTRUCTORS
+
     function __construct(
         )
     {

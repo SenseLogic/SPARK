@@ -6,6 +6,8 @@ import 'controller.php';
 
 class DISCONNECT_USER_CONTROLLER extends CONTROLLER
 {
+    // -- CONSTRUCTORS
+
     method constructor(
         )
     {

@@ -4,6 +4,7 @@ import 'FRAMEWORK/error.php';
 import 'FRAMEWORK/global.php';
 import 'FRAMEWORK/random.php';
 import 'FRAMEWORK/text.php';
+import 'FRAMEWORK/route.php';
 import 'FRAMEWORK/path.php';
 import 'FRAMEWORK/file.php';
 import 'FRAMEWORK/time.php';
@@ -16,12 +17,14 @@ import 'FRAMEWORK/mail.php';
 
 // -- CONSTANTS
 
+define( 'DefaultLanguageCode', 'en' );
+
 if ( GetServerName() === 'localhost' )
 {
     define( 'DatabaseHost', 'localhost' );
     define( 'DatabaseName', 'spark-project' );
     define( 'DatabaseUserName', 'root' );
-    define( 'DatabasePassword', 'root' );
+    define( 'DatabasePassword', '' );
 }
 else
 {
@@ -43,7 +46,7 @@ function Route(
 
     if ( language_code === '' )
     {
-        language_code = GetBrowserLanguageCode( language_code_array, 'en' );
+        language_code = GetBrowserLanguageCode( language_code_array, DefaultLanguageCode );
     }
 
     var path_value_count = count( path_value_array );
@@ -418,12 +421,12 @@ function Route(
                            || path_value_array[ 0 ] === 'contact'
                            || path_value_array[ 0 ] === 'legal-notice' ) )
             {
-                var view_name = path_value_array[ 0 ];
+                var view_route = path_value_array[ 0 ];
                 import 'CONTROLLER/show_base_controller.php';
             }
             else if ( path_value_count == 0 )
             {
-                var view_name = 'home';
+                var view_route = 'home';
                 import 'CONTROLLER/show_base_controller.php';
             }
             else

@@ -8,13 +8,17 @@ require_once __DIR__ . '/' . '../MODEL/text_model.php';
 
 class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
 {
+    // -- CONSTRUCTORS
+
     function __construct(
         string $language_code,
-        string $view_name
+        string $view_route
         )
     {
         parent::__construct( $language_code );
-        $this->ViewName = $view_name;
+        $this->ViewRoute = $view_route;
+        $this->ViewName = GetViewName( $view_route );
+        $this->SectionName = GetSectionName( $view_route );
 
         $this->ArticleArray = GetDatabaseArticleArray();
         $this->ArticleCount = count( $this->ArticleArray );
@@ -25,8 +29,21 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
 
         require_once __DIR__ . '/' . '../VIEW/show_base_view.php';
     }
+
+    // -- INQUIRIES
+
+    function GetProcessedText(
+        string $text
+        )
+    {
+        return ReplaceText(
+            [],
+            [],
+            GetProcessedText( $this->GetTranslatedText( $text ) )
+            );
+    }
 }
 
 // -- STATEMENTS
 
- $show_base_controller = new SHOW_BASE_CONTROLLER(  $language_code,  $view_name );
+ $show_base_controller = new SHOW_BASE_CONTROLLER(  $language_code,  $view_route );

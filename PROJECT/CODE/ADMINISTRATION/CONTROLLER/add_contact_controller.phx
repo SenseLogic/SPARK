@@ -7,6 +7,8 @@ import '../../MODEL/contact_model.php';
 
 class ADD_CONTACT_CONTROLLER extends CONTROLLER
 {
+    // -- CONSTRUCTORS
+
     method constructor(
         )
     {

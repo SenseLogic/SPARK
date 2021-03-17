@@ -7,6 +7,8 @@ require_once __DIR__ . '/' . '../../MODEL/text_model.php';
 
 class VIEW_TEXT_CONTROLLER extends CONTROLLER
 {
+    // -- CONSTRUCTORS
+
     function __construct(
         $text_id
         )

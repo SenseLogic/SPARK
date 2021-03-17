@@ -7,6 +7,8 @@ require_once __DIR__ . '/' . '../../MODEL/contact_model.php';
 
 class VIEW_CONTACTS_CONTROLLER extends CONTROLLER
 {
+    // -- CONSTRUCTORS
+
     function __construct(
         )
     {

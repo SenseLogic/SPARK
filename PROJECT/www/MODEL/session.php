@@ -2,6 +2,8 @@
 
 class SESSION
 {
+    // -- CONSTRUCTORS
+
     function __construct(
         )
     {
@@ -13,7 +15,7 @@ class SESSION
         $this->Captcha = FindSessionValue( 'Captcha', '' );
     }
 
-    // ~~
+    // -- OPERATIONS
 
     function Store(
         )

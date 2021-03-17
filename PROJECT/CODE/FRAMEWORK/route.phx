@@ -1,0 +1,35 @@
+// -- FUNCTIONS
+
+function GetViewName(
+    string route
+    )
+{
+    var separator_character_index = strpos( route, '#' );
+
+    if ( separator_character_index === false )
+    {
+        return route;
+    }
+    else
+    {
+        return substr( route, 0, separator_character_index );
+    }
+}
+
+// ~~
+
+function GetSectionName(
+    string route
+    )
+{
+    var separator_character_index = strpos( route, '#' );
+
+    if ( separator_character_index === false )
+    {
+        return '';
+    }
+    else
+    {
+        return substr( route, separator_character_index + 1 );
+    }
+}

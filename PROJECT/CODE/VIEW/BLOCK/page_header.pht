@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="<% var language_code %>">
     <head>
         <? include 'page_head.php'; ?>
     </head>

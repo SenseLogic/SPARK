@@ -8,13 +8,17 @@ import '../MODEL/text_model.php';
 
 class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
 {
+    // -- CONSTRUCTORS
+
     method constructor(
         string language_code,
-        string view_name
+        string view_route
         )
     {
         parent::constructor( language_code );
-        .ViewName = view_name;
+        .ViewRoute = view_route;
+        .ViewName = GetViewName( view_route );
+        .SectionName = GetSectionName( view_route );
 
         .ArticleArray = GetDatabaseArticleArray();
         .ArticleCount = count( .ArticleArray );
@@ -25,8 +29,21 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
 
         import '../VIEW/show_base_view.php';
     }
+
+    // -- INQUIRIES
+
+    method GetProcessedText(
+        string text
+        )
+    {
+        return ReplaceText(
+            [],
+            [],
+            GetProcessedText( .GetTranslatedText( text ) )
+            );
+    }
 }
 
 // -- STATEMENTS
 
-var show_base_controller = new SHOW_BASE_CONTROLLER( var language_code, var view_name );
+var show_base_controller = new SHOW_BASE_CONTROLLER( var language_code, var view_route );

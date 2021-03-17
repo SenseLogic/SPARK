@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="<?php echo htmlspecialchars(  $language_code ); ?>">
     <head>
         <?php require __DIR__ . '/' . 'page_head.php'; ?>
     </head>

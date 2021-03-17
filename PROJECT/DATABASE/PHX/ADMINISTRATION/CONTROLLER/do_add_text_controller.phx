@@ -7,6 +7,8 @@ import '../../MODEL/text_model.php';
 
 class DO_ADD_TEXT_CONTROLLER extends CONTROLLER
 {
+    // -- CONSTRUCTORS
+
     method constructor(
         )
     {

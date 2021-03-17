@@ -6,6 +6,8 @@ import 'controller.php';
 
 class UPLOAD_VIDEO_CONTROLLER extends CONTROLLER
 {
+    // -- CONSTRUCTORS
+
     method constructor(
         )
     {

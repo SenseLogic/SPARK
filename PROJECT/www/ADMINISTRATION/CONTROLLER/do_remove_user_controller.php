@@ -7,6 +7,8 @@ require_once __DIR__ . '/' . '../../MODEL/user_model.php';
 
 class DO_REMOVE_USER_CONTROLLER extends CONTROLLER
 {
+    // -- CONSTRUCTORS
+
     function __construct(
         $user_id
         )

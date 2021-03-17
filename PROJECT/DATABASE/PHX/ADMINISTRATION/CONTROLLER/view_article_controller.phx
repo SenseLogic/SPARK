@@ -7,6 +7,8 @@ import '../../MODEL/article_model.php';
 
 class VIEW_ARTICLE_CONTROLLER extends CONTROLLER
 {
+    // -- CONSTRUCTORS
+
     method constructor(
         article_id
         )

@@ -5,7 +5,9 @@
     // -- VARIABLES
 
     var
-        ViewName = "<?php echo $this->ViewName; ?>";
+        ViewRoute = "<?php echo $this->ViewRoute; ?>",
+        ViewName = "<?php echo $this->ViewName; ?>",
+        SectionName = "<?php echo $this->SectionName; ?>";
 
     // -- FUNCTIONS
 
@@ -25,13 +27,15 @@
 
     // ~~
 
-    function SetViewName(
-        view_name
+    function SetViewRoute(
+        view_route
         )
     {
         window.SetScrollTop( 0 );
-        ViewName = view_name;
-        SetRoute( "/<?php echo $this->LanguageCode; ?>/" + view_name + "/" );
+        ViewRoute = view_route;
+        ViewName = GetViewName( view_route );
+        SectionName = GetSectionName( view_route );
+        SetRoute( "/<?php echo $this->LanguageCode; ?>/" + view_route );
         UpdateView();
     }
 
@@ -41,7 +45,7 @@
         element
         )
     {
-        SetViewName( element.dataset.viewName );
+        SetViewRoute( element.dataset.viewRoute );
     }
 </script>
 <div>
