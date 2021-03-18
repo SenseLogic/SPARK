@@ -79,7 +79,7 @@ function GetTranslatedText(
         }
     }
 
-    return str_replace( '[<', '<', str_replace( '>]', '>', translated_text ) );
+    return translated_text;
 }
 
 // ~~

@@ -38,6 +38,55 @@ The project template uses the following tools :
 * [Resync](https://github.com/senselogic/RESYNC)
     * to update the website code and data on the development system.
 
+## Internationalization
+
+Strings can be internationalized by using language separators :
+
+```
+Default language text¨de:German text¨fr:French text¨ru:Russian text...
+```
+
+They can contain both HTML and BBCode-like tags :
+
+* `[amp]` : ampersand character (`&`)
+* `[lt]` : lower-than character (`<`)
+* `[gt]` : greater-than character (`>`)
+* `[lsb]` : left square bracket character (`[`)
+* `[rsb]` : right square bracket character (`]`)
+* `[lcb]` : left curly bracket character (`{`)
+* `[rcb]` : right curly bracket character (`}`)
+* `[nbsp]` : non breakable space
+* `[br]` : line break
+* `[div]`, `[div[` : div opening tag
+* `[/div]` : div closing tag
+* `[span]`, `[span[` : span opening tag
+* `[/span]` : span closing tag
+* `[p]`, `[p[` : paragraph opening tag
+* `[/p]` : paragraph closing  tag
+* `[ul]`, `[ul[` : unordered list opening tag
+* `[/ul]` : unordered list closing tag
+* `[li]`, `[li[` : line opening tag
+* `[/li]` : line closing tag
+* `[a[` : anchor opening tag
+* `[/a]` : anchor closing tag
+* `[href]` : anchor `href` attribute
+* `[img[` : image tag
+* `[src]` : image `src` attribute
+* `[color[` : colored text opening tag
+* `[/color]` : colored text closing tag
+* `]]` : end of opening tag
+* `[b]` : bold text opening tag
+* `[/b]` : bold text closing tag
+* `[i]` : italic text opening tag
+* `[/i]` : italic text closing tag
+
+Open tags can be followed by CSS class names and some attributes :
+
+```
+[img[width-50%[src]/static/image/test.jpg]][br]
+This [color[green]]green text[/color] is followed by a [a[[href]/view#section]]link[/a].
+```
+
 ## Installation
 
 ## For Windows

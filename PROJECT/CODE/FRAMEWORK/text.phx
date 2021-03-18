@@ -405,7 +405,6 @@ function GetBareText(
                 '[/a]',
                 '[href]',
                 '[img[',
-                '[/img]',
                 '[src]',
                 '[color[',
                 '[/color]',
@@ -457,7 +456,6 @@ function GetProcessedText(
                 '[/a]',
                 '[href]',
                 '[img[',
-                '[/img]',
                 '[src]',
                 '[color[',
                 '[/color]',
@@ -494,10 +492,9 @@ function GetProcessedText(
                 '</li>',
                 '<a class="',
                 '</a>',
-                '" href="'
+                '" href="',
                 '<img class="',
-                '</img>',
-                '" src="'
+                '" src="',
                 '<span class="text-color-',
                 '</span>',
                 '">',
