@@ -1,10 +1,19 @@
 // -- FUNCTIONS
 
-function GetViewName(
+function GetRoute(
+    array &path_value_array
+    )
+{
+    return implode( '/', path_value_array );
+}
+
+// ~~
+
+function GetRouteViewName(
     string route
     )
 {
-    var separator_character_index = strpos( route, '#' );
+    var separator_character_index = strrpos( route, '/#' );
 
     if ( separator_character_index === false )
     {
@@ -18,11 +27,11 @@ function GetViewName(
 
 // ~~
 
-function GetSectionName(
+function GetRouteSectionName(
     string route
     )
 {
-    var separator_character_index = strpos( route, '#' );
+    var separator_character_index = strrpos( route, '/#' );
 
     if ( separator_character_index === false )
     {

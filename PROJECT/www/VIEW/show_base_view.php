@@ -31,12 +31,20 @@
         view_route
         )
     {
-        window.SetScrollTop( 0 );
         ViewRoute = view_route;
-        ViewName = GetViewName( view_route );
-        SectionName = GetSectionName( view_route );
+        ViewName = GetRouteViewName( view_route );
+        SectionName = GetRouteSectionName( view_route );
         SetRoute( "/<?php echo $this->LanguageCode; ?>/" + view_route );
         UpdateView();
+
+        if ( SectionName === "" )
+        {
+            window.SetScrollTop( 0 );
+        }
+        else
+        {
+            window.SetScrollTop( GetElementById( ViewRoute ) );
+        }
     }
 
     // ~~

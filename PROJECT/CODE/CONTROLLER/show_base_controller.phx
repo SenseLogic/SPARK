@@ -17,8 +17,8 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
         .ViewRoute = view_route;
-        .ViewName = GetViewName( view_route );
-        .SectionName = GetSectionName( view_route );
+        .ViewName = GetRouteViewName( view_route );
+        .SectionName = GetRouteSectionName( view_route );
 
         .ArticleArray = GetDatabaseArticleArray();
         .ArticleCount = count( .ArticleArray );

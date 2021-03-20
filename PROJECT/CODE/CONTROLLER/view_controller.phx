@@ -50,7 +50,7 @@ class VIEW_CONTROLLER
         string text
         )
     {
-        GetBareText( .GetTranslatedText( text ) );
+        return GetBareText( .GetTranslatedText( text ) );
     }
 
     // ~~

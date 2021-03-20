@@ -50,7 +50,7 @@ class VIEW_CONTROLLER
         string $text
         )
     {
-        GetBareText( $this->GetTranslatedText( $text ) );
+        return GetBareText( $this->GetTranslatedText( $text ) );
     }
 
     // ~~

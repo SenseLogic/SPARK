@@ -590,37 +590,37 @@ sup {
 .font-weight-900 {
   font-weight: 900;
 }
-.text-color-black {
+.color-black {
   color: #000;
 }
-.text-color-darkest-gray {
+.color-darkest-gray {
   color: #202020;
 }
-.text-color-darker-gray {
+.color-darker-gray {
   color: #404040;
 }
-.text-color-dark-gray {
+.color-dark-gray {
   color: #808080;
 }
-.text-color-gray {
+.color-gray {
   color: #a0a0a0;
 }
-.text-color-light-gray {
+.color-light-gray {
   color: #c0c0c0;
 }
-.text-color-lighter-gray {
+.color-lighter-gray {
   color: #f0f0f0;
 }
-.text-color-lightest-gray {
+.color-lightest-gray {
   color: #f8f8f8;
 }
-.text-color-white {
+.color-white {
   color: #fff;
 }
-.text-color-red {
+.color-red {
   color: #f00;
 }
-.text-color-blue {
+.color-blue {
   color: #00f;
 }
 .background-color-black {

@@ -17,8 +17,8 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
         $this->ViewRoute = $view_route;
-        $this->ViewName = GetViewName( $view_route );
-        $this->SectionName = GetSectionName( $view_route );
+        $this->ViewName = GetRouteViewName( $view_route );
+        $this->SectionName = GetRouteSectionName( $view_route );
 
         $this->ArticleArray = GetDatabaseArticleArray();
         $this->ArticleCount = count( $this->ArticleArray );

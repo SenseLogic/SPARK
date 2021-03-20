@@ -34,6 +34,8 @@ else
     define( 'DatabasePassword', '???' );
 }
 
+DefineColorTag( 'green' );
+
 // -- FUNCTIONS
 
 function Route(
@@ -41,7 +43,7 @@ function Route(
     )
 {
      $path_value_array = GetPathValueArray( $path );
-     $language_code_array = [ 'en', 'de', 'fr' ];
+     $language_code_array = [ DefaultLanguageCode ];
      $language_code = ExtractLanguageCode( $path_value_array, $language_code_array, '' );
 
     if ( $language_code === '' )
@@ -415,13 +417,13 @@ function Route(
             {
                 require_once __DIR__ . '/' . 'CONTROLLER/get_captcha_image_controller.php';
             }
-            else if ( $path_value_count == 1
+            else if ( $path_value_count >= 1
                       && ( $path_value_array[ 0 ] === 'home'
                            || $path_value_array[ 0 ] === 'articles'
                            || $path_value_array[ 0 ] === 'contact'
                            || $path_value_array[ 0 ] === 'legal-notice' ) )
             {
-                 $view_route = $path_value_array[ 0 ];
+                 $view_route = GetRoute( $path_value_array );
                 require_once __DIR__ . '/' . 'CONTROLLER/show_base_controller.php';
             }
             else if ( $path_value_count == 0 )

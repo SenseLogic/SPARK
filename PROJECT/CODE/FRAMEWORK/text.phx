@@ -1,3 +1,45 @@
+// -- VARIABLES
+
+GLOBALS[ 'ProcessedTextSourceTagArray' ] =
+    [
+        '<div<',
+        '<span<',
+        '<p<',
+        '<ul<',
+        '<li<',
+        '<a<',
+        '[href]',
+        '<img<',
+        '[src]',
+        '<color<',
+        '</color>',
+        '<size<',
+        '</size>',
+        '<weight<',
+        '</weight>',
+        '>>'
+    ];
+
+GLOBALS[ 'ProcessedTextTargetTagArray' ] =
+    [
+        '<div class="',
+        '<span class="',
+        '<p class="',
+        '<ul class="',
+        '<li class="',
+        '<a class="',
+        '" href="',
+        '<img class="',
+        '" src="',
+        '<span style="color:',
+        '</span>',
+        '<span style="font-size:',
+        '</span>',
+        '<span style="font-weight:',
+        '</span>',
+        '">'
+    ];
+
 // -- FUNCTIONS
 
 function GetCharacterCount(
@@ -374,49 +416,37 @@ function GetBareText(
     string text
     )
 {
-    return
-        str_replace(
-            [
-                '[amp]',
-                '[lt]',
-                '[gt]',
-                '[lsb]',
-                '[rsb]',
-                '[lcb]',
-                '[rcb]',
-                '[nbsp]',
-                '[br]',
-                '[div]',
-                '[div[',
-                '[/div]',
-                '[span]',
-                '[span[',
-                '[/span]',
-                '[p]',
-                '[p[',
-                '[/p]',
-                '[ul]',
-                '[ul[',
-                '[/ul]',
-                '[li]',
-                '[li[',
-                '[/li]',
-                '[a[',
-                '[/a]',
-                '[href]',
-                '[img[',
-                '[src]',
-                '[color[',
-                '[/color]',
-                ']]',
-                '[b]',
-                '[/b]',
-                '[i]',
-                '[/i]'
-            ],
-            '',
-            text
-            );
+    return preg_replace( '/<.*?>?>/', '', text );
+}
+
+// ~~
+
+function DefineTag(
+    string source_tag,
+    string target_tag
+    )
+{
+    array_push( GLOBALS[ 'ProcessedTextSourceTagArray' ], source_tag );
+    array_push( GLOBALS[ 'ProcessedTextTargetTagArray' ], target_tag );
+}
+
+// ~~
+
+function DefineColorTag(
+    string color_name
+    )
+{
+    DefineTag( '<' .. color_name .. '>', '<span class="color-' .. color_name .. '">' );
+    DefineTag( '</' .. color_name .. '>', '</span>' );
+}
+
+// ~~
+
+function DefineStylableTag(
+    string tag_name
+    )
+{
+    DefineTag( '<' .. tag_name .. '<', '<' .. tag_name .. ' class="' );
 }
 
 // ~~
@@ -425,86 +455,7 @@ function GetProcessedText(
     string text
     )
 {
-    return
-        str_replace(
-            [
-                '[amp]',
-                '[lt]',
-                '[gt]',
-                '[lsb]',
-                '[rsb]',
-                '[lcb]',
-                '[rcb]',
-                '[nbsp]',
-                '[br]',
-                '[div]',
-                '[div[',
-                '[/div]',
-                '[span]',
-                '[span[',
-                '[/span]',
-                '[p]',
-                '[p[',
-                '[/p]',
-                '[ul]',
-                '[ul[',
-                '[/ul]',
-                '[li]',
-                '[li[',
-                '[/li]',
-                '[a[',
-                '[/a]',
-                '[href]',
-                '[img[',
-                '[src]',
-                '[color[',
-                '[/color]',
-                ']]',
-                '[b]',
-                '[/b]',
-                '[i]',
-                '[/i]'
-            ],
-            [
-                '&amp;',
-                '&lt;',
-                '&gt;',
-                '&#91;',
-                '&#93;',
-                '&#123;',
-                '&#125;',
-                '&nbsp;',
-                '<br/>',
-                '<div>',
-                '<div class="',
-                '</div>',
-                '<span>',
-                '<span class="',
-                '</span>',
-                '<p>',
-                '<p class="',
-                '</p>',
-                '<ul>',
-                '<ul class="',
-                '</ul>',
-                '<li>',
-                '<li class="',
-                '</li>',
-                '<a class="',
-                '</a>',
-                '" href="',
-                '<img class="',
-                '" src="',
-                '<span class="text-color-',
-                '</span>',
-                '">',
-                '<b>',
-                '</b>',
-                '<i>',
-                '</i>'
-            ],
-            text
-            );
+    return str_replace( GLOBALS[ 'ProcessedTextSourceTagArray' ], GLOBALS[ 'ProcessedTextTargetTagArray' ], text );
 }
 
 // ~~
