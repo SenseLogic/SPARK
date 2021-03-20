@@ -70,7 +70,7 @@ Stylable tags can be followed by class names and specific attributes :
 ```
 <color<red>>RED</color>
 <color<#00F>>BLUE</color>
-<size<3em>>BIG</hue>
+<size<3rem>>BIG</size>
 <weight<100>>THIN</weight>
 <a<[href]/home/introduction>>LINK</a>
 <img<width-50% height-auto[src]/static/image/illustration.jpg>>
