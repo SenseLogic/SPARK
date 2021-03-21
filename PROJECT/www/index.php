@@ -24,7 +24,7 @@ if ( GetServerName() === 'localhost' )
     define( 'DatabaseHost', 'localhost' );
     define( 'DatabaseName', 'spark-project' );
     define( 'DatabaseUserName', 'root' );
-    define( 'DatabasePassword', '' );
+    define( 'DatabasePassword', 'root' );
 }
 else
 {
@@ -34,7 +34,19 @@ else
     define( 'DatabasePassword', '???' );
 }
 
+DefineOpenTag( 'div' );
+DefineOpenTag( 'span' );
+DefineAttributeTag( 'route', 'data-route' );
+DefineOpenTag( 'span' );
+DefineOpenTag( 'a' );
+DefineAttributeTag( 'href' );
+DefineOpenTag( 'img' );
+DefineAttributeTag( 'src' );
 DefineColorTag( 'green' );
+DefineStyleTag( 'color' );
+DefineStyleTag( 'size', 'font-size' );
+DefineStyleTag( 'weight', 'font-weight' );
+DefineTag( '>>', '">' );
 
 // -- FUNCTIONS
 
@@ -423,12 +435,12 @@ function Route(
                            || $path_value_array[ 0 ] === 'contact'
                            || $path_value_array[ 0 ] === 'legal-notice' ) )
             {
-                 $view_route = GetRoute( $path_value_array );
+                 $route = GetRoute( $path_value_array );
                 require_once __DIR__ . '/' . 'CONTROLLER/show_base_controller.php';
             }
             else if ( $path_value_count == 0 )
             {
-                 $view_route = 'home';
+                 $route = 'home';
                 require_once __DIR__ . '/' . 'CONTROLLER/show_base_controller.php';
             }
             else

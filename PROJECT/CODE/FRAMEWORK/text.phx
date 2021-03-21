@@ -1,44 +1,7 @@
 // -- VARIABLES
 
-GLOBALS[ 'ProcessedTextSourceTagArray' ] =
-    [
-        '<div<',
-        '<span<',
-        '<p<',
-        '<ul<',
-        '<li<',
-        '<a<',
-        '[href]',
-        '<img<',
-        '[src]',
-        '<color<',
-        '</color>',
-        '<size<',
-        '</size>',
-        '<weight<',
-        '</weight>',
-        '>>'
-    ];
-
-GLOBALS[ 'ProcessedTextTargetTagArray' ] =
-    [
-        '<div class="',
-        '<span class="',
-        '<p class="',
-        '<ul class="',
-        '<li class="',
-        '<a class="',
-        '" href="',
-        '<img class="',
-        '" src="',
-        '<span style="color:',
-        '</span>',
-        '<span style="font-size:',
-        '</span>',
-        '<span style="font-weight:',
-        '</span>',
-        '">'
-    ];
+GLOBALS[ 'SourceTagArray' ] = [];
+GLOBALS[ 'TargetTagArray' ] = [];
 
 // -- FUNCTIONS
 
@@ -426,23 +389,32 @@ function DefineTag(
     string target_tag
     )
 {
-    array_push( GLOBALS[ 'ProcessedTextSourceTagArray' ], source_tag );
-    array_push( GLOBALS[ 'ProcessedTextTargetTagArray' ], target_tag );
+    array_push( GLOBALS[ 'SourceTagArray' ], source_tag );
+    array_push( GLOBALS[ 'TargetTagArray' ], target_tag );
 }
 
 // ~~
 
 function DefineColorTag(
-    string color_name
+    string tag_name,
+    string color_value = ''
     )
 {
-    DefineTag( '<' .. color_name .. '>', '<span class="color-' .. color_name .. '">' );
-    DefineTag( '</' .. color_name .. '>', '</span>' );
+    if ( color_value === '' )
+    {
+        DefineTag( '<' .. tag_name .. '>', '<span class="color-' .. tag_name .. '">' );
+    }
+    else
+    {
+        DefineTag( '<' .. tag_name .. '>', '<span style="color:' .. color_value .. '">' );
+    }
+
+    DefineTag( '</' .. tag_name .. '>', '</span>' );
 }
 
 // ~~
 
-function DefineStylableTag(
+function DefineOpenTag(
     string tag_name
     )
 {
@@ -451,11 +423,47 @@ function DefineStylableTag(
 
 // ~~
 
+function DefineAttributeTag(
+    string tag_name,
+    string attribute_name = ''
+    )
+{
+    if ( attribute_name === '' )
+    {
+        DefineTag( '[' .. tag_name .. ']', '" ' .. tag_name .. '="' );
+    }
+    else
+    {
+        DefineTag( '[' .. tag_name .. ']', '" ' .. attribute_name .. '="' );
+    }
+}
+
+// ~~
+
+function DefineStyleTag(
+    string tag_name,
+    string style_name = ''
+    )
+{
+    if ( style_name === '' )
+    {
+        DefineTag( '<' .. tag_name .. '>', '<span style="' .. tag_name .. ':' );
+    }
+    else
+    {
+        DefineTag( '<' .. tag_name .. '>', '<span style="' .. style_name .. ':' );
+    }
+
+    DefineTag( '</' .. tag_name .. '>', '</span>' );
+}
+
+// ~~
+
 function GetProcessedText(
     string text
     )
 {
-    return str_replace( GLOBALS[ 'ProcessedTextSourceTagArray' ], GLOBALS[ 'ProcessedTextTargetTagArray' ], text );
+    return str_replace( GLOBALS[ 'SourceTagArray' ], GLOBALS[ 'TargetTagArray' ], text );
 }
 
 // ~~

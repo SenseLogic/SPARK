@@ -46,49 +46,36 @@ Strings can be internationalized by using language separators :
 Default language text¨de:German text¨fr:French text¨ru:Russian text...
 ```
 
-They can contain both HTML and special tags :
+They can contain HTML tags and entities.
 
-* `<div<` : div stylable tag
-* `<span<` : span stylable tag
-* `<p<` : paragraph stylable tag
-* `<ul<` : unordered list stylable tag
-* `<li<` : line stylable tag
-* `<a<` : anchor stylable tag
-* `[href]` : `href` attribute
-* `<img<` : image tag
-* `[src]` : `src` attribute
-* `<color<` : color stylable tag
-* `</color>` : color closing tag
-* `<size<` : font size stylable tag
-* `</size>` : font size closing tag
-* `<weight<` : font weight stylable tag
-* `</weight>` : font weight closing tag
-* `>>` : end of stylable tag
-
-Stylable tags can be followed by class names and specific attributes :
+Custom HTML tags can also be defined :
 
 ```
-<color<red>>RED</color>
+DefineOpenTag( 'div' );
+DefineOpenTag( 'span' );
+DefineAttributeTag( 'route', 'data-route' );
+DefineOpenTag( 'a' );
+DefineAttributeTag( 'href' );
+DefineOpenTag( 'img' );
+DefineAttributeTag( 'src' );
+DefineColorTag( 'red' );
+DefineColorTag( 'green', '#0F0' );
+DefineStyleTag( 'color' );
+DefineStyleTag( 'size', 'font-size' );
+DefineStyleTag( 'weight', 'font-weight' );
+DefineTag( '>>', '">' );
+```
+
+```
+<div<container>>DIV</div>
+<span<button[route]home>>HOME</span>
+<a<color-red[href]/home/introduction>>LINK</a>
+<img<width-50% height-auto[src]/static/image/illustration.jpg>>
+<red>RED</red>
+<green>GREEN</green>
 <color<#00F>>BLUE</color>
 <size<3rem>>BIG</size>
 <weight<100>>THIN</weight>
-<a<[href]/home/introduction>>LINK</a>
-<img<width-50% height-auto[src]/static/image/illustration.jpg>>
-```
-
-New special tags can also be defined :
-
-```
-DefineTag( '<link>', '<span class="link">' );
-DefineTag( '</link>', '</span>' );
-DefineColorTag( 'green' );
-DefineStylableTag( 'button' );
-```
-
-```
-<link>LINK</link>
-<green>GREEN</green>
-<button<color-red>>BUTTON</button>
 ```
 
 ## Installation

@@ -2,9 +2,9 @@
 set -x
 sudo apt remove golang golang-go
 sudo rm -R /usr/local/go
-wget -c https://golang.org/dl/go1.15.4.linux-amd64.tar.gz
-sudo tar -C /usr/local -xvzf go1.15.4.linux-amd64.tar.gz
-rm go1.15.4.linux-amd64.tar.gz
+wget -c https://golang.org/dl/go1.16.2.linux-amd64.tar.gz
+sudo tar -C /usr/local -xvzf go1.16.2.linux-amd64.tar.gz
+rm go1.16.2.linux-amd64.tar.gz
 export PATH=$PATH:/usr/local/go/bin
 sudo apt install git dmd mysql-server mysql-client php php-mysql php-gd
 sudo npm install -g npm
