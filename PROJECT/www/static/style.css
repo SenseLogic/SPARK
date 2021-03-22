@@ -720,7 +720,6 @@ sup {
 }
 .header-menu-button {
   border-radius: 8px;
-  margin-right: 8px;
   padding: 5px 10px;
   background-color: #444;
   color: #fff;
@@ -731,10 +730,21 @@ sup {
   background-color: #ccc;
   color: #000;
 }
+.header-menu-button + .header-menu-button {
+  margin-left: 8px;
+}
+.footer-menu {
+  display: flex;
+  margin: 8px;
+}
 .footer-menu-button {
-  padding: 8px 16px;
+  border-radius: 8px;
+  padding: 5px 10px;
   background-color: #ccc;
-  color: #fff;
+  color: #000;
+}
+.footer-menu-button + .footer-menu-button {
+  margin-left: 8px;
 }
 .cookie-consent-banner-container {
   z-index: 1000;
@@ -842,4 +852,7 @@ sup {
 }
 .add-contact-form-captcha-image {
   height: 3rem;
+}
+.legal-notice {
+  margin-top: 3rem;
 }

@@ -29,19 +29,6 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
 
         require_once __DIR__ . '/' . '../VIEW/show_base_view.php';
     }
-
-    // -- INQUIRIES
-
-    function GetProcessedText(
-        string $text
-        )
-    {
-        return ReplaceText(
-            [],
-            [],
-            GetProcessedText( $this->GetTranslatedText( $text ) )
-            );
-    }
 }
 
 // -- STATEMENTS

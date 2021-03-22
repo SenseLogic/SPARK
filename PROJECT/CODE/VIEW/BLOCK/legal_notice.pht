@@ -1,5 +1,11 @@
 <style file="legal_notice.styl">
+    .legal-notice
+    {
+        margin-top: 3rem;
+    }
 </style>
-<h1>
-    Legal notice
-</h1>
+<div class="legal-notice">
+    <h1>
+        <# .GetText( 'LegalNoticeTitle' ) #>
+    </h1>
+</div>

@@ -2,6 +2,18 @@ TEXT
 
     Slug Text
 
+        HeaderMenuHomeButton
+            ~ Home
+
+        HeaderMenuContactButton
+            ~ Contact
+
+        FooterMenuLegalNoticeButton
+            ~ Legal Notice
+
+        LegalNoticeTitle
+            ~ Legal notice
+
 USER
 
     Email Pseudonym Password Role

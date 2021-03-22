@@ -63,7 +63,6 @@ DefineColorTag( 'green', '#0F0' );
 DefineStyleTag( 'color' );
 DefineStyleTag( 'size', 'font-size' );
 DefineStyleTag( 'weight', 'font-weight' );
-DefineTag( '>>', '">' );
 ```
 
 ```

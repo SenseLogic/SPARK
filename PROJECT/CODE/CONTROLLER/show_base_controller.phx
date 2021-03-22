@@ -29,19 +29,6 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
 
         import '../VIEW/show_base_view.php';
     }
-
-    // -- INQUIRIES
-
-    method GetProcessedText(
-        string text
-        )
-    {
-        return ReplaceText(
-            [],
-            [],
-            GetProcessedText( .GetTranslatedText( text ) )
-            );
-    }
 }
 
 // -- STATEMENTS

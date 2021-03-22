@@ -1,13 +1,25 @@
 <style file="footer_menu.styl">
+    .footer-menu
+    {
+        display: flex;
+        margin: 8px;
+    }
+
     .footer-menu-button
     {
-        padding: 8px 16px;
+        border-radius: 8px;
+        padding: 5px 10px;
         background-color: #CCCCCC;
-        color: #FFFFFF;
+        color: #000000;
+    }
+
+    .footer-menu-button + .footer-menu-button
+    {
+        margin-left: 8px;
     }
 </style>
-<div class=">
-    <button class="footer-menu-button" data-route="legal-notice" onclick="SelectView( this )">
-        Legal Notice
-    </button>
+<div class="footer-menu">
+    <span class="footer-menu-button" data-route="legal-notice" onclick="SelectView( this )">
+        <# .GetText( 'FooterMenuLegalNoticeButton' ) #>
+    </span>
 </div>

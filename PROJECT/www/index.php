@@ -37,16 +37,15 @@ else
 DefineOpenTag( 'div' );
 DefineOpenTag( 'span' );
 DefineAttributeTag( 'route', 'data-route' );
-DefineOpenTag( 'span' );
 DefineOpenTag( 'a' );
 DefineAttributeTag( 'href' );
 DefineOpenTag( 'img' );
 DefineAttributeTag( 'src' );
-DefineColorTag( 'green' );
+DefineColorTag( 'red' );
+DefineColorTag( 'green', '#0F0' );
 DefineStyleTag( 'color' );
 DefineStyleTag( 'size', 'font-size' );
 DefineStyleTag( 'weight', 'font-weight' );
-DefineTag( '>>', '">' );
 
 // -- FUNCTIONS
 

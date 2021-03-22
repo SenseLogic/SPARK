@@ -1,5 +1,11 @@
 
 
-<h1>
-    Legal notice
-</h1>
+
+
+
+
+<div class="legal-notice">
+    <h1>
+        <?php echo $this->GetText( 'LegalNoticeTitle' ); ?>
+    </h1>
+</div>

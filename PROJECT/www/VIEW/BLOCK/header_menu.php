@@ -29,12 +29,16 @@
 
 
 
+
+
+
+
 <div class="header-menu">
     <div class="header-menu-button" data-route="home" onclick="SelectView( this )">
-        Home
+        <?php echo $this->GetText( 'HeaderMenuHomeButton' ); ?>
     </div>
     <div class="header-menu-button" data-route="contact" onclick="SelectView( this )">
-        Contact
+        <?php echo $this->GetText( 'HeaderMenuContactButton' ); ?>
     </div>
 </div>
 <script>

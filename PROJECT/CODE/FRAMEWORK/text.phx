@@ -1,7 +1,8 @@
 // -- VARIABLES
 
-GLOBALS[ 'SourceTagArray' ] = [];
-GLOBALS[ 'TargetTagArray' ] = [];
+var ProcessedTagArray = [];
+var ProcessedTagDefinitionArray = [];
+var EndTagIsDefined = false;
 
 // -- FUNCTIONS
 
@@ -385,12 +386,16 @@ function GetBareText(
 // ~~
 
 function DefineTag(
-    string source_tag,
-    string target_tag
+    string tag,
+    string tag_definition
     )
 {
-    array_push( GLOBALS[ 'SourceTagArray' ], source_tag );
-    array_push( GLOBALS[ 'TargetTagArray' ], target_tag );
+    global
+        ProcessedTagArray,
+        ProcessedTagDefinitionArray;
+
+    array_push( ProcessedTagArray, tag );
+    array_push( ProcessedTagDefinitionArray, tag_definition );
 }
 
 // ~~
@@ -414,11 +419,27 @@ function DefineColorTag(
 
 // ~~
 
+function DefineEndTag(
+    )
+{
+    global
+        EndTagIsDefined;
+
+    if ( !EndTagIsDefined )
+    {
+        DefineTag( '>>', '">' );
+        EndTagIsDefined = true;
+    }
+}
+
+// ~~
+
 function DefineOpenTag(
     string tag_name
     )
 {
     DefineTag( '<' .. tag_name .. '<', '<' .. tag_name .. ' class="' );
+    DefineEndTag();
 }
 
 // ~~
@@ -454,6 +475,7 @@ function DefineStyleTag(
         DefineTag( '<' .. tag_name .. '>', '<span style="' .. style_name .. ':' );
     }
 
+    DefineEndTag();
     DefineTag( '</' .. tag_name .. '>', '</span>' );
 }
 
@@ -463,7 +485,11 @@ function GetProcessedText(
     string text
     )
 {
-    return str_replace( GLOBALS[ 'SourceTagArray' ], GLOBALS[ 'TargetTagArray' ], text );
+    global
+        ProcessedTagArray,
+        ProcessedTagDefinitionArray;
+
+    return str_replace( ProcessedTagArray, ProcessedTagDefinitionArray, text );
 }
 
 // ~~
