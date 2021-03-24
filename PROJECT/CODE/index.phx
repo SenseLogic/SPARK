@@ -24,7 +24,7 @@ if ( GetServerName() === 'localhost' )
     define( 'DatabaseHost', 'localhost' );
     define( 'DatabaseName', 'spark-project' );
     define( 'DatabaseUserName', 'root' );
-    define( 'DatabasePassword', '' );
+    define( 'DatabasePassword', 'root' );
 }
 else
 {

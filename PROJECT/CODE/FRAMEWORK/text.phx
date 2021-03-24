@@ -206,7 +206,7 @@ function GetTitleCaseText(
     bool separator_characters_are_kept = true
     )
 {
-    var title_case_text = "";
+    var title_case_text = '';
 
     foreach ( var character; str_split( text ) )
     {
@@ -265,62 +265,80 @@ function GetCamelCaseText(
 
 function GetSnakeCaseText(
     string text,
-    string separator_character = "_"
+    string separator_character = '_'
     )
 {
-    var snake_case_text = "";
-    var prior_character_is_digit = false;
-    var prior_character_is_lower_case_letter = false;
+    var character_array = [];
+    var character_is_lower_case_array = [];
+    var character_is_upper_case_array = [];
+    var character_is_digit_array = [];
 
-    foreach ( var character; str_split( text ) )
+    foreach ( var character; str_split( str_replace( '-', '_', text ) ) )
     {
-        if ( character >= '0'
-             && character <= '9' )
-        {
-            if ( !prior_character_is_digit )
-            {
-                snake_case_text ..= separator_character;
-            }
+        array_push( character_array, character );
 
-            prior_character_is_digit = true;
+        var lower_case_character = strtolower( character );
+        var upper_case_character = strtoupper( character );
+
+        if ( lower_case_character !== upper_case_character )
+        {
+            array_push( character_is_lower_case_array, character === lower_case_character );
+            array_push( character_is_upper_case_array, character === upper_case_character );
         }
         else
         {
-            var lower_case_character = strtolower( character );
-            var upper_case_character = strtoupper( character );
+            array_push( character_is_lower_case_array, false );
+            array_push( character_is_upper_case_array, false );
+        }
 
-            if ( lower_case_character !== upper_case_character )
-            {
-                if ( character === lower_case_character )
-                {
-                    var prior_character_is_lower_case_letter = true;
-                }
-                else if ( character === upper_case_character )
-                {
-                    if ( prior_character_is_lower_case_letter
-                         || prior_character_is_digit )
-                    {
-                        snake_case_text ..= separator_character;
-                    }
+        array_push( character_is_digit_array, character >= '0' && character <= '9' );
+    }
 
-                    prior_character_is_lower_case_letter = false;
-                }
+    var character_count = count( character_array );
+    var snake_case_text = '';
+    var prior_character_is_lower_case = false;
+    var prior_character_is_upper_case = false;
+    var prior_character_is_digit = false;
 
-                character = lower_case_character;
-            }
-            else
-            {
-                character = "";
-                prior_character_is_lower_case_letter = true;
-            }
+    for ( var character_index = 0;
+          character_index < character_count;
+          ++character_index )
+    {
+        var character = character_array[ character_index ];
+        var character_is_lower_case = character_is_lower_case_array[ character_index ];
+        var character_is_upper_case = character_is_upper_case_array[ character_index ];
+        var character_is_digit = character_is_digit_array[ character_index ];
 
-            prior_character_is_digit = false;
+        if ( character_index + 1 < character_count )
+        {
+            var next_character_is_lower_case = character_is_lower_case_array[ character_index + 1 ];
+        }
+        else
+        {
+            var next_character_is_lower_case = false;
+        }
+
+        if ( ( prior_character_is_lower_case
+               && ( character_is_upper_case
+                    || character_is_digit ) )
+             || ( prior_character_is_digit
+                  && ( character_is_lower_case
+                       || character_is_upper_case ) )
+             || ( prior_character_is_upper_case
+                  && character_is_upper_case
+                  && next_character_is_lower_case ) )
+        {
+            snake_case_text ..= separator_character;
         }
 
         snake_case_text ..= character;
+
+        prior_character_is_lower_case = character_is_lower_case;
+        prior_character_is_upper_case = character_is_upper_case;
+        prior_character_is_digit = character_is_digit;
     }
 
-    return snake_case_text;
+    return strtolower( snake_case_text );
 }
 
 // ~~
