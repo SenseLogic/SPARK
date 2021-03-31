@@ -39,16 +39,20 @@
                 <div class="form-centered sortable-grid-cell">
                     <a class="form-button view-button" href="/admin/article/view/<?php echo htmlspecialchars( $article->Id ); ?>">
                     </a>
-                    <a class="form-button edit-button" href="/admin/article/edit/<?php echo htmlspecialchars( $article->Id ); ?>">
-                    </a>
-                    <a class="form-button remove-button" href="/admin/article/remove/<?php echo htmlspecialchars( $article->Id ); ?>">
+                    <?php if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                        <a class="form-button edit-button" href="/admin/article/edit/<?php echo htmlspecialchars( $article->Id ); ?>">
+                        </a>
+                        <a class="form-button remove-button" href="/admin/article/remove/<?php echo htmlspecialchars( $article->Id ); ?>">
+                        </a>
+                    <?php } ?>
+                </div>
+            <?php } ?>
+            <?php if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                <div class="form-extended form-centered sortable-grid-footer">
+                    <a class="form-button form-button-large add-button" href="/admin/article/add">
                     </a>
                 </div>
             <?php } ?>
-            <div class="form-extended form-centered sortable-grid-footer">
-                <a class="form-button form-button-large add-button" href="/admin/article/add">
-                </a>
-            </div>
         </div>
     </div>
 </div>

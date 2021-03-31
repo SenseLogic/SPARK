@@ -35,7 +35,7 @@
                             </span>
                         </a>
                     </div>
-                    <?php if ( FindSessionValue( 'UserRole', '' ) === 'administrator' ) { ?>
+                    <?php if ( HasSessionMinimumUserRole( 'administrator' ) ) { ?>
                         <div class="page-menu-item">
                             <a href="/admin/user">
                                 <span class="form-button form-button-large user-button">

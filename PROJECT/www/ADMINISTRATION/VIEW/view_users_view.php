@@ -33,16 +33,20 @@
                 <div class="form-centered sortable-grid-cell">
                     <a class="form-button view-button" href="/admin/user/view/<?php echo htmlspecialchars( $user->Id ); ?>">
                     </a>
-                    <a class="form-button edit-button" href="/admin/user/edit/<?php echo htmlspecialchars( $user->Id ); ?>">
-                    </a>
-                    <a class="form-button remove-button" href="/admin/user/remove/<?php echo htmlspecialchars( $user->Id ); ?>">
+                    <?php if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                        <a class="form-button edit-button" href="/admin/user/edit/<?php echo htmlspecialchars( $user->Id ); ?>">
+                        </a>
+                        <a class="form-button remove-button" href="/admin/user/remove/<?php echo htmlspecialchars( $user->Id ); ?>">
+                        </a>
+                    <?php } ?>
+                </div>
+            <?php } ?>
+            <?php if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                <div class="form-extended form-centered sortable-grid-footer">
+                    <a class="form-button form-button-large add-button" href="/admin/user/add">
                     </a>
                 </div>
             <?php } ?>
-            <div class="form-extended form-centered sortable-grid-footer">
-                <a class="form-button form-button-large add-button" href="/admin/user/add">
-                </a>
-            </div>
         </div>
     </div>
 </div>

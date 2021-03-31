@@ -553,7 +553,7 @@ textarea:focus {
   grid-template-columns: repeat(3, auto);
 }
 .article-table {
-  grid-template-columns: repeat(7, auto);
+  grid-template-columns: repeat(6, auto);
 }
 .contact-table {
   grid-template-columns: repeat(8, auto);

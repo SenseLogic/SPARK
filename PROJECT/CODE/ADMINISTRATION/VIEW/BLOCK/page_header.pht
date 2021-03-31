@@ -35,7 +35,7 @@
                             </span>
                         </a>
                     </div>
-                    <? if ( FindSessionValue( 'UserRole', '' ) === 'administrator' ) { ?>
+                    <? if ( HasSessionMinimumUserRole( 'administrator' ) ) { ?>
                         <div class="page-menu-item">
                             <a href="/admin/user">
                                 <span class="form-button form-button-large user-button">

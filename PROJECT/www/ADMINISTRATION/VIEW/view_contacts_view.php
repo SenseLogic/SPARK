@@ -51,16 +51,20 @@
                 <div class="form-centered sortable-grid-cell">
                     <a class="form-button view-button" href="/admin/contact/view/<?php echo htmlspecialchars( $contact->Id ); ?>">
                     </a>
-                    <a class="form-button edit-button" href="/admin/contact/edit/<?php echo htmlspecialchars( $contact->Id ); ?>">
-                    </a>
-                    <a class="form-button remove-button" href="/admin/contact/remove/<?php echo htmlspecialchars( $contact->Id ); ?>">
+                    <?php if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                        <a class="form-button edit-button" href="/admin/contact/edit/<?php echo htmlspecialchars( $contact->Id ); ?>">
+                        </a>
+                        <a class="form-button remove-button" href="/admin/contact/remove/<?php echo htmlspecialchars( $contact->Id ); ?>">
+                        </a>
+                    <?php } ?>
+                </div>
+            <?php } ?>
+            <?php if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                <div class="form-extended form-centered sortable-grid-footer">
+                    <a class="form-button form-button-large add-button" href="/admin/contact/add">
                     </a>
                 </div>
             <?php } ?>
-            <div class="form-extended form-centered sortable-grid-footer">
-                <a class="form-button form-button-large add-button" href="/admin/contact/add">
-                </a>
-            </div>
         </div>
     </div>
 </div>

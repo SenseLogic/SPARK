@@ -14,6 +14,7 @@ require_once __DIR__ . '/' . 'FRAMEWORK/language.php';
 require_once __DIR__ . '/' . 'FRAMEWORK/database.php';
 require_once __DIR__ . '/' . 'FRAMEWORK/captcha.php';
 require_once __DIR__ . '/' . 'FRAMEWORK/mail.php';
+require_once __DIR__ . '/' . 'FRAMEWORK/user.php';
 
 // -- CONSTANTS
 
@@ -24,7 +25,7 @@ if ( GetServerName() === 'localhost' )
     define( 'DatabaseHost', 'localhost' );
     define( 'DatabaseName', 'spark-project' );
     define( 'DatabaseUserName', 'root' );
-    define( 'DatabasePassword', 'root' );
+    define( 'DatabasePassword', '' );
 }
 else
 {

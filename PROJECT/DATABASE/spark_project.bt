@@ -15,6 +15,7 @@ import 'FRAMEWORK/language.php';
 import 'FRAMEWORK/database.php';
 import 'FRAMEWORK/captcha.php';
 import 'FRAMEWORK/mail.php';
+import 'FRAMEWORK/user.php';
 
 // -- CONSTANTS
 
