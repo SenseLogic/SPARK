@@ -102,12 +102,6 @@
 
 
 
-
-
-
-
-
-
 <div id="header-menu" class="header-menu">
     <div class="header-menu-button-container">
         <div class="header-menu-button" data-route="home" onclick="SelectView( this )">

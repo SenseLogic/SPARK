@@ -721,13 +721,9 @@ sup {
   align-items: center;
   background-color: transparent;
 }
-.header-menu.is-scrolled {
-  background-color: rgba(255,255,255,0.8);
-}
-@media (max-width: 39.98em) {
-  .header-menu.is-open {
-    min-height: 100vh;
-    background-color: rgba(255,255,255,0.5);
+@media (min-width: 40em) {
+  .header-menu.is-scrolled {
+    background-color: rgba(255,255,255,0.8);
   }
 }
 .header-menu-button-container {
@@ -740,14 +736,6 @@ sup {
 @media (min-width: 40em) {
   .header-menu-button-container {
     display: flex;
-  }
-}
-@media (max-width: 39.98em) {
-  .header-menu.is-open .header-menu-button-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
   }
 }
 .header-menu-button {
@@ -765,12 +753,6 @@ sup {
 .header-menu-button + .header-menu-button {
   margin-left: 1rem;
 }
-@media (max-width: 39.98em) {
-  .header-menu.is-open .header-menu-button + .header-menu-button {
-    margin-left: 0;
-    margin-top: 1rem;
-  }
-}
 .header-menu-open-button {
   position: absolute;
   top: 0.5rem;
@@ -786,6 +768,20 @@ sup {
   }
 }
 @media (max-width: 39.98em) {
+  .header-menu.is-open {
+    min-height: 100vh;
+    background-color: rgba(255,255,255,0.5);
+  }
+  .header-menu.is-open .header-menu-button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .header-menu.is-open .header-menu-button + .header-menu-button {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
   .header-menu.is-open .header-menu-open-button {
     background: url("/static/image/header/close_button.svg");
     background-size: contain;
