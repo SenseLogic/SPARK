@@ -77,14 +77,7 @@
                     element
                     )
                 {
-                    if ( element.dataset.viewName === ViewName )
-                    {
-                        element.RemoveClass( "display-hidden" );
-                    }
-                    else
-                    {
-                        element.AddClass( "display-hidden" );
-                    }
+                    element.ToggleClass( "display-hidden", element.dataset.viewName !== ViewName );
                 }
                 );
         }
