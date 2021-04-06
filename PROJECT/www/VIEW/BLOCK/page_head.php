@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 <meta name="title" content="Spark Project"/>
 <meta name="description" content="Spark Project"/>
-<meta name="keywords" content="spark-project"/>
+<meta name="keywords" content="spark, project"/>
 <meta name="robots" content="index, follow"/>
 <meta name="language" content="English"/>
 <meta name="revisit-after" content="30 days"/>

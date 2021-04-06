@@ -8,31 +8,40 @@
         right: 0;
         padding: 8px;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
 
         background-color: transparent;
     }
 
-    .header-menu.is-scrolled
+    .header-menu:not(.is-open).is-scrolled
     {
-        +Media( above-40em )
+        background-color: rgba( 255, 255, 255, 0.8 );
+    }
+
+    .header-menu.is-open
+    {
+        +Media( below-50em )
         {
-            background-color: rgba( 255, 255, 255, 0.8 );
+            min-height: 100vh;
+            background-color: rgba( 0, 0, 0, 0.5 );
         }
     }
 
     .header-menu-button-container
     {
-        display: none;
+        display: flex;
         justify-content: flex-start;
         align-items: center;
         height: 100%;
         width: 100%;
+    }
 
-        +Media( above-40em )
+    .header-menu.is-open .header-menu-button-container
+    {
+        +Media( below-50em )
         {
-            display: flex;
+            display: none;
         }
     }
 
@@ -57,49 +66,81 @@
         margin-left: 1rem;
     }
 
-    .header-menu-open-button
+    .header-menu-desktop-button
     {
-        position: absolute;
-        top: 0.5rem;
-        right: 0.5rem;
-        height: 2rem;
-        width: 2rem;
-        background: url( "/static/image/header/menu_button.svg" );
-        background-size: contain;
-
-        +Media( above-40em )
+        +Media( below-50em )
         {
             display: none;
         }
     }
 
-    +Media( below-40em )
+    .header-menu-icon-button
     {
-        .header-menu.is-open
-        {
-            min-height: 100vh;
-            background-color: rgba( 255, 255, 255, 0.5 );
-        }
+        height: 2rem;
+        width: 2rem;
+    }
 
-        .header-menu.is-open .header-menu-button-container
+    .header-menu-open-button
+    {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        background: url( "/static/image/header/menu_button.svg" ) no-repeat center center;
+        background-size: contain;
+
+        +Media( above-50em )
+        {
+            display: none;
+        }
+    }
+
+    .header-menu-mobile-button-container
+    {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+    }
+
+    .header-menu.is-open .header-menu-mobile-button-container
+    {
+        +Media( below-50em )
         {
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
         }
+    }
 
-        .header-menu.is-open .header-menu-button + .header-menu-button
-        {
-            margin-left: 0;
-            margin-top: 1rem;
-        }
+    .header-menu-mobile-button
+    {
+        border-radius: 8px;
+        padding: 5px 10px;
+        background-color: #444444;
+        color: #FFFFFF;
+        cursor: pointer;
+    }
 
-        .header-menu.is-open .header-menu-open-button
-        {
-            background: url( "/static/image/header/close_button.svg" );
-            background-size: contain;
-        }
+    .header-menu-mobile-button:hover,
+    .header-menu-mobile-button.is-selected
+    {
+        background-color: #CCCCCC;
+        color: #000000;
+    }
+
+    .header-menu-mobile-button + .header-menu-mobile-button
+    {
+        margin-top: 1rem;
+    }
+
+    .header-menu-close-button
+    {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+
+        background: url( "/static/image/header/close_button.svg" ) no-repeat center center;
+        background-size: contain;
     }
 </style>
 <div id="header-menu" class="header-menu">
@@ -107,11 +148,30 @@
         <div class="header-menu-button" data-route="home" onclick="SelectView( this )">
             <# .GetText( 'HeaderMenuHomeButton' ) #>
         </div>
-        <div class="header-menu-button" data-route="contact" onclick="SelectView( this )">
+        <div class="header-menu-button header-menu-desktop-button" style="margin-left:auto" data-route="contact" onclick="SelectView( this )">
             <# .GetText( 'HeaderMenuContactButton' ) #>
         </div>
+        <div class="header-menu-button header-menu-desktop-button" data-route="contact" onclick="SelectView( this )">
+            <# .GetText( 'HeaderMenuContactButton' ) #>
+        </div>
+        <div class="header-menu-button header-menu-desktop-button" style="margin-right:auto" data-route="contact" onclick="SelectView( this )">
+            <# .GetText( 'HeaderMenuContactButton' ) #>
+        </div>
+        <div class="header-menu-icon-button header-menu-open-button" onclick="HandleHeaderMenuOpenButtonClickEvent( this )">
+        </div>
     </div>
-    <div class="header-menu-open-button" onclick="HandleHeaderMenuOpenButtonClickEvent( this )">
+    <div class="header-menu-mobile-button-container">
+        <div class="header-menu-mobile-button" data-route="home" onclick="SelectView( this )">
+            <# .GetText( 'HeaderMenuHomeButton' ) #>
+        </div>
+        <div class="header-menu-mobile-button" data-route="contact" onclick="SelectView( this )">
+            <# .GetText( 'HeaderMenuContactButton' ) #>
+        </div>
+        <div class="header-menu-mobile-button" data-route="contact" onclick="SelectView( this )">
+            <# .GetText( 'HeaderMenuContactButton' ) #>
+        </div>
+        <div class="header-menu-icon-button header-menu-close-button" onclick="HandleHeaderMenuCloseButtonClickEvent( this )">
+        </div>
     </div>
 </div>
 <script>
@@ -121,7 +181,16 @@
         button_element
         )
     {
-        GetElementById( "header-menu" ).ToggleClass( "is-open" );
+        GetElementById( "header-menu" ).AddClass( "is-open" );
+    }
+
+    // ~~
+
+    function HandleHeaderMenuCloseButtonClickEvent(
+        button_element
+        )
+    {
+        GetElementById( "header-menu" ).RemoveClass( "is-open" );
     }
 
     // -- STATEMENTS
