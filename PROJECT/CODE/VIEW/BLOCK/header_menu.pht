@@ -2,21 +2,21 @@
     .header-menu
     {
         z-index: 100;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         position: fixed;
         top: 0;
         left: 0;
         right: 0;
-        padding: 8px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
+        padding: 1rem;
         background-color: transparent;
+        transition: background-color 0.3s ease;
     }
 
     .header-menu:not(.is-open).is-scrolled
     {
-        background-color: rgba( 255, 255, 255, 0.8 );
+        background-color: rgba( 0, 0, 0, 0.3 );
     }
 
     .header-menu.is-open
@@ -47,17 +47,19 @@
 
     .header-menu-button
     {
-        border-radius: 8px;
-        padding: 5px 10px;
-        background-color: #444444;
+        font-size: 1rem;
         color: #FFFFFF;
         cursor: pointer;
+        transition: transform 0.3s ease;
     }
 
-    .header-menu-button:hover,
+    .header-menu-button:hover
+    {
+        transform: scale( 1.2 );
+    }
+
     .header-menu-button.is-selected
     {
-        background-color: #CCCCCC;
         color: #000000;
     }
 
@@ -78,13 +80,25 @@
     {
         height: 2rem;
         width: 2rem;
+        pointer: cursor;
+        transition: transform 0.3s ease;
+    }
+
+    .header-menu-icon-button:hover
+    {
+        transform: scale( 1.2 );
+    }
+
+    .header-menu-icon-button + .header-menu-icon-button
+    {
+        margin-left: 1rem;
     }
 
     .header-menu-open-button
     {
         position: absolute;
-        top: 0.5rem;
-        right: 0.5rem;
+        top: 1rem;
+        right: 1rem;
         background: url( "/static/image/header/menu_button.svg" ) no-repeat center center;
         background-size: contain;
 
@@ -116,15 +130,19 @@
     {
         border-radius: 8px;
         padding: 5px 10px;
-        background-color: #444444;
+        font-size: 2rem;
         color: #FFFFFF;
         cursor: pointer;
+        transition: transform 0.3s ease;
     }
 
-    .header-menu-mobile-button:hover,
+    .header-menu-mobile-button:hover
+    {
+        transform: scale( 1.2 );
+    }
+
     .header-menu-mobile-button.is-selected
     {
-        background-color: #CCCCCC;
         color: #000000;
     }
 
@@ -136,8 +154,8 @@
     .header-menu-close-button
     {
         position: absolute;
-        top: 0.5rem;
-        right: 0.5rem;
+        top: 1rem;
+        right: 1rem;
 
         background: url( "/static/image/header/close_button.svg" ) no-repeat center center;
         background-size: contain;
@@ -157,27 +175,27 @@
         <div class="header-menu-button header-menu-desktop-button" style="margin-right:auto" data-route="contact" onclick="SelectView( this )">
             <# .GetText( 'HeaderMenuContactButton' ) #>
         </div>
-        <div class="header-menu-icon-button header-menu-open-button" onclick="HandleHeaderMenuOpenButtonClickEvent( this )">
+        <div class="header-menu-icon-button header-menu-open-button" onclick="ShowHeaderMenu()">
         </div>
     </div>
     <div class="header-menu-mobile-button-container">
-        <div class="header-menu-mobile-button" data-route="home" onclick="SelectView( this )">
+        <div class="header-menu-mobile-button" data-route="home" onclick="HideHeaderMenu(); SelectView( this )">
             <# .GetText( 'HeaderMenuHomeButton' ) #>
         </div>
-        <div class="header-menu-mobile-button" data-route="contact" onclick="SelectView( this )">
+        <div class="header-menu-mobile-button" data-route="contact" onclick="HideHeaderMenu(); SelectView( this )">
             <# .GetText( 'HeaderMenuContactButton' ) #>
         </div>
-        <div class="header-menu-mobile-button" data-route="contact" onclick="SelectView( this )">
+        <div class="header-menu-mobile-button" data-route="contact" onclick="HideHeaderMenu(); SelectView( this )">
             <# .GetText( 'HeaderMenuContactButton' ) #>
         </div>
-        <div class="header-menu-icon-button header-menu-close-button" onclick="HandleHeaderMenuCloseButtonClickEvent( this )">
+        <div class="header-menu-icon-button header-menu-close-button" onclick="HideHeaderMenu()">
         </div>
     </div>
 </div>
 <script>
     // -- FUNCTIONS
 
-    function HandleHeaderMenuOpenButtonClickEvent(
+    function ShowHeaderMenu(
         button_element
         )
     {
@@ -186,7 +204,7 @@
 
     // ~~
 
-    function HandleHeaderMenuCloseButtonClickEvent(
+    function HideHeaderMenu(
         button_element
         )
     {
@@ -195,7 +213,7 @@
 
     // -- STATEMENTS
 
-    HandleScrollEvent( 1, ".header-menu", "is-scrolled" );
+    HandleScrollEvent( GetViewportHeight() - 48, ".header-menu", "is-scrolled" );
 
     AddEventListener(
         "update-view",
