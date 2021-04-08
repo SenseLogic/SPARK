@@ -175,27 +175,27 @@
         <div class="header-menu-button header-menu-desktop-button" style="margin-right:auto" data-route="contact" onclick="SelectView( this )">
             <?php echo $this->GetText( 'HeaderMenuContactButton' ); ?>
         </div>
-        <div class="header-menu-icon-button header-menu-open-button" onclick="ShowHeaderMenu()">
+        <div class="header-menu-icon-button header-menu-open-button" onclick="OpenHeaderMenu()">
         </div>
     </div>
     <div class="header-menu-mobile-button-container">
-        <div class="header-menu-mobile-button" data-route="home" onclick="HideHeaderMenu(); SelectView( this )">
+        <div class="header-menu-mobile-button" data-route="home" onclick="CloseHeaderMenu(); SelectView( this )">
             <?php echo $this->GetText( 'HeaderMenuHomeButton' ); ?>
         </div>
-        <div class="header-menu-mobile-button" data-route="contact" onclick="HideHeaderMenu(); SelectView( this )">
+        <div class="header-menu-mobile-button" data-route="contact" onclick="CloseHeaderMenu(); SelectView( this )">
             <?php echo $this->GetText( 'HeaderMenuContactButton' ); ?>
         </div>
-        <div class="header-menu-mobile-button" data-route="contact" onclick="HideHeaderMenu(); SelectView( this )">
+        <div class="header-menu-mobile-button" data-route="contact" onclick="CloseHeaderMenu(); SelectView( this )">
             <?php echo $this->GetText( 'HeaderMenuContactButton' ); ?>
         </div>
-        <div class="header-menu-icon-button header-menu-close-button" onclick="HideHeaderMenu()">
+        <div class="header-menu-icon-button header-menu-close-button" onclick="CloseHeaderMenu()">
         </div>
     </div>
 </div>
 <script>
     // -- FUNCTIONS
 
-    function ShowHeaderMenu(
+    function OpenHeaderMenu(
         button_element
         )
     {
@@ -204,7 +204,7 @@
 
     // ~~
 
-    function HideHeaderMenu(
+    function CloseHeaderMenu(
         button_element
         )
     {
