@@ -1,18 +1,32 @@
 .footer-menu
 {
     display: flex;
+    justify-content: center;
+    align-items: center;
+
     margin: 8px;
 }
 
 .footer-menu-button
 {
-    border-radius: 8px;
-    padding: 5px 10px;
-    background-color: #CCCCCC;
-    color: #000000;
+    font-size: 1rem;
+    color: #FFFFFF;
+
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.footer-menu-button:hover
+{
+    transform: scale( 1.2 );
+}
+
+.footer-menu-button.is-selected
+{
+    font-weight: bold;
 }
 
 .footer-menu-button + .footer-menu-button
 {
-    margin-left: 8px;
+    margin-left: 1rem;
 }

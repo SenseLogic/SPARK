@@ -1,3 +1,3 @@
 <div class="container-extended view display-hidden" data-view-name="contact">
-    <? import 'BLOCK/add_contact_form.php'; ?>
+    <? import 'BLOCK/contact_form.php'; ?>
 </div>

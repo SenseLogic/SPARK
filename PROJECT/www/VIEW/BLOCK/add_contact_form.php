@@ -13,33 +13,68 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="add-contact-form">
     <form name="AddContactForm">
-        <div>
-            <input id="name" name="Name" type="text" placeholder="Name"/>
+        <div class="add-contact-form-row">
+            <input class="add-contact-form-input" name="Name" type="text" placeholder="Name"/>
         </div>
-        <div>
-            <input id="company" name="Company" type="text" placeholder="Company"/>
+        <div class="add-contact-form-row">
+            <input class="add-contact-form-input" name="Company" type="text" placeholder="Company"/>
         </div>
-        <div>
-            <input id="email" name="Email" type="email" placeholder="Email"/>
+        <div class="add-contact-form-row">
+            <input class="add-contact-form-input" name="Email" type="email" placeholder="Email"/>
         </div>
-        <div>
-            <input id="phone" name="Phone" type="tel" placeholder="Phone"/>
+        <div class="add-contact-form-row">
+            <input class="add-contact-form-input" name="Phone" type="tel" placeholder="Phone"/>
         </div>
-        <div>
-            <input id="subject" name="Subject" type="text" placeholder="Subject"/>
+        <div class="add-contact-form-row">
+            <input class="add-contact-form-input" name="Subject" type="text" placeholder="Subject"/>
         </div>
-        <div>
-            <input id="message" name="Message" type="text" placeholder="Message"/>
+        <div class="add-contact-form-row">
+            <input class="add-contact-form-input" name="Message" type="text" placeholder="Message"/>
         </div>
-        <div>
-            <input name="Captcha" type="text" placeholder="Captcha"/>
+        <div class="add-contact-form-row">
+            <input class="add-contact-form-input" name="Captcha" type="text" placeholder="Captcha"/>
             <img class="add-contact-form-captcha-image" src="/captcha"/>
         </div>
-        <button id="add-contact-form-send-button">
+        <div id="add-contact-form-send-button">
             Send
-        </button>
+        </div>
         <div id="thanks-text" class="display-hidden">
             Thanks !
         </div>
@@ -77,22 +112,22 @@
 
         if ( name_field.value !== "" )
         {
-            name_field.classList.remove( "invalid" );
+            name_field.classList.remove( "is-invalid" );
         }
         else
         {
-            name_field.classList.add( "invalid" );
+            name_field.classList.add( "is-invalid" );
 
             it_is_valid_add_contact_form = false;
         }
 
         if ( company_field.value !== "" )
         {
-            company_field.classList.remove( "invalid" );
+            company_field.classList.remove( "is-invalid" );
         }
         else
         {
-            company_field.classList.add( "invalid" );
+            company_field.classList.add( "is-invalid" );
 
             it_is_valid_add_contact_form = false;
         }
@@ -100,44 +135,44 @@
         if ( email_field.value !== ""
              && /^[a-z-.]+@[a-z-.]+\.[a-z]+$/g.test( email_field.value.toLowerCase() ) )
         {
-            email_field.classList.remove( "invalid" );
+            email_field.classList.remove( "is-invalid" );
         }
         else
         {
-            email_field.classList.add( "invalid" );
+            email_field.classList.add( "is-invalid" );
 
             it_is_valid_add_contact_form = false;
         }
 
         if ( phone_field.value !== "" )
         {
-            phone_field.classList.remove( "invalid" );
+            phone_field.classList.remove( "is-invalid" );
         }
         else
         {
-            phone_field.classList.add( "invalid" );
+            phone_field.classList.add( "is-invalid" );
 
             it_is_valid_add_contact_form = false;
         }
 
         if ( subject_field.value !== "" )
         {
-            subject_field.classList.remove( "invalid" );
+            subject_field.classList.remove( "is-invalid" );
         }
         else
         {
-            subject_field.classList.add( "invalid" );
+            subject_field.classList.add( "is-invalid" );
 
             it_is_valid_add_contact_form = false;
         }
 
         if ( message_field.value !== "" )
         {
-            message_field.classList.remove( "invalid" );
+            message_field.classList.remove( "is-invalid" );
         }
         else
         {
-            message_field.classList.add( "invalid" );
+            message_field.classList.add( "is-invalid" );
 
             it_is_valid_add_contact_form = false;
         }
@@ -145,11 +180,11 @@
         if ( captcha_field.value !== ""
              && IsValidCaptcha( captcha_field.value ) )
         {
-            captcha_field.classList.remove( "invalid" );
+            captcha_field.classList.remove( "is-invalid" );
         }
         else
         {
-            captcha_field.classList.add( "invalid" );
+            captcha_field.classList.add( "is-invalid" );
 
             it_is_valid_add_contact_form = false;
         }
@@ -159,7 +194,7 @@
 
     // ~~
 
-    function ClearContactForm(
+    function ClearAddContactForm(
         )
     {
         var
@@ -177,7 +212,7 @@
 
     // ~~
 
-    async function HandleAddContactButtonClickEvent(
+    async function HandleAddContactFormSendButtonClickEvent(
         )
     {
         var
@@ -206,7 +241,7 @@
 
             if ( request.status === 200 )
             {
-                ClearContactForm();
+                ClearAddContactForm();
                 GetElementById( "thanks-text" ).RemoveClass( "display-hidden" );
             }
         }
@@ -222,7 +257,7 @@
         {
             event.preventDefault();
 
-            HandleAddContactButtonClickEvent();
+            HandleAddContactFormSendButtonClickEvent();
         }
         );
 </script>

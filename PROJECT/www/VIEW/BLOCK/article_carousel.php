@@ -49,6 +49,9 @@
 
 
 
+
+
+
 <div id="article-carousel" class="article-carousel">
     <div id="article-carousel-strip" class="article-carousel-strip">
     <?php  for (  $article_index = 0; $article_index <= $this->ArticleCount; ++$article_index ) { ?>

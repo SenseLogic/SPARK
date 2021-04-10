@@ -66,7 +66,7 @@
 
     .header-menu-button.is-selected
     {
-        color: #000000;
+        font-weight: bold;
     }
 
     .header-menu-button + .header-menu-button
@@ -224,7 +224,7 @@
 
     // -- STATEMENTS
 
-    HandleScrollEvent( GetViewportHeight() - 48, ".header-menu", "is-scrolled" );
+    HandleScrollEvent( 1, ".header-menu", "is-scrolled" );
 
     AddEventListener(
         "update-view",

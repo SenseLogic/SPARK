@@ -2,23 +2,34 @@
     .footer-menu
     {
         display: flex;
+        justify-content: center;
+        align-items: center;
 
         margin: 8px;
     }
 
     .footer-menu-button
     {
-        border-radius: 8px;
-        padding: 5px 10px;
+        font-size: 1rem;
+        color: #FFFFFF;
 
-        background-color: #CCCCCC;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
 
-        color: #000000;
+    .footer-menu-button:hover
+    {
+        transform: scale( 1.2 );
+    }
+
+    .footer-menu-button.is-selected
+    {
+        font-weight: bold;
     }
 
     .footer-menu-button + .footer-menu-button
     {
-        margin-left: 8px;
+        margin-left: 1rem;
     }
 </style>
 <div class="footer-menu">

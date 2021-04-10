@@ -4,7 +4,7 @@
         margin-top: 3rem;
     }
 </style>
-<div class="legal-notice">
+<div class="large-container-margined legal-notice">
     <h1>
         <# .GetText( 'LegalNoticeTitle' ) #>
     </h1>
