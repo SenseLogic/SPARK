@@ -49,7 +49,7 @@
 
     // ~~
 
-    function SelectView(
+    function ShowView(
         element
         )
     {

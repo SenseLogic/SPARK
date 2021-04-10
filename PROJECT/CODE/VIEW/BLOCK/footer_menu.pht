@@ -22,7 +22,7 @@
     }
 </style>
 <div class="footer-menu">
-    <span class="footer-menu-button" data-route="legal-notice" onclick="SelectView( this )">
+    <span class="footer-menu-button" data-route="legal-notice" onclick="ShowView( this )">
         <# .GetText( 'FooterMenuLegalNoticeButton' ) #>
     </span>
 </div>
