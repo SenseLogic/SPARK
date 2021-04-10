@@ -1,16 +1,20 @@
 <style file="header_menu.styl">
     .header-menu
     {
-        z-index: 100;
         display: flex;
         justify-content: center;
         align-items: center;
+
+        z-index: 100;
         position: fixed;
         top: 0;
         left: 0;
         right: 0;
+
         padding: 1rem;
+
         background-color: transparent;
+
         transition: background-color 0.3s ease;
     }
 
@@ -33,6 +37,7 @@
         display: flex;
         justify-content: flex-start;
         align-items: center;
+
         height: 100%;
         width: 100%;
     }
@@ -49,6 +54,7 @@
     {
         font-size: 1rem;
         color: #FFFFFF;
+
         cursor: pointer;
         transition: transform 0.3s ease;
     }
@@ -80,7 +86,8 @@
     {
         height: 2rem;
         width: 2rem;
-        pointer: cursor;
+
+        cursor: pointer;
         transition: transform 0.3s ease;
     }
 
@@ -99,6 +106,7 @@
         position: absolute;
         top: 1rem;
         right: 1rem;
+
         background: url( "/static/image/header/menu_button.svg" ) no-repeat center center;
         background-size: contain;
 
@@ -114,6 +122,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
         height: 100%;
         width: 100%;
     }
@@ -130,8 +139,10 @@
     {
         border-radius: 8px;
         padding: 5px 10px;
+
         font-size: 2rem;
         color: #FFFFFF;
+
         cursor: pointer;
         transition: transform 0.3s ease;
     }

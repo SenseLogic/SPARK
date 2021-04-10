@@ -2,6 +2,7 @@
     .footer-menu
     {
         display: flex;
+
         margin: 8px;
     }
 
@@ -9,7 +10,9 @@
     {
         border-radius: 8px;
         padding: 5px 10px;
+
         background-color: #CCCCCC;
+
         color: #000000;
     }
 
