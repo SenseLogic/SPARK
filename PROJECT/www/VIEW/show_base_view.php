@@ -27,7 +27,7 @@
 
     // ~~
 
-    function SetViewRoute(
+    function SetView(
         route
         )
     {
@@ -53,7 +53,7 @@
         element
         )
     {
-        SetViewRoute( element.dataset.route );
+        SetView( element.dataset.route );
     }
 </script>
 <div>
