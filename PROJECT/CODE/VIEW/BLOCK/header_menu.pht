@@ -174,29 +174,29 @@
 </style>
 <div id="header-menu" class="header-menu">
     <div class="header-menu-button-container">
-        <div class="header-menu-button" data-route="home" onclick="ShowView( this )">
+        <div class="header-menu-button" onclick="SetView( 'home' )">
             <# .GetText( 'HeaderMenuHomeButton' ) #>
         </div>
-        <div class="header-menu-button header-menu-desktop-button" style="margin-left:auto" data-route="contact" onclick="ShowView( this )">
+        <div class="header-menu-button header-menu-desktop-button" style="margin-left:auto" onclick="SetView( 'contact' )">
             <# .GetText( 'HeaderMenuContactButton' ) #>
         </div>
-        <div class="header-menu-button header-menu-desktop-button" data-route="contact" onclick="ShowView( this )">
+        <div class="header-menu-button header-menu-desktop-button" onclick="SetView( 'contact' )">
             <# .GetText( 'HeaderMenuContactButton' ) #>
         </div>
-        <div class="header-menu-button header-menu-desktop-button" style="margin-right:auto" data-route="contact" onclick="ShowView( this )">
+        <div class="header-menu-button header-menu-desktop-button" style="margin-right:auto" onclick="SetView( 'contact' )">
             <# .GetText( 'HeaderMenuContactButton' ) #>
         </div>
         <div class="header-menu-icon-button header-menu-open-button" onclick="OpenHeaderMenu()">
         </div>
     </div>
     <div class="header-menu-mobile-button-container">
-        <div class="header-menu-mobile-button" data-route="home" onclick="CloseHeaderMenu(); ShowView( this )">
+        <div class="header-menu-mobile-button" onclick="CloseHeaderMenu(); SetView( 'home' )">
             <# .GetText( 'HeaderMenuHomeButton' ) #>
         </div>
-        <div class="header-menu-mobile-button" data-route="contact" onclick="CloseHeaderMenu(); ShowView( this )">
+        <div class="header-menu-mobile-button" onclick="CloseHeaderMenu(); SetView( 'contact' )">
             <# .GetText( 'HeaderMenuContactButton' ) #>
         </div>
-        <div class="header-menu-mobile-button" data-route="contact" onclick="CloseHeaderMenu(); ShowView( this )">
+        <div class="header-menu-mobile-button" onclick="CloseHeaderMenu(); SetView( 'contact' )">
             <# .GetText( 'HeaderMenuContactButton' ) #>
         </div>
         <div class="header-menu-icon-button header-menu-close-button" onclick="CloseHeaderMenu()">

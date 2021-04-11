@@ -19,23 +19,19 @@
 
     // ~~
 
-    function UpdateView(
-        )
-    {
-        EmitEvent( "update-view" );
-    }
-
-    // ~~
-
     function SetView(
         route
         )
     {
-        Route = route;
-        ViewName = GetRouteViewName( route );
-        SectionName = GetRouteSectionName( route );
-        SetRoute( "/<# .LanguageCode #>/" + route );
-        UpdateView();
+        if ( route !== undefined )
+        {
+            Route = route;
+            ViewName = GetRouteViewName( route );
+            SectionName = GetRouteSectionName( route );
+            SetRoute( "/<# .LanguageCode #>/" + route );
+        }
+
+        EmitEvent( "update-view" );
 
         if ( SectionName === "" )
         {
@@ -45,15 +41,6 @@
         {
             window.SetScrollTop( GetElementById( Route ) );
         }
-    }
-
-    // ~~
-
-    function ShowView(
-        element
-        )
-    {
-        SetView( element.dataset.route );
     }
 </script>
 <div>
@@ -84,7 +71,7 @@
         );
 
     InitializeView()
-    UpdateView();
+    SetView();
     window.AddEventListener( "resize", UpdateView );
 </script>
 <? include 'BLOCK/page_footer.php'; ?>
