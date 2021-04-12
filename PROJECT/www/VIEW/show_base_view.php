@@ -19,7 +19,7 @@
 
     // ~~
 
-    function ShowRoute(
+    function ShowView(
         route
         )
     {
@@ -71,7 +71,7 @@
         );
 
     InitializeView()
-    ShowRoute();
-    window.AddEventListener( "resize", ShowRoute );
+    ShowView();
+    window.AddEventListener( "resize", ShowView );
 </script>
 <?php require __DIR__ . '/' . 'BLOCK/page_footer.php'; ?>
