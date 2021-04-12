@@ -360,75 +360,75 @@ sup {
   top: -0.7em;
   vertical-align: baseline;
 }
-.container-extended {
+.extended-container {
   width: 100%;
   margin-right: auto;
   margin-left: auto;
 }
-.large-container-margined {
+.large-margined-container {
   margin-left: 20px;
   margin-right: 20px;
 }
 @media (min-width: 40em) {
-  .large-container-margined {
+  .large-margined-container {
     margin-left: 40px;
     margin-right: 40px;
   }
 }
 @media (min-width: 60em) {
-  .large-container-margined {
+  .large-margined-container {
     margin-left: 80px;
     margin-right: 80px;
   }
 }
 @media (min-width: 80em) {
-  .large-container-margined {
+  .large-margined-container {
     margin-left: 120px;
     margin-right: 120px;
   }
 }
 @media (min-width: 100em) {
-  .large-container-margined {
+  .large-margined-container {
     margin-left: 160px;
     margin-right: 160px;
   }
 }
 @media (min-width: 120em) {
-  .large-container-margined {
+  .large-margined-container {
     margin-left: 200px;
     margin-right: 200px;
   }
 }
-.narrow-container-margined {
+.narrow-margined-container {
   margin-left: 20px;
   margin-right: 20px;
 }
 @media (min-width: 40em) {
-  .narrow-container-margined {
+  .narrow-margined-container {
     margin-left: 80px;
     margin-right: 80px;
   }
 }
 @media (min-width: 60em) {
-  .narrow-container-margined {
+  .narrow-margined-container {
     margin-left: 120px;
     margin-right: 120px;
   }
 }
 @media (min-width: 80em) {
-  .narrow-container-margined {
+  .narrow-margined-container {
     margin-left: 160px;
     margin-right: 160px;
   }
 }
 @media (min-width: 100em) {
-  .narrow-container-margined {
+  .narrow-margined-container {
     margin-left: 200px;
     margin-right: 200px;
   }
 }
 @media (min-width: 120em) {
-  .narrow-container-margined {
+  .narrow-margined-container {
     margin-left: 240px;
     margin-right: 240px;
   }

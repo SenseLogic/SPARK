@@ -1,4 +1,4 @@
-<div class="large-container-margined">
+<div class="large-margined-container">
     <? foreach ( var article; .ArticleArray ) { ?>
         <div>
             <h2><% article.Name %></h2>

@@ -5,7 +5,7 @@
     </head>
     <body>
         <?php require __DIR__ . '/' . 'page_body.php'; ?>
-        <div class="container-extended page-container">
+        <div class="extended-container page-container">
             <div class="page-menu">
                 <div class="page-menu-content">
                     <div class="page-menu-item">

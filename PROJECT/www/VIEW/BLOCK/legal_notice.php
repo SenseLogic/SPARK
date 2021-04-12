@@ -4,7 +4,7 @@
 
 
 
-<div class="large-container-margined legal-notice">
+<div class="large-margined-container legal-notice">
     <h1>
         <?php echo $this->GetText( 'LegalNoticeTitle' ); ?>
     </h1>

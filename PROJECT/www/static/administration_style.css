@@ -3,6 +3,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  outline: 0 none;
   border: 0 none;
   margin: 0;
   padding: 0;
@@ -338,7 +339,7 @@ input:focus,
 textarea:focus {
   outline: none;
 }
-.container-extended {
+.extended-container {
   width: 100%;
   margin-right: auto;
   margin-left: auto;

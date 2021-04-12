@@ -77,7 +77,7 @@
 
 
 
-<div class="large-container-margined contact-form">
+<div class="large-margined-container contact-form">
     <form name="ContactForm">
         <div class="contact-form-row">
             <input class="contact-form-input" name="Name" type="text" placeholder="Name"/>

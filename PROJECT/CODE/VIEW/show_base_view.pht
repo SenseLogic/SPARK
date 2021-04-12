@@ -19,11 +19,11 @@
 
     // ~~
 
-    function SetView(
+    function ShowRoute(
         route
         )
     {
-        if ( route !== undefined )
+        if ( IsString( route ) )
         {
             Route = route;
             ViewName = GetRouteViewName( route );
@@ -71,7 +71,7 @@
         );
 
     InitializeView()
-    SetView();
-    window.AddEventListener( "resize", UpdateView );
+    ShowRoute();
+    window.AddEventListener( "resize", ShowRoute );
 </script>
 <? include 'BLOCK/page_footer.php'; ?>

@@ -1,4 +1,4 @@
-<div class="large-container-margined">
+<div class="large-margined-container">
     <?php foreach ( $this->ArticleArray as  $article ) { ?>
         <div>
             <h2><?php echo htmlspecialchars( $article->Name ); ?></h2>
