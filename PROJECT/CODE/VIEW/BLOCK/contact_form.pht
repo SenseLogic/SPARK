@@ -54,12 +54,12 @@
 
     .contact-form-send-button
     {
-        display: inline-block;
-
         margin-left: auto;
         height: 3rem;
         border-radius: 0.5rem;
         padding: 0 2rem;
+
+        display: inline-block;
 
         line-height: 3rem;
         color: WhiteColor;

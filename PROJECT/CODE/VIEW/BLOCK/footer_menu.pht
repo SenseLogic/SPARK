@@ -1,11 +1,11 @@
 <style file="footer_menu.styl">
     .footer-menu
     {
+        margin: 8px;
+
         display: flex;
         justify-content: center;
         align-items: center;
-
-        margin: 8px;
     }
 
     .footer-menu-button

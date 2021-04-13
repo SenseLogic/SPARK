@@ -1,11 +1,6 @@
 <style file="cookie_consent_banner.styl">
     .cookie-consent-banner-container
     {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
         z-index: 1000;
         position: fixed;
         bottom: 0;
@@ -18,6 +13,11 @@
         margin-left: auto;
         margin-right: auto;
         padding: 20px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
         background-color: white;
         box-shadow: 0 5px 10px rgba( 128, 128, 128, 0.5 );
@@ -46,11 +46,11 @@
 
     .cookie-consent-banner-button-container
     {
+        margin-top: 20px;
+
         display: flex;
         justify-content: center;
         align-items: center;
-
-        margin-top: 20px;
     }
 
     .cookie-consent-banner-button
