@@ -30,9 +30,12 @@
         color: LightGrayColor;
     }
 
+    .contact-form-input:invalid,
     .contact-form-input.is-invalid
     {
         border: 2px solid RedColor;
+        
+        box-shadow: none;
     }
 
     .contact-form-captcha-image

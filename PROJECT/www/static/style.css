@@ -712,15 +712,15 @@ sup {
   font-style: italic;
 }
 .header-menu {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   z-index: 100;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: transparent;
   transition: background-color 0.3s ease;
 }
@@ -734,11 +734,11 @@ sup {
   }
 }
 .header-menu-button-container {
+  height: 100%;
+  width: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  height: 100%;
-  width: 100%;
 }
 @media (max-width: 49.98em) {
   .header-menu.is-open .header-menu-button-container {
@@ -790,12 +790,12 @@ sup {
   }
 }
 .header-menu-mobile-button-container {
+  height: 100%;
+  width: 100%;
   display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  width: 100%;
 }
 @media (max-width: 49.98em) {
   .header-menu.is-open .header-menu-mobile-button-container {
@@ -827,10 +827,10 @@ sup {
   background-size: contain;
 }
 .footer-menu {
+  margin: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 8px;
 }
 .footer-menu-button {
   font-size: 1rem;
@@ -848,10 +848,6 @@ sup {
   margin-left: 1rem;
 }
 .cookie-consent-banner-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   z-index: 1000;
   position: fixed;
   bottom: 0;
@@ -863,6 +859,10 @@ sup {
   margin-left: auto;
   margin-right: auto;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: #fff;
   box-shadow: 0 5px 10px rgba(128,128,128,0.5);
   font-size: 1rem;
@@ -881,10 +881,10 @@ sup {
   text-align: center;
 }
 .cookie-consent-banner-button-container {
+  margin-top: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
 }
 .cookie-consent-banner-button {
   border-radius: 5px;
@@ -909,20 +909,20 @@ sup {
   overflow-x: hidden;
 }
 .article-carousel-strip {
-  display: flex;
   position: relative;
   left: 0;
   margin: 0;
   width: 100%;
+  display: flex;
 }
 .article-carousel-strip {
   height: 100vh;
 }
 .article-carousel-slide {
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
   background-position: center center;
   background-size: cover;
 }
@@ -966,8 +966,10 @@ sup {
   text-align: center;
   color: #c0c0c0;
 }
+.contact-form-input:invalid,
 .contact-form-input.is-invalid {
   border: 2px solid #f00;
+  box-shadow: none;
 }
 .contact-form-captcha-image {
   margin-left: 1rem;
@@ -981,11 +983,11 @@ sup {
   margin-top: 1rem;
 }
 .contact-form-send-button {
-  display: inline-block;
   margin-left: auto;
   height: 3rem;
   border-radius: 0.5rem;
   padding: 0 2rem;
+  display: inline-block;
   line-height: 3rem;
   color: #fff;
   background: #808080;
