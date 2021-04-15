@@ -962,14 +962,14 @@ sup {
   text-align: center;
   background-color: #fff;
 }
-.contact-form-input::placeholder {
-  text-align: center;
-  color: #c0c0c0;
-}
 .contact-form-input:invalid,
 .contact-form-input.is-invalid {
   border: 2px solid #f00;
   box-shadow: none;
+}
+.contact-form-input::placeholder {
+  text-align: center;
+  color: #c0c0c0;
 }
 .contact-form-captcha-image {
   margin-left: 1rem;

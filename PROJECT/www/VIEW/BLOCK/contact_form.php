@@ -125,100 +125,100 @@
     {
         var
             contact_form,
-            captcha_field,
-            company_field,
-            email_field,
+            captcha_input_element,
+            company_input_element,
+            email_input_element,
             it_is_valid_contact_form,
-            message_field,
-            phone_field,
-            subject_field;
+            message_input_element,
+            phone_input_element,
+            subject_input_element;
 
         it_is_valid_contact_form = true;
 
         contact_form = document.ContactForm;
-        name_field = contact_form.Name;
-        company_field = contact_form.Company;
-        email_field = contact_form.Email;
-        phone_field = contact_form.Phone;
-        subject_field = contact_form.Subject;
-        message_field = contact_form.Message;
-        captcha_field = contact_form.Captcha;
+        name_input_element = contact_form.Name;
+        company_input_element = contact_form.Company;
+        email_input_element = contact_form.Email;
+        phone_input_element = contact_form.Phone;
+        subject_input_element = contact_form.Subject;
+        message_textarea_element = contact_form.Message;
+        captcha_input_element = contact_form.Captcha;
 
-        if ( name_field.value !== "" )
+        if ( name_input_element.value !== "" )
         {
-            name_field.classList.remove( "is-invalid" );
+            name_input_element.classList.remove( "is-invalid" );
         }
         else
         {
-            name_field.classList.add( "is-invalid" );
+            name_input_element.classList.add( "is-invalid" );
 
             it_is_valid_contact_form = false;
         }
 
-        if ( company_field.value !== "" )
+        if ( company_input_element.value !== "" )
         {
-            company_field.classList.remove( "is-invalid" );
+            company_input_element.classList.remove( "is-invalid" );
         }
         else
         {
-            company_field.classList.add( "is-invalid" );
+            company_input_element.classList.add( "is-invalid" );
 
             it_is_valid_contact_form = false;
         }
 
-        if ( email_field.value !== ""
-             && /^[a-z-.]+@[a-z-.]+\.[a-z]+$/g.test( email_field.value.toLowerCase() ) )
+        if ( email_input_element.value !== ""
+             && /^[a-z-.]+@[a-z-.]+\.[a-z]+$/g.test( email_input_element.value.toLowerCase() ) )
         {
-            email_field.classList.remove( "is-invalid" );
+            email_input_element.classList.remove( "is-invalid" );
         }
         else
         {
-            email_field.classList.add( "is-invalid" );
+            email_input_element.classList.add( "is-invalid" );
 
             it_is_valid_contact_form = false;
         }
 
-        if ( phone_field.value !== "" )
+        if ( phone_input_element.value !== "" )
         {
-            phone_field.classList.remove( "is-invalid" );
+            phone_input_element.classList.remove( "is-invalid" );
         }
         else
         {
-            phone_field.classList.add( "is-invalid" );
+            phone_input_element.classList.add( "is-invalid" );
 
             it_is_valid_contact_form = false;
         }
 
-        if ( subject_field.value !== "" )
+        if ( subject_input_element.value !== "" )
         {
-            subject_field.classList.remove( "is-invalid" );
+            subject_input_element.classList.remove( "is-invalid" );
         }
         else
         {
-            subject_field.classList.add( "is-invalid" );
+            subject_input_element.classList.add( "is-invalid" );
 
             it_is_valid_contact_form = false;
         }
 
-        if ( message_field.value !== "" )
+        if ( message_textarea_element.value !== "" )
         {
-            message_field.classList.remove( "is-invalid" );
+            message_textarea_element.classList.remove( "is-invalid" );
         }
         else
         {
-            message_field.classList.add( "is-invalid" );
+            message_textarea_element.classList.add( "is-invalid" );
 
             it_is_valid_contact_form = false;
         }
 
-        if ( captcha_field.value !== ""
-             && IsValidCaptcha( captcha_field.value ) )
+        if ( captcha_input_element.value !== ""
+             && IsValidCaptcha( captcha_input_element.value ) )
         {
-            captcha_field.classList.remove( "is-invalid" );
+            captcha_input_element.classList.remove( "is-invalid" );
         }
         else
         {
-            captcha_field.classList.add( "is-invalid" );
+            captcha_input_element.classList.add( "is-invalid" );
 
             it_is_valid_contact_form = false;
         }
