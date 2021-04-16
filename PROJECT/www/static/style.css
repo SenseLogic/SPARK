@@ -642,24 +642,24 @@ sup {
 html {
   font-size: 1rem;
 }
-@media  {
+@media (min-width: 90em) {
   html {
-    font-size: 'above-90em';
+    font-size: 1.1rem;
   }
 }
-@media  {
+@media (min-width: 100em) {
   html {
-    font-size: 'above-100em';
+    font-size: 1.2rem;
   }
 }
-@media  {
+@media (min-width: 110em) {
   html {
-    font-size: 'above-110em';
+    font-size: 1.3rem;
   }
 }
-@media  {
+@media (min-width: 120em) {
   html {
-    font-size: 'above-120em';
+    font-size: 1.4rem;
   }
 }
 .font-size-12px {
