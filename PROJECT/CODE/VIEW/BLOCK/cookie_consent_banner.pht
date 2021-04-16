@@ -34,13 +34,13 @@
     .cookie-consent-banner-container a,
     .cookie-consent-banner-container a:visited
     {
-        color: #444444;
+        color: DarkerGrayColor;
         text-decoration: underline;
     }
 
     .cookie-consent-banner-text
     {
-        color: #444444;
+        color: DarkerGrayColor;
         text-align: center;
     }
 
@@ -73,12 +73,12 @@
 
     .cookie-consent-banner-accept-button
     {
-        background-color: #FF0000;
+        background-color: RedColor;
     }
 
     .cookie-consent-banner-decline-button
     {
-        background-color: #CCCCCC;
+        background-color: LightGrayColor;
     }
 </style>
 <div id="cookie-consent-banner-container" class="cookie-consent-banner-container">

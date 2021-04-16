@@ -1,15 +1,12 @@
-<div class="large-margined-container">
+<style file="article_list.styl">
+    .article-list
+    {
+        padding
+        color: WhiteColor;
+    }
+</style>
+<div id="home/#article-list" class="narrow-margined-container article-list">
     <? foreach ( var article; .ArticleArray ) { ?>
-        <div>
-            <h2><% article.Name %></h2>
-            <p><% article.Text %></p>
-            <div>
-                <img src="<# article.Image #>"/>
-            </div>
-            <div>
-                <video src="<# article.Video #>" autoplay loop>
-                </video>
-            </div>
-        </div>
+        <? include 'article.php'; ?>
     <? } ?>
 </div>

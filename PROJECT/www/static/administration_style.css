@@ -340,9 +340,9 @@ textarea:focus {
   outline: none;
 }
 .extended-container {
-  width: 100%;
   margin-right: auto;
   margin-left: auto;
+  width: 100%;
 }
 .justify-self-start {
   justify-self: flex-start;

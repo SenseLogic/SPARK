@@ -8,6 +8,15 @@ TEXT
         HeaderMenuContactButton
             ~ Contact
 
+        FooterMenuHomeButton
+            ~ Home
+
+        FooterMenuArticleListButton
+            ~ Article List
+
+        FooterMenuContactButton
+            ~ Contact
+            
         FooterMenuLegalNoticeButton
             ~ Legal Notice
 

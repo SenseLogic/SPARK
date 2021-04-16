@@ -1,15 +1,12 @@
-<div class="large-margined-container">
+
+
+
+
+
+
+
+<div id="home/#article-list" class="narrow-margined-container article-list">
     <?php foreach ( $this->ArticleArray as  $article ) { ?>
-        <div>
-            <h2><?php echo htmlspecialchars( $article->Name ); ?></h2>
-            <p><?php echo htmlspecialchars( $article->Text ); ?></p>
-            <div>
-                <img src="<?php echo $article->Image; ?>"/>
-            </div>
-            <div>
-                <video src="<?php echo $article->Video; ?>" autoplay loop>
-                </video>
-            </div>
-        </div>
+        <?php require __DIR__ . '/' . 'article.php'; ?>
     <?php } ?>
 </div>

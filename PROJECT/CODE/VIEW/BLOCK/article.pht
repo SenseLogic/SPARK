@@ -1,0 +1,44 @@
+<style file="article.styl">
+    .article
+    {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    
+    .article-title
+    {
+        font-size: 2rem;
+    }
+    
+    .article-text
+    {
+        font-size: 1rem;
+    }
+    
+    .article-image
+    {
+        height: auto;
+        width: 100%;
+    }
+    
+    .article-video
+    {
+        height: auto;
+        width: 100%;
+    }
+</style>
+<div class="article">
+    <div class="article-title">
+        <% var article.Name %>
+    </div>
+    <div class="article-text">
+        <% article.Text %></p>
+    </div>
+    <div>
+        <img class="article-image" src="<# article.Image #>"/>
+    </div>
+    <div>
+        <video class="article-video" src="<# article.Video #>" autoplay loop>
+        </video>
+    </div>
+</div>

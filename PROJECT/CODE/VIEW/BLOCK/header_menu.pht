@@ -7,7 +7,8 @@
         left: 0;
         right: 0;
 
-        padding: 1rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
 
         display: flex;
         justify-content: center;
@@ -53,7 +54,7 @@
     .header-menu-button
     {
         font-size: 1rem;
-        color: #FFFFFF;
+        color: WhiteColor;
 
         cursor: pointer;
         transition: transform 0.3s ease;
@@ -103,10 +104,6 @@
 
     .header-menu-open-button
     {
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-
         background: url( "/static/image/header/menu_button.svg" ) no-repeat center center;
         background-size: contain;
 
@@ -141,7 +138,7 @@
         padding: 5px 10px;
 
         font-size: 2rem;
-        color: #FFFFFF;
+        color: WhiteColor;
 
         cursor: pointer;
         transition: transform 0.3s ease;
@@ -154,7 +151,7 @@
 
     .header-menu-mobile-button.is-selected
     {
-        color: #000000;
+        color: BlackColor;
     }
 
     .header-menu-mobile-button + .header-menu-mobile-button
@@ -173,7 +170,7 @@
     }
 </style>
 <div id="header-menu" class="header-menu">
-    <div class="header-menu-button-container">
+    <div class="large-padded-container header-menu-button-container">
         <div class="header-menu-button" data-view-name="home" onclick="ShowView( 'home' )">
             <# .GetText( 'HeaderMenuHomeButton' ) #>
         </div>
@@ -186,7 +183,10 @@
         <div class="header-menu-button header-menu-desktop-button" style="margin-right:auto" data-view-name="contact" onclick="ShowView( 'contact' )">
             <# .GetText( 'HeaderMenuContactButton' ) #>
         </div>
-        <div class="header-menu-icon-button header-menu-open-button" onclick="OpenHeaderMenu()">
+        <div class="header-menu-button header-menu-desktop-button" data-view-name="contact" onclick="ShowView( 'contact' )">
+            <# .GetText( 'HeaderMenuContactButton' ) #>
+        </div>
+        <div class="header-menu-icon-button header-menu-open-button" style="margin-left:auto" onclick="OpenHeaderMenu()">
         </div>
     </div>
     <div class="header-menu-mobile-button-container">

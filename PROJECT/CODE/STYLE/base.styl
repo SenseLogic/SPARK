@@ -10,7 +10,17 @@ LighterGrayColor = #F0F0F0;
 LightestGrayColor = #F8F8F8;
 WhiteColor = #FFFFFF;
 RedColor = #FF0000;
+GreenColor = #00FF00;
 BlueColor = #0000FF;
+
+// ~~
+
+RootFontSizeMap = {
+    above-90em: 1.1rem,
+    above-100em: 1.2rem,
+    above-110em: 1.3rem,
+    above-120em: 1.4rem
+};
 
 // ~~
 
@@ -33,43 +43,6 @@ NarrowContainerMarginMap = {
 };
 
 // -- ELEMENTS
-
-html
-{
-    font-size: 1rem;
-}
-
-+Media( above-90em )
-{
-    html
-    {
-        font-size: 1.1rem;
-    }
-}
-
-+Media( above-100em )
-{
-    html
-    {
-        font-size: 1.2rem;
-    }
-}
-
-+Media( above-110em )
-{
-    html
-    {
-        font-size: 1.3rem;
-    }
-}
-
-+Media( above-120em )
-{
-    html
-    {
-        font-size: 1.4rem;
-    }
-}
 
 html
 {
@@ -105,7 +78,19 @@ sup
 
 MakeExtendedContainer();
 MakeMarginedContainer( 20px, LargeContainerMarginMap, above-40em above-60em above-80em above-100em above-120em, "large-" );
+MakePaddedContainer( 20px, LargeContainerMarginMap, above-40em above-60em above-80em above-100em above-120em, "large-" );
 MakeMarginedContainer( 20px, NarrowContainerMarginMap, above-40em above-60em above-80em above-100em above-120em, "narrow-" );
+MakePaddedContainer( 20px, NarrowContainerMarginMap, above-40em above-60em above-80em above-100em above-120em, "narrow-" );
+MakeMarginLateralValue( 8, 1px, "px" );
+MakeMarginLateralValue( 16, 1px, "px" );
+MakeMarginVerticalValue( 8, 1px, "px" );
+MakeMarginVerticalValue( 16, 1px, "px" );
+
+MakePaddingLateralValue( 8, 1px, "px" );
+MakePaddingLateralValue( 16, 1px, "px" );
+MakePaddingVerticalValue( 8, 1px, "px" );
+MakePaddingVerticalValue( 16, 1px, "px" );
+
 MakeDisplayNone();
 MakeDisplayFlex();
 MakeDisplayHidden();
@@ -119,20 +104,29 @@ MakeJustifyContentEnd();
 MakeAlignItemsStart();
 MakeAlignItemsCenter();
 MakeAlignItemsEnd();
-MakeMarginLateralValue( 8, 1px, "px" );
-MakeMarginLateralValue( 16, 1px, "px" );
-MakeMarginVerticalValue( 8, 1px, "px" );
-MakeMarginVerticalValue( 16, 1px, "px" );
-MakePaddingLateralValue( 8, 1px, "px" );
-MakePaddingLateralValue( 16, 1px, "px" );
-MakePaddingVerticalValue( 8, 1px, "px" );
-MakePaddingVerticalValue( 16, 1px, "px" );
+
 MakeHeightAuto();
 MakeHeightValue( 100, 1%, "\%" );
 MakeHeightAuto();
 MakeMinHeightValue( 100, 1vh, "vh" );
 MakeWidthValue( 100, 1%, "\%" );
 MakeFractionalWidthValueRange( 12 );
+
+MakeObjectFitCover();
+MakeBackgroundColorValue( "black", BlackColor );
+MakeBackgroundColorValue( "darkest-gray", DarkestGrayColor );
+MakeBackgroundColorValue( "darker-gray", DarkerGrayColor );
+MakeBackgroundColorValue( "dark-gray", DarkGrayColor );
+MakeBackgroundColorValue( "gray", GrayColor );
+MakeBackgroundColorValue( "light-gray", LightGrayColor );
+MakeBackgroundColorValue( "lighter-gray", LighterGrayColor );
+MakeBackgroundColorValue( "lightest-gray", LightestGrayColor );
+MakeBackgroundColorValue( "white", WhiteColor );
+MakeBackgroundColorValue( "red", RedColor );
+MakeBackgroundColorValue( "green", GreenColor );
+MakeBackgroundColorValue( "blue", BlueColor );
+
+SetRootFontSize( 1rem, RootFontSizeMap );
 MakeFontSizeValue( 12, 1px, "px" );
 MakeFontSizeValue( 16, 1px, "px" );
 MakeFontSizeValue( 20, 1px, "px" );
@@ -148,16 +142,5 @@ MakeColorValue( "lighter-gray", LighterGrayColor );
 MakeColorValue( "lightest-gray", LightestGrayColor );
 MakeColorValue( "white", WhiteColor );
 MakeColorValue( "red", RedColor );
+MakeColorValue( "green", GreenColor );
 MakeColorValue( "blue", BlueColor );
-MakeBackgroundColorValue( "black", BlackColor );
-MakeBackgroundColorValue( "darkest-gray", DarkestGrayColor );
-MakeBackgroundColorValue( "darker-gray", DarkerGrayColor );
-MakeBackgroundColorValue( "dark-gray", DarkGrayColor );
-MakeBackgroundColorValue( "gray", GrayColor );
-MakeBackgroundColorValue( "light-gray", LightGrayColor );
-MakeBackgroundColorValue( "lighter-gray", LighterGrayColor );
-MakeBackgroundColorValue( "lightest-gray", LightestGrayColor );
-MakeBackgroundColorValue( "white", WhiteColor );
-MakeBackgroundColorValue( "red", RedColor );
-MakeBackgroundColorValue( "blue", BlueColor );
-MakeObjectFitCover();
