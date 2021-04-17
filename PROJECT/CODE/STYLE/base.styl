@@ -49,14 +49,19 @@ sup
 
 MakeExtendedContainer();
 MakeMarginedContainer( 20px, 40px 80px 120px 160px 200px, above-40em above-60em above-80em above-100em above-120em, "large-" );
-MakePaddedContainer( 20px, 40px 80px 120px 160px 200px, above-40em above-60em above-80em above-100em above-120em, "large-" );
 MakeMarginedContainer( 20px, 80px 120px 160px 200px 240px, above-40em above-60em above-80em above-100em above-120em, "narrow-" );
+MakePaddedContainer( 20px, 40px 80px 120px 160px 200px, above-40em above-60em above-80em above-100em above-120em, "large-" );
 MakePaddedContainer( 20px, 80px 120px 160px 200px 240px, above-40em above-60em above-80em above-100em above-120em, "narrow-" );
 MakeMarginLateralValue( 8, 1px, "px" );
 MakeMarginLateralValue( 16, 1px, "px" );
 MakeMarginVerticalValue( 8, 1px, "px" );
 MakeMarginVerticalValue( 16, 1px, "px" );
-
+MakeHeightAuto();
+MakeHeightValue( 100, 1%, "\%" );
+MakeHeightAuto();
+MakeMinHeightValue( 100, 1vh, "vh" );
+MakeWidthValue( 100, 1%, "\%" );
+MakeFractionalWidthValueRange( 12 );
 MakePaddingLateralValue( 8, 1px, "px" );
 MakePaddingLateralValue( 16, 1px, "px" );
 MakePaddingVerticalValue( 8, 1px, "px" );
@@ -75,15 +80,8 @@ MakeJustifyContentEnd();
 MakeAlignItemsStart();
 MakeAlignItemsCenter();
 MakeAlignItemsEnd();
-
-MakeHeightAuto();
-MakeHeightValue( 100, 1%, "\%" );
-MakeHeightAuto();
-MakeMinHeightValue( 100, 1vh, "vh" );
-MakeWidthValue( 100, 1%, "\%" );
-MakeFractionalWidthValueRange( 12 );
-
 MakeObjectFitCover();
+
 MakeBackgroundColorValue( "black", BlackColor );
 MakeBackgroundColorValue( "darkest-gray", DarkestGrayColor );
 MakeBackgroundColorValue( "darker-gray", DarkerGrayColor );
