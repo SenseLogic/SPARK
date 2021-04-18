@@ -35,11 +35,11 @@
 
         if ( SectionName === "" )
         {
-            window.SetScrollTop( 0 );
+            SetScrollTop( 0 );
         }
         else
         {
-            window.SetScrollTop( GetElementById( Route ) );
+            SetScrollTop( GetElementById( Route ) );
         }
     }
 </script>
@@ -50,6 +50,7 @@
     <?php require __DIR__ . '/' . 'show_legal_notice_view.php'; ?>
     <?php require __DIR__ . '/' . 'BLOCK/footer_menu.php'; ?>
     <?php require __DIR__ . '/' . 'BLOCK/cookie_consent_banner.php'; ?>
+    <?php require __DIR__ . '/' . 'BLOCK/scroll_button.php'; ?>
 </div>
 <script>
     // -- STATEMENTS

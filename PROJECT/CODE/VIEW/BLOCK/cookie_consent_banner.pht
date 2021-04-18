@@ -7,11 +7,11 @@
         left: 0;
         right: 0;
 
+        margin-left: auto;
+        margin-right: auto;
         max-width: 20rem;
         border-top-left-radius: 1rem;
         border-top-right-radius: 1rem;
-        margin-left: auto;
-        margin-right: auto;
         padding: 20px;
 
         display: flex;
@@ -34,14 +34,14 @@
     .cookie-consent-banner-container a,
     .cookie-consent-banner-container a:visited
     {
-        color: DarkerGrayColor;
         text-decoration: underline;
+        color: DarkerGrayColor;
     }
 
     .cookie-consent-banner-text
     {
-        color: DarkerGrayColor;
         text-align: center;
+        color: DarkerGrayColor;
     }
 
     .cookie-consent-banner-button-container
@@ -55,9 +55,9 @@
 
     .cookie-consent-banner-button
     {
-        border-radius: 5px;
         margin-left: 5px;
         margin-right: 5px;
+        border-radius: 5px;
         padding: 5px 15px;
 
         color: white;

@@ -20,9 +20,9 @@
         border-radius: 0.5rem;
         padding: 0.5rem;
 
-        text-align: center;
-
         background-color: WhiteColor;
+
+        text-align: center;
     }
 
     .contact-form-input:invalid,
@@ -65,10 +65,10 @@
 
         display: inline-block;
 
+        background: DarkGrayColor;
+
         line-height: 3rem;
         color: WhiteColor;
-
-        background: DarkGrayColor;
 
         cursor: pointer;
     }

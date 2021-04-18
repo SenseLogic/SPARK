@@ -169,6 +169,7 @@
 
 
 
+
 <div id="header-menu" class="header-menu">
     <div class="large-padded-container header-menu-button-container">
         <div class="header-menu-button" data-view-name="home" onclick="ShowView( 'home' )">
@@ -210,6 +211,7 @@
         )
     {
         GetElementById( "header-menu" ).AddClass( "is-open" );
+        SetScrollTop( 0 );
     }
 
     // ~~
