@@ -152,7 +152,6 @@ function GetTimeZoneFromLocation(
         {
             switch ( time_shift )
             {
-
                 case -11 : return 'Antarctica/McMurdo';
                 case -3 : return 'Antarctica/Palmer';
                 case 0 : return 'Antarctica/Troll';

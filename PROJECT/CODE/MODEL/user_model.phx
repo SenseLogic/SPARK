@@ -23,4 +23,3 @@ function GetDatabaseUserByPseudonymAndPassword(
         return GetDatabaseObject( statement );
     }
 }
-

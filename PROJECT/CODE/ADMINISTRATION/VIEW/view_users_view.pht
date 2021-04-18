@@ -51,5 +51,3 @@
     </div>
 </div>
 <? include 'BLOCK/page_footer.php'; ?>
-
-

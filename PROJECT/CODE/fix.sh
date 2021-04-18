@@ -1,3 +1,3 @@
 #!/bin/sh
 set -x
-../../../../TOOL/PHYX/phyx VIEW//*.pht STYLE/*.styl
+../../../../TOOL/PHYX/phyx ".//*.pht" ".//*.phx" ".//*.styl"

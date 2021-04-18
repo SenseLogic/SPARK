@@ -17,13 +17,14 @@ body
 
 a
 {
-    color: inherit;
     text-decoration: none;
+    color: inherit;
 }
 
 a:hover
 {
     color: inherit;
+
     cursor: pointer;
 }
 
@@ -54,19 +55,22 @@ MakeSortableGridColumn();
 
 .page-container
 {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-template-rows: auto 1fr;
     min-height: 100vh;
+
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: auto 1fr;
 }
 
 .page-menu
 {
-    grid-area: 1 / 1 / span 2;
-    display: flex;
-    padding: 15px;
-    background-image: linear-gradient( to right, #29323c 0%, #485563 100%);
     width: 72px;
+    padding: 15px;
+
+    display: flex;
+    grid-area: 1 / 1 / span 2;
+
+    background-image: linear-gradient( to right, #29323c 0%, #485563 100%);
 }
 
 .page-menu-content
@@ -81,16 +85,20 @@ MakeSortableGridColumn();
 .page-menu-title
 {
     margin-left: 5px;
+
     font-size: 20px;
     color: #FFFFFF;
 }
 
 .page-title
 {
-    grid-area: 1 / 2;
     padding: 15px;
-    text-align: center;
+
+    grid-area: 1 / 2;
+
     background-image: linear-gradient( to top, #4481eb 0%, #04befe 100%);
+
+    text-align: center;
 }
 
 .page-title-content
@@ -101,8 +109,10 @@ MakeSortableGridColumn();
 
 .page-body
 {
-    grid-area: 2 / 2;
     padding: 15px;
+
+    grid-area: 2 / 2;
+
     background-image: linear-gradient( to top, #fdfbfb 0%, #ebedee 100%);
 }
 
@@ -114,8 +124,9 @@ MakeSortableGridColumn();
 .page-section
 {
     border-radius: 10px;
-    background-color: #FFFFFF;
     padding: 15px;
+
+    background-color: #FFFFFF;
 }
 
 .page-section + .page-section
@@ -125,12 +136,13 @@ MakeSortableGridColumn();
 
 .form-container
 {
+    width: 100%;
+
     display: grid;
     grid-template-columns: auto 1fr;
     grid-gap: 15px;
     justify-content: center;
     align-items: flex-start;
-    width: 100%;
 }
 
 .form-container-small
@@ -145,39 +157,42 @@ MakeSortableGridColumn();
 
 .form-input
 {
-    display: block;
+    width: 100%;
     border: 1px solid #CCCCCC;
     border-radius: 5px;
     padding: 5px;
-    width: 100%;
+
+    display: block;
 }
 
 .form-textarea
 {
-    display: block;
+    overflow: hidden;
+    height: 36px;
+    min-height: 36px;
+    width: 100%;
     border: 1px solid #CCCCCC;
     border-radius: 5px;
     padding: 5px;
-    width: 100%;
-    height: 36px;
-    min-height: 36px;
-    overflow: hidden;
+
+    display: block;
 }
 
 .form-upload-container
 {
+    margin-top: 8px;
+
     display: flex;
     align-items: center;
-    margin-top: 8px;
 }
 
 .form-upload-image,
 .form-upload-video
 {
-    border-radius: 5px;
+    height: 200px;
     width: auto;
     max-width: 80%;
-    height: 200px;
+    border-radius: 5px;
 }
 
 .form-upload-icon
@@ -188,15 +203,16 @@ MakeSortableGridColumn();
 
 .form-upload-file
 {
+    overflow: hidden;
     height: 0;
     width: 0;
-    overflow: hidden;
 }
 
 .form-field-name
 {
-    font-weight: bold;
     padding-top: 5px;
+
+    font-weight: bold;
 }
 
 .form-column-name
@@ -213,10 +229,11 @@ MakeSortableGridColumn();
 
 .form-button
 {
-    display: inline-block;
-    border: none;
-    width: 24px;
     height: 24px;
+    width: 24px;
+    border: none;
+
+    display: inline-block;
 }
 
 .form-button + .form-button
@@ -226,24 +243,28 @@ MakeSortableGridColumn();
 
 .form-button-large
 {
-    width: 40px;
     height: 40px;
+    width: 40px;
 }
 
 .form-button-tooltip
 {
-    display: none;
     position: absolute;
+
+    display: none;
 }
 
 .form-button:hover + .form-button-tooltip
 {
-    display: inline-block;
+    margin-left: 15px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-    margin-left: 15px;
     padding: 8px 15px 8px 10px;
+
+    display: inline-block;
+
     background-color: #475462;
+
     color: #FFFFFF;
 }
 
