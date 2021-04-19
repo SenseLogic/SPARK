@@ -49,8 +49,8 @@
     <?php require __DIR__ . '/' . 'show_contact_view.php'; ?>
     <?php require __DIR__ . '/' . 'show_legal_notice_view.php'; ?>
     <?php require __DIR__ . '/' . 'BLOCK/footer_menu.php'; ?>
+    <?php require __DIR__ . '/' . 'BLOCK/scroll_top_button.php'; ?>
     <?php require __DIR__ . '/' . 'BLOCK/cookie_consent_banner.php'; ?>
-    <?php require __DIR__ . '/' . 'BLOCK/scroll_button.php'; ?>
 </div>
 <script>
     // -- STATEMENTS

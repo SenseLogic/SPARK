@@ -2,6 +2,9 @@ TEXT
 
     Slug Text
 
+        ScrollDownReminder
+            ~ Scroll Down
+
         HeaderMenuHomeButton
             ~ Home
 
@@ -16,7 +19,7 @@ TEXT
 
         FooterMenuContactButton
             ~ Contact
-            
+
         FooterMenuLegalNoticeButton
             ~ Legal Notice
 

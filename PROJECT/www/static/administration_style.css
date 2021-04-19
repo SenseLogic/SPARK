@@ -3,9 +3,9 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
   outline: 0 none;
   border: 0 none;
-  margin: 0;
   padding: 0;
 }
 body {
@@ -136,10 +136,10 @@ samp {
   font-size: 1em;
 }
 pre {
-  display: block;
+  overflow: auto;
   margin-top: 0;
   margin-bottom: 1rem;
-  overflow: auto;
+  display: block;
   font-size: 0.875em;
 }
 pre code {
@@ -180,15 +180,15 @@ table {
 caption {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  text-align: left;
   caption-side: bottom;
+  text-align: left;
 }
 th {
   text-align: inherit;
 }
 label {
-  display: inline-block;
   margin-bottom: 0.5rem;
+  display: inline-block;
 }
 button {
   border-radius: 0;
@@ -244,16 +244,16 @@ textarea {
   resize: vertical;
 }
 fieldset {
+  margin: 0;
   min-width: 0;
   border: 0;
-  margin: 0;
   padding: 0;
 }
 legend {
-  float: left;
-  width: 100%;
   margin-bottom: 0.5rem;
+  width: 100%;
   padding: 0;
+  float: left;
   line-height: inherit;
   font-size: 1.5rem;
   white-space: normal;
@@ -322,8 +322,8 @@ body {
   min-height: 100vh;
 }
 a {
-  color: inherit;
   text-decoration: none;
+  color: inherit;
 }
 a:hover {
   color: inherit;
@@ -340,8 +340,8 @@ textarea:focus {
   outline: none;
 }
 .extended-container {
-  margin-right: auto;
   margin-left: auto;
+  margin-right: auto;
   width: 100%;
 }
 .justify-self-start {
@@ -363,17 +363,17 @@ textarea:focus {
   content: "\00a0\25BC";
 }
 .page-container {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-template-rows: auto 1fr;
   min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: auto 1fr;
 }
 .page-menu {
-  grid-area: 1/1/span 2;
-  display: flex;
-  padding: 15px;
-  background-image: linear-gradient(to right, #29323c 0%, #485563 100%);
   width: 72px;
+  padding: 15px;
+  display: flex;
+  grid-area: 1/1/span 2;
+  background-image: linear-gradient(to right, #29323c 0%, #485563 100%);
 }
 .page-menu-item {
   margin-top: 10px;
@@ -384,18 +384,18 @@ textarea:focus {
   color: #fff;
 }
 .page-title {
-  grid-area: 1/2;
   padding: 15px;
-  text-align: center;
+  grid-area: 1/2;
   background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);
+  text-align: center;
 }
 .page-title-content {
   font-size: 28px;
   color: #fff;
 }
 .page-body {
-  grid-area: 2/2;
   padding: 15px;
+  grid-area: 2/2;
   background-image: linear-gradient(to top, #fdfbfb 0%, #ebedee 100%);
 }
 .page-body-content {
@@ -403,19 +403,19 @@ textarea:focus {
 }
 .page-section {
   border-radius: 10px;
-  background-color: #fff;
   padding: 15px;
+  background-color: #fff;
 }
 .page-section + .page-section {
   margin-top: 15px;
 }
 .form-container {
+  width: 100%;
   display: grid;
   grid-template-columns: auto 1fr;
   grid-gap: 15px;
   justify-content: center;
   align-items: flex-start;
-  width: 100%;
 }
 .form-container-small {
   max-width: 30rem;
@@ -424,46 +424,46 @@ textarea:focus {
   grid-column: 1/-1;
 }
 .form-input {
-  display: block;
+  width: 100%;
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 5px;
-  width: 100%;
+  display: block;
 }
 .form-textarea {
-  display: block;
+  overflow: hidden;
+  height: 36px;
+  min-height: 36px;
+  width: 100%;
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 5px;
-  width: 100%;
-  height: 36px;
-  min-height: 36px;
-  overflow: hidden;
+  display: block;
 }
 .form-upload-container {
+  margin-top: 8px;
   display: flex;
   align-items: center;
-  margin-top: 8px;
 }
 .form-upload-image,
 .form-upload-video {
-  border-radius: 5px;
+  height: 200px;
   width: auto;
   max-width: 80%;
-  height: 200px;
+  border-radius: 5px;
 }
 .form-upload-icon {
   margin-left: 4px;
   height: 16px;
 }
 .form-upload-file {
+  overflow: hidden;
   height: 0;
   width: 0;
-  overflow: hidden;
 }
 .form-field-name {
-  font-weight: bold;
   padding-top: 5px;
+  font-weight: bold;
 }
 .form-column-name {
   font-weight: bold;
@@ -474,28 +474,28 @@ textarea:focus {
   align-items: center;
 }
 .form-button {
-  display: inline-block;
-  border: none;
-  width: 24px;
   height: 24px;
+  width: 24px;
+  border: none;
+  display: inline-block;
 }
 .form-button + .form-button {
   margin-left: 5px;
 }
 .form-button-large {
-  width: 40px;
   height: 40px;
+  width: 40px;
 }
 .form-button-tooltip {
-  display: none;
   position: absolute;
+  display: none;
 }
 .form-button:hover + .form-button-tooltip {
-  display: inline-block;
+  margin-left: 15px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  margin-left: 15px;
   padding: 8px 15px 8px 10px;
+  display: inline-block;
   background-color: #475462;
   color: #fff;
 }

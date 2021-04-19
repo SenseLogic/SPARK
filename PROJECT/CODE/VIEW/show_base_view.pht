@@ -49,8 +49,8 @@
     <? include 'show_contact_view.php'; ?>
     <? include 'show_legal_notice_view.php'; ?>
     <? include 'BLOCK/footer_menu.php'; ?>
+    <? include 'BLOCK/scroll_top_button.php'; ?>
     <? include 'BLOCK/cookie_consent_banner.php'; ?>
-    <? include 'BLOCK/scroll_button.php'; ?>
 </div>
 <script>
     // -- STATEMENTS

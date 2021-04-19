@@ -70,6 +70,7 @@
     <div id="article-carousel-right-arrow" class="article-carousel-arrow article-carousel-right-arrow">
         &gt;
     </div>
+    <?php require __DIR__ . '/' . 'scroll_down_reminder.php'; ?>
 </div>
 <script>
     var article_carousel

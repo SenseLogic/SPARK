@@ -19,7 +19,7 @@
         transition: background-color 0.3s ease;
     }
 
-    .header-menu:not(.is-open).is-scrolled
+    body.is-scrolled .header-menu:not(.is-open)
     {
         background-color: rgba( 0, 0, 0, 0.3 );
     }
@@ -224,7 +224,7 @@
 
     // -- STATEMENTS
 
-    HandleScrollEvent( 1, ".header-menu", "is-scrolled" );
+    HandleScrollEvent( 1, "body", "is-scrolled" );
 
     AddEventListener(
         "update-view",

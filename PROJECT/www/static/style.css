@@ -3,9 +3,9 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
   outline: 0 none;
   border: 0 none;
-  margin: 0;
   padding: 0;
 }
 body {
@@ -136,10 +136,10 @@ samp {
   font-size: 1em;
 }
 pre {
-  display: block;
+  overflow: auto;
   margin-top: 0;
   margin-bottom: 1rem;
-  overflow: auto;
+  display: block;
   font-size: 0.875em;
 }
 pre code {
@@ -180,15 +180,15 @@ table {
 caption {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  text-align: left;
   caption-side: bottom;
+  text-align: left;
 }
 th {
   text-align: inherit;
 }
 label {
-  display: inline-block;
   margin-bottom: 0.5rem;
+  display: inline-block;
 }
 button {
   border-radius: 0;
@@ -244,16 +244,16 @@ textarea {
   resize: vertical;
 }
 fieldset {
+  margin: 0;
   min-width: 0;
   border: 0;
-  margin: 0;
   padding: 0;
 }
 legend {
-  float: left;
-  width: 100%;
   margin-bottom: 0.5rem;
+  width: 100%;
   padding: 0;
+  float: left;
   line-height: inherit;
   font-size: 1.5rem;
   white-space: normal;
@@ -338,8 +338,8 @@ sup {
   vertical-align: baseline;
 }
 .extended-container {
-  margin-right: auto;
   margin-left: auto;
+  margin-right: auto;
   width: 100%;
 }
 .large-margined-container {
@@ -799,7 +799,7 @@ html {
   background-color: transparent;
   transition: background-color 0.3s ease;
 }
-.header-menu:not(.is-open).is-scrolled {
+body.is-scrolled .header-menu:not(.is-open) {
   background-color: rgba(0,0,0,0.3);
 }
 @media (max-width: 49.98em) {
@@ -919,63 +919,6 @@ html {
 }
 .footer-menu-button + .footer-menu-button {
   margin-left: 1rem;
-}
-.cookie-consent-banner-container {
-  z-index: 1000;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 20rem;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #fff;
-  box-shadow: 0 5px 10px rgba(128,128,128,0.5);
-  font-size: 1rem;
-  color: #000;
-}
-.cookie-consent-banner-container.hidden {
-  display: none;
-}
-.cookie-consent-banner-container a,
-.cookie-consent-banner-container a:visited {
-  text-decoration: underline;
-  color: #404040;
-}
-.cookie-consent-banner-text {
-  text-align: center;
-  color: #404040;
-}
-.cookie-consent-banner-button-container {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.cookie-consent-banner-button {
-  margin-left: 5px;
-  margin-right: 5px;
-  border-radius: 5px;
-  padding: 5px 15px;
-  color: #fff;
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-.cookie-consent-banner-button:hover {
-  transform: scale(1.05);
-}
-.cookie-consent-banner-accept-button {
-  background-color: #f00;
-}
-.cookie-consent-banner-decline-button {
-  background-color: #c0c0c0;
 }
 .article-carousel {
   position: relative;
@@ -1097,4 +1040,151 @@ padding
 }
 .legal-notice {
   margin-top: 3rem;
+}
+.scroll-down-reminder {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 50%;
+  transform: translate-x(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+body.is-scrolled .scroll-down-reminder {
+  opacity: 0;
+}
+.scroll-down-reminder-text {
+  line-height: 1rem;
+  font-size: 0.8rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #fff;
+}
+.scroll-down-reminder-icon {
+  margin-top: 1rem;
+  height: 0.8rem;
+  width: 0.8rem;
+  opacity: 1;
+  background: url("/static/image/common/scroll_down_icon.svg") no-repeat center center;
+  background-size: contain;
+  transition: all 0.25s ease;
+  animation: scroll-down-reminder-icon-animation 1s ease infinite;
+}
+@-moz-keyframes scroll-down-reminder-icon-animation {
+  0% {
+    transform: translateY(-1rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0rem);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes scroll-down-reminder-icon-animation {
+  0% {
+    transform: translateY(-1rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0rem);
+    opacity: 1;
+  }
+}
+@-o-keyframes scroll-down-reminder-icon-animation {
+  0% {
+    transform: translateY(-1rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0rem);
+    opacity: 1;
+  }
+}
+@keyframes scroll-down-reminder-icon-animation {
+  0% {
+    transform: translateY(-1rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0rem);
+    opacity: 1;
+  }
+}
+.scroll-top-button {
+  z-index: 999;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  overflow: visible;
+  height: 50px;
+  width: 20px;
+  opacity: 1;
+  background: url("/static/image/common/scroll_top_icon.svg") no-repeat center center;
+  background-size: contain;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+body:not(.is-scrolled ) .scroll-top-button {
+  opacity: 0;
+  pointer-events: none;
+}
+.cookie-consent-banner-container {
+  z-index: 1000;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 20rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgba(128,128,128,0.5);
+  font-size: 1rem;
+  color: #000;
+}
+.cookie-consent-banner-container.hidden {
+  display: none;
+}
+.cookie-consent-banner-container a,
+.cookie-consent-banner-container a:visited {
+  text-decoration: underline;
+  color: #404040;
+}
+.cookie-consent-banner-text {
+  text-align: center;
+  color: #404040;
+}
+.cookie-consent-banner-button-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cookie-consent-banner-button {
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 5px;
+  padding: 5px 15px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.cookie-consent-banner-button:hover {
+  transform: scale(1.05);
+}
+.cookie-consent-banner-accept-button {
+  background-color: #f00;
+}
+.cookie-consent-banner-decline-button {
+  background-color: #c0c0c0;
 }

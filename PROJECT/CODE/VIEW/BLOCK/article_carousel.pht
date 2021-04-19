@@ -26,13 +26,13 @@
         max-width: 40rem;
 
         font-size: 2rem;
-        color: white;
+        color: WhiteColor;
     }
 
     .article-carousel-arrow
     {
         font-size: 4rem;
-        color: white;
+        color: WhiteColor;
 
         cursor: pointer;
     }
@@ -70,6 +70,7 @@
     <div id="article-carousel-right-arrow" class="article-carousel-arrow article-carousel-right-arrow">
         &gt;
     </div>
+    <? include 'scroll_down_reminder.php'; ?>
 </div>
 <script>
     var article_carousel
