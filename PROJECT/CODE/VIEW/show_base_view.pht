@@ -5,9 +5,8 @@
     // -- VARIABLES
 
     var
-        Route = "<# .Route #>",
-        ViewName = "<# .ViewName #>",
-        SectionName = "<# .SectionName #>";
+        ViewName,
+        SectionName;
 
     // -- FUNCTIONS
 
@@ -23,13 +22,13 @@
         route
         )
     {
-        if ( IsString( route ) )
+        if ( route !== undefined )
         {
-            Route = route;
-            ViewName = GetRouteViewName( route );
-            SectionName = GetRouteSectionName( route );
             SetRoute( "/<# .LanguageCode #>/" + route );
         }
+
+        ViewName = GetRoute( "/<# .LanguageCode #>/", "/" );
+        SectionName = GetHash();
 
         EmitEvent( "update-view" );
 
@@ -39,7 +38,7 @@
         }
         else
         {
-            SetScrollTop( GetElementById( Route ) );
+            SetScrollTop( GetElementById( ViewName + "/" + SectionName ), "auto" );
         }
     }
 </script>
@@ -73,6 +72,7 @@
 
     InitializeView()
     ShowView();
-    window.AddEventListener( "resize", ShowView );
+    HandleResizeEvent( ShowView );
+    HandleRouteEvent( ShowView );
 </script>
 <? include 'BLOCK/page_footer.php'; ?>

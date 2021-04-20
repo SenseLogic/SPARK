@@ -5,9 +5,8 @@
     // -- VARIABLES
 
     var
-        Route = "<?php echo $this->Route; ?>",
-        ViewName = "<?php echo $this->ViewName; ?>",
-        SectionName = "<?php echo $this->SectionName; ?>";
+        ViewName,
+        SectionName;
 
     // -- FUNCTIONS
 
@@ -23,13 +22,16 @@
         route
         )
     {
-        if ( IsString( route ) )
+console.log( "*********SHOWVIEW " + route );
+        if ( route !== undefined )
         {
-            Route = route;
-            ViewName = GetRouteViewName( route );
-            SectionName = GetRouteSectionName( route );
             SetRoute( "/<?php echo $this->LanguageCode; ?>/" + route );
         }
+
+        ViewName = GetRoute( "/<?php echo $this->LanguageCode; ?>/", "/" );
+        SectionName = GetHash();
+
+console.log( ViewName + " | " + SectionName);
 
         EmitEvent( "update-view" );
 
@@ -39,7 +41,7 @@
         }
         else
         {
-            SetScrollTop( GetElementById( Route ) );
+            SetScrollTop( GetElementById( ViewName + "/" + SectionName ), "auto" );
         }
     }
 </script>
@@ -73,6 +75,7 @@
 
     InitializeView()
     ShowView();
-    window.AddEventListener( "resize", ShowView );
+    HandleResizeEvent( ShowView );
+    HandleRouteEvent( ShowView );
 </script>
 <?php require __DIR__ . '/' . 'BLOCK/page_footer.php'; ?>

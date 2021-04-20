@@ -4,7 +4,6 @@ import 'FRAMEWORK/error.php';
 import 'FRAMEWORK/global.php';
 import 'FRAMEWORK/random.php';
 import 'FRAMEWORK/text.php';
-import 'FRAMEWORK/route.php';
 import 'FRAMEWORK/path.php';
 import 'FRAMEWORK/file.php';
 import 'FRAMEWORK/time.php';
@@ -435,12 +434,10 @@ function Route(
                            || path_value_array[ 0 ] === 'contact'
                            || path_value_array[ 0 ] === 'legal-notice' ) )
             {
-                var route = GetRoute( path_value_array );
                 import 'CONTROLLER/show_base_controller.php';
             }
             else if ( path_value_count == 0 )
             {
-                var route = 'home';
                 import 'CONTROLLER/show_base_controller.php';
             }
             else

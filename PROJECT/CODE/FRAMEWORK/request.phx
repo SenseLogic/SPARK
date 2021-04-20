@@ -55,6 +55,15 @@ function GetPathValueArray(
 
 // ~~
 
+function GetRoute(
+    array &path_value_array
+    )
+{
+    return implode( '/', path_value_array );
+}
+
+// ~~
+
 function IsGetRequest(
     )
 {

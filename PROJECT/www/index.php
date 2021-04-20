@@ -4,7 +4,6 @@ require_once __DIR__ . '/' . 'FRAMEWORK/error.php';
 require_once __DIR__ . '/' . 'FRAMEWORK/global.php';
 require_once __DIR__ . '/' . 'FRAMEWORK/random.php';
 require_once __DIR__ . '/' . 'FRAMEWORK/text.php';
-require_once __DIR__ . '/' . 'FRAMEWORK/route.php';
 require_once __DIR__ . '/' . 'FRAMEWORK/path.php';
 require_once __DIR__ . '/' . 'FRAMEWORK/file.php';
 require_once __DIR__ . '/' . 'FRAMEWORK/time.php';
@@ -435,12 +434,10 @@ function Route(
                            || $path_value_array[ 0 ] === 'contact'
                            || $path_value_array[ 0 ] === 'legal-notice' ) )
             {
-                 $route = GetRoute( $path_value_array );
                 require_once __DIR__ . '/' . 'CONTROLLER/show_base_controller.php';
             }
             else if ( $path_value_count == 0 )
             {
-                 $route = 'home';
                 require_once __DIR__ . '/' . 'CONTROLLER/show_base_controller.php';
             }
             else

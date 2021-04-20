@@ -11,14 +11,10 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
     // -- CONSTRUCTORS
 
     method constructor(
-        string language_code,
-        string route
+        string language_code
         )
     {
         parent::constructor( language_code );
-        .Route = route;
-        .ViewName = GetRouteViewName( route );
-        .SectionName = GetRouteSectionName( route );
 
         .ArticleArray = GetDatabaseArticleArray();
         .ArticleCount = count( .ArticleArray );
@@ -33,4 +29,4 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
-var show_base_controller = new SHOW_BASE_CONTROLLER( var language_code, var route );
+var show_base_controller = new SHOW_BASE_CONTROLLER( var language_code );

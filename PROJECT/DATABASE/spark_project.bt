@@ -5,7 +5,6 @@ import 'FRAMEWORK/error.php';
 import 'FRAMEWORK/global.php';
 import 'FRAMEWORK/random.php';
 import 'FRAMEWORK/text.php';
-import 'FRAMEWORK/route.php';
 import 'FRAMEWORK/path.php';
 import 'FRAMEWORK/file.php';
 import 'FRAMEWORK/time.php';

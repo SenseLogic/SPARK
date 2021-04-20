@@ -11,14 +11,10 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
     // -- CONSTRUCTORS
 
     function __construct(
-        string $language_code,
-        string $route
+        string $language_code
         )
     {
         parent::__construct( $language_code );
-        $this->Route = $route;
-        $this->ViewName = GetRouteViewName( $route );
-        $this->SectionName = GetRouteSectionName( $route );
 
         $this->ArticleArray = GetDatabaseArticleArray();
         $this->ArticleCount = count( $this->ArticleArray );
@@ -33,4 +29,4 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $show_base_controller = new SHOW_BASE_CONTROLLER(  $language_code,  $route );
+ $show_base_controller = new SHOW_BASE_CONTROLLER(  $language_code );
