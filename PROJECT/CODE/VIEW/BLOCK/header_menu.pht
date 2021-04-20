@@ -224,8 +224,6 @@
 
     // -- STATEMENTS
 
-    HandleScrollEvent( 1, "body", "is-scrolled" );
-
     AddEventListener(
         "update-view",
         function (

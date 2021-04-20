@@ -8,3 +8,4 @@
 <script src="/static/script/vista_scroll.js"></script>
 <script src="/static/script/vista_tracking.js"></script>
 <script src="/static/script/vista_carousel.js"></script>
+<script src="/static/script/base.js"></script>

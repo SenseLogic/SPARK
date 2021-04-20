@@ -640,26 +640,26 @@ sup {
   background-color: #00f;
 }
 html {
-  font-size: 1rem;
+  font-size: 1rem important;
 }
 @media (min-width: 90em) {
   html {
-    font-size: 1.1rem;
+    font-size: 1.1rem important;
   }
 }
 @media (min-width: 100em) {
   html {
-    font-size: 1.2rem;
+    font-size: 1.2rem important;
   }
 }
 @media (min-width: 110em) {
   html {
-    font-size: 1.3rem;
+    font-size: 1.3rem important;
   }
 }
 @media (min-width: 120em) {
   html {
-    font-size: 1.4rem;
+    font-size: 1.4rem important;
   }
 }
 .font-size-12px {
@@ -1068,7 +1068,7 @@ body.is-scrolled .scroll-down-reminder {
   height: 0.8rem;
   width: 0.8rem;
   opacity: 1;
-  background: url("/static/image/common/scroll_down_icon.svg") no-repeat center center;
+  background: url("/static/image/base/scroll_down_icon.svg") no-repeat center center;
   background-size: contain;
   transition: all 0.25s ease;
   animation: scroll-down-reminder-icon-animation 1s ease infinite;
@@ -1122,7 +1122,7 @@ body.is-scrolled .scroll-down-reminder {
   height: 50px;
   width: 20px;
   opacity: 1;
-  background: url("/static/image/common/scroll_top_icon.svg") no-repeat center center;
+  background: url("/static/image/base/scroll_top_icon.svg") no-repeat center center;
   background-size: contain;
   cursor: pointer;
   transition: opacity 0.3s ease;

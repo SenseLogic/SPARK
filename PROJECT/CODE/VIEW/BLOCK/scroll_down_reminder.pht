@@ -54,7 +54,7 @@
         width: 0.8rem;
 
         opacity: 1;
-        background: url( "/static/image/common/scroll_down_icon.svg" ) no-repeat center center;
+        background: url( "/static/image/base/scroll_down_icon.svg" ) no-repeat center center;
         background-size: contain;
 
         transition: all 0.25s ease;

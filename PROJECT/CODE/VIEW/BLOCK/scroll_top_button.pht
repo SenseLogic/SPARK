@@ -11,7 +11,7 @@
         width: 20px;
 
         opacity: 1;
-        background: url( "/static/image/common/scroll_top_icon.svg" ) no-repeat center center;
+        background: url( "/static/image/base/scroll_top_icon.svg" ) no-repeat center center;
         background-size: contain;
 
         cursor: pointer;
