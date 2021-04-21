@@ -7,7 +7,7 @@
     <style>
         html
         {
-            background: url(/static/image/background/error_background.png) no-repeat center center fixed / cover;
+            background: url( "/static/image/background/error_background.png" ) no-repeat center center fixed / cover;
         }
     </style>
     <body>
