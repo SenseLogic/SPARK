@@ -22,7 +22,6 @@
         route
         )
     {
-console.log( "*********SHOWVIEW " + route );
         if ( route !== undefined )
         {
             SetRoute( "/<?php echo $this->LanguageCode; ?>/" + route );
@@ -31,7 +30,10 @@ console.log( "*********SHOWVIEW " + route );
         ViewName = GetRoute( "/<?php echo $this->LanguageCode; ?>/", "/" );
         SectionName = GetHash();
 
-console.log( ViewName + " | " + SectionName);
+        if ( ViewName === "" )
+        {
+            ViewName = "home";
+        }
 
         EmitEvent( "update-view" );
 

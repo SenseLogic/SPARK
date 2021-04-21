@@ -81,28 +81,37 @@
 
 
 
+
+
+
+
+
+
+
+
+
 <div class="narrow-margined-container contact-form">
     <form name="ContactForm">
         <div class="contact-form-row">
             <input class="contact-form-input" name="Name" type="text" placeholder="Name"/>
         </div>
         <div class="contact-form-row">
-            <input class="contact-form-input" name="Company" type="text" placeholder="Company"/>
+            <input class="contact-form-input" name="Company" type="text" placeholder="<?php echo $this->GetText( 'ContactFormCompanyPlaceholder' ); ?>"/>
         </div>
         <div class="contact-form-row">
-            <input class="contact-form-input" name="Email" type="email" placeholder="Email"/>
+            <input class="contact-form-input" name="Email" type="email" placeholder="<?php echo $this->GetText( 'ContactFormEmailPlaceholder' ); ?>"/>
         </div>
         <div class="contact-form-row">
-            <input class="contact-form-input" name="Phone" type="tel" placeholder="Phone"/>
+            <input class="contact-form-input" name="Phone" type="tel" placeholder="<?php echo $this->GetText( 'ContactFormPhonePlaceholder' ); ?>"/>
         </div>
         <div class="contact-form-row">
-            <input class="contact-form-input" name="Subject" type="text" placeholder="Subject"/>
+            <input class="contact-form-input" name="Subject" type="text" placeholder="<?php echo $this->GetText( 'ContactFormSubjectPlaceholder' ); ?>"/>
         </div>
         <div class="contact-form-row">
-            <input class="contact-form-input" name="Message" type="text" placeholder="Message"/>
+            <textarea class="contact-form-input" name="Message" type="text" placeholder="<?php echo $this->GetText( 'ContactFormMessagePlaceholder' ); ?>"></textarea>
         </div>
         <div class="contact-form-row">
-            <input class="contact-form-input" name="Captcha" type="text" placeholder="Captcha"/>
+            <input class="contact-form-input contact-form-textarea" name="Captcha" type="text" placeholder="Captcha"/>
             <img class="contact-form-captcha-image" src="/captcha"/>
         </div>
         <div  class="contact-form-row">

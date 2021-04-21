@@ -54,8 +54,7 @@
         width: 0.8rem;
 
         opacity: 1;
-        background: url( "/static/image/base/scroll_down_icon.svg" ) no-repeat center center;
-        background-size: contain;
+        background: url( "/static/image/base/scroll_down_icon.svg" ) no-repeat center center / contain;
 
         transition: all 0.25s ease;
         animation: scroll-down-reminder-icon-animation 1s ease infinite;

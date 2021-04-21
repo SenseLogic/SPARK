@@ -337,6 +337,18 @@ sup {
   font-size: 0.5em;
   vertical-align: baseline;
 }
+::-webkit-scrollbar {
+  width: 1rem;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.2);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.3);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,255,255,0.5);
+}
 .extended-container {
   margin-left: auto;
   margin-right: auto;
@@ -853,8 +865,7 @@ body.is-scrolled .header-menu:not(.is-open) {
   margin-left: 1rem;
 }
 .header-menu-open-button {
-  background: url("/static/image/header/menu_button.svg") no-repeat center center;
-  background-size: contain;
+  background: url("/static/image/header/menu_button.svg") no-repeat center center/contain;
 }
 @media (min-width: 50em) {
   .header-menu-open-button {
@@ -895,8 +906,7 @@ body.is-scrolled .header-menu:not(.is-open) {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: url("/static/image/header/close_button.svg") no-repeat center center;
-  background-size: contain;
+  background: url("/static/image/header/close_button.svg") no-repeat center center/contain;
 }
 .footer-menu {
   height: 3rem;
@@ -1010,6 +1020,11 @@ padding
   text-align: center;
   color: #c0c0c0;
 }
+.contact-form-textarea {
+  height: 6rem;
+  resize: none;
+  text-align: left;
+}
 .contact-form-captcha-image {
   margin-left: 1rem;
   height: 3rem;
@@ -1068,8 +1083,7 @@ body.is-scrolled .scroll-down-reminder {
   height: 0.8rem;
   width: 0.8rem;
   opacity: 1;
-  background: url("/static/image/base/scroll_down_icon.svg") no-repeat center center;
-  background-size: contain;
+  background: url("/static/image/base/scroll_down_icon.svg") no-repeat center center/contain;
   transition: all 0.25s ease;
   animation: scroll-down-reminder-icon-animation 1s ease infinite;
 }
@@ -1122,8 +1136,7 @@ body.is-scrolled .scroll-down-reminder {
   height: 50px;
   width: 20px;
   opacity: 1;
-  background: url("/static/image/base/scroll_top_icon.svg") no-repeat center center;
-  background-size: contain;
+  background: url("/static/image/base/scroll_top_icon.svg") no-repeat center center/contain;
   cursor: pointer;
   transition: opacity 0.3s ease;
 }

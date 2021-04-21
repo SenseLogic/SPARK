@@ -168,8 +168,6 @@
 
 
 
-
-
 <div id="header-menu" class="header-menu">
     <div class="large-padded-container header-menu-button-container">
         <div class="header-menu-button" data-view-name="home" onclick="ShowView( 'home' )">

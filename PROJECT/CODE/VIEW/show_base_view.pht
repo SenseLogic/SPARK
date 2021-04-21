@@ -30,6 +30,11 @@
         ViewName = GetRoute( "/<# .LanguageCode #>/", "/" );
         SectionName = GetHash();
 
+        if ( ViewName === "" )
+        {
+            ViewName = "home";
+        }
+
         EmitEvent( "update-view" );
 
         if ( SectionName === "" )

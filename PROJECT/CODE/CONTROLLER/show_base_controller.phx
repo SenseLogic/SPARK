@@ -2,7 +2,6 @@
 
 import 'view_controller.php';
 import '../MODEL/article_model.php';
-import '../MODEL/text_model.php';
 
 // -- TYPES
 

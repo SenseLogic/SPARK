@@ -38,6 +38,15 @@
         text-align: center;
         color: LightGrayColor;
     }
+    
+    .contact-form-textarea
+    {
+        height: 6rem;
+
+        resize: none;
+        
+        text-align: left;
+    }
 
     .contact-form-captcha-image
     {
@@ -87,22 +96,22 @@
             <input class="contact-form-input" name="Name" type="text" placeholder="Name"/>
         </div>
         <div class="contact-form-row">
-            <input class="contact-form-input" name="Company" type="text" placeholder="Company"/>
+            <input class="contact-form-input" name="Company" type="text" placeholder="<# .GetText( 'ContactFormCompanyPlaceholder' ) #>"/>
         </div>
         <div class="contact-form-row">
-            <input class="contact-form-input" name="Email" type="email" placeholder="Email"/>
+            <input class="contact-form-input" name="Email" type="email" placeholder="<# .GetText( 'ContactFormEmailPlaceholder' ) #>"/>
         </div>
         <div class="contact-form-row">
-            <input class="contact-form-input" name="Phone" type="tel" placeholder="Phone"/>
+            <input class="contact-form-input" name="Phone" type="tel" placeholder="<# .GetText( 'ContactFormPhonePlaceholder' ) #>"/>
         </div>
         <div class="contact-form-row">
-            <input class="contact-form-input" name="Subject" type="text" placeholder="Subject"/>
+            <input class="contact-form-input" name="Subject" type="text" placeholder="<# .GetText( 'ContactFormSubjectPlaceholder' ) #>"/>
         </div>
         <div class="contact-form-row">
-            <input class="contact-form-input" name="Message" type="text" placeholder="Message"/>
+            <textarea class="contact-form-input" name="Message" type="text" placeholder="<# .GetText( 'ContactFormMessagePlaceholder' ) #>"></textarea>
         </div>
         <div class="contact-form-row">
-            <input class="contact-form-input" name="Captcha" type="text" placeholder="Captcha"/>
+            <input class="contact-form-input contact-form-textarea" name="Captcha" type="text" placeholder="Captcha"/>
             <img class="contact-form-captcha-image" src="/captcha"/>
         </div>
         <div  class="contact-form-row">

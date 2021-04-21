@@ -23,6 +23,24 @@ TEXT
         FooterMenuLegalNoticeButton
             ~ Legal Notice
 
+        ContactFormNamePlaceholder
+            ~ Name*
+
+        ContactFormCompanyPlaceholder
+            ~ Company*
+
+        ContactFormEmailPlaceholder
+            ~ E-mail*
+
+        ContactFormPhonePlaceholder
+            ~ Phone
+
+        ContactFormSubjectPlaceholder
+            ~ Subject*
+
+        ContactFormMessagePlaceholder
+            ~ Message*
+
         LegalNoticeTitle
             ~ Legal notice
 
