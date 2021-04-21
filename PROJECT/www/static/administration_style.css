@@ -500,36 +500,28 @@ textarea:focus {
   color: #fff;
 }
 .disconnect-button {
-  background: url("/static/image/admin/disconnect_icon.svg") no-repeat center center;
-  background-size: contain;
+  background: url("/static/image/admin/disconnect_icon.svg") no-repeat center center / contain;
 }
 .connect-button {
-  background: url("/static/image/admin/connect_icon.svg") no-repeat center center;
-  background-size: contain;
+  background: url("/static/image/admin/connect_icon.svg") no-repeat center center / contain;
 }
 .view-button {
-  background: url("/static/image/admin/view_icon.svg") no-repeat center center;
-  background-size: contain;
+  background: url("/static/image/admin/view_icon.svg") no-repeat center center / contain;
 }
 .edit-button {
-  background: url("/static/image/admin/edit_icon.svg") no-repeat center center;
-  background-size: contain;
+  background: url("/static/image/admin/edit_icon.svg") no-repeat center center / contain;
 }
 .remove-button {
-  background: url("/static/image/admin/remove_icon.svg") no-repeat center center;
-  background-size: contain;
+  background: url("/static/image/admin/remove_icon.svg") no-repeat center center / contain;
 }
 .add-button {
-  background: url("/static/image/admin/add_icon.svg") no-repeat center center;
-  background-size: contain;
+  background: url("/static/image/admin/add_icon.svg") no-repeat center center / contain;
 }
 .cancel-button {
-  background: url("/static/image/admin/cancel_icon.svg") no-repeat center center;
-  background-size: contain;
+  background: url("/static/image/admin/cancel_icon.svg") no-repeat center center / contain;
 }
 .apply-button {
-  background: url("/static/image/admin/apply_icon.svg") no-repeat center center;
-  background-size: contain;
+  background: url("/static/image/admin/apply_icon.svg") no-repeat center center / contain;
 }
 .table-container {
   align-items: start;
@@ -538,20 +530,16 @@ textarea:focus {
   outline: 0.1px solid rgba(255,0,0,0.5);
 }
 .text-button {
-  background: url("/static/image/admin/text_icon.svg") no-repeat center center;
-  background-size: contain;
+  background: url("/static/image/admin/text_icon.svg") no-repeat center center / contain;
 }
 .article-button {
-  background: url("/static/image/admin/article_icon.svg") no-repeat center center;
-  background-size: contain;
+  background: url("/static/image/admin/article_icon.svg") no-repeat center center / contain;
 }
 .contact-button {
-  background: url("/static/image/admin/contact_icon.svg") no-repeat center center;
-  background-size: contain;
+  background: url("/static/image/admin/contact_icon.svg") no-repeat center center / contain;
 }
 .user-button {
-  background: url("/static/image/admin/user_icon.svg") no-repeat center center;
-  background-size: contain;
+  background: url("/static/image/admin/user_icon.svg") no-repeat center center / contain;
 }
 .text-table {
   grid-template-columns: repeat(3, auto);
