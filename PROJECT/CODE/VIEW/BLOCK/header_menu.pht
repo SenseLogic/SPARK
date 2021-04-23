@@ -26,7 +26,7 @@
 
     .header-menu.is-open
     {
-        +Media( below-50em )
+        +Media( max-width-50em )
         {
             min-height: 100vh;
 
@@ -46,7 +46,7 @@
 
     .header-menu.is-open .header-menu-button-container
     {
-        +Media( below-50em )
+        +Media( max-width-50em )
         {
             display: none;
         }
@@ -78,7 +78,7 @@
 
     .header-menu-desktop-button
     {
-        +Media( below-50em )
+        +Media( max-width-50em )
         {
             display: none;
         }
@@ -107,7 +107,7 @@
     {
         background: url( "/static/image/header/menu_button.svg" ) no-repeat center center / contain;
 
-        +Media( above-50em )
+        +Media( min-width-50em )
         {
             display: none;
         }
@@ -126,7 +126,7 @@
 
     .header-menu.is-open .header-menu-mobile-button-container
     {
-        +Media( below-50em )
+        +Media( max-width-50em )
         {
             display: flex;
         }

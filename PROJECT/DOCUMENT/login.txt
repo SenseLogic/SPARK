@@ -3,7 +3,9 @@ Web
 
 Admin
     http://www.spark-project.com/admin/
-        root / xyz
+        administrator / xyz
+        editor / xyz
+        guest / xyz
 
 FTP
     spark-project.com
