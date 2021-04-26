@@ -55,7 +55,7 @@
 
 <div id="article-carousel" class="article-carousel">
     <div id="article-carousel-strip" class="article-carousel-strip">
-    <?php  for (  $article_index = 0; $article_index <= $this->ArticleCount; ++$article_index ) { ?>
+    <?php for (  $article_index = 0; $article_index <= $this->ArticleCount; ++$article_index ) { ?>
         <?php  $article = $this->ArticleArray[ $article_index % $this->ArticleCount ]; ?>
         <div class="article-carousel-slide" style="background-image: url( '<?php echo $article->Image; ?>' )">
             <div class="article-carousel-slide-text">

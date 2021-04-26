@@ -55,7 +55,7 @@
 </style>
 <div id="article-carousel" class="article-carousel">
     <div id="article-carousel-strip" class="article-carousel-strip">
-    <?  for ( var article_index = 0; article_index <= .ArticleCount; ++article_index ) { ?>
+    <? for ( var article_index = 0; article_index <= .ArticleCount; ++article_index ) { ?>
         <? var article = .ArticleArray[ article_index % .ArticleCount ]; ?>
         <div class="article-carousel-slide" style="background-image: url( '<# article.Image #>' )">
             <div class="article-carousel-slide-text">

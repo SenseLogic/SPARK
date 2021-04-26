@@ -1022,8 +1022,8 @@ padding
 }
 .contact-form-textarea {
   height: 6rem;
-  resize: none;
   text-align: left;
+  resize: none;
 }
 .contact-form-captcha-image {
   margin-left: 1rem;

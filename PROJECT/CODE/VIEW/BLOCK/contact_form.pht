@@ -38,14 +38,14 @@
         text-align: center;
         color: LightGrayColor;
     }
-    
+
     .contact-form-textarea
     {
         height: 6rem;
 
-        resize: none;
-        
         text-align: left;
+
+        resize: none;
     }
 
     .contact-form-captcha-image
