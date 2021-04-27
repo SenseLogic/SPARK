@@ -1,3 +1,39 @@
 // -- IMPORTS
 
 import 'text.php';
+
+// -- FUNCTIONS
+
+function GetDatabaseTextBySlug(
+    string slug
+    )
+{
+    var statement = GetDatabaseStatement( 'select Id, Slug, Text from TEXT where Slug = ? limit 1' );
+    statement.bindParam( 1, slug, PDO::PARAM_STR );
+
+    if ( !statement.execute() )
+    {
+        var_dump( statement.errorInfo() );
+    }
+
+    var text = statement.fetchObject();
+    text.Id = ( int )( text.Id );
+
+    return text;
+}
+
+// ~~
+
+function GetTextMap(
+    array &text_array
+    )
+{
+    var text_map = array();
+
+    foreach ( var text; text_array )
+    {
+        text_map[ text.Slug ] = text.Text;
+    }
+
+    return text_map;
+}

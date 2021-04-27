@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/' . 'view_controller.php';
 require_once __DIR__ . '/' . '../MODEL/article_model.php';
+require_once __DIR__ . '/' . '../MODEL/text_model.php';
 
 // -- TYPES
 

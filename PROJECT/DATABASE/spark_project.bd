@@ -33,13 +33,22 @@ TEXT
             ~ E-mail*
 
         ContactFormPhonePlaceholder
-            ~ Phone
+            ~ Phone*
 
         ContactFormSubjectPlaceholder
             ~ Subject*
 
         ContactFormMessagePlaceholder
             ~ Message*
+
+        ContactFormSendButton
+            ~ Send
+
+        ContactFormThanksText
+            ~ Thank you for your interest in Spark Project!
+
+        ContactMailThanksText
+            ~ Hi,\\n\\nThank you for your interest in Spark Project :)\\n\\nBest regards,\\n\\nThe Spark Project team\\n
 
         LegalNoticeTitle
             ~ Legal notice

@@ -18,12 +18,7 @@ class VIEW_CONTROLLER
         $this->LanguageCode = $language_code;
         $this->LanguageDecimalSeparator = ',';
         $this->TextArray = GetDatabaseTextArray();
-        $this->TextMap = array();
-
-        foreach ( $this->TextArray as  $text )
-        {
-            $this->TextMap[ $text->Slug ] = $text->Text;
-        }
+        $this->TextMap = GetTextMap( $this->TextArray );
     }
 
     // -- INQUIRIES

@@ -3,7 +3,7 @@ spark-project
     TEXT | dropped, count 5
 
         Id : UINT32 | key, unique, incremented
-        Slug : STRING | indexed
+        Slug : STRING
         Text : STRING | is_text
 
     ARTICLE | dropped, count 5

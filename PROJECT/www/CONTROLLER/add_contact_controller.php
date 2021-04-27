@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/' . 'controller.php';
 require_once __DIR__ . '/' . '../MODEL/contact_model.php';
+require_once __DIR__ . '/' . '../MODEL/text_model.php';
 
 // -- TYPES
 
@@ -10,6 +11,7 @@ class ADD_CONTACT_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     function __construct(
+        string $language_code,
         string $name,
         string $company,
         string $email,
@@ -19,7 +21,7 @@ class ADD_CONTACT_CONTROLLER extends CONTROLLER
         string $captcha
         )
     {
-        parent::__construct();
+        parent::__construct( $language_code );
 
         if ( IsValidCaptcha( $captcha, $this->Session->Captcha ) )
         {
@@ -42,7 +44,7 @@ class ADD_CONTACT_CONTROLLER extends CONTROLLER
         string $email,
         string $phone,
         string $subject,
-        string $message,
+        string $message
         )
     {
         SendEmail(
@@ -53,7 +55,7 @@ class ADD_CONTACT_CONTROLLER extends CONTROLLER
             'contact@spark-project.com',
             $email,
             'spark-project.com',
-            "Hi,\n\nThank you for your interest in Spark Project :)\n\nBest regards,\n\nThe Spark Project team\n"
+            $this->GetTranslatedText( GetDatabaseTextBySlug( 'ContactMailThanksText' )->Text )
             );
 
         SendEmail(
@@ -76,4 +78,4 @@ class ADD_CONTACT_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
- $add_contact_controller = new ADD_CONTACT_CONTROLLER(  $name,  $company,  $email,  $phone,  $subject,  $message,  $captcha );
+ $add_contact_controller = new ADD_CONTACT_CONTROLLER(  $language_code,  $name,  $company,  $email,  $phone,  $subject,  $message,  $captcha );

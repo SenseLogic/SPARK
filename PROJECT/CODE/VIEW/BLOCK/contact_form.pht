@@ -93,7 +93,7 @@
 <div class="narrow-margined-container contact-form">
     <form name="ContactForm">
         <div class="contact-form-row">
-            <input class="contact-form-input" name="Name" type="text" placeholder="Name"/>
+            <input class="contact-form-input" name="Name" type="text" placeholder="<# .GetText( 'ContactFormNamePlaceholder' ) #>"/>
         </div>
         <div class="contact-form-row">
             <input class="contact-form-input" name="Company" type="text" placeholder="<# .GetText( 'ContactFormCompanyPlaceholder' ) #>"/>
@@ -108,19 +108,19 @@
             <input class="contact-form-input" name="Subject" type="text" placeholder="<# .GetText( 'ContactFormSubjectPlaceholder' ) #>"/>
         </div>
         <div class="contact-form-row">
-            <textarea class="contact-form-input" name="Message" type="text" placeholder="<# .GetText( 'ContactFormMessagePlaceholder' ) #>"></textarea>
+            <textarea class="contact-form-input contact-form-textarea" name="Message" type="text" placeholder="<# .GetText( 'ContactFormMessagePlaceholder' ) #>"></textarea>
         </div>
         <div class="contact-form-row">
-            <input class="contact-form-input contact-form-textarea" name="Captcha" type="text" placeholder="Captcha"/>
+            <input class="contact-form-input" name="Captcha" type="text" placeholder="Captcha"/>
             <img class="contact-form-captcha-image" src="/captcha"/>
         </div>
         <div  class="contact-form-row">
             <div id="contact-form-send-button" class="contact-form-send-button">
-                Send
+                <# .GetText( 'ContactFormSendButton' ) #>
             </div>
         </div>
         <div id="contact-form-thanks-text" class="contact-form-thanks-text display-hidden">
-            Thanks !
+            <# .GetText( 'ContactFormThanksText' ) #>
         </div>
     </form>
 </div>
@@ -282,6 +282,8 @@
                 "POST",
                 form_data
                 );
+
+            // Dump( request );
 
             if ( request.status === 200 )
             {

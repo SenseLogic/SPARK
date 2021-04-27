@@ -17,6 +17,7 @@ copy ..\..\..\TOOL\SPARK\PROJECT\CODE\CONTROLLER\controller.phx CODE\CONTROLLER\
 copy ..\..\..\TOOL\SPARK\PROJECT\CODE\CONTROLLER\get_captcha_image_controller.phx CODE\CONTROLLER\
 copy ..\..\..\TOOL\SPARK\PROJECT\CODE\CONTROLLER\view_controller.phx CODE\CONTROLLER\
 copy ..\..\..\TOOL\SPARK\PROJECT\CODE\FRAMEWORK\*.* CODE\FRAMEWORK\
+copy ..\..\..\TOOL\SPARK\PROJECT\CODE\MODEL\text_model.phx CODE\MODEL\
 copy ..\..\..\TOOL\SPARK\PROJECT\CODE\MODEL\user_model.phx CODE\MODEL\
 copy ..\..\..\TOOL\SPARK\PROJECT\DATABASE\administration.bt DATABASE\
 copy ..\..\..\TOOL\SPARK\PROJECT\DATABASE\api.bt DATABASE\

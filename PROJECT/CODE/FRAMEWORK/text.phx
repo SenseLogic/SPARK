@@ -530,3 +530,12 @@ function ReplaceText(
 {
     return str_replace( old_text, new_text, text );
 }
+
+// ~~
+
+function ReplaceSpecialCharacters(
+    string text
+    )
+{
+    return str_replace( [ '\n', '\r', '\t' ], [ "\n", "\r", "\t" ], text );
+}

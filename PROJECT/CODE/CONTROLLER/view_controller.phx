@@ -18,12 +18,7 @@ class VIEW_CONTROLLER
         .LanguageCode = language_code;
         .LanguageDecimalSeparator = ',';
         .TextArray = GetDatabaseTextArray();
-        .TextMap = array();
-
-        foreach ( var text; .TextArray )
-        {
-            .TextMap[ text.Slug ] = text.Text;
-        }
+        .TextMap = GetTextMap( .TextArray );
     }
 
     // -- INQUIRIES
