@@ -75,7 +75,7 @@
         }
         );
 
-    InitializeView()
+    InitializeView();
     ShowView();
     HandleResizeEvent( ShowView );
     HandleRouteEvent( ShowView );

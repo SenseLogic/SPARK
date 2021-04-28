@@ -53,3 +53,8 @@ function PrintRequest(
 
 ini_set( 'log_errors', 1 );
 ini_set( 'error_log', 'error.log' );
+
+if ( _SERVER[ 'SERVER_NAME' ] === 'localhost' )
+{
+    ShowErrors();
+}
