@@ -149,7 +149,7 @@ make
 
 ## Internationalization
 
-Any string can be internationalized by separating translations with language separators :
+Any string can be internationalized by separating translations with language specifiers :
 
 ```
 Default language text¨de:German text¨fr:French text¨ru:Russian text...
