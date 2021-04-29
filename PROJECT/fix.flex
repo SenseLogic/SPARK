@@ -1,4 +1,4 @@
-IncludeFiles .//*.b? .//*.ph? .//*.sql
+IncludeFiles .//*.b? .//*.sql .//*.ph? .//*.styl .//*.css .//*.bat .//*.sh
 ReadFiles
 Edit label text
 ReplaceText
@@ -30,7 +30,7 @@ ReplaceText
     article
 ListChangedFiles
 DumpChangedLines
-#MoveFiles
+MoveFiles
 
 ExcludeFiles
 IncludeFiles .gitignore
@@ -40,7 +40,7 @@ ReplaceText
     #/CODE/FRAMEWORK/*.ph?
     /CODE/FRAMEWORK/*.ph?
 DumpChangedLines
-#WriteFiles
+WriteFiles
 
 ExcludeFiles
 IncludeFiles clean.bat
@@ -50,7 +50,7 @@ ReplaceText
     rem del /Q CODE\\FRAMEWORK\\*.ph?
     del /Q CODE\\FRAMEWORK\\*.ph?
 DumpChangedLines
-#WriteFiles
+WriteFiles
 
 ExcludeFiles
 IncludeFiles clean.sh
@@ -60,5 +60,5 @@ ReplaceText
     #rm -fv CODE/FRAMEWORK/*.ph?
     rm -fv CODE/FRAMEWORK/*.ph?
 DumpChangedLines
-#WriteFiles
+WriteFiles
 

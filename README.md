@@ -33,8 +33,10 @@ The project template uses the following tools :
     * as the Stylus and JavaScript front-end framework for the administration website.
 * [Stylus](https://github.com/stylus/stylus)
     * to compile the Stylus scripts into CSS code.
-* [Cylus](https://github.com/cylus/cylus)
+* [Cylus](https://github.com/senselogic/CYLUS)
     * to find unused and missing CSS classes.
+* [Phyx](https://github.com/senselogic/PHYX)
+    * to automatically fix CSS declarations.
 * [Resync](https://github.com/senselogic/RESYNC)
     * to update the website code and data on the development system.
 
@@ -79,7 +81,18 @@ DefineStyleTag( 'weight', 'font-weight' );
 
 ## Installation
 
-## For Windows
+### Framework
+
+The PHOENIX source files are located in the `PROJECT/CODE/FRAMEWORK` folder, 
+while the generated PHP files can be found in the `PROJECT/www/FRAMEWORK` folder.
+
+### Template
+
+The project template itself has no source code dependency except from `VISTA`, its CSS and JavaScript front-end framework.
+
+However its build chain is based on several tools implemented in the D (`Flex`, `Basil`, `Phoenix`, `Cylus`, `Phyx`, `Resync`), Go (`Cyclone`) and JavaScript (`Stylus`) languages.
+
+### For Windows
 
 * Install [Git](https://gitforwindows.org/)
 * Install [DMD (using the MinGW setup option)](https://dlang.org/download.html)
@@ -89,7 +102,7 @@ DefineStyleTag( 'weight', 'font-weight' );
 * Run the `install.bat` script of the `SETUP` folder.
 * Spark and its dependencies are now installed in `%UserProfile%\PROJECT`.
 
-## For Linux
+### For Linux
 
 * Install [DMD](https://dlang.org/download.html)
 * Install [Node.js](https://nodejs.org/en/download/)
@@ -109,6 +122,70 @@ sudo mysql_secure_installation
 
 * Run the `install.sh` script of the `SETUP` folder.
 * Spark and its dependencies are now installed in `~/PROJECT`.
+
+## Instantiation
+
+* Copy the content of the `TOOL/SPARK/PROJECT` folder to a target folder of similar depth, for instance `SITE/TYRELL_CORPORATION/TYRELL_CORPORATION_SITE_2021".
+
+* Edit the `fix.flex` file to change the project and article identifiers in their various forms :
+
+```
+ReplaceText
+    Spark Project
+    Tyrell Corporation
+ReplaceText
+    spark-project
+    tyrell-corporation
+ReplaceText
+    spark_project
+    tyrell_corporation
+ReplaceText
+    spark, project
+    tyrell, corporation
+ReplaceText
+    ARTICLE
+    REPLICANT
+ReplaceText
+    Articles
+    Replicants
+ReplaceText
+    Article
+    Replicant
+ReplaceText
+    articles
+    replicants
+ReplaceText
+    article
+    replicant
+```
+
+* Run the following commands :
+
+Linux :
+
+```sh
+cd SITE/TYRELL_CORPORATION/TYRELL_CORPORATION_SITE_2021
+./fix.sh
+./update.sh
+cd DATABASE
+./make.sh
+cd ../CODE
+./make.sh
+```
+
+Windows :
+
+```sh
+cd SITE\TYRELL_CORPORATION\TYRELL_CORPORATION_SITE_2021
+fix
+update
+cd DATABASE
+make
+cd ..\CODE
+make
+```
+
+* Open `localhost` in a web browser.
 
 ## Version
 
