@@ -16,30 +16,6 @@ Spark is just a small collection of reusable procedural functions wrapping and e
 Spark is implemented in the [Phoenix](https://github.com/senselogic/PHOENIX) language,
 which allows to develop modular PHP code with a readable and concise JavaScript-like syntax.
 
-## Dependencies
-
-The project template uses the following tools :
-
-* [Flex](https://github.com/senselogic/FLEX)
-    * to fix the project and table names.
-* [Basil](https://github.com/senselogic/BASIL)
-    * to design the database schema and test data, and generate the SQL initialization scripts;
-    * to generate the request routing, database access, REST API and administration website code.
-* [Cyclone](https://github.com/senselogic/CYCLONE)
-    * to update the database schema and data on the development system.
-* [Phoenix](https://github.com/senselogic/PHOENIX)
-    * to compile the Phoenix scripts into human-readable PHP code.
-* [Vista](https://github.com/senselogic/VISTA)
-    * as the Stylus and JavaScript front-end framework for the administration website.
-* [Stylus](https://github.com/stylus/stylus)
-    * to compile the Stylus scripts into CSS code.
-* [Cylus](https://github.com/senselogic/CYLUS)
-    * to find unused and missing CSS classes.
-* [Phyx](https://github.com/senselogic/PHYX)
-    * to automatically fix CSS declarations.
-* [Resync](https://github.com/senselogic/RESYNC)
-    * to update the website code and data on the development system.
-
 ## Internationalization
 
 Strings can be internationalized by using language separators :
@@ -79,20 +55,46 @@ DefineStyleTag( 'weight', 'font-weight' );
 <weight<100>>THIN</weight>
 ```
 
-## Installation
+## Dependencies
 
 ### Framework
 
-The PHOENIX source files are located in the `PROJECT/CODE/FRAMEWORK` folder, 
-while the generated PHP files can be found in the `PROJECT/www/FRAMEWORK` folder.
+The PHOENIX source files have no dependencies, and are located in the `PROJECT/CODE/FRAMEWORK` folder.
+
+The generated PHP files can also be used independently, and are located in the `PROJECT/www/FRAMEWORK` folder.
 
 ### Template
 
 The project template itself has no source code dependency except from `VISTA`, its CSS and JavaScript front-end framework.
 
-However its build chain is based on several tools implemented in the D (`Flex`, `Basil`, `Phoenix`, `Cylus`, `Phyx`, `Resync`), Go (`Cyclone`) and JavaScript (`Stylus`) languages.
+However its build chain is based on several tools :
 
-### For Windows
+* [Flex](https://github.com/senselogic/FLEX)
+    * to fix the project and table names.
+* [Basil](https://github.com/senselogic/BASIL)
+    * to design the database schema and test data, and generate the SQL initialization scripts;
+    * to generate the request routing, database access, REST API and administration website code.
+* [Cyclone](https://github.com/senselogic/CYCLONE)
+    * to update the database schema and data on the development system.
+* [Phoenix](https://github.com/senselogic/PHOENIX)
+    * to compile the Phoenix scripts into human-readable PHP code.
+* [Vista](https://github.com/senselogic/VISTA)
+    * as the Stylus and JavaScript front-end framework for the administration website.
+* [Stylus](https://github.com/stylus/stylus)
+    * to compile the Stylus scripts into CSS code.
+* [Cylus](https://github.com/senselogic/CYLUS)
+    * to find unused and missing CSS classes.
+* [Phyx](https://github.com/senselogic/PHYX)
+    * to automatically fix CSS declarations.
+* [Resync](https://github.com/senselogic/RESYNC)
+    * to update the website code and data on the development system.
+
+These tools, mostly implemented in D (`Flex`, `Basil`, `Phoenix`, `Cylus`, `Phyx`, `Resync`), but also in Go (`Cyclone`) and JavaScript (`Stylus`),
+therefore have to be built or installed.
+
+## Installation
+
+## On Windows
 
 * Install [Git](https://gitforwindows.org/)
 * Install [DMD (using the MinGW setup option)](https://dlang.org/download.html)
@@ -102,7 +104,7 @@ However its build chain is based on several tools implemented in the D (`Flex`, 
 * Run the `install.bat` script of the `SETUP` folder.
 * Spark and its dependencies are now installed in `%UserProfile%\PROJECT`.
 
-### For Linux
+## On Linux
 
 * Install [DMD](https://dlang.org/download.html)
 * Install [Node.js](https://nodejs.org/en/download/)
@@ -125,7 +127,7 @@ sudo mysql_secure_installation
 
 ## Instantiation
 
-* Copy the content of the `TOOL/SPARK/PROJECT` folder to a target folder of similar depth, for instance `SITE/TYRELL_CORPORATION/TYRELL_CORPORATION_SITE_2021".
+* Copy the content of the `TOOL/SPARK/PROJECT` folder to a target folder of similar depth, for instance `SITE/TYRELL_CORPORATION/TYRELL_CORPORATION_SITE_2021`.
 
 * Edit the `fix.flex` file to change the project and article identifiers in their various forms :
 
@@ -185,7 +187,7 @@ cd ..\CODE
 make
 ```
 
-* Open `localhost` in a web browser.
+* Open `localhost` in your web browser.
 
 ## Version
 
