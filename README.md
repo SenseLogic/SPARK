@@ -20,13 +20,13 @@ which allows to develop modular PHP code with a readable and concise JavaScript-
 
 ### Framework
 
-The PHOENIX source files have no dependencies, and are located in the `PROJECT/CODE/FRAMEWORK` folder.
+Its Phoenix source files are located in the **PROJECT/CODE/FRAMEWORK** folder, and have no dependencies.
 
-The generated PHP files can also be used independently, and are located in the `PROJECT/www/FRAMEWORK` folder.
+Their matching PHP files are located in the **PROJECT/www/FRAMEWORK** folder, and can be used directly in any PHP project.
 
 ### Template
 
-The project template itself has no source code dependency except from `VISTA`, its CSS and JavaScript front-end framework.
+The project template itself has no source code dependency except from **VISTA**, its **CSS** and **JavaScript** front-end framework.
 
 However its build chain is based on several tools :
 
