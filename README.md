@@ -31,7 +31,7 @@ The project template itself has no source code dependency except from **VISTA**,
 However its build chain is based on several tools :
 
 * [Flex](https://github.com/senselogic/FLEX)
-    * to fix the project and table names.
+    * to fix the placeholder identifiers when instantiating the project.
 * [Basil](https://github.com/senselogic/BASIL)
     * to design the database schema and test data, and generate the SQL initialization scripts;
     * to generate the request routing, database access, REST API and administration website code.
@@ -46,12 +46,9 @@ However its build chain is based on several tools :
 * [Cylus](https://github.com/senselogic/CYLUS)
     * to find unused and missing CSS classes.
 * [Phyx](https://github.com/senselogic/PHYX)
-    * to automatically fix CSS declarations.
+    * to automatically standardize all CSS declarations.
 * [Resync](https://github.com/senselogic/RESYNC)
     * to update the website code and data on the development system.
-
-These tools, mostly implemented in D (`Flex`, `Basil`, `Phoenix`, `Cylus`, `Phyx`, `Resync`), but also in Go (`Cyclone`) and JavaScript (`Stylus`),
-therefore have to be built or installed.
 
 ## Installation
 
@@ -88,9 +85,9 @@ sudo mysql_secure_installation
 
 ## Instantiation
 
-* Copy the content of the `TOOL/SPARK/PROJECT` folder to a target folder of similar depth, for instance `SITE/TYRELL_CORPORATION/TYRELL_CORPORATION_SITE_2021`.
+* Copy the content of the **TOOL/SPARK/PROJECT** folder to a target folder of similar depth, for instance **SITE/TYRELL_CORPORATION/TYRELL_CORPORATION_SITE_2021**.
 
-* Edit the `fix.flex` file to change the project and article identifiers in their various forms :
+* Edit the **fix.flex** file to change the project and article identifiers in their various forms :
 
 ```
 ReplaceText
@@ -148,7 +145,7 @@ cd ..\CODE
 make
 ```
 
-* Open `localhost` in your web browser.
+* Open **localhost** in your web browser.
 
 ## Internationalization
 
