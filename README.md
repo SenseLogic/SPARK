@@ -16,45 +16,6 @@ Spark is just a small collection of reusable procedural functions wrapping and e
 Spark is implemented in the [Phoenix](https://github.com/senselogic/PHOENIX) language,
 which allows to develop modular PHP code with a readable and concise JavaScript-like syntax.
 
-## Internationalization
-
-Strings can be internationalized by using language separators :
-
-```
-Default language text¨de:German text¨fr:French text¨ru:Russian text...
-```
-
-They can contain HTML tags and entities.
-
-Custom HTML tags can also be defined :
-
-```
-DefineOpenTag( 'div' );
-DefineOpenTag( 'span' );
-DefineAttributeTag( 'route', 'data-route' );
-DefineOpenTag( 'a' );
-DefineAttributeTag( 'href' );
-DefineOpenTag( 'img' );
-DefineAttributeTag( 'src' );
-DefineColorTag( 'red' );
-DefineColorTag( 'green', '#0F0' );
-DefineStyleTag( 'color' );
-DefineStyleTag( 'size', 'font-size' );
-DefineStyleTag( 'weight', 'font-weight' );
-```
-
-```
-<div<container>>DIV</div>
-<span<button[route]home>>HOME</span>
-<a<color-red[href]/home/introduction>>LINK</a>
-<img<width-50% height-auto[src]/static/image/illustration.jpg>>
-<red>RED</red>
-<green>GREEN</green>
-<color<#00F>>BLUE</color>
-<size<3rem>>BIG</size>
-<weight<100>>THIN</weight>
-```
-
 ## Dependencies
 
 ### Framework
@@ -188,6 +149,45 @@ make
 ```
 
 * Open `localhost` in your web browser.
+
+## Internationalization
+
+Strings can be internationalized by using language separators :
+
+```
+Default language text¨de:German text¨fr:French text¨ru:Russian text...
+```
+
+They can contain HTML tags and entities.
+
+Custom HTML tags can also be defined :
+
+```
+DefineOpenTag( 'div' );
+DefineOpenTag( 'span' );
+DefineAttributeTag( 'route', 'data-route' );
+DefineOpenTag( 'a' );
+DefineAttributeTag( 'href' );
+DefineOpenTag( 'img' );
+DefineAttributeTag( 'src' );
+DefineColorTag( 'red' );
+DefineColorTag( 'green', '#0F0' );
+DefineStyleTag( 'color' );
+DefineStyleTag( 'size', 'font-size' );
+DefineStyleTag( 'weight', 'font-weight' );
+```
+
+```
+<div<container>>DIV</div>
+<span<button[route]home>>HOME</span>
+<a<color-red[href]/home/introduction>>LINK</a>
+<img<width-50% height-auto[src]/static/image/illustration.jpg>>
+<red>RED</red>
+<green>GREEN</green>
+<color<#00F>>BLUE</color>
+<size<3rem>>BIG</size>
+<weight<100>>THIN</weight>
+```
 
 ## Version
 
