@@ -22,7 +22,7 @@ which allows to develop modular PHP code with a readable and concise JavaScript-
 
 Its Phoenix source files are located in the **PROJECT/CODE/FRAMEWORK** folder, and have no dependencies.
 
-Their matching PHP files are located in the **PROJECT/www/FRAMEWORK** folder, and can be used directly in any PHP project.
+Their matching **PHP** files are located in the **PROJECT/www/FRAMEWORK** folder, and can be used directly in any project.
 
 ### Template
 
