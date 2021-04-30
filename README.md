@@ -40,7 +40,7 @@ Its build chain uses the following tools :
 * [Phoenix](https://github.com/senselogic/PHOENIX)
     * to compile back-end scripts into human-readable PHP code.
 * [Vista](https://github.com/senselogic/VISTA)
-    * as the Stylus and JavaScript front-end framework for the administration website.
+    * as the Stylus and JavaScript front-end framework for the public and administration websites.
 * [Stylus](https://github.com/stylus/stylus)
     * to compile the Stylus scripts into CSS code.
 * [Cylus](https://github.com/senselogic/CYLUS)
