@@ -187,9 +187,9 @@ Any string can be internationalized by separating translations with **language s
 Default language text¨de:German text¨fr:French text¨ru:Russian text...
 ```
 
-Strings can contain any HTML tag and entity.
+Strings can contain any HTML **tag** or **entity**.
 
-Custom HTML tags can also be defined and used :
+**Custom HTML tags** can also be defined :
 
 ```
 DefineOpenTag( 'div' );
