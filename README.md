@@ -33,7 +33,7 @@ Its build chain uses the following tools :
 * [Flex](https://github.com/senselogic/FLEX)
     * to fix the placeholder identifiers when instantiating the project.
 * [Basil](https://github.com/senselogic/BASIL)
-    * to design the database schema and test data, and generate the SQL initialization scripts;
+    * to textually design the database schema and test data, and generate the SQL initialization scripts;
     * to generate the request routing, database access, REST API and administration website code.
 * [Cyclone](https://github.com/senselogic/CYCLONE)
     * to update the database schema and data on the development system.
