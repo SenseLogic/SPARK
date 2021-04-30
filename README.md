@@ -85,7 +85,7 @@ Its build chain uses the following tools :
 
 ## Instantiation
 
-*   Copy the content of the **TOOL/SPARK/PROJECT** folder to a target folder of similar depth, for instance **SITE/TYRELL_CORPORATION/TYRELL_CORPORATION_SITE_2021**.
+*   Copy the content of the **TOOL/SPARK/PROJECT** folder into a target folder of similar depth, for instance **SITE/TYRELL_CORPORATION/TYRELL_CORPORATION_SITE_2021**.
 
 *   Edit the **fix.flex** file to change the project and article identifiers in their various forms :
 
