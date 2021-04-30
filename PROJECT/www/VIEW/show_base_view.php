@@ -25,6 +25,7 @@
         if ( route !== undefined )
         {
             SetRoute( "/<?php echo $this->LanguageCode; ?>/" + route );
+            TrackRoute();
         }
 
         ViewName = GetRoute( "/<?php echo $this->LanguageCode; ?>/", "/" );

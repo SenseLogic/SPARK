@@ -1,6 +1,6 @@
 spark-project
 
-    TEXT | dropped, count 5
+    TEXT | dropped
 
         Id : UINT32 | key, unique, incremented
         Slug : STRING
@@ -15,7 +15,7 @@ spark-project
         Image : STRING = "/static/image/test/beach.jpg|/static/image/test/palm_tree.jpg|/static/image/test/surfer.jpg" | is_image
         Video : STRING = "/static/video/test/train.mp4|/static/video/test/bus.mp4" | is_video
 
-    CONTACT | sorted, count 5
+    CONTACT | sorted
 
         Id : UINT32 | key, unique, incremented
         Name : STRING
@@ -26,7 +26,7 @@ spark-project
         Message : STRING | is_text
         DateTime : DATETIME | now, descending
 
-    USER | sorted, dropped, count 5
+    USER | sorted, dropped
 
         Id : UINT32 | key, unique, incremented, ascending, mapped
         Email : STRING

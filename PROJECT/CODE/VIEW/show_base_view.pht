@@ -25,6 +25,7 @@
         if ( route !== undefined )
         {
             SetRoute( "/<# .LanguageCode #>/" + route );
+            TrackRoute();
         }
 
         ViewName = GetRoute( "/<# .LanguageCode #>/", "/" );
