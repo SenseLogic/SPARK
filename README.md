@@ -20,15 +20,15 @@ which allows to develop modular PHP code with a readable and concise JavaScript-
 
 ### Framework
 
-Its Phoenix source files are located in the **PROJECT/CODE/FRAMEWORK** folder, and have no dependencies.
+Phoenix source files are located in the **PROJECT/CODE/FRAMEWORK** folder, and have no dependencies.
 
-Their matching **PHP** files are located in the **PROJECT/www/FRAMEWORK** folder, and can be used directly in any project.
+The generated **PHP** files are located in the **PROJECT/www/FRAMEWORK** folder, and can be used independently.
 
 ### Template
 
-The project template itself has no source code dependency except from **VISTA**, its **CSS** and **JavaScript** front-end framework.
+The project template itself has no source code dependency except from **VISTA**, a front-end framework.
 
-However its build chain is based on several tools :
+Its build chain uses the following tools :
 
 * [Flex](https://github.com/senselogic/FLEX)
     * to fix the placeholder identifiers when instantiating the project.
@@ -46,7 +46,7 @@ However its build chain is based on several tools :
 * [Cylus](https://github.com/senselogic/CYLUS)
     * to find unused and missing CSS classes.
 * [Phyx](https://github.com/senselogic/PHYX)
-    * to automatically standardize all CSS declarations.
+    * to automatically fix CSS declarations.
 * [Resync](https://github.com/senselogic/RESYNC)
     * to update the website code and data on the development system.
 
