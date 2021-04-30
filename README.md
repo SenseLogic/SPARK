@@ -30,42 +30,42 @@ The project template itself has no source code dependency except from **VISTA**,
 
 Its build chain uses the following tools :
 
-* [Flex](https://github.com/senselogic/FLEX)
-    * to fix the placeholder identifiers when instantiating the project.
-* [Basil](https://github.com/senselogic/BASIL)
-    * to textually design the database schema and test data, and generate the SQL initialization scripts;
-    * to generate the request routing, database access, REST API and administration website code.
-* [Cyclone](https://github.com/senselogic/CYCLONE)
-    * to update the database schema and data on the development system.
-* [Phoenix](https://github.com/senselogic/PHOENIX)
-    * to compile back-end scripts into human-readable PHP code.
-* [Vista](https://github.com/senselogic/VISTA)
-    * as the Stylus and JavaScript front-end framework for the public and administration websites.
-* [Stylus](https://github.com/stylus/stylus)
-    * to compile the Stylus scripts into CSS code.
-* [Cylus](https://github.com/senselogic/CYLUS)
-    * to find unused and missing CSS classes.
-* [Phyx](https://github.com/senselogic/PHYX)
-    * to fix CSS declarations.
-* [Resync](https://github.com/senselogic/RESYNC)
-    * to update the website code and data on the development system.
+*   [Flex](https://github.com/senselogic/FLEX)
+    *   to fix the placeholder identifiers when instantiating the project.
+*   [Basil](https://github.com/senselogic/BASIL)
+    *   to textually design the database schema and test data, and generate the SQL initialization scripts;
+    *   to generate the request routing, database access, REST API and administration website code.
+*   [Cyclone](https://github.com/senselogic/CYCLONE)
+    *   to update the database schema and data on the development system.
+*   [Phoenix](https://github.com/senselogic/PHOENIX)
+    *   to compile back-end scripts into human-readable PHP code.
+*   [Vista](https://github.com/senselogic/VISTA)
+    *   as the Stylus and JavaScript front-end framework for the public and administration websites.
+*   [Stylus](https://github.com/stylus/stylus)
+    *   to compile the Stylus scripts into CSS code.
+*   [Cylus](https://github.com/senselogic/CYLUS)
+    *   to find unused and missing CSS classes.
+*   [Phyx](https://github.com/senselogic/PHYX)
+    *   to fix CSS declarations.
+*   [Resync](https://github.com/senselogic/RESYNC)
+    *   to update the website code and data on the development system.
 
 ## Installation
 
 ## On Windows
 
-* Install [Git](https://gitforwindows.org/)
-* Install [DMD (using the MinGW setup option)](https://dlang.org/download.html)
-* Install [Golang](https://golang.org/dl/)
-* Install [Node.js](https://nodejs.org/en/download/)
-* Install [Wampserver](https://www.wampserver.com/)
-* Run the `install.bat` script of the `SETUP` folder.
-* Spark and its dependencies are now installed in `%UserProfile%\PROJECT`.
+*   Install [Git](https://gitforwindows.org/)
+*   Install [DMD (using the MinGW setup option)](https://dlang.org/download.html)
+*   Install [Golang](https://golang.org/dl/)
+*   Install [Node.js](https://nodejs.org/en/download/)
+*   Install [Wampserver](https://www.wampserver.com/)
+*   Run the `install.bat` script of the `SETUP` folder.
+*   Spark and its dependencies are now installed in `%UserProfile%\PROJECT`.
 
 ## On Linux
 
-* Install [DMD](https://dlang.org/download.html)
-* Install [Node.js](https://nodejs.org/en/download/)
+*   Install [DMD](https://dlang.org/download.html)
+*   Install [Node.js](https://nodejs.org/en/download/)
 
 ```
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
@@ -73,21 +73,21 @@ sudo apt install -y gcc g++ make nodejs
 sudo npm install -g npm
 ```
 
-* Install PHP and MySQL
+*   Install PHP and MySQL
 
 ```
 sudo apt install mysql-server mysql-client php php-mysql php-gd
 sudo mysql_secure_installation
 ```
 
-* Run the `install.sh` script of the `SETUP` folder.
-* Spark and its dependencies are now installed in `~/PROJECT`.
+*   Run the `install.sh` script of the `SETUP` folder.
+*   Spark and its dependencies are now installed in `~/PROJECT`.
 
 ## Instantiation
 
-* Copy the content of the **TOOL/SPARK/PROJECT** folder to a target folder of similar depth, for instance **SITE/TYRELL_CORPORATION/TYRELL_CORPORATION_SITE_2021**.
+*   Copy the content of the **TOOL/SPARK/PROJECT** folder to a target folder of similar depth, for instance **SITE/TYRELL_CORPORATION/TYRELL_CORPORATION_SITE_2021**.
 
-* Edit the **fix.flex** file to change the project and article identifiers in their various forms :
+*   Edit the **fix.flex** file to change the project and article identifiers in their various forms :
 
 ```
 ReplaceText
@@ -119,9 +119,9 @@ ReplaceText
     replicant
 ```
 
-* Run the following commands :
+*   Run the following commands :
 
-Linux :
+    *   **On Linux**
 
 ```sh
 cd SITE/TYRELL_CORPORATION/TYRELL_CORPORATION_SITE_2021
@@ -133,7 +133,7 @@ cd ../CODE
 ./make.sh
 ```
 
-Windows :
+    *   **On Windows**
 
 ```sh
 cd SITE\TYRELL_CORPORATION\TYRELL_CORPORATION_SITE_2021
@@ -145,7 +145,7 @@ cd ..\CODE
 make
 ```
 
-* Open **localhost** in your web browser.
+*   Open **localhost** in your web browser.
 
 ## Internationalization
 
