@@ -20,7 +20,7 @@ which allows to develop modular PHP code with a readable and concise JavaScript-
 
 ### Framework
 
-Phoenix source files are located in the **PROJECT/CODE/FRAMEWORK** folder, and have no dependencies.
+Phoenix source files are located in the **PROJECT/CODE/FRAMEWORK** folder, and have no external dependencies.
 
 The generated **PHP** files are located in the **PROJECT/www/FRAMEWORK** folder, and can be used independently.
 
