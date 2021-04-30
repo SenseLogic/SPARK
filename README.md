@@ -38,7 +38,7 @@ Its build chain uses the following tools :
 * [Cyclone](https://github.com/senselogic/CYCLONE)
     * to update the database schema and data on the development system.
 * [Phoenix](https://github.com/senselogic/PHOENIX)
-    * to compile the Phoenix scripts into human-readable PHP code.
+    * to compile JavaScript-like scripts into human-readable PHP code.
 * [Vista](https://github.com/senselogic/VISTA)
     * as the Stylus and JavaScript front-end framework for the administration website.
 * [Stylus](https://github.com/stylus/stylus)
