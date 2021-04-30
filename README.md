@@ -60,7 +60,7 @@ It provides base code for :
 
 The template files are located in the **PROJECT** folder, and have no external code dependency except from **VISTA**, a front-end framework.
 
-Its build chain uses the following tools :
+The project build chain uses the following tools :
 
 *   [Flex](https://github.com/senselogic/FLEX)
     *   to fix the placeholder identifiers when instantiating the project.
