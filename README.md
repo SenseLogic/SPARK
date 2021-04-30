@@ -82,7 +82,9 @@ Its build chain uses the following tools :
 *   [Resync](https://github.com/senselogic/RESYNC)
     *   to update the website code and data on the development system.
 
-## Installation
+The template files are located in the **PROJECT** folder.
+
+## Tools installation
 
 ## On Windows
 
@@ -115,7 +117,7 @@ Its build chain uses the following tools :
 *   Run the `install.sh` script of the `SETUP` folder.
 *   Spark and its dependencies are now installed in `~/PROJECT`.
 
-## Instantiation
+## Template instantiation
 
 *   Copy the content of the **TOOL/SPARK/PROJECT** folder into a target folder of similar depth, for instance **SITE/TYRELL_CORPORATION/TYRELL_CORPORATION_SITE_2021**.
 
