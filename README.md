@@ -46,7 +46,7 @@ Its build chain uses the following tools :
 * [Cylus](https://github.com/senselogic/CYLUS)
     * to find unused and missing CSS classes.
 * [Phyx](https://github.com/senselogic/PHYX)
-    * to automatically fix CSS declarations.
+    * to fix CSS declarations.
 * [Resync](https://github.com/senselogic/RESYNC)
     * to update the website code and data on the development system.
 
