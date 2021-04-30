@@ -67,18 +67,18 @@ Its build chain uses the following tools :
 *   Install [DMD](https://dlang.org/download.html)
 *   Install [Node.js](https://nodejs.org/en/download/)
 
-```
-curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-sudo apt install -y gcc g++ make nodejs
-sudo npm install -g npm
-```
+    ```
+    curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+    sudo apt install -y gcc g++ make nodejs
+    sudo npm install -g npm
+    ```
 
 *   Install PHP and MySQL
 
-```
-sudo apt install mysql-server mysql-client php php-mysql php-gd
-sudo mysql_secure_installation
-```
+    ```
+    sudo apt install mysql-server mysql-client php php-mysql php-gd
+    sudo mysql_secure_installation
+    ```
 
 *   Run the `install.sh` script of the `SETUP` folder.
 *   Spark and its dependencies are now installed in `~/PROJECT`.
