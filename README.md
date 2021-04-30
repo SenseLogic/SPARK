@@ -48,7 +48,8 @@ The generated **PHP** files are located in the **PROJECT/www/FRAMEWORK** folder,
 
 It provides base code for :
 
-*   header and footer menus
+*   header menu
+*   footer menu
 *   contact form
 *   legal notice
 *   article carousel
