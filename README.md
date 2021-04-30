@@ -16,17 +16,48 @@ Spark is just a small collection of reusable procedural functions wrapping and e
 Spark is implemented in the [Phoenix](https://github.com/senselogic/PHOENIX) language,
 which allows to develop modular PHP code with a readable and concise JavaScript-like syntax.
 
-## Dependencies
+## Content
 
 ### Framework
 
-Phoenix source files are located in the **PROJECT/CODE/FRAMEWORK** folder, and have no external dependencies.
+It provides base functions to handle :
+
+*   arrays
+*   captchas
+*   databases
+*   errors
+*   files
+*   globals
+*   translations
+*   mails
+*   objects
+*   paths
+*   random
+*   requests
+*   RSS feeds
+*   sessions
+*   strings
+*   time
+*   user roles
+
+Phoenix source files are located in the **PROJECT/CODE/FRAMEWORK** folder, and have no external code dependencies.
 
 The generated **PHP** files are located in the **PROJECT/www/FRAMEWORK** folder, and can be used independently.
 
-### Template
+### Template project
 
-The project template itself has no source code dependency except from **VISTA**, a front-end framework.
+It provides base code for :
+
+*   header and footer menus
+*   contact form
+*   legal notice
+*   article carousel
+*   article list
+*   cookie consent banner
+*   scroll down reminder
+*   scroll top button
+
+It has no external code dependency except from **VISTA**, a front-end framework.
 
 Its build chain uses the following tools :
 
