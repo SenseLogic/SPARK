@@ -58,7 +58,7 @@ It provides base code for :
 *   scroll down reminder
 *   scroll top button
 
-It has no external code dependency except from **VISTA**, a front-end framework.
+The template files are located in the **PROJECT** folder, and have no external code dependency except from **VISTA**, a front-end framework.
 
 Its build chain uses the following tools :
 
@@ -81,8 +81,6 @@ Its build chain uses the following tools :
     *   to fix CSS declarations.
 *   [Resync](https://github.com/senselogic/RESYNC)
     *   to update the website code and data on the development system.
-
-The template files are located in the **PROJECT** folder.
 
 ## Tools installation
 
