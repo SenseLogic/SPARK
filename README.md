@@ -181,15 +181,15 @@ The project build chain uses the following tools :
 
 ## Internationalization
 
-Any string can be internationalized by separating translations using language specifiers :
+Any string can be internationalized by separating translations with **language specifiers** :
 
 ```
 Default language text¨de:German text¨fr:French text¨ru:Russian text...
 ```
 
-They can contain HTML tags and entities.
+Strings can contain any HTML tag and entity.
 
-Custom HTML tags can also be defined :
+Custom HTML tags can also be defined and used :
 
 ```
 DefineOpenTag( 'div' );
