@@ -89,61 +89,61 @@ sudo mysql_secure_installation
 
 *   Edit the **fix.flex** file to change the project and article identifiers in their various forms :
 
-```
-ReplaceText
-    Spark Project
-    Tyrell Corporation
-ReplaceText
-    spark-project
-    tyrell-corporation
-ReplaceText
-    spark_project
-    tyrell_corporation
-ReplaceText
-    spark, project
-    tyrell, corporation
-ReplaceText
-    ARTICLE
-    REPLICANT
-ReplaceText
-    Articles
-    Replicants
-ReplaceText
-    Article
-    Replicant
-ReplaceText
-    articles
-    replicants
-ReplaceText
-    article
-    replicant
-```
+    ```
+    ReplaceText
+        Spark Project
+        Tyrell Corporation
+    ReplaceText
+        spark-project
+        tyrell-corporation
+    ReplaceText
+        spark_project
+        tyrell_corporation
+    ReplaceText
+        spark, project
+        tyrell, corporation
+    ReplaceText
+        ARTICLE
+        REPLICANT
+    ReplaceText
+        Articles
+        Replicants
+    ReplaceText
+        Article
+        Replicant
+    ReplaceText
+        articles
+        replicants
+    ReplaceText
+        article
+        replicant
+    ```
 
 *   Run the following commands :
 
     *   **On Linux**
 
-```sh
-cd SITE/TYRELL_CORPORATION/TYRELL_CORPORATION_SITE_2021
-./fix.sh
-./update.sh
-cd DATABASE
-./make.sh
-cd ../CODE
-./make.sh
-```
+        ```sh
+        cd SITE/TYRELL_CORPORATION/TYRELL_CORPORATION_SITE_2021
+        ./fix.sh
+        ./update.sh
+        cd DATABASE
+        ./make.sh
+        cd ../CODE
+        ./make.sh
+        ```
 
     *   **On Windows**
 
-```sh
-cd SITE\TYRELL_CORPORATION\TYRELL_CORPORATION_SITE_2021
-fix
-update
-cd DATABASE
-make
-cd ..\CODE
-make
-```
+        ```sh
+        cd SITE\TYRELL_CORPORATION\TYRELL_CORPORATION_SITE_2021
+        fix
+        update
+        cd DATABASE
+        make
+        cd ..\CODE
+        make
+        ```
 
 *   Open **localhost** in your web browser.
 
