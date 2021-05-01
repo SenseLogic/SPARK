@@ -16,51 +16,58 @@ Spark is just a small collection of reusable procedural functions wrapping and e
 Spark is implemented in the [Phoenix](https://github.com/senselogic/PHOENIX) language,
 which allows to develop modular PHP code with a readable and concise JavaScript-like syntax.
 
-## Content
+## Microframework
 
-### Framework
+It provides **base functions** to handle :
 
-It provides base functions to handle :
-
-*   arrays
-*   captchas
-*   databases
 *   errors
-*   files
 *   globals
-*   translations
-*   mails
-*   objects
-*   paths
-*   random
-*   requests
-*   RSS feeds
 *   sessions
+*   objects
+*   arrays
 *   strings
+*   paths
+*   translations
 *   time
-*   user roles
+*   files
+*   requests
+*   queries
+*   mails
+*   feeds
+*   users
+*   captchas
 
-Phoenix source files are located in the **PROJECT/CODE/FRAMEWORK** folder, and have no external code dependencies.
+The source files are located in the **PROJECT/CODE/FRAMEWORK** folder, and have no external dependencies.
 
-The generated **PHP** files are located in the **PROJECT/www/FRAMEWORK** folder, and can be used independently.
+The generated **PHP** files are located in the **PROJECT/www/FRAMEWORK** folder, and can be used independently of the Phoenix compiler.
 
-### Template project
+## Template project
 
-It provides base code for :
+It provides an **initial version** of :
 
-*   header menu
-*   footer menu
-*   contact form
-*   legal notice
-*   article carousel
-*   article list
-*   cookie consent banner
-*   scroll down reminder
-*   scroll top button
+*   the **public website** :
+    *   header menu
+    *   footer menu
+    *   contact form
+    *   captcha validation
+    *   legal notice
+    *   article carousel
+    *   article list
+    *   cookie consent banner
+    *   scroll down reminder
+    *   scroll top button
+*   the **administration website** :
+    *   login
+    *   table menu
+    *   table view
+    *   row view
+    *   row creation
+    *   row editing
+    *   row removal
 
-The template files are located in the **PROJECT** folder, and have no external code dependency except from **VISTA**, a front-end framework.
+The template files are located in the **PROJECT** folder, and have no external dependencies except from **VISTA**, a minimalistic front-end framework.
 
-The project build chain uses the following tools :
+The project build chain is using the following tools to **simplify** and **automate** the most frequent development tasks :
 
 *   [Flex](https://github.com/senselogic/FLEX)
     *   to fix the placeholder identifiers when instantiating the project.
@@ -73,12 +80,12 @@ The project build chain uses the following tools :
     *   to compile back-end scripts into human-readable PHP code.
 *   [Vista](https://github.com/senselogic/VISTA)
     *   as the Stylus and JavaScript front-end framework for the public and administration websites.
+*   [Phyx](https://github.com/senselogic/PHYX)
+    *   to fix Stylus declarations.
 *   [Stylus](https://github.com/stylus/stylus)
     *   to compile the Stylus scripts into CSS code.
 *   [Cylus](https://github.com/senselogic/CYLUS)
-    *   to find unused and missing CSS classes.
-*   [Phyx](https://github.com/senselogic/PHYX)
-    *   to fix CSS declarations.
+    *   to find unused and missing CSS classes in the PHP code.
 *   [Resync](https://github.com/senselogic/RESYNC)
     *   to update the website code and data on the development system.
 
