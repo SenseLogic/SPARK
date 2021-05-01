@@ -35,7 +35,7 @@
 
 
 <div class="large-padded-container footer-menu">
-    <span class="footer-menu-button" style="margin-right:auto" onclick="ShowView( 'home' )">
+    <span class="margin-right-auto! footer-menu-button" onclick="ShowView( 'home' )">
         <?php echo $this->GetText( 'FooterMenuHomeButton' ); ?>
     </span>
     <span class="footer-menu-button" onclick="ShowView( 'home/#article-list' )">
@@ -44,7 +44,7 @@
     <span class="footer-menu-button" onclick="ShowView( 'contact' )">
         <?php echo $this->GetText( 'FooterMenuContactButton' ); ?>
     </span>
-    <span class="footer-menu-button" style="margin-left:auto" onclick="ShowView( 'legal-notice' )">
+    <span class="margin-left-auto! footer-menu-button" onclick="ShowView( 'legal-notice' )">
         <?php echo $this->GetText( 'FooterMenuLegalNoticeButton' ); ?>
     </span>
 </div>

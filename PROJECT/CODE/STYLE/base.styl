@@ -74,6 +74,8 @@ MakeMarginedContainer( 20px, 40px 80px 120px 160px 200px, min-width-40em min-wid
 MakeMarginedContainer( 20px, 80px 120px 160px 200px 240px, min-width-40em min-width-60em min-width-80em min-width-100em min-width-120em, "narrow-" );
 MakePaddedContainer( 20px, 40px 80px 120px 160px 200px, min-width-40em min-width-60em min-width-80em min-width-100em min-width-120em, "large-" );
 MakePaddedContainer( 20px, 80px 120px 160px 200px 240px, min-width-40em min-width-60em min-width-80em min-width-100em min-width-120em, "narrow-" );
+MakeMarginLeftAuto( , , "\!", !important );
+MakeMarginRightAuto( , , "\!", !important );
 MakeMarginLateralValue( 8, 1px, "px" );
 MakeMarginLateralValue( 16, 1px, "px" );
 MakeMarginVerticalValue( 8, 1px, "px" );
@@ -90,8 +92,8 @@ MakePaddingVerticalValue( 8, 1px, "px" );
 MakePaddingVerticalValue( 16, 1px, "px" );
 
 MakeDisplayNone();
+MakeDisplayNone( , , "\!", !important );
 MakeDisplayFlex();
-MakeDisplayHidden();
 MakeFlexDirectionRow();
 MakeFlexDirectionColumn();
 MakeFlexGrowValue( 1 );

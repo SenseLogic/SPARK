@@ -70,7 +70,7 @@
                     element
                     )
                 {
-                    element.ToggleClass( "display-hidden", element.dataset.viewName !== ViewName );
+                    element.ToggleClass( "display-none!", element.dataset.viewName !== ViewName );
                 }
                 );
         }

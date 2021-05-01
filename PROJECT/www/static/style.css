@@ -490,6 +490,12 @@ sup {
     padding-right: 240px;
   }
 }
+.margin-left-auto\! {
+  margin-left: auto !important;
+}
+.margin-right-auto\! {
+  margin-right: auto !important;
+}
 .margin-lateral-8px {
   margin-left: 8px;
   margin-right: 8px;
@@ -576,11 +582,11 @@ sup {
 .display-none {
   display: none;
 }
+.display-none\! {
+  display: none !important;
+}
 .display-flex {
   display: flex;
-}
-.display-hidden {
-  display: none !important;
 }
 .flex-direction-row {
   flex-direction: row;

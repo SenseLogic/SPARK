@@ -119,7 +119,7 @@
                 <?php echo $this->GetText( 'ContactFormSendButton' ); ?>
             </div>
         </div>
-        <div id="contact-form-thanks-text" class="contact-form-thanks-text display-hidden">
+        <div id="contact-form-thanks-text" class="display-none! contact-form-thanks-text">
             <?php echo $this->GetText( 'ContactFormThanksText' ); ?>
         </div>
     </form>
@@ -286,7 +286,7 @@
             if ( request.status === 200 )
             {
                 ClearContactForm();
-                GetElementById( "contact-form-thanks-text" ).RemoveClass( "display-hidden" );
+                GetElementById( "contact-form-thanks-text" ).RemoveClass( "display-none!" );
             }
         }
     }
