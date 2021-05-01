@@ -18,7 +18,7 @@ which allows to develop modular PHP code with a readable and concise JavaScript-
 
 ## Microframework
 
-It provides **base functions** to handle :
+It provides **base functions** for :
 
 *   errors
 *   globals
