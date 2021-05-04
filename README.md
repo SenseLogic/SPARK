@@ -43,9 +43,9 @@ The generated **PHP** files are located in the **PROJECT/www/FRAMEWORK** folder,
 
 ## Template project
 
-It provides an **initial version** of :
+It provides :
 
-*   the **public website** :
+*   an unstyled **public website** with :
     *   header menu
     *   footer menu
     *   contact form
@@ -53,10 +53,11 @@ It provides an **initial version** of :
     *   legal notice
     *   article carousel
     *   article list
+    *   article
     *   cookie consent banner
     *   scroll down reminder
     *   scroll top button
-*   the **administration website** :
+*   a styled **administration website** with :
     *   login
     *   table menu
     *   table view
