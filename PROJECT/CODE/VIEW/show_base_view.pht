@@ -51,6 +51,7 @@
 <div>
     <? include 'BLOCK/header_menu.php'; ?>
     <? include 'show_home_view.php'; ?>
+    <? include 'show_article_view.php'; ?>
     <? include 'show_contact_view.php'; ?>
     <? include 'show_legal_notice_view.php'; ?>
     <? include 'BLOCK/footer_menu.php'; ?>

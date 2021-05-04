@@ -981,26 +981,53 @@ body.is-scrolled .header-menu:not(.is-open) {
   transform: translateY(-50%);
 }
 .article-list {
-padding
+  min-height: 100vh;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #404040;
   color: #fff;
 }
+.article-list-button {
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+.article-list-button:hover {
+  font-weight: 700;
+}
+.article-list-button + .article-list-button {
+  margin-top: 1rem;
+}
 .article {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+  background-color: #808080;
+  color: #fff;
 }
 .article-title {
-  font-size: 2rem;
+  font-size: 5rem;
+  font-weight: 700;
+  text-align: center;
 }
 .article-text {
+  margin-top: 2rem;
   font-size: 1rem;
 }
 .article-image {
+  margin-top: 2rem;
   height: auto;
   width: 100%;
+  border-radius: 2rem;
 }
 .article-video {
+  margin-top: 2rem;
   height: auto;
   width: 100%;
+  border-radius: 2rem;
 }
 .contact-form {
   margin-top: 4rem;
@@ -1060,7 +1087,8 @@ padding
   color: #fff;
 }
 .legal-notice {
-  margin-top: 3rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 .scroll-down-reminder {
   position: absolute;

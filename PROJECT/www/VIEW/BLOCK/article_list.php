@@ -5,8 +5,38 @@
 
 
 
-<div id="home/#article-list" class="narrow-margined-container article-list">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="home/#article-list" class="narrow-padded-container article-list">
     <?php foreach ( $this->ArticleArray as  $article ) { ?>
-        <?php require __DIR__ . '/' . 'article.php'; ?>
+        <div class="article-list-button" onclick="ShowView( 'article/<?php echo $article->Id; ?>/<?php echo $article->Slug; ?>' )">
+            <?php echo $article->Name; ?>
+        </div>
     <?php } ?>
 </div>

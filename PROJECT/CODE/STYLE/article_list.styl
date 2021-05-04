@@ -1,5 +1,33 @@
 .article-list
 {
-    padding
+    min-height: 100vh;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: DarkerGrayColor;
+
     color: WhiteColor;
+}
+
+.article-list-button
+{
+    font-size: 2rem;
+    color: WhiteColor;
+
+    cursor: pointer;
+}
+
+.article-list-button:hover
+{
+    font-weight: 700;
+}
+
+.article-list-button + .article-list-button
+{
+    margin-top: 1rem;
 }

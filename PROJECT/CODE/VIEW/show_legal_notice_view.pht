@@ -1,3 +1,3 @@
 <div class="display-none! extended-container view" data-view-name="legal-notice">
-    <? import 'BLOCK/legal_notice.php'; ?>
+    <? include 'BLOCK/legal_notice.php'; ?>
 </div>

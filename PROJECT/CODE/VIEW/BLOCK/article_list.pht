@@ -1,12 +1,42 @@
 <style file="article_list.styl">
     .article-list
     {
-        padding
+        min-height: 100vh;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        background-color: DarkerGrayColor;
+
         color: WhiteColor;
     }
+
+    .article-list-button
+    {
+        font-size: 2rem;
+        color: WhiteColor;
+
+        cursor: pointer;
+    }
+
+    .article-list-button:hover
+    {
+        font-weight: 700;
+    }
+
+    .article-list-button + .article-list-button
+    {
+        margin-top: 1rem;
+    }
 </style>
-<div id="home/#article-list" class="narrow-margined-container article-list">
+<div id="home/#article-list" class="narrow-padded-container article-list">
     <? foreach ( var article; .ArticleArray ) { ?>
-        <? include 'article.php'; ?>
+        <div class="article-list-button" onclick="ShowView( 'article/<# article.Id #>/<# article.Slug #>' )">
+            <# article.Name #>
+        </div>
     <? } ?>
 </div>

@@ -1,7 +1,8 @@
 <style file="legal_notice.styl">
     .legal-notice
     {
-        margin-top: 3rem;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
     }
 </style>
 <div class="large-padded-container legal-notice">

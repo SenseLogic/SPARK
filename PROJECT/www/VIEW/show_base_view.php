@@ -51,6 +51,7 @@
 <div>
     <?php require __DIR__ . '/' . 'BLOCK/header_menu.php'; ?>
     <?php require __DIR__ . '/' . 'show_home_view.php'; ?>
+    <?php require __DIR__ . '/' . 'show_article_view.php'; ?>
     <?php require __DIR__ . '/' . 'show_contact_view.php'; ?>
     <?php require __DIR__ . '/' . 'show_legal_notice_view.php'; ?>
     <?php require __DIR__ . '/' . 'BLOCK/footer_menu.php'; ?>
