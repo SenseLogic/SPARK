@@ -43,9 +43,9 @@ The generated **PHP** files are located in the **PROJECT/www/FRAMEWORK** folder,
 
 ## Template project
 
-It provides :
+It provides a starting version of :
 
-*   an unstyled **public website** with :
+*   the **public website** with :
     *   header menu
     *   footer menu
     *   contact form
@@ -57,7 +57,7 @@ It provides :
     *   cookie consent banner
     *   scroll down reminder
     *   scroll top button
-*   a styled **administration website** with :
+*   the **administration website** with :
     *   login
     *   table menu
     *   table view
@@ -65,6 +65,8 @@ It provides :
     *   row creation
     *   row editing
     *   row removal
+
+Both are almost unstyled, but fully functional.
 
 The template files are located in the **PROJECT** folder, and have no external dependencies except from **VISTA**, a minimalistic front-end framework.
 
