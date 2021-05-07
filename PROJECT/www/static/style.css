@@ -957,6 +957,7 @@ body.is-scrolled .header-menu:not(.is-open) {
   align-items: center;
   background-position: center center;
   background-size: cover;
+  cursor: pointer;
 }
 .article-carousel-slide-text {
   max-width: 40rem;
