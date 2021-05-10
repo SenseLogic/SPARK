@@ -13,5 +13,5 @@
 <meta name="format-detection" content="telephone=no"/>
 <meta name="HandheldFriendly" content="true"/>
 <title>Spark Project</title>
-<link rel="icon" href="favicon.ico"/>
+<link rel="icon" href="/favicon.ico"/>
 <link rel="stylesheet" href="/static/style.css"/>

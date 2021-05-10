@@ -1,4 +1,4 @@
-IncludeFiles .//*.b? .//*.sql .//*.ph? .//*.styl .//*.css .//*.svg .//*.bat .//*.sh
+IncludeFiles .//*.b? .//*.sql .//*.ph? .//*.styl .//*.css .//*.svg .//*.bat .//*.sh .//*.txt
 ReadFiles
 Edit label text
 ReplaceText
