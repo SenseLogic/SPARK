@@ -161,8 +161,8 @@ function DrawJustifiedText(
     float color_red,
     float color_green,
     float color_blue,
-    float space_width_factor = 1,
-    float line_height_factor = 1
+    float line_height_factor = 1,
+    float space_width_factor = 1
     )
 {
     var space_bounding_box = imagettfbbox( font_size, 0, font_path, 'M' );
