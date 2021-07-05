@@ -222,7 +222,7 @@ function GetAlphanumericText(
     string text,
     string kept_characters = '',
     string replaced_characters = '',
-    string replacement_character = '' 
+    string replacement_character = ''
     )
 {
     var alphanumeric_text = '';
@@ -587,4 +587,13 @@ function ReplaceSpecialCharacters(
     )
 {
     return str_replace( [ '\n', '\r', '\t' ], [ "\n", "\r", "\t" ], text );
+}
+
+// ~~
+
+function GetBase64Text(
+    string text
+    )
+{
+    return base64_encode( text );
 }

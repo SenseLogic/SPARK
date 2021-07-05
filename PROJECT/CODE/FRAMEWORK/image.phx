@@ -1,0 +1,204 @@
+// -- FUNCTIONS
+
+function DrawLine(
+    image,
+    float first_column,
+    float first_row,
+    float last_column,
+    float last_row,
+    float color_red,
+    float color_green,
+    float color_blue
+    )
+{
+    imageline(
+        image,
+        first_column,
+        first_row,
+        last_column,
+        last_row,
+        imagecolorallocate( image, color_red, color_green, color_blue )
+        );
+}
+
+// ~~
+
+function DrawFilledRectangle(
+    image,
+    float column,
+    float row,
+    float width,
+    float height,
+    float color_red,
+    float color_green,
+    float color_blue
+    )
+{
+    imagefilledrectangle(
+        image,
+        column,
+        row,
+        width,
+        height,
+        imagecolorallocate( image, color_red, color_green, color_blue )
+        );
+}
+
+// ~~
+
+function DrawStretchedImage(
+    target_image,
+    float target_column,
+    float target_row,
+    float target_width,
+    float target_height,
+    source_image,
+    float source_column,
+    float source_row,
+    float source_width,
+    float source_height
+    )
+{
+    imagecopyresized(
+        target_image,
+        source_image,
+        target_column,
+        target_row,
+        source_column,
+        source_row,
+        target_width,
+        target_height,
+        source_width,
+        source_height
+        );
+}
+
+// ~~
+
+function DrawCoveredImage(
+    target_image,
+    float target_column,
+    float target_row,
+    float target_width,
+    float target_height,
+    source_image,
+    float source_column,
+    float source_row,
+    float source_width,
+    float source_height
+    )
+{
+    var cropped_source_column = 0;
+    var cropped_source_row = 0;
+    var cropped_source_width = source_width;
+    var cropped_source_height = source_height;
+    var source_aspect_ratio = source_width / source_height;
+    var target_aspect_ratio = target_width / target_height;
+
+    if ( source_aspect_ratio > target_aspect_ratio )
+    {
+        cropped_source_width = floor( source_height * target_aspect_ratio );
+        cropped_source_column = floor( ( source_width - cropped_source_width ) * 0.5 );
+    }
+    else if ( source_aspect_ratio < target_aspect_ratio )
+    {
+        cropped_source_height = floor( source_width / target_aspect_ratio );
+        cropped_source_row = floor( ( source_height - cropped_source_height ) * 0.5 );
+    }
+
+    imagecopyresized(
+        target_image,
+        source_image,
+        target_column,
+        target_row,
+        source_column + cropped_source_column,
+        source_row + cropped_source_row,
+        target_width,
+        target_height,
+        cropped_source_width,
+        cropped_source_height
+        );
+}
+
+// ~~
+
+function DrawText(
+    image,
+    float column,
+    float row,
+    float angle,
+    string text,
+    string font_path,
+    string font_size,
+    float color_red,
+    float color_green,
+    float color_blue
+    )
+{
+    return imagettftext(
+        image,
+        font_size,
+        angle,
+        column,
+        row,
+        imagecolorallocate( image, color_red, color_green, color_blue ),
+        font_path,
+        text
+        );
+}
+
+// ~~
+
+function DrawJustifiedText(
+    image,
+    float column,
+    float row,
+    float width,
+    float height,
+    string text,
+    string font_path,
+    string font_size,
+    float color_red,
+    float color_green,
+    float color_blue,
+    float space_width_factor = 1,
+    float line_height_factor = 1
+    )
+{
+    var space_bounding_box = imagettfbbox( font_size, 0, font_path, 'M' );
+    var space_width = ( space_bounding_box[ 2 ] - space_bounding_box[ 0 ] ) * 0.5;
+    var line_height = ( space_bounding_box[ 1 ] - space_bounding_box[ 7 ] ) * 1.5;
+
+    var word_column = column;
+    var word_row = row;
+    var word_array = explode( ' ', text );
+
+    foreach ( var word; word_array )
+    {
+        var word_bounding_box = imagettfbbox( font_size, 0, font_path, word );
+        var word_width = word_bounding_box[ 2 ] - word_bounding_box[ 0 ];
+        var word_height = word_bounding_box[ 1 ] - word_bounding_box[ 7 ];
+
+        if ( word_column + word_width > column + width )
+        {
+            word_column = column;
+            word_row += line_height * line_height_factor;
+        }
+
+        if ( word_row + word_height <= row + height )
+        {
+            imagettftext(
+                image,
+                font_size,
+                0,
+                word_column,
+                word_row,
+                imagecolorallocate( image, color_red, color_green, color_blue ),
+                font_path,
+                word
+                );
+
+            word_column += word_width + space_width * space_width_factor;
+        }
+    }
+}

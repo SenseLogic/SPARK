@@ -45,3 +45,12 @@ function MoveUploadedFile(
 {
     return move_uploaded_file( source_file_path, target_file_path);
 }
+
+// ~~
+
+function GetFileText(
+    string file_path
+    )
+{
+    return file_get_contents( file_path );
+}
