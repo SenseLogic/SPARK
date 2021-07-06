@@ -69,7 +69,7 @@ It provides a starting version of :
 
 Both are fully functional, but almost unstyled, on purpose.
 
-The template files are located in the **PROJECT** folder, and have no external dependencies except from **VISTA**, a minimalistic front-end framework.
+The template files are located in the **PROJECT** folder, and have no external dependencies except **VISTA**, a minimalistic front-end framework.
 
 The project build chain is using the following tools to **simplify** and **automate** the most frequent development tasks :
 
