@@ -135,16 +135,17 @@ function DrawText(
     float color_blue
     )
 {
-    return imagettftext(
-        image,
-        font_size,
-        angle,
-        column,
-        row,
-        imagecolorallocate( image, color_red, color_green, color_blue ),
-        font_path,
-        text
-        );
+    return
+        imagettftext(
+            image,
+            font_size,
+            angle,
+            column,
+            row,
+            imagecolorallocate( image, color_red, color_green, color_blue ),
+            font_path,
+            text
+            );
 }
 
 // ~~
@@ -165,13 +166,13 @@ function DrawJustifiedText(
     float space_width_factor = 1
     )
 {
-    var space_bounding_box = imagettfbbox( font_size, 0, font_path, 'M' );
-    var space_width = ( space_bounding_box[ 2 ] - space_bounding_box[ 0 ] ) * 0.5;
-    var line_height = ( space_bounding_box[ 1 ] - space_bounding_box[ 7 ] ) * 1.5;
-
+    var letter_bounding_box = imagettfbbox( font_size, 0, font_path, 'M' );
+    var line_height = ( letter_bounding_box[ 1 ] - letter_bounding_box[ 7 ] ) * 1.5 * line_height_factor;
+    var space_width = ( letter_bounding_box[ 2 ] - letter_bounding_box[ 0 ] ) * 0.5 * space_width_factor;
     var word_column = column;
     var word_row = row;
     var word_array = explode( ' ', text );
+    var last_row = row;
 
     foreach ( var word; word_array )
     {
@@ -182,7 +183,7 @@ function DrawJustifiedText(
         if ( word_column + word_width > column + width )
         {
             word_column = column;
-            word_row += line_height * line_height_factor;
+            word_row += line_height;
         }
 
         if ( word_row + word_height <= row + height )
@@ -198,7 +199,10 @@ function DrawJustifiedText(
                 word
                 );
 
-            word_column += word_width + space_width * space_width_factor;
+            word_column += word_width + space_width;
+            last_row = word_row;
         }
     }
+
+    return last_row + line_height;
 }
