@@ -67,7 +67,7 @@ It provides a starting version of :
     *   row editing
     *   row removal
 
-Both are almost unstyled, but fully functional.
+Both are fully functional, but almost unstyled, on purpose.
 
 The template files are located in the **PROJECT** folder, and have no external dependencies except from **VISTA**, a minimalistic front-end framework.
 
