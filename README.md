@@ -81,13 +81,13 @@ The project build chain is using the following tools to **simplify** and **autom
 *   [Cyclone](https://github.com/senselogic/CYCLONE)
     *   to update the database schema and data on the development system.
 *   [Phoenix](https://github.com/senselogic/PHOENIX)
-    *   to compile back-end scripts into human-readable PHP code.
+    *   to compile Phoenix scripts into human-readable PHP code.
 *   [Vista](https://github.com/senselogic/VISTA)
-    *   as the Stylus and JavaScript front-end framework for the public and administration websites.
+    *   as front-end framework for both the public and administration websites.
 *   [Phyx](https://github.com/senselogic/PHYX)
     *   to fix Stylus declarations.
 *   [Stylus](https://github.com/stylus/stylus)
-    *   to compile the Stylus scripts into CSS code.
+    *   to compile Stylus scripts into CSS code.
 *   [Cylus](https://github.com/senselogic/CYLUS)
     *   to find unused and missing CSS classes in the PHP code.
 *   [Resync](https://github.com/senselogic/RESYNC)
