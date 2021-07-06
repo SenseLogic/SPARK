@@ -23,12 +23,35 @@ function DrawLine(
 
 // ~~
 
+function DrawRectangle(
+    image,
+    float first_column,
+    float first_row,
+    float last_column,
+    float last_row,
+    float color_red,
+    float color_green,
+    float color_blue
+    )
+{
+    imagerectangle(
+        image,
+        first_column,
+        first_row,
+        last_column,
+        last_row,
+        imagecolorallocate( image, color_red, color_green, color_blue )
+        );
+}
+
+// ~~
+
 function DrawFilledRectangle(
     image,
-    float column,
-    float row,
-    float width,
-    float height,
+    float first_column,
+    float first_row,
+    float last_column,
+    float last_row,
     float color_red,
     float color_green,
     float color_blue
@@ -36,10 +59,10 @@ function DrawFilledRectangle(
 {
     imagefilledrectangle(
         image,
-        column,
-        row,
-        width,
-        height,
+        first_column,
+        first_row,
+        last_column,
+        last_row,
         imagecolorallocate( image, color_red, color_green, color_blue )
         );
 }
@@ -152,57 +175,231 @@ function DrawText(
 
 function DrawJustifiedText(
     image,
-    float column,
-    float row,
-    float width,
-    float height,
+    float canvas_column,
+    float canvas_row,
+    float canvas_width,
+    float canvas_height,
     string text,
+    bool text_has_tags = true,
     string font_path,
+    string bold_font_path,
+    string italic_font_path,
+    string bold_italic_font_path,
     string font_size,
     float color_red,
     float color_green,
     float color_blue,
-    float line_height_factor = 1,
-    float space_width_factor = 1
+    int word_alignment = -1,
+    int column_alignment = -1,
+    int row_alignment = -1,
+    float line_height_factor = 1.5,
+    float line_spacing_factor = 1,
+    float space_width_factor = 0.8
     )
 {
-    var letter_bounding_box = imagettfbbox( font_size, 0, font_path, 'M' );
-    var line_height = ( letter_bounding_box[ 1 ] - letter_bounding_box[ 7 ] ) * 1.5 * line_height_factor;
-    var space_width = ( letter_bounding_box[ 2 ] - letter_bounding_box[ 0 ] ) * 0.5 * space_width_factor;
-    var word_column = column;
-    var word_row = row;
-    var word_array = explode( ' ', text );
-    var last_row = row;
-
-    foreach ( var word; word_array )
+    if ( text_has_tags )
     {
-        var word_bounding_box = imagettfbbox( font_size, 0, font_path, word );
-        var word_width = word_bounding_box[ 2 ] - word_bounding_box[ 0 ];
-        var word_height = word_bounding_box[ 1 ] - word_bounding_box[ 7 ];
+        text
+            = str_replace(
+                  [ '<', '>' ],
+                  [ ' <', '> ' ],
+                  preg_replace( '/<([^>]*) +([^>]*)>/', '<$1¨$2>', text )
+                  );
+    }
 
-        if ( word_column + word_width > column + width )
+    var box = new stdClass();
+    var box.Column = 0;
+    var box.Row = 0;
+    var box.Width = 0;
+    var box.Height = 0;
+
+    var letter_bounding_box = imagettfbbox( font_size, 0, font_path, '-' );
+    var space_width = letter_bounding_box[ 2 ] * space_width_factor;
+
+    var letter_bounding_box = imagettfbbox( font_size, 0, font_path, 'AMWbdfhkltjgpqy' );
+    var letter_height = ( letter_bounding_box[ 1 ] - letter_bounding_box[ 7 ] );
+    var top_height = -letter_bounding_box[ 7 ];
+    var bottom_height = letter_bounding_box[ 1 ];
+    var line_height = letter_height * line_height_factor;
+
+    var line_index = 0;
+    var line_width_array = array();
+    line_width_array[ line_index ] = 0;
+
+    var word_column = 0;
+    var word_row = 0;
+    var word_text_array = explode( ' ', text );
+    var word_count = 0;
+    var word_array = array();
+    var word_is_bold = false;
+    var word_is_italic = false;
+
+    foreach ( var word_text; word_text_array )
+    {
+        if ( text_has_tags
+             && word_text === '<b>' )
         {
-            word_column = column;
-            word_row += line_height;
+            word_is_bold = true;
         }
-
-        if ( word_row + word_height <= row + height )
+        else if ( text_has_tags
+                  && word_text === '</b>' )
         {
-            imagettftext(
-                image,
-                font_size,
-                0,
-                word_column,
-                word_row,
-                imagecolorallocate( image, color_red, color_green, color_blue ),
-                font_path,
-                word
-                );
+            word_is_bold = false;
+        }
+        else if ( text_has_tags
+                  && word_text === '<i>' )
+        {
+            word_is_italic = true;
+        }
+        else if ( text_has_tags
+                  && word_text === '</i>' )
+        {
+            word_is_italic = false;
+        }
+        else if ( text_has_tags
+                  && ( word_text === '<br>'
+                       || word_text === '<br/>' ) )
+        {
+            ++line_index;
+            line_width_array[ line_index ] = 0;
 
-            word_column += word_width + space_width;
-            last_row = word_row;
+            word_column = 0;
+            word_row += line_height;
+
+            box.Height = word_row + letter_height;
+        }
+        else if ( !text_has_tags
+                  || word_text !== '' )
+        {
+            var word = new stdClass();
+            word.Text = word_text;
+            word.ColorRed = color_red;
+            word.ColorGreen = color_green;
+            word.ColorBlue = color_blue;
+            word.FontSize = font_size;
+
+            if ( word_is_bold )
+            {
+                if ( word_is_italic )
+                {
+                    word.FontPath = bold_italic_font_path;
+                }
+                else
+                {
+                    word.FontPath = bold_font_path;
+                }
+            }
+            else
+            {
+                if ( word_is_italic )
+                {
+                    word.FontPath = italic_font_path;
+                }
+                else
+                {
+                    word.FontPath = font_path;
+                }
+            }
+
+            var word_bounding_box = imagettfbbox( word.FontSize, 0, word.FontPath, word.Text );
+            word.Width = word_bounding_box[ 2 ];
+            word.Height = word_bounding_box[ 1 ];
+
+            if ( word_column + word.Width > canvas_width )
+            {
+                ++line_index;
+                line_width_array[ line_index ] = 0;
+
+                word_column = 0;
+                word_row += line_height;
+            }
+
+            if ( word_row + word.Height <= canvas_height )
+            {
+                var box_height = word_row + letter_height;
+
+                if ( box_height > box.Height )
+                {
+                    box.Height = box_height;
+                }
+
+                var line_width = word_column + word.Width;
+                line_width_array[ line_index ] = line_width;
+
+                if ( line_width > box.Width )
+                {
+                    box.Width = line_width;
+                }
+
+                word.Column = word_column;
+                word.Row = word_row;
+                word.LineIndex = line_index;
+
+                word_array[ word_count ] = word;
+                ++word_count;
+
+                word_column += word.Width + space_width;
+            }
         }
     }
 
-    return last_row + line_height;
+    if ( column_alignment < 0 )
+    {
+        box.Column = canvas_column;
+    }
+    else if ( column_alignment > 0 )
+    {
+        box.Column = canvas_column + canvas_width - box.Width;
+    }
+    else
+    {
+        box.Column = canvas_column + ( canvas_width - box.Width ) * 0.5;
+    }
+
+    if ( row_alignment < 0 )
+    {
+        box.Row = canvas_row;
+    }
+    else if ( row_alignment > 0 )
+    {
+        box.Row = canvas_row + canvas_height - box.Height;
+    }
+    else
+    {
+        box.Row = canvas_row + ( canvas_height - box.Height ) * 0.5;
+    }
+
+    foreach ( word; word_array )
+    {
+        if ( word.Text !== '' )
+        {
+            word_column = box.Column + word.Column;
+            word_row = box.Row + word.Row;
+
+            if ( word_alignment === 0 )
+            {
+                word_column += ( box.Width - line_width_array[ word.LineIndex ] ) * 0.5;
+            }
+            else if ( word_alignment > 0 )
+            {
+                word_column += box.Width - line_width_array[ word.LineIndex ];
+            }
+
+            imagettftext(
+                image,
+                word.FontSize,
+                0,
+                word_column,
+                word_row + top_height,
+                imagecolorallocate( image, word.ColorRed, word.ColorGreen, word.ColorBlue ),
+                word.FontPath,
+                word.Text
+                );
+        }
+    }
+
+    box.LastColumn = box.Column + box.Width - 1;
+    box.LastRow = box.Row + box.Height - 1;
+
+    return box;
 }
