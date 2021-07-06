@@ -35,6 +35,7 @@ It provides **base functions** for :
 *   mails
 *   feeds
 *   users
+*   images
 *   captchas
 
 The source files are located in the **PROJECT/CODE/FRAMEWORK** folder, and have no external dependencies.
