@@ -1,5 +1,26 @@
 // -- FUNCTIONS
 
+function GetImageColor(
+    image,
+    float color_red,
+    float color_green,
+    float color_blue,
+    float color_opacity
+    )
+{
+    if ( color_opacity === 255 )
+    {
+        return imagecolorallocate( image, color_red, color_green, color_blue );
+    }
+    else
+    {
+
+        return imagecolorallocatealpha( image, color_red, color_green, color_blue, ( 255 - color_opacity ) * 127 / 255 );
+    }
+}
+
+// ~~
+
 function DrawLine(
     image,
     float first_column,
@@ -8,7 +29,8 @@ function DrawLine(
     float last_row,
     float color_red,
     float color_green,
-    float color_blue
+    float color_blue,
+    float color_opacity = 255
     )
 {
     imageline(
@@ -17,7 +39,7 @@ function DrawLine(
         first_row,
         last_column,
         last_row,
-        imagecolorallocate( image, color_red, color_green, color_blue )
+        GetImageColor( image, color_red, color_green, color_blue, color_opacity )
         );
 }
 
@@ -31,7 +53,8 @@ function DrawRectangle(
     float last_row,
     float color_red,
     float color_green,
-    float color_blue
+    float color_blue,
+    float color_opacity = 255
     )
 {
     imagerectangle(
@@ -40,7 +63,7 @@ function DrawRectangle(
         first_row,
         last_column,
         last_row,
-        imagecolorallocate( image, color_red, color_green, color_blue )
+        GetImageColor( image, color_red, color_green, color_blue, color_opacity )
         );
 }
 
@@ -54,7 +77,8 @@ function DrawFilledRectangle(
     float last_row,
     float color_red,
     float color_green,
-    float color_blue
+    float color_blue,
+    float color_opacity = 255
     )
 {
     imagefilledrectangle(
@@ -63,7 +87,28 @@ function DrawFilledRectangle(
         first_row,
         last_column,
         last_row,
-        imagecolorallocate( image, color_red, color_green, color_blue )
+        GetImageColor( image, color_red, color_green, color_blue, color_opacity )
+        );
+}
+
+// ~~
+
+function DrawBox(
+    image,
+    box,
+    float color_red,
+    float color_green,
+    float color_blue,
+    float color_opacity = 255
+    )
+{
+    imagerectangle(
+        image,
+        box.Column,
+        box.Row,
+        box.Column + box.Width - 1,
+        box.Row + box.Height - 1,
+        GetImageColor( image, color_red, color_green, color_blue, color_opacity )
         );
 }
 
@@ -82,7 +127,7 @@ function DrawStretchedImage(
     float source_height
     )
 {
-    imagecopyresized(
+    imagecopyresampled(
         target_image,
         source_image,
         target_column,
@@ -129,7 +174,7 @@ function DrawCoveredImage(
         cropped_source_row = floor( ( source_height - cropped_source_height ) * 0.5 );
     }
 
-    imagecopyresized(
+    imagecopyresampled(
         target_image,
         source_image,
         target_column,
@@ -145,6 +190,141 @@ function DrawCoveredImage(
 
 // ~~
 
+function DrawSlicedImage(
+    target_image,
+    float target_column,
+    float target_row,
+    float target_width,
+    float target_height,
+    float target_border,
+    source_image,
+    float source_column,
+    float source_row,
+    float source_width,
+    float source_height,
+    float source_border
+    )
+{
+    imagecopyresampled(
+        target_image,
+        source_image,
+        target_column,
+        target_row,
+        source_column,
+        source_row,
+        target_border,
+        target_border,
+        source_border,
+        source_border
+        );    // upper left corner
+
+    imagecopyresampled(
+        target_image,
+        source_image,
+        target_column + target_width - target_border,
+        target_row,
+        source_column + source_width - source_border,
+        source_row,
+        target_border,
+        target_border,
+        source_border,
+        source_border
+        );    // upper right corner
+
+    imagecopyresampled(
+        target_image,
+        source_image,
+        target_column,
+        target_row + target_height - target_border,
+        source_column,
+        source_row + source_height - source_border,
+        target_border,
+        target_border,
+        source_border,
+        source_border
+        );    // lower left corner
+
+    imagecopyresampled(
+        target_image,
+        source_image,
+        target_column + target_width - target_border,
+        target_row + target_height - target_border,
+        source_column + source_width - source_border,
+        source_row + source_height - source_border,
+        target_border,
+        target_border,
+        source_border,
+        source_border
+        );    // lower right corner
+
+    imagecopyresampled(
+        target_image,
+        source_image,
+        target_column,
+        target_row + target_border,
+        source_column,
+        source_row + source_border,
+        target_border,
+        target_height - target_border * 2,
+        source_border,
+        source_height - source_border * 2
+        );    // left edge
+
+    imagecopyresampled(
+        target_image,
+        source_image,
+        target_column + target_width - target_border,
+        target_row + target_border,
+        source_column + source_width - source_border,
+        source_row + source_border,
+        target_border,
+        target_height - target_border * 2,
+        source_border,
+        source_height - source_border * 2
+        );    // right edge
+
+    imagecopyresampled(
+        target_image,
+        source_image,
+        target_column + target_border,
+        target_row,
+        source_column + source_border,
+        source_row,
+        target_width - target_border * 2,
+        target_border,
+        source_width - source_border * 2,
+        source_border
+        );    // upper edge
+
+    imagecopyresampled(
+        target_image,
+        source_image,
+        target_column + target_border,
+        target_row + target_height - target_border,
+        source_column + source_border,
+        source_row + source_height - source_border,
+        target_width - target_border * 2,
+        target_border,
+        source_width - source_border * 2,
+        source_border
+        );    // lower edge
+
+    imagecopyresampled(
+        target_image,
+        source_image,
+        target_column + target_border,
+        target_row + target_border,
+        source_column + source_border,
+        source_row + source_border,
+        target_width - target_border * 2,
+        target_height - target_border * 2,
+        source_width - source_border * 2,
+        source_height - source_border * 2
+        );    // middle
+}
+
+// ~~
+
 function DrawText(
     image,
     float column,
@@ -155,7 +335,8 @@ function DrawText(
     string font_size,
     float color_red,
     float color_green,
-    float color_blue
+    float color_blue,
+    float color_opacity = 255
     )
 {
     return
@@ -165,7 +346,7 @@ function DrawText(
             angle,
             column,
             row,
-            imagecolorallocate( image, color_red, color_green, color_blue ),
+            GetImageColor( image, color_red, color_green, color_blue, color_opacity ),
             font_path,
             text
             );
@@ -189,21 +370,28 @@ function DrawJustifiedText(
     float color_red,
     float color_green,
     float color_blue,
+    float color_opacity = 255,
     int word_alignment = -1,
     int column_alignment = -1,
     int row_alignment = -1,
-    float line_height_factor = 1.5,
-    float line_spacing_factor = 1,
-    float space_width_factor = 0.8
+    float line_height_factor = 1,
+    float space_width_factor = 1
     )
 {
     if ( text_has_tags )
     {
+        do
+        {
+            var old_text = text;
+            text = preg_replace( '/<([^>]*?) +([^>]*?)>/', '<$1¨$2>', old_text );
+        }
+        while ( text !== old_text );
+
         text
             = str_replace(
-                  [ '<', '>' ],
-                  [ ' <', '> ' ],
-                  preg_replace( '/<([^>]*) +([^>]*)>/', '<$1¨$2>', text )
+                  [ '<', '>', '&lt;', '&gt;' ],
+                  [ ' <', '> ', '<', '>' ],
+                  text
                   );
     }
 
@@ -213,13 +401,13 @@ function DrawJustifiedText(
     var box.Width = 0;
     var box.Height = 0;
 
-    var letter_bounding_box = imagettfbbox( font_size, 0, font_path, '-' );
-    var space_width = letter_bounding_box[ 2 ] * space_width_factor;
+    var space_bounding_box = imagettfbbox( font_size, 0, font_path, ' ' );
+    var space_width = space_bounding_box[ 2 ] * space_width_factor;
 
-    var letter_bounding_box = imagettfbbox( font_size, 0, font_path, 'AMWbdfhkltjgpqy' );
-    var letter_height = ( letter_bounding_box[ 1 ] - letter_bounding_box[ 7 ] );
-    var top_height = -letter_bounding_box[ 7 ];
-    var bottom_height = letter_bounding_box[ 1 ];
+    var text_bounding_box = imagettfbbox( font_size, 0, font_path, 'AMWbdfhkltjgpqy' );
+    var letter_upper_height = -text_bounding_box[ 7 ];
+    var letter_lower_height = text_bounding_box[ 1 ];
+    var letter_height = ( text_bounding_box[ 1 ] - text_bounding_box[ 7 ] );
     var line_height = letter_height * line_height_factor;
 
     var line_index = 0;
@@ -257,6 +445,17 @@ function DrawJustifiedText(
             word_is_italic = false;
         }
         else if ( text_has_tags
+                  && ( word_text === '<u>'
+                       || word_text === '</u>'
+                       || word_text === '<sub>'
+                       || word_text === '</sub>'
+                       || word_text === '<sup>'
+                       || word_text === '</sup>'
+                       || word_text === '<div>'
+                       || word_text === '</div>' ) )
+        {
+        }
+        else if ( text_has_tags
                   && ( word_text === '<br>'
                        || word_text === '<br/>' ) )
         {
@@ -276,6 +475,7 @@ function DrawJustifiedText(
             word.ColorRed = color_red;
             word.ColorGreen = color_green;
             word.ColorBlue = color_blue;
+            word.ColorOpacity = color_opacity;
             word.FontSize = font_size;
 
             if ( word_is_bold )
@@ -343,63 +543,82 @@ function DrawJustifiedText(
         }
     }
 
-    if ( column_alignment < 0 )
+    if ( column_alignment === -2 )
+    {
+        box.Column = canvas_column - box.Width;
+    }
+    else if ( column_alignment === -1 )
     {
         box.Column = canvas_column;
     }
-    else if ( column_alignment > 0 )
-    {
-        box.Column = canvas_column + canvas_width - box.Width;
-    }
-    else
+    else if ( column_alignment === 0 )
     {
         box.Column = canvas_column + ( canvas_width - box.Width ) * 0.5;
     }
+    else if ( column_alignment === 1 )
+    {
+        box.Column = canvas_column + canvas_width - box.Width;
+    }
+    else if ( column_alignment === 2 )
+    {
+        box.Column = canvas_column + canvas_width;
+    }
 
-    if ( row_alignment < 0 )
+    if ( row_alignment === -2 )
     {
-        box.Row = canvas_row;
+        box.Row = canvas_row - box.Height;
     }
-    else if ( row_alignment > 0 )
-    {
-        box.Row = canvas_row + canvas_height - box.Height;
-    }
-    else
+    else if ( row_alignment === 0 )
     {
         box.Row = canvas_row + ( canvas_height - box.Height ) * 0.5;
     }
-
-    foreach ( word; word_array )
+    else if ( row_alignment === -1 )
     {
-        if ( word.Text !== '' )
-        {
-            word_column = box.Column + word.Column;
-            word_row = box.Row + word.Row;
-
-            if ( word_alignment === 0 )
-            {
-                word_column += ( box.Width - line_width_array[ word.LineIndex ] ) * 0.5;
-            }
-            else if ( word_alignment > 0 )
-            {
-                word_column += box.Width - line_width_array[ word.LineIndex ];
-            }
-
-            imagettftext(
-                image,
-                word.FontSize,
-                0,
-                word_column,
-                word_row + top_height,
-                imagecolorallocate( image, word.ColorRed, word.ColorGreen, word.ColorBlue ),
-                word.FontPath,
-                word.Text
-                );
-        }
+        box.Row = canvas_row;
+    }
+    else if ( row_alignment === 1 )
+    {
+        box.Row = canvas_row + canvas_height - box.Height;
+    }
+    else if ( row_alignment === 2 )
+    {
+        box.Row = canvas_row + canvas_height;
     }
 
-    box.LastColumn = box.Column + box.Width - 1;
-    box.LastRow = box.Row + box.Height - 1;
+    if ( image !== null )
+    {
+        foreach ( word; word_array )
+        {
+            if ( word.Text !== '' )
+            {
+                if ( word_alignment === -1 )
+                {
+                    word_column = box.Column + word.Column;
+                }
+                else if ( word_alignment === 0 )
+                {
+                    word_column = box.Column + word.Column + ( box.Width - line_width_array[ word.LineIndex ] ) * 0.5;
+                }
+                else if ( word_alignment === 1 )
+                {
+                    word_column = box.Column + word.Column + box.Width - line_width_array[ word.LineIndex ];
+                }
+
+                word_row = box.Row + word.Row;
+
+                imagettftext(
+                    image,
+                    word.FontSize,
+                    0,
+                    word_column,
+                    word_row + letter_upper_height,
+                    GetImageColor( image, word.ColorRed, word.ColorGreen, word.ColorBlue, word.ColorOpacity ),
+                    word.FontPath,
+                    word.Text
+                    );
+            }
+        }
+    }
 
     return box;
 }
