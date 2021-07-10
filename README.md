@@ -30,6 +30,7 @@ It provides **base functions** for :
 *   translations
 *   time
 *   files
+*   buffers
 *   requests
 *   queries
 *   mails

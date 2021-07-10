@@ -54,3 +54,14 @@ function GetFileText(
 {
     return file_get_contents( file_path );
 }
+
+
+// ~~
+
+function SetFileText(
+    string file_path,
+    string file_text
+    )
+{
+    return file_put_contents( file_path, file_text );
+}

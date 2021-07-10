@@ -1,0 +1,15 @@
+// -- FUNCTIONS
+
+function BeginBuffer(
+    )
+{
+    ob_start();
+}
+
+// ~~
+
+function EndBuffer(
+    )
+{
+    return ob_end_clean();
+}

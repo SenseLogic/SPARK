@@ -88,6 +88,15 @@ function GetBaseFolderPath(
 
 // ~~
 
+function GetBaseFilePath(
+    string file_path
+    )
+{
+    return _SERVER[ 'DOCUMENT_ROOT' ] .. file_path;
+}
+
+// ~~
+
 function GetAbsoluteFilePath(
     relative_file_path,
     base_folder_path = null
