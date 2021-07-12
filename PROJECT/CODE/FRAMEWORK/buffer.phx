@@ -3,7 +3,15 @@
 function BeginBuffer(
     )
 {
-    ob_start();
+    return ob_start();
+}
+
+// ~~
+
+function GetBuffer(
+    )
+{
+    return ob_get_contents();
 }
 
 // ~~
