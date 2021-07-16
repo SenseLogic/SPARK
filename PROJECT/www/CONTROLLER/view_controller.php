@@ -18,7 +18,7 @@ class VIEW_CONTROLLER
         $this->LanguageCode = $language_code;
         $this->LanguageDecimalSeparator = ',';
         $this->TextArray = GetDatabaseTextArray();
-        $this->TextMap = GetTextMap( $this->TextArray );
+        $this->TextBySlugMap = GetTextBySlugMap( $this->TextArray );
     }
 
     // -- INQUIRIES
@@ -63,7 +63,7 @@ class VIEW_CONTROLLER
         string $slug
         )
     {
-        return $this->GetProcessedText( GetTranslatedText( $this->TextMap[ $slug ], $this->LanguageCode ) );
+        return $this->GetProcessedText( GetTranslatedText( $this->TextBySlugMap[ $slug ], $this->LanguageCode ) );
     }
 
     // ~~
@@ -72,6 +72,6 @@ class VIEW_CONTROLLER
         string $slug
         )
     {
-        return GetTranslatedNumber( $this->TextMap[ $slug ], $this->LanguageDecimalSeparator );
+        return GetTranslatedNumber( $this->TextBySlugMap[ $slug ], $this->LanguageDecimalSeparator );
     }
 }

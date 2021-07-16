@@ -3,7 +3,7 @@
 function GetDatabaseArticleArray(
     )
 {
-     $statement = GetDatabaseStatement( 'select Id, Slug, Name, Text, Image, Video from ARTICLE' );
+     $statement = GetDatabaseStatement( 'select `Id`, `Slug`, `Name`, `Text`, `Image`, `Video` from `ARTICLE`' );
 
     if ( !$statement->execute() )
     {
@@ -27,7 +27,7 @@ function GetDatabaseArticleById(
     int $id
     )
 {
-     $statement = GetDatabaseStatement( 'select Id, Slug, Name, Text, Image, Video from ARTICLE where Id = ? limit 1' );
+     $statement = GetDatabaseStatement( 'select `Id`, `Slug`, `Name`, `Text`, `Image`, `Video` from `ARTICLE` where `Id` = ? limit 1' );
     $statement->bindParam( 1, $id, PDO::PARAM_INT );
 
     if ( !$statement->execute() )
@@ -51,7 +51,7 @@ function AddDatabaseArticle(
     string $video
     )
 {
-     $statement = GetDatabaseStatement( 'insert into ARTICLE ( Slug, Name, Text, Image, Video ) values ( ?, ?, ?, ?, ? )' );
+     $statement = GetDatabaseStatement( 'insert into `ARTICLE` ( `Slug`, `Name`, `Text`, `Image`, `Video` ) values ( ?, ?, ?, ?, ? )' );
     $statement->bindParam( 1, $slug, PDO::PARAM_STR );
     $statement->bindParam( 2, $name, PDO::PARAM_STR );
     $statement->bindParam( 3, $text, PDO::PARAM_STR );
@@ -76,7 +76,7 @@ function PutDatabaseArticle(
     string $video
     )
 {
-     $statement = GetDatabaseStatement( 'replace into ARTICLE ( Slug, Name, Text, Image, Video ) values ( ?, ?, ?, ?, ? )' );
+     $statement = GetDatabaseStatement( 'replace into `ARTICLE` ( `Slug`, `Name`, `Text`, `Image`, `Video` ) values ( ?, ?, ?, ?, ? )' );
     $statement->bindParam( 1, $slug, PDO::PARAM_STR );
     $statement->bindParam( 2, $name, PDO::PARAM_STR );
     $statement->bindParam( 3, $text, PDO::PARAM_STR );
@@ -102,7 +102,7 @@ function SetDatabaseArticle(
     string $video
     )
 {
-     $statement = GetDatabaseStatement( 'update ARTICLE set Slug = ?, Name = ?, Text = ?, Image = ?, Video = ? where Id = ?' );
+     $statement = GetDatabaseStatement( 'update `ARTICLE` set `Slug` = ?, `Name` = ?, `Text` = ?, `Image` = ?, `Video` = ? where Id = ?' );
     $statement->bindParam( 1, $slug, PDO::PARAM_STR );
     $statement->bindParam( 2, $name, PDO::PARAM_STR );
     $statement->bindParam( 3, $text, PDO::PARAM_STR );
@@ -122,7 +122,7 @@ function RemoveDatabaseArticleById(
     int $id
     )
 {
-     $statement = GetDatabaseStatement( 'delete from ARTICLE where Id = ?' );
+     $statement = GetDatabaseStatement( 'delete from `ARTICLE` where `Id` = ?' );
     $statement->bindParam( 1, $id, PDO::PARAM_INT );
 
     if ( !$statement->execute() )

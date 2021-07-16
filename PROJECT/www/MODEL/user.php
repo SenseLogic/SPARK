@@ -3,7 +3,7 @@
 function GetDatabaseUserArray(
     )
 {
-     $statement = GetDatabaseStatement( 'select Id, Email, Pseudonym, Password, Role from USER order by Id asc' );
+     $statement = GetDatabaseStatement( 'select `Id`, `Email`, `Pseudonym`, `Password`, `Role` from `USER` order by `Id` asc' );
 
     if ( !$statement->execute() )
     {
@@ -26,7 +26,7 @@ function GetDatabaseUserArray(
 function GetDatabaseUserByIdMap(
     )
 {
-     $statement = GetDatabaseStatement( 'select Id, Email, Pseudonym, Password, Role from USER' );
+     $statement = GetDatabaseStatement( 'select `Id`, `Email`, `Pseudonym`, `Password`, `Role` from `USER`' );
 
     if ( !$statement->execute() )
     {
@@ -50,7 +50,7 @@ function GetDatabaseUserById(
     int $id
     )
 {
-     $statement = GetDatabaseStatement( 'select Id, Email, Pseudonym, Password, Role from USER where Id = ? limit 1' );
+     $statement = GetDatabaseStatement( 'select `Id`, `Email`, `Pseudonym`, `Password`, `Role` from `USER` where `Id` = ? limit 1' );
     $statement->bindParam( 1, $id, PDO::PARAM_INT );
 
     if ( !$statement->execute() )
@@ -73,7 +73,7 @@ function AddDatabaseUser(
     string $role
     )
 {
-     $statement = GetDatabaseStatement( 'insert into USER ( Email, Pseudonym, Password, Role ) values ( ?, ?, ?, ? )' );
+     $statement = GetDatabaseStatement( 'insert into `USER` ( `Email`, `Pseudonym`, `Password`, `Role` ) values ( ?, ?, ?, ? )' );
     $statement->bindParam( 1, $email, PDO::PARAM_STR );
     $statement->bindParam( 2, $pseudonym, PDO::PARAM_STR );
     $statement->bindParam( 3, $password, PDO::PARAM_STR );
@@ -96,7 +96,7 @@ function PutDatabaseUser(
     string $role
     )
 {
-     $statement = GetDatabaseStatement( 'replace into USER ( Email, Pseudonym, Password, Role ) values ( ?, ?, ?, ? )' );
+     $statement = GetDatabaseStatement( 'replace into `USER` ( `Email`, `Pseudonym`, `Password`, `Role` ) values ( ?, ?, ?, ? )' );
     $statement->bindParam( 1, $email, PDO::PARAM_STR );
     $statement->bindParam( 2, $pseudonym, PDO::PARAM_STR );
     $statement->bindParam( 3, $password, PDO::PARAM_STR );
@@ -120,7 +120,7 @@ function SetDatabaseUser(
     string $role
     )
 {
-     $statement = GetDatabaseStatement( 'update USER set Email = ?, Pseudonym = ?, Password = ?, Role = ? where Id = ?' );
+     $statement = GetDatabaseStatement( 'update `USER` set `Email` = ?, `Pseudonym` = ?, `Password` = ?, `Role` = ? where Id = ?' );
     $statement->bindParam( 1, $email, PDO::PARAM_STR );
     $statement->bindParam( 2, $pseudonym, PDO::PARAM_STR );
     $statement->bindParam( 3, $password, PDO::PARAM_STR );
@@ -139,7 +139,7 @@ function RemoveDatabaseUserById(
     int $id
     )
 {
-     $statement = GetDatabaseStatement( 'delete from USER where Id = ?' );
+     $statement = GetDatabaseStatement( 'delete from `USER` where `Id` = ?' );
     $statement->bindParam( 1, $id, PDO::PARAM_INT );
 
     if ( !$statement->execute() )

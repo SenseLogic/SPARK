@@ -8,7 +8,7 @@ function GetDatabaseTextBySlug(
     string $slug
     )
 {
-     $statement = GetDatabaseStatement( 'select Id, Slug, Text from TEXT where Slug = ? limit 1' );
+     $statement = GetDatabaseStatement( 'select `Id`, `Slug`, `Text` from `TEXT` where `Slug` = ? limit 1' );
     $statement->bindParam( 1, $slug, PDO::PARAM_STR );
 
     if ( !$statement->execute() )
@@ -24,16 +24,16 @@ function GetDatabaseTextBySlug(
 
 // ~~
 
-function GetTextMap(
+function GetTextBySlugMap(
     array &$text_array
     )
 {
-     $text_map = array();
+     $text_by_slug_map = array();
 
     foreach ( $text_array as  $text )
     {
-        $text_map[ $text->Slug ] = $text->Text;
+        $text_by_slug_map[ $text->Slug ] = $text->Text;
     }
 
-    return $text_map;
+    return $text_by_slug_map;
 }

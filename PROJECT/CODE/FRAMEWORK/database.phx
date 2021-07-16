@@ -77,7 +77,7 @@ function GetDatabaseTableObjectArray(
     string table_name
     )
 {
-    var statement = GetDatabaseStatement( 'select * from ' .. table_name );
+    var statement = GetDatabaseStatement( 'select * from `' .. table_name .. '`' );
 
     if ( !statement.execute() )
     {

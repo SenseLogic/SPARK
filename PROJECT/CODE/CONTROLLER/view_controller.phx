@@ -18,7 +18,7 @@ class VIEW_CONTROLLER
         .LanguageCode = language_code;
         .LanguageDecimalSeparator = ',';
         .TextArray = GetDatabaseTextArray();
-        .TextMap = GetTextMap( .TextArray );
+        .TextBySlugMap = GetTextBySlugMap( .TextArray );
     }
 
     // -- INQUIRIES
@@ -63,7 +63,7 @@ class VIEW_CONTROLLER
         string slug
         )
     {
-        return .GetProcessedText( GetTranslatedText( .TextMap[ slug ], .LanguageCode ) );
+        return .GetProcessedText( GetTranslatedText( .TextBySlugMap[ slug ], .LanguageCode ) );
     }
 
     // ~~
@@ -72,6 +72,6 @@ class VIEW_CONTROLLER
         string slug
         )
     {
-        return GetTranslatedNumber( .TextMap[ slug ], .LanguageDecimalSeparator );
+        return GetTranslatedNumber( .TextBySlugMap[ slug ], .LanguageDecimalSeparator );
     }
 }
