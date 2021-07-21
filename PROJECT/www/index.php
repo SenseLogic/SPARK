@@ -84,6 +84,7 @@ function Route(
             else if ( $it_is_post_request )
             {
                  $path = '/admin/text';
+
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_connect_user_controller.php';
             }
             else
@@ -284,8 +285,7 @@ function Route(
                       && HasPostValue( 'Email' )
                       && HasPostValue( 'Phone' )
                       && HasPostValue( 'Subject' )
-                      && HasPostValue( 'Message' )
-                      && HasPostValue( 'DateTime' ) )
+                      && HasPostValue( 'Message' ) )
             {
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_add_contact_controller.php';
             }

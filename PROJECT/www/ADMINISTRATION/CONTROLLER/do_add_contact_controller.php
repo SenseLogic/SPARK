@@ -20,9 +20,8 @@ class DO_ADD_CONTACT_CONTROLLER extends CONTROLLER
          $phone = GetPostValue( 'Phone' );
          $subject = GetPostValue( 'Subject' );
          $message = GetPostValue( 'Message' );
-         $date_time = GetPostValue( 'DateTime' );
 
-        AddDatabaseContact( $name, $company, $email, $phone, $subject, $message, $date_time );
+        AddDatabaseContact( $name, $company, $email, $phone, $subject, $message );
 
         Redirect( '/admin/contact' );
     }

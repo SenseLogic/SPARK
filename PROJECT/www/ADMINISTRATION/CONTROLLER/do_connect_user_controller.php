@@ -21,7 +21,7 @@ class DO_CONNECT_USER_CONTROLLER extends CONTROLLER
 
         if ( $user === null )
         {
-            $this->Title = 'LOG IN';
+            $this->Title = 'Sign In';
 
             require_once __DIR__ . '/' . '../VIEW/connect_user_view.php';
         }

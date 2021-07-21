@@ -28,7 +28,7 @@ import '../../MODEL/{#variable#}_model.php';
 // -- STATEMENTS
 
 var input = GetJsonInput();
-AddDatabase{#attribute#}( <%input.{%attribute%}<~!{%is_last%}<>, ~>%> );
+AddDatabase{#attribute#}( <%¨input.{%attribute%}<~!{%is_last_added%}<>, ~>¨%> );
 
 SetStatus( 201 );
 %%PHX/CONTROLLER/API/set_{#variable#}_controller.phx
@@ -116,7 +116,7 @@ import '../../MODEL/{#variable#}_model.php';
 // -- STATEMENTS
 
 var input = GetJsonInput();
-AddDatabase{#attribute#}( <%input.{%attribute%}<~!{%is_last%}<>, ~>%> );
+AddDatabase{#attribute#}( <%¨input.{%attribute%}<~!{%is_last_added%}<>, ~>¨%> );
 
 SetStatus( 201 );
 %%PHX/CONTROLLER/API/set_{#variable#}_controller.phx

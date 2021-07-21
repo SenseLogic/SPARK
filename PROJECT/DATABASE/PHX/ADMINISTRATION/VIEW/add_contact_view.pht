@@ -92,17 +92,6 @@
             it_is_valid_add_contact_form = false;
         }
 
-        if ( date_time_field.value !== "" )
-        {
-            date_time_field.classList.remove( "form-field-error" );
-        }
-        else
-        {
-            date_time_field.classList.add( "form-field-error" );
-
-            it_is_valid_add_contact_form = false;
-        }
-
         return it_is_valid_add_contact_form;
     }
 </script>
@@ -145,12 +134,6 @@
                 </div>
                 <div>
                     <textarea class="form-textarea" name="Message"></textarea>
-                </div>
-                <div class="form-field-name">
-                    Date Time :
-                </div>
-                <div>
-                    <input class="form-input" name="DateTime" type="text"/>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="/admin/contact">
                 </a>

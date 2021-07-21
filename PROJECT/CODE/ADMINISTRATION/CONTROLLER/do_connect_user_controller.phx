@@ -21,7 +21,7 @@ class DO_CONNECT_USER_CONTROLLER extends CONTROLLER
 
         if ( user === null )
         {
-            .Title = 'LOG IN';
+            .Title = 'Sign In';
 
             import '../VIEW/connect_user_view.php';
         }

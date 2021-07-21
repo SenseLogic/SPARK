@@ -40,11 +40,11 @@ class DO_ADD_{#type#}_CONTROLLER extends CONTROLLER
         )
     {
         parent::constructor();
-<$<~{%is_scalar%}<>
+<%¨<~{%is_scalar%}<>
         var {%variable%} = GetPostValue( '{%attribute%}' );<>
-        var {%variable%} = GetJsonObject( GetPostValue( '{%attribute%}' ) );~>$>
+        var {%variable%} = GetJsonObject( GetPostValue( '{%attribute%}' ) );~>¨%>
 
-        AddDatabase{#attribute#}( <${%variable%}<~!{%is_last%}<>, ~>$> );
+        AddDatabase{#attribute#}( <%¨{%variable%}<~!{%is_last_added%}<>, ~>¨%> );
 
         Redirect( '/admin/{#style#}' );
     }
@@ -102,7 +102,7 @@ class DO_EDIT_{#type#}_CONTROLLER extends CONTROLLER
         var {%variable%} = GetPostValue( '{%attribute%}' );<>
         var {%variable%} = GetJsonObject( GetPostValue( '{%attribute%}' ) );~>$>
 
-        SetDatabase{#attribute#}( {#variable#}_{#key_variable#}, <${%variable%}<~!{%is_last%}<>, ~>$> );
+        SetDatabase{#attribute#}( {#variable#}_{#key_variable#}, <${%variable%}<~!{%is_last_non_key%}<>, ~>$> );
 
         Redirect( '/admin/{#style#}' );
     }
@@ -240,7 +240,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
 
         add_{#variable#}_form = document.Add{#attribute#}Form;<$
         {%variable%}_field = add_{#variable#}_form.{%attribute%};$>
-<$
+<%¨
         if ( {%variable%}_field.value !== "" )
         {
             {%variable%}_field.classList.remove( "form-field-error" );
@@ -251,14 +251,14 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
 
             it_is_valid_add_{#variable#}_form = false;
         }
-$>
+¨%>
         return it_is_valid_add_{#variable#}_form;
     }
 </script>
 <div>
     <div class="page-section form-section">
         <form class="form-centered" name="Add{#attribute#}Form" onsubmit="return IsValidAdd{#attribute#}Form()" action="/admin/{#style#}/add" method="post">
-            <div class="form-container"><$
+            <div class="form-container"><%¨
                 <div class="form-field-name">
                     {%title%} :
                 </div>
@@ -279,7 +279,7 @@ $>
                     </div><><~{%is_text%}<>
                     <textarea class="form-textarea" name="{%attribute%}"></textarea><>
                     <input class="form-input" name="{%attribute%}" type="text"/>~>~>~>
-                </div>$>
+                </div>¨%>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="/admin/{#style#}">
                 </a>
                 <button class="justify-self-end form-button form-button-large apply-button" type="submit">

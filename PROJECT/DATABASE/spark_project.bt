@@ -85,6 +85,7 @@ function Route(
             else if ( it_is_post_request )
             {
                 var path = '/admin/text';
+
                 import 'ADMINISTRATION/CONTROLLER/do_connect_user_controller.php';
             }
             else
@@ -135,8 +136,8 @@ function Route(
             }
             else if ( it_is_post_request
                       && path_value_count === 3
-                      && path_value_array[ 2 ] === 'add'<$
-                      && HasPostValue( '{%attribute%}' )$> )
+                      && path_value_array[ 2 ] === 'add'<%¨
+                      && HasPostValue( '{%attribute%}' )¨%> )
             {
                 import 'ADMINISTRATION/CONTROLLER/do_add_{#variable#}_controller.php';
             }

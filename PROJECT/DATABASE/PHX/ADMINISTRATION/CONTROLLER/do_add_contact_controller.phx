@@ -20,9 +20,8 @@ class DO_ADD_CONTACT_CONTROLLER extends CONTROLLER
         var phone = GetPostValue( 'Phone' );
         var subject = GetPostValue( 'Subject' );
         var message = GetPostValue( 'Message' );
-        var date_time = GetPostValue( 'DateTime' );
 
-        AddDatabaseContact( name, company, email, phone, subject, message, date_time );
+        AddDatabaseContact( name, company, email, phone, subject, message );
 
         Redirect( '/admin/contact' );
     }
