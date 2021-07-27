@@ -47,10 +47,10 @@
         <?php echo htmlspecialchars( $article->Text ); ?>
     </div>
     <div>
-        <img class="article-image" src="<?php echo $article->Image; ?>"/>
+        <img class="article-image" src="<?php echo $article->ImagePath; ?>"/>
     </div>
     <div>
-        <video class="article-video" src="<?php echo $article->Video; ?>" autoplay loop>
+        <video class="article-video" src="<?php echo $article->VideoPath; ?>" autoplay loop>
         </video>
     </div>
 </div>

@@ -17,10 +17,10 @@ class DO_ADD_ARTICLE_CONTROLLER extends CONTROLLER
         var slug = GetPostValue( 'Slug' );
         var name = GetPostValue( 'Name' );
         var text = GetPostValue( 'Text' );
-        var image = GetPostValue( 'Image' );
-        var video = GetPostValue( 'Video' );
+        var image_path = GetPostValue( 'ImagePath' );
+        var video_path = GetPostValue( 'VideoPath' );
 
-        AddDatabaseArticle( slug, name, text, image, video );
+        AddDatabaseArticle( slug, name, text, image_path, video_path );
 
         Redirect( '/admin/article' );
     }

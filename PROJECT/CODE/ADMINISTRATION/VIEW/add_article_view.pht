@@ -10,8 +10,8 @@
             slug_field,
             name_field,
             text_field,
-            image_field,
-            video_field;
+            image_path_field,
+            video_path_field;
 
         it_is_valid_add_article_form = true;
 
@@ -19,8 +19,8 @@
         slug_field = add_article_form.Slug;
         name_field = add_article_form.Name;
         text_field = add_article_form.Text;
-        image_field = add_article_form.Image;
-        video_field = add_article_form.Video;
+        image_path_field = add_article_form.ImagePath;
+        video_path_field = add_article_form.VideoPath;
 
         if ( slug_field.value !== "" )
         {
@@ -55,24 +55,24 @@
             it_is_valid_add_article_form = false;
         }
 
-        if ( image_field.value !== "" )
+        if ( image_path_field.value !== "" )
         {
-            image_field.classList.remove( "form-field-error" );
+            image_path_field.classList.remove( "form-field-error" );
         }
         else
         {
-            image_field.classList.add( "form-field-error" );
+            image_path_field.classList.add( "form-field-error" );
 
             it_is_valid_add_article_form = false;
         }
 
-        if ( video_field.value !== "" )
+        if ( video_path_field.value !== "" )
         {
-            video_field.classList.remove( "form-field-error" );
+            video_path_field.classList.remove( "form-field-error" );
         }
         else
         {
-            video_field.classList.add( "form-field-error" );
+            video_path_field.classList.add( "form-field-error" );
 
             it_is_valid_add_article_form = false;
         }
@@ -103,10 +103,10 @@
                     <textarea class="form-textarea" name="Text"></textarea>
                 </div>
                 <div class="form-field-name">
-                    Image :
+                    Image Path :
                 </div>
                 <div>
-                    <input class="form-input" name="Image" type="text" oninput="HandleImagePathInputChangeEvent( this )"/>
+                    <input class="form-input" name="ImagePath" type="text" oninput="HandleImagePathInputChangeEvent( this )"/>
                     <div class="form-upload-container">
                         <img class="form-upload-image" src="" onerror="this.src='/static/image/admin/missing_image.svg'"/>
                         <label class="form-upload-button">
@@ -115,10 +115,10 @@
                     </div>
                 </div>
                 <div class="form-field-name">
-                    Video :
+                    Video Path :
                 </div>
                 <div>
-                    <input class="form-input" name="Video" type="text" oninput="HandleVideoPathInputChangeEvent( this )"/>
+                    <input class="form-input" name="VideoPath" type="text" oninput="HandleVideoPathInputChangeEvent( this )"/>
                     <div class="form-upload-container">
                         <video class="form-upload-video" src="" type="video/mp4" onerror="this.src='/static/video/admin/missing_video.mp4'"></video>
                         <label class="form-upload-button">

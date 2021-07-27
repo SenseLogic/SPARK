@@ -4,7 +4,7 @@
         position: absolute;
         bottom: 0.5rem;
         left: 50%;
-        transform: translate-x( -50% );
+        transform: translateX( -50% );
 
         display: flex;
         flex-direction: column;
@@ -29,6 +29,8 @@
         text-transform: uppercase;
         color: WhiteColor;
     }
+
+    vendors = official
 
     @keyframes scroll-down-reminder-icon-animation
     {

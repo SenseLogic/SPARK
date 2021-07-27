@@ -12,10 +12,10 @@
                 Text
             </div>
             <div class="form-column-name sortable-grid-column">
-                Image
+                Image Path
             </div>
             <div class="form-column-name sortable-grid-column">
-                Video
+                Video Path
             </div>
             <div class="form-column-name sortable-grid-column">
                 Action
@@ -31,10 +31,10 @@
                     <% GetValueText( article.Text ) %>
                 </div>
                 <div class="sortable-grid-cell">
-                    <% GetValueText( article.Image ) %>
+                    <% GetValueText( article.ImagePath ) %>
                 </div>
                 <div class="sortable-grid-cell">
-                    <% GetValueText( article.Video ) %>
+                    <% GetValueText( article.VideoPath ) %>
                 </div>
                 <div class="form-centered sortable-grid-cell">
                     <a class="form-button view-button" href="/admin/article/view/<% article.Id %>">

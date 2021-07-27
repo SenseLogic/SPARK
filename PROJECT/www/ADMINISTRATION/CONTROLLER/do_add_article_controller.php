@@ -17,10 +17,10 @@ class DO_ADD_ARTICLE_CONTROLLER extends CONTROLLER
          $slug = GetPostValue( 'Slug' );
          $name = GetPostValue( 'Name' );
          $text = GetPostValue( 'Text' );
-         $image = GetPostValue( 'Image' );
-         $video = GetPostValue( 'Video' );
+         $image_path = GetPostValue( 'ImagePath' );
+         $video_path = GetPostValue( 'VideoPath' );
 
-        AddDatabaseArticle( $slug, $name, $text, $image, $video );
+        AddDatabaseArticle( $slug, $name, $text, $image_path, $video_path );
 
         Redirect( '/admin/article' );
     }

@@ -3,7 +3,7 @@
 function GetDatabaseArticleArray(
     )
 {
-     $statement = GetDatabaseStatement( 'select `Id`, `Slug`, `Name`, `Text`, `Image`, `Video` from `ARTICLE`' );
+     $statement = GetDatabaseStatement( 'select `Id`, `Slug`, `Name`, `Text`, `ImagePath`, `VideoPath` from `ARTICLE`' );
 
     if ( !$statement->execute() )
     {
@@ -27,7 +27,7 @@ function GetDatabaseArticleById(
     int $id
     )
 {
-     $statement = GetDatabaseStatement( 'select `Id`, `Slug`, `Name`, `Text`, `Image`, `Video` from `ARTICLE` where `Id` = ? limit 1' );
+     $statement = GetDatabaseStatement( 'select `Id`, `Slug`, `Name`, `Text`, `ImagePath`, `VideoPath` from `ARTICLE` where `Id` = ? limit 1' );
     $statement->bindParam( 1, $id, PDO::PARAM_INT );
 
     if ( !$statement->execute() )
@@ -47,16 +47,16 @@ function AddDatabaseArticle(
     string $slug,
     string $name,
     string $text,
-    string $image,
-    string $video
+    string $image_path,
+    string $video_path
     )
 {
-     $statement = GetDatabaseStatement( 'insert into `ARTICLE` ( `Slug`, `Name`, `Text`, `Image`, `Video` ) values ( ?, ?, ?, ?, ? )' );
+     $statement = GetDatabaseStatement( 'insert into `ARTICLE` ( `Slug`, `Name`, `Text`, `ImagePath`, `VideoPath` ) values ( ?, ?, ?, ?, ? )' );
     $statement->bindParam( 1, $slug, PDO::PARAM_STR );
     $statement->bindParam( 2, $name, PDO::PARAM_STR );
     $statement->bindParam( 3, $text, PDO::PARAM_STR );
-    $statement->bindParam( 4, $image, PDO::PARAM_STR );
-    $statement->bindParam( 5, $video, PDO::PARAM_STR );
+    $statement->bindParam( 4, $image_path, PDO::PARAM_STR );
+    $statement->bindParam( 5, $video_path, PDO::PARAM_STR );
 
     if ( !$statement->execute() )
     {
@@ -72,16 +72,16 @@ function PutDatabaseArticle(
     string $slug,
     string $name,
     string $text,
-    string $image,
-    string $video
+    string $image_path,
+    string $video_path
     )
 {
-     $statement = GetDatabaseStatement( 'replace into `ARTICLE` ( `Slug`, `Name`, `Text`, `Image`, `Video` ) values ( ?, ?, ?, ?, ? )' );
+     $statement = GetDatabaseStatement( 'replace into `ARTICLE` ( `Slug`, `Name`, `Text`, `ImagePath`, `VideoPath` ) values ( ?, ?, ?, ?, ? )' );
     $statement->bindParam( 1, $slug, PDO::PARAM_STR );
     $statement->bindParam( 2, $name, PDO::PARAM_STR );
     $statement->bindParam( 3, $text, PDO::PARAM_STR );
-    $statement->bindParam( 4, $image, PDO::PARAM_STR );
-    $statement->bindParam( 5, $video, PDO::PARAM_STR );
+    $statement->bindParam( 4, $image_path, PDO::PARAM_STR );
+    $statement->bindParam( 5, $video_path, PDO::PARAM_STR );
 
     if ( !$statement->execute() )
     {
@@ -98,16 +98,16 @@ function SetDatabaseArticle(
     string $slug,
     string $name,
     string $text,
-    string $image,
-    string $video
+    string $image_path,
+    string $video_path
     )
 {
-     $statement = GetDatabaseStatement( 'update `ARTICLE` set `Slug` = ?, `Name` = ?, `Text` = ?, `Image` = ?, `Video` = ? where Id = ?' );
+     $statement = GetDatabaseStatement( 'update `ARTICLE` set `Slug` = ?, `Name` = ?, `Text` = ?, `ImagePath` = ?, `VideoPath` = ? where Id = ?' );
     $statement->bindParam( 1, $slug, PDO::PARAM_STR );
     $statement->bindParam( 2, $name, PDO::PARAM_STR );
     $statement->bindParam( 3, $text, PDO::PARAM_STR );
-    $statement->bindParam( 4, $image, PDO::PARAM_STR );
-    $statement->bindParam( 5, $video, PDO::PARAM_STR );
+    $statement->bindParam( 4, $image_path, PDO::PARAM_STR );
+    $statement->bindParam( 5, $video_path, PDO::PARAM_STR );
     $statement->bindParam( 6, $id, PDO::PARAM_INT );
 
     if ( !$statement->execute() )

@@ -208,8 +208,8 @@ function Route(
                       && HasPostValue( 'Slug' )
                       && HasPostValue( 'Name' )
                       && HasPostValue( 'Text' )
-                      && HasPostValue( 'Image' )
-                      && HasPostValue( 'Video' ) )
+                      && HasPostValue( 'ImagePath' )
+                      && HasPostValue( 'VideoPath' ) )
             {
                 import 'ADMINISTRATION/CONTROLLER/do_add_article_controller.php';
             }
@@ -235,8 +235,8 @@ function Route(
                       && HasPostValue( 'Slug' )
                       && HasPostValue( 'Name' )
                       && HasPostValue( 'Text' )
-                      && HasPostValue( 'Image' )
-                      && HasPostValue( 'Video' ) )
+                      && HasPostValue( 'ImagePath' )
+                      && HasPostValue( 'VideoPath' ) )
             {
                 var article_id = path_value_array[ 3 ];
 

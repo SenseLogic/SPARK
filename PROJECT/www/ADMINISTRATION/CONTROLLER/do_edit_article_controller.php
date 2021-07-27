@@ -18,10 +18,10 @@ class DO_EDIT_ARTICLE_CONTROLLER extends CONTROLLER
          $slug = GetPostValue( 'Slug' );
          $name = GetPostValue( 'Name' );
          $text = GetPostValue( 'Text' );
-         $image = GetPostValue( 'Image' );
-         $video = GetPostValue( 'Video' );
+         $image_path = GetPostValue( 'ImagePath' );
+         $video_path = GetPostValue( 'VideoPath' );
 
-        SetDatabaseArticle( $article_id, $slug, $name, $text, $image, $video );
+        SetDatabaseArticle( $article_id, $slug, $name, $text, $image_path, $video_path );
 
         Redirect( '/admin/article' );
     }

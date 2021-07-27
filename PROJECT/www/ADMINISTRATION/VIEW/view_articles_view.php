@@ -12,10 +12,10 @@
                 Text
             </div>
             <div class="form-column-name sortable-grid-column">
-                Image
+                Image Path
             </div>
             <div class="form-column-name sortable-grid-column">
-                Video
+                Video Path
             </div>
             <div class="form-column-name sortable-grid-column">
                 Action
@@ -31,10 +31,10 @@
                     <?php echo htmlspecialchars( GetValueText( $article->Text ) ); ?>
                 </div>
                 <div class="sortable-grid-cell">
-                    <?php echo htmlspecialchars( GetValueText( $article->Image ) ); ?>
+                    <?php echo htmlspecialchars( GetValueText( $article->ImagePath ) ); ?>
                 </div>
                 <div class="sortable-grid-cell">
-                    <?php echo htmlspecialchars( GetValueText( $article->Video ) ); ?>
+                    <?php echo htmlspecialchars( GetValueText( $article->VideoPath ) ); ?>
                 </div>
                 <div class="form-centered sortable-grid-cell">
                     <a class="form-button view-button" href="/admin/article/view/<?php echo htmlspecialchars( $article->Id ); ?>">

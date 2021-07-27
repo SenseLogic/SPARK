@@ -63,7 +63,7 @@ class VIEW_CONTROLLER
         string slug
         )
     {
-        return .GetProcessedText( GetTranslatedText( .TextBySlugMap[ slug ], .LanguageCode ) );
+        return .GetProcessedText( .TextBySlugMap[ slug ] );
     }
 
     // ~~

@@ -63,7 +63,7 @@ class VIEW_CONTROLLER
         string $slug
         )
     {
-        return $this->GetProcessedText( GetTranslatedText( $this->TextBySlugMap[ $slug ], $this->LanguageCode ) );
+        return $this->GetProcessedText( $this->TextBySlugMap[ $slug ] );
     }
 
     // ~~
