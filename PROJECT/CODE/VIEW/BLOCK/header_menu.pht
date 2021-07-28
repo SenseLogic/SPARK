@@ -56,14 +56,6 @@
     {
         font-size: 1rem;
         color: WhiteColor;
-
-        cursor: pointer;
-        transition: transform 0.3s ease;
-    }
-
-    .header-menu-button:hover
-    {
-        transform: scale( 1.2 );
     }
 
     .header-menu-button.is-selected
@@ -88,14 +80,6 @@
     {
         height: 2rem;
         width: 2rem;
-
-        cursor: pointer;
-        transition: transform 0.3s ease;
-    }
-
-    .header-menu-icon-button:hover
-    {
-        transform: scale( 1.2 );
     }
 
     .header-menu-icon-button + .header-menu-icon-button
@@ -139,14 +123,6 @@
 
         font-size: 2rem;
         color: WhiteColor;
-
-        cursor: pointer;
-        transition: transform 0.3s ease;
-    }
-
-    .header-menu-mobile-button:hover
-    {
-        transform: scale( 1.2 );
     }
 
     .header-menu-mobile-button.is-selected
@@ -170,35 +146,35 @@
 </style>
 <div id="header-menu" class="header-menu">
     <div class="large-padded-container header-menu-button-container">
-        <div class="header-menu-button" data-view-name="home" onclick="ShowView( 'home' )">
+        <div class="scaled-button header-menu-button" data-view-name="home" onclick="ShowView( 'home' )">
             <# .GetText( 'HeaderMenuHomeButton' ) #>
         </div>
-        <div class="margin-left-auto! header-menu-button header-menu-desktop-button" data-view-name="home" onclick="ShowView( 'home/#article-list' )">
+        <div class="margin-left-auto! scaled-button header-menu-button header-menu-desktop-button" data-view-name="home" onclick="ShowView( 'home/#article-list' )">
             <# .GetText( 'HeaderMenuArticleListButton' ) #>
         </div>
-        <div class="margin-right-auto! header-menu-button header-menu-desktop-button" data-view-name="legal-notice" onclick="ShowView( 'legal-notice' )">
+        <div class="margin-right-auto! scaled-button header-menu-button header-menu-desktop-button" data-view-name="legal-notice" onclick="ShowView( 'legal-notice' )">
             <# .GetText( 'HeaderMenuLegalNoticeButton' ) #>
         </div>
-        <div class="header-menu-button header-menu-desktop-button" data-view-name="contact" onclick="ShowView( 'contact' )">
+        <div class="scaled-button header-menu-button header-menu-desktop-button" data-view-name="contact" onclick="ShowView( 'contact' )">
             <# .GetText( 'HeaderMenuContactButton' ) #>
         </div>
-        <div class="margin-left-auto! header-menu-icon-button header-menu-open-button" onclick="OpenHeaderMenu()">
+        <div class="margin-left-auto! scaled-button header-menu-icon-button header-menu-open-button" onclick="OpenHeaderMenu()">
         </div>
     </div>
     <div class="header-menu-mobile-button-container">
-        <div class="header-menu-mobile-button" data-view-name="home" onclick="CloseHeaderMenu(); ShowView( 'home' )">
+        <div class="scaled-button header-menu-mobile-button" data-view-name="home" onclick="CloseHeaderMenu(); ShowView( 'home' )">
             <# .GetText( 'HeaderMenuHomeButton' ) #>
         </div>
-        <div class="header-menu-mobile-button" data-view-name="home" onclick="CloseHeaderMenu(); ShowView( 'home/#article-list' )">
+        <div class="scaled-button header-menu-mobile-button" data-view-name="home" onclick="CloseHeaderMenu(); ShowView( 'home/#article-list' )">
             <# .GetText( 'HeaderMenuArticleListButton' ) #>
         </div>
-        <div class="header-menu-mobile-button" data-view-name="legal-notice" onclick="CloseHeaderMenu(); ShowView( 'legal-notice' )">
+        <div class="scaled-button header-menu-mobile-button" data-view-name="legal-notice" onclick="CloseHeaderMenu(); ShowView( 'legal-notice' )">
             <# .GetText( 'HeaderMenuLegalNoticeButton' ) #>
         </div>
-        <div class="header-menu-mobile-button" data-view-name="contact" onclick="CloseHeaderMenu(); ShowView( 'contact' )">
+        <div class="scaled-button header-menu-mobile-button" data-view-name="contact" onclick="CloseHeaderMenu(); ShowView( 'contact' )">
             <# .GetText( 'HeaderMenuContactButton' ) #>
         </div>
-        <div class="header-menu-icon-button header-menu-close-button" onclick="CloseHeaderMenu()">
+        <div class="scaled-button header-menu-icon-button header-menu-close-button" onclick="CloseHeaderMenu()">
         </div>
     </div>
 </div>

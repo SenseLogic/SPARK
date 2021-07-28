@@ -80,7 +80,7 @@
               GetElementById( "article-carousel" ),
               GetElementById( "article-carousel-strip" ),
               0.0,
-              6,
+              <?php echo $this->ArticleCount + 1; ?>,
               1,
               3.0,
               0.5

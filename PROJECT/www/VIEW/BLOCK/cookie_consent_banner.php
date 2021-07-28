@@ -73,24 +73,16 @@
 
 
 
-
-
-
-
-
-
-
-
 <div id="cookie-consent-banner-container" class="cookie-consent-banner-container">
     <div class="cookie-consent-banner-text">
         We use cookies on our website to provide you with the best possible online experience.
         <a href="/legal-notice" target="_blank">More information</a>
     </div>
     <div class="cookie-consent-banner-button-container">
-        <div class="cookie-consent-banner-button cookie-consent-banner-accept-button" onclick="HandleCookieConsentBannerAgreeButtonClickEvent()">
+        <div class="scaled-button cookie-consent-banner-button cookie-consent-banner-accept-button" onclick="HandleCookieConsentBannerAgreeButtonClickEvent()">
             Accept
         </div>
-        <div class="cookie-consent-banner-button cookie-consent-banner-decline-button" onclick="HandleCookieConsentBannerDisacceptButtonClickEvent()">
+        <div class="scaled-button cookie-consent-banner-button cookie-consent-banner-decline-button" onclick="HandleCookieConsentBannerDisacceptButtonClickEvent()">
             Decline
         </div>
     </div>

@@ -61,14 +61,6 @@
         padding: 5px 15px;
 
         color: WhiteColor;
-
-        cursor: pointer;
-        transition: all 0.25s ease;
-    }
-
-    .cookie-consent-banner-button:hover
-    {
-        transform: scale( 1.05 );
     }
 
     .cookie-consent-banner-accept-button
@@ -87,10 +79,10 @@
         <a href="/legal-notice" target="_blank">More information</a>
     </div>
     <div class="cookie-consent-banner-button-container">
-        <div class="cookie-consent-banner-button cookie-consent-banner-accept-button" onclick="HandleCookieConsentBannerAgreeButtonClickEvent()">
+        <div class="scaled-button cookie-consent-banner-button cookie-consent-banner-accept-button" onclick="HandleCookieConsentBannerAgreeButtonClickEvent()">
             Accept
         </div>
-        <div class="cookie-consent-banner-button cookie-consent-banner-decline-button" onclick="HandleCookieConsentBannerDisacceptButtonClickEvent()">
+        <div class="scaled-button cookie-consent-banner-button cookie-consent-banner-decline-button" onclick="HandleCookieConsentBannerDisacceptButtonClickEvent()">
             Decline
         </div>
     </div>

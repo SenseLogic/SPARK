@@ -755,6 +755,13 @@ html {
 .color-blue {
   color: #00f;
 }
+.scaled-button {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.scaled-button:hover {
+  transform: scale(1.1);
+}
 @font-face {
   font-family: "Ubuntu";
   src: url("font/ubuntu_light.woff2") format("woff2"), url("font/ubuntu_light.woff") format("woff");
@@ -841,11 +848,6 @@ body.is-scrolled .header-menu:not(.is-open) {
 .header-menu-button {
   font-size: 1rem;
   color: #fff;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-.header-menu-button:hover {
-  transform: scale(1.2);
 }
 .header-menu-button.is-selected {
   font-weight: bold;
@@ -861,11 +863,6 @@ body.is-scrolled .header-menu:not(.is-open) {
 .header-menu-icon-button {
   height: 2rem;
   width: 2rem;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-.header-menu-icon-button:hover {
-  transform: scale(1.2);
 }
 .header-menu-icon-button + .header-menu-icon-button {
   margin-left: 1rem;
@@ -896,11 +893,6 @@ body.is-scrolled .header-menu:not(.is-open) {
   padding: 5px 10px;
   font-size: 2rem;
   color: #fff;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-.header-menu-mobile-button:hover {
-  transform: scale(1.2);
 }
 .header-menu-mobile-button.is-selected {
   color: #000;
@@ -924,11 +916,6 @@ body.is-scrolled .header-menu:not(.is-open) {
 .footer-menu-button {
   font-size: 1rem;
   color: #fff;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-.footer-menu-button:hover {
-  transform: scale(1.2);
 }
 .footer-menu-button.is-selected {
   font-weight: bold;
@@ -1194,11 +1181,6 @@ body:not(.is-scrolled ) .scroll-top-button {
   border-radius: 5px;
   padding: 5px 15px;
   color: #fff;
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-.cookie-consent-banner-button:hover {
-  transform: scale(1.05);
 }
 .cookie-consent-banner-accept-button {
   background-color: #f00;

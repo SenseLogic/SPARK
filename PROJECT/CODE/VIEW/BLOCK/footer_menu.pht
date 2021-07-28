@@ -14,14 +14,6 @@
     {
         font-size: 1rem;
         color: WhiteColor;
-
-        cursor: pointer;
-        transition: transform 0.3s ease;
-    }
-
-    .footer-menu-button:hover
-    {
-        transform: scale( 1.2 );
     }
 
     .footer-menu-button.is-selected
@@ -35,16 +27,16 @@
     }
 </style>
 <div class="large-padded-container footer-menu">
-    <span class="margin-right-auto! footer-menu-button" onclick="ShowView( 'home' )">
+    <span class="margin-right-auto! scaled-button footer-menu-button" onclick="ShowView( 'home' )">
         <# .GetText( 'FooterMenuHomeButton' ) #>
     </span>
-    <span class="footer-menu-button" onclick="ShowView( 'home/#article-list' )">
+    <span class="scaled-button footer-menu-button" onclick="ShowView( 'home/#article-list' )">
         <# .GetText( 'FooterMenuArticleListButton' ) #>
     </span>
-    <span class="footer-menu-button" onclick="ShowView( 'contact' )">
+    <span class="scaled-button footer-menu-button" onclick="ShowView( 'contact' )">
         <# .GetText( 'FooterMenuContactButton' ) #>
     </span>
-    <span class="margin-left-auto! footer-menu-button" onclick="ShowView( 'legal-notice' )">
+    <span class="margin-left-auto! scaled-button footer-menu-button" onclick="ShowView( 'legal-notice' )">
         <# .GetText( 'FooterMenuLegalNoticeButton' ) #>
     </span>
 </div>
