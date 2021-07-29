@@ -401,10 +401,11 @@ function GetKebabCaseText(
 
 // ~~
 
-function GetShortenedText(
+function GetPartialText(
     string text,
     int maximum_character_count,
-    string separator = '...'
+    string ellipsis = '...',
+    string trimmed_characters = ' '
     )
 {
     var text_character_count = strlen( text );
@@ -415,14 +416,37 @@ function GetShortenedText(
     }
     else
     {
-        var separator_character_count = strlen( separator );
-        var first_character_count = ( int )( ( maximum_character_count - separator_character_count ) / 2 );
-        var last_character_count = maximum_character_count - first_character_count - separator_character_count;
+        return
+            rtrim( substr( text, 0, maximum_character_count - strlen( ellipsis ) ), trimmed_characters )
+            .. ellipsis;
+    }
+}
+
+// ~~
+
+function GetShortenedText(
+    string text,
+    int maximum_character_count,
+    string ellipsis = '...',
+    string trimmed_characters = ' '
+    )
+{
+    var text_character_count = strlen( text );
+
+    if ( text_character_count <= maximum_character_count )
+    {
+        return text;
+    }
+    else
+    {
+        var ellipsis_character_count = strlen( ellipsis );
+        var first_character_count = ( int )( ( maximum_character_count - ellipsis_character_count ) / 2 );
+        var last_character_count = maximum_character_count - first_character_count - ellipsis_character_count;
 
         return
-            substr( text, 0, first_character_count )
-            .. separator
-            .. substr( text, text_character_count - last_character_count, last_character_count );
+            rtrim( substr( text, 0, first_character_count ), trimmed_characters )
+            .. ellipsis
+            .. ltrim( substr( text, text_character_count - last_character_count, last_character_count ), trimmed_characters );
     }
 }
 
