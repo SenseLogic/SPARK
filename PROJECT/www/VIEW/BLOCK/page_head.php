@@ -14,4 +14,4 @@
 <meta name="HandheldFriendly" content="true"/>
 <title>Spark Project</title>
 <link rel="icon" href="/favicon.ico"/>
-<link rel="stylesheet" href="/static/style.css"/>
+<link rel="stylesheet" href="/static/style.css?v=<?php echo VersionTimestamp; ?>"/>

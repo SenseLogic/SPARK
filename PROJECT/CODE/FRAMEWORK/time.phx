@@ -25,6 +25,15 @@ function GetCurrentTimestamp(
 
 // ~~
 
+function GetVersionTimestamp(
+    int expiration_second_count
+    )
+{
+    return intdiv( time(), expiration_second_count );
+}
+
+// ~~
+
 function GetCurrentMillisecondTimestamp(
     )
 {

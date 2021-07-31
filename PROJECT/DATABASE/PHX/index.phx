@@ -25,6 +25,7 @@ if ( GetServerName() === 'localhost' )
     define( 'DatabaseName', 'spark-project' );
     define( 'DatabaseUserName', 'root' );
     define( 'DatabasePassword', '' );
+    define( 'VersionTimestamp', GetVersionTimestamp( 1 ) );
 }
 else
 {
@@ -32,6 +33,7 @@ else
     define( 'DatabaseName', '???' );
     define( 'DatabaseUserName', '???' );
     define( 'DatabasePassword', '???' );
+    define( 'VersionTimestamp', GetVersionTimestamp( 600 ) );
 }
 
 DefineOpenTag( 'div' );

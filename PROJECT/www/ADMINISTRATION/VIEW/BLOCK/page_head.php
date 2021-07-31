@@ -13,4 +13,4 @@
 <meta name="format-detection" content="telephone=no">
 <meta name="HandheldFriendly" content="true" />
 <title>Spark Project</title>
-<link rel="stylesheet" href="/static/administration_style.css">
+<link rel="stylesheet" href="/static/administration_style.css?v=<?php echo VersionTimestamp; ?>">
