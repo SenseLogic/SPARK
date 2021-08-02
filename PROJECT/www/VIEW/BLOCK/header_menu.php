@@ -203,7 +203,7 @@
         function (
             )
         {
-            GetElements( ".header-menu-button" ).Iterate(
+            GetElements( ".header-menu-button, .header-menu-mobile-button" ).Iterate(
                 function (
                     element
                     )

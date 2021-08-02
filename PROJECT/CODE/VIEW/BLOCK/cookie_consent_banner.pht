@@ -26,7 +26,7 @@
         color: BlackColor;
     }
 
-    .cookie-consent-banner-container.hidden
+    .cookie-consent-banner-container.is-hidden
     {
         display: none;
     }
@@ -146,7 +146,7 @@
     function ShowCookieConsentBanner(
         )
     {
-        CookieConsentBannerContainerElement.RemoveClass( "hidden" );
+        CookieConsentBannerContainerElement.RemoveClass( "is-hidden" );
     }
 
     // ~~
@@ -154,7 +154,7 @@
     function HideCookieConsentBanner(
         )
     {
-        CookieConsentBannerContainerElement.AddClass( "hidden" );
+        CookieConsentBannerContainerElement.AddClass( "is-hidden" );
     }
 
     // ~~

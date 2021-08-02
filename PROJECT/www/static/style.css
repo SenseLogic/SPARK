@@ -1157,7 +1157,7 @@ body:not(.is-scrolled ) .scroll-top-button {
   font-size: 1rem;
   color: #000;
 }
-.cookie-consent-banner-container.hidden {
+.cookie-consent-banner-container.is-hidden {
   display: none;
 }
 .cookie-consent-banner-container a,
