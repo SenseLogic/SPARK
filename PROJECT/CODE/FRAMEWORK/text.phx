@@ -621,3 +621,39 @@ function GetBase64Text(
 {
     return base64_encode( text );
 }
+
+// ~~
+
+function GetEncodedHtml(
+    string text
+    )
+{
+    return htmlentities( text );
+}
+
+// ~~
+
+function GetDecodedHtml(
+    string text
+    )
+{
+    return html_entity_decode( text );
+}
+
+// ~~
+
+function GetEncodedUri(
+    string text
+    )
+{
+    return urlencode( text );
+}
+
+// ~~
+
+function GetDecodedUri(
+    string text
+    )
+{
+    return urldecode( text );
+}
