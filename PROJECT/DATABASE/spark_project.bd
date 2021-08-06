@@ -63,7 +63,7 @@ TEXT
             ~ Legal notice
 
         LegalNoticeText
-            ~ ! Title^^TM^^\\n* **Bold**\\n  * %%Italic%%\\n    * __Underlined__\\n* Normal\\nSome text.
+            ~ ! Title\^\^TM\^\^\\n* **Bold**\\n  * %%Italic%%\\n    * __Underlined__\\n* Normal\\nSome text,,2,,.
 
 USER
 

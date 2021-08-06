@@ -114,7 +114,7 @@
             <input class="contact-form-input" name="Captcha" type="text" placeholder="<?php echo $this->GetText( 'ContactFormCaptchaPlaceholder' ); ?>"/>
             <img class="contact-form-captcha-image" src="/captcha"/>
         </div>
-        <div  class="contact-form-row">
+        <div class="contact-form-row">
             <div id="contact-form-send-button" class="contact-form-send-button">
                 <?php echo $this->GetText( 'ContactFormSendButton' ); ?>
             </div>
@@ -140,6 +140,7 @@
             email_input_element,
             it_is_valid_contact_form,
             message_input_element,
+            name_input_element,
             phone_input_element,
             subject_input_element;
 

@@ -48,6 +48,20 @@ DefineColorTag( 'green', '#0F0' );
 DefineStyleTag( 'color' );
 DefineStyleTag( 'size', 'font-size' );
 DefineStyleTag( 'weight', 'font-weight' );
+DefineDualTag( '**', '<b>', '</b>' );
+DefineDualTag( '%%', '<i>', '</i>' );
+DefineDualTag( '__', '<u>', '</u>' );
+DefineDualTag( '^^', '<sup>', '</sup>' );
+DefineDualTag( ',,', '<sub>', '</sub>' );
+DefineNewlineTag( '<div>', '</div>' );
+DefineLineTag( '<div>! ', '<div class="title-1">' );
+DefineLineTag( '<div>!! ', '<div class="title-2">' );
+DefineLineTag( '<div>!!! ', '<div class="title-3">' );
+DefineLineTag( '<div>!!!! ', '<div class="title-4">' );
+DefineLineTag( '<div>* ', '<div class="bullet-1">' );
+DefineLineTag( '<div>  * ', '<div class="bullet-2">' );
+DefineLineTag( '<div>    * ', '<div class="bullet-3">' );
+DefineLineTag( '<div>      * ', '<div class="bullet-4">' );
 
 // -- FUNCTIONS
 
@@ -74,8 +88,6 @@ function Route(
     if ( $path_value_count >= 1
          && $path_value_array[ 0 ] === 'admin' )
     {
-         $user_is_connected = FindSessionValue( 'UserIsConnected', false );
-
         if ( $path_value_count === 1
              || !$user_is_connected )
         {

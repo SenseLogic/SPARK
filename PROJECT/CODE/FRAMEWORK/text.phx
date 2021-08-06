@@ -2,6 +2,12 @@
 
 var ProcessedTagArray = [];
 var ProcessedTagDefinitionArray = [];
+var ProcessedDualTagArray = [];
+var ProcessedDualTagDefinitionArray = [];
+var ProcessedNewlineOpeningTag = '';
+var ProcessedNewlineClosingTag = '';
+var ProcessedLineTagArray = [];
+var ProcessedLineTagDefinitionArray = [];
 var EndTagIsDefined = false;
 
 // -- FUNCTIONS
@@ -670,15 +676,82 @@ function DefineStyleTag(
 
 // ~~
 
+function DefineDualTag(
+    string dual_tag,
+    string dual_tag_opening_definition,
+    string dual_tag_closing_definition
+    )
+{
+    global
+        ProcessedDualTagArray,
+        ProcessedDualTagDefinitionArray;
+
+    array_push( ProcessedDualTagArray, dual_tag );
+    array_push( ProcessedDualTagDefinitionArray, dual_tag_opening_definition );
+    array_push( ProcessedDualTagDefinitionArray, dual_tag_closing_definition );
+}
+
+// ~~
+
 function GetProcessedText(
     string text
     )
 {
     global
+        ProcessedDualTagArray,
+        ProcessedDualTagDefinitionArray,
         ProcessedTagArray,
         ProcessedTagDefinitionArray;
 
+    var processed_dual_tag_count = count( ProcessedDualTagArray );
+
+    if ( processed_dual_tag_count > 0 )
+    {
+        for ( var processed_dual_tag_index = 0;
+              processed_dual_tag_index < processed_dual_tag_count;
+              ++processed_dual_tag_index )
+        {
+            text
+                = ReplaceDualText(
+                      text,
+                      ProcessedDualTagArray[ processed_dual_tag_index ],
+                      ProcessedDualTagDefinitionArray[ processed_dual_tag_index * 2 ],
+                      ProcessedDualTagDefinitionArray[ processed_dual_tag_index * 2 + 1 ]
+                      );
+        }
+    }
+
     return str_replace( ProcessedTagArray, ProcessedTagDefinitionArray, text );
+}
+
+// ~~
+
+function DefineNewlineTag(
+    string newline_opening_tag,
+    string newline_ending_tag
+    )
+{
+    global
+        ProcessedNewlineClosingTag,
+        ProcessedNewlineOpeningTag;
+
+    ProcessedNewlineOpeningTag = newline_opening_tag;
+    ProcessedNewlineClosingTag = newline_ending_tag;
+}
+
+// ~~
+
+function DefineLineTag(
+    string line_tag,
+    string line_tag_definition
+    )
+{
+    global
+        ProcessedLineTagArray,
+        ProcessedLineTagDefinitionArray;
+
+    array_push( ProcessedLineTagArray, line_tag );
+    array_push( ProcessedLineTagDefinitionArray, line_tag_definition );
 }
 
 // ~~
@@ -687,38 +760,23 @@ function GetProcessedMultilineText(
     string text
     )
 {
-    text
-        = str_replace(
-            [
-                '<p>! ',
-                '<p>!! ',
-                '<p>!!! ',
-                '<p>!!!! ',
-                '<p>* ',
-                '<p>  * ',
-                '<p>    * ',
-                '<p>      * '
-            ],
-            [
-                '<p class="title-1">',
-                '<p class="title-2">',
-                '<p class="title-3">',
-                '<p class="title-4">',
-                '<p class="bullet-1">',
-                '<p class="bullet-2">',
-                '<p class="bullet-3">',
-                '<p class="bullet-4">'
-            ],
-            '<p>'
-            .. str_replace( "\n", '</p><p>', text )
-            .. '</p>'
-            );
+    global
+        ProcessedLineTagArray,
+        ProcessedLineTagDefinitionArray,
+        ProcessedNewlineClosingTag,
+        ProcessedNewlineOpeningTag;
 
-    text = ReplaceDualText( text, '**', '<b>', '</b>' );
-    text = ReplaceDualText( text, '%%', '<i>', '</i>' );
-    text = ReplaceDualText( text, '__', '<u>', '</u>' );
-    text = ReplaceDualText( text, '^^', '<sup>', '</sup>' );
-    text = ReplaceDualText( text, ',,', '<sub>', '</sub>' );
+    if ( ProcessedNewlineOpeningTag !== '' )
+    {
+        text
+            = str_replace(
+                ProcessedLineTagArray,
+                ProcessedLineTagDefinitionArray,
+                ProcessedNewlineOpeningTag
+                .. str_replace( "\n", ProcessedNewlineClosingTag .. ProcessedNewlineOpeningTag, text )
+                .. ProcessedNewlineClosingTag
+                );
+    }
 
     return GetProcessedText( text );
 }

@@ -26,7 +26,7 @@ class ADD_CONTACT_CONTROLLER extends CONTROLLER
         if ( IsValidCaptcha( captcha, .Session.Captcha ) )
         {
             AddDatabaseContact( name, company, email, phone, subject, message );
-            .SendEmails( name, company, email, phone, subject, message );
+            // .SendEmails( name, company, email, phone, subject, message );
 
             SetStatus( 200 );
         }
