@@ -62,6 +62,9 @@ TEXT
         LegalNoticeTitle
             ~ Legal notice
 
+        LegalNoticeText
+            ~ ! Title^^TM^^\\n* **Bold**\\n  * %%Italic%%\\n    * __Underlined__\\n* Normal\\nSome text.
+
 USER
 
     Email Pseudonym Password Role

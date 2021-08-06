@@ -59,11 +59,29 @@ class VIEW_CONTROLLER
 
     // ~~
 
+    function GetProcessedMultilineText(
+        string $text
+        )
+    {
+        return GetProcessedMultilineText( $this->GetTranslatedText( $text ) );
+    }
+
+    // ~~
+
     function GetText(
         string $slug
         )
     {
         return $this->GetProcessedText( $this->TextBySlugMap[ $slug ] );
+    }
+
+    // ~~
+
+    function GetMultilineText(
+        string $slug
+        )
+    {
+        return $this->GetProcessedMultilineText( $this->TextBySlugMap[ $slug ] );
     }
 
     // ~~

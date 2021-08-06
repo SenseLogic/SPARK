@@ -762,6 +762,38 @@ html {
 .scaled-button:hover {
   transform: scale(1.1);
 }
+.title-1 {
+  font-size: 2rem;
+}
+.title-2 {
+  font-size: 1.75rem;
+}
+.title-3 {
+  font-size: 1.5rem;
+}
+.title-4 {
+  font-size: 1rem;
+}
+.bullet-1 {
+  margin-left: 1em;
+}
+.bullet-2 {
+  margin-left: 2em;
+}
+.bullet-3 {
+  margin-left: 3em;
+}
+.bullet-4 {
+  margin-left: 4em;
+}
+.bullet-1::before,
+.bullet-2::before,
+.bullet-3::before,
+.bullet-4::before {
+  position: absolute;
+  transform: translateX(-1em);
+  content: "\2022";
+}
 @font-face {
   font-family: "Ubuntu";
   src: url("font/ubuntu_light.woff2") format("woff2"), url("font/ubuntu_light.woff") format("woff");

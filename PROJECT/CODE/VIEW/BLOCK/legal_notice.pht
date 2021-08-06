@@ -9,4 +9,7 @@
     <h1>
         <# .GetText( 'LegalNoticeTitle' ) #>
     </h1>
+    <div>
+        <# .GetMultilineText( 'LegalNoticeText' ) #>
+    </div>
 </div>

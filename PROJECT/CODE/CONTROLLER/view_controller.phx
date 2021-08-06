@@ -59,11 +59,29 @@ class VIEW_CONTROLLER
 
     // ~~
 
+    method GetProcessedMultilineText(
+        string text
+        )
+    {
+        return GetProcessedMultilineText( .GetTranslatedText( text ) );
+    }
+
+    // ~~
+
     method GetText(
         string slug
         )
     {
         return .GetProcessedText( .TextBySlugMap[ slug ] );
+    }
+
+    // ~~
+
+    method GetMultilineText(
+        string slug
+        )
+    {
+        return .GetProcessedMultilineText( .TextBySlugMap[ slug ] );
     }
 
     // ~~

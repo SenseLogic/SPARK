@@ -15,6 +15,104 @@ function GetCharacterCount(
 
 // ~~
 
+function SplitText(
+    string text,
+    string separator
+    )
+{
+    return explode( separator, text );
+}
+
+// ~~
+
+function ReplaceText(
+    string text,
+    old_text,
+    new_text
+    )
+{
+    return str_replace( old_text, new_text, text );
+}
+
+// ~~
+
+function ReplaceSpecialCharacters(
+    string text
+    )
+{
+    return str_replace( [ '\n', '\r', '\t' ], [ "\n", "\r", "\t" ], text );
+}
+
+// ~~
+
+function ReplaceDualText(
+    string text,
+    string old_text,
+    string first_new_text,
+    string second_new_text
+    )
+{
+    var part_array = explode( old_text, text );
+    var part_count = count( part_array );
+
+    for ( var part_index = 0;
+          part_index + 1 < part_count;
+          part_index += 2 )
+    {
+        part_array[ part_index ] ..= first_new_text;
+        part_array[ part_index + 1 ] ..= second_new_text;
+    }
+
+    return implode( '', part_array );
+}
+
+// ~~
+
+function GetBase64Text(
+    string text
+    )
+{
+    return base64_encode( text );
+}
+
+// ~~
+
+function GetEncodedHtml(
+    string text
+    )
+{
+    return htmlentities( text );
+}
+
+// ~~
+
+function GetDecodedHtml(
+    string text
+    )
+{
+    return html_entity_decode( text );
+}
+
+// ~~
+
+function GetEncodedUri(
+    string text
+    )
+{
+    return urlencode( text );
+}
+
+// ~~
+
+function GetDecodedUri(
+    string text
+    )
+{
+    return urldecode( text );
+}
+
+// ~~
+
 function IsInteger(
     value
     )
@@ -585,75 +683,42 @@ function GetProcessedText(
 
 // ~~
 
-function SplitText(
-    string text,
-    string separator
-    )
-{
-    return explode( separator, text );
-}
-
-// ~~
-
-function ReplaceText(
-    string text,
-    old_text,
-    new_text
-    )
-{
-    return str_replace( old_text, new_text, text );
-}
-
-// ~~
-
-function ReplaceSpecialCharacters(
+function GetProcessedMultilineText(
     string text
     )
 {
-    return str_replace( [ '\n', '\r', '\t' ], [ "\n", "\r", "\t" ], text );
-}
+    text
+        = str_replace(
+            [
+                '<p>! ',
+                '<p>!! ',
+                '<p>!!! ',
+                '<p>!!!! ',
+                '<p>* ',
+                '<p>  * ',
+                '<p>    * ',
+                '<p>      * '
+            ],
+            [
+                '<p class="title-1">',
+                '<p class="title-2">',
+                '<p class="title-3">',
+                '<p class="title-4">',
+                '<p class="bullet-1">',
+                '<p class="bullet-2">',
+                '<p class="bullet-3">',
+                '<p class="bullet-4">'
+            ],
+            '<p>'
+            .. str_replace( "\n", '</p><p>', text )
+            .. '</p>'
+            );
 
-// ~~
+    text = ReplaceDualText( text, '**', '<b>', '</b>' );
+    text = ReplaceDualText( text, '%%', '<i>', '</i>' );
+    text = ReplaceDualText( text, '__', '<u>', '</u>' );
+    text = ReplaceDualText( text, '^^', '<sup>', '</sup>' );
+    text = ReplaceDualText( text, ',,', '<sub>', '</sub>' );
 
-function GetBase64Text(
-    string text
-    )
-{
-    return base64_encode( text );
-}
-
-// ~~
-
-function GetEncodedHtml(
-    string text
-    )
-{
-    return htmlentities( text );
-}
-
-// ~~
-
-function GetDecodedHtml(
-    string text
-    )
-{
-    return html_entity_decode( text );
-}
-
-// ~~
-
-function GetEncodedUri(
-    string text
-    )
-{
-    return urlencode( text );
-}
-
-// ~~
-
-function GetDecodedUri(
-    string text
-    )
-{
-    return urldecode( text );
+    return GetProcessedText( text );
 }
