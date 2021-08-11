@@ -118,8 +118,8 @@
 
     .header-menu-mobile-button
     {
-        border-radius: 8px;
-        padding: 5px 10px;
+        border-radius: 8 * Pxm;
+        padding: 5 * Pxm 10 * Pxm;
 
         font-size: 2rem;
         color: WhiteColor;

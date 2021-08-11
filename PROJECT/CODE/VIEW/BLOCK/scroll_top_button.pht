@@ -3,12 +3,12 @@
     {
         z-index: 999;
         position: fixed;
-        bottom: 10px;
-        right: 10px;
+        bottom: 10 * Pxm;
+        right: 10 * Pxm;
 
         overflow: visible;
-        height: 50px;
-        width: 20px;
+        height: 50 * Pxm;
+        width: 20 * Pxm;
 
         opacity: 1;
         background: url( "/static/image/base/scroll_top_icon.svg" ) no-repeat center center / contain;

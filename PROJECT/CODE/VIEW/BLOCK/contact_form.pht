@@ -28,7 +28,7 @@
     .contact-form-input:invalid,
     .contact-form-input.is-invalid
     {
-        border: 2px solid RedColor;
+        border: 2 * Pxm solid RedColor;
 
         box-shadow: none;
     }

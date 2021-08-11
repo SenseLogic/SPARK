@@ -70,26 +70,26 @@ sup
 // -- CLASSES
 
 MakeExtendedContainer();
-MakeMarginedContainer( 20px, 40px 80px 120px 160px 200px, min-width-40em min-width-60em min-width-80em min-width-100em min-width-120em, "large-" );
-MakeMarginedContainer( 20px, 80px 120px 160px 200px 240px, min-width-40em min-width-60em min-width-80em min-width-100em min-width-120em, "narrow-" );
-MakePaddedContainer( 20px, 40px 80px 120px 160px 200px, min-width-40em min-width-60em min-width-80em min-width-100em min-width-120em, "large-" );
-MakePaddedContainer( 20px, 80px 120px 160px 200px 240px, min-width-40em min-width-60em min-width-80em min-width-100em min-width-120em, "narrow-" );
+MakeMarginedContainer( 20 * Pxm, 2.5rem 80 * Pxm 120 * Pxm 160 * Pxm 200 * Pxm, min-width-40em min-width-60em min-width-80em min-width-100em min-width-120em, "large-" );
+MakeMarginedContainer( 20 * Pxm, 80 * Pxm 120 * Pxm 160 * Pxm 200 * Pxm 240 * Pxm, min-width-40em min-width-60em min-width-80em min-width-100em min-width-120em, "narrow-" );
+MakePaddedContainer( 20 * Pxm, 2.5rem 80 * Pxm 120 * Pxm 160 * Pxm 200 * Pxm, min-width-40em min-width-60em min-width-80em min-width-100em min-width-120em, "large-" );
+MakePaddedContainer( 20 * Pxm, 80 * Pxm 120 * Pxm 160 * Pxm 200 * Pxm 240 * Pxm, min-width-40em min-width-60em min-width-80em min-width-100em min-width-120em, "narrow-" );
 MakeMarginLeftAuto( , , "\!", !important );
 MakeMarginRightAuto( , , "\!", !important );
-MakeMarginLateralValue( 8, 1px, "px" );
-MakeMarginLateralValue( 16, 1px, "px" );
-MakeMarginVerticalValue( 8, 1px, "px" );
-MakeMarginVerticalValue( 16, 1px, "px" );
+MakeMarginLateralValue( 8, Pxm, "pxm" );
+MakeMarginLateralValue( 16, Pxm, "pxm" );
+MakeMarginVerticalValue( 8, Pxm, "pxm" );
+MakeMarginVerticalValue( 16, Pxm, "pxm" );
 MakeHeightAuto();
 MakeHeightValue( 100, 1%, "\%" );
 MakeHeightAuto();
 MakeMinHeightValue( 100, 1vh, "vh" );
 MakeWidthValue( 100, 1%, "\%" );
 MakeFractionalWidthValueRange( 12 );
-MakePaddingLateralValue( 8, 1px, "px" );
-MakePaddingLateralValue( 16, 1px, "px" );
-MakePaddingVerticalValue( 8, 1px, "px" );
-MakePaddingVerticalValue( 16, 1px, "px" );
+MakePaddingLateralValue( 8, Pxm, "pxm" );
+MakePaddingLateralValue( 16, Pxm, "pxm" );
+MakePaddingVerticalValue( 8, Pxm, "pxm" );
+MakePaddingVerticalValue( 16, Pxm, "pxm" );
 
 MakeDisplayNone();
 MakeDisplayNone( , , "\!", !important );
@@ -120,10 +120,10 @@ MakeBackgroundColorValue( "green", GreenColor );
 MakeBackgroundColorValue( "blue", BlueColor );
 
 SetRootFontSize( 1rem, 1.1rem 1.2rem 1.3rem 1.4rem, min-width-90em min-width-100em min-width-110em min-width-120em );
-MakeFontSizeValue( 12, 1px, "px" );
-MakeFontSizeValue( 16, 1px, "px" );
-MakeFontSizeValue( 20, 1px, "px" );
-MakeFontSizeValue( 24, 1px, "px" );
+MakeFontSizeValue( 12, Pxm, "pxm" );
+MakeFontSizeValue( 16, Pxm, "pxm" );
+MakeFontSizeValue( 20, Pxm, "pxm" );
+MakeFontSizeValue( 24, Pxm, "pxm" );
 MakeFontWeightValueRange( 100, 100, 9 );
 MakeColorValue( "black", BlackColor );
 MakeColorValue( "darkest-gray", DarkestGrayColor );

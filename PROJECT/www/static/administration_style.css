@@ -369,32 +369,32 @@ textarea:focus {
   grid-template-columns: auto 1fr;
 }
 .page-menu {
-  width: 72px;
-  padding: 15px;
+  width: 4.5rem;
+  padding: 0.9375rem;
   display: flex;
   grid-area: 1/1/span 2;
   background-image: linear-gradient(to right, #29323c 0%, #485563 100%);
 }
 .page-menu-item {
-  margin-top: 10px;
+  margin-top: 0.625rem;
 }
 .page-menu-title {
-  margin-left: 5px;
-  font-size: 20px;
+  margin-left: 0.3125rem;
+  font-size: 1.25rem;
   color: #fff;
 }
 .page-title {
-  padding: 15px;
+  padding: 0.9375rem;
   grid-area: 1/2;
   background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);
   text-align: center;
 }
 .page-title-content {
-  font-size: 28px;
+  font-size: 1.75rem;
   color: #fff;
 }
 .page-body {
-  padding: 15px;
+  padding: 0.9375rem;
   grid-area: 2/2;
   background-image: linear-gradient(to top, #fdfbfb 0%, #ebedee 100%);
 }
@@ -402,18 +402,18 @@ textarea:focus {
   color: #222;
 }
 .page-section {
-  border-radius: 10px;
-  padding: 15px;
+  border-radius: 0.625rem;
+  padding: 0.9375rem;
   background-color: #fff;
 }
 .page-section + .page-section {
-  margin-top: 15px;
+  margin-top: 0.9375rem;
 }
 .form-container {
   width: 100%;
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-gap: 15px;
+  grid-gap: 0.9375rem;
   justify-content: center;
   align-items: flex-start;
 }
@@ -425,36 +425,36 @@ textarea:focus {
 }
 .form-input {
   width: 100%;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 5px;
+  border: 0.0625rem solid #ccc;
+  border-radius: 0.3125rem;
+  padding: 0.3125rem;
   display: block;
 }
 .form-textarea {
   overflow: hidden;
-  height: 36px;
-  min-height: 36px;
+  height: 2.25rem;
+  min-height: 2.25rem;
   width: 100%;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 5px;
+  border: 0.0625rem solid #ccc;
+  border-radius: 0.3125rem;
+  padding: 0.3125rem;
   display: block;
 }
 .form-upload-container {
-  margin-top: 8px;
+  margin-top: 0.5rem;
   display: flex;
   align-items: center;
 }
 .form-upload-image,
 .form-upload-video {
-  height: 200px;
+  height: 12.5rem;
   width: auto;
   max-width: 80%;
-  border-radius: 5px;
+  border-radius: 0.3125rem;
 }
 .form-upload-icon {
-  margin-left: 4px;
-  height: 16px;
+  margin-left: 0.25rem;
+  height: 1rem;
 }
 .form-upload-file {
   overflow: hidden;
@@ -462,7 +462,7 @@ textarea:focus {
   width: 0;
 }
 .form-field-name {
-  padding-top: 5px;
+  padding-top: 0.3125rem;
   font-weight: bold;
 }
 .form-column-name {
@@ -474,27 +474,27 @@ textarea:focus {
   align-items: center;
 }
 .form-button {
-  height: 24px;
-  width: 24px;
+  height: 1.5rem;
+  width: 1.5rem;
   border: none;
   display: inline-block;
 }
 .form-button + .form-button {
-  margin-left: 5px;
+  margin-left: 0.3125rem;
 }
 .form-button-large {
-  height: 40px;
-  width: 40px;
+  height: 2.5rem;
+  width: 2.5rem;
 }
 .form-button-tooltip {
   position: absolute;
   display: none;
 }
 .form-button:hover + .form-button-tooltip {
-  margin-left: 15px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  padding: 8px 15px 8px 10px;
+  margin-left: 0.9375rem;
+  border-top-right-radius: 0.3125rem;
+  border-bottom-right-radius: 0.3125rem;
+  padding: 0.5rem 0.9375rem 0.5rem 0.625rem;
   display: inline-block;
   background-color: #475462;
   color: #fff;
@@ -527,7 +527,7 @@ textarea:focus {
   align-items: start;
 }
 .debug-outline * {
-  outline: 0.1px solid rgba(255,0,0,0.5);
+  outline: 0.00625rem solid rgba(255,0,0,0.5);
 }
 .text-button {
   background: url("/static/image/admin/text_icon.svg") no-repeat center center/contain;
