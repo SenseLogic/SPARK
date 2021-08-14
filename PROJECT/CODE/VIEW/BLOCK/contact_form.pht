@@ -115,7 +115,7 @@
             <img class="contact-form-captcha-image" src="/captcha"/>
         </div>
         <div class="contact-form-row">
-            <div id="contact-form-send-button" class="contact-form-send-button">
+            <div id="contact-form-send-button" class="contact-form-send-button" onclick="event.preventDefault(); HandleContactFormSendButtonClickEvent()">
                 <# .GetText( 'ContactFormSendButton' ) #>
             </div>
         </div>
@@ -291,18 +291,4 @@
             }
         }
     }
-
-    // -- STATEMENTS
-
-    GetElementById( "contact-form-send-button" ).AddEventListener(
-        "click",
-        function (
-            event
-            )
-        {
-            event.preventDefault();
-
-            HandleContactFormSendButtonClickEvent();
-        }
-        );
 </script>
