@@ -3,5 +3,5 @@ RewriteCond %{HTTP_HOST} !=localhost
 RewriteCond %{HTTPS} off
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=307,L,NE,QSA]
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_URI} !^.*\.(css|gif|jpg|webp|js|mp4|webm|png|svg|ico)$ [NC]
+RewriteCond %{REQUEST_URI} !^.*\.(css|gif|html|ico|jpg|js|mp4|png|svg|txt|webm|webmanifest|webp)$ [NC]
 RewriteRule ^(.*)$ index.php
