@@ -13,7 +13,7 @@ Spark is just a small collection of reusable procedural functions wrapping and e
 
 ### Autonomy and maintainability
 
-The PHP framework has no external dependencies, and doesn't actually require any of the build tools, whose goal is just to enhance the developer productivity and comfort.
+The PHP framework has no external dependencies, and can be used without any of the the build tools.
 
 ### Readability and conciseness
 
