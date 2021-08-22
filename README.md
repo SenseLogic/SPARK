@@ -16,6 +16,11 @@ Spark is just a small collection of reusable procedural functions wrapping and e
 Spark is implemented in the [Phoenix](https://github.com/senselogic/PHOENIX) language,
 which allows to develop modular PHP code with a readable and concise JavaScript-like syntax.
 
+### Long term maintenability
+
+While Spark uses several tools to enhance the developer productivity, they are not required to maintain the code, as the generated PHP files are identical to hand-crafted code
+and have absolutely no external dependencies.
+
 ## Microframework
 
 It provides **base functions** for :
