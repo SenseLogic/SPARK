@@ -11,15 +11,14 @@ Phoenix microframework and project template.
 Unlike huge frameworks like Laravel and Symphony which use classes to manage both the web and database requests,
 Spark is just a small collection of reusable procedural functions wrapping and extending the PHP standard library in order to improve its ease of use.
 
+### Autonomy and maintainability
+
+The PHP framework has no external dependencies, and doesn't actually require any of the build tools, whose goal is just to enhance the developer productivity and comfort.
+
 ### Readability and conciseness
 
-Spark is implemented in the [Phoenix](https://github.com/senselogic/PHOENIX) language,
-which allows to develop modular PHP code with a readable and concise JavaScript-like syntax.
-
-### Long term maintenability
-
-While Spark uses several tools to enhance the developer productivity, they are not required to maintain the code, as the generated PHP files are identical to hand-crafted code
-and have absolutely no external dependencies.
+Spark is implemented in the [Phoenix](https://github.com/senselogic/PHOENIX) language, which is translated into PHP code.
+This allows to develop modular PHP code with a readable and concise JavaScript-like syntax.
 
 ## Microframework
 
@@ -44,7 +43,7 @@ It provides **base functions** for :
 *   images
 *   captchas
 
-The source files are located in the **PROJECT/CODE/FRAMEWORK** folder, and have no external dependencies.
+The source files are located in the **PROJECT/CODE/FRAMEWORK** folder.
 
 The generated **PHP** files are located in the **PROJECT/www/FRAMEWORK** folder, and can be used independently of the Phoenix compiler.
 
