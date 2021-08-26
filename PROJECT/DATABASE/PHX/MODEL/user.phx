@@ -33,15 +33,15 @@ function GetDatabaseUserByIdMap(
         var_dump( statement.errorInfo() );
     }
 
-    var user_map = [];
+    var user_by_id_map = [];
 
     while ( var user = statement.fetchObject() )
     {
         user.Id = ( int )( user.Id );
-        user_map[ user.Id ] = user;
+        user_by_id_map[ user.Id ] = user;
     }
 
-    return user_map;
+    return user_by_id_map;
 }
 
 // ~~

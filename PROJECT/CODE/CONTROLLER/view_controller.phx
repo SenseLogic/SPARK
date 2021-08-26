@@ -1,11 +1,12 @@
 // -- IMPORTS
 
+import 'controller.php';
 import '../MODEL/session.php';
 import '../MODEL/text_model.php';
 
 // -- TYPES
 
-class VIEW_CONTROLLER
+class VIEW_CONTROLLER extends CONTROLLER
 {
     // -- CONSTRUCTORS
 
@@ -13,60 +14,13 @@ class VIEW_CONTROLLER
         string language_code
         )
     {
-        .Session = new SESSION();
+        parent::constructor( language_code );
 
-        .LanguageCode = language_code;
-        .LanguageDecimalSeparator = ',';
         .TextArray = GetDatabaseTextArray();
         .TextBySlugMap = GetTextBySlugMap( .TextArray );
     }
 
     // -- INQUIRIES
-
-    method GetTranslatedText(
-        string text
-        )
-    {
-        return GetTranslatedText( text, .LanguageCode );
-    }
-
-    // ~~
-
-    method GetTranslatedNumber(
-        string number
-        )
-    {
-        return GetTranslatedNumber( number, .LanguageDecimalSeparator );
-    }
-
-    // ~~
-
-    method GetBareText(
-        string text
-        )
-    {
-        return GetBareText( .GetTranslatedText( text ) );
-    }
-
-    // ~~
-
-    method GetProcessedText(
-        string text
-        )
-    {
-        return GetProcessedText( .GetTranslatedText( text ) );
-    }
-
-    // ~~
-
-    method GetProcessedMultilineText(
-        string text
-        )
-    {
-        return GetProcessedMultilineText( .GetTranslatedText( text ) );
-    }
-
-    // ~~
 
     method GetText(
         string slug

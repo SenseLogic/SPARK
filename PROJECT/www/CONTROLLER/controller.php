@@ -15,6 +15,7 @@ class CONTROLLER
         $this->Session = new SESSION();
 
         $this->LanguageCode = $language_code;
+        $this->LanguageDecimalSeparator = GetLanguageDecimalSeparator( $this->LanguageCode );
     }
 
     // -- INQUIRIES
@@ -24,5 +25,41 @@ class CONTROLLER
         )
     {
         return GetTranslatedText( $text, $this->LanguageCode );
+    }
+
+    // ~~
+
+    function GetTranslatedNumber(
+        string $number
+        )
+    {
+        return GetTranslatedNumber( $number, $this->LanguageDecimalSeparator );
+    }
+
+    // ~~
+
+    function GetBareText(
+        string $text
+        )
+    {
+        return GetBareText( $this->GetTranslatedText( $text ) );
+    }
+
+    // ~~
+
+    function GetProcessedText(
+        string $text
+        )
+    {
+        return GetProcessedText( $this->GetTranslatedText( $text ) );
+    }
+
+    // ~~
+
+    function GetProcessedMultilineText(
+        string $text
+        )
+    {
+        return GetProcessedMultilineText( $this->GetTranslatedText( $text ) );
     }
 }

@@ -15,6 +15,7 @@ class CONTROLLER
         .Session = new SESSION();
 
         .LanguageCode = language_code;
+        .LanguageDecimalSeparator = GetLanguageDecimalSeparator( .LanguageCode );
     }
 
     // -- INQUIRIES
@@ -24,5 +25,41 @@ class CONTROLLER
         )
     {
         return GetTranslatedText( text, .LanguageCode );
+    }
+
+    // ~~
+
+    method GetTranslatedNumber(
+        string number
+        )
+    {
+        return GetTranslatedNumber( number, .LanguageDecimalSeparator );
+    }
+
+    // ~~
+
+    method GetBareText(
+        string text
+        )
+    {
+        return GetBareText( .GetTranslatedText( text ) );
+    }
+
+    // ~~
+
+    method GetProcessedText(
+        string text
+        )
+    {
+        return GetProcessedText( .GetTranslatedText( text ) );
+    }
+
+    // ~~
+
+    method GetProcessedMultilineText(
+        string text
+        )
+    {
+        return GetProcessedMultilineText( .GetTranslatedText( text ) );
     }
 }

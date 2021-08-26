@@ -33,15 +33,15 @@ function GetDatabaseUserByIdMap(
         var_dump( $statement->errorInfo() );
     }
 
-     $user_map = [];
+     $user_by_id_map = [];
 
     while (  $user = $statement->fetchObject() )
     {
         $user->Id = ( int )( $user->Id );
-        $user_map[ $user->Id ] = $user;
+        $user_by_id_map[ $user->Id ] = $user;
     }
 
-    return $user_map;
+    return $user_by_id_map;
 }
 
 // ~~
