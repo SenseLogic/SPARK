@@ -7,8 +7,6 @@ class SESSION
     method constructor(
         )
     {
-        .Path = FindSessionValue( 'Path', '' );
-        .Message = FindSessionValue( 'Message', '' );
         .User = FindSessionValue( 'User', null );
         .UserIsConnected = FindSessionValue( 'UserIsConnected', false );
         .UserRole = FindSessionValue( 'UserRole', '' );
@@ -20,8 +18,6 @@ class SESSION
     method Store(
         )
     {
-        SetSessionValue( 'Path', .Path );
-        SetSessionValue( 'Message', .Message );
         SetSessionValue( 'User', .User );
         SetSessionValue( 'UserIsConnected', .UserIsConnected );
         SetSessionValue( 'UserRole', .UserRole );
