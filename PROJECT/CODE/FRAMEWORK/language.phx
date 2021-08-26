@@ -107,6 +107,7 @@ function GetLanguageDecimalSeparator(
 {
     if ( language_code === "en"
          || language_code === "ja"
+         || language_code === "ko"
          || language_code === "zh" )
     {
         return '.';
