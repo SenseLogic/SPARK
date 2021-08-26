@@ -105,8 +105,8 @@ function GetLanguageDecimalSeparator(
     string language_code
     )
 {
-    if ( language_code == "en"
-         || language_code == "ja" )
+    if ( language_code === "en"
+         || language_code === "ja" )
     {
         return '.';
     }
