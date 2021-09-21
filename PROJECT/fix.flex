@@ -14,6 +14,9 @@ ReplaceText
     spark, project
     spark, project
 ReplaceText
+    ARTICLES
+    ARTICLES
+ReplaceText
     ARTICLE
     ARTICLE
 ReplaceText
