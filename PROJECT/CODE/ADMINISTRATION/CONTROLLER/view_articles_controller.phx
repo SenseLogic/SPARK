@@ -17,7 +17,7 @@ class VIEW_ARTICLES_CONTROLLER extends CONTROLLER
         .Title = 'View articles';
         .ArticleArray = GetDatabaseArticleArray();
 
-        SetSessionValue( 'PreviousPage', GetRequest() );
+        SetSessionValue( 'ListPage', GetRequest() );
 
         import '../VIEW/view_articles_view.php';
     }

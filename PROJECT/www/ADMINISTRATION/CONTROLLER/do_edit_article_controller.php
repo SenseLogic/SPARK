@@ -20,10 +20,12 @@ class DO_EDIT_ARTICLE_CONTROLLER extends CONTROLLER
          $text = GetPostValue( 'Text' );
          $image_path = GetPostValue( 'ImagePath' );
          $video_path = GetPostValue( 'VideoPath' );
+         $importance = GetPostValue( 'Importance' );
+         $next_article_id = GetPostValue( 'NextArticleId' );
 
-        SetDatabaseArticle( $article_id, $slug, $name, $text, $image_path, $video_path );
+        SetDatabaseArticle( $article_id, $slug, $name, $text, $image_path, $video_path, $importance, $next_article_id );
 
-        Redirect( '/admin/article' );
+        Redirect( FindSessionValue( 'ListPage', '/admin/article' ) );
     }
 }
 

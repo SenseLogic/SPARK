@@ -15,6 +15,7 @@ class ADD_ARTICLE_CONTROLLER extends CONTROLLER
         parent::__construct();
 
         $this->Title = 'Add a article';
+        $this->ListPage = FindSessionValue( 'ListPage', '/admin/article' );
 
         require_once __DIR__ . '/' . '../VIEW/add_article_view.php';
     }

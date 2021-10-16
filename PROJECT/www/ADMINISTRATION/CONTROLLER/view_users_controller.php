@@ -17,7 +17,7 @@ class VIEW_USERS_CONTROLLER extends CONTROLLER
         $this->Title = 'View users';
         $this->UserArray = GetDatabaseUserArray();
 
-        SetSessionValue( 'PreviousPage', GetRequest() );
+        SetSessionValue( 'ListPage', GetRequest() );
 
         require_once __DIR__ . '/' . '../VIEW/view_users_view.php';
     }

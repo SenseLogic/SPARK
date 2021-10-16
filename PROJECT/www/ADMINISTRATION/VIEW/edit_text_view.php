@@ -57,7 +57,7 @@
                 <div>
                     <textarea class="form-textarea" name="Text"><?php echo htmlspecialchars( $this->Text->Text ); ?></textarea>
                 </div>
-                <a class="justify-self-start form-button form-button-large cancel-button" href="/admin/text">
+                <a class="justify-self-start form-button form-button-large cancel-button" href="<?php echo htmlspecialchars( $this->ListPage ); ?>">
                 </a>
                 <button class="justify-self-end form-button form-button-large apply-button" type="submit">
                 </button>

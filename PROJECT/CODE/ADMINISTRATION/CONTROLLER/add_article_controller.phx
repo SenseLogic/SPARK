@@ -15,6 +15,7 @@ class ADD_ARTICLE_CONTROLLER extends CONTROLLER
         parent::constructor();
 
         .Title = 'Add a article';
+        .ListPage = FindSessionValue( 'ListPage', '/admin/article' );
 
         import '../VIEW/add_article_view.php';
     }

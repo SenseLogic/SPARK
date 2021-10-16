@@ -21,7 +21,7 @@ class DO_ADD_USER_CONTROLLER extends CONTROLLER
 
         AddDatabaseUser( $email, $pseudonym, $password, $role );
 
-        Redirect( '/admin/user' );
+        Redirect( FindSessionValue( 'ListPage', '/admin/user' ) );
     }
 }
 

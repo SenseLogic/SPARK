@@ -17,6 +17,7 @@ class EDIT_ARTICLE_CONTROLLER extends CONTROLLER
 
         $this->Title = 'Edit a article';
         $this->Article = GetDatabaseArticleById( $article_id );
+        $this->ListPage = FindSessionValue( 'ListPage', '/admin/article' );
 
         require_once __DIR__ . '/' . '../VIEW/edit_article_view.php';
     }

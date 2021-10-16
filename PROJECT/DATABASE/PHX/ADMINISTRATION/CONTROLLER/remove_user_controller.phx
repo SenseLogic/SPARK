@@ -17,6 +17,7 @@ class REMOVE_USER_CONTROLLER extends CONTROLLER
 
         .Title = 'Remove a user';
         .User = GetDatabaseUserById( user_id );
+        .ListPage = FindSessionValue( 'ListPage', '/admin/user' );
 
         import '../VIEW/remove_user_view.php';
     }

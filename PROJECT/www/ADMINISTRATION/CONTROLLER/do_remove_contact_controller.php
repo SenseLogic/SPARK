@@ -17,7 +17,7 @@ class DO_REMOVE_CONTACT_CONTROLLER extends CONTROLLER
 
         RemoveDatabaseContactById( $contact_id );
 
-        Redirect( '/admin/contact' );
+        Redirect( FindSessionValue( 'ListPage', '/admin/contact' ) );
     }
 }
 

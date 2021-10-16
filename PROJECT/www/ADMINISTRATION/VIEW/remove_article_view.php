@@ -39,7 +39,19 @@
                         <video class="form-upload-video" src="<?php echo htmlspecialchars( $this->Article->VideoPath ); ?>" type="video/mp4" onerror="this.src='/static/video/admin/missing_video.mp4'"></video>
                     </div>
                 </div>
-                <a class="justify-self-start form-button form-button-large cancel-button" href="/admin/article">
+                <div class="form-field-name">
+                    Importance :
+                </div>
+                <div>
+                    <input class="form-input" name="Importance" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Article->Importance ) ); ?>" readonly/>
+                </div>
+                <div class="form-field-name">
+                    Next Article Id :
+                </div>
+                <div>
+                    <input class="form-input" name="NextArticleId" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Article->NextArticleId ) ); ?>" readonly/>
+                </div>
+                <a class="justify-self-start form-button form-button-large cancel-button" href="<?php echo htmlspecialchars( $this->ListPage ); ?>">
                 </a>
                 <button class="justify-self-end form-button-large form-button form-button-large remove-button" type="submit">
                 </button>

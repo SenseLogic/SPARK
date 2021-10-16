@@ -17,7 +17,7 @@ class DO_REMOVE_USER_CONTROLLER extends CONTROLLER
 
         RemoveDatabaseUserById( user_id );
 
-        Redirect( '/admin/user' );
+        Redirect( FindSessionValue( 'ListPage', '/admin/user' ) );
     }
 }
 

@@ -17,7 +17,7 @@ class VIEW_USER_CONTROLLER extends CONTROLLER
 
         $this->Title = 'View a user';
         $this->User = GetDatabaseUserById( $user_id );
-        $this->PreviousPage = GetSessionValue( 'PreviousPage' );
+        $this->ListPage = FindSessionValue( 'ListPage', '/admin/user' );
 
         require_once __DIR__ . '/' . '../VIEW/view_user_view.php';
     }

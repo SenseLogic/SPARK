@@ -17,7 +17,7 @@ class VIEW_TEXTS_CONTROLLER extends CONTROLLER
         $this->Title = 'View texts';
         $this->TextArray = GetDatabaseTextArray();
 
-        SetSessionValue( 'PreviousPage', GetRequest() );
+        SetSessionValue( 'ListPage', GetRequest() );
 
         require_once __DIR__ . '/' . '../VIEW/view_texts_view.php';
     }

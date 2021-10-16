@@ -17,6 +17,7 @@ class REMOVE_CONTACT_CONTROLLER extends CONTROLLER
 
         .Title = 'Remove a contact';
         .Contact = GetDatabaseContactById( contact_id );
+        .ListPage = FindSessionValue( 'ListPage', '/admin/contact' );
 
         import '../VIEW/remove_contact_view.php';
     }

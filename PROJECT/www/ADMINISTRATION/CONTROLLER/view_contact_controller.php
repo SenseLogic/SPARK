@@ -17,7 +17,7 @@ class VIEW_CONTACT_CONTROLLER extends CONTROLLER
 
         $this->Title = 'View a contact';
         $this->Contact = GetDatabaseContactById( $contact_id );
-        $this->PreviousPage = GetSessionValue( 'PreviousPage' );
+        $this->ListPage = FindSessionValue( 'ListPage', '/admin/contact' );
 
         require_once __DIR__ . '/' . '../VIEW/view_contact_view.php';
     }

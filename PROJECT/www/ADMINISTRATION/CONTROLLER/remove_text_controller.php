@@ -17,6 +17,7 @@ class REMOVE_TEXT_CONTROLLER extends CONTROLLER
 
         $this->Title = 'Remove a text';
         $this->Text = GetDatabaseTextById( $text_id );
+        $this->ListPage = FindSessionValue( 'ListPage', '/admin/text' );
 
         require_once __DIR__ . '/' . '../VIEW/remove_text_view.php';
     }

@@ -17,7 +17,7 @@ class VIEW_ARTICLE_CONTROLLER extends CONTROLLER
 
         $this->Title = 'View a article';
         $this->Article = GetDatabaseArticleById( $article_id );
-        $this->PreviousPage = GetSessionValue( 'PreviousPage' );
+        $this->ListPage = FindSessionValue( 'ListPage', '/admin/article' );
 
         require_once __DIR__ . '/' . '../VIEW/view_article_view.php';
     }

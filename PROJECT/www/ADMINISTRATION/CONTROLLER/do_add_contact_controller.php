@@ -23,7 +23,7 @@ class DO_ADD_CONTACT_CONTROLLER extends CONTROLLER
 
         AddDatabaseContact( $name, $company, $email, $phone, $subject, $message );
 
-        Redirect( '/admin/contact' );
+        Redirect( FindSessionValue( 'ListPage', '/admin/contact' ) );
     }
 }
 

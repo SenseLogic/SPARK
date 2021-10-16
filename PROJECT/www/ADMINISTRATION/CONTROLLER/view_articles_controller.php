@@ -17,7 +17,7 @@ class VIEW_ARTICLES_CONTROLLER extends CONTROLLER
         $this->Title = 'View articles';
         $this->ArticleArray = GetDatabaseArticleArray();
 
-        SetSessionValue( 'PreviousPage', GetRequest() );
+        SetSessionValue( 'ListPage', GetRequest() );
 
         require_once __DIR__ . '/' . '../VIEW/view_articles_view.php';
     }

@@ -17,7 +17,7 @@ class DO_REMOVE_TEXT_CONTROLLER extends CONTROLLER
 
         RemoveDatabaseTextById( text_id );
 
-        Redirect( '/admin/text' );
+        Redirect( FindSessionValue( 'ListPage', '/admin/text' ) );
     }
 }
 

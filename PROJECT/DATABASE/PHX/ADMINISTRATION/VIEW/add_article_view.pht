@@ -11,7 +11,9 @@
             name_field,
             text_field,
             image_path_field,
-            video_path_field;
+            video_path_field,
+            importance_field,
+            next_article_id_field;
 
         it_is_valid_add_article_form = true;
 
@@ -21,6 +23,8 @@
         text_field = add_article_form.Text;
         image_path_field = add_article_form.ImagePath;
         video_path_field = add_article_form.VideoPath;
+        importance_field = add_article_form.Importance;
+        next_article_id_field = add_article_form.NextArticleId;
 
         if ( slug_field.value !== "" )
         {
@@ -77,6 +81,28 @@
             it_is_valid_add_article_form = false;
         }
 
+        if ( importance_field.value !== "" )
+        {
+            importance_field.classList.remove( "form-field-error" );
+        }
+        else
+        {
+            importance_field.classList.add( "form-field-error" );
+
+            it_is_valid_add_article_form = false;
+        }
+
+        if ( next_article_id_field.value !== "" )
+        {
+            next_article_id_field.classList.remove( "form-field-error" );
+        }
+        else
+        {
+            next_article_id_field.classList.add( "form-field-error" );
+
+            it_is_valid_add_article_form = false;
+        }
+
         return it_is_valid_add_article_form;
     }
 </script>
@@ -126,7 +152,27 @@
                         </label>
                     </div>
                 </div>
-                <a class="justify-self-start form-button form-button-large cancel-button" href="/admin/article">
+                <div class="form-field-name">
+                    Importance :
+                </div>
+                <div>
+                    <select class="form-select" name="Importance">
+                        <option value="low">Low importance</option>
+                        <option value="high">High importance</option>
+                    </select>
+                </div>
+                <div class="form-field-name">
+                    Next Article Id :
+                </div>
+                <div>
+                    <select class="form-select" name="NextArticleId">
+                        <? var article_array = GetDatabaseArticleArray(); ?>
+                        <? foreach ( article; article_array ) { ?>
+                            <option value="<% article.Id %>"><% article.Name %></option>
+                        <? } ?>
+                    </select>
+                </div>
+                <a class="justify-self-start form-button form-button-large cancel-button" href="<% .ListPage %>">
                 </a>
                 <button class="justify-self-end form-button form-button-large apply-button" type="submit">
                 </button>

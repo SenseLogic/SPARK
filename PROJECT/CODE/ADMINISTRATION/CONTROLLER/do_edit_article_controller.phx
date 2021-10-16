@@ -20,10 +20,12 @@ class DO_EDIT_ARTICLE_CONTROLLER extends CONTROLLER
         var text = GetPostValue( 'Text' );
         var image_path = GetPostValue( 'ImagePath' );
         var video_path = GetPostValue( 'VideoPath' );
+        var importance = GetPostValue( 'Importance' );
+        var next_article_id = GetPostValue( 'NextArticleId' );
 
-        SetDatabaseArticle( article_id, slug, name, text, image_path, video_path );
+        SetDatabaseArticle( article_id, slug, name, text, image_path, video_path, importance, next_article_id );
 
-        Redirect( '/admin/article' );
+        Redirect( FindSessionValue( 'ListPage', '/admin/article' ) );
     }
 }
 

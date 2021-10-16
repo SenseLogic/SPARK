@@ -18,6 +18,12 @@
                 Video Path
             </div>
             <div class="form-column-name sortable-grid-column">
+                Importance
+            </div>
+            <div class="form-column-name sortable-grid-column">
+                Next Article Id
+            </div>
+            <div class="form-column-name sortable-grid-column">
                 Action
             </div>
             <?php foreach ( $this->ArticleArray as  $article ) { ?>
@@ -35,6 +41,12 @@
                 </div>
                 <div class="sortable-grid-cell">
                     <?php echo htmlspecialchars( GetValueText( $article->VideoPath ) ); ?>
+                </div>
+                <div class="sortable-grid-cell">
+                    <?php echo htmlspecialchars( GetValueText( $article->Importance ) ); ?>
+                </div>
+                <div class="sortable-grid-cell">
+                    <?php echo htmlspecialchars( GetValueText( $article->NextArticleId ) ); ?>
                 </div>
                 <div class="form-centered sortable-grid-cell">
                     <a class="form-button view-button" href="/admin/article/view/<?php echo htmlspecialchars( $article->Id ); ?>">

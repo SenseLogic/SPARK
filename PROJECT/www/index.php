@@ -223,7 +223,9 @@ function Route(
                       && HasPostValue( 'Name' )
                       && HasPostValue( 'Text' )
                       && HasPostValue( 'ImagePath' )
-                      && HasPostValue( 'VideoPath' ) )
+                      && HasPostValue( 'VideoPath' )
+                      && HasPostValue( 'Importance' )
+                      && HasPostValue( 'NextArticleId' ) )
             {
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_add_article_controller.php';
             }
@@ -250,7 +252,9 @@ function Route(
                       && HasPostValue( 'Name' )
                       && HasPostValue( 'Text' )
                       && HasPostValue( 'ImagePath' )
-                      && HasPostValue( 'VideoPath' ) )
+                      && HasPostValue( 'VideoPath' )
+                      && HasPostValue( 'Importance' )
+                      && HasPostValue( 'NextArticleId' ) )
             {
                  $article_id = $path_value_array[ 3 ];
 

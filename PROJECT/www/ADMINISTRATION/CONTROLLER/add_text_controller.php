@@ -15,6 +15,7 @@ class ADD_TEXT_CONTROLLER extends CONTROLLER
         parent::__construct();
 
         $this->Title = 'Add a text';
+        $this->ListPage = FindSessionValue( 'ListPage', '/admin/text' );
 
         require_once __DIR__ . '/' . '../VIEW/add_text_view.php';
     }

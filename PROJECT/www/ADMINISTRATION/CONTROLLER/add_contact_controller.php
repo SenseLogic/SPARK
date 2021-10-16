@@ -15,6 +15,7 @@ class ADD_CONTACT_CONTROLLER extends CONTROLLER
         parent::__construct();
 
         $this->Title = 'Add a contact';
+        $this->ListPage = FindSessionValue( 'ListPage', '/admin/contact' );
 
         require_once __DIR__ . '/' . '../VIEW/add_contact_view.php';
     }

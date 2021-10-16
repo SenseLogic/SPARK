@@ -17,6 +17,7 @@ class REMOVE_USER_CONTROLLER extends CONTROLLER
 
         $this->Title = 'Remove a user';
         $this->User = GetDatabaseUserById( $user_id );
+        $this->ListPage = FindSessionValue( 'ListPage', '/admin/user' );
 
         require_once __DIR__ . '/' . '../VIEW/remove_user_view.php';
     }

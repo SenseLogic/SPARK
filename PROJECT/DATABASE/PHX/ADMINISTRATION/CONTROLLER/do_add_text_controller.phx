@@ -19,7 +19,7 @@ class DO_ADD_TEXT_CONTROLLER extends CONTROLLER
 
         AddDatabaseText( slug, text );
 
-        Redirect( '/admin/text' );
+        Redirect( FindSessionValue( 'ListPage', '/admin/text' ) );
     }
 }
 

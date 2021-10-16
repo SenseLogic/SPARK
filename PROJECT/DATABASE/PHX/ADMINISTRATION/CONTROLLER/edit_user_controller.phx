@@ -17,6 +17,7 @@ class EDIT_USER_CONTROLLER extends CONTROLLER
 
         .Title = 'Edit a user';
         .User = GetDatabaseUserById( user_id );
+        .ListPage = FindSessionValue( 'ListPage', '/admin/user' );
 
         import '../VIEW/edit_user_view.php';
     }

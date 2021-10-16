@@ -17,7 +17,7 @@ class VIEW_CONTACTS_CONTROLLER extends CONTROLLER
         .Title = 'View contacts';
         .ContactArray = GetDatabaseContactArray();
 
-        SetSessionValue( 'PreviousPage', GetRequest() );
+        SetSessionValue( 'ListPage', GetRequest() );
 
         import '../VIEW/view_contacts_view.php';
     }

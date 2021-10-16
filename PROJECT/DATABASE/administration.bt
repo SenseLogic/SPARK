@@ -16,6 +16,7 @@ class ADD_{#type#}_CONTROLLER extends CONTROLLER
         parent::constructor();
 
         .Title = 'Add a {#locution#}';
+        .ListPage = FindSessionValue( 'ListPage', '/admin/{#style#}' );
 
         import '../VIEW/add_{#variable#}_view.php';
     }
@@ -46,7 +47,7 @@ class DO_ADD_{#type#}_CONTROLLER extends CONTROLLER
 
         AddDatabase{#attribute#}( <%¨{%variable%}<~!{%is_last_added%}<>, ~>¨%> );
 
-        Redirect( '/admin/{#style#}' );
+        Redirect( FindSessionValue( 'ListPage', '/admin/{#style#}' ) );
     }
 }
 
@@ -73,6 +74,7 @@ class EDIT_{#type#}_CONTROLLER extends CONTROLLER
 
         .Title = 'Edit a {#locution#}';
         .{#attribute#} = GetDatabase{#attribute#}By{#key_attribute#}( {#variable#}_{#key_variable#} );
+        .ListPage = FindSessionValue( 'ListPage', '/admin/{#style#}' );
 
         import '../VIEW/edit_{#variable#}_view.php';
     }
@@ -104,7 +106,7 @@ class DO_EDIT_{#type#}_CONTROLLER extends CONTROLLER
 
         SetDatabase{#attribute#}( {#variable#}_{#key_variable#}, <${%variable%}<~!{%is_last_non_key%}<>, ~>$> );
 
-        Redirect( '/admin/{#style#}' );
+        Redirect( FindSessionValue( 'ListPage', '/admin/{#style#}' ) );
     }
 }
 
@@ -131,6 +133,7 @@ class REMOVE_{#type#}_CONTROLLER extends CONTROLLER
 
         .Title = 'Remove a {#locution#}';
         .{#attribute#} = GetDatabase{#attribute#}By{#key_attribute#}( {#variable#}_{#key_variable#} );
+        .ListPage = FindSessionValue( 'ListPage', '/admin/{#style#}' );
 
         import '../VIEW/remove_{#variable#}_view.php';
     }
@@ -159,7 +162,7 @@ class DO_REMOVE_{#type#}_CONTROLLER extends CONTROLLER
 
         RemoveDatabase{#attribute#}By{#key_attribute#}( {#variable#}_{#key_variable#} );
 
-        Redirect( '/admin/{#style#}' );
+        Redirect( FindSessionValue( 'ListPage', '/admin/{#style#}' ) );
     }
 }
 
@@ -186,7 +189,7 @@ class VIEW_{#type#}_CONTROLLER extends CONTROLLER
 
         .Title = 'View a {#locution#}';
         .{#attribute#} = GetDatabase{#attribute#}By{#key_attribute#}( {#variable#}_{#key_variable#} );
-        .PreviousPage = GetSessionValue( 'PreviousPage' );
+        .ListPage = FindSessionValue( 'ListPage', '/admin/{#style#}' );
 
         import '../VIEW/view_{#variable#}_view.php';
     }
@@ -215,7 +218,7 @@ class VIEW_<~Plural<>{#type#}~>_CONTROLLER extends CONTROLLER
         .Title = 'View <~Plural<>{#locution#}~>';
         .{#attribute#}Array = GetDatabase{#attribute#}Array();
 
-        SetSessionValue( 'PreviousPage', GetRequest() );
+        SetSessionValue( 'ListPage', GetRequest() );
 
         import '../VIEW/view_<~Plural<>{#variable#}~>_view.php';
     }
@@ -276,11 +279,20 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                         <label class="form-upload-button">
                             <img class="form-upload-icon" src="/static/image/admin/upload_icon.svg"/><input id="file" class="form-upload-file" type="file" accept="video/mp4" onchange="HandleVideoFileInputChangeEvent( this )"/>
                         </label>
-                    </div><><~{%is_text%}<>
+                    </div><><~{%is_enumeration%}<>
+                    <select class="form-select" name="{%attribute%}"><~Map<>enumeration<>{%enumeration%}<>^<>~<>
+                        <option value="{*enumeration1*}">{*enumeration2*}</option>~>
+                    </select><><~{%is_reference%}<>
+                    <select class="form-select" name="{%attribute%}"><~Split<>reference<>{%reference%}<>~<>
+                        <? var {*reference1*}_array = {*reference2*}; ?>
+                        <? foreach ( {*reference1*}; {*reference1*}_array ) { ?>
+                            <option value="<\% {*reference3*} %\>"><\% {*reference4*} %\></option>~>
+                        <? } ?>
+                    </select><><~{%is_text%}<>
                     <textarea class="form-textarea" name="{%attribute%}"></textarea><>
-                    <input class="form-input" name="{%attribute%}" type="text"/>~>~>~>
+                    <input class="form-input" name="{%attribute%}" type="text"/>~>~>~>~>~>
                 </div>¨%>
-                <a class="justify-self-start form-button form-button-large cancel-button" href="/admin/{#style#}">
+                <a class="justify-self-start form-button form-button-large cancel-button" href="<\% .ListPage %\>">
                 </a>
                 <button class="justify-self-end form-button form-button-large apply-button" type="submit">
                 </button>
@@ -341,11 +353,20 @@ $>
                         <label class="form-upload-button">
                             <img class="form-upload-icon" src="/static/image/admin/upload_icon.svg"/><input id="file" class="form-upload-file" type="file" accept="video/mp4" onchange="HandleVideoFileInputChangeEvent( this )"/>
                         </label>
-                    </div><><~{%is_text%}<>
+                    </div><><~{%is_enumeration%}<>
+                    <select class="form-select" name="{%attribute%}"><~Map<>enumeration<>{%enumeration%}<>^<>~<>
+                        <option value="{*enumeration1*}" <? if ( .{#attribute#}.{%attribute%} === '{*enumeration1*}' ) echo 'selected'; ?>>{*enumeration2*}</option>~>
+                    </select><><~{%is_reference%}<>
+                    <select class="form-select" name="{%attribute%}"><~Split<>reference<>{%reference%}<>~<>
+                        <? var {*reference1*}_array = {*reference2*}; ?>
+                        <? foreach ( var {*reference1*}; {*reference1*}_array ) { ?>
+                            <option value="<\% {*reference3*} %\>" <? if ( .{#attribute#}.{%attribute%} === {*reference3*} ) echo 'selected'; ?>><\% {*reference4*} %\></option>~>
+                        <? } ?>
+                    </select><><~{%is_text%}<>
                     <textarea class="form-textarea" name="{%attribute%}"><\% .{#attribute#}.{%attribute%} %\></textarea><>
-                    <input class="form-input" name="{%attribute%}" type="text" value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>"/>~>~>~>
+                    <input class="form-input" name="{%attribute%}" type="text" value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>"/>~>~>~>~>~>
                 </div>$>
-                <a class="justify-self-start form-button form-button-large cancel-button" href="/admin/{#style#}">
+                <a class="justify-self-start form-button form-button-large cancel-button" href="<\% .ListPage %\>">
                 </a>
                 <button class="justify-self-end form-button form-button-large apply-button" type="submit">
                 </button>
@@ -375,7 +396,7 @@ $>
                     <textarea class="form-textarea" name="{%attribute%}" readonly><\% .{#attribute#}.{%attribute%} %\></textarea><>
                     <input class="form-input" name="{%attribute%}" type="text" value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" readonly/>~>~>~>
                 </div>$>
-                <a class="justify-self-start form-button form-button-large cancel-button" href="/admin/{#style#}">
+                <a class="justify-self-start form-button form-button-large cancel-button" href="<\% .ListPage %\>">
                 </a>
                 <button class="justify-self-end form-button-large form-button form-button-large remove-button" type="submit">
                 </button>
@@ -404,7 +425,7 @@ $>
                     <textarea class="form-textarea" name="{%attribute%}" readonly><\% .{#attribute#}.{%attribute%} %\></textarea><>
                     <input class="form-input" name="{%attribute%}" type="text" value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" readonly/>~>~>~>
             </div>$>
-            <a class="justify-self-start form-button form-button-large cancel-button" href="<\% .PreviousPage %\>">
+            <a class="justify-self-start form-button form-button-large cancel-button" href="<\% .ListPage %\>">
             </a>
         </div>
     </div>

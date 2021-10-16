@@ -17,7 +17,7 @@ class VIEW_CONTACT_CONTROLLER extends CONTROLLER
 
         .Title = 'View a contact';
         .Contact = GetDatabaseContactById( contact_id );
-        .PreviousPage = GetSessionValue( 'PreviousPage' );
+        .ListPage = FindSessionValue( 'ListPage', '/admin/contact' );
 
         import '../VIEW/view_contact_view.php';
     }

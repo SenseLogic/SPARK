@@ -20,7 +20,7 @@ class DO_EDIT_TEXT_CONTROLLER extends CONTROLLER
 
         SetDatabaseText( text_id, slug, text );
 
-        Redirect( '/admin/text' );
+        Redirect( FindSessionValue( 'ListPage', '/admin/text' ) );
     }
 }
 

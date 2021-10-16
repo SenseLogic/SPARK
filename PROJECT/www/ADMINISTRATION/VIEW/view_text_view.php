@@ -14,7 +14,7 @@
             <div>
                     <textarea class="form-textarea" name="Text" readonly><?php echo htmlspecialchars( $this->Text->Text ); ?></textarea>
             </div>
-            <a class="justify-self-start form-button form-button-large cancel-button" href="<?php echo htmlspecialchars( $this->PreviousPage ); ?>">
+            <a class="justify-self-start form-button form-button-large cancel-button" href="<?php echo htmlspecialchars( $this->ListPage ); ?>">
             </a>
         </div>
     </div>

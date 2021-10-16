@@ -17,6 +17,7 @@ class EDIT_TEXT_CONTROLLER extends CONTROLLER
 
         $this->Title = 'Edit a text';
         $this->Text = GetDatabaseTextById( $text_id );
+        $this->ListPage = FindSessionValue( 'ListPage', '/admin/text' );
 
         require_once __DIR__ . '/' . '../VIEW/edit_text_view.php';
     }

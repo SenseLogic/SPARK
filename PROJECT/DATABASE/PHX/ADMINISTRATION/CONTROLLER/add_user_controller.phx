@@ -15,6 +15,7 @@ class ADD_USER_CONTROLLER extends CONTROLLER
         parent::constructor();
 
         .Title = 'Add a user';
+        .ListPage = FindSessionValue( 'ListPage', '/admin/user' );
 
         import '../VIEW/add_user_view.php';
     }

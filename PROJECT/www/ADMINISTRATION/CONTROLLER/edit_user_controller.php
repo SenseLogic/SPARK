@@ -17,6 +17,7 @@ class EDIT_USER_CONTROLLER extends CONTROLLER
 
         $this->Title = 'Edit a user';
         $this->User = GetDatabaseUserById( $user_id );
+        $this->ListPage = FindSessionValue( 'ListPage', '/admin/user' );
 
         require_once __DIR__ . '/' . '../VIEW/edit_user_view.php';
     }

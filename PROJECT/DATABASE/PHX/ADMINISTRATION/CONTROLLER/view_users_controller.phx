@@ -17,7 +17,7 @@ class VIEW_USERS_CONTROLLER extends CONTROLLER
         .Title = 'View users';
         .UserArray = GetDatabaseUserArray();
 
-        SetSessionValue( 'PreviousPage', GetRequest() );
+        SetSessionValue( 'ListPage', GetRequest() );
 
         import '../VIEW/view_users_view.php';
     }
