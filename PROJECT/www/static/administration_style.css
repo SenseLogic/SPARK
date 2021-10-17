@@ -426,6 +426,7 @@ textarea:focus {
 .form-input,
 .form-select {
   width: 100%;
+  min-height: 2rem;
   border: 0.0625rem solid #ccc;
   border-radius: 0.3125rem;
   padding: 0.3125rem;

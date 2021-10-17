@@ -1,5 +1,5 @@
 <? include 'BLOCK/page_header.php'; ?>
-<div>
+<div class="view-user-view">
     <div class="page-section form-section">
         <div class="form-container">
             <div class="form-field-name">

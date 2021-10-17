@@ -1,5 +1,5 @@
 <?php require __DIR__ . '/' . 'BLOCK/page_header.php'; ?>
-<div>
+<div class="remove-user-view">
     <div class="page-section form-section">
         <form class="form-centered" action="/admin/user/remove/<?php echo htmlspecialchars( $this->User->Id ); ?>" method="post">
             <div class="form-container">

@@ -106,7 +106,7 @@
         return it_is_valid_edit_article_form;
     }
 </script>
-<div>
+<div class="edit-article-view">
     <div class="page-section form-section">
         <form class="form-centered" name="EditArticleForm" onsubmit="return IsValidEditArticleForm()" action="/admin/article/edit/<?php echo htmlspecialchars( $this->Article->Id ); ?>" method="post">
             <div class="form-container">

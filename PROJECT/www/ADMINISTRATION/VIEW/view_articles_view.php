@@ -1,5 +1,5 @@
 <?php require __DIR__ . '/' . 'BLOCK/page_header.php'; ?>
-<div>
+<div class="view-articles-view">
     <div class="page-section form-section">
         <div class="form-container table-container article-table sortable-grid">
             <div class="form-column-name sortable-grid-column">

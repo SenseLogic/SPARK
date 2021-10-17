@@ -67,7 +67,7 @@
         return it_is_valid_edit_user_form;
     }
 </script>
-<div>
+<div class="edit-user-view">
     <div class="page-section form-section">
         <form class="form-centered" name="EditUserForm" onsubmit="return IsValidEditUserForm()" action="/admin/user/edit/<% .User.Id %>" method="post">
             <div class="form-container">

@@ -1,5 +1,5 @@
 <? include 'BLOCK/page_header.php'; ?>
-<div>
+<div class="view-contacts-view">
     <div class="page-section form-section">
         <div class="form-container table-container contact-table sortable-grid">
             <div class="form-column-name sortable-grid-column">

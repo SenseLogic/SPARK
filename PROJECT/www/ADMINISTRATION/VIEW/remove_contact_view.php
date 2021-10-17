@@ -1,5 +1,5 @@
 <?php require __DIR__ . '/' . 'BLOCK/page_header.php'; ?>
-<div>
+<div class="remove-contact-view">
     <div class="page-section form-section">
         <form class="form-centered" action="/admin/contact/remove/<?php echo htmlspecialchars( $this->Contact->Id ); ?>" method="post">
             <div class="form-container">
