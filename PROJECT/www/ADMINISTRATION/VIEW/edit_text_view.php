@@ -41,7 +41,7 @@
         return it_is_valid_edit_text_form;
     }
 </script>
-<div class="edit-text-view">
+<div id="edit-text-view">
     <div class="page-section form-section">
         <form class="form-centered" name="EditTextForm" onsubmit="return IsValidEditTextForm()" action="/admin/text/edit/<?php echo htmlspecialchars( $this->Text->Id ); ?>" method="post">
             <div class="form-container">

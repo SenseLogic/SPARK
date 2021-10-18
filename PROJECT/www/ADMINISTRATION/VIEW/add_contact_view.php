@@ -95,7 +95,7 @@
         return it_is_valid_add_contact_form;
     }
 </script>
-<div class="add-contact-view">
+<div id="add-contact-view">
     <div class="page-section form-section">
         <form class="form-centered" name="AddContactForm" onsubmit="return IsValidAddContactForm()" action="/admin/contact/add" method="post">
             <div class="form-container">

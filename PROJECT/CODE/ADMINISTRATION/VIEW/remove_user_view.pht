@@ -1,5 +1,5 @@
 <? include 'BLOCK/page_header.php'; ?>
-<div class="remove-user-view">
+<div id="remove-user-view">
     <div class="page-section form-section">
         <form class="form-centered" action="/admin/user/remove/<% .User.Id %>" method="post">
             <div class="form-container">

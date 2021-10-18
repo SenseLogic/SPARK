@@ -14,7 +14,6 @@ function GetImageColor(
     }
     else
     {
-
         return imagecolorallocatealpha( image, color_red, color_green, color_blue, ( 255 - color_opacity ) * 127 / 255 );
     }
 }

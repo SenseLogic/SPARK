@@ -258,7 +258,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
         return it_is_valid_add_{#variable#}_form;
     }
 </script>
-<div class="add-{#style#}-view">
+<div id="add-{#style#}-view">
     <div class="page-section form-section">
         <form class="form-centered" name="Add{#attribute#}Form" onsubmit="return IsValidAdd{#attribute#}Form()" action="/admin/{#style#}/add" method="post">
             <div class="form-container"><%¨
@@ -332,7 +332,7 @@ $>
         return it_is_valid_edit_{#variable#}_form;
     }
 </script>
-<div class="edit-{#style#}-view">
+<div id="edit-{#style#}-view">
     <div class="page-section form-section">
         <form class="form-centered" name="Edit{#attribute#}Form" onsubmit="return IsValidEdit{#attribute#}Form()" action="/admin/{#style#}/edit/<\% .{#attribute#}.{#key_attribute#} %\>" method="post">
             <div class="form-container"><$
@@ -377,7 +377,7 @@ $>
 <? include 'BLOCK/page_footer.php'; ?>
 %%PHX/ADMINISTRATION/VIEW/remove_{#variable#}_view.pht
 <? include 'BLOCK/page_header.php'; ?>
-<div class="remove-{#style#}-view">
+<div id="remove-{#style#}-view">
     <div class="page-section form-section">
         <form class="form-centered" action="/admin/{#style#}/remove/<\% .{#attribute#}.{#key_attribute#} %\>" method="post">
             <div class="form-container"><$
@@ -407,7 +407,7 @@ $>
 <? include 'BLOCK/page_footer.php'; ?>
 %%PHX/ADMINISTRATION/VIEW/view_{#variable#}_view.pht
 <? include 'BLOCK/page_header.php'; ?>
-<div class="view-{#style#}-view">
+<div id="view-{#style#}-view">
     <div class="page-section form-section">
         <div class="form-container"><$
             <div class="form-field-name">
@@ -433,7 +433,7 @@ $>
 <? include 'BLOCK/page_footer.php'; ?>
 %%PHX/ADMINISTRATION/VIEW/view_<~Plural<>{#variable#}~>_view.pht
 <? include 'BLOCK/page_header.php'; ?>
-<div class="view-<~Plural<>{#style#}~>-view">
+<div id="view-<~Plural<>{#style#}~>-view">
     <div class="page-section form-section">
         <div class="form-container table-container {#style#}-table sortable-grid"><$
             <div class="form-column-name sortable-grid-column">

@@ -106,7 +106,7 @@
         return it_is_valid_edit_contact_form;
     }
 </script>
-<div class="edit-contact-view">
+<div id="edit-contact-view">
     <div class="page-section form-section">
         <form class="form-centered" name="EditContactForm" onsubmit="return IsValidEditContactForm()" action="/admin/contact/edit/<?php echo htmlspecialchars( $this->Contact->Id ); ?>" method="post">
             <div class="form-container">

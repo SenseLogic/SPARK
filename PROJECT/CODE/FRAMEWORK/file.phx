@@ -55,7 +55,6 @@ function GetFileText(
     return file_get_contents( file_path );
 }
 
-
 // ~~
 
 function SetFileText(

@@ -67,7 +67,7 @@
         return it_is_valid_add_user_form;
     }
 </script>
-<div class="add-user-view">
+<div id="add-user-view">
     <div class="page-section form-section">
         <form class="form-centered" name="AddUserForm" onsubmit="return IsValidAddUserForm()" action="/admin/user/add" method="post">
             <div class="form-container">

@@ -41,7 +41,7 @@
         return it_is_valid_add_text_form;
     }
 </script>
-<div class="add-text-view">
+<div id="add-text-view">
     <div class="page-section form-section">
         <form class="form-centered" name="AddTextForm" onsubmit="return IsValidAddTextForm()" action="/admin/text/add" method="post">
             <div class="form-container">

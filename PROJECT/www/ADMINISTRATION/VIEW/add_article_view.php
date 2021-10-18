@@ -106,7 +106,7 @@
         return it_is_valid_add_article_form;
     }
 </script>
-<div class="add-article-view">
+<div id="add-article-view">
     <div class="page-section form-section">
         <form class="form-centered" name="AddArticleForm" onsubmit="return IsValidAddArticleForm()" action="/admin/article/add" method="post">
             <div class="form-container">
