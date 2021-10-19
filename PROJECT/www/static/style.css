@@ -756,8 +756,8 @@ html {
   color: #00f;
 }
 .scaled-button {
-  transition: transform 0.3s ease;
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
 .scaled-button:hover {
   transform: scale(1.1);

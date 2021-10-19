@@ -27,6 +27,7 @@ class DO_CONNECT_USER_CONTROLLER extends CONTROLLER
         }
         else
         {
+            .Session.User = user;
             .Session.UserIsConnected = true;
             .Session.UserRole = user.Role;
             .Session.Store();

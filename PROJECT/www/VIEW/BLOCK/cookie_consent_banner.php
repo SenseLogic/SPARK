@@ -75,15 +75,14 @@
 
 <div id="cookie-consent-banner-container" class="cookie-consent-banner-container">
     <div class="cookie-consent-banner-text">
-        We use cookies on our website to provide you with the best possible online experience.
-        <a href="/legal-notice" target="_blank">More information</a>
+        <?php echo $this->GetText( 'CookieConsentBannerText' ); ?>
     </div>
     <div class="cookie-consent-banner-button-container">
         <div class="scaled-button cookie-consent-banner-button cookie-consent-banner-accept-button" onclick="HandleCookieConsentBannerAgreeButtonClickEvent()">
-            Accept
+            <?php echo $this->GetText( 'CookieConsentBannerAcceptButton' ); ?>
         </div>
         <div class="scaled-button cookie-consent-banner-button cookie-consent-banner-decline-button" onclick="HandleCookieConsentBannerDisacceptButtonClickEvent()">
-            Decline
+            <?php echo $this->GetText( 'CookieConsentBannerDeclineButton' ); ?>
         </div>
     </div>
 </div>

@@ -13,6 +13,7 @@ class DISCONNECT_USER_CONTROLLER extends CONTROLLER
     {
         parent::__construct();
 
+        $this->Session->User = null;
         $this->Session->UserIsConnected = false;
         $this->Session->UserRole = '';
         $this->Session->Store();
