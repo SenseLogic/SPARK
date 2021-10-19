@@ -285,7 +285,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                     </select><><~{%is_reference%}<>
                     <select class="form-select" name="{%attribute%}"><~Split<>reference<>{%reference%}<>~<>
                         <? var {*reference1*}_array = {*reference2*}; ?>
-                        <? foreach ( {*reference1*}; {*reference1*}_array ) { ?>
+                        <? foreach ( var {*reference1*}; {*reference1*}_array ) { ?>
                             <option value="<\% {*reference3*} %\>"><\% {*reference4*} %\></option>~>
                         <? } ?>
                     </select><><~{%is_text%}<>
