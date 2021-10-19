@@ -243,7 +243,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
 
         add_{#variable#}_form = document.Add{#attribute#}Form;<$
         {%variable%}_field = add_{#variable#}_form.{%attribute%};$>
-<%¨
+<%¨<~!{%is_optional%}<>
         if ( {%variable%}_field.value !== "" )
         {
             {%variable%}_field.classList.remove( "form-field-error" );
@@ -254,7 +254,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
 
             it_is_valid_add_{#variable#}_form = false;
         }
-¨%>
+~>¨%>
         return it_is_valid_add_{#variable#}_form;
     }
 </script>
@@ -317,7 +317,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
 
         edit_{#variable#}_form = document.Edit{#attribute#}Form;<$
         {%variable%}_field = edit_{#variable#}_form.{%attribute%};$>
-<$
+<$<~!{%is_optional%}<>
         if ( {%variable%}_field.value !== "" )
         {
             {%variable%}_field.classList.remove( "form-field-error" );
@@ -328,7 +328,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
 
             it_is_valid_edit_{#variable#}_form = false;
         }
-$>
+~>$>
         return it_is_valid_edit_{#variable#}_form;
     }
 </script>

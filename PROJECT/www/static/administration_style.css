@@ -423,6 +423,9 @@ textarea:focus {
 .form-extended {
   grid-column: 1/-1;
 }
+.form-field-error {
+  outline: solid #f00 1px;
+}
 .form-input,
 .form-select {
   min-height: 2rem;

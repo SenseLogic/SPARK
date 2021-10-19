@@ -167,7 +167,7 @@
                 <div>
                     <select class="form-select" name="NextArticleId">
                         <? var article_array = GetDatabaseArticleArray(); ?>
-                        <? foreach ( article; article_array ) { ?>
+                        <? foreach ( var article; article_array ) { ?>
                             <option value="<% article.Id %>"><% article.Name %></option>
                         <? } ?>
                     </select>

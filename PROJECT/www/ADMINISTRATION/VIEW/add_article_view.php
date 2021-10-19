@@ -167,8 +167,8 @@
                 <div>
                     <select class="form-select" name="NextArticleId">
                         <?php  $article_array = GetDatabaseArticleArray(); ?>
-                        <?php foreach ( $article_array as article ) { ?>
-                            <option value="<?php echo htmlspecialchars( article->Id ); ?>"><?php echo htmlspecialchars( article->Name ); ?></option>
+                        <?php foreach ( $article_array as  $article ) { ?>
+                            <option value="<?php echo htmlspecialchars( $article->Id ); ?>"><?php echo htmlspecialchars( $article->Name ); ?></option>
                         <?php } ?>
                     </select>
                 </div>
