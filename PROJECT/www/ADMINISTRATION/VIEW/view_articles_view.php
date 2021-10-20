@@ -18,10 +18,13 @@
                 Video Path
             </div>
             <div class="form-column-name sortable-grid-column">
-                Importance
+                Next Article Id
             </div>
             <div class="form-column-name sortable-grid-column">
-                Next Article Id
+                Priority
+            </div>
+            <div class="form-column-name sortable-grid-column">
+                Is Active
             </div>
             <div class="form-column-name sortable-grid-column">
                 Action
@@ -43,10 +46,13 @@
                     <?php echo htmlspecialchars( GetValueText( $article->VideoPath ) ); ?>
                 </div>
                 <div class="sortable-grid-cell">
-                    <?php echo htmlspecialchars( GetValueText( $article->Importance ) ); ?>
+                    <?php echo htmlspecialchars( GetValueText( $article->NextArticleId ) ); ?>
                 </div>
                 <div class="sortable-grid-cell">
-                    <?php echo htmlspecialchars( GetValueText( $article->NextArticleId ) ); ?>
+                    <?php echo htmlspecialchars( GetValueText( $article->Priority ) ); ?>
+                </div>
+                <div class="sortable-grid-cell">
+                    <?php echo htmlspecialchars( GetValueText( $article->IsActive ) ); ?>
                 </div>
                 <div class="form-centered sortable-grid-cell">
                     <a class="form-button view-button" href="/admin/article/view/<?php echo htmlspecialchars( $article->Id ); ?>">

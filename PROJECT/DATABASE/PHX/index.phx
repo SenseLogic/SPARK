@@ -224,8 +224,9 @@ function Route(
                       && HasPostValue( 'Text' )
                       && HasPostValue( 'ImagePath' )
                       && HasPostValue( 'VideoPath' )
-                      && HasPostValue( 'Importance' )
-                      && HasPostValue( 'NextArticleId' ) )
+                      && HasPostValue( 'NextArticleId' )
+                      && HasPostValue( 'Priority' )
+                      && HasPostValue( 'IsActive' ) )
             {
                 import 'ADMINISTRATION/CONTROLLER/do_add_article_controller.php';
             }
@@ -253,8 +254,9 @@ function Route(
                       && HasPostValue( 'Text' )
                       && HasPostValue( 'ImagePath' )
                       && HasPostValue( 'VideoPath' )
-                      && HasPostValue( 'Importance' )
-                      && HasPostValue( 'NextArticleId' ) )
+                      && HasPostValue( 'NextArticleId' )
+                      && HasPostValue( 'Priority' )
+                      && HasPostValue( 'IsActive' ) )
             {
                 var article_id = path_value_array[ 3 ];
 

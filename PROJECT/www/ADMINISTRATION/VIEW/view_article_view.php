@@ -39,16 +39,22 @@
                 </div>
             </div>
             <div class="form-field-name">
-                Importance :
-            </div>
-            <div>
-                    <input class="form-input" name="Importance" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Article->Importance ) ); ?>" readonly/>
-            </div>
-            <div class="form-field-name">
                 Next Article Id :
             </div>
             <div>
                     <input class="form-input" name="NextArticleId" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Article->NextArticleId ) ); ?>" readonly/>
+            </div>
+            <div class="form-field-name">
+                Priority :
+            </div>
+            <div>
+                    <input class="form-input" name="Priority" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Article->Priority ) ); ?>" readonly/>
+            </div>
+            <div class="form-field-name">
+                Is Active :
+            </div>
+            <div>
+                    <input class="form-input" name="IsActive" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Article->IsActive ) ); ?>" readonly/>
             </div>
             <a class="justify-self-start form-button form-button-large cancel-button" href="<?php echo htmlspecialchars( $this->ListPage ); ?>">
             </a>

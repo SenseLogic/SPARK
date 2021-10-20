@@ -266,31 +266,31 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                     {%title%} :
                 </div>
                 <div><~{%is_image%}<>
-                    <input class="form-input" name="{%attribute%}" type="text"<~{%has_default%}<> value="{%default%}"~> oninput="HandleImagePathInputChangeEvent( this )"/>
+                    <input class="form-input" name="{%attribute%}" type="text"<~{%has_filling%}<> value="{%filling%}"~> oninput="HandleImagePathInputChangeEvent( this )"/>
                     <div class="form-upload-container">
-                        <img class="form-upload-image" src="<~{%has_default%}<>{%default%}~>" onerror="this.src='/static/image/admin/missing_image.svg'"/>
+                        <img class="form-upload-image" src="<~{%has_filling%}<>{%filling%}~>" onerror="this.src='/static/image/admin/missing_image.svg'"/>
                         <label class="form-upload-button">
                             <img class="form-upload-icon" src="/static/image/admin/upload_icon.svg"/><input id="file" class="form-upload-file" type="file" accept="image/jpeg, image/png, image/webp, image/gif, image/svg" onchange="HandleImageFileInputChangeEvent( this )"/>
                         </label>
                     </div><><~{%is_video%}<>
-                    <input class="form-input" name="{%attribute%}" type="text"<~{%has_default%}<> value="{%default%}"~> oninput="HandleVideoPathInputChangeEvent( this )"/>
+                    <input class="form-input" name="{%attribute%}" type="text"<~{%has_filling%}<> value="{%filling%}"~> oninput="HandleVideoPathInputChangeEvent( this )"/>
                     <div class="form-upload-container">
-                        <video class="form-upload-video" src="<~{%has_default%}<>{%default%}~>" type="video/mp4" onerror="this.src='/static/video/admin/missing_video.mp4'"></video>
+                        <video class="form-upload-video" src="<~{%has_filling%}<>{%filling%}~>" type="video/mp4" onerror="this.src='/static/video/admin/missing_video.mp4'"></video>
                         <label class="form-upload-button">
                             <img class="form-upload-icon" src="/static/image/admin/upload_icon.svg"/><input id="file" class="form-upload-file" type="file" accept="video/mp4" onchange="HandleVideoFileInputChangeEvent( this )"/>
                         </label>
                     </div><><~{%is_enumeration%}<>
                     <select class="form-select" name="{%attribute%}"><~Map<>enumeration<>{%enumeration%}<>^<>~<>
-                        <option value="{*enumeration1*}"<~{%has_default%}<><? if ( .{#attribute#}.{%attribute%} === '{%default%}' ) echo ' selected'; ?>~>>{*enumeration2*}</option>~>
+                        <option value="{*enumeration1*}"<~{%has_filling%}<><? if ( '{*enumeration1*}' === '{%filling%}' ) echo ' selected'; ?>~>>{*enumeration2*}</option>~>
                     </select><><~{%is_reference%}<>
                     <select class="form-select" name="{%attribute%}"><~Split<>reference<>{%reference%}<>~<>
                         <? var {*reference1*}_array = {*reference2*}; ?>
                         <? foreach ( var {*reference1*}; {*reference1*}_array ) { ?>
-                            <option value="<\% {*reference3*} %\>"<~{%has_default%}<><? if ( .{#attribute#}.{%attribute%} === '{%default%}' ) echo ' selected'; ?>~>><\% {*reference4*} %\></option>~>
+                            <option value="<\% {*reference3*} %\>"<~{%has_filling%}<><? if ( '{*reference3*}' === '{%filling%}' ) echo ' selected'; ?>~>><\% {*reference4*} %\></option>~>
                         <? } ?>
                     </select><><~{%is_text%}<>
-                    <textarea class="form-textarea" name="{%attribute%}"><~{%has_default%}<>{%default%}~></textarea><>
-                    <input class="form-input" name="{%attribute%}" type="text"<~{%has_default%}<> value="{%default%}"~>/>~>~>~>~>~>
+                    <textarea class="form-textarea" name="{%attribute%}"><~{%has_filling%}<>{%filling%}~></textarea><>
+                    <input class="form-input" name="{%attribute%}" type="text"<~{%has_filling%}<> value="{%filling%}"~>/>~>~>~>~>~>
                 </div>¨%>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="<\% .ListPage %\>">
                 </a>

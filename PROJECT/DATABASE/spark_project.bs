@@ -11,11 +11,12 @@ spark-project
         Id : UINT32 | key, unique, incremented
         Slug : STRING = "{{Name:slug_case}}"
         Name : STRING
-        Text : STRING = "{{english 2 4 5 10}}" | is_text
-        ImagePath : STRING = "/static/image/test/beach.jpg|/static/image/test/palm_tree.jpg|/static/image/test/surfer.jpg" | is_image
-        VideoPath : STRING = "/static/video/test/train.mp4|/static/video/test/bus.mp4" | is_video
-        Importance : STRING = "low|high" | is_enumeration, enumeration low~Low importance^high~High importance
+        Text : STRING = "{{english 2 4 5 10}}" | is_text, is_optional
+        ImagePath : STRING = "/static/image/test/beach.jpg|/static/image/test/palm_tree.jpg|/static/image/test/surfer.jpg" | is_image, is_optional
+        VideoPath : STRING = "/static/video/test/train.mp4|/static/video/test/bus.mp4" | is_video, is_optional
         NextArticleId : ARTICLE.Id | is_reference, reference article~GetDatabaseArticleArray()~article.Id~article.Name
+        Priority : STRING = "low|high" | is_enumeration, enumeration low~Low importance^high~High importance, has_filling, filling high
+        IsActive : BOOL = "true" | is_enumeration, enumeration 0~False^1~True, has_filling, filling 1
 
     CONTACT | sorted
 

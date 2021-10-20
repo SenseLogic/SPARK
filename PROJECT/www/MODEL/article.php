@@ -3,7 +3,7 @@
 function GetDatabaseArticleArray(
     )
 {
-     $statement = GetDatabaseStatement( 'select `Id`, `Slug`, `Name`, `Text`, `ImagePath`, `VideoPath`, `Importance`, `NextArticleId` from `ARTICLE`' );
+     $statement = GetDatabaseStatement( 'select `Id`, `Slug`, `Name`, `Text`, `ImagePath`, `VideoPath`, `NextArticleId`, `Priority`, `IsActive` from `ARTICLE`' );
 
     if ( !$statement->execute() )
     {
@@ -28,7 +28,7 @@ function GetDatabaseArticleById(
     int $id
     )
 {
-     $statement = GetDatabaseStatement( 'select `Id`, `Slug`, `Name`, `Text`, `ImagePath`, `VideoPath`, `Importance`, `NextArticleId` from `ARTICLE` where `Id` = ? limit 1' );
+     $statement = GetDatabaseStatement( 'select `Id`, `Slug`, `Name`, `Text`, `ImagePath`, `VideoPath`, `NextArticleId`, `Priority`, `IsActive` from `ARTICLE` where `Id` = ? limit 1' );
     $statement->bindParam( 1, $id, PDO::PARAM_INT );
 
     if ( !$statement->execute() )
@@ -51,18 +51,20 @@ function AddDatabaseArticle(
     string $text,
     string $image_path,
     string $video_path,
-    string $importance,
-    int $next_article_id
+    int $next_article_id,
+    string $priority,
+    bool $is_active
     )
 {
-     $statement = GetDatabaseStatement( 'insert into `ARTICLE` ( `Slug`, `Name`, `Text`, `ImagePath`, `VideoPath`, `Importance`, `NextArticleId` ) values ( ?, ?, ?, ?, ?, ?, ? )' );
+     $statement = GetDatabaseStatement( 'insert into `ARTICLE` ( `Slug`, `Name`, `Text`, `ImagePath`, `VideoPath`, `NextArticleId`, `Priority`, `IsActive` ) values ( ?, ?, ?, ?, ?, ?, ?, ? )' );
     $statement->bindParam( 1, $slug, PDO::PARAM_STR );
     $statement->bindParam( 2, $name, PDO::PARAM_STR );
     $statement->bindParam( 3, $text, PDO::PARAM_STR );
     $statement->bindParam( 4, $image_path, PDO::PARAM_STR );
     $statement->bindParam( 5, $video_path, PDO::PARAM_STR );
-    $statement->bindParam( 6, $importance, PDO::PARAM_STR );
-    $statement->bindParam( 7, $next_article_id, PDO::PARAM_INT );
+    $statement->bindParam( 6, $next_article_id, PDO::PARAM_INT );
+    $statement->bindParam( 7, $priority, PDO::PARAM_STR );
+    $statement->bindParam( 8, $is_active, PDO::PARAM_BOOL );
 
     if ( !$statement->execute() )
     {
@@ -80,18 +82,20 @@ function PutDatabaseArticle(
     string $text,
     string $image_path,
     string $video_path,
-    string $importance,
-    int $next_article_id
+    int $next_article_id,
+    string $priority,
+    bool $is_active
     )
 {
-     $statement = GetDatabaseStatement( 'replace into `ARTICLE` ( `Slug`, `Name`, `Text`, `ImagePath`, `VideoPath`, `Importance`, `NextArticleId` ) values ( ?, ?, ?, ?, ?, ?, ? )' );
+     $statement = GetDatabaseStatement( 'replace into `ARTICLE` ( `Slug`, `Name`, `Text`, `ImagePath`, `VideoPath`, `NextArticleId`, `Priority`, `IsActive` ) values ( ?, ?, ?, ?, ?, ?, ?, ? )' );
     $statement->bindParam( 1, $slug, PDO::PARAM_STR );
     $statement->bindParam( 2, $name, PDO::PARAM_STR );
     $statement->bindParam( 3, $text, PDO::PARAM_STR );
     $statement->bindParam( 4, $image_path, PDO::PARAM_STR );
     $statement->bindParam( 5, $video_path, PDO::PARAM_STR );
-    $statement->bindParam( 6, $importance, PDO::PARAM_STR );
-    $statement->bindParam( 7, $next_article_id, PDO::PARAM_INT );
+    $statement->bindParam( 6, $next_article_id, PDO::PARAM_INT );
+    $statement->bindParam( 7, $priority, PDO::PARAM_STR );
+    $statement->bindParam( 8, $is_active, PDO::PARAM_BOOL );
 
     if ( !$statement->execute() )
     {
@@ -110,19 +114,21 @@ function SetDatabaseArticle(
     string $text,
     string $image_path,
     string $video_path,
-    string $importance,
-    int $next_article_id
+    int $next_article_id,
+    string $priority,
+    bool $is_active
     )
 {
-     $statement = GetDatabaseStatement( 'update `ARTICLE` set `Slug` = ?, `Name` = ?, `Text` = ?, `ImagePath` = ?, `VideoPath` = ?, `Importance` = ?, `NextArticleId` = ? where Id = ?' );
+     $statement = GetDatabaseStatement( 'update `ARTICLE` set `Slug` = ?, `Name` = ?, `Text` = ?, `ImagePath` = ?, `VideoPath` = ?, `NextArticleId` = ?, `Priority` = ?, `IsActive` = ? where Id = ?' );
     $statement->bindParam( 1, $slug, PDO::PARAM_STR );
     $statement->bindParam( 2, $name, PDO::PARAM_STR );
     $statement->bindParam( 3, $text, PDO::PARAM_STR );
     $statement->bindParam( 4, $image_path, PDO::PARAM_STR );
     $statement->bindParam( 5, $video_path, PDO::PARAM_STR );
-    $statement->bindParam( 6, $importance, PDO::PARAM_STR );
-    $statement->bindParam( 7, $next_article_id, PDO::PARAM_INT );
-    $statement->bindParam( 8, $id, PDO::PARAM_INT );
+    $statement->bindParam( 6, $next_article_id, PDO::PARAM_INT );
+    $statement->bindParam( 7, $priority, PDO::PARAM_STR );
+    $statement->bindParam( 8, $is_active, PDO::PARAM_BOOL );
+    $statement->bindParam( 9, $id, PDO::PARAM_INT );
 
     if ( !$statement->execute() )
     {

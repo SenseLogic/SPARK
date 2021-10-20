@@ -12,8 +12,9 @@
             text_field,
             image_path_field,
             video_path_field,
-            importance_field,
-            next_article_id_field;
+            next_article_id_field,
+            priority_field,
+            is_active_field;
 
         it_is_valid_add_article_form = true;
 
@@ -23,8 +24,9 @@
         text_field = add_article_form.Text;
         image_path_field = add_article_form.ImagePath;
         video_path_field = add_article_form.VideoPath;
-        importance_field = add_article_form.Importance;
         next_article_id_field = add_article_form.NextArticleId;
+        priority_field = add_article_form.Priority;
+        is_active_field = add_article_form.IsActive;
 
         if ( slug_field.value !== "" )
         {
@@ -48,50 +50,6 @@
             it_is_valid_add_article_form = false;
         }
 
-        if ( text_field.value !== "" )
-        {
-            text_field.classList.remove( "form-field-error" );
-        }
-        else
-        {
-            text_field.classList.add( "form-field-error" );
-
-            it_is_valid_add_article_form = false;
-        }
-
-        if ( image_path_field.value !== "" )
-        {
-            image_path_field.classList.remove( "form-field-error" );
-        }
-        else
-        {
-            image_path_field.classList.add( "form-field-error" );
-
-            it_is_valid_add_article_form = false;
-        }
-
-        if ( video_path_field.value !== "" )
-        {
-            video_path_field.classList.remove( "form-field-error" );
-        }
-        else
-        {
-            video_path_field.classList.add( "form-field-error" );
-
-            it_is_valid_add_article_form = false;
-        }
-
-        if ( importance_field.value !== "" )
-        {
-            importance_field.classList.remove( "form-field-error" );
-        }
-        else
-        {
-            importance_field.classList.add( "form-field-error" );
-
-            it_is_valid_add_article_form = false;
-        }
-
         if ( next_article_id_field.value !== "" )
         {
             next_article_id_field.classList.remove( "form-field-error" );
@@ -99,6 +57,28 @@
         else
         {
             next_article_id_field.classList.add( "form-field-error" );
+
+            it_is_valid_add_article_form = false;
+        }
+
+        if ( priority_field.value !== "" )
+        {
+            priority_field.classList.remove( "form-field-error" );
+        }
+        else
+        {
+            priority_field.classList.add( "form-field-error" );
+
+            it_is_valid_add_article_form = false;
+        }
+
+        if ( is_active_field.value !== "" )
+        {
+            is_active_field.classList.remove( "form-field-error" );
+        }
+        else
+        {
+            is_active_field.classList.add( "form-field-error" );
 
             it_is_valid_add_article_form = false;
         }
@@ -153,15 +133,6 @@
                     </div>
                 </div>
                 <div class="form-field-name">
-                    Importance :
-                </div>
-                <div>
-                    <select class="form-select" name="Importance">
-                        <option value="low">Low importance</option>
-                        <option value="high">High importance</option>
-                    </select>
-                </div>
-                <div class="form-field-name">
                     Next Article Id :
                 </div>
                 <div>
@@ -170,6 +141,24 @@
                         <? foreach ( var article; article_array ) { ?>
                             <option value="<% article.Id %>"><% article.Name %></option>
                         <? } ?>
+                    </select>
+                </div>
+                <div class="form-field-name">
+                    Priority :
+                </div>
+                <div>
+                    <select class="form-select" name="Priority">
+                        <option value="low"<? if ( 'low' === 'high' ) echo ' selected'; ?>>Low importance</option>
+                        <option value="high"<? if ( 'high' === 'high' ) echo ' selected'; ?>>High importance</option>
+                    </select>
+                </div>
+                <div class="form-field-name">
+                    Is Active :
+                </div>
+                <div>
+                    <select class="form-select" name="IsActive">
+                        <option value="0"<? if ( '0' === '1' ) echo ' selected'; ?>>False</option>
+                        <option value="1"<? if ( '1' === '1' ) echo ' selected'; ?>>True</option>
                     </select>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="<% .ListPage %>">

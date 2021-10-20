@@ -18,10 +18,13 @@
                 Video Path
             </div>
             <div class="form-column-name sortable-grid-column">
-                Importance
+                Next Article Id
             </div>
             <div class="form-column-name sortable-grid-column">
-                Next Article Id
+                Priority
+            </div>
+            <div class="form-column-name sortable-grid-column">
+                Is Active
             </div>
             <div class="form-column-name sortable-grid-column">
                 Action
@@ -43,10 +46,13 @@
                     <% GetValueText( article.VideoPath ) %>
                 </div>
                 <div class="sortable-grid-cell">
-                    <% GetValueText( article.Importance ) %>
+                    <% GetValueText( article.NextArticleId ) %>
                 </div>
                 <div class="sortable-grid-cell">
-                    <% GetValueText( article.NextArticleId ) %>
+                    <% GetValueText( article.Priority ) %>
+                </div>
+                <div class="sortable-grid-cell">
+                    <% GetValueText( article.IsActive ) %>
                 </div>
                 <div class="form-centered sortable-grid-cell">
                     <a class="form-button view-button" href="/admin/article/view/<% article.Id %>">
