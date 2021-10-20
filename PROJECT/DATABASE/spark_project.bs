@@ -15,8 +15,8 @@ spark-project
         ImagePath : STRING = "/static/image/test/beach.jpg|/static/image/test/palm_tree.jpg|/static/image/test/surfer.jpg" | is_image, is_optional
         VideoPath : STRING = "/static/video/test/train.mp4|/static/video/test/bus.mp4" | is_video, is_optional
         NextArticleId : ARTICLE.Id | is_reference, reference article~GetDatabaseArticleArray()~article.Id~article.Name
-        Priority : STRING = "low|high" | is_enumeration, enumeration low~Low importance^high~High importance, has_filling, filling high
-        IsActive : BOOL = "true" | is_enumeration, enumeration 0~False^1~True, has_filling, filling 1
+        Priority : STRING = "low|high" | is_enumeration, enumeration low~Low importance^high~High importance, has_default_value, default_value high
+        IsActive : BOOL = "true" | is_enumeration, enumeration 0~False^1~True, has_default_value, default_value 1
 
     CONTACT | sorted
 

@@ -139,7 +139,7 @@
                     <select class="form-select" name="NextArticleId">
                         <?php  $article_array = GetDatabaseArticleArray(); ?>
                         <?php foreach ( $article_array as  $article ) { ?>
-                            <option value="<?php echo htmlspecialchars( $article->Id ); ?>"<?php if ( $this->Article->NextArticleId === $article->Id ) echo ' selected'; ?>><?php echo htmlspecialchars( $article->Name ); ?></option>
+                            <option value="<?php echo htmlspecialchars( GetValueText( $article->Id ) ); ?>"<?php if ( $this->Article->NextArticleId === $article->Id ) echo ' selected'; ?>><?php echo htmlspecialchars( $article->Name ); ?></option>
                         <?php } ?>
                     </select>
                 </div>

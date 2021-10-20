@@ -139,7 +139,7 @@
                     <select class="form-select" name="NextArticleId">
                         <? var article_array = GetDatabaseArticleArray(); ?>
                         <? foreach ( var article; article_array ) { ?>
-                            <option value="<% article.Id %>"<? if ( .Article.NextArticleId === article.Id ) echo ' selected'; ?>><% article.Name %></option>
+                            <option value="<% GetValueText( article.Id ) %>"<? if ( .Article.NextArticleId === article.Id ) echo ' selected'; ?>><% article.Name %></option>
                         <? } ?>
                     </select>
                 </div>
