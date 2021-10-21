@@ -76,11 +76,5 @@
 
     // -- STATEMENTS
 
-    DelayCall(
-        function (
-            )
-        {
-            InitializeSortableGridColumns();
-        }
-        );
+    DelayCall( InitializeSortableGridColumns );
 </script>
