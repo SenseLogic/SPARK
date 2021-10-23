@@ -1,7 +1,9 @@
 <script src="/static/script/vista_base.js?v=<?php echo VersionTimestamp; ?>"></script>
+<script src="/static/script/vista_text.js?v=<?php echo VersionTimestamp; ?>"></script>
 <script src="/static/script/vista_element.js?v=<?php echo VersionTimestamp; ?>"></script>
 <script src="/static/script/vista_animation.js?v=<?php echo VersionTimestamp; ?>"></script>
 <script src="/static/script/vista_request.js?v=<?php echo VersionTimestamp; ?>"></script>
+<script src="/static/script/vista_storage.js?v=<?php echo VersionTimestamp; ?>"></script>
 <script src="/static/script/vista_sortable_grid.js?v=<?php echo VersionTimestamp; ?>"></script>
 <script>
     // -- FUNCTIONS
