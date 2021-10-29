@@ -148,8 +148,8 @@
                 </div>
                 <div>
                     <select class="form-select" name="Priority">
-                        <option value="low"<?php if ( 'low' === 'high' ) echo ' selected'; ?>>Low importance</option>
-                        <option value="high"<?php if ( 'high' === 'high' ) echo ' selected'; ?>>High importance</option>
+                        <option value="low">Low importance</option>
+                        <option value="high" selected>High importance</option>
                     </select>
                 </div>
                 <div class="form-field-name">
@@ -157,8 +157,8 @@
                 </div>
                 <div>
                     <select class="form-select" name="IsActive">
-                        <option value="0"<?php if ( '0' === '1' ) echo ' selected'; ?>>False</option>
-                        <option value="1"<?php if ( '1' === '1' ) echo ' selected'; ?>>True</option>
+                        <option value="0">False</option>
+                        <option value="1" selected>True</option>
                     </select>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="<?php echo htmlspecialchars( $this->ListPage ); ?>">

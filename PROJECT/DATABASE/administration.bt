@@ -281,7 +281,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                         </label>
                     </div><><~{%is_enumeration%}<>
                     <select class="form-select" name="{%attribute%}"><~Map<>enumeration<>{%enumeration%}<>^<>~<>
-                        <option value="{*enumeration1*}"<~{%has_default_value%}<><? if ( '{*enumeration1*}' === '{%default_value%}' ) echo ' selected'; ?>~>>{*enumeration2*}</option>~>
+                        <option value="{*enumeration1*}"<~{%has_default_value%}<><+~Equals<+>{*enumeration1*}<+>{%default_value%}<+> selected~+>~>>{*enumeration2*}</option>~>
                     </select><><~{%is_reference%}<>
                     <select class="form-select" name="{%attribute%}"><~Split<>reference<>{%reference%}<>~<>
                         <? var {*reference1*}_array = {*reference2*}; ?>
