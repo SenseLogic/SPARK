@@ -133,7 +133,8 @@ The project build chain is using the following tools to **simplify** and **autom
 
 ## Template instantiation
 
-*   Copy the content of the **TOOL/SPARK/PROJECT** folder into a target folder of similar depth, for instance **SITE/TYRELL_CORPORATION/TYRELL_CORPORATION_SITE_2021**.
+*   Copy the content of the **~/PROJECT/TOOL/SPARK/PROJECT** folder into a target folder with the same depth and parent folder,
+    for instance **~/PROJECT/SITE/TYRELL_CORPORATION/TYRELL_CORPORATION_SITE_2021**.
 
 *   Edit the **fix.flex** file to change the project and article identifiers in their various forms :
 
@@ -172,7 +173,7 @@ The project build chain is using the following tools to **simplify** and **autom
     *   **On Linux**
 
         ```sh
-        cd SITE/TYRELL_CORPORATION/TYRELL_CORPORATION_SITE_2021
+        cd ~/PROJECT/SITE/TYRELL_CORPORATION/TYRELL_CORPORATION_SITE_2021
         ./fix.sh
         ./update.sh
         ./make.sh
@@ -181,7 +182,7 @@ The project build chain is using the following tools to **simplify** and **autom
     *   **On Windows**
 
         ```sh
-        cd SITE\TYRELL_CORPORATION\TYRELL_CORPORATION_SITE_2021
+        cd \PROJECT\SITE\TYRELL_CORPORATION\TYRELL_CORPORATION_SITE_2021
         fix
         update
         make
