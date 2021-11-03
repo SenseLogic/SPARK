@@ -175,9 +175,6 @@ The project build chain is using the following tools to **simplify** and **autom
         cd SITE/TYRELL_CORPORATION/TYRELL_CORPORATION_SITE_2021
         ./fix.sh
         ./update.sh
-        cd DATABASE
-        ./make.sh
-        cd ../CODE
         ./make.sh
         ```
 
@@ -187,9 +184,6 @@ The project build chain is using the following tools to **simplify** and **autom
         cd SITE\TYRELL_CORPORATION\TYRELL_CORPORATION_SITE_2021
         fix
         update
-        cd DATABASE
-        make
-        cd ..\CODE
         make
         ```
 
