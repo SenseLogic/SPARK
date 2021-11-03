@@ -133,10 +133,10 @@ The project build chain is using the following tools to **simplify** and **autom
 
 ## Template instantiation
 
-*   Copy the content of the **~/PROJECT/TOOL/SPARK/PROJECT** folder into a target folder with the same depth and parent folder,
+*   Copy the content of the **~/PROJECT/TOOL/SPARK/PROJECT** folder into a target folder of identical depth under the same root folder,
     for instance **~/PROJECT/SITE/TYRELL_CORPORATION/TYRELL_CORPORATION_SITE_2021**.
 
-*   Edit the **fix.flex** file to change the project and article identifiers in their various forms :
+*   Edit the **fix.flex** file to change the project and article identifiers in all their forms :
 
     ```
     ReplaceText
