@@ -13,12 +13,12 @@ Spark is just a small collection of reusable procedural functions wrapping and e
 
 ### Autonomy and maintainability
 
-The PHP framework has no external dependencies, and can be used without any of the the build tools.
+The PHP framework has no external dependencies, and can be used without any of the build tools.
 
 ### Readability and conciseness
 
-Spark is implemented in the [Phoenix](https://github.com/senselogic/PHOENIX) language, which is translated into PHP code.
-This allows to develop modular PHP code with a readable and concise JavaScript-like syntax.
+Spark is implemented in the [Phoenix](https://github.com/senselogic/PHOENIX) language, which is directly translated into PHP code.
+This allows to develop modular PHP code with a much readable and concise JavaScript-like syntax.
 
 ## Microframework
 
