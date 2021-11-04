@@ -437,3 +437,100 @@ function SetJsonResponse(
     header( 'Content-Type: application/json; charset=UTF-8' );
     echo json_encode( object );
 }
+
+// ~~
+
+function SendRequest(
+    string request_url,
+    string request_method,
+    request_body = null,
+    array request_query_map = [],
+    array request_header_array = [],
+    string request_username = "",
+    string request_password = ""
+    )
+{
+    var curl_request = curl_init();
+
+    if ( request_method === "POST" )
+    {
+        curl_setopt( curl_request, CURLOPT_POST, true );
+    }
+    else
+    {
+        curl_setopt( curl_request, CURLOPT_CUSTOMREQUEST, request_method );
+    }
+
+    if ( count( request_query_map ) > 0 )
+    {
+        request_url ..= '?' .. http_build_query( request_query_map );
+    }
+
+    if ( request_body !== null
+         && is_array( request_body ) )
+    {
+        request_body = http_build_query( request_body );
+    }
+
+    if ( is_string( request_body ) )
+    {
+        array_push( request_header_array, 'Content-Length: ' .. strlen( request_body ) );
+        curl_setopt( curl_request, CURLOPT_POSTFIELDS, request_body );
+    }
+
+    if ( count( request_header_array ) > 0 )
+    {
+        curl_setopt( curl_request, CURLOPT_HTTPHEADER, request_header_array );
+    }
+
+    if ( request_username !== "" )
+    {
+        curl_setopt( curl_request, CURLOPT_HTTPAUTH, CURLAUTH_BASIC );
+        curl_setopt( curl_request, CURLOPT_USERPWD, request_username .. ":" .. request_username );
+    }
+
+    curl_setopt( curl_request, CURLOPT_URL, request_url );
+    curl_setopt( curl_request, CURLOPT_RETURNTRANSFER, true );
+
+    var request_response = curl_exec( curl_request );
+    var request_status = curl_getinfo( curl_request, CURLINFO_RESPONSE_CODE );
+
+    curl_close( curl_request );
+
+    return ( object )array( 'Status' => request_status, 'Response' => request_response );
+}
+
+// ~~
+
+function SendJsonRequest(
+    request_url,
+    request_method,
+    request_object = null,
+    request_query_map = [],
+    request_header_array = [],
+    request_username = "",
+    request_password = ""
+    )
+{
+    array_push( request_header_array, 'Content-Type:application/json;charset=UTF-8' );
+    array_push( request_header_array, 'Accept:application/json' );
+
+    var request_result
+        = SendRequest(
+              request_url,
+              request_method,
+              json_encode( request_object ),
+              request_query_map,
+              request_header_array,
+              request_username,
+              request_password
+              );
+
+    if ( request_result.Response !== false
+         && is_string( request_result.Response ) )
+    {
+        request_result.Response = json_decode( request_result.Response );
+    }
+
+    return request_result;
+}
