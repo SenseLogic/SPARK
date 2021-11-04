@@ -512,7 +512,7 @@ function SendJsonRequest(
     request_password = ""
     )
 {
-    array_push( request_header_array, 'Content-Type:application/json;charset=UTF-8' );
+    array_push( request_header_array, 'Content-Type: application/json; charset=UTF-8' );
     array_push( request_header_array, 'Accept:application/json' );
 
     var request_result
