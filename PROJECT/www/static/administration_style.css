@@ -362,6 +362,18 @@ textarea:focus {
   position: absolute;
   content: "\00a0\25BC";
 }
+.margin-top-1rem {
+  margin-top: 1rem !important;
+}
+.margin-top-2rem {
+  margin-top: 2rem !important;
+}
+.margin-bottom-1rem {
+  margin-bottom: 1rem !important;
+}
+.margin-bottom-2rem {
+  margin-bottom: 2rem !important;
+}
 .page-container {
   min-height: 100vh;
   display: grid;
@@ -503,6 +515,62 @@ textarea:focus {
   display: inline-block;
   background-color: #475462;
   color: #fff;
+}
+.form-title {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.form-toolbar {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.card-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 0.9375rem;
+}
+@media (min-width: 60em) {
+  .card-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 90em) {
+  .card-list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (min-width: 120em) {
+  .card-list {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+.card {
+  border-radius: 0.625rem;
+  padding: 0.9375rem;
+  background-color: #fff;
+}
+.filter-container {
+  position: relative;
+  width: 100%;
+}
+.filter-input {
+  width: 100%;
+  border: 0.0625rem solid #ccc;
+  border: 0.0625rem solid #ccc;
+  border-radius: 0.625rem;
+  padding: 0.3125rem 0.9375rem;
+  background-color: #fff;
+}
+.filter-button {
+  position: absolute;
+  right: 0.125rem;
+  height: 100%;
+  padding: 0.3125rem 0.9375rem;
+  cursor: pointer;
 }
 .disconnect-button {
   background: url("/static/image/admin/disconnect_icon.svg") no-repeat center center/contain;

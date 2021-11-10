@@ -42,6 +42,24 @@ function ReplaceText(
 
 // ~~
 
+function ReplaceTexts(
+    string text,
+    old_text,
+    new_text
+    )
+{
+    do
+    {
+        var prior_text = text;
+        text = str_replace( old_text, new_text, text );
+    }
+    while ( text !== prior_text );
+
+    return text;
+}
+
+// ~~
+
 function ReplaceSpecialCharacters(
     string text
     )
@@ -79,6 +97,20 @@ function GetBase64Text(
     )
 {
     return base64_encode( text );
+}
+
+// ~~
+
+function GetUntaggedText(
+    string text
+    )
+{
+    return
+        str_replace(
+            [ '<', '>' ],
+            [ '&lt;', '&gt;' ],
+            text
+            );
 }
 
 // ~~
@@ -349,6 +381,15 @@ function GetAlphanumericText(
     }
 
     return alphanumeric_text;
+}
+
+// ~~
+
+function GetSlugText(
+    string text
+    )
+{
+    return ReplaceTexts( GetAlphanumericText( GetLowerCaseText( text ), '', '', '-' ), '--', '-' );
 }
 
 // ~~

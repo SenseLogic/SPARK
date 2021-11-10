@@ -53,6 +53,26 @@ MakeSortableGridColumn();
 
 // ~~
 
+.margin-top-1rem
+{
+    margin-top: 1rem !important;
+}
+
+.margin-top-2rem
+{
+    margin-top: 2rem !important;
+}
+
+.margin-bottom-1rem
+{
+    margin-bottom: 1rem !important;
+}
+
+.margin-bottom-2rem
+{
+    margin-bottom: 2rem !important;
+}
+
 .page-container
 {
     min-height: 100vh;
@@ -273,6 +293,87 @@ MakeSortableGridColumn();
     background-color: #475462;
 
     color: #FFFFFF;
+}
+
+.form-title
+{
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.form-toolbar
+{
+    margin-top: 1rem;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.card-list
+{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 15 * Pxm;
+
+    +Media( min-width-60em )
+    {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    +Media( min-width-90em )
+    {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    +Media( min-width-120em )
+    {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+.card-container
+{
+}
+
+.card
+{
+    border-radius: 10 * Pxm;
+    padding: 15 * Pxm;
+
+    background-color: #FFFFFF;
+}
+
+.filter-container
+{
+    position: relative;
+
+    width: 100%;
+}
+
+.filter-input
+{
+    width: 100%;
+    border: 1 * Pxm solid #CCCCCC;
+    border: 1 * Pxm solid #CCCCCC;
+    border-radius: 10 * Pxm;
+    padding: 5 * Pxm 15 * Pxm;
+
+    background-color: white;
+}
+
+.filter-button
+{
+    position: absolute;
+    right: 2 * Pxm;
+
+    height: 100%;
+    padding: 5 * Pxm 15 * Pxm;
+
+    cursor: pointer;
 }
 
 .disconnect-button
