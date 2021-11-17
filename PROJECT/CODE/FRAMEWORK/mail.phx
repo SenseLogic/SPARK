@@ -6,7 +6,8 @@ function SendEmail(
     string sender_email,
     string receiver_email,
     string subject,
-    string message
+    string message,
+    bool it_is_logged = false
     )
 {
     ini_set( 'SMTP', server );
@@ -16,11 +17,33 @@ function SendEmail(
     ini_set( 'sendmail_from', sender_email );
     ini_set( 'sendmail_path', sender_email );
 
-    mail(
-        receiver_email,
-        subject,
-        message,
-        "Content-type: text/plain; charset=utf-8\r\n"
-        .. "From: " .. sender_email .. "\r\n"
-        );
+    if ( it_is_logged )
+    {
+        PrintLine( 'Sending mail' );
+        PrintLine( 'Server : ' .. server );
+        PrintLine( 'Port : ' .. port );
+        PrintLine( 'Username : ' .. username );
+        PrintLine( 'Sender email : ' .. sender_email );
+        PrintLine( 'Receiver email : ' .. receiver_email );
+        PrintLine( 'Subject : ' .. subject );
+        PrintLine( 'Message :' );
+        PrintLine( message );
+    }
+
+    if ( !mail(
+            receiver_email,
+            subject,
+            message,
+            "Content-type: text/plain; charset=utf-8\r\n"
+            .. "From: " .. sender_email .. "\r\n"
+            ) )
+    {
+        PrintError( 'Could not send email (' .. GetErrorMessage() .. ')' );
+
+        return false;
+    }
+    else
+    {
+        return true;
+    }
 }

@@ -1,5 +1,23 @@
 // -- FUNCTIONS
 
+function GetErrorMessage(
+    )
+{
+    var error_property_array = error_get_last();
+
+    if ( error_property_array !== null
+         && isset( error_property_array[ 'message' ] ) )
+    {
+        return error_property_array[ 'message' ];
+    }
+    else
+    {
+        return '';
+    }
+}
+
+// ~~
+
 function ShowErrors(
     )
 {
@@ -21,7 +39,7 @@ function HideErrors(
 // ~~
 
 function PrintText(
-    text
+    text = ''
     )
 {
     error_log( text, 3, _SERVER[ 'DOCUMENT_ROOT' ] .. '/php.log' );
@@ -30,7 +48,7 @@ function PrintText(
 // ~~
 
 function PrintLine(
-    text
+    text = ''
     )
 {
     PrintText( text .. "\n" );
@@ -49,10 +67,63 @@ function PrintRequest(
     PrintLine( 'SERVER : ' .. json_encode( _SERVER, JSON_PRETTY_PRINT ) );
 }
 
+// ~~
+
+function PrintError(
+    text
+    )
+{
+    PrintText( '*** ERROR : ' .. text .. "\n" );
+}
+
+// ~~
+
+function PrintStack(
+    )
+{
+    var function_call_array = debug_backtrace();
+
+    foreach ( var function_call; function_call_array )
+    {
+        PrintLine(
+            function_call[ 'file' ]
+            .. ' ['
+            .. function_call[ 'line' ]
+            .. '] : '
+            .. function_call[ 'function' ]
+            .. '('
+            .. json_encode( function_call[ 'args' ] )
+            .. ')'
+            );
+        PrintLine( '    ' .. function_call[ 'type' ] );
+        PrintLine( '    ' .. function_call[ 'class' ] );
+        PrintLine( '    ' .. json_encode( function_call[ 'object' ] ) );
+    }
+}
+
+// ~~
+
+function DumpStack(
+    )
+{
+    debug_print_backtrace();
+}
+
+// ~~
+
+function Abort(
+    text = ''
+    )
+{
+    PrintError( text );
+
+    exit();
+}
+
 // -- STATEMENTS
 
 ini_set( 'log_errors', 1 );
-ini_set( 'error_log', 'error.log' );
+ini_set( 'error_log', _SERVER[ 'DOCUMENT_ROOT' ] .. '/error.log' );
 
 if ( _SERVER[ 'SERVER_NAME' ] === 'localhost' )
 {

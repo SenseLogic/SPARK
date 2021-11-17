@@ -47,6 +47,27 @@
             SetScrollTop( GetElementById( ViewName + "/" + SectionName ), "auto" );
         }
     }
+
+    // ~~
+
+    function SetLanguage(
+        language
+        )
+    {
+        var
+            route;
+
+        route = GetRoute( "/<?php echo $this->LanguageCode; ?>/", "/" );
+
+        if ( route === "" )
+        {
+            SetUrl( "/" + language + "/" );
+        }
+        else
+        {
+            SetUrl( "/" + language + "/" + route + "/" );
+        }
+    }
 </script>
 <div>
     <?php require __DIR__ . '/' . 'BLOCK/header_menu.php'; ?>
