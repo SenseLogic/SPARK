@@ -5,6 +5,7 @@
 <script src="/static/script/vista_request.js?v=<?php echo VersionTimestamp; ?>"></script>
 <script src="/static/script/vista_storage.js?v=<?php echo VersionTimestamp; ?>"></script>
 <script src="/static/script/vista_sortable_grid.js?v=<?php echo VersionTimestamp; ?>"></script>
+<script src="/static/script/vista_multilingual_input.js?v=<?php echo VersionTimestamp; ?>"></script>
 <script>
     // -- FUNCTIONS
 
@@ -79,4 +80,5 @@
     // -- STATEMENTS
 
     DelayCall( InitializeSortableGridColumns );
+    DelayCall( InitializeMultilingualTexts );
 </script>

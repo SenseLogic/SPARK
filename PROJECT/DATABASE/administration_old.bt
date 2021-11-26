@@ -283,22 +283,19 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                     <select class="form-select" name="{%attribute%}"><~Map<>enumeration_<>{%enumeration%}<>^<>~<>
                         <option value="{*enumeration_1*}"<~{%has_default_value%}<><+~Equals<+>{*enumeration_1*}<+>{%default_value%}<+> selected~+>~>>{*enumeration_2*}</option>~>
                     </select><><~{%is_reference%}<>
-                    <select class="form-select" name="{%attribute%}"><~Split<>reference_<>{%reference%}<>~<>
+                    <select class="form-select" name="{%attribute%}"><~Map<>reference_<>{%reference%}<>~<>
                         <? var {*reference_1*}_array = {*reference_2*}; ?>
                         <? foreach ( var {*reference_1*}; {*reference_1*}_array ) { ?>
                             <option value="<\% GetValueText( {*reference_3*} ) %\>"<~{%has_default_value%}<><? if ( GetValueText( {*reference_3*} ) === '{%default_value%}' ) echo ' selected'; ?>~>><\% {*reference_4*} %\></option>~>
                         <? } ?>
                     </select><><~{%is_multilingual_text%}<>
                     <div>
-                        <textarea class="form-textarea multilingual-input" name="{%attribute%}" hidden><~{%has_default_value%}<>{%default_value%}~></textarea><~Map<>translation_<>{%multilingual_text%}<>^<>~<>
+                        <textarea class="form-textarea multilingual-input" name="{%attribute%}" hidden><~{%has_default_value%}<>{%default_value%}~></textarea>
+                        <~Map<>translation_<>{%multilingual_text%}<>^<>~<>
                         <textarea class="form-textarea multilingual-input-translation" data-language-code="{*translation_1*}" placeholder="{*translation_2*}"></textarea>~>
-                    </div><><~{%is_multilingual%}<>
-                    <div>
-                        <input class="form-input multilingual-input" name="{%attribute%}" type="text"<~{%has_default_value%}<> value="{%default_value%}"~> hidden/><~Map<>translation_<>{%multilingual%}<>^<>~<>
-                        <input class="form-input multilingual-input-translation" data-language-code="{*translation_1*}" placeholder="{*translation_2*}"/>~>
                     </div><><~{%is_text%}<>
                     <textarea class="form-textarea" name="{%attribute%}"><~{%has_default_value%}<>{%default_value%}~></textarea><>
-                    <input class="form-input" name="{%attribute%}" type="text"<~{%has_default_value%}<> value="{%default_value%}"~>/>~>~>~>~>~>~>~>
+                    <input class="form-input" name="{%attribute%}" type="text"<~{%has_default_value%}<> value="{%default_value%}"~>/>~>~>~>~>~>~>
                 </div>¨%>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="<\% .ListPage %\>">
                 </a>
@@ -372,15 +369,12 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                         <? } ?>
                     </select><><~{%is_multilingual_text%}<>
                     <div>
-                        <textarea class="form-textarea multilingual-input" name="{%attribute%}" hidden><\% .{#attribute#}.{%attribute%} %\></textarea><~Map<>translation_<>{%multilingual_text%}<>^<>~<>
+                        <textarea class="form-textarea multilingual-input" name="{%attribute%}" hidden><\% .{#attribute#}.{%attribute%} %\></textarea>
+                        <~Map<>translation_<>{%multilingual_text%}<>^<>~<>
                         <textarea class="form-textarea multilingual-input-translation" data-language-code="{*translation_1*}" placeholder="{*translation_2*}"></textarea>~>
-                    </div><><~{%is_multilingual%}<>
-                    <div>
-                        <input class="form-input multilingual-input" name="{%attribute%}" type="text" value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" hidden/><~Map<>translation_<>{%multilingual%}<>^<>~<>
-                        <input class="form-input multilingual-input-translation" data-language-code="{*translation_1*}" placeholder="{*translation_2*}"/>~>
                     </div><><~{%is_text%}<>
                     <textarea class="form-textarea" name="{%attribute%}"><\% .{#attribute#}.{%attribute%} %\></textarea><>
-                    <input class="form-input" name="{%attribute%}" type="text" value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>"/>~>~>~>~>~>~>~>
+                    <input class="form-input" name="{%attribute%}" type="text" value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>"/>~>~>~>~>~>~>
                 </div>$>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="<\% .ListPage %\>">
                 </a>

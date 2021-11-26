@@ -73,7 +73,7 @@ function Route(
     )
 {
      $path_value_array = GetPathValueArray( $path );
-     $language_code_array = [ DefaultLanguageCode ];
+     $language_code_array = [ DefaultLanguageCode, 'fr' ];
      $language_code = ExtractLanguageCode( $path_value_array, $language_code_array, '' );
 
     if ( $language_code === '' )

@@ -158,6 +158,15 @@
         <div class="scaled-button header-menu-button header-menu-desktop-button" data-view-name="contact" onclick="ShowView( 'contact' )">
             <?php echo $this->GetText( 'HeaderMenuContactButton' ); ?>
         </div>
+        <?php if ( $this->LanguageCode === 'en' ) { ?>
+            <div class="scaled-button header-menu-button" onclick="SetLanguage( 'fr' )">
+                <?php echo $this->GetText( 'HeaderMenuFrenchButton' ); ?>
+            </div>
+        <?php } else { ?>
+            <div class="scaled-button header-menu-button" onclick="SetLanguage( 'en' )">
+                <?php echo $this->GetText( 'HeaderMenuEnglishButton' ); ?>
+            </div>
+        <?php } ?>
         <div class="margin-left-auto! scaled-button header-menu-icon-button header-menu-open-button" onclick="OpenHeaderMenu()">
         </div>
     </div>

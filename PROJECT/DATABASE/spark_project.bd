@@ -3,46 +3,60 @@ TEXT
     Slug Text
 
         ScrollDownReminder
-            ~ Scroll Down
+            ~ Scroll down
 
         HeaderMenuHomeButton
-            ~ Home
+            ~ Home¨fr:Accueil
 
         HeaderMenuArticleListButton
-            ~ Article List
+            ~ Article list
+              ¨fr:Liste d'articles
 
         HeaderMenuLegalNoticeButton
-            ~ Legal Notice
+            ~ Legal notice
 
         HeaderMenuContactButton
             ~ Contact
 
+        HeaderMenuEnglishButton
+            ~ EN
+
+        HeaderMenuFrenchButton
+            ~ FR
+
         FooterMenuHomeButton
-            ~ Home
+            ~ Home¨fr:Accueil
 
         FooterMenuArticleListButton
-            ~ Article List
+            ~ Article list
+              ¨fr:Liste d'articles
 
         FooterMenuContactButton
             ~ Contact
 
         FooterMenuLegalNoticeButton
-            ~ Legal Notice
+            ~ Legal notice
+              ¨fr:Mention légale
 
         ContactFormNamePlaceholder
             ~ Name*
+              ¨fr:Nom
 
         ContactFormCompanyPlaceholder
             ~ Company*
+              ¨fr:Société*
 
         ContactFormEmailPlaceholder
             ~ E-mail*
+              ¨fr:Email*
 
         ContactFormPhonePlaceholder
             ~ Phone*
+              ¨fr:Téléphone*
 
         ContactFormSubjectPlaceholder
             ~ Subject*
+              ¨fr:Sujet*
 
         ContactFormMessagePlaceholder
             ~ Message*
@@ -52,28 +66,37 @@ TEXT
 
         ContactFormSendButton
             ~ Send
+              ¨fr:Envoyer
 
         ContactFormThanksText
             ~ Thank you for your interest in Spark Project!
+              ¨fr:Merci de l'intérêt que vous portez à Spark Project !
 
         ContactMailThanksText
             ~ Hi,\\n\\nThank you for your interest in Spark Project. We will get back to you as soon as possible.\\n\\nBest regards,\\n\\nThe Spark Project team\\n
+              ¨fr:Bonjour,\\n\\nJe vous remercie de l'intérêt que vous portez à Spark Project. Nous vous répondrons dès que possible.\\n\\nMeilleures salutations,\\n\\nL'équipe de Spark Project.\\n
 
         CookieConsentBannerText
             ~ We use cookies on our website to provide you with the best possible online experience.^
               <a href="/legal-notice" target="_blank">More information</a>
+              ¨fr:Nous utilisons des cookies sur notre site Web pour vous offrir la meilleure expérience en ligne possible.^
+              <a href="/legal-notice" target="_blank">Plus d'informations</a>
 
         CookieConsentBannerAcceptButton
             ~ Accept
+              ¨fr:Accepter
 
         CookieConsentBannerDeclineButton
             ~ Decline
+              ¨fr:Refuser
 
         LegalNoticeTitle
             ~ Legal notice
+              ¨fr:Mention légale
 
         LegalNoticeText
             ~ ! Title\^\^TM\^\^\\n* **Bold**\\n  * %%Italic%%\\n    * __Underlined__\\n* Normal\\nSome text,,2,,.
+              ¨fr:! Titre\^\^TM\^\^\\n* **Bold**\\n  * %%Italic%%\\n    * __Underlined__\\n* Normal\\nSome text,,2,,.
 
 USER
 

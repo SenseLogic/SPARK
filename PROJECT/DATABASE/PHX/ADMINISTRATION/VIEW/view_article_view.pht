@@ -18,7 +18,7 @@
                 Text :
             </div>
             <div>
-                    <textarea class="form-textarea" name="Text" readonly><% .Article.Text %></textarea>
+                    <input class="form-input" name="Text" type="text" value="<% GetValueText( .Article.Text ) %>" readonly/>
             </div>
             <div class="form-field-name">
                 Image Path :

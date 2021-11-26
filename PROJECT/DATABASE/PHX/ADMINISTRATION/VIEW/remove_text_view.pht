@@ -13,7 +13,7 @@
                     Text :
                 </div>
                 <div>
-                    <textarea class="form-textarea" name="Text" readonly><% .Text.Text %></textarea>
+                    <input class="form-input" name="Text" type="text" value="<% GetValueText( .Text.Text ) %>" readonly/>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="<% .ListPage %>">
                 </a>

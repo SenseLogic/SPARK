@@ -19,7 +19,7 @@
                     Text :
                 </div>
                 <div>
-                    <textarea class="form-textarea" name="Text" readonly><?php echo htmlspecialchars( $this->Article->Text ); ?></textarea>
+                    <input class="form-input" name="Text" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Article->Text ) ); ?>" readonly/>
                 </div>
                 <div class="form-field-name">
                     Image Path :

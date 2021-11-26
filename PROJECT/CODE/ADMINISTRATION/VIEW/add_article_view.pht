@@ -100,13 +100,21 @@
                     Name :
                 </div>
                 <div>
-                    <input class="form-input" name="Name" type="text"/>
+                    <div>
+                        <input class="form-input multilingual-input" name="Name" type="text" hidden/>
+                        <input class="form-input multilingual-input-translation" data-language-code="en" placeholder="English"/>
+                        <input class="form-input multilingual-input-translation" data-language-code="fr" placeholder="French"/>
+                    </div>
                 </div>
                 <div class="form-field-name">
                     Text :
                 </div>
                 <div>
-                    <textarea class="form-textarea" name="Text"></textarea>
+                    <div>
+                        <textarea class="form-textarea multilingual-input" name="Text" hidden></textarea>
+                        <textarea class="form-textarea multilingual-input-translation" data-language-code="en" placeholder="English"></textarea>
+                        <textarea class="form-textarea multilingual-input-translation" data-language-code="fr" placeholder="French"></textarea>
+                    </div>
                 </div>
                 <div class="form-field-name">
                     Image Path :

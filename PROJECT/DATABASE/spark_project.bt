@@ -74,7 +74,7 @@ function Route(
     )
 {
     var path_value_array = GetPathValueArray( path );
-    var language_code_array = [ DefaultLanguageCode ];
+    var language_code_array = [ DefaultLanguageCode, 'fr' ];
     var language_code = ExtractLanguageCode( path_value_array, language_code_array, '' );
 
     if ( language_code === '' )

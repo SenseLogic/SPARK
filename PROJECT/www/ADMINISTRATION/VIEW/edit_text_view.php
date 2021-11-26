@@ -55,7 +55,11 @@
                     Text :
                 </div>
                 <div>
-                    <textarea class="form-textarea" name="Text"><?php echo htmlspecialchars( $this->Text->Text ); ?></textarea>
+                    <div>
+                        <textarea class="form-textarea multilingual-input" name="Text" hidden><?php echo htmlspecialchars( $this->Text->Text ); ?></textarea>
+                        <textarea class="form-textarea multilingual-input-translation" data-language-code="en" placeholder="English"></textarea>
+                        <textarea class="form-textarea multilingual-input-translation" data-language-code="fr" placeholder="French"></textarea>
+                    </div>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="<?php echo htmlspecialchars( $this->ListPage ); ?>">
                 </a>

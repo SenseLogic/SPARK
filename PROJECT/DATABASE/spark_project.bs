@@ -4,14 +4,14 @@ spark-project
 
         Id : UINT32 | key, unique, incremented
         Slug : STRING
-        Text : STRING | is_text
+        Text : STRING | is_multilingual_text, multilingual_text en~English^fr~French
 
     ARTICLE | dropped, count 5
 
         Id : UINT32 | key, unique, incremented
         Slug : STRING = "{{Name:slug_case}}"
-        Name : STRING
-        Text : STRING = "{{english 2 4 5 10}}" | is_text, is_optional
+        Name : STRING | is_multilingual, multilingual en~English^fr~French
+        Text : STRING = "{{english 2 4 5 10}}¨fr:{{french 2 4 5 10}}" | is_multilingual_text, multilingual_text en~English^fr~French, is_optional
         ImagePath : STRING = "/static/image/test/beach.jpg|/static/image/test/palm_tree.jpg|/static/image/test/surfer.jpg" | is_image, is_optional
         VideoPath : STRING = "/static/video/test/train.mp4|/static/video/test/bus.mp4" | is_video, is_optional
         NextArticleId : ARTICLE.Id | is_reference, reference article~GetDatabaseArticleArray()~article.Id~article.Name
