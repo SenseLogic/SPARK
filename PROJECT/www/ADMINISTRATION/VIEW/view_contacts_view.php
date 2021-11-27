@@ -3,28 +3,28 @@
     <div class="page-section form-section">
         <div class="form-container table-container contact-table sortable-grid">
             <div class="form-column-name sortable-grid-column">
-                Name
+                <?php echo htmlspecialchars( GetText_( 'Name' ) ); ?>
             </div>
             <div class="form-column-name sortable-grid-column">
-                Company
+                <?php echo htmlspecialchars( GetText_( 'Company' ) ); ?>
             </div>
             <div class="form-column-name sortable-grid-column">
-                Email
+                <?php echo htmlspecialchars( GetText_( 'Email' ) ); ?>
             </div>
             <div class="form-column-name sortable-grid-column">
-                Phone
+                <?php echo htmlspecialchars( GetText_( 'Phone' ) ); ?>
             </div>
             <div class="form-column-name sortable-grid-column">
-                Subject
+                <?php echo htmlspecialchars( GetText_( 'Subject' ) ); ?>
             </div>
             <div class="form-column-name sortable-grid-column">
-                Message
+                <?php echo htmlspecialchars( GetText_( 'Message' ) ); ?>
             </div>
             <div class="form-column-name sortable-grid-column">
-                Date Time
+                <?php echo htmlspecialchars( GetText_( 'Date Time' ) ); ?>
             </div>
             <div class="form-column-name sortable-grid-column">
-                Action
+                <?php echo htmlspecialchars( GetText_( 'Action' ) ); ?>
             </div>
             <?php foreach ( $this->ContactArray as  $contact ) { ?>
                 <div class="sortable-grid-cell">

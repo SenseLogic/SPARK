@@ -41,10 +41,10 @@
 </style>
 <div class="narrow-padded-container article">
     <div class="article-title">
-        <% var article.Name %>
+        <# .GetTranslatedText( var article.Name ) #>
     </div>
     <div class="article-text">
-        <% article.Text %>
+        <# .GetTranslatedText( article.Text ) #>
     </div>
     <div>
         <img class="article-image" src="<# article.ImagePath #>"/>

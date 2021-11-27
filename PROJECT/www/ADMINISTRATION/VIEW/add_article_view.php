@@ -91,33 +91,35 @@
         <form class="form-centered" name="AddArticleForm" onsubmit="return IsValidAddArticleForm()" action="/admin/article/add" method="post">
             <div class="form-container">
                 <div class="form-field-name">
-                    Slug :
+                    <?php echo htmlspecialchars( GetText_( 'Slug' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="Slug" type="text"/>
                 </div>
                 <div class="form-field-name">
-                    Name :
+                    <?php echo htmlspecialchars( GetText_( 'Name' ) ); ?> :
                 </div>
                 <div>
                     <div>
                         <input class="form-input multilingual-input" name="Name" type="text" hidden/>
-                        <input class="form-input multilingual-input-translation" data-language-code="en" placeholder="English"/>
-                        <input class="form-input multilingual-input-translation" data-language-code="fr" placeholder="French"/>
+                        <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
+                            <input class="form-input multilingual-input-translation" data-language-code="<?php echo htmlspecialchars( $language_code ); ?>" placeholder="<?php echo htmlspecialchars( GetText_( $language_code ) ); ?>"/>
+                        <?php } ?>
                     </div>
                 </div>
                 <div class="form-field-name">
-                    Text :
+                    <?php echo htmlspecialchars( GetText_( 'Text' ) ); ?> :
                 </div>
                 <div>
                     <div>
                         <textarea class="form-textarea multilingual-input" name="Text" hidden></textarea>
-                        <textarea class="form-textarea multilingual-input-translation" data-language-code="en" placeholder="English"></textarea>
-                        <textarea class="form-textarea multilingual-input-translation" data-language-code="fr" placeholder="French"></textarea>
+                        <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
+                            <textarea class="form-textarea multilingual-input-translation" data-language-code="<?php echo htmlspecialchars( $language_code ); ?>" placeholder="<?php echo htmlspecialchars( GetText_( $language_code ) ); ?>"></textarea>
+                        <?php } ?>
                     </div>
                 </div>
                 <div class="form-field-name">
-                    Image Path :
+                    <?php echo htmlspecialchars( GetText_( 'Image Path' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="ImagePath" type="text" oninput="HandleImagePathInputChangeEvent( this )"/>
@@ -129,7 +131,7 @@
                     </div>
                 </div>
                 <div class="form-field-name">
-                    Video Path :
+                    <?php echo htmlspecialchars( GetText_( 'Video Path' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="VideoPath" type="text" oninput="HandleVideoPathInputChangeEvent( this )"/>
@@ -141,7 +143,7 @@
                     </div>
                 </div>
                 <div class="form-field-name">
-                    Next Article Id :
+                    <?php echo htmlspecialchars( GetText_( 'Next Article Id' ) ); ?> :
                 </div>
                 <div>
                     <select class="form-select" name="NextArticleId">
@@ -152,7 +154,7 @@
                     </select>
                 </div>
                 <div class="form-field-name">
-                    Priority :
+                    <?php echo htmlspecialchars( GetText_( 'Priority' ) ); ?> :
                 </div>
                 <div>
                     <select class="form-select" name="Priority">
@@ -161,7 +163,7 @@
                     </select>
                 </div>
                 <div class="form-field-name">
-                    Is Active :
+                    <?php echo htmlspecialchars( GetText_( 'Is Active' ) ); ?> :
                 </div>
                 <div>
                     <select class="form-select" name="IsActive">

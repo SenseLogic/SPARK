@@ -36,7 +36,7 @@
 <div id="home/#article-list" class="narrow-padded-container article-list">
     <? foreach ( var article; .ArticleArray ) { ?>
         <div class="article-list-button" onclick="ShowView( 'article/<# article.Id #>/<# article.Slug #>' )">
-            <# article.Name #>
+            <# .GetTranslatedText( article.Name ) #>
         </div>
     <? } ?>
 </div>

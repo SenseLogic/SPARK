@@ -3,13 +3,13 @@
     <div class="page-section form-section">
         <div class="form-container table-container text-table sortable-grid">
             <div class="form-column-name sortable-grid-column">
-                Slug
+                <?php echo htmlspecialchars( GetText_( 'Slug' ) ); ?>
             </div>
             <div class="form-column-name sortable-grid-column">
-                Text
+                <?php echo htmlspecialchars( GetText_( 'Text' ) ); ?>
             </div>
             <div class="form-column-name sortable-grid-column">
-                Action
+                <?php echo htmlspecialchars( GetText_( 'Action' ) ); ?>
             </div>
             <?php foreach ( $this->TextArray as  $text ) { ?>
                 <div class="sortable-grid-cell">

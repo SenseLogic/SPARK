@@ -46,19 +46,20 @@
         <form class="form-centered" name="AddTextForm" onsubmit="return IsValidAddTextForm()" action="/admin/text/add" method="post">
             <div class="form-container">
                 <div class="form-field-name">
-                    Slug :
+                    <% GetText_( 'Slug' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="Slug" type="text"/>
                 </div>
                 <div class="form-field-name">
-                    Text :
+                    <% GetText_( 'Text' ) %> :
                 </div>
                 <div>
                     <div>
                         <textarea class="form-textarea multilingual-input" name="Text" hidden></textarea>
-                        <textarea class="form-textarea multilingual-input-translation" data-language-code="en" placeholder="English"></textarea>
-                        <textarea class="form-textarea multilingual-input-translation" data-language-code="fr" placeholder="French"></textarea>
+                        <? foreach ( var language_code; LanguageCodeArray ) { ?>
+                            <textarea class="form-textarea multilingual-input-translation" data-language-code="<% language_code %>" placeholder="<% GetText_( language_code ) %>"></textarea>
+                        <? } ?>
                     </div>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="<% .ListPage %>">

@@ -61,7 +61,7 @@
         <? var article = .ArticleArray[ article_index % .ArticleCount ]; ?>
         <div class="article-carousel-slide" style="background-image: url( '<# article.ImagePath #>' )" onclick="ShowView( 'article/<# article.Id #>/<# article.Slug #>' )">
             <div class="article-carousel-slide-text">
-                <% article.Text %>
+                <# .GetTranslatedText( article.Text ) #>
             </div>
         </div>
     <? } ?>

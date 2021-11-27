@@ -100,37 +100,37 @@
         <form class="form-centered" name="AddContactForm" onsubmit="return IsValidAddContactForm()" action="/admin/contact/add" method="post">
             <div class="form-container">
                 <div class="form-field-name">
-                    Name :
+                    <% GetText_( 'Name' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="Name" type="text"/>
                 </div>
                 <div class="form-field-name">
-                    Company :
+                    <% GetText_( 'Company' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="Company" type="text"/>
                 </div>
                 <div class="form-field-name">
-                    Email :
+                    <% GetText_( 'Email' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="Email" type="text"/>
                 </div>
                 <div class="form-field-name">
-                    Phone :
+                    <% GetText_( 'Phone' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="Phone" type="text"/>
                 </div>
                 <div class="form-field-name">
-                    Subject :
+                    <% GetText_( 'Subject' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="Subject" type="text"/>
                 </div>
                 <div class="form-field-name">
-                    Message :
+                    <% GetText_( 'Message' ) %> :
                 </div>
                 <div>
                     <textarea class="form-textarea" name="Message"></textarea>

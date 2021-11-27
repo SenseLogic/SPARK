@@ -4,6 +4,7 @@ TEXT
 
         ScrollDownReminder
             ~ Scroll down
+              ¨fr:Faire défiler
 
         HeaderMenuHomeButton
             ~ Home¨fr:Accueil
@@ -14,6 +15,7 @@ TEXT
 
         HeaderMenuLegalNoticeButton
             ~ Legal notice
+              ¨fr:Mention légale
 
         HeaderMenuContactButton
             ~ Contact

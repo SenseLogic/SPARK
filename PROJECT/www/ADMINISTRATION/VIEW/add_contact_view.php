@@ -100,37 +100,37 @@
         <form class="form-centered" name="AddContactForm" onsubmit="return IsValidAddContactForm()" action="/admin/contact/add" method="post">
             <div class="form-container">
                 <div class="form-field-name">
-                    Name :
+                    <?php echo htmlspecialchars( GetText_( 'Name' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="Name" type="text"/>
                 </div>
                 <div class="form-field-name">
-                    Company :
+                    <?php echo htmlspecialchars( GetText_( 'Company' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="Company" type="text"/>
                 </div>
                 <div class="form-field-name">
-                    Email :
+                    <?php echo htmlspecialchars( GetText_( 'Email' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="Email" type="text"/>
                 </div>
                 <div class="form-field-name">
-                    Phone :
+                    <?php echo htmlspecialchars( GetText_( 'Phone' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="Phone" type="text"/>
                 </div>
                 <div class="form-field-name">
-                    Subject :
+                    <?php echo htmlspecialchars( GetText_( 'Subject' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="Subject" type="text"/>
                 </div>
                 <div class="form-field-name">
-                    Message :
+                    <?php echo htmlspecialchars( GetText_( 'Message' ) ); ?> :
                 </div>
                 <div>
                     <textarea class="form-textarea" name="Message"></textarea>

@@ -3,31 +3,31 @@
     <div class="page-section form-section">
         <div class="form-container table-container article-table sortable-grid">
             <div class="form-column-name sortable-grid-column">
-                Slug
+                <?php echo htmlspecialchars( GetText_( 'Slug' ) ); ?>
             </div>
             <div class="form-column-name sortable-grid-column">
-                Name
+                <?php echo htmlspecialchars( GetText_( 'Name' ) ); ?>
             </div>
             <div class="form-column-name sortable-grid-column">
-                Text
+                <?php echo htmlspecialchars( GetText_( 'Text' ) ); ?>
             </div>
             <div class="form-column-name sortable-grid-column">
-                Image Path
+                <?php echo htmlspecialchars( GetText_( 'Image Path' ) ); ?>
             </div>
             <div class="form-column-name sortable-grid-column">
-                Video Path
+                <?php echo htmlspecialchars( GetText_( 'Video Path' ) ); ?>
             </div>
             <div class="form-column-name sortable-grid-column">
-                Next Article Id
+                <?php echo htmlspecialchars( GetText_( 'Next Article Id' ) ); ?>
             </div>
             <div class="form-column-name sortable-grid-column">
-                Priority
+                <?php echo htmlspecialchars( GetText_( 'Priority' ) ); ?>
             </div>
             <div class="form-column-name sortable-grid-column">
-                Is Active
+                <?php echo htmlspecialchars( GetText_( 'Is Active' ) ); ?>
             </div>
             <div class="form-column-name sortable-grid-column">
-                Action
+                <?php echo htmlspecialchars( GetText_( 'Action' ) ); ?>
             </div>
             <?php foreach ( $this->ArticleArray as  $article ) { ?>
                 <div class="sortable-grid-cell">

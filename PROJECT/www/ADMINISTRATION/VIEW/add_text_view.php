@@ -46,19 +46,20 @@
         <form class="form-centered" name="AddTextForm" onsubmit="return IsValidAddTextForm()" action="/admin/text/add" method="post">
             <div class="form-container">
                 <div class="form-field-name">
-                    Slug :
+                    <?php echo htmlspecialchars( GetText_( 'Slug' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="Slug" type="text"/>
                 </div>
                 <div class="form-field-name">
-                    Text :
+                    <?php echo htmlspecialchars( GetText_( 'Text' ) ); ?> :
                 </div>
                 <div>
                     <div>
                         <textarea class="form-textarea multilingual-input" name="Text" hidden></textarea>
-                        <textarea class="form-textarea multilingual-input-translation" data-language-code="en" placeholder="English"></textarea>
-                        <textarea class="form-textarea multilingual-input-translation" data-language-code="fr" placeholder="French"></textarea>
+                        <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
+                            <textarea class="form-textarea multilingual-input-translation" data-language-code="<?php echo htmlspecialchars( $language_code ); ?>" placeholder="<?php echo htmlspecialchars( GetText_( $language_code ) ); ?>"></textarea>
+                        <?php } ?>
                     </div>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="<?php echo htmlspecialchars( $this->ListPage ); ?>">

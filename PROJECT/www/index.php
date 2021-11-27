@@ -18,6 +18,7 @@ require_once __DIR__ . '/' . 'FRAMEWORK/user.php';
 // -- CONSTANTS
 
 define( 'DefaultLanguageCode', 'en' );
+define( 'LanguageCodeArray', [ 'en', 'fr' ] );
 
 if ( GetServerName() === 'localhost' )
 {
@@ -73,13 +74,14 @@ function Route(
     )
 {
      $path_value_array = GetPathValueArray( $path );
-     $language_code_array = [ DefaultLanguageCode, 'fr' ];
-     $language_code = ExtractLanguageCode( $path_value_array, $language_code_array, '' );
+     $language_code = ExtractLanguageCode( $path_value_array, LanguageCodeArray, '' );
 
     if ( $language_code === '' )
     {
-        $language_code = GetBrowserLanguageCode( $language_code_array, DefaultLanguageCode );
+        $language_code = GetBrowserLanguageCode( LanguageCodeArray, DefaultLanguageCode );
     }
+
+    define( 'LanguageCode', $language_code );
 
      $path_value_count = count( $path_value_array );
      $it_is_get_request = IsGetRequest();
@@ -91,6 +93,9 @@ function Route(
     if ( $path_value_count >= 1
          && $path_value_array[ 0 ] === 'admin' )
     {
+        DefineText( 'en', 'English' );
+        DefineText( 'fr', 'French' );
+
         if ( $path_value_count === 1
              || !$user_is_connected )
         {

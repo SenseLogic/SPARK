@@ -3,31 +3,31 @@
     <div class="page-section form-section">
         <div class="form-container table-container article-table sortable-grid">
             <div class="form-column-name sortable-grid-column">
-                Slug
+                <% GetText_( 'Slug' ) %>
             </div>
             <div class="form-column-name sortable-grid-column">
-                Name
+                <% GetText_( 'Name' ) %>
             </div>
             <div class="form-column-name sortable-grid-column">
-                Text
+                <% GetText_( 'Text' ) %>
             </div>
             <div class="form-column-name sortable-grid-column">
-                Image Path
+                <% GetText_( 'Image Path' ) %>
             </div>
             <div class="form-column-name sortable-grid-column">
-                Video Path
+                <% GetText_( 'Video Path' ) %>
             </div>
             <div class="form-column-name sortable-grid-column">
-                Next Article Id
+                <% GetText_( 'Next Article Id' ) %>
             </div>
             <div class="form-column-name sortable-grid-column">
-                Priority
+                <% GetText_( 'Priority' ) %>
             </div>
             <div class="form-column-name sortable-grid-column">
-                Is Active
+                <% GetText_( 'Is Active' ) %>
             </div>
             <div class="form-column-name sortable-grid-column">
-                Action
+                <% GetText_( 'Action' ) %>
             </div>
             <? foreach ( var article; .ArticleArray ) { ?>
                 <div class="sortable-grid-cell">

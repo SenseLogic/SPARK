@@ -1,3 +1,7 @@
+// -- VARIABLES
+
+var TextMap = [];
+
 // -- FUNCTIONS
 
 function GetBrowserLanguageCode(
@@ -115,5 +119,37 @@ function GetLanguageDecimalSeparator(
     else
     {
         return ',';
+    }
+}
+
+// ~~
+
+function DefineText(
+    string slug,
+    string text
+    )
+{
+    global
+        TextMap;
+
+    TextMap[ slug ] = text;
+}
+
+// ~~
+
+function GetText_(
+    string slug
+    )
+{
+    global
+        TextMap;
+
+    if ( array_key_exists( slug, TextMap ) )
+    {
+        return GetTranslatedText( TextMap[ slug ], LanguageCode, DefaultLanguageCode );
+    }
+    else
+    {
+        return slug;
     }
 }

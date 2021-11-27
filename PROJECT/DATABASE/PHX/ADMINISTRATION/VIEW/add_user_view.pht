@@ -72,25 +72,25 @@
         <form class="form-centered" name="AddUserForm" onsubmit="return IsValidAddUserForm()" action="/admin/user/add" method="post">
             <div class="form-container">
                 <div class="form-field-name">
-                    Email :
+                    <% GetText_( 'Email' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="Email" type="text"/>
                 </div>
                 <div class="form-field-name">
-                    Pseudonym :
+                    <% GetText_( 'Pseudonym' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="Pseudonym" type="text"/>
                 </div>
                 <div class="form-field-name">
-                    Password :
+                    <% GetText_( 'Password' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="Password" type="text"/>
                 </div>
                 <div class="form-field-name">
-                    Role :
+                    <% GetText_( 'Role' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="Role" type="text"/>

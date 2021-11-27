@@ -3,13 +3,13 @@
     <div class="page-section form-section">
         <div class="form-container">
             <div class="form-field-name">
-                Slug :
+                <?php echo htmlspecialchars( GetText_( 'Slug' ) ); ?> :
             </div>
             <div>
                     <input class="form-input" name="Slug" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Text->Slug ) ); ?>" readonly/>
             </div>
             <div class="form-field-name">
-                Text :
+                <?php echo htmlspecialchars( GetText_( 'Text' ) ); ?> :
             </div>
             <div>
                     <input class="form-input" name="Text" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Text->Text ) ); ?>" readonly/>

@@ -4,25 +4,25 @@
         <form class="form-centered" action="/admin/article/remove/<?php echo htmlspecialchars( $this->Article->Id ); ?>" method="post">
             <div class="form-container">
                 <div class="form-field-name">
-                    Slug :
+                    <?php echo htmlspecialchars( GetText_( 'Slug' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="Slug" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Article->Slug ) ); ?>" readonly/>
                 </div>
                 <div class="form-field-name">
-                    Name :
+                    <?php echo htmlspecialchars( GetText_( 'Name' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="Name" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Article->Name ) ); ?>" readonly/>
                 </div>
                 <div class="form-field-name">
-                    Text :
+                    <?php echo htmlspecialchars( GetText_( 'Text' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="Text" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Article->Text ) ); ?>" readonly/>
                 </div>
                 <div class="form-field-name">
-                    Image Path :
+                    <?php echo htmlspecialchars( GetText_( 'Image Path' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="ImagePath" type="text" value="<?php echo htmlspecialchars( $this->Article->ImagePath ); ?>" readonly/>
@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <div class="form-field-name">
-                    Video Path :
+                    <?php echo htmlspecialchars( GetText_( 'Video Path' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="VideoPath" type="text" value="<?php echo htmlspecialchars( $this->Article->VideoPath ); ?>" readonly/>
@@ -40,19 +40,19 @@
                     </div>
                 </div>
                 <div class="form-field-name">
-                    Next Article Id :
+                    <?php echo htmlspecialchars( GetText_( 'Next Article Id' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="NextArticleId" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Article->NextArticleId ) ); ?>" readonly/>
                 </div>
                 <div class="form-field-name">
-                    Priority :
+                    <?php echo htmlspecialchars( GetText_( 'Priority' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="Priority" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Article->Priority ) ); ?>" readonly/>
                 </div>
                 <div class="form-field-name">
-                    Is Active :
+                    <?php echo htmlspecialchars( GetText_( 'Is Active' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="IsActive" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Article->IsActive ) ); ?>" readonly/>

@@ -3,28 +3,28 @@
     <div class="page-section form-section">
         <div class="form-container table-container contact-table sortable-grid">
             <div class="form-column-name sortable-grid-column">
-                Name
+                <% GetText_( 'Name' ) %>
             </div>
             <div class="form-column-name sortable-grid-column">
-                Company
+                <% GetText_( 'Company' ) %>
             </div>
             <div class="form-column-name sortable-grid-column">
-                Email
+                <% GetText_( 'Email' ) %>
             </div>
             <div class="form-column-name sortable-grid-column">
-                Phone
+                <% GetText_( 'Phone' ) %>
             </div>
             <div class="form-column-name sortable-grid-column">
-                Subject
+                <% GetText_( 'Subject' ) %>
             </div>
             <div class="form-column-name sortable-grid-column">
-                Message
+                <% GetText_( 'Message' ) %>
             </div>
             <div class="form-column-name sortable-grid-column">
-                Date Time
+                <% GetText_( 'Date Time' ) %>
             </div>
             <div class="form-column-name sortable-grid-column">
-                Action
+                <% GetText_( 'Action' ) %>
             </div>
             <? foreach ( var contact; .ContactArray ) { ?>
                 <div class="sortable-grid-cell">

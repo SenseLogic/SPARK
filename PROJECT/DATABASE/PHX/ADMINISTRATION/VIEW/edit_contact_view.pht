@@ -111,43 +111,43 @@
         <form class="form-centered" name="EditContactForm" onsubmit="return IsValidEditContactForm()" action="/admin/contact/edit/<% .Contact.Id %>" method="post">
             <div class="form-container">
                 <div class="form-field-name">
-                    Name :
+                    <% GetText_( 'Name' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="Name" type="text" value="<% GetValueText( .Contact.Name ) %>"/>
                 </div>
                 <div class="form-field-name">
-                    Company :
+                    <% GetText_( 'Company' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="Company" type="text" value="<% GetValueText( .Contact.Company ) %>"/>
                 </div>
                 <div class="form-field-name">
-                    Email :
+                    <% GetText_( 'Email' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="Email" type="text" value="<% GetValueText( .Contact.Email ) %>"/>
                 </div>
                 <div class="form-field-name">
-                    Phone :
+                    <% GetText_( 'Phone' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="Phone" type="text" value="<% GetValueText( .Contact.Phone ) %>"/>
                 </div>
                 <div class="form-field-name">
-                    Subject :
+                    <% GetText_( 'Subject' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="Subject" type="text" value="<% GetValueText( .Contact.Subject ) %>"/>
                 </div>
                 <div class="form-field-name">
-                    Message :
+                    <% GetText_( 'Message' ) %> :
                 </div>
                 <div>
                     <textarea class="form-textarea" name="Message"><% .Contact.Message %></textarea>
                 </div>
                 <div class="form-field-name">
-                    Date Time :
+                    <% GetText_( 'Date Time' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="DateTime" type="text" value="<% GetValueText( .Contact.DateTime ) %>"/>

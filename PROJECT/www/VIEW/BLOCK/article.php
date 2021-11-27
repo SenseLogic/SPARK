@@ -41,10 +41,10 @@
 
 <div class="narrow-padded-container article">
     <div class="article-title">
-        <?php echo htmlspecialchars(  $article->Name ); ?>
+        <?php echo $this->GetTranslatedText(  $article->Name ); ?>
     </div>
     <div class="article-text">
-        <?php echo htmlspecialchars( $article->Text ); ?>
+        <?php echo $this->GetTranslatedText( $article->Text ); ?>
     </div>
     <div>
         <img class="article-image" src="<?php echo $article->ImagePath; ?>"/>

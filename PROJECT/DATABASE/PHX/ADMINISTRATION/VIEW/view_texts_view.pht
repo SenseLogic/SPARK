@@ -3,13 +3,13 @@
     <div class="page-section form-section">
         <div class="form-container table-container text-table sortable-grid">
             <div class="form-column-name sortable-grid-column">
-                Slug
+                <% GetText_( 'Slug' ) %>
             </div>
             <div class="form-column-name sortable-grid-column">
-                Text
+                <% GetText_( 'Text' ) %>
             </div>
             <div class="form-column-name sortable-grid-column">
-                Action
+                <% GetText_( 'Action' ) %>
             </div>
             <? foreach ( var text; .TextArray ) { ?>
                 <div class="sortable-grid-cell">
