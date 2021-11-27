@@ -77,8 +77,19 @@
         }
     }
 
+    // ~~
+
+    function InitializeTextAreas(
+        )
+    {
+        GetElements( ".form-textarea" )
+            .SetContentHeight()
+            .AddEventListener( "input", ( event ) => event.target.SetContentHeight() );
+    }
+
     // -- STATEMENTS
 
     DelayCall( InitializeSortableGridColumns );
-    DelayCall( InitializeMultilingualTexts );
+    DelayCall( InitializeMultilingualInputs );
+    DelayCall( InitializeTextAreas );
 </script>
