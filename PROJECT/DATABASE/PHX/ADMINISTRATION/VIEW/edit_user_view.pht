@@ -72,25 +72,25 @@
         <form class="form-centered" name="EditUserForm" onsubmit="return IsValidEditUserForm()" action="/admin/user/edit/<% .User.Id %>" method="post">
             <div class="form-container">
                 <div class="form-field-name">
-                    <% GetText_( 'Email' ) %> :
+                    <% .GetText( 'Email' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="Email" type="text" value="<% GetValueText( .User.Email ) %>"/>
                 </div>
                 <div class="form-field-name">
-                    <% GetText_( 'Pseudonym' ) %> :
+                    <% .GetText( 'Pseudonym' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="Pseudonym" type="text" value="<% GetValueText( .User.Pseudonym ) %>"/>
                 </div>
                 <div class="form-field-name">
-                    <% GetText_( 'Password' ) %> :
+                    <% .GetText( 'Password' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="Password" type="text" value="<% GetValueText( .User.Password ) %>"/>
                 </div>
                 <div class="form-field-name">
-                    <% GetText_( 'Role' ) %> :
+                    <% .GetText( 'Role' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="Role" type="text" value="<% GetValueText( .User.Role ) %>"/>

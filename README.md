@@ -231,7 +231,7 @@ DefineStyleTag( 'weight', 'font-weight' );
 
 ## Version
 
-0.4
+0.5
 
 ## Author
 

@@ -10,10 +10,11 @@ class VIEW_ARTICLE_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     function __construct(
+        string $language_code,
         $article_id
         )
     {
-        parent::__construct();
+        parent::__construct( $language_code );
 
         $this->Title = 'View a article';
         $this->Article = GetDatabaseArticleById( $article_id );
@@ -25,4 +26,4 @@ class VIEW_ARTICLE_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
- $view_article_controller = new VIEW_ARTICLE_CONTROLLER(  $article_id );
+ $view_article_controller = new VIEW_ARTICLE_CONTROLLER(  $language_code,  $article_id );

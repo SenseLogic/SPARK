@@ -13,7 +13,7 @@
                             <span class="form-button form-button-large text-button">
                             </span>
                             <span class="form-button-tooltip">
-                                <?php echo htmlspecialchars( GetText_( 'Text' ) ); ?>
+                                <?php echo htmlspecialchars( $this->GetText( 'Text' ) ); ?>
                             </span>
                         </a>
                     </div>
@@ -22,7 +22,7 @@
                             <span class="form-button form-button-large article-button">
                             </span>
                             <span class="form-button-tooltip">
-                                <?php echo htmlspecialchars( GetText_( 'Article' ) ); ?>
+                                <?php echo htmlspecialchars( $this->GetText( 'Article' ) ); ?>
                             </span>
                         </a>
                     </div>
@@ -31,7 +31,7 @@
                             <span class="form-button form-button-large contact-button">
                             </span>
                             <span class="form-button-tooltip">
-                                <?php echo htmlspecialchars( GetText_( 'Contact' ) ); ?>
+                                <?php echo htmlspecialchars( $this->GetText( 'Contact' ) ); ?>
                             </span>
                         </a>
                     </div>
@@ -40,7 +40,7 @@
                             <span class="form-button form-button-large user-button">
                             </span>
                             <span class="form-button-tooltip">
-                                <?php echo htmlspecialchars( GetText_( 'User' ) ); ?>
+                                <?php echo htmlspecialchars( $this->GetText( 'User' ) ); ?>
                             </span>
                         </a>
                     </div>
@@ -49,7 +49,7 @@
                             <span class="form-button form-button-large disconnect-button">
                             </span>
                             <span class="form-button-tooltip">
-                                <?php echo htmlspecialchars( GetText_( 'Disconnect' ) ); ?>
+                                <?php echo htmlspecialchars( $this->GetText( 'Disconnect' ) ); ?>
                             </span>
                         </a>
                     </div>
@@ -57,7 +57,7 @@
             </div>
             <div class="page-title">
                 <span class="page-title-content">
-                    <?php echo htmlspecialchars( GetText_( $this->Title ) ); ?>
+                    <?php echo htmlspecialchars( $this->GetText( $this->Title ) ); ?>
                 </span>
             </div>
             <div class="page-body">

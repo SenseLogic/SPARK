@@ -3,28 +3,28 @@
     <div class="page-section form-section">
         <div class="form-container table-container contact-table sortable-grid">
             <div class="form-column-name sortable-grid-column">
-                <?php echo htmlspecialchars( GetText_( 'Name' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetText( 'Name' ) ); ?>
             </div>
             <div class="form-column-name sortable-grid-column">
-                <?php echo htmlspecialchars( GetText_( 'Company' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetText( 'Company' ) ); ?>
             </div>
             <div class="form-column-name sortable-grid-column">
-                <?php echo htmlspecialchars( GetText_( 'Email' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetText( 'Email' ) ); ?>
             </div>
             <div class="form-column-name sortable-grid-column">
-                <?php echo htmlspecialchars( GetText_( 'Phone' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetText( 'Phone' ) ); ?>
             </div>
             <div class="form-column-name sortable-grid-column">
-                <?php echo htmlspecialchars( GetText_( 'Subject' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetText( 'Subject' ) ); ?>
             </div>
             <div class="form-column-name sortable-grid-column">
-                <?php echo htmlspecialchars( GetText_( 'Message' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetText( 'Message' ) ); ?>
             </div>
             <div class="form-column-name sortable-grid-column">
-                <?php echo htmlspecialchars( GetText_( 'Date Time' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetText( 'Date Time' ) ); ?>
             </div>
             <div class="form-column-name sortable-grid-column">
-                <?php echo htmlspecialchars( GetText_( 'Action' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetText( 'Action' ) ); ?>
             </div>
             <?php foreach ( $this->ContactArray as  $contact ) { ?>
                 <div class="sortable-grid-cell">

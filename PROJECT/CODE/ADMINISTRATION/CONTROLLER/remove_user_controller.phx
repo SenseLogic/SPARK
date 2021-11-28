@@ -10,10 +10,11 @@ class REMOVE_USER_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     method constructor(
+        string language_code,
         user_id
         )
     {
-        parent::constructor();
+        parent::constructor( language_code );
 
         .Title = 'Remove a user';
         .User = GetDatabaseUserById( user_id );
@@ -25,4 +26,4 @@ class REMOVE_USER_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
-var remove_user_controller = new REMOVE_USER_CONTROLLER( var user_id );
+var remove_user_controller = new REMOVE_USER_CONTROLLER( var language_code, var user_id );

@@ -10,10 +10,11 @@ class EDIT_ARTICLE_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     function __construct(
+        string $language_code,
         $article_id
         )
     {
-        parent::__construct();
+        parent::__construct( $language_code );
 
         $this->Title = 'Edit a article';
         $this->Article = GetDatabaseArticleById( $article_id );
@@ -25,4 +26,4 @@ class EDIT_ARTICLE_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
- $edit_article_controller = new EDIT_ARTICLE_CONTROLLER(  $article_id );
+ $edit_article_controller = new EDIT_ARTICLE_CONTROLLER(  $language_code,  $article_id );

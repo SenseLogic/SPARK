@@ -4,13 +4,13 @@
         <form class="form-centered" action="/admin/text/remove/<% .Text.Id %>" method="post">
             <div class="form-container">
                 <div class="form-field-name">
-                    <% GetText_( 'Slug' ) %> :
+                    <% .GetText( 'Slug' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="Slug" type="text" value="<% GetValueText( .Text.Slug ) %>" readonly/>
                 </div>
                 <div class="form-field-name">
-                    <% GetText_( 'Text' ) %> :
+                    <% .GetText( 'Text' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="Text" type="text" value="<% GetValueText( .Text.Text ) %>" readonly/>

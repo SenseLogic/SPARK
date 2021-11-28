@@ -10,10 +10,11 @@ class VIEW_USER_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     function __construct(
+        string $language_code,
         $user_id
         )
     {
-        parent::__construct();
+        parent::__construct( $language_code );
 
         $this->Title = 'View a user';
         $this->User = GetDatabaseUserById( $user_id );
@@ -25,4 +26,4 @@ class VIEW_USER_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
- $view_user_controller = new VIEW_USER_CONTROLLER(  $user_id );
+ $view_user_controller = new VIEW_USER_CONTROLLER(  $language_code,  $user_id );

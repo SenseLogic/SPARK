@@ -10,10 +10,11 @@ class EDIT_USER_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     function __construct(
+        string $language_code,
         $user_id
         )
     {
-        parent::__construct();
+        parent::__construct( $language_code );
 
         $this->Title = 'Edit a user';
         $this->User = GetDatabaseUserById( $user_id );
@@ -25,4 +26,4 @@ class EDIT_USER_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
- $edit_user_controller = new EDIT_USER_CONTROLLER(  $user_id );
+ $edit_user_controller = new EDIT_USER_CONTROLLER(  $language_code,  $user_id );

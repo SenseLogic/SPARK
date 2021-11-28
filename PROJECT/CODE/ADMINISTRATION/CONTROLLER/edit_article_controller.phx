@@ -10,10 +10,11 @@ class EDIT_ARTICLE_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     method constructor(
+        string language_code,
         article_id
         )
     {
-        parent::constructor();
+        parent::constructor( language_code );
 
         .Title = 'Edit a article';
         .Article = GetDatabaseArticleById( article_id );
@@ -25,4 +26,4 @@ class EDIT_ARTICLE_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
-var edit_article_controller = new EDIT_ARTICLE_CONTROLLER( var article_id );
+var edit_article_controller = new EDIT_ARTICLE_CONTROLLER( var language_code, var article_id );

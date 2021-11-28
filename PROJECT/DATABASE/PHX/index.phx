@@ -81,8 +81,6 @@ function Route(
         language_code = GetBrowserLanguageCode( LanguageCodeArray, DefaultLanguageCode );
     }
 
-    define( 'LanguageCode', language_code );
-
     var path_value_count = count( path_value_array );
     var it_is_get_request = IsGetRequest();
     var it_is_post_request = IsPostRequest();

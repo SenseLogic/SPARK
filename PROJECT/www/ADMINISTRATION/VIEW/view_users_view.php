@@ -3,19 +3,19 @@
     <div class="page-section form-section">
         <div class="form-container table-container user-table sortable-grid">
             <div class="form-column-name sortable-grid-column">
-                <?php echo htmlspecialchars( GetText_( 'Email' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetText( 'Email' ) ); ?>
             </div>
             <div class="form-column-name sortable-grid-column">
-                <?php echo htmlspecialchars( GetText_( 'Pseudonym' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetText( 'Pseudonym' ) ); ?>
             </div>
             <div class="form-column-name sortable-grid-column">
-                <?php echo htmlspecialchars( GetText_( 'Password' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetText( 'Password' ) ); ?>
             </div>
             <div class="form-column-name sortable-grid-column">
-                <?php echo htmlspecialchars( GetText_( 'Role' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetText( 'Role' ) ); ?>
             </div>
             <div class="form-column-name sortable-grid-column">
-                <?php echo htmlspecialchars( GetText_( 'Action' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetText( 'Action' ) ); ?>
             </div>
             <?php foreach ( $this->UserArray as  $user ) { ?>
                 <div class="sortable-grid-cell">

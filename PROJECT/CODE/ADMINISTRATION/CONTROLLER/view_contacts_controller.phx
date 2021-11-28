@@ -10,9 +10,10 @@ class VIEW_CONTACTS_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     method constructor(
+        string language_code
         )
     {
-        parent::constructor();
+        parent::constructor( language_code );
 
         .Title = 'View contacts';
         .ContactArray = GetDatabaseContactArray();
@@ -25,4 +26,4 @@ class VIEW_CONTACTS_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
-var view_contacts_controller = new VIEW_CONTACTS_CONTROLLER();
+var view_contacts_controller = new VIEW_CONTACTS_CONTROLLER( var language_code );

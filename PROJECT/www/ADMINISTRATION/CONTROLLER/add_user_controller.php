@@ -10,9 +10,10 @@ class ADD_USER_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     function __construct(
+        string $language_code
         )
     {
-        parent::__construct();
+        parent::__construct( $language_code );
 
         $this->Title = 'Add a user';
         $this->ListPage = FindSessionValue( 'ListPage', '/admin/user' );
@@ -23,4 +24,4 @@ class ADD_USER_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
- $add_user_controller = new ADD_USER_CONTROLLER();
+ $add_user_controller = new ADD_USER_CONTROLLER(  $language_code );

@@ -10,10 +10,11 @@ class DO_CONNECT_USER_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     function __construct(
+        string $language_code,
         string $path
         )
     {
-        parent::__construct();
+        parent::__construct( $language_code );
 
          $pseudonym = GetPostValue( 'Pseudonym' );
          $password = GetPostValue( 'Password' );
@@ -39,4 +40,4 @@ class DO_CONNECT_USER_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
- $do_connect_user_controller = new DO_CONNECT_USER_CONTROLLER(  $path );
+ $do_connect_user_controller = new DO_CONNECT_USER_CONTROLLER(  $language_code,  $path );

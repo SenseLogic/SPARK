@@ -72,25 +72,25 @@
         <form class="form-centered" name="AddUserForm" onsubmit="return IsValidAddUserForm()" action="/admin/user/add" method="post">
             <div class="form-container">
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( GetText_( 'Email' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetText( 'Email' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="Email" type="text"/>
                 </div>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( GetText_( 'Pseudonym' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetText( 'Pseudonym' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="Pseudonym" type="text"/>
                 </div>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( GetText_( 'Password' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetText( 'Password' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="Password" type="text"/>
                 </div>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( GetText_( 'Role' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetText( 'Role' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="Role" type="text"/>

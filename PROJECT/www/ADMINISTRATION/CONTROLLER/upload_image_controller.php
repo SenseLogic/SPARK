@@ -9,9 +9,10 @@ class UPLOAD_IMAGE_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     function __construct(
+        string $language_code
         )
     {
-        parent::__construct();
+        parent::__construct( $language_code );
 
         if ( HasUploadedFile( 'file' ) )
         {
@@ -35,4 +36,4 @@ class UPLOAD_IMAGE_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
- $upload_image_controller = new UPLOAD_IMAGE_CONTROLLER();
+ $upload_image_controller = new UPLOAD_IMAGE_CONTROLLER(  $language_code );

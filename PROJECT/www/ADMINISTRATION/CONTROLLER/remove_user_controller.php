@@ -10,10 +10,11 @@ class REMOVE_USER_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     function __construct(
+        string $language_code,
         $user_id
         )
     {
-        parent::__construct();
+        parent::__construct( $language_code );
 
         $this->Title = 'Remove a user';
         $this->User = GetDatabaseUserById( $user_id );
@@ -25,4 +26,4 @@ class REMOVE_USER_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
- $remove_user_controller = new REMOVE_USER_CONTROLLER(  $user_id );
+ $remove_user_controller = new REMOVE_USER_CONTROLLER(  $language_code,  $user_id );

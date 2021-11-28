@@ -10,10 +10,11 @@ class DO_CONNECT_USER_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     method constructor(
+        string language_code,
         string path
         )
     {
-        parent::constructor();
+        parent::constructor( language_code );
 
         var pseudonym = GetPostValue( 'Pseudonym' );
         var password = GetPostValue( 'Password' );
@@ -39,4 +40,4 @@ class DO_CONNECT_USER_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
-var do_connect_user_controller = new DO_CONNECT_USER_CONTROLLER( var path );
+var do_connect_user_controller = new DO_CONNECT_USER_CONTROLLER( var language_code, var path );

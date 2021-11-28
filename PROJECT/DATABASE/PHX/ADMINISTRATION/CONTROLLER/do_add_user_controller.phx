@@ -10,9 +10,10 @@ class DO_ADD_USER_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     method constructor(
+        string language_code
         )
     {
-        parent::constructor();
+        parent::constructor( language_code );
 
         var email = GetPostValue( 'Email' );
         var pseudonym = GetPostValue( 'Pseudonym' );
@@ -27,4 +28,4 @@ class DO_ADD_USER_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
-var do_add_user_controller = new DO_ADD_USER_CONTROLLER();
+var do_add_user_controller = new DO_ADD_USER_CONTROLLER( var language_code );

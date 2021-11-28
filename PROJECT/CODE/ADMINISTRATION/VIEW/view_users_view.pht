@@ -3,19 +3,19 @@
     <div class="page-section form-section">
         <div class="form-container table-container user-table sortable-grid">
             <div class="form-column-name sortable-grid-column">
-                <% GetText_( 'Email' ) %>
+                <% .GetText( 'Email' ) %>
             </div>
             <div class="form-column-name sortable-grid-column">
-                <% GetText_( 'Pseudonym' ) %>
+                <% .GetText( 'Pseudonym' ) %>
             </div>
             <div class="form-column-name sortable-grid-column">
-                <% GetText_( 'Password' ) %>
+                <% .GetText( 'Password' ) %>
             </div>
             <div class="form-column-name sortable-grid-column">
-                <% GetText_( 'Role' ) %>
+                <% .GetText( 'Role' ) %>
             </div>
             <div class="form-column-name sortable-grid-column">
-                <% GetText_( 'Action' ) %>
+                <% .GetText( 'Action' ) %>
             </div>
             <? foreach ( var user; .UserArray ) { ?>
                 <div class="sortable-grid-cell">

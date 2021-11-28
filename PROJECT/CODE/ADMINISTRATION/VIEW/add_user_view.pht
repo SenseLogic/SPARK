@@ -72,25 +72,25 @@
         <form class="form-centered" name="AddUserForm" onsubmit="return IsValidAddUserForm()" action="/admin/user/add" method="post">
             <div class="form-container">
                 <div class="form-field-name">
-                    <% GetText_( 'Email' ) %> :
+                    <% .GetText( 'Email' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="Email" type="text"/>
                 </div>
                 <div class="form-field-name">
-                    <% GetText_( 'Pseudonym' ) %> :
+                    <% .GetText( 'Pseudonym' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="Pseudonym" type="text"/>
                 </div>
                 <div class="form-field-name">
-                    <% GetText_( 'Password' ) %> :
+                    <% .GetText( 'Password' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="Password" type="text"/>
                 </div>
                 <div class="form-field-name">
-                    <% GetText_( 'Role' ) %> :
+                    <% .GetText( 'Role' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="Role" type="text"/>

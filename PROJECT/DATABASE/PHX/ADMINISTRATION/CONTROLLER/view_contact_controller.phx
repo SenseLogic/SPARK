@@ -10,10 +10,11 @@ class VIEW_CONTACT_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     method constructor(
+        string language_code,
         contact_id
         )
     {
-        parent::constructor();
+        parent::constructor( language_code );
 
         .Title = 'View a contact';
         .Contact = GetDatabaseContactById( contact_id );
@@ -25,4 +26,4 @@ class VIEW_CONTACT_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
-var view_contact_controller = new VIEW_CONTACT_CONTROLLER( var contact_id );
+var view_contact_controller = new VIEW_CONTACT_CONTROLLER( var language_code, var contact_id );

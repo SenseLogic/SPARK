@@ -10,9 +10,10 @@ class ADD_CONTACT_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     method constructor(
+        string language_code
         )
     {
-        parent::constructor();
+        parent::constructor( language_code );
 
         .Title = 'Add a contact';
         .ListPage = FindSessionValue( 'ListPage', '/admin/contact' );
@@ -23,4 +24,4 @@ class ADD_CONTACT_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
-var add_contact_controller = new ADD_CONTACT_CONTROLLER();
+var add_contact_controller = new ADD_CONTACT_CONTROLLER( var language_code );

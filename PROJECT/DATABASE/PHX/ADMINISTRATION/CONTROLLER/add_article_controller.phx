@@ -10,9 +10,10 @@ class ADD_ARTICLE_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     method constructor(
+        string language_code
         )
     {
-        parent::constructor();
+        parent::constructor( language_code );
 
         .Title = 'Add a article';
         .ListPage = FindSessionValue( 'ListPage', '/admin/article' );
@@ -23,4 +24,4 @@ class ADD_ARTICLE_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
-var add_article_controller = new ADD_ARTICLE_CONTROLLER();
+var add_article_controller = new ADD_ARTICLE_CONTROLLER( var language_code );

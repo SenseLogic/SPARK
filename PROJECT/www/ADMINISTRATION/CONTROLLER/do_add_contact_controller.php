@@ -10,9 +10,10 @@ class DO_ADD_CONTACT_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     function __construct(
+        string $language_code
         )
     {
-        parent::__construct();
+        parent::__construct( $language_code );
 
          $name = GetPostValue( 'Name' );
          $company = GetPostValue( 'Company' );
@@ -29,4 +30,4 @@ class DO_ADD_CONTACT_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
- $do_add_contact_controller = new DO_ADD_CONTACT_CONTROLLER();
+ $do_add_contact_controller = new DO_ADD_CONTACT_CONTROLLER(  $language_code );

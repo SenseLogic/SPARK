@@ -9,9 +9,10 @@ class DISCONNECT_USER_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     function __construct(
+        string $language_code
         )
     {
-        parent::__construct();
+        parent::__construct( $language_code );
 
         $this->Session->User = null;
         $this->Session->UserIsConnected = false;
@@ -24,4 +25,4 @@ class DISCONNECT_USER_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
- $disconnect_user_controller = new DISCONNECT_USER_CONTROLLER();
+ $disconnect_user_controller = new DISCONNECT_USER_CONTROLLER(  $language_code );

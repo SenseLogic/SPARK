@@ -9,9 +9,10 @@ class SHOW_ERROR_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     method constructor(
+        string language_code
         )
     {
-        parent::constructor();
+        parent::constructor( language_code );
 
         import '../VIEW/show_error_view.php';
     }
@@ -19,4 +20,4 @@ class SHOW_ERROR_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
-var show_error_controller = new SHOW_ERROR_CONTROLLER();
+var show_error_controller = new SHOW_ERROR_CONTROLLER( var language_code );

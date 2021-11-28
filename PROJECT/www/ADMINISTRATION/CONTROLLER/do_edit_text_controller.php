@@ -10,10 +10,11 @@ class DO_EDIT_TEXT_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     function __construct(
+        string $language_code,
         $text_id
         )
     {
-        parent::__construct();
+        parent::__construct( $language_code );
 
          $slug = GetPostValue( 'Slug' );
          $text = GetPostValue( 'Text' );
@@ -26,4 +27,4 @@ class DO_EDIT_TEXT_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
- $do_edit_text_controller = new DO_EDIT_TEXT_CONTROLLER(  $text_id );
+ $do_edit_text_controller = new DO_EDIT_TEXT_CONTROLLER(  $language_code,  $text_id );

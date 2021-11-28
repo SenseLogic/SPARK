@@ -10,9 +10,10 @@ class ADD_TEXT_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     function __construct(
+        string $language_code
         )
     {
-        parent::__construct();
+        parent::__construct( $language_code );
 
         $this->Title = 'Add a text';
         $this->ListPage = FindSessionValue( 'ListPage', '/admin/text' );
@@ -23,4 +24,4 @@ class ADD_TEXT_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
- $add_text_controller = new ADD_TEXT_CONTROLLER();
+ $add_text_controller = new ADD_TEXT_CONTROLLER(  $language_code );

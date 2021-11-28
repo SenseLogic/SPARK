@@ -10,10 +10,11 @@ class DO_REMOVE_ARTICLE_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     function __construct(
+        string $language_code,
         $article_id
         )
     {
-        parent::__construct();
+        parent::__construct( $language_code );
 
         RemoveDatabaseArticleById( $article_id );
 
@@ -23,4 +24,4 @@ class DO_REMOVE_ARTICLE_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
- $do_remove_article_controller = new DO_REMOVE_ARTICLE_CONTROLLER(  $article_id );
+ $do_remove_article_controller = new DO_REMOVE_ARTICLE_CONTROLLER(  $language_code,  $article_id );

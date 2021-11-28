@@ -100,37 +100,37 @@
         <form class="form-centered" name="AddContactForm" onsubmit="return IsValidAddContactForm()" action="/admin/contact/add" method="post">
             <div class="form-container">
                 <div class="form-field-name">
-                    <% GetText_( 'Name' ) %> :
+                    <% .GetText( 'Name' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="Name" type="text"/>
                 </div>
                 <div class="form-field-name">
-                    <% GetText_( 'Company' ) %> :
+                    <% .GetText( 'Company' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="Company" type="text"/>
                 </div>
                 <div class="form-field-name">
-                    <% GetText_( 'Email' ) %> :
+                    <% .GetText( 'Email' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="Email" type="text"/>
                 </div>
                 <div class="form-field-name">
-                    <% GetText_( 'Phone' ) %> :
+                    <% .GetText( 'Phone' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="Phone" type="text"/>
                 </div>
                 <div class="form-field-name">
-                    <% GetText_( 'Subject' ) %> :
+                    <% .GetText( 'Subject' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="Subject" type="text"/>
                 </div>
                 <div class="form-field-name">
-                    <% GetText_( 'Message' ) %> :
+                    <% .GetText( 'Message' ) %> :
                 </div>
                 <div>
                     <textarea class="form-textarea" name="Message"></textarea>

@@ -10,10 +10,11 @@ class REMOVE_TEXT_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     function __construct(
+        string $language_code,
         $text_id
         )
     {
-        parent::__construct();
+        parent::__construct( $language_code );
 
         $this->Title = 'Remove a text';
         $this->Text = GetDatabaseTextById( $text_id );
@@ -25,4 +26,4 @@ class REMOVE_TEXT_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
- $remove_text_controller = new REMOVE_TEXT_CONTROLLER(  $text_id );
+ $remove_text_controller = new REMOVE_TEXT_CONTROLLER(  $language_code,  $text_id );

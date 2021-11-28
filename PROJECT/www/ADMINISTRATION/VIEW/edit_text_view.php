@@ -46,19 +46,19 @@
         <form class="form-centered" name="EditTextForm" onsubmit="return IsValidEditTextForm()" action="/admin/text/edit/<?php echo htmlspecialchars( $this->Text->Id ); ?>" method="post">
             <div class="form-container">
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( GetText_( 'Slug' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetText( 'Slug' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="Slug" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Text->Slug ) ); ?>"/>
                 </div>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( GetText_( 'Text' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetText( 'Text' ) ); ?> :
                 </div>
                 <div>
                     <div>
                         <textarea class="form-textarea multilingual-input" name="Text" hidden><?php echo htmlspecialchars( $this->Text->Text ); ?></textarea>
                         <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
-                            <textarea class="form-textarea multilingual-input-translation" data-language-code="<?php echo htmlspecialchars( $language_code ); ?>" placeholder="<?php echo htmlspecialchars( GetText_( $language_code ) ); ?>"></textarea>
+                            <textarea class="form-textarea multilingual-input-translation" data-language-code="<?php echo htmlspecialchars( $language_code ); ?>" placeholder="<?php echo htmlspecialchars( $this->GetText( $language_code ) ); ?>"></textarea>
                         <?php } ?>
                     </div>
                 </div>

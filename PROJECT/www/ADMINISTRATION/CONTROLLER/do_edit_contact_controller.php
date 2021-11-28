@@ -10,10 +10,11 @@ class DO_EDIT_CONTACT_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     function __construct(
+        string $language_code,
         $contact_id
         )
     {
-        parent::__construct();
+        parent::__construct( $language_code );
 
          $name = GetPostValue( 'Name' );
          $company = GetPostValue( 'Company' );
@@ -31,4 +32,4 @@ class DO_EDIT_CONTACT_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
- $do_edit_contact_controller = new DO_EDIT_CONTACT_CONTROLLER(  $contact_id );
+ $do_edit_contact_controller = new DO_EDIT_CONTACT_CONTROLLER(  $language_code,  $contact_id );

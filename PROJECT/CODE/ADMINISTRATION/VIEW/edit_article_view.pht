@@ -91,35 +91,35 @@
         <form class="form-centered" name="EditArticleForm" onsubmit="return IsValidEditArticleForm()" action="/admin/article/edit/<% .Article.Id %>" method="post">
             <div class="form-container">
                 <div class="form-field-name">
-                    <% GetText_( 'Slug' ) %> :
+                    <% .GetText( 'Slug' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="Slug" type="text" value="<% GetValueText( .Article.Slug ) %>"/>
                 </div>
                 <div class="form-field-name">
-                    <% GetText_( 'Name' ) %> :
+                    <% .GetText( 'Name' ) %> :
                 </div>
                 <div>
                     <div>
                         <input class="form-input multilingual-input" name="Name" type="text" value="<% GetValueText( .Article.Name ) %>" hidden/>
                         <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <input class="form-input multilingual-input-translation" data-language-code="<% language_code %>" placeholder="<% GetText_( language_code ) %>"/>
+                            <input class="form-input multilingual-input-translation" data-language-code="<% language_code %>" placeholder="<% .GetText( language_code ) %>"/>
                         <? } ?>
                     </div>
                 </div>
                 <div class="form-field-name">
-                    <% GetText_( 'Text' ) %> :
+                    <% .GetText( 'Text' ) %> :
                 </div>
                 <div>
                     <div>
                         <textarea class="form-textarea multilingual-input" name="Text" hidden><% .Article.Text %></textarea>
                         <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <textarea class="form-textarea multilingual-input-translation" data-language-code="<% language_code %>" placeholder="<% GetText_( language_code ) %>"></textarea>
+                            <textarea class="form-textarea multilingual-input-translation" data-language-code="<% language_code %>" placeholder="<% .GetText( language_code ) %>"></textarea>
                         <? } ?>
                     </div>
                 </div>
                 <div class="form-field-name">
-                    <% GetText_( 'Image Path' ) %> :
+                    <% .GetText( 'Image Path' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="ImagePath" type="text" value="<% .Article.ImagePath %>" oninput="HandleImagePathInputChangeEvent( this )"/>
@@ -131,7 +131,7 @@
                     </div>
                 </div>
                 <div class="form-field-name">
-                    <% GetText_( 'Video Path' ) %> :
+                    <% .GetText( 'Video Path' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="VideoPath" type="text" value="<% .Article.VideoPath %>" oninput="HandleVideoPathInputChangeEvent( this )"/>
@@ -143,7 +143,7 @@
                     </div>
                 </div>
                 <div class="form-field-name">
-                    <% GetText_( 'Next Article Id' ) %> :
+                    <% .GetText( 'Next Article Id' ) %> :
                 </div>
                 <div>
                     <select class="form-select" name="NextArticleId">
@@ -154,7 +154,7 @@
                     </select>
                 </div>
                 <div class="form-field-name">
-                    <% GetText_( 'Priority' ) %> :
+                    <% .GetText( 'Priority' ) %> :
                 </div>
                 <div>
                     <select class="form-select" name="Priority">
@@ -163,7 +163,7 @@
                     </select>
                 </div>
                 <div class="form-field-name">
-                    <% GetText_( 'Is Active' ) %> :
+                    <% .GetText( 'Is Active' ) %> :
                 </div>
                 <div>
                     <select class="form-select" name="IsActive">

@@ -10,10 +10,11 @@ class VIEW_CONTACT_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     function __construct(
+        string $language_code,
         $contact_id
         )
     {
-        parent::__construct();
+        parent::__construct( $language_code );
 
         $this->Title = 'View a contact';
         $this->Contact = GetDatabaseContactById( $contact_id );
@@ -25,4 +26,4 @@ class VIEW_CONTACT_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
- $view_contact_controller = new VIEW_CONTACT_CONTROLLER(  $contact_id );
+ $view_contact_controller = new VIEW_CONTACT_CONTROLLER(  $language_code,  $contact_id );

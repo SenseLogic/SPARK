@@ -10,9 +10,10 @@ class VIEW_TEXTS_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     function __construct(
+        string $language_code
         )
     {
-        parent::__construct();
+        parent::__construct( $language_code );
 
         $this->Title = 'View texts';
         $this->TextArray = GetDatabaseTextArray();
@@ -25,4 +26,4 @@ class VIEW_TEXTS_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
- $view_texts_controller = new VIEW_TEXTS_CONTROLLER();
+ $view_texts_controller = new VIEW_TEXTS_CONTROLLER(  $language_code );

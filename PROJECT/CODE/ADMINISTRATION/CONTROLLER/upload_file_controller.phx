@@ -9,9 +9,10 @@ class UPLOAD_FILE_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     method constructor(
+        string language_code
         )
     {
-        parent::constructor();
+        parent::constructor( language_code );
 
         if ( HasUploadedFile( 'file' ) )
         {
@@ -35,4 +36,4 @@ class UPLOAD_FILE_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
-var upload_file_controller = new UPLOAD_FILE_CONTROLLER();
+var upload_file_controller = new UPLOAD_FILE_CONTROLLER( var language_code );

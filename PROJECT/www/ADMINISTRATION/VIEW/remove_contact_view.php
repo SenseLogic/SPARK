@@ -4,43 +4,43 @@
         <form class="form-centered" action="/admin/contact/remove/<?php echo htmlspecialchars( $this->Contact->Id ); ?>" method="post">
             <div class="form-container">
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( GetText_( 'Name' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetText( 'Name' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="Name" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Contact->Name ) ); ?>" readonly/>
                 </div>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( GetText_( 'Company' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetText( 'Company' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="Company" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Contact->Company ) ); ?>" readonly/>
                 </div>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( GetText_( 'Email' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetText( 'Email' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="Email" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Contact->Email ) ); ?>" readonly/>
                 </div>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( GetText_( 'Phone' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetText( 'Phone' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="Phone" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Contact->Phone ) ); ?>" readonly/>
                 </div>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( GetText_( 'Subject' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetText( 'Subject' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="Subject" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Contact->Subject ) ); ?>" readonly/>
                 </div>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( GetText_( 'Message' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetText( 'Message' ) ); ?> :
                 </div>
                 <div>
                     <textarea class="form-textarea" name="Message" readonly><?php echo htmlspecialchars( $this->Contact->Message ); ?></textarea>
                 </div>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( GetText_( 'Date Time' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetText( 'Date Time' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="DateTime" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Contact->DateTime ) ); ?>" readonly/>

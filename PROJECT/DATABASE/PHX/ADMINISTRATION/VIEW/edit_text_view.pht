@@ -46,19 +46,19 @@
         <form class="form-centered" name="EditTextForm" onsubmit="return IsValidEditTextForm()" action="/admin/text/edit/<% .Text.Id %>" method="post">
             <div class="form-container">
                 <div class="form-field-name">
-                    <% GetText_( 'Slug' ) %> :
+                    <% .GetText( 'Slug' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="Slug" type="text" value="<% GetValueText( .Text.Slug ) %>"/>
                 </div>
                 <div class="form-field-name">
-                    <% GetText_( 'Text' ) %> :
+                    <% .GetText( 'Text' ) %> :
                 </div>
                 <div>
                     <div>
                         <textarea class="form-textarea multilingual-input" name="Text" hidden><% .Text.Text %></textarea>
                         <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <textarea class="form-textarea multilingual-input-translation" data-language-code="<% language_code %>" placeholder="<% GetText_( language_code ) %>"></textarea>
+                            <textarea class="form-textarea multilingual-input-translation" data-language-code="<% language_code %>" placeholder="<% .GetText( language_code ) %>"></textarea>
                         <? } ?>
                     </div>
                 </div>

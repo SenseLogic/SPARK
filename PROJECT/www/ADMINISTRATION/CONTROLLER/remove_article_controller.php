@@ -10,10 +10,11 @@ class REMOVE_ARTICLE_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     function __construct(
+        string $language_code,
         $article_id
         )
     {
-        parent::__construct();
+        parent::__construct( $language_code );
 
         $this->Title = 'Remove a article';
         $this->Article = GetDatabaseArticleById( $article_id );
@@ -25,4 +26,4 @@ class REMOVE_ARTICLE_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
- $remove_article_controller = new REMOVE_ARTICLE_CONTROLLER(  $article_id );
+ $remove_article_controller = new REMOVE_ARTICLE_CONTROLLER(  $language_code,  $article_id );

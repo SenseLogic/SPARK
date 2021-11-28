@@ -91,35 +91,35 @@
         <form class="form-centered" name="AddArticleForm" onsubmit="return IsValidAddArticleForm()" action="/admin/article/add" method="post">
             <div class="form-container">
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( GetText_( 'Slug' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetText( 'Slug' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="Slug" type="text"/>
                 </div>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( GetText_( 'Name' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetText( 'Name' ) ); ?> :
                 </div>
                 <div>
                     <div>
                         <input class="form-input multilingual-input" name="Name" type="text" hidden/>
                         <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
-                            <input class="form-input multilingual-input-translation" data-language-code="<?php echo htmlspecialchars( $language_code ); ?>" placeholder="<?php echo htmlspecialchars( GetText_( $language_code ) ); ?>"/>
+                            <input class="form-input multilingual-input-translation" data-language-code="<?php echo htmlspecialchars( $language_code ); ?>" placeholder="<?php echo htmlspecialchars( $this->GetText( $language_code ) ); ?>"/>
                         <?php } ?>
                     </div>
                 </div>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( GetText_( 'Text' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetText( 'Text' ) ); ?> :
                 </div>
                 <div>
                     <div>
                         <textarea class="form-textarea multilingual-input" name="Text" hidden></textarea>
                         <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
-                            <textarea class="form-textarea multilingual-input-translation" data-language-code="<?php echo htmlspecialchars( $language_code ); ?>" placeholder="<?php echo htmlspecialchars( GetText_( $language_code ) ); ?>"></textarea>
+                            <textarea class="form-textarea multilingual-input-translation" data-language-code="<?php echo htmlspecialchars( $language_code ); ?>" placeholder="<?php echo htmlspecialchars( $this->GetText( $language_code ) ); ?>"></textarea>
                         <?php } ?>
                     </div>
                 </div>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( GetText_( 'Image Path' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetText( 'Image Path' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="ImagePath" type="text" oninput="HandleImagePathInputChangeEvent( this )"/>
@@ -131,7 +131,7 @@
                     </div>
                 </div>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( GetText_( 'Video Path' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetText( 'Video Path' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="VideoPath" type="text" oninput="HandleVideoPathInputChangeEvent( this )"/>
@@ -143,7 +143,7 @@
                     </div>
                 </div>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( GetText_( 'Next Article Id' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetText( 'Next Article Id' ) ); ?> :
                 </div>
                 <div>
                     <select class="form-select" name="NextArticleId">
@@ -154,7 +154,7 @@
                     </select>
                 </div>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( GetText_( 'Priority' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetText( 'Priority' ) ); ?> :
                 </div>
                 <div>
                     <select class="form-select" name="Priority">
@@ -163,7 +163,7 @@
                     </select>
                 </div>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( GetText_( 'Is Active' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetText( 'Is Active' ) ); ?> :
                 </div>
                 <div>
                     <select class="form-select" name="IsActive">

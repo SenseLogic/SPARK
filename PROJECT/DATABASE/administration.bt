@@ -11,9 +11,10 @@ class ADD_{#type#}_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     method constructor(
+        string language_code
         )
     {
-        parent::constructor();
+        parent::constructor( language_code );
 
         .Title = 'Add a {#locution#}';
         .ListPage = FindSessionValue( 'ListPage', '/admin/{#style#}' );
@@ -24,7 +25,7 @@ class ADD_{#type#}_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
-var add_{#variable#}_controller = new ADD_{#type#}_CONTROLLER();
+var add_{#variable#}_controller = new ADD_{#type#}_CONTROLLER( var language_code );
 %%PHX/ADMINISTRATION/CONTROLLER/do_add_{#variable#}_controller.phx
 // -- IMPORTS
 
@@ -38,9 +39,10 @@ class DO_ADD_{#type#}_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     method constructor(
+        string language_code
         )
     {
-        parent::constructor();
+        parent::constructor( language_code );
 <%¨<~{%is_scalar%}<>
         var {%variable%} = GetPostValue( '{%attribute%}' );<>
         var {%variable%} = GetJsonObject( GetPostValue( '{%attribute%}' ) );~>¨%>
@@ -53,7 +55,7 @@ class DO_ADD_{#type#}_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
-var do_add_{#variable#}_controller = new DO_ADD_{#type#}_CONTROLLER();
+var do_add_{#variable#}_controller = new DO_ADD_{#type#}_CONTROLLER( var language_code );
 %%PHX/ADMINISTRATION/CONTROLLER/edit_{#variable#}_controller.phx
 // -- IMPORTS
 
@@ -67,10 +69,11 @@ class EDIT_{#type#}_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     method constructor(
+        string language_code,
         {#variable#}_{#key_variable#}
         )
     {
-        parent::constructor();
+        parent::constructor( language_code );
 
         .Title = 'Edit a {#locution#}';
         .{#attribute#} = GetDatabase{#attribute#}By{#key_attribute#}( {#variable#}_{#key_variable#} );
@@ -82,7 +85,7 @@ class EDIT_{#type#}_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
-var edit_{#variable#}_controller = new EDIT_{#type#}_CONTROLLER( var {#variable#}_{#key_variable#} );
+var edit_{#variable#}_controller = new EDIT_{#type#}_CONTROLLER( var language_code, var {#variable#}_{#key_variable#} );
 %%PHX/ADMINISTRATION/CONTROLLER/do_edit_{#variable#}_controller.phx
 // -- IMPORTS
 
@@ -96,10 +99,11 @@ class DO_EDIT_{#type#}_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     method constructor(
+        string language_code,
         {#variable#}_{#key_variable#}
         )
     {
-        parent::constructor();
+        parent::constructor( language_code );
 <$<~{%is_scalar%}<>
         var {%variable%} = GetPostValue( '{%attribute%}' );<>
         var {%variable%} = GetJsonObject( GetPostValue( '{%attribute%}' ) );~>$>
@@ -112,7 +116,7 @@ class DO_EDIT_{#type#}_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
-var do_edit_{#variable#}_controller = new DO_EDIT_{#type#}_CONTROLLER( var {#variable#}_{#key_variable#} );
+var do_edit_{#variable#}_controller = new DO_EDIT_{#type#}_CONTROLLER( var language_code, var {#variable#}_{#key_variable#} );
 %%PHX/ADMINISTRATION/CONTROLLER/remove_{#variable#}_controller.phx
 // -- IMPORTS
 
@@ -126,10 +130,11 @@ class REMOVE_{#type#}_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     method constructor(
+        string language_code,
         {#variable#}_{#key_variable#}
         )
     {
-        parent::constructor();
+        parent::constructor( language_code );
 
         .Title = 'Remove a {#locution#}';
         .{#attribute#} = GetDatabase{#attribute#}By{#key_attribute#}( {#variable#}_{#key_variable#} );
@@ -141,7 +146,7 @@ class REMOVE_{#type#}_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
-var remove_{#variable#}_controller = new REMOVE_{#type#}_CONTROLLER( var {#variable#}_{#key_variable#} );
+var remove_{#variable#}_controller = new REMOVE_{#type#}_CONTROLLER( var language_code, var {#variable#}_{#key_variable#} );
 %%PHX/ADMINISTRATION/CONTROLLER/do_remove_{#variable#}_controller.phx
 // -- IMPORTS
 
@@ -155,10 +160,11 @@ class DO_REMOVE_{#type#}_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     method constructor(
+        string language_code,
         {#variable#}_{#key_variable#}
         )
     {
-        parent::constructor();
+        parent::constructor( language_code );
 
         RemoveDatabase{#attribute#}By{#key_attribute#}( {#variable#}_{#key_variable#} );
 
@@ -168,7 +174,7 @@ class DO_REMOVE_{#type#}_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
-var do_remove_{#variable#}_controller = new DO_REMOVE_{#type#}_CONTROLLER( var {#variable#}_{#key_variable#} );
+var do_remove_{#variable#}_controller = new DO_REMOVE_{#type#}_CONTROLLER( var language_code, var {#variable#}_{#key_variable#} );
 %%PHX/ADMINISTRATION/CONTROLLER/view_{#variable#}_controller.phx
 // -- IMPORTS
 
@@ -182,10 +188,11 @@ class VIEW_{#type#}_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     method constructor(
+        string language_code,
         {#variable#}_{#key_variable#}
         )
     {
-        parent::constructor();
+        parent::constructor( language_code );
 
         .Title = 'View a {#locution#}';
         .{#attribute#} = GetDatabase{#attribute#}By{#key_attribute#}( {#variable#}_{#key_variable#} );
@@ -197,7 +204,7 @@ class VIEW_{#type#}_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
-var view_{#variable#}_controller = new VIEW_{#type#}_CONTROLLER( var {#variable#}_{#key_variable#} );
+var view_{#variable#}_controller = new VIEW_{#type#}_CONTROLLER( var language_code, var {#variable#}_{#key_variable#} );
 %%PHX/ADMINISTRATION/CONTROLLER/view_<~Plural<>{#variable#}~>_controller.phx
 // -- IMPORTS
 
@@ -211,9 +218,10 @@ class VIEW_<~Plural<>{#type#}~>_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     method constructor(
+        string language_code
         )
     {
-        parent::constructor();
+        parent::constructor( language_code );
 
         .Title = 'View <~Plural<>{#locution#}~>';
         .{#attribute#}Array = GetDatabase{#attribute#}Array();
@@ -226,7 +234,7 @@ class VIEW_<~Plural<>{#type#}~>_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
-var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CONTROLLER();
+var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CONTROLLER( var language_code );
 %%PHX/ADMINISTRATION/VIEW/add_{#variable#}_view.pht
 <? include 'BLOCK/page_header.php'; ?>
 <script>
@@ -263,7 +271,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
         <form class="form-centered" name="Add{#attribute#}Form" onsubmit="return IsValidAdd{#attribute#}Form()" action="/admin/{#style#}/add" method="post">
             <div class="form-container"><%¨
                 <div class="form-field-name">
-                    <\% GetText_( '{%title%}' ) %\> :
+                    <\% .GetText( '{%title%}' ) %\> :
                 </div>
                 <div><~{%is_image%}<>
                     <input class="form-input" name="{%attribute%}" type="text"<~{%has_default_value%}<> value="{%default_value%}"~> oninput="HandleImagePathInputChangeEvent( this )"/>
@@ -292,13 +300,13 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                     <div>
                         <textarea class="form-textarea multilingual-input" name="{%attribute%}" hidden><~{%has_default_value%}<>{%default_value%}~></textarea>
                         <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <textarea class="form-textarea multilingual-input-translation" data-language-code="<\% language_code %\>" placeholder="<\% GetText_( language_code ) %\>"></textarea>
+                            <textarea class="form-textarea multilingual-input-translation" data-language-code="<\% language_code %\>" placeholder="<\% .GetText( language_code ) %\>"></textarea>
                         <? } ?>
                     </div><><~{%is_multilingual%}<>
                     <div>
                         <input class="form-input multilingual-input" name="{%attribute%}" type="text"<~{%has_default_value%}<> value="{%default_value%}"~> hidden/>
                         <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <input class="form-input multilingual-input-translation" data-language-code="<\% language_code %\>" placeholder="<\% GetText_( language_code ) %\>"/>
+                            <input class="form-input multilingual-input-translation" data-language-code="<\% language_code %\>" placeholder="<\% .GetText( language_code ) %\>"/>
                         <? } ?>
                     </div><><~{%is_text%}<>
                     <textarea class="form-textarea" name="{%attribute%}"><~{%has_default_value%}<>{%default_value%}~></textarea><>
@@ -349,7 +357,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
         <form class="form-centered" name="Edit{#attribute#}Form" onsubmit="return IsValidEdit{#attribute#}Form()" action="/admin/{#style#}/edit/<\% .{#attribute#}.{#key_attribute#} %\>" method="post">
             <div class="form-container"><$
                 <div class="form-field-name">
-                    <\% GetText_( '{%title%}' ) %\> :
+                    <\% .GetText( '{%title%}' ) %\> :
                 </div>
                 <div><~{%is_image%}<>
                     <input class="form-input" name="{%attribute%}" type="text" value="<\% .{#attribute#}.{%attribute%} %\>" oninput="HandleImagePathInputChangeEvent( this )"/>
@@ -378,13 +386,13 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                     <div>
                         <textarea class="form-textarea multilingual-input" name="{%attribute%}" hidden><\% .{#attribute#}.{%attribute%} %\></textarea>
                         <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <textarea class="form-textarea multilingual-input-translation" data-language-code="<\% language_code %\>" placeholder="<\% GetText_( language_code ) %\>"></textarea>
+                            <textarea class="form-textarea multilingual-input-translation" data-language-code="<\% language_code %\>" placeholder="<\% .GetText( language_code ) %\>"></textarea>
                         <? } ?>
                     </div><><~{%is_multilingual%}<>
                     <div>
                         <input class="form-input multilingual-input" name="{%attribute%}" type="text" value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" hidden/>
                         <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <input class="form-input multilingual-input-translation" data-language-code="<\% language_code %\>" placeholder="<\% GetText_( language_code ) %\>"/>
+                            <input class="form-input multilingual-input-translation" data-language-code="<\% language_code %\>" placeholder="<\% .GetText( language_code ) %\>"/>
                         <? } ?>
                     </div><><~{%is_text%}<>
                     <textarea class="form-textarea" name="{%attribute%}"><\% .{#attribute#}.{%attribute%} %\></textarea><>
@@ -406,7 +414,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
         <form class="form-centered" action="/admin/{#style#}/remove/<\% .{#attribute#}.{#key_attribute#} %\>" method="post">
             <div class="form-container"><$
                 <div class="form-field-name">
-                    <\% GetText_( '{%title%}' ) %\> :
+                    <\% .GetText( '{%title%}' ) %\> :
                 </div>
                 <div><~{%is_image%}<>
                     <input class="form-input" name="{%attribute%}" type="text" value="<\% .{#attribute#}.{%attribute%} %\>" readonly/>
@@ -435,7 +443,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
     <div class="page-section form-section">
         <div class="form-container"><$
             <div class="form-field-name">
-                <\% GetText_( '{%title%}' ) %\> :
+                <\% .GetText( '{%title%}' ) %\> :
             </div>
             <div><~{%is_image%}<>
                 <input class="form-input" name="{%attribute%}" type="text" value="<\% .{#attribute#}.{%attribute%} %\>" readonly/>
@@ -461,10 +469,10 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
     <div class="page-section form-section">
         <div class="form-container table-container {#style#}-table sortable-grid"><$
             <div class="form-column-name sortable-grid-column">
-                <\% GetText_( '<~TitleCase<>{%attribute%}~>' ) %\>
+                <\% .GetText( '<~TitleCase<>{%attribute%}~>' ) %\>
             </div>$>
             <div class="form-column-name sortable-grid-column">
-                <\% GetText_( 'Action' ) %\>
+                <\% .GetText( 'Action' ) %\>
             </div>
             <? foreach ( var {#variable#}; .{#attribute#}Array ) { ?><$
                 <div class="sortable-grid-cell">
@@ -508,7 +516,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                             <span class="form-button form-button-large {#style#}-button">
                             </span>
                             <span class="form-button-tooltip">
-                                <\% GetText_( '{#sentence#}' ) %\>
+                                <\% .GetText( '{#sentence#}' ) %\>
                             </span>
                         </a>
                     </div>#>
@@ -517,7 +525,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                             <span class="form-button form-button-large disconnect-button">
                             </span>
                             <span class="form-button-tooltip">
-                                <\% GetText_( 'Disconnect' ) %\>
+                                <\% .GetText( 'Disconnect' ) %\>
                             </span>
                         </a>
                     </div>
@@ -525,7 +533,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
             </div>
             <div class="page-title">
                 <span class="page-title-content">
-                    <\% GetText_( .Title ) %\>
+                    <\% .GetText( .Title ) %\>
                 </span>
             </div>
             <div class="page-body">

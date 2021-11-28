@@ -10,10 +10,11 @@ class REMOVE_CONTACT_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     method constructor(
+        string language_code,
         contact_id
         )
     {
-        parent::constructor();
+        parent::constructor( language_code );
 
         .Title = 'Remove a contact';
         .Contact = GetDatabaseContactById( contact_id );
@@ -25,4 +26,4 @@ class REMOVE_CONTACT_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
-var remove_contact_controller = new REMOVE_CONTACT_CONTROLLER( var contact_id );
+var remove_contact_controller = new REMOVE_CONTACT_CONTROLLER( var language_code, var contact_id );

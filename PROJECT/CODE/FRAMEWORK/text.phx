@@ -1,5 +1,6 @@
 // -- VARIABLES
 
+var TextMap = [];
 var ProcessedTagArray = [];
 var ProcessedTagDefinitionArray = [];
 var ProcessedDualTagArray = [];
@@ -617,6 +618,38 @@ function GetBareText(
     )
 {
     return preg_replace( '/<.*?>?>/', '', text );
+}
+
+// ~~
+
+function DefineText(
+    string slug,
+    string text
+    )
+{
+    global
+        TextMap;
+
+    TextMap[ slug ] = text;
+}
+
+// ~~
+
+function GetText_(
+    string slug
+    )
+{
+    global
+        TextMap;
+
+    if ( array_key_exists( slug, TextMap ) )
+    {
+        return TextMap[ slug ];
+    }
+    else
+    {
+        return slug;
+    }
 }
 
 // ~~

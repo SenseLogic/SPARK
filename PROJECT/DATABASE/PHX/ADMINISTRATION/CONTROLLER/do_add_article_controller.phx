@@ -10,9 +10,10 @@ class DO_ADD_ARTICLE_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     method constructor(
+        string language_code
         )
     {
-        parent::constructor();
+        parent::constructor( language_code );
 
         var slug = GetPostValue( 'Slug' );
         var name = GetPostValue( 'Name' );
@@ -31,4 +32,4 @@ class DO_ADD_ARTICLE_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
-var do_add_article_controller = new DO_ADD_ARTICLE_CONTROLLER();
+var do_add_article_controller = new DO_ADD_ARTICLE_CONTROLLER( var language_code );

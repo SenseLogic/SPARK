@@ -3,31 +3,31 @@
     <div class="page-section form-section">
         <div class="form-container table-container article-table sortable-grid">
             <div class="form-column-name sortable-grid-column">
-                <% GetText_( 'Slug' ) %>
+                <% .GetText( 'Slug' ) %>
             </div>
             <div class="form-column-name sortable-grid-column">
-                <% GetText_( 'Name' ) %>
+                <% .GetText( 'Name' ) %>
             </div>
             <div class="form-column-name sortable-grid-column">
-                <% GetText_( 'Text' ) %>
+                <% .GetText( 'Text' ) %>
             </div>
             <div class="form-column-name sortable-grid-column">
-                <% GetText_( 'Image Path' ) %>
+                <% .GetText( 'Image Path' ) %>
             </div>
             <div class="form-column-name sortable-grid-column">
-                <% GetText_( 'Video Path' ) %>
+                <% .GetText( 'Video Path' ) %>
             </div>
             <div class="form-column-name sortable-grid-column">
-                <% GetText_( 'Next Article Id' ) %>
+                <% .GetText( 'Next Article Id' ) %>
             </div>
             <div class="form-column-name sortable-grid-column">
-                <% GetText_( 'Priority' ) %>
+                <% .GetText( 'Priority' ) %>
             </div>
             <div class="form-column-name sortable-grid-column">
-                <% GetText_( 'Is Active' ) %>
+                <% .GetText( 'Is Active' ) %>
             </div>
             <div class="form-column-name sortable-grid-column">
-                <% GetText_( 'Action' ) %>
+                <% .GetText( 'Action' ) %>
             </div>
             <? foreach ( var article; .ArticleArray ) { ?>
                 <div class="sortable-grid-cell">

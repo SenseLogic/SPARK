@@ -10,9 +10,10 @@ class VIEW_ARTICLES_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     function __construct(
+        string $language_code
         )
     {
-        parent::__construct();
+        parent::__construct( $language_code );
 
         $this->Title = 'View articles';
         $this->ArticleArray = GetDatabaseArticleArray();
@@ -25,4 +26,4 @@ class VIEW_ARTICLES_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
- $view_articles_controller = new VIEW_ARTICLES_CONTROLLER();
+ $view_articles_controller = new VIEW_ARTICLES_CONTROLLER(  $language_code );

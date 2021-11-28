@@ -10,9 +10,10 @@ class ADD_ARTICLE_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     function __construct(
+        string $language_code
         )
     {
-        parent::__construct();
+        parent::__construct( $language_code );
 
         $this->Title = 'Add a article';
         $this->ListPage = FindSessionValue( 'ListPage', '/admin/article' );
@@ -23,4 +24,4 @@ class ADD_ARTICLE_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
- $add_article_controller = new ADD_ARTICLE_CONTROLLER();
+ $add_article_controller = new ADD_ARTICLE_CONTROLLER(  $language_code );

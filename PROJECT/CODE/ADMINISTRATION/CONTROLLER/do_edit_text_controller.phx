@@ -10,10 +10,11 @@ class DO_EDIT_TEXT_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     method constructor(
+        string language_code,
         text_id
         )
     {
-        parent::constructor();
+        parent::constructor( language_code );
 
         var slug = GetPostValue( 'Slug' );
         var text = GetPostValue( 'Text' );
@@ -26,4 +27,4 @@ class DO_EDIT_TEXT_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
-var do_edit_text_controller = new DO_EDIT_TEXT_CONTROLLER( var text_id );
+var do_edit_text_controller = new DO_EDIT_TEXT_CONTROLLER( var language_code, var text_id );

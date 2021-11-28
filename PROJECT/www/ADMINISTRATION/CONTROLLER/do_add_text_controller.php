@@ -10,9 +10,10 @@ class DO_ADD_TEXT_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     function __construct(
+        string $language_code
         )
     {
-        parent::__construct();
+        parent::__construct( $language_code );
 
          $slug = GetPostValue( 'Slug' );
          $text = GetPostValue( 'Text' );
@@ -25,4 +26,4 @@ class DO_ADD_TEXT_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
- $do_add_text_controller = new DO_ADD_TEXT_CONTROLLER();
+ $do_add_text_controller = new DO_ADD_TEXT_CONTROLLER(  $language_code );

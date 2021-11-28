@@ -9,8 +9,75 @@ class CONTROLLER
     // -- CONSTRUCTORS
 
     method constructor(
+        string language_code = DefaultLanguageCode
         )
     {
         .Session = new SESSION();
+
+        .LanguageCode = language_code;
+        .LanguageDecimalSeparator = GetLanguageDecimalSeparator( .LanguageCode );
+    }
+
+    // -- INQUIRIES
+
+    method GetTranslatedText(
+        string text
+        )
+    {
+        return GetTranslatedText( text, .LanguageCode );
+    }
+
+    // ~~
+
+    method GetTranslatedNumber(
+        string number
+        )
+    {
+        return GetTranslatedNumber( number, .LanguageDecimalSeparator );
+    }
+
+    // ~~
+
+    method GetBareText(
+        string text
+        )
+    {
+        return GetBareText( .GetTranslatedText( text ) );
+    }
+
+    // ~~
+
+    method GetProcessedText(
+        string text
+        )
+    {
+        return GetProcessedText( .GetTranslatedText( text ) );
+    }
+
+    // ~~
+
+    method GetText(
+        string slug
+        )
+    {
+        return .GetProcessedText( GetText_( slug ) );
+    }
+
+    // ~~
+
+    method GetMultilineText(
+        string slug
+        )
+    {
+        return .GetProcessedMultilineText( GetText_( slug ) );
+    }
+
+    // ~~
+
+    method GetNumber(
+        string slug
+        )
+    {
+        return GetTranslatedNumber( GetText_( slug ), .LanguageDecimalSeparator );
     }
 }

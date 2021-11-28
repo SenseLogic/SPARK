@@ -10,10 +10,11 @@ class VIEW_TEXT_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     method constructor(
+        string language_code,
         text_id
         )
     {
-        parent::constructor();
+        parent::constructor( language_code );
 
         .Title = 'View a text';
         .Text = GetDatabaseTextById( text_id );
@@ -25,4 +26,4 @@ class VIEW_TEXT_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
-var view_text_controller = new VIEW_TEXT_CONTROLLER( var text_id );
+var view_text_controller = new VIEW_TEXT_CONTROLLER( var language_code, var text_id );

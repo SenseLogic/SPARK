@@ -10,10 +10,11 @@ class DO_REMOVE_CONTACT_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     function __construct(
+        string $language_code,
         $contact_id
         )
     {
-        parent::__construct();
+        parent::__construct( $language_code );
 
         RemoveDatabaseContactById( $contact_id );
 
@@ -23,4 +24,4 @@ class DO_REMOVE_CONTACT_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
- $do_remove_contact_controller = new DO_REMOVE_CONTACT_CONTROLLER(  $contact_id );
+ $do_remove_contact_controller = new DO_REMOVE_CONTACT_CONTROLLER(  $language_code,  $contact_id );

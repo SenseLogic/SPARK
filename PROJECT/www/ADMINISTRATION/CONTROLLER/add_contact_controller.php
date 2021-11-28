@@ -10,9 +10,10 @@ class ADD_CONTACT_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     function __construct(
+        string $language_code
         )
     {
-        parent::__construct();
+        parent::__construct( $language_code );
 
         $this->Title = 'Add a contact';
         $this->ListPage = FindSessionValue( 'ListPage', '/admin/contact' );
@@ -23,4 +24,4 @@ class ADD_CONTACT_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
- $add_contact_controller = new ADD_CONTACT_CONTROLLER();
+ $add_contact_controller = new ADD_CONTACT_CONTROLLER(  $language_code );

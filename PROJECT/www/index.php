@@ -81,8 +81,6 @@ function Route(
         $language_code = GetBrowserLanguageCode( LanguageCodeArray, DefaultLanguageCode );
     }
 
-    define( 'LanguageCode', $language_code );
-
      $path_value_count = count( $path_value_array );
      $it_is_get_request = IsGetRequest();
      $it_is_post_request = IsPostRequest();

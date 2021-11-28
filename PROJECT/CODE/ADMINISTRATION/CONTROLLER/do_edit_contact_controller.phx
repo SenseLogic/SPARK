@@ -10,10 +10,11 @@ class DO_EDIT_CONTACT_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     method constructor(
+        string language_code,
         contact_id
         )
     {
-        parent::constructor();
+        parent::constructor( language_code );
 
         var name = GetPostValue( 'Name' );
         var company = GetPostValue( 'Company' );
@@ -31,4 +32,4 @@ class DO_EDIT_CONTACT_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
-var do_edit_contact_controller = new DO_EDIT_CONTACT_CONTROLLER( var contact_id );
+var do_edit_contact_controller = new DO_EDIT_CONTACT_CONTROLLER( var language_code, var contact_id );

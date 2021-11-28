@@ -10,10 +10,11 @@ class DO_REMOVE_TEXT_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     function __construct(
+        string $language_code,
         $text_id
         )
     {
-        parent::__construct();
+        parent::__construct( $language_code );
 
         RemoveDatabaseTextById( $text_id );
 
@@ -23,4 +24,4 @@ class DO_REMOVE_TEXT_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
- $do_remove_text_controller = new DO_REMOVE_TEXT_CONTROLLER(  $text_id );
+ $do_remove_text_controller = new DO_REMOVE_TEXT_CONTROLLER(  $language_code,  $text_id );

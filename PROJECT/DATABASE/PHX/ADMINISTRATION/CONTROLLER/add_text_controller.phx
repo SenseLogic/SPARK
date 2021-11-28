@@ -10,9 +10,10 @@ class ADD_TEXT_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     method constructor(
+        string language_code
         )
     {
-        parent::constructor();
+        parent::constructor( language_code );
 
         .Title = 'Add a text';
         .ListPage = FindSessionValue( 'ListPage', '/admin/text' );
@@ -23,4 +24,4 @@ class ADD_TEXT_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
-var add_text_controller = new ADD_TEXT_CONTROLLER();
+var add_text_controller = new ADD_TEXT_CONTROLLER( var language_code );

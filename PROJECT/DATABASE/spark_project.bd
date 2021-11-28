@@ -98,7 +98,7 @@ TEXT
 
         LegalNoticeText
             ~ ! Title\^\^TM\^\^\\n* **Bold**\\n  * %%Italic%%\\n    * __Underlined__\\n* Normal\\nSome text,,2,,.
-              ¨fr:! Titre\^\^TM\^\^\\n* **Bold**\\n  * %%Italic%%\\n    * __Underlined__\\n* Normal\\nSome text,,2,,.
+              ¨fr:! Titre\^\^TM\^\^\\n* **Gras**\\n  * %%Italique%%\\n    * __Souligné__\\n* Normal\\nUn texte,,2,,.
 
 USER
 

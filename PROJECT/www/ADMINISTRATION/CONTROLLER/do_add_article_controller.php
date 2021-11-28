@@ -10,9 +10,10 @@ class DO_ADD_ARTICLE_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     function __construct(
+        string $language_code
         )
     {
-        parent::__construct();
+        parent::__construct( $language_code );
 
          $slug = GetPostValue( 'Slug' );
          $name = GetPostValue( 'Name' );
@@ -31,4 +32,4 @@ class DO_ADD_ARTICLE_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
- $do_add_article_controller = new DO_ADD_ARTICLE_CONTROLLER();
+ $do_add_article_controller = new DO_ADD_ARTICLE_CONTROLLER(  $language_code );

@@ -10,10 +10,11 @@ class DO_EDIT_USER_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     function __construct(
+        string $language_code,
         $user_id
         )
     {
-        parent::__construct();
+        parent::__construct( $language_code );
 
          $email = GetPostValue( 'Email' );
          $pseudonym = GetPostValue( 'Pseudonym' );
@@ -28,4 +29,4 @@ class DO_EDIT_USER_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
- $do_edit_user_controller = new DO_EDIT_USER_CONTROLLER(  $user_id );
+ $do_edit_user_controller = new DO_EDIT_USER_CONTROLLER(  $language_code,  $user_id );

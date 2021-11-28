@@ -10,10 +10,11 @@ class VIEW_USER_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     method constructor(
+        string language_code,
         user_id
         )
     {
-        parent::constructor();
+        parent::constructor( language_code );
 
         .Title = 'View a user';
         .User = GetDatabaseUserById( user_id );
@@ -25,4 +26,4 @@ class VIEW_USER_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
-var view_user_controller = new VIEW_USER_CONTROLLER( var user_id );
+var view_user_controller = new VIEW_USER_CONTROLLER( var language_code, var user_id );

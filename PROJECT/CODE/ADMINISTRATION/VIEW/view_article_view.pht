@@ -3,25 +3,25 @@
     <div class="page-section form-section">
         <div class="form-container">
             <div class="form-field-name">
-                <% GetText_( 'Slug' ) %> :
+                <% .GetText( 'Slug' ) %> :
             </div>
             <div>
                     <input class="form-input" name="Slug" type="text" value="<% GetValueText( .Article.Slug ) %>" readonly/>
             </div>
             <div class="form-field-name">
-                <% GetText_( 'Name' ) %> :
+                <% .GetText( 'Name' ) %> :
             </div>
             <div>
                     <input class="form-input" name="Name" type="text" value="<% GetValueText( .Article.Name ) %>" readonly/>
             </div>
             <div class="form-field-name">
-                <% GetText_( 'Text' ) %> :
+                <% .GetText( 'Text' ) %> :
             </div>
             <div>
                     <input class="form-input" name="Text" type="text" value="<% GetValueText( .Article.Text ) %>" readonly/>
             </div>
             <div class="form-field-name">
-                <% GetText_( 'Image Path' ) %> :
+                <% .GetText( 'Image Path' ) %> :
             </div>
             <div>
                 <input class="form-input" name="ImagePath" type="text" value="<% .Article.ImagePath %>" readonly/>
@@ -30,7 +30,7 @@
                 </div>
             </div>
             <div class="form-field-name">
-                <% GetText_( 'Video Path' ) %> :
+                <% .GetText( 'Video Path' ) %> :
             </div>
             <div>
                 <input class="form-input" name="VideoPath" type="text" value="<% .Article.VideoPath %>" readonly/>
@@ -39,19 +39,19 @@
                 </div>
             </div>
             <div class="form-field-name">
-                <% GetText_( 'Next Article Id' ) %> :
+                <% .GetText( 'Next Article Id' ) %> :
             </div>
             <div>
                     <input class="form-input" name="NextArticleId" type="text" value="<% GetValueText( .Article.NextArticleId ) %>" readonly/>
             </div>
             <div class="form-field-name">
-                <% GetText_( 'Priority' ) %> :
+                <% .GetText( 'Priority' ) %> :
             </div>
             <div>
                     <input class="form-input" name="Priority" type="text" value="<% GetValueText( .Article.Priority ) %>" readonly/>
             </div>
             <div class="form-field-name">
-                <% GetText_( 'Is Active' ) %> :
+                <% .GetText( 'Is Active' ) %> :
             </div>
             <div>
                     <input class="form-input" name="IsActive" type="text" value="<% GetValueText( .Article.IsActive ) %>" readonly/>

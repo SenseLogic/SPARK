@@ -10,9 +10,10 @@ class VIEW_ARTICLES_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     method constructor(
+        string language_code
         )
     {
-        parent::constructor();
+        parent::constructor( language_code );
 
         .Title = 'View articles';
         .ArticleArray = GetDatabaseArticleArray();
@@ -25,4 +26,4 @@ class VIEW_ARTICLES_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
-var view_articles_controller = new VIEW_ARTICLES_CONTROLLER();
+var view_articles_controller = new VIEW_ARTICLES_CONTROLLER( var language_code );

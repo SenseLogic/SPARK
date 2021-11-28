@@ -3,31 +3,31 @@
     <div class="page-section form-section">
         <div class="form-container table-container article-table sortable-grid">
             <div class="form-column-name sortable-grid-column">
-                <?php echo htmlspecialchars( GetText_( 'Slug' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetText( 'Slug' ) ); ?>
             </div>
             <div class="form-column-name sortable-grid-column">
-                <?php echo htmlspecialchars( GetText_( 'Name' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetText( 'Name' ) ); ?>
             </div>
             <div class="form-column-name sortable-grid-column">
-                <?php echo htmlspecialchars( GetText_( 'Text' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetText( 'Text' ) ); ?>
             </div>
             <div class="form-column-name sortable-grid-column">
-                <?php echo htmlspecialchars( GetText_( 'Image Path' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetText( 'Image Path' ) ); ?>
             </div>
             <div class="form-column-name sortable-grid-column">
-                <?php echo htmlspecialchars( GetText_( 'Video Path' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetText( 'Video Path' ) ); ?>
             </div>
             <div class="form-column-name sortable-grid-column">
-                <?php echo htmlspecialchars( GetText_( 'Next Article Id' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetText( 'Next Article Id' ) ); ?>
             </div>
             <div class="form-column-name sortable-grid-column">
-                <?php echo htmlspecialchars( GetText_( 'Priority' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetText( 'Priority' ) ); ?>
             </div>
             <div class="form-column-name sortable-grid-column">
-                <?php echo htmlspecialchars( GetText_( 'Is Active' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetText( 'Is Active' ) ); ?>
             </div>
             <div class="form-column-name sortable-grid-column">
-                <?php echo htmlspecialchars( GetText_( 'Action' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetText( 'Action' ) ); ?>
             </div>
             <?php foreach ( $this->ArticleArray as  $article ) { ?>
                 <div class="sortable-grid-cell">
