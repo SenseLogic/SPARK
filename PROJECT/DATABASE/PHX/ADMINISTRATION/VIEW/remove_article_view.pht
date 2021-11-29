@@ -15,7 +15,7 @@
                 <div>
                     <div>
                         <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <input class="multilingual-input-translation form-input" name="Name" type="text" value="<% GetValueText( GetTranslatedText( .Article.Name, language_code ) ) %>" readonly/>
+                            <input class="form-translation form-input" name="Name" type="text" value="<% GetValueText( GetTranslatedText( .Article.Name, language_code ) ) %>" readonly/>
                         <? } ?>
                     </div>
                 </div>
@@ -25,7 +25,7 @@
                 <div>
                     <div>
                         <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <textarea class="multilingual-input-translation form-textarea" name="Text" readonly><% GetTranslatedText( .Article.Text, language_code ) %></textarea>
+                            <textarea class="form-translation form-textarea" name="Text" readonly><% GetTranslatedText( .Article.Text, language_code ) %></textarea>
                         <? } ?>
                     </div>
                 </div>

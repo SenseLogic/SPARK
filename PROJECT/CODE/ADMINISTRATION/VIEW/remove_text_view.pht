@@ -15,7 +15,7 @@
                 <div>
                     <div>
                         <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <textarea class="multilingual-input-translation form-textarea" name="Text" readonly><% GetTranslatedText( .Text.Text, language_code ) %></textarea>
+                            <textarea class="form-translation form-textarea" name="Text" readonly><% GetTranslatedText( .Text.Text, language_code ) %></textarea>
                         <? } ?>
                     </div>
                 </div>

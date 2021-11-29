@@ -36,7 +36,7 @@
                 <div class="sortable-grid-cell">
                     <div>
                         <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <div class="multilingual-input-translation">
+                            <div class="form-translation">
                                 <% GetValueText( GetTranslatedText( article.Name, language_code ) ) %>
                             </div>
                         <? } ?>
@@ -45,7 +45,7 @@
                 <div class="sortable-grid-cell">
                     <div>
                         <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <div class="multilingual-input-translation">
+                            <div class="form-translation">
                                 <% GetTranslatedText( article.Text, language_code ) %>
                             </div>
                         <? } ?>

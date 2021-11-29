@@ -18,7 +18,7 @@
                 <div class="sortable-grid-cell">
                     <div>
                         <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
-                            <div class="multilingual-input-translation">
+                            <div class="form-translation">
                                 <?php echo htmlspecialchars( GetTranslatedText( $text->Text, $language_code ) ); ?>
                             </div>
                         <?php } ?>

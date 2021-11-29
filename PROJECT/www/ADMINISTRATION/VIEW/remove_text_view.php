@@ -15,7 +15,7 @@
                 <div>
                     <div>
                         <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
-                            <textarea class="multilingual-input-translation form-textarea" name="Text" readonly><?php echo htmlspecialchars( GetTranslatedText( $this->Text->Text, $language_code ) ); ?></textarea>
+                            <textarea class="form-translation form-textarea" name="Text" readonly><?php echo htmlspecialchars( GetTranslatedText( $this->Text->Text, $language_code ) ); ?></textarea>
                         <?php } ?>
                     </div>
                 </div>

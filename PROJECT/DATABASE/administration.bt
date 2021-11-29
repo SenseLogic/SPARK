@@ -300,13 +300,13 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                     <div>
                         <textarea class="multilingual-input form-textarea" name="{%attribute%}" hidden><~{%has_default_value%}<>{%default_value%}~></textarea>
                         <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <textarea class="multilingual-input-translation form-textarea" data-language-code="<\% language_code %\>" placeholder="<\% .GetText( language_code ) %\>"></textarea>
+                            <textarea class="multilingual-input-translation form-translation form-textarea" data-language-code="<\% language_code %\>" placeholder="<\% .GetText( language_code ) %\>"></textarea>
                         <? } ?>
                     </div><><~{%is_multilingual%}<>
                     <div>
                         <input class="multilingual-input form-input" name="{%attribute%}" type="text"<~{%has_default_value%}<> value="{%default_value%}"~> hidden/>
                         <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <input class="multilingual-input-translation form-input" data-language-code="<\% language_code %\>" placeholder="<\% .GetText( language_code ) %\>"/>
+                            <input class="multilingual-input-translation form-translation form-input" data-language-code="<\% language_code %\>" placeholder="<\% .GetText( language_code ) %\>"/>
                         <? } ?>
                     </div><><~{%is_text%}<>
                     <textarea class="form-textarea" name="{%attribute%}"><~{%has_default_value%}<>{%default_value%}~></textarea><>
@@ -386,13 +386,13 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                     <div>
                         <textarea class="multilingual-input form-textarea" name="{%attribute%}" hidden><\% .{#attribute#}.{%attribute%} %\></textarea>
                         <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <textarea class="multilingual-input-translation form-textarea" data-language-code="<\% language_code %\>" placeholder="<\% .GetText( language_code ) %\>"></textarea>
+                            <textarea class="multilingual-input-translation form-translation form-textarea" data-language-code="<\% language_code %\>" placeholder="<\% .GetText( language_code ) %\>"></textarea>
                         <? } ?>
                     </div><><~{%is_multilingual%}<>
                     <div>
                         <input class="multilingual-input form-input" name="{%attribute%}" type="text" value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" hidden/>
                         <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <input class="multilingual-input-translation form-input" data-language-code="<\% language_code %\>" placeholder="<\% .GetText( language_code ) %\>"/>
+                            <input class="multilingual-input-translation form-translation form-input" data-language-code="<\% language_code %\>" placeholder="<\% .GetText( language_code ) %\>"/>
                         <? } ?>
                     </div><><~{%is_text%}<>
                     <textarea class="form-textarea" name="{%attribute%}"><\% .{#attribute#}.{%attribute%} %\></textarea><>
@@ -427,12 +427,12 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                     </div><><~{%is_multilingual_text%}<>
                     <div>
                         <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <textarea class="multilingual-input-translation form-textarea" name="{%attribute%}" readonly><\% GetTranslatedText( .{#attribute#}.{%attribute%}, language_code ) %\></textarea>
+                            <textarea class="form-translation form-textarea" name="{%attribute%}" readonly><\% GetTranslatedText( .{#attribute#}.{%attribute%}, language_code ) %\></textarea>
                         <? } ?>
                     </div><><~{%is_multilingual%}<>
                     <div>
                         <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <input class="multilingual-input-translation form-input" name="{%attribute%}" type="text" value="<\% GetValueText( GetTranslatedText( .{#attribute#}.{%attribute%}, language_code ) ) %\>" readonly/>
+                            <input class="form-translation form-input" name="{%attribute%}" type="text" value="<\% GetValueText( GetTranslatedText( .{#attribute#}.{%attribute%}, language_code ) ) %\>" readonly/>
                         <? } ?>
                     </div><><~{%is_text%}<>
                     <textarea class="form-textarea" name="{%attribute%}" readonly><\% .{#attribute#}.{%attribute%} %\></textarea><>
@@ -466,12 +466,12 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                 </div><><~{%is_multilingual_text%}<>
                 <div>
                     <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                        <textarea class="multilingual-input-translation form-textarea" name="{%attribute%}" readonly><\% GetTranslatedText( .{#attribute#}.{%attribute%}, language_code ) %\></textarea>
+                        <textarea class="form-translation form-textarea" name="{%attribute%}" readonly><\% GetTranslatedText( .{#attribute#}.{%attribute%}, language_code ) %\></textarea>
                     <? } ?>
                 </div><><~{%is_multilingual%}<>
                 <div>
                     <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                        <input class="multilingual-input-translation form-input" name="{%attribute%}" type="text" value="<\% GetValueText( GetTranslatedText( .{#attribute#}.{%attribute%}, language_code ) ) %\>" readonly/>
+                        <input class="form-translation form-input" name="{%attribute%}" type="text" value="<\% GetValueText( GetTranslatedText( .{#attribute#}.{%attribute%}, language_code ) ) %\>" readonly/>
                     <? } ?>
                 </div><><~{%is_text%}<>
                     <textarea class="form-textarea" name="{%attribute%}" readonly><\% .{#attribute#}.{%attribute%} %\></textarea><>
@@ -498,14 +498,14 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                 <div class="sortable-grid-cell"><~{%is_multilingual_text%}<>
                     <div>
                         <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <div class="multilingual-input-translation">
+                            <div class="form-translation">
                                 <\% GetTranslatedText( {#variable#}.{%attribute%}, language_code ) %\>
                             </div>
                         <? } ?>
                     </div><><~{%is_multilingual%}<>
                     <div>
                         <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <div class="multilingual-input-translation">
+                            <div class="form-translation">
                                 <\% GetValueText( GetTranslatedText( {#variable#}.{%attribute%}, language_code ) ) %\>
                             </div>
                         <? } ?>
