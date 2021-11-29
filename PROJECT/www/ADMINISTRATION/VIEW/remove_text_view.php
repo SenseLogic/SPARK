@@ -13,7 +13,11 @@
                     <?php echo htmlspecialchars( $this->GetText( 'Text' ) ); ?> :
                 </div>
                 <div>
-                    <input class="form-input" name="Text" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Text->Text ) ); ?>" readonly/>
+                    <div>
+                        <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
+                            <textarea class="multilingual-input-translation form-textarea" name="Text" readonly><?php echo htmlspecialchars( GetTranslatedText( $this->Text->Text, $language_code ) ); ?></textarea>
+                        <?php } ?>
+                    </div>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="<?php echo htmlspecialchars( $this->ListPage ); ?>">
                 </a>

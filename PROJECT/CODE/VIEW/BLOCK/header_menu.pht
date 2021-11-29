@@ -159,11 +159,11 @@
             <# .GetText( 'HeaderMenuContactButton' ) #>
         </div>
         <? if ( .LanguageCode === 'en' ) { ?>
-            <div class="scaled-button header-menu-button" onclick="SetLanguage( 'fr' )">
+            <div class="scaled-button header-menu-button" onclick="SetLanguageCode( 'fr' )">
                 <# .GetText( 'HeaderMenuFrenchButton' ) #>
             </div>
         <? } else { ?>
-            <div class="scaled-button header-menu-button" onclick="SetLanguage( 'en' )">
+            <div class="scaled-button header-menu-button" onclick="SetLanguageCode( 'en' )">
                 <# .GetText( 'HeaderMenuEnglishButton' ) #>
             </div>
         <? } ?>

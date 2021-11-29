@@ -50,8 +50,8 @@
 
     // ~~
 
-    function SetLanguage(
-        language
+    function SetLanguageCode(
+        language_code
         )
     {
         var
@@ -61,11 +61,11 @@
 
         if ( route === "" )
         {
-            SetUrl( "/" + language + "/" );
+            SetUrl( "/" + language_code + "/" );
         }
         else
         {
-            SetUrl( "/" + language + "/" + route + "/" );
+            SetUrl( "/" + language_code + "/" + route + "/" );
         }
     }
 </script>

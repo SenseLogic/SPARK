@@ -12,13 +12,21 @@
                 <?php echo htmlspecialchars( $this->GetText( 'Name' ) ); ?> :
             </div>
             <div>
-                    <input class="form-input" name="Name" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Article->Name ) ); ?>" readonly/>
+                <div>
+                    <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
+                        <input class="multilingual-input-translation form-input" name="Name" type="text" value="<?php echo htmlspecialchars( GetValueText( GetTranslatedText( $this->Article->Name, $language_code ) ) ); ?>" readonly/>
+                    <?php } ?>
+                </div>
             </div>
             <div class="form-field-name">
                 <?php echo htmlspecialchars( $this->GetText( 'Text' ) ); ?> :
             </div>
             <div>
-                    <input class="form-input" name="Text" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Article->Text ) ); ?>" readonly/>
+                <div>
+                    <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
+                        <textarea class="multilingual-input-translation form-textarea" name="Text" readonly><?php echo htmlspecialchars( GetTranslatedText( $this->Article->Text, $language_code ) ); ?></textarea>
+                    <?php } ?>
+                </div>
             </div>
             <div class="form-field-name">
                 <?php echo htmlspecialchars( $this->GetText( 'Image Path' ) ); ?> :

@@ -56,9 +56,9 @@
                 </div>
                 <div>
                     <div>
-                        <textarea class="form-textarea multilingual-input" name="Text" hidden></textarea>
+                        <textarea class="multilingual-input form-textarea" name="Text" hidden></textarea>
                         <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
-                            <textarea class="form-textarea multilingual-input-translation" data-language-code="<?php echo htmlspecialchars( $language_code ); ?>" placeholder="<?php echo htmlspecialchars( $this->GetText( $language_code ) ); ?>"></textarea>
+                            <textarea class="multilingual-input-translation form-textarea" data-language-code="<?php echo htmlspecialchars( $language_code ); ?>" placeholder="<?php echo htmlspecialchars( $this->GetText( $language_code ) ); ?>"></textarea>
                         <?php } ?>
                     </div>
                 </div>

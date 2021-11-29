@@ -16,7 +16,13 @@
                     <?php echo htmlspecialchars( GetValueText( $text->Slug ) ); ?>
                 </div>
                 <div class="sortable-grid-cell">
-                    <?php echo htmlspecialchars( GetValueText( $text->Text ) ); ?>
+                    <div>
+                        <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
+                            <div class="multilingual-input-translation">
+                                <?php echo htmlspecialchars( GetTranslatedText( $text->Text, $language_code ) ); ?>
+                            </div>
+                        <?php } ?>
+                    </div>
                 </div>
                 <div class="form-centered sortable-grid-cell">
                     <a class="form-button view-button" href="/admin/text/view/<?php echo htmlspecialchars( $text->Id ); ?>">

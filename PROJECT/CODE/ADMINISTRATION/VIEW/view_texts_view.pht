@@ -16,7 +16,13 @@
                     <% GetValueText( text.Slug ) %>
                 </div>
                 <div class="sortable-grid-cell">
-                    <% GetValueText( text.Text ) %>
+                    <div>
+                        <? foreach ( var language_code; LanguageCodeArray ) { ?>
+                            <div class="multilingual-input-translation">
+                                <% GetTranslatedText( text.Text, language_code ) %>
+                            </div>
+                        <? } ?>
+                    </div>
                 </div>
                 <div class="form-centered sortable-grid-cell">
                     <a class="form-button view-button" href="/admin/text/view/<% text.Id %>">

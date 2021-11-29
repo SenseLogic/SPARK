@@ -13,13 +13,21 @@
                     <% .GetText( 'Name' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="Name" type="text" value="<% GetValueText( .Article.Name ) %>" readonly/>
+                    <div>
+                        <? foreach ( var language_code; LanguageCodeArray ) { ?>
+                            <input class="multilingual-input-translation form-input" name="Name" type="text" value="<% GetValueText( GetTranslatedText( .Article.Name, language_code ) ) %>" readonly/>
+                        <? } ?>
+                    </div>
                 </div>
                 <div class="form-field-name">
                     <% .GetText( 'Text' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="Text" type="text" value="<% GetValueText( .Article.Text ) %>" readonly/>
+                    <div>
+                        <? foreach ( var language_code; LanguageCodeArray ) { ?>
+                            <textarea class="multilingual-input-translation form-textarea" name="Text" readonly><% GetTranslatedText( .Article.Text, language_code ) %></textarea>
+                        <? } ?>
+                    </div>
                 </div>
                 <div class="form-field-name">
                     <% .GetText( 'Image Path' ) %> :

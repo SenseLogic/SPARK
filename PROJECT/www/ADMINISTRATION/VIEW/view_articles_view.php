@@ -34,10 +34,22 @@
                     <?php echo htmlspecialchars( GetValueText( $article->Slug ) ); ?>
                 </div>
                 <div class="sortable-grid-cell">
-                    <?php echo htmlspecialchars( GetValueText( $article->Name ) ); ?>
+                    <div>
+                        <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
+                            <div class="multilingual-input-translation">
+                                <?php echo htmlspecialchars( GetValueText( GetTranslatedText( $article->Name, $language_code ) ) ); ?>
+                            </div>
+                        <?php } ?>
+                    </div>
                 </div>
                 <div class="sortable-grid-cell">
-                    <?php echo htmlspecialchars( GetValueText( $article->Text ) ); ?>
+                    <div>
+                        <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
+                            <div class="multilingual-input-translation">
+                                <?php echo htmlspecialchars( GetTranslatedText( $article->Text, $language_code ) ); ?>
+                            </div>
+                        <?php } ?>
+                    </div>
                 </div>
                 <div class="sortable-grid-cell">
                     <?php echo htmlspecialchars( GetValueText( $article->ImagePath ) ); ?>

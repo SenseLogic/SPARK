@@ -56,9 +56,9 @@
                 </div>
                 <div>
                     <div>
-                        <textarea class="form-textarea multilingual-input" name="Text" hidden><% .Text.Text %></textarea>
+                        <textarea class="multilingual-input form-textarea" name="Text" hidden><% .Text.Text %></textarea>
                         <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <textarea class="form-textarea multilingual-input-translation" data-language-code="<% language_code %>" placeholder="<% .GetText( language_code ) %>"></textarea>
+                            <textarea class="multilingual-input-translation form-textarea" data-language-code="<% language_code %>" placeholder="<% .GetText( language_code ) %>"></textarea>
                         <? } ?>
                     </div>
                 </div>

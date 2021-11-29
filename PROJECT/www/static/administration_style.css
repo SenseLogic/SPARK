@@ -374,6 +374,9 @@ textarea:focus {
 .margin-bottom-2rem {
   margin-bottom: 2rem !important;
 }
+.multilingual-input-translation + .multilingual-input-translation {
+  margin-top: 0.3125rem;
+}
 .page-container {
   min-height: 100vh;
   display: grid;
@@ -456,10 +459,6 @@ textarea:focus {
   border-radius: 0.3125rem;
   padding: 0.3125rem;
   display: block;
-}
-.form-input.multilingual-input-translation + .form-input.multilingual-input-translation,
-.form-textarea.multilingual-input-translation + .form-textarea.multilingual-input-translation {
-  margin-top: 0.3125rem;
 }
 .form-upload-container {
   margin-top: 0.5rem;

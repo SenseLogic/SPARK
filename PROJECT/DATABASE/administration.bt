@@ -298,15 +298,15 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                         <? } ?>
                     </select><><~{%is_multilingual_text%}<>
                     <div>
-                        <textarea class="form-textarea multilingual-input" name="{%attribute%}" hidden><~{%has_default_value%}<>{%default_value%}~></textarea>
+                        <textarea class="multilingual-input form-textarea" name="{%attribute%}" hidden><~{%has_default_value%}<>{%default_value%}~></textarea>
                         <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <textarea class="form-textarea multilingual-input-translation" data-language-code="<\% language_code %\>" placeholder="<\% .GetText( language_code ) %\>"></textarea>
+                            <textarea class="multilingual-input-translation form-textarea" data-language-code="<\% language_code %\>" placeholder="<\% .GetText( language_code ) %\>"></textarea>
                         <? } ?>
                     </div><><~{%is_multilingual%}<>
                     <div>
-                        <input class="form-input multilingual-input" name="{%attribute%}" type="text"<~{%has_default_value%}<> value="{%default_value%}"~> hidden/>
+                        <input class="multilingual-input form-input" name="{%attribute%}" type="text"<~{%has_default_value%}<> value="{%default_value%}"~> hidden/>
                         <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <input class="form-input multilingual-input-translation" data-language-code="<\% language_code %\>" placeholder="<\% .GetText( language_code ) %\>"/>
+                            <input class="multilingual-input-translation form-input" data-language-code="<\% language_code %\>" placeholder="<\% .GetText( language_code ) %\>"/>
                         <? } ?>
                     </div><><~{%is_text%}<>
                     <textarea class="form-textarea" name="{%attribute%}"><~{%has_default_value%}<>{%default_value%}~></textarea><>
@@ -384,15 +384,15 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                         <? } ?>
                     </select><><~{%is_multilingual_text%}<>
                     <div>
-                        <textarea class="form-textarea multilingual-input" name="{%attribute%}" hidden><\% .{#attribute#}.{%attribute%} %\></textarea>
+                        <textarea class="multilingual-input form-textarea" name="{%attribute%}" hidden><\% .{#attribute#}.{%attribute%} %\></textarea>
                         <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <textarea class="form-textarea multilingual-input-translation" data-language-code="<\% language_code %\>" placeholder="<\% .GetText( language_code ) %\>"></textarea>
+                            <textarea class="multilingual-input-translation form-textarea" data-language-code="<\% language_code %\>" placeholder="<\% .GetText( language_code ) %\>"></textarea>
                         <? } ?>
                     </div><><~{%is_multilingual%}<>
                     <div>
-                        <input class="form-input multilingual-input" name="{%attribute%}" type="text" value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" hidden/>
+                        <input class="multilingual-input form-input" name="{%attribute%}" type="text" value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" hidden/>
                         <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <input class="form-input multilingual-input-translation" data-language-code="<\% language_code %\>" placeholder="<\% .GetText( language_code ) %\>"/>
+                            <input class="multilingual-input-translation form-input" data-language-code="<\% language_code %\>" placeholder="<\% .GetText( language_code ) %\>"/>
                         <? } ?>
                     </div><><~{%is_text%}<>
                     <textarea class="form-textarea" name="{%attribute%}"><\% .{#attribute#}.{%attribute%} %\></textarea><>
@@ -424,9 +424,19 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                     <input class="form-input" name="{%attribute%}" type="text" value="<\% .{#attribute#}.{%attribute%} %\>" readonly/>
                     <div class="form-upload-container">
                         <video class="form-upload-video" src="<\% .{#attribute#}.{%attribute%} %\>" type="video/mp4" onerror="this.src='/static/video/admin/missing_video.mp4'"></video>
+                    </div><><~{%is_multilingual_text%}<>
+                    <div>
+                        <? foreach ( var language_code; LanguageCodeArray ) { ?>
+                            <textarea class="multilingual-input-translation form-textarea" name="{%attribute%}" readonly><\% GetTranslatedText( .{#attribute#}.{%attribute%}, language_code ) %\></textarea>
+                        <? } ?>
+                    </div><><~{%is_multilingual%}<>
+                    <div>
+                        <? foreach ( var language_code; LanguageCodeArray ) { ?>
+                            <input class="multilingual-input-translation form-input" name="{%attribute%}" type="text" value="<\% GetValueText( GetTranslatedText( .{#attribute#}.{%attribute%}, language_code ) ) %\>" readonly/>
+                        <? } ?>
                     </div><><~{%is_text%}<>
                     <textarea class="form-textarea" name="{%attribute%}" readonly><\% .{#attribute#}.{%attribute%} %\></textarea><>
-                    <input class="form-input" name="{%attribute%}" type="text" value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" readonly/>~>~>~>
+                    <input class="form-input" name="{%attribute%}" type="text" value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" readonly/>~>~>~>~>~>
                 </div>$>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="<\% .ListPage %\>">
                 </a>
@@ -453,9 +463,19 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                 <input class="form-input" name="{%attribute%}" type="text" value="<\% .{#attribute#}.{%attribute%} %\>" readonly/>
                 <div class="form-upload-container">
                     <video class="form-upload-video" src="<\% .{#attribute#}.{%attribute%} %\>" type="video/mp4" onerror="this.src='/static/video/admin/missing_video.mp4'"></video>
+                </div><><~{%is_multilingual_text%}<>
+                <div>
+                    <? foreach ( var language_code; LanguageCodeArray ) { ?>
+                        <textarea class="multilingual-input-translation form-textarea" name="{%attribute%}" readonly><\% GetTranslatedText( .{#attribute#}.{%attribute%}, language_code ) %\></textarea>
+                    <? } ?>
+                </div><><~{%is_multilingual%}<>
+                <div>
+                    <? foreach ( var language_code; LanguageCodeArray ) { ?>
+                        <input class="multilingual-input-translation form-input" name="{%attribute%}" type="text" value="<\% GetValueText( GetTranslatedText( .{#attribute#}.{%attribute%}, language_code ) ) %\>" readonly/>
+                    <? } ?>
                 </div><><~{%is_text%}<>
                     <textarea class="form-textarea" name="{%attribute%}" readonly><\% .{#attribute#}.{%attribute%} %\></textarea><>
-                    <input class="form-input" name="{%attribute%}" type="text" value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" readonly/>~>~>~>
+                    <input class="form-input" name="{%attribute%}" type="text" value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" readonly/>~>~>~>~>~>
             </div>$>
             <a class="justify-self-start form-button form-button-large cancel-button" href="<\% .ListPage %\>">
             </a>
@@ -475,8 +495,22 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                 <\% .GetText( 'Action' ) %\>
             </div>
             <? foreach ( var {#variable#}; .{#attribute#}Array ) { ?><$
-                <div class="sortable-grid-cell">
-                    <\% GetValueText( {#variable#}.{%attribute%} ) %\>
+                <div class="sortable-grid-cell"><~{%is_multilingual_text%}<>
+                    <div>
+                        <? foreach ( var language_code; LanguageCodeArray ) { ?>
+                            <div class="multilingual-input-translation">
+                                <\% GetTranslatedText( {#variable#}.{%attribute%}, language_code ) %\>
+                            </div>
+                        <? } ?>
+                    </div><><~{%is_multilingual%}<>
+                    <div>
+                        <? foreach ( var language_code; LanguageCodeArray ) { ?>
+                            <div class="multilingual-input-translation">
+                                <\% GetValueText( GetTranslatedText( {#variable#}.{%attribute%}, language_code ) ) %\>
+                            </div>
+                        <? } ?>
+                    </div><>
+                    <\% GetValueText( {#variable#}.{%attribute%} ) %\>~>~>
                 </div>$>
                 <div class="form-centered sortable-grid-cell">
                     <a class="form-button view-button" href="/admin/{#style#}/view/<\% {#variable#}.{#key_attribute#} %\>">

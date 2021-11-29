@@ -34,10 +34,22 @@
                     <% GetValueText( article.Slug ) %>
                 </div>
                 <div class="sortable-grid-cell">
-                    <% GetValueText( article.Name ) %>
+                    <div>
+                        <? foreach ( var language_code; LanguageCodeArray ) { ?>
+                            <div class="multilingual-input-translation">
+                                <% GetValueText( GetTranslatedText( article.Name, language_code ) ) %>
+                            </div>
+                        <? } ?>
+                    </div>
                 </div>
                 <div class="sortable-grid-cell">
-                    <% GetValueText( article.Text ) %>
+                    <div>
+                        <? foreach ( var language_code; LanguageCodeArray ) { ?>
+                            <div class="multilingual-input-translation">
+                                <% GetTranslatedText( article.Text, language_code ) %>
+                            </div>
+                        <? } ?>
+                    </div>
                 </div>
                 <div class="sortable-grid-cell">
                     <% GetValueText( article.ImagePath ) %>

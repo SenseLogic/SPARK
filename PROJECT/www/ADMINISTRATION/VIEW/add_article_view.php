@@ -101,9 +101,9 @@
                 </div>
                 <div>
                     <div>
-                        <input class="form-input multilingual-input" name="Name" type="text" hidden/>
+                        <input class="multilingual-input form-input" name="Name" type="text" hidden/>
                         <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
-                            <input class="form-input multilingual-input-translation" data-language-code="<?php echo htmlspecialchars( $language_code ); ?>" placeholder="<?php echo htmlspecialchars( $this->GetText( $language_code ) ); ?>"/>
+                            <input class="multilingual-input-translation form-input" data-language-code="<?php echo htmlspecialchars( $language_code ); ?>" placeholder="<?php echo htmlspecialchars( $this->GetText( $language_code ) ); ?>"/>
                         <?php } ?>
                     </div>
                 </div>
@@ -112,9 +112,9 @@
                 </div>
                 <div>
                     <div>
-                        <textarea class="form-textarea multilingual-input" name="Text" hidden></textarea>
+                        <textarea class="multilingual-input form-textarea" name="Text" hidden></textarea>
                         <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
-                            <textarea class="form-textarea multilingual-input-translation" data-language-code="<?php echo htmlspecialchars( $language_code ); ?>" placeholder="<?php echo htmlspecialchars( $this->GetText( $language_code ) ); ?>"></textarea>
+                            <textarea class="multilingual-input-translation form-textarea" data-language-code="<?php echo htmlspecialchars( $language_code ); ?>" placeholder="<?php echo htmlspecialchars( $this->GetText( $language_code ) ); ?>"></textarea>
                         <?php } ?>
                     </div>
                 </div>

@@ -159,11 +159,11 @@
             <?php echo $this->GetText( 'HeaderMenuContactButton' ); ?>
         </div>
         <?php if ( $this->LanguageCode === 'en' ) { ?>
-            <div class="scaled-button header-menu-button" onclick="SetLanguage( 'fr' )">
+            <div class="scaled-button header-menu-button" onclick="SetLanguageCode( 'fr' )">
                 <?php echo $this->GetText( 'HeaderMenuFrenchButton' ); ?>
             </div>
         <?php } else { ?>
-            <div class="scaled-button header-menu-button" onclick="SetLanguage( 'en' )">
+            <div class="scaled-button header-menu-button" onclick="SetLanguageCode( 'en' )">
                 <?php echo $this->GetText( 'HeaderMenuEnglishButton' ); ?>
             </div>
         <?php } ?>

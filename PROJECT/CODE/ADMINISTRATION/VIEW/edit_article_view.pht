@@ -101,9 +101,9 @@
                 </div>
                 <div>
                     <div>
-                        <input class="form-input multilingual-input" name="Name" type="text" value="<% GetValueText( .Article.Name ) %>" hidden/>
+                        <input class="multilingual-input form-input" name="Name" type="text" value="<% GetValueText( .Article.Name ) %>" hidden/>
                         <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <input class="form-input multilingual-input-translation" data-language-code="<% language_code %>" placeholder="<% .GetText( language_code ) %>"/>
+                            <input class="multilingual-input-translation form-input" data-language-code="<% language_code %>" placeholder="<% .GetText( language_code ) %>"/>
                         <? } ?>
                     </div>
                 </div>
@@ -112,9 +112,9 @@
                 </div>
                 <div>
                     <div>
-                        <textarea class="form-textarea multilingual-input" name="Text" hidden><% .Article.Text %></textarea>
+                        <textarea class="multilingual-input form-textarea" name="Text" hidden><% .Article.Text %></textarea>
                         <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <textarea class="form-textarea multilingual-input-translation" data-language-code="<% language_code %>" placeholder="<% .GetText( language_code ) %>"></textarea>
+                            <textarea class="multilingual-input-translation form-textarea" data-language-code="<% language_code %>" placeholder="<% .GetText( language_code ) %>"></textarea>
                         <? } ?>
                     </div>
                 </div>

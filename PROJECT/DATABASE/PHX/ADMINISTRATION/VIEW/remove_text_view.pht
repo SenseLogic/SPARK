@@ -13,7 +13,11 @@
                     <% .GetText( 'Text' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="Text" type="text" value="<% GetValueText( .Text.Text ) %>" readonly/>
+                    <div>
+                        <? foreach ( var language_code; LanguageCodeArray ) { ?>
+                            <textarea class="multilingual-input-translation form-textarea" name="Text" readonly><% GetTranslatedText( .Text.Text, language_code ) %></textarea>
+                        <? } ?>
+                    </div>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="<% .ListPage %>">
                 </a>
