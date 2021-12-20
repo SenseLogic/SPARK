@@ -38,4 +38,4 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png"/>
 <link rel="mask-icon" href="/favicon.svg" color="#FFFFFF"/>
 <link rel="manifest" href="/site.webmanifest"/>
-<link rel="stylesheet" href="/static/style.css?v=<?phpphp echo VersionTimestamp; ?>"/>
+<link rel="stylesheet" href="/static/style.css?v=<?php echo VersionTimestamp; ?>"/>
