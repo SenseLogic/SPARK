@@ -37,15 +37,6 @@
         }
 
         EmitEvent( "update-view" );
-
-        if ( SectionName === "" )
-        {
-            SetScrollTop( 0 );
-        }
-        else
-        {
-            SetScrollTop( GetElementById( ViewName + "/" + SectionName ), "auto" );
-        }
     }
 
     // ~~
@@ -95,6 +86,15 @@
                     element.ToggleClass( "display-none!", element.dataset.viewName !== ViewName );
                 }
                 );
+
+            if ( SectionName === "" )
+            {
+                SetScrollPosition();
+            }
+            else
+            {
+                SetScrollPosition( GetElementById( ViewName + "/" + SectionName ) );
+            }
         }
         );
 

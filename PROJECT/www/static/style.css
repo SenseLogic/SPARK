@@ -757,7 +757,7 @@ html {
 }
 .scaled-button {
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: transform 0.25s ease;
 }
 .scaled-button:hover {
   transform: scale(1.1);
@@ -854,7 +854,7 @@ html {
   justify-content: center;
   align-items: center;
   background-color: transparent;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.25s ease;
 }
 body.is-scrolled .header-menu:not(.is-open) {
   background-color: rgba(0,0,0,0.3);
@@ -1120,7 +1120,7 @@ body.is-scrolled .header-menu:not(.is-open) {
   justify-content: center;
   align-items: center;
   opacity: 1;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.25s ease;
 }
 body.is-scrolled .scroll-down-reminder {
   opacity: 0;
@@ -1162,7 +1162,7 @@ body.is-scrolled .scroll-down-reminder {
   opacity: 1;
   background: url("/static/image/base/scroll_top_icon.svg") no-repeat center center/contain;
   cursor: pointer;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.25s ease;
 }
 body:not(.is-scrolled ) .scroll-top-button {
   opacity: 0;

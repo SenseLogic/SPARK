@@ -194,7 +194,7 @@
         )
     {
         GetElementById( "header-menu" ).AddClass( "is-open" );
-        SetScrollTop( 0 );
+        SetScrollPosition( 0 );
     }
 
     // ~~
