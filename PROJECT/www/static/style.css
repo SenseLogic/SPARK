@@ -884,7 +884,7 @@ body.is-scrolled .header-menu:not(.is-open) {
   color: #fff;
 }
 .header-menu-button.is-selected {
-  font-weight: bold;
+  font-weight: 700;
 }
 .header-menu-button + .header-menu-button {
   margin-left: 1rem;
@@ -952,7 +952,7 @@ body.is-scrolled .header-menu:not(.is-open) {
   color: #fff;
 }
 .footer-menu-button.is-selected {
-  font-weight: bold;
+  font-weight: 700;
 }
 .footer-menu-button + .footer-menu-button {
   margin-left: 1rem;

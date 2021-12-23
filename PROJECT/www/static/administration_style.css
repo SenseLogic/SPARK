@@ -483,10 +483,10 @@ textarea:focus {
 }
 .form-field-name {
   padding-top: 0.3125rem;
-  font-weight: bold;
+  font-weight: 700;
 }
 .form-column-name {
-  font-weight: bold;
+  font-weight: 700;
 }
 .form-centered {
   display: flex;
@@ -524,7 +524,7 @@ textarea:focus {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   font-size: 1.5rem;
-  font-weight: bold;
+  font-weight: 700;
 }
 .form-toolbar {
   margin-top: 1rem;

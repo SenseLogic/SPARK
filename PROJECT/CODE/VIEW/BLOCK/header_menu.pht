@@ -60,7 +60,7 @@
 
     .header-menu-button.is-selected
     {
-        font-weight: bold;
+        font-weight: 700;
     }
 
     .header-menu-button + .header-menu-button
