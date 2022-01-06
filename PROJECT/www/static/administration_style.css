@@ -471,6 +471,7 @@ textarea:focus {
   width: auto;
   max-width: 80%;
   border-radius: 0.3125rem;
+  background: repeating-conic-gradient(#eee 0% 25%, transparent 0% 50%) 50%/20px 20px;
 }
 .form-upload-icon {
   margin-left: 0.25rem;
