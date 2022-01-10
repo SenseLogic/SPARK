@@ -366,9 +366,9 @@ function GetAlphanumericText(
 
     foreach ( var character; str_split( text ) )
     {
-        if ( ( character >= '0'
-               && character <= '9' )
-             || strtolower( character ) !== strtoupper( character )
+        if ( ( character >= '0' && character <= '9' )
+             || ( character >= 'a' && character <= 'z' )
+             || ( character >= 'A' && character <= 'Z' )
              || strpos( kept_characters, character ) !== false )
         {
             alphanumeric_text ..= character;
@@ -386,11 +386,39 @@ function GetAlphanumericText(
 
 // ~~
 
+function GetUnaccentuatedText(
+    string text
+    )
+{
+    return
+        str_replace(
+            array(
+                'á', 'à', 'â', 'ã', 'ª', 'ä', 'å', 'Á', 'À', 'Â', 'Ã', 'Ä',
+                'é', 'è', 'ê', 'ë', 'É', 'È', 'Ê', 'Ë',
+                'í', 'ì', 'î', 'ï', 'Í', 'Ì', 'Î', 'Ï',
+                'œ', 'ò', 'ó', 'ô', 'õ', 'ø', 'Ø', 'Ó', 'Ò', 'Ô', 'Õ',
+                'ú', 'ù', 'û', 'Ú', 'Ù', 'Û',
+                'ç', 'Ç', 'Ñ', 'ñ'
+                ),
+            array(
+                'a', 'a', 'a', 'a', 'a', 'a', 'a', 'A', 'A', 'A', 'A', 'A',
+                'e', 'e', 'e', 'e', 'E', 'E', 'E', 'E',
+                'i', 'i', 'i', 'i', 'I', 'I', 'I', 'I',
+                'oe', 'o', 'o', 'o', 'o', 'o', 'O', 'O', 'O', 'O', 'O',
+                'u', 'u', 'u', 'U', 'U', 'U',
+                'c', 'C', 'N', 'n'
+                ),
+            text
+            );
+}
+
+// ~~
+
 function GetSlugText(
     string text
     )
 {
-    return ReplaceTexts( GetAlphanumericText( GetLowerCaseText( text ), '', '', '-' ), '--', '-' );
+    return ReplaceTexts( GetAlphanumericText( GetLowerCaseText( GetUnaccentuatedText( text ) ), '', '', '-' ), '--', '-' );
 }
 
 // ~~
