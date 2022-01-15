@@ -45,7 +45,7 @@ function GetPathValueArray(
 
     if ( path === '' )
     {
-        return array();
+        return [];
     }
     else
     {

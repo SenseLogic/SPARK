@@ -220,7 +220,7 @@ function GetFolderPathArray(
     bool is_recursive = false
     )
 {
-    folder_path_array = array();
+    folder_path_array = [];
 
     AddFolderPathArray( folder_path_array, folder_path, is_recursive );
 }
@@ -263,7 +263,7 @@ function GetFilePathArray(
     bool is_recursive = false
     )
 {
-    file_path_array = array();
+    file_path_array = [];
 
     AddFilePathArray( file_path_array, folder_path, is_recursive );
 }
@@ -427,9 +427,9 @@ function SplitFilePath(
         );
 
     return
-        array(
+        [
             substr( file_path, 0, folder_path_character_count ),
             substr( file_path, folder_path_character_count, file_label_character_count ),
             substr( file_path, folder_path_character_count + file_label_character_count, file_extension_character_count )
-            );
+        ];
 }

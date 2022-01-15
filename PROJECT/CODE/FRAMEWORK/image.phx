@@ -410,14 +410,14 @@ function DrawJustifiedText(
     var line_height = letter_height * line_height_factor;
 
     var line_index = 0;
-    var line_width_array = array();
+    var line_width_array = [];
     line_width_array[ line_index ] = 0;
 
     var word_column = 0;
     var word_row = 0;
     var word_text_array = explode( ' ', text );
     var word_count = 0;
-    var word_array = array();
+    var word_array = [];
     var word_is_bold = false;
     var word_is_italic = false;
 
