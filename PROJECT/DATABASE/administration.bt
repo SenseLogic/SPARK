@@ -254,11 +254,11 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
 <%¨<~!{%is_optional%}<>
         if ( {%variable%}_field.value !== "" )
         {
-            {%variable%}_field.classList.remove( "form-field-error" );
+            {%variable%}_field.RemoveClass( "form-field-error" );
         }
         else
         {
-            {%variable%}_field.classList.add( "form-field-error" );
+            {%variable%}_field.AddClass( "form-field-error" );
 
             it_is_valid_add_{#variable#}_form = false;
         }
@@ -340,11 +340,11 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
 <$<~!{%is_optional%}<>
         if ( {%variable%}_field.value !== "" )
         {
-            {%variable%}_field.classList.remove( "form-field-error" );
+            {%variable%}_field.RemoveClass( "form-field-error" );
         }
         else
         {
-            {%variable%}_field.classList.add( "form-field-error" );
+            {%variable%}_field.AddClass( "form-field-error" );
 
             it_is_valid_edit_{#variable#}_form = false;
         }

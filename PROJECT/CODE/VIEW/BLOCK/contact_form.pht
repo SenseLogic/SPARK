@@ -157,22 +157,22 @@
 
         if ( name_input_element.value !== "" )
         {
-            name_input_element.classList.remove( "is-invalid" );
+            name_input_element.RemoveClass( "is-invalid" );
         }
         else
         {
-            name_input_element.classList.add( "is-invalid" );
+            name_input_element.AddClass( "is-invalid" );
 
             it_is_valid_contact_form = false;
         }
 
         if ( company_input_element.value !== "" )
         {
-            company_input_element.classList.remove( "is-invalid" );
+            company_input_element.RemoveClass( "is-invalid" );
         }
         else
         {
-            company_input_element.classList.add( "is-invalid" );
+            company_input_element.AddClass( "is-invalid" );
 
             it_is_valid_contact_form = false;
         }
@@ -180,44 +180,44 @@
         if ( email_input_element.value !== ""
              && /^[a-z-.]+@[a-z-.]+\.[a-z]+$/g.test( email_input_element.value.toLowerCase() ) )
         {
-            email_input_element.classList.remove( "is-invalid" );
+            email_input_element.RemoveClass( "is-invalid" );
         }
         else
         {
-            email_input_element.classList.add( "is-invalid" );
+            email_input_element.AddClass( "is-invalid" );
 
             it_is_valid_contact_form = false;
         }
 
         if ( phone_input_element.value !== "" )
         {
-            phone_input_element.classList.remove( "is-invalid" );
+            phone_input_element.RemoveClass( "is-invalid" );
         }
         else
         {
-            phone_input_element.classList.add( "is-invalid" );
+            phone_input_element.AddClass( "is-invalid" );
 
             it_is_valid_contact_form = false;
         }
 
         if ( subject_input_element.value !== "" )
         {
-            subject_input_element.classList.remove( "is-invalid" );
+            subject_input_element.RemoveClass( "is-invalid" );
         }
         else
         {
-            subject_input_element.classList.add( "is-invalid" );
+            subject_input_element.AddClass( "is-invalid" );
 
             it_is_valid_contact_form = false;
         }
 
         if ( message_textarea_element.value !== "" )
         {
-            message_textarea_element.classList.remove( "is-invalid" );
+            message_textarea_element.RemoveClass( "is-invalid" );
         }
         else
         {
-            message_textarea_element.classList.add( "is-invalid" );
+            message_textarea_element.AddClass( "is-invalid" );
 
             it_is_valid_contact_form = false;
         }
@@ -225,11 +225,11 @@
         if ( captcha_input_element.value !== ""
              && IsValidCaptcha( captcha_input_element.value ) )
         {
-            captcha_input_element.classList.remove( "is-invalid" );
+            captcha_input_element.RemoveClass( "is-invalid" );
         }
         else
         {
-            captcha_input_element.classList.add( "is-invalid" );
+            captcha_input_element.AddClass( "is-invalid" );
 
             it_is_valid_contact_form = false;
         }

@@ -30,55 +30,55 @@
 
         if ( slug_field.value !== "" )
         {
-            slug_field.classList.remove( "form-field-error" );
+            slug_field.RemoveClass( "form-field-error" );
         }
         else
         {
-            slug_field.classList.add( "form-field-error" );
+            slug_field.AddClass( "form-field-error" );
 
             it_is_valid_add_article_form = false;
         }
 
         if ( name_field.value !== "" )
         {
-            name_field.classList.remove( "form-field-error" );
+            name_field.RemoveClass( "form-field-error" );
         }
         else
         {
-            name_field.classList.add( "form-field-error" );
+            name_field.AddClass( "form-field-error" );
 
             it_is_valid_add_article_form = false;
         }
 
         if ( next_article_id_field.value !== "" )
         {
-            next_article_id_field.classList.remove( "form-field-error" );
+            next_article_id_field.RemoveClass( "form-field-error" );
         }
         else
         {
-            next_article_id_field.classList.add( "form-field-error" );
+            next_article_id_field.AddClass( "form-field-error" );
 
             it_is_valid_add_article_form = false;
         }
 
         if ( priority_field.value !== "" )
         {
-            priority_field.classList.remove( "form-field-error" );
+            priority_field.RemoveClass( "form-field-error" );
         }
         else
         {
-            priority_field.classList.add( "form-field-error" );
+            priority_field.AddClass( "form-field-error" );
 
             it_is_valid_add_article_form = false;
         }
 
         if ( is_active_field.value !== "" )
         {
-            is_active_field.classList.remove( "form-field-error" );
+            is_active_field.RemoveClass( "form-field-error" );
         }
         else
         {
-            is_active_field.classList.add( "form-field-error" );
+            is_active_field.AddClass( "form-field-error" );
 
             it_is_valid_add_article_form = false;
         }

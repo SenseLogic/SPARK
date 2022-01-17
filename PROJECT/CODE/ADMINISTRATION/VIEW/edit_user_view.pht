@@ -22,44 +22,44 @@
 
         if ( email_field.value !== "" )
         {
-            email_field.classList.remove( "form-field-error" );
+            email_field.RemoveClass( "form-field-error" );
         }
         else
         {
-            email_field.classList.add( "form-field-error" );
+            email_field.AddClass( "form-field-error" );
 
             it_is_valid_edit_user_form = false;
         }
 
         if ( pseudonym_field.value !== "" )
         {
-            pseudonym_field.classList.remove( "form-field-error" );
+            pseudonym_field.RemoveClass( "form-field-error" );
         }
         else
         {
-            pseudonym_field.classList.add( "form-field-error" );
+            pseudonym_field.AddClass( "form-field-error" );
 
             it_is_valid_edit_user_form = false;
         }
 
         if ( password_field.value !== "" )
         {
-            password_field.classList.remove( "form-field-error" );
+            password_field.RemoveClass( "form-field-error" );
         }
         else
         {
-            password_field.classList.add( "form-field-error" );
+            password_field.AddClass( "form-field-error" );
 
             it_is_valid_edit_user_form = false;
         }
 
         if ( role_field.value !== "" )
         {
-            role_field.classList.remove( "form-field-error" );
+            role_field.RemoveClass( "form-field-error" );
         }
         else
         {
-            role_field.classList.add( "form-field-error" );
+            role_field.AddClass( "form-field-error" );
 
             it_is_valid_edit_user_form = false;
         }

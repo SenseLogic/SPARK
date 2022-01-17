@@ -18,22 +18,22 @@
 
         if ( slug_field.value !== "" )
         {
-            slug_field.classList.remove( "form-field-error" );
+            slug_field.RemoveClass( "form-field-error" );
         }
         else
         {
-            slug_field.classList.add( "form-field-error" );
+            slug_field.AddClass( "form-field-error" );
 
             it_is_valid_edit_text_form = false;
         }
 
         if ( text_field.value !== "" )
         {
-            text_field.classList.remove( "form-field-error" );
+            text_field.RemoveClass( "form-field-error" );
         }
         else
         {
-            text_field.classList.add( "form-field-error" );
+            text_field.AddClass( "form-field-error" );
 
             it_is_valid_edit_text_form = false;
         }

@@ -28,77 +28,77 @@
 
         if ( name_field.value !== "" )
         {
-            name_field.classList.remove( "form-field-error" );
+            name_field.RemoveClass( "form-field-error" );
         }
         else
         {
-            name_field.classList.add( "form-field-error" );
+            name_field.AddClass( "form-field-error" );
 
             it_is_valid_edit_contact_form = false;
         }
 
         if ( company_field.value !== "" )
         {
-            company_field.classList.remove( "form-field-error" );
+            company_field.RemoveClass( "form-field-error" );
         }
         else
         {
-            company_field.classList.add( "form-field-error" );
+            company_field.AddClass( "form-field-error" );
 
             it_is_valid_edit_contact_form = false;
         }
 
         if ( email_field.value !== "" )
         {
-            email_field.classList.remove( "form-field-error" );
+            email_field.RemoveClass( "form-field-error" );
         }
         else
         {
-            email_field.classList.add( "form-field-error" );
+            email_field.AddClass( "form-field-error" );
 
             it_is_valid_edit_contact_form = false;
         }
 
         if ( phone_field.value !== "" )
         {
-            phone_field.classList.remove( "form-field-error" );
+            phone_field.RemoveClass( "form-field-error" );
         }
         else
         {
-            phone_field.classList.add( "form-field-error" );
+            phone_field.AddClass( "form-field-error" );
 
             it_is_valid_edit_contact_form = false;
         }
 
         if ( subject_field.value !== "" )
         {
-            subject_field.classList.remove( "form-field-error" );
+            subject_field.RemoveClass( "form-field-error" );
         }
         else
         {
-            subject_field.classList.add( "form-field-error" );
+            subject_field.AddClass( "form-field-error" );
 
             it_is_valid_edit_contact_form = false;
         }
 
         if ( message_field.value !== "" )
         {
-            message_field.classList.remove( "form-field-error" );
+            message_field.RemoveClass( "form-field-error" );
         }
         else
         {
-            message_field.classList.add( "form-field-error" );
+            message_field.AddClass( "form-field-error" );
 
             it_is_valid_edit_contact_form = false;
         }
 
         if ( date_time_field.value !== "" )
         {
-            date_time_field.classList.remove( "form-field-error" );
+            date_time_field.RemoveClass( "form-field-error" );
         }
         else
         {
-            date_time_field.classList.add( "form-field-error" );
+            date_time_field.AddClass( "form-field-error" );
 
             it_is_valid_edit_contact_form = false;
         }
