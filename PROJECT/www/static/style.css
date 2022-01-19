@@ -1166,7 +1166,7 @@ body.is-scrolled .scroll-down-reminder {
   cursor: pointer;
   transition: opacity 0.25s ease;
 }
-body:not(.is-scrolled ) .scroll-top-button {
+body:not(.is-scrolled) .scroll-top-button {
   opacity: 0;
   pointer-events: none;
 }
