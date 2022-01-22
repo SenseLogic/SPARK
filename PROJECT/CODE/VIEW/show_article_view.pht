@@ -1,7 +1,7 @@
 <style file="show_article_view.styl">
 </style>
 <? foreach ( var article; .ArticleArray ) { ?>
-    <div class="display-none! extended-container view" data-view-name="article/<# article.Id #>/<# article.Slug #>">
+    <div class="is-hidden extended-container view" data-view-name="article/<# article.Id #>/<# article.Slug #>">
         <? include 'BLOCK/article.php'; ?>
     </div>
 <? } ?>

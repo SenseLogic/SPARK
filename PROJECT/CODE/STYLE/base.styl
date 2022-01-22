@@ -91,7 +91,6 @@ MakePaddingVerticalValue( 8, Pxm, "pxm" );
 MakePaddingVerticalValue( 16, Pxm, "pxm" );
 
 MakeDisplayNone();
-MakeDisplayNone( , , "\!", !important );
 MakeDisplayFlex();
 MakeFlexDirectionRow();
 MakeFlexDirectionColumn();
@@ -138,6 +137,11 @@ MakeColorValue( "green", GreenColor );
 MakeColorValue( "blue", BlueColor );
 
 // ~~
+
+.is-hidden
+{
+    display: none !important;
+}
 
 .scaled-button
 {

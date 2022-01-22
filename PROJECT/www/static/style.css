@@ -581,9 +581,6 @@ sup {
 .display-none {
   display: none;
 }
-.display-none\! {
-  display: none !important;
-}
 .display-flex {
   display: flex;
 }
@@ -753,6 +750,9 @@ html {
 }
 .color-blue {
   color: #00f;
+}
+.is-hidden {
+  display: none !important;
 }
 .scaled-button {
   cursor: pointer;
@@ -1190,9 +1190,6 @@ body:not(.is-scrolled) .scroll-top-button {
   box-shadow: 0 0.3125rem 0.625rem rgba(128,128,128,0.5);
   font-size: 1rem;
   color: #000;
-}
-.cookie-consent-banner-container.is-hidden {
-  display: none;
 }
 .cookie-consent-banner-container a,
 .cookie-consent-banner-container a:visited {

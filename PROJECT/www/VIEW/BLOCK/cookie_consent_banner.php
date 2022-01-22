@@ -68,11 +68,6 @@
 
 
 
-
-
-
-
-
 <div id="cookie-consent-banner-container" class="cookie-consent-banner-container">
     <div class="cookie-consent-banner-text">
         <?php echo $this->GetText( 'CookieConsentBannerText' ); ?>

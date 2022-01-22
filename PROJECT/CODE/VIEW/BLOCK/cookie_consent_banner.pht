@@ -26,11 +26,6 @@
         color: BlackColor;
     }
 
-    .cookie-consent-banner-container.is-hidden
-    {
-        display: none;
-    }
-
     .cookie-consent-banner-container a,
     .cookie-consent-banner-container a:visited
     {

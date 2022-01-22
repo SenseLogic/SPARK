@@ -83,7 +83,7 @@
                     element
                     )
                 {
-                    element.ToggleClass( "display-none!", element.dataset.viewName !== ViewName );
+                    element.Toggle( element.dataset.viewName === ViewName );
                 }
                 );
 
