@@ -621,3 +621,43 @@ function DrawJustifiedText(
 
     return box;
 }
+
+// ~~
+
+function ReadJpegImage(
+    string image_url
+    )
+{
+    return imagecreatefromjpeg( image_url );
+}
+
+// ~~
+
+function WriteJpegImage(
+    image,
+    string image_file_path = null,
+    int quality = -1
+    )
+{
+    imagejpeg( image, image_file_path, quality );
+}
+
+// ~~
+
+function ReadPngImage(
+    string image_url
+    )
+{
+    return imagecreatefrompng( image_url );
+}
+
+// ~~
+
+function WritePngImage(
+    image,
+    string image_file_path = null,
+    int quality = -1
+    )
+{
+    imagepng( image, image_file_path, quality );
+}

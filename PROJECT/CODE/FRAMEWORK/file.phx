@@ -1,5 +1,61 @@
 // -- FUNCTIONS
 
+function FileExists(
+    string file_path
+    )
+{
+    return file_exists( file_path );
+}
+
+// ~~
+
+function RemoveFile(
+    string file_path
+    )
+{
+    unlink( file_path );
+}
+
+// ~~
+
+function DownloadFile(
+    string file_url,
+    string file_path
+    )
+{
+    var curl_request = curl_init( file_url );
+    curl_setopt( curl_request, CURLOPT_HEADER, 0 );
+    curl_setopt( curl_request, CURLOPT_RETURNTRANSFER, 1 );
+    curl_setopt( curl_request, CURLOPT_BINARYTRANSFER, 1 );
+    var file_content = curl_exec( curl_request );
+    curl_close( curl_request );
+
+    var file_ = fopen( file_path, 'w' );
+    fwrite( file_, file_content );
+    fclose( file_ );
+}
+
+// ~~
+
+function GetFileText(
+    string file_path
+    )
+{
+    return file_get_contents( file_path );
+}
+
+// ~~
+
+function SetFileText(
+    string file_path,
+    string file_text
+    )
+{
+    return file_put_contents( file_path, file_text );
+}
+
+// ~~
+
 function HasUploadedFile(
     string name
     )
@@ -44,23 +100,4 @@ function MoveUploadedFile(
     )
 {
     return move_uploaded_file( source_file_path, target_file_path);
-}
-
-// ~~
-
-function GetFileText(
-    string file_path
-    )
-{
-    return file_get_contents( file_path );
-}
-
-// ~~
-
-function SetFileText(
-    string file_path,
-    string file_text
-    )
-{
-    return file_put_contents( file_path, file_text );
 }

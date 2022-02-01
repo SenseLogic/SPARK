@@ -54,6 +54,14 @@ function GetCurrentMicrosecondTimestamp(
 
 // ~~
 
+function GetCurrentDateTimeReal(
+    )
+{
+    return floatval( date( 'Ymd.His' ) );
+}
+
+// ~~
+
 function GetCurrentDateTimeSuffix(
     )
 {

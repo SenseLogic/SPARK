@@ -32,6 +32,27 @@ function SplitText(
 
 // ~~
 
+function GetTextPosition(
+    string text,
+    string searched_text,
+    int first_text_position = 0
+    )
+{
+    return strpos( text, searched_text, first_text_position );
+}
+
+// ~~
+
+function ContainsText(
+    string text,
+    string searched_text
+    )
+{
+    return str_contains( text, searched_text );
+}
+
+// ~~
+
 function ReplaceText(
     string text,
     old_text,
