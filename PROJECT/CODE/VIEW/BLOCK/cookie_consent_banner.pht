@@ -109,7 +109,7 @@
         cookie_consent
         )
     {
-        localStorage.setItem( "cookie-consent", "true" );
+        localStorage.setItem( "cookie-consent", cookie_consent );
     }
 
     // ~~
