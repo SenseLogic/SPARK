@@ -42,7 +42,7 @@ TEXT
 
         ContactFormNamePlaceholder
             ~ Name*
-              ¨fr:Nom
+              ¨fr:Nom*
 
         ContactFormCompanyPlaceholder
             ~ Company*
