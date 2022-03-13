@@ -49,9 +49,14 @@ MakeExtendedContainer();
 MakeJustifySelfStart();
 MakeJustifySelfEnd();
 MakeFontWeightRange( 100, 100, 9 );
-MakeSortableGridColumn();
+MakeSortableTableColumn();
 
 // ~~
+
+.is-hidden
+{
+    display: none !important;
+}
 
 .margin-top-1rem
 {
@@ -268,6 +273,8 @@ MakeSortableGridColumn();
     border: none;
 
     display: inline-block;
+
+    cursor: pointer;
 }
 
 .form-button + .form-button
@@ -321,6 +328,11 @@ MakeSortableGridColumn();
     align-items: center;
 }
 
+.filter-row
+{
+    display: contents;
+}
+
 .card-list
 {
     display: grid;
@@ -355,11 +367,37 @@ MakeSortableGridColumn();
     background-color: #FFFFFF;
 }
 
+.tool-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.tool-container .filter-container
+{
+    flex-grow: 1;
+}
+
 .filter-container
 {
     position: relative;
 
     width: 100%;
+}
+
+
+.filter-container ~ .form-button
+{
+    margin-left: 1rem;
+    height: 2rem;
+    width: 2rem;
+}
+
+.filter-container .card-list
+{
+    margin-top: 1rem;
 }
 
 .filter-input
@@ -422,6 +460,11 @@ MakeSortableGridColumn();
 .apply-button
 {
     background: url( "/static/image/admin/apply_icon.svg" ) no-repeat center center / contain;
+}
+
+.list-button
+{
+    background: url( "/static/image/admin/list_icon.svg" ) no-repeat center center / contain;
 }
 
 .table-container

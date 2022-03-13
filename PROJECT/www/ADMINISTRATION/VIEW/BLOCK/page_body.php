@@ -6,6 +6,7 @@
 <script src="/static/script/vista_storage.js?v=<?php echo VersionTimestamp; ?>"></script>
 <script src="/static/script/vista_scroll.js?v=<?php echo VersionTimestamp; ?>"></script>
 <script src="/static/script/vista_sortable_grid.js?v=<?php echo VersionTimestamp; ?>"></script>
+<script src="/static/script/vista_sortable_table.js?v=<?php echo VersionTimestamp; ?>"></script>
 <script src="/static/script/vista_multilingual_input.js?v=<?php echo VersionTimestamp; ?>"></script>
 <script>
     // -- FUNCTIONS
@@ -90,8 +91,7 @@
 
     // -- STATEMENTS
 
-    DelayCall( InitializeSortableGridColumns );
+    DelayCall( InitializeSortableTableColumns );
     DelayCall( InitializeMultilingualInputs );
     DelayCall( InitializeTextAreas );
-    DelayCall( InitializeScroll );
 </script>

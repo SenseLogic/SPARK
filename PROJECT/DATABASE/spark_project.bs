@@ -6,11 +6,22 @@ spark-project
         Slug : STRING
         Text : STRING | is_multilingual_text
 
+    BLOCK | dropped, count 20
+
+        Id : UINT32 | key, unique, incremented
+        Slug : STRING = "{{Title:prefix ¨:slug_case}}"
+        ArticleSlug : ARTICLE.Slug | mapped, processed
+        Number : FLOAT32
+        Title : STRING = "{{english 1 1 4 6}}¨fr:{{french 1 1 4 6}}" | is_multilingual, is_optional
+        Text : STRING = "{{english 2 4 5 10}}¨fr:{{french 2 4 5 10}}" | is_multilingual_text, is_optional
+        ImagePath : STRING = "/static/image/test/beach.jpg|/static/image/test/palm_tree.jpg|/static/image/test/surfer.jpg" | is_image, is_optional
+        VideoPath : STRING = "/static/video/test/train.mp4|/static/video/test/bus.mp4" | is_video, is_optional
+
     ARTICLE | dropped, count 5
 
         Id : UINT32 | key, unique, incremented
-        Slug : STRING = "{{Name:slug_case}}"
-        Name : STRING | is_multilingual
+        Slug : STRING = "{{Name:prefix ¨:slug_case}}"
+        Name : STRING = "{{english 1 1 4 6}}¨fr:{{french 1 1 4 6}}" | is_multilingual
         Text : STRING = "{{english 2 4 5 10}}¨fr:{{french 2 4 5 10}}" | is_multilingual_text, is_optional
         ImagePath : STRING = "/static/image/test/beach.jpg|/static/image/test/palm_tree.jpg|/static/image/test/surfer.jpg" | is_image, is_optional
         VideoPath : STRING = "/static/video/test/train.mp4|/static/video/test/bus.mp4" | is_video, is_optional

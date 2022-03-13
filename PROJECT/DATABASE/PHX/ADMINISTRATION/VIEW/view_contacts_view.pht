@@ -1,71 +1,139 @@
 <? include 'BLOCK/page_header.php'; ?>
 <div id="view-contacts-view">
-    <div class="page-section form-section">
-        <div class="form-container table-container contact-table sortable-grid">
-            <div class="form-column-name sortable-grid-column">
+    <div class="form-extended form-centered margin-bottom-1rem">
+        <div class="tool-container">
+            <? var filter_name = "ContactFilter"; ?>
+            <? include 'BLOCK/filter.php'; ?>
+            <? var list_mode_name = "ContactListMode"; ?>
+            <? include 'BLOCK/list_mode.php'; ?>
+            <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                <a class="form-button form-button-large add-button" href="/admin/contact/add">
+                </a>
+            <? } ?>
+        </div>
+    </div>
+    <div class="cell-list is-hidden page-section form-section">
+        <div class="form-container table-container contact-table sortable-table">
+            <div class="form-column-name sortable-table-column">
                 <% .GetText( 'Name' ) %>
             </div>
-            <div class="form-column-name sortable-grid-column">
+            <div class="form-column-name sortable-table-column">
                 <% .GetText( 'Company' ) %>
             </div>
-            <div class="form-column-name sortable-grid-column">
+            <div class="form-column-name sortable-table-column">
                 <% .GetText( 'Email' ) %>
             </div>
-            <div class="form-column-name sortable-grid-column">
+            <div class="form-column-name sortable-table-column">
                 <% .GetText( 'Phone' ) %>
             </div>
-            <div class="form-column-name sortable-grid-column">
+            <div class="form-column-name sortable-table-column">
                 <% .GetText( 'Subject' ) %>
             </div>
-            <div class="form-column-name sortable-grid-column">
+            <div class="form-column-name sortable-table-column">
                 <% .GetText( 'Message' ) %>
             </div>
-            <div class="form-column-name sortable-grid-column">
+            <div class="form-column-name sortable-table-column">
                 <% .GetText( 'Date Time' ) %>
             </div>
-            <div class="form-column-name sortable-grid-column">
+            <div class="form-column-name sortable-table-column">
                 <% .GetText( 'Action' ) %>
             </div>
             <? foreach ( var contact; .ContactArray ) { ?>
-                <div class="sortable-grid-cell">
-                    <% GetValueText( contact.Name ) %>
-                </div>
-                <div class="sortable-grid-cell">
-                    <% GetValueText( contact.Company ) %>
-                </div>
-                <div class="sortable-grid-cell">
-                    <% GetValueText( contact.Email ) %>
-                </div>
-                <div class="sortable-grid-cell">
-                    <% GetValueText( contact.Phone ) %>
-                </div>
-                <div class="sortable-grid-cell">
-                    <% GetValueText( contact.Subject ) %>
-                </div>
-                <div class="sortable-grid-cell">
-                    <% GetValueText( contact.Message ) %>
-                </div>
-                <div class="sortable-grid-cell">
-                    <% GetValueText( contact.DateTime ) %>
-                </div>
-                <div class="form-centered sortable-grid-cell">
-                    <a class="form-button view-button" href="/admin/contact/view/<% contact.Id %>">
-                    </a>
-                    <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
-                        <a class="form-button edit-button" href="/admin/contact/edit/<% contact.Id %>">
+                <div class="sortable-table-row filter-row">
+                    <div class="sortable-table-cell filter-cell">
+                        <% GetValueText( contact.Name ) %>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <% GetValueText( contact.Company ) %>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <% GetValueText( contact.Email ) %>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <% GetValueText( contact.Phone ) %>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <% GetValueText( contact.Subject ) %>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <% GetValueText( contact.Message ) %>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <% GetValueText( contact.DateTime ) %>
+                    </div>
+                    <div class="form-centered sortable-table-cell">
+                        <a class="form-button view-button" href="/admin/contact/view/<% contact.Id %>">
                         </a>
-                        <a class="form-button remove-button" href="/admin/contact/remove/<% contact.Id %>">
-                        </a>
-                    <? } ?>
-                </div>
-            <? } ?>
-            <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
-                <div class="form-extended form-centered sortable-grid-footer">
-                    <a class="form-button form-button-large add-button" href="/admin/contact/add">
-                    </a>
+                        <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                            <a class="form-button edit-button" href="/admin/contact/edit/<% contact.Id %>">
+                            </a>
+                            <a class="form-button remove-button" href="/admin/contact/remove/<% contact.Id %>">
+                            </a>
+                        <? } ?>
+                    </div>
                 </div>
             <? } ?>
         </div>
+    </div>
+    <div class="card-list is-hidden">
+        <? foreach ( var contact; .ContactArray ) { ?>
+            <div class="card-container filter-row">
+                <div class="card">
+                    <div class="form-container">
+                        <div class="form-field-name">
+                            <% .GetText( 'Name' ) %> :
+                        </div>
+                        <div>
+                                <input class="form-input" name="Name" type="text" value="<% GetValueText( contact.Name ) %>" readonly/>
+                        </div>
+                        <div class="form-field-name">
+                            <% .GetText( 'Company' ) %> :
+                        </div>
+                        <div>
+                                <input class="form-input" name="Company" type="text" value="<% GetValueText( contact.Company ) %>" readonly/>
+                        </div>
+                        <div class="form-field-name">
+                            <% .GetText( 'Email' ) %> :
+                        </div>
+                        <div>
+                                <input class="form-input" name="Email" type="text" value="<% GetValueText( contact.Email ) %>" readonly/>
+                        </div>
+                        <div class="form-field-name">
+                            <% .GetText( 'Phone' ) %> :
+                        </div>
+                        <div>
+                                <input class="form-input" name="Phone" type="text" value="<% GetValueText( contact.Phone ) %>" readonly/>
+                        </div>
+                        <div class="form-field-name">
+                            <% .GetText( 'Subject' ) %> :
+                        </div>
+                        <div>
+                                <input class="form-input" name="Subject" type="text" value="<% GetValueText( contact.Subject ) %>" readonly/>
+                        </div>
+                        <div class="form-field-name">
+                            <% .GetText( 'Message' ) %> :
+                        </div>
+                        <div>
+                                <textarea class="form-textarea" name="Message" readonly><% contact.Message %></textarea>
+                        </div>
+                        <div class="form-field-name">
+                            <% .GetText( 'Date Time' ) %> :
+                        </div>
+                        <div>
+                                <input class="form-input" name="DateTime" type="text" value="<% GetValueText( contact.DateTime ) %>" readonly/>
+                        </div>
+                    </div>
+                    <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                        <div class="form-toolbar">
+                            <a class="form-button edit-button" href="/admin/contact/edit/<% contact.Id %>">
+                            </a>
+                            <a class="form-button remove-button" href="/admin/contact/remove/<% contact.Id %>">
+                            </a>
+                        </div>
+                    <? } ?>
+                </div>
+            </div>
+        <? } ?>
     </div>
 </div>
 <? include 'BLOCK/page_footer.php'; ?>

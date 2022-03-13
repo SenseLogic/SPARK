@@ -486,50 +486,101 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
 %%PHX/ADMINISTRATION/VIEW/view_<~Plural<>{#variable#}~>_view.pht
 <? include 'BLOCK/page_header.php'; ?>
 <div id="view-<~Plural<>{#style#}~>-view">
-    <div class="page-section form-section">
-        <div class="form-container table-container {#style#}-table sortable-grid"><$
-            <div class="form-column-name sortable-grid-column">
+    <div class="form-extended form-centered margin-bottom-1rem">
+        <div class="tool-container">
+            <? var filter_name = "{#attribute#}Filter"; ?>
+            <? include 'BLOCK/filter.php'; ?>
+            <? var list_mode_name = "{#attribute#}ListMode"; ?>
+            <? include 'BLOCK/list_mode.php'; ?>
+            <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                <a class="form-button form-button-large add-button" href="/admin/{#variable#}/add">
+                </a>
+            <? } ?>
+        </div>
+    </div>
+    <div class="cell-list is-hidden page-section form-section">
+        <div class="form-container table-container {#style#}-table sortable-table"><$
+            <div class="form-column-name sortable-table-column">
                 <\% .GetText( '<~TitleCase<>{%attribute%}~>' ) %\>
             </div>$>
-            <div class="form-column-name sortable-grid-column">
+            <div class="form-column-name sortable-table-column">
                 <\% .GetText( 'Action' ) %\>
             </div>
-            <? foreach ( var {#variable#}; .{#attribute#}Array ) { ?><$
-                <div class="sortable-grid-cell"><~{%is_multilingual_text%}<>
-                    <div>
-                        <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <div class="form-translation">
-                                <\% GetTranslatedText( {#variable#}.{%attribute%}, language_code ) %\>
-                            </div>
-                        <? } ?>
-                    </div><><~{%is_multilingual%}<>
-                    <div>
-                        <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <div class="form-translation">
-                                <\% GetValueText( GetTranslatedText( {#variable#}.{%attribute%}, language_code ) ) %\>
-                            </div>
-                        <? } ?>
-                    </div><>
-                    <\% GetValueText( {#variable#}.{%attribute%} ) %\>~>~>
-                </div>$>
-                <div class="form-centered sortable-grid-cell">
-                    <a class="form-button view-button" href="/admin/{#style#}/view/<\% {#variable#}.{#key_attribute#} %\>">
-                    </a>
-                    <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
-                        <a class="form-button edit-button" href="/admin/{#style#}/edit/<\% {#variable#}.{#key_attribute#} %\>">
+            <? foreach ( var {#variable#}; .{#attribute#}Array ) { ?>
+                <div class="sortable-table-row filter-row"><$
+                    <div class="sortable-table-cell filter-cell"><~{%is_multilingual_text%}<>
+                        <div>
+                            <? foreach ( var language_code; LanguageCodeArray ) { ?>
+                                <div class="form-translation">
+                                    <\% GetTranslatedText( {#variable#}.{%attribute%}, language_code ) %\>
+                                </div>
+                            <? } ?>
+                        </div><><~{%is_multilingual%}<>
+                        <div>
+                            <? foreach ( var language_code; LanguageCodeArray ) { ?>
+                                <div class="form-translation">
+                                    <\% GetValueText( GetTranslatedText( {#variable#}.{%attribute%}, language_code ) ) %\>
+                                </div>
+                            <? } ?>
+                        </div><>
+                        <\% GetValueText( {#variable#}.{%attribute%} ) %\>~>~>
+                    </div>$>
+                    <div class="form-centered sortable-table-cell">
+                        <a class="form-button view-button" href="/admin/{#style#}/view/<\% {#variable#}.{#key_attribute#} %\>">
                         </a>
-                        <a class="form-button remove-button" href="/admin/{#style#}/remove/<\% {#variable#}.{#key_attribute#} %\>">
-                        </a>
-                    <? } ?>
-                </div>
-            <? } ?>
-            <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
-                <div class="form-extended form-centered sortable-grid-footer">
-                    <a class="form-button form-button-large add-button" href="/admin/{#style#}/add">
-                    </a>
+                        <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                            <a class="form-button edit-button" href="/admin/{#style#}/edit/<\% {#variable#}.{#key_attribute#} %\>">
+                            </a>
+                            <a class="form-button remove-button" href="/admin/{#style#}/remove/<\% {#variable#}.{#key_attribute#} %\>">
+                            </a>
+                        <? } ?>
+                    </div>
                 </div>
             <? } ?>
         </div>
+    </div>
+    <div class="card-list is-hidden">
+        <? foreach ( var {#variable#}; .{#attribute#}Array ) { ?>
+            <div class="card-container filter-row">
+                <div class="card">
+                    <div class="form-container"><$
+                        <div class="form-field-name">
+                            <\% .GetText( '{%title%}' ) %\> :
+                        </div>
+                        <div><~{%is_image%}<>
+                            <input class="form-input" name="{%attribute%}" type="text" value="<\% {#variable#}.{%attribute%} %\>" readonly/>
+                            <div class="form-upload-container">
+                                <img class="form-upload-image" src="<\% {#variable#}.{%attribute%} %\>" onerror="this.src='/static/image/admin/missing_image.svg'"/>
+                            </div><><~{%is_video%}<>
+                            <input class="form-input" name="{%attribute%}" type="text" value="<\% {#variable#}.{%attribute%} %\>" readonly/>
+                            <div class="form-upload-container">
+                                <video class="form-upload-video" src="<\% {#variable#}.{%attribute%} %\>" type="video/mp4" onerror="this.src='/static/video/admin/missing_video.mp4'"></video>
+                            </div><><~{%is_multilingual_text%}<>
+                            <div>
+                                <? foreach ( var language_code; LanguageCodeArray ) { ?>
+                                    <textarea class="form-translation form-textarea" name="{%attribute%}" readonly><\% GetTranslatedText( {#variable#}.{%attribute%}, language_code ) %\></textarea>
+                                <? } ?>
+                            </div><><~{%is_multilingual%}<>
+                            <div>
+                                <? foreach ( var language_code; LanguageCodeArray ) { ?>
+                                    <input class="form-translation form-input" name="{%attribute%}" type="text" value="<\% GetValueText( GetTranslatedText( {#variable#}.{%attribute%}, language_code ) ) %\>" readonly/>
+                                <? } ?>
+                            </div><><~{%is_text%}<>
+                                <textarea class="form-textarea" name="{%attribute%}" readonly><\% {#variable#}.{%attribute%} %\></textarea><>
+                                <input class="form-input" name="{%attribute%}" type="text" value="<\% GetValueText( {#variable#}.{%attribute%} ) %\>" readonly/>~>~>~>~>~>
+                        </div>$>
+                    </div>
+                    <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                        <div class="form-toolbar">
+                            <a class="form-button edit-button" href="/admin/{#variable#}/edit/<\% {#variable#}.{#key_attribute#} %\>">
+                            </a>
+                            <a class="form-button remove-button" href="/admin/{#variable#}/remove/<\% {#variable#}.{#key_attribute#} %\>">
+                            </a>
+                        </div>
+                    <? } ?>
+                </div>
+            </div>
+        <? } ?>
     </div>
 </div>
 <? include 'BLOCK/page_footer.php'; ?>

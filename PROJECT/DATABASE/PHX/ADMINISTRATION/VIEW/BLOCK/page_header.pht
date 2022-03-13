@@ -18,6 +18,15 @@
                         </a>
                     </div>
                     <div class="page-menu-item">
+                        <a href="/admin/block">
+                            <span class="form-button form-button-large block-button">
+                            </span>
+                            <span class="form-button-tooltip">
+                                <% .GetText( 'Block' ) %>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="page-menu-item">
                         <a href="/admin/article">
                             <span class="form-button form-button-large article-button">
                             </span>

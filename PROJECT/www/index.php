@@ -209,6 +209,85 @@ function Route(
             }
         }
         else if ( $path_value_count >= 2
+                  && $path_value_array[ 1 ] === 'block' )
+        {
+            if ( $it_is_get_request
+                 && $path_value_count === 2 )
+            {
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_blocks_controller.php';
+            }
+            else if ( $it_is_get_request
+                      && $path_value_count === 3
+                      && $path_value_array[ 2 ] === 'add' )
+            {
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/add_block_controller.php';
+            }
+            else if ( $it_is_post_request
+                      && $path_value_count === 3
+                      && $path_value_array[ 2 ] === 'add'
+                      && HasPostValue( 'Slug' )
+                      && HasPostValue( 'ArticleSlug' )
+                      && HasPostValue( 'Number' )
+                      && HasPostValue( 'Title' )
+                      && HasPostValue( 'Text' )
+                      && HasPostValue( 'ImagePath' )
+                      && HasPostValue( 'VideoPath' ) )
+            {
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_add_block_controller.php';
+            }
+            else if ( $it_is_get_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'view' )
+            {
+                 $block_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_block_controller.php';
+            }
+            else if ( $it_is_get_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'edit' )
+            {
+                 $block_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/edit_block_controller.php';
+            }
+            else if ( $it_is_post_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'edit'
+                      && HasPostValue( 'Slug' )
+                      && HasPostValue( 'ArticleSlug' )
+                      && HasPostValue( 'Number' )
+                      && HasPostValue( 'Title' )
+                      && HasPostValue( 'Text' )
+                      && HasPostValue( 'ImagePath' )
+                      && HasPostValue( 'VideoPath' ) )
+            {
+                 $block_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_edit_block_controller.php';
+            }
+            else if ( $it_is_get_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'remove' )
+            {
+                 $block_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/remove_block_controller.php';
+            }
+            else if ( $it_is_post_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'remove' )
+            {
+                 $block_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_remove_block_controller.php';
+            }
+            else
+            {
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/show_error_controller.php';
+            }
+        }
+        else if ( $path_value_count >= 2
                   && $path_value_array[ 1 ] === 'article' )
         {
             if ( $it_is_get_request

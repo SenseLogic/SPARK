@@ -1,53 +1,103 @@
 <? include 'BLOCK/page_header.php'; ?>
 <div id="view-users-view">
-    <div class="page-section form-section">
-        <div class="form-container table-container user-table sortable-grid">
-            <div class="form-column-name sortable-grid-column">
+    <div class="form-extended form-centered margin-bottom-1rem">
+        <div class="tool-container">
+            <? var filter_name = "UserFilter"; ?>
+            <? include 'BLOCK/filter.php'; ?>
+            <? var list_mode_name = "UserListMode"; ?>
+            <? include 'BLOCK/list_mode.php'; ?>
+            <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                <a class="form-button form-button-large add-button" href="/admin/user/add">
+                </a>
+            <? } ?>
+        </div>
+    </div>
+    <div class="cell-list is-hidden page-section form-section">
+        <div class="form-container table-container user-table sortable-table">
+            <div class="form-column-name sortable-table-column">
                 <% .GetText( 'Email' ) %>
             </div>
-            <div class="form-column-name sortable-grid-column">
+            <div class="form-column-name sortable-table-column">
                 <% .GetText( 'Pseudonym' ) %>
             </div>
-            <div class="form-column-name sortable-grid-column">
+            <div class="form-column-name sortable-table-column">
                 <% .GetText( 'Password' ) %>
             </div>
-            <div class="form-column-name sortable-grid-column">
+            <div class="form-column-name sortable-table-column">
                 <% .GetText( 'Role' ) %>
             </div>
-            <div class="form-column-name sortable-grid-column">
+            <div class="form-column-name sortable-table-column">
                 <% .GetText( 'Action' ) %>
             </div>
             <? foreach ( var user; .UserArray ) { ?>
-                <div class="sortable-grid-cell">
-                    <% GetValueText( user.Email ) %>
-                </div>
-                <div class="sortable-grid-cell">
-                    <% GetValueText( user.Pseudonym ) %>
-                </div>
-                <div class="sortable-grid-cell">
-                    <% GetValueText( user.Password ) %>
-                </div>
-                <div class="sortable-grid-cell">
-                    <% GetValueText( user.Role ) %>
-                </div>
-                <div class="form-centered sortable-grid-cell">
-                    <a class="form-button view-button" href="/admin/user/view/<% user.Id %>">
-                    </a>
-                    <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
-                        <a class="form-button edit-button" href="/admin/user/edit/<% user.Id %>">
+                <div class="sortable-table-row filter-row">
+                    <div class="sortable-table-cell filter-cell">
+                        <% GetValueText( user.Email ) %>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <% GetValueText( user.Pseudonym ) %>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <% GetValueText( user.Password ) %>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <% GetValueText( user.Role ) %>
+                    </div>
+                    <div class="form-centered sortable-table-cell">
+                        <a class="form-button view-button" href="/admin/user/view/<% user.Id %>">
                         </a>
-                        <a class="form-button remove-button" href="/admin/user/remove/<% user.Id %>">
-                        </a>
-                    <? } ?>
-                </div>
-            <? } ?>
-            <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
-                <div class="form-extended form-centered sortable-grid-footer">
-                    <a class="form-button form-button-large add-button" href="/admin/user/add">
-                    </a>
+                        <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                            <a class="form-button edit-button" href="/admin/user/edit/<% user.Id %>">
+                            </a>
+                            <a class="form-button remove-button" href="/admin/user/remove/<% user.Id %>">
+                            </a>
+                        <? } ?>
+                    </div>
                 </div>
             <? } ?>
         </div>
+    </div>
+    <div class="card-list is-hidden">
+        <? foreach ( var user; .UserArray ) { ?>
+            <div class="card-container filter-row">
+                <div class="card">
+                    <div class="form-container">
+                        <div class="form-field-name">
+                            <% .GetText( 'Email' ) %> :
+                        </div>
+                        <div>
+                                <input class="form-input" name="Email" type="text" value="<% GetValueText( user.Email ) %>" readonly/>
+                        </div>
+                        <div class="form-field-name">
+                            <% .GetText( 'Pseudonym' ) %> :
+                        </div>
+                        <div>
+                                <input class="form-input" name="Pseudonym" type="text" value="<% GetValueText( user.Pseudonym ) %>" readonly/>
+                        </div>
+                        <div class="form-field-name">
+                            <% .GetText( 'Password' ) %> :
+                        </div>
+                        <div>
+                                <input class="form-input" name="Password" type="text" value="<% GetValueText( user.Password ) %>" readonly/>
+                        </div>
+                        <div class="form-field-name">
+                            <% .GetText( 'Role' ) %> :
+                        </div>
+                        <div>
+                                <input class="form-input" name="Role" type="text" value="<% GetValueText( user.Role ) %>" readonly/>
+                        </div>
+                    </div>
+                    <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                        <div class="form-toolbar">
+                            <a class="form-button edit-button" href="/admin/user/edit/<% user.Id %>">
+                            </a>
+                            <a class="form-button remove-button" href="/admin/user/remove/<% user.Id %>">
+                            </a>
+                        </div>
+                    <? } ?>
+                </div>
+            </div>
+        <? } ?>
     </div>
 </div>
 <? include 'BLOCK/page_footer.php'; ?>

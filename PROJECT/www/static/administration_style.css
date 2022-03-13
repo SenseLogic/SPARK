@@ -350,17 +350,20 @@ textarea:focus {
 .justify-self-end {
   justify-self: flex-end;
 }
-.sortable-grid-column {
+.sortable-table-column {
   user-select: none;
   cursor: pointer;
 }
-.sortable-grid-column.order-is-ascending:after {
+.sortable-table-column.order-is-ascending:after {
   position: absolute;
   content: "\00a0\25B2";
 }
-.sortable-grid-column.order-is-descending:after {
+.sortable-table-column.order-is-descending:after {
   position: absolute;
   content: "\00a0\25BC";
+}
+.is-hidden {
+  display: none !important;
 }
 .margin-top-1rem {
   margin-top: 1rem !important;
@@ -499,6 +502,7 @@ textarea:focus {
   width: 1.5rem;
   border: none;
   display: inline-block;
+  cursor: pointer;
 }
 .form-button + .form-button {
   margin-left: 0.3125rem;
@@ -533,6 +537,9 @@ textarea:focus {
   justify-content: flex-end;
   align-items: center;
 }
+.filter-row {
+  display: contents;
+}
 .card-list {
   display: grid;
   grid-template-columns: 1fr;
@@ -558,9 +565,26 @@ textarea:focus {
   padding: 0.9375rem;
   background-color: #fff;
 }
+.tool-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.tool-container .filter-container {
+  flex-grow: 1;
+}
 .filter-container {
   position: relative;
   width: 100%;
+}
+.filter-container ~ .form-button {
+  margin-left: 1rem;
+  height: 2rem;
+  width: 2rem;
+}
+.filter-container .card-list {
+  margin-top: 1rem;
 }
 .filter-input {
   width: 100%;
@@ -601,6 +625,9 @@ textarea:focus {
 .apply-button {
   background: url("/static/image/admin/apply_icon.svg") no-repeat center center/contain;
 }
+.list-button {
+  background: url("/static/image/admin/list_icon.svg") no-repeat center center/contain;
+}
 .table-container {
   align-items: start;
 }
@@ -609,6 +636,9 @@ textarea:focus {
 }
 .text-button {
   background: url("/static/image/admin/text_icon.svg") no-repeat center center/contain;
+}
+.block-button {
+  background: url("/static/image/admin/block_icon.svg") no-repeat center center/contain;
 }
 .article-button {
   background: url("/static/image/admin/article_icon.svg") no-repeat center center/contain;
@@ -621,6 +651,9 @@ textarea:focus {
 }
 .text-table {
   grid-template-columns: repeat(3, auto);
+}
+.block-table {
+  grid-template-columns: repeat(8, auto);
 }
 .article-table {
   grid-template-columns: repeat(9, auto);
