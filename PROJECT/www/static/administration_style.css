@@ -384,14 +384,16 @@ textarea:focus {
   grid-template-columns: auto 1fr;
 }
 .page-menu {
-  width: 4.5rem;
-  padding: 0.9375rem;
+  padding: 0.5rem;
   display: flex;
   grid-area: 1/1/span 2;
   background-image: linear-gradient(to right, #29323c 0%, #485563 100%);
 }
+.page-menu-content {
+  padding-top: 0.5rem;
+}
 .page-menu-item {
-  margin-top: 0.625rem;
+  margin-bottom: 0.25rem;
 }
 .page-menu-title {
   margin-left: 0.3125rem;
@@ -399,13 +401,13 @@ textarea:focus {
   color: #fff;
 }
 .page-title {
-  padding: 0.9375rem;
+  padding: 0.25rem;
   grid-area: 1/2;
   background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);
   text-align: center;
 }
 .page-title-content {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   color: #fff;
 }
 .page-body {
@@ -508,8 +510,8 @@ textarea:focus {
   margin-left: 0.3125rem;
 }
 .form-button-large {
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 2rem;
+  width: 2rem;
 }
 .form-button-tooltip {
   z-index: 100;
@@ -517,10 +519,10 @@ textarea:focus {
   display: none;
 }
 .form-button:hover + .form-button-tooltip {
-  margin-left: 0.9375rem;
+  margin-left: 0.5rem;
   border-top-right-radius: 0.3125rem;
   border-bottom-right-radius: 0.3125rem;
-  padding: 0.5rem 0.9375rem 0.5rem 0.625rem;
+  padding: 0.25rem 0.75rem 0.25rem 0.5rem;
   display: inline-block;
   background-color: #475462;
   color: #fff;

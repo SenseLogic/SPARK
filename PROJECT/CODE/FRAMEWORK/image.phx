@@ -1,5 +1,142 @@
 // -- FUNCTIONS
 
+function CreateImage(
+    int width,
+    int height
+    )
+{
+    return imagecreatetruecolor( width, height );
+}
+
+// ~~
+
+function CreateCopiedImage(
+    image
+    )
+{
+    var width = imageSX( image );
+    var height = imageSY( image );
+    var new_image = imagecreatetruecolor( width, height );
+
+    imagecopyresampled(
+        new_image,
+        image,
+        0,
+        0,
+        0,
+        0,
+        width,
+        height,
+        width,
+        height
+        );
+
+    return new_image;
+}
+
+// ~~
+
+function CreateResizedImage(
+    image,
+    int new_width,
+    int new_height
+    )
+{
+    var old_width = imageSX( image );
+    var old_height = imageSY( image );
+    var new_image = imagecreatetruecolor( new_width, new_height );
+
+    imagecopyresampled(
+        new_image,
+        image,
+        0,
+        0,
+        0,
+        0,
+        new_width,
+        new_height,
+        old_width,
+        old_height
+        );
+
+    return new_image;
+}
+
+// ~~
+
+function CreateConstrainedImage(
+    image,
+    int minimum_width = 0,
+    int maximum_width = 32768,
+    int minimum_height = 0,
+    int maximum_height = 32768
+    )
+{
+    var old_width = imageSX( image );
+    var old_height = imageSY( image );
+
+    if ( old_width > 0
+         && old_height > 0 )
+    {
+        var new_width = old_width;
+        var new_height = old_height;
+
+        if ( new_width < minimum_width )
+        {
+            new_width = minimum_width;
+            new_height = GetInteger( old_height * new_width / old_width );
+        }
+        else if ( new_width > maximum_width )
+        {
+            new_width = maximum_width;
+            new_height = GetInteger( old_height * new_width / old_width );
+        }
+
+        if ( new_height < minimum_height )
+        {
+            new_height = minimum_height;
+            new_width = GetInteger( old_width * new_height / old_height );
+        }
+        else if ( new_height > maximum_height )
+        {
+            new_height = maximum_height;
+            new_width = GetInteger( old_width * new_height / old_height );
+        }
+
+        var new_image = imagecreatetruecolor( new_width, new_height );
+
+        imagecopyresampled(
+            new_image,
+            image,
+            0,
+            0,
+            0,
+            0,
+            new_width,
+            new_height,
+            old_width,
+            old_height
+            );
+
+        return new_image;
+    }
+    else
+    {
+        return imagecreatetruecolor( 0, 0 );
+    }
+}
+
+// ~~
+
+function ReleaseImage(
+    image
+    )
+{
+    return imagedestroy( image );
+}
+
+// ~~
+
 function GetImageColor(
     image,
     float color_red,
