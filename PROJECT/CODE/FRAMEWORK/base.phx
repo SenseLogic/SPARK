@@ -5,13 +5,13 @@ function GetValue(
     default_value = ''
     )
 {
-    if ( isset( value ) )
+    if ( is_null( value ) )
     {
-        return value;
+        return default_value;
     }
     else
     {
-        return default_value;
+        return value;
     }
 }
 

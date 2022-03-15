@@ -46,6 +46,23 @@ sup
     vertical-align: baseline;
 }
 
+table
+{
+    border-collapse: collapse;
+}
+
+table tr:first-child
+{
+    font-weight: bold;
+    text-align: center;
+}
+
+td
+{
+    border: 1px solid #888888;
+    padding: 0.5rem;
+}
+
 ::-webkit-scrollbar
 {
     width: 1rem;
@@ -154,6 +171,11 @@ MakeColorValue( "blue", BlueColor );
     transform: scale( 1.1 );
 }
 
+.paragraph + .paragraph
+{
+    margin-top: 0.5em;
+}
+
 .title-1
 {
     font-size: 2rem;
@@ -172,6 +194,37 @@ MakeColorValue( "blue", BlueColor );
 .title-4
 {
     font-size: 1rem;
+}
+
+.dash-1
+{
+    margin-left: 1em;
+}
+
+.dash-2
+{
+    margin-left: 2em;
+}
+
+.dash-3
+{
+    margin-left: 3em;
+}
+
+.dash-4
+{
+    margin-left: 4em;
+}
+
+.dash-1::before,
+.dash-2::before,
+.dash-3::before,
+.dash-4::before
+{
+    position: absolute;
+    transform: translateX( -0.9em );
+
+    content: "-";
 }
 
 .bullet-1
@@ -200,7 +253,7 @@ MakeColorValue( "blue", BlueColor );
 .bullet-4::before
 {
     position: absolute;
-    transform: translateX( -1em );
+    transform: translateX( -0.9em );
 
     content: "\2022";
 }

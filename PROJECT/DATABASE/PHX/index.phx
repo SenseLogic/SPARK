@@ -37,22 +37,32 @@ else
     define( 'VersionTimestamp', GetVersionTimestamp( 600 ) );
 }
 
-DefineNewlineTag( '<div>', '</div>' );
-DefineLineTag( '<div>! ', '<div class="title-1">' );
-DefineLineTag( '<div>!! ', '<div class="title-2">' );
-DefineLineTag( '<div>!!! ', '<div class="title-3">' );
-DefineLineTag( '<div>!!!! ', '<div class="title-4">' );
-DefineLineTag( '<div>* ', '<div class="bullet-1">' );
-DefineLineTag( '<div>  * ', '<div class="bullet-2">' );
-DefineLineTag( '<div>    * ', '<div class="bullet-3">' );
-DefineLineTag( '<div>      * ', '<div class="bullet-4">' );
+DefineLineTag( '! ', '<div class="paragraph title-1">', '</div>' );
+DefineLineTag( '!! ', '<div class="paragraph title-2">', '</div>' );
+DefineLineTag( '!!! ', '<div class="paragraph title-3">', '</div>' );
+DefineLineTag( '!!!! ', '<div class="paragraph title-4">', '</div>' );
+DefineLineTag( '- ', '<div class="paragraph dash-1">', '</div>' );
+DefineLineTag( '  - ', '<div class="paragraph dash-2">', '</div>' );
+DefineLineTag( '    - ', '<div class="paragraph dash-3">', '</div>' );
+DefineLineTag( '      - ', '<div class="paragraph dash-4">', '</div>' );
+DefineLineTag( '* ', '<div class="paragraph bullet-1">', '</div>' );
+DefineLineTag( '  * ', '<div class="paragraph bullet-2">', '</div>' );
+DefineLineTag( '    * ', '<div class="paragraph bullet-3">', '</div>' );
+DefineLineTag( '      * ', '<div class="paragraph bullet-4">', '</div>' );
+DefineLineTag( '', '<div class="paragraph">', '</div>' );
 
-DefineTag( '§', '<br>' );
 DefineDualTag( '**', '<b>', '</b>' );
 DefineDualTag( '%%', '<i>', '</i>' );
 DefineDualTag( '__', '<u>', '</u>' );
 DefineDualTag( '^^', '<sup>', '</sup>' );
 DefineDualTag( ',,', '<sub>', '</sub>' );
+
+DefineTag( '§', '<br>' );
+DefineTag( '[[[', '<table>' );
+DefineTag( ']]]', '</table>' );
+DefineTag( '[[', '<tr><td>' );
+DefineTag( '||', '</td><td>' );
+DefineTag( ']]', '</td></tr>' );
 
 DefineOpenTag( 'div' );
 DefineOpenTag( 'span' );

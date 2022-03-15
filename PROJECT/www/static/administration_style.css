@@ -380,14 +380,23 @@ textarea:focus {
 .page-container {
   min-height: 100vh;
   display: grid;
-  grid-template-rows: auto 1fr;
-  grid-template-columns: auto 1fr;
+  grid-template-rows: 3rem 1fr;
+  grid-template-columns: 3rem 1fr;
 }
 .page-menu {
+  z-index: 1000;
+  position: fixed;
+  overflow-y: auto;
+  scrollbar-width: none !important;
+  height: 100vh;
+  width: 3rem;
   padding: 0.5rem;
   display: flex;
   grid-area: 1/1/span 2;
   background-image: linear-gradient(to right, #29323c 0%, #485563 100%);
+}
+.page-menu::-webkit-scrollbar {
+  display: none !important;
 }
 .page-menu-content {
   padding-top: 0.5rem;
@@ -396,7 +405,7 @@ textarea:focus {
   margin-bottom: 0.25rem;
 }
 .page-menu-title {
-  margin-left: 0.3125rem;
+  margin-left: 0.25rem;
   font-size: 1.25rem;
   color: #fff;
 }
@@ -411,7 +420,7 @@ textarea:focus {
   color: #fff;
 }
 .page-body {
-  padding: 0.9375rem;
+  padding: 1rem;
   grid-area: 2/2;
   background-image: linear-gradient(to top, #fdfbfb 0%, #ebedee 100%);
 }
@@ -419,18 +428,18 @@ textarea:focus {
   color: #222;
 }
 .page-section {
-  border-radius: 0.625rem;
-  padding: 0.9375rem;
+  border-radius: 0.5rem;
+  padding: 1rem;
   background-color: #fff;
 }
 .page-section + .page-section {
-  margin-top: 0.9375rem;
+  margin-top: 1rem;
 }
 .form-container {
   width: 100%;
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-gap: 0.9375rem;
+  grid-gap: 1rem;
   justify-content: center;
   align-items: flex-start;
 }
@@ -444,15 +453,15 @@ textarea:focus {
   outline: solid #f00 1px;
 }
 .form-translation + .form-translation {
-  margin-top: 0.3125rem;
+  margin-top: 0.25rem;
 }
 .form-input,
 .form-select {
   min-height: 2rem;
   width: 100%;
   border: 0.0625rem solid #ccc;
-  border-radius: 0.3125rem;
-  padding: 0.3125rem;
+  border-radius: 0.25rem;
+  padding: 0.25rem;
   display: block;
 }
 .form-textarea {
@@ -461,8 +470,8 @@ textarea:focus {
   min-height: 2.25rem;
   width: 100%;
   border: 0.0625rem solid #ccc;
-  border-radius: 0.3125rem;
-  padding: 0.3125rem;
+  border-radius: 0.25rem;
+  padding: 0.25rem;
   display: block;
 }
 .form-upload-container {
@@ -475,7 +484,7 @@ textarea:focus {
   height: 12.5rem;
   width: auto;
   max-width: 80%;
-  border-radius: 0.3125rem;
+  border-radius: 0.25rem;
   background: repeating-conic-gradient(#eee 0% 25%, transparent 0% 50%) 50%/20px 20px;
 }
 .form-upload-icon {
@@ -488,7 +497,7 @@ textarea:focus {
   width: 0;
 }
 .form-field-name {
-  padding-top: 0.3125rem;
+  padding-top: 0.25rem;
   font-weight: 700;
 }
 .form-column-name {
@@ -507,7 +516,7 @@ textarea:focus {
   cursor: pointer;
 }
 .form-button + .form-button {
-  margin-left: 0.3125rem;
+  margin-left: 0.25rem;
 }
 .form-button-large {
   height: 2rem;
@@ -520,8 +529,8 @@ textarea:focus {
 }
 .form-button:hover + .form-button-tooltip {
   margin-left: 0.5rem;
-  border-top-right-radius: 0.3125rem;
-  border-bottom-right-radius: 0.3125rem;
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
   padding: 0.25rem 0.75rem 0.25rem 0.5rem;
   display: inline-block;
   background-color: #475462;
@@ -545,7 +554,7 @@ textarea:focus {
 .card-list {
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 0.9375rem;
+  grid-gap: 1rem;
 }
 @media (min-width: 60em) {
   .card-list {
@@ -563,15 +572,15 @@ textarea:focus {
   }
 }
 .card {
-  border-radius: 0.625rem;
-  padding: 0.9375rem;
+  border-radius: 0.5rem;
+  padding: 1rem;
   background-color: #fff;
 }
 .tool-container {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
 }
 .tool-container .filter-container {
   flex-grow: 1;
@@ -592,15 +601,15 @@ textarea:focus {
   width: 100%;
   border: 0.0625rem solid #ccc;
   border: 0.0625rem solid #ccc;
-  border-radius: 0.625rem;
-  padding: 0.3125rem 0.9375rem;
+  border-radius: 0.5rem;
+  padding: 0.25rem 1rem;
   background-color: #fff;
 }
 .filter-button {
   position: absolute;
   right: 0.125rem;
   height: 100%;
-  padding: 0.3125rem 0.9375rem;
+  padding: 0.25rem 1rem;
   cursor: pointer;
 }
 .disconnect-button {

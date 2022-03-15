@@ -97,8 +97,52 @@ TEXT
               ¨fr:Mention légale
 
         LegalNoticeText
-            ~ ! Title\^\^TM\^\^\\n* **Bold**\\n  * %%Italic%%\\n    * __Underlined__\\n* Normal\\nSome text,,2,,.
-              ¨fr:! Titre\^\^TM\^\^\\n* **Gras**\\n  * %%Italique%%\\n    * __Souligné__\\n* Normal\\nUn texte,,2,,.
+            ~ ! Title\^\^TM\^\^\\n
+              \\n
+              * **Bold**\\n
+              \\n
+              ^ * %%Italic%%\\n
+              \\n
+              ^   * __Underlined__\\n
+              \\n
+              * Normal\\n
+              \\n
+              A text,,2,,§\\n
+              on several§\\n
+              lines.\\n
+              \\n
+              §\\n
+              \\n
+              !! Subtitle.\\n
+              \\n
+              [[[\\n
+              [[ Before || After ]]\\n
+              [[ first value || second value ]]\\n
+              [[ third value || fourth value ]]\\n
+              ]]]
+              ¨fr:! Titre\^\^TM\^\^\\n
+              \\n
+              - **Gras**\\n
+              \\n
+              ^ - %%Italique%%\\n
+              \\n
+              ^   - __Souligné__\\n
+              \\n
+              - Normal\\n
+              \\n
+              Un texte,,2,,§\\n
+              sur plusieurs§\\n
+              lignes.\\n
+              \\n
+              §\\n
+              \\n
+              !! Sous-titre.\\n
+              \\n
+              [[[\\n
+              [[ Avant || Après ]]\\n
+              [[ première valeur || seconde valeur ]]\\n
+              [[ troisième valeur || quatrième valeur ]]\\n
+              ]]]
 
 USER
 

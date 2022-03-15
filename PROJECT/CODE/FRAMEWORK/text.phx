@@ -5,8 +5,6 @@ var ProcessedTagArray = [];
 var ProcessedTagDefinitionArray = [];
 var ProcessedDualTagArray = [];
 var ProcessedDualTagDefinitionArray = [];
-var ProcessedNewlineOpeningTag = '';
-var ProcessedNewlineClosingTag = '';
 var ProcessedLineTagArray = [];
 var ProcessedLineTagDefinitionArray = [];
 var EndTagIsDefined = false;
@@ -18,6 +16,15 @@ function GetCharacterCount(
     )
 {
     return strlen( text );
+}
+
+// ~~
+
+function HasText(
+    value
+    )
+{
+    return !is_null( value ) && value !== '';
 }
 
 // ~~
@@ -275,12 +282,7 @@ function HasPrefix(
     string prefix
     )
 {
-    var text_character_count = strlen( text );
-    var prefix_character_count = strlen( prefix );
-
-    return
-        text_character_count >= prefix_character_count
-        && strncmp( text, prefix, prefix_character_count ) === 0;
+    return strncmp( text, prefix, strlen( prefix ) ) === 0;
 }
 
 // ~~
@@ -290,11 +292,9 @@ function RemovePrefix(
     string prefix
     )
 {
-    var text_character_count = strlen( text );
     var prefix_character_count = strlen( prefix );
 
-    if ( text_character_count >= prefix_character_count
-         && strncmp( text, prefix, prefix_character_count ) === 0 )
+    if ( strncmp( text, prefix, prefix_character_count ) === 0 )
     {
         return substr( text, prefix_character_count );
     }
@@ -849,24 +849,10 @@ function GetProcessedText(
 
 // ~~
 
-function DefineNewlineTag(
-    string newline_opening_tag,
-    string newline_ending_tag
-    )
-{
-    global
-        ProcessedNewlineClosingTag,
-        ProcessedNewlineOpeningTag;
-
-    ProcessedNewlineOpeningTag = newline_opening_tag;
-    ProcessedNewlineClosingTag = newline_ending_tag;
-}
-
-// ~~
-
 function DefineLineTag(
     string line_tag,
-    string line_tag_definition
+    string line_tag_opening_definition,
+    string line_tag_closing_definition
     )
 {
     global
@@ -874,7 +860,8 @@ function DefineLineTag(
         ProcessedLineTagDefinitionArray;
 
     array_push( ProcessedLineTagArray, line_tag );
-    array_push( ProcessedLineTagDefinitionArray, line_tag_definition );
+    array_push( ProcessedLineTagDefinitionArray, line_tag_opening_definition );
+    array_push( ProcessedLineTagDefinitionArray, line_tag_closing_definition );
 }
 
 // ~~
@@ -885,20 +872,41 @@ function GetProcessedMultilineText(
 {
     global
         ProcessedLineTagArray,
-        ProcessedLineTagDefinitionArray,
-        ProcessedNewlineClosingTag,
-        ProcessedNewlineOpeningTag;
+        ProcessedLineTagDefinitionArray;
 
-    if ( ProcessedNewlineOpeningTag !== '' )
+    var processed_line_tag_count = count( ProcessedLineTagArray );
+
+    if ( processed_line_tag_count > 0 )
     {
-        text
-            = str_replace(
-                ProcessedLineTagArray,
-                ProcessedLineTagDefinitionArray,
-                ProcessedNewlineOpeningTag
-                .. str_replace( "\n", ProcessedNewlineClosingTag .. ProcessedNewlineOpeningTag, text )
-                .. ProcessedNewlineClosingTag
-                );
+        var line_array = explode( "\n\n", str_replace( "\r", '', text ) );
+        var line_count = count( line_array );
+
+        for ( var line_index = 0;
+              line_index < line_count;
+              ++line_index )
+        {
+            var line = ltrim( line_array[ line_index ], "\n" );
+
+            for ( var processed_line_tag_index = 0;
+                  processed_line_tag_index < processed_line_tag_count;
+                  ++processed_line_tag_index )
+            {
+                var processed_line_tag = ProcessedLineTagArray[ processed_line_tag_index ];
+                var processed_line_tag_character_count = strlen( processed_line_tag );
+
+                if ( strncmp( line, processed_line_tag, processed_line_tag_character_count ) === 0 )
+                {
+                    line_array[ line_index ]
+                        = ProcessedLineTagDefinitionArray[ processed_line_tag_index * 2 ]
+                          .. substr( line, processed_line_tag_character_count )
+                          .. ProcessedLineTagDefinitionArray[ processed_line_tag_index * 2 + 1 ];
+
+                    break;
+                }
+            }
+        }
+
+        text = implode( "\n", line_array );
     }
 
     return GetProcessedText( text );

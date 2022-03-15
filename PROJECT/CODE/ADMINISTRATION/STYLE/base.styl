@@ -83,18 +83,30 @@ MakeSortableTableColumn();
     min-height: 100vh;
 
     display: grid;
-    grid-template-rows: auto 1fr;
-    grid-template-columns: auto 1fr;
+    grid-template-rows: 3rem 1fr;
+    grid-template-columns: 3rem 1fr;
 }
 
 .page-menu
 {
+    z-index: 1000;
+    position: fixed;
+
+    overflow-y: auto;
+    scrollbar-width: none !important;
+    height: 100vh;
+    width: 3rem;
     padding: 0.5rem;
 
     display: flex;
     grid-area: 1 / 1 / span 2;
 
     background-image: linear-gradient( to right, #29323c 0%, #485563 100%);
+}
+
+.page-menu::-webkit-scrollbar
+{
+    display: none !important;
 }
 
 .page-menu-content
@@ -109,9 +121,9 @@ MakeSortableTableColumn();
 
 .page-menu-title
 {
-    margin-left: 5 * Pxm;
+    margin-left: 0.25rem;
 
-    font-size: 20 * Pxm;
+    font-size: 1.25rem;
     color: #FFFFFF;
 }
 
@@ -134,7 +146,7 @@ MakeSortableTableColumn();
 
 .page-body
 {
-    padding: 15 * Pxm;
+    padding: 1rem;
 
     grid-area: 2 / 2;
 
@@ -148,15 +160,15 @@ MakeSortableTableColumn();
 
 .page-section
 {
-    border-radius: 10 * Pxm;
-    padding: 15 * Pxm;
+    border-radius: 0.5rem;
+    padding: 1rem;
 
     background-color: #FFFFFF;
 }
 
 .page-section + .page-section
 {
-    margin-top: 15 * Pxm;
+    margin-top: 1rem;
 }
 
 .form-container
@@ -165,7 +177,7 @@ MakeSortableTableColumn();
 
     display: grid;
     grid-template-columns: auto 1fr;
-    grid-gap: 15 * Pxm;
+    grid-gap: 1rem;
     justify-content: center;
     align-items: flex-start;
 }
@@ -187,17 +199,17 @@ MakeSortableTableColumn();
 
 .form-translation + .form-translation,
 {
-    margin-top: 5 * Pxm;
+    margin-top: 0.25rem;
 }
 
 .form-input,
 .form-select
 {
-    min-height: 32 * Pxm;
+    min-height: 2rem;
     width: 100%;
     border: 1 * Pxm solid #CCCCCC;
-    border-radius: 5 * Pxm;
-    padding: 5 * Pxm;
+    border-radius: 0.25rem;
+    padding: 0.25rem;
 
     display: block;
 }
@@ -205,19 +217,19 @@ MakeSortableTableColumn();
 .form-textarea
 {
     overflow: hidden;
-    height: 36 * Pxm;
-    min-height: 36 * Pxm;
+    height: 2.25rem;
+    min-height: 2.25rem;
     width: 100%;
     border: 1 * Pxm solid #CCCCCC;
-    border-radius: 5 * Pxm;
-    padding: 5 * Pxm;
+    border-radius: 0.25rem;
+    padding: 0.25rem;
 
     display: block;
 }
 
 .form-upload-container
 {
-    margin-top: 8 * Pxm;
+    margin-top: 0.5rem;
 
     display: flex;
     align-items: center;
@@ -226,18 +238,18 @@ MakeSortableTableColumn();
 .form-upload-image,
 .form-upload-video
 {
-    height: 200 * Pxm;
+    height: 12.5rem;
     width: auto;
     max-width: 80%;
-    border-radius: 5 * Pxm;
+    border-radius: 0.25rem;
 
     background: repeating-conic-gradient( #EEEEEE 0% 25%, transparent 0% 50% ) 50% / 20px 20px;
 }
 
 .form-upload-icon
 {
-    margin-left: 4 * Pxm;
-    height: 16 * Pxm;
+    margin-left: 0.25rem;
+    height: 1rem;
 }
 
 .form-upload-file
@@ -249,7 +261,7 @@ MakeSortableTableColumn();
 
 .form-field-name
 {
-    padding-top: 5 * Pxm;
+    padding-top: 0.25rem;
 
     font-weight: 700;
 }
@@ -279,7 +291,7 @@ MakeSortableTableColumn();
 
 .form-button + .form-button
 {
-    margin-left: 5 * Pxm;
+    margin-left: 0.25rem;
 }
 
 .form-button-large
@@ -299,8 +311,8 @@ MakeSortableTableColumn();
 .form-button:hover + .form-button-tooltip
 {
     margin-left: 0.5rem;
-    border-top-right-radius: 5 * Pxm;
-    border-bottom-right-radius: 5 * Pxm;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
     padding: 0.25rem 0.75rem 0.25rem 0.5rem;
 
     display: inline-block;
@@ -337,7 +349,7 @@ MakeSortableTableColumn();
 {
     display: grid;
     grid-template-columns: 1fr;
-    grid-gap: 15 * Pxm;
+    grid-gap: 1rem;
 
     +Media( min-width-60em )
     {
@@ -361,18 +373,19 @@ MakeSortableTableColumn();
 
 .card
 {
-    border-radius: 10 * Pxm;
-    padding: 15 * Pxm;
+    border-radius: 0.5rem;
+    padding: 1rem;
 
     background-color: #FFFFFF;
 }
 
 .tool-container
 {
+    width: 100%;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
 }
 
 .tool-container .filter-container
@@ -386,7 +399,6 @@ MakeSortableTableColumn();
 
     width: 100%;
 }
-
 
 .filter-container ~ .form-button
 {
@@ -405,8 +417,8 @@ MakeSortableTableColumn();
     width: 100%;
     border: 1 * Pxm solid #CCCCCC;
     border: 1 * Pxm solid #CCCCCC;
-    border-radius: 10 * Pxm;
-    padding: 5 * Pxm 15 * Pxm;
+    border-radius: 0.5rem;
+    padding: 0.25rem 1rem;
 
     background-color: white;
 }
@@ -414,10 +426,10 @@ MakeSortableTableColumn();
 .filter-button
 {
     position: absolute;
-    right: 2 * Pxm;
+    right: 0.125rem;
 
     height: 100%;
-    padding: 5 * Pxm 15 * Pxm;
+    padding: 0.25rem 1rem;
 
     cursor: pointer;
 }
