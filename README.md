@@ -79,29 +79,31 @@ Both are fully functional, but mostly unstyled on purpose.
 
 The template files are located in the **PROJECT** folder, and have no external dependencies except **VISTA**, a minimalistic front-end framework.
 
-The project build chain is using the following tools to **simplify** and **automate** the most frequent development tasks :
+The following tools are thus not necessary per se, but are very useful to **automate** many frequent development tasks :
 
 *   [Flex](https://github.com/senselogic/FLEX)
-    *   to fix the placeholder identifiers when instantiating the project.
+    *   fixes the placeholder identifiers when instantiating the project.
 *   [Basil](https://github.com/senselogic/BASIL)
-    *   to textually design the database schema and test data, and generate the SQL initialization scripts;
-    *   to generate the request routing, database access, REST API and administration website code.
+    *   compiles the database schema and test data into SQL initialization scripts;
+    *   generates the request routing, database access, REST API and administration website code.
 *   [Cyclone](https://github.com/senselogic/CYCLONE)
-    *   to update the database schema and data on the development system.
+    *   updates the database schema and data on the development system.
 *   [Phoenix](https://github.com/senselogic/PHOENIX)
-    *   to compile Phoenix scripts into human-readable PHP code.
+    *   compiles Phoenix scripts into human-readable PHP code.
 *   [Vista](https://github.com/senselogic/VISTA)
-    *   as front-end framework for both the public and administration websites.
+    *   provides CSS styling and JavaScript tools for both the public and administration websites.
 *   [Phyx](https://github.com/senselogic/PHYX)
-    *   to fix Stylus declarations.
+    *   fixes Stylus declarations.
 *   [Stylus](https://github.com/stylus/stylus)
-    *   to compile Stylus scripts into CSS code.
+    *   compiles Stylus scripts into CSS code.
 *   [Cylus](https://github.com/senselogic/CYLUS)
-    *   to find unused and missing CSS classes in the PHP code.
+    *   finds unused and missing CSS classes in the PHP code.
 *   [Resync](https://github.com/senselogic/RESYNC)
-    *   to update the website code and data on the development system.
+    *   updates the website code and data on the development system.
 
 ## Tools installation
+
+The following instructions describe how to install all the above tools on Windows and Linux platforms.
 
 ## On Windows
 
