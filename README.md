@@ -205,7 +205,11 @@ Default language text¨de:German text¨fr:French text¨ru:Russian text...
 
 They can contain any HTML **tag** or **entity**.
 
-**Custom HTML tags** can easily be defined :
+```
+A text<br>on two lines.¨fr:Un texte<br>sur deux lignes.
+```
+
+**Custom HTML tags** can also be defined :
 
 ```
 DefineLineTag( '! ', '<div class="paragraph title-1">', '</div>' );
