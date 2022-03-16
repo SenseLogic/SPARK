@@ -200,10 +200,10 @@ The following instructions describe how to install all the above tools on Window
 Any string can be internationalized by separating translations with special **language specifiers** :
 
 ```
-Default language text¨de:German text¨fr:French text¨ru:Russian text...
+Default language text¨de:German text¨fr:French text¨ru:Russian text
 ```
 
-They can contain any HTML **tag** or **entity**.
+They can contain any HTML **tag** or **entity** :
 
 ```
 A text<br>on two lines.¨fr:Un texte<br>sur deux lignes.
