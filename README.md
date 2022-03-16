@@ -79,7 +79,7 @@ Both are fully functional, but mostly unstyled on purpose.
 
 The template files are located in the **PROJECT** folder, and have no external dependencies except **VISTA**, a minimalistic front-end framework.
 
-The following tools are not required to use SPARK, but are useful to **automate** many development tasks :
+The following tools are not required to use SPARK, but are useful to automate many development tasks :
 
 *   [Flex](https://github.com/senselogic/FLEX)
     *   fixes the placeholder identifiers when instantiating the project.
