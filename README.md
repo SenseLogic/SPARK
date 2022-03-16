@@ -67,12 +67,15 @@ It provides a starting version of :
     *   login
     *   table menu
     *   table view
-    *   row view
-    *   row creation
-    *   row editing
-    *   row removal
+    *   table filter
+    *   card view
+    *   card filter
+    *   element view
+    *   element creation
+    *   element editing
+    *   element removal
 
-Both are fully functional, but almost unstyled, on purpose.
+Both are fully functional, but mostly unstyled on purpose.
 
 The template files are located in the **PROJECT** folder, and have no external dependencies except **VISTA**, a minimalistic front-end framework.
 
