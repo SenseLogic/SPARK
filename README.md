@@ -86,8 +86,6 @@ The following tools are not required to use the SPARK framework, but are useful 
 *   [Basil](https://github.com/senselogic/BASIL)
     *   compiles the database schema and test data into SQL initialization scripts;
     *   generates the request routing, database access, REST API and administration website code.
-*   [Cyclone](https://github.com/senselogic/CYCLONE)
-    *   updates the database schema and data on the development system.
 *   [Phoenix](https://github.com/senselogic/PHOENIX)
     *   compiles Phoenix scripts into human-readable PHP code.
 *   [Vista](https://github.com/senselogic/VISTA)
@@ -100,6 +98,8 @@ The following tools are not required to use the SPARK framework, but are useful 
     *   finds unused and missing CSS classes in the PHP code.
 *   [Resync](https://github.com/senselogic/RESYNC)
     *   updates the website code and data on the development system.
+*   [Cyclone](https://github.com/senselogic/CYCLONE)
+    *   updates the database schema and data on the development system.
 
 ## Tools installation
 
