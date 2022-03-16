@@ -203,9 +203,11 @@ Any string can be internationalized by separating translations with **language s
 Default language text¨de:German text¨fr:French text¨ru:Russian text...
 ```
 
-Strings can also contain any HTML **tag** or **entity**.
+## Texts
 
-**Custom HTML tags** can be defined :
+Translated texts can contain any HTML **tag** or **entity**.
+
+Moreover, **custom HTML tags** can be defined :
 
 ```
 DefineLineTag( '! ', '<div class="paragraph title-1">', '</div>' );
