@@ -13,6 +13,13 @@ RedColor = #FF0000;
 GreenColor = #00FF00;
 BlueColor = #0000FF;
 
+LinkColor = #86B4F0;
+LinkHoverColor = #A2C2EC;
+TableBorderColor = #888888;
+ScrollbarThumbColor = rgba( 255, 255, 255, 0.3 );
+ScrollbarThumbHoverColor = rgba( 255, 255, 255, 0.2 );
+ScrollbarTrackColor = rgba( 0, 0, 0, 0.1 );
+
 // -- ELEMENTS
 
 html
@@ -37,6 +44,18 @@ textarea
     font-family: "Ubuntu", sans-serif;
 }
 
+.view-content-text-container a,
+.view-content-text-container a:link
+{
+    color: LinkColor;
+}
+
+.view-content-text-container a:hover,
+.view-content-text-container a:active
+{
+    color: LinkHoverColor;
+}
+
 sup
 {
     position: relative;
@@ -49,38 +68,51 @@ sup
 table
 {
     border-collapse: collapse;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 table tr:first-child
 {
-    font-weight: bold;
+    font-weight: 700;
     text-align: center;
 }
 
 td
 {
-    border: 1px solid #888888;
+    border: 1px solid TableBorderColor;
     padding: 0.5rem;
+}
+
+html,
+body,
+body *,
+button,
+input,
+textarea
+{
+    scrollbar-width: thin;
+    scrollbar-color: ScrollbarThumbColor ScrollbarTrackColor;
 }
 
 ::-webkit-scrollbar
 {
-    width: 1rem;
-}
-
-::-webkit-scrollbar-track
-{
-    background: rgba( 0, 0, 0, 0.2 );
+    width: 0.4rem;
 }
 
 ::-webkit-scrollbar-thumb
 {
-    background: rgba( 255, 255, 255, 0.3 );
+    background: ScrollbarThumbColor;
 }
 
 ::-webkit-scrollbar-thumb:hover
 {
-    background: rgba( 255, 255, 255, 0.5 );
+    background: ScrollbarThumbHoverColor;
+}
+
+::-webkit-scrollbar-track
+{
+    background: ScrollbarTrackColor;
 }
 
 // -- CLASSES
@@ -193,7 +225,7 @@ MakeColorValue( "blue", BlueColor );
 
 .title-4
 {
-    font-size: 1rem;
+    font-size: 1.25rem;
 }
 
 .dash-1

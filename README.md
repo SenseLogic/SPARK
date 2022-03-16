@@ -203,13 +203,36 @@ Strings can also contain any HTML **tag** or **entity**.
 **Custom HTML tags** can be defined :
 
 ```
-DefineOpenTag( 'div' );
-DefineOpenTag( 'span' );
-DefineAttributeTag( 'route', 'data-route' );
-DefineOpenTag( 'a' );
-DefineAttributeTag( 'href' );
-DefineOpenTag( 'img' );
-DefineAttributeTag( 'src' );
+DefineLineTag( '! ', '<div class="paragraph title-1">', '</div>' );
+DefineLineTag( '!! ', '<div class="paragraph title-2">', '</div>' );
+DefineLineTag( '!!! ', '<div class="paragraph title-3">', '</div>' );
+DefineLineTag( '!!!! ', '<div class="paragraph title-4">', '</div>' );
+DefineLineTag( '- ', '<div class="paragraph dash-1">', '</div>' );
+DefineLineTag( '  - ', '<div class="paragraph dash-2">', '</div>' );
+DefineLineTag( '    - ', '<div class="paragraph dash-3">', '</div>' );
+DefineLineTag( '      - ', '<div class="paragraph dash-4">', '</div>' );
+DefineLineTag( '* ', '<div class="paragraph bullet-1">', '</div>' );
+DefineLineTag( '  * ', '<div class="paragraph bullet-2">', '</div>' );
+DefineLineTag( '    * ', '<div class="paragraph bullet-3">', '</div>' );
+DefineLineTag( '      * ', '<div class="paragraph bullet-4">', '</div>' );
+DefineLineTag( '', '<div class="paragraph">', '</div>' );
+
+DefineDualTag( '**', '<b>', '</b>' );
+DefineDualTag( '%%', '<i>', '</i>' );
+DefineDualTag( '__', '<u>', '</u>' );
+DefineDualTag( ',,', '<sub>', '</sub>' );
+DefineDualTag( '^^', '<sup>', '</sup>' );
+
+DefineTag( '§', '<br>' );
+DefineTag( '[[[', '<table>' );
+DefineTag( ']]]', '</table>' );
+DefineTag( '[[', '<tr><td>' );
+DefineTag( '||', '</td><td>' );
+DefineTag( ']]', '</td></tr>' );
+DefineTag( '((', '<a href="' );
+DefineTag( ')(', '">' );
+DefineTag( '))', '</a>' );
+
 DefineColorTag( 'red' );
 DefineColorTag( 'green', '#0F0' );
 DefineStyleTag( 'color' );
@@ -218,10 +241,35 @@ DefineStyleTag( 'weight', 'font-weight' );
 ```
 
 ```
-<div<container>>DIV</div>
-<span<button[route]home>>HOME</span>
-<a<color-red[href]/home/introduction>>LINK</a>
-<img<width-50% height-auto[src]/static/image/illustration.jpg>>
+! Title
+
+- item
+
+  * item
+
+  * item
+
+- item
+
+  * item
+
+  * item
+
+!! Subtitle
+
+**Bold** %%italic%% __underlined__ ,,subscript,, ^^superscript^^:
+
+[[[
+[[ Fruit || Vegetable ]]
+[[ apple || potato ]]
+[[ orange || carrot ]]
+[[ kiwi || broccoli ]]
+]]]
+
+For more information : ((http://www.wikipedia.com)(Wikipedia)).
+
+!! Subtitle
+
 <red>RED</red>
 <green>GREEN</green>
 <color<#00F>>BLUE</color>

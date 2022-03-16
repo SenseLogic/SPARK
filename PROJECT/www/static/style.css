@@ -330,6 +330,14 @@ input,
 textarea {
   font-family: "Ubuntu", sans-serif;
 }
+.view-content-text-container a,
+.view-content-text-container a:link {
+  color: #86b4f0;
+}
+.view-content-text-container a:hover,
+.view-content-text-container a:active {
+  color: #a2c2ec;
+}
 sup {
   position: relative;
   top: -0.7em;
@@ -338,26 +346,37 @@ sup {
 }
 table {
   border-collapse: collapse;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 table tr:first-child {
-  font-weight: bold;
+  font-weight: 700;
   text-align: center;
 }
 td {
   border: 1px solid #888;
   padding: 0.5rem;
 }
-::-webkit-scrollbar {
-  width: 1rem;
+html,
+body,
+body *,
+button,
+input,
+textarea {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.3) rgba(0,0,0,0.1);
 }
-::-webkit-scrollbar-track {
-  background: rgba(0,0,0,0.2);
+::-webkit-scrollbar {
+  width: 0.4rem;
 }
 ::-webkit-scrollbar-thumb {
   background: rgba(255,255,255,0.3);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.2);
+}
+::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.1);
 }
 .extended-container {
   margin-left: auto;
@@ -785,7 +804,7 @@ html {
   font-size: 1.5rem;
 }
 .title-4 {
-  font-size: 1rem;
+  font-size: 1.25rem;
 }
 .dash-1 {
   margin-left: 1em;

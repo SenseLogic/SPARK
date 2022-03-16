@@ -54,8 +54,8 @@ DefineLineTag( '', '<div class="paragraph">', '</div>' );
 DefineDualTag( '**', '<b>', '</b>' );
 DefineDualTag( '%%', '<i>', '</i>' );
 DefineDualTag( '__', '<u>', '</u>' );
-DefineDualTag( '^^', '<sup>', '</sup>' );
 DefineDualTag( ',,', '<sub>', '</sub>' );
+DefineDualTag( '^^', '<sup>', '</sup>' );
 
 DefineTag( '§', '<br>' );
 DefineTag( '[[[', '<table>' );
@@ -63,14 +63,10 @@ DefineTag( ']]]', '</table>' );
 DefineTag( '[[', '<tr><td>' );
 DefineTag( '||', '</td><td>' );
 DefineTag( ']]', '</td></tr>' );
+DefineTag( '((', '<a href="' );
+DefineTag( ')(', '">' );
+DefineTag( '))', '</a>' );
 
-DefineOpenTag( 'div' );
-DefineOpenTag( 'span' );
-DefineAttributeTag( 'route', 'data-route' );
-DefineOpenTag( 'a' );
-DefineAttributeTag( 'href' );
-DefineOpenTag( 'img' );
-DefineAttributeTag( 'src' );
 DefineColorTag( 'red' );
 DefineColorTag( 'green', '#0F0' );
 DefineStyleTag( 'color' );

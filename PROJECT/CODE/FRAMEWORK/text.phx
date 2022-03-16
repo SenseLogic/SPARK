@@ -786,11 +786,11 @@ function DefineStyleTag(
 {
     if ( style_name === '' )
     {
-        DefineTag( '<' .. tag_name .. '>', '<span style="' .. tag_name .. ':' );
+        DefineTag( '<' .. tag_name .. '<', '<span style="' .. tag_name .. ':' );
     }
     else
     {
-        DefineTag( '<' .. tag_name .. '>', '<span style="' .. style_name .. ':' );
+        DefineTag( '<' .. tag_name .. '<', '<span style="' .. style_name .. ':' );
     }
 
     DefineEndTag();

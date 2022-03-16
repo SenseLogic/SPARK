@@ -97,52 +97,74 @@ TEXT
               ¨fr:Mention légale
 
         LegalNoticeText
-            ~ ! Title\^\^TM\^\^\\n
+            ~ ! Title\\n
               \\n
-              * **Bold**\\n
+              - item\\n
               \\n
-              ^ * %%Italic%%\\n
+              ^ * item\\n
               \\n
-              ^   * __Underlined__\\n
+              ^ * item\\n
               \\n
-              * Normal\\n
+              - item\\n
               \\n
-              A text,,2,,§\\n
-              on several§\\n
-              lines.\\n
+              ^ * item\\n
               \\n
-              §\\n
+              ^ * item\\n
               \\n
-              !! Subtitle.\\n
+              !! Subtitle\\n
               \\n
-              [[[\\n
-              [[ Before || After ]]\\n
-              [[ first value || second value ]]\\n
-              [[ third value || fourth value ]]\\n
-              ]]]
-              ¨fr:! Titre\^\^TM\^\^\\n
-              \\n
-              - **Gras**\\n
-              \\n
-              ^ - %%Italique%%\\n
-              \\n
-              ^   - __Souligné__\\n
-              \\n
-              - Normal\\n
-              \\n
-              Un texte,,2,,§\\n
-              sur plusieurs§\\n
-              lignes.\\n
-              \\n
-              §\\n
-              \\n
-              !! Sous-titre.\\n
+              **Bold** %%italic%% __underlined__ ,,subscript,, \^\^superscript\^\^:\\n
               \\n
               [[[\\n
-              [[ Avant || Après ]]\\n
-              [[ première valeur || seconde valeur ]]\\n
-              [[ troisième valeur || quatrième valeur ]]\\n
-              ]]]
+              [[ Fruit || Vegetable ]]\\n
+              [[ apple || potato ]]\\n
+              [[ orange || carrot ]]\\n
+              [[ kiwi || broccoli ]]\\n
+              ]]]\\n
+              \\n
+              For more information : ((http://www.wikipedia.com)(Wikipedia)).\\n
+              \\n
+              !! Subtitle\\n
+              \\n
+              <red>RED</red>\\n
+              <green>GREEN</green>\\n
+              <color<#00F>>BLUE</color>\\n
+              <size<3rem>>BIG</size>\\n
+              <weight<100>>THIN</weight>\\n
+              ¨fr:! Titre\\n
+              \\n
+              - élément\\n
+              \\n
+              ^ * élément\\n
+              \\n
+              ^ * élément\\n
+              \\n
+              - élément\\n
+              \\n
+              ^ * élément\\n
+              \\n
+              ^ * élément\\n
+              \\n
+              !! Sous-titre\\n
+              \\n
+              **Gras** %%italique%% __souligné__ ,,indice,, \^\^exposant\^\^ :\\n
+              \\n
+              [[[\\n
+              [[ Fruit || Légume ]]\\n
+              [[ pomme || patate ]]\\n
+              [[ orange || carotte ]]\\n
+              [[ kiwi || brocoli ]]\\n
+              ]]]\\n
+              \\n
+              Pour plus d'informations : ((http://www.wikipedia.com)(Wikipedia)).\\n
+              \\n
+              !! Sous-titre\\n
+              \\n
+              <red>ROUGE</red>\\n
+              <green>VERT</green>\\n
+              <color<#00F>>BLEU</color>\\n
+              <size<3rem>>GRAND</size>\\n
+              <weight<100>>FIN</weight>\\n
 
 USER
 
