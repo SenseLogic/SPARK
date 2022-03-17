@@ -977,7 +977,7 @@ body.is-scrolled .header-menu:not(.is-open) {
 }
 .header-menu-mobile-button {
   border-radius: 0.5rem;
-  padding: 0.3125rem 0.625rem;
+  padding: 0.25rem 0.5rem;
   font-size: 2rem;
   color: #fff;
 }
@@ -1209,10 +1209,10 @@ body.is-scrolled .scroll-down-reminder {
 .scroll-top-button {
   z-index: 999;
   position: fixed;
-  bottom: 0.625rem;
-  right: 0.625rem;
+  bottom: 0.5rem;
+  right: 0.5rem;
   overflow: visible;
-  height: 3.125rem;
+  height: 3rem;
   width: 1.25rem;
   opacity: 1;
   background: url("/static/image/base/scroll_top_icon.svg") no-repeat center center/contain;
@@ -1240,7 +1240,7 @@ body:not(.is-scrolled) .scroll-top-button {
   justify-content: center;
   align-items: center;
   background-color: #fff;
-  box-shadow: 0 0.3125rem 0.625rem rgba(128,128,128,0.5);
+  box-shadow: 0 0.25rem 0.5rem rgba(128,128,128,0.5);
   font-size: 1rem;
   color: #000;
 }
@@ -1260,10 +1260,10 @@ body:not(.is-scrolled) .scroll-top-button {
   align-items: center;
 }
 .cookie-consent-banner-button {
-  margin-left: 0.3125rem;
-  margin-right: 0.3125rem;
-  border-radius: 0.3125rem;
-  padding: 0.3125rem 0.9375rem;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+  border-radius: 0.25rem;
+  padding: 0.25rem 1rem;
   color: #fff;
 }
 .cookie-consent-banner-accept-button {

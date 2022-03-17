@@ -1,6 +1,6 @@
 <style file="show_home_view.styl">
 </style>
-<div class="extended-container view" data-view-name="home">
+<div class="is-hidden extended-container view" data-view-name="home">
     <? include 'BLOCK/article_carousel.php'; ?>
     <? include 'BLOCK/article_list.php'; ?>
 </div>
