@@ -7,7 +7,8 @@ TEXT
               ¨fr:Faire défiler
 
         HeaderMenuHomeButton
-            ~ Home¨fr:Accueil
+            ~ Home
+              ¨fr:Accueil
 
         HeaderMenuArticleListButton
             ~ Article list
@@ -27,7 +28,8 @@ TEXT
             ~ FR
 
         FooterMenuHomeButton
-            ~ Home¨fr:Accueil
+            ~ Home
+              ¨fr:Accueil
 
         FooterMenuArticleListButton
             ~ Article list

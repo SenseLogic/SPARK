@@ -101,7 +101,9 @@ MakeSortableTableColumn();
     display: flex;
     grid-area: 1 / 1 / span 2;
 
-    background-image: linear-gradient( to right, #29323c 0%, #485563 100%);
+    background-color: #4886C5;
+
+    box-shadow: 0 0 0.6rem rgba( 0, 0, 0, 0.17 ) inset;
 }
 
 .page-menu::-webkit-scrollbar
@@ -133,9 +135,11 @@ MakeSortableTableColumn();
 
     grid-area: 1 / 2;
 
-    background-image: linear-gradient( to top, #4481eb 0%, #04befe 100%);
+    background-color: #78A5D4;
 
     text-align: center;
+
+    box-shadow: 0 0 0.6rem rgba( 0, 0, 0, 0.17 ) inset;
 }
 
 .page-title-content
@@ -164,6 +168,7 @@ MakeSortableTableColumn();
     padding: 1rem;
 
     background-color: #FFFFFF;
+    box-shadow: 0 0.6rem 1.2rem rgba( 0, 0, 0, 0.17 ), 0 0.4rem 0.4rem rgba( 0, 0, 0, 0.20 );
 }
 
 .page-section + .page-section
@@ -351,17 +356,17 @@ MakeSortableTableColumn();
     grid-template-columns: 1fr;
     grid-gap: 1rem;
 
-    +Media( min-width-60em )
+    +Media( min-width-80em )
     {
         grid-template-columns: 1fr 1fr;
     }
 
-    +Media( min-width-90em )
+    +Media( min-width-120em )
     {
         grid-template-columns: 1fr 1fr 1fr;
     }
 
-    +Media( min-width-120em )
+    +Media( min-width-160em )
     {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
@@ -377,6 +382,7 @@ MakeSortableTableColumn();
     padding: 1rem;
 
     background-color: #FFFFFF;
+    box-shadow: 0 0.6rem 1.2rem rgba( 0, 0, 0, 0.17 ), 0 0.4rem 0.4rem rgba( 0, 0, 0, 0.20 );
 }
 
 .tool-container
@@ -416,11 +422,11 @@ MakeSortableTableColumn();
 {
     width: 100%;
     border: 1 * Pxm solid #CCCCCC;
-    border: 1 * Pxm solid #CCCCCC;
     border-radius: 0.5rem;
     padding: 0.25rem 1rem;
 
     background-color: white;
+    box-shadow: 0 0.3rem 0.6rem rgba( 0, 0, 0, 0.17 ), 0 0.2rem 0.2rem rgba( 0, 0, 0, 0.20 );
 }
 
 .filter-button
@@ -432,6 +438,11 @@ MakeSortableTableColumn();
     padding: 0.25rem 1rem;
 
     cursor: pointer;
+}
+
+.filter-row:hover .filter-cell
+{
+    background-color: #E8F2F2;
 }
 
 .disconnect-button

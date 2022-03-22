@@ -27,16 +27,16 @@
     }
 </style>
 <div class="large-padded-container footer-menu">
-    <span class="margin-right-auto! scaled-button footer-menu-button" onclick="ShowView( 'home' )">
+    <div class="margin-right-auto! scaled-button footer-menu-button" onclick="ShowView( 'home' )">
         <# .GetText( 'FooterMenuHomeButton' ) #>
-    </span>
-    <span class="scaled-button footer-menu-button" onclick="ShowView( 'home/#article-list' )">
+    </div>
+    <div class="scaled-button footer-menu-button" onclick="ShowView( 'home/#article-list' )">
         <# .GetText( 'FooterMenuArticleListButton' ) #>
-    </span>
-    <span class="scaled-button footer-menu-button" onclick="ShowView( 'contact' )">
+    </div>
+    <div class="scaled-button footer-menu-button" onclick="ShowView( 'contact' )">
         <# .GetText( 'FooterMenuContactButton' ) #>
-    </span>
-    <span class="margin-left-auto! scaled-button footer-menu-button" onclick="ShowView( 'legal-notice' )">
+    </div>
+    <div class="margin-left-auto! scaled-button footer-menu-button" onclick="ShowView( 'legal-notice' )">
         <# .GetText( 'FooterMenuLegalNoticeButton' ) #>
-    </span>
+    </div>
 </div>

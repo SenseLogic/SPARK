@@ -393,7 +393,8 @@ textarea:focus {
   padding: 0.5rem;
   display: flex;
   grid-area: 1/1/span 2;
-  background-image: linear-gradient(to right, #29323c 0%, #485563 100%);
+  background-color: #4886c5;
+  box-shadow: 0 0 0.6rem rgba(0,0,0,0.17) inset;
 }
 .page-menu::-webkit-scrollbar {
   display: none !important;
@@ -412,8 +413,9 @@ textarea:focus {
 .page-title {
   padding: 0.25rem;
   grid-area: 1/2;
-  background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);
+  background-color: #78a5d4;
   text-align: center;
+  box-shadow: 0 0 0.6rem rgba(0,0,0,0.17) inset;
 }
 .page-title-content {
   font-size: 1.5rem;
@@ -431,6 +433,7 @@ textarea:focus {
   border-radius: 0.5rem;
   padding: 1rem;
   background-color: #fff;
+  box-shadow: 0 0.6rem 1.2rem rgba(0,0,0,0.17), 0 0.4rem 0.4rem rgba(0,0,0,0.2);
 }
 .page-section + .page-section {
   margin-top: 1rem;
@@ -556,17 +559,17 @@ textarea:focus {
   grid-template-columns: 1fr;
   grid-gap: 1rem;
 }
-@media (min-width: 60em) {
+@media (min-width: 80em) {
   .card-list {
     grid-template-columns: 1fr 1fr;
   }
 }
-@media (min-width: 90em) {
+@media (min-width: 120em) {
   .card-list {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
-@media (min-width: 120em) {
+@media min-width-160em {
   .card-list {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
@@ -575,6 +578,7 @@ textarea:focus {
   border-radius: 0.5rem;
   padding: 1rem;
   background-color: #fff;
+  box-shadow: 0 0.6rem 1.2rem rgba(0,0,0,0.17), 0 0.4rem 0.4rem rgba(0,0,0,0.2);
 }
 .tool-container {
   width: 100%;
@@ -600,10 +604,10 @@ textarea:focus {
 .filter-input {
   width: 100%;
   border: 0.0625rem solid #ccc;
-  border: 0.0625rem solid #ccc;
   border-radius: 0.5rem;
   padding: 0.25rem 1rem;
   background-color: #fff;
+  box-shadow: 0 0.3rem 0.6rem rgba(0,0,0,0.17), 0 0.2rem 0.2rem rgba(0,0,0,0.2);
 }
 .filter-button {
   position: absolute;
@@ -611,6 +615,9 @@ textarea:focus {
   height: 100%;
   padding: 0.25rem 1rem;
   cursor: pointer;
+}
+.filter-row:hover .filter-cell {
+  background-color: #e8f2f2;
 }
 .disconnect-button {
   background: url("/static/image/admin/disconnect_icon.svg") no-repeat center center/contain;
