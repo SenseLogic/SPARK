@@ -278,15 +278,17 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                     <div class="form-upload-container">
                         <img class="form-upload-image" src="<~{%has_default_value%}<>{%default_value%}~>" onerror="this.src='/static/image/admin/missing_image.svg'"/>
                         <label class="form-upload-button">
-                            <img class="form-upload-icon" src="/static/image/admin/upload_icon.svg"/><input id="file" class="form-upload-file" type="file" accept="image/jpeg, image/png, image/webp, image/gif, image/svg" onchange="HandleImageFileInputChangeEvent( this )"/>
+                            <img class="form-upload-icon" src="/static/image/admin/upload_icon.svg"/><input class="form-upload-file" type="file" accept="image/jpeg, image/png, image/webp, image/gif, image/svg" onchange="HandleImageFileInputChangeEvent( this )"/>
                         </label>
+                        <img class="form-delete-icon" src="/static/image/admin/remove_icon.svg" onclick="HandleFileInputDeleteButtonClickEvent( this )"/>
                     </div><><~{%is_video%}<>
                     <input class="form-input" name="{%attribute%}" type="text"<~{%has_default_value%}<> value="{%default_value%}"~> oninput="HandleVideoPathInputChangeEvent( this )"/>
                     <div class="form-upload-container">
                         <video class="form-upload-video" src="<~{%has_default_value%}<>{%default_value%}~>" type="video/mp4" onerror="this.src='/static/video/admin/missing_video.mp4'"></video>
                         <label class="form-upload-button">
-                            <img class="form-upload-icon" src="/static/image/admin/upload_icon.svg"/><input id="file" class="form-upload-file" type="file" accept="video/mp4" onchange="HandleVideoFileInputChangeEvent( this )"/>
+                            <img class="form-upload-icon" src="/static/image/admin/upload_icon.svg"/><input class="form-upload-file" type="file" accept="video/mp4" onchange="HandleVideoFileInputChangeEvent( this )"/>
                         </label>
+                        <img class="form-delete-icon" src="/static/image/admin/remove_icon.svg" onclick="HandleFileInputDeleteButtonClickEvent( this )"/>
                     </div><><~{%is_enumeration%}<>
                     <select class="form-select" name="{%attribute%}"><~Map<>enumeration_<>{%enumeration%}<>^<>~<>
                         <option value="{*enumeration_1*}"<~{%has_default_value%}<><+~Equals<+>{*enumeration_1*}<+>{%default_value%}<+> selected~+>~>>{*enumeration_2*}</option>~>
@@ -364,15 +366,17 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                     <div class="form-upload-container">
                         <img class="form-upload-image" src="<\% .{#attribute#}.{%attribute%} %\>" onerror="this.src='/static/image/admin/missing_image.svg'"/>
                         <label class="form-upload-button">
-                            <img class="form-upload-icon" src="/static/image/admin/upload_icon.svg"/><input id="file" class="form-upload-file" type="file" accept="image/jpeg, image/png, image/webp, image/gif, image/svg" onchange="HandleImageFileInputChangeEvent( this )"/>
+                            <img class="form-upload-icon" src="/static/image/admin/upload_icon.svg"/><input class="form-upload-file" type="file" accept="image/jpeg, image/png, image/webp, image/gif, image/svg" onchange="HandleImageFileInputChangeEvent( this )"/>
                         </label>
+                        <img class="form-delete-icon" src="/static/image/admin/remove_icon.svg" onclick="HandleFileInputDeleteButtonClickEvent( this )"/>
                     </div><><~{%is_video%}<>
                     <input class="form-input" name="{%attribute%}" type="text" value="<\% .{#attribute#}.{%attribute%} %\>" oninput="HandleVideoPathInputChangeEvent( this )"/>
                     <div class="form-upload-container">
                         <video class="form-upload-video" src="<\% .{#attribute#}.{%attribute%} %\>" type="video/mp4" onerror="this.src='/static/video/admin/missing_video.mp4'"></video>
                         <label class="form-upload-button">
-                            <img class="form-upload-icon" src="/static/image/admin/upload_icon.svg"/><input id="file" class="form-upload-file" type="file" accept="video/mp4" onchange="HandleVideoFileInputChangeEvent( this )"/>
+                            <img class="form-upload-icon" src="/static/image/admin/upload_icon.svg"/><input class="form-upload-file" type="file" accept="video/mp4" onchange="HandleVideoFileInputChangeEvent( this )"/>
                         </label>
+                        <img class="form-delete-icon" src="/static/image/admin/remove_icon.svg" onclick="HandleFileInputDeleteButtonClickEvent( this )"/>
                     </div><><~{%is_enumeration%}<>
                     <select class="form-select" name="{%attribute%}"><~Map<>enumeration_<>{%enumeration%}<>^<>~<>
                         <option value="{*enumeration_1*}"<? if ( .{#attribute#}.{%attribute%} === '{*enumeration_1*}' ) echo ' selected'; ?>>{*enumeration_2*}</option>~>

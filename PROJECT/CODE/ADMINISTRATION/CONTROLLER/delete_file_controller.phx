@@ -1,0 +1,35 @@
+// -- IMPORTS
+
+import 'controller.php';
+
+// -- TYPES
+
+class DELETE_FILE_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code
+        )
+    {
+        parent::constructor( language_code );
+
+        var file_path = GetBaseFolderName() .. GetPostValue( 'FilePath' );
+
+        if ( FileExists( file_path )
+             && RemoveFile( file_path ) )
+        {
+            SetStatus( 201 );
+            SetJsonResponse( file_path );
+        }
+        else
+        {
+            SetStatus( 400 );
+            SetJsonResponse( file_path );
+        }
+    }
+}
+
+// -- STATEMENTS
+
+var delete_file_controller = new DELETE_FILE_CONTROLLER( var language_code );

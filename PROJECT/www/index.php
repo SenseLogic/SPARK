@@ -135,9 +135,16 @@ function Route(
         else if ( $it_is_post_request
                   && $path_value_count == 3
                   && $path_value_array[ 1 ] === 'upload'
+                  && $path_value_array[ 2 ] === 'document' )
+        {
+            require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/upload_document_controller.php';
+        }
+        else if ( $it_is_post_request
+                  && $path_value_count == 3
+                  && $path_value_array[ 1 ] === 'delete'
                   && $path_value_array[ 2 ] === 'file' )
         {
-            require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/upload_file_controller.php';
+            require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/delete_file_controller.php';
         }
         else if ( $it_is_get_request
                   && $path_value_count === 2

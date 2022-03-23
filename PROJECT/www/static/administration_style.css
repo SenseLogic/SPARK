@@ -339,6 +339,28 @@ input:focus,
 textarea:focus {
   outline: none;
 }
+html,
+body,
+body *,
+button,
+input,
+textarea {
+  scrollbar-width: thin;
+  scrollbar-color: #bdcfe4 #ebedee;
+}
+::-webkit-scrollbar {
+  height: 0.6rem;
+  width: 0.6rem;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #bdcfe4;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #8dabcd;
+}
+::-webkit-scrollbar-track {
+  background-color: #ebedee;
+}
 .extended-container {
   margin-left: auto;
   margin-right: auto;
@@ -377,6 +399,16 @@ textarea:focus {
 .margin-bottom-2rem {
   margin-bottom: 2rem !important;
 }
+.title {
+  box-shadow: 0 0 0.6rem rgba(0,0,0,0.17) inset;
+}
+.image,
+.video {
+  box-shadow: 0 0.6rem 1.2rem rgba(0,0,0,0.12), 0 0.4rem 0.4rem rgba(0,0,0,0.15);
+}
+.input {
+  box-shadow: 0 0.3rem 0.6rem rgba(0,0,0,0.12), 0 0.2rem 0.2rem rgba(0,0,0,0.15);
+}
 .page-container {
   min-height: 100vh;
   display: grid;
@@ -414,8 +446,8 @@ textarea:focus {
   padding: 0.25rem;
   grid-area: 1/2;
   background-color: #78a5d4;
-  text-align: center;
   box-shadow: 0 0 0.6rem rgba(0,0,0,0.17) inset;
+  text-align: center;
 }
 .page-title-content {
   font-size: 1.5rem;
@@ -424,7 +456,7 @@ textarea:focus {
 .page-body {
   padding: 1rem;
   grid-area: 2/2;
-  background-image: linear-gradient(to top, #fdfbfb 0%, #ebedee 100%);
+  background-color: #ebedee;
 }
 .page-body-content {
   color: #222;
@@ -433,7 +465,7 @@ textarea:focus {
   border-radius: 0.5rem;
   padding: 1rem;
   background-color: #fff;
-  box-shadow: 0 0.6rem 1.2rem rgba(0,0,0,0.17), 0 0.4rem 0.4rem rgba(0,0,0,0.2);
+  box-shadow: 0 0.6rem 1.2rem rgba(0,0,0,0.12), 0 0.4rem 0.4rem rgba(0,0,0,0.15);
 }
 .page-section + .page-section {
   margin-top: 1rem;
@@ -489,15 +521,26 @@ textarea:focus {
   max-width: 80%;
   border-radius: 0.25rem;
   background: repeating-conic-gradient(#eee 0% 25%, transparent 0% 50%) 50%/20px 20px;
+  box-shadow: 0 0.6rem 1.2rem rgba(0,0,0,0.12), 0 0.4rem 0.4rem rgba(0,0,0,0.15);
+}
+.form-upload-button {
+  margin-bottom: 0;
+  display: flex;
+  cursor: pointer;
 }
 .form-upload-icon {
-  margin-left: 0.25rem;
+  margin-left: 0.5rem;
   height: 1rem;
 }
 .form-upload-file {
   overflow: hidden;
   height: 0;
   width: 0;
+}
+.form-delete-icon {
+  margin-left: 0.25rem;
+  height: 1rem;
+  cursor: pointer;
 }
 .form-field-name {
   padding-top: 0.25rem;
@@ -578,7 +621,7 @@ textarea:focus {
   border-radius: 0.5rem;
   padding: 1rem;
   background-color: #fff;
-  box-shadow: 0 0.6rem 1.2rem rgba(0,0,0,0.17), 0 0.4rem 0.4rem rgba(0,0,0,0.2);
+  box-shadow: 0 0.6rem 1.2rem rgba(0,0,0,0.12), 0 0.4rem 0.4rem rgba(0,0,0,0.15);
 }
 .tool-container {
   width: 100%;
@@ -607,7 +650,7 @@ textarea:focus {
   border-radius: 0.5rem;
   padding: 0.25rem 1rem;
   background-color: #fff;
-  box-shadow: 0 0.3rem 0.6rem rgba(0,0,0,0.17), 0 0.2rem 0.2rem rgba(0,0,0,0.2);
+  box-shadow: 0 0.3rem 0.6rem rgba(0,0,0,0.12), 0 0.2rem 0.2rem rgba(0,0,0,0.15);
 }
 .filter-button {
   position: absolute;
