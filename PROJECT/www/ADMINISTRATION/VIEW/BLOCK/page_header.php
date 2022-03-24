@@ -44,15 +44,17 @@
                             </span>
                         </a>
                     </div>
-                    <div class="page-menu-item">
-                        <a href="/admin/user">
-                            <span class="form-button form-button-large user-button">
-                            </span>
-                            <span class="form-button-tooltip">
-                                <?php echo htmlspecialchars( $this->GetText( 'User' ) ); ?>
-                            </span>
-                        </a>
-                    </div>
+                    <?php if ( HasSessionMinimumUserRole( 'administrator' ) ) { ?>
+                        <div class="page-menu-item">
+                            <a href="/admin/user">
+                                <span class="form-button form-button-large user-button">
+                                </span>
+                                <span class="form-button-tooltip">
+                                    <?php echo htmlspecialchars( $this->GetText( 'User' ) ); ?>
+                                </span>
+                            </a>
+                        </div>
+                    <?php } ?>
                     <div class="page-menu-item">
                         <a href="/admin/disconnect">
                             <span class="form-button form-button-large disconnect-button">

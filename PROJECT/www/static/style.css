@@ -784,6 +784,9 @@ html {
 .is-hidden {
   display: none !important;
 }
+.button {
+  cursor: pointer;
+}
 .scaled-button {
   cursor: pointer;
   transition: transform 0.25s ease;

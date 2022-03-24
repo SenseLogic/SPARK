@@ -16,9 +16,10 @@ BlueColor = #0000FF;
 LinkColor = #86B4F0;
 LinkHoverColor = #A2C2EC;
 TableBorderColor = #888888;
-ScrollbarThumbColor = rgba( 255, 255, 255, 0.3 );
-ScrollbarThumbHoverColor = rgba( 255, 255, 255, 0.2 );
-ScrollbarTrackColor = rgba( 0, 0, 0, 0.1 );
+
+ScrollbarColor = rgba( 255, 255, 255, 0.3 );
+ScrollbarHoverColor = rgba( 255, 255, 255, 0.2 );
+ScrollbarBackgroundColor = rgba( 0, 0, 0, 0.1 );
 
 // -- ELEMENTS
 
@@ -92,7 +93,7 @@ input,
 textarea
 {
     scrollbar-width: thin;
-    scrollbar-color: ScrollbarThumbColor ScrollbarTrackColor;
+    scrollbar-color: ScrollbarColor ScrollbarBackgroundColor;
 }
 
 ::-webkit-scrollbar
@@ -102,17 +103,17 @@ textarea
 
 ::-webkit-scrollbar-thumb
 {
-    background: ScrollbarThumbColor;
+    background: ScrollbarColor;
 }
 
 ::-webkit-scrollbar-thumb:hover
 {
-    background: ScrollbarThumbHoverColor;
+    background: ScrollbarHoverColor;
 }
 
 ::-webkit-scrollbar-track
 {
-    background: ScrollbarTrackColor;
+    background: ScrollbarBackgroundColor;
 }
 
 // -- CLASSES
@@ -190,6 +191,11 @@ MakeColorValue( "blue", BlueColor );
 .is-hidden
 {
     display: none !important;
+}
+
+.button
+{
+    cursor: pointer;
 }
 
 .scaled-button

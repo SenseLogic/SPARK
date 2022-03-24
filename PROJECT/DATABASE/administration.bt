@@ -600,7 +600,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
         <div class="extended-container page-container">
             <div class="page-menu">
                 <div class="page-menu-content"><#
-                    <div class="page-menu-item">
+                    <~!Equals<>{#style#}<>user<><div class="page-menu-item">
                         <a href="/admin/{#style#}">
                             <span class="form-button form-button-large {#style#}-button">
                             </span>
@@ -608,7 +608,17 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                                 <\% .GetText( '{#sentence#}' ) %\>
                             </span>
                         </a>
-                    </div>#>
+                    </div><><? if ( HasSessionMinimumUserRole( 'administrator' ) ) { ?>
+                        <div class="page-menu-item">
+                            <a href="/admin/{#style#}">
+                                <span class="form-button form-button-large {#style#}-button">
+                                </span>
+                                <span class="form-button-tooltip">
+                                    <\% .GetText( '{#sentence#}' ) %\>
+                                </span>
+                            </a>
+                        </div>
+                    <? } ?>~>#>
                     <div class="page-menu-item">
                         <a href="/admin/disconnect">
                             <span class="form-button form-button-large disconnect-button">
