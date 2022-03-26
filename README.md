@@ -78,9 +78,13 @@ It provides a starting version of :
     *   video upload
     *   document upload
 
-Both are fully functional, but the public website is very basic and almost unstyled, so it can serve as the basis for any new website.
+The administration website is fully functional, and is automatically generated from the database design.
+
+The public website is very basic and almost unstyled, so it can serve as the basis for any new website.
 
 The template files are located in the **PROJECT** folder, and have no external dependencies except **VISTA**, a minimalistic front-end framework.
+
+
 
 ## Tooling
 
