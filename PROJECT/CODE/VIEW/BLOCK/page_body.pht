@@ -7,4 +7,5 @@
 <script src="/static/script/vista_scroll.js?v=<# VersionTimestamp #>"></script>
 <script src="/static/script/vista_tracking.js?v=<# VersionTimestamp #>"></script>
 <script src="/static/script/vista_carousel.js?v=<# VersionTimestamp #>"></script>
+<script src="/static/script/vista_video.js?v=<# VersionTimestamp #>"></script>
 <script src="/static/script/base.js?v=<# VersionTimestamp #>"></script>

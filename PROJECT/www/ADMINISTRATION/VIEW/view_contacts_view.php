@@ -1,6 +1,6 @@
 <?php require __DIR__ . '/' . 'BLOCK/page_header.php'; ?>
 <div id="view-contacts-view">
-    <div class="form-extended form-centered margin-bottom-1rem">
+    <div class="form-limited form-centered margin-bottom-1rem">
         <div class="tool-container">
             <?php  $filter_name = "ContactFilter"; ?>
             <?php require __DIR__ . '/' . 'BLOCK/filter.php'; ?>

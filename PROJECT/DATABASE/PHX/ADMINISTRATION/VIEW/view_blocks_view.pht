@@ -1,6 +1,6 @@
 <? include 'BLOCK/page_header.php'; ?>
 <div id="view-blocks-view">
-    <div class="form-extended form-centered margin-bottom-1rem">
+    <div class="form-limited form-centered margin-bottom-1rem">
         <div class="tool-container">
             <? var filter_name = "BlockFilter"; ?>
             <? include 'BLOCK/filter.php'; ?>

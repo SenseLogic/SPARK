@@ -67,9 +67,9 @@
                 </div>
             </div>
             <div class="page-title">
-                <span class="page-title-content">
+                <div class="page-title-content">
                     <% .GetText( .Title ) %>
-                </span>
+                </div>
             </div>
             <div class="page-body">
                 <div class="page-body-content">

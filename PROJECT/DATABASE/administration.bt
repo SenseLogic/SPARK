@@ -490,7 +490,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
 %%PHX/ADMINISTRATION/VIEW/view_<~Plural<>{#variable#}~>_view.pht
 <? include 'BLOCK/page_header.php'; ?>
 <div id="view-<~Plural<>{#style#}~>-view">
-    <div class="form-extended form-centered margin-bottom-1rem">
+    <div class="form-limited form-centered margin-bottom-1rem">
         <div class="tool-container">
             <? var filter_name = "{#attribute#}Filter"; ?>
             <? include 'BLOCK/filter.php'; ?>
@@ -631,9 +631,9 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                 </div>
             </div>
             <div class="page-title">
-                <span class="page-title-content">
+                <div class="page-title-content">
                     <\% .GetText( .Title ) %\>
-                </span>
+                </div>
             </div>
             <div class="page-body">
                 <div class="page-body-content">

@@ -149,38 +149,54 @@ MakeSortableTableColumn();
     display: grid;
     grid-template-rows: 3rem 1fr;
     grid-template-columns: 3rem 1fr;
+    grid-template-areas: \
+        "menu title" \
+        "menu body";
 }
 
 .page-menu
 {
     z-index: 1000;
+    position: fixed;
 
-    overflow-y: auto;
-    scrollbar-width: none !important;
     min-height: 100vh;
     width: 3rem;
-    padding: 0.5rem;
 
     display: flex;
-    grid-area: 1 / 1 / span 2;
+    grid-area: menu;
 
     background-color: PageMenuBackgroundColor;
     box-shadow: 0 0 0.6rem PrimaryInsetColor inset;
 }
 
-.page-menu::-webkit-scrollbar
+.page-menu-content
+{
+    z-index: 1000;
+    position: fixed;
+
+    overflow-y: auto;
+    scrollbar-width: none !important;
+    min-height: 100vh;
+    max-height: 100%;
+    padding: 1rem 0.5rem 0.5rem 0.5rem;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.page-menu-content::-webkit-scrollbar
 {
     display: none !important;
 }
 
-.page-menu-content
-{
-    padding-top: 0.5rem;
-}
-
 .page-menu-item
 {
-    margin-bottom: 0.25rem;
+    padding-bottom: 0.5rem;
+}
+
+.page-menu-item a
+{
+    display: flex;
 }
 
 .page-menu-title
@@ -193,19 +209,24 @@ MakeSortableTableColumn();
 
 .page-title
 {
-    padding: 0.25rem;
-
-    grid-area: 1 / 2;
-
-    background-color: PageTitleBackgroundColor;
-    box-shadow: 0 0 0.6rem PrimaryInsetColor inset;
-
-    text-align: center;
+    grid-area: title;
 }
 
 .page-title-content
 {
+    z-index: 900;
+    position: fixed;
+
+    height: 3rem;
+    width: 100%;
+    max-width: calc( 100vw - 3rem );
+    padding: 0.25rem;
+
+    background-color: PageTitleBackgroundColor;
+    box-shadow: 0 0 0.6rem PrimaryInsetColor inset;
+
     font-size: 1.5rem;
+    text-align: center;
     color: #FFFFFF;
 }
 
@@ -220,7 +241,6 @@ MakeSortableTableColumn();
 
 .page-body-content
 {
-    color: #222222;
 }
 
 .page-section
@@ -251,6 +271,11 @@ MakeSortableTableColumn();
 .form-container-small
 {
     max-width: 30rem;
+}
+
+.form-limited
+{
+    max-width: calc( 100vw - 5rem );
 }
 
 .form-extended
@@ -386,9 +411,6 @@ MakeSortableTableColumn();
 
 .form-button-tooltip
 {
-    z-index: 2000;
-    position: absolute;
-
     display: none;
 }
 
