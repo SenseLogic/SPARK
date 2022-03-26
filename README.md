@@ -74,6 +74,9 @@ It provides a starting version of :
     *   element creation
     *   element editing
     *   element removal
+    *   image upload
+    *   video upload
+    *   document upload
 
 Both are fully functional, but mostly unstyled on purpose.
 
