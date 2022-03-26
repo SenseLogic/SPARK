@@ -82,6 +82,8 @@ Both are fully functional, but the public website is very basic and almost unsty
 
 The template files are located in the **PROJECT** folder, and have no external dependencies except **VISTA**, a minimalistic front-end framework.
 
+## Tooling
+
 The following tools are not required to use the SPARK framework, but can be used to automate repetitive development operations :
 
 *   [Flex](https://github.com/senselogic/FLEX)
@@ -104,11 +106,9 @@ The following tools are not required to use the SPARK framework, but can be used
 *   [Cyclone](https://github.com/senselogic/CYCLONE)
     *   updates the database schema and data on the development system.
 
-## Tools installation
-
 The following instructions describe how to install all the above tools on Windows and Linux platforms.
 
-## On Windows
+### On Windows
 
 *   Install [Git](https://gitforwindows.org/)
 *   Install [DMD (using the MinGW setup option)](https://dlang.org/download.html)
@@ -118,7 +118,7 @@ The following instructions describe how to install all the above tools on Window
 *   Run the `install.bat` script of the `SETUP` folder.
 *   Spark and its dependencies are now installed in `%UserProfile%\PROJECT`.
 
-## On Linux
+### On Linux
 
 *   Install [DMD](https://dlang.org/download.html)
 *   Install [Node.js](https://nodejs.org/en/download/)
@@ -288,6 +288,15 @@ For more information : ((http://www.wikipedia.com)(Wikipedia)).
 <size<3rem>>BIG</size>
 <weight<100>>THIN</weight>
 ```
+
+## Screenshots
+
+![](https://github.com/senselogic/SPARK/blob/master/SCREENSHOT/legal_notice.png)
+![](https://github.com/senselogic/SPARK/blob/master/SCREENSHOT/contact.png)
+![](https://github.com/senselogic/SPARK/blob/master/SCREENSHOT/sign_in.png)
+![](https://github.com/senselogic/SPARK/blob/master/SCREENSHOT/view_texts_table.png)
+![](https://github.com/senselogic/SPARK/blob/master/SCREENSHOT/view_texts_cards.png)
+![](https://github.com/senselogic/SPARK/blob/master/SCREENSHOT/edit_text.png)
 
 ## Version
 

@@ -58,7 +58,8 @@
         color: WhiteColor;
     }
 
-    .header-menu-button.is-selected
+    .header-menu-button.is-selected,
+    .header-menu-button.is-used
     {
         font-weight: 700;
     }
@@ -89,6 +90,8 @@
 
     .header-menu-open-button
     {
+        margin-left: 1rem;
+
         background: url( "/static/image/header/menu_button.svg" ) no-repeat center center / contain;
 
         +Media( min-width-50em )
@@ -125,9 +128,10 @@
         color: WhiteColor;
     }
 
-    .header-menu-mobile-button.is-selected
+    .header-menu-mobile-button.is-selected,
+    .header-menu-mobile-button.is-active
     {
-        color: BlackColor;
+        font-weight: 700;
     }
 
     .header-menu-mobile-button + .header-menu-mobile-button
@@ -146,28 +150,25 @@
 </style>
 <div id="header-menu" class="header-menu">
     <div class="large-padded-container header-menu-button-container">
-        <div class="scaled-button header-menu-button" data-view-name="home" onclick="ShowView( 'home' )">
+        <div class="margin-right-auto! scaled-button header-menu-button" data-view-name="home" onclick="ShowView( 'home' )">
             <# .GetText( 'HeaderMenuHomeButton' ) #>
         </div>
-        <div class="margin-left-auto! scaled-button header-menu-button header-menu-desktop-button" data-view-name="home" onclick="ShowView( 'home/#article-list' )">
+        <div class="scaled-button header-menu-button header-menu-desktop-button" data-view-name="home" onclick="ShowView( 'home/#article-list' )">
             <# .GetText( 'HeaderMenuArticleListButton' ) #>
         </div>
-        <div class="margin-right-auto! scaled-button header-menu-button header-menu-desktop-button" data-view-name="legal-notice" onclick="ShowView( 'legal-notice' )">
+        <div class="scaled-button header-menu-button header-menu-desktop-button" data-view-name="legal-notice" onclick="ShowView( 'legal-notice' )">
             <# .GetText( 'HeaderMenuLegalNoticeButton' ) #>
         </div>
-        <div class="scaled-button header-menu-button header-menu-desktop-button" data-view-name="contact" onclick="ShowView( 'contact' )">
+        <div class="margin-right-auto! scaled-button header-menu-button header-menu-desktop-button" data-view-name="contact" onclick="ShowView( 'contact' )">
             <# .GetText( 'HeaderMenuContactButton' ) #>
         </div>
-        <? if ( .LanguageCode === 'en' ) { ?>
-            <div class="scaled-button header-menu-button" onclick="SetLanguageCode( 'fr' )">
-                <# .GetText( 'HeaderMenuFrenchButton' ) #>
-            </div>
-        <? } else { ?>
-            <div class="scaled-button header-menu-button" onclick="SetLanguageCode( 'en' )">
-                <# .GetText( 'HeaderMenuEnglishButton' ) #>
-            </div>
-        <? } ?>
-        <div class="margin-left-auto! scaled-button header-menu-icon-button header-menu-open-button" onclick="OpenHeaderMenu()">
+        <div class="scaled-button header-menu-button <# ( .LanguageCode === 'en' ) ? 'is-used' : '' #>" onclick="SetLanguageCode( 'en' )">
+            <# .GetText( 'HeaderMenuEnglishButton' ) #>
+        </div>
+        <div class="scaled-button header-menu-button <# ( .LanguageCode === 'fr' ) ? 'is-used' : '' #>" onclick="SetLanguageCode( 'fr' )">
+            <# .GetText( 'HeaderMenuFrenchButton' ) #>
+        </div>
+        <div class="scaled-button header-menu-icon-button header-menu-open-button" onclick="OpenHeaderMenu()">
         </div>
     </div>
     <div class="header-menu-mobile-button-container">

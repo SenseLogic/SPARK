@@ -469,7 +469,7 @@ textarea {
 }
 .page-body {
   padding: 1rem;
-  grid-area: 2/2;
+  grid-area: body;
   background-color: #ebedee;
 }
 .page-section {

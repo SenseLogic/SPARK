@@ -57,7 +57,8 @@ body.is-scrolled .header-menu:not(.is-open)
     color: WhiteColor;
 }
 
-.header-menu-button.is-selected
+.header-menu-button.is-selected,
+.header-menu-button.is-used
 {
     font-weight: 700;
 }
@@ -88,6 +89,8 @@ body.is-scrolled .header-menu:not(.is-open)
 
 .header-menu-open-button
 {
+    margin-left: 1rem;
+
     background: url( "/static/image/header/menu_button.svg" ) no-repeat center center / contain;
 
     +Media( min-width-50em )
@@ -124,9 +127,10 @@ body.is-scrolled .header-menu:not(.is-open)
     color: WhiteColor;
 }
 
-.header-menu-mobile-button.is-selected
+.header-menu-mobile-button.is-selected,
+.header-menu-mobile-button.is-active
 {
-    color: BlackColor;
+    font-weight: 700;
 }
 
 .header-menu-mobile-button + .header-menu-mobile-button
