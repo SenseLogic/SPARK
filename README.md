@@ -78,7 +78,7 @@ It provides a starting version of :
     *   video upload
     *   document upload
 
-Both are fully functional, but mostly unstyled on purpose.
+Both are fully functional, but the public website is almost unstyled, on purpose.
 
 The template files are located in the **PROJECT** folder, and have no external dependencies except **VISTA**, a minimalistic front-end framework.
 
