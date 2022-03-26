@@ -292,10 +292,15 @@ For more information : ((http://www.wikipedia.com)(Wikipedia)).
 ## Screenshots
 
 ![](https://github.com/senselogic/SPARK/blob/master/SCREENSHOT/legal_notice.png)
+
 ![](https://github.com/senselogic/SPARK/blob/master/SCREENSHOT/contact.png)
+
 ![](https://github.com/senselogic/SPARK/blob/master/SCREENSHOT/sign_in.png)
+
 ![](https://github.com/senselogic/SPARK/blob/master/SCREENSHOT/view_texts_table.png)
+
 ![](https://github.com/senselogic/SPARK/blob/master/SCREENSHOT/view_texts_cards.png)
+
 ![](https://github.com/senselogic/SPARK/blob/master/SCREENSHOT/edit_text.png)
 
 ## Version
