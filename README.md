@@ -120,6 +120,8 @@ The following tools are not required to use the SPARK framework, but can be used
 *   [Cyclone](https://github.com/senselogic/CYCLONE)
     *   updates the database schema and data on the development system.
 
+## Installation
+
 The following instructions describe how to install all the above tools on Windows and Linux platforms.
 
 ### On Windows
