@@ -157,8 +157,8 @@ The following instructions describe how to install all the above tools on Window
 
 ## Template instantiation
 
-*   Copy the content of the **~/PROJECT/TOOL/SPARK/PROJECT** folder into a target folder of identical depth under the same root folder,
-    for instance **~/PROJECT/SITE/TYRELL_CORPORATION/TYRELL_CORPORATION_SITE_2021**.
+*   Copy the content of the **~/PROJECT/TOOL/SPARK/PROJECT** folder into a target folder of identical depth under the same root folder.<br>
+    (ex: **~/PROJECT/SITE/TYRELL_CORPORATION/TYRELL_CORPORATION_SITE_2021**)
 
 *   Edit the **fix.flex** file to change the project and article identifiers in all their forms :
 
