@@ -49,9 +49,11 @@ The generated **PHP** files are located in the **PROJECT/www/FRAMEWORK** folder,
 
 ## Template project
 
-It provides a starting version of :
+A default project is provided in the **PROJECT** folder.
 
-*   the **public website** with :
+It provides a starting version for :
+
+*   a **public website** with :
     *   header menu
     *   footer menu
     *   contact form
@@ -63,7 +65,7 @@ It provides a starting version of :
     *   cookie consent banner
     *   scroll down reminder
     *   scroll top button
-*   the **administration website** with :
+*   an **administration website** with :
     *   login
     *   table menu
     *   table view
@@ -78,13 +80,21 @@ It provides a starting version of :
     *   video upload
     *   document upload
 
-The public website is very basic and almost unstyled, so it can serve as the basis for any new website.
+The public website is responsive but very basic and almost unstyled, so it can immediately serve as the basis for a new website.
+
+![](https://github.com/senselogic/SPARK/blob/master/SCREENSHOT/contact.png)
 
 The administration website is fully functional, and is automatically generated from the database design.
 
-The template files are located in the **PROJECT** folder, and have no external dependencies except **VISTA**, a minimalistic front-end framework.
+![](https://github.com/senselogic/SPARK/blob/master/SCREENSHOT/sign_in.png)
 
+![](https://github.com/senselogic/SPARK/blob/master/SCREENSHOT/view_texts_table.png)
 
+![](https://github.com/senselogic/SPARK/blob/master/SCREENSHOT/view_texts_cards.png)
+
+![](https://github.com/senselogic/SPARK/blob/master/SCREENSHOT/edit_text.png)
+
+The template project has no required external dependency except **VISTA**, a minimalistic front-end framework.
 
 ## Tooling
 
@@ -293,19 +303,7 @@ For more information : ((http://www.wikipedia.com)(Wikipedia)).
 <weight<100>>THIN</weight>
 ```
 
-## Screenshots
-
 ![](https://github.com/senselogic/SPARK/blob/master/SCREENSHOT/legal_notice.png)
-
-![](https://github.com/senselogic/SPARK/blob/master/SCREENSHOT/contact.png)
-
-![](https://github.com/senselogic/SPARK/blob/master/SCREENSHOT/sign_in.png)
-
-![](https://github.com/senselogic/SPARK/blob/master/SCREENSHOT/view_texts_table.png)
-
-![](https://github.com/senselogic/SPARK/blob/master/SCREENSHOT/view_texts_cards.png)
-
-![](https://github.com/senselogic/SPARK/blob/master/SCREENSHOT/edit_text.png)
 
 ## Version
 
