@@ -98,7 +98,7 @@ The template project has no required external dependency except **VISTA**, a min
 
 ## Tooling
 
-The following tools are not required to use the SPARK framework, but can be used to automate repetitive development operations :
+The following tools are not required to use the SPARK framework, but can be used to automate some repetitive operations of the website development :
 
 *   [Flex](https://github.com/senselogic/FLEX)
     *   fixes the placeholder identifiers when instantiating the project.
