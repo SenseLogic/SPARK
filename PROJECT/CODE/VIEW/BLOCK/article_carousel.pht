@@ -57,14 +57,14 @@
 </style>
 <div id="article-carousel" class="article-carousel">
     <div id="article-carousel-strip" class="article-carousel-strip">
-    <? for ( var article_index = 0; article_index <= .ArticleCount; ++article_index ) { ?>
-        <? var article = .ArticleArray[ article_index % .ArticleCount ]; ?>
-        <div class="article-carousel-slide" style="background-image: url( '<# article.ImagePath #>' )" onclick="ShowView( 'article/<# article.Id #>/<# article.Slug #>' )">
-            <div class="article-carousel-slide-text">
-                <# .GetTranslatedText( article.Text ) #>
+        <? for ( var article_index = 0; article_index <= .ArticleCount; ++article_index ) { ?>
+            <? var article = .ArticleArray[ article_index % .ArticleCount ]; ?>
+            <div class="article-carousel-slide" style="background-image: url( '<# article.ImagePath #>' )" onclick="ShowView( 'article/<# article.Id #>/<# article.Slug #>' )">
+                <div class="article-carousel-slide-text">
+                    <# .GetTranslatedText( article.Text ) #>
+                </div>
             </div>
-        </div>
-    <? } ?>
+        <? } ?>
     </div>
     <div id="article-carousel-left-arrow" class="article-carousel-arrow article-carousel-left-arrow">
         &lt;

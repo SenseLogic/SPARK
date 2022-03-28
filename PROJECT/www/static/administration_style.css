@@ -346,20 +346,20 @@ button,
 input,
 textarea {
   scrollbar-width: thin;
-  scrollbar-color: #c4d0dd #ebedee;
+  scrollbar-color: #a0bad5 #c4d0dd;
 }
 ::-webkit-scrollbar {
   height: 0.6rem;
   width: 0.6rem;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #c4d0dd;
+  background-color: #a0bad5;
 }
 ::-webkit-scrollbar-thumb:hover {
   background-color: #8dabcd;
 }
 ::-webkit-scrollbar-track {
-  background-color: #ebedee;
+  background-color: #c4d0dd;
 }
 .extended-container {
   margin-left: auto;
