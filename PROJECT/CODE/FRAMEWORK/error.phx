@@ -56,6 +56,15 @@ function PrintLine(
 
 // ~~
 
+function PrintValue(
+    value
+    )
+{
+    PrintLine( json_encode( value, JSON_PRETTY_PRINT ) );
+}
+
+// ~~
+
 function PrintRequest(
     )
 {
