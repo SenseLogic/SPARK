@@ -128,6 +128,74 @@ function CreateConstrainedImage(
 
 // ~~
 
+function CreateLimitedImage(
+    image,
+    int maximum_pixel_count
+    )
+{
+    var old_width = imageSX( image );
+    var old_height = imageSY( image );
+
+    if ( old_width > 0
+         && old_height > 0 )
+    {
+        var new_width = old_width;
+        var new_height = old_height;
+
+        if ( new_width > new_height )
+        {
+            while ( new_width > 1
+                    && new_width * new_height > maximum_pixel_count )
+            {
+                --new_width;
+                new_height = GetInteger( new_width * old_height / old_width );
+            }
+        }
+        else
+        {
+            while ( new_height > 1
+                    && new_width * new_height > maximum_pixel_count )
+            {
+                --new_height;
+                new_width = GetInteger( new_height * old_width / old_height );
+            }
+        }
+
+        if ( new_width < 1 )
+        {
+            new_width = 1;
+        }
+
+        if ( new_height < 1 )
+        {
+            new_height = 1;
+        }
+
+        var new_image = imagecreatetruecolor( new_width, new_height );
+
+        imagecopyresampled(
+            new_image,
+            image,
+            0,
+            0,
+            0,
+            0,
+            new_width,
+            new_height,
+            old_width,
+            old_height
+            );
+
+        return new_image;
+    }
+    else
+    {
+        return imagecreatetruecolor( 0, 0 );
+    }
+}
+
+// ~~
+
 function ReleaseImage(
     image
     )

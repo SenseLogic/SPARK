@@ -18,6 +18,13 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
         .ArticleArray = GetDatabaseArticleArray();
         .ArticleCount = count( .ArticleArray );
 
+        .ImagePathArray = [];
+
+        foreach ( var article; .ArticleArray )
+        {
+            array_push( .ImagePathArray, article.ImagePath );
+        }
+
         .Captcha = GetCaptchaText( 6 );
         .Session.Captcha = .Captcha;
         .Session.Store();

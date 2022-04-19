@@ -59,7 +59,7 @@
     <div id="article-carousel-strip" class="article-carousel-strip">
         <?php for (  $article_index = 0; $article_index <= $this->ArticleCount; ++$article_index ) { ?>
             <?php  $article = $this->ArticleArray[ $article_index % $this->ArticleCount ]; ?>
-            <div class="article-carousel-slide" style="background-image: url( '<?php echo $article->ImagePath; ?>' )" onclick="ShowView( 'article/<?php echo $article->Id; ?>/<?php echo $article->Slug; ?>' )">
+            <div class="article-carousel-slide" style="background-image: url( '<?php echo $article->ImagePath; ?>' ), url( '<?php echo $article->ImagePath; ?>.preload.jpg' )" onclick="ShowView( 'article/<?php echo $article->Id; ?>/<?php echo $article->Slug; ?>' )">
                 <div class="article-carousel-slide-text">
                     <?php echo $this->GetTranslatedText( $article->Text ); ?>
                 </div>

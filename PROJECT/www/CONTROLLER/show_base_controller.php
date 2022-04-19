@@ -18,6 +18,13 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
         $this->ArticleArray = GetDatabaseArticleArray();
         $this->ArticleCount = count( $this->ArticleArray );
 
+        $this->ImagePathArray = [];
+
+        foreach ( $this->ArticleArray as  $article )
+        {
+            array_push( $this->ImagePathArray, $article->ImagePath );
+        }
+
         $this->Captcha = GetCaptchaText( 6 );
         $this->Session->Captcha = $this->Captcha;
         $this->Session->Store();

@@ -59,7 +59,7 @@
     <div id="article-carousel-strip" class="article-carousel-strip">
         <? for ( var article_index = 0; article_index <= .ArticleCount; ++article_index ) { ?>
             <? var article = .ArticleArray[ article_index % .ArticleCount ]; ?>
-            <div class="article-carousel-slide" style="background-image: url( '<# article.ImagePath #>' )" onclick="ShowView( 'article/<# article.Id #>/<# article.Slug #>' )">
+            <div class="article-carousel-slide" style="background-image: url( '<# article.ImagePath #>' ), url( '<# article.ImagePath #>.preload.jpg' )" onclick="ShowView( 'article/<# article.Id #>/<# article.Slug #>' )">
                 <div class="article-carousel-slide-text">
                     <# .GetTranslatedText( article.Text ) #>
                 </div>

@@ -1,6 +1,7 @@
 <?php // -- IMPORTS
 
 require_once __DIR__ . '/' . 'controller.php';
+require_once __DIR__ . '/' . '../../FRAMEWORK/image.php';
 
 // -- TYPES
 
@@ -23,6 +24,19 @@ class UPLOAD_IMAGE_CONTROLLER extends CONTROLLER
 
             if ( MoveUploadedFile( $source_file_path, $target_file_path ) )
             {
+                if ( HasSuffix( $target_file_path, '.jpg' )
+                     || HasSuffix( $target_file_path, '.jpeg' ) )
+                {
+                     $image = ReadJpegImage( $target_file_path );
+                    WriteJpegImage( $image, $target_file_path, 80 );
+
+                     $preload_image = CreateLimitedImage( $image, 147456 );
+                    WriteJpegImage( $preload_image, $target_file_path . ".preload.jpg", 50 );
+                    ReleaseImage( $preload_image );
+
+                    ReleaseImage( $image );
+                }
+
                 SetStatus( 201 );
                 SetJsonResponse( '/upload/image/' . $target_file_name );
             }

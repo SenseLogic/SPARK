@@ -306,6 +306,26 @@ function RemovePrefix(
 
 // ~~
 
+function ReplacePrefix(
+    string text,
+    string old_prefix,
+    string new_prefix
+    )
+{
+    var old_prefix_character_count = strlen( old_prefix );
+
+    if ( strncmp( text, old_prefix, old_prefix_character_count ) === 0 )
+    {
+        return new_prefix .. substr( text, old_prefix_character_count );
+    }
+    else
+    {
+        return text;
+    }
+}
+
+// ~~
+
 function HasSuffix(
     string text,
     string suffix
@@ -342,6 +362,28 @@ function RemoveSuffix(
 
 // ~~
 
+function ReplaceSuffix(
+    string text,
+    string old_suffix,
+    string new_suffix
+    )
+{
+    var text_character_count = strlen( text );
+    var old_suffix_character_count = strlen( old_suffix );
+
+    if ( text_character_count >= old_suffix_character_count
+         && substr_compare( text, old_suffix, text_character_count - old_suffix_character_count, old_suffix_character_count ) === 0 )
+    {
+        return substr( text, 0, text_character_count - old_suffix_character_count ) .. new_suffix;
+    }
+    else
+    {
+        return text;
+    }
+}
+
+// ~~
+
 function GetLowerCaseText(
     string text
     )
@@ -364,7 +406,7 @@ function GetCapitalCaseText(
     string text
     )
 {
-    if ( count( text ) <= 1 )
+    if ( strlen( text ) <= 1 )
     {
         return strtoupper( text );
     }
@@ -372,6 +414,24 @@ function GetCapitalCaseText(
     {
         return strtoupper( text[ 0 ] ) .. strtolower( substr( text, 1 ) );
     }
+}
+
+// ~~
+
+function GetCapitalizedCaseText(
+    string text
+    )
+{
+    var word_array = explode( ' ', text );
+
+    for ( var word_index = 0;
+          word_index < count( word_array );
+          ++word_index )
+    {
+        word_array[ word_index ] = GetCapitalCaseText( word_array[ word_index ] );
+    }
+
+    return implode( ' ', word_array );
 }
 
 // ~~
@@ -538,7 +598,7 @@ function GetSnakeCaseText(
         array_push( character_is_digit_array, character >= '0' && character <= '9' );
     }
 
-    var character_count = count( character_array );
+    var character_count = strlen( character_array );
     var snake_case_text = '';
     var prior_character_is_lower_case = false;
     var prior_character_is_upper_case = false;
