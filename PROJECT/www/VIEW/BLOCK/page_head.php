@@ -39,3 +39,6 @@
 <link rel="mask-icon" href="/favicon.svg" color="#FFFFFF"/>
 <link rel="manifest" href="/site.webmanifest"/>
 <link rel="stylesheet" href="/static/style.css?v=<?php echo VersionTimestamp; ?>"/>
+<?php foreach ( $this->ImagePathArray as  $image_path ) { ?>
+    <link rel="preload" href="<?php echo $image_path; ?>.preload.jpg" as="image"/>
+<?php } ?>

@@ -553,6 +553,28 @@ html {
 .scaled-button:hover {
   transform: scale(1.1);
 }
+.zoomed-button {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.zoomed-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: inherit;
+  transition: transform 0.8s ease;
+}
+.zoomed-button:hover::after {
+  transform: scale(1.05);
+}
+.zoomed-button > * {
+  position: relative;
+  z-index: 1;
+}
 .paragraph + .paragraph {
   margin-top: 0.5em;
 }
@@ -613,48 +635,56 @@ html {
   src: url("font/ubuntu_light.woff2") format("woff2"), url("font/ubuntu_light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
+  font-display: block;
 }
 @font-face {
   font-family: "Ubuntu";
   src: url("font/ubuntu_light_italic.woff2") format("woff2"), url("font/ubuntu_light_italic.woff") format("woff");
   font-weight: 300;
   font-style: italic;
+  font-display: block;
 }
 @font-face {
   font-family: "Ubuntu";
   src: url("font/ubuntu_regular.woff2") format("woff2"), url("font/ubuntu_regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
+  font-display: block;
 }
 @font-face {
   font-family: "Ubuntu";
   src: url("font/ubuntu_regular_italic.woff2") format("woff2"), url("font/ubuntu_regular_italic.woff") format("woff");
   font-weight: 400;
   font-style: italic;
+  font-display: block;
 }
 @font-face {
   font-family: "Ubuntu";
   src: url("font/ubuntu_medium.woff2") format("woff2"), url("font/ubuntu_medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
+  font-display: block;
 }
 @font-face {
   font-family: "Ubuntu";
   src: url("font/ubuntu_medium_italic.woff2") format("woff2"), url("font/ubuntu_medium_italic.woff") format("woff");
   font-weight: 500;
   font-style: italic;
+  font-display: block;
 }
 @font-face {
   font-family: "Ubuntu";
   src: url("font/ubuntu_bold.woff2") format("woff2"), url("font/ubuntu_bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
+  font-display: block;
 }
 @font-face {
   font-family: "Ubuntu";
   src: url("font/ubuntu_bold_italic.woff2") format("woff2"), url("font/ubuntu_bold_italic.woff") format("woff");
   font-weight: 700;
   font-style: italic;
+  font-display: block;
 }
 .font-family-ubuntu {
   font-family: "Ubuntu", sans-serif;

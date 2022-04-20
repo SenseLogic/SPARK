@@ -115,7 +115,7 @@
             <img class="contact-form-captcha-image" src="/captcha"/>
         </div>
         <div class="contact-form-row">
-            <div id="contact-form-send-button" class="contact-form-send-button" onclick="event.preventDefault(); HandleContactFormSendButtonClickEvent()">
+            <div id="contact-form-send-button" class="contact-form-send-button" onclick="CancelEvent( event ); HandleContactFormSendButtonClickEvent()">
                 <?php echo $this->GetText( 'ContactFormSendButton' ); ?>
             </div>
         </div>

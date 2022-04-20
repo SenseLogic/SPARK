@@ -139,6 +139,36 @@ SetRootFontSize( 1rem, 1.1rem 1.2rem 1.3rem 1.4rem, min-width-90em min-width-100
     transform: scale( 1.1 );
 }
 
+.zoomed-button
+{
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.zoomed-button::after
+{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: inherit;
+    transition: transform .8s ease;
+}
+
+.zoomed-button:hover::after
+{
+    transform: scale( 1.05 );
+}
+
+.zoomed-button > *
+{
+    position: relative;
+    z-index: 1;
+}
+
 .paragraph + .paragraph
 {
     margin-top: 0.5em;

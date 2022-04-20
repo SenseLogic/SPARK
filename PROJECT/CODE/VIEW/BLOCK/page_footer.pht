@@ -1,5 +1,2 @@
     </body>
-    <? foreach ( var image_path; .ImagePathArray ) { ?>
-        <link rel="preload" href="<# image_path #>.preload.jpg" as="image"/>
-    <? } ?>
 </html>
