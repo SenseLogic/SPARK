@@ -359,6 +359,7 @@ textarea {
   scrollbar-color: rgba(255,255,255,0.3) rgba(0,0,0,0.1);
 }
 ::-webkit-scrollbar {
+  height: 0.4rem;
   width: 0.4rem;
 }
 ::-webkit-scrollbar-thumb {
@@ -554,17 +555,17 @@ html {
   transform: scale(1.1);
 }
 .zoomed-button {
-  cursor: pointer;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 .zoomed-button::after {
-  content: "";
   position: absolute;
   top: 0;
-  right: 0;
   bottom: 0;
   left: 0;
+  right: 0;
+  content: "";
   background: inherit;
   transition: transform 0.8s ease;
 }
@@ -572,8 +573,8 @@ html {
   transform: scale(1.05);
 }
 .zoomed-button > * {
-  position: relative;
   z-index: 1;
+  position: relative;
 }
 .paragraph + .paragraph {
   margin-top: 0.5em;

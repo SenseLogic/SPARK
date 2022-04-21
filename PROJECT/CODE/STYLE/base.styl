@@ -17,6 +17,7 @@ LinkColor = #86B4F0;
 LinkHoverColor = #A2C2EC;
 TableBorderColor = #888888;
 
+ScrollbarWidth = 0.4rem;
 ScrollbarColor = rgba( 255, 255, 255, 0.3 );
 ScrollbarHoverColor = rgba( 255, 255, 255, 0.2 );
 ScrollbarBackgroundColor = rgba( 0, 0, 0, 0.1 );
@@ -86,7 +87,8 @@ textarea
 
 ::-webkit-scrollbar
 {
-    width: 0.4rem;
+    height: ScrollbarWidth;
+    width: ScrollbarWidth;
 }
 
 ::-webkit-scrollbar-thumb
@@ -141,20 +143,24 @@ SetRootFontSize( 1rem, 1.1rem 1.2rem 1.3rem 1.4rem, min-width-90em min-width-100
 
 .zoomed-button
 {
-    cursor: pointer;
     position: relative;
+
     overflow: hidden;
+
+    cursor: pointer;
 }
 
 .zoomed-button::after
 {
-    content: "";
     position: absolute;
     top: 0;
-    right: 0;
     bottom: 0;
     left: 0;
+    right: 0;
+
+    content: "";
     background: inherit;
+
     transition: transform .8s ease;
 }
 
@@ -165,8 +171,8 @@ SetRootFontSize( 1rem, 1.1rem 1.2rem 1.3rem 1.4rem, min-width-90em min-width-100
 
 .zoomed-button > *
 {
-    position: relative;
     z-index: 1;
+    position: relative;
 }
 
 .paragraph + .paragraph
