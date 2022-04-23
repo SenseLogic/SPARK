@@ -12,7 +12,7 @@
     <% GetValueText( field_value ) %>
 <? } ?>
 <script>
-    function UpdateArticleBlockSlugArrayField(
+    function BuildArticleBlockSlugArrayField(
         form_element
         )
     {

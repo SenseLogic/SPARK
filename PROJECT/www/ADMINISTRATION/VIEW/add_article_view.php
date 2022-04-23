@@ -26,7 +26,7 @@
         image_path_field = add_article_form.ImagePath;
         video_path_field = add_article_form.VideoPath;
         next_article_id_field = add_article_form.NextArticleId;
-        UpdateArticleBlockSlugArrayField( add_article_form );
+        BuildArticleBlockSlugArrayField( add_article_form );
         block_slug_array_field = add_article_form.BlockSlugArray;
         priority_field = add_article_form.Priority;
         is_active_field = add_article_form.IsActive;

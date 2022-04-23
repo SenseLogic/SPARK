@@ -12,7 +12,7 @@
     <?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>
 <?php } ?>
 <script>
-    function UpdateArticleBlockSlugArrayField(
+    function BuildArticleBlockSlugArrayField(
         form_element
         )
     {

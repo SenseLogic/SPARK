@@ -249,8 +249,8 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
 
         it_is_valid_add_{#variable#}_form = true;
 
-        add_{#variable#}_form = document.Add{#attribute#}Form;<$<~{%is_custom%}<>
-        Update{#attribute#}{%attribute%}Field( add_{#variable#}_form );~>
+        add_{#variable#}_form = document.Add{#attribute#}Form;<$<~{%is_multiple%}<>
+        Build{#attribute#}{%attribute%}Field( add_{#variable#}_form );~>
         {%variable%}_field = add_{#variable#}_form.{%attribute%};$>
 <%¨<~!{%is_optional%}<>
         if ( {%variable%}_field.value !== "" )
@@ -346,8 +346,8 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
 
         it_is_valid_edit_{#variable#}_form = true;
 
-        edit_{#variable#}_form = document.Edit{#attribute#}Form;<$<~{%is_custom%}<>
-        Update{#attribute#}{%attribute%}Field( edit_{#variable#}_form );~>
+        edit_{#variable#}_form = document.Edit{#attribute#}Form;<$<~{%is_multiple%}<>
+        Build{#attribute#}{%attribute%}Field( edit_{#variable#}_form );~>
         {%variable%}_field = edit_{#variable#}_form.{%attribute%};$>
 <$<~!{%is_optional%}<>
         if ( {%variable%}_field.value !== "" )
