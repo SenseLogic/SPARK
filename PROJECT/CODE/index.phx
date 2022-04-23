@@ -323,6 +323,7 @@ function Route(
                       && HasPostValue( 'ImagePath' )
                       && HasPostValue( 'VideoPath' )
                       && HasPostValue( 'NextArticleId' )
+                      && HasPostValue( 'BlockSlugArray' )
                       && HasPostValue( 'Priority' )
                       && HasPostValue( 'IsActive' ) )
             {
@@ -353,6 +354,7 @@ function Route(
                       && HasPostValue( 'ImagePath' )
                       && HasPostValue( 'VideoPath' )
                       && HasPostValue( 'NextArticleId' )
+                      && HasPostValue( 'BlockSlugArray' )
                       && HasPostValue( 'Priority' )
                       && HasPostValue( 'IsActive' ) )
             {

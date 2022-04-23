@@ -13,6 +13,7 @@
             image_path_field,
             video_path_field,
             next_article_id_field,
+            block_slug_array_field,
             priority_field,
             is_active_field;
 
@@ -25,6 +26,8 @@
         image_path_field = edit_article_form.ImagePath;
         video_path_field = edit_article_form.VideoPath;
         next_article_id_field = edit_article_form.NextArticleId;
+        UpdateArticleBlockSlugArrayField( edit_article_form );
+        block_slug_array_field = edit_article_form.BlockSlugArray;
         priority_field = edit_article_form.Priority;
         is_active_field = edit_article_form.IsActive;
 
@@ -155,6 +158,11 @@
                         <?php } ?>
                     </select>
                 </div>
+                <?php  $field_mode = 'edit'; ?>
+                <?php  $field_name = 'BlockSlugArray'; ?>
+                <?php  $field_title = 'Block Slug Array'; ?>
+                <?php  $field_value = $this->Article->BlockSlugArray; ?>
+                <?php require __DIR__ . '/' . 'BLOCK/article_block_slug_array_field.php'; ?>
                 <div class="form-field-name">
                     <?php echo htmlspecialchars( $this->GetText( 'Priority' ) ); ?> :
                 </div>
@@ -180,5 +188,8 @@
             </div>
         </form>
     </div>
+    <?php  $object_mode = 'edit'; ?>
+    <?php  $object_value = Article; ?>
+    <?php require __DIR__ . '/' . 'BLOCK/article_object.php'; ?>
 </div>
 <?php require __DIR__ . '/' . 'BLOCK/page_footer.php'; ?>

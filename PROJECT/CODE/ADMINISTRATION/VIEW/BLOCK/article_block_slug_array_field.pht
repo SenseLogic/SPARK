@@ -1,0 +1,20 @@
+<? if ( var field_mode === 'add' || field_mode === 'edit' ) { ?>
+    <div class="form-field-name">
+        <% var field_title %> :
+    </div>
+    <input class="form-input" name="<% var field_name %>" type="text" value="<% GetValueText( var field_value ) %>"/>
+<? } else if ( field_mode === 'remove' || field_mode === 'view' || field_mode === 'card' ) { ?>
+    <div class="form-field-name">
+        <% field_title %> :
+    </div>
+    <input class="form-input" name="<% field_name %>" type="text" value="<% GetValueText( field_value ) %>" readonly/>
+<? } else if ( field_mode === 'cell' ) { ?>
+    <% GetValueText( field_value ) %>
+<? } ?>
+<script>
+    function UpdateArticleBlockSlugArrayField(
+        form_element
+        )
+    {
+    }
+</script>

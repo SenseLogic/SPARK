@@ -731,7 +731,7 @@ textarea {
   grid-template-columns: repeat(8, auto);
 }
 .article-table {
-  grid-template-columns: repeat(9, auto);
+  grid-template-columns: repeat(10, auto);
 }
 .contact-table {
   grid-template-columns: repeat(8, auto);

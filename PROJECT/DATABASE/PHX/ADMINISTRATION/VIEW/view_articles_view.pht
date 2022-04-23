@@ -33,6 +33,9 @@
                 <% .GetText( 'Next Article Id' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
+                <% .GetText( 'Block Slug Array' ) %>
+            </div>
+            <div class="form-column-name sortable-table-column">
                 <% .GetText( 'Priority' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
@@ -72,6 +75,12 @@
                     </div>
                     <div class="sortable-table-cell filter-cell">
                         <% GetValueText( article.NextArticleId ) %>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                            <? var field_mode = 'cell'; ?>
+                            <? var field_name = 'BlockSlugArray'; ?>
+                            <? var field_value = article.BlockSlugArray; ?>
+                            <? include 'BLOCK/article_block_slug_array_field.php'; ?>
                     </div>
                     <div class="sortable-table-cell filter-cell">
                         <% GetValueText( article.Priority ) %>
@@ -148,6 +157,11 @@
                         <div>
                                 <input class="form-input" name="NextArticleId" type="text" value="<% GetValueText( article.NextArticleId ) %>" readonly/>
                         </div>
+                        <? var field_mode = 'card'; ?>
+                        <? var field_name = 'BlockSlugArray'; ?>
+                        <? var field_title = 'Block Slug Array'; ?>
+                        <? var field_value = article.BlockSlugArray; ?>
+                        <? include 'BLOCK/article_block_slug_array_field.php'; ?>
                         <div class="form-field-name">
                             <% .GetText( 'Priority' ) %> :
                         </div>
@@ -170,6 +184,9 @@
                         </div>
                     <? } ?>
                 </div>
+                <? var object_mode = 'card'; ?>
+                <? var object_value = article; ?>
+                <? include 'BLOCK/article_object.php'; ?>
             </div>
         <? } ?>
     </div>
