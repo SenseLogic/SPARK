@@ -249,9 +249,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
 
         it_is_valid_add_{#variable#}_form = true;
 
-        add_{#variable#}_form = document.Add{#attribute#}Form;<$<~{%is_multiple%}<>
-        Build{#attribute#}{%attribute%}Field( add_{#variable#}_form );~>
-        {%variable%}_field = add_{#variable#}_form.{%attribute%};$>
+        add_{#variable#}_form = document.Add{#attribute#}Form;
 <%¨<~!{%is_optional%}<>
         if ( {%variable%}_field.value !== "" )
         {
@@ -270,7 +268,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
 <div id="add-{#style#}-view">
     <div class="page-section form-section">
         <form class="form-centered" name="Add{#attribute#}Form" onsubmit="return IsValidAdd{#attribute#}Form()" action="/admin/{#style#}/add" method="post">
-            <div class="form-container"><%¨<~{%is_custom%}<>
+            <div class="form-container"><%¨<~{%has_custom_block%}<>
                 <? var field_mode = 'add'; ?>
                 <? var field_name = '{%attribute%}'; ?>
                 <? var field_title = '{%title%}'; ?>
@@ -326,7 +324,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                 </button>
             </div>
         </form>
-    </div><~{#is_custom#}<>
+    </div><~{#has_custom_block#}<>
     <? var object_mode = 'add'; ?>
     <? var object_value = {#attribute#}; ?>
     <? include 'BLOCK/{#variable#}_object.php'; ?>~>
@@ -346,9 +344,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
 
         it_is_valid_edit_{#variable#}_form = true;
 
-        edit_{#variable#}_form = document.Edit{#attribute#}Form;<$<~{%is_multiple%}<>
-        Build{#attribute#}{%attribute%}Field( edit_{#variable#}_form );~>
-        {%variable%}_field = edit_{#variable#}_form.{%attribute%};$>
+        edit_{#variable#}_form = document.Edit{#attribute#}Form;
 <$<~!{%is_optional%}<>
         if ( {%variable%}_field.value !== "" )
         {
@@ -367,7 +363,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
 <div id="edit-{#style#}-view">
     <div class="page-section form-section">
         <form class="form-centered" name="Edit{#attribute#}Form" onsubmit="return IsValidEdit{#attribute#}Form()" action="/admin/{#style#}/edit/<\% .{#attribute#}.{#key_attribute#} %\>" method="post">
-            <div class="form-container"><$<~{%is_custom%}<>
+            <div class="form-container"><$<~{%has_custom_block%}<>
                 <? var field_mode = 'edit'; ?>
                 <? var field_name = '{%attribute%}'; ?>
                 <? var field_title = '{%title%}'; ?>
@@ -423,7 +419,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                 </button>
             </div>
         </form>
-    </div><~{#is_custom#}<>
+    </div><~{#has_custom_block#}<>
     <? var object_mode = 'edit'; ?>
     <? var object_value = {#attribute#}; ?>
     <? include 'BLOCK/{#variable#}_object.php'; ?>~>
@@ -434,7 +430,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
 <div id="remove-{#style#}-view">
     <div class="page-section form-section">
         <form class="form-centered" action="/admin/{#style#}/remove/<\% .{#attribute#}.{#key_attribute#} %\>" method="post">
-            <div class="form-container"><$<~{%is_custom%}<>
+            <div class="form-container"><$<~{%has_custom_block%}<>
                 <? var field_mode = 'remove'; ?>
                 <? var field_name = '{%attribute%}'; ?>
                 <? var field_title = '{%title%}'; ?>
@@ -470,7 +466,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                 <button class="justify-self-end form-button-large form-button form-button-large remove-button" type="submit">
                 </button>
             </div>
-        </form><~{#is_custom#}<>
+        </form><~{#has_custom_block#}<>
         <? var object_mode = 'remove'; ?>
         <? var object_value = {#attribute#}; ?>
         <? include 'BLOCK/{#variable#}_object.php'; ?>~>
@@ -481,7 +477,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
 <? include 'BLOCK/page_header.php'; ?>
 <div id="view-{#style#}-view">
     <div class="page-section form-section">
-        <div class="form-container"><$<~{%is_custom%}<>
+        <div class="form-container"><$<~{%has_custom_block%}<>
             <? var field_mode = 'view'; ?>
             <? var field_name = '{%attribute%}'; ?>
             <? var field_title = '{%title%}'; ?>
@@ -515,7 +511,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
             <a class="justify-self-start form-button form-button-large cancel-button" href="<\% .ListPage %\>">
             </a>
         </div>
-    </div><~{#is_custom#}<>
+    </div><~{#has_custom_block#}<>
     <? var object_mode = 'view'; ?>
     <? var object_value = {#attribute#}; ?>
     <? include 'BLOCK/{#variable#}_object.php'; ?>~>
@@ -546,7 +542,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
             </div>
             <? foreach ( var {#variable#}; .{#attribute#}Array ) { ?>
                 <div class="sortable-table-row filter-row"><$
-                    <div class="sortable-table-cell filter-cell"><~{%is_custom%}<>
+                    <div class="sortable-table-cell filter-cell"><~{%has_custom_block%}<>
                             <? var field_mode = 'cell'; ?>
                             <? var field_name = '{%attribute%}'; ?>
                             <? var field_value = {#variable#}.{%attribute%}; ?>
@@ -585,7 +581,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
         <? foreach ( var {#variable#}; .{#attribute#}Array ) { ?>
             <div class="card-container filter-row">
                 <div class="card">
-                    <div class="form-container"><$<~{%is_custom%}<>
+                    <div class="form-container"><$<~{%has_custom_block%}<>
                         <? var field_mode = 'card'; ?>
                         <? var field_name = '{%attribute%}'; ?>
                         <? var field_title = '{%title%}'; ?>
@@ -625,7 +621,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                             </a>
                         </div>
                     <? } ?>
-                </div><~{#is_custom#}<>
+                </div><~{#has_custom_block#}<>
                 <? var object_mode = 'card'; ?>
                 <? var object_value = {#variable#}; ?>
                 <? include 'BLOCK/{#variable#}_object.php'; ?>~>
