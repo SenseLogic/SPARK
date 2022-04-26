@@ -18,13 +18,6 @@
         it_is_valid_edit_contact_form = true;
 
         edit_contact_form = document.EditContactForm;
-        name_field = edit_contact_form.Name;
-        company_field = edit_contact_form.Company;
-        email_field = edit_contact_form.Email;
-        phone_field = edit_contact_form.Phone;
-        subject_field = edit_contact_form.Subject;
-        message_field = edit_contact_form.Message;
-        date_time_field = edit_contact_form.DateTime;
 
         if ( name_field.value !== "" )
         {

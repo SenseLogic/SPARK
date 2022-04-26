@@ -13,8 +13,6 @@
         it_is_valid_add_text_form = true;
 
         add_text_form = document.AddTextForm;
-        slug_field = add_text_form.Slug;
-        text_field = add_text_form.Text;
 
         if ( slug_field.value !== "" )
         {

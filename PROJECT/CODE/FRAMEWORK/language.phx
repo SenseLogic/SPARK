@@ -53,6 +53,17 @@ function ExtractLanguageCode(
 
 // ~~
 
+function GetUntranslatedText(
+    string text
+    )
+{
+    var translated_text_array = explode( '¨', text );
+
+    return translated_text_array[ 0 ];
+}
+
+// ~~
+
 function GetTranslatedText(
     string text,
     string language_code,

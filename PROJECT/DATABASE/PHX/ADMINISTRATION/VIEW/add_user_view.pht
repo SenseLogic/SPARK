@@ -15,10 +15,6 @@
         it_is_valid_add_user_form = true;
 
         add_user_form = document.AddUserForm;
-        email_field = add_user_form.Email;
-        pseudonym_field = add_user_form.Pseudonym;
-        password_field = add_user_form.Password;
-        role_field = add_user_form.Role;
 
         if ( email_field.value !== "" )
         {

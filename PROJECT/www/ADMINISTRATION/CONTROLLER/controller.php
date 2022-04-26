@@ -20,6 +20,15 @@ class CONTROLLER
 
     // -- INQUIRIES
 
+    function GetUntranslatedText(
+        string $text
+        )
+    {
+        return GetUntranslatedText( $text );
+    }
+
+    // ~~
+
     function GetTranslatedText(
         string $text
         )

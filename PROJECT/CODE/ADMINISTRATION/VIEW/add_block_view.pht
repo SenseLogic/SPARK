@@ -18,13 +18,6 @@
         it_is_valid_add_block_form = true;
 
         add_block_form = document.AddBlockForm;
-        slug_field = add_block_form.Slug;
-        article_slug_field = add_block_form.ArticleSlug;
-        number_field = add_block_form.Number;
-        title_field = add_block_form.Title;
-        text_field = add_block_form.Text;
-        image_path_field = add_block_form.ImagePath;
-        video_path_field = add_block_form.VideoPath;
 
         if ( slug_field.value !== "" )
         {

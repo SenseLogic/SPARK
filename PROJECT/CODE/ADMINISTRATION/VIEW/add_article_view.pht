@@ -20,16 +20,6 @@
         it_is_valid_add_article_form = true;
 
         add_article_form = document.AddArticleForm;
-        slug_field = add_article_form.Slug;
-        name_field = add_article_form.Name;
-        text_field = add_article_form.Text;
-        image_path_field = add_article_form.ImagePath;
-        video_path_field = add_article_form.VideoPath;
-        next_article_id_field = add_article_form.NextArticleId;
-        BuildArticleBlockSlugArrayField( add_article_form );
-        block_slug_array_field = add_article_form.BlockSlugArray;
-        priority_field = add_article_form.Priority;
-        is_active_field = add_article_form.IsActive;
 
         if ( slug_field.value !== "" )
         {

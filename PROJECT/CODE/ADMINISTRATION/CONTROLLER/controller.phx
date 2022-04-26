@@ -20,6 +20,15 @@ class CONTROLLER
 
     // -- INQUIRIES
 
+    method GetUntranslatedText(
+        string text
+        )
+    {
+        return GetUntranslatedText( text );
+    }
+
+    // ~~
+
     method GetTranslatedText(
         string text
         )

@@ -13,8 +13,6 @@
         it_is_valid_edit_text_form = true;
 
         edit_text_form = document.EditTextForm;
-        slug_field = edit_text_form.Slug;
-        text_field = edit_text_form.Text;
 
         if ( slug_field.value !== "" )
         {

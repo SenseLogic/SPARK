@@ -18,13 +18,6 @@
         it_is_valid_edit_block_form = true;
 
         edit_block_form = document.EditBlockForm;
-        slug_field = edit_block_form.Slug;
-        article_slug_field = edit_block_form.ArticleSlug;
-        number_field = edit_block_form.Number;
-        title_field = edit_block_form.Title;
-        text_field = edit_block_form.Text;
-        image_path_field = edit_block_form.ImagePath;
-        video_path_field = edit_block_form.VideoPath;
 
         if ( slug_field.value !== "" )
         {

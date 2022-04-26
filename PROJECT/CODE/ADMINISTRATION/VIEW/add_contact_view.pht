@@ -18,13 +18,6 @@
         it_is_valid_add_contact_form = true;
 
         add_contact_form = document.AddContactForm;
-        name_field = add_contact_form.Name;
-        company_field = add_contact_form.Company;
-        email_field = add_contact_form.Email;
-        phone_field = add_contact_form.Phone;
-        subject_field = add_contact_form.Subject;
-        message_field = add_contact_form.Message;
-        date_time_field = add_contact_form.DateTime;
 
         if ( name_field.value !== "" )
         {

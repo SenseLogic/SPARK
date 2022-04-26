@@ -15,10 +15,6 @@
         it_is_valid_edit_user_form = true;
 
         edit_user_form = document.EditUserForm;
-        email_field = edit_user_form.Email;
-        pseudonym_field = edit_user_form.Pseudonym;
-        password_field = edit_user_form.Password;
-        role_field = edit_user_form.Role;
 
         if ( email_field.value !== "" )
         {
