@@ -532,7 +532,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
             <? } ?>
         </div>
     </div>
-    <div class="cell-list is-hidden page-section form-section">
+    <div class="cell-list page-section form-section is-hidden">
         <div class="form-container table-container {#style#}-table sortable-table"><$
             <div class="form-column-name sortable-table-column">
                 <\% .GetText( '<~TitleCase<>{%attribute%}~>' ) %\>

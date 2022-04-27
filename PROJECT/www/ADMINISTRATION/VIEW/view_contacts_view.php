@@ -12,7 +12,7 @@
             <?php } ?>
         </div>
     </div>
-    <div class="cell-list is-hidden page-section form-section">
+    <div class="cell-list page-section form-section is-hidden">
         <div class="form-container table-container contact-table sortable-table">
             <div class="form-column-name sortable-table-column">
                 <?php echo htmlspecialchars( $this->GetText( 'Name' ) ); ?>
