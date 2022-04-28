@@ -13,63 +13,60 @@
             image_path_field,
             video_path_field,
             next_article_id_field,
-            block_slug_array_field,
             priority_field,
             is_active_field;
 
+        edit_article_form = document.EditArticleForm;
+        slug_field = edit_article_form.Slug;
+        name_field = edit_article_form.Name;
+        text_field = edit_article_form.Text;
+        image_path_field = edit_article_form.ImagePath;
+        video_path_field = edit_article_form.VideoPath;
+        next_article_id_field = edit_article_form.NextArticleId;
+        priority_field = edit_article_form.Priority;
+        is_active_field = edit_article_form.IsActive;
+
+        slug_field.RemoveClass( "form-field-error" );
+        name_field.RemoveClass( "form-field-error" );
+        text_field.RemoveClass( "form-field-error" );
+        image_path_field.RemoveClass( "form-field-error" );
+        video_path_field.RemoveClass( "form-field-error" );
+        next_article_id_field.RemoveClass( "form-field-error" );
+        priority_field.RemoveClass( "form-field-error" );
+        is_active_field.RemoveClass( "form-field-error" );
+
         it_is_valid_edit_article_form = true;
 
-        edit_article_form = document.EditArticleForm;
-
-        if ( slug_field.value !== "" )
-        {
-            slug_field.RemoveClass( "form-field-error" );
-        }
-        else
+        if ( slug_field.value === "" )
         {
             slug_field.AddClass( "form-field-error" );
 
             it_is_valid_edit_article_form = false;
         }
 
-        if ( name_field.value !== "" )
-        {
-            name_field.RemoveClass( "form-field-error" );
-        }
-        else
+        if ( name_field.value === "" )
         {
             name_field.AddClass( "form-field-error" );
 
             it_is_valid_edit_article_form = false;
         }
 
-        if ( next_article_id_field.value !== "" )
-        {
-            next_article_id_field.RemoveClass( "form-field-error" );
-        }
-        else
+        if ( !IsNaturalText( next_article_id_field.value ) )
         {
             next_article_id_field.AddClass( "form-field-error" );
 
             it_is_valid_edit_article_form = false;
         }
 
-        if ( priority_field.value !== "" )
-        {
-            priority_field.RemoveClass( "form-field-error" );
-        }
-        else
+        if ( priority_field.value === "" )
         {
             priority_field.AddClass( "form-field-error" );
 
             it_is_valid_edit_article_form = false;
         }
 
-        if ( is_active_field.value !== "" )
-        {
-            is_active_field.RemoveClass( "form-field-error" );
-        }
-        else
+        if ( !IsBooleanText( is_active_field.value )
+             && !IsBinaryText( is_active_field.value ) )
         {
             is_active_field.AddClass( "form-field-error" );
 
@@ -148,11 +145,6 @@
                         <?php } ?>
                     </select>
                 </div>
-                <?php  $field_mode = 'edit'; ?>
-                <?php  $field_name = 'BlockSlugArray'; ?>
-                <?php  $field_title = 'Block Slug Array'; ?>
-                <?php  $field_value = $this->Article->BlockSlugArray; ?>
-                <?php require __DIR__ . '/' . 'BLOCK/article_block_slug_array_field.php'; ?>
                 <div class="form-field-name">
                     <?php echo htmlspecialchars( $this->GetText( 'Priority' ) ); ?> :
                 </div>
@@ -178,8 +170,5 @@
             </div>
         </form>
     </div>
-    <?php  $object_mode = 'edit'; ?>
-    <?php  $object_value = Article; ?>
-    <?php require __DIR__ . '/' . 'BLOCK/article_object.php'; ?>
 </div>
 <?php require __DIR__ . '/' . 'BLOCK/page_footer.php'; ?>

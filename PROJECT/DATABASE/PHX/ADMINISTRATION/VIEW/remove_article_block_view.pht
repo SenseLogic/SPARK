@@ -1,0 +1,26 @@
+<? include 'BLOCK/page_header.php'; ?>
+<div id="remove-article-block-view">
+    <div class="page-section form-section">
+        <form class="form-centered" action="/admin/article-block/remove/<% .ArticleBlock.Id %>" method="post">
+            <div class="form-container">
+                <div class="form-field-name">
+                    <% .GetText( 'Article Slug' ) %> :
+                </div>
+                <div>
+                    <input class="form-input" name="ArticleSlug" type="text" value="<% GetValueText( .ArticleBlock.ArticleSlug ) %>" readonly/>
+                </div>
+                <div class="form-field-name">
+                    <% .GetText( 'Block Slug' ) %> :
+                </div>
+                <div>
+                    <input class="form-input" name="BlockSlug" type="text" value="<% GetValueText( .ArticleBlock.BlockSlug ) %>" readonly/>
+                </div>
+                <a class="justify-self-start form-button form-button-large cancel-button" href="<% .ListPage %>">
+                </a>
+                <button class="justify-self-end form-button-large form-button form-button-large remove-button" type="submit">
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<? include 'BLOCK/page_footer.php'; ?>

@@ -10,26 +10,23 @@
             slug_field,
             text_field;
 
+        edit_text_form = document.EditTextForm;
+        slug_field = edit_text_form.Slug;
+        text_field = edit_text_form.Text;
+
+        slug_field.RemoveClass( "form-field-error" );
+        text_field.RemoveClass( "form-field-error" );
+
         it_is_valid_edit_text_form = true;
 
-        edit_text_form = document.EditTextForm;
-
-        if ( slug_field.value !== "" )
-        {
-            slug_field.RemoveClass( "form-field-error" );
-        }
-        else
+        if ( slug_field.value === "" )
         {
             slug_field.AddClass( "form-field-error" );
 
             it_is_valid_edit_text_form = false;
         }
 
-        if ( text_field.value !== "" )
-        {
-            text_field.RemoveClass( "form-field-error" );
-        }
-        else
+        if ( text_field.value === "" )
         {
             text_field.AddClass( "form-field-error" );
 

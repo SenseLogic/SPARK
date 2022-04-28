@@ -12,48 +12,41 @@
             password_field,
             role_field;
 
+        edit_user_form = document.EditUserForm;
+        email_field = edit_user_form.Email;
+        pseudonym_field = edit_user_form.Pseudonym;
+        password_field = edit_user_form.Password;
+        role_field = edit_user_form.Role;
+
+        email_field.RemoveClass( "form-field-error" );
+        pseudonym_field.RemoveClass( "form-field-error" );
+        password_field.RemoveClass( "form-field-error" );
+        role_field.RemoveClass( "form-field-error" );
+
         it_is_valid_edit_user_form = true;
 
-        edit_user_form = document.EditUserForm;
-
-        if ( email_field.value !== "" )
-        {
-            email_field.RemoveClass( "form-field-error" );
-        }
-        else
+        if ( email_field.value === "" )
         {
             email_field.AddClass( "form-field-error" );
 
             it_is_valid_edit_user_form = false;
         }
 
-        if ( pseudonym_field.value !== "" )
-        {
-            pseudonym_field.RemoveClass( "form-field-error" );
-        }
-        else
+        if ( pseudonym_field.value === "" )
         {
             pseudonym_field.AddClass( "form-field-error" );
 
             it_is_valid_edit_user_form = false;
         }
 
-        if ( password_field.value !== "" )
-        {
-            password_field.RemoveClass( "form-field-error" );
-        }
-        else
+        if ( password_field.value === "" )
         {
             password_field.AddClass( "form-field-error" );
 
             it_is_valid_edit_user_form = false;
         }
 
-        if ( role_field.value !== "" )
-        {
-            role_field.RemoveClass( "form-field-error" );
-        }
-        else
+        if ( role_field.value === "" )
         {
             role_field.AddClass( "form-field-error" );
 

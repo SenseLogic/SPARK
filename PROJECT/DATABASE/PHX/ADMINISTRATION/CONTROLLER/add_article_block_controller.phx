@@ -1,0 +1,27 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/article_block_model.php';
+
+// -- TYPES
+
+class ADD_ARTICLE_BLOCK_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code
+        )
+    {
+        parent::constructor( language_code );
+
+        .Title = 'Add a article block';
+        .ListPage = FindSessionValue( 'ListPage', '/admin/article-block' );
+
+        import '../VIEW/add_article_block_view.php';
+    }
+}
+
+// -- STATEMENTS
+
+var add_article_block_controller = new ADD_ARTICLE_BLOCK_CONTROLLER( var language_code );

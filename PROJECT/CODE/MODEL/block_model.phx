@@ -1,3 +1,4 @@
 // -- IMPORTS
 
+import 'article.php';
 import 'block.php';

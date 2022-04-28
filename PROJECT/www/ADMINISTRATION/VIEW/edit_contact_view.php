@@ -15,81 +15,68 @@
             message_field,
             date_time_field;
 
+        edit_contact_form = document.EditContactForm;
+        name_field = edit_contact_form.Name;
+        company_field = edit_contact_form.Company;
+        email_field = edit_contact_form.Email;
+        phone_field = edit_contact_form.Phone;
+        subject_field = edit_contact_form.Subject;
+        message_field = edit_contact_form.Message;
+        date_time_field = edit_contact_form.DateTime;
+
+        name_field.RemoveClass( "form-field-error" );
+        company_field.RemoveClass( "form-field-error" );
+        email_field.RemoveClass( "form-field-error" );
+        phone_field.RemoveClass( "form-field-error" );
+        subject_field.RemoveClass( "form-field-error" );
+        message_field.RemoveClass( "form-field-error" );
+        date_time_field.RemoveClass( "form-field-error" );
+
         it_is_valid_edit_contact_form = true;
 
-        edit_contact_form = document.EditContactForm;
-
-        if ( name_field.value !== "" )
-        {
-            name_field.RemoveClass( "form-field-error" );
-        }
-        else
+        if ( name_field.value === "" )
         {
             name_field.AddClass( "form-field-error" );
 
             it_is_valid_edit_contact_form = false;
         }
 
-        if ( company_field.value !== "" )
-        {
-            company_field.RemoveClass( "form-field-error" );
-        }
-        else
+        if ( company_field.value === "" )
         {
             company_field.AddClass( "form-field-error" );
 
             it_is_valid_edit_contact_form = false;
         }
 
-        if ( email_field.value !== "" )
-        {
-            email_field.RemoveClass( "form-field-error" );
-        }
-        else
+        if ( email_field.value === "" )
         {
             email_field.AddClass( "form-field-error" );
 
             it_is_valid_edit_contact_form = false;
         }
 
-        if ( phone_field.value !== "" )
-        {
-            phone_field.RemoveClass( "form-field-error" );
-        }
-        else
+        if ( phone_field.value === "" )
         {
             phone_field.AddClass( "form-field-error" );
 
             it_is_valid_edit_contact_form = false;
         }
 
-        if ( subject_field.value !== "" )
-        {
-            subject_field.RemoveClass( "form-field-error" );
-        }
-        else
+        if ( subject_field.value === "" )
         {
             subject_field.AddClass( "form-field-error" );
 
             it_is_valid_edit_contact_form = false;
         }
 
-        if ( message_field.value !== "" )
-        {
-            message_field.RemoveClass( "form-field-error" );
-        }
-        else
+        if ( message_field.value === "" )
         {
             message_field.AddClass( "form-field-error" );
 
             it_is_valid_edit_contact_form = false;
         }
 
-        if ( date_time_field.value !== "" )
-        {
-            date_time_field.RemoveClass( "form-field-error" );
-        }
-        else
+        if ( date_time_field.value === "" )
         {
             date_time_field.AddClass( "form-field-error" );
 

@@ -22,11 +22,10 @@ class DO_EDIT_ARTICLE_CONTROLLER extends CONTROLLER
          $image_path = GetPostValue( 'ImagePath' );
          $video_path = GetPostValue( 'VideoPath' );
          $next_article_id = GetPostValue( 'NextArticleId' );
-         $block_slug_array = GetJsonObject( GetPostValue( 'BlockSlugArray' ) );
          $priority = GetPostValue( 'Priority' );
          $is_active = GetPostValue( 'IsActive' );
 
-        SetDatabaseArticle( $article_id, $slug, $name, $text, $image_path, $video_path, $next_article_id, $block_slug_array, $priority, $is_active );
+        SetDatabaseArticle( $article_id, $slug, $name, $text, $image_path, $video_path, $next_article_id, $priority, $is_active );
 
         Redirect( FindSessionValue( 'ListPage', '/admin/article' ) );
     }

@@ -15,37 +15,40 @@
             image_path_field,
             video_path_field;
 
+        edit_block_form = document.EditBlockForm;
+        slug_field = edit_block_form.Slug;
+        article_slug_field = edit_block_form.ArticleSlug;
+        number_field = edit_block_form.Number;
+        title_field = edit_block_form.Title;
+        text_field = edit_block_form.Text;
+        image_path_field = edit_block_form.ImagePath;
+        video_path_field = edit_block_form.VideoPath;
+
+        slug_field.RemoveClass( "form-field-error" );
+        article_slug_field.RemoveClass( "form-field-error" );
+        number_field.RemoveClass( "form-field-error" );
+        title_field.RemoveClass( "form-field-error" );
+        text_field.RemoveClass( "form-field-error" );
+        image_path_field.RemoveClass( "form-field-error" );
+        video_path_field.RemoveClass( "form-field-error" );
+
         it_is_valid_edit_block_form = true;
 
-        edit_block_form = document.EditBlockForm;
-
-        if ( slug_field.value !== "" )
-        {
-            slug_field.RemoveClass( "form-field-error" );
-        }
-        else
+        if ( slug_field.value === "" )
         {
             slug_field.AddClass( "form-field-error" );
 
             it_is_valid_edit_block_form = false;
         }
 
-        if ( article_slug_field.value !== "" )
-        {
-            article_slug_field.RemoveClass( "form-field-error" );
-        }
-        else
+        if ( article_slug_field.value === "" )
         {
             article_slug_field.AddClass( "form-field-error" );
 
             it_is_valid_edit_block_form = false;
         }
 
-        if ( number_field.value !== "" )
-        {
-            number_field.RemoveClass( "form-field-error" );
-        }
-        else
+        if ( !IsNumericText( number_field.value ) )
         {
             number_field.AddClass( "form-field-error" );
 
@@ -69,7 +72,12 @@
                     <?php echo htmlspecialchars( $this->GetText( 'Article Slug' ) ); ?> :
                 </div>
                 <div>
-                    <input class="form-input" name="ArticleSlug" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Block->ArticleSlug ) ); ?>"/>
+                    <select class="form-select" name="ArticleSlug">
+                        <?php  $article_array = GetDatabaseArticleArray(); ?>
+                        <?php foreach ( $article_array as  $article ) { ?>
+                            <option value="<?php echo htmlspecialchars( GetValueText( $article->Id ) ); ?>"<?php if ( $this->Block->ArticleSlug === $article->Id ) echo ' selected'; ?>><?php echo htmlspecialchars( $article->Name ); ?></option>
+                        <?php } ?>
+                    </select>
                 </div>
                 <div class="form-field-name">
                     <?php echo htmlspecialchars( $this->GetText( 'Number' ) ); ?> :

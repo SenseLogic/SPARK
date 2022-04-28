@@ -52,11 +52,6 @@
             <div>
                     <input class="form-input" name="NextArticleId" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Article->NextArticleId ) ); ?>" readonly/>
             </div>
-            <?php  $field_mode = 'view'; ?>
-            <?php  $field_name = 'BlockSlugArray'; ?>
-            <?php  $field_title = 'Block Slug Array'; ?>
-            <?php  $field_value = $this->Article->BlockSlugArray; ?>
-            <?php require __DIR__ . '/' . 'BLOCK/article_block_slug_array_field.php'; ?>
             <div class="form-field-name">
                 <?php echo htmlspecialchars( $this->GetText( 'Priority' ) ); ?> :
             </div>
@@ -73,8 +68,5 @@
             </a>
         </div>
     </div>
-    <?php  $object_mode = 'view'; ?>
-    <?php  $object_value = Article; ?>
-    <?php require __DIR__ . '/' . 'BLOCK/article_object.php'; ?>
 </div>
 <?php require __DIR__ . '/' . 'BLOCK/page_footer.php'; ?>

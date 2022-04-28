@@ -908,6 +908,12 @@ body.is-scrolled .header-menu:not(.is-open) {
   padding: 1rem;
   background-color: #c0c0c0;
 }
+.contact-form-row {
+  display: flex;
+}
+.contact-form-row + .contact-form-row {
+  margin-top: 1rem;
+}
 .contact-form-input {
   height: 3rem;
   width: 20rem;
@@ -935,12 +941,6 @@ body.is-scrolled .header-menu:not(.is-open) {
   height: 3rem;
   border-radius: 0.5rem;
 }
-.contact-form-row {
-  display: flex;
-}
-.contact-form-row + .contact-form-row {
-  margin-top: 1rem;
-}
 .contact-form-send-button {
   margin-left: auto;
   height: 3rem;
@@ -952,7 +952,7 @@ body.is-scrolled .header-menu:not(.is-open) {
   color: #fff;
   cursor: pointer;
 }
-.contact-form-thanks {
+.contact-form-thanks-container {
   position: absolute;
   top: 0;
   bottom: 0;

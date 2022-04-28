@@ -33,9 +33,6 @@
                 <?php echo htmlspecialchars( $this->GetText( 'Next Article Id' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( $this->GetText( 'Block Slug Array' ) ); ?>
-            </div>
-            <div class="form-column-name sortable-table-column">
                 <?php echo htmlspecialchars( $this->GetText( 'Priority' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
@@ -75,12 +72,6 @@
                     </div>
                     <div class="sortable-table-cell filter-cell">
                         <?php echo htmlspecialchars( GetValueText( $article->NextArticleId ) ); ?>
-                    </div>
-                    <div class="sortable-table-cell filter-cell">
-                            <?php  $field_mode = 'cell'; ?>
-                            <?php  $field_name = 'BlockSlugArray'; ?>
-                            <?php  $field_value = $article->BlockSlugArray; ?>
-                            <?php require __DIR__ . '/' . 'BLOCK/article_block_slug_array_field.php'; ?>
                     </div>
                     <div class="sortable-table-cell filter-cell">
                         <?php echo htmlspecialchars( GetValueText( $article->Priority ) ); ?>
@@ -157,11 +148,6 @@
                         <div>
                                 <input class="form-input" name="NextArticleId" type="text" value="<?php echo htmlspecialchars( GetValueText( $article->NextArticleId ) ); ?>" readonly/>
                         </div>
-                        <?php  $field_mode = 'card'; ?>
-                        <?php  $field_name = 'BlockSlugArray'; ?>
-                        <?php  $field_title = 'Block Slug Array'; ?>
-                        <?php  $field_value = $article->BlockSlugArray; ?>
-                        <?php require __DIR__ . '/' . 'BLOCK/article_block_slug_array_field.php'; ?>
                         <div class="form-field-name">
                             <?php echo htmlspecialchars( $this->GetText( 'Priority' ) ); ?> :
                         </div>
@@ -184,9 +170,6 @@
                         </div>
                     <?php } ?>
                 </div>
-                <?php  $object_mode = 'card'; ?>
-                <?php  $object_value = $article; ?>
-                <?php require __DIR__ . '/' . 'BLOCK/article_object.php'; ?>
             </div>
         <?php } ?>
     </div>

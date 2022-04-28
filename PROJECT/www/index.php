@@ -323,7 +323,6 @@ function Route(
                       && HasPostValue( 'ImagePath' )
                       && HasPostValue( 'VideoPath' )
                       && HasPostValue( 'NextArticleId' )
-                      && HasPostValue( 'BlockSlugArray' )
                       && HasPostValue( 'Priority' )
                       && HasPostValue( 'IsActive' ) )
             {
@@ -354,7 +353,6 @@ function Route(
                       && HasPostValue( 'ImagePath' )
                       && HasPostValue( 'VideoPath' )
                       && HasPostValue( 'NextArticleId' )
-                      && HasPostValue( 'BlockSlugArray' )
                       && HasPostValue( 'Priority' )
                       && HasPostValue( 'IsActive' ) )
             {
@@ -377,6 +375,75 @@ function Route(
                  $article_id = $path_value_array[ 3 ];
 
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_remove_article_controller.php';
+            }
+            else
+            {
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/show_error_controller.php';
+            }
+        }
+        else if ( $path_value_count >= 2
+                  && $path_value_array[ 1 ] === 'article-block' )
+        {
+            if ( $it_is_get_request
+                 && $path_value_count === 2 )
+            {
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_article_blocks_controller.php';
+            }
+            else if ( $it_is_get_request
+                      && $path_value_count === 3
+                      && $path_value_array[ 2 ] === 'add' )
+            {
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/add_article_block_controller.php';
+            }
+            else if ( $it_is_post_request
+                      && $path_value_count === 3
+                      && $path_value_array[ 2 ] === 'add'
+                      && HasPostValue( 'ArticleSlug' )
+                      && HasPostValue( 'BlockSlug' ) )
+            {
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_add_article_block_controller.php';
+            }
+            else if ( $it_is_get_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'view' )
+            {
+                 $article_block_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_article_block_controller.php';
+            }
+            else if ( $it_is_get_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'edit' )
+            {
+                 $article_block_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/edit_article_block_controller.php';
+            }
+            else if ( $it_is_post_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'edit'
+                      && HasPostValue( 'ArticleSlug' )
+                      && HasPostValue( 'BlockSlug' ) )
+            {
+                 $article_block_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_edit_article_block_controller.php';
+            }
+            else if ( $it_is_get_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'remove' )
+            {
+                 $article_block_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/remove_article_block_controller.php';
+            }
+            else if ( $it_is_post_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'remove' )
+            {
+                 $article_block_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_remove_article_block_controller.php';
             }
             else
             {

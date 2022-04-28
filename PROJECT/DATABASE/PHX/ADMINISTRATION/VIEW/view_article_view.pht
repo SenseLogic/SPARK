@@ -52,11 +52,6 @@
             <div>
                     <input class="form-input" name="NextArticleId" type="text" value="<% GetValueText( .Article.NextArticleId ) %>" readonly/>
             </div>
-            <? var field_mode = 'view'; ?>
-            <? var field_name = 'BlockSlugArray'; ?>
-            <? var field_title = 'Block Slug Array'; ?>
-            <? var field_value = .Article.BlockSlugArray; ?>
-            <? include 'BLOCK/article_block_slug_array_field.php'; ?>
             <div class="form-field-name">
                 <% .GetText( 'Priority' ) %> :
             </div>
@@ -73,8 +68,5 @@
             </a>
         </div>
     </div>
-    <? var object_mode = 'view'; ?>
-    <? var object_value = Article; ?>
-    <? include 'BLOCK/article_object.php'; ?>
 </div>
 <? include 'BLOCK/page_footer.php'; ?>

@@ -498,11 +498,12 @@ textarea {
 .form-extended {
   grid-column: 1/-1;
 }
-.form-field-error {
-  outline: solid #f00 1px;
-}
 .form-translation + .form-translation {
   margin-top: 0.25rem;
+}
+.form-field-error,
+.form-field-error ~ .form-translation {
+  outline: solid #f00 1px;
 }
 .form-input,
 .form-select {
@@ -718,6 +719,9 @@ textarea {
 .article-button {
   background: url("/static/image/admin/article_icon.svg") no-repeat center center/contain;
 }
+.article-block-button {
+  background: url("/static/image/admin/article-block_icon.svg") no-repeat center center/contain;
+}
 .contact-button {
   background: url("/static/image/admin/contact_icon.svg") no-repeat center center/contain;
 }
@@ -731,7 +735,10 @@ textarea {
   grid-template-columns: repeat(8, auto);
 }
 .article-table {
-  grid-template-columns: repeat(10, auto);
+  grid-template-columns: repeat(9, auto);
+}
+.article-block-table {
+  grid-template-columns: repeat(3, auto);
 }
 .contact-table {
   grid-template-columns: repeat(8, auto);

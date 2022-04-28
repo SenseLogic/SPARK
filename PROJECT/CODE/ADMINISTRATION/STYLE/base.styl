@@ -283,14 +283,15 @@ MakeSortableTableColumn();
     grid-column: 1 / -1;
 }
 
-.form-field-error
-{
-    outline: solid red 1px;
-}
-
 .form-translation + .form-translation,
 {
     margin-top: 0.25rem;
+}
+
+.form-field-error,
+.form-field-error ~ .form-translation
+{
+    outline: solid red 1px;
 }
 
 .form-input,

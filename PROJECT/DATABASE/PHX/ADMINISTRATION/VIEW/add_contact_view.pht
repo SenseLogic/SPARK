@@ -12,73 +12,61 @@
             email_field,
             phone_field,
             subject_field,
-            message_field,
-            date_time_field;
+            message_field;
+
+        add_contact_form = document.AddContactForm;
+        name_field = add_contact_form.Name;
+        company_field = add_contact_form.Company;
+        email_field = add_contact_form.Email;
+        phone_field = add_contact_form.Phone;
+        subject_field = add_contact_form.Subject;
+        message_field = add_contact_form.Message;
+
+        name_field.RemoveClass( "form-field-error" );
+        company_field.RemoveClass( "form-field-error" );
+        email_field.RemoveClass( "form-field-error" );
+        phone_field.RemoveClass( "form-field-error" );
+        subject_field.RemoveClass( "form-field-error" );
+        message_field.RemoveClass( "form-field-error" );
 
         it_is_valid_add_contact_form = true;
 
-        add_contact_form = document.AddContactForm;
-
-        if ( name_field.value !== "" )
-        {
-            name_field.RemoveClass( "form-field-error" );
-        }
-        else
+        if ( name_field.value === "" )
         {
             name_field.AddClass( "form-field-error" );
 
             it_is_valid_add_contact_form = false;
         }
 
-        if ( company_field.value !== "" )
-        {
-            company_field.RemoveClass( "form-field-error" );
-        }
-        else
+        if ( company_field.value === "" )
         {
             company_field.AddClass( "form-field-error" );
 
             it_is_valid_add_contact_form = false;
         }
 
-        if ( email_field.value !== "" )
-        {
-            email_field.RemoveClass( "form-field-error" );
-        }
-        else
+        if ( email_field.value === "" )
         {
             email_field.AddClass( "form-field-error" );
 
             it_is_valid_add_contact_form = false;
         }
 
-        if ( phone_field.value !== "" )
-        {
-            phone_field.RemoveClass( "form-field-error" );
-        }
-        else
+        if ( phone_field.value === "" )
         {
             phone_field.AddClass( "form-field-error" );
 
             it_is_valid_add_contact_form = false;
         }
 
-        if ( subject_field.value !== "" )
-        {
-            subject_field.RemoveClass( "form-field-error" );
-        }
-        else
+        if ( subject_field.value === "" )
         {
             subject_field.AddClass( "form-field-error" );
 
             it_is_valid_add_contact_form = false;
         }
 
-        if ( message_field.value !== "" )
-        {
-            message_field.RemoveClass( "form-field-error" );
-        }
-        else
+        if ( message_field.value === "" )
         {
             message_field.AddClass( "form-field-error" );
 
@@ -92,41 +80,113 @@
     <div class="page-section form-section">
         <form class="form-centered" name="AddContactForm" onsubmit="return IsValidAddContactForm()" action="/admin/contact/add" method="post">
             <div class="form-container">
+                <?
+                    var field_name = 'Name';
+
+                    if ( HasQueryValue( field_name ) )
+                    {
+                        var field_value = GetQueryValue( field_name );
+                    }
+                    else
+                    {
+                        field_value = '';
+                    }
+                ?>
                 <div class="form-field-name">
                     <% .GetText( 'Name' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="Name" type="text"/>
+                    <input class="form-input" name="Name" type="text" value="<# field_value #>"/>
                 </div>
+                <?
+                    var field_name = 'Company';
+
+                    if ( HasQueryValue( field_name ) )
+                    {
+                        var field_value = GetQueryValue( field_name );
+                    }
+                    else
+                    {
+                        field_value = '';
+                    }
+                ?>
                 <div class="form-field-name">
                     <% .GetText( 'Company' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="Company" type="text"/>
+                    <input class="form-input" name="Company" type="text" value="<# field_value #>"/>
                 </div>
+                <?
+                    var field_name = 'Email';
+
+                    if ( HasQueryValue( field_name ) )
+                    {
+                        var field_value = GetQueryValue( field_name );
+                    }
+                    else
+                    {
+                        field_value = '';
+                    }
+                ?>
                 <div class="form-field-name">
                     <% .GetText( 'Email' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="Email" type="text"/>
+                    <input class="form-input" name="Email" type="text" value="<# field_value #>"/>
                 </div>
+                <?
+                    var field_name = 'Phone';
+
+                    if ( HasQueryValue( field_name ) )
+                    {
+                        var field_value = GetQueryValue( field_name );
+                    }
+                    else
+                    {
+                        field_value = '';
+                    }
+                ?>
                 <div class="form-field-name">
                     <% .GetText( 'Phone' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="Phone" type="text"/>
+                    <input class="form-input" name="Phone" type="text" value="<# field_value #>"/>
                 </div>
+                <?
+                    var field_name = 'Subject';
+
+                    if ( HasQueryValue( field_name ) )
+                    {
+                        var field_value = GetQueryValue( field_name );
+                    }
+                    else
+                    {
+                        field_value = '';
+                    }
+                ?>
                 <div class="form-field-name">
                     <% .GetText( 'Subject' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="Subject" type="text"/>
+                    <input class="form-input" name="Subject" type="text" value="<# field_value #>"/>
                 </div>
+                <?
+                    var field_name = 'Message';
+
+                    if ( HasQueryValue( field_name ) )
+                    {
+                        var field_value = GetQueryValue( field_name );
+                    }
+                    else
+                    {
+                        field_value = '';
+                    }
+                ?>
                 <div class="form-field-name">
                     <% .GetText( 'Message' ) %> :
                 </div>
                 <div>
-                    <textarea class="form-textarea" name="Message"></textarea>
+                    <textarea class="form-textarea" name="Message"><# field_value #></textarea>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="<% .ListPage %>">
                 </a>

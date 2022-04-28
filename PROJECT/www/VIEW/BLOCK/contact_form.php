@@ -107,8 +107,12 @@
 
 
 
+
+
+
+
 <div class="narrow-margined-container contact-form">
-    <form id="contact-form" name="ContactForm">
+    <form id="contact-form-container" class="contact-form-container" name="ContactForm">
         <div class="contact-form-row">
             <input class="contact-form-input" name="Name" type="text" placeholder="<?php echo $this->GetText( 'ContactFormNamePlaceholder' ); ?>"/>
         </div>
@@ -137,7 +141,7 @@
             </div>
         </div>
     </form>
-    <div id="contact-form-thanks" class="contact-form-thanks is-hidden">
+    <div id="contact-form-thanks-container" class="contact-form-thanks-container is-hidden">
         <div class="contact-form-thanks-text">
             <?php echo $this->GetText( 'ContactFormThanksText' ); ?>
         </div>
@@ -286,7 +290,7 @@
 
         contact_form = document.ContactForm;
 
-        if ( true || IsValidContactForm( contact_form ) )
+        if ( IsValidContactForm( contact_form ) )
         {
             form_data = new FormData();
             form_data.append( "Name", contact_form.Name.value );
@@ -305,21 +309,21 @@
 
             if ( request.status === 200 )
             {
-                GetElementById( "contact-form" )
+                GetElementById( "contact-form-container" )
                     .AnimateStyles(
                         {
                             "opacity" : [ "100%", "0%", "0%", "100%" ]
                         },
-                        [ 0.0, 0.5, 3.5, 4.0 ]
+                        [ 0.0, 0.5, 4.5, 5.0 ]
                         );
 
-                GetElementById( "contact-form-thanks" )
+                GetElementById( "contact-form-thanks-container" )
                     .AnimateStyles(
                         {
                             "opacity" : [ "0%", "100%", "100%", "0%" ],
                             "class-list" : [ "-is-hidden", "-is-hidden", "-is-hidden", "+is-hidden" ]
                         },
-                        [ 0.0, 0.5, 3.5, 4.0 ]
+                        [ 0.0, 0.5, 4.5, 5.0 ]
                         );
 
                 DelayCall( ClearContactForm, 0.5 );
