@@ -1,0 +1,14 @@
+<style file="image_text.styl">
+</style>
+<div class="block appearing-block y-translation-opacity-transition image-text">
+    <div class="block-column block-image-column" style="background-image: url( '<# var block.ImagePath #>' ), url( '<# block.ImagePath #>.preload.jpg' )">
+    </div>
+    <div class="block-column block-text-column">
+        <div class="block-title">
+            <# .GetProcessedText( block.Title ) #>
+        </div>
+        <div class="block-text">
+            <# .GetProcessedMultilineText( block.Text ) #>
+        </div>
+    </div>
+</div>

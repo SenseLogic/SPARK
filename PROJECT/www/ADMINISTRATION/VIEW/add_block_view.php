@@ -8,8 +8,7 @@
             add_block_form,
             it_is_valid_add_block_form,
             slug_field,
-            article_slug_field,
-            number_field,
+            type_slug_field,
             title_field,
             text_field,
             image_path_field,
@@ -17,16 +16,14 @@
 
         add_block_form = document.AddBlockForm;
         slug_field = add_block_form.Slug;
-        article_slug_field = add_block_form.ArticleSlug;
-        number_field = add_block_form.Number;
+        type_slug_field = add_block_form.TypeSlug;
         title_field = add_block_form.Title;
         text_field = add_block_form.Text;
         image_path_field = add_block_form.ImagePath;
         video_path_field = add_block_form.VideoPath;
 
         slug_field.RemoveClass( "form-field-error" );
-        article_slug_field.RemoveClass( "form-field-error" );
-        number_field.RemoveClass( "form-field-error" );
+        type_slug_field.RemoveClass( "form-field-error" );
         title_field.RemoveClass( "form-field-error" );
         text_field.RemoveClass( "form-field-error" );
         image_path_field.RemoveClass( "form-field-error" );
@@ -41,16 +38,9 @@
             it_is_valid_add_block_form = false;
         }
 
-        if ( article_slug_field.value === "" )
+        if ( type_slug_field.value === "" )
         {
-            article_slug_field.AddClass( "form-field-error" );
-
-            it_is_valid_add_block_form = false;
-        }
-
-        if ( !IsNumericText( number_field.value ) )
-        {
-            number_field.AddClass( "form-field-error" );
+            type_slug_field.AddClass( "form-field-error" );
 
             it_is_valid_add_block_form = false;
         }
@@ -81,7 +71,7 @@
                     <input class="form-input" name="Slug" type="text" value="<?php echo $field_value; ?>"/>
                 </div>
                 <?php
-                     $field_name = 'ArticleSlug';
+                     $field_name = 'TypeSlug';
 
                     if ( HasQueryValue( $field_name ) )
                     {
@@ -93,33 +83,15 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetText( 'Article Slug' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetText( 'Type Slug' ) ); ?> :
                 </div>
                 <div>
-                    <select class="form-select" name="ArticleSlug">
-                        <?php  $article_array = GetDatabaseArticleArray(); ?>
-                        <?php foreach ( $article_array as  $article ) { ?>
-                            <option value="<?php echo htmlspecialchars( GetValueText( $article->Id ) ); ?>"<?php if ( GetValueText( $article->Id ) === $field_value ) echo ' selected'; ?>><?php echo htmlspecialchars( $article->Name ); ?></option>
+                    <select class="form-select" name="TypeSlug">
+                        <?php  $block_type_array = GetDatabaseBlockTypeArray(); ?>
+                        <?php foreach ( $block_type_array as  $block_type ) { ?>
+                            <option value="<?php echo htmlspecialchars( GetValueText( $block_type->Slug ) ); ?>"<?php if ( GetValueText( $block_type->Slug ) === $field_value ) echo ' selected'; ?>><?php echo htmlspecialchars( $this->GetUntranslatedText( $block_type->Title ) ); ?></option>
                         <?php } ?>
                     </select>
-                </div>
-                <?php
-                     $field_name = 'Number';
-
-                    if ( HasQueryValue( $field_name ) )
-                    {
-                         $field_value = GetQueryValue( $field_name );
-                    }
-                    else
-                    {
-                        $field_value = '1';
-                    }
-                ?>
-                <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetText( 'Number' ) ); ?> :
-                </div>
-                <div>
-                    <input class="form-input" name="Number" type="text" value="<?php echo $field_value; ?>"/>
                 </div>
                 <?php
                      $field_name = 'Title';

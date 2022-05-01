@@ -1,7 +1,12 @@
 <?php // -- IMPORTS
 
 require_once __DIR__ . '/' . 'view_controller.php';
-require_once __DIR__ . '/' . '../MODEL/article_model.php';
+require_once __DIR__ . '/' . '../MODEL/block_model.php';
+require_once __DIR__ . '/' . '../MODEL/block_sub_block_model.php';
+require_once __DIR__ . '/' . '../MODEL/block_type_model.php';
+require_once __DIR__ . '/' . '../MODEL/page_content_block_model.php';
+require_once __DIR__ . '/' . '../MODEL/page_model.php';
+require_once __DIR__ . '/' . '../MODEL/page_sub_page_model.php';
 
 // -- TYPES
 
@@ -15,14 +20,32 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-        $this->ArticleArray = GetDatabaseArticleArray();
-        $this->ArticleCount = count( $this->ArticleArray );
+         $block_array = GetDatabaseBlockArray();
+         $block_sub_block_array = GetDatabaseBlockSubBlockArray();
+         $page_array = GetDatabasePageArray();
+         $page_content_block_array = GetDatabasePageContentBlockArray();
+         $page_sub_page_array = GetDatabasePageSubPageArray();
+
+        $this->BlockTypeBySlugMap = GetDatabaseBlockTypeBySlugMap();
+        $this->BlockBySlugMap = GetBlockBySlugMap( $block_array, $block_sub_block_array );
+        $this->PageBySlugMap = GetPageBySlugMap( $page_array, $page_content_block_array, $page_sub_page_array );
 
         $this->ImagePathArray = [];
 
-        foreach ( $this->ArticleArray as  $article )
+        foreach ( $this->PageBySlugMap as  $page_slug =>  $page )
         {
-            array_push( $this->ImagePathArray, $article->ImagePath );
+            if ( $page->ImagePath !== '' )
+            {
+                array_push( $this->ImagePathArray, $page->ImagePath );
+            }
+        }
+
+        foreach ( $this->BlockBySlugMap as  $block_slug =>  $block )
+        {
+            if ( $block->ImagePath !== '' )
+            {
+                array_push( $this->ImagePathArray, $block->ImagePath );
+            }
         }
 
         $this->Captcha = GetCaptchaText( 6 );

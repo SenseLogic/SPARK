@@ -1,0 +1,27 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/page_content_block_model.php';
+
+// -- TYPES
+
+class DO_REMOVE_PAGE_CONTENT_BLOCK_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code,
+        page_content_block_id
+        )
+    {
+        parent::constructor( language_code );
+
+        RemoveDatabasePageContentBlockById( page_content_block_id );
+
+        Redirect( FindSessionValue( 'ListPage', '/admin/page-content-block' ) );
+    }
+}
+
+// -- STATEMENTS
+
+var do_remove_page_content_block_controller = new DO_REMOVE_PAGE_CONTENT_BLOCK_CONTROLLER( var language_code, var page_content_block_id );

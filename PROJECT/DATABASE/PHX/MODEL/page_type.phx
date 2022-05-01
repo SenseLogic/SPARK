@@ -1,0 +1,114 @@
+// -- FUNCTIONS
+
+function GetDatabasePageTypeArray(
+    )
+{
+    var statement = GetDatabaseStatement( 'select `Id`, `Slug`, `Title` from `PAGE_TYPE`' );
+
+    if ( !statement.execute() )
+    {
+        var_dump( statement.errorInfo() );
+    }
+
+    var page_type_array = [];
+
+    while ( var page_type = statement.fetchObject() )
+    {
+        page_type.Id = ( int )( page_type.Id );
+        array_push( page_type_array, page_type );
+    }
+
+    return page_type_array;
+}
+
+// ~~
+
+function GetDatabasePageTypeById(
+    int id
+    )
+{
+    var statement = GetDatabaseStatement( 'select `Id`, `Slug`, `Title` from `PAGE_TYPE` where `Id` = ? limit 1' );
+    statement.bindParam( 1, id, PDO::PARAM_INT );
+
+    if ( !statement.execute() )
+    {
+        var_dump( statement.errorInfo() );
+    }
+
+    var page_type = statement.fetchObject();
+    page_type.Id = ( int )( page_type.Id );
+
+    return page_type;
+}
+
+// ~~
+
+function AddDatabasePageType(
+    string slug,
+    string title
+    )
+{
+    var statement = GetDatabaseStatement( 'insert into `PAGE_TYPE` ( `Slug`, `Title` ) values ( ?, ? )' );
+    statement.bindParam( 1, slug, PDO::PARAM_STR );
+    statement.bindParam( 2, title, PDO::PARAM_STR );
+
+    if ( !statement.execute() )
+    {
+        var_dump( statement.errorInfo() );
+    }
+
+    return GetDatabaseAddedId( statement );
+}
+
+// ~~
+
+function PutDatabasePageType(
+    string slug,
+    string title
+    )
+{
+    var statement = GetDatabaseStatement( 'replace into `PAGE_TYPE` ( `Slug`, `Title` ) values ( ?, ? )' );
+    statement.bindParam( 1, slug, PDO::PARAM_STR );
+    statement.bindParam( 2, title, PDO::PARAM_STR );
+
+    if ( !statement.execute() )
+    {
+        var_dump( statement.errorInfo() );
+    }
+
+    return GetDatabaseAddedId( statement );
+}
+
+// ~~
+
+function SetDatabasePageType(
+    int id,
+    string slug,
+    string title
+    )
+{
+    var statement = GetDatabaseStatement( 'update `PAGE_TYPE` set `Slug` = ?, `Title` = ? where Id = ?' );
+    statement.bindParam( 1, slug, PDO::PARAM_STR );
+    statement.bindParam( 2, title, PDO::PARAM_STR );
+    statement.bindParam( 3, id, PDO::PARAM_INT );
+
+    if ( !statement.execute() )
+    {
+        var_dump( statement.errorInfo() );
+    }
+}
+
+// ~~
+
+function RemoveDatabasePageTypeById(
+    int id
+    )
+{
+    var statement = GetDatabaseStatement( 'delete from `PAGE_TYPE` where `Id` = ?' );
+    statement.bindParam( 1, id, PDO::PARAM_INT );
+
+    if ( !statement.execute() )
+    {
+        var_dump( statement.errorInfo() );
+    }
+}

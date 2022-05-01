@@ -16,14 +16,13 @@ class DO_ADD_BLOCK_CONTROLLER extends CONTROLLER
         parent::__construct( $language_code );
 
          $slug = GetPostValue( 'Slug' );
-         $article_slug = GetPostValue( 'ArticleSlug' );
-         $number = GetPostValue( 'Number' );
+         $type_slug = GetPostValue( 'TypeSlug' );
          $title = GetPostValue( 'Title' );
          $text = GetPostValue( 'Text' );
          $image_path = GetPostValue( 'ImagePath' );
          $video_path = GetPostValue( 'VideoPath' );
 
-        AddDatabaseBlock( $slug, $article_slug, $number, $title, $text, $image_path, $video_path );
+        AddDatabaseBlock( $slug, $type_slug, $title, $text, $image_path, $video_path );
 
         Redirect( FindSessionValue( 'ListPage', '/admin/block' ) );
     }

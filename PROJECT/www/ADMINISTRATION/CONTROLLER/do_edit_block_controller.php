@@ -17,14 +17,13 @@ class DO_EDIT_BLOCK_CONTROLLER extends CONTROLLER
         parent::__construct( $language_code );
 
          $slug = GetPostValue( 'Slug' );
-         $article_slug = GetPostValue( 'ArticleSlug' );
-         $number = GetPostValue( 'Number' );
+         $type_slug = GetPostValue( 'TypeSlug' );
          $title = GetPostValue( 'Title' );
          $text = GetPostValue( 'Text' );
          $image_path = GetPostValue( 'ImagePath' );
          $video_path = GetPostValue( 'VideoPath' );
 
-        SetDatabaseBlock( $block_id, $slug, $article_slug, $number, $title, $text, $image_path, $video_path );
+        SetDatabaseBlock( $block_id, $slug, $type_slug, $title, $text, $image_path, $video_path );
 
         Redirect( FindSessionValue( 'ListPage', '/admin/block' ) );
     }

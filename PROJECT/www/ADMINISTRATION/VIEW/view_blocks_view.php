@@ -18,10 +18,7 @@
                 <?php echo htmlspecialchars( $this->GetText( 'Slug' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( $this->GetText( 'Article Slug' ) ); ?>
-            </div>
-            <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( $this->GetText( 'Number' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetText( 'Type Slug' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
                 <?php echo htmlspecialchars( $this->GetText( 'Title' ) ); ?>
@@ -44,10 +41,7 @@
                         <?php echo htmlspecialchars( GetValueText( $block->Slug ) ); ?>
                     </div>
                     <div class="sortable-table-cell filter-cell">
-                        <?php echo htmlspecialchars( GetValueText( $block->ArticleSlug ) ); ?>
-                    </div>
-                    <div class="sortable-table-cell filter-cell">
-                        <?php echo htmlspecialchars( GetValueText( $block->Number ) ); ?>
+                        <?php echo htmlspecialchars( GetValueText( $block->TypeSlug ) ); ?>
                     </div>
                     <div class="sortable-table-cell filter-cell">
                         <div>
@@ -99,16 +93,10 @@
                                 <input class="form-input" name="Slug" type="text" value="<?php echo htmlspecialchars( GetValueText( $block->Slug ) ); ?>" readonly/>
                         </div>
                         <div class="form-field-name">
-                            <?php echo htmlspecialchars( $this->GetText( 'Article Slug' ) ); ?> :
+                            <?php echo htmlspecialchars( $this->GetText( 'Type Slug' ) ); ?> :
                         </div>
                         <div>
-                                <input class="form-input" name="ArticleSlug" type="text" value="<?php echo htmlspecialchars( GetValueText( $block->ArticleSlug ) ); ?>" readonly/>
-                        </div>
-                        <div class="form-field-name">
-                            <?php echo htmlspecialchars( $this->GetText( 'Number' ) ); ?> :
-                        </div>
-                        <div>
-                                <input class="form-input" name="Number" type="text" value="<?php echo htmlspecialchars( GetValueText( $block->Number ) ); ?>" readonly/>
+                                <input class="form-input" name="TypeSlug" type="text" value="<?php echo htmlspecialchars( GetValueText( $block->TypeSlug ) ); ?>" readonly/>
                         </div>
                         <div class="form-field-name">
                             <?php echo htmlspecialchars( $this->GetText( 'Title' ) ); ?> :

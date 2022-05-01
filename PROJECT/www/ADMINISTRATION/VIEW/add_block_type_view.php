@@ -1,0 +1,92 @@
+<?php require __DIR__ . '/' . 'BLOCK/page_header.php'; ?>
+<script>
+    // -- FUNCTIONS
+
+    function IsValidAddBlockTypeForm()
+    {
+        var
+            add_block_type_form,
+            it_is_valid_add_block_type_form,
+            slug_field,
+            name_field;
+
+        add_block_type_form = document.AddBlockTypeForm;
+        slug_field = add_block_type_form.Slug;
+        name_field = add_block_type_form.Name;
+
+        slug_field.RemoveClass( "form-field-error" );
+        name_field.RemoveClass( "form-field-error" );
+
+        it_is_valid_add_block_type_form = true;
+
+        if ( slug_field.value === "" )
+        {
+            slug_field.AddClass( "form-field-error" );
+
+            it_is_valid_add_block_type_form = false;
+        }
+
+        if ( name_field.value === "" )
+        {
+            name_field.AddClass( "form-field-error" );
+
+            it_is_valid_add_block_type_form = false;
+        }
+
+        return it_is_valid_add_block_type_form;
+    }
+</script>
+<div id="add-block-type-view">
+    <div class="page-section form-section">
+        <form class="form-centered" name="AddBlockTypeForm" onsubmit="return IsValidAddBlockTypeForm()" action="/admin/block-type/add" method="post">
+            <div class="form-container">
+                <?php
+                     $field_name = 'Slug';
+
+                    if ( HasQueryValue( $field_name ) )
+                    {
+                         $field_value = GetQueryValue( $field_name );
+                    }
+                    else
+                    {
+                        $field_value = '';
+                    }
+                ?>
+                <div class="form-field-name">
+                    <?php echo htmlspecialchars( $this->GetText( 'Slug' ) ); ?> :
+                </div>
+                <div>
+                    <input class="form-input" name="Slug" type="text" value="<?php echo $field_value; ?>"/>
+                </div>
+                <?php
+                     $field_name = 'Name';
+
+                    if ( HasQueryValue( $field_name ) )
+                    {
+                         $field_value = GetQueryValue( $field_name );
+                    }
+                    else
+                    {
+                        $field_value = '';
+                    }
+                ?>
+                <div class="form-field-name">
+                    <?php echo htmlspecialchars( $this->GetText( 'Name' ) ); ?> :
+                </div>
+                <div>
+                    <div>
+                        <input class="multilingual-input form-input" name="Name" type="text" value="<?php echo $field_value; ?>" hidden/>
+                        <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
+                            <input class="multilingual-input-translation form-translation form-input" data-language-code="<?php echo htmlspecialchars( $language_code ); ?>" placeholder="<?php echo htmlspecialchars( $this->GetText( $language_code ) ); ?>"/>
+                        <?php } ?>
+                    </div>
+                </div>
+                <a class="justify-self-start form-button form-button-large cancel-button" href="<?php echo htmlspecialchars( $this->ListPage ); ?>">
+                </a>
+                <button class="justify-self-end form-button form-button-large apply-button" type="submit">
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<?php require __DIR__ . '/' . 'BLOCK/page_footer.php'; ?>

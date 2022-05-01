@@ -12,11 +12,14 @@
 
     opacity: 1;
 
+    pointer-events: none;
     transition: opacity 0.25s ease;
 }
 
 body.is-scrolled .scroll-down-reminder
 {
+    z-index: -1000;
+
     opacity: 0;
 }
 

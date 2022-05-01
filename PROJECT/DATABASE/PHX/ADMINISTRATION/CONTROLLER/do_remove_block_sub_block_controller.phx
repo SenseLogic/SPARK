@@ -1,0 +1,27 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/block_sub_block_model.php';
+
+// -- TYPES
+
+class DO_REMOVE_BLOCK_SUB_BLOCK_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code,
+        block_sub_block_id
+        )
+    {
+        parent::constructor( language_code );
+
+        RemoveDatabaseBlockSubBlockById( block_sub_block_id );
+
+        Redirect( FindSessionValue( 'ListPage', '/admin/block-sub-block' ) );
+    }
+}
+
+// -- STATEMENTS
+
+var do_remove_block_sub_block_controller = new DO_REMOVE_BLOCK_SUB_BLOCK_CONTROLLER( var language_code, var block_sub_block_id );

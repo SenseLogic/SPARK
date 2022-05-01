@@ -10,9 +10,13 @@ TEXT
             ~ Home
               ¨fr:Accueil
 
-        HeaderMenuArticleListButton
-            ~ Article list
-              ¨fr:Liste d'articles
+        HeaderMenuArticlesButton
+            ~ Articles
+              ¨fr:Articles
+
+        HeaderMenuCookiePolicyButton
+            ~ Cookie policy
+              ¨fr:Politique de cookies
 
         HeaderMenuLegalNoticeButton
             ~ Legal notice
@@ -94,6 +98,19 @@ TEXT
             ~ Decline
               ¨fr:Refuser
 
+        CookiePolicyTitle
+            ~ Legal notice
+              ¨fr:Mention légale
+
+        CookiePolicyText
+            ~ ! Title\\n
+              \\n
+              Paragraph.\\n
+              \\n
+              !! Subtitle\\n
+              \\n
+              Paragraph.
+
         LegalNoticeTitle
             ~ Legal notice
               ¨fr:Mention légale
@@ -166,7 +183,125 @@ TEXT
               <green>VERT</green>\\n
               <color<#00F>>BLEU</color>\\n
               <size<3rem>>GRAND</size>\\n
-              <weight<100>>FIN</weight>\\n
+              <weight<100>>FIN</weight>
+
+BLOCK_TYPE
+
+    Slug Name
+
+        text
+            ~ Text
+              ¨fr:Texte
+
+        image_text
+            ~ Image and text
+              ¨fr:Image et texte
+
+        text_image
+            ~ Text and image
+              ¨fr:Texte et image
+
+PAGE_TYPE
+
+    Slug Title
+
+        home
+            ~ Home
+
+        article
+            ~ Article
+
+        articles
+            ~ Articles
+
+        home
+            ~ Home
+
+        cookie_policy
+            ~ Cookie policy
+
+        legal_notice
+            ~ Legal notice
+
+        contact
+            ~ Contact
+
+PAGE
+
+    Slug TypeSlug Route Title ImagePath
+
+        article-1
+            ~ article
+            ~ articles/1
+            ~ Article 1
+            ~ /static/image/article/beach.jpg
+
+        article-2
+            ~ article
+            ~ articles/2
+            ~ Article 2
+            ~ /static/image/article/california.jpg
+
+        article-3
+            ~ article
+            ~ articles/3
+            ~ Article 3
+            ~ /static/image/article/drink.jpg
+
+        article-4
+            ~ article
+            ~ articles/4
+            ~ Article 4
+            ~ /static/image/article/sunset.jpg
+
+        articles
+            ~ articles
+            ~ articles
+            ~ Articles
+            ~ /static/image/article/beach.jpg
+
+        home
+            ~ home
+            ~ home
+            ~ Home
+              ¨fr:Accueil
+            ~ /static/image/article/drink.jpg
+
+        contact
+            ~ contact
+            ~ contact
+            ~ Contact
+            ~ /static/image/article/clouds.jpg
+
+        cookie-policy
+            ~ cookie_policy
+            ~ cookie-policy
+            ~ Cookie policy
+              ¨fr:Politique de cookies
+            ~ /static/image/article/california.jpg
+
+        legal-notice
+            ~ legal_notice
+            ~ legal-notice
+            ~ Legal notice
+              ¨fr:Mention légale
+            ~ /static/image/article/mountains.jpg
+
+PAGE_SUB_PAGE
+
+    PageSlug SubPageSlug
+
+        articles
+            ~ article-1
+
+        articles
+            ~ article-2
+
+        articles
+            ~ article-3
+
+        articles
+            ~ article-4
 
 USER
 

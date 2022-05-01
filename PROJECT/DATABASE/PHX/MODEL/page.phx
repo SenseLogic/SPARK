@@ -1,0 +1,173 @@
+// -- FUNCTIONS
+
+function GetDatabasePageArray(
+    )
+{
+    var statement = GetDatabaseStatement( 'select `Id`, `Slug`, `TypeSlug`, `Route`, `Title`, `Text`, `ImagePath`, `VideoPath`, `IsActive` from `PAGE`' );
+
+    if ( !statement.execute() )
+    {
+        var_dump( statement.errorInfo() );
+    }
+
+    var page_array = [];
+
+    while ( var page = statement.fetchObject() )
+    {
+        page.Id = ( int )( page.Id );
+        array_push( page_array, page );
+    }
+
+    return page_array;
+}
+
+// ~~
+
+function GetDatabasePageBySlugMap(
+    )
+{
+    var statement = GetDatabaseStatement( 'select `Id`, `Slug`, `TypeSlug`, `Route`, `Title`, `Text`, `ImagePath`, `VideoPath`, `IsActive` from `PAGE`' );
+
+    if ( !statement.execute() )
+    {
+        var_dump( statement.errorInfo() );
+    }
+
+    var page_by_slug_map = [];
+
+    while ( var page = statement.fetchObject() )
+    {
+        page.Id = ( int )( page.Id );
+        page_by_slug_map[ page.Slug ] = page;
+    }
+
+    return page_by_slug_map;
+}
+
+// ~~
+
+function GetDatabasePageById(
+    int id
+    )
+{
+    var statement = GetDatabaseStatement( 'select `Id`, `Slug`, `TypeSlug`, `Route`, `Title`, `Text`, `ImagePath`, `VideoPath`, `IsActive` from `PAGE` where `Id` = ? limit 1' );
+    statement.bindParam( 1, id, PDO::PARAM_INT );
+
+    if ( !statement.execute() )
+    {
+        var_dump( statement.errorInfo() );
+    }
+
+    var page = statement.fetchObject();
+    page.Id = ( int )( page.Id );
+
+    return page;
+}
+
+// ~~
+
+function AddDatabasePage(
+    string slug,
+    string type_slug,
+    string route,
+    string title,
+    string text,
+    string image_path,
+    string video_path,
+    bool is_active
+    )
+{
+    var statement = GetDatabaseStatement( 'insert into `PAGE` ( `Slug`, `TypeSlug`, `Route`, `Title`, `Text`, `ImagePath`, `VideoPath`, `IsActive` ) values ( ?, ?, ?, ?, ?, ?, ?, ? )' );
+    statement.bindParam( 1, slug, PDO::PARAM_STR );
+    statement.bindParam( 2, type_slug, PDO::PARAM_STR );
+    statement.bindParam( 3, route, PDO::PARAM_STR );
+    statement.bindParam( 4, title, PDO::PARAM_STR );
+    statement.bindParam( 5, text, PDO::PARAM_STR );
+    statement.bindParam( 6, image_path, PDO::PARAM_STR );
+    statement.bindParam( 7, video_path, PDO::PARAM_STR );
+    statement.bindParam( 8, is_active, PDO::PARAM_BOOL );
+
+    if ( !statement.execute() )
+    {
+        var_dump( statement.errorInfo() );
+    }
+
+    return GetDatabaseAddedId( statement );
+}
+
+// ~~
+
+function PutDatabasePage(
+    string slug,
+    string type_slug,
+    string route,
+    string title,
+    string text,
+    string image_path,
+    string video_path,
+    bool is_active
+    )
+{
+    var statement = GetDatabaseStatement( 'replace into `PAGE` ( `Slug`, `TypeSlug`, `Route`, `Title`, `Text`, `ImagePath`, `VideoPath`, `IsActive` ) values ( ?, ?, ?, ?, ?, ?, ?, ? )' );
+    statement.bindParam( 1, slug, PDO::PARAM_STR );
+    statement.bindParam( 2, type_slug, PDO::PARAM_STR );
+    statement.bindParam( 3, route, PDO::PARAM_STR );
+    statement.bindParam( 4, title, PDO::PARAM_STR );
+    statement.bindParam( 5, text, PDO::PARAM_STR );
+    statement.bindParam( 6, image_path, PDO::PARAM_STR );
+    statement.bindParam( 7, video_path, PDO::PARAM_STR );
+    statement.bindParam( 8, is_active, PDO::PARAM_BOOL );
+
+    if ( !statement.execute() )
+    {
+        var_dump( statement.errorInfo() );
+    }
+
+    return GetDatabaseAddedId( statement );
+}
+
+// ~~
+
+function SetDatabasePage(
+    int id,
+    string slug,
+    string type_slug,
+    string route,
+    string title,
+    string text,
+    string image_path,
+    string video_path,
+    bool is_active
+    )
+{
+    var statement = GetDatabaseStatement( 'update `PAGE` set `Slug` = ?, `TypeSlug` = ?, `Route` = ?, `Title` = ?, `Text` = ?, `ImagePath` = ?, `VideoPath` = ?, `IsActive` = ? where Id = ?' );
+    statement.bindParam( 1, slug, PDO::PARAM_STR );
+    statement.bindParam( 2, type_slug, PDO::PARAM_STR );
+    statement.bindParam( 3, route, PDO::PARAM_STR );
+    statement.bindParam( 4, title, PDO::PARAM_STR );
+    statement.bindParam( 5, text, PDO::PARAM_STR );
+    statement.bindParam( 6, image_path, PDO::PARAM_STR );
+    statement.bindParam( 7, video_path, PDO::PARAM_STR );
+    statement.bindParam( 8, is_active, PDO::PARAM_BOOL );
+    statement.bindParam( 9, id, PDO::PARAM_INT );
+
+    if ( !statement.execute() )
+    {
+        var_dump( statement.errorInfo() );
+    }
+}
+
+// ~~
+
+function RemoveDatabasePageById(
+    int id
+    )
+{
+    var statement = GetDatabaseStatement( 'delete from `PAGE` where `Id` = ?' );
+    statement.bindParam( 1, id, PDO::PARAM_INT );
+
+    if ( !statement.execute() )
+    {
+        var_dump( statement.errorInfo() );
+    }
+}

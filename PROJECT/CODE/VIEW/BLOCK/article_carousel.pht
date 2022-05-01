@@ -1,3 +1,6 @@
+<?
+    var article_count = count( var article_array );
+?>
 <style file="article_carousel.styl">
     MakeCarousel( "article-" );
     MakeCarouselStrip( 1, 1, "article-" );
@@ -57,9 +60,9 @@
 </style>
 <div id="article-carousel" class="article-carousel">
     <div id="article-carousel-strip" class="article-carousel-strip">
-        <? for ( var article_index = 0; article_index <= .ArticleCount; ++article_index ) { ?>
-            <? var article = .ArticleArray[ article_index % .ArticleCount ]; ?>
-            <div class="article-carousel-slide" style="background-image: url( '<# article.ImagePath #>' ), url( '<# article.ImagePath #>.preload.jpg' )" onclick="ShowView( 'article/<# article.Id #>/<# article.Slug #>' )">
+        <? for ( var article_index = 0; article_index <= article_count; ++article_index ) { ?>
+            <? var article = article_array[ article_index % article_count ]; ?>
+            <div class="article-carousel-slide" style="background-image: url( '<# article.ImagePath #>' ), url( '<# article.ImagePath #>.preload.jpg' )" onclick="ShowView( '<# article.Route #>' )">
                 <div class="article-carousel-slide-text">
                     <# .GetTranslatedText( article.Text ) #>
                 </div>
@@ -80,7 +83,7 @@
               GetElementById( "article-carousel" ),
               GetElementById( "article-carousel-strip" ),
               0.0,
-              <# .ArticleCount + 1 #>,
+              <# article_count + 1 #>,
               1,
               3.0,
               0.5

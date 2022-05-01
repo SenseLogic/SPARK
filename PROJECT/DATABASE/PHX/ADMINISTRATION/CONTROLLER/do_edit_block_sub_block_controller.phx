@@ -1,0 +1,31 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/block_sub_block_model.php';
+
+// -- TYPES
+
+class DO_EDIT_BLOCK_SUB_BLOCK_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code,
+        block_sub_block_id
+        )
+    {
+        parent::constructor( language_code );
+
+        var block_slug = GetPostValue( 'BlockSlug' );
+        var sub_block_slug = GetPostValue( 'SubBlockSlug' );
+        var number = GetPostValue( 'Number' );
+
+        SetDatabaseBlockSubBlock( block_sub_block_id, block_slug, sub_block_slug, number );
+
+        Redirect( FindSessionValue( 'ListPage', '/admin/block-sub-block' ) );
+    }
+}
+
+// -- STATEMENTS
+
+var do_edit_block_sub_block_controller = new DO_EDIT_BLOCK_SUB_BLOCK_CONTROLLER( var language_code, var block_sub_block_id );

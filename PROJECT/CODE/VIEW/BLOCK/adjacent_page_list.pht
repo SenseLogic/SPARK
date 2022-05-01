@@ -1,0 +1,45 @@
+<?
+    var page_slug_count = count( var page_slug_array );
+    var page_slug_index = array_search( var page.Slug, page_slug_array );
+
+    var prior_page_slug_index = ( page_slug_index + page_slug_count - 1 ) % page_slug_count;
+    var next_page_slug_index = ( page_slug_index + 1 ) % page_slug_count;
+
+    var prior_page = .PageBySlugMap[ page_slug_array[ prior_page_slug_index ] ];
+    var next_page = .PageBySlugMap[ page_slug_array[ next_page_slug_index ] ];
+?>
+<style file="adjacent_page_list.styl">
+    .adjacent-page-list
+    {
+        height: 20rem;
+
+        display: flex;
+    }
+
+    .adjacent-page-list-button
+    {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 50%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .adjacent-page-list-button-title
+    {
+        font-size: 1.5rem;
+        color: WhiteColor;
+    }
+</style>
+<div class="adjacent-page-list">
+    <div class="zoomed-button adjacent-page-list-button" style="background: url( '<# var prior_page.ImagePath #>' ) no-repeat center center / cover, url( '<# prior_page.ImagePath #>.preload.jpg' ) no-repeat center center / cover" onclick="ShowView( '<# prior_page.Route #>' )">
+        <div class="adjacent-page-list-button-title">
+            <# .GetProcessedText( prior_page.Title ) #>
+        </div>
+    </div>
+    <div class="zoomed-button adjacent-page-list-button" style="background: url( '<# var next_page.ImagePath #>' ) no-repeat center center / cover, url( '<# next_page.ImagePath #>.preload.jpg' ) no-repeat center center / cover" onclick="ShowView( '<# next_page.Route #>' )">
+        <div class="adjacent-page-list-button-title">
+            <# .GetProcessedText( next_page.Title ) #>
+        </div>
+    </div>
+</div>

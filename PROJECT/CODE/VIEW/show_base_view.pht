@@ -29,13 +29,13 @@
         }
 
         ViewName = GetRoute( "/<# .LanguageCode #>/", "/" );
-        SectionName = GetHash();
 
         if ( ViewName === "" )
         {
             ViewName = "home";
         }
 
+        SectionName = GetHash();
         EmitEvent( "update-view" );
     }
 
@@ -61,19 +61,23 @@
     }
 </script>
 <div>
-    <? include 'BLOCK/header_menu.php'; ?>
-    <? include 'show_home_view.php'; ?>
-    <? include 'show_article_view.php'; ?>
-    <? include 'show_contact_view.php'; ?>
-    <? include 'show_legal_notice_view.php'; ?>
-    <? include 'BLOCK/footer_menu.php'; ?>
+    <? foreach ( var page_slug => var page; .PageBySlugMap ) { ?>
+        <div class="extended-container view is-hidden" data-view-name="<# page.Route #>">
+            <? include 'PAGE/' .. page.TypeSlug .. '_page.php'; ?>
+        </div>
+    <? } ?>
     <? include 'BLOCK/scroll_top_button.php'; ?>
     <? include 'BLOCK/cookie_consent_banner.php'; ?>
 </div>
+<script src="/static/script/header_menu.js?v=<# VersionTimestamp #>"></script>
 <script>
     // -- STATEMENTS
 
     HandleScrollEvent( 1, "body", "is-scrolled" );
+
+    GetElements( ".appearing-block" )
+        .AddIntersectionObserver( true, 0.25, "is-visible" )
+        .AddIntersectionObserver( false, 0.0, "", "is-visible" );
 
     AddEventListener(
         "update-view",
@@ -82,10 +86,10 @@
         {
             GetElements( ".view" ).Iterate(
                 function (
-                    element
+                    view_element
                     )
                 {
-                    element.Toggle( element.dataset.viewName === ViewName );
+                    view_element.Fade( view_element.dataset.viewName === ViewName );
                 }
                 );
 

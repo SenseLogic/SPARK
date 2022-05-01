@@ -1,0 +1,29 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/page_model.php';
+
+// -- TYPES
+
+class VIEW_PAGES_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code
+        )
+    {
+        parent::constructor( language_code );
+
+        .Title = 'View pages';
+        .PageArray = GetDatabasePageArray();
+
+        SetSessionValue( 'ListPage', GetRequest() );
+
+        import '../VIEW/view_pages_view.php';
+    }
+}
+
+// -- STATEMENTS
+
+var view_pages_controller = new VIEW_PAGES_CONTROLLER( var language_code );

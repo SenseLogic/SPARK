@@ -1,0 +1,30 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/block_type_model.php';
+
+// -- TYPES
+
+class DO_EDIT_BLOCK_TYPE_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code,
+        block_type_id
+        )
+    {
+        parent::constructor( language_code );
+
+        var slug = GetPostValue( 'Slug' );
+        var name = GetPostValue( 'Name' );
+
+        SetDatabaseBlockType( block_type_id, slug, name );
+
+        Redirect( FindSessionValue( 'ListPage', '/admin/block-type' ) );
+    }
+}
+
+// -- STATEMENTS
+
+var do_edit_block_type_controller = new DO_EDIT_BLOCK_TYPE_CONTROLLER( var language_code, var block_type_id );

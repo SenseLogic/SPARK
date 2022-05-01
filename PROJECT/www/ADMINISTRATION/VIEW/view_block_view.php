@@ -9,16 +9,10 @@
                     <input class="form-input" name="Slug" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Block->Slug ) ); ?>" readonly/>
             </div>
             <div class="form-field-name">
-                <?php echo htmlspecialchars( $this->GetText( 'Article Slug' ) ); ?> :
+                <?php echo htmlspecialchars( $this->GetText( 'Type Slug' ) ); ?> :
             </div>
             <div>
-                    <input class="form-input" name="ArticleSlug" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Block->ArticleSlug ) ); ?>" readonly/>
-            </div>
-            <div class="form-field-name">
-                <?php echo htmlspecialchars( $this->GetText( 'Number' ) ); ?> :
-            </div>
-            <div>
-                    <input class="form-input" name="Number" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Block->Number ) ); ?>" readonly/>
+                    <input class="form-input" name="TypeSlug" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Block->TypeSlug ) ); ?>" readonly/>
             </div>
             <div class="form-field-name">
                 <?php echo htmlspecialchars( $this->GetText( 'Title' ) ); ?> :

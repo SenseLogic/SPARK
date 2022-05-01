@@ -713,14 +713,26 @@ textarea {
 .text-button {
   background: url("/static/image/admin/text_icon.svg") no-repeat center center/contain;
 }
+.block-type-button {
+  background: url("/static/image/admin/block-type_icon.svg") no-repeat center center/contain;
+}
 .block-button {
   background: url("/static/image/admin/block_icon.svg") no-repeat center center/contain;
 }
-.article-button {
-  background: url("/static/image/admin/article_icon.svg") no-repeat center center/contain;
+.block-sub-block-button {
+  background: url("/static/image/admin/block-sub-block_icon.svg") no-repeat center center/contain;
 }
-.article-block-button {
-  background: url("/static/image/admin/article-block_icon.svg") no-repeat center center/contain;
+.page-type-button {
+  background: url("/static/image/admin/page-type_icon.svg") no-repeat center center/contain;
+}
+.page-button {
+  background: url("/static/image/admin/page_icon.svg") no-repeat center center/contain;
+}
+.page-content-block-button {
+  background: url("/static/image/admin/page-content-block_icon.svg") no-repeat center center/contain;
+}
+.page-sub-page-button {
+  background: url("/static/image/admin/page-sub-page_icon.svg") no-repeat center center/contain;
 }
 .contact-button {
   background: url("/static/image/admin/contact_icon.svg") no-repeat center center/contain;
@@ -731,14 +743,26 @@ textarea {
 .text-table {
   grid-template-columns: repeat(3, auto);
 }
-.block-table {
-  grid-template-columns: repeat(8, auto);
+.block-type-table {
+  grid-template-columns: repeat(3, auto);
 }
-.article-table {
+.block-table {
+  grid-template-columns: repeat(7, auto);
+}
+.block-sub-block-table {
+  grid-template-columns: repeat(4, auto);
+}
+.page-type-table {
+  grid-template-columns: repeat(3, auto);
+}
+.page-table {
   grid-template-columns: repeat(9, auto);
 }
-.article-block-table {
-  grid-template-columns: repeat(3, auto);
+.page-content-block-table {
+  grid-template-columns: repeat(4, auto);
+}
+.page-sub-page-table {
+  grid-template-columns: repeat(4, auto);
 }
 .contact-table {
   grid-template-columns: repeat(8, auto);

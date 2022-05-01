@@ -1,0 +1,27 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/page_type_model.php';
+
+// -- TYPES
+
+class ADD_PAGE_TYPE_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code
+        )
+    {
+        parent::constructor( language_code );
+
+        .Title = 'Add a page type';
+        .ListPage = FindSessionValue( 'ListPage', '/admin/page-type' );
+
+        import '../VIEW/add_page_type_view.php';
+    }
+}
+
+// -- STATEMENTS
+
+var add_page_type_controller = new ADD_PAGE_TYPE_CONTROLLER( var language_code );

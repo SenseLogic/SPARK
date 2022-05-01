@@ -153,8 +153,11 @@
         <div class="margin-right-auto! scaled-button header-menu-button" data-view-name="home" onclick="ShowView( 'home' )">
             <# .GetText( 'HeaderMenuHomeButton' ) #>
         </div>
-        <div class="scaled-button header-menu-button header-menu-desktop-button" data-view-name="home" onclick="ShowView( 'home/#article-list' )">
-            <# .GetText( 'HeaderMenuArticleListButton' ) #>
+        <div class="scaled-button header-menu-button header-menu-desktop-button" data-view-name="articles" onclick="ShowView( 'articles' )">
+            <# .GetText( 'HeaderMenuArticlesButton' ) #>
+        </div>
+        <div class="scaled-button header-menu-button header-menu-desktop-button" data-view-name="cookie-policy" onclick="ShowView( 'cookie-policy' )">
+            <# .GetText( 'HeaderMenuCookiePolicyButton' ) #>
         </div>
         <div class="scaled-button header-menu-button header-menu-desktop-button" data-view-name="legal-notice" onclick="ShowView( 'legal-notice' )">
             <# .GetText( 'HeaderMenuLegalNoticeButton' ) #>
@@ -175,8 +178,11 @@
         <div class="scaled-button header-menu-mobile-button" data-view-name="home" onclick="CloseHeaderMenu(); ShowView( 'home' )">
             <# .GetText( 'HeaderMenuHomeButton' ) #>
         </div>
-        <div class="scaled-button header-menu-mobile-button" data-view-name="home" onclick="CloseHeaderMenu(); ShowView( 'home/#article-list' )">
-            <# .GetText( 'HeaderMenuArticleListButton' ) #>
+        <div class="scaled-button header-menu-mobile-button" data-view-name="articles" onclick="CloseHeaderMenu(); ShowView( 'articles' )">
+            <# .GetText( 'HeaderMenuArticlesButton' ) #>
+        </div>
+        <div class="scaled-button header-menu-mobile-button" data-view-name="cookie-policy" onclick="CloseHeaderMenu(); ShowView( 'cookie-policy' )">
+            <# .GetText( 'HeaderMenuCookiePolicyButton' ) #>
         </div>
         <div class="scaled-button header-menu-mobile-button" data-view-name="legal-notice" onclick="CloseHeaderMenu(); ShowView( 'legal-notice' )">
             <# .GetText( 'HeaderMenuLegalNoticeButton' ) #>
@@ -188,7 +194,7 @@
         </div>
     </div>
 </div>
-<script>
+<script file="header_menu.js">
     // -- FUNCTIONS
 
     function OpenHeaderMenu(
@@ -218,7 +224,11 @@
                     element
                     )
                 {
-                    element.ToggleClass( "is-selected", element.dataset.viewName === ViewName );
+                    element.ToggleClass(
+                        "is-selected",
+                        element.dataset.viewName === ViewName
+                        || ViewName.startsWith( element.dataset.viewName + "/" )
+                        );
                 }
                 );
         }

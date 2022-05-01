@@ -29,13 +29,13 @@
         }
 
         ViewName = GetRoute( "/<?php echo $this->LanguageCode; ?>/", "/" );
-        SectionName = GetHash();
 
         if ( ViewName === "" )
         {
             ViewName = "home";
         }
 
+        SectionName = GetHash();
         EmitEvent( "update-view" );
     }
 
@@ -61,19 +61,23 @@
     }
 </script>
 <div>
-    <?php require __DIR__ . '/' . 'BLOCK/header_menu.php'; ?>
-    <?php require __DIR__ . '/' . 'show_home_view.php'; ?>
-    <?php require __DIR__ . '/' . 'show_article_view.php'; ?>
-    <?php require __DIR__ . '/' . 'show_contact_view.php'; ?>
-    <?php require __DIR__ . '/' . 'show_legal_notice_view.php'; ?>
-    <?php require __DIR__ . '/' . 'BLOCK/footer_menu.php'; ?>
+    <?php foreach ( $this->PageBySlugMap as  $page_slug =>  $page ) { ?>
+        <div class="extended-container view is-hidden" data-view-name="<?php echo $page->Route; ?>">
+            <?php require __DIR__ . '/' . 'PAGE/' . $page->TypeSlug . '_page.php'; ?>
+        </div>
+    <?php } ?>
     <?php require __DIR__ . '/' . 'BLOCK/scroll_top_button.php'; ?>
     <?php require __DIR__ . '/' . 'BLOCK/cookie_consent_banner.php'; ?>
 </div>
+<script src="/static/script/header_menu.js?v=<?php echo VersionTimestamp; ?>"></script>
 <script>
     // -- STATEMENTS
 
     HandleScrollEvent( 1, "body", "is-scrolled" );
+
+    GetElements( ".appearing-block" )
+        .AddIntersectionObserver( true, 0.25, "is-visible" )
+        .AddIntersectionObserver( false, 0.0, "", "is-visible" );
 
     AddEventListener(
         "update-view",
@@ -82,10 +86,10 @@
         {
             GetElements( ".view" ).Iterate(
                 function (
-                    element
+                    view_element
                     )
                 {
-                    element.Toggle( element.dataset.viewName === ViewName );
+                    view_element.Fade( view_element.dataset.viewName === ViewName );
                 }
                 );
 

@@ -35,7 +35,7 @@ body
     height: 100%;
     min-height: 100%;
 
-    background-color: GrayColor;
+    background-color: WhiteColor;
 }
 
 body,
@@ -115,8 +115,16 @@ MakePaddedContainer( 1.25rem, 2.5rem 5rem 7.5rem 10rem 12.5rem, min-width-40em m
 MakePaddedContainer( 1.25rem, 5rem 7.5rem 10rem 12.5rem 240 * Pxm, min-width-40em min-width-60em min-width-80em min-width-100em min-width-120em, "narrow-" );
 MakeMarginLeftAuto( , , "\!", !important );
 MakeMarginRightAuto( , , "\!", !important );
+MakeOverflowScrollbarHidden();
+MakeScrollSnapTypeMandatory();
+MakeScrollSnapAlignStart();
+MakeScrollSnapAlignEnd();
 
 SetRootFontSize( 1rem, 1.1rem 1.2rem 1.3rem 1.4rem, min-width-90em min-width-100em min-width-110em min-width-120em );
+
+MakeScaledButton( 0.25s, ease, 1.1 );
+MakeZoomedButton( 0.8s, ease, 1.05 );
+MakeYTranslationOpacityTransition( ".is-visible", 1.8s, ease, 10% );
 
 // ~~
 
@@ -128,51 +136,6 @@ SetRootFontSize( 1rem, 1.1rem 1.2rem 1.3rem 1.4rem, min-width-90em min-width-100
 .button
 {
     cursor: pointer;
-}
-
-.scaled-button
-{
-    cursor: pointer;
-    transition: transform 0.25s ease;
-}
-
-.scaled-button:hover
-{
-    transform: scale( 1.1 );
-}
-
-.zoomed-button
-{
-    position: relative;
-
-    overflow: hidden;
-
-    cursor: pointer;
-}
-
-.zoomed-button::after
-{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-
-    content: "";
-    background: inherit;
-
-    transition: transform .8s ease;
-}
-
-.zoomed-button:hover::after
-{
-    transform: scale( 1.05 );
-}
-
-.zoomed-button > *
-{
-    z-index: 1;
-    position: relative;
 }
 
 .paragraph + .paragraph
@@ -260,4 +223,92 @@ SetRootFontSize( 1rem, 1.1rem 1.2rem 1.3rem 1.4rem, min-width-90em min-width-100
     transform: translateX( -0.9em );
 
     content: "\2022";
+}
+
+.view
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    overflow: hidden;
+
+    flex-shrink: 0;
+}
+
+.page
+{
+    position: relative;
+
+    height: auto;
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.block
+{
+    margin-bottom: 2rem;
+
+    display: block;
+    justify-content: center;
+    align-items: stretch;
+
+    +Media( min-width-50em )
+    {
+        margin-bottom: 2rem;
+
+        display: flex;
+    }
+}
+
+.block-column
+{
+    width: 100%;
+
+    +Media( min-width-50em )
+    {
+        width: 50%;
+    }
+}
+
+.block-image-column
+{
+    min-height: 60vh;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    +Media( min-width-50em )
+    {
+        min-height: 20rem;
+    }
+}
+
+.block-text-column
+{
+    padding: 2rem;
+
+    +Media( min-width-50em )
+    {
+        min-height: 20rem;
+        padding: 5rem;
+    }
+}
+
+.block-title
+{
+    margin-bottom: 1em;
+
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.block-text
+{
+    font-size: 1rem;
 }

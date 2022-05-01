@@ -1,0 +1,29 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/page_type_model.php';
+
+// -- TYPES
+
+class EDIT_PAGE_TYPE_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code,
+        page_type_id
+        )
+    {
+        parent::constructor( language_code );
+
+        .Title = 'Edit a page type';
+        .PageType = GetDatabasePageTypeById( page_type_id );
+        .ListPage = FindSessionValue( 'ListPage', '/admin/page-type' );
+
+        import '../VIEW/edit_page_type_view.php';
+    }
+}
+
+// -- STATEMENTS
+
+var edit_page_type_controller = new EDIT_PAGE_TYPE_CONTROLLER( var language_code, var page_type_id );

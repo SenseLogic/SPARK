@@ -367,7 +367,6 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
     </div><~{#has_custom_block#}<>
     <?
         var object_mode = 'add';
-        var object_value = .{#attribute#};
         include 'BLOCK/{#variable#}_object.php';
     ?>~>
 </div>

@@ -1,5 +1,0 @@
-// -- IMPORTS
-
-import 'article.php';
-import 'article_block.php';
-import 'block.php';

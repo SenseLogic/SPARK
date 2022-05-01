@@ -9,16 +9,10 @@
                     <input class="form-input" name="Slug" type="text" value="<% GetValueText( .Block.Slug ) %>" readonly/>
             </div>
             <div class="form-field-name">
-                <% .GetText( 'Article Slug' ) %> :
+                <% .GetText( 'Type Slug' ) %> :
             </div>
             <div>
-                    <input class="form-input" name="ArticleSlug" type="text" value="<% GetValueText( .Block.ArticleSlug ) %>" readonly/>
-            </div>
-            <div class="form-field-name">
-                <% .GetText( 'Number' ) %> :
-            </div>
-            <div>
-                    <input class="form-input" name="Number" type="text" value="<% GetValueText( .Block.Number ) %>" readonly/>
+                    <input class="form-input" name="TypeSlug" type="text" value="<% GetValueText( .Block.TypeSlug ) %>" readonly/>
             </div>
             <div class="form-field-name">
                 <% .GetText( 'Title' ) %> :

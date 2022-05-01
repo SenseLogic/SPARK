@@ -1,0 +1,17 @@
+<?
+    var page_slug_array = .PageBySlugMap[ 'articles' ].SubPageSlugArray;
+    var article_array = [];
+
+    foreach ( var page_slug; page_slug_array )
+    {
+        array_push( article_array, .PageBySlugMap[ page_slug ] );
+    }
+?>
+<style file="articles_page.styl">
+</style>
+<div class="page">
+    <? include '../BLOCK/header_menu.php'; ?>
+    <? include '../BLOCK/article_carousel.php'; ?>
+    <? include '../BLOCK/content_block_list.php'; ?>
+    <? include '../BLOCK/footer_menu.php'; ?>
+</div>

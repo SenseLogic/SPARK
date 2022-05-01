@@ -1,0 +1,29 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/block_sub_block_model.php';
+
+// -- TYPES
+
+class VIEW_BLOCK_SUB_BLOCK_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code,
+        block_sub_block_id
+        )
+    {
+        parent::constructor( language_code );
+
+        .Title = 'View a block sub block';
+        .BlockSubBlock = GetDatabaseBlockSubBlockById( block_sub_block_id );
+        .ListPage = FindSessionValue( 'ListPage', '/admin/block-sub-block' );
+
+        import '../VIEW/view_block_sub_block_view.php';
+    }
+}
+
+// -- STATEMENTS
+
+var view_block_sub_block_controller = new VIEW_BLOCK_SUB_BLOCK_CONTROLLER( var language_code, var block_sub_block_id );

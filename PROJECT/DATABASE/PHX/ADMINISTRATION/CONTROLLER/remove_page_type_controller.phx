@@ -1,0 +1,29 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/page_type_model.php';
+
+// -- TYPES
+
+class REMOVE_PAGE_TYPE_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code,
+        page_type_id
+        )
+    {
+        parent::constructor( language_code );
+
+        .Title = 'Remove a page type';
+        .PageType = GetDatabasePageTypeById( page_type_id );
+        .ListPage = FindSessionValue( 'ListPage', '/admin/page-type' );
+
+        import '../VIEW/remove_page_type_view.php';
+    }
+}
+
+// -- STATEMENTS
+
+var remove_page_type_controller = new REMOVE_PAGE_TYPE_CONTROLLER( var language_code, var page_type_id );

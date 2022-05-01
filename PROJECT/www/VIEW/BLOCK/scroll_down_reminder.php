@@ -62,6 +62,9 @@
 
 
 
+
+
+
 <div class="scroll-down-reminder">
     <div class="scroll-down-reminder-text">
         <?php echo $this->GetText( 'ScrollDownReminder' ); ?>

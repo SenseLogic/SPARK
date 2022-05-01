@@ -1,0 +1,177 @@
+<? include 'BLOCK/page_header.php'; ?>
+<div id="view-pages-view">
+    <div class="form-limited form-centered margin-bottom-1rem">
+        <div class="tool-container">
+            <? var filter_name = "PageFilter"; ?>
+            <? include 'BLOCK/filter.php'; ?>
+            <? var list_mode_name = "PageListMode"; ?>
+            <? include 'BLOCK/list_mode.php'; ?>
+            <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                <a class="form-button form-button-large add-button" href="/admin/page/add">
+                </a>
+            <? } ?>
+        </div>
+    </div>
+    <div class="cell-list page-section form-section is-hidden">
+        <div class="form-container table-container page-table sortable-table">
+            <div class="form-column-name sortable-table-column">
+                <% .GetText( 'Slug' ) %>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <% .GetText( 'Type Slug' ) %>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <% .GetText( 'Route' ) %>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <% .GetText( 'Title' ) %>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <% .GetText( 'Text' ) %>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <% .GetText( 'Image Path' ) %>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <% .GetText( 'Video Path' ) %>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <% .GetText( 'Is Active' ) %>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <% .GetText( 'Action' ) %>
+            </div>
+            <? foreach ( var page; .PageArray ) { ?>
+                <div class="sortable-table-row filter-row">
+                    <div class="sortable-table-cell filter-cell">
+                        <% GetValueText( page.Slug ) %>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <% GetValueText( page.TypeSlug ) %>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <% GetValueText( page.Route ) %>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <div>
+                            <? foreach ( var language_code; LanguageCodeArray ) { ?>
+                                <div class="form-translation">
+                                    <% GetValueText( GetTranslatedText( page.Title, language_code ) ) %>
+                                </div>
+                            <? } ?>
+                        </div>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <div>
+                            <? foreach ( var language_code; LanguageCodeArray ) { ?>
+                                <div class="form-translation">
+                                    <% GetTranslatedText( page.Text, language_code ) %>
+                                </div>
+                            <? } ?>
+                        </div>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <% GetValueText( page.ImagePath ) %>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <% GetValueText( page.VideoPath ) %>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <% GetValueText( page.IsActive ) %>
+                    </div>
+                    <div class="form-centered sortable-table-cell">
+                        <a class="form-button view-button" href="/admin/page/view/<% page.Id %>">
+                        </a>
+                        <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                            <a class="form-button edit-button" href="/admin/page/edit/<% page.Id %>">
+                            </a>
+                            <a class="form-button remove-button" href="/admin/page/remove/<% page.Id %>">
+                            </a>
+                        <? } ?>
+                    </div>
+                </div>
+            <? } ?>
+        </div>
+    </div>
+    <div class="card-list is-hidden">
+        <? foreach ( var page; .PageArray ) { ?>
+            <div class="card-container filter-row">
+                <div class="card">
+                    <div class="form-container">
+                        <div class="form-field-name">
+                            <% .GetText( 'Slug' ) %> :
+                        </div>
+                        <div>
+                                <input class="form-input" name="Slug" type="text" value="<% GetValueText( page.Slug ) %>" readonly/>
+                        </div>
+                        <div class="form-field-name">
+                            <% .GetText( 'Type Slug' ) %> :
+                        </div>
+                        <div>
+                                <input class="form-input" name="TypeSlug" type="text" value="<% GetValueText( page.TypeSlug ) %>" readonly/>
+                        </div>
+                        <div class="form-field-name">
+                            <% .GetText( 'Route' ) %> :
+                        </div>
+                        <div>
+                                <input class="form-input" name="Route" type="text" value="<% GetValueText( page.Route ) %>" readonly/>
+                        </div>
+                        <div class="form-field-name">
+                            <% .GetText( 'Title' ) %> :
+                        </div>
+                        <div>
+                            <div>
+                                <? foreach ( var language_code; LanguageCodeArray ) { ?>
+                                    <input class="form-translation form-input" name="Title" type="text" value="<% GetValueText( GetTranslatedText( page.Title, language_code ) ) %>" readonly/>
+                                <? } ?>
+                            </div>
+                        </div>
+                        <div class="form-field-name">
+                            <% .GetText( 'Text' ) %> :
+                        </div>
+                        <div>
+                            <div>
+                                <? foreach ( var language_code; LanguageCodeArray ) { ?>
+                                    <textarea class="form-translation form-textarea" name="Text" readonly><% GetTranslatedText( page.Text, language_code ) %></textarea>
+                                <? } ?>
+                            </div>
+                        </div>
+                        <div class="form-field-name">
+                            <% .GetText( 'Image Path' ) %> :
+                        </div>
+                        <div>
+                            <input class="form-input" name="ImagePath" type="text" value="<% page.ImagePath %>" readonly/>
+                            <div class="form-upload-container">
+                                <img class="form-upload-image" src="<% page.ImagePath %>" onerror="this.src='/static/image/admin/missing_image.svg'"/>
+                            </div>
+                        </div>
+                        <div class="form-field-name">
+                            <% .GetText( 'Video Path' ) %> :
+                        </div>
+                        <div>
+                            <input class="form-input" name="VideoPath" type="text" value="<% page.VideoPath %>" readonly/>
+                            <div class="form-upload-container">
+                                <video class="form-upload-video" src="<% page.VideoPath %>" type="video/mp4" onerror="this.src='/static/video/admin/missing_video.mp4'"></video>
+                            </div>
+                        </div>
+                        <div class="form-field-name">
+                            <% .GetText( 'Is Active' ) %> :
+                        </div>
+                        <div>
+                                <input class="form-input" name="IsActive" type="text" value="<% GetValueText( page.IsActive ) %>" readonly/>
+                        </div>
+                    </div>
+                    <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                        <div class="form-toolbar">
+                            <a class="form-button edit-button" href="/admin/page/edit/<% page.Id %>">
+                            </a>
+                            <a class="form-button remove-button" href="/admin/page/remove/<% page.Id %>">
+                            </a>
+                        </div>
+                    <? } ?>
+                </div>
+            </div>
+        <? } ?>
+    </div>
+</div>
+<? include 'BLOCK/page_footer.php'; ?>

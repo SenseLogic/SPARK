@@ -1,0 +1,31 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/page_sub_page_model.php';
+
+// -- TYPES
+
+class DO_EDIT_PAGE_SUB_PAGE_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code,
+        page_sub_page_id
+        )
+    {
+        parent::constructor( language_code );
+
+        var page_slug = GetPostValue( 'PageSlug' );
+        var sub_page_slug = GetPostValue( 'SubPageSlug' );
+        var number = GetPostValue( 'Number' );
+
+        SetDatabasePageSubPage( page_sub_page_id, page_slug, sub_page_slug, number );
+
+        Redirect( FindSessionValue( 'ListPage', '/admin/page-sub-page' ) );
+    }
+}
+
+// -- STATEMENTS
+
+var do_edit_page_sub_page_controller = new DO_EDIT_PAGE_SUB_PAGE_CONTROLLER( var language_code, var page_sub_page_id );

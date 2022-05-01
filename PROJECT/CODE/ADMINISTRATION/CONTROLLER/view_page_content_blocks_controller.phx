@@ -1,0 +1,29 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/page_content_block_model.php';
+
+// -- TYPES
+
+class VIEW_PAGE_CONTENT_BLOCKS_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code
+        )
+    {
+        parent::constructor( language_code );
+
+        .Title = 'View page content blocks';
+        .PageContentBlockArray = GetDatabasePageContentBlockArray();
+
+        SetSessionValue( 'ListPage', GetRequest() );
+
+        import '../VIEW/view_page_content_blocks_view.php';
+    }
+}
+
+// -- STATEMENTS
+
+var view_page_content_blocks_controller = new VIEW_PAGE_CONTENT_BLOCKS_CONTROLLER( var language_code );

@@ -1,0 +1,18 @@
+<style file="contact_page.styl">
+    .contact-page-heading
+    {
+        position: relative;
+
+        min-height: 100vh;
+    }
+</style>
+<div class="page">
+    <? include '../BLOCK/header_menu.php'; ?>
+    <div class="contact-page-heading" style="background: url( '<# var page.ImagePath #>' ) no-repeat center center / cover, url( '<# page.ImagePath #>.preload.jpg' ) no-repeat center center / cover">>
+        <? include '../BLOCK/contact_form.php'; ?>
+        <? include '../BLOCK/scroll_down_reminder.php'; ?>
+    </div>
+    <? include '../BLOCK/contact_map.php'; ?>
+    <? include '../BLOCK/content_block_list.php'; ?>
+    <? include '../BLOCK/footer_menu.php'; ?>
+</div>

@@ -1,4 +1,34 @@
 // -- IMPORTS
 
-import 'article.php';
 import 'block.php';
+import 'block_type.php';
+
+// -- FUNCTIONS
+
+function GetBlockBySlugMap(
+    array &block_array,
+    array &block_sub_block_array
+    )
+{
+    var block_by_slug_map = [];
+
+    foreach ( var block; block_array )
+    {
+        block.SubBlockSlugArray = [];
+
+        block_by_slug_map[ block.Slug ] = block;
+    }
+
+    foreach ( var block_sub_block; block_sub_block_array )
+    {
+        if ( isset( block_by_slug_map[ block_sub_block.BlockSlug ] ) )
+        {
+            array_push(
+                block_by_slug_map[ block_sub_block.BlockSlug ].SubBlockSlugArray,
+                block_sub_block.SubBlockSlug
+                );
+        }
+    }
+
+    return block_by_slug_map;
+}

@@ -153,8 +153,11 @@
         <div class="margin-right-auto! scaled-button header-menu-button" data-view-name="home" onclick="ShowView( 'home' )">
             <?php echo $this->GetText( 'HeaderMenuHomeButton' ); ?>
         </div>
-        <div class="scaled-button header-menu-button header-menu-desktop-button" data-view-name="home" onclick="ShowView( 'home/#article-list' )">
-            <?php echo $this->GetText( 'HeaderMenuArticleListButton' ); ?>
+        <div class="scaled-button header-menu-button header-menu-desktop-button" data-view-name="articles" onclick="ShowView( 'articles' )">
+            <?php echo $this->GetText( 'HeaderMenuArticlesButton' ); ?>
+        </div>
+        <div class="scaled-button header-menu-button header-menu-desktop-button" data-view-name="cookie-policy" onclick="ShowView( 'cookie-policy' )">
+            <?php echo $this->GetText( 'HeaderMenuCookiePolicyButton' ); ?>
         </div>
         <div class="scaled-button header-menu-button header-menu-desktop-button" data-view-name="legal-notice" onclick="ShowView( 'legal-notice' )">
             <?php echo $this->GetText( 'HeaderMenuLegalNoticeButton' ); ?>
@@ -175,8 +178,11 @@
         <div class="scaled-button header-menu-mobile-button" data-view-name="home" onclick="CloseHeaderMenu(); ShowView( 'home' )">
             <?php echo $this->GetText( 'HeaderMenuHomeButton' ); ?>
         </div>
-        <div class="scaled-button header-menu-mobile-button" data-view-name="home" onclick="CloseHeaderMenu(); ShowView( 'home/#article-list' )">
-            <?php echo $this->GetText( 'HeaderMenuArticleListButton' ); ?>
+        <div class="scaled-button header-menu-mobile-button" data-view-name="articles" onclick="CloseHeaderMenu(); ShowView( 'articles' )">
+            <?php echo $this->GetText( 'HeaderMenuArticlesButton' ); ?>
+        </div>
+        <div class="scaled-button header-menu-mobile-button" data-view-name="cookie-policy" onclick="CloseHeaderMenu(); ShowView( 'cookie-policy' )">
+            <?php echo $this->GetText( 'HeaderMenuCookiePolicyButton' ); ?>
         </div>
         <div class="scaled-button header-menu-mobile-button" data-view-name="legal-notice" onclick="CloseHeaderMenu(); ShowView( 'legal-notice' )">
             <?php echo $this->GetText( 'HeaderMenuLegalNoticeButton' ); ?>
@@ -188,39 +194,3 @@
         </div>
     </div>
 </div>
-<script>
-    // -- FUNCTIONS
-
-    function OpenHeaderMenu(
-        )
-    {
-        GetElementById( "header-menu" ).AddClass( "is-open" );
-        SetScrollPosition( 0 );
-    }
-
-    // ~~
-
-    function CloseHeaderMenu(
-        )
-    {
-        GetElementById( "header-menu" ).RemoveClass( "is-open" );
-    }
-
-    // -- STATEMENTS
-
-    AddEventListener(
-        "update-view",
-        function (
-            )
-        {
-            GetElements( ".header-menu-button, .header-menu-mobile-button" ).Iterate(
-                function (
-                    element
-                    )
-                {
-                    element.ToggleClass( "is-selected", element.dataset.viewName === ViewName );
-                }
-                );
-        }
-        );
-</script>

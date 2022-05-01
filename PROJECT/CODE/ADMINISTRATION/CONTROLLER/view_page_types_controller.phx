@@ -1,0 +1,29 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/page_type_model.php';
+
+// -- TYPES
+
+class VIEW_PAGE_TYPES_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code
+        )
+    {
+        parent::constructor( language_code );
+
+        .Title = 'View page types';
+        .PageTypeArray = GetDatabasePageTypeArray();
+
+        SetSessionValue( 'ListPage', GetRequest() );
+
+        import '../VIEW/view_page_types_view.php';
+    }
+}
+
+// -- STATEMENTS
+
+var view_page_types_controller = new VIEW_PAGE_TYPES_CONTROLLER( var language_code );

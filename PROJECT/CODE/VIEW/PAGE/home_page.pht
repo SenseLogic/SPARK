@@ -1,0 +1,8 @@
+<style file="home_page.styl">
+</style>
+<div class="page">
+    <? include '../BLOCK/header_menu.php'; ?>
+    <? include '../BLOCK/page_heading.php'; ?>
+    <? include '../BLOCK/content_block_list.php'; ?>
+    <? include '../BLOCK/footer_menu.php'; ?>
+</div>

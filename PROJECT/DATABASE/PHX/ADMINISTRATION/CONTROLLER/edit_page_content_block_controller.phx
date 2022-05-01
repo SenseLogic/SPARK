@@ -1,0 +1,29 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/page_content_block_model.php';
+
+// -- TYPES
+
+class EDIT_PAGE_CONTENT_BLOCK_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code,
+        page_content_block_id
+        )
+    {
+        parent::constructor( language_code );
+
+        .Title = 'Edit a page content block';
+        .PageContentBlock = GetDatabasePageContentBlockById( page_content_block_id );
+        .ListPage = FindSessionValue( 'ListPage', '/admin/page-content-block' );
+
+        import '../VIEW/edit_page_content_block_view.php';
+    }
+}
+
+// -- STATEMENTS
+
+var edit_page_content_block_controller = new EDIT_PAGE_CONTENT_BLOCK_CONTROLLER( var language_code, var page_content_block_id );

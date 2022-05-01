@@ -1,0 +1,41 @@
+<style file="page_heading.styl">
+    .page-heading
+    {
+        margin-bottom: 2rem;
+        min-height: 100vh;
+        padding: 6rem;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        color: WhiteColor;
+
+        +Media( min-width-50em )
+        {
+            padding: 4rem;
+        }
+    }
+
+    .page-heading-title
+    {
+        font-size: 2rem;
+    }
+
+    .page-heading-text
+    {
+        margin-top: 1rem;
+
+        font-size: 1.5rem;
+    }
+</style>
+<div class="page-heading" style="background: url( '<# var page.ImagePath #>' ) no-repeat center center / cover, url( '<# page.ImagePath #>.preload.jpg' ) no-repeat center center / cover">
+    <div class="page-heading-title">
+        <# .GetProcessedText( var page.Title ) #>
+    </div>
+    <div class="page-heading-text">
+        <# .GetProcessedText( page.Text ) #>
+    </div>
+    <? include 'scroll_down_reminder.php'; ?>
+</div>

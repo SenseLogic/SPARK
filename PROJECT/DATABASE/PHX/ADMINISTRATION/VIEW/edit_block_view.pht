@@ -8,8 +8,7 @@
             edit_block_form,
             it_is_valid_edit_block_form,
             slug_field,
-            article_slug_field,
-            number_field,
+            type_slug_field,
             title_field,
             text_field,
             image_path_field,
@@ -17,16 +16,14 @@
 
         edit_block_form = document.EditBlockForm;
         slug_field = edit_block_form.Slug;
-        article_slug_field = edit_block_form.ArticleSlug;
-        number_field = edit_block_form.Number;
+        type_slug_field = edit_block_form.TypeSlug;
         title_field = edit_block_form.Title;
         text_field = edit_block_form.Text;
         image_path_field = edit_block_form.ImagePath;
         video_path_field = edit_block_form.VideoPath;
 
         slug_field.RemoveClass( "form-field-error" );
-        article_slug_field.RemoveClass( "form-field-error" );
-        number_field.RemoveClass( "form-field-error" );
+        type_slug_field.RemoveClass( "form-field-error" );
         title_field.RemoveClass( "form-field-error" );
         text_field.RemoveClass( "form-field-error" );
         image_path_field.RemoveClass( "form-field-error" );
@@ -41,16 +38,9 @@
             it_is_valid_edit_block_form = false;
         }
 
-        if ( article_slug_field.value === "" )
+        if ( type_slug_field.value === "" )
         {
-            article_slug_field.AddClass( "form-field-error" );
-
-            it_is_valid_edit_block_form = false;
-        }
-
-        if ( !IsNumericText( number_field.value ) )
-        {
-            number_field.AddClass( "form-field-error" );
+            type_slug_field.AddClass( "form-field-error" );
 
             it_is_valid_edit_block_form = false;
         }
@@ -69,21 +59,15 @@
                     <input class="form-input" name="Slug" type="text" value="<% GetValueText( .Block.Slug ) %>"/>
                 </div>
                 <div class="form-field-name">
-                    <% .GetText( 'Article Slug' ) %> :
+                    <% .GetText( 'Type Slug' ) %> :
                 </div>
                 <div>
-                    <select class="form-select" name="ArticleSlug">
-                        <? var article_array = GetDatabaseArticleArray(); ?>
-                        <? foreach ( var article; article_array ) { ?>
-                            <option value="<% GetValueText( article.Id ) %>"<? if ( .Block.ArticleSlug === article.Id ) echo ' selected'; ?>><% article.Name %></option>
+                    <select class="form-select" name="TypeSlug">
+                        <? var block_type_array = GetDatabaseBlockTypeArray(); ?>
+                        <? foreach ( var block_type; block_type_array ) { ?>
+                            <option value="<% GetValueText( block_type.Slug ) %>"<? if ( .Block.TypeSlug === block_type.Slug ) echo ' selected'; ?>><% .GetUntranslatedText( block_type.Title ) %></option>
                         <? } ?>
                     </select>
-                </div>
-                <div class="form-field-name">
-                    <% .GetText( 'Number' ) %> :
-                </div>
-                <div>
-                    <input class="form-input" name="Number" type="text" value="<% GetValueText( .Block.Number ) %>"/>
                 </div>
                 <div class="form-field-name">
                     <% .GetText( 'Title' ) %> :

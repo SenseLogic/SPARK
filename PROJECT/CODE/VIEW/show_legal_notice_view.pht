@@ -1,3 +1,0 @@
-<div class="extended-container view is-hidden" data-view-name="legal-notice">
-    <? include 'BLOCK/legal_notice.php'; ?>
-</div>

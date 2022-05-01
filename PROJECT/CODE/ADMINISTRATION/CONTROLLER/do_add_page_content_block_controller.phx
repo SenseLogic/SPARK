@@ -1,0 +1,30 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/page_content_block_model.php';
+
+// -- TYPES
+
+class DO_ADD_PAGE_CONTENT_BLOCK_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code
+        )
+    {
+        parent::constructor( language_code );
+
+        var page_slug = GetPostValue( 'PageSlug' );
+        var block_slug = GetPostValue( 'BlockSlug' );
+        var number = GetPostValue( 'Number' );
+
+        AddDatabasePageContentBlock( page_slug, block_slug, number );
+
+        Redirect( FindSessionValue( 'ListPage', '/admin/page-content-block' ) );
+    }
+}
+
+// -- STATEMENTS
+
+var do_add_page_content_block_controller = new DO_ADD_PAGE_CONTENT_BLOCK_CONTROLLER( var language_code );

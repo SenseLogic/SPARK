@@ -1,3 +1,6 @@
+<?php
+     $article_count = count(  $article_array );
+?>
 
 
 
@@ -57,9 +60,9 @@
 
 <div id="article-carousel" class="article-carousel">
     <div id="article-carousel-strip" class="article-carousel-strip">
-        <?php for (  $article_index = 0; $article_index <= $this->ArticleCount; ++$article_index ) { ?>
-            <?php  $article = $this->ArticleArray[ $article_index % $this->ArticleCount ]; ?>
-            <div class="article-carousel-slide" style="background-image: url( '<?php echo $article->ImagePath; ?>' ), url( '<?php echo $article->ImagePath; ?>.preload.jpg' )" onclick="ShowView( 'article/<?php echo $article->Id; ?>/<?php echo $article->Slug; ?>' )">
+        <?php for (  $article_index = 0; $article_index <= $article_count; ++$article_index ) { ?>
+            <?php  $article = $article_array[ $article_index % $article_count ]; ?>
+            <div class="article-carousel-slide" style="background-image: url( '<?php echo $article->ImagePath; ?>' ), url( '<?php echo $article->ImagePath; ?>.preload.jpg' )" onclick="ShowView( '<?php echo $article->Route; ?>' )">
                 <div class="article-carousel-slide-text">
                     <?php echo $this->GetTranslatedText( $article->Text ); ?>
                 </div>
@@ -80,7 +83,7 @@
               GetElementById( "article-carousel" ),
               GetElementById( "article-carousel-strip" ),
               0.0,
-              <?php echo $this->ArticleCount + 1; ?>,
+              <?php echo $article_count + 1; ?>,
               1,
               3.0,
               0.5

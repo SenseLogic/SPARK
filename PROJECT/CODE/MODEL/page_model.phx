@@ -1,0 +1,48 @@
+// -- IMPORTS
+
+import 'block.php';
+import 'page.php';
+import 'page_type.php';
+
+// -- FUNCTIONS
+
+function GetPageBySlugMap(
+    array &page_array,
+    array &page_content_block_array,
+    array &page_sub_page_array
+    )
+{
+    var page_by_slug_map = [];
+
+    foreach ( var page; page_array )
+    {
+        page.ContentBlockSlugArray = [];
+        page.SubPageSlugArray = [];
+
+        page_by_slug_map[ page.Slug ] = page;
+    }
+
+    foreach ( var page_content_block; page_content_block_array )
+    {
+        if ( isset( page_by_slug_map[ page_content_block.PageSlug ] ) )
+        {
+            array_push(
+                page_by_slug_map[ page_content_block.PageSlug ].ContentBlockSlugArray,
+                page_content_block.BlockSlug
+                );
+        }
+    }
+
+    foreach ( var page_sub_page; page_sub_page_array )
+    {
+        if ( isset( page_by_slug_map[ page_sub_page.PageSlug ] ) )
+        {
+            array_push(
+                page_by_slug_map[ page_sub_page.PageSlug ].SubPageSlugArray,
+                page_sub_page.SubPageSlug
+                );
+        }
+    }
+
+    return page_by_slug_map;
+}

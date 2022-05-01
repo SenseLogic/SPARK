@@ -1,3 +1,0 @@
-<div class="extended-container view is-hidden" data-view-name="contact">
-    <? include 'BLOCK/contact_form.php'; ?>
-</div>

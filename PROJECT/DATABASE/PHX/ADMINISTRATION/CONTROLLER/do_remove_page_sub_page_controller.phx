@@ -1,0 +1,27 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/page_sub_page_model.php';
+
+// -- TYPES
+
+class DO_REMOVE_PAGE_SUB_PAGE_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code,
+        page_sub_page_id
+        )
+    {
+        parent::constructor( language_code );
+
+        RemoveDatabasePageSubPageById( page_sub_page_id );
+
+        Redirect( FindSessionValue( 'ListPage', '/admin/page-sub-page' ) );
+    }
+}
+
+// -- STATEMENTS
+
+var do_remove_page_sub_page_controller = new DO_REMOVE_PAGE_SUB_PAGE_CONTROLLER( var language_code, var page_sub_page_id );

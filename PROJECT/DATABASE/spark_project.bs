@@ -4,36 +4,62 @@ spark-project
 
         Id : UINT32 | key, unique, incremented
         Slug : STRING
-        Text : STRING | is_multilingual_text
+        Text : STRING = "{{english 2 4 5 10}}¨fr:{{french 2 4 5 10}}" | is_multilingual_text
 
-    BLOCK | dropped, count 20
+    BLOCK_TYPE | dropped
 
         Id : UINT32 | key, unique, incremented
-        Slug : STRING = "{{Title:prefix ¨:slug_case}}"
-        ArticleSlug : ARTICLE.Slug | mapped, processed, is_reference, reference article~GetDatabaseArticleArray()~article.Id~article.Name
-        Number : FLOAT32 | has_default_value, default_value 1
+        Slug : STRING | mapped
+        Name : STRING = "{{english 1 1 4 6}}¨fr:{{french 1 1 4 6}}" | is_multilingual
+
+    BLOCK | dropped, count 60
+
+        Id : UINT32 | key, unique, incremented
+        Slug : STRING = "{{Title:prefix ¨:slug_case}}" | mapped
+        TypeSlug : BLOCK_TYPE.Slug | is_reference, reference block_type~GetDatabaseBlockTypeArray()~block_type.Slug~.GetUntranslatedText( block_type.Title )
         Title : STRING = "{{english 1 1 4 6}}¨fr:{{french 1 1 4 6}}" | is_multilingual, is_optional
         Text : STRING = "{{english 2 4 5 10}}¨fr:{{french 2 4 5 10}}" | is_multilingual_text, is_optional
-        ImagePath : STRING = "/static/image/test/beach.jpg|/static/image/test/palm_tree.jpg|/static/image/test/surfer.jpg" | is_image, is_optional
-        VideoPath : STRING = "/static/video/test/train.mp4|/static/video/test/bus.mp4" | is_video, is_optional
+        ImagePath : STRING = "/static/image/article/clouds.jpg|/static/image/article/groynes.jpg|/static/image/article/mountains.jpg|/static/image/article/spring.jpg" | is_image, is_optional
+        VideoPath : STRING  = "/static/video/article/train.mp4|/static/video/article/bus.mp4" | is_video, is_optional
 
-    ARTICLE | dropped, count 5
+    BLOCK_SUB_BLOCK | sorted, dropped, count 60
 
         Id : UINT32 | key, unique, incremented
-        Slug : STRING = "{{Name:prefix ¨:slug_case}}"
-        Name : STRING = "{{english 1 1 4 6}}¨fr:{{french 1 1 4 6}}" | is_multilingual
+        BlockSlug : BLOCK.Slug | ascending, is_reference, reference block~GetDatabaseBlockArray()~block.Slug~block.Slug
+        SubBlockSlug : BLOCK.Slug | is_reference, reference block~GetDatabaseBlockArray()~block.Slug~block.Slug
+        Number : FLOAT32 | ascending
+
+    PAGE_TYPE | dropped
+
+        Id : UINT32 | key, unique, incremented
+        Slug : STRING
+        Title : STRING = "{{english 1 1 4 6}}¨fr:{{french 1 1 4 6}}" | is_multilingual, is_optional
+
+    PAGE | dropped
+
+        Id : UINT32 | key, unique, incremented
+        Slug : STRING = "{{Title:prefix ¨:slug_case}}" | mapped
+        TypeSlug : PAGE_TYPE.Slug | is_reference, reference page_type~GetDatabasePageTypeArray()~page_type.Slug~.GetUntranslatedText( page_type.Title )
+        Route : STRING = "article/{{Id}}/{{Title:prefix ¨:slug_case}}"
+        Title : STRING = "{{english 1 1 4 6}}¨fr:{{french 1 1 4 6}}" | is_multilingual, is_optional
         Text : STRING = "{{english 2 4 5 10}}¨fr:{{french 2 4 5 10}}" | is_multilingual_text, is_optional
-        ImagePath : STRING = "/static/image/test/beach.jpg|/static/image/test/palm_tree.jpg|/static/image/test/surfer.jpg" | is_image, is_optional
-        VideoPath : STRING = "/static/video/test/train.mp4|/static/video/test/bus.mp4" | is_video, is_optional
-        NextArticleId : ARTICLE.Id | is_reference, reference article~GetDatabaseArticleArray()~article.Id~article.Name
-        Priority : STRING = "low|high" | is_enumeration, enumeration low~Low importance^high~High importance, has_default_value, default_value high
+        ImagePath : STRING = "/static/image/article/beach.jpg|/static/image/article/california.jpg|/static/image/article/drink.jpg|/static/image/article/sunset.jpg" | is_image, is_optional
+        VideoPath : STRING = "/static/video/article/train.mp4|/static/video/article/bus.mp4" | is_video, is_optional
         IsActive : BOOL = "true" | is_enumeration, enumeration 0~False^1~True, has_default_value, default_value 1
 
-    ARTICLE_BLOCK | dropped, count 20
+    PAGE_CONTENT_BLOCK | sorted, dropped, count 60
 
         Id : UINT32 | key, unique, incremented
-        ArticleSlug : ARTICLE.Slug | is_reference, reference article~GetDatabaseArticleArray()~article.Slug~article.Slug
+        PageSlug : PAGE.Slug | ascending, is_reference, reference page~GetDatabasePageArray()~page.Slug~page.Slug
         BlockSlug : BLOCK.Slug | is_reference, reference block~GetDatabaseBlockArray()~block.Slug~block.Slug
+        Number : FLOAT32 | ascending
+
+    PAGE_SUB_PAGE | sorted, dropped, count 60
+
+        Id : UINT32 | key, unique, incremented
+        PageSlug : PAGE.Slug | ascending, is_reference, reference page~GetDatabasePageArray()~page.Slug~page.Slug
+        SubPageSlug : PAGE.Slug | is_reference, reference page~GetDatabasePageArray()~page.Slug~page.Slug
+        Number : FLOAT32 | ascending
 
     CONTACT | sorted
 
@@ -42,8 +68,8 @@ spark-project
         Company : STRING
         Email : STRING
         Phone : STRING
-        Subject : STRING
-        Message : STRING | is_text
+        Subject : STRING = "{{english 1 1 4 6}}|{{french 1 1 4 6}}"
+        Message : STRING = "{{english 2 4 5 10}}|{{french 2 4 5 10}}" | is_text
         DateTime : DATETIME | now, descending
 
     USER | sorted, dropped

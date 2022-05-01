@@ -1,0 +1,29 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/block_sub_block_model.php';
+
+// -- TYPES
+
+class VIEW_BLOCK_SUB_BLOCKS_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code
+        )
+    {
+        parent::constructor( language_code );
+
+        .Title = 'View block sub blocks';
+        .BlockSubBlockArray = GetDatabaseBlockSubBlockArray();
+
+        SetSessionValue( 'ListPage', GetRequest() );
+
+        import '../VIEW/view_block_sub_blocks_view.php';
+    }
+}
+
+// -- STATEMENTS
+
+var view_block_sub_blocks_controller = new VIEW_BLOCK_SUB_BLOCKS_CONTROLLER( var language_code );

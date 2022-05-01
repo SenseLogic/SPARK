@@ -1,0 +1,27 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/page_type_model.php';
+
+// -- TYPES
+
+class DO_REMOVE_PAGE_TYPE_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code,
+        page_type_id
+        )
+    {
+        parent::constructor( language_code );
+
+        RemoveDatabasePageTypeById( page_type_id );
+
+        Redirect( FindSessionValue( 'ListPage', '/admin/page-type' ) );
+    }
+}
+
+// -- STATEMENTS
+
+var do_remove_page_type_controller = new DO_REMOVE_PAGE_TYPE_CONTROLLER( var language_code, var page_type_id );
