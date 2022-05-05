@@ -714,25 +714,25 @@ textarea {
   background: url("/static/image/admin/text_icon.svg") no-repeat center center/contain;
 }
 .block-type-button {
-  background: url("/static/image/admin/block-type_icon.svg") no-repeat center center/contain;
+  background: url("/static/image/admin/block_type_icon.svg") no-repeat center center/contain;
 }
 .block-button {
   background: url("/static/image/admin/block_icon.svg") no-repeat center center/contain;
 }
 .block-sub-block-button {
-  background: url("/static/image/admin/block-sub-block_icon.svg") no-repeat center center/contain;
+  background: url("/static/image/admin/block_sub_block_icon.svg") no-repeat center center/contain;
 }
 .page-type-button {
-  background: url("/static/image/admin/page-type_icon.svg") no-repeat center center/contain;
+  background: url("/static/image/admin/page_type_icon.svg") no-repeat center center/contain;
 }
 .page-button {
   background: url("/static/image/admin/page_icon.svg") no-repeat center center/contain;
 }
 .page-content-block-button {
-  background: url("/static/image/admin/page-content-block_icon.svg") no-repeat center center/contain;
+  background: url("/static/image/admin/page_content_block_icon.svg") no-repeat center center/contain;
 }
 .page-sub-page-button {
-  background: url("/static/image/admin/page-sub-page_icon.svg") no-repeat center center/contain;
+  background: url("/static/image/admin/page_sub_page_icon.svg") no-repeat center center/contain;
 }
 .contact-button {
   background: url("/static/image/admin/contact_icon.svg") no-repeat center center/contain;

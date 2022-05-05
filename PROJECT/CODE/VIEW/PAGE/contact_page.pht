@@ -8,7 +8,7 @@
 </style>
 <div class="page">
     <? include '../BLOCK/header_menu.php'; ?>
-    <div class="contact-page-heading" style="background: url( '<# var page.ImagePath #>' ) no-repeat center center / cover, url( '<# page.ImagePath #>.preload.jpg' ) no-repeat center center / cover">>
+    <div class="contact-page-heading" style="background: url( '<# var page.ImagePath #>' ) no-repeat center center / cover, url( '<# page.ImagePath #>.preload.jpg' ) no-repeat center center / cover">
         <? include '../BLOCK/contact_form.php'; ?>
         <? include '../BLOCK/scroll_down_reminder.php'; ?>
     </div>
