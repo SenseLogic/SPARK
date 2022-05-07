@@ -1,8 +1,15 @@
 <style file="contact_map.styl">
     .contact-map
     {
-        height: 100vh;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        height: 50vh;
         width: 100%;
+    }
+
+    .contact-map > *
+    {
+        display: none;
     }
 </style>
 <div id="contact-map" class="contact-map" style="background: url( '/static/image/contact/background.jpg' ) no-repeat center center / cover, url( '/static/image/contact/background.jpg.preload.jpg' ) no-repeat center center / cover">

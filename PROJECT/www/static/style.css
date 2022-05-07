@@ -603,8 +603,11 @@ html {
 .button {
   cursor: pointer;
 }
+.paragraph {
+  min-height: 1em;
+}
 .paragraph + .paragraph {
-  margin-top: 0.5em;
+  margin-top: 0.8em;
 }
 .title-1 {
   font-size: 2rem;
@@ -784,6 +787,9 @@ html {
 .contact-page-heading {
   position: relative;
   min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .text {
   display: flex;
@@ -975,8 +981,8 @@ body.is-scrolled .header-menu:not(.is-open) {
   margin-top: 4rem;
   margin-bottom: 1rem;
   border-radius: 0.5rem;
-  padding: 1rem;
-  background-color: rgba(0,0,0,0.2);
+  padding: 2rem;
+  background-color: rgba(0,0,0,0.1);
 }
 .contact-form-row {
   display: flex;
@@ -999,7 +1005,7 @@ body.is-scrolled .header-menu:not(.is-open) {
 }
 .contact-form-input::placeholder {
   text-align: center;
-  color: #c0c0c0;
+  color: #a0a0a0;
 }
 .contact-form-textarea {
   height: 6rem;
@@ -1017,7 +1023,7 @@ body.is-scrolled .header-menu:not(.is-open) {
   border-radius: 0.5rem;
   padding: 0 2rem;
   display: inline-block;
-  background: #808080;
+  background: #c0c0c0;
   line-height: 3rem;
   color: #fff;
   cursor: pointer;
@@ -1040,8 +1046,13 @@ body.is-scrolled .header-menu:not(.is-open) {
   color: #fff;
 }
 .contact-map {
-  height: 100vh;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  height: 50vh;
   width: 100%;
+}
+.contact-map > * {
+  display: none;
 }
 .page-heading {
   margin-bottom: 2rem;
