@@ -1055,6 +1055,7 @@ body.is-scrolled .header-menu:not(.is-open) {
   display: none;
 }
 .page-heading {
+  position: relative;
   margin-bottom: 2rem;
   min-height: 100vh;
   padding: 6rem;

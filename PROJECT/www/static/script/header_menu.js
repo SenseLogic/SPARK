@@ -3,7 +3,8 @@
 function OpenHeaderMenu(
     )
 {
-    GetElementById( "header-menu" ).AddClass( "is-open" );
+    console.log( "hello" );
+    GetElements( ".header-menu" ).AddClass( "is-open" );
     SetScrollPosition( 0 );
 }
 
@@ -12,7 +13,7 @@ function OpenHeaderMenu(
 function CloseHeaderMenu(
     )
 {
-    GetElementById( "header-menu" ).RemoveClass( "is-open" );
+    GetElements( ".header-menu" ).RemoveClass( "is-open" );
 }
 
 // -- STATEMENTS
