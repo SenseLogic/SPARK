@@ -62,7 +62,7 @@
     <div id="article-carousel-strip" class="article-carousel-strip">
         <?php for (  $article_index = 0; $article_index <= $article_count; ++$article_index ) { ?>
             <?php  $article = $article_array[ $article_index % $article_count ]; ?>
-            <div class="article-carousel-slide" style="background-image: linear-gradient( 90deg, rgba( 0, 0, 0, 0.1 ) 0%, rgba( 0, 0, 0, 0.1 ) 100% ), url( '<?php echo $article->ImagePath; ?>' ), url( '<?php echo $article->ImagePath; ?>.preload.jpg' )" onclick="ShowView( '<?php echo $article->Route; ?>' )">
+            <div class="article-carousel-slide" style="background-image: linear-gradient( rgba( 0, 0, 0, 0.1 ), rgba( 0, 0, 0, 0.1 ) ), url( '<?php echo $article->ImagePath; ?>' ), url( '<?php echo $article->ImagePath; ?>.preload.jpg' )" onclick="ShowView( '<?php echo $article->Route; ?>' )">
                 <div class="article-carousel-slide-text">
                     <?php echo $this->GetTranslatedText( $article->Text ); ?>
                 </div>

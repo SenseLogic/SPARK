@@ -9,15 +9,16 @@ class SHOW_ERROR_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     function __construct(
-        string $language_code
         )
     {
-        parent::__construct( $language_code );
+        parent::__construct( 'en' );
 
         require_once __DIR__ . '/' . '../VIEW/show_error_view.php';
+
+        SetStatus( 404 );
     }
 }
 
 // -- STATEMENTS
 
- $show_error_controller = new SHOW_ERROR_CONTROLLER(  $language_code );
+ $show_error_controller = new SHOW_ERROR_CONTROLLER();

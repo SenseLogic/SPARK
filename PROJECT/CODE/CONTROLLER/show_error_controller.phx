@@ -9,15 +9,16 @@ class SHOW_ERROR_CONTROLLER extends CONTROLLER
     // -- CONSTRUCTORS
 
     method constructor(
-        string language_code
         )
     {
-        parent::constructor( language_code );
+        parent::constructor( 'en' );
 
         import '../VIEW/show_error_view.php';
+
+        SetStatus( 404 );
     }
 }
 
 // -- STATEMENTS
 
-var show_error_controller = new SHOW_ERROR_CONTROLLER( var language_code );
+var show_error_controller = new SHOW_ERROR_CONTROLLER();

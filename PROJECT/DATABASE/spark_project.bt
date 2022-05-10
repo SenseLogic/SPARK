@@ -65,8 +65,11 @@ DefineTag( '[[', '<tr><td>' );
 DefineTag( '||', '</td><td>' );
 DefineTag( ']]', '</td></tr>' );
 DefineTag( '((', '<a href="' );
-DefineTag( ')(', '">' );
+DefineTag( ')(', '" target="_blank">' );
 DefineTag( '))', '</a>' );
+DefineTag( '([', "<span class=\"button\" onclick=\"ShowView( '" );
+DefineTag( '][', "' )\">" );
+DefineTag( '])', '</span>' );
 
 DefineColorTag( 'red' );
 DefineColorTag( 'green', '#0F0' );
@@ -116,7 +119,7 @@ function Route(
             }
             else
             {
-                import 'ADMINISTRATION/CONTROLLER/show_error_controller.php';
+                import 'CONTROLLER/show_error_controller.php';
             }
         }
         else if ( it_is_post_request
@@ -217,12 +220,12 @@ function Route(
             }
             else
             {
-                import 'ADMINISTRATION/CONTROLLER/show_error_controller.php';
+                import 'CONTROLLER/show_error_controller.php';
             }
         }#>
         else
         {
-            import 'ADMINISTRATION/CONTROLLER/show_error_controller.php';
+            import 'CONTROLLER/show_error_controller.php';
         }
     }
     else
@@ -249,7 +252,7 @@ function Route(
             }
             else
             {
-                SetStatus( 404 );
+                import 'CONTROLLER/show_error_controller.php';
             }
         }
         else if ( it_is_post_request )
@@ -276,7 +279,7 @@ function Route(
             }
             else
             {
-                SetStatus( 404 );
+                import 'CONTROLLER/show_error_controller.php';
             }
         }
     }
