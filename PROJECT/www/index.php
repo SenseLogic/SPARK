@@ -57,6 +57,7 @@ DefineDualTag( '__', '<u>', '</u>' );
 DefineDualTag( ',,', '<sub>', '</sub>' );
 DefineDualTag( '^^', '<sup>', '</sup>' );
 
+DefineTag( '~', '&nbsp;' );
 DefineTag( '§', '<br>' );
 DefineTag( '[[[', '<table>' );
 DefineTag( ']]]', '</table>' );
