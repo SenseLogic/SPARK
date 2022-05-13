@@ -1,6 +1,6 @@
-<style file="image_text_block.styl">
+<style file="image_text.styl">
 </style>
-<div class="block appearing-block y-translation-opacity-transition image-text-block">
+<div class="y-translation-opacity-transition block appearing-block image-text">
     <div class="block-column block-image-column" style="background-image: url( '<# var block.ImagePath #>' ), url( '<# block.ImagePath #>.preload.jpg' )">
     </div>
     <div class="block-column block-text-column">

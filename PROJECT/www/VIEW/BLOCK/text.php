@@ -5,7 +5,7 @@
 
 
 
-<div class="block block-text-column appearing-block y-translation-opacity-transition text">
+<div class="y-translation-opacity-transition block block-text-column appearing-block text">
     <div class="block-title">
         <?php echo $this->GetProcessedText(  $block->Title ); ?>
     </div>

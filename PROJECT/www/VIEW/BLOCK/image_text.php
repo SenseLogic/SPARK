@@ -1,6 +1,6 @@
 
 
-<div class="block appearing-block y-translation-opacity-transition image-text">
+<div class="y-translation-opacity-transition block appearing-block image-text">
     <div class="block-column block-image-column" style="background-image: url( '<?php echo  $block->ImagePath; ?>' ), url( '<?php echo $block->ImagePath; ?>.preload.jpg' )">
     </div>
     <div class="block-column block-text-column">

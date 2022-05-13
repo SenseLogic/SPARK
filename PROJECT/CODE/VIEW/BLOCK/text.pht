@@ -1,11 +1,11 @@
-<style file="text_block.styl">
-    .text-block
+<style file="text.styl">
+    .text
     {
         display: flex;
         flex-direction: column;
     }
 </style>
-<div class="block block-text-column appearing-block y-translation-opacity-transition text-block">
+<div class="y-translation-opacity-transition block block-text-column appearing-block text">
     <div class="block-title">
         <# .GetProcessedText( var block.Title ) #>
     </div>

@@ -1,5 +1,5 @@
-<style file="text_image_block.styl">
-    .image-text-block + .text-image-block
+<style file="text_image.styl">
+    .image-text + .text-image
     {
         +Media( max-width-50em )
         {
@@ -7,7 +7,7 @@
         }
     }
 </style>
-<div class="block appearing-block y-translation-opacity-transition text-image-block">
+<div class="y-translation-opacity-transition block appearing-block text-image">
     <div class="block-column block-text-column">
         <div class="block-title">
             <# .GetProcessedText( var block.Title ) #>
