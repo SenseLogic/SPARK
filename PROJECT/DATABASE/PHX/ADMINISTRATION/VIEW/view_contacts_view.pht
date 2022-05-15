@@ -15,28 +15,28 @@
     <div class="cell-list page-section form-section is-hidden">
         <div class="form-container table-container contact-table sortable-table">
             <div class="form-column-name sortable-table-column">
-                <% .GetText( 'Name' ) %>
+                <% .GetProcessedTextBySlug( 'Name' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetText( 'Company' ) %>
+                <% .GetProcessedTextBySlug( 'Company' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetText( 'Email' ) %>
+                <% .GetProcessedTextBySlug( 'Email' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetText( 'Phone' ) %>
+                <% .GetProcessedTextBySlug( 'Phone' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetText( 'Subject' ) %>
+                <% .GetProcessedTextBySlug( 'Subject' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetText( 'Message' ) %>
+                <% .GetProcessedTextBySlug( 'Message' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetText( 'Date Time' ) %>
+                <% .GetProcessedTextBySlug( 'Date Time' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetText( 'Action' ) %>
+                <% .GetProcessedTextBySlug( 'Action' ) %>
             </div>
             <? foreach ( var contact; .ContactArray ) { ?>
                 <div class="sortable-table-row filter-row">
@@ -81,43 +81,43 @@
                 <div class="card">
                     <div class="form-container">
                         <div class="form-field-name">
-                            <% .GetText( 'Name' ) %> :
+                            <% .GetProcessedTextBySlug( 'Name' ) %> :
                         </div>
                         <div>
                                 <input class="form-input" name="Name" type="text" value="<% GetValueText( contact.Name ) %>" readonly/>
                         </div>
                         <div class="form-field-name">
-                            <% .GetText( 'Company' ) %> :
+                            <% .GetProcessedTextBySlug( 'Company' ) %> :
                         </div>
                         <div>
                                 <input class="form-input" name="Company" type="text" value="<% GetValueText( contact.Company ) %>" readonly/>
                         </div>
                         <div class="form-field-name">
-                            <% .GetText( 'Email' ) %> :
+                            <% .GetProcessedTextBySlug( 'Email' ) %> :
                         </div>
                         <div>
                                 <input class="form-input" name="Email" type="text" value="<% GetValueText( contact.Email ) %>" readonly/>
                         </div>
                         <div class="form-field-name">
-                            <% .GetText( 'Phone' ) %> :
+                            <% .GetProcessedTextBySlug( 'Phone' ) %> :
                         </div>
                         <div>
                                 <input class="form-input" name="Phone" type="text" value="<% GetValueText( contact.Phone ) %>" readonly/>
                         </div>
                         <div class="form-field-name">
-                            <% .GetText( 'Subject' ) %> :
+                            <% .GetProcessedTextBySlug( 'Subject' ) %> :
                         </div>
                         <div>
                                 <input class="form-input" name="Subject" type="text" value="<% GetValueText( contact.Subject ) %>" readonly/>
                         </div>
                         <div class="form-field-name">
-                            <% .GetText( 'Message' ) %> :
+                            <% .GetProcessedTextBySlug( 'Message' ) %> :
                         </div>
                         <div>
                                 <textarea class="form-textarea" name="Message" readonly><% contact.Message %></textarea>
                         </div>
                         <div class="form-field-name">
-                            <% .GetText( 'Date Time' ) %> :
+                            <% .GetProcessedTextBySlug( 'Date Time' ) %> :
                         </div>
                         <div>
                                 <input class="form-input" name="DateTime" type="text" value="<% GetValueText( contact.DateTime ) %>" readonly/>

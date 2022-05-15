@@ -15,16 +15,16 @@
     <div class="cell-list page-section form-section is-hidden">
         <div class="form-container table-container page-content-block-table sortable-table">
             <div class="form-column-name sortable-table-column">
-                <% .GetText( 'Page Slug' ) %>
+                <% .GetProcessedTextBySlug( 'Page Slug' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetText( 'Block Slug' ) %>
+                <% .GetProcessedTextBySlug( 'Block Slug' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetText( 'Number' ) %>
+                <% .GetProcessedTextBySlug( 'Number' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetText( 'Action' ) %>
+                <% .GetProcessedTextBySlug( 'Action' ) %>
             </div>
             <? foreach ( var page_content_block; .PageContentBlockArray ) { ?>
                 <div class="sortable-table-row filter-row">
@@ -57,19 +57,19 @@
                 <div class="card">
                     <div class="form-container">
                         <div class="form-field-name">
-                            <% .GetText( 'Page Slug' ) %> :
+                            <% .GetProcessedTextBySlug( 'Page Slug' ) %> :
                         </div>
                         <div>
                                 <input class="form-input" name="PageSlug" type="text" value="<% GetValueText( page_content_block.PageSlug ) %>" readonly/>
                         </div>
                         <div class="form-field-name">
-                            <% .GetText( 'Block Slug' ) %> :
+                            <% .GetProcessedTextBySlug( 'Block Slug' ) %> :
                         </div>
                         <div>
                                 <input class="form-input" name="BlockSlug" type="text" value="<% GetValueText( page_content_block.BlockSlug ) %>" readonly/>
                         </div>
                         <div class="form-field-name">
-                            <% .GetText( 'Number' ) %> :
+                            <% .GetProcessedTextBySlug( 'Number' ) %> :
                         </div>
                         <div>
                                 <input class="form-input" name="Number" type="text" value="<% GetValueText( page_content_block.Number ) %>" readonly/>

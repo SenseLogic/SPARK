@@ -4,13 +4,13 @@
         <form class="form-centered" action="/admin/block-type/remove/<?php echo htmlspecialchars( $this->BlockType->Id ); ?>" method="post">
             <div class="form-container">
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetText( 'Slug' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Slug' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="Slug" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->BlockType->Slug ) ); ?>" readonly/>
                 </div>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetText( 'Name' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Name' ) ); ?> :
                 </div>
                 <div>
                     <div>

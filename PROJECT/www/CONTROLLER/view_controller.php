@@ -22,7 +22,16 @@ class VIEW_CONTROLLER extends CONTROLLER
 
     // -- INQUIRIES
 
-    function GetText(
+    function GetTranslatedNumberBySlug(
+        string $slug
+        )
+    {
+        return $this->GetTranslatedNumber( $this->TextBySlugMap[ $slug ] );
+    }
+
+    // ~~
+
+    function GetProcessedTextBySlug(
         string $slug
         )
     {
@@ -31,19 +40,10 @@ class VIEW_CONTROLLER extends CONTROLLER
 
     // ~~
 
-    function GetMultilineText(
+    function GetProcessedMultilineTextBySlug(
         string $slug
         )
     {
         return $this->GetProcessedMultilineText( $this->TextBySlugMap[ $slug ] );
-    }
-
-    // ~~
-
-    function GetNumber(
-        string $slug
-        )
-    {
-        return GetTranslatedNumber( $this->TextBySlugMap[ $slug ], $this->LanguageDecimalSeparator );
     }
 }

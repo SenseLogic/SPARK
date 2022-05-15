@@ -47,6 +47,15 @@ class CONTROLLER
 
     // ~~
 
+    function GetTranslatedNumberBySlug(
+        string $slug
+        )
+    {
+        return $this->GetTranslatedNumber( GetText_( $slug ) );
+    }
+
+    // ~~
+
     function GetBareText(
         string $text
         )
@@ -65,7 +74,7 @@ class CONTROLLER
 
     // ~~
 
-    function GetText(
+    function GetProcessedTextBySlug(
         string $slug
         )
     {
@@ -74,19 +83,19 @@ class CONTROLLER
 
     // ~~
 
-    function GetMultilineText(
-        string $slug
+    function GetProcessedMultilineText(
+        string $text
         )
     {
-        return $this->GetProcessedMultilineText( GetText_( $slug ) );
+        return GetProcessedMultilineText( $this->GetTranslatedText( $text ) );
     }
 
     // ~~
 
-    function GetNumber(
+    function GetProcessedMultilineTextBySlug(
         string $slug
         )
     {
-        return GetTranslatedNumber( GetText_( $slug ), $this->LanguageDecimalSeparator );
+        return $this->GetProcessedMultilineText( GetText_( $slug ) );
     }
 }

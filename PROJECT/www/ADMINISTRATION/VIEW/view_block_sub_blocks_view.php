@@ -15,16 +15,16 @@
     <div class="cell-list page-section form-section is-hidden">
         <div class="form-container table-container block-sub-block-table sortable-table">
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( $this->GetText( 'Block Slug' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Block Slug' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( $this->GetText( 'Sub Block Slug' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Sub Block Slug' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( $this->GetText( 'Number' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Number' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( $this->GetText( 'Action' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Action' ) ); ?>
             </div>
             <?php foreach ( $this->BlockSubBlockArray as  $block_sub_block ) { ?>
                 <div class="sortable-table-row filter-row">
@@ -57,19 +57,19 @@
                 <div class="card">
                     <div class="form-container">
                         <div class="form-field-name">
-                            <?php echo htmlspecialchars( $this->GetText( 'Block Slug' ) ); ?> :
+                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Block Slug' ) ); ?> :
                         </div>
                         <div>
                                 <input class="form-input" name="BlockSlug" type="text" value="<?php echo htmlspecialchars( GetValueText( $block_sub_block->BlockSlug ) ); ?>" readonly/>
                         </div>
                         <div class="form-field-name">
-                            <?php echo htmlspecialchars( $this->GetText( 'Sub Block Slug' ) ); ?> :
+                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Sub Block Slug' ) ); ?> :
                         </div>
                         <div>
                                 <input class="form-input" name="SubBlockSlug" type="text" value="<?php echo htmlspecialchars( GetValueText( $block_sub_block->SubBlockSlug ) ); ?>" readonly/>
                         </div>
                         <div class="form-field-name">
-                            <?php echo htmlspecialchars( $this->GetText( 'Number' ) ); ?> :
+                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Number' ) ); ?> :
                         </div>
                         <div>
                                 <input class="form-input" name="Number" type="text" value="<?php echo htmlspecialchars( GetValueText( $block_sub_block->Number ) ); ?>" readonly/>

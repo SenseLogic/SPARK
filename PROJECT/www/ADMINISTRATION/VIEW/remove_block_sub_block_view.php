@@ -4,19 +4,19 @@
         <form class="form-centered" action="/admin/block-sub-block/remove/<?php echo htmlspecialchars( $this->BlockSubBlock->Id ); ?>" method="post">
             <div class="form-container">
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetText( 'Block Slug' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Block Slug' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="BlockSlug" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->BlockSubBlock->BlockSlug ) ); ?>" readonly/>
                 </div>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetText( 'Sub Block Slug' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Sub Block Slug' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="SubBlockSlug" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->BlockSubBlock->SubBlockSlug ) ); ?>" readonly/>
                 </div>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetText( 'Number' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Number' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="Number" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->BlockSubBlock->Number ) ); ?>" readonly/>

@@ -47,6 +47,15 @@ class CONTROLLER
 
     // ~~
 
+    method GetTranslatedNumberBySlug(
+        string slug
+        )
+    {
+        return .GetTranslatedNumber( GetText_( slug ) );
+    }
+
+    // ~~
+
     method GetBareText(
         string text
         )
@@ -65,7 +74,7 @@ class CONTROLLER
 
     // ~~
 
-    method GetText(
+    method GetProcessedTextBySlug(
         string slug
         )
     {
@@ -74,19 +83,19 @@ class CONTROLLER
 
     // ~~
 
-    method GetMultilineText(
-        string slug
+    method GetProcessedMultilineText(
+        string text
         )
     {
-        return .GetProcessedMultilineText( GetText_( slug ) );
+        return GetProcessedMultilineText( .GetTranslatedText( text ) );
     }
 
     // ~~
 
-    method GetNumber(
+    method GetProcessedMultilineTextBySlug(
         string slug
         )
     {
-        return GetTranslatedNumber( GetText_( slug ), .LanguageDecimalSeparator );
+        return .GetProcessedMultilineText( GetText_( slug ) );
     }
 }

@@ -15,31 +15,31 @@
     <div class="cell-list page-section form-section is-hidden">
         <div class="form-container table-container article-table sortable-table">
             <div class="form-column-name sortable-table-column">
-                <% .GetText( 'Slug' ) %>
+                <% .GetProcessedTextBySlug( 'Slug' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetText( 'Name' ) %>
+                <% .GetProcessedTextBySlug( 'Name' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetText( 'Text' ) %>
+                <% .GetProcessedTextBySlug( 'Text' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetText( 'Image Path' ) %>
+                <% .GetProcessedTextBySlug( 'Image Path' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetText( 'Video Path' ) %>
+                <% .GetProcessedTextBySlug( 'Video Path' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetText( 'Next Article Id' ) %>
+                <% .GetProcessedTextBySlug( 'Next Article Id' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetText( 'Priority' ) %>
+                <% .GetProcessedTextBySlug( 'Priority' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetText( 'Is Active' ) %>
+                <% .GetProcessedTextBySlug( 'Is Active' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetText( 'Action' ) %>
+                <% .GetProcessedTextBySlug( 'Action' ) %>
             </div>
             <? foreach ( var article; .ArticleArray ) { ?>
                 <div class="sortable-table-row filter-row">
@@ -99,13 +99,13 @@
                 <div class="card">
                     <div class="form-container">
                         <div class="form-field-name">
-                            <% .GetText( 'Slug' ) %> :
+                            <% .GetProcessedTextBySlug( 'Slug' ) %> :
                         </div>
                         <div>
                                 <input class="form-input" name="Slug" type="text" value="<% GetValueText( article.Slug ) %>" readonly/>
                         </div>
                         <div class="form-field-name">
-                            <% .GetText( 'Name' ) %> :
+                            <% .GetProcessedTextBySlug( 'Name' ) %> :
                         </div>
                         <div>
                             <div>
@@ -115,7 +115,7 @@
                             </div>
                         </div>
                         <div class="form-field-name">
-                            <% .GetText( 'Text' ) %> :
+                            <% .GetProcessedTextBySlug( 'Text' ) %> :
                         </div>
                         <div>
                             <div>
@@ -125,7 +125,7 @@
                             </div>
                         </div>
                         <div class="form-field-name">
-                            <% .GetText( 'Image Path' ) %> :
+                            <% .GetProcessedTextBySlug( 'Image Path' ) %> :
                         </div>
                         <div>
                             <input class="form-input" name="ImagePath" type="text" value="<% article.ImagePath %>" readonly/>
@@ -134,7 +134,7 @@
                             </div>
                         </div>
                         <div class="form-field-name">
-                            <% .GetText( 'Video Path' ) %> :
+                            <% .GetProcessedTextBySlug( 'Video Path' ) %> :
                         </div>
                         <div>
                             <input class="form-input" name="VideoPath" type="text" value="<% article.VideoPath %>" readonly/>
@@ -143,19 +143,19 @@
                             </div>
                         </div>
                         <div class="form-field-name">
-                            <% .GetText( 'Next Article Id' ) %> :
+                            <% .GetProcessedTextBySlug( 'Next Article Id' ) %> :
                         </div>
                         <div>
                                 <input class="form-input" name="NextArticleId" type="text" value="<% GetValueText( article.NextArticleId ) %>" readonly/>
                         </div>
                         <div class="form-field-name">
-                            <% .GetText( 'Priority' ) %> :
+                            <% .GetProcessedTextBySlug( 'Priority' ) %> :
                         </div>
                         <div>
                                 <input class="form-input" name="Priority" type="text" value="<% GetValueText( article.Priority ) %>" readonly/>
                         </div>
                         <div class="form-field-name">
-                            <% .GetText( 'Is Active' ) %> :
+                            <% .GetProcessedTextBySlug( 'Is Active' ) %> :
                         </div>
                         <div>
                                 <input class="form-input" name="IsActive" type="text" value="<% GetValueText( article.IsActive ) %>" readonly/>

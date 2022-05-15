@@ -315,7 +315,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                     include 'BLOCK/{#variable#}_{%variable%}_field.php';
                 ?><>
                 <div class="form-field-name">
-                    <\% .GetText( '{%title%}' ) %\> :
+                    <\% .GetProcessedTextBySlug( '{%title%}' ) %\> :
                 </div>
                 <div><~{%is_image%}<>
                     <input class="form-input" name="{%attribute%}" type="text" value="<\# field_value #\>" oninput="HandleImagePathInputChangeEvent( this )"/>
@@ -346,13 +346,13 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                     <div>
                         <textarea class="multilingual-input form-textarea" name="{%attribute%}" hidden><\# field_value #\></textarea>
                         <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <textarea class="multilingual-input-translation form-translation form-textarea" data-language-code="<\% language_code %\>" placeholder="<\% .GetText( language_code ) %\>"></textarea>
+                            <textarea class="multilingual-input-translation form-translation form-textarea" data-language-code="<\% language_code %\>" placeholder="<\% .GetProcessedTextBySlug( language_code ) %\>"></textarea>
                         <? } ?>
                     </div><><~{%is_multilingual%}<>
                     <div>
                         <input class="multilingual-input form-input" name="{%attribute%}" type="text" value="<\# field_value #\>" hidden/>
                         <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <input class="multilingual-input-translation form-translation form-input" data-language-code="<\% language_code %\>" placeholder="<\% .GetText( language_code ) %\>"/>
+                            <input class="multilingual-input-translation form-translation form-input" data-language-code="<\% language_code %\>" placeholder="<\% .GetProcessedTextBySlug( language_code ) %\>"/>
                         <? } ?>
                     </div><><~{%is_text%}<>
                     <textarea class="form-textarea" name="{%attribute%}"><\# field_value #\></textarea><>
@@ -441,7 +441,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                     include 'BLOCK/{#variable#}_{%variable%}_field.php';
                 ?><>
                 <div class="form-field-name">
-                    <\% .GetText( '{%title%}' ) %\> :
+                    <\% .GetProcessedTextBySlug( '{%title%}' ) %\> :
                 </div>
                 <div><~{%is_image%}<>
                     <input class="form-input" name="{%attribute%}" type="text" value="<\% .{#attribute#}.{%attribute%} %\>" oninput="HandleImagePathInputChangeEvent( this )"/>
@@ -472,13 +472,13 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                     <div>
                         <textarea class="multilingual-input form-textarea" name="{%attribute%}" hidden><\% .{#attribute#}.{%attribute%} %\></textarea>
                         <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <textarea class="multilingual-input-translation form-translation form-textarea" data-language-code="<\% language_code %\>" placeholder="<\% .GetText( language_code ) %\>"></textarea>
+                            <textarea class="multilingual-input-translation form-translation form-textarea" data-language-code="<\% language_code %\>" placeholder="<\% .GetProcessedTextBySlug( language_code ) %\>"></textarea>
                         <? } ?>
                     </div><><~{%is_multilingual%}<>
                     <div>
                         <input class="multilingual-input form-input" name="{%attribute%}" type="text" value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" hidden/>
                         <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <input class="multilingual-input-translation form-translation form-input" data-language-code="<\% language_code %\>" placeholder="<\% .GetText( language_code ) %\>"/>
+                            <input class="multilingual-input-translation form-translation form-input" data-language-code="<\% language_code %\>" placeholder="<\% .GetProcessedTextBySlug( language_code ) %\>"/>
                         <? } ?>
                     </div><><~{%is_text%}<>
                     <textarea class="form-textarea" name="{%attribute%}"><\% .{#attribute#}.{%attribute%} %\></textarea><>
@@ -512,7 +512,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                     include 'BLOCK/{#variable#}_{%variable%}_field.php';
                 ?><>
                 <div class="form-field-name">
-                    <\% .GetText( '{%title%}' ) %\> :
+                    <\% .GetProcessedTextBySlug( '{%title%}' ) %\> :
                 </div>
                 <div><~{%is_image%}<>
                     <input class="form-input" name="{%attribute%}" type="text" value="<\% .{#attribute#}.{%attribute%} %\>" readonly/>
@@ -563,7 +563,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                 include 'BLOCK/{#variable#}_{%variable%}_field.php';
             ?><>
             <div class="form-field-name">
-                <\% .GetText( '{%title%}' ) %\> :
+                <\% .GetProcessedTextBySlug( '{%title%}' ) %\> :
             </div>
             <div><~{%is_image%}<>
                 <input class="form-input" name="{%attribute%}" type="text" value="<\% .{#attribute#}.{%attribute%} %\>" readonly/>
@@ -616,10 +616,10 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
     <div class="cell-list page-section form-section is-hidden">
         <div class="form-container table-container {#style#}-table sortable-table"><$
             <div class="form-column-name sortable-table-column">
-                <\% .GetText( '<~TitleCase<>{%attribute%}~>' ) %\>
+                <\% .GetProcessedTextBySlug( '<~TitleCase<>{%attribute%}~>' ) %\>
             </div>$>
             <div class="form-column-name sortable-table-column">
-                <\% .GetText( 'Action' ) %\>
+                <\% .GetProcessedTextBySlug( 'Action' ) %\>
             </div>
             <? foreach ( var {#variable#}; .{#attribute#}Array ) { ?>
                 <div class="sortable-table-row filter-row"><$
@@ -673,7 +673,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                             include 'BLOCK/{#variable#}_{%variable%}_field.php';
                         ?><>
                         <div class="form-field-name">
-                            <\% .GetText( '{%title%}' ) %\> :
+                            <\% .GetProcessedTextBySlug( '{%title%}' ) %\> :
                         </div>
                         <div><~{%is_image%}<>
                             <input class="form-input" name="{%attribute%}" type="text" value="<\% {#variable#}.{%attribute%} %\>" readonly/>
@@ -734,7 +734,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                             <span class="form-button form-button-large {#style#}-button">
                             </span>
                             <span class="form-button-tooltip">
-                                <\% .GetText( '{#sentence#}' ) %\>
+                                <\% .GetProcessedTextBySlug( '{#sentence#}' ) %\>
                             </span>
                         </a>
                     </div><><? if ( HasSessionMinimumUserRole( 'administrator' ) ) { ?>
@@ -743,7 +743,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                                 <span class="form-button form-button-large {#style#}-button">
                                 </span>
                                 <span class="form-button-tooltip">
-                                    <\% .GetText( '{#sentence#}' ) %\>
+                                    <\% .GetProcessedTextBySlug( '{#sentence#}' ) %\>
                                 </span>
                             </a>
                         </div>
@@ -753,7 +753,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                             <span class="form-button form-button-large disconnect-button">
                             </span>
                             <span class="form-button-tooltip">
-                                <\% .GetText( 'Disconnect' ) %\>
+                                <\% .GetProcessedTextBySlug( 'Disconnect' ) %\>
                             </span>
                         </a>
                     </div>
@@ -761,7 +761,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
             </div>
             <div class="page-title">
                 <div class="page-title-content">
-                    <\% .GetText( .Title ) %\>
+                    <\% .GetProcessedTextBySlug( .Title ) %\>
                 </div>
             </div>
             <div class="page-body">

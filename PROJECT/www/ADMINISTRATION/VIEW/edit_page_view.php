@@ -74,13 +74,13 @@
         <form class="form-centered" name="EditPageForm" onsubmit="return IsValidEditPageForm()" action="/admin/page/edit/<?php echo htmlspecialchars( $this->Page->Id ); ?>" method="post">
             <div class="form-container">
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetText( 'Slug' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Slug' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="Slug" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Page->Slug ) ); ?>"/>
                 </div>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetText( 'Type Slug' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Type Slug' ) ); ?> :
                 </div>
                 <div>
                     <select class="form-select" name="TypeSlug">
@@ -91,35 +91,35 @@
                     </select>
                 </div>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetText( 'Route' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Route' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="Route" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Page->Route ) ); ?>"/>
                 </div>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetText( 'Title' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Title' ) ); ?> :
                 </div>
                 <div>
                     <div>
                         <input class="multilingual-input form-input" name="Title" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Page->Title ) ); ?>" hidden/>
                         <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
-                            <input class="multilingual-input-translation form-translation form-input" data-language-code="<?php echo htmlspecialchars( $language_code ); ?>" placeholder="<?php echo htmlspecialchars( $this->GetText( $language_code ) ); ?>"/>
+                            <input class="multilingual-input-translation form-translation form-input" data-language-code="<?php echo htmlspecialchars( $language_code ); ?>" placeholder="<?php echo htmlspecialchars( $this->GetProcessedTextBySlug( $language_code ) ); ?>"/>
                         <?php } ?>
                     </div>
                 </div>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetText( 'Text' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Text' ) ); ?> :
                 </div>
                 <div>
                     <div>
                         <textarea class="multilingual-input form-textarea" name="Text" hidden><?php echo htmlspecialchars( $this->Page->Text ); ?></textarea>
                         <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
-                            <textarea class="multilingual-input-translation form-translation form-textarea" data-language-code="<?php echo htmlspecialchars( $language_code ); ?>" placeholder="<?php echo htmlspecialchars( $this->GetText( $language_code ) ); ?>"></textarea>
+                            <textarea class="multilingual-input-translation form-translation form-textarea" data-language-code="<?php echo htmlspecialchars( $language_code ); ?>" placeholder="<?php echo htmlspecialchars( $this->GetProcessedTextBySlug( $language_code ) ); ?>"></textarea>
                         <?php } ?>
                     </div>
                 </div>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetText( 'Image Path' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Image Path' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="ImagePath" type="text" value="<?php echo htmlspecialchars( $this->Page->ImagePath ); ?>" oninput="HandleImagePathInputChangeEvent( this )"/>
@@ -132,7 +132,7 @@
                     </div>
                 </div>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetText( 'Video Path' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Video Path' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="VideoPath" type="text" value="<?php echo htmlspecialchars( $this->Page->VideoPath ); ?>" oninput="HandleVideoPathInputChangeEvent( this )"/>
@@ -145,7 +145,7 @@
                     </div>
                 </div>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetText( 'Is Active' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Is Active' ) ); ?> :
                 </div>
                 <div>
                     <select class="form-select" name="IsActive">

@@ -151,44 +151,44 @@
 <div id="header-menu" class="header-menu">
     <div class="large-padded-container header-menu-button-container">
         <div class="margin-right-auto! scaled-button header-menu-button" data-view-name="home" onclick="ShowView( 'home' )">
-            <# .GetText( 'HeaderMenuHomeButton' ) #>
+            <# .GetProcessedTextBySlug( 'HeaderMenuHomeButton' ) #>
         </div>
         <div class="scaled-button header-menu-button header-menu-desktop-button" data-view-name="articles" onclick="ShowView( 'articles' )">
-            <# .GetText( 'HeaderMenuArticlesButton' ) #>
+            <# .GetProcessedTextBySlug( 'HeaderMenuArticlesButton' ) #>
         </div>
         <div class="scaled-button header-menu-button header-menu-desktop-button" data-view-name="cookie-policy" onclick="ShowView( 'cookie-policy' )">
-            <# .GetText( 'HeaderMenuCookiePolicyButton' ) #>
+            <# .GetProcessedTextBySlug( 'HeaderMenuCookiePolicyButton' ) #>
         </div>
         <div class="scaled-button header-menu-button header-menu-desktop-button" data-view-name="legal-notice" onclick="ShowView( 'legal-notice' )">
-            <# .GetText( 'HeaderMenuLegalNoticeButton' ) #>
+            <# .GetProcessedTextBySlug( 'HeaderMenuLegalNoticeButton' ) #>
         </div>
         <div class="margin-right-auto! scaled-button header-menu-button header-menu-desktop-button" data-view-name="contact" onclick="ShowView( 'contact' )">
-            <# .GetText( 'HeaderMenuContactButton' ) #>
+            <# .GetProcessedTextBySlug( 'HeaderMenuContactButton' ) #>
         </div>
         <div class="scaled-button header-menu-button <# ( .LanguageCode === 'en' ) ? 'is-used' : '' #>" onclick="SetLanguageCode( 'en' )">
-            <# .GetText( 'HeaderMenuEnglishButton' ) #>
+            <# .GetProcessedTextBySlug( 'HeaderMenuEnglishButton' ) #>
         </div>
         <div class="scaled-button header-menu-button <# ( .LanguageCode === 'fr' ) ? 'is-used' : '' #>" onclick="SetLanguageCode( 'fr' )">
-            <# .GetText( 'HeaderMenuFrenchButton' ) #>
+            <# .GetProcessedTextBySlug( 'HeaderMenuFrenchButton' ) #>
         </div>
         <div class="scaled-button header-menu-icon-button header-menu-open-button" onclick="OpenHeaderMenu()">
         </div>
     </div>
     <div class="header-menu-mobile-button-container">
         <div class="scaled-button header-menu-mobile-button" data-view-name="home" onclick="CloseHeaderMenu(); ShowView( 'home' )">
-            <# .GetText( 'HeaderMenuHomeButton' ) #>
+            <# .GetProcessedTextBySlug( 'HeaderMenuHomeButton' ) #>
         </div>
         <div class="scaled-button header-menu-mobile-button" data-view-name="articles" onclick="CloseHeaderMenu(); ShowView( 'articles' )">
-            <# .GetText( 'HeaderMenuArticlesButton' ) #>
+            <# .GetProcessedTextBySlug( 'HeaderMenuArticlesButton' ) #>
         </div>
         <div class="scaled-button header-menu-mobile-button" data-view-name="cookie-policy" onclick="CloseHeaderMenu(); ShowView( 'cookie-policy' )">
-            <# .GetText( 'HeaderMenuCookiePolicyButton' ) #>
+            <# .GetProcessedTextBySlug( 'HeaderMenuCookiePolicyButton' ) #>
         </div>
         <div class="scaled-button header-menu-mobile-button" data-view-name="legal-notice" onclick="CloseHeaderMenu(); ShowView( 'legal-notice' )">
-            <# .GetText( 'HeaderMenuLegalNoticeButton' ) #>
+            <# .GetProcessedTextBySlug( 'HeaderMenuLegalNoticeButton' ) #>
         </div>
         <div class="scaled-button header-menu-mobile-button" data-view-name="contact" onclick="CloseHeaderMenu(); ShowView( 'contact' )">
-            <# .GetText( 'HeaderMenuContactButton' ) #>
+            <# .GetProcessedTextBySlug( 'HeaderMenuContactButton' ) #>
         </div>
         <div class="scaled-button header-menu-icon-button header-menu-close-button" onclick="CloseHeaderMenu()">
         </div>

@@ -73,7 +73,7 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <% .GetText( 'Email' ) %> :
+                    <% .GetProcessedTextBySlug( 'Email' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="Email" type="text" value="<# field_value #>"/>
@@ -91,7 +91,7 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <% .GetText( 'Pseudonym' ) %> :
+                    <% .GetProcessedTextBySlug( 'Pseudonym' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="Pseudonym" type="text" value="<# field_value #>"/>
@@ -109,7 +109,7 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <% .GetText( 'Password' ) %> :
+                    <% .GetProcessedTextBySlug( 'Password' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="Password" type="text" value="<# field_value #>"/>
@@ -127,7 +127,7 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <% .GetText( 'Role' ) %> :
+                    <% .GetProcessedTextBySlug( 'Role' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="Role" type="text" value="<# field_value #>"/>

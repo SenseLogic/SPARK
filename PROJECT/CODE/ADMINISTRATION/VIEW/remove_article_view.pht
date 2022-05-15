@@ -4,13 +4,13 @@
         <form class="form-centered" action="/admin/article/remove/<% .Article.Id %>" method="post">
             <div class="form-container">
                 <div class="form-field-name">
-                    <% .GetText( 'Slug' ) %> :
+                    <% .GetProcessedTextBySlug( 'Slug' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="Slug" type="text" value="<% GetValueText( .Article.Slug ) %>" readonly/>
                 </div>
                 <div class="form-field-name">
-                    <% .GetText( 'Name' ) %> :
+                    <% .GetProcessedTextBySlug( 'Name' ) %> :
                 </div>
                 <div>
                     <div>
@@ -20,7 +20,7 @@
                     </div>
                 </div>
                 <div class="form-field-name">
-                    <% .GetText( 'Text' ) %> :
+                    <% .GetProcessedTextBySlug( 'Text' ) %> :
                 </div>
                 <div>
                     <div>
@@ -30,7 +30,7 @@
                     </div>
                 </div>
                 <div class="form-field-name">
-                    <% .GetText( 'Image Path' ) %> :
+                    <% .GetProcessedTextBySlug( 'Image Path' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="ImagePath" type="text" value="<% .Article.ImagePath %>" readonly/>
@@ -39,7 +39,7 @@
                     </div>
                 </div>
                 <div class="form-field-name">
-                    <% .GetText( 'Video Path' ) %> :
+                    <% .GetProcessedTextBySlug( 'Video Path' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="VideoPath" type="text" value="<% .Article.VideoPath %>" readonly/>
@@ -48,19 +48,19 @@
                     </div>
                 </div>
                 <div class="form-field-name">
-                    <% .GetText( 'Next Article Id' ) %> :
+                    <% .GetProcessedTextBySlug( 'Next Article Id' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="NextArticleId" type="text" value="<% GetValueText( .Article.NextArticleId ) %>" readonly/>
                 </div>
                 <div class="form-field-name">
-                    <% .GetText( 'Priority' ) %> :
+                    <% .GetProcessedTextBySlug( 'Priority' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="Priority" type="text" value="<% GetValueText( .Article.Priority ) %>" readonly/>
                 </div>
                 <div class="form-field-name">
-                    <% .GetText( 'Is Active' ) %> :
+                    <% .GetProcessedTextBySlug( 'Is Active' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="IsActive" type="text" value="<% GetValueText( .Article.IsActive ) %>" readonly/>

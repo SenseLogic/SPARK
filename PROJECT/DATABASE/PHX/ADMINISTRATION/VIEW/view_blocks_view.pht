@@ -15,25 +15,25 @@
     <div class="cell-list page-section form-section is-hidden">
         <div class="form-container table-container block-table sortable-table">
             <div class="form-column-name sortable-table-column">
-                <% .GetText( 'Slug' ) %>
+                <% .GetProcessedTextBySlug( 'Slug' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetText( 'Type Slug' ) %>
+                <% .GetProcessedTextBySlug( 'Type Slug' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetText( 'Title' ) %>
+                <% .GetProcessedTextBySlug( 'Title' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetText( 'Text' ) %>
+                <% .GetProcessedTextBySlug( 'Text' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetText( 'Image Path' ) %>
+                <% .GetProcessedTextBySlug( 'Image Path' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetText( 'Video Path' ) %>
+                <% .GetProcessedTextBySlug( 'Video Path' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetText( 'Action' ) %>
+                <% .GetProcessedTextBySlug( 'Action' ) %>
             </div>
             <? foreach ( var block; .BlockArray ) { ?>
                 <div class="sortable-table-row filter-row">
@@ -87,19 +87,19 @@
                 <div class="card">
                     <div class="form-container">
                         <div class="form-field-name">
-                            <% .GetText( 'Slug' ) %> :
+                            <% .GetProcessedTextBySlug( 'Slug' ) %> :
                         </div>
                         <div>
                                 <input class="form-input" name="Slug" type="text" value="<% GetValueText( block.Slug ) %>" readonly/>
                         </div>
                         <div class="form-field-name">
-                            <% .GetText( 'Type Slug' ) %> :
+                            <% .GetProcessedTextBySlug( 'Type Slug' ) %> :
                         </div>
                         <div>
                                 <input class="form-input" name="TypeSlug" type="text" value="<% GetValueText( block.TypeSlug ) %>" readonly/>
                         </div>
                         <div class="form-field-name">
-                            <% .GetText( 'Title' ) %> :
+                            <% .GetProcessedTextBySlug( 'Title' ) %> :
                         </div>
                         <div>
                             <div>
@@ -109,7 +109,7 @@
                             </div>
                         </div>
                         <div class="form-field-name">
-                            <% .GetText( 'Text' ) %> :
+                            <% .GetProcessedTextBySlug( 'Text' ) %> :
                         </div>
                         <div>
                             <div>
@@ -119,7 +119,7 @@
                             </div>
                         </div>
                         <div class="form-field-name">
-                            <% .GetText( 'Image Path' ) %> :
+                            <% .GetProcessedTextBySlug( 'Image Path' ) %> :
                         </div>
                         <div>
                             <input class="form-input" name="ImagePath" type="text" value="<% block.ImagePath %>" readonly/>
@@ -128,7 +128,7 @@
                             </div>
                         </div>
                         <div class="form-field-name">
-                            <% .GetText( 'Video Path' ) %> :
+                            <% .GetProcessedTextBySlug( 'Video Path' ) %> :
                         </div>
                         <div>
                             <input class="form-input" name="VideoPath" type="text" value="<% block.VideoPath %>" readonly/>

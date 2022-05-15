@@ -53,7 +53,7 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <% .GetText( 'Article Slug' ) %> :
+                    <% .GetProcessedTextBySlug( 'Article Slug' ) %> :
                 </div>
                 <div>
                     <select class="form-select" name="ArticleSlug">
@@ -76,7 +76,7 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <% .GetText( 'Block Slug' ) %> :
+                    <% .GetProcessedTextBySlug( 'Block Slug' ) %> :
                 </div>
                 <div>
                     <select class="form-select" name="BlockSlug">

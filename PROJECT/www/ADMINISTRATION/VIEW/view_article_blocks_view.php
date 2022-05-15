@@ -15,13 +15,13 @@
     <div class="cell-list page-section form-section is-hidden">
         <div class="form-container table-container article-block-table sortable-table">
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( $this->GetText( 'Article Slug' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Article Slug' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( $this->GetText( 'Block Slug' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Block Slug' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( $this->GetText( 'Action' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Action' ) ); ?>
             </div>
             <?php foreach ( $this->ArticleBlockArray as  $article_block ) { ?>
                 <div class="sortable-table-row filter-row">
@@ -51,13 +51,13 @@
                 <div class="card">
                     <div class="form-container">
                         <div class="form-field-name">
-                            <?php echo htmlspecialchars( $this->GetText( 'Article Slug' ) ); ?> :
+                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Article Slug' ) ); ?> :
                         </div>
                         <div>
                                 <input class="form-input" name="ArticleSlug" type="text" value="<?php echo htmlspecialchars( GetValueText( $article_block->ArticleSlug ) ); ?>" readonly/>
                         </div>
                         <div class="form-field-name">
-                            <?php echo htmlspecialchars( $this->GetText( 'Block Slug' ) ); ?> :
+                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Block Slug' ) ); ?> :
                         </div>
                         <div>
                                 <input class="form-input" name="BlockSlug" type="text" value="<?php echo htmlspecialchars( GetValueText( $article_block->BlockSlug ) ); ?>" readonly/>

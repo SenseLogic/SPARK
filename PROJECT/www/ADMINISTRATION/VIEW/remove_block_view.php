@@ -4,19 +4,19 @@
         <form class="form-centered" action="/admin/block/remove/<?php echo htmlspecialchars( $this->Block->Id ); ?>" method="post">
             <div class="form-container">
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetText( 'Slug' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Slug' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="Slug" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Block->Slug ) ); ?>" readonly/>
                 </div>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetText( 'Type Slug' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Type Slug' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="TypeSlug" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Block->TypeSlug ) ); ?>" readonly/>
                 </div>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetText( 'Title' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Title' ) ); ?> :
                 </div>
                 <div>
                     <div>
@@ -26,7 +26,7 @@
                     </div>
                 </div>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetText( 'Text' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Text' ) ); ?> :
                 </div>
                 <div>
                     <div>
@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetText( 'Image Path' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Image Path' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="ImagePath" type="text" value="<?php echo htmlspecialchars( $this->Block->ImagePath ); ?>" readonly/>
@@ -45,7 +45,7 @@
                     </div>
                 </div>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetText( 'Video Path' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Video Path' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="VideoPath" type="text" value="<?php echo htmlspecialchars( $this->Block->VideoPath ); ?>" readonly/>

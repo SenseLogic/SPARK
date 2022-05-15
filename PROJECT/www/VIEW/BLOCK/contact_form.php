@@ -114,36 +114,36 @@
 <div class="narrow-margined-container contact-form">
     <form id="contact-form-container" class="contact-form-container" name="ContactForm">
         <div class="contact-form-row">
-            <input class="contact-form-input" name="Name" type="text" placeholder="<?php echo $this->GetText( 'ContactFormNamePlaceholder' ); ?>"/>
+            <input class="contact-form-input" name="Name" type="text" placeholder="<?php echo $this->GetProcessedTextBySlug( 'ContactFormNamePlaceholder' ); ?>"/>
         </div>
         <div class="contact-form-row">
-            <input class="contact-form-input" name="Company" type="text" placeholder="<?php echo $this->GetText( 'ContactFormCompanyPlaceholder' ); ?>"/>
+            <input class="contact-form-input" name="Company" type="text" placeholder="<?php echo $this->GetProcessedTextBySlug( 'ContactFormCompanyPlaceholder' ); ?>"/>
         </div>
         <div class="contact-form-row">
-            <input class="contact-form-input" name="Email" type="email" placeholder="<?php echo $this->GetText( 'ContactFormEmailPlaceholder' ); ?>"/>
+            <input class="contact-form-input" name="Email" type="email" placeholder="<?php echo $this->GetProcessedTextBySlug( 'ContactFormEmailPlaceholder' ); ?>"/>
         </div>
         <div class="contact-form-row">
-            <input class="contact-form-input" name="Phone" type="tel" placeholder="<?php echo $this->GetText( 'ContactFormPhonePlaceholder' ); ?>"/>
+            <input class="contact-form-input" name="Phone" type="tel" placeholder="<?php echo $this->GetProcessedTextBySlug( 'ContactFormPhonePlaceholder' ); ?>"/>
         </div>
         <div class="contact-form-row">
-            <input class="contact-form-input" name="Subject" type="text" placeholder="<?php echo $this->GetText( 'ContactFormSubjectPlaceholder' ); ?>"/>
+            <input class="contact-form-input" name="Subject" type="text" placeholder="<?php echo $this->GetProcessedTextBySlug( 'ContactFormSubjectPlaceholder' ); ?>"/>
         </div>
         <div class="contact-form-row">
-            <textarea class="contact-form-input contact-form-textarea" name="Message" type="text" placeholder="<?php echo $this->GetText( 'ContactFormMessagePlaceholder' ); ?>"></textarea>
+            <textarea class="contact-form-input contact-form-textarea" name="Message" type="text" placeholder="<?php echo $this->GetProcessedTextBySlug( 'ContactFormMessagePlaceholder' ); ?>"></textarea>
         </div>
         <div class="contact-form-row">
-            <input class="contact-form-input" name="Captcha" type="text" placeholder="<?php echo $this->GetText( 'ContactFormCaptchaPlaceholder' ); ?>"/>
+            <input class="contact-form-input" name="Captcha" type="text" placeholder="<?php echo $this->GetProcessedTextBySlug( 'ContactFormCaptchaPlaceholder' ); ?>"/>
             <img class="contact-form-captcha-image" src="/captcha"/>
         </div>
         <div class="contact-form-row">
             <div id="contact-form-send-button" class="contact-form-send-button" onclick="CancelEvent( event ); HandleContactFormSendButtonClickEvent()">
-                <?php echo $this->GetText( 'ContactFormSendButton' ); ?>
+                <?php echo $this->GetProcessedTextBySlug( 'ContactFormSendButton' ); ?>
             </div>
         </div>
     </form>
     <div id="contact-form-thanks-container" class="contact-form-thanks-container is-hidden">
         <div class="contact-form-thanks-text">
-            <?php echo $this->GetText( 'ContactFormThanksText' ); ?>
+            <?php echo $this->GetProcessedTextBySlug( 'ContactFormThanksText' ); ?>
         </div>
     </div>
 </div>

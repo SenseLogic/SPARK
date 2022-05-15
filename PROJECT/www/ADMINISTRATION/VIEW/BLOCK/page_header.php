@@ -13,7 +13,7 @@
                             <span class="form-button form-button-large text-button">
                             </span>
                             <span class="form-button-tooltip">
-                                <?php echo htmlspecialchars( $this->GetText( 'Text' ) ); ?>
+                                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Text' ) ); ?>
                             </span>
                         </a>
                     </div>
@@ -22,7 +22,7 @@
                             <span class="form-button form-button-large block-type-button">
                             </span>
                             <span class="form-button-tooltip">
-                                <?php echo htmlspecialchars( $this->GetText( 'Block type' ) ); ?>
+                                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Block type' ) ); ?>
                             </span>
                         </a>
                     </div>
@@ -31,7 +31,7 @@
                             <span class="form-button form-button-large block-button">
                             </span>
                             <span class="form-button-tooltip">
-                                <?php echo htmlspecialchars( $this->GetText( 'Block' ) ); ?>
+                                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Block' ) ); ?>
                             </span>
                         </a>
                     </div>
@@ -40,7 +40,7 @@
                             <span class="form-button form-button-large block-sub-block-button">
                             </span>
                             <span class="form-button-tooltip">
-                                <?php echo htmlspecialchars( $this->GetText( 'Block sub block' ) ); ?>
+                                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Block sub block' ) ); ?>
                             </span>
                         </a>
                     </div>
@@ -49,7 +49,7 @@
                             <span class="form-button form-button-large page-type-button">
                             </span>
                             <span class="form-button-tooltip">
-                                <?php echo htmlspecialchars( $this->GetText( 'Page type' ) ); ?>
+                                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Page type' ) ); ?>
                             </span>
                         </a>
                     </div>
@@ -58,7 +58,7 @@
                             <span class="form-button form-button-large page-button">
                             </span>
                             <span class="form-button-tooltip">
-                                <?php echo htmlspecialchars( $this->GetText( 'Page' ) ); ?>
+                                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Page' ) ); ?>
                             </span>
                         </a>
                     </div>
@@ -67,7 +67,7 @@
                             <span class="form-button form-button-large page-content-block-button">
                             </span>
                             <span class="form-button-tooltip">
-                                <?php echo htmlspecialchars( $this->GetText( 'Page content block' ) ); ?>
+                                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Page content block' ) ); ?>
                             </span>
                         </a>
                     </div>
@@ -76,7 +76,7 @@
                             <span class="form-button form-button-large page-sub-page-button">
                             </span>
                             <span class="form-button-tooltip">
-                                <?php echo htmlspecialchars( $this->GetText( 'Page sub page' ) ); ?>
+                                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Page sub page' ) ); ?>
                             </span>
                         </a>
                     </div>
@@ -85,7 +85,7 @@
                             <span class="form-button form-button-large contact-button">
                             </span>
                             <span class="form-button-tooltip">
-                                <?php echo htmlspecialchars( $this->GetText( 'Contact' ) ); ?>
+                                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Contact' ) ); ?>
                             </span>
                         </a>
                     </div>
@@ -95,7 +95,7 @@
                                 <span class="form-button form-button-large user-button">
                                 </span>
                                 <span class="form-button-tooltip">
-                                    <?php echo htmlspecialchars( $this->GetText( 'User' ) ); ?>
+                                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'User' ) ); ?>
                                 </span>
                             </a>
                         </div>
@@ -105,7 +105,7 @@
                             <span class="form-button form-button-large disconnect-button">
                             </span>
                             <span class="form-button-tooltip">
-                                <?php echo htmlspecialchars( $this->GetText( 'Disconnect' ) ); ?>
+                                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Disconnect' ) ); ?>
                             </span>
                         </a>
                     </div>
@@ -113,7 +113,7 @@
             </div>
             <div class="page-title">
                 <div class="page-title-content">
-                    <?php echo htmlspecialchars( $this->GetText( $this->Title ) ); ?>
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( $this->Title ) ); ?>
                 </div>
             </div>
             <div class="page-body">

@@ -3,13 +3,13 @@
     <div class="page-section form-section">
         <div class="form-container">
             <div class="form-field-name">
-                <% .GetText( 'Article Slug' ) %> :
+                <% .GetProcessedTextBySlug( 'Article Slug' ) %> :
             </div>
             <div>
                     <input class="form-input" name="ArticleSlug" type="text" value="<% GetValueText( .ArticleBlock.ArticleSlug ) %>" readonly/>
             </div>
             <div class="form-field-name">
-                <% .GetText( 'Block Slug' ) %> :
+                <% .GetProcessedTextBySlug( 'Block Slug' ) %> :
             </div>
             <div>
                     <input class="form-input" name="BlockSlug" type="text" value="<% GetValueText( .ArticleBlock.BlockSlug ) %>" readonly/>

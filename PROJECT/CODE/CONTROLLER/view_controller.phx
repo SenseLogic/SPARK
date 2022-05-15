@@ -22,7 +22,16 @@ class VIEW_CONTROLLER extends CONTROLLER
 
     // -- INQUIRIES
 
-    method GetText(
+    method GetTranslatedNumberBySlug(
+        string slug
+        )
+    {
+        return .GetTranslatedNumber( .TextBySlugMap[ slug ] );
+    }
+
+    // ~~
+
+    method GetProcessedTextBySlug(
         string slug
         )
     {
@@ -31,19 +40,10 @@ class VIEW_CONTROLLER extends CONTROLLER
 
     // ~~
 
-    method GetMultilineText(
+    method GetProcessedMultilineTextBySlug(
         string slug
         )
     {
         return .GetProcessedMultilineText( .TextBySlugMap[ slug ] );
-    }
-
-    // ~~
-
-    method GetNumber(
-        string slug
-        )
-    {
-        return GetTranslatedNumber( .TextBySlugMap[ slug ], .LanguageDecimalSeparator );
     }
 }

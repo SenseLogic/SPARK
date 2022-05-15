@@ -3,43 +3,43 @@
     <div class="page-section form-section">
         <div class="form-container">
             <div class="form-field-name">
-                <% .GetText( 'Name' ) %> :
+                <% .GetProcessedTextBySlug( 'Name' ) %> :
             </div>
             <div>
                     <input class="form-input" name="Name" type="text" value="<% GetValueText( .Contact.Name ) %>" readonly/>
             </div>
             <div class="form-field-name">
-                <% .GetText( 'Company' ) %> :
+                <% .GetProcessedTextBySlug( 'Company' ) %> :
             </div>
             <div>
                     <input class="form-input" name="Company" type="text" value="<% GetValueText( .Contact.Company ) %>" readonly/>
             </div>
             <div class="form-field-name">
-                <% .GetText( 'Email' ) %> :
+                <% .GetProcessedTextBySlug( 'Email' ) %> :
             </div>
             <div>
                     <input class="form-input" name="Email" type="text" value="<% GetValueText( .Contact.Email ) %>" readonly/>
             </div>
             <div class="form-field-name">
-                <% .GetText( 'Phone' ) %> :
+                <% .GetProcessedTextBySlug( 'Phone' ) %> :
             </div>
             <div>
                     <input class="form-input" name="Phone" type="text" value="<% GetValueText( .Contact.Phone ) %>" readonly/>
             </div>
             <div class="form-field-name">
-                <% .GetText( 'Subject' ) %> :
+                <% .GetProcessedTextBySlug( 'Subject' ) %> :
             </div>
             <div>
                     <input class="form-input" name="Subject" type="text" value="<% GetValueText( .Contact.Subject ) %>" readonly/>
             </div>
             <div class="form-field-name">
-                <% .GetText( 'Message' ) %> :
+                <% .GetProcessedTextBySlug( 'Message' ) %> :
             </div>
             <div>
                     <textarea class="form-textarea" name="Message" readonly><% .Contact.Message %></textarea>
             </div>
             <div class="form-field-name">
-                <% .GetText( 'Date Time' ) %> :
+                <% .GetProcessedTextBySlug( 'Date Time' ) %> :
             </div>
             <div>
                     <input class="form-input" name="DateTime" type="text" value="<% GetValueText( .Contact.DateTime ) %>" readonly/>

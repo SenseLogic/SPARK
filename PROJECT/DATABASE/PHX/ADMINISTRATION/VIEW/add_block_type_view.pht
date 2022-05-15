@@ -53,7 +53,7 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <% .GetText( 'Slug' ) %> :
+                    <% .GetProcessedTextBySlug( 'Slug' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="Slug" type="text" value="<# field_value #>"/>
@@ -71,13 +71,13 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <% .GetText( 'Name' ) %> :
+                    <% .GetProcessedTextBySlug( 'Name' ) %> :
                 </div>
                 <div>
                     <div>
                         <input class="multilingual-input form-input" name="Name" type="text" value="<# field_value #>" hidden/>
                         <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <input class="multilingual-input-translation form-translation form-input" data-language-code="<% language_code %>" placeholder="<% .GetText( language_code ) %>"/>
+                            <input class="multilingual-input-translation form-translation form-input" data-language-code="<% language_code %>" placeholder="<% .GetProcessedTextBySlug( language_code ) %>"/>
                         <? } ?>
                     </div>
                 </div>

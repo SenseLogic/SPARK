@@ -41,7 +41,7 @@
         <form class="form-centered" name="EditArticleBlockForm" onsubmit="return IsValidEditArticleBlockForm()" action="/admin/article-block/edit/<% .ArticleBlock.Id %>" method="post">
             <div class="form-container">
                 <div class="form-field-name">
-                    <% .GetText( 'Article Slug' ) %> :
+                    <% .GetProcessedTextBySlug( 'Article Slug' ) %> :
                 </div>
                 <div>
                     <select class="form-select" name="ArticleSlug">
@@ -52,7 +52,7 @@
                     </select>
                 </div>
                 <div class="form-field-name">
-                    <% .GetText( 'Block Slug' ) %> :
+                    <% .GetProcessedTextBySlug( 'Block Slug' ) %> :
                 </div>
                 <div>
                     <select class="form-select" name="BlockSlug">

@@ -51,7 +51,7 @@
         <form class="form-centered" name="EditPageContentBlockForm" onsubmit="return IsValidEditPageContentBlockForm()" action="/admin/page-content-block/edit/<?php echo htmlspecialchars( $this->PageContentBlock->Id ); ?>" method="post">
             <div class="form-container">
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetText( 'Page Slug' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Page Slug' ) ); ?> :
                 </div>
                 <div>
                     <select class="form-select" name="PageSlug">
@@ -62,7 +62,7 @@
                     </select>
                 </div>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetText( 'Block Slug' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Block Slug' ) ); ?> :
                 </div>
                 <div>
                     <select class="form-select" name="BlockSlug">
@@ -73,7 +73,7 @@
                     </select>
                 </div>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetText( 'Number' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Number' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="Number" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->PageContentBlock->Number ) ); ?>"/>

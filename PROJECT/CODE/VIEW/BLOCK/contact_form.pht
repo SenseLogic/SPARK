@@ -114,36 +114,36 @@
 <div class="narrow-margined-container contact-form">
     <form id="contact-form-container" class="contact-form-container" name="ContactForm">
         <div class="contact-form-row">
-            <input class="contact-form-input" name="Name" type="text" placeholder="<# .GetText( 'ContactFormNamePlaceholder' ) #>"/>
+            <input class="contact-form-input" name="Name" type="text" placeholder="<# .GetProcessedTextBySlug( 'ContactFormNamePlaceholder' ) #>"/>
         </div>
         <div class="contact-form-row">
-            <input class="contact-form-input" name="Company" type="text" placeholder="<# .GetText( 'ContactFormCompanyPlaceholder' ) #>"/>
+            <input class="contact-form-input" name="Company" type="text" placeholder="<# .GetProcessedTextBySlug( 'ContactFormCompanyPlaceholder' ) #>"/>
         </div>
         <div class="contact-form-row">
-            <input class="contact-form-input" name="Email" type="email" placeholder="<# .GetText( 'ContactFormEmailPlaceholder' ) #>"/>
+            <input class="contact-form-input" name="Email" type="email" placeholder="<# .GetProcessedTextBySlug( 'ContactFormEmailPlaceholder' ) #>"/>
         </div>
         <div class="contact-form-row">
-            <input class="contact-form-input" name="Phone" type="tel" placeholder="<# .GetText( 'ContactFormPhonePlaceholder' ) #>"/>
+            <input class="contact-form-input" name="Phone" type="tel" placeholder="<# .GetProcessedTextBySlug( 'ContactFormPhonePlaceholder' ) #>"/>
         </div>
         <div class="contact-form-row">
-            <input class="contact-form-input" name="Subject" type="text" placeholder="<# .GetText( 'ContactFormSubjectPlaceholder' ) #>"/>
+            <input class="contact-form-input" name="Subject" type="text" placeholder="<# .GetProcessedTextBySlug( 'ContactFormSubjectPlaceholder' ) #>"/>
         </div>
         <div class="contact-form-row">
-            <textarea class="contact-form-input contact-form-textarea" name="Message" type="text" placeholder="<# .GetText( 'ContactFormMessagePlaceholder' ) #>"></textarea>
+            <textarea class="contact-form-input contact-form-textarea" name="Message" type="text" placeholder="<# .GetProcessedTextBySlug( 'ContactFormMessagePlaceholder' ) #>"></textarea>
         </div>
         <div class="contact-form-row">
-            <input class="contact-form-input" name="Captcha" type="text" placeholder="<# .GetText( 'ContactFormCaptchaPlaceholder' ) #>"/>
+            <input class="contact-form-input" name="Captcha" type="text" placeholder="<# .GetProcessedTextBySlug( 'ContactFormCaptchaPlaceholder' ) #>"/>
             <img class="contact-form-captcha-image" src="/captcha"/>
         </div>
         <div class="contact-form-row">
             <div id="contact-form-send-button" class="contact-form-send-button" onclick="CancelEvent( event ); HandleContactFormSendButtonClickEvent()">
-                <# .GetText( 'ContactFormSendButton' ) #>
+                <# .GetProcessedTextBySlug( 'ContactFormSendButton' ) #>
             </div>
         </div>
     </form>
     <div id="contact-form-thanks-container" class="contact-form-thanks-container is-hidden">
         <div class="contact-form-thanks-text">
-            <# .GetText( 'ContactFormThanksText' ) #>
+            <# .GetProcessedTextBySlug( 'ContactFormThanksText' ) #>
         </div>
     </div>
 </div>

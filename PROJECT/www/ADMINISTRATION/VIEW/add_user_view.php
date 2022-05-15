@@ -73,7 +73,7 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetText( 'Email' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Email' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="Email" type="text" value="<?php echo $field_value; ?>"/>
@@ -91,7 +91,7 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetText( 'Pseudonym' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Pseudonym' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="Pseudonym" type="text" value="<?php echo $field_value; ?>"/>
@@ -109,7 +109,7 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetText( 'Password' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Password' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="Password" type="text" value="<?php echo $field_value; ?>"/>
@@ -127,7 +127,7 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetText( 'Role' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Role' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="Role" type="text" value="<?php echo $field_value; ?>"/>

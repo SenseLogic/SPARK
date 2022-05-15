@@ -15,19 +15,19 @@
     <div class="cell-list page-section form-section is-hidden">
         <div class="form-container table-container user-table sortable-table">
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( $this->GetText( 'Email' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Email' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( $this->GetText( 'Pseudonym' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Pseudonym' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( $this->GetText( 'Password' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Password' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( $this->GetText( 'Role' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Role' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( $this->GetText( 'Action' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Action' ) ); ?>
             </div>
             <?php foreach ( $this->UserArray as  $user ) { ?>
                 <div class="sortable-table-row filter-row">
@@ -63,25 +63,25 @@
                 <div class="card">
                     <div class="form-container">
                         <div class="form-field-name">
-                            <?php echo htmlspecialchars( $this->GetText( 'Email' ) ); ?> :
+                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Email' ) ); ?> :
                         </div>
                         <div>
                                 <input class="form-input" name="Email" type="text" value="<?php echo htmlspecialchars( GetValueText( $user->Email ) ); ?>" readonly/>
                         </div>
                         <div class="form-field-name">
-                            <?php echo htmlspecialchars( $this->GetText( 'Pseudonym' ) ); ?> :
+                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Pseudonym' ) ); ?> :
                         </div>
                         <div>
                                 <input class="form-input" name="Pseudonym" type="text" value="<?php echo htmlspecialchars( GetValueText( $user->Pseudonym ) ); ?>" readonly/>
                         </div>
                         <div class="form-field-name">
-                            <?php echo htmlspecialchars( $this->GetText( 'Password' ) ); ?> :
+                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Password' ) ); ?> :
                         </div>
                         <div>
                                 <input class="form-input" name="Password" type="text" value="<?php echo htmlspecialchars( GetValueText( $user->Password ) ); ?>" readonly/>
                         </div>
                         <div class="form-field-name">
-                            <?php echo htmlspecialchars( $this->GetText( 'Role' ) ); ?> :
+                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Role' ) ); ?> :
                         </div>
                         <div>
                                 <input class="form-input" name="Role" type="text" value="<?php echo htmlspecialchars( GetValueText( $user->Role ) ); ?>" readonly/>

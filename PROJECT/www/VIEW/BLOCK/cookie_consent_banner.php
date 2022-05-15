@@ -70,14 +70,14 @@
 
 <div id="cookie-consent-banner-container" class="cookie-consent-banner-container">
     <div class="cookie-consent-banner-text">
-        <?php echo $this->GetText( 'CookieConsentBannerText' ); ?>
+        <?php echo $this->GetProcessedTextBySlug( 'CookieConsentBannerText' ); ?>
     </div>
     <div class="cookie-consent-banner-button-container">
         <div class="scaled-button cookie-consent-banner-button cookie-consent-banner-accept-button" onclick="HandleCookieConsentBannerAgreeButtonClickEvent()">
-            <?php echo $this->GetText( 'CookieConsentBannerAcceptButton' ); ?>
+            <?php echo $this->GetProcessedTextBySlug( 'CookieConsentBannerAcceptButton' ); ?>
         </div>
         <div class="scaled-button cookie-consent-banner-button cookie-consent-banner-decline-button" onclick="HandleCookieConsentBannerDisacceptButtonClickEvent()">
-            <?php echo $this->GetText( 'CookieConsentBannerDeclineButton' ); ?>
+            <?php echo $this->GetProcessedTextBySlug( 'CookieConsentBannerDeclineButton' ); ?>
         </div>
     </div>
 </div>

@@ -41,19 +41,19 @@
         <form class="form-centered" name="EditTextForm" onsubmit="return IsValidEditTextForm()" action="/admin/text/edit/<% .Text.Id %>" method="post">
             <div class="form-container">
                 <div class="form-field-name">
-                    <% .GetText( 'Slug' ) %> :
+                    <% .GetProcessedTextBySlug( 'Slug' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="Slug" type="text" value="<% GetValueText( .Text.Slug ) %>"/>
                 </div>
                 <div class="form-field-name">
-                    <% .GetText( 'Text' ) %> :
+                    <% .GetProcessedTextBySlug( 'Text' ) %> :
                 </div>
                 <div>
                     <div>
                         <textarea class="multilingual-input form-textarea" name="Text" hidden><% .Text.Text %></textarea>
                         <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <textarea class="multilingual-input-translation form-translation form-textarea" data-language-code="<% language_code %>" placeholder="<% .GetText( language_code ) %>"></textarea>
+                            <textarea class="multilingual-input-translation form-translation form-textarea" data-language-code="<% language_code %>" placeholder="<% .GetProcessedTextBySlug( language_code ) %>"></textarea>
                         <? } ?>
                     </div>
                 </div>

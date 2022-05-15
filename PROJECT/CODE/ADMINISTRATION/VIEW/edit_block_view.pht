@@ -53,13 +53,13 @@
         <form class="form-centered" name="EditBlockForm" onsubmit="return IsValidEditBlockForm()" action="/admin/block/edit/<% .Block.Id %>" method="post">
             <div class="form-container">
                 <div class="form-field-name">
-                    <% .GetText( 'Slug' ) %> :
+                    <% .GetProcessedTextBySlug( 'Slug' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="Slug" type="text" value="<% GetValueText( .Block.Slug ) %>"/>
                 </div>
                 <div class="form-field-name">
-                    <% .GetText( 'Type Slug' ) %> :
+                    <% .GetProcessedTextBySlug( 'Type Slug' ) %> :
                 </div>
                 <div>
                     <select class="form-select" name="TypeSlug">
@@ -70,29 +70,29 @@
                     </select>
                 </div>
                 <div class="form-field-name">
-                    <% .GetText( 'Title' ) %> :
+                    <% .GetProcessedTextBySlug( 'Title' ) %> :
                 </div>
                 <div>
                     <div>
                         <input class="multilingual-input form-input" name="Title" type="text" value="<% GetValueText( .Block.Title ) %>" hidden/>
                         <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <input class="multilingual-input-translation form-translation form-input" data-language-code="<% language_code %>" placeholder="<% .GetText( language_code ) %>"/>
+                            <input class="multilingual-input-translation form-translation form-input" data-language-code="<% language_code %>" placeholder="<% .GetProcessedTextBySlug( language_code ) %>"/>
                         <? } ?>
                     </div>
                 </div>
                 <div class="form-field-name">
-                    <% .GetText( 'Text' ) %> :
+                    <% .GetProcessedTextBySlug( 'Text' ) %> :
                 </div>
                 <div>
                     <div>
                         <textarea class="multilingual-input form-textarea" name="Text" hidden><% .Block.Text %></textarea>
                         <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <textarea class="multilingual-input-translation form-translation form-textarea" data-language-code="<% language_code %>" placeholder="<% .GetText( language_code ) %>"></textarea>
+                            <textarea class="multilingual-input-translation form-translation form-textarea" data-language-code="<% language_code %>" placeholder="<% .GetProcessedTextBySlug( language_code ) %>"></textarea>
                         <? } ?>
                     </div>
                 </div>
                 <div class="form-field-name">
-                    <% .GetText( 'Image Path' ) %> :
+                    <% .GetProcessedTextBySlug( 'Image Path' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="ImagePath" type="text" value="<% .Block.ImagePath %>" oninput="HandleImagePathInputChangeEvent( this )"/>
@@ -105,7 +105,7 @@
                     </div>
                 </div>
                 <div class="form-field-name">
-                    <% .GetText( 'Video Path' ) %> :
+                    <% .GetProcessedTextBySlug( 'Video Path' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="VideoPath" type="text" value="<% .Block.VideoPath %>" oninput="HandleVideoPathInputChangeEvent( this )"/>

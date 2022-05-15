@@ -15,28 +15,28 @@
     <div class="cell-list page-section form-section is-hidden">
         <div class="form-container table-container contact-table sortable-table">
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( $this->GetText( 'Name' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Name' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( $this->GetText( 'Company' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Company' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( $this->GetText( 'Email' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Email' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( $this->GetText( 'Phone' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Phone' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( $this->GetText( 'Subject' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Subject' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( $this->GetText( 'Message' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Message' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( $this->GetText( 'Date Time' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Date Time' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( $this->GetText( 'Action' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Action' ) ); ?>
             </div>
             <?php foreach ( $this->ContactArray as  $contact ) { ?>
                 <div class="sortable-table-row filter-row">
@@ -81,43 +81,43 @@
                 <div class="card">
                     <div class="form-container">
                         <div class="form-field-name">
-                            <?php echo htmlspecialchars( $this->GetText( 'Name' ) ); ?> :
+                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Name' ) ); ?> :
                         </div>
                         <div>
                                 <input class="form-input" name="Name" type="text" value="<?php echo htmlspecialchars( GetValueText( $contact->Name ) ); ?>" readonly/>
                         </div>
                         <div class="form-field-name">
-                            <?php echo htmlspecialchars( $this->GetText( 'Company' ) ); ?> :
+                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Company' ) ); ?> :
                         </div>
                         <div>
                                 <input class="form-input" name="Company" type="text" value="<?php echo htmlspecialchars( GetValueText( $contact->Company ) ); ?>" readonly/>
                         </div>
                         <div class="form-field-name">
-                            <?php echo htmlspecialchars( $this->GetText( 'Email' ) ); ?> :
+                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Email' ) ); ?> :
                         </div>
                         <div>
                                 <input class="form-input" name="Email" type="text" value="<?php echo htmlspecialchars( GetValueText( $contact->Email ) ); ?>" readonly/>
                         </div>
                         <div class="form-field-name">
-                            <?php echo htmlspecialchars( $this->GetText( 'Phone' ) ); ?> :
+                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Phone' ) ); ?> :
                         </div>
                         <div>
                                 <input class="form-input" name="Phone" type="text" value="<?php echo htmlspecialchars( GetValueText( $contact->Phone ) ); ?>" readonly/>
                         </div>
                         <div class="form-field-name">
-                            <?php echo htmlspecialchars( $this->GetText( 'Subject' ) ); ?> :
+                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Subject' ) ); ?> :
                         </div>
                         <div>
                                 <input class="form-input" name="Subject" type="text" value="<?php echo htmlspecialchars( GetValueText( $contact->Subject ) ); ?>" readonly/>
                         </div>
                         <div class="form-field-name">
-                            <?php echo htmlspecialchars( $this->GetText( 'Message' ) ); ?> :
+                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Message' ) ); ?> :
                         </div>
                         <div>
                                 <textarea class="form-textarea" name="Message" readonly><?php echo htmlspecialchars( $contact->Message ); ?></textarea>
                         </div>
                         <div class="form-field-name">
-                            <?php echo htmlspecialchars( $this->GetText( 'Date Time' ) ); ?> :
+                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Date Time' ) ); ?> :
                         </div>
                         <div>
                                 <input class="form-input" name="DateTime" type="text" value="<?php echo htmlspecialchars( GetValueText( $contact->DateTime ) ); ?>" readonly/>

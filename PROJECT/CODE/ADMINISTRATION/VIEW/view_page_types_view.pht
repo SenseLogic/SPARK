@@ -15,13 +15,13 @@
     <div class="cell-list page-section form-section is-hidden">
         <div class="form-container table-container page-type-table sortable-table">
             <div class="form-column-name sortable-table-column">
-                <% .GetText( 'Slug' ) %>
+                <% .GetProcessedTextBySlug( 'Slug' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetText( 'Title' ) %>
+                <% .GetProcessedTextBySlug( 'Title' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetText( 'Action' ) %>
+                <% .GetProcessedTextBySlug( 'Action' ) %>
             </div>
             <? foreach ( var page_type; .PageTypeArray ) { ?>
                 <div class="sortable-table-row filter-row">
@@ -57,13 +57,13 @@
                 <div class="card">
                     <div class="form-container">
                         <div class="form-field-name">
-                            <% .GetText( 'Slug' ) %> :
+                            <% .GetProcessedTextBySlug( 'Slug' ) %> :
                         </div>
                         <div>
                                 <input class="form-input" name="Slug" type="text" value="<% GetValueText( page_type.Slug ) %>" readonly/>
                         </div>
                         <div class="form-field-name">
-                            <% .GetText( 'Title' ) %> :
+                            <% .GetProcessedTextBySlug( 'Title' ) %> :
                         </div>
                         <div>
                             <div>

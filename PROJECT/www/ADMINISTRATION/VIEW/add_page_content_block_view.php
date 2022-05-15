@@ -63,7 +63,7 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetText( 'Page Slug' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Page Slug' ) ); ?> :
                 </div>
                 <div>
                     <select class="form-select" name="PageSlug">
@@ -86,7 +86,7 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetText( 'Block Slug' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Block Slug' ) ); ?> :
                 </div>
                 <div>
                     <select class="form-select" name="BlockSlug">
@@ -109,7 +109,7 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetText( 'Number' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Number' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="Number" type="text" value="<?php echo $field_value; ?>"/>

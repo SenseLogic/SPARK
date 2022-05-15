@@ -41,7 +41,7 @@
         <form class="form-centered" name="EditArticleBlockForm" onsubmit="return IsValidEditArticleBlockForm()" action="/admin/article-block/edit/<?php echo htmlspecialchars( $this->ArticleBlock->Id ); ?>" method="post">
             <div class="form-container">
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetText( 'Article Slug' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Article Slug' ) ); ?> :
                 </div>
                 <div>
                     <select class="form-select" name="ArticleSlug">
@@ -52,7 +52,7 @@
                     </select>
                 </div>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetText( 'Block Slug' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Block Slug' ) ); ?> :
                 </div>
                 <div>
                     <select class="form-select" name="BlockSlug">

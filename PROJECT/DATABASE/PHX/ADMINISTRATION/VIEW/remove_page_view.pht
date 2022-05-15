@@ -4,25 +4,25 @@
         <form class="form-centered" action="/admin/page/remove/<% .Page.Id %>" method="post">
             <div class="form-container">
                 <div class="form-field-name">
-                    <% .GetText( 'Slug' ) %> :
+                    <% .GetProcessedTextBySlug( 'Slug' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="Slug" type="text" value="<% GetValueText( .Page.Slug ) %>" readonly/>
                 </div>
                 <div class="form-field-name">
-                    <% .GetText( 'Type Slug' ) %> :
+                    <% .GetProcessedTextBySlug( 'Type Slug' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="TypeSlug" type="text" value="<% GetValueText( .Page.TypeSlug ) %>" readonly/>
                 </div>
                 <div class="form-field-name">
-                    <% .GetText( 'Route' ) %> :
+                    <% .GetProcessedTextBySlug( 'Route' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="Route" type="text" value="<% GetValueText( .Page.Route ) %>" readonly/>
                 </div>
                 <div class="form-field-name">
-                    <% .GetText( 'Title' ) %> :
+                    <% .GetProcessedTextBySlug( 'Title' ) %> :
                 </div>
                 <div>
                     <div>
@@ -32,7 +32,7 @@
                     </div>
                 </div>
                 <div class="form-field-name">
-                    <% .GetText( 'Text' ) %> :
+                    <% .GetProcessedTextBySlug( 'Text' ) %> :
                 </div>
                 <div>
                     <div>
@@ -42,7 +42,7 @@
                     </div>
                 </div>
                 <div class="form-field-name">
-                    <% .GetText( 'Image Path' ) %> :
+                    <% .GetProcessedTextBySlug( 'Image Path' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="ImagePath" type="text" value="<% .Page.ImagePath %>" readonly/>
@@ -51,7 +51,7 @@
                     </div>
                 </div>
                 <div class="form-field-name">
-                    <% .GetText( 'Video Path' ) %> :
+                    <% .GetProcessedTextBySlug( 'Video Path' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="VideoPath" type="text" value="<% .Page.VideoPath %>" readonly/>
@@ -60,7 +60,7 @@
                     </div>
                 </div>
                 <div class="form-field-name">
-                    <% .GetText( 'Is Active' ) %> :
+                    <% .GetProcessedTextBySlug( 'Is Active' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="IsActive" type="text" value="<% GetValueText( .Page.IsActive ) %>" readonly/>

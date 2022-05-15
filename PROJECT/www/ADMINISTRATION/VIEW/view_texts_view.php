@@ -15,13 +15,13 @@
     <div class="cell-list page-section form-section is-hidden">
         <div class="form-container table-container text-table sortable-table">
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( $this->GetText( 'Slug' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Slug' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( $this->GetText( 'Text' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Text' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( $this->GetText( 'Action' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Action' ) ); ?>
             </div>
             <?php foreach ( $this->TextArray as  $text ) { ?>
                 <div class="sortable-table-row filter-row">
@@ -57,13 +57,13 @@
                 <div class="card">
                     <div class="form-container">
                         <div class="form-field-name">
-                            <?php echo htmlspecialchars( $this->GetText( 'Slug' ) ); ?> :
+                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Slug' ) ); ?> :
                         </div>
                         <div>
                                 <input class="form-input" name="Slug" type="text" value="<?php echo htmlspecialchars( GetValueText( $text->Slug ) ); ?>" readonly/>
                         </div>
                         <div class="form-field-name">
-                            <?php echo htmlspecialchars( $this->GetText( 'Text' ) ); ?> :
+                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Text' ) ); ?> :
                         </div>
                         <div>
                             <div>

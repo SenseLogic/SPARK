@@ -93,7 +93,7 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetText( 'Name' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Name' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="Name" type="text" value="<?php echo $field_value; ?>"/>
@@ -111,7 +111,7 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetText( 'Company' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Company' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="Company" type="text" value="<?php echo $field_value; ?>"/>
@@ -129,7 +129,7 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetText( 'Email' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Email' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="Email" type="text" value="<?php echo $field_value; ?>"/>
@@ -147,7 +147,7 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetText( 'Phone' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Phone' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="Phone" type="text" value="<?php echo $field_value; ?>"/>
@@ -165,7 +165,7 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetText( 'Subject' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Subject' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="Subject" type="text" value="<?php echo $field_value; ?>"/>
@@ -183,7 +183,7 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetText( 'Message' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Message' ) ); ?> :
                 </div>
                 <div>
                     <textarea class="form-textarea" name="Message"><?php echo $field_value; ?></textarea>

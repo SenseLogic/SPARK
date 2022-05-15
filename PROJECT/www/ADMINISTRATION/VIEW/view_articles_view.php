@@ -15,31 +15,31 @@
     <div class="cell-list page-section form-section is-hidden">
         <div class="form-container table-container article-table sortable-table">
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( $this->GetText( 'Slug' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Slug' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( $this->GetText( 'Name' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Name' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( $this->GetText( 'Text' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Text' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( $this->GetText( 'Image Path' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Image Path' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( $this->GetText( 'Video Path' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Video Path' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( $this->GetText( 'Next Article Id' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Next Article Id' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( $this->GetText( 'Priority' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Priority' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( $this->GetText( 'Is Active' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Is Active' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( $this->GetText( 'Action' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Action' ) ); ?>
             </div>
             <?php foreach ( $this->ArticleArray as  $article ) { ?>
                 <div class="sortable-table-row filter-row">
@@ -99,13 +99,13 @@
                 <div class="card">
                     <div class="form-container">
                         <div class="form-field-name">
-                            <?php echo htmlspecialchars( $this->GetText( 'Slug' ) ); ?> :
+                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Slug' ) ); ?> :
                         </div>
                         <div>
                                 <input class="form-input" name="Slug" type="text" value="<?php echo htmlspecialchars( GetValueText( $article->Slug ) ); ?>" readonly/>
                         </div>
                         <div class="form-field-name">
-                            <?php echo htmlspecialchars( $this->GetText( 'Name' ) ); ?> :
+                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Name' ) ); ?> :
                         </div>
                         <div>
                             <div>
@@ -115,7 +115,7 @@
                             </div>
                         </div>
                         <div class="form-field-name">
-                            <?php echo htmlspecialchars( $this->GetText( 'Text' ) ); ?> :
+                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Text' ) ); ?> :
                         </div>
                         <div>
                             <div>
@@ -125,7 +125,7 @@
                             </div>
                         </div>
                         <div class="form-field-name">
-                            <?php echo htmlspecialchars( $this->GetText( 'Image Path' ) ); ?> :
+                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Image Path' ) ); ?> :
                         </div>
                         <div>
                             <input class="form-input" name="ImagePath" type="text" value="<?php echo htmlspecialchars( $article->ImagePath ); ?>" readonly/>
@@ -134,7 +134,7 @@
                             </div>
                         </div>
                         <div class="form-field-name">
-                            <?php echo htmlspecialchars( $this->GetText( 'Video Path' ) ); ?> :
+                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Video Path' ) ); ?> :
                         </div>
                         <div>
                             <input class="form-input" name="VideoPath" type="text" value="<?php echo htmlspecialchars( $article->VideoPath ); ?>" readonly/>
@@ -143,19 +143,19 @@
                             </div>
                         </div>
                         <div class="form-field-name">
-                            <?php echo htmlspecialchars( $this->GetText( 'Next Article Id' ) ); ?> :
+                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Next Article Id' ) ); ?> :
                         </div>
                         <div>
                                 <input class="form-input" name="NextArticleId" type="text" value="<?php echo htmlspecialchars( GetValueText( $article->NextArticleId ) ); ?>" readonly/>
                         </div>
                         <div class="form-field-name">
-                            <?php echo htmlspecialchars( $this->GetText( 'Priority' ) ); ?> :
+                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Priority' ) ); ?> :
                         </div>
                         <div>
                                 <input class="form-input" name="Priority" type="text" value="<?php echo htmlspecialchars( GetValueText( $article->Priority ) ); ?>" readonly/>
                         </div>
                         <div class="form-field-name">
-                            <?php echo htmlspecialchars( $this->GetText( 'Is Active' ) ); ?> :
+                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Is Active' ) ); ?> :
                         </div>
                         <div>
                                 <input class="form-input" name="IsActive" type="text" value="<?php echo htmlspecialchars( GetValueText( $article->IsActive ) ); ?>" readonly/>

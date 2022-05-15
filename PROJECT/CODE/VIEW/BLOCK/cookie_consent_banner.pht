@@ -70,14 +70,14 @@
 </style>
 <div id="cookie-consent-banner-container" class="cookie-consent-banner-container">
     <div class="cookie-consent-banner-text">
-        <# .GetText( 'CookieConsentBannerText' ) #>
+        <# .GetProcessedTextBySlug( 'CookieConsentBannerText' ) #>
     </div>
     <div class="cookie-consent-banner-button-container">
         <div class="scaled-button cookie-consent-banner-button cookie-consent-banner-accept-button" onclick="HandleCookieConsentBannerAgreeButtonClickEvent()">
-            <# .GetText( 'CookieConsentBannerAcceptButton' ) #>
+            <# .GetProcessedTextBySlug( 'CookieConsentBannerAcceptButton' ) #>
         </div>
         <div class="scaled-button cookie-consent-banner-button cookie-consent-banner-decline-button" onclick="HandleCookieConsentBannerDisacceptButtonClickEvent()">
-            <# .GetText( 'CookieConsentBannerDeclineButton' ) #>
+            <# .GetProcessedTextBySlug( 'CookieConsentBannerDeclineButton' ) #>
         </div>
     </div>
 </div>
