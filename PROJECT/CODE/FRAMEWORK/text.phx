@@ -144,6 +144,15 @@ function GetUntaggedText(
 
 // ~~
 
+function GetEncodedText(
+    string text
+    )
+{
+    return htmlspecialchars( text );
+}
+
+// ~~
+
 function GetEncodedHtml(
     string text
     )

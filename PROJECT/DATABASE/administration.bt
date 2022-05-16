@@ -766,18 +766,17 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
             </div>
             <div class="page-body">
                 <div class="page-body-content">
-%%PHX/ADMINISTRATION/STYLE/administration_style.styl
-// -- IMPORTS
-
-@import "base.styl"
-
+%%PHX/ADMINISTRATION/STYLE/button.styl
 // -- CLASSES
 <#
 .{#style#}-button
 {
     background: url( "/static/image/admin/{#variable#}_icon.svg" ) no-repeat center center / contain;
 }
-#><#
+#>
+%%PHX/ADMINISTRATION/STYLE/table.styl
+// -- CLASSES
+<#
 .{#style#}-table
 {
     grid-template-columns: repeat( {#stored_column_count#}, auto );
