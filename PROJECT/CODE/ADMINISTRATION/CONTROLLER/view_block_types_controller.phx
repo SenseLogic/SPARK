@@ -18,7 +18,7 @@ class VIEW_BLOCK_TYPES_CONTROLLER extends CONTROLLER
         .Title = 'View block types';
         .BlockTypeArray = GetDatabaseBlockTypeArray();
 
-        SetSessionValue( 'ListPage', GetRequest() );
+        SetSessionValue( 'ListRoute', GetRequest() );
 
         import '../VIEW/view_block_types_view.php';
     }

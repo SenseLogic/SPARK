@@ -27,7 +27,7 @@ class DO_EDIT_ARTICLE_CONTROLLER extends CONTROLLER
 
         SetDatabaseArticle( $article_id, $slug, $name, $text, $image_path, $video_path, $next_article_id, $priority, $is_active );
 
-        Redirect( FindSessionValue( 'ListPage', '/admin/article' ) );
+        Redirect( FindSessionValue( 'ListRoute', '/admin/article' ) );
     }
 }
 

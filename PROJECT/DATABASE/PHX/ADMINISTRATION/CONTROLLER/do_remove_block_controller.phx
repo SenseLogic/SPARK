@@ -18,7 +18,7 @@ class DO_REMOVE_BLOCK_CONTROLLER extends CONTROLLER
 
         RemoveDatabaseBlockById( block_id );
 
-        Redirect( FindSessionValue( 'ListPage', '/admin/block' ) );
+        Redirect( FindSessionValue( 'ListRoute', '/admin/block' ) );
     }
 }
 

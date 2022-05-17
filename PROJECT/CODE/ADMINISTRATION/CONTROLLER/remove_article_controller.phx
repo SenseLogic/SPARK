@@ -18,7 +18,7 @@ class REMOVE_ARTICLE_CONTROLLER extends CONTROLLER
 
         .Title = 'Remove a article';
         .Article = GetDatabaseArticleById( article_id );
-        .ListPage = FindSessionValue( 'ListPage', '/admin/article' );
+        .ListRoute = FindSessionValue( 'ListRoute', '/admin/article' );
 
         import '../VIEW/remove_article_view.php';
     }

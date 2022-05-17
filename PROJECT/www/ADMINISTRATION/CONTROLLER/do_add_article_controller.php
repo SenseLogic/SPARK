@@ -26,7 +26,7 @@ class DO_ADD_ARTICLE_CONTROLLER extends CONTROLLER
 
         AddDatabaseArticle( $slug, $name, $text, $image_path, $video_path, $next_article_id, $priority, $is_active );
 
-        Redirect( FindSessionValue( 'ListPage', '/admin/article' ) );
+        Redirect( FindSessionValue( 'ListRoute', '/admin/article' ) );
     }
 }
 

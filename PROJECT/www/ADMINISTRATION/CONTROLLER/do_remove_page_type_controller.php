@@ -18,7 +18,7 @@ class DO_REMOVE_PAGE_TYPE_CONTROLLER extends CONTROLLER
 
         RemoveDatabasePageTypeById( $page_type_id );
 
-        Redirect( FindSessionValue( 'ListPage', '/admin/page-type' ) );
+        Redirect( FindSessionValue( 'ListRoute', '/admin/page-type' ) );
     }
 }
 

@@ -18,7 +18,7 @@ class REMOVE_PAGE_CONTROLLER extends CONTROLLER
 
         $this->Title = 'Remove a page';
         $this->Page = GetDatabasePageById( $page_id );
-        $this->ListPage = FindSessionValue( 'ListPage', '/admin/page' );
+        $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/page' );
 
         require_once __DIR__ . '/' . '../VIEW/remove_page_view.php';
     }

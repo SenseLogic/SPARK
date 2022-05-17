@@ -78,7 +78,7 @@
                 <div>
                     <input class="form-input" name="Number" type="text" value="<% GetValueText( .BlockSubBlock.Number ) %>"/>
                 </div>
-                <a class="justify-self-start form-button form-button-large cancel-button" href="<% .ListPage %>">
+                <a class="justify-self-start form-button form-button-large cancel-button" href="<% .ListRoute %>">
                 </a>
                 <button class="justify-self-end form-button form-button-large apply-button" type="submit">
                 </button>

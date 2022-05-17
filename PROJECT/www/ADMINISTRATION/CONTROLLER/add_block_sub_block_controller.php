@@ -16,7 +16,7 @@ class ADD_BLOCK_SUB_BLOCK_CONTROLLER extends CONTROLLER
         parent::__construct( $language_code );
 
         $this->Title = 'Add a block sub block';
-        $this->ListPage = FindSessionValue( 'ListPage', '/admin/block-sub-block' );
+        $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/block-sub-block' );
 
         require_once __DIR__ . '/' . '../VIEW/add_block_sub_block_view.php';
     }

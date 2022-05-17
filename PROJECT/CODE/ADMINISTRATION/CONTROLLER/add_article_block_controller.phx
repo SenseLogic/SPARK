@@ -16,7 +16,7 @@ class ADD_ARTICLE_BLOCK_CONTROLLER extends CONTROLLER
         parent::constructor( language_code );
 
         .Title = 'Add a article block';
-        .ListPage = FindSessionValue( 'ListPage', '/admin/article-block' );
+        .ListRoute = FindSessionValue( 'ListRoute', '/admin/article-block' );
 
         import '../VIEW/add_article_block_view.php';
     }

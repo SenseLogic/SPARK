@@ -26,7 +26,7 @@ class DO_EDIT_CONTACT_CONTROLLER extends CONTROLLER
 
         SetDatabaseContact( contact_id, name, company, email, phone, subject, message, date_time );
 
-        Redirect( FindSessionValue( 'ListPage', '/admin/contact' ) );
+        Redirect( FindSessionValue( 'ListRoute', '/admin/contact' ) );
     }
 }
 

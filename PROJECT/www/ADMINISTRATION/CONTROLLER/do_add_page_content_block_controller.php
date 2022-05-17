@@ -21,7 +21,7 @@ class DO_ADD_PAGE_CONTENT_BLOCK_CONTROLLER extends CONTROLLER
 
         AddDatabasePageContentBlock( $page_slug, $block_slug, $number );
 
-        Redirect( FindSessionValue( 'ListPage', '/admin/page-content-block' ) );
+        Redirect( FindSessionValue( 'ListRoute', '/admin/page-content-block' ) );
     }
 }
 

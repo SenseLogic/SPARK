@@ -18,7 +18,7 @@ class VIEW_PAGE_SUB_PAGE_CONTROLLER extends CONTROLLER
 
         $this->Title = 'View a page sub page';
         $this->PageSubPage = GetDatabasePageSubPageById( $page_sub_page_id );
-        $this->ListPage = FindSessionValue( 'ListPage', '/admin/page-sub-page' );
+        $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/page-sub-page' );
 
         require_once __DIR__ . '/' . '../VIEW/view_page_sub_page_view.php';
     }

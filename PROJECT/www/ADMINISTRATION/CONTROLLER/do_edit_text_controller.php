@@ -21,7 +21,7 @@ class DO_EDIT_TEXT_CONTROLLER extends CONTROLLER
 
         SetDatabaseText( $text_id, $slug, $text );
 
-        Redirect( FindSessionValue( 'ListPage', '/admin/text' ) );
+        Redirect( FindSessionValue( 'ListRoute', '/admin/text' ) );
     }
 }
 

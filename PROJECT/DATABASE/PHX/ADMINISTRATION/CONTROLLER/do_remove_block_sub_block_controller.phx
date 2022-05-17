@@ -18,7 +18,7 @@ class DO_REMOVE_BLOCK_SUB_BLOCK_CONTROLLER extends CONTROLLER
 
         RemoveDatabaseBlockSubBlockById( block_sub_block_id );
 
-        Redirect( FindSessionValue( 'ListPage', '/admin/block-sub-block' ) );
+        Redirect( FindSessionValue( 'ListRoute', '/admin/block-sub-block' ) );
     }
 }
 

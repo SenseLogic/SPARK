@@ -64,7 +64,7 @@
             <div>
                     <input class="form-input" name="IsActive" type="text" value="<% GetValueText( .Page.IsActive ) %>" readonly/>
             </div>
-            <a class="justify-self-start form-button form-button-large cancel-button" href="<% .ListPage %>">
+            <a class="justify-self-start form-button form-button-large cancel-button" href="<% .ListRoute %>">
             </a>
         </div>
     </div>

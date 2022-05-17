@@ -27,7 +27,7 @@ class DO_EDIT_PAGE_CONTROLLER extends CONTROLLER
 
         SetDatabasePage( $page_id, $slug, $type_slug, $route, $title, $text, $image_path, $video_path, $is_active );
 
-        Redirect( FindSessionValue( 'ListPage', '/admin/page' ) );
+        Redirect( FindSessionValue( 'ListRoute', '/admin/page' ) );
     }
 }
 

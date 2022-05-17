@@ -18,7 +18,7 @@ class REMOVE_PAGE_SUB_PAGE_CONTROLLER extends CONTROLLER
 
         $this->Title = 'Remove a page sub page';
         $this->PageSubPage = GetDatabasePageSubPageById( $page_sub_page_id );
-        $this->ListPage = FindSessionValue( 'ListPage', '/admin/page-sub-page' );
+        $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/page-sub-page' );
 
         require_once __DIR__ . '/' . '../VIEW/remove_page_sub_page_view.php';
     }

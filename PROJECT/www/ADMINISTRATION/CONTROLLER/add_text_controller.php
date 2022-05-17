@@ -16,7 +16,7 @@ class ADD_TEXT_CONTROLLER extends CONTROLLER
         parent::__construct( $language_code );
 
         $this->Title = 'Add a text';
-        $this->ListPage = FindSessionValue( 'ListPage', '/admin/text' );
+        $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/text' );
 
         require_once __DIR__ . '/' . '../VIEW/add_text_view.php';
     }

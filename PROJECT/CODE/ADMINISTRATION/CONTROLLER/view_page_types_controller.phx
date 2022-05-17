@@ -18,7 +18,7 @@ class VIEW_PAGE_TYPES_CONTROLLER extends CONTROLLER
         .Title = 'View page types';
         .PageTypeArray = GetDatabasePageTypeArray();
 
-        SetSessionValue( 'ListPage', GetRequest() );
+        SetSessionValue( 'ListRoute', GetRequest() );
 
         import '../VIEW/view_page_types_view.php';
     }

@@ -18,7 +18,7 @@ class VIEW_PAGE_CONTROLLER extends CONTROLLER
 
         $this->Title = 'View a page';
         $this->Page = GetDatabasePageById( $page_id );
-        $this->ListPage = FindSessionValue( 'ListPage', '/admin/page' );
+        $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/page' );
 
         require_once __DIR__ . '/' . '../VIEW/view_page_view.php';
     }

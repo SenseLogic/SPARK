@@ -21,7 +21,7 @@ class DO_EDIT_ARTICLE_BLOCK_CONTROLLER extends CONTROLLER
 
         SetDatabaseArticleBlock( article_block_id, article_slug, block_slug );
 
-        Redirect( FindSessionValue( 'ListPage', '/admin/article-block' ) );
+        Redirect( FindSessionValue( 'ListRoute', '/admin/article-block' ) );
     }
 }
 

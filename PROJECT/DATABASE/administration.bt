@@ -17,7 +17,7 @@ class ADD_{#type#}_CONTROLLER extends CONTROLLER
         parent::constructor( language_code );
 
         .Title = 'Add a {#locution#}';
-        .ListPage = FindSessionValue( 'ListPage', '/admin/{#style#}' );
+        .ListRoute = FindSessionValue( 'ListRoute', '/admin/{#style#}' );
 
         import '../VIEW/add_{#variable#}_view.php';
     }
@@ -49,7 +49,7 @@ class DO_ADD_{#type#}_CONTROLLER extends CONTROLLER
 
         AddDatabase{#attribute#}( <%¨{%variable%}<~!{%is_last_added%}<>, ~>¨%> );
 
-        Redirect( FindSessionValue( 'ListPage', '/admin/{#style#}' ) );
+        Redirect( FindSessionValue( 'ListRoute', '/admin/{#style#}' ) );
     }
 }
 
@@ -77,7 +77,7 @@ class EDIT_{#type#}_CONTROLLER extends CONTROLLER
 
         .Title = 'Edit a {#locution#}';
         .{#attribute#} = GetDatabase{#attribute#}By{#key_attribute#}( {#variable#}_{#key_variable#} );
-        .ListPage = FindSessionValue( 'ListPage', '/admin/{#style#}' );
+        .ListRoute = FindSessionValue( 'ListRoute', '/admin/{#style#}' );
 
         import '../VIEW/edit_{#variable#}_view.php';
     }
@@ -110,7 +110,7 @@ class DO_EDIT_{#type#}_CONTROLLER extends CONTROLLER
 
         SetDatabase{#attribute#}( {#variable#}_{#key_variable#}, <${%variable%}<~!{%is_last_non_key%}<>, ~>$> );
 
-        Redirect( FindSessionValue( 'ListPage', '/admin/{#style#}' ) );
+        Redirect( FindSessionValue( 'ListRoute', '/admin/{#style#}' ) );
     }
 }
 
@@ -138,7 +138,7 @@ class REMOVE_{#type#}_CONTROLLER extends CONTROLLER
 
         .Title = 'Remove a {#locution#}';
         .{#attribute#} = GetDatabase{#attribute#}By{#key_attribute#}( {#variable#}_{#key_variable#} );
-        .ListPage = FindSessionValue( 'ListPage', '/admin/{#style#}' );
+        .ListRoute = FindSessionValue( 'ListRoute', '/admin/{#style#}' );
 
         import '../VIEW/remove_{#variable#}_view.php';
     }
@@ -168,7 +168,7 @@ class DO_REMOVE_{#type#}_CONTROLLER extends CONTROLLER
 
         RemoveDatabase{#attribute#}By{#key_attribute#}( {#variable#}_{#key_variable#} );
 
-        Redirect( FindSessionValue( 'ListPage', '/admin/{#style#}' ) );
+        Redirect( FindSessionValue( 'ListRoute', '/admin/{#style#}' ) );
     }
 }
 
@@ -196,7 +196,7 @@ class VIEW_{#type#}_CONTROLLER extends CONTROLLER
 
         .Title = 'View a {#locution#}';
         .{#attribute#} = GetDatabase{#attribute#}By{#key_attribute#}( {#variable#}_{#key_variable#} );
-        .ListPage = FindSessionValue( 'ListPage', '/admin/{#style#}' );
+        .ListRoute = FindSessionValue( 'ListRoute', '/admin/{#style#}' );
 
         import '../VIEW/view_{#variable#}_view.php';
     }
@@ -226,7 +226,7 @@ class VIEW_<~Plural<>{#type#}~>_CONTROLLER extends CONTROLLER
         .Title = 'View <~Plural<>{#locution#}~>';
         .{#attribute#}Array = GetDatabase{#attribute#}Array();
 
-        SetSessionValue( 'ListPage', GetRequest() );
+        SetSessionValue( 'ListRoute', GetRequest() );
 
         import '../VIEW/view_<~Plural<>{#variable#}~>_view.php';
     }
@@ -358,7 +358,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                     <textarea class="form-textarea" name="{%attribute%}"><\# field_value #\></textarea><>
                     <input class="form-input" name="{%attribute%}" type="text" value="<\# field_value #\>"/>~>~>~>~>~>~>~>
                 </div>~>¨%>
-                <a class="justify-self-start form-button form-button-large cancel-button" href="<\% .ListPage %\>">
+                <a class="justify-self-start form-button form-button-large cancel-button" href="<\% .ListRoute %\>">
                 </a>
                 <button class="justify-self-end form-button form-button-large apply-button" type="submit">
                 </button>
@@ -484,7 +484,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                     <textarea class="form-textarea" name="{%attribute%}"><\% .{#attribute#}.{%attribute%} %\></textarea><>
                     <input class="form-input" name="{%attribute%}" type="text" value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>"/>~>~>~>~>~>~>~>
                 </div>~>$>
-                <a class="justify-self-start form-button form-button-large cancel-button" href="<\% .ListPage %\>">
+                <a class="justify-self-start form-button form-button-large cancel-button" href="<\% .ListRoute %\>">
                 </a>
                 <button class="justify-self-end form-button form-button-large apply-button" type="submit">
                 </button>
@@ -536,7 +536,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                     <textarea class="form-textarea" name="{%attribute%}" readonly><\% .{#attribute#}.{%attribute%} %\></textarea><>
                     <input class="form-input" name="{%attribute%}" type="text" value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" readonly/>~>~>~>~>~>
                 </div>~>$>
-                <a class="justify-self-start form-button form-button-large cancel-button" href="<\% .ListPage %\>">
+                <a class="justify-self-start form-button form-button-large cancel-button" href="<\% .ListRoute %\>">
                 </a>
                 <button class="justify-self-end form-button-large form-button form-button-large remove-button" type="submit">
                 </button>
@@ -587,7 +587,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                     <textarea class="form-textarea" name="{%attribute%}" readonly><\% .{#attribute#}.{%attribute%} %\></textarea><>
                     <input class="form-input" name="{%attribute%}" type="text" value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" readonly/>~>~>~>~>~>
             </div>~>$>
-            <a class="justify-self-start form-button form-button-large cancel-button" href="<\% .ListPage %\>">
+            <a class="justify-self-start form-button form-button-large cancel-button" href="<\% .ListRoute %\>">
             </a>
         </div>
     </div><~{#has_custom_block#}<>

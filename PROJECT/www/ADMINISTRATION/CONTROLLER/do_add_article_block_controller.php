@@ -20,7 +20,7 @@ class DO_ADD_ARTICLE_BLOCK_CONTROLLER extends CONTROLLER
 
         AddDatabaseArticleBlock( $article_slug, $block_slug );
 
-        Redirect( FindSessionValue( 'ListPage', '/admin/article-block' ) );
+        Redirect( FindSessionValue( 'ListRoute', '/admin/article-block' ) );
     }
 }
 

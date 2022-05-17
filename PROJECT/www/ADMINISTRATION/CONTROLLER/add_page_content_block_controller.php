@@ -16,7 +16,7 @@ class ADD_PAGE_CONTENT_BLOCK_CONTROLLER extends CONTROLLER
         parent::__construct( $language_code );
 
         $this->Title = 'Add a page content block';
-        $this->ListPage = FindSessionValue( 'ListPage', '/admin/page-content-block' );
+        $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/page-content-block' );
 
         require_once __DIR__ . '/' . '../VIEW/add_page_content_block_view.php';
     }

@@ -22,7 +22,7 @@ class DO_EDIT_PAGE_SUB_PAGE_CONTROLLER extends CONTROLLER
 
         SetDatabasePageSubPage( $page_sub_page_id, $page_slug, $sub_page_slug, $number );
 
-        Redirect( FindSessionValue( 'ListPage', '/admin/page-sub-page' ) );
+        Redirect( FindSessionValue( 'ListRoute', '/admin/page-sub-page' ) );
     }
 }
 

@@ -18,7 +18,7 @@ class VIEW_PAGE_SUB_PAGES_CONTROLLER extends CONTROLLER
         $this->Title = 'View page sub pages';
         $this->PageSubPageArray = GetDatabasePageSubPageArray();
 
-        SetSessionValue( 'ListPage', GetRequest() );
+        SetSessionValue( 'ListRoute', GetRequest() );
 
         require_once __DIR__ . '/' . '../VIEW/view_page_sub_pages_view.php';
     }

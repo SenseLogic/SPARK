@@ -18,7 +18,7 @@ class EDIT_BLOCK_CONTROLLER extends CONTROLLER
 
         $this->Title = 'Edit a block';
         $this->Block = GetDatabaseBlockById( $block_id );
-        $this->ListPage = FindSessionValue( 'ListPage', '/admin/block' );
+        $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/block' );
 
         require_once __DIR__ . '/' . '../VIEW/edit_block_view.php';
     }

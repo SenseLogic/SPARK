@@ -18,7 +18,7 @@ class VIEW_BLOCK_TYPES_CONTROLLER extends CONTROLLER
         $this->Title = 'View block types';
         $this->BlockTypeArray = GetDatabaseBlockTypeArray();
 
-        SetSessionValue( 'ListPage', GetRequest() );
+        SetSessionValue( 'ListRoute', GetRequest() );
 
         require_once __DIR__ . '/' . '../VIEW/view_block_types_view.php';
     }

@@ -18,7 +18,7 @@ class VIEW_ARTICLE_CONTROLLER extends CONTROLLER
 
         .Title = 'View a article';
         .Article = GetDatabaseArticleById( article_id );
-        .ListPage = FindSessionValue( 'ListPage', '/admin/article' );
+        .ListRoute = FindSessionValue( 'ListRoute', '/admin/article' );
 
         import '../VIEW/view_article_view.php';
     }

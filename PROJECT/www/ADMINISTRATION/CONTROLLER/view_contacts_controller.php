@@ -18,7 +18,7 @@ class VIEW_CONTACTS_CONTROLLER extends CONTROLLER
         $this->Title = 'View contacts';
         $this->ContactArray = GetDatabaseContactArray();
 
-        SetSessionValue( 'ListPage', GetRequest() );
+        SetSessionValue( 'ListRoute', GetRequest() );
 
         require_once __DIR__ . '/' . '../VIEW/view_contacts_view.php';
     }

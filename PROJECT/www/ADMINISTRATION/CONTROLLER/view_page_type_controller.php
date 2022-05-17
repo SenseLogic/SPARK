@@ -18,7 +18,7 @@ class VIEW_PAGE_TYPE_CONTROLLER extends CONTROLLER
 
         $this->Title = 'View a page type';
         $this->PageType = GetDatabasePageTypeById( $page_type_id );
-        $this->ListPage = FindSessionValue( 'ListPage', '/admin/page-type' );
+        $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/page-type' );
 
         require_once __DIR__ . '/' . '../VIEW/view_page_type_view.php';
     }

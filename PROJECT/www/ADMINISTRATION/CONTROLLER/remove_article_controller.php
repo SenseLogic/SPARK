@@ -18,7 +18,7 @@ class REMOVE_ARTICLE_CONTROLLER extends CONTROLLER
 
         $this->Title = 'Remove a article';
         $this->Article = GetDatabaseArticleById( $article_id );
-        $this->ListPage = FindSessionValue( 'ListPage', '/admin/article' );
+        $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/article' );
 
         require_once __DIR__ . '/' . '../VIEW/remove_article_view.php';
     }

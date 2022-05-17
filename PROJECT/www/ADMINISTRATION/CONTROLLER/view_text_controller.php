@@ -18,7 +18,7 @@ class VIEW_TEXT_CONTROLLER extends CONTROLLER
 
         $this->Title = 'View a text';
         $this->Text = GetDatabaseTextById( $text_id );
-        $this->ListPage = FindSessionValue( 'ListPage', '/admin/text' );
+        $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/text' );
 
         require_once __DIR__ . '/' . '../VIEW/view_text_view.php';
     }

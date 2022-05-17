@@ -20,7 +20,7 @@ class DO_ADD_PAGE_TYPE_CONTROLLER extends CONTROLLER
 
         AddDatabasePageType( slug, title );
 
-        Redirect( FindSessionValue( 'ListPage', '/admin/page-type' ) );
+        Redirect( FindSessionValue( 'ListRoute', '/admin/page-type' ) );
     }
 }
 

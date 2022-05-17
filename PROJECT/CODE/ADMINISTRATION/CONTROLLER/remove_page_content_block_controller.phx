@@ -18,7 +18,7 @@ class REMOVE_PAGE_CONTENT_BLOCK_CONTROLLER extends CONTROLLER
 
         .Title = 'Remove a page content block';
         .PageContentBlock = GetDatabasePageContentBlockById( page_content_block_id );
-        .ListPage = FindSessionValue( 'ListPage', '/admin/page-content-block' );
+        .ListRoute = FindSessionValue( 'ListRoute', '/admin/page-content-block' );
 
         import '../VIEW/remove_page_content_block_view.php';
     }

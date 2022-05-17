@@ -18,7 +18,7 @@ class DO_REMOVE_ARTICLE_CONTROLLER extends CONTROLLER
 
         RemoveDatabaseArticleById( $article_id );
 
-        Redirect( FindSessionValue( 'ListPage', '/admin/article' ) );
+        Redirect( FindSessionValue( 'ListRoute', '/admin/article' ) );
     }
 }
 

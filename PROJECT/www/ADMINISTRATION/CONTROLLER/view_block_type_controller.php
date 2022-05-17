@@ -18,7 +18,7 @@ class VIEW_BLOCK_TYPE_CONTROLLER extends CONTROLLER
 
         $this->Title = 'View a block type';
         $this->BlockType = GetDatabaseBlockTypeById( $block_type_id );
-        $this->ListPage = FindSessionValue( 'ListPage', '/admin/block-type' );
+        $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/block-type' );
 
         require_once __DIR__ . '/' . '../VIEW/view_block_type_view.php';
     }

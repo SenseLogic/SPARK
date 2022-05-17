@@ -22,7 +22,7 @@ class DO_EDIT_PAGE_CONTENT_BLOCK_CONTROLLER extends CONTROLLER
 
         SetDatabasePageContentBlock( page_content_block_id, page_slug, block_slug, number );
 
-        Redirect( FindSessionValue( 'ListPage', '/admin/page-content-block' ) );
+        Redirect( FindSessionValue( 'ListRoute', '/admin/page-content-block' ) );
     }
 }
 

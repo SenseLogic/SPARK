@@ -26,7 +26,7 @@ class DO_ADD_PAGE_CONTROLLER extends CONTROLLER
 
         AddDatabasePage( $slug, $type_slug, $route, $title, $text, $image_path, $video_path, $is_active );
 
-        Redirect( FindSessionValue( 'ListPage', '/admin/page' ) );
+        Redirect( FindSessionValue( 'ListRoute', '/admin/page' ) );
     }
 }
 

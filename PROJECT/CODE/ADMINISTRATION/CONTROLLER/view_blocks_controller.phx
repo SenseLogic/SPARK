@@ -18,7 +18,7 @@ class VIEW_BLOCKS_CONTROLLER extends CONTROLLER
         .Title = 'View blocks';
         .BlockArray = GetDatabaseBlockArray();
 
-        SetSessionValue( 'ListPage', GetRequest() );
+        SetSessionValue( 'ListRoute', GetRequest() );
 
         import '../VIEW/view_blocks_view.php';
     }

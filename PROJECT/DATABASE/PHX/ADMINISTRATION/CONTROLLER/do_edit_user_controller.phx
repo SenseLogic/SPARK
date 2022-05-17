@@ -23,7 +23,7 @@ class DO_EDIT_USER_CONTROLLER extends CONTROLLER
 
         SetDatabaseUser( user_id, email, pseudonym, password, role );
 
-        Redirect( FindSessionValue( 'ListPage', '/admin/user' ) );
+        Redirect( FindSessionValue( 'ListRoute', '/admin/user' ) );
     }
 }
 

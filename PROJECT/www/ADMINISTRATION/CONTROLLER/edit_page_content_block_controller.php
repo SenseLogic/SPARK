@@ -18,7 +18,7 @@ class EDIT_PAGE_CONTENT_BLOCK_CONTROLLER extends CONTROLLER
 
         $this->Title = 'Edit a page content block';
         $this->PageContentBlock = GetDatabasePageContentBlockById( $page_content_block_id );
-        $this->ListPage = FindSessionValue( 'ListPage', '/admin/page-content-block' );
+        $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/page-content-block' );
 
         require_once __DIR__ . '/' . '../VIEW/edit_page_content_block_view.php';
     }

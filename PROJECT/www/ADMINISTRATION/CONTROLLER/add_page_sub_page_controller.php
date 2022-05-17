@@ -16,7 +16,7 @@ class ADD_PAGE_SUB_PAGE_CONTROLLER extends CONTROLLER
         parent::__construct( $language_code );
 
         $this->Title = 'Add a page sub page';
-        $this->ListPage = FindSessionValue( 'ListPage', '/admin/page-sub-page' );
+        $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/page-sub-page' );
 
         require_once __DIR__ . '/' . '../VIEW/add_page_sub_page_view.php';
     }

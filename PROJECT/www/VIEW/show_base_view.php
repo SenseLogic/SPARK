@@ -24,7 +24,7 @@
     {
         if ( route !== undefined )
         {
-            SetRoute( "/<?php echo $this->LanguageCode; ?>/" + route );
+            SetRoute( "/<?php echo $this->LanguageCode; ?>/" + route.RemovePrefix( "/" ) );
             TrackRoute();
         }
 

@@ -20,7 +20,7 @@ class DO_ADD_BLOCK_TYPE_CONTROLLER extends CONTROLLER
 
         AddDatabaseBlockType( slug, name );
 
-        Redirect( FindSessionValue( 'ListPage', '/admin/block-type' ) );
+        Redirect( FindSessionValue( 'ListRoute', '/admin/block-type' ) );
     }
 }
 

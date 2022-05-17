@@ -686,6 +686,9 @@ textarea {
 .view-button {
   background: url("/static/image/admin/view_icon.svg") no-repeat center center/contain;
 }
+.manage-button {
+  background: url("/static/image/admin/manage_icon.svg") no-repeat center center/contain;
+}
 .edit-button {
   background: url("/static/image/admin/edit_icon.svg") no-repeat center center/contain;
 }

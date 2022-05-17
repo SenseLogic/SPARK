@@ -18,7 +18,7 @@ class DO_REMOVE_PAGE_CONTENT_BLOCK_CONTROLLER extends CONTROLLER
 
         RemoveDatabasePageContentBlockById( $page_content_block_id );
 
-        Redirect( FindSessionValue( 'ListPage', '/admin/page-content-block' ) );
+        Redirect( FindSessionValue( 'ListRoute', '/admin/page-content-block' ) );
     }
 }
 

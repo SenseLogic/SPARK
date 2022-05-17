@@ -18,7 +18,7 @@ class VIEW_BLOCK_SUB_BLOCKS_CONTROLLER extends CONTROLLER
         $this->Title = 'View block sub blocks';
         $this->BlockSubBlockArray = GetDatabaseBlockSubBlockArray();
 
-        SetSessionValue( 'ListPage', GetRequest() );
+        SetSessionValue( 'ListRoute', GetRequest() );
 
         require_once __DIR__ . '/' . '../VIEW/view_block_sub_blocks_view.php';
     }

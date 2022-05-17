@@ -16,7 +16,7 @@ class ADD_BLOCK_TYPE_CONTROLLER extends CONTROLLER
         parent::constructor( language_code );
 
         .Title = 'Add a block type';
-        .ListPage = FindSessionValue( 'ListPage', '/admin/block-type' );
+        .ListRoute = FindSessionValue( 'ListRoute', '/admin/block-type' );
 
         import '../VIEW/add_block_type_view.php';
     }

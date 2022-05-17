@@ -18,7 +18,7 @@ class VIEW_TEXTS_CONTROLLER extends CONTROLLER
         .Title = 'View texts';
         .TextArray = GetDatabaseTextArray();
 
-        SetSessionValue( 'ListPage', GetRequest() );
+        SetSessionValue( 'ListRoute', GetRequest() );
 
         import '../VIEW/view_texts_view.php';
     }

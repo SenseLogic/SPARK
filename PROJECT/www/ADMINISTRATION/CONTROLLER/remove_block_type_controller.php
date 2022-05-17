@@ -18,7 +18,7 @@ class REMOVE_BLOCK_TYPE_CONTROLLER extends CONTROLLER
 
         $this->Title = 'Remove a block type';
         $this->BlockType = GetDatabaseBlockTypeById( $block_type_id );
-        $this->ListPage = FindSessionValue( 'ListPage', '/admin/block-type' );
+        $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/block-type' );
 
         require_once __DIR__ . '/' . '../VIEW/remove_block_type_view.php';
     }

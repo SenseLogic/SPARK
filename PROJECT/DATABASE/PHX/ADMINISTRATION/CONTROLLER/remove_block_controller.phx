@@ -18,7 +18,7 @@ class REMOVE_BLOCK_CONTROLLER extends CONTROLLER
 
         .Title = 'Remove a block';
         .Block = GetDatabaseBlockById( block_id );
-        .ListPage = FindSessionValue( 'ListPage', '/admin/block' );
+        .ListRoute = FindSessionValue( 'ListRoute', '/admin/block' );
 
         import '../VIEW/remove_block_view.php';
     }

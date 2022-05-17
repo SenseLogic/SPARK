@@ -16,7 +16,7 @@ class ADD_USER_CONTROLLER extends CONTROLLER
         parent::__construct( $language_code );
 
         $this->Title = 'Add a user';
-        $this->ListPage = FindSessionValue( 'ListPage', '/admin/user' );
+        $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/user' );
 
         require_once __DIR__ . '/' . '../VIEW/add_user_view.php';
     }

@@ -22,7 +22,7 @@ class DO_EDIT_BLOCK_SUB_BLOCK_CONTROLLER extends CONTROLLER
 
         SetDatabaseBlockSubBlock( block_sub_block_id, block_slug, sub_block_slug, number );
 
-        Redirect( FindSessionValue( 'ListPage', '/admin/block-sub-block' ) );
+        Redirect( FindSessionValue( 'ListRoute', '/admin/block-sub-block' ) );
     }
 }
 

@@ -18,7 +18,7 @@ class VIEW_PAGE_SUB_PAGES_CONTROLLER extends CONTROLLER
         .Title = 'View page sub pages';
         .PageSubPageArray = GetDatabasePageSubPageArray();
 
-        SetSessionValue( 'ListPage', GetRequest() );
+        SetSessionValue( 'ListRoute', GetRequest() );
 
         import '../VIEW/view_page_sub_pages_view.php';
     }

@@ -16,7 +16,7 @@ class ADD_BLOCK_TYPE_CONTROLLER extends CONTROLLER
         parent::__construct( $language_code );
 
         $this->Title = 'Add a block type';
-        $this->ListPage = FindSessionValue( 'ListPage', '/admin/block-type' );
+        $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/block-type' );
 
         require_once __DIR__ . '/' . '../VIEW/add_block_type_view.php';
     }

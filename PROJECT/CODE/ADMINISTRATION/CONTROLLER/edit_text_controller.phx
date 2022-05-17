@@ -18,7 +18,7 @@ class EDIT_TEXT_CONTROLLER extends CONTROLLER
 
         .Title = 'Edit a text';
         .Text = GetDatabaseTextById( text_id );
-        .ListPage = FindSessionValue( 'ListPage', '/admin/text' );
+        .ListRoute = FindSessionValue( 'ListRoute', '/admin/text' );
 
         import '../VIEW/edit_text_view.php';
     }

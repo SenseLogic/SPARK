@@ -18,7 +18,7 @@ class VIEW_PAGES_CONTROLLER extends CONTROLLER
         $this->Title = 'View pages';
         $this->PageArray = GetDatabasePageArray();
 
-        SetSessionValue( 'ListPage', GetRequest() );
+        SetSessionValue( 'ListRoute', GetRequest() );
 
         require_once __DIR__ . '/' . '../VIEW/view_pages_view.php';
     }

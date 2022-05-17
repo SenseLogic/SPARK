@@ -21,7 +21,7 @@ class DO_ADD_PAGE_SUB_PAGE_CONTROLLER extends CONTROLLER
 
         AddDatabasePageSubPage( page_slug, sub_page_slug, number );
 
-        Redirect( FindSessionValue( 'ListPage', '/admin/page-sub-page' ) );
+        Redirect( FindSessionValue( 'ListRoute', '/admin/page-sub-page' ) );
     }
 }
 

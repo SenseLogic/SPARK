@@ -18,7 +18,7 @@ class EDIT_PAGE_TYPE_CONTROLLER extends CONTROLLER
 
         .Title = 'Edit a page type';
         .PageType = GetDatabasePageTypeById( page_type_id );
-        .ListPage = FindSessionValue( 'ListPage', '/admin/page-type' );
+        .ListRoute = FindSessionValue( 'ListRoute', '/admin/page-type' );
 
         import '../VIEW/edit_page_type_view.php';
     }

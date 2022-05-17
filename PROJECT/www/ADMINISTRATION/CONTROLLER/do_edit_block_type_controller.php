@@ -21,7 +21,7 @@ class DO_EDIT_BLOCK_TYPE_CONTROLLER extends CONTROLLER
 
         SetDatabaseBlockType( $block_type_id, $slug, $name );
 
-        Redirect( FindSessionValue( 'ListPage', '/admin/block-type' ) );
+        Redirect( FindSessionValue( 'ListRoute', '/admin/block-type' ) );
     }
 }
 

@@ -18,7 +18,7 @@ class EDIT_CONTACT_CONTROLLER extends CONTROLLER
 
         .Title = 'Edit a contact';
         .Contact = GetDatabaseContactById( contact_id );
-        .ListPage = FindSessionValue( 'ListPage', '/admin/contact' );
+        .ListRoute = FindSessionValue( 'ListRoute', '/admin/contact' );
 
         import '../VIEW/edit_contact_view.php';
     }

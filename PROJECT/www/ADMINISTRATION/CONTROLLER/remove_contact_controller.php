@@ -18,7 +18,7 @@ class REMOVE_CONTACT_CONTROLLER extends CONTROLLER
 
         $this->Title = 'Remove a contact';
         $this->Contact = GetDatabaseContactById( $contact_id );
-        $this->ListPage = FindSessionValue( 'ListPage', '/admin/contact' );
+        $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/contact' );
 
         require_once __DIR__ . '/' . '../VIEW/remove_contact_view.php';
     }

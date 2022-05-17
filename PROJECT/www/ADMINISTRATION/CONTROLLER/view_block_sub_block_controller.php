@@ -18,7 +18,7 @@ class VIEW_BLOCK_SUB_BLOCK_CONTROLLER extends CONTROLLER
 
         $this->Title = 'View a block sub block';
         $this->BlockSubBlock = GetDatabaseBlockSubBlockById( $block_sub_block_id );
-        $this->ListPage = FindSessionValue( 'ListPage', '/admin/block-sub-block' );
+        $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/block-sub-block' );
 
         require_once __DIR__ . '/' . '../VIEW/view_block_sub_block_view.php';
     }

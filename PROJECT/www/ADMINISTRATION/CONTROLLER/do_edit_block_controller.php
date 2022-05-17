@@ -25,7 +25,7 @@ class DO_EDIT_BLOCK_CONTROLLER extends CONTROLLER
 
         SetDatabaseBlock( $block_id, $slug, $type_slug, $title, $text, $image_path, $video_path );
 
-        Redirect( FindSessionValue( 'ListPage', '/admin/block' ) );
+        Redirect( FindSessionValue( 'ListRoute', '/admin/block' ) );
     }
 }
 

@@ -18,7 +18,7 @@ class VIEW_BLOCK_CONTROLLER extends CONTROLLER
 
         .Title = 'View a block';
         .Block = GetDatabaseBlockById( block_id );
-        .ListPage = FindSessionValue( 'ListPage', '/admin/block' );
+        .ListRoute = FindSessionValue( 'ListRoute', '/admin/block' );
 
         import '../VIEW/view_block_view.php';
     }

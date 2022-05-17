@@ -18,7 +18,7 @@ class REMOVE_BLOCK_CONTROLLER extends CONTROLLER
 
         $this->Title = 'Remove a block';
         $this->Block = GetDatabaseBlockById( $block_id );
-        $this->ListPage = FindSessionValue( 'ListPage', '/admin/block' );
+        $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/block' );
 
         require_once __DIR__ . '/' . '../VIEW/remove_block_view.php';
     }

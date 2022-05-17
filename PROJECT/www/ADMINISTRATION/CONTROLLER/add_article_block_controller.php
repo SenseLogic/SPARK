@@ -16,7 +16,7 @@ class ADD_ARTICLE_BLOCK_CONTROLLER extends CONTROLLER
         parent::__construct( $language_code );
 
         $this->Title = 'Add a article block';
-        $this->ListPage = FindSessionValue( 'ListPage', '/admin/article-block' );
+        $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/article-block' );
 
         require_once __DIR__ . '/' . '../VIEW/add_article_block_view.php';
     }

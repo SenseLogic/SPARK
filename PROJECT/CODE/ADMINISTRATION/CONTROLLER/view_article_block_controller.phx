@@ -18,7 +18,7 @@ class VIEW_ARTICLE_BLOCK_CONTROLLER extends CONTROLLER
 
         .Title = 'View a article block';
         .ArticleBlock = GetDatabaseArticleBlockById( article_block_id );
-        .ListPage = FindSessionValue( 'ListPage', '/admin/article-block' );
+        .ListRoute = FindSessionValue( 'ListRoute', '/admin/article-block' );
 
         import '../VIEW/view_article_block_view.php';
     }

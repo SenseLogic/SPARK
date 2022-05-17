@@ -18,7 +18,7 @@ class DO_REMOVE_ARTICLE_BLOCK_CONTROLLER extends CONTROLLER
 
         RemoveDatabaseArticleBlockById( $article_block_id );
 
-        Redirect( FindSessionValue( 'ListPage', '/admin/article-block' ) );
+        Redirect( FindSessionValue( 'ListRoute', '/admin/article-block' ) );
     }
 }
 

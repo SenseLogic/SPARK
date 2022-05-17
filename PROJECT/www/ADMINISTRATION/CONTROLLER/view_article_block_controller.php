@@ -18,7 +18,7 @@ class VIEW_ARTICLE_BLOCK_CONTROLLER extends CONTROLLER
 
         $this->Title = 'View a article block';
         $this->ArticleBlock = GetDatabaseArticleBlockById( $article_block_id );
-        $this->ListPage = FindSessionValue( 'ListPage', '/admin/article-block' );
+        $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/article-block' );
 
         require_once __DIR__ . '/' . '../VIEW/view_article_block_view.php';
     }

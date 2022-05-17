@@ -16,7 +16,7 @@ class ADD_CONTACT_CONTROLLER extends CONTROLLER
         parent::constructor( language_code );
 
         .Title = 'Add a contact';
-        .ListPage = FindSessionValue( 'ListPage', '/admin/contact' );
+        .ListRoute = FindSessionValue( 'ListRoute', '/admin/contact' );
 
         import '../VIEW/add_contact_view.php';
     }

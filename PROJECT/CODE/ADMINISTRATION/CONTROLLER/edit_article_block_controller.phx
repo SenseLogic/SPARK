@@ -18,7 +18,7 @@ class EDIT_ARTICLE_BLOCK_CONTROLLER extends CONTROLLER
 
         .Title = 'Edit a article block';
         .ArticleBlock = GetDatabaseArticleBlockById( article_block_id );
-        .ListPage = FindSessionValue( 'ListPage', '/admin/article-block' );
+        .ListRoute = FindSessionValue( 'ListRoute', '/admin/article-block' );
 
         import '../VIEW/edit_article_block_view.php';
     }

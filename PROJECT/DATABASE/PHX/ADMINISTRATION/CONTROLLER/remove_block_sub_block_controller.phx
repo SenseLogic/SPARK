@@ -18,7 +18,7 @@ class REMOVE_BLOCK_SUB_BLOCK_CONTROLLER extends CONTROLLER
 
         .Title = 'Remove a block sub block';
         .BlockSubBlock = GetDatabaseBlockSubBlockById( block_sub_block_id );
-        .ListPage = FindSessionValue( 'ListPage', '/admin/block-sub-block' );
+        .ListRoute = FindSessionValue( 'ListRoute', '/admin/block-sub-block' );
 
         import '../VIEW/remove_block_sub_block_view.php';
     }

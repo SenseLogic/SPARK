@@ -18,7 +18,7 @@ class DO_REMOVE_PAGE_SUB_PAGE_CONTROLLER extends CONTROLLER
 
         RemoveDatabasePageSubPageById( page_sub_page_id );
 
-        Redirect( FindSessionValue( 'ListPage', '/admin/page-sub-page' ) );
+        Redirect( FindSessionValue( 'ListRoute', '/admin/page-sub-page' ) );
     }
 }
 

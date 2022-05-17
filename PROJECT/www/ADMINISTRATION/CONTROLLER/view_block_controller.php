@@ -18,7 +18,7 @@ class VIEW_BLOCK_CONTROLLER extends CONTROLLER
 
         $this->Title = 'View a block';
         $this->Block = GetDatabaseBlockById( $block_id );
-        $this->ListPage = FindSessionValue( 'ListPage', '/admin/block' );
+        $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/block' );
 
         require_once __DIR__ . '/' . '../VIEW/view_block_view.php';
     }

@@ -18,7 +18,7 @@ class VIEW_PAGE_TYPES_CONTROLLER extends CONTROLLER
         $this->Title = 'View page types';
         $this->PageTypeArray = GetDatabasePageTypeArray();
 
-        SetSessionValue( 'ListPage', GetRequest() );
+        SetSessionValue( 'ListRoute', GetRequest() );
 
         require_once __DIR__ . '/' . '../VIEW/view_page_types_view.php';
     }

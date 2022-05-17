@@ -18,7 +18,7 @@ class EDIT_BLOCK_CONTROLLER extends CONTROLLER
 
         .Title = 'Edit a block';
         .Block = GetDatabaseBlockById( block_id );
-        .ListPage = FindSessionValue( 'ListPage', '/admin/block' );
+        .ListRoute = FindSessionValue( 'ListRoute', '/admin/block' );
 
         import '../VIEW/edit_block_view.php';
     }

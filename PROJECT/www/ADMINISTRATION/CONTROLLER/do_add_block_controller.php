@@ -24,7 +24,7 @@ class DO_ADD_BLOCK_CONTROLLER extends CONTROLLER
 
         AddDatabaseBlock( $slug, $type_slug, $title, $text, $image_path, $video_path );
 
-        Redirect( FindSessionValue( 'ListPage', '/admin/block' ) );
+        Redirect( FindSessionValue( 'ListRoute', '/admin/block' ) );
     }
 }
 

@@ -21,7 +21,7 @@ class DO_ADD_BLOCK_SUB_BLOCK_CONTROLLER extends CONTROLLER
 
         AddDatabaseBlockSubBlock( block_slug, sub_block_slug, number );
 
-        Redirect( FindSessionValue( 'ListPage', '/admin/block-sub-block' ) );
+        Redirect( FindSessionValue( 'ListRoute', '/admin/block-sub-block' ) );
     }
 }
 
