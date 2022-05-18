@@ -89,7 +89,7 @@
                     <select class="form-select" name="TypeSlug">
                         <? var block_type_array = GetDatabaseBlockTypeArray(); ?>
                         <? foreach ( var block_type; block_type_array ) { ?>
-                            <option value="<% GetValueText( block_type.Slug ) %>"<? if ( GetValueText( block_type.Slug ) === field_value ) echo ' selected'; ?>><% .GetUntranslatedText( block_type.Title ) %></option>
+                            <option value="<% GetValueText( block_type.Slug ) %>"<? if ( GetValueText( block_type.Slug ) === field_value ) echo ' selected'; ?>><% .GetUntranslatedText( block_type.Name ) %></option>
                         <? } ?>
                     </select>
                 </div>

@@ -7,6 +7,7 @@ require_once __DIR__ . '/' . 'FRAMEWORK/text.php';
 require_once __DIR__ . '/' . 'FRAMEWORK/path.php';
 require_once __DIR__ . '/' . 'FRAMEWORK/file.php';
 require_once __DIR__ . '/' . 'FRAMEWORK/time.php';
+require_once __DIR__ . '/' . 'FRAMEWORK/array.php';
 require_once __DIR__ . '/' . 'FRAMEWORK/request.php';
 require_once __DIR__ . '/' . 'FRAMEWORK/session.php';
 require_once __DIR__ . '/' . 'FRAMEWORK/language.php';
@@ -155,6 +156,38 @@ function Route(
                   && $path_value_array[ 1 ] === 'disconnect' )
         {
             require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/disconnect_user_controller.php';
+        }
+        else if ( $it_is_get_request
+                  && $path_value_count == 3
+                  && $path_value_array[ 1 ] === 'block'
+                  && $path_value_array[ 2 ] === 'manage' )
+        {
+            require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/manage_blocks_controller.php';
+        }
+        else if ( $it_is_get_request
+                  && $path_value_count == 4
+                  && $path_value_array[ 1 ] === 'block'
+                  && $path_value_array[ 2 ] === 'manage' )
+        {
+             $block_id = $path_value_array[ 3 ];
+
+            require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/manage_block_controller.php';
+        }
+        else if ( $it_is_get_request
+                  && $path_value_count == 3
+                  && $path_value_array[ 1 ] === 'page'
+                  && $path_value_array[ 2 ] === 'manage')
+        {
+            require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/manage_pages_controller.php';
+        }
+        else if ( $it_is_get_request
+                  && $path_value_count == 4
+                  && $path_value_array[ 1 ] === 'page'
+                  && $path_value_array[ 2 ] === 'manage' )
+        {
+             $page_id = $path_value_array[ 3 ];
+
+            require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/manage_page_controller.php';
         }
         else if ( $path_value_count >= 2
                   && $path_value_array[ 1 ] === 'text' )

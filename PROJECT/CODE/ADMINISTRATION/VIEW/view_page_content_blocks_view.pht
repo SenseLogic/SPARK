@@ -27,7 +27,7 @@
                 <% .GetProcessedTextBySlug( 'Action' ) %>
             </div>
             <? foreach ( var page_content_block; .PageContentBlockArray ) { ?>
-                <div class="sortable-table-row filter-row">
+                <div class="sortable-table-row filter-row filter-content">
                     <div class="sortable-table-cell filter-cell">
                         <% GetValueText( page_content_block.PageSlug ) %>
                     </div>

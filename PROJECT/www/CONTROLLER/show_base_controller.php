@@ -20,15 +20,15 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-         $block_array = GetDatabaseBlockArray();
-         $block_sub_block_array = GetDatabaseBlockSubBlockArray();
-         $page_array = GetDatabasePageArray();
-         $page_content_block_array = GetDatabasePageContentBlockArray();
-         $page_sub_page_array = GetDatabasePageSubPageArray();
+        $this->BlockArray = GetDatabaseBlockArray();
+        $this->BlockSubBlockArray = GetDatabaseBlockSubBlockArray();
+        $this->PageArray = GetDatabasePageArray();
+        $this->PageContentBlockArray = GetDatabasePageContentBlockArray();
+        $this->PageSubPageArray = GetDatabasePageSubPageArray();
 
         $this->BlockTypeBySlugMap = GetDatabaseBlockTypeBySlugMap();
-        $this->BlockBySlugMap = GetBlockBySlugMap( $block_array, $block_sub_block_array );
-        $this->PageBySlugMap = GetPageBySlugMap( $page_array, $page_content_block_array, $page_sub_page_array );
+        $this->BlockBySlugMap = GetValidBlockBySlugMap( $this->BlockArray, $this->BlockSubBlockArray );
+        $this->PageBySlugMap = GetValidPageBySlugMap( $this->PageArray, $this->PageContentBlockArray, $this->PageSubPageArray, $this->BlockBySlugMap );
 
         $this->ImagePathArray = [];
 

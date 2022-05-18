@@ -1,9 +1,8 @@
 <style file="content_block_list.styl">
 </style>
 <?
-    foreach ( var block_slug; var page.ContentBlockSlugArray )
+    foreach ( var block; var page.ContentBlockArray )
     {
-        var block = .BlockBySlugMap[ block_slug ];
         include block.TypeSlug .. '.php';
     }
 ?>

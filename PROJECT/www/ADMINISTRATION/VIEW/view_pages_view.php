@@ -42,7 +42,7 @@
                 <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Action' ) ); ?>
             </div>
             <?php foreach ( $this->PageArray as  $page ) { ?>
-                <div class="sortable-table-row filter-row">
+                <div class="sortable-table-row filter-row filter-content">
                     <div class="sortable-table-cell filter-cell">
                         <?php echo htmlspecialchars( GetValueText( $page->Slug ) ); ?>
                     </div>

@@ -36,7 +36,7 @@
                 <% .GetProcessedTextBySlug( 'Action' ) %>
             </div>
             <? foreach ( var block; .BlockArray ) { ?>
-                <div class="sortable-table-row filter-row">
+                <div class="sortable-table-row filter-row filter-content">
                     <div class="sortable-table-cell filter-cell">
                         <% GetValueText( block.Slug ) %>
                     </div>

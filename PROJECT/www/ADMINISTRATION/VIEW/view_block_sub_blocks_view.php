@@ -27,7 +27,7 @@
                 <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Action' ) ); ?>
             </div>
             <?php foreach ( $this->BlockSubBlockArray as  $block_sub_block ) { ?>
-                <div class="sortable-table-row filter-row">
+                <div class="sortable-table-row filter-row filter-content">
                     <div class="sortable-table-cell filter-cell">
                         <?php echo htmlspecialchars( GetValueText( $block_sub_block->BlockSlug ) ); ?>
                     </div>

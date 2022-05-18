@@ -9,6 +9,24 @@
             <div class="page-menu">
                 <div class="page-menu-content">
                     <div class="page-menu-item">
+                        <a href="/admin/block/manage">
+                            <span class="form-button form-button-large block-manager-button">
+                            </span>
+                            <span class="form-button-tooltip">
+                                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Block manager' ) ); ?>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="page-menu-item">
+                        <a href="/admin/page/manage">
+                            <span class="form-button form-button-large page-manager-button">
+                            </span>
+                            <span class="form-button-tooltip">
+                                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Page manager' ) ); ?>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="page-menu-item">
                         <a href="/admin/text">
                             <span class="form-button form-button-large text-button">
                             </span>

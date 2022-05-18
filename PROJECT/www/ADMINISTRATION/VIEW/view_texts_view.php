@@ -24,7 +24,7 @@
                 <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Action' ) ); ?>
             </div>
             <?php foreach ( $this->TextArray as  $text ) { ?>
-                <div class="sortable-table-row filter-row">
+                <div class="sortable-table-row filter-row filter-content">
                     <div class="sortable-table-cell filter-cell">
                         <?php echo htmlspecialchars( GetValueText( $text->Slug ) ); ?>
                     </div>

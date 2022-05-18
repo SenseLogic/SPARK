@@ -1,9 +1,8 @@
 
 
 <?php
-    foreach (  $page->ContentBlockSlugArray as  $block_slug )
+    foreach (  $page->ContentBlockArray as  $block )
     {
-         $block = $this->BlockBySlugMap[ $block_slug ];
         require __DIR__ . '/' . $block->TypeSlug . '.php';
     }
 ?>

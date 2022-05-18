@@ -1,0 +1,39 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/block_model.php';
+import '../../MODEL/block_sub_block_model.php';
+import '../../MODEL/page_model.php';
+import '../../MODEL/page_content_block_model.php';
+import '../../MODEL/page_sub_page_model.php';
+
+// -- TYPES
+
+class MANAGE_PAGES_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        )
+    {
+        parent::constructor();
+
+        .Title = 'Manage pages';
+        .BlockArray = GetDatabaseBlockArray();
+        .BlockSubBlockArray = GetDatabaseBlockSubBlockArray();
+        .BlockBySlugMap = GetValidBlockBySlugMap( .BlockArray, .BlockSubBlockArray );
+        .PageArray = GetDatabasePageArray();
+        .PageContentBlockArray = GetDatabasePageContentBlockArray();
+        .PageSubPageArray = GetDatabasePageSubPageArray();
+        .PageBySlugMap = GetValidPageBySlugMap( .PageArray, .PageContentBlockArray, .PageSubPageArray, .BlockBySlugMap );
+        .ListRoute = '/admin/page/manage';
+
+        SetSessionValue( 'ListRoute', .ListRoute );
+
+        import '../VIEW/manage_pages_view.php';
+    }
+}
+
+// -- STATEMENTS
+
+var manage_pages_controller = new MANAGE_PAGES_CONTROLLER();

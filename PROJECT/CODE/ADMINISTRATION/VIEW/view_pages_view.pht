@@ -42,7 +42,7 @@
                 <% .GetProcessedTextBySlug( 'Action' ) %>
             </div>
             <? foreach ( var page; .PageArray ) { ?>
-                <div class="sortable-table-row filter-row">
+                <div class="sortable-table-row filter-row filter-content">
                     <div class="sortable-table-cell filter-cell">
                         <% GetValueText( page.Slug ) %>
                     </div>

@@ -1,4 +1,11 @@
 <?
+    var page_slug_array = [];
+
+    foreach ( var page_; var page_array )
+    {
+        array_push( page_slug_array, page_.Slug );
+    }
+
     var page_slug_count = count( var page_slug_array );
     var page_slug_index = array_search( var page.Slug, page_slug_array );
 

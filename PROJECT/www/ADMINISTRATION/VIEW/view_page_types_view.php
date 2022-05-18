@@ -24,7 +24,7 @@
                 <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Action' ) ); ?>
             </div>
             <?php foreach ( $this->PageTypeArray as  $page_type ) { ?>
-                <div class="sortable-table-row filter-row">
+                <div class="sortable-table-row filter-row filter-content">
                     <div class="sortable-table-cell filter-cell">
                         <?php echo htmlspecialchars( GetValueText( $page_type->Slug ) ); ?>
                     </div>

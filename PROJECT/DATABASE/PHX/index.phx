@@ -7,6 +7,7 @@ import 'FRAMEWORK/text.php';
 import 'FRAMEWORK/path.php';
 import 'FRAMEWORK/file.php';
 import 'FRAMEWORK/time.php';
+import 'FRAMEWORK/array.php';
 import 'FRAMEWORK/request.php';
 import 'FRAMEWORK/session.php';
 import 'FRAMEWORK/language.php';
@@ -155,6 +156,38 @@ function Route(
                   && path_value_array[ 1 ] === 'disconnect' )
         {
             import 'ADMINISTRATION/CONTROLLER/disconnect_user_controller.php';
+        }
+        else if ( it_is_get_request
+                  && path_value_count == 3
+                  && path_value_array[ 1 ] === 'block'
+                  && path_value_array[ 2 ] === 'manage' )
+        {
+            import 'ADMINISTRATION/CONTROLLER/manage_blocks_controller.php';
+        }
+        else if ( it_is_get_request
+                  && path_value_count == 4
+                  && path_value_array[ 1 ] === 'block'
+                  && path_value_array[ 2 ] === 'manage' )
+        {
+            var block_id = path_value_array[ 3 ];
+
+            import 'ADMINISTRATION/CONTROLLER/manage_block_controller.php';
+        }
+        else if ( it_is_get_request
+                  && path_value_count == 3
+                  && path_value_array[ 1 ] === 'page'
+                  && path_value_array[ 2 ] === 'manage')
+        {
+            import 'ADMINISTRATION/CONTROLLER/manage_pages_controller.php';
+        }
+        else if ( it_is_get_request
+                  && path_value_count == 4
+                  && path_value_array[ 1 ] === 'page'
+                  && path_value_array[ 2 ] === 'manage' )
+        {
+            var page_id = path_value_array[ 3 ];
+
+            import 'ADMINISTRATION/CONTROLLER/manage_page_controller.php';
         }
         else if ( path_value_count >= 2
                   && path_value_array[ 1 ] === 'text' )

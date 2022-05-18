@@ -30,7 +30,7 @@
                 <% .GetProcessedTextBySlug( 'Action' ) %>
             </div>
             <? foreach ( var user; .UserArray ) { ?>
-                <div class="sortable-table-row filter-row">
+                <div class="sortable-table-row filter-row filter-content">
                     <div class="sortable-table-cell filter-cell">
                         <% GetValueText( user.Email ) %>
                     </div>

@@ -1,4 +1,11 @@
 <?php
+     $page_slug_array = [];
+
+    foreach (  $page_array as  $page_ )
+    {
+        array_push( $page_slug_array, $page_->Slug );
+    }
+
      $page_slug_count = count(  $page_slug_array );
      $page_slug_index = array_search(  $page->Slug, $page_slug_array );
 

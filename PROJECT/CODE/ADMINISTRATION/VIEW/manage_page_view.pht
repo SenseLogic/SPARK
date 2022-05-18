@@ -1,0 +1,133 @@
+<? include 'BLOCK/page_header.php'; ?>
+<div id="manage-page-view">
+    <div class="page-section form-section">
+        <div class="form-container">
+            <div class="form-field-name">
+                <% .GetProcessedTextBySlug( 'Slug' ) %> :
+            </div>
+            <div>
+                <input class="form-input" name="Slug" type="text" value="<% GetValueText( .Page.Slug ) %>" readonly/>
+            </div>
+            <div class="form-field-name">
+                <% .GetProcessedTextBySlug( 'Type Slug' ) %> :
+            </div>
+            <div>
+                <input class="form-input" name="TypeSlug" type="text" value="<% GetValueText( .Page.TypeSlug ) %>" readonly/>
+            </div>
+            <div class="form-field-name">
+                <% .GetProcessedTextBySlug( 'Route' ) %> :
+            </div>
+            <div>
+                <input class="form-input" name="Route" type="text" value="<% GetValueText( .Page.Route ) %>" readonly/>
+            </div>
+            <div class="form-field-name">
+                <% .GetProcessedTextBySlug( 'Title' ) %> :
+            </div>
+            <div>
+                <div>
+                    <? foreach ( var language_code; LanguageCodeArray ) { ?>
+                        <input class="form-translation form-input" name="Title" type="text" value="<% GetValueText( GetTranslatedText( .Page.Title, language_code ) ) %>" readonly/>
+                    <? } ?>
+                </div>
+            </div>
+            <div class="form-field-name">
+                <% .GetProcessedTextBySlug( 'Image Path' ) %> :
+            </div>
+            <div>
+                <input class="form-input" name="ImagePath" type="text" value="<% .Page.ImagePath %>" readonly/>
+                <div class="form-upload-container">
+                    <img class="form-upload-image" src="<% .Page.ImagePath %>" onerror="this.src='/static/image/admin/missing_image.svg'"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-toolbar">
+            <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                <a class="form-button manage-button" href="/admin/page/manage/<% .Page.Id %>">
+                </a>
+                <a class="form-button edit-button" href="/admin/page/edit/<% .Page.Id %>">
+                </a>
+                <a class="form-button remove-button" href="/admin/page/remove/<% .Page.Id %>">
+                </a>
+            <? } ?>
+        </div>
+    </div>
+    <div class="form-title">
+        <% .GetProcessedTextBySlug( 'Sub-pages' ) %> :
+    </div>
+    <div class="margin-top-1rem margin-bottom-2rem card-list">
+        <? var added_sub_page_number = 1; ?>
+        <? foreach ( var sub_page_index => var sub_page; .Page.SubPageArray ) { ?>
+            <? added_sub_page_number = GetAddedElementNumber( .Page.PageSubPageArray, sub_page_index ); ?>
+            <div class="card-container filter-row">
+                <div class="card">
+                    <div class="form-container">
+                        <div class="form-field-name">
+                            <% .GetProcessedTextBySlug( 'Number' ) %> :
+                        </div>
+                        <div>
+                            <input class="form-input" name="Number" type="text" value="<% GetValueText( .Page.PageSubPageArray[ sub_page_index ].Number ) %>" readonly/>
+                        </div>
+                        <div class="form-field-name">
+                            <% .GetProcessedTextBySlug( 'Slug' ) %> :
+                        </div>
+                        <div>
+                            <input class="form-input" name="Slug" type="text" value="<% GetValueText( sub_page.Slug ) %>" readonly/>
+                        </div>
+                        <div class="form-field-name">
+                            <% .GetProcessedTextBySlug( 'Type Slug' ) %> :
+                        </div>
+                        <div>
+                            <input class="form-input" name="TypeSlug" type="text" value="<% GetValueText( sub_page.TypeSlug ) %>" readonly/>
+                        </div>
+                        <div class="form-field-name">
+                            <% .GetProcessedTextBySlug( 'Route' ) %> :
+                        </div>
+                        <div>
+                            <input class="form-input" name="Route" type="text" value="<% GetValueText( sub_page.Route ) %>" readonly/>
+                        </div>
+                        <div class="form-field-name">
+                            <% .GetProcessedTextBySlug( 'Title' ) %> :
+                        </div>
+                        <div>
+                            <div>
+                                <? foreach ( var language_code; LanguageCodeArray ) { ?>
+                                    <input class="form-translation form-input" name="Title" type="text" value="<% GetValueText( GetTranslatedText( sub_page.Title, language_code ) ) %>" readonly/>
+                                <? } ?>
+                            </div>
+                        </div>
+                        <div class="form-field-name">
+                            <% .GetProcessedTextBySlug( 'Image Path' ) %> :
+                        </div>
+                        <div>
+                            <input class="form-input" name="ImagePath" type="text" value="<% sub_page.ImagePath %>" readonly/>
+                            <div class="form-upload-container">
+                                <img class="form-upload-image" src="<% sub_page.ImagePath %>" onerror="this.src='/static/image/admin/missing_image.svg'"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-toolbar">
+                        <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                            <a class="form-button manage-button" href="/admin/page/manage/<% sub_page.Id %>">
+                            </a>
+                            <a class="form-button edit-button" href="/admin/page/edit/<% sub_page.Id %>">
+                            </a>
+                            <a class="form-button remove-button" href="/admin/page/remove/<% sub_page.Id %>">
+                            </a>
+                            <a class="form-button add-button" href="/admin/page-sub-page/add?PageSlug=<# .Page.Slug #>&Number=<# added_sub_page_number #>">
+                            </a>
+                        <? } ?>
+                    </div>
+                </div>
+            </div>
+        <? } ?>
+    </div>
+    <div class="form-extended form-centered margin-top-1rem margin-bottom-1rem">
+        <a class="form-button form-button-large add-button" href="/admin/page-sub-page/add?PageSlug=<# .Page.Slug #>&Number=<# added_sub_page_number #>">
+        </a>
+    </div>
+    <div>
+        <a class="justify-self-start form-button form-button-large cancel-button" href="/admin/page/manage">
+        </a>
+    </div>
+</div>
+<? include 'BLOCK/page_footer.php'; ?>

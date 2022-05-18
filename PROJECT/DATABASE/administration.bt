@@ -622,7 +622,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                 <\% .GetProcessedTextBySlug( 'Action' ) %\>
             </div>
             <? foreach ( var {#variable#}; .{#attribute#}Array ) { ?>
-                <div class="sortable-table-row filter-row"><$
+                <div class="sortable-table-row filter-row filter-content"><$
                     <div class="sortable-table-cell filter-cell"><~{%has_custom_block%}<>
                             <?
                                 var field_mode = 'cell';
@@ -728,7 +728,25 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
         <? include 'page_body.php'; ?>
         <div class="extended-container page-container">
             <div class="page-menu">
-                <div class="page-menu-content"><#
+                <div class="page-menu-content">
+                    <div class="page-menu-item">
+                        <a href="/admin/block/manage">
+                            <span class="form-button form-button-large block-manager-button">
+                            </span>
+                            <span class="form-button-tooltip">
+                                <\% .GetProcessedTextBySlug( 'Block manager' ) %\>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="page-menu-item">
+                        <a href="/admin/page/manage">
+                            <span class="form-button form-button-large page-manager-button">
+                            </span>
+                            <span class="form-button-tooltip">
+                                <\% .GetProcessedTextBySlug( 'Page manager' ) %\>
+                            </span>
+                        </a>
+                    </div><#
                     <~!Equals<>{#style#}<>user<><div class="page-menu-item">
                         <a href="/admin/{#style#}">
                             <span class="form-button form-button-large {#style#}-button">

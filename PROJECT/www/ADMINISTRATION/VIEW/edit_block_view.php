@@ -65,7 +65,7 @@
                     <select class="form-select" name="TypeSlug">
                         <?php  $block_type_array = GetDatabaseBlockTypeArray(); ?>
                         <?php foreach ( $block_type_array as  $block_type ) { ?>
-                            <option value="<?php echo htmlspecialchars( GetValueText( $block_type->Slug ) ); ?>"<?php if ( $this->Block->TypeSlug === $block_type->Slug ) echo ' selected'; ?>><?php echo htmlspecialchars( $this->GetUntranslatedText( $block_type->Title ) ); ?></option>
+                            <option value="<?php echo htmlspecialchars( GetValueText( $block_type->Slug ) ); ?>"<?php if ( $this->Block->TypeSlug === $block_type->Slug ) echo ' selected'; ?>><?php echo htmlspecialchars( $this->GetUntranslatedText( $block_type->Name ) ); ?></option>
                         <?php } ?>
                     </select>
                 </div>

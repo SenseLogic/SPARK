@@ -1,11 +1,5 @@
 <?php
-     $page_slug_array = $this->PageBySlugMap[ 'articles' ]->SubPageSlugArray;
-     $article_array = [];
-
-    foreach ( $page_slug_array as  $page_slug )
-    {
-        array_push( $article_array, $this->PageBySlugMap[ $page_slug ] );
-    }
+     $article_array = $this->PageBySlugMap[ 'articles' ]->SubPageArray;
 ?>
 
 

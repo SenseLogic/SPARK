@@ -597,7 +597,7 @@ textarea {
   color: #fff;
 }
 .form-title {
-  margin-top: 0.5rem;
+  margin-top: 1.5rem;
   margin-bottom: 0.5rem;
   font-size: 1.5rem;
   font-weight: 700;
@@ -607,9 +607,6 @@ textarea {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-}
-.filter-row {
-  display: contents;
 }
 .card-list {
   display: grid;
@@ -673,6 +670,9 @@ textarea {
   height: 100%;
   padding: 0.25rem 1rem;
   cursor: pointer;
+}
+.filter-content {
+  display: contents;
 }
 .filter-row:hover .filter-cell {
   background-color: #f1f7f7;
@@ -772,4 +772,10 @@ textarea {
 }
 .user-table {
   grid-template-columns: repeat(5, auto);
+}
+.block-manager-button {
+  background: url("/static/image/admin/block_manager_icon.svg") no-repeat center center/contain;
+}
+.page-manager-button {
+  background: url("/static/image/admin/page_manager_icon.svg") no-repeat center center/contain;
 }

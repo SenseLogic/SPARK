@@ -1,0 +1,32 @@
+<?php // -- IMPORTS
+
+require_once __DIR__ . '/' . 'controller.php';
+require_once __DIR__ . '/' . '../../MODEL/block_model.php';
+require_once __DIR__ . '/' . '../../MODEL/block_sub_block_model.php';
+
+// -- TYPES
+
+class MANAGE_PROPERTIES_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    function __construct(
+        )
+    {
+        parent::__construct();
+
+        $this->Title = 'Manage blocks';
+        $this->BlockArray = GetDatabaseBlockArray();
+        $this->BlockSubBlockArray = GetDatabaseBlockSubBlockArray();
+        $this->BlockBySlugMap = GetValidBlockBySlugMap( $this->BlockArray, $this->BlockSubBlockArray );
+        $this->ListRoute = '/admin/block/manage';
+
+        SetSessionValue( 'ListRoute', $this->ListRoute );
+
+        require_once __DIR__ . '/' . '../VIEW/manage_blocks_view.php';
+    }
+}
+
+// -- STATEMENTS
+
+ $manage_blocks_controller = new MANAGE_PROPERTIES_CONTROLLER();

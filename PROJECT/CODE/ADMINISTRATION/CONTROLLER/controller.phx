@@ -51,7 +51,7 @@ class CONTROLLER
         string slug
         )
     {
-        return .GetTranslatedNumber( GetText_( slug ) );
+        return .GetTranslatedNumber( GetTextBySlug( slug ) );
     }
 
     // ~~
@@ -78,7 +78,7 @@ class CONTROLLER
         string slug
         )
     {
-        return .GetProcessedText( GetText_( slug ) );
+        return .GetProcessedText( GetTextBySlug( slug ) );
     }
 
     // ~~
@@ -96,6 +96,6 @@ class CONTROLLER
         string slug
         )
     {
-        return .GetProcessedMultilineText( GetText_( slug ) );
+        return .GetProcessedMultilineText( GetTextBySlug( slug ) );
     }
 }

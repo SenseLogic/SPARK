@@ -1,11 +1,5 @@
 <?
-    var page_slug_array = .PageBySlugMap[ 'articles' ].SubPageSlugArray;
-    var article_array = [];
-
-    foreach ( var page_slug; page_slug_array )
-    {
-        array_push( article_array, .PageBySlugMap[ page_slug ] );
-    }
+    var article_array = .PageBySlugMap[ 'articles' ].SubPageArray;
 ?>
 <style file="articles_page.styl">
 </style>

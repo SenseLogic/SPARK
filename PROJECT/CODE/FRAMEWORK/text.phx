@@ -753,7 +753,7 @@ function DefineText(
 
 // ~~
 
-function GetText_(
+function GetTextBySlug(
     string slug
     )
 {

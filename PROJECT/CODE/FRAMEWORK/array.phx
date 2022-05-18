@@ -173,3 +173,24 @@ function SortArrayByDescendingTextualValue(
 {
     rsort( array_, SORT_STRING );
 }
+
+// ~~
+
+function GetAddedElementNumber(
+    array &element_array,
+    int prior_element_index
+    )
+{
+    var prior_value = element_array[ prior_element_index ].Number;
+
+    if ( prior_element_index + 1 < count( element_array ) )
+    {
+        var next_value = element_array[ prior_element_index + 1 ].Number;
+
+        return ( prior_value + next_value ) * 0.5;
+    }
+    else
+    {
+        return prior_value + 1;
+    }
+}

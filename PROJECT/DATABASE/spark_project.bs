@@ -16,7 +16,7 @@ spark-project
 
         Id : UINT32 | key, unique, incremented
         Slug : STRING = "{{Title:prefix ¨:slug_case}}" | mapped
-        TypeSlug : BLOCK_TYPE.Slug | is_reference, reference block_type~GetDatabaseBlockTypeArray()~block_type.Slug~.GetUntranslatedText( block_type.Title )
+        TypeSlug : BLOCK_TYPE.Slug | is_reference, reference block_type~GetDatabaseBlockTypeArray()~block_type.Slug~.GetUntranslatedText( block_type.Name )
         Title : STRING = "{{latin 1 1 4 6}}¨fr:{{latin 1 1 4 6}}" | is_multilingual, is_optional
         Text : STRING = "{{latin 2 4 5 10}}¨fr:{{latin 2 4 5 10}}" | is_multilingual_text, is_optional
         ImagePath : STRING = "/static/image/article/autumn.jpg|/static/image/article/castle.jpg|/static/image/article/drink.jpg|/static/image/article/groynes.jpg|/static/image/article/mountains.jpg|/static/image/article/spring.jpg" | is_image, is_optional

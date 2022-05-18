@@ -51,7 +51,7 @@ class CONTROLLER
         string $slug
         )
     {
-        return $this->GetTranslatedNumber( GetText_( $slug ) );
+        return $this->GetTranslatedNumber( GetTextBySlug( $slug ) );
     }
 
     // ~~
@@ -78,7 +78,7 @@ class CONTROLLER
         string $slug
         )
     {
-        return $this->GetProcessedText( GetText_( $slug ) );
+        return $this->GetProcessedText( GetTextBySlug( $slug ) );
     }
 
     // ~~
@@ -96,6 +96,6 @@ class CONTROLLER
         string $slug
         )
     {
-        return $this->GetProcessedMultilineText( GetText_( $slug ) );
+        return $this->GetProcessedMultilineText( GetTextBySlug( $slug ) );
     }
 }
