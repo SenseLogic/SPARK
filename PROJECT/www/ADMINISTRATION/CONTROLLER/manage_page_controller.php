@@ -1,10 +1,8 @@
 <?php // -- IMPORTS
 
 require_once __DIR__ . '/' . 'controller.php';
-require_once __DIR__ . '/' . '../../MODEL/block_model.php';
-require_once __DIR__ . '/' . '../../MODEL/block_sub_block_model.php';
+require_once __DIR__ . '/' . '../../MODEL/content_block_model.php';
 require_once __DIR__ . '/' . '../../MODEL/page_model.php';
-require_once __DIR__ . '/' . '../../MODEL/page_content_block_model.php';
 require_once __DIR__ . '/' . '../../MODEL/page_sub_page_model.php';
 
 // -- TYPES
@@ -20,13 +18,11 @@ class MANAGE_PAGE_CONTROLLER extends CONTROLLER
         parent::__construct();
 
         $this->Title = 'Manage a page';
-        $this->BlockArray = GetDatabaseBlockArray();
-        $this->BlockSubBlockArray = GetDatabaseBlockSubBlockArray();
-        $this->BlockBySlugMap = GetValidBlockBySlugMap( $this->BlockArray, $this->BlockSubBlockArray );
+        $this->ContentBlockArray = GetDatabaseContentBlockArray();
+        $this->ContentBlockBySlugMap = GetValidContentBlockBySlugMap( $this->ContentBlockArray );
         $this->PageArray = GetDatabasePageArray();
-        $this->PageContentBlockArray = GetDatabasePageContentBlockArray();
         $this->PageSubPageArray = GetDatabasePageSubPageArray();
-        $this->PageBySlugMap = GetValidPageBySlugMap( $this->PageArray, $this->PageContentBlockArray, $this->PageSubPageArray, $this->BlockBySlugMap );
+        $this->PageBySlugMap = GetValidPageBySlugMap( $this->PageArray, $this->PageSubPageArray, $this->ContentBlockArray, $this->ContentBlockBySlugMap );
         $this->Page = GetValidPageById( $this->PageBySlugMap, $page_id );
         $this->ListRoute = '/admin/page/manage/' . $page_id;
 

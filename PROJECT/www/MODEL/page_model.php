@@ -1,6 +1,6 @@
 <?php // -- IMPORTS
 
-require_once __DIR__ . '/' . 'block.php';
+require_once __DIR__ . '/' . 'content_block.php';
 require_once __DIR__ . '/' . 'page.php';
 require_once __DIR__ . '/' . 'page_type.php';
 
@@ -8,9 +8,9 @@ require_once __DIR__ . '/' . 'page_type.php';
 
 function GetValidPageBySlugMap(
     array &$page_array,
-    array &$page_content_block_array,
     array &$page_sub_page_array,
-    array &$block_by_slug_map
+    array &$content_block_array,
+    array &$content_block_by_slug_map
     )
 {
      $page_by_slug_map = [];
@@ -18,25 +18,18 @@ function GetValidPageBySlugMap(
     foreach ( $page_array as  $page )
     {
         $page->ContentBlockArray = [];
-        $page->PageContentBlockArray = [];
         $page->SubPageArray = [];
         $page->PageSubPageArray = [];
         $page_by_slug_map[ $page->Slug ] = $page;
     }
 
-    foreach ( $page_content_block_array as  $page_content_block )
+    foreach ( $content_block_array as  $content_block )
     {
-        if ( isset( $page_by_slug_map[ $page_content_block->PageSlug ] )
-             && isset( $block_by_slug_map[ $page_content_block->BlockSlug ] ) )
+        if ( isset( $page_by_slug_map[ $content_block->PageSlug ] ) )
         {
             array_push(
-                $page_by_slug_map[ $page_content_block->PageSlug ]->ContentBlockArray,
-                $block_by_slug_map[ $page_content_block->BlockSlug ]
-                );
-
-            array_push(
-                $page_by_slug_map[ $page_content_block->PageSlug ]->PageContentBlockArray,
-                $page_content_block
+                $page_by_slug_map[ $content_block->PageSlug ]->ContentBlockArray,
+                $content_block
                 );
         }
     }

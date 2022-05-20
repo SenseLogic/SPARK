@@ -9,56 +9,11 @@
             <div class="page-menu">
                 <div class="page-menu-content">
                     <div class="page-menu-item">
-                        <a href="/admin/block/manage">
-                            <span class="form-button form-button-large block-manager-button">
-                            </span>
-                            <span class="form-button-tooltip">
-                                <% .GetProcessedTextBySlug( 'Block manager' ) %>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="page-menu-item">
-                        <a href="/admin/page/manage">
-                            <span class="form-button form-button-large page-manager-button">
-                            </span>
-                            <span class="form-button-tooltip">
-                                <% .GetProcessedTextBySlug( 'Page manager' ) %>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="page-menu-item">
                         <a href="/admin/text">
                             <span class="form-button form-button-large text-button">
                             </span>
                             <span class="form-button-tooltip">
                                 <% .GetProcessedTextBySlug( 'Text' ) %>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="page-menu-item">
-                        <a href="/admin/block-type">
-                            <span class="form-button form-button-large block-type-button">
-                            </span>
-                            <span class="form-button-tooltip">
-                                <% .GetProcessedTextBySlug( 'Block type' ) %>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="page-menu-item">
-                        <a href="/admin/block">
-                            <span class="form-button form-button-large block-button">
-                            </span>
-                            <span class="form-button-tooltip">
-                                <% .GetProcessedTextBySlug( 'Block' ) %>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="page-menu-item">
-                        <a href="/admin/block-sub-block">
-                            <span class="form-button form-button-large block-sub-block-button">
-                            </span>
-                            <span class="form-button-tooltip">
-                                <% .GetProcessedTextBySlug( 'Block sub block' ) %>
                             </span>
                         </a>
                     </div>
@@ -72,6 +27,15 @@
                         </a>
                     </div>
                     <div class="page-menu-item">
+                        <a href="/admin/page/manage">
+                            <span class="form-button form-button-large page-manager-button">
+                            </span>
+                            <span class="form-button-tooltip">
+                                <% .GetProcessedTextBySlug( 'Page manager' ) %>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="page-menu-item">
                         <a href="/admin/page">
                             <span class="form-button form-button-large page-button">
                             </span>
@@ -81,20 +45,38 @@
                         </a>
                     </div>
                     <div class="page-menu-item">
-                        <a href="/admin/page-content-block">
-                            <span class="form-button form-button-large page-content-block-button">
-                            </span>
-                            <span class="form-button-tooltip">
-                                <% .GetProcessedTextBySlug( 'Page content block' ) %>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="page-menu-item">
                         <a href="/admin/page-sub-page">
                             <span class="form-button form-button-large page-sub-page-button">
                             </span>
                             <span class="form-button-tooltip">
                                 <% .GetProcessedTextBySlug( 'Page sub page' ) %>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="page-menu-item">
+                        <a href="/admin/block-type">
+                            <span class="form-button form-button-large block-type-button">
+                            </span>
+                            <span class="form-button-tooltip">
+                                <% .GetProcessedTextBySlug( 'Block type' ) %>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="page-menu-item">
+                        <a href="/admin/content-block/manage">
+                            <span class="form-button form-button-large content-block-manager-button">
+                            </span>
+                            <span class="form-button-tooltip">
+                                <% .GetProcessedTextBySlug( 'Content block manager' ) %>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="page-menu-item">
+                        <a href="/admin/content-block">
+                            <span class="form-button form-button-large content-block-button">
+                            </span>
+                            <span class="form-button-tooltip">
+                                <% .GetProcessedTextBySlug( 'Content block' ) %>
                             </span>
                         </a>
                     </div>

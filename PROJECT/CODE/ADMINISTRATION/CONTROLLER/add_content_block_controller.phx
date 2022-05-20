@@ -1,0 +1,27 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/content_block_model.php';
+
+// -- TYPES
+
+class ADD_CONTENT_BLOCK_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code
+        )
+    {
+        parent::constructor( language_code );
+
+        .Title = 'Add a content block';
+        .ListRoute = FindSessionValue( 'ListRoute', '/admin/content-block' );
+
+        import '../VIEW/add_content_block_view.php';
+    }
+}
+
+// -- STATEMENTS
+
+var add_content_block_controller = new ADD_CONTENT_BLOCK_CONTROLLER( var language_code );

@@ -1,0 +1,32 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/content_block_model.php';
+
+// -- TYPES
+
+class MANAGE_CONTENT_BLOCK_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        int content_block_id
+        )
+    {
+        parent::constructor();
+
+        .Title = 'Manage a content block';
+        .ContentBlockArray = GetDatabaseContentBlockArray();
+        .ContentBlockBySlugMap = GetValidContentBlockBySlugMap( .ContentBlockArray );
+        .ContentBlock = GetValidContentBlockById( .ContentBlockBySlugMap, content_block_id );
+        .ListRoute = '/admin/content-block/manage/' .. content_block_id;
+
+        SetSessionValue( 'ListRoute', GetRequest() );
+
+        import '../VIEW/manage_content_block_view.php';
+    }
+}
+
+// -- STATEMENTS
+
+var manage_content_block_controller = new MANAGE_CONTENT_BLOCK_CONTROLLER( var content_block_id );

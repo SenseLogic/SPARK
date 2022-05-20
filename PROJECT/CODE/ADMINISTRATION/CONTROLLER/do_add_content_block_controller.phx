@@ -1,0 +1,36 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/content_block_model.php';
+
+// -- TYPES
+
+class DO_ADD_CONTENT_BLOCK_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code
+        )
+    {
+        parent::constructor( language_code );
+
+        var page_slug = GetPostValue( 'PageSlug' );
+        var block_slug = GetPostValue( 'BlockSlug' );
+        var slug = GetPostValue( 'Slug' );
+        var type_slug = GetPostValue( 'TypeSlug' );
+        var number = GetPostValue( 'Number' );
+        var title = GetPostValue( 'Title' );
+        var text = GetPostValue( 'Text' );
+        var image_path = GetPostValue( 'ImagePath' );
+        var video_path = GetPostValue( 'VideoPath' );
+
+        AddDatabaseContentBlock( page_slug, block_slug, slug, type_slug, number, title, text, image_path, video_path );
+
+        Redirect( FindSessionValue( 'ListRoute', '/admin/content-block' ) );
+    }
+}
+
+// -- STATEMENTS
+
+var do_add_content_block_controller = new DO_ADD_CONTENT_BLOCK_CONTROLLER( var language_code );

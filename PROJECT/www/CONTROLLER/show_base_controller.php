@@ -1,10 +1,8 @@
 <?php // -- IMPORTS
 
 require_once __DIR__ . '/' . 'view_controller.php';
-require_once __DIR__ . '/' . '../MODEL/block_model.php';
-require_once __DIR__ . '/' . '../MODEL/block_sub_block_model.php';
 require_once __DIR__ . '/' . '../MODEL/block_type_model.php';
-require_once __DIR__ . '/' . '../MODEL/page_content_block_model.php';
+require_once __DIR__ . '/' . '../MODEL/content_block_model.php';
 require_once __DIR__ . '/' . '../MODEL/page_model.php';
 require_once __DIR__ . '/' . '../MODEL/page_sub_page_model.php';
 
@@ -20,15 +18,13 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-        $this->BlockArray = GetDatabaseBlockArray();
-        $this->BlockSubBlockArray = GetDatabaseBlockSubBlockArray();
+        $this->BlockTypeBySlugMap = GetDatabaseBlockTypeBySlugMap();
+        $this->ContentBlockArray = GetDatabaseContentBlockArray();
         $this->PageArray = GetDatabasePageArray();
-        $this->PageContentBlockArray = GetDatabasePageContentBlockArray();
         $this->PageSubPageArray = GetDatabasePageSubPageArray();
 
-        $this->BlockTypeBySlugMap = GetDatabaseBlockTypeBySlugMap();
-        $this->BlockBySlugMap = GetValidBlockBySlugMap( $this->BlockArray, $this->BlockSubBlockArray );
-        $this->PageBySlugMap = GetValidPageBySlugMap( $this->PageArray, $this->PageContentBlockArray, $this->PageSubPageArray, $this->BlockBySlugMap );
+        $this->ContentBlockBySlugMap = GetValidContentBlockBySlugMap( $this->ContentBlockArray );
+        $this->PageBySlugMap = GetValidPageBySlugMap( $this->PageArray, $this->PageSubPageArray, $this->ContentBlockArray, $this->ContentBlockBySlugMap );
 
         $this->ImagePathArray = [];
 
@@ -40,11 +36,11 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
             }
         }
 
-        foreach ( $this->BlockBySlugMap as  $block_slug =>  $block )
+        foreach ( $this->ContentBlockBySlugMap as  $content_block_slug =>  $content_block )
         {
-            if ( $block->ImagePath !== '' )
+            if ( $content_block->ImagePath !== '' )
             {
-                array_push( $this->ImagePathArray, $block->ImagePath );
+                array_push( $this->ImagePathArray, $content_block->ImagePath );
             }
         }
 

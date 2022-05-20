@@ -185,22 +185,6 @@ TEXT
               <size<3rem>>GRAND</size>\\n
               <weight<100>>FIN</weight>
 
-BLOCK_TYPE
-
-    Slug Name
-
-        text
-            ~ Text
-              ¨fr:Texte
-
-        image_text
-            ~ Image and text
-              ¨fr:Image et texte
-
-        text_image
-            ~ Text and image
-              ¨fr:Texte et image
-
 PAGE_TYPE
 
     Slug Title
@@ -302,6 +286,22 @@ PAGE_SUB_PAGE
 
         articles
             ~ article-4
+
+BLOCK_TYPE
+
+    Slug Name
+
+        text
+            ~ Text
+              ¨fr:Texte
+
+        image_text
+            ~ Image and text
+              ¨fr:Image et texte
+
+        text_image
+            ~ Text and image
+              ¨fr:Texte et image
 
 USER
 

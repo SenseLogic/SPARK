@@ -1,10 +1,8 @@
 // -- IMPORTS
 
 import 'controller.php';
-import '../../MODEL/block_model.php';
-import '../../MODEL/block_sub_block_model.php';
+import '../../MODEL/content_block_model.php';
 import '../../MODEL/page_model.php';
-import '../../MODEL/page_content_block_model.php';
 import '../../MODEL/page_sub_page_model.php';
 
 // -- TYPES
@@ -20,13 +18,11 @@ class MANAGE_PAGE_CONTROLLER extends CONTROLLER
         parent::constructor();
 
         .Title = 'Manage a page';
-        .BlockArray = GetDatabaseBlockArray();
-        .BlockSubBlockArray = GetDatabaseBlockSubBlockArray();
-        .BlockBySlugMap = GetValidBlockBySlugMap( .BlockArray, .BlockSubBlockArray );
+        .ContentBlockArray = GetDatabaseContentBlockArray();
+        .ContentBlockBySlugMap = GetValidContentBlockBySlugMap( .ContentBlockArray );
         .PageArray = GetDatabasePageArray();
-        .PageContentBlockArray = GetDatabasePageContentBlockArray();
         .PageSubPageArray = GetDatabasePageSubPageArray();
-        .PageBySlugMap = GetValidPageBySlugMap( .PageArray, .PageContentBlockArray, .PageSubPageArray, .BlockBySlugMap );
+        .PageBySlugMap = GetValidPageBySlugMap( .PageArray, .PageSubPageArray, .ContentBlockArray, .ContentBlockBySlugMap );
         .Page = GetValidPageById( .PageBySlugMap, page_id );
         .ListRoute = '/admin/page/manage/' .. page_id;
 

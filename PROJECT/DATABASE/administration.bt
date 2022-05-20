@@ -337,7 +337,8 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                     <select class="form-select" name="{%attribute%}"><~Map<>enumeration_<>{%enumeration%}<>^<>~<>
                         <option value="{*enumeration_1*}"<? if ( field_value === '{*enumeration_1*}' ) echo ' selected'; ?>>{*enumeration_2*}</option>~>
                     </select><><~{%is_reference%}<>
-                    <select class="form-select" name="{%attribute%}"><~Split<>reference_<>{%reference%}<>~<>
+                    <select class="form-select" name="{%attribute%}"><~{%is_optional%}<>
+                        <option value=""><\% .GetProcessedTextBySlug( 'None' ) %\></option>~><~Split<>reference_<>{%reference%}<>~<>
                         <? var {*reference_1*}_array = {*reference_2*}; ?>
                         <? foreach ( var {*reference_1*}; {*reference_1*}_array ) { ?>
                             <option value="<\% GetValueText( {*reference_3*} ) %\>"<? if ( GetValueText( {*reference_3*} ) === field_value ) echo ' selected'; ?>><\% {*reference_4*} %\></option>~>
@@ -463,7 +464,8 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                     <select class="form-select" name="{%attribute%}"><~Map<>enumeration_<>{%enumeration%}<>^<>~<>
                         <option value="{*enumeration_1*}"<? if ( .{#attribute#}.{%attribute%} === '{*enumeration_1*}' ) echo ' selected'; ?>>{*enumeration_2*}</option>~>
                     </select><><~{%is_reference%}<>
-                    <select class="form-select" name="{%attribute%}"><~Split<>reference_<>{%reference%}<>~<>
+                    <select class="form-select" name="{%attribute%}"><~{%is_optional%}<>
+                        <option value=""><\% .GetProcessedTextBySlug( 'None' ) %\></option>~><~Split<>reference_<>{%reference%}<>~<>
                         <? var {*reference_1*}_array = {*reference_2*}; ?>
                         <? foreach ( var {*reference_1*}; {*reference_1*}_array ) { ?>
                             <option value="<\% GetValueText( {*reference_3*} ) %\>"<? if ( .{#attribute#}.{%attribute%} === {*reference_3*} ) echo ' selected'; ?>><\% {*reference_4*} %\></option>~>
@@ -728,26 +730,17 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
         <? include 'page_body.php'; ?>
         <div class="extended-container page-container">
             <div class="page-menu">
-                <div class="page-menu-content">
-                    <div class="page-menu-item">
-                        <a href="/admin/block/manage">
-                            <span class="form-button form-button-large block-manager-button">
+                <div class="page-menu-content"><#
+                    <~!Equals<>{#style#}<>user<><~{#managed#}<><div class="page-menu-item">
+                        <a href="/admin/{#style#}/manage">
+                            <span class="form-button form-button-large {#style#}-manager-button">
                             </span>
                             <span class="form-button-tooltip">
-                                <\% .GetProcessedTextBySlug( 'Block manager' ) %\>
+                                <\% .GetProcessedTextBySlug( '{#sentence#} manager' ) %\>
                             </span>
                         </a>
                     </div>
-                    <div class="page-menu-item">
-                        <a href="/admin/page/manage">
-                            <span class="form-button form-button-large page-manager-button">
-                            </span>
-                            <span class="form-button-tooltip">
-                                <\% .GetProcessedTextBySlug( 'Page manager' ) %\>
-                            </span>
-                        </a>
-                    </div><#
-                    <~!Equals<>{#style#}<>user<><div class="page-menu-item">
+                    ~><div class="page-menu-item">
                         <a href="/admin/{#style#}">
                             <span class="form-button form-button-large {#style#}-button">
                             </span>

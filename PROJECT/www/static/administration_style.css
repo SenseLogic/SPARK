@@ -716,26 +716,20 @@ textarea {
 .text-button {
   background: url("/static/image/admin/text_icon.svg") no-repeat center center/contain;
 }
-.block-type-button {
-  background: url("/static/image/admin/block_type_icon.svg") no-repeat center center/contain;
-}
-.block-button {
-  background: url("/static/image/admin/block_icon.svg") no-repeat center center/contain;
-}
-.block-sub-block-button {
-  background: url("/static/image/admin/block_sub_block_icon.svg") no-repeat center center/contain;
-}
 .page-type-button {
   background: url("/static/image/admin/page_type_icon.svg") no-repeat center center/contain;
 }
 .page-button {
   background: url("/static/image/admin/page_icon.svg") no-repeat center center/contain;
 }
-.page-content-block-button {
-  background: url("/static/image/admin/page_content_block_icon.svg") no-repeat center center/contain;
-}
 .page-sub-page-button {
   background: url("/static/image/admin/page_sub_page_icon.svg") no-repeat center center/contain;
+}
+.block-type-button {
+  background: url("/static/image/admin/block_type_icon.svg") no-repeat center center/contain;
+}
+.content-block-button {
+  background: url("/static/image/admin/content_block_icon.svg") no-repeat center center/contain;
 }
 .contact-button {
   background: url("/static/image/admin/contact_icon.svg") no-repeat center center/contain;
@@ -746,26 +740,20 @@ textarea {
 .text-table {
   grid-template-columns: repeat(3, auto);
 }
-.block-type-table {
-  grid-template-columns: repeat(3, auto);
-}
-.block-table {
-  grid-template-columns: repeat(7, auto);
-}
-.block-sub-block-table {
-  grid-template-columns: repeat(4, auto);
-}
 .page-type-table {
   grid-template-columns: repeat(3, auto);
 }
 .page-table {
   grid-template-columns: repeat(9, auto);
 }
-.page-content-block-table {
-  grid-template-columns: repeat(4, auto);
-}
 .page-sub-page-table {
   grid-template-columns: repeat(4, auto);
+}
+.block-type-table {
+  grid-template-columns: repeat(3, auto);
+}
+.content-block-table {
+  grid-template-columns: repeat(10, auto);
 }
 .contact-table {
   grid-template-columns: repeat(8, auto);
@@ -773,9 +761,9 @@ textarea {
 .user-table {
   grid-template-columns: repeat(5, auto);
 }
-.block-manager-button {
-  background: url("/static/image/admin/block_manager_icon.svg") no-repeat center center/contain;
-}
 .page-manager-button {
   background: url("/static/image/admin/page_manager_icon.svg") no-repeat center center/contain;
+}
+.content-block-manager-button {
+  background: url("/static/image/admin/content_block_manager_icon.svg") no-repeat center center/contain;
 }

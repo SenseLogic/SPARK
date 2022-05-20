@@ -1,0 +1,29 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/content_block_model.php';
+
+// -- TYPES
+
+class EDIT_CONTENT_BLOCK_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code,
+        content_block_id
+        )
+    {
+        parent::constructor( language_code );
+
+        .Title = 'Edit a content block';
+        .ContentBlock = GetDatabaseContentBlockById( content_block_id );
+        .ListRoute = FindSessionValue( 'ListRoute', '/admin/content-block' );
+
+        import '../VIEW/edit_content_block_view.php';
+    }
+}
+
+// -- STATEMENTS
+
+var edit_content_block_controller = new EDIT_CONTENT_BLOCK_CONTROLLER( var language_code, var content_block_id );
