@@ -731,7 +731,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
         <div class="extended-container page-container">
             <div class="page-menu">
                 <div class="page-menu-content"><#
-                    <~!Equals<>{#style#}<>user<><~{#managed#}<><div class="page-menu-item">
+                    <~!Equals<>{#style#}<>user<><~{#is_managed#}<><div class="page-menu-item">
                         <a href="/admin/{#style#}/manage">
                             <span class="form-button form-button-large {#style#}-manager-button">
                             </span>

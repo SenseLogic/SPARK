@@ -10,7 +10,7 @@ spark-project
 
         Id : UINT32 | key, unique, incremented
         Slug : STRING
-        Title : STRING = "{{latin 1 1 4 6}}¨fr:{{latin 1 1 4 6}}" | is_multilingual, is_optional
+        Title : STRING = "{{latin 1 1 4 6}}¨fr:{{latin 1 1 4 6}}" | optional, is_multilingual
 
     PAGE | dropped, managed
 
@@ -18,10 +18,10 @@ spark-project
         Slug : STRING = "{{Title:prefix ¨:slug_case}}" | mapped
         TypeSlug : PAGE_TYPE.Slug | is_reference, reference page_type~GetDatabasePageTypeArray()~page_type.Slug~.GetUntranslatedText( page_type.Title )
         Route : STRING = "article/{{Id}}/{{Title:prefix ¨:slug_case}}"
-        Title : STRING = "{{latin 1 1 4 6}}¨fr:{{latin 1 1 4 6}}" | is_multilingual, is_optional
-        Text : STRING = "{{latin 2 4 5 10}}¨fr:{{latin 2 4 5 10}}" | is_multilingual_text, is_optional
-        ImagePath : STRING = "/static/image/article/beach.jpg|/static/image/article/california.jpg|/static/image/article/clouds.jpg|/static/image/article/road.jpg|/static/image/article/sunset.jpg|/static/image/article/tree.jpg" | is_image, is_optional
-        VideoPath : STRING = "/static/video/article/train.mp4|/static/video/article/bus.mp4" | is_video, is_optional
+        Title : STRING = "{{latin 1 1 4 6}}¨fr:{{latin 1 1 4 6}}" | optional, is_multilingual
+        Text : STRING = "{{latin 2 4 5 10}}¨fr:{{latin 2 4 5 10}}" | optional, is_multilingual_text
+        ImagePath : STRING = "/static/image/article/beach.jpg|/static/image/article/california.jpg|/static/image/article/clouds.jpg|/static/image/article/road.jpg|/static/image/article/sunset.jpg|/static/image/article/tree.jpg" | optional, is_image
+        VideoPath : STRING = "/static/video/article/train.mp4|/static/video/article/bus.mp4" | optional, is_video
         IsActive : BOOL = "true" | is_enumeration, enumeration 0~False^1~True, has_default_value, default_value 1
 
     PAGE_SUB_PAGE | sorted, dropped
@@ -40,15 +40,15 @@ spark-project
     CONTENT_BLOCK | sorted, managed, dropped, count 60
 
         Id : UINT32 | key, unique, incremented
-        PageSlug : PAGE.Slug | ascending, is_reference, reference page~GetDatabasePageArray()~page.Slug~page.Slug, is_optional
-        BlockSlug : CONTENT_BLOCK.Slug = "" | ascending, is_reference, reference content_block~GetDatabaseContentBlockArray()~content_block.Slug~content_block.Slug, is_optional
+        PageSlug : PAGE.Slug | optional, ascending, is_reference, reference page~GetDatabasePageArray()~page.Slug~page.Slug
+        BlockSlug : CONTENT_BLOCK.Slug = "" | optional, ascending, is_reference, reference content_block~GetDatabaseContentBlockArray()~content_block.Slug~content_block.Slug
         Slug : STRING = "{{Title:prefix ¨:slug_case}}" | mapped
         TypeSlug : BLOCK_TYPE.Slug | is_reference, reference block_type~GetDatabaseBlockTypeArray()~block_type.Slug~.GetUntranslatedText( block_type.Name )
         Number : FLOAT32 | ascending
-        Title : STRING = "{{latin 1 1 4 6}}¨fr:{{latin 1 1 4 6}}" | is_multilingual, is_optional
-        Text : STRING = "{{latin 2 4 5 10}}¨fr:{{latin 2 4 5 10}}" | is_multilingual_text, is_optional
-        ImagePath : STRING = "/static/image/article/autumn.jpg|/static/image/article/castle.jpg|/static/image/article/drink.jpg|/static/image/article/groynes.jpg|/static/image/article/mountains.jpg|/static/image/article/spring.jpg" | is_image, is_optional
-        VideoPath : STRING  = "/static/video/article/train.mp4|/static/video/article/bus.mp4" | is_video, is_optional
+        Title : STRING = "{{latin 1 1 4 6}}¨fr:{{latin 1 1 4 6}}" | optional, is_multilingual
+        Text : STRING = "{{latin 2 4 5 10}}¨fr:{{latin 2 4 5 10}}" | optional, is_multilingual_text
+        ImagePath : STRING = "/static/image/article/autumn.jpg|/static/image/article/castle.jpg|/static/image/article/drink.jpg|/static/image/article/groynes.jpg|/static/image/article/mountains.jpg|/static/image/article/spring.jpg" | optional, is_image
+        VideoPath : STRING  = "/static/video/article/train.mp4|/static/video/article/bus.mp4" | optional, is_video
 
     CONTACT | sorted
 
@@ -63,7 +63,7 @@ spark-project
 
     USER | sorted, dropped
 
-        Id : UINT32 | key, unique, incremented, ascending, mapped
+        Id : UINT32 | key, unique, incremented, mapped, ascending
         Email : STRING
         Pseudonym : STRING
         Password : STRING

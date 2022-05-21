@@ -62,12 +62,6 @@
                 <div class="card">
                     <div class="form-container">
                         <div class="form-field-name">
-                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Number' ) ); ?> :
-                        </div>
-                        <div>
-                            <input class="form-input" name="Number" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Page->ContentBlockArray[ $content_block_index ]->Number ) ); ?>" readonly/>
-                        </div>
-                        <div class="form-field-name">
                             <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Slug' ) ); ?> :
                         </div>
                         <div>
@@ -78,6 +72,12 @@
                         </div>
                         <div>
                             <input class="form-input" name="TypeSlug" type="text" value="<?php echo htmlspecialchars( GetValueText( $content_block->TypeSlug ) ); ?>" readonly/>
+                        </div>
+                        <div class="form-field-name">
+                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Number' ) ); ?> :
+                        </div>
+                        <div>
+                            <input class="form-input" name="Number" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Page->ContentBlockArray[ $content_block_index ]->Number ) ); ?>" readonly/>
                         </div>
                         <div class="form-field-name">
                             <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Title' ) ); ?> :
@@ -130,12 +130,6 @@
                 <div class="card">
                     <div class="form-container">
                         <div class="form-field-name">
-                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Number' ) ); ?> :
-                        </div>
-                        <div>
-                            <input class="form-input" name="Number" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Page->PageSubPageArray[ $sub_page_index ]->Number ) ); ?>" readonly/>
-                        </div>
-                        <div class="form-field-name">
                             <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Slug' ) ); ?> :
                         </div>
                         <div>
@@ -146,6 +140,12 @@
                         </div>
                         <div>
                             <input class="form-input" name="TypeSlug" type="text" value="<?php echo htmlspecialchars( GetValueText( $sub_page->TypeSlug ) ); ?>" readonly/>
+                        </div>
+                        <div class="form-field-name">
+                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Number' ) ); ?> :
+                        </div>
+                        <div>
+                            <input class="form-input" name="Number" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Page->PageSubPageArray[ $sub_page_index ]->Number ) ); ?>" readonly/>
                         </div>
                         <div class="form-field-name">
                             <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Route' ) ); ?> :

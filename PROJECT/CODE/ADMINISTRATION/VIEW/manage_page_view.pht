@@ -62,12 +62,6 @@
                 <div class="card">
                     <div class="form-container">
                         <div class="form-field-name">
-                            <% .GetProcessedTextBySlug( 'Number' ) %> :
-                        </div>
-                        <div>
-                            <input class="form-input" name="Number" type="text" value="<% GetValueText( .Page.ContentBlockArray[ content_block_index ].Number ) %>" readonly/>
-                        </div>
-                        <div class="form-field-name">
                             <% .GetProcessedTextBySlug( 'Slug' ) %> :
                         </div>
                         <div>
@@ -78,6 +72,12 @@
                         </div>
                         <div>
                             <input class="form-input" name="TypeSlug" type="text" value="<% GetValueText( content_block.TypeSlug ) %>" readonly/>
+                        </div>
+                        <div class="form-field-name">
+                            <% .GetProcessedTextBySlug( 'Number' ) %> :
+                        </div>
+                        <div>
+                            <input class="form-input" name="Number" type="text" value="<% GetValueText( .Page.ContentBlockArray[ content_block_index ].Number ) %>" readonly/>
                         </div>
                         <div class="form-field-name">
                             <% .GetProcessedTextBySlug( 'Title' ) %> :
@@ -130,12 +130,6 @@
                 <div class="card">
                     <div class="form-container">
                         <div class="form-field-name">
-                            <% .GetProcessedTextBySlug( 'Number' ) %> :
-                        </div>
-                        <div>
-                            <input class="form-input" name="Number" type="text" value="<% GetValueText( .Page.PageSubPageArray[ sub_page_index ].Number ) %>" readonly/>
-                        </div>
-                        <div class="form-field-name">
                             <% .GetProcessedTextBySlug( 'Slug' ) %> :
                         </div>
                         <div>
@@ -146,6 +140,12 @@
                         </div>
                         <div>
                             <input class="form-input" name="TypeSlug" type="text" value="<% GetValueText( sub_page.TypeSlug ) %>" readonly/>
+                        </div>
+                        <div class="form-field-name">
+                            <% .GetProcessedTextBySlug( 'Number' ) %> :
+                        </div>
+                        <div>
+                            <input class="form-input" name="Number" type="text" value="<% GetValueText( .Page.PageSubPageArray[ sub_page_index ].Number ) %>" readonly/>
                         </div>
                         <div class="form-field-name">
                             <% .GetProcessedTextBySlug( 'Route' ) %> :
