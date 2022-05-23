@@ -719,6 +719,9 @@ textarea {
 .page-type-button {
   background: url("/static/image/admin/page_type_icon.svg") no-repeat center center/contain;
 }
+.page-manager-button {
+  background: url("/static/image/admin/page_manager_icon.svg") no-repeat center center/contain;
+}
 .page-button {
   background: url("/static/image/admin/page_icon.svg") no-repeat center center/contain;
 }
@@ -727,6 +730,9 @@ textarea {
 }
 .block-type-button {
   background: url("/static/image/admin/block_type_icon.svg") no-repeat center center/contain;
+}
+.content-block-manager-button {
+  background: url("/static/image/admin/content_block_manager_icon.svg") no-repeat center center/contain;
 }
 .content-block-button {
   background: url("/static/image/admin/content_block_icon.svg") no-repeat center center/contain;
@@ -760,10 +766,4 @@ textarea {
 }
 .user-table {
   grid-template-columns: repeat(5, auto);
-}
-.page-manager-button {
-  background: url("/static/image/admin/page_manager_icon.svg") no-repeat center center/contain;
-}
-.content-block-manager-button {
-  background: url("/static/image/admin/content_block_manager_icon.svg") no-repeat center center/contain;
 }

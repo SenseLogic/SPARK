@@ -37,7 +37,7 @@
 
         it_is_valid_edit_page_form = true;
 
-        if ( slug_field.value === "" )
+        if ( !IsSlugText( slug_field.value ) )
         {
             slug_field.AddClass( "form-field-error" );
 

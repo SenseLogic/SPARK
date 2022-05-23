@@ -19,7 +19,7 @@
 
         it_is_valid_add_page_type_form = true;
 
-        if ( slug_field.value === "" )
+        if ( !IsSlugText( slug_field.value ) )
         {
             slug_field.AddClass( "form-field-error" );
 

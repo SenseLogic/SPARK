@@ -282,6 +282,13 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
 
             it_is_valid_add_{#variable#}_form = false;
         }
+<><~{%is_slug%}<>
+        if ( !IsSlugText( {%variable%}_field.value ) )
+        {
+            {%variable%}_field.AddClass( "form-field-error" );
+
+            it_is_valid_add_{#variable#}_form = false;
+        }
 <><~!{%is_optional%}<>
         if ( {%variable%}_field.value === "" )
         {
@@ -289,7 +296,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
 
             it_is_valid_add_{#variable#}_form = false;
         }
-~>~>~>~>~>¨%>
+~>~>~>~>~>~>¨%>
         return it_is_valid_add_{#variable#}_form;
     }
 </script>
@@ -419,6 +426,13 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
 
             it_is_valid_edit_{#variable#}_form = false;
         }
+<><~{%is_slug%}<>
+        if ( !IsSlugText( {%variable%}_field.value ) )
+        {
+            {%variable%}_field.AddClass( "form-field-error" );
+
+            it_is_valid_edit_{#variable#}_form = false;
+        }
 <><~!{%is_optional%}<>
         if ( {%variable%}_field.value === "" )
         {
@@ -426,7 +440,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
 
             it_is_valid_edit_{#variable#}_form = false;
         }
-~>~>~>~>~>$>
+~>~>~>~>~>~>$>
         return it_is_valid_edit_{#variable#}_form;
     }
 </script>
@@ -779,7 +793,12 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                 <div class="page-body-content">
 %%PHX/ADMINISTRATION/STYLE/button.styl
 // -- CLASSES
-<#
+<#<~{#is_managed#}<>
+.{#style#}-manager-button
+{
+    background: url( "/static/image/admin/{#variable#}_manager_icon.svg" ) no-repeat center center / contain;
+}
+~>
 .{#style#}-button
 {
     background: url( "/static/image/admin/{#variable#}_icon.svg" ) no-repeat center center / contain;

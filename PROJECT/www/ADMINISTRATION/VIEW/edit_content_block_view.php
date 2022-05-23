@@ -40,7 +40,7 @@
 
         it_is_valid_edit_content_block_form = true;
 
-        if ( slug_field.value === "" )
+        if ( !IsSlugText( slug_field.value ) )
         {
             slug_field.AddClass( "form-field-error" );
 
