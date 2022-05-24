@@ -283,7 +283,8 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
             it_is_valid_add_{#variable#}_form = false;
         }
 <><~{%is_slug%}<>
-        if ( !IsSlugText( {%variable%}_field.value ) )
+        if ( !IsSlugText( {%variable%}_field.value )<~{%is_optional%}<>
+             && {%variable%}_field.value !== "" ~> )
         {
             {%variable%}_field.AddClass( "form-field-error" );
 
