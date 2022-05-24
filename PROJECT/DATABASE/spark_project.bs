@@ -3,7 +3,7 @@ spark-project
     TEXT | dropped
 
         Id : UINT32 | key, unique, incremented
-        Slug : STRING | is_slug
+        Slug : STRING | indexed
         Text : STRING = "{{latin 2 4 5 10}}¨fr:{{latin 2 4 5 10}}" | is_multilingual_text
 
     PAGE_TYPE | dropped
@@ -16,7 +16,7 @@ spark-project
 
         Id : UINT32 | key, unique, incremented
         Slug : STRING = "{{Title:prefix ¨:slug_case}}" | mapped, is_slug
-        TypeSlug : PAGE_TYPE.Slug | is_reference, reference page_type~GetDatabasePageTypeArray()~page_type.Slug~.GetUntranslatedText( page_type.Title )
+        TypeSlug : PAGE_TYPE.Slug | is_slug, is_reference, reference page_type~GetDatabasePageTypeArray()~page_type.Slug~.GetUntranslatedText( page_type.Title )
         Route : STRING = "article/{{Id}}/{{Title:prefix ¨:slug_case}}"
         Title : STRING = "{{latin 1 1 4 6}}¨fr:{{latin 1 1 4 6}}" | optional, is_multilingual
         Text : STRING = "{{latin 2 4 5 10}}¨fr:{{latin 2 4 5 10}}" | optional, is_multilingual_text
@@ -27,8 +27,8 @@ spark-project
     PAGE_SUB_PAGE | sorted, dropped
 
         Id : UINT32 | key, unique, incremented
-        PageSlug : PAGE.Slug | ascending, is_reference, reference page~GetDatabasePageArray()~page.Slug~page.Slug
-        SubPageSlug : PAGE.Slug | is_reference, reference page~GetDatabasePageArray()~page.Slug~page.Slug
+        PageSlug : PAGE.Slug | ascending, is_slug, is_reference, reference page~GetDatabasePageArray()~page.Slug~page.Slug
+        SubPageSlug : PAGE.Slug | is_slug, is_reference, reference page~GetDatabasePageArray()~page.Slug~page.Slug
         Number : FLOAT32 | ascending
 
     BLOCK_TYPE | dropped
@@ -40,10 +40,10 @@ spark-project
     CONTENT_BLOCK | sorted, managed, dropped, count 60
 
         Id : UINT32 | key, unique, incremented
-        PageSlug : PAGE.Slug | optional, ascending, is_reference, reference page~GetDatabasePageArray()~page.Slug~page.Slug
-        BlockSlug : CONTENT_BLOCK.Slug = "" | optional, ascending, is_reference, reference content_block~GetDatabaseContentBlockArray()~content_block.Slug~content_block.Slug
+        PageSlug : PAGE.Slug | optional, ascending, is_slug, is_reference, reference page~GetDatabasePageArray()~page.Slug~page.Slug
+        BlockSlug : CONTENT_BLOCK.Slug = "" | optional, ascending, is_slug, is_reference, reference content_block~GetDatabaseContentBlockArray()~content_block.Slug~content_block.Slug
         Slug : STRING = "{{Title:prefix ¨:slug_case}}" | mapped, is_slug
-        TypeSlug : BLOCK_TYPE.Slug | is_reference, reference block_type~GetDatabaseBlockTypeArray()~block_type.Slug~.GetUntranslatedText( block_type.Name )
+        TypeSlug : BLOCK_TYPE.Slug | is_slug, is_reference, reference block_type~GetDatabaseBlockTypeArray()~block_type.Slug~.GetUntranslatedText( block_type.Name )
         Number : FLOAT32 | ascending
         Title : STRING = "{{latin 1 1 4 6}}¨fr:{{latin 1 1 4 6}}" | optional, is_multilingual
         Text : STRING = "{{latin 2 4 5 10}}¨fr:{{latin 2 4 5 10}}" | optional, is_multilingual_text

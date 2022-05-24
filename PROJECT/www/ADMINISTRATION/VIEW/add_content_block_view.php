@@ -40,6 +40,22 @@
 
         it_is_valid_add_content_block_form = true;
 
+        if ( !IsSlugText( page_slug_field.value )
+             && page_slug_field.value !== ""  )
+        {
+            page_slug_field.AddClass( "form-field-error" );
+
+            it_is_valid_add_content_block_form = false;
+        }
+
+        if ( !IsSlugText( block_slug_field.value )
+             && block_slug_field.value !== ""  )
+        {
+            block_slug_field.AddClass( "form-field-error" );
+
+            it_is_valid_add_content_block_form = false;
+        }
+
         if ( !IsSlugText( slug_field.value ) )
         {
             slug_field.AddClass( "form-field-error" );
@@ -47,7 +63,7 @@
             it_is_valid_add_content_block_form = false;
         }
 
-        if ( type_slug_field.value === "" )
+        if ( !IsSlugText( type_slug_field.value ) )
         {
             type_slug_field.AddClass( "form-field-error" );
 

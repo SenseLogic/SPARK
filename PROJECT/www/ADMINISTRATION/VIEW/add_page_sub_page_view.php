@@ -22,14 +22,14 @@
 
         it_is_valid_add_page_sub_page_form = true;
 
-        if ( page_slug_field.value === "" )
+        if ( !IsSlugText( page_slug_field.value ) )
         {
             page_slug_field.AddClass( "form-field-error" );
 
             it_is_valid_add_page_sub_page_form = false;
         }
 
-        if ( sub_page_slug_field.value === "" )
+        if ( !IsSlugText( sub_page_slug_field.value ) )
         {
             sub_page_slug_field.AddClass( "form-field-error" );
 

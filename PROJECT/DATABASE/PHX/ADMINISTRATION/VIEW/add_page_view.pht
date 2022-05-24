@@ -44,7 +44,7 @@
             it_is_valid_add_page_form = false;
         }
 
-        if ( type_slug_field.value === "" )
+        if ( !IsSlugText( type_slug_field.value ) )
         {
             type_slug_field.AddClass( "form-field-error" );
 
