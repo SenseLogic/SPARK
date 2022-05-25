@@ -1,9 +1,12 @@
-IncludeFiles .//*.b? .//*.sql .//*.ph? .//*.styl .//*.css .//*.svg .//*.bat .//*.sh .//*.txt
+IncludeFiles .//*.b? .//*.sql .//*.ph? .//*.styl .//*.css .//*.svg .//*.bat .//*.sh .//*.txt .//*.xml
 ReadFiles
 Edit label text
 ReplaceText
     Spark Project
     Spark Project
+ReplaceText
+    spark-project.com
+    spark-project.com
 ReplaceText
     spark-project
     spark-project
