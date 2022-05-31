@@ -74,6 +74,19 @@ td
     padding: 0.5rem;
 }
 
+a,
+a:link,
+a:visited
+{
+    color: LinkColor;
+}
+
+a:active,
+a:hover
+{
+    color: LinkHoverColor;
+}
+
 html,
 body,
 body *,
@@ -136,6 +149,17 @@ MakeYTranslationOpacityTransition( ".is-visible", 1.8s, ease, 10% );
 .button
 {
     cursor: pointer;
+}
+
+.link-button
+{
+    cursor: pointer;
+    color: LinkColor;
+}
+
+.link-button:hover
+{
+    color: LinkHoverColor;
 }
 
 .paragraph

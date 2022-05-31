@@ -69,7 +69,7 @@ DefineTag( ']]', '</td></tr>' );
 DefineTag( '((', '<a href="' );
 DefineTag( ')(', '" target="_blank">' );
 DefineTag( '))', '</a>' );
-DefineTag( '([', "<span class=\"button\" onclick=\"ShowView( '" );
+DefineTag( '([', "<span class=\"link-button\" onclick=\"ShowView( '" );
 DefineTag( '][', "' )\">" );
 DefineTag( '])', '</span>' );
 

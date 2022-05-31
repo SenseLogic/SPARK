@@ -349,6 +349,15 @@ td {
   border: 1px solid #888;
   padding: 0.5rem;
 }
+a,
+a:link,
+a:visited {
+  color: #86b4f0;
+}
+a:active,
+a:hover {
+  color: #a2c2ec;
+}
 html,
 body,
 body *,
@@ -602,6 +611,13 @@ html {
 }
 .button {
   cursor: pointer;
+}
+.link-button {
+  cursor: pointer;
+  color: #86b4f0;
+}
+.link-button:hover {
+  color: #a2c2ec;
 }
 .paragraph {
   min-height: 1em;
