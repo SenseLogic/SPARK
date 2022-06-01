@@ -613,8 +613,8 @@ html {
   cursor: pointer;
 }
 .link-button {
-  cursor: pointer;
   color: #86b4f0;
+  cursor: pointer;
 }
 .link-button:hover {
   color: #a2c2ec;
