@@ -32,7 +32,7 @@
         font-size: 1.5rem;
     }
 </style>
-<div class="page-heading" style="background: linear-gradient( rgba( 0, 0, 0, 0.1 ), rgba( 0, 0, 0, 0.1 ) ), url( '<# var page.ImagePath #>' ) no-repeat center center / cover, url( '<# page.ImagePath #>.preload.jpg' ) no-repeat center center / cover">
+<div class="page-heading" style="background: linear-gradient( rgba( 0, 0, 0, 0.1 ), rgba( 0, 0, 0, 0.1 ) ), url( '<# var page.ImagePath #>' ) no-repeat <# page.ImageHorizontalPosition #> <# page.ImageVerticalPosition #> / cover, url( '<# page.ImagePath #>.preload.jpg' ) no-repeat <# page.ImageHorizontalPosition #> <# page.ImageVerticalPosition #> / cover">
     <div class="page-heading-title">
         <# .GetProcessedText( var page.Title ) #>
     </div>

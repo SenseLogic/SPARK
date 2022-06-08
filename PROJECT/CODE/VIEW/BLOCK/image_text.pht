@@ -1,7 +1,7 @@
 <style file="image_text.styl">
 </style>
 <div class="y-translation-opacity-transition block appearing-block image-text">
-    <div class="block-column block-image-column" style="background-image: url( '<# var block.ImagePath #>' ), url( '<# block.ImagePath #>.preload.jpg' )">
+    <div class="block-column block-image-column" style="background: url( '<# var block.ImagePath #>' ) no-repeat <# block.ImageHorizontalPosition #> <# block.ImageVerticalPosition #> / cover, url( '<# block.ImagePath #>.preload.jpg' ) no-repeat <# block.ImageHorizontalPosition #> <# block.ImageVerticalPosition #> / cover">
     </div>
     <div class="block-column block-text-column">
         <div class="block-title">

@@ -39,12 +39,12 @@
     }
 </style>
 <div class="adjacent-page-list">
-    <div class="zoomed-button adjacent-page-list-button" style="background: url( '<# var prior_page.ImagePath #>' ) no-repeat center center / cover, url( '<# prior_page.ImagePath #>.preload.jpg' ) no-repeat center center / cover" onclick="ShowView( '<# prior_page.Route #>' )">
+    <div class="zoomed-button adjacent-page-list-button" style="background: url( '<# var prior_page.ImagePath #>' ) no-repeat <# prior_page.ImageHorizontalPosition #> <# prior_page.ImageVerticalPosition #> / cover, url( '<# prior_page.ImagePath #>.preload.jpg' ) no-repeat <# prior_page.ImageHorizontalPosition #> <# prior_page.ImageVerticalPosition #> / cover" onclick="ShowView( '<# prior_page.Route #>' )">
         <div class="adjacent-page-list-button-title">
             <# .GetProcessedText( prior_page.Title ) #>
         </div>
     </div>
-    <div class="zoomed-button adjacent-page-list-button" style="background: url( '<# var next_page.ImagePath #>' ) no-repeat center center / cover, url( '<# next_page.ImagePath #>.preload.jpg' ) no-repeat center center / cover" onclick="ShowView( '<# next_page.Route #>' )">
+    <div class="zoomed-button adjacent-page-list-button" style="background: url( '<# var next_page.ImagePath #>' ) no-repeat <# next_page.ImageHorizontalPosition #> <# next_page.ImageVerticalPosition #> / cover, url( '<# next_page.ImagePath #>.preload.jpg' ) no-repeat <# next_page.ImageHorizontalPosition #> <# next_page.ImageVerticalPosition #> / cover" onclick="ShowView( '<# next_page.Route #>' )">
         <div class="adjacent-page-list-button-title">
             <# .GetProcessedText( next_page.Title ) #>
         </div>

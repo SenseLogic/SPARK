@@ -62,7 +62,7 @@
     <div id="article-carousel-strip" class="article-carousel-strip">
         <? for ( var article_index = 0; article_index <= article_count; ++article_index ) { ?>
             <? var article = article_array[ article_index % article_count ]; ?>
-            <div class="article-carousel-slide" style="background-image: linear-gradient( rgba( 0, 0, 0, 0.1 ), rgba( 0, 0, 0, 0.1 ) ), url( '<# article.ImagePath #>' ), url( '<# article.ImagePath #>.preload.jpg' )" onclick="ShowView( '<# article.Route #>' )">
+            <div class="article-carousel-slide" style="background: linear-gradient( rgba( 0, 0, 0, 0.1 ), rgba( 0, 0, 0, 0.1 ) ), url( '<# article.ImagePath #>' ) no-repeat <# article.ImageHorizontalPosition #> <# article.ImageVerticalPosition #> / cover, url( '<# article.ImagePath #>.preload.jpg' ) no-repeat <# article.ImageHorizontalPosition #> <# article.ImageVerticalPosition #> / cover" onclick="ShowView( '<# article.Route #>' )">
                 <div class="article-carousel-slide-text">
                     <# .GetTranslatedText( article.Text ) #>
                 </div>

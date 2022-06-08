@@ -39,6 +39,12 @@
                 <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Image Path' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Image Vertical Position' ) ); ?>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Image Horizontal Position' ) ); ?>
+            </div>
+            <div class="form-column-name sortable-table-column">
                 <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Video Path' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
@@ -81,6 +87,12 @@
                     </div>
                     <div class="sortable-table-cell filter-cell">
                         <?php echo htmlspecialchars( GetValueText( $content_block->ImagePath ) ); ?>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <?php echo htmlspecialchars( GetValueText( $content_block->ImageVerticalPosition ) ); ?>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <?php echo htmlspecialchars( GetValueText( $content_block->ImageHorizontalPosition ) ); ?>
                     </div>
                     <div class="sortable-table-cell filter-cell">
                         <?php echo htmlspecialchars( GetValueText( $content_block->VideoPath ) ); ?>
@@ -162,6 +174,18 @@
                             <div class="form-upload-container">
                                 <img class="form-upload-image" src="<?php echo htmlspecialchars( $content_block->ImagePath ); ?>" onerror="this.src='/static/image/admin/missing_image.svg'"/>
                             </div>
+                        </div>
+                        <div class="form-field-name">
+                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Image Vertical Position' ) ); ?> :
+                        </div>
+                        <div>
+                                <input class="form-input" name="ImageVerticalPosition" type="text" value="<?php echo htmlspecialchars( GetValueText( $content_block->ImageVerticalPosition ) ); ?>" readonly/>
+                        </div>
+                        <div class="form-field-name">
+                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Image Horizontal Position' ) ); ?> :
+                        </div>
+                        <div>
+                                <input class="form-input" name="ImageHorizontalPosition" type="text" value="<?php echo htmlspecialchars( GetValueText( $content_block->ImageHorizontalPosition ) ); ?>" readonly/>
                         </div>
                         <div class="form-field-name">
                             <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Video Path' ) ); ?> :

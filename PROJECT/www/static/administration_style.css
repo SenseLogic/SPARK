@@ -750,7 +750,7 @@ textarea {
   grid-template-columns: repeat(3, auto);
 }
 .page-table {
-  grid-template-columns: repeat(9, auto);
+  grid-template-columns: repeat(11, auto);
 }
 .page-sub-page-table {
   grid-template-columns: repeat(4, auto);
@@ -759,7 +759,7 @@ textarea {
   grid-template-columns: repeat(3, auto);
 }
 .content-block-table {
-  grid-template-columns: repeat(10, auto);
+  grid-template-columns: repeat(12, auto);
 }
 .contact-table {
   grid-template-columns: repeat(8, auto);

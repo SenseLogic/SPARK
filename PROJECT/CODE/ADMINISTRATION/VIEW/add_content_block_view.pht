@@ -15,6 +15,8 @@
             title_field,
             text_field,
             image_path_field,
+            image_vertical_position_field,
+            image_horizontal_position_field,
             video_path_field;
 
         add_content_block_form = document.AddContentBlockForm;
@@ -26,6 +28,8 @@
         title_field = add_content_block_form.Title;
         text_field = add_content_block_form.Text;
         image_path_field = add_content_block_form.ImagePath;
+        image_vertical_position_field = add_content_block_form.ImageVerticalPosition;
+        image_horizontal_position_field = add_content_block_form.ImageHorizontalPosition;
         video_path_field = add_content_block_form.VideoPath;
 
         page_slug_field.RemoveClass( "form-field-error" );
@@ -36,6 +40,8 @@
         title_field.RemoveClass( "form-field-error" );
         text_field.RemoveClass( "form-field-error" );
         image_path_field.RemoveClass( "form-field-error" );
+        image_vertical_position_field.RemoveClass( "form-field-error" );
+        image_horizontal_position_field.RemoveClass( "form-field-error" );
         video_path_field.RemoveClass( "form-field-error" );
 
         it_is_valid_add_content_block_form = true;
@@ -73,6 +79,20 @@
         if ( !IsNumericText( number_field.value ) )
         {
             number_field.AddClass( "form-field-error" );
+
+            it_is_valid_add_content_block_form = false;
+        }
+
+        if ( image_vertical_position_field.value === "" )
+        {
+            image_vertical_position_field.AddClass( "form-field-error" );
+
+            it_is_valid_add_content_block_form = false;
+        }
+
+        if ( image_horizontal_position_field.value === "" )
+        {
+            image_horizontal_position_field.AddClass( "form-field-error" );
 
             it_is_valid_add_content_block_form = false;
         }
@@ -261,6 +281,66 @@
                         </label>
                         <img class="form-delete-icon" src="/static/image/admin/remove_icon.svg" onclick="HandleFileInputDeleteButtonClickEvent( this )"/>
                     </div>
+                </div>
+                <?
+                    var field_name = 'ImageVerticalPosition';
+
+                    if ( HasQueryValue( field_name ) )
+                    {
+                        var field_value = GetQueryValue( field_name );
+                    }
+                    else
+                    {
+                        field_value = 'center';
+                    }
+                ?>
+                <div class="form-field-name">
+                    <% .GetProcessedTextBySlug( 'Image Vertical Position' ) %> :
+                </div>
+                <div>
+                    <select class="form-select" name="ImageVerticalPosition">
+                        <option value="top"<? if ( field_value === 'top' ) echo ' selected'; ?>>Top</option>
+                        <option value="10%"<? if ( field_value === '10%' ) echo ' selected'; ?>>10%</option>
+                        <option value="20%"<? if ( field_value === '20%' ) echo ' selected'; ?>>20%</option>
+                        <option value="30%"<? if ( field_value === '30%' ) echo ' selected'; ?>>30%</option>
+                        <option value="40%"<? if ( field_value === '40%' ) echo ' selected'; ?>>40%</option>
+                        <option value="center"<? if ( field_value === 'center' ) echo ' selected'; ?>>Center</option>
+                        <option value="60%"<? if ( field_value === '60%' ) echo ' selected'; ?>>60%</option>
+                        <option value="70%"<? if ( field_value === '70%' ) echo ' selected'; ?>>70%</option>
+                        <option value="80%"<? if ( field_value === '80%' ) echo ' selected'; ?>>80%</option>
+                        <option value="90%"<? if ( field_value === '90%' ) echo ' selected'; ?>>90%</option>
+                        <option value="bottom"<? if ( field_value === 'bottom' ) echo ' selected'; ?>>Bottom</option>
+                    </select>
+                </div>
+                <?
+                    var field_name = 'ImageHorizontalPosition';
+
+                    if ( HasQueryValue( field_name ) )
+                    {
+                        var field_value = GetQueryValue( field_name );
+                    }
+                    else
+                    {
+                        field_value = 'center';
+                    }
+                ?>
+                <div class="form-field-name">
+                    <% .GetProcessedTextBySlug( 'Image Horizontal Position' ) %> :
+                </div>
+                <div>
+                    <select class="form-select" name="ImageHorizontalPosition">
+                        <option value="left"<? if ( field_value === 'left' ) echo ' selected'; ?>>Left</option>
+                        <option value="10%"<? if ( field_value === '10%' ) echo ' selected'; ?>>10%</option>
+                        <option value="20%"<? if ( field_value === '20%' ) echo ' selected'; ?>>20%</option>
+                        <option value="30%"<? if ( field_value === '30%' ) echo ' selected'; ?>>30%</option>
+                        <option value="40%"<? if ( field_value === '40%' ) echo ' selected'; ?>>40%</option>
+                        <option value="center"<? if ( field_value === 'center' ) echo ' selected'; ?>>Center</option>
+                        <option value="60%"<? if ( field_value === '60%' ) echo ' selected'; ?>>60%</option>
+                        <option value="70%"<? if ( field_value === '70%' ) echo ' selected'; ?>>70%</option>
+                        <option value="80%"<? if ( field_value === '80%' ) echo ' selected'; ?>>80%</option>
+                        <option value="90%"<? if ( field_value === '90%' ) echo ' selected'; ?>>90%</option>
+                        <option value="right"<? if ( field_value === 'right' ) echo ' selected'; ?>>Right</option>
+                    </select>
                 </div>
                 <?
                     var field_name = 'VideoPath';

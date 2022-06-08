@@ -50,6 +50,18 @@
                 </div>
             </div>
             <div class="form-field-name">
+                <% .GetProcessedTextBySlug( 'Image Vertical Position' ) %> :
+            </div>
+            <div>
+                    <input class="form-input" name="ImageVerticalPosition" type="text" value="<% GetValueText( .Page.ImageVerticalPosition ) %>" readonly/>
+            </div>
+            <div class="form-field-name">
+                <% .GetProcessedTextBySlug( 'Image Horizontal Position' ) %> :
+            </div>
+            <div>
+                    <input class="form-input" name="ImageHorizontalPosition" type="text" value="<% GetValueText( .Page.ImageHorizontalPosition ) %>" readonly/>
+            </div>
+            <div class="form-field-name">
                 <% .GetProcessedTextBySlug( 'Video Path' ) %> :
             </div>
             <div>

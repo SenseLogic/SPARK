@@ -350,6 +350,8 @@ function Route(
                       && HasPostValue( 'Title' )
                       && HasPostValue( 'Text' )
                       && HasPostValue( 'ImagePath' )
+                      && HasPostValue( 'ImageVerticalPosition' )
+                      && HasPostValue( 'ImageHorizontalPosition' )
                       && HasPostValue( 'VideoPath' )
                       && HasPostValue( 'IsActive' ) )
             {
@@ -380,6 +382,8 @@ function Route(
                       && HasPostValue( 'Title' )
                       && HasPostValue( 'Text' )
                       && HasPostValue( 'ImagePath' )
+                      && HasPostValue( 'ImageVerticalPosition' )
+                      && HasPostValue( 'ImageHorizontalPosition' )
                       && HasPostValue( 'VideoPath' )
                       && HasPostValue( 'IsActive' ) )
             {
@@ -573,6 +577,8 @@ function Route(
                       && HasPostValue( 'Title' )
                       && HasPostValue( 'Text' )
                       && HasPostValue( 'ImagePath' )
+                      && HasPostValue( 'ImageVerticalPosition' )
+                      && HasPostValue( 'ImageHorizontalPosition' )
                       && HasPostValue( 'VideoPath' ) )
             {
                 import 'ADMINISTRATION/CONTROLLER/do_add_content_block_controller.php';
@@ -604,6 +610,8 @@ function Route(
                       && HasPostValue( 'Title' )
                       && HasPostValue( 'Text' )
                       && HasPostValue( 'ImagePath' )
+                      && HasPostValue( 'ImageVerticalPosition' )
+                      && HasPostValue( 'ImageHorizontalPosition' )
                       && HasPostValue( 'VideoPath' ) )
             {
                 var content_block_id = path_value_array[ 3 ];

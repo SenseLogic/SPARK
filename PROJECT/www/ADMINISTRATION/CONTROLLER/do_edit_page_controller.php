@@ -22,10 +22,12 @@ class DO_EDIT_PAGE_CONTROLLER extends CONTROLLER
          $title = GetPostValue( 'Title' );
          $text = GetPostValue( 'Text' );
          $image_path = GetPostValue( 'ImagePath' );
+         $image_vertical_position = GetPostValue( 'ImageVerticalPosition' );
+         $image_horizontal_position = GetPostValue( 'ImageHorizontalPosition' );
          $video_path = GetPostValue( 'VideoPath' );
          $is_active = GetPostValue( 'IsActive' );
 
-        SetDatabasePage( $page_id, $slug, $type_slug, $route, $title, $text, $image_path, $video_path, $is_active );
+        SetDatabasePage( $page_id, $slug, $type_slug, $route, $title, $text, $image_path, $image_vertical_position, $image_horizontal_position, $video_path, $is_active );
 
         Redirect( FindSessionValue( 'ListRoute', '/admin/page' ) );
     }

@@ -13,6 +13,8 @@
             title_field,
             text_field,
             image_path_field,
+            image_vertical_position_field,
+            image_horizontal_position_field,
             video_path_field,
             is_active_field;
 
@@ -23,6 +25,8 @@
         title_field = edit_page_form.Title;
         text_field = edit_page_form.Text;
         image_path_field = edit_page_form.ImagePath;
+        image_vertical_position_field = edit_page_form.ImageVerticalPosition;
+        image_horizontal_position_field = edit_page_form.ImageHorizontalPosition;
         video_path_field = edit_page_form.VideoPath;
         is_active_field = edit_page_form.IsActive;
 
@@ -32,6 +36,8 @@
         title_field.RemoveClass( "form-field-error" );
         text_field.RemoveClass( "form-field-error" );
         image_path_field.RemoveClass( "form-field-error" );
+        image_vertical_position_field.RemoveClass( "form-field-error" );
+        image_horizontal_position_field.RemoveClass( "form-field-error" );
         video_path_field.RemoveClass( "form-field-error" );
         is_active_field.RemoveClass( "form-field-error" );
 
@@ -54,6 +60,20 @@
         if ( route_field.value === "" )
         {
             route_field.AddClass( "form-field-error" );
+
+            it_is_valid_edit_page_form = false;
+        }
+
+        if ( image_vertical_position_field.value === "" )
+        {
+            image_vertical_position_field.AddClass( "form-field-error" );
+
+            it_is_valid_edit_page_form = false;
+        }
+
+        if ( image_horizontal_position_field.value === "" )
+        {
+            image_horizontal_position_field.AddClass( "form-field-error" );
 
             it_is_valid_edit_page_form = false;
         }
@@ -130,6 +150,42 @@
                         </label>
                         <img class="form-delete-icon" src="/static/image/admin/remove_icon.svg" onclick="HandleFileInputDeleteButtonClickEvent( this )"/>
                     </div>
+                </div>
+                <div class="form-field-name">
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Image Vertical Position' ) ); ?> :
+                </div>
+                <div>
+                    <select class="form-select" name="ImageVerticalPosition">
+                        <option value="top"<?php if ( $this->Page->ImageVerticalPosition === 'top' ) echo ' selected'; ?>>Top</option>
+                        <option value="10%"<?php if ( $this->Page->ImageVerticalPosition === '10%' ) echo ' selected'; ?>>10%</option>
+                        <option value="20%"<?php if ( $this->Page->ImageVerticalPosition === '20%' ) echo ' selected'; ?>>20%</option>
+                        <option value="30%"<?php if ( $this->Page->ImageVerticalPosition === '30%' ) echo ' selected'; ?>>30%</option>
+                        <option value="40%"<?php if ( $this->Page->ImageVerticalPosition === '40%' ) echo ' selected'; ?>>40%</option>
+                        <option value="center"<?php if ( $this->Page->ImageVerticalPosition === 'center' ) echo ' selected'; ?>>Center</option>
+                        <option value="60%"<?php if ( $this->Page->ImageVerticalPosition === '60%' ) echo ' selected'; ?>>60%</option>
+                        <option value="70%"<?php if ( $this->Page->ImageVerticalPosition === '70%' ) echo ' selected'; ?>>70%</option>
+                        <option value="80%"<?php if ( $this->Page->ImageVerticalPosition === '80%' ) echo ' selected'; ?>>80%</option>
+                        <option value="90%"<?php if ( $this->Page->ImageVerticalPosition === '90%' ) echo ' selected'; ?>>90%</option>
+                        <option value="bottom"<?php if ( $this->Page->ImageVerticalPosition === 'bottom' ) echo ' selected'; ?>>Bottom</option>
+                    </select>
+                </div>
+                <div class="form-field-name">
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Image Horizontal Position' ) ); ?> :
+                </div>
+                <div>
+                    <select class="form-select" name="ImageHorizontalPosition">
+                        <option value="left"<?php if ( $this->Page->ImageHorizontalPosition === 'left' ) echo ' selected'; ?>>Left</option>
+                        <option value="10%"<?php if ( $this->Page->ImageHorizontalPosition === '10%' ) echo ' selected'; ?>>10%</option>
+                        <option value="20%"<?php if ( $this->Page->ImageHorizontalPosition === '20%' ) echo ' selected'; ?>>20%</option>
+                        <option value="30%"<?php if ( $this->Page->ImageHorizontalPosition === '30%' ) echo ' selected'; ?>>30%</option>
+                        <option value="40%"<?php if ( $this->Page->ImageHorizontalPosition === '40%' ) echo ' selected'; ?>>40%</option>
+                        <option value="center"<?php if ( $this->Page->ImageHorizontalPosition === 'center' ) echo ' selected'; ?>>Center</option>
+                        <option value="60%"<?php if ( $this->Page->ImageHorizontalPosition === '60%' ) echo ' selected'; ?>>60%</option>
+                        <option value="70%"<?php if ( $this->Page->ImageHorizontalPosition === '70%' ) echo ' selected'; ?>>70%</option>
+                        <option value="80%"<?php if ( $this->Page->ImageHorizontalPosition === '80%' ) echo ' selected'; ?>>80%</option>
+                        <option value="90%"<?php if ( $this->Page->ImageHorizontalPosition === '90%' ) echo ' selected'; ?>>90%</option>
+                        <option value="right"<?php if ( $this->Page->ImageHorizontalPosition === 'right' ) echo ' selected'; ?>>Right</option>
+                    </select>
                 </div>
                 <div class="form-field-name">
                     <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Video Path' ) ); ?> :

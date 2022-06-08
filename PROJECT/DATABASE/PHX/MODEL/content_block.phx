@@ -3,7 +3,7 @@
 function GetDatabaseContentBlockArray(
     )
 {
-    var statement = GetDatabaseStatement( 'select `Id`, `PageSlug`, `BlockSlug`, `Slug`, `TypeSlug`, `Number`, `Title`, `Text`, `ImagePath`, `VideoPath` from `CONTENT_BLOCK` order by `PageSlug` asc, `BlockSlug` asc, `Number` asc' );
+    var statement = GetDatabaseStatement( 'select `Id`, `PageSlug`, `BlockSlug`, `Slug`, `TypeSlug`, `Number`, `Title`, `Text`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `VideoPath` from `CONTENT_BLOCK` order by `PageSlug` asc, `BlockSlug` asc, `Number` asc' );
 
     if ( !statement.execute() )
     {
@@ -27,7 +27,7 @@ function GetDatabaseContentBlockArray(
 function GetDatabaseContentBlockBySlugMap(
     )
 {
-    var statement = GetDatabaseStatement( 'select `Id`, `PageSlug`, `BlockSlug`, `Slug`, `TypeSlug`, `Number`, `Title`, `Text`, `ImagePath`, `VideoPath` from `CONTENT_BLOCK`' );
+    var statement = GetDatabaseStatement( 'select `Id`, `PageSlug`, `BlockSlug`, `Slug`, `TypeSlug`, `Number`, `Title`, `Text`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `VideoPath` from `CONTENT_BLOCK`' );
 
     if ( !statement.execute() )
     {
@@ -52,7 +52,7 @@ function GetDatabaseContentBlockById(
     int id
     )
 {
-    var statement = GetDatabaseStatement( 'select `Id`, `PageSlug`, `BlockSlug`, `Slug`, `TypeSlug`, `Number`, `Title`, `Text`, `ImagePath`, `VideoPath` from `CONTENT_BLOCK` where `Id` = ? limit 1' );
+    var statement = GetDatabaseStatement( 'select `Id`, `PageSlug`, `BlockSlug`, `Slug`, `TypeSlug`, `Number`, `Title`, `Text`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `VideoPath` from `CONTENT_BLOCK` where `Id` = ? limit 1' );
     statement.bindParam( 1, id, PDO::PARAM_INT );
 
     if ( !statement.execute() )
@@ -78,10 +78,12 @@ function AddDatabaseContentBlock(
     string title,
     string text,
     string image_path,
+    string image_vertical_position,
+    string image_horizontal_position,
     string video_path
     )
 {
-    var statement = GetDatabaseStatement( 'insert into `CONTENT_BLOCK` ( `PageSlug`, `BlockSlug`, `Slug`, `TypeSlug`, `Number`, `Title`, `Text`, `ImagePath`, `VideoPath` ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ? )' );
+    var statement = GetDatabaseStatement( 'insert into `CONTENT_BLOCK` ( `PageSlug`, `BlockSlug`, `Slug`, `TypeSlug`, `Number`, `Title`, `Text`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `VideoPath` ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )' );
     statement.bindParam( 1, page_slug, PDO::PARAM_STR );
     statement.bindParam( 2, block_slug, PDO::PARAM_STR );
     statement.bindParam( 3, slug, PDO::PARAM_STR );
@@ -90,7 +92,9 @@ function AddDatabaseContentBlock(
     statement.bindParam( 6, title, PDO::PARAM_STR );
     statement.bindParam( 7, text, PDO::PARAM_STR );
     statement.bindParam( 8, image_path, PDO::PARAM_STR );
-    statement.bindParam( 9, video_path, PDO::PARAM_STR );
+    statement.bindParam( 9, image_vertical_position, PDO::PARAM_STR );
+    statement.bindParam( 10, image_horizontal_position, PDO::PARAM_STR );
+    statement.bindParam( 11, video_path, PDO::PARAM_STR );
 
     if ( !statement.execute() )
     {
@@ -111,10 +115,12 @@ function PutDatabaseContentBlock(
     string title,
     string text,
     string image_path,
+    string image_vertical_position,
+    string image_horizontal_position,
     string video_path
     )
 {
-    var statement = GetDatabaseStatement( 'replace into `CONTENT_BLOCK` ( `PageSlug`, `BlockSlug`, `Slug`, `TypeSlug`, `Number`, `Title`, `Text`, `ImagePath`, `VideoPath` ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ? )' );
+    var statement = GetDatabaseStatement( 'replace into `CONTENT_BLOCK` ( `PageSlug`, `BlockSlug`, `Slug`, `TypeSlug`, `Number`, `Title`, `Text`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `VideoPath` ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )' );
     statement.bindParam( 1, page_slug, PDO::PARAM_STR );
     statement.bindParam( 2, block_slug, PDO::PARAM_STR );
     statement.bindParam( 3, slug, PDO::PARAM_STR );
@@ -123,7 +129,9 @@ function PutDatabaseContentBlock(
     statement.bindParam( 6, title, PDO::PARAM_STR );
     statement.bindParam( 7, text, PDO::PARAM_STR );
     statement.bindParam( 8, image_path, PDO::PARAM_STR );
-    statement.bindParam( 9, video_path, PDO::PARAM_STR );
+    statement.bindParam( 9, image_vertical_position, PDO::PARAM_STR );
+    statement.bindParam( 10, image_horizontal_position, PDO::PARAM_STR );
+    statement.bindParam( 11, video_path, PDO::PARAM_STR );
 
     if ( !statement.execute() )
     {
@@ -145,10 +153,12 @@ function SetDatabaseContentBlock(
     string title,
     string text,
     string image_path,
+    string image_vertical_position,
+    string image_horizontal_position,
     string video_path
     )
 {
-    var statement = GetDatabaseStatement( 'update `CONTENT_BLOCK` set `PageSlug` = ?, `BlockSlug` = ?, `Slug` = ?, `TypeSlug` = ?, `Number` = ?, `Title` = ?, `Text` = ?, `ImagePath` = ?, `VideoPath` = ? where Id = ?' );
+    var statement = GetDatabaseStatement( 'update `CONTENT_BLOCK` set `PageSlug` = ?, `BlockSlug` = ?, `Slug` = ?, `TypeSlug` = ?, `Number` = ?, `Title` = ?, `Text` = ?, `ImagePath` = ?, `ImageVerticalPosition` = ?, `ImageHorizontalPosition` = ?, `VideoPath` = ? where Id = ?' );
     statement.bindParam( 1, page_slug, PDO::PARAM_STR );
     statement.bindParam( 2, block_slug, PDO::PARAM_STR );
     statement.bindParam( 3, slug, PDO::PARAM_STR );
@@ -157,8 +167,10 @@ function SetDatabaseContentBlock(
     statement.bindParam( 6, title, PDO::PARAM_STR );
     statement.bindParam( 7, text, PDO::PARAM_STR );
     statement.bindParam( 8, image_path, PDO::PARAM_STR );
-    statement.bindParam( 9, video_path, PDO::PARAM_STR );
-    statement.bindParam( 10, id, PDO::PARAM_INT );
+    statement.bindParam( 9, image_vertical_position, PDO::PARAM_STR );
+    statement.bindParam( 10, image_horizontal_position, PDO::PARAM_STR );
+    statement.bindParam( 11, video_path, PDO::PARAM_STR );
+    statement.bindParam( 12, id, PDO::PARAM_INT );
 
     if ( !statement.execute() )
     {
