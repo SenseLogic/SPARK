@@ -1,6 +1,6 @@
 <div class="filter-container">
     <input id="filter-input" class="filter-input" type="text" placeholder="Search"/>
-    <img class="form-button view-button filter-button" onclick="ApplyFilter()"/>
+    <img class="form-button view-button filter-apply-button" onclick="ApplyFilter()"/>
 </div>
 <script>
     // -- FUNCTIONS

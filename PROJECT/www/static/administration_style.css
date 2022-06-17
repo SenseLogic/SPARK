@@ -663,7 +663,7 @@ textarea {
   background-color: #fff;
   box-shadow: 0 0.3rem 0.6rem rgba(0,0,0,0.1), 0 0.2rem 0.2rem rgba(0,0,0,0.13);
 }
-.filter-button {
+.filter-apply-button {
   position: absolute;
   right: 0.125rem;
   transform: scale(0.6);
