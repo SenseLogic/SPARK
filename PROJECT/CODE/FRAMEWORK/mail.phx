@@ -4,10 +4,11 @@ function SendEmail(
     string username,
     string password,
     string sender_email,
-    string receiver_email,
+    string recipient_email,
     string subject,
     string message,
-    bool it_is_logged = false
+    bool it_is_logged = false,
+    string header = "Content-type: text/plain; charset=utf-8"
     )
 {
     ini_set( 'SMTP', server );
@@ -24,18 +25,17 @@ function SendEmail(
         PrintLine( 'Port : ' .. port );
         PrintLine( 'Username : ' .. username );
         PrintLine( 'Sender email : ' .. sender_email );
-        PrintLine( 'Receiver email : ' .. receiver_email );
+        PrintLine( 'Receiver email : ' .. recipient_email );
         PrintLine( 'Subject : ' .. subject );
         PrintLine( 'Message :' );
         PrintLine( message );
     }
 
     if ( !mail(
-            receiver_email,
+            recipient_email,
             subject,
             message,
-            "Content-type: text/plain; charset=utf-8\r\n"
-            .. "From: " .. sender_email .. "\r\n"
+            header .. "\r\nFrom: " .. sender_email .. "\r\n"
             ) )
     {
         PrintError( 'Could not send email (' .. GetErrorMessage() .. ')' );
