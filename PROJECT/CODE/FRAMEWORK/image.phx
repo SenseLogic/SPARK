@@ -565,7 +565,7 @@ function DrawJustifiedText(
     float canvas_width,
     float canvas_height,
     string text,
-    bool text_has_tags = true,
+    bool text_has_tags,
     string font_path,
     string bold_font_path,
     string italic_font_path,
