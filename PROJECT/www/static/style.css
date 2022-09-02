@@ -625,6 +625,9 @@ html {
 .paragraph + .paragraph {
   margin-top: 0.8em;
 }
+.linebreak {
+  margin-bottom: 0.8em;
+}
 .title-1 {
   font-size: 2rem;
 }
