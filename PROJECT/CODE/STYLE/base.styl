@@ -1,17 +1,236 @@
 // -- CONSTANTS
 
+PrimaryFontFamily = sans-serif;
+SecondaryFontFamily = sans-serif;
+TertiaryFontFamily = sans-serif;
+MonospaceFontFamily = monospace;
+
 BlackColor = #000000;
-DarkestGrayColor = #202020;
-DarkerGrayColor = #404040;
-DarkGrayColor = #808080;
-GrayColor = #A0A0A0;
-LightGrayColor = #C0C0C0;
-LighterGrayColor = #F0F0F0;
-LightestGrayColor = #F8F8F8;
 WhiteColor = #FFFFFF;
+
+GrayColor = #808080;
+GrayDimColor = darken( GrayColor, 60% );
+GrayDarkColor = darken( GrayColor, 40% );
+GrayShadeColor = darken( GrayColor, 20% );
+GrayTintColor = lighten( GrayColor, 20% );
+GrayLightColor = lighten( GrayColor, 40% );
+GrayPaleColor = lighten( GrayColor, 60% );
+
+GrayContrastColor = BlackColor;
+GrayDimContrastColor = WhiteColor;
+GrayDarkContrastColor = WhiteColor;
+GrayShadeContrastColor = WhiteColor;
+GrayTintContrastColor = BlackColor;
+GrayLightContrastColor = BlackColor;
+GrayPaleContrastColor = BlackColor;
+
 RedColor = #FF0000;
+RedDimColor = darken( RedColor, 60% );
+RedDarkColor = darken( RedColor, 40% );
+RedShadeColor = darken( RedColor, 20% );
+RedTintColor = lighten( RedColor, 20% );
+RedLightColor = lighten( RedColor, 40% );
+RedPaleColor = lighten( RedColor, 60% );
+
+RedContrastColor = BlackColor;
+RedDimContrastColor = WhiteColor;
+RedDarkContrastColor = WhiteColor;
+RedShadeContrastColor = WhiteColor;
+RedTintContrastColor = BlackColor;
+RedLightContrastColor = BlackColor;
+RedPaleContrastColor = BlackColor;
+
 GreenColor = #00FF00;
+GreenDimColor = darken( GreenColor, 60% );
+GreenDarkColor = darken( GreenColor, 40% );
+GreenShadeColor = darken( GreenColor, 20% );
+GreenTintColor = lighten( GreenColor, 20% );
+GreenLightColor = lighten( GreenColor, 40% );
+GreenPaleColor = lighten( GreenColor, 60% );
+
+GreenContrastColor = BlackColor;
+GreenDimContrastColor = WhiteColor;
+GreenDarkContrastColor = WhiteColor;
+GreenShadeContrastColor = WhiteColor;
+GreenTintContrastColor = BlackColor;
+GreenLightContrastColor = BlackColor;
+GreenPaleContrastColor = BlackColor;
+
 BlueColor = #0000FF;
+BlueDimColor = darken( BlueColor, 60% );
+BlueDarkColor = darken( BlueColor, 40% );
+BlueShadeColor = darken( BlueColor, 20% );
+BlueTintColor = lighten( BlueColor, 20% );
+BlueLightColor = lighten( BlueColor, 40% );
+BluePaleColor = lighten( BlueColor, 60% );
+
+BlueContrastColor = BlackColor;
+BlueDimContrastColor = WhiteColor;
+BlueDarkContrastColor = WhiteColor;
+BlueShadeContrastColor = WhiteColor;
+BlueTintContrastColor = BlackColor;
+BlueLightContrastColor = BlackColor;
+BluePaleContrastColor = BlackColor;
+
+BaseColor = #FFFFFF;
+BaseDimColor = darken( BaseColor, 60% );
+BaseDarkColor = darken( BaseColor, 40% );
+BaseShadeColor = darken( BaseColor, 20% );
+BaseTintColor = lighten( BaseColor, 20% );
+BaseLightColor = lighten( BaseColor, 40% );
+BasePaleColor = lighten( BaseColor, 60% );
+
+BaseContrastColor = BlackColor;
+BaseDimContrastColor = WhiteColor;
+BaseDarkContrastColor = WhiteColor;
+BaseShadeContrastColor = WhiteColor;
+BaseTintContrastColor = BlackColor;
+BaseLightContrastColor = BlackColor;
+BasePaleContrastColor = BlackColor;
+
+NeutralColor = #808080;
+NeutralDimColor = darken( NeutralColor, 60% );
+NeutralShadeColor = darken( NeutralColor, 40% );
+NeutralDarkColor = darken( NeutralColor, 20% );
+NeutralLightColor = lighten( NeutralColor, 20% );
+NeutralTintColor = lighten( NeutralColor, 40% );
+NeutralPaleColor = lighten( NeutralColor, 60% );
+
+NeutralContrastColor = BlackColor;
+NeutralDimContrastColor = WhiteColor;
+NeutralDarkContrastColor = WhiteColor;
+NeutralShadeContrastColor = WhiteColor;
+NeutralTintContrastColor = BlackColor;
+NeutralLightContrastColor = BlackColor;
+NeutralPaleContrastColor = BlackColor;
+
+PrimaryColor = #2AB4E7;
+PrimaryDimColor = darken( PrimaryColor, 60% );
+PrimaryDarkColor = darken( PrimaryColor, 40% );
+PrimaryShadeColor = darken( PrimaryColor, 20% );
+PrimaryTintColor = lighten( PrimaryColor, 20% );
+PrimaryLightColor = lighten( PrimaryColor, 40% );
+PrimaryPaleColor = lighten( PrimaryColor, 60% );
+
+PrimaryContrastColor = BlackColor;
+PrimaryDimContrastColor = WhiteColor;
+PrimaryDarkContrastColor = WhiteColor;
+PrimaryShadeContrastColor = WhiteColor;
+PrimaryTintContrastColor = BlackColor;
+PrimaryLightContrastColor = BlackColor;
+PrimaryPaleContrastColor = BlackColor;
+
+SecondaryColor = #2AB4E7;
+SecondayDimColor = darken( SecondaryColor, 60% );
+SecondayDarkColor = darken( SecondaryColor, 40% );
+SecondayShadeColor = darken( SecondaryColor, 20% );
+SecondayTintColor = lighten( SecondaryColor, 20% );
+SecondayLightColor = lighten( SecondaryColor, 40% );
+SecondayPaleColor = lighten( SecondaryColor, 60% );
+
+SecondayContrastColor = BlackColor;
+SecondayDimContrastColor = WhiteColor;
+SecondayDarkContrastColor = WhiteColor;
+SecondayShadeContrastColor = WhiteColor;
+SecondayTintContrastColor = BlackColor;
+SecondayLightContrastColor = BlackColor;
+SecondayPaleContrastColor = BlackColor;
+
+TertiaryColor = #2AB4E7;
+TertiaryDimColor = darken( TertiaryColor, 60% );
+TertiaryDarkColor = darken( TertiaryColor, 40% );
+TertiaryShadeColor = darken( TertiaryColor, 20% );
+TertiaryTintColor = lighten( TertiaryColor, 20% );
+TertiaryLightColor = lighten( TertiaryColor, 40% );
+TertiaryPaleColor = lighten( TertiaryColor, 60% );
+
+TertiaryContrastColor = BlackColor;
+TertiaryDimContrastColor = WhiteColor;
+TertiaryDarkContrastColor = WhiteColor;
+TertiaryShadeContrastColor = WhiteColor;
+TertiaryTintContrastColor = BlackColor;
+TertiaryLightContrastColor = BlackColor;
+TertiaryPaleContrastColor = BlackColor;
+
+AccentColor = #2AB4E7;
+AccentDimColor = darken( AccentColor, 60% );
+AccentDarkColor = darken( AccentColor, 40% );
+AccentShadeColor = darken( AccentColor, 20% );
+AccentTintColor = lighten( AccentColor, 20% );
+AccentLightColor = lighten( AccentColor, 40% );
+AccentPaleColor = lighten( AccentColor, 60% );
+
+AccentContrastColor = BlackColor;
+AccentDimContrastColor = WhiteColor;
+AccentDarkContrastColor = WhiteColor;
+AccentShadeContrastColor = WhiteColor;
+AccentTintContrastColor = BlackColor;
+AccentLightContrastColor = BlackColor;
+AccentPaleContrastColor = BlackColor;
+
+InfoColor = #3ABFF8;
+InfoDimColor = darken( InfoColor, 60% );
+InfoDarkColor = darken( InfoColor, 40% );
+InfoShadeColor = darken( InfoColor, 20% );
+InfoTintColor = lighten( InfoColor, 20% );
+InfoLightColor = lighten( InfoColor, 40% );
+InfoPaleColor = lighten( InfoColor, 60% );
+
+InfoContrastColor = BlackColor;
+InfoDimContrastColor = WhiteColor;
+InfoDarkContrastColor = WhiteColor;
+InfoShadeContrastColor = WhiteColor;
+InfoTintContrastColor = BlackColor;
+InfoLightContrastColor = BlackColor;
+InfoPaleContrastColor = BlackColor;
+
+SuccessColor = #36D399;
+SuccessDimColor  = darken( SuccessColor, 60% );
+SuccessDarkColor  = darken( SuccessColor, 40% );
+SuccessShadeColor  = darken( SuccessColor, 20% );
+SuccessTintColor  = lighten( SuccessColor, 20% );
+SuccessLightColor  = lighten( SuccessColor, 40% );
+SuccessPaleColor  = lighten( SuccessColor, 60% );
+
+SuccessContrastColor = BlackColor;
+SuccessDimContrastColor = WhiteColor;
+SuccessDarkContrastColor = WhiteColor;
+SuccessShadeContrastColor = WhiteColor;
+SuccessTintContrastColor = BlackColor;
+SuccessLightContrastColor = BlackColor;
+SuccessPaleContrastColor = BlackColor;
+
+WarningColor = #FBBD23;
+WarningDimColor = darken( WarningColor, 60% );
+WarningDarkColor = darken( WarningColor, 40% );
+WarningShadeColor = darken( WarningColor, 20% );
+WarningTintColor = lighten( WarningColor, 20% );
+WarningLightColor = lighten( WarningColor, 40% );
+WarningPaleColor = lighten( WarningColor, 60% );
+
+WarningContrastColor = BlackColor;
+WarningDimContrastColor = WhiteColor;
+WarningDarkContrastColor = WhiteColor;
+WarningShadeContrastColor = WhiteColor;
+WarningTintContrastColor = BlackColor;
+WarningLightContrastColor = BlackColor;
+WarningPaleContrastColor = BlackColor;
+
+ErrorColor = #F87272;
+ErrorDimColor = darken( ErrorColor, 60% );
+ErrorDarkColor = darken( ErrorColor, 40% );
+ErrorShadeColor = darken( ErrorColor, 20% );
+ErrorTintColor = lighten( ErrorColor, 20% );
+ErrorLightColor = lighten( ErrorColor, 40% );
+ErrorPaleColor = lighten( ErrorColor, 60% );
+
+ErrorContrastColor = BlackColor;
+ErrorDimContrastColor = WhiteColor;
+ErrorDarkContrastColor = WhiteColor;
+ErrorShadeContrastColor = WhiteColor;
+ErrorTintContrastColor = BlackColor;
+ErrorLightContrastColor = BlackColor;
+ErrorPaleContrastColor = BlackColor;
 
 LinkColor = #86B4F0;
 LinkHoverColor = #A2C2EC;
@@ -22,7 +241,212 @@ ScrollbarColor = rgba( 255, 255, 255, 0.3 );
 ScrollbarHoverColor = rgba( 255, 255, 255, 0.2 );
 ScrollbarBackgroundColor = rgba( 0, 0, 0, 0.1 );
 
+TinyButtonFontSize = 1rem;
+SmallButtonFontSize = 1rem;
+ButtonFontSize = 1rem;
+LargeButtonFontSize = 1rem;
+BigButtonFontSize = 1rem;
+HugeButtonFontSize = 1rem;
+
+TinyButtonBorderRadius = 0.5rem;
+SmallButtonBorderRadius = 0.5rem;
+ButtonBorderRadius = 0.5rem;
+LargeButtonBorderRadius = 0.5rem;
+BigButtonBorderRadius = 0.5rem;
+HugeButtonBorderRadius = 0.5rem;
+PillButtonBorderRadius = 100vmax;
+
+TinyButtonPadding = 0.125rem 0.25rem;
+SmallButtonPadding = 0.25rem 0.5rem;
+ButtonPadding = 0.5rem 1rem;
+LargeButtonPadding = 1rem 2rem;
+BigButtonPadding = 1.5rem 3rem;
+HugeButtonPadding = 2rem 4rem;
+
 // -- ELEMENTS
+
+:root
+{
+    --primary-font-family: PrimaryFontFamily;
+    --secondary-font-family: SecondaryFontFamily;
+    --tertiary-font-family: TertiaryFontFamily;
+    --mono-font-family: MonoFontFamily;
+
+    --base-color: BaseColor;
+    --base-dim-color: BaseDimColor;
+    --base-dark-color: BaseDarkColor;
+    --base-shade-color: BaseShadeColor;
+    --base-tint-color: BaseTintColor;
+    --base-light-color: BaseLightColor;
+    --base-pale-color: BasePaleColor;
+
+    --base-contrast-color: BaseContrastColor;
+    --base-dim-contrast-color: BaseDimContrastColor;
+    --base-dark-contrast-color: BaseDarkContrastColor;
+    --base-shade-contrast-color: BaseShadeContrastColor;
+    --base-tint-contrast-color: BaseTintContrastColor;
+    --base-light-contrast-color: BaseLightContrastColor;
+    --base-pale-contrast-color: BasePaleContrastColor;
+
+    --neutral-color: NeutralColor;
+    --neutral-dim-color: NeutralDimColor;
+    --neutral-shade-color: NeutralDarkColor;
+    --neutral-dark-color: NeutralShadeColor;
+    --neutral-light-color: NeutralTintColor;
+    --neutral-tint-color: NeutralLightColor;
+    --neutral-pale-color: NeutralPaleColor;
+
+    --neutral-contrast-color: NeutralContrastColor;
+    --neutral-dim-contrast-color: NeutralDimContrastColor;
+    --neutral-dark-contrast-color: NeutralDarkContrastColor;
+    --neutral-shade-contrast-color: NeutralShadeContrastColor;
+    --neutral-tint-contrast-color: NeutralTintContrastColor;
+    --neutral-light-contrast-color: NeutralLightContrastColor;
+    --neutral-pale-contrast-color: NeutralPaleContrastColor;
+
+    --primary-color: PrimaryColor;
+    --primary-dim-color: PrimaryDimColor;
+    --primary-dark-color: PrimaryDarkColor;
+    --primary-shade-color: PrimaryShadeColor;
+    --primary-tint-color: PrimaryTintColor;
+    --primary-light-color: PrimaryLightColor;
+    --primary-pale-color: PrimaryPaleColor;
+
+    --primary-contrast-color: PrimaryContrastColor;
+    --primary-dim-contrast-color: PrimaryDimContrastColor;
+    --primary-dark-contrast-color: PrimaryDarkContrastColor;
+    --primary-shade-contrast-color: PrimaryShadeContrastColor;
+    --primary-tint-contrast-color: PrimaryTintContrastColor;
+    --primary-light-contrast-color: PrimaryLightContrastColor;
+    --primary-pale-contrast-color: PrimaryPaleContrastColor;
+
+    --secondary-color: SecondaryColor;
+    --secondary-dim-color: SecondaryDimColor;
+    --secondary-dark-color: SecondaryDarkColor;
+    --secondary-shade-color: SecondaryShadeColor;
+    --secondary-tint-color: SecondaryTintColor;
+    --secondary-light-color: SecondaryLightColor;
+    --secondary-pale-color: SecondaryPaleColor;
+
+    --secondary-contrast-color: SecondaryContrastColor;
+    --secondary-dim-contrast-color: SecondaryDimContrastColor;
+    --secondary-dark-contrast-color: SecondaryDarkContrastColor;
+    --secondary-shade-contrast-color: SecondaryShadeContrastColor;
+    --secondary-tint-contrast-color: SecondaryTintContrastColor;
+    --secondary-light-contrast-color: SecondaryLightContrastColor;
+    --secondary-pale-contrast-color: SecondaryPaleContrastColor;
+
+    --tertiary-color: TertiaryColor;
+    --tertiary-dim-color: TertiaryDimColor;
+    --tertiary-dark-color: TertiaryDarkColor;
+    --tertiary-shade-color: TertiaryShadeColor;
+    --tertiary-tint-color: TertiaryTintColor;
+    --tertiary-light-color: TertiaryLightColor;
+    --tertiary-pale-color: TertiaryPaleColor;
+
+    --tertiary-contrast-color: TertiaryContrastColor;
+    --tertiary-dim-contrast-color: TertiaryDimContrastColor;
+    --tertiary-dark-contrast-color: TertiaryDarkContrastColor;
+    --tertiary-shade-contrast-color: TertiaryShadeContrastColor;
+    --tertiary-tint-contrast-color: TertiaryTintContrastColor;
+    --tertiary-light-contrast-color: TertiaryLightContrastColor;
+    --tertiary-pale-contrast-color: TertiaryPaleContrastColor;
+
+    --accent-color: AccentColor;
+    --accent-dim-color: AccentDimColor;
+    --accent-dark-color: AccentDarkColor;
+    --accent-shade-color: AccentShadeColor;
+    --accent-tint-color: AccentTintColor;
+    --accent-light-color: AccentLightColor;
+    --accent-pale-color: AccentPaleColor;
+
+    --accent-contrast-color: AccentContrastColor;
+    --accent-dim-contrast-color: AccentDimContrastColor;
+    --accent-dark-contrast-color: AccentDarkContrastColor;
+    --accent-shade-contrast-color: AccentShadeContrastColor;
+    --accent-tint-contrast-color: AccentTintContrastColor;
+    --accent-light-contrast-color: AccentLightContrastColor;
+    --accent-pale-contrast-color: AccentPaleContrastColor;
+
+    --info-color: InfoColor;
+    --info-dim-color: InfoDimColor;
+    --info-dark-color: InfoDarkColor;
+    --info-shade-color: InfoShadeColor;
+    --info-tint-color: InfoTintColor;
+    --info-light-color: InfoLightColor;
+    --info-pale-color: InfoPaleColor;
+
+    --info-contrast-color: InfoContrastColor;
+    --info-dim-contrast-color: InfoDimContrastColor;
+    --info-dark-contrast-color: InfoDarkContrastColor;
+    --info-shade-contrast-color: InfoShadeContrastColor;
+    --info-tint-contrast-color: InfoTintContrastColor;
+    --info-light-contrast-color: InfoLightContrastColor;
+    --info-pale-contrast-color: InfoPaleContrastColor;
+
+    --success-color : SuccessColor;
+    --success-dim-color : SuccessDimColor;
+    --success-dark-color : SuccessDarkColor;
+    --success-shade-color : SuccessShadeColor;
+    --success-tint-color : SuccessTintColor;
+    --success-light-color : SuccessLightColor;
+    --success-pale-color : SuccessPaleColor;
+
+    --success-contrast-color: SuccessContrastColor;
+    --success-dim-contrast-color: SuccessDimContrastColor;
+    --success-dark-contrast-color: SuccessDarkContrastColor;
+    --success-shade-contrast-color: SuccessShadeContrastColor;
+    --success-tint-contrast-color: SuccessTintContrastColor;
+    --success-light-contrast-color: SuccessLightContrastColor;
+    --success-pale-contrast-color: SuccessPaleContrastColor;
+
+    --warning-color: WarningColor;
+    --warning-dim-color: WarningDimColor;
+    --warning-dark-color: WarningDarkColor;
+    --warning-shade-color: WarningShadeColor;
+    --warning-tint-color: WarningTintColor;
+    --warning-light-color: WarningLightColor;
+    --warning-pale-color: WarningPaleColor;
+
+    --warning-contrast-color: WarningContrastColor;
+    --warning-dim-contrast-color: WarningDimContrastColor;
+    --warning-dark-contrast-color: WarningDarkContrastColor;
+    --warning-shade-contrast-color: WarningShadeContrastColor;
+    --warning-tint-contrast-color: WarningTintContrastColor;
+    --warning-light-contrast-color: WarningLightContrastColor;
+    --warning-pale-contrast-color: WarningPaleContrastColor;
+
+    --error-color: ErrorColor;
+    --error-dim-color: ErrorDimColor;
+    --error-dark-color: ErrorDarkColor;
+    --error-shade-color: ErrorShadeColor;
+    --error-tint-color: ErrorTintColor;
+    --error-light-color: ErrorLightColor;
+    --error-pale-color: ErrorPaleColor;
+
+    --error-contrast-color: ErrorContrastColor;
+    --error-dim-contrast-color: ErrorDimContrastColor;
+    --error-dark-contrast-color: ErrorDarkContrastColor;
+    --error-shade-contrast-color: ErrorShadeContrastColor;
+    --error-tint-contrast-color: ErrorTintContrastColor;
+    --error-light-contrast-color: ErrorLightContrastColor;
+    --error-pale-contrast-color: ErrorPaleContrastColor;
+
+    --tiny-button-border-radius: TinyButtonBorderRadius;
+    --small-button-border-radius: SmallButtonBorderRadius;
+    --button-border-radius: ButtonBorderRadius;
+    --large-button-border-radius: LargeButtonBorderRadius;
+    --big-button-border-radius: BigButtonBorderRadius;
+    --huge-button-border-radius: HugeButtonBorderRadius;
+    --pill-button-border-radius: PillButtonBorderRadius;
+
+    --tiny-button-padding: TinyButtonPadding;
+    --small-button-padding: SmallButtonPadding;
+    --button-padding: ButtonPadding;
+    --large-button-padding: LargeButtonPadding;
+    --big-button-padding: BigButtonPadding;
+    --huge-button-padding: HugeButtonPadding;
+}
 
 html
 {

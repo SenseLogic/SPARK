@@ -315,6 +315,165 @@ a:active,
 a:hover {
   outline: 0;
 }
+:root {
+  --primary-font-family: sans-serif;
+  --secondary-font-family: sans-serif;
+  --tertiary-font-family: sans-serif;
+  --mono-font-family: MonoFontFamily;
+  --base-color: #fff;
+  --base-dim-color: #666;
+  --base-dark-color: #999;
+  --base-shade-color: #ccc;
+  --base-tint-color: #fff;
+  --base-light-color: #fff;
+  --base-pale-color: #fff;
+  --base-contrast-color: #000;
+  --base-dim-contrast-color: #fff;
+  --base-dark-contrast-color: #fff;
+  --base-shade-contrast-color: #fff;
+  --base-tint-contrast-color: #000;
+  --base-light-contrast-color: #000;
+  --base-pale-contrast-color: #000;
+  --neutral-color: #808080;
+  --neutral-dim-color: #333;
+  --neutral-shade-color: #666;
+  --neutral-dark-color: #4d4d4d;
+  --neutral-light-color: #b3b3b3;
+  --neutral-tint-color: #999;
+  --neutral-pale-color: #ccc;
+  --neutral-contrast-color: #000;
+  --neutral-dim-contrast-color: #fff;
+  --neutral-dark-contrast-color: #fff;
+  --neutral-shade-contrast-color: #fff;
+  --neutral-tint-contrast-color: #000;
+  --neutral-light-contrast-color: #000;
+  --neutral-pale-contrast-color: #000;
+  --primary-color: #2ab4e7;
+  --primary-dim-color: #0b4b62;
+  --primary-dark-color: #117093;
+  --primary-shade-color: #1695c4;
+  --primary-tint-color: #55c3ec;
+  --primary-light-color: #7fd2f1;
+  --primary-pale-color: #aae1f5;
+  --primary-contrast-color: #000;
+  --primary-dim-contrast-color: #fff;
+  --primary-dark-contrast-color: #fff;
+  --primary-shade-contrast-color: #fff;
+  --primary-tint-contrast-color: #000;
+  --primary-light-contrast-color: #000;
+  --primary-pale-contrast-color: #000;
+  --secondary-color: #2ab4e7;
+  --secondary-dim-color: SecondaryDimColor;
+  --secondary-dark-color: SecondaryDarkColor;
+  --secondary-shade-color: SecondaryShadeColor;
+  --secondary-tint-color: SecondaryTintColor;
+  --secondary-light-color: SecondaryLightColor;
+  --secondary-pale-color: SecondaryPaleColor;
+  --secondary-contrast-color: SecondaryContrastColor;
+  --secondary-dim-contrast-color: SecondaryDimContrastColor;
+  --secondary-dark-contrast-color: SecondaryDarkContrastColor;
+  --secondary-shade-contrast-color: SecondaryShadeContrastColor;
+  --secondary-tint-contrast-color: SecondaryTintContrastColor;
+  --secondary-light-contrast-color: SecondaryLightContrastColor;
+  --secondary-pale-contrast-color: SecondaryPaleContrastColor;
+  --tertiary-color: #2ab4e7;
+  --tertiary-dim-color: #0b4b62;
+  --tertiary-dark-color: #117093;
+  --tertiary-shade-color: #1695c4;
+  --tertiary-tint-color: #55c3ec;
+  --tertiary-light-color: #7fd2f1;
+  --tertiary-pale-color: #aae1f5;
+  --tertiary-contrast-color: #000;
+  --tertiary-dim-contrast-color: #fff;
+  --tertiary-dark-contrast-color: #fff;
+  --tertiary-shade-contrast-color: #fff;
+  --tertiary-tint-contrast-color: #000;
+  --tertiary-light-contrast-color: #000;
+  --tertiary-pale-contrast-color: #000;
+  --accent-color: #2ab4e7;
+  --accent-dim-color: #0b4b62;
+  --accent-dark-color: #117093;
+  --accent-shade-color: #1695c4;
+  --accent-tint-color: #55c3ec;
+  --accent-light-color: #7fd2f1;
+  --accent-pale-color: #aae1f5;
+  --accent-contrast-color: #000;
+  --accent-dim-contrast-color: #fff;
+  --accent-dark-contrast-color: #fff;
+  --accent-shade-contrast-color: #fff;
+  --accent-tint-contrast-color: #000;
+  --accent-light-contrast-color: #000;
+  --accent-pale-contrast-color: #000;
+  --info-color: #3abff8;
+  --info-dim-color: #045476;
+  --info-dark-color: #067eb1;
+  --info-shade-color: #08a8ec;
+  --info-tint-color: #61ccf9;
+  --info-light-color: #89d9fb;
+  --info-pale-color: #b0e5fc;
+  --info-contrast-color: #000;
+  --info-dim-contrast-color: #fff;
+  --info-dark-contrast-color: #fff;
+  --info-shade-contrast-color: #fff;
+  --info-tint-contrast-color: #000;
+  --info-light-contrast-color: #000;
+  --info-pale-contrast-color: #000;
+  --success-color: #36d399;
+  --success-dim-color: #13573e;
+  --success-dark-color: #1d825d;
+  --success-shade-color: #26ae7c;
+  --success-tint-color: #5edcad;
+  --success-light-color: #86e5c2;
+  --success-pale-color: #afedd6;
+  --success-contrast-color: #000;
+  --success-dim-contrast-color: #fff;
+  --success-dark-contrast-color: #fff;
+  --success-shade-contrast-color: #fff;
+  --success-tint-contrast-color: #000;
+  --success-light-contrast-color: #000;
+  --success-pale-contrast-color: #000;
+  --warning-color: #fbbd23;
+  --warning-dim-color: #705102;
+  --warning-dark-color: #a97903;
+  --warning-shade-color: #e1a104;
+  --warning-tint-color: #fcca4f;
+  --warning-light-color: #fdd77b;
+  --warning-pale-color: #fde5a7;
+  --warning-contrast-color: #000;
+  --warning-dim-contrast-color: #fff;
+  --warning-dark-contrast-color: #fff;
+  --warning-shade-contrast-color: #fff;
+  --warning-tint-contrast-color: #000;
+  --warning-light-contrast-color: #000;
+  --warning-pale-contrast-color: #000;
+  --error-color: #f87272;
+  --error-dim-color: #8a0707;
+  --error-dark-color: #cf0a0a;
+  --error-shade-color: #f52d2d;
+  --error-tint-color: #f98e8e;
+  --error-light-color: #fbaaaa;
+  --error-pale-color: #fcc7c7;
+  --error-contrast-color: #000;
+  --error-dim-contrast-color: #fff;
+  --error-dark-contrast-color: #fff;
+  --error-shade-contrast-color: #fff;
+  --error-tint-contrast-color: #000;
+  --error-light-contrast-color: #000;
+  --error-pale-contrast-color: #000;
+  --tiny-button-border-radius: 0.5rem;
+  --small-button-border-radius: 0.5rem;
+  --button-border-radius: 0.5rem;
+  --large-button-border-radius: 0.5rem;
+  --big-button-border-radius: 0.5rem;
+  --huge-button-border-radius: 0.5rem;
+  --pill-button-border-radius: 100vmax;
+  --tiny-button-padding: 0.125rem 0.25rem;
+  --small-button-padding: 0.25rem 0.5rem;
+  --button-padding: 0.5rem 1rem;
+  --large-button-padding: 1rem 2rem;
+  --big-button-padding: 1.5rem 3rem;
+  --huge-button-padding: 2rem 4rem;
+}
 html {
   height: 100%;
   min-height: 100%;
@@ -938,7 +1097,7 @@ body.is-scrolled .header-menu:not(.is-open) {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #808080;
+  background-color: #666;
 }
 .footer-menu-button {
   font-size: 1rem;
@@ -1024,7 +1183,7 @@ body.is-scrolled .header-menu:not(.is-open) {
 }
 .contact-form-input::placeholder {
   text-align: center;
-  color: #a0a0a0;
+  color: #808080;
 }
 .contact-form-textarea {
   height: 6rem;
@@ -1042,7 +1201,7 @@ body.is-scrolled .header-menu:not(.is-open) {
   border-radius: 0.5rem;
   padding: 0 2rem;
   display: inline-block;
-  background: #c0c0c0;
+  background: #999;
   line-height: 3rem;
   color: #fff;
   cursor: pointer;
@@ -1180,11 +1339,11 @@ body:not(.is-scrolled) .scroll-top-button {
 .cookie-consent-banner-container a,
 .cookie-consent-banner-container a:visited {
   text-decoration: underline;
-  color: #404040;
+  color: #333;
 }
 .cookie-consent-banner-text {
   text-align: center;
-  color: #404040;
+  color: #333;
 }
 .cookie-consent-banner-button-container {
   margin-top: 1.25rem;
@@ -1203,5 +1362,5 @@ body:not(.is-scrolled) .scroll-top-button {
   background-color: #f00;
 }
 .cookie-consent-banner-decline-button {
-  background-color: #c0c0c0;
+  background-color: #999;
 }
