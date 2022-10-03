@@ -1,10 +1,9 @@
-
-
 <?php require __DIR__ . '/' . 'BLOCK/page_header.php'; ?>
 <script>
     // -- VARIABLES
 
     var
+        OldViewName = "",
         ViewName,
         SectionName;
 
@@ -14,6 +13,9 @@
         )
     {
         EmitEvent( "initialize-view" );
+
+        InitializeAutoplayVideos();
+        InitializeAutohideVideos();
     }
 
     // ~~
@@ -28,6 +30,7 @@
             TrackRoute();
         }
 
+        OldViewName = ViewName;
         ViewName = GetRoute( "/<?php echo $this->LanguageCode; ?>/", "/" );
 
         if ( ViewName === "" )
@@ -37,6 +40,24 @@
 
         SectionName = GetHash();
         EmitEvent( "update-view" );
+    }
+
+    // ~~
+
+    function ResizeView(
+        )
+    {
+        ShowView();
+        InitializeAutohideVideos();
+    }
+
+    // ~~
+
+    function FadeView(
+        view_element
+        )
+    {
+        view_element.Fade( view_element.dataset.viewName === ViewName );
     }
 
     // ~~
@@ -61,6 +82,7 @@
     }
 </script>
 <div>
+    <?php require __DIR__ . '/' . 'PAGE/loader_page.php'; ?>
     <?php foreach ( $this->PageBySlugMap as  $page_slug =>  $page ) { ?>
         <div class="extended-container view is-hidden" data-view-name="<?php echo $page->Route; ?>">
             <?php require __DIR__ . '/' . 'PAGE/' . $page->TypeSlug . '_page.php'; ?>
@@ -84,14 +106,13 @@
         function (
             )
         {
-            GetElements( ".view" ).Iterate(
-                function (
-                    view_element
-                    )
-                {
-                    view_element.Fade( view_element.dataset.viewName === ViewName );
-                }
-                );
+            var
+                view_element;
+
+            for ( view_element of GetElements( ".view" ) )
+            {
+                FadeView( view_element );
+            }
 
             if ( SectionName === "" )
             {
@@ -106,7 +127,7 @@
 
     InitializeView();
     ShowView();
-    HandleResizeEvent( ShowView );
+    HandleResizeEvent( ResizeView );
     HandleRouteEvent( ShowView );
 </script>
 <?php require __DIR__ . '/' . 'BLOCK/page_footer.php'; ?>
