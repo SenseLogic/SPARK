@@ -2,7 +2,7 @@
 
 # Spark
 
-Phoenix microframework and project template.
+Phoenix microframework and starter project.
 
 ## Goals
 

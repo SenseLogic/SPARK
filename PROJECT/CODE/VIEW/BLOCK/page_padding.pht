@@ -1,0 +1,8 @@
+<style file="page_padding.styl">
+    .page-padding
+    {
+        flex-grow: 1;
+    }
+</style>
+<div class="page-padding">
+</div>

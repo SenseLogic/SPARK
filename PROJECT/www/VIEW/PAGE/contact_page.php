@@ -18,5 +18,6 @@
     </div>
     <?php require __DIR__ . '/' . '../BLOCK/contact_map.php'; ?>
     <?php require __DIR__ . '/' . '../BLOCK/content_block_list.php'; ?>
+    <?php require __DIR__ . '/' . '../BLOCK/page_padding.php'; ?>
     <?php require __DIR__ . '/' . '../BLOCK/footer_menu.php'; ?>
 </div>
