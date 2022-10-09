@@ -17,7 +17,7 @@ The PHP framework has no external dependencies, and can be used without any of t
 
 ### Readability and conciseness
 
-Spark is implemented in the [Phoenix](https://github.com/senselogic/PHOENIX) language, which allows to develop modular PHP code with a JavaScript-like syntax.
+Spark is implemented in the [Phoenix](https://github.com/senselogic/PHOENIX) language, which allows to develop modular PHP components with a JavaScript-like syntax.
 
 ## Microframework
 
