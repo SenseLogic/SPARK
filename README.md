@@ -53,6 +53,7 @@ A default project is provided in the **PROJECT** folder.
 It provides a starting version for :
 
 *   a **public website** with :
+    *   animated loader
     *   header menu
     *   footer menu
     *   contact form
