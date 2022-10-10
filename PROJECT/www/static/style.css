@@ -693,7 +693,7 @@ textarea {
 .overflow-scrollbar-hidden::-webkit-scrollbar {
   display: none;
 }
-.scroll-snap-type-mandatory {
+.scroll-snap-type-y-mandatory {
   scroll-snap-type: mandatory;
   scroll-snap-type: y mandatory;
   scroll-snap-points-y: repeat(100vh);
