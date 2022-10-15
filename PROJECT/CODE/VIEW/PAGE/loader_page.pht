@@ -1,4 +1,4 @@
-<style>
+<style file="loader_page.styl">
     .loader-page
     {
         z-index: 10000;

@@ -316,9 +316,9 @@ a:hover {
   outline: 0;
 }
 :root {
-  --primary-font-family: sans-serif;
-  --secondary-font-family: sans-serif;
-  --tertiary-font-family: sans-serif;
+  --primary-font-family: Ubuntu, sans-serif;
+  --secondary-font-family: Ubuntu, sans-serif;
+  --tertiary-font-family: Ubuntu, sans-serif;
   --mono-font-family: MonoFontFamily;
   --base-color: #fff;
   --base-dim-color: #666;
@@ -328,12 +328,6 @@ a:hover {
   --base-light-color: #fff;
   --base-pale-color: #fff;
   --base-contrast-color: #000;
-  --base-dim-contrast-color: #fff;
-  --base-dark-contrast-color: #fff;
-  --base-shade-contrast-color: #fff;
-  --base-tint-contrast-color: #000;
-  --base-light-contrast-color: #000;
-  --base-pale-contrast-color: #000;
   --neutral-color: #808080;
   --neutral-dim-color: #333;
   --neutral-shade-color: #666;
@@ -342,68 +336,38 @@ a:hover {
   --neutral-tint-color: #999;
   --neutral-pale-color: #ccc;
   --neutral-contrast-color: #000;
-  --neutral-dim-contrast-color: #fff;
-  --neutral-dark-contrast-color: #fff;
-  --neutral-shade-contrast-color: #fff;
-  --neutral-tint-contrast-color: #000;
-  --neutral-light-contrast-color: #000;
-  --neutral-pale-contrast-color: #000;
-  --primary-color: #2ab4e7;
-  --primary-dim-color: #0b4b62;
-  --primary-dark-color: #117093;
-  --primary-shade-color: #1695c4;
-  --primary-tint-color: #55c3ec;
-  --primary-light-color: #7fd2f1;
-  --primary-pale-color: #aae1f5;
+  --primary-color: #3abff8;
+  --primary-dim-color: #045476;
+  --primary-dark-color: #067eb1;
+  --primary-shade-color: #08a8ec;
+  --primary-tint-color: #61ccf9;
+  --primary-light-color: #89d9fb;
+  --primary-pale-color: #b0e5fc;
   --primary-contrast-color: #000;
-  --primary-dim-contrast-color: #fff;
-  --primary-dark-contrast-color: #fff;
-  --primary-shade-contrast-color: #fff;
-  --primary-tint-contrast-color: #000;
-  --primary-light-contrast-color: #000;
-  --primary-pale-contrast-color: #000;
-  --secondary-color: #2ab4e7;
+  --secondary-color: #3abff8;
   --secondary-dim-color: SecondaryDimColor;
   --secondary-dark-color: SecondaryDarkColor;
   --secondary-shade-color: SecondaryShadeColor;
   --secondary-tint-color: SecondaryTintColor;
   --secondary-light-color: SecondaryLightColor;
   --secondary-pale-color: SecondaryPaleColor;
-  --secondary-contrast-color: SecondaryContrastColor;
-  --secondary-dim-contrast-color: SecondaryDimContrastColor;
-  --secondary-dark-contrast-color: SecondaryDarkContrastColor;
-  --secondary-shade-contrast-color: SecondaryShadeContrastColor;
-  --secondary-tint-contrast-color: SecondaryTintContrastColor;
-  --secondary-light-contrast-color: SecondaryLightContrastColor;
-  --secondary-pale-contrast-color: SecondaryPaleContrastColor;
-  --tertiary-color: #2ab4e7;
-  --tertiary-dim-color: #0b4b62;
-  --tertiary-dark-color: #117093;
-  --tertiary-shade-color: #1695c4;
-  --tertiary-tint-color: #55c3ec;
-  --tertiary-light-color: #7fd2f1;
-  --tertiary-pale-color: #aae1f5;
+  --secondary-contrast-color: #000;
+  --tertiary-color: #3abff8;
+  --tertiary-dim-color: #045476;
+  --tertiary-dark-color: #067eb1;
+  --tertiary-shade-color: #08a8ec;
+  --tertiary-tint-color: #61ccf9;
+  --tertiary-light-color: #89d9fb;
+  --tertiary-pale-color: #b0e5fc;
   --tertiary-contrast-color: #000;
-  --tertiary-dim-contrast-color: #fff;
-  --tertiary-dark-contrast-color: #fff;
-  --tertiary-shade-contrast-color: #fff;
-  --tertiary-tint-contrast-color: #000;
-  --tertiary-light-contrast-color: #000;
-  --tertiary-pale-contrast-color: #000;
-  --accent-color: #2ab4e7;
-  --accent-dim-color: #0b4b62;
-  --accent-dark-color: #117093;
-  --accent-shade-color: #1695c4;
-  --accent-tint-color: #55c3ec;
-  --accent-light-color: #7fd2f1;
-  --accent-pale-color: #aae1f5;
+  --accent-color: #fbbd23;
+  --accent-dim-color: #705102;
+  --accent-dark-color: #a97903;
+  --accent-shade-color: #e1a104;
+  --accent-tint-color: #fcca4f;
+  --accent-light-color: #fdd77b;
+  --accent-pale-color: #fde5a7;
   --accent-contrast-color: #000;
-  --accent-dim-contrast-color: #fff;
-  --accent-dark-contrast-color: #fff;
-  --accent-shade-contrast-color: #fff;
-  --accent-tint-contrast-color: #000;
-  --accent-light-contrast-color: #000;
-  --accent-pale-contrast-color: #000;
   --info-color: #3abff8;
   --info-dim-color: #045476;
   --info-dark-color: #067eb1;
@@ -412,12 +376,6 @@ a:hover {
   --info-light-color: #89d9fb;
   --info-pale-color: #b0e5fc;
   --info-contrast-color: #000;
-  --info-dim-contrast-color: #fff;
-  --info-dark-contrast-color: #fff;
-  --info-shade-contrast-color: #fff;
-  --info-tint-contrast-color: #000;
-  --info-light-contrast-color: #000;
-  --info-pale-contrast-color: #000;
   --success-color: #36d399;
   --success-dim-color: #13573e;
   --success-dark-color: #1d825d;
@@ -426,12 +384,6 @@ a:hover {
   --success-light-color: #86e5c2;
   --success-pale-color: #afedd6;
   --success-contrast-color: #000;
-  --success-dim-contrast-color: #fff;
-  --success-dark-contrast-color: #fff;
-  --success-shade-contrast-color: #fff;
-  --success-tint-contrast-color: #000;
-  --success-light-contrast-color: #000;
-  --success-pale-contrast-color: #000;
   --warning-color: #fbbd23;
   --warning-dim-color: #705102;
   --warning-dark-color: #a97903;
@@ -440,12 +392,6 @@ a:hover {
   --warning-light-color: #fdd77b;
   --warning-pale-color: #fde5a7;
   --warning-contrast-color: #000;
-  --warning-dim-contrast-color: #fff;
-  --warning-dark-contrast-color: #fff;
-  --warning-shade-contrast-color: #fff;
-  --warning-tint-contrast-color: #000;
-  --warning-light-contrast-color: #000;
-  --warning-pale-contrast-color: #000;
   --error-color: #f87272;
   --error-dim-color: #8a0707;
   --error-dark-color: #cf0a0a;
@@ -454,12 +400,6 @@ a:hover {
   --error-light-color: #fbaaaa;
   --error-pale-color: #fcc7c7;
   --error-contrast-color: #000;
-  --error-dim-contrast-color: #fff;
-  --error-dark-contrast-color: #fff;
-  --error-shade-contrast-color: #fff;
-  --error-tint-contrast-color: #000;
-  --error-light-contrast-color: #000;
-  --error-pale-contrast-color: #000;
   --tiny-button-border-radius: 0.5rem;
   --small-button-border-radius: 0.5rem;
   --button-border-radius: 0.5rem;
@@ -482,6 +422,7 @@ body {
   height: 100%;
   min-height: 100%;
   background-color: #fff;
+  color: #000;
 }
 body,
 button,
@@ -969,6 +910,174 @@ html {
   justify-content: center;
   align-items: center;
 }
+.loader-page {
+  z-index: 10000;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: #fff;
+}
+body.is-appearing .loader-page {
+  background: transparent;
+}
+.loader-page-slider {
+  position: absolute;
+  top: 0;
+  bottom: 50vh;
+  left: 0;
+  right: 0;
+  background: linear-gradient(#fff, #fff);
+  background-size: auto 100vh;
+  animation: loader-page-slider-appearing-animation 1s;
+}
+body.is-appearing .loader-page-slider {
+  animation: loader-page-slider-disappearing-animation 1s forwards;
+}
+.loader-page-logo {
+  --progress: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  height: 15rem;
+  width: 15rem;
+  animation: loader-page-logo-appearing-animation 1s;
+}
+body.is-appearing .loader-page-logo {
+  display: none;
+}
+.loader-page-logo-upper-slider {
+  position: absolute;
+  top: 0;
+  bottom: var(--progress);
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}
+.loader-page-logo-lower-slider {
+  position: absolute;
+  top: calc(100% - var(--progress));
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}
+.loader-page-logo-background {
+  height: 15rem;
+  width: 15rem;
+}
+.loader-page-logo-upper-slider .loader-page-logo-background {
+  transform: translateY(0);
+  background: url("/static/image/loader/initial_logo.svg") no-repeat center center/contain;
+}
+.loader-page-logo-lower-slider .loader-page-logo-background {
+  transform: translateY(calc(0% - calc(100% - var(--progress))));
+  background: url("/static/image/loader/final_logo.svg") no-repeat center center/contain;
+}
+@-moz-keyframes loader-page-slider-appearing-animation {
+  0% {
+    opacity: 0;
+    background: linear-gradient(#fff, #fff);
+  }
+  100% {
+    opacity: 1;
+    background: linear-gradient(#fff, #fff);
+  }
+}
+@-webkit-keyframes loader-page-slider-appearing-animation {
+  0% {
+    opacity: 0;
+    background: linear-gradient(#fff, #fff);
+  }
+  100% {
+    opacity: 1;
+    background: linear-gradient(#fff, #fff);
+  }
+}
+@-o-keyframes loader-page-slider-appearing-animation {
+  0% {
+    opacity: 0;
+    background: linear-gradient(#fff, #fff);
+  }
+  100% {
+    opacity: 1;
+    background: linear-gradient(#fff, #fff);
+  }
+}
+@keyframes loader-page-slider-appearing-animation {
+  0% {
+    opacity: 0;
+    background: linear-gradient(#fff, #fff);
+  }
+  100% {
+    opacity: 1;
+    background: linear-gradient(#fff, #fff);
+  }
+}
+@-moz-keyframes loader-page-slider-disappearing-animation {
+  0% {
+    bottom: 0;
+  }
+  100% {
+    bottom: 100vh;
+  }
+}
+@-webkit-keyframes loader-page-slider-disappearing-animation {
+  0% {
+    bottom: 0;
+  }
+  100% {
+    bottom: 100vh;
+  }
+}
+@-o-keyframes loader-page-slider-disappearing-animation {
+  0% {
+    bottom: 0;
+  }
+  100% {
+    bottom: 100vh;
+  }
+}
+@keyframes loader-page-slider-disappearing-animation {
+  0% {
+    bottom: 0;
+  }
+  100% {
+    bottom: 100vh;
+  }
+}
+@-moz-keyframes loader-page-logo-appearing-animation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes loader-page-logo-appearing-animation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-o-keyframes loader-page-logo-appearing-animation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes loader-page-logo-appearing-animation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .adjacent-page-list {
   height: 20rem;
   display: flex;
@@ -1053,7 +1162,7 @@ html {
 }
 .contact-form-input:invalid,
 .contact-form-input.is-invalid {
-  border: 0.125rem solid #f00;
+  border: 0.125rem solid #f87272;
   box-shadow: none;
 }
 .contact-form-input::placeholder {
@@ -1151,7 +1260,7 @@ html {
   color: #fff;
 }
 .cookie-consent-banner-accept-button {
-  background-color: #f00;
+  background-color: #f87272;
 }
 .cookie-consent-banner-decline-button {
   background-color: #999;
