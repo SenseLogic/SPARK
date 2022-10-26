@@ -154,10 +154,11 @@
 
     // ~~
 
-    function IsValidContactForm()
+    function IsValidContactForm(
+        contact_form
+        )
     {
         var
-            contact_form,
             captcha_input_element,
             company_input_element,
             email_input_element,
@@ -169,7 +170,6 @@
 
         it_is_valid_contact_form = true;
 
-        contact_form = document.ContactForm;
         name_input_element = contact_form.Name;
         company_input_element = contact_form.Company;
         email_input_element = contact_form.Email;
@@ -263,12 +263,9 @@
     // ~~
 
     function ClearContactForm(
+        contact_form
         )
     {
-        var
-            contact_form;
-
-        contact_form = document.ContactForm;
         contact_form.Name.value = "";
         contact_form.Company.value = "";
         contact_form.Email.value = "";
@@ -288,7 +285,7 @@
             form_data,
             request;
 
-        contact_form = document.ContactForm;
+        contact_form = GetElementById( "contact-form-container" );
 
         if ( IsValidContactForm( contact_form ) )
         {
@@ -326,7 +323,14 @@
                         [ 0.0, 0.5, 4.5, 5.0 ]
                         );
 
-                DelayCall( ClearContactForm, 0.5 );
+                DelayCall(
+                    function (
+                        )
+                    {
+                        ClearContactForm( contact_form );
+                    },
+                    0.5
+                    );
             }
         }
     }
