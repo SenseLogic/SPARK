@@ -1,4 +1,5 @@
 IncludeFiles .//*.b? .//*.sql .//*.ph? .//*.styl .//*.css .//*.svg .//*.bat .//*.sh .//*.txt .//*.xml
+ExcludeFiles ./fix.*
 ReadFiles
 Edit label text
 ReplaceText
