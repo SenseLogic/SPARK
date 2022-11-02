@@ -14,7 +14,7 @@
 
         color: WhiteColor;
 
-        +Media( min-width-50em )
+        +Media( min-width-65em )
         {
             padding: 4rem;
         }
