@@ -30,13 +30,13 @@
     .cookie-consent-banner-container a:visited
     {
         text-decoration: underline;
-        color: GrayDimColor;
+        color: GrayColor200;
     }
 
     .cookie-consent-banner-text
     {
         text-align: center;
-        color: GrayDimColor;
+        color: GrayColor200;
     }
 
     .cookie-consent-banner-button-container
@@ -65,7 +65,7 @@
 
     .cookie-consent-banner-decline-button
     {
-        background-color: GrayTintColor;
+        background-color: GrayColor600;
     }
 </style>
 <div id="cookie-consent-banner-container" class="cookie-consent-banner-container">

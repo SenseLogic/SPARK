@@ -80,7 +80,7 @@
 
         display: inline-block;
 
-        background: GrayTintColor;
+        background: GrayColor600;
 
         line-height: 3rem;
         color: WhiteColor;
