@@ -47,7 +47,7 @@
     function ResizeView(
         )
     {
-        ShowView();
+        EmitEvent( "update-view" );
         InitializeAutohideVideos();
     }
 

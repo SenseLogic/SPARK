@@ -330,10 +330,10 @@ a:hover {
   --base-contrast-color: #000;
   --neutral-color: #808080;
   --neutral-color-200: #333;
-  --neutral-color-300: #666;
-  --neutral-dark-color200: #4d4d4d;
-  --neutral-light-color200: #b3b3b3;
-  --neutral-color-700: #999;
+  --neutral-color-300: #4d4d4d;
+  --neutral-color-400: #666;
+  --neutral-color-600: #999;
+  --neutral-color-700: #b3b3b3;
   --neutral-color-800: #ccc;
   --neutral-contrast-color: #000;
   --primary-color: #3abff8;
