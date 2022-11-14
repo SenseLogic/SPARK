@@ -304,7 +304,7 @@
                 form_data
                 );
 
-            if ( request.status === 200 )
+            if ( request.status === 201 )
             {
                 GetElementById( "contact-form-container" )
                     .AnimateStyles(

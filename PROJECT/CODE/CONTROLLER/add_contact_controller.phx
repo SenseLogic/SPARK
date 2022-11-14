@@ -28,7 +28,7 @@ class ADD_CONTACT_CONTROLLER extends CONTROLLER
             AddDatabaseContact( name, company, email, phone, subject, message );
             // .SendEmails( name, company, email, phone, subject, message );
 
-            SetStatus( 200 );
+            SetStatus( 201 );
         }
         else
         {
