@@ -6,7 +6,7 @@
 <div class="page">
     <? include '../BLOCK/header_menu.php'; ?>
     <? include '../BLOCK/article_carousel.php'; ?>
-    <? include '../BLOCK/content_block_list.php'; ?>
+    <? include '../BLOCK/block_list.php'; ?>
     <? include '../BLOCK/page_padding.php'; ?>
     <? include '../BLOCK/footer_menu.php'; ?>
 </div>

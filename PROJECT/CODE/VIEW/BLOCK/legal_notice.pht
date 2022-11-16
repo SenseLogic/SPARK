@@ -7,9 +7,9 @@
 </style>
 <div class="large-padded-container legal-notice">
     <h1>
-        <# .GetProcessedTextBySlug( 'LegalNoticeTitle' ) #>
+        <# .GetProcessedTextBySlug( 'legal-notice-title' ) #>
     </h1>
     <div>
-        <# .GetProcessedMultilineTextBySlug( 'LegalNoticeText' ) #>
+        <# .GetProcessedMultilineTextBySlug( 'legal-notice-text' ) #>
     </div>
 </div>

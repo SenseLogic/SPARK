@@ -2,7 +2,7 @@
 
 require_once __DIR__ . '/' . 'view_controller.php';
 require_once __DIR__ . '/' . '../MODEL/block_type_model.php';
-require_once __DIR__ . '/' . '../MODEL/content_block_model.php';
+require_once __DIR__ . '/' . '../MODEL/block_model.php';
 require_once __DIR__ . '/' . '../MODEL/page_model.php';
 require_once __DIR__ . '/' . '../MODEL/page_sub_page_model.php';
 
@@ -19,12 +19,12 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
         parent::__construct( $language_code );
 
         $this->BlockTypeBySlugMap = GetDatabaseBlockTypeBySlugMap();
-        $this->ContentBlockArray = GetDatabaseContentBlockArray();
+        $this->BlockArray = GetDatabaseBlockArray();
         $this->PageArray = GetDatabasePageArray();
         $this->PageSubPageArray = GetDatabasePageSubPageArray();
 
-        $this->ContentBlockBySlugMap = GetValidContentBlockBySlugMap( $this->ContentBlockArray );
-        $this->PageBySlugMap = GetValidPageBySlugMap( $this->PageArray, $this->PageSubPageArray, $this->ContentBlockArray, $this->ContentBlockBySlugMap );
+        $this->BlockBySlugMap = GetValidBlockBySlugMap( $this->BlockArray );
+        $this->PageBySlugMap = GetValidPageBySlugMap( $this->PageArray, $this->PageSubPageArray, $this->BlockArray, $this->BlockBySlugMap );
 
         $this->ImagePathArray = [];
 
@@ -36,11 +36,11 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
             }
         }
 
-        foreach ( $this->ContentBlockBySlugMap as  $content_block_slug =>  $content_block )
+        foreach ( $this->BlockBySlugMap as  $block_slug =>  $block )
         {
-            if ( $content_block->ImagePath !== '' )
+            if ( $block->ImagePath !== '' )
             {
-                array_push( $this->ImagePathArray, $content_block->ImagePath );
+                array_push( $this->ImagePathArray, $block->ImagePath );
             }
         }
 

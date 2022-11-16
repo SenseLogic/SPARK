@@ -33,17 +33,23 @@ spark-project
         SubPageSlug : PAGE.Slug | is_slug, is_reference, reference page~GetDatabasePageArray()~page.Slug~page.Slug
         Number : FLOAT32 | ascending
 
+    BLOCK_CATEGORY | dropped
+
+        Id : UINT32 | key, unique, incremented
+        Slug : STRING | mapped, is_slug
+        Name : STRING = "{{latin 1 1 4 6}}¨fr:{{latin 1 1 4 6}}" | is_multilingual
+
     BLOCK_TYPE | dropped
 
         Id : UINT32 | key, unique, incremented
         Slug : STRING | mapped, is_slug
         Name : STRING = "{{latin 1 1 4 6}}¨fr:{{latin 1 1 4 6}}" | is_multilingual
 
-    CONTENT_BLOCK | sorted, managed, dropped, count 60
+    BLOCK | sorted, managed, dropped, count 60
 
         Id : UINT32 | key, unique, incremented
         PageSlug : PAGE.Slug | optional, ascending, is_slug, is_reference, reference page~GetDatabasePageArray()~page.Slug~page.Slug
-        BlockSlug : CONTENT_BLOCK.Slug = "" | optional, ascending, is_slug, is_reference, reference content_block~GetDatabaseContentBlockArray()~content_block.Slug~content_block.Slug
+        BlockSlug : BLOCK.Slug = "" | optional, ascending, is_slug, is_reference, reference block~GetDatabaseBlockArray()~block.Slug~block.Slug
         Slug : STRING = "{{Title:prefix ¨:slug_case}}" | mapped, is_slug
         TypeSlug : BLOCK_TYPE.Slug | is_slug, is_reference, reference block_type~GetDatabaseBlockTypeArray()~block_type.Slug~.GetUntranslatedText( block_type.Name )
         Number : FLOAT32 | ascending

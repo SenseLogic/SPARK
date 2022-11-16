@@ -1,0 +1,32 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/block_model.php';
+
+// -- TYPES
+
+class MANAGE_BLOCK_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        int block_id
+        )
+    {
+        parent::constructor();
+
+        .Title = 'Manage a content block';
+        .BlockArray = GetDatabaseBlockArray();
+        .BlockBySlugMap = GetValidBlockBySlugMap( .BlockArray );
+        .Block = GetValidBlockById( .BlockBySlugMap, block_id );
+        .ListRoute = '/admin/block/manage/' .. block_id;
+
+        SetSessionValue( 'ListRoute', GetRequest() );
+
+        import '../VIEW/manage_block_view.php';
+    }
+}
+
+// -- STATEMENTS
+
+var manage_block_controller = new MANAGE_BLOCK_CONTROLLER( var block_id );

@@ -28,12 +28,12 @@
 </style>
 <div class="large-padded-container footer-menu">
     <div class="margin-right-auto! scaled-button footer-menu-button" onclick="ShowView( 'home' )">
-        <# .GetProcessedTextBySlug( 'FooterMenuHomeButton' ) #>
+        <# .GetProcessedTextBySlug( 'footer-menu-home-button' ) #>
     </div>
     <div class="scaled-button footer-menu-button" onclick="ShowView( 'contact' )">
-        <# .GetProcessedTextBySlug( 'FooterMenuContactButton' ) #>
+        <# .GetProcessedTextBySlug( 'footer-menu-contact-button' ) #>
     </div>
     <div class="margin-left-auto! scaled-button footer-menu-button" onclick="ShowView( 'legal-notice' )">
-        <# .GetProcessedTextBySlug( 'FooterMenuLegalNoticeButton' ) #>
+        <# .GetProcessedTextBySlug( 'footer-menu-legal-notice-button' ) #>
     </div>
 </div>

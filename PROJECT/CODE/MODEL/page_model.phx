@@ -1,6 +1,6 @@
 // -- IMPORTS
 
-import 'content_block.php';
+import 'block.php';
 import 'page.php';
 import 'page_type.php';
 
@@ -9,27 +9,27 @@ import 'page_type.php';
 function GetValidPageBySlugMap(
     array &page_array,
     array &page_sub_page_array,
-    array &content_block_array,
-    array &content_block_by_slug_map
+    array &block_array,
+    array &block_by_slug_map
     )
 {
     var page_by_slug_map = [];
 
     foreach ( var page; page_array )
     {
-        page.ContentBlockArray = [];
+        page.BlockArray = [];
         page.SubPageArray = [];
         page.PageSubPageArray = [];
         page_by_slug_map[ page.Slug ] = page;
     }
 
-    foreach ( var content_block; content_block_array )
+    foreach ( var block; block_array )
     {
-        if ( isset( page_by_slug_map[ content_block.PageSlug ] ) )
+        if ( isset( page_by_slug_map[ block.PageSlug ] ) )
         {
             array_push(
-                page_by_slug_map[ content_block.PageSlug ].ContentBlockArray,
-                content_block
+                page_by_slug_map[ block.PageSlug ].BlockArray,
+                block
                 );
         }
     }

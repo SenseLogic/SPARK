@@ -54,6 +54,15 @@
                         </a>
                     </div>
                     <div class="page-menu-item">
+                        <a href="/admin/block-category">
+                            <span class="form-button form-button-large block-category-button">
+                            </span>
+                            <span class="form-button-tooltip">
+                                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Block category' ) ); ?>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="page-menu-item">
                         <a href="/admin/block-type">
                             <span class="form-button form-button-large block-type-button">
                             </span>
@@ -63,20 +72,20 @@
                         </a>
                     </div>
                     <div class="page-menu-item">
-                        <a href="/admin/content-block/manage">
-                            <span class="form-button form-button-large content-block-manager-button">
+                        <a href="/admin/block/manage">
+                            <span class="form-button form-button-large block-manager-button">
                             </span>
                             <span class="form-button-tooltip">
-                                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Content block manager' ) ); ?>
+                                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Block manager' ) ); ?>
                             </span>
                         </a>
                     </div>
                     <div class="page-menu-item">
-                        <a href="/admin/content-block">
-                            <span class="form-button form-button-large content-block-button">
+                        <a href="/admin/block">
+                            <span class="form-button form-button-large block-button">
                             </span>
                             <span class="form-button-tooltip">
-                                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Content block' ) ); ?>
+                                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Block' ) ); ?>
                             </span>
                         </a>
                     </div>

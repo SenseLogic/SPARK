@@ -1,7 +1,7 @@
 <?php // -- IMPORTS
 
 require_once __DIR__ . '/' . 'controller.php';
-require_once __DIR__ . '/' . '../../MODEL/content_block_model.php';
+require_once __DIR__ . '/' . '../../MODEL/block_model.php';
 require_once __DIR__ . '/' . '../../MODEL/page_model.php';
 require_once __DIR__ . '/' . '../../MODEL/page_sub_page_model.php';
 
@@ -18,11 +18,11 @@ class MANAGE_PAGE_CONTROLLER extends CONTROLLER
         parent::__construct();
 
         $this->Title = 'Manage a page';
-        $this->ContentBlockArray = GetDatabaseContentBlockArray();
-        $this->ContentBlockBySlugMap = GetValidContentBlockBySlugMap( $this->ContentBlockArray );
+        $this->BlockArray = GetDatabaseBlockArray();
+        $this->BlockBySlugMap = GetValidBlockBySlugMap( $this->BlockArray );
         $this->PageArray = GetDatabasePageArray();
         $this->PageSubPageArray = GetDatabasePageSubPageArray();
-        $this->PageBySlugMap = GetValidPageBySlugMap( $this->PageArray, $this->PageSubPageArray, $this->ContentBlockArray, $this->ContentBlockBySlugMap );
+        $this->PageBySlugMap = GetValidPageBySlugMap( $this->PageArray, $this->PageSubPageArray, $this->BlockArray, $this->BlockBySlugMap );
         $this->Page = GetValidPageById( $this->PageBySlugMap, $page_id );
         $this->ListRoute = '/admin/page/manage/' . $page_id;
 

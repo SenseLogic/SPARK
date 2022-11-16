@@ -1,6 +1,6 @@
 <?php // -- IMPORTS
 
-require_once __DIR__ . '/' . 'content_block.php';
+require_once __DIR__ . '/' . 'block.php';
 require_once __DIR__ . '/' . 'page.php';
 require_once __DIR__ . '/' . 'page_type.php';
 
@@ -9,27 +9,27 @@ require_once __DIR__ . '/' . 'page_type.php';
 function GetValidPageBySlugMap(
     array &$page_array,
     array &$page_sub_page_array,
-    array &$content_block_array,
-    array &$content_block_by_slug_map
+    array &$block_array,
+    array &$block_by_slug_map
     )
 {
      $page_by_slug_map = [];
 
     foreach ( $page_array as  $page )
     {
-        $page->ContentBlockArray = [];
+        $page->BlockArray = [];
         $page->SubPageArray = [];
         $page->PageSubPageArray = [];
         $page_by_slug_map[ $page->Slug ] = $page;
     }
 
-    foreach ( $content_block_array as  $content_block )
+    foreach ( $block_array as  $block )
     {
-        if ( isset( $page_by_slug_map[ $content_block->PageSlug ] ) )
+        if ( isset( $page_by_slug_map[ $block->PageSlug ] ) )
         {
             array_push(
-                $page_by_slug_map[ $content_block->PageSlug ]->ContentBlockArray,
-                $content_block
+                $page_by_slug_map[ $block->PageSlug ]->BlockArray,
+                $block
                 );
         }
     }

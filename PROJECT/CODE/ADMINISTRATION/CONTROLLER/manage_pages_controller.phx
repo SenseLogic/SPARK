@@ -1,7 +1,7 @@
 // -- IMPORTS
 
 import 'controller.php';
-import '../../MODEL/content_block_model.php';
+import '../../MODEL/block_model.php';
 import '../../MODEL/page_model.php';
 import '../../MODEL/page_sub_page_model.php';
 
@@ -17,11 +17,11 @@ class MANAGE_PAGES_CONTROLLER extends CONTROLLER
         parent::constructor();
 
         .Title = 'Manage pages';
-        .ContentBlockArray = GetDatabaseContentBlockArray();
-        .ContentBlockBySlugMap = GetValidContentBlockBySlugMap( .ContentBlockArray );
+        .BlockArray = GetDatabaseBlockArray();
+        .BlockBySlugMap = GetValidBlockBySlugMap( .BlockArray );
         .PageArray = GetDatabasePageArray();
         .PageSubPageArray = GetDatabasePageSubPageArray();
-        .PageBySlugMap = GetValidPageBySlugMap( .PageArray, .PageSubPageArray, .ContentBlockArray, .ContentBlockBySlugMap );
+        .PageBySlugMap = GetValidPageBySlugMap( .PageArray, .PageSubPageArray, .BlockArray, .BlockBySlugMap );
         .ListRoute = '/admin/page/manage';
 
         SetSessionValue( 'ListRoute', .ListRoute );

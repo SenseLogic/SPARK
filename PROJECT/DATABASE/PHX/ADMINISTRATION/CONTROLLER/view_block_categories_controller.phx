@@ -1,0 +1,29 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/block_category_model.php';
+
+// -- TYPES
+
+class VIEW_BLOCK_CATEGORIES_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code
+        )
+    {
+        parent::constructor( language_code );
+
+        .Title = 'View block categories';
+        .BlockCategoryArray = GetDatabaseBlockCategoryArray();
+
+        SetSessionValue( 'ListRoute', GetRequest() );
+
+        import '../VIEW/view_block_categories_view.php';
+    }
+}
+
+// -- STATEMENTS
+
+var view_block_categories_controller = new VIEW_BLOCK_CATEGORIES_CONTROLLER( var language_code );

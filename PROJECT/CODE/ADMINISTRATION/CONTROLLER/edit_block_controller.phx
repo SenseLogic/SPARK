@@ -1,0 +1,29 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/block_model.php';
+
+// -- TYPES
+
+class EDIT_BLOCK_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code,
+        block_id
+        )
+    {
+        parent::constructor( language_code );
+
+        .Title = 'Edit a block';
+        .Block = GetDatabaseBlockById( block_id );
+        .ListRoute = FindSessionValue( 'ListRoute', '/admin/block' );
+
+        import '../VIEW/edit_block_view.php';
+    }
+}
+
+// -- STATEMENTS
+
+var edit_block_controller = new EDIT_BLOCK_CONTROLLER( var language_code, var block_id );

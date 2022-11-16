@@ -1,0 +1,30 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/block_category_model.php';
+
+// -- TYPES
+
+class DO_EDIT_BLOCK_CATEGORY_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code,
+        block_category_id
+        )
+    {
+        parent::constructor( language_code );
+
+        var slug = GetPostValue( 'Slug' );
+        var name = GetPostValue( 'Name' );
+
+        SetDatabaseBlockCategory( block_category_id, slug, name );
+
+        Redirect( FindSessionValue( 'ListRoute', '/admin/block-category' ) );
+    }
+}
+
+// -- STATEMENTS
+
+var do_edit_block_category_controller = new DO_EDIT_BLOCK_CATEGORY_CONTROLLER( var language_code, var block_category_id );

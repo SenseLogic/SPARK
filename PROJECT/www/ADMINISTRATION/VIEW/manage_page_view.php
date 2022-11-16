@@ -52,12 +52,12 @@
         </div>
     </div>
     <div class="form-title">
-        <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Content blocks' ) ); ?> :
+        <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Blocks' ) ); ?> :
     </div>
     <div class="margin-top-1rem margin-bottom-2rem card-list">
-        <?php  $added_content_block_number = 1; ?>
-        <?php foreach ( $this->Page->ContentBlockArray as  $content_block_index =>  $content_block ) { ?>
-            <?php $added_content_block_number = GetAddedElementNumber( $this->Page->ContentBlockArray, $content_block_index ); ?>
+        <?php  $added_block_number = 1; ?>
+        <?php foreach ( $this->Page->BlockArray as  $block_index =>  $block ) { ?>
+            <?php $added_block_number = GetAddedElementNumber( $this->Page->BlockArray, $block_index ); ?>
             <div class="card-container filter-row">
                 <div class="card">
                     <div class="form-container">
@@ -65,19 +65,19 @@
                             <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Slug' ) ); ?> :
                         </div>
                         <div>
-                            <input class="form-input" name="Slug" type="text" value="<?php echo htmlspecialchars( GetValueText( $content_block->Slug ) ); ?>" readonly/>
+                            <input class="form-input" name="Slug" type="text" value="<?php echo htmlspecialchars( GetValueText( $block->Slug ) ); ?>" readonly/>
                         </div>
                         <div class="form-field-name">
                             <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Type Slug' ) ); ?> :
                         </div>
                         <div>
-                            <input class="form-input" name="TypeSlug" type="text" value="<?php echo htmlspecialchars( GetValueText( $content_block->TypeSlug ) ); ?>" readonly/>
+                            <input class="form-input" name="TypeSlug" type="text" value="<?php echo htmlspecialchars( GetValueText( $block->TypeSlug ) ); ?>" readonly/>
                         </div>
                         <div class="form-field-name">
                             <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Number' ) ); ?> :
                         </div>
                         <div>
-                            <input class="form-input" name="Number" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Page->ContentBlockArray[ $content_block_index ]->Number ) ); ?>" readonly/>
+                            <input class="form-input" name="Number" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Page->BlockArray[ $block_index ]->Number ) ); ?>" readonly/>
                         </div>
                         <div class="form-field-name">
                             <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Title' ) ); ?> :
@@ -85,7 +85,7 @@
                         <div>
                             <div>
                                 <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
-                                    <input class="form-translation form-input" name="Title" type="text" value="<?php echo htmlspecialchars( GetValueText( GetTranslatedText( $content_block->Title, $language_code ) ) ); ?>" readonly/>
+                                    <input class="form-translation form-input" name="Title" type="text" value="<?php echo htmlspecialchars( GetValueText( GetTranslatedText( $block->Title, $language_code ) ) ); ?>" readonly/>
                                 <?php } ?>
                             </div>
                         </div>
@@ -93,21 +93,21 @@
                             <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Image Path' ) ); ?> :
                         </div>
                         <div>
-                            <input class="form-input" name="ImagePath" type="text" value="<?php echo htmlspecialchars( $content_block->ImagePath ); ?>" readonly/>
+                            <input class="form-input" name="ImagePath" type="text" value="<?php echo htmlspecialchars( $block->ImagePath ); ?>" readonly/>
                             <div class="form-upload-container">
-                                <img class="form-upload-image" src="<?php echo htmlspecialchars( $content_block->ImagePath ); ?>" onerror="this.src='/static/image/admin/missing_image.svg'"/>
+                                <img class="form-upload-image" src="<?php echo htmlspecialchars( $block->ImagePath ); ?>" onerror="this.src='/static/image/admin/missing_image.svg'"/>
                             </div>
                         </div>
                     </div>
                     <div class="form-toolbar">
                         <?php if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
-                            <a class="form-button manage-button" href="/admin/content-block/manage/<?php echo htmlspecialchars( $content_block->Id ); ?>">
+                            <a class="form-button manage-button" href="/admin/block/manage/<?php echo htmlspecialchars( $block->Id ); ?>">
                             </a>
-                            <a class="form-button edit-button" href="/admin/content-block/edit/<?php echo htmlspecialchars( $content_block->Id ); ?>">
+                            <a class="form-button edit-button" href="/admin/block/edit/<?php echo htmlspecialchars( $block->Id ); ?>">
                             </a>
-                            <a class="form-button remove-button" href="/admin/content-block/remove/<?php echo htmlspecialchars( $content_block->Id ); ?>">
+                            <a class="form-button remove-button" href="/admin/block/remove/<?php echo htmlspecialchars( $block->Id ); ?>">
                             </a>
-                            <a class="form-button add-button" href="/admin/content-block/add?PageSlug=<?php echo $this->Page->Slug; ?>&Number=<?php echo $added_content_block_number; ?>">
+                            <a class="form-button add-button" href="/admin/block/add?PageSlug=<?php echo $this->Page->Slug; ?>&Number=<?php echo $added_block_number; ?>">
                             </a>
                         <?php } ?>
                     </div>
@@ -116,7 +116,7 @@
         <?php } ?>
     </div>
     <div class="form-extended form-centered margin-top-1rem margin-bottom-1rem">
-        <a class="form-button form-button-large add-button" href="/admin/content-block/add?PageSlug=<?php echo $this->Page->Slug; ?>&Number=<?php echo $added_content_block_number; ?>">
+        <a class="form-button form-button-large add-button" href="/admin/block/add?PageSlug=<?php echo $this->Page->Slug; ?>&Number=<?php echo $added_block_number; ?>">
         </a>
     </div>
     <div class="form-title">

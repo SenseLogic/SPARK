@@ -316,9 +316,9 @@ a:hover {
   outline: 0;
 }
 :root {
-  --primary-font-family: Ubuntu, sans-serif;
-  --secondary-font-family: Ubuntu, sans-serif;
-  --tertiary-font-family: Ubuntu, sans-serif;
+  --primary-font-family: "Ubuntu", sans-serif;
+  --secondary-font-family: "Ubuntu", sans-serif;
+  --tertiary-font-family: "Ubuntu", sans-serif;
   --mono-font-family: MonoFontFamily;
   --base-color: #fff;
   --base-color-200: #666;

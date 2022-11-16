@@ -1,0 +1,30 @@
+<? include 'BLOCK/page_header.php'; ?>
+<div id="remove-block-category-view">
+    <div class="page-section form-section">
+        <form class="form-centered" action="/admin/block-category/remove/<% .BlockCategory.Id %>" method="post">
+            <div class="form-container">
+                <div class="form-field-name">
+                    <% .GetProcessedTextBySlug( 'Slug' ) %> :
+                </div>
+                <div>
+                    <input class="form-input" name="Slug" type="text" value="<% GetValueText( .BlockCategory.Slug ) %>" readonly/>
+                </div>
+                <div class="form-field-name">
+                    <% .GetProcessedTextBySlug( 'Name' ) %> :
+                </div>
+                <div>
+                    <div>
+                        <? foreach ( var language_code; LanguageCodeArray ) { ?>
+                            <input class="form-translation form-input" name="Name" type="text" value="<% GetValueText( GetTranslatedText( .BlockCategory.Name, language_code ) ) %>" readonly/>
+                        <? } ?>
+                    </div>
+                </div>
+                <a class="justify-self-start form-button form-button-large cancel-button" href="<% .ListRoute %>">
+                </a>
+                <button class="justify-self-end form-button-large form-button form-button-large remove-button" type="submit">
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<? include 'BLOCK/page_footer.php'; ?>

@@ -1,0 +1,8 @@
+<style file="block_list.styl">
+</style>
+<?
+    foreach ( var block; var page.BlockArray )
+    {
+        include block.TypeSlug .. '.php';
+    }
+?>

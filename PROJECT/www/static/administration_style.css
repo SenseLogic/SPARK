@@ -728,14 +728,17 @@ textarea {
 .page-sub-page-button {
   background: url("/static/image/admin/page_sub_page_icon.svg") no-repeat center center/contain;
 }
+.block-category-button {
+  background: url("/static/image/admin/block_category_icon.svg") no-repeat center center/contain;
+}
 .block-type-button {
   background: url("/static/image/admin/block_type_icon.svg") no-repeat center center/contain;
 }
-.content-block-manager-button {
-  background: url("/static/image/admin/content_block_manager_icon.svg") no-repeat center center/contain;
+.block-manager-button {
+  background: url("/static/image/admin/block_manager_icon.svg") no-repeat center center/contain;
 }
-.content-block-button {
-  background: url("/static/image/admin/content_block_icon.svg") no-repeat center center/contain;
+.block-button {
+  background: url("/static/image/admin/block_icon.svg") no-repeat center center/contain;
 }
 .contact-button {
   background: url("/static/image/admin/contact_icon.svg") no-repeat center center/contain;
@@ -755,10 +758,13 @@ textarea {
 .page-sub-page-table {
   grid-template-columns: repeat(4, auto);
 }
+.block-category-table {
+  grid-template-columns: repeat(3, auto);
+}
 .block-type-table {
   grid-template-columns: repeat(3, auto);
 }
-.content-block-table {
+.block-table {
   grid-template-columns: repeat(12, auto);
 }
 .contact-table {

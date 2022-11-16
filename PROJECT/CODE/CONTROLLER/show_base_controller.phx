@@ -2,7 +2,7 @@
 
 import 'view_controller.php';
 import '../MODEL/block_type_model.php';
-import '../MODEL/content_block_model.php';
+import '../MODEL/block_model.php';
 import '../MODEL/page_model.php';
 import '../MODEL/page_sub_page_model.php';
 
@@ -19,12 +19,12 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
         parent::constructor( language_code );
 
         .BlockTypeBySlugMap = GetDatabaseBlockTypeBySlugMap();
-        .ContentBlockArray = GetDatabaseContentBlockArray();
+        .BlockArray = GetDatabaseBlockArray();
         .PageArray = GetDatabasePageArray();
         .PageSubPageArray = GetDatabasePageSubPageArray();
 
-        .ContentBlockBySlugMap = GetValidContentBlockBySlugMap( .ContentBlockArray );
-        .PageBySlugMap = GetValidPageBySlugMap( .PageArray, .PageSubPageArray, .ContentBlockArray, .ContentBlockBySlugMap );
+        .BlockBySlugMap = GetValidBlockBySlugMap( .BlockArray );
+        .PageBySlugMap = GetValidPageBySlugMap( .PageArray, .PageSubPageArray, .BlockArray, .BlockBySlugMap );
 
         .ImagePathArray = [];
 
@@ -36,11 +36,11 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
             }
         }
 
-        foreach ( var content_block_slug => var content_block; .ContentBlockBySlugMap )
+        foreach ( var block_slug => var block; .BlockBySlugMap )
         {
-            if ( content_block.ImagePath !== '' )
+            if ( block.ImagePath !== '' )
             {
-                array_push( .ImagePathArray, content_block.ImagePath );
+                array_push( .ImagePathArray, block.ImagePath );
             }
         }
 

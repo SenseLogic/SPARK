@@ -67,7 +67,7 @@
 </style>
 <div class="scroll-down-reminder">
     <div class="scroll-down-reminder-text">
-        <# .GetProcessedTextBySlug( 'ScrollDownReminder' ) #>
+        <# .GetProcessedTextBySlug( 'scroll-down-reminder' ) #>
     </div>
     <div class="scroll-down-reminder-icon">
     </div>

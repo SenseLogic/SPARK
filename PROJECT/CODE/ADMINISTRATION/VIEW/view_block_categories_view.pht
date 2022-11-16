@@ -1,0 +1,89 @@
+<? include 'BLOCK/page_header.php'; ?>
+<div id="view-block-categories-view">
+    <div class="form-limited form-centered margin-bottom-1rem">
+        <div class="tool-container">
+            <? var filter_name = "BlockCategoryFilter"; ?>
+            <? include 'BLOCK/filter.php'; ?>
+            <? var list_mode_name = "BlockCategoryListMode"; ?>
+            <? include 'BLOCK/list_mode.php'; ?>
+            <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                <a class="form-button form-button-large add-button" href="/admin/block-category/add">
+                </a>
+            <? } ?>
+        </div>
+    </div>
+    <div class="cell-list page-section form-section is-hidden">
+        <div class="form-container table-container block-category-table sortable-table">
+            <div class="form-column-name sortable-table-column">
+                <% .GetProcessedTextBySlug( 'Slug' ) %>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <% .GetProcessedTextBySlug( 'Name' ) %>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <% .GetProcessedTextBySlug( 'Action' ) %>
+            </div>
+            <? foreach ( var block_category; .BlockCategoryArray ) { ?>
+                <div class="sortable-table-row filter-row filter-content">
+                    <div class="sortable-table-cell filter-cell">
+                        <% GetValueText( block_category.Slug ) %>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <div>
+                            <? foreach ( var language_code; LanguageCodeArray ) { ?>
+                                <div class="form-translation">
+                                    <% GetValueText( GetTranslatedText( block_category.Name, language_code ) ) %>
+                                </div>
+                            <? } ?>
+                        </div>
+                    </div>
+                    <div class="form-centered sortable-table-cell">
+                        <a class="form-button view-button" href="/admin/block-category/view/<% block_category.Id %>">
+                        </a>
+                        <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                            <a class="form-button edit-button" href="/admin/block-category/edit/<% block_category.Id %>">
+                            </a>
+                            <a class="form-button remove-button" href="/admin/block-category/remove/<% block_category.Id %>">
+                            </a>
+                        <? } ?>
+                    </div>
+                </div>
+            <? } ?>
+        </div>
+    </div>
+    <div class="card-list is-hidden">
+        <? foreach ( var block_category; .BlockCategoryArray ) { ?>
+            <div class="card-container filter-row">
+                <div class="card">
+                    <div class="form-container">
+                        <div class="form-field-name">
+                            <% .GetProcessedTextBySlug( 'Slug' ) %> :
+                        </div>
+                        <div>
+                                <input class="form-input" name="Slug" type="text" value="<% GetValueText( block_category.Slug ) %>" readonly/>
+                        </div>
+                        <div class="form-field-name">
+                            <% .GetProcessedTextBySlug( 'Name' ) %> :
+                        </div>
+                        <div>
+                            <div>
+                                <? foreach ( var language_code; LanguageCodeArray ) { ?>
+                                    <input class="form-translation form-input" name="Name" type="text" value="<% GetValueText( GetTranslatedText( block_category.Name, language_code ) ) %>" readonly/>
+                                <? } ?>
+                            </div>
+                        </div>
+                    </div>
+                    <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                        <div class="form-toolbar">
+                            <a class="form-button edit-button" href="/admin/block-category/edit/<% block_category.Id %>">
+                            </a>
+                            <a class="form-button remove-button" href="/admin/block-category/remove/<% block_category.Id %>">
+                            </a>
+                        </div>
+                    <? } ?>
+                </div>
+            </div>
+        <? } ?>
+    </div>
+</div>
+<? include 'BLOCK/page_footer.php'; ?>
