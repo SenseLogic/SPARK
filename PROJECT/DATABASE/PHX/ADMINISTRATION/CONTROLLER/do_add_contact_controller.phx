@@ -15,6 +15,7 @@ class DO_ADD_CONTACT_CONTROLLER extends CONTROLLER
     {
         parent::constructor( language_code );
 
+        var id = GetPostValue( 'Id' );
         var name = GetPostValue( 'Name' );
         var company = GetPostValue( 'Company' );
         var email = GetPostValue( 'Email' );
@@ -22,7 +23,7 @@ class DO_ADD_CONTACT_CONTROLLER extends CONTROLLER
         var subject = GetPostValue( 'Subject' );
         var message = GetPostValue( 'Message' );
 
-        AddDatabaseContact( name, company, email, phone, subject, message );
+        AddDatabaseContact( id, name, company, email, phone, subject, message );
 
         Redirect( FindSessionValue( 'ListRoute', '/admin/contact' ) );
     }

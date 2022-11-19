@@ -1,0 +1,27 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/language_model.php';
+
+// -- TYPES
+
+class ADD_LANGUAGE_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code
+        )
+    {
+        parent::constructor( language_code );
+
+        .Title = 'Add a language';
+        .ListRoute = FindSessionValue( 'ListRoute', '/admin/language' );
+
+        import '../VIEW/add_language_view.php';
+    }
+}
+
+// -- STATEMENTS
+
+var add_language_controller = new ADD_LANGUAGE_CONTROLLER( var language_code );

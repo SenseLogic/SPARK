@@ -1,19 +1,19 @@
 <?php
-     $page_slug_array = [];
+     $page_id_array = [];
 
     foreach (  $page_array as  $page_ )
     {
-        array_push( $page_slug_array, $page_->Slug );
+        array_push( $page_id_array, $page_->Id );
     }
 
-     $page_slug_count = count(  $page_slug_array );
-     $page_slug_index = array_search(  $page->Slug, $page_slug_array );
+     $page_id_count = count(  $page_id_array );
+     $page_id_index = array_search(  $page->Id, $page_id_array );
 
-     $prior_page_slug_index = ( $page_slug_index + $page_slug_count - 1 ) % $page_slug_count;
-     $next_page_slug_index = ( $page_slug_index + 1 ) % $page_slug_count;
+     $prior_page_id_index = ( $page_id_index + $page_id_count - 1 ) % $page_id_count;
+     $next_page_id_index = ( $page_id_index + 1 ) % $page_id_count;
 
-     $prior_page = $this->PageBySlugMap[ $page_slug_array[ $prior_page_slug_index ] ];
-     $next_page = $this->PageBySlugMap[ $page_slug_array[ $next_page_slug_index ] ];
+     $prior_page = $this->PageByIdMap[ $page_id_array[ $prior_page_id_index ] ];
+     $next_page = $this->PageByIdMap[ $page_id_array[ $next_page_id_index ] ];
 ?>
 
 

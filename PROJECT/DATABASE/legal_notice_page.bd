@@ -1,0 +1,11 @@
+LEGAL_NOTICE_PAGE
+
+    Id Route Number LanguageCodeArray Title ImagePath
+
+        %legal-notice
+            ~ legal-notice
+            ~ 1
+            ~ { en ~ fr }
+            ~ Legal notice
+              ¨fr:Mention légale
+            ~ /static/image/article/mountains.jpg

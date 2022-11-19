@@ -1,0 +1,187 @@
+TEXT
+
+    Slug Text
+
+        scroll-down-reminder
+            ~ Scroll down
+              ¨fr:Faire défiler
+
+        header-menu-home-button
+            ~ Home
+              ¨fr:Accueil
+
+        header-menu-articles-button
+            ~ Articles
+              ¨fr:Articles
+
+        header-menu-cookie-policy-button
+            ~ Cookie policy
+              ¨fr:Politique de cookies
+
+        header-menu-legal-notice-button
+            ~ Legal notice
+              ¨fr:Mention légale
+
+        header-menu-contact-button
+            ~ Contact
+
+        header-menu-english-button
+            ~ EN
+
+        header-menu-french-button
+            ~ FR
+
+        footer-menu-home-button
+            ~ Home
+              ¨fr:Accueil
+
+        footer-menu-article-list-button
+            ~ Article list
+              ¨fr:Liste d'articles
+
+        footer-menu-contact-button
+            ~ Contact
+
+        footer-menu-legal-notice-button
+            ~ Legal notice
+              ¨fr:Mention légale
+
+        contact-form-name-placeholder
+            ~ Name*
+              ¨fr:Nom*
+
+        contact-form-company-placeholder
+            ~ Company*
+              ¨fr:Société*
+
+        contact-form-email-placeholder
+            ~ E-mail*
+              ¨fr:Email*
+
+        contact-form-phone-placeholder
+            ~ Phone*
+              ¨fr:Téléphone*
+
+        contact-form-subject-placeholder
+            ~ Subject*
+              ¨fr:Sujet*
+
+        contact-form-message-placeholder
+            ~ Message*
+
+        contact-form-captcha-placeholder
+            ~ Captcha*
+
+        contact-form-send-button
+            ~ Send
+              ¨fr:Envoyer
+
+        contact-form-thanks-text
+            ~ Thank you for your interest in Spark Project!
+              ¨fr:Merci de l'intérêt que vous portez à Spark Project !
+
+        contact-mail-thanks-text
+            ~ Hi,\\n\\nThank you for your interest in Spark Project. We will get back to you as soon as possible.\\n\\nBest regards,\\n\\nThe Spark Project team\\n
+              ¨fr:Bonjour,\\n\\nJe vous remercie de l'intérêt que vous portez à Spark Project. Nous vous répondrons dès que possible.\\n\\nMeilleures salutations,\\n\\nL'équipe de Spark Project.\\n
+
+        cookie-consent-banner-text
+            ~ We use cookies on our website to provide you with the best possible online experience.^
+              ([legal-notice][More information])
+              ¨fr:Nous utilisons des cookies sur notre site Web pour vous offrir la meilleure expérience en ligne possible.^
+              ([legal-notice][Plus d'informations])
+
+        cookie-consent-banner-accept-button
+            ~ Accept
+              ¨fr:Accepter
+
+        cookie-consent-banner-decline-button
+            ~ Decline
+              ¨fr:Refuser
+
+        cookie-policy-title
+            ~ Legal notice
+              ¨fr:Mention légale
+
+        cookie-policy-text
+            ~ ! Title\\n
+              \\n
+              Paragraph.\\n
+              \\n
+              !! Subtitle\\n
+              \\n
+              Paragraph.
+
+        legal-notice-title
+            ~ Legal notice
+              ¨fr:Mention légale
+
+        legal-notice-text
+            ~ ! Title\\n
+              \\n
+              - item\\n
+              \\n
+              ^ * item\\n
+              \\n
+              ^ * item\\n
+              \\n
+              - item\\n
+              \\n
+              ^ * item\\n
+              \\n
+              ^ * item\\n
+              \\n
+              !! Subtitle\\n
+              \\n
+              **Bold** %%italic%% __underlined__ ,,subscript,, \^\^superscript\^\^:\\n
+              \\n
+              [[[\\n
+              [[ Fruit || Vegetable ]]\\n
+              [[ apple || potato ]]\\n
+              [[ orange || carrot ]]\\n
+              [[ kiwi || broccoli ]]\\n
+              ]]]\\n
+              \\n
+              For more information : ((http://www.wikipedia.com)(Wikipedia)).\\n
+              \\n
+              !! Subtitle\\n
+              \\n
+              <red>RED</red>\\n
+              <green>GREEN</green>\\n
+              <color<#00F>>BLUE</color>\\n
+              <size<3rem>>BIG</size>\\n
+              <weight<100>>THIN</weight>\\n
+              ¨fr:! Titre\\n
+              \\n
+              - élément\\n
+              \\n
+              ^ * élément\\n
+              \\n
+              ^ * élément\\n
+              \\n
+              - élément\\n
+              \\n
+              ^ * élément\\n
+              \\n
+              ^ * élément\\n
+              \\n
+              !! Sous-titre\\n
+              \\n
+              **Gras** %%italique%% __souligné__ ,,indice,, \^\^exposant\^\^ :\\n
+              \\n
+              [[[\\n
+              [[ Fruit || Légume ]]\\n
+              [[ pomme || patate ]]\\n
+              [[ orange || carotte ]]\\n
+              [[ kiwi || brocoli ]]\\n
+              ]]]\\n
+              \\n
+              Pour plus d'informations : ((http://www.wikipedia.com)(Wikipedia)).\\n
+              \\n
+              !! Sous-titre\\n
+              \\n
+              <red>ROUGE</red>\\n
+              <green>VERT</green>\\n
+              <color<#00F>>BLEU</color>\\n
+              <size<3rem>>GRAND</size>\\n
+              <weight<100>>FIN</weight>
+

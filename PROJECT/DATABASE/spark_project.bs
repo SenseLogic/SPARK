@@ -2,67 +2,176 @@ spark-project
 
     TEXT | dropped
 
-        Id : UINT32 | key, unique, incremented
+        Id : TUID | key, unique
         Slug : STRING | indexed
         Text : STRING = "{{latin 2 4 5 10}}¨fr:{{latin 2 4 5 10}}" | is_multilingual_text
 
+    LANGUAGE | sorted, dropped
+
+        Id : TUID | key, unique
+        Code : STRING
+        Number : STRING | ascending
+        Text : STRING | is_multilingual
+
     PAGE_TYPE | dropped
 
-        Id : UINT32 | key, unique, incremented
+        Id : TUID | key, unique
         Slug : STRING | is_slug
         Title : STRING = "{{latin 1 1 4 6}}¨fr:{{latin 1 1 4 6}}" | optional, is_multilingual
 
-    PAGE | managed, dropped
+    HOME_PAGE | dropped
 
-        Id : UINT32 | key, unique, incremented
-        Slug : STRING = "{{Title:prefix ¨:slug_case}}" | mapped, is_slug
-        TypeSlug : PAGE_TYPE.Slug | is_slug, is_reference, reference page_type~GetDatabasePageTypeArray()~page_type.Slug~.GetUntranslatedText( page_type.Title )
-        Route : STRING = "article/{{Id}}/{{Title:prefix ¨:slug_case}}"
+        Id : TUID | key, unique
+        Route : STRING
+        TypeSlug : PAGE_TYPE.Slug = "home"
+        Number : FLOAT32 | ascending
+        LanguageCodeArray : LIST[ LANGUAGE.Code ]
+        IsActive : BOOL = "true" | is_enumeration, enumeration 0~False^1~True, has_default_value, default_value 1
         Title : STRING = "{{latin 1 1 4 6}}¨fr:{{latin 1 1 4 6}}" | optional, is_multilingual
         Text : STRING = "{{latin 2 4 5 10}}¨fr:{{latin 2 4 5 10}}" | optional, is_multilingual_text
         ImagePath : STRING = "/static/image/article/beach.jpg|/static/image/article/california.jpg|/static/image/article/clouds.jpg|/static/image/article/road.jpg|/static/image/article/sunset.jpg|/static/image/article/tree.jpg" | optional, is_image
         ImageVerticalPosition : STRING = "bottom|center|top" | is_enumeration, enumeration top~Top^10%~10%^20%~20%^30%~30%^40%~40%^center~Center^60%~60%^70%~70%^80%~80%^90%~90%^bottom~Bottom, has_default_value, default_value center
         ImageHorizontalPosition : STRING = "left|center|right" | is_enumeration, enumeration left~Left^10%~10%^20%~20%^30%~30%^40%~40%^center~Center^60%~60%^70%~70%^80%~80%^90%~90%^right~Right, has_default_value, default_value center
         VideoPath : STRING = "/static/video/article/train.mp4|/static/video/article/bus.mp4" | optional, is_video
+
+    ARTICLE_PAGE | dropped
+
+        Id : TUID | key, unique
+        Route : STRING
+        TypeSlug : PAGE_TYPE.Slug = "article"
+        Number : FLOAT32 | ascending
+        LanguageCodeArray : LIST[ LANGUAGE.Code ]
         IsActive : BOOL = "true" | is_enumeration, enumeration 0~False^1~True, has_default_value, default_value 1
+        Title : STRING = "{{latin 1 1 4 6}}¨fr:{{latin 1 1 4 6}}" | optional, is_multilingual
+        Text : STRING = "{{latin 2 4 5 10}}¨fr:{{latin 2 4 5 10}}" | optional, is_multilingual_text
+        ImagePath : STRING = "/static/image/article/beach.jpg|/static/image/article/california.jpg|/static/image/article/clouds.jpg|/static/image/article/road.jpg|/static/image/article/sunset.jpg|/static/image/article/tree.jpg" | optional, is_image
+        ImageVerticalPosition : STRING = "bottom|center|top" | is_enumeration, enumeration top~Top^10%~10%^20%~20%^30%~30%^40%~40%^center~Center^60%~60%^70%~70%^80%~80%^90%~90%^bottom~Bottom, has_default_value, default_value center
+        ImageHorizontalPosition : STRING = "left|center|right" | is_enumeration, enumeration left~Left^10%~10%^20%~20%^30%~30%^40%~40%^center~Center^60%~60%^70%~70%^80%~80%^90%~90%^right~Right, has_default_value, default_value center
+        VideoPath : STRING = "/static/video/article/train.mp4|/static/video/article/bus.mp4" | optional, is_video
+
+    ARTICLES_PAGE | dropped
+
+        Id : TUID | key, unique
+        Route : STRING
+        TypeSlug : PAGE_TYPE.Slug = "articles"
+        Number : FLOAT32 | ascending
+        LanguageCodeArray : LIST[ LANGUAGE.Code ]
+        IsActive : BOOL = "true" | is_enumeration, enumeration 0~False^1~True, has_default_value, default_value 1
+        Title : STRING = "{{latin 1 1 4 6}}¨fr:{{latin 1 1 4 6}}" | optional, is_multilingual
+        Text : STRING = "{{latin 2 4 5 10}}¨fr:{{latin 2 4 5 10}}" | optional, is_multilingual_text
+        ImagePath : STRING = "/static/image/article/beach.jpg|/static/image/article/california.jpg|/static/image/article/clouds.jpg|/static/image/article/road.jpg|/static/image/article/sunset.jpg|/static/image/article/tree.jpg" | optional, is_image
+        ImageVerticalPosition : STRING = "bottom|center|top" | is_enumeration, enumeration top~Top^10%~10%^20%~20%^30%~30%^40%~40%^center~Center^60%~60%^70%~70%^80%~80%^90%~90%^bottom~Bottom, has_default_value, default_value center
+        ImageHorizontalPosition : STRING = "left|center|right" | is_enumeration, enumeration left~Left^10%~10%^20%~20%^30%~30%^40%~40%^center~Center^60%~60%^70%~70%^80%~80%^90%~90%^right~Right, has_default_value, default_value center
+        VideoPath : STRING = "/static/video/article/train.mp4|/static/video/article/bus.mp4" | optional, is_video
+
+    COOKIE_POLICY_PAGE | dropped
+
+        Id : TUID | key, unique
+        Route : STRING
+        TypeSlug : PAGE_TYPE.Slug = "cookie_policy"
+        Number : FLOAT32 | ascending
+        LanguageCodeArray : LIST[ LANGUAGE.Code ]
+        IsActive : BOOL = "true" | is_enumeration, enumeration 0~False^1~True, has_default_value, default_value 1
+        Title : STRING = "{{latin 1 1 4 6}}¨fr:{{latin 1 1 4 6}}" | optional, is_multilingual
+        Text : STRING = "{{latin 2 4 5 10}}¨fr:{{latin 2 4 5 10}}" | optional, is_multilingual_text
+        ImagePath : STRING = "/static/image/article/beach.jpg|/static/image/article/california.jpg|/static/image/article/clouds.jpg|/static/image/article/road.jpg|/static/image/article/sunset.jpg|/static/image/article/tree.jpg" | optional, is_image
+        ImageVerticalPosition : STRING = "bottom|center|top" | is_enumeration, enumeration top~Top^10%~10%^20%~20%^30%~30%^40%~40%^center~Center^60%~60%^70%~70%^80%~80%^90%~90%^bottom~Bottom, has_default_value, default_value center
+        ImageHorizontalPosition : STRING = "left|center|right" | is_enumeration, enumeration left~Left^10%~10%^20%~20%^30%~30%^40%~40%^center~Center^60%~60%^70%~70%^80%~80%^90%~90%^right~Right, has_default_value, default_value center
+        VideoPath : STRING = "/static/video/article/train.mp4|/static/video/article/bus.mp4" | optional, is_video
+
+    LEGAL_NOTICE_PAGE | dropped
+
+        Id : TUID | key, unique
+        Route : STRING
+        TypeSlug : PAGE_TYPE.Slug = "legal_notice"
+        Number : FLOAT32 | ascending
+        LanguageCodeArray : LIST[ LANGUAGE.Code ]
+        IsActive : BOOL = "true" | is_enumeration, enumeration 0~False^1~True, has_default_value, default_value 1
+        Title : STRING = "{{latin 1 1 4 6}}¨fr:{{latin 1 1 4 6}}" | optional, is_multilingual
+        Text : STRING = "{{latin 2 4 5 10}}¨fr:{{latin 2 4 5 10}}" | optional, is_multilingual_text
+        ImagePath : STRING = "/static/image/article/beach.jpg|/static/image/article/california.jpg|/static/image/article/clouds.jpg|/static/image/article/road.jpg|/static/image/article/sunset.jpg|/static/image/article/tree.jpg" | optional, is_image
+        ImageVerticalPosition : STRING = "bottom|center|top" | is_enumeration, enumeration top~Top^10%~10%^20%~20%^30%~30%^40%~40%^center~Center^60%~60%^70%~70%^80%~80%^90%~90%^bottom~Bottom, has_default_value, default_value center
+        ImageHorizontalPosition : STRING = "left|center|right" | is_enumeration, enumeration left~Left^10%~10%^20%~20%^30%~30%^40%~40%^center~Center^60%~60%^70%~70%^80%~80%^90%~90%^right~Right, has_default_value, default_value center
+        VideoPath : STRING = "/static/video/article/train.mp4|/static/video/article/bus.mp4" | optional, is_video
+
+    CONTACT_PAGE | dropped
+
+        Id : TUID | key, unique
+        Route : STRING
+        TypeSlug : PAGE_TYPE.Slug = "contact"
+        Number : FLOAT32 | ascending
+        LanguageCodeArray : LIST[ LANGUAGE.Code ]
+        IsActive : BOOL = "true" | is_enumeration, enumeration 0~False^1~True, has_default_value, default_value 1
+        Title : STRING = "{{latin 1 1 4 6}}¨fr:{{latin 1 1 4 6}}" | optional, is_multilingual
+        Text : STRING = "{{latin 2 4 5 10}}¨fr:{{latin 2 4 5 10}}" | optional, is_multilingual_text
+        ImagePath : STRING = "/static/image/article/beach.jpg|/static/image/article/california.jpg|/static/image/article/clouds.jpg|/static/image/article/road.jpg|/static/image/article/sunset.jpg|/static/image/article/tree.jpg" | optional, is_image
+        ImageVerticalPosition : STRING = "bottom|center|top" | is_enumeration, enumeration top~Top^10%~10%^20%~20%^30%~30%^40%~40%^center~Center^60%~60%^70%~70%^80%~80%^90%~90%^bottom~Bottom, has_default_value, default_value center
+        ImageHorizontalPosition : STRING = "left|center|right" | is_enumeration, enumeration left~Left^10%~10%^20%~20%^30%~30%^40%~40%^center~Center^60%~60%^70%~70%^80%~80%^90%~90%^right~Right, has_default_value, default_value center
+        VideoPath : STRING = "/static/video/article/train.mp4|/static/video/article/bus.mp4" | optional, is_video
 
     PAGE_SUB_PAGE | sorted, dropped
 
-        Id : UINT32 | key, unique, incremented
-        PageSlug : PAGE.Slug | ascending, is_slug, is_reference, reference page~GetDatabasePageArray()~page.Slug~page.Slug
-        SubPageSlug : PAGE.Slug | is_slug, is_reference, reference page~GetDatabasePageArray()~page.Slug~page.Slug
+        Id : TUID | key, unique
+        PageId : TUID | is_reference, reference page~GetPageArray()~page.Id~page.Id
+        SubPageId : TUID | is_reference, reference page~GetPageArray()~page.Id~page.Id
         Number : FLOAT32 | ascending
 
     BLOCK_CATEGORY | dropped
 
-        Id : UINT32 | key, unique, incremented
+        Id : TUID | key, unique
         Slug : STRING | mapped, is_slug
         Name : STRING = "{{latin 1 1 4 6}}¨fr:{{latin 1 1 4 6}}" | is_multilingual
 
     BLOCK_TYPE | dropped
 
-        Id : UINT32 | key, unique, incremented
+        Id : TUID | key, unique
         Slug : STRING | mapped, is_slug
         Name : STRING = "{{latin 1 1 4 6}}¨fr:{{latin 1 1 4 6}}" | is_multilingual
 
-    BLOCK | sorted, managed, dropped, count 60
+    TEXT_BLOCK | dropped, count 30
 
-        Id : UINT32 | key, unique, incremented
-        PageSlug : PAGE.Slug | optional, ascending, is_slug, is_reference, reference page~GetDatabasePageArray()~page.Slug~page.Slug
-        BlockSlug : BLOCK.Slug = "" | optional, ascending, is_slug, is_reference, reference block~GetDatabaseBlockArray()~block.Slug~block.Slug
-        Slug : STRING = "{{Title:prefix ¨:slug_case}}" | mapped, is_slug
-        TypeSlug : BLOCK_TYPE.Slug | is_slug, is_reference, reference block_type~GetDatabaseBlockTypeArray()~block_type.Slug~.GetUntranslatedText( block_type.Name )
+        Id : TUID | key, unique
+        PageId : TUID = "{{HOME_PAGE.Id}}|{{ARTICLE_PAGE.Id}}|{{ARTICLES_PAGE.Id}}|{{COOKIE_POLICY_PAGE.Id}}|{{LEGAL_NOTICE_PAGE.Id}}|{{CONTACT_PAGE.Id}}"
+        BlockId : TUID = ""
+        TypeSlug : BLOCK_TYPE.Slug = "text"
         Number : FLOAT32 | ascending
+        LanguageCodeArray : LIST[ LANGUAGE.Code ] | count 2
         Title : STRING = "{{latin 1 1 4 6}}¨fr:{{latin 1 1 4 6}}" | optional, is_multilingual
-        Text : STRING = "{{latin 2 4 5 10}}¨fr:{{latin 2 4 5 10}}" | optional, is_multilingual_text
-        ImagePath : STRING = "/static/image/article/autumn.jpg|/static/image/article/castle.jpg|/static/image/article/drink.jpg|/static/image/article/groynes.jpg|/static/image/article/mountains.jpg|/static/image/article/spring.jpg" | optional, is_image
+        Text : STRING = "{{latin 2 4 5 10}}¨fr:{{latin 2 4 5 10}}" | is_multilingual_text
+
+    IMAGE_BLOCK | dropped, count 30
+
+        Id : TUID | key, unique
+        PageId : TUID = "{{HOME_PAGE.Id}}|{{ARTICLE_PAGE.Id}}|{{ARTICLES_PAGE.Id}}|{{COOKIE_POLICY_PAGE.Id}}|{{LEGAL_NOTICE_PAGE.Id}}|{{CONTACT_PAGE.Id}}"
+        BlockId : TUID = ""
+        TypeSlug : BLOCK_TYPE.Slug = "image"
+        Number : FLOAT32 | ascending
+        LanguageCodeArray : LIST[ LANGUAGE.Code ] | count 2
+        Title : STRING = "{{latin 1 1 4 6}}¨fr:{{latin 1 1 4 6}}" | optional, is_multilingual
+        ImagePath : STRING = "/static/image/article/autumn.jpg|/static/image/article/castle.jpg|/static/image/article/drink.jpg|/static/image/article/groynes.jpg|/static/image/article/mountains.jpg|/static/image/article/spring.jpg" | is_image
         ImageVerticalPosition : STRING = "bottom|center|top" | is_enumeration, enumeration top~Top^10%~10%^20%~20%^30%~30%^40%~40%^center~Center^60%~60%^70%~70%^80%~80%^90%~90%^bottom~Bottom, has_default_value, default_value center
         ImageHorizontalPosition : STRING = "left|center|right" | is_enumeration, enumeration left~Left^10%~10%^20%~20%^30%~30%^40%~40%^center~Center^60%~60%^70%~70%^80%~80%^90%~90%^right~Right, has_default_value, default_value center
-        VideoPath : STRING  = "/static/video/article/train.mp4|/static/video/article/bus.mp4" | optional, is_video
+        VideoPath : STRING = "/static/video/article/train.mp4|/static/video/article/bus.mp4" | is_video
+
+    TEXT_AND_IMAGE_BLOCK | dropped, count 30
+
+        Id : TUID | key, unique
+        PageId : TUID = "{{HOME_PAGE.Id}}|{{ARTICLE_PAGE.Id}}|{{ARTICLES_PAGE.Id}}|{{COOKIE_POLICY_PAGE.Id}}|{{LEGAL_NOTICE_PAGE.Id}}|{{CONTACT_PAGE.Id}}"
+        BlockId : TUID = ""
+        TypeSlug : BLOCK_TYPE.Slug = "text_and_image"
+        Number : FLOAT32 | ascending
+        LanguageCodeArray : LIST[ LANGUAGE.Code ] | count 2
+        Title : STRING = "{{latin 1 1 4 6}}¨fr:{{latin 1 1 4 6}}" | optional, is_multilingual
+        Text : STRING = "{{latin 2 4 5 10}}¨fr:{{latin 2 4 5 10}}" | is_multilingual_text
+        ImagePath : STRING = "/static/image/article/autumn.jpg|/static/image/article/castle.jpg|/static/image/article/drink.jpg|/static/image/article/groynes.jpg|/static/image/article/mountains.jpg|/static/image/article/spring.jpg" | is_image
+        ImageVerticalPosition : STRING = "bottom|center|top" | is_enumeration, enumeration top~Top^10%~10%^20%~20%^30%~30%^40%~40%^center~Center^60%~60%^70%~70%^80%~80%^90%~90%^bottom~Bottom, has_default_value, default_value center
+        ImageHorizontalPosition : STRING = "left|center|right" | is_enumeration, enumeration left~Left^10%~10%^20%~20%^30%~30%^40%~40%^center~Center^60%~60%^70%~70%^80%~80%^90%~90%^right~Right, has_default_value, default_value center
+        ImageSide : STRING = "left|right" | is_enumeration, enumeration left~Left^right~Right, has_default_value, default_value left
+        VideoPath : STRING = "/static/video/article/train.mp4|/static/video/article/bus.mp4" | is_video
 
     CONTACT | sorted
 
-        Id : UINT32 | key, unique, incremented
+        Id : TUID | key, unique
         Name : STRING
         Company : STRING
         Email : STRING
@@ -73,8 +182,8 @@ spark-project
 
     USER | sorted, dropped
 
-        Id : UINT32 | key, unique, incremented, mapped, ascending
-        Email : STRING
+        Id : TUID | key, unique, mapped
+        Email : STRING | ascending
         Pseudonym : STRING
         Password : STRING
         Role : STRING

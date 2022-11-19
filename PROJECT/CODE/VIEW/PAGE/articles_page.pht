@@ -1,5 +1,5 @@
 <?
-    var article_array = .PageBySlugMap[ 'articles' ].SubPageArray;
+    var article_array = .ArticlesPageArray[ 0 ].SubPageArray;
 ?>
 <style file="articles_page.styl">
 </style>

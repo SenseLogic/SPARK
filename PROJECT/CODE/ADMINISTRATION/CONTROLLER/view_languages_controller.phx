@@ -1,0 +1,29 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/language_model.php';
+
+// -- TYPES
+
+class VIEW_LANGUAGES_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code
+        )
+    {
+        parent::constructor( language_code );
+
+        .Title = 'View languages';
+        .LanguageArray = GetDatabaseLanguageArray();
+
+        SetSessionValue( 'ListRoute', GetRequest() );
+
+        import '../VIEW/view_languages_view.php';
+    }
+}
+
+// -- STATEMENTS
+
+var view_languages_controller = new VIEW_LANGUAGES_CONTROLLER( var language_code );

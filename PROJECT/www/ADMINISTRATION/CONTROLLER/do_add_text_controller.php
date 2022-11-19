@@ -15,10 +15,11 @@ class DO_ADD_TEXT_CONTROLLER extends CONTROLLER
     {
         parent::__construct( $language_code );
 
+         $id = GetPostValue( 'Id' );
          $slug = GetPostValue( 'Slug' );
          $text = GetPostValue( 'Text' );
 
-        AddDatabaseText( $slug, $text );
+        AddDatabaseText( $id, $slug, $text );
 
         Redirect( FindSessionValue( 'ListRoute', '/admin/text' ) );
     }

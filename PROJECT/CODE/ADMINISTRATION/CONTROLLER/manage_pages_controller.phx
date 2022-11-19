@@ -18,10 +18,10 @@ class MANAGE_PAGES_CONTROLLER extends CONTROLLER
 
         .Title = 'Manage pages';
         .BlockArray = GetDatabaseBlockArray();
-        .BlockBySlugMap = GetValidBlockBySlugMap( .BlockArray );
+        .BlockByIdMap = GetValidBlockByIdMap( .BlockArray );
         .PageArray = GetDatabasePageArray();
         .PageSubPageArray = GetDatabasePageSubPageArray();
-        .PageBySlugMap = GetValidPageBySlugMap( .PageArray, .PageSubPageArray, .BlockArray, .BlockBySlugMap );
+        .PageByIdMap = GetValidPageByIdMap( .PageArray, .PageSubPageArray, .BlockArray, .BlockByIdMap );
         .ListRoute = '/admin/page/manage';
 
         SetSessionValue( 'ListRoute', .ListRoute );

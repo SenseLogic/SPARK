@@ -1,0 +1,29 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/home_page_model.php';
+
+// -- TYPES
+
+class REMOVE_HOME_PAGE_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code,
+        home_page_id
+        )
+    {
+        parent::constructor( language_code );
+
+        .Title = 'Remove a home page';
+        .HomePage = GetDatabaseHomePageById( home_page_id );
+        .ListRoute = FindSessionValue( 'ListRoute', '/admin/home-page' );
+
+        import '../VIEW/remove_home_page_view.php';
+    }
+}
+
+// -- STATEMENTS
+
+var remove_home_page_controller = new REMOVE_HOME_PAGE_CONTROLLER( var language_code, var home_page_id );

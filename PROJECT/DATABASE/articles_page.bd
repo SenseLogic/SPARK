@@ -1,0 +1,10 @@
+ARTICLES_PAGE
+
+    Id Route Number LanguageCodeArray Title ImagePath
+
+        %articles
+            ~ articles
+            ~ 1
+            ~ { en ~ fr }
+            ~ Articles
+            ~ /static/image/article/beach.jpg

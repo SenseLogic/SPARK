@@ -1,0 +1,29 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/text_and_image_block_model.php';
+
+// -- TYPES
+
+class VIEW_TEXT_AND_IMAGE_BLOCKS_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code
+        )
+    {
+        parent::constructor( language_code );
+
+        .Title = 'View text and image blocks';
+        .TextAndImageBlockArray = GetDatabaseTextAndImageBlockArray();
+
+        SetSessionValue( 'ListRoute', GetRequest() );
+
+        import '../VIEW/view_text_and_image_blocks_view.php';
+    }
+}
+
+// -- STATEMENTS
+
+var view_text_and_image_blocks_controller = new VIEW_TEXT_AND_IMAGE_BLOCKS_CONTROLLER( var language_code );

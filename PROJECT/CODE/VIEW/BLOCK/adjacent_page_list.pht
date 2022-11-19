@@ -1,19 +1,19 @@
 <?
-    var page_slug_array = [];
+    var page_id_array = [];
 
     foreach ( var page_; var page_array )
     {
-        array_push( page_slug_array, page_.Slug );
+        array_push( page_id_array, page_.Id );
     }
 
-    var page_slug_count = count( var page_slug_array );
-    var page_slug_index = array_search( var page.Slug, page_slug_array );
+    var page_id_count = count( var page_id_array );
+    var page_id_index = array_search( var page.Id, page_id_array );
 
-    var prior_page_slug_index = ( page_slug_index + page_slug_count - 1 ) % page_slug_count;
-    var next_page_slug_index = ( page_slug_index + 1 ) % page_slug_count;
+    var prior_page_id_index = ( page_id_index + page_id_count - 1 ) % page_id_count;
+    var next_page_id_index = ( page_id_index + 1 ) % page_id_count;
 
-    var prior_page = .PageBySlugMap[ page_slug_array[ prior_page_slug_index ] ];
-    var next_page = .PageBySlugMap[ page_slug_array[ next_page_slug_index ] ];
+    var prior_page = .PageByIdMap[ page_id_array[ prior_page_id_index ] ];
+    var next_page = .PageByIdMap[ page_id_array[ next_page_id_index ] ];
 ?>
 <style file="adjacent_page_list.styl">
     .adjacent-page-list

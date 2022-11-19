@@ -15,10 +15,10 @@
     <div class="cell-list page-section form-section is-hidden">
         <div class="form-container table-container page-sub-page-table sortable-table">
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Page Slug' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Page Id' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Sub Page Slug' ) ); ?>
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Sub Page Id' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
                 <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Number' ) ); ?>
@@ -29,10 +29,10 @@
             <?php foreach ( $this->PageSubPageArray as  $page_sub_page ) { ?>
                 <div class="sortable-table-row filter-row filter-content">
                     <div class="sortable-table-cell filter-cell">
-                        <?php echo htmlspecialchars( GetValueText( $page_sub_page->PageSlug ) ); ?>
+                        <?php echo htmlspecialchars( GetValueText( $page_sub_page->PageId ) ); ?>
                     </div>
                     <div class="sortable-table-cell filter-cell">
-                        <?php echo htmlspecialchars( GetValueText( $page_sub_page->SubPageSlug ) ); ?>
+                        <?php echo htmlspecialchars( GetValueText( $page_sub_page->SubPageId ) ); ?>
                     </div>
                     <div class="sortable-table-cell filter-cell">
                         <?php echo htmlspecialchars( GetValueText( $page_sub_page->Number ) ); ?>
@@ -57,16 +57,16 @@
                 <div class="card">
                     <div class="form-container">
                         <div class="form-field-name">
-                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Page Slug' ) ); ?> :
+                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Page Id' ) ); ?> :
                         </div>
                         <div>
-                                <input class="form-input" name="PageSlug" type="text" value="<?php echo htmlspecialchars( GetValueText( $page_sub_page->PageSlug ) ); ?>" readonly/>
+                                <input class="form-input" name="PageId" type="text" value="<?php echo htmlspecialchars( GetValueText( $page_sub_page->PageId ) ); ?>" readonly/>
                         </div>
                         <div class="form-field-name">
-                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Sub Page Slug' ) ); ?> :
+                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Sub Page Id' ) ); ?> :
                         </div>
                         <div>
-                                <input class="form-input" name="SubPageSlug" type="text" value="<?php echo htmlspecialchars( GetValueText( $page_sub_page->SubPageSlug ) ); ?>" readonly/>
+                                <input class="form-input" name="SubPageId" type="text" value="<?php echo htmlspecialchars( GetValueText( $page_sub_page->SubPageId ) ); ?>" readonly/>
                         </div>
                         <div class="form-field-name">
                             <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Number' ) ); ?> :

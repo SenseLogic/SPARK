@@ -1,0 +1,29 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/text_block_model.php';
+
+// -- TYPES
+
+class EDIT_TEXT_BLOCK_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code,
+        text_block_id
+        )
+    {
+        parent::constructor( language_code );
+
+        .Title = 'Edit a text block';
+        .TextBlock = GetDatabaseTextBlockById( text_block_id );
+        .ListRoute = FindSessionValue( 'ListRoute', '/admin/text-block' );
+
+        import '../VIEW/edit_text_block_view.php';
+    }
+}
+
+// -- STATEMENTS
+
+var edit_text_block_controller = new EDIT_TEXT_BLOCK_CONTROLLER( var language_code, var text_block_id );

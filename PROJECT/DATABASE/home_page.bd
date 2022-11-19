@@ -1,0 +1,11 @@
+HOME_PAGE
+
+    Id Route Number LanguageCodeArray Title ImagePath
+
+        %home
+            ~ home
+            ~ 1
+            ~ { en ~ fr }
+            ~ Home
+              ¨fr:Accueil
+            ~ /static/image/article/groynes.jpg

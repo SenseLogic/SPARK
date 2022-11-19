@@ -15,10 +15,11 @@ class DO_ADD_PAGE_TYPE_CONTROLLER extends CONTROLLER
     {
         parent::__construct( $language_code );
 
+         $id = GetPostValue( 'Id' );
          $slug = GetPostValue( 'Slug' );
          $title = GetPostValue( 'Title' );
 
-        AddDatabasePageType( $slug, $title );
+        AddDatabasePageType( $id, $slug, $title );
 
         Redirect( FindSessionValue( 'ListRoute', '/admin/page-type' ) );
     }

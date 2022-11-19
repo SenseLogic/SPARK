@@ -1,0 +1,29 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/cookie_policy_page_model.php';
+
+// -- TYPES
+
+class REMOVE_COOKIE_POLICY_PAGE_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code,
+        cookie_policy_page_id
+        )
+    {
+        parent::constructor( language_code );
+
+        .Title = 'Remove a cookie policy page';
+        .CookiePolicyPage = GetDatabaseCookiePolicyPageById( cookie_policy_page_id );
+        .ListRoute = FindSessionValue( 'ListRoute', '/admin/cookie-policy-page' );
+
+        import '../VIEW/remove_cookie_policy_page_view.php';
+    }
+}
+
+// -- STATEMENTS
+
+var remove_cookie_policy_page_controller = new REMOVE_COOKIE_POLICY_PAGE_CONTROLLER( var language_code, var cookie_policy_page_id );

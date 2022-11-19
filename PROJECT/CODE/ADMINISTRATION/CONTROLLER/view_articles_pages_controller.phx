@@ -1,0 +1,29 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/articles_page_model.php';
+
+// -- TYPES
+
+class VIEW_ARTICLES_PAGES_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code
+        )
+    {
+        parent::constructor( language_code );
+
+        .Title = 'View articles pages';
+        .ArticlesPageArray = GetDatabaseArticlesPageArray();
+
+        SetSessionValue( 'ListRoute', GetRequest() );
+
+        import '../VIEW/view_articles_pages_view.php';
+    }
+}
+
+// -- STATEMENTS
+
+var view_articles_pages_controller = new VIEW_ARTICLES_PAGES_CONTROLLER( var language_code );

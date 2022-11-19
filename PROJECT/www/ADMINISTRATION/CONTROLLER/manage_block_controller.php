@@ -17,8 +17,8 @@ class MANAGE_BLOCK_CONTROLLER extends CONTROLLER
 
         $this->Title = 'Manage a content block';
         $this->BlockArray = GetDatabaseBlockArray();
-        $this->BlockBySlugMap = GetValidBlockBySlugMap( $this->BlockArray );
-        $this->Block = GetValidBlockById( $this->BlockBySlugMap, $block_id );
+        $this->BlockByIdMap = GetValidBlockByIdMap( $this->BlockArray );
+        $this->Block = GetValidBlockById( $this->BlockByIdMap, $block_id );
         $this->ListRoute = '/admin/block/manage/' . $block_id;
 
         SetSessionValue( 'ListRoute', GetRequest() );

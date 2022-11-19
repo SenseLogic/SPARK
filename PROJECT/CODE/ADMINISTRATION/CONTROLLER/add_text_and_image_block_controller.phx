@@ -1,0 +1,27 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/text_and_image_block_model.php';
+
+// -- TYPES
+
+class ADD_TEXT_AND_IMAGE_BLOCK_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code
+        )
+    {
+        parent::constructor( language_code );
+
+        .Title = 'Add a text and image block';
+        .ListRoute = FindSessionValue( 'ListRoute', '/admin/text-and-image-block' );
+
+        import '../VIEW/add_text_and_image_block_view.php';
+    }
+}
+
+// -- STATEMENTS
+
+var add_text_and_image_block_controller = new ADD_TEXT_AND_IMAGE_BLOCK_CONTROLLER( var language_code );

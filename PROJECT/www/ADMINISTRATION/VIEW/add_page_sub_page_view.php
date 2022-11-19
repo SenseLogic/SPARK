@@ -7,31 +7,41 @@
         var
             add_page_sub_page_form,
             it_is_valid_add_page_sub_page_form,
-            page_slug_field,
-            sub_page_slug_field,
+            id_field,
+            page_id_field,
+            sub_page_id_field,
             number_field;
 
         add_page_sub_page_form = document.AddPageSubPageForm;
-        page_slug_field = add_page_sub_page_form.PageSlug;
-        sub_page_slug_field = add_page_sub_page_form.SubPageSlug;
+        id_field = add_page_sub_page_form.Id;
+        page_id_field = add_page_sub_page_form.PageId;
+        sub_page_id_field = add_page_sub_page_form.SubPageId;
         number_field = add_page_sub_page_form.Number;
 
-        page_slug_field.RemoveClass( "form-field-error" );
-        sub_page_slug_field.RemoveClass( "form-field-error" );
+        id_field.RemoveClass( "form-field-error" );
+        page_id_field.RemoveClass( "form-field-error" );
+        sub_page_id_field.RemoveClass( "form-field-error" );
         number_field.RemoveClass( "form-field-error" );
 
         it_is_valid_add_page_sub_page_form = true;
 
-        if ( !IsSlugText( page_slug_field.value ) )
+        if ( id_field.value === "" )
         {
-            page_slug_field.AddClass( "form-field-error" );
+            id_field.AddClass( "form-field-error" );
 
             it_is_valid_add_page_sub_page_form = false;
         }
 
-        if ( !IsSlugText( sub_page_slug_field.value ) )
+        if ( page_id_field.value === "" )
         {
-            sub_page_slug_field.AddClass( "form-field-error" );
+            page_id_field.AddClass( "form-field-error" );
+
+            it_is_valid_add_page_sub_page_form = false;
+        }
+
+        if ( sub_page_id_field.value === "" )
+        {
+            sub_page_id_field.AddClass( "form-field-error" );
 
             it_is_valid_add_page_sub_page_form = false;
         }
@@ -51,7 +61,7 @@
         <form class="form-centered" name="AddPageSubPageForm" onsubmit="return IsValidAddPageSubPageForm()" action="/admin/page-sub-page/add" method="post">
             <div class="form-container">
                 <?php
-                     $field_name = 'PageSlug';
+                     $field_name = 'Id';
 
                     if ( HasQueryValue( $field_name ) )
                     {
@@ -63,18 +73,36 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Page Slug' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Id' ) ); ?> :
                 </div>
                 <div>
-                    <select class="form-select" name="PageSlug">
-                        <?php  $page_array = GetDatabasePageArray(); ?>
+                    <input class="form-input" name="Id" type="text" value="<?php echo $field_value; ?>"/>
+                </div>
+                <?php
+                     $field_name = 'PageId';
+
+                    if ( HasQueryValue( $field_name ) )
+                    {
+                         $field_value = GetQueryValue( $field_name );
+                    }
+                    else
+                    {
+                        $field_value = '';
+                    }
+                ?>
+                <div class="form-field-name">
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Page Id' ) ); ?> :
+                </div>
+                <div>
+                    <select class="form-select" name="PageId">
+                        <?php  $page_array = GetPageArray(); ?>
                         <?php foreach ( $page_array as  $page ) { ?>
-                            <option value="<?php echo htmlspecialchars( GetValueText( $page->Slug ) ); ?>"<?php if ( GetValueText( $page->Slug ) === $field_value ) echo ' selected'; ?>><?php echo htmlspecialchars( $page->Slug ); ?></option>
+                            <option value="<?php echo htmlspecialchars( GetValueText( $page->Id ) ); ?>"<?php if ( GetValueText( $page->Id ) === $field_value ) echo ' selected'; ?>><?php echo htmlspecialchars( $page->Id ); ?></option>
                         <?php } ?>
                     </select>
                 </div>
                 <?php
-                     $field_name = 'SubPageSlug';
+                     $field_name = 'SubPageId';
 
                     if ( HasQueryValue( $field_name ) )
                     {
@@ -86,13 +114,13 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Sub Page Slug' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Sub Page Id' ) ); ?> :
                 </div>
                 <div>
-                    <select class="form-select" name="SubPageSlug">
-                        <?php  $page_array = GetDatabasePageArray(); ?>
+                    <select class="form-select" name="SubPageId">
+                        <?php  $page_array = GetPageArray(); ?>
                         <?php foreach ( $page_array as  $page ) { ?>
-                            <option value="<?php echo htmlspecialchars( GetValueText( $page->Slug ) ); ?>"<?php if ( GetValueText( $page->Slug ) === $field_value ) echo ' selected'; ?>><?php echo htmlspecialchars( $page->Slug ); ?></option>
+                            <option value="<?php echo htmlspecialchars( GetValueText( $page->Id ) ); ?>"<?php if ( GetValueText( $page->Id ) === $field_value ) echo ' selected'; ?>><?php echo htmlspecialchars( $page->Id ); ?></option>
                         <?php } ?>
                     </select>
                 </div>

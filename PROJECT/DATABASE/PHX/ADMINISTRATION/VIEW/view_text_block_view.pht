@@ -1,0 +1,60 @@
+<? include 'BLOCK/page_header.php'; ?>
+<div id="view-text-block-view">
+    <div class="page-section form-section">
+        <div class="form-container">
+            <div class="form-field-name">
+                <% .GetProcessedTextBySlug( 'Page Id' ) %> :
+            </div>
+            <div>
+                    <input class="form-input" name="PageId" type="text" value="<% GetValueText( .TextBlock.PageId ) %>" readonly/>
+            </div>
+            <div class="form-field-name">
+                <% .GetProcessedTextBySlug( 'Block Id' ) %> :
+            </div>
+            <div>
+                    <input class="form-input" name="BlockId" type="text" value="<% GetValueText( .TextBlock.BlockId ) %>" readonly/>
+            </div>
+            <div class="form-field-name">
+                <% .GetProcessedTextBySlug( 'Type Slug' ) %> :
+            </div>
+            <div>
+                    <input class="form-input" name="TypeSlug" type="text" value="<% GetValueText( .TextBlock.TypeSlug ) %>" readonly/>
+            </div>
+            <div class="form-field-name">
+                <% .GetProcessedTextBySlug( 'Number' ) %> :
+            </div>
+            <div>
+                    <input class="form-input" name="Number" type="text" value="<% GetValueText( .TextBlock.Number ) %>" readonly/>
+            </div>
+            <div class="form-field-name">
+                <% .GetProcessedTextBySlug( 'Language Code Array' ) %> :
+            </div>
+            <div>
+                    <input class="form-input" name="LanguageCodeArray" type="text" value="<% GetValueText( .TextBlock.LanguageCodeArray ) %>" readonly/>
+            </div>
+            <div class="form-field-name">
+                <% .GetProcessedTextBySlug( 'Title' ) %> :
+            </div>
+            <div>
+                <div>
+                    <? foreach ( var language_code; LanguageCodeArray ) { ?>
+                        <input class="form-translation form-input" name="Title" type="text" value="<% GetValueText( GetTranslatedText( .TextBlock.Title, language_code ) ) %>" readonly/>
+                    <? } ?>
+                </div>
+            </div>
+            <div class="form-field-name">
+                <% .GetProcessedTextBySlug( 'Text' ) %> :
+            </div>
+            <div>
+                <div>
+                    <? foreach ( var language_code; LanguageCodeArray ) { ?>
+                        <textarea class="form-translation form-textarea" name="Text" readonly><% GetTranslatedText( .TextBlock.Text, language_code ) %></textarea>
+                    <? } ?>
+                </div>
+            </div>
+            <a class="justify-self-start form-button form-button-large cancel-button" href="<% .ListRoute %>">
+            </a>
+        </div>
+    </div>
+</div>
+<? include 'BLOCK/page_footer.php'; ?>

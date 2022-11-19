@@ -1,0 +1,20 @@
+PAGE_SUB_PAGE
+
+    PageId SubPageId Number
+
+        %articles
+            ~ %article-1
+            ~ 1
+
+        %articles
+            ~ %article-2
+            ~ 2
+
+        %articles
+            ~ %article-3
+            ~ 3
+
+        %articles
+            ~ %article-4
+            ~ 4
+

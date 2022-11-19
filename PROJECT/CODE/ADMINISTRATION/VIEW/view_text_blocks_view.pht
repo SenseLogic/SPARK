@@ -1,0 +1,159 @@
+<? include 'BLOCK/page_header.php'; ?>
+<div id="view-text-blocks-view">
+    <div class="form-limited form-centered margin-bottom-1rem">
+        <div class="tool-container">
+            <? var filter_name = "TextBlockFilter"; ?>
+            <? include 'BLOCK/filter.php'; ?>
+            <? var list_mode_name = "TextBlockListMode"; ?>
+            <? include 'BLOCK/list_mode.php'; ?>
+            <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                <a class="form-button form-button-large add-button" href="/admin/text-block/add">
+                </a>
+            <? } ?>
+        </div>
+    </div>
+    <div class="cell-list page-section form-section is-hidden">
+        <div class="form-container table-container text-block-table sortable-table">
+            <div class="form-column-name sortable-table-column">
+                <% .GetProcessedTextBySlug( 'Page Id' ) %>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <% .GetProcessedTextBySlug( 'Block Id' ) %>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <% .GetProcessedTextBySlug( 'Type Slug' ) %>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <% .GetProcessedTextBySlug( 'Number' ) %>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <% .GetProcessedTextBySlug( 'Language Code Array' ) %>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <% .GetProcessedTextBySlug( 'Title' ) %>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <% .GetProcessedTextBySlug( 'Text' ) %>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <% .GetProcessedTextBySlug( 'Action' ) %>
+            </div>
+            <? foreach ( var text_block; .TextBlockArray ) { ?>
+                <div class="sortable-table-row filter-row filter-content">
+                    <div class="sortable-table-cell filter-cell">
+                        <% GetValueText( text_block.PageId ) %>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <% GetValueText( text_block.BlockId ) %>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <% GetValueText( text_block.TypeSlug ) %>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <% GetValueText( text_block.Number ) %>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <% GetValueText( text_block.LanguageCodeArray ) %>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <div>
+                            <? foreach ( var language_code; LanguageCodeArray ) { ?>
+                                <div class="form-translation">
+                                    <% GetValueText( GetTranslatedText( text_block.Title, language_code ) ) %>
+                                </div>
+                            <? } ?>
+                        </div>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <div>
+                            <? foreach ( var language_code; LanguageCodeArray ) { ?>
+                                <div class="form-translation">
+                                    <% GetTranslatedText( text_block.Text, language_code ) %>
+                                </div>
+                            <? } ?>
+                        </div>
+                    </div>
+                    <div class="form-centered sortable-table-cell">
+                        <a class="form-button view-button" href="/admin/text-block/view/<% text_block.Id %>">
+                        </a>
+                        <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                            <a class="form-button edit-button" href="/admin/text-block/edit/<% text_block.Id %>">
+                            </a>
+                            <a class="form-button remove-button" href="/admin/text-block/remove/<% text_block.Id %>">
+                            </a>
+                        <? } ?>
+                    </div>
+                </div>
+            <? } ?>
+        </div>
+    </div>
+    <div class="card-list is-hidden">
+        <? foreach ( var text_block; .TextBlockArray ) { ?>
+            <div class="card-container filter-row">
+                <div class="card">
+                    <div class="form-container">
+                        <div class="form-field-name">
+                            <% .GetProcessedTextBySlug( 'Page Id' ) %> :
+                        </div>
+                        <div>
+                                <input class="form-input" name="PageId" type="text" value="<% GetValueText( text_block.PageId ) %>" readonly/>
+                        </div>
+                        <div class="form-field-name">
+                            <% .GetProcessedTextBySlug( 'Block Id' ) %> :
+                        </div>
+                        <div>
+                                <input class="form-input" name="BlockId" type="text" value="<% GetValueText( text_block.BlockId ) %>" readonly/>
+                        </div>
+                        <div class="form-field-name">
+                            <% .GetProcessedTextBySlug( 'Type Slug' ) %> :
+                        </div>
+                        <div>
+                                <input class="form-input" name="TypeSlug" type="text" value="<% GetValueText( text_block.TypeSlug ) %>" readonly/>
+                        </div>
+                        <div class="form-field-name">
+                            <% .GetProcessedTextBySlug( 'Number' ) %> :
+                        </div>
+                        <div>
+                                <input class="form-input" name="Number" type="text" value="<% GetValueText( text_block.Number ) %>" readonly/>
+                        </div>
+                        <div class="form-field-name">
+                            <% .GetProcessedTextBySlug( 'Language Code Array' ) %> :
+                        </div>
+                        <div>
+                                <input class="form-input" name="LanguageCodeArray" type="text" value="<% GetValueText( text_block.LanguageCodeArray ) %>" readonly/>
+                        </div>
+                        <div class="form-field-name">
+                            <% .GetProcessedTextBySlug( 'Title' ) %> :
+                        </div>
+                        <div>
+                            <div>
+                                <? foreach ( var language_code; LanguageCodeArray ) { ?>
+                                    <input class="form-translation form-input" name="Title" type="text" value="<% GetValueText( GetTranslatedText( text_block.Title, language_code ) ) %>" readonly/>
+                                <? } ?>
+                            </div>
+                        </div>
+                        <div class="form-field-name">
+                            <% .GetProcessedTextBySlug( 'Text' ) %> :
+                        </div>
+                        <div>
+                            <div>
+                                <? foreach ( var language_code; LanguageCodeArray ) { ?>
+                                    <textarea class="form-translation form-textarea" name="Text" readonly><% GetTranslatedText( text_block.Text, language_code ) %></textarea>
+                                <? } ?>
+                            </div>
+                        </div>
+                    </div>
+                    <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                        <div class="form-toolbar">
+                            <a class="form-button edit-button" href="/admin/text-block/edit/<% text_block.Id %>">
+                            </a>
+                            <a class="form-button remove-button" href="/admin/text-block/remove/<% text_block.Id %>">
+                            </a>
+                        </div>
+                    <? } ?>
+                </div>
+            </div>
+        <? } ?>
+    </div>
+</div>
+<? include 'BLOCK/page_footer.php'; ?>

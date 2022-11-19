@@ -7,6 +7,7 @@
         var
             add_contact_form,
             it_is_valid_add_contact_form,
+            id_field,
             name_field,
             company_field,
             email_field,
@@ -15,6 +16,7 @@
             message_field;
 
         add_contact_form = document.AddContactForm;
+        id_field = add_contact_form.Id;
         name_field = add_contact_form.Name;
         company_field = add_contact_form.Company;
         email_field = add_contact_form.Email;
@@ -22,6 +24,7 @@
         subject_field = add_contact_form.Subject;
         message_field = add_contact_form.Message;
 
+        id_field.RemoveClass( "form-field-error" );
         name_field.RemoveClass( "form-field-error" );
         company_field.RemoveClass( "form-field-error" );
         email_field.RemoveClass( "form-field-error" );
@@ -30,6 +33,13 @@
         message_field.RemoveClass( "form-field-error" );
 
         it_is_valid_add_contact_form = true;
+
+        if ( id_field.value === "" )
+        {
+            id_field.AddClass( "form-field-error" );
+
+            it_is_valid_add_contact_form = false;
+        }
 
         if ( name_field.value === "" )
         {
@@ -80,6 +90,24 @@
     <div class="page-section form-section">
         <form class="form-centered" name="AddContactForm" onsubmit="return IsValidAddContactForm()" action="/admin/contact/add" method="post">
             <div class="form-container">
+                <?php
+                     $field_name = 'Id';
+
+                    if ( HasQueryValue( $field_name ) )
+                    {
+                         $field_value = GetQueryValue( $field_name );
+                    }
+                    else
+                    {
+                        $field_value = '';
+                    }
+                ?>
+                <div class="form-field-name">
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Id' ) ); ?> :
+                </div>
+                <div>
+                    <input class="form-input" name="Id" type="text" value="<?php echo $field_value; ?>"/>
+                </div>
                 <?php
                      $field_name = 'Name';
 

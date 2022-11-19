@@ -1,0 +1,27 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/legal_notice_page_model.php';
+
+// -- TYPES
+
+class DO_REMOVE_LEGAL_NOTICE_PAGE_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code,
+        legal_notice_page_id
+        )
+    {
+        parent::constructor( language_code );
+
+        RemoveDatabaseLegalNoticePageById( legal_notice_page_id );
+
+        Redirect( FindSessionValue( 'ListRoute', '/admin/legal-notice-page' ) );
+    }
+}
+
+// -- STATEMENTS
+
+var do_remove_legal_notice_page_controller = new DO_REMOVE_LEGAL_NOTICE_PAGE_CONTROLLER( var language_code, var legal_notice_page_id );

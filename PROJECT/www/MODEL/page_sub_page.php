@@ -3,7 +3,7 @@
 function GetDatabasePageSubPageArray(
     )
 {
-     $statement = GetDatabaseStatement( 'select `Id`, `PageSlug`, `SubPageSlug`, `Number` from `PAGE_SUB_PAGE` order by `PageSlug` asc, `Number` asc' );
+     $statement = GetDatabaseStatement( 'select `Id`, `PageId`, `SubPageId`, `Number` from `PAGE_SUB_PAGE` order by `Number` asc' );
 
     if ( !$statement->execute() )
     {
@@ -14,7 +14,6 @@ function GetDatabasePageSubPageArray(
 
     while (  $page_sub_page = $statement->fetchObject() )
     {
-        $page_sub_page->Id = ( int )( $page_sub_page->Id );
         $page_sub_page->Number = ( float )( $page_sub_page->Number );
         array_push( $page_sub_page_array, $page_sub_page );
     }
@@ -25,11 +24,11 @@ function GetDatabasePageSubPageArray(
 // ~~
 
 function GetDatabasePageSubPageById(
-    int $id
+    string $id
     )
 {
-     $statement = GetDatabaseStatement( 'select `Id`, `PageSlug`, `SubPageSlug`, `Number` from `PAGE_SUB_PAGE` where `Id` = ? limit 1' );
-    $statement->bindParam( 1, $id, PDO::PARAM_INT );
+     $statement = GetDatabaseStatement( 'select `Id`, `PageId`, `SubPageId`, `Number` from `PAGE_SUB_PAGE` where `Id` = ? limit 1' );
+    $statement->bindParam( 1, $id, PDO::PARAM_STR );
 
     if ( !$statement->execute() )
     {
@@ -37,7 +36,6 @@ function GetDatabasePageSubPageById(
     }
 
      $page_sub_page = $statement->fetchObject();
-    $page_sub_page->Id = ( int )( $page_sub_page->Id );
     $page_sub_page->Number = ( float )( $page_sub_page->Number );
 
     return $page_sub_page;
@@ -46,15 +44,17 @@ function GetDatabasePageSubPageById(
 // ~~
 
 function AddDatabasePageSubPage(
-    string $page_slug,
-    string $sub_page_slug,
+    string $id,
+    string $page_id,
+    string $sub_page_id,
     float $number
     )
 {
-     $statement = GetDatabaseStatement( 'insert into `PAGE_SUB_PAGE` ( `PageSlug`, `SubPageSlug`, `Number` ) values ( ?, ?, ? )' );
-    $statement->bindParam( 1, $page_slug, PDO::PARAM_STR );
-    $statement->bindParam( 2, $sub_page_slug, PDO::PARAM_STR );
-    $statement->bindParam( 3, $number, PDO::PARAM_STR );
+     $statement = GetDatabaseStatement( 'insert into `PAGE_SUB_PAGE` ( `Id`, `PageId`, `SubPageId`, `Number` ) values ( ?, ?, ?, ? )' );
+    $statement->bindParam( 1, $id, PDO::PARAM_STR );
+    $statement->bindParam( 2, $page_id, PDO::PARAM_STR );
+    $statement->bindParam( 3, $sub_page_id, PDO::PARAM_STR );
+    $statement->bindParam( 4, $number, PDO::PARAM_STR );
 
     if ( !$statement->execute() )
     {
@@ -67,15 +67,17 @@ function AddDatabasePageSubPage(
 // ~~
 
 function PutDatabasePageSubPage(
-    string $page_slug,
-    string $sub_page_slug,
+    string $id,
+    string $page_id,
+    string $sub_page_id,
     float $number
     )
 {
-     $statement = GetDatabaseStatement( 'replace into `PAGE_SUB_PAGE` ( `PageSlug`, `SubPageSlug`, `Number` ) values ( ?, ?, ? )' );
-    $statement->bindParam( 1, $page_slug, PDO::PARAM_STR );
-    $statement->bindParam( 2, $sub_page_slug, PDO::PARAM_STR );
-    $statement->bindParam( 3, $number, PDO::PARAM_STR );
+     $statement = GetDatabaseStatement( 'replace into `PAGE_SUB_PAGE` ( `Id`, `PageId`, `SubPageId`, `Number` ) values ( ?, ?, ?, ? )' );
+    $statement->bindParam( 1, $id, PDO::PARAM_STR );
+    $statement->bindParam( 2, $page_id, PDO::PARAM_STR );
+    $statement->bindParam( 3, $sub_page_id, PDO::PARAM_STR );
+    $statement->bindParam( 4, $number, PDO::PARAM_STR );
 
     if ( !$statement->execute() )
     {
@@ -88,17 +90,17 @@ function PutDatabasePageSubPage(
 // ~~
 
 function SetDatabasePageSubPage(
-    int $id,
-    string $page_slug,
-    string $sub_page_slug,
+    string $id,
+    string $page_id,
+    string $sub_page_id,
     float $number
     )
 {
-     $statement = GetDatabaseStatement( 'update `PAGE_SUB_PAGE` set `PageSlug` = ?, `SubPageSlug` = ?, `Number` = ? where Id = ?' );
-    $statement->bindParam( 1, $page_slug, PDO::PARAM_STR );
-    $statement->bindParam( 2, $sub_page_slug, PDO::PARAM_STR );
+     $statement = GetDatabaseStatement( 'update `PAGE_SUB_PAGE` set `PageId` = ?, `SubPageId` = ?, `Number` = ? where Id = ?' );
+    $statement->bindParam( 1, $page_id, PDO::PARAM_STR );
+    $statement->bindParam( 2, $sub_page_id, PDO::PARAM_STR );
     $statement->bindParam( 3, $number, PDO::PARAM_STR );
-    $statement->bindParam( 4, $id, PDO::PARAM_INT );
+    $statement->bindParam( 4, $id, PDO::PARAM_STR );
 
     if ( !$statement->execute() )
     {
@@ -109,11 +111,11 @@ function SetDatabasePageSubPage(
 // ~~
 
 function RemoveDatabasePageSubPageById(
-    int $id
+    string $id
     )
 {
      $statement = GetDatabaseStatement( 'delete from `PAGE_SUB_PAGE` where `Id` = ?' );
-    $statement->bindParam( 1, $id, PDO::PARAM_INT );
+    $statement->bindParam( 1, $id, PDO::PARAM_STR );
 
     if ( !$statement->execute() )
     {

@@ -15,12 +15,13 @@ class DO_ADD_USER_CONTROLLER extends CONTROLLER
     {
         parent::__construct( $language_code );
 
+         $id = GetPostValue( 'Id' );
          $email = GetPostValue( 'Email' );
          $pseudonym = GetPostValue( 'Pseudonym' );
          $password = GetPostValue( 'Password' );
          $role = GetPostValue( 'Role' );
 
-        AddDatabaseUser( $email, $pseudonym, $password, $role );
+        AddDatabaseUser( $id, $email, $pseudonym, $password, $role );
 
         Redirect( FindSessionValue( 'ListRoute', '/admin/user' ) );
     }

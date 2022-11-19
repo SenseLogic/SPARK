@@ -1,0 +1,21 @@
+PAGE_TYPE
+
+    Slug Title
+
+        home
+            ~ Home
+
+        article
+            ~ Article
+
+        articles
+            ~ Articles
+
+        cookie_policy
+            ~ Cookie policy
+
+        legal_notice
+            ~ Legal notice
+
+        contact
+            ~ Contact

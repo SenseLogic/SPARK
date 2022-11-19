@@ -16,7 +16,7 @@ class MANAGE_BLOCKS_CONTROLLER extends CONTROLLER
 
         .Title = 'Manage content blocks';
         .BlockArray = GetDatabaseBlockArray();
-        .BlockBySlugMap = GetValidBlockBySlugMap( .BlockArray );
+        .BlockByIdMap = GetValidBlockByIdMap( .BlockArray );
         .ListRoute = '/admin/block/manage';
 
         SetSessionValue( 'ListRoute', .ListRoute );

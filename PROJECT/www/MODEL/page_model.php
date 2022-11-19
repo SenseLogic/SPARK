@@ -1,34 +1,54 @@
 <?php // -- IMPORTS
 
-require_once __DIR__ . '/' . 'block.php';
-require_once __DIR__ . '/' . 'page.php';
 require_once __DIR__ . '/' . 'page_type.php';
 
 // -- FUNCTIONS
 
-function GetValidPageBySlugMap(
+function GetActivePageArray(
+    array &$page_array,
+    string $language_code
+    )
+{
+     $active_page_array = [];
+
+    foreach ( $page_array as  $page )
+    {
+        if ( $page->IsActive
+             && in_array( $language_code, $page->LanguageCodeArray, true ) )
+        {
+            array_push( $active_page_array, $page );
+        }
+    }
+
+    return $active_page_array;
+}
+
+// ~~
+
+function GetValidPageByIdMap(
     array &$page_array,
     array &$page_sub_page_array,
     array &$block_array,
-    array &$block_by_slug_map
+    array &$block_by_id_map,
+    string $language_code
     )
 {
-     $page_by_slug_map = [];
+     $page_by_id_map = [];
 
     foreach ( $page_array as  $page )
     {
         $page->BlockArray = [];
         $page->SubPageArray = [];
         $page->PageSubPageArray = [];
-        $page_by_slug_map[ $page->Slug ] = $page;
+        $page_by_id_map[ $page->Id ] = $page;
     }
 
     foreach ( $block_array as  $block )
     {
-        if ( isset( $page_by_slug_map[ $block->PageSlug ] ) )
+        if ( isset( $page_by_id_map[ $block->PageId ] ) )
         {
             array_push(
-                $page_by_slug_map[ $block->PageSlug ]->BlockArray,
+                $page_by_id_map[ $block->PageId ]->BlockArray,
                 $block
                 );
         }
@@ -36,32 +56,32 @@ function GetValidPageBySlugMap(
 
     foreach ( $page_sub_page_array as  $page_sub_page )
     {
-        if ( isset( $page_by_slug_map[ $page_sub_page->PageSlug ] )
-             && isset( $page_by_slug_map[ $page_sub_page->SubPageSlug ] ) )
+        if ( isset( $page_by_id_map[ $page_sub_page->PageId ] )
+             && isset( $page_by_id_map[ $page_sub_page->SubPageId ] ) )
         {
             array_push(
-                $page_by_slug_map[ $page_sub_page->PageSlug ]->SubPageArray,
-                $page_by_slug_map[ $page_sub_page->SubPageSlug ]
+                $page_by_id_map[ $page_sub_page->PageId ]->SubPageArray,
+                $page_by_id_map[ $page_sub_page->SubPageId ]
                 );
 
             array_push(
-                $page_by_slug_map[ $page_sub_page->PageSlug ]->PageSubPageArray,
+                $page_by_id_map[ $page_sub_page->PageId ]->PageSubPageArray,
                 $page_sub_page
                 );
         }
     }
 
-    return $page_by_slug_map;
+    return $page_by_id_map;
 }
 
 // ~~
 
 function GetValidPageById(
-    array &$page_by_slug_map,
+    array &$page_by_id_map,
     int $id
     )
 {
-    foreach ( $page_by_slug_map as  $page_slug =>  $page )
+    foreach ( $page_by_id_map as  $page_id =>  $page )
     {
         if ( $page->Id === $id )
         {

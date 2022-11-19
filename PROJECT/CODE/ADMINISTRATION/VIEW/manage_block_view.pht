@@ -6,7 +6,7 @@
                 <% .GetProcessedTextBySlug( 'Slug' ) %> :
             </div>
             <div>
-                <input class="form-input" name="Slug" type="text" value="<% GetValueText( .Block.Slug ) %>" readonly/>
+                <input class="form-input" name="Slug" type="text" value="<% GetValueText( .Block.Id ) %>" readonly/>
             </div>
             <div class="form-field-name">
                 <% .GetProcessedTextBySlug( 'Type Slug' ) %> :
@@ -65,7 +65,7 @@
                             <% .GetProcessedTextBySlug( 'Slug' ) %> :
                         </div>
                         <div>
-                            <input class="form-input" name="Slug" type="text" value="<% GetValueText( sub_block.Slug ) %>" readonly/>
+                            <input class="form-input" name="Slug" type="text" value="<% GetValueText( sub_block.Id ) %>" readonly/>
                         </div>
                         <div class="form-field-name">
                             <% .GetProcessedTextBySlug( 'Type Slug' ) %> :
@@ -107,7 +107,7 @@
                             </a>
                             <a class="form-button remove-button" href="/admin/block/remove/<% sub_block.Id %>">
                             </a>
-                            <a class="form-button add-button" href="/admin/block/add?BlockSlug=<# .Block.Slug #>&Number=<# added_sub_block_number #>">
+                            <a class="form-button add-button" href="/admin/block/add?BlockSlug=<# .Block.Id #>&Number=<# added_sub_block_number #>">
                             </a>
                         <? } ?>
                     </div>
@@ -116,7 +116,7 @@
         <? } ?>
     </div>
     <div class="form-extended form-centered margin-top-1rem margin-bottom-1rem">
-        <a class="form-button form-button-large add-button" href="/admin/block/add?BlockSlug=<# .Block.Slug #>&Number=<# added_sub_block_number #>">
+        <a class="form-button form-button-large add-button" href="/admin/block/add?BlockSlug=<# .Block.Id #>&Number=<# added_sub_block_number #>">
         </a>
     </div>
     <div>

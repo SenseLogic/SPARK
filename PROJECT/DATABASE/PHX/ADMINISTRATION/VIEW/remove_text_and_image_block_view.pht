@@ -1,0 +1,100 @@
+<? include 'BLOCK/page_header.php'; ?>
+<div id="remove-text-and-image-block-view">
+    <div class="page-section form-section">
+        <form class="form-centered" action="/admin/text-and-image-block/remove/<% .TextAndImageBlock.Id %>" method="post">
+            <div class="form-container">
+                <div class="form-field-name">
+                    <% .GetProcessedTextBySlug( 'Page Id' ) %> :
+                </div>
+                <div>
+                    <input class="form-input" name="PageId" type="text" value="<% GetValueText( .TextAndImageBlock.PageId ) %>" readonly/>
+                </div>
+                <div class="form-field-name">
+                    <% .GetProcessedTextBySlug( 'Block Id' ) %> :
+                </div>
+                <div>
+                    <input class="form-input" name="BlockId" type="text" value="<% GetValueText( .TextAndImageBlock.BlockId ) %>" readonly/>
+                </div>
+                <div class="form-field-name">
+                    <% .GetProcessedTextBySlug( 'Type Slug' ) %> :
+                </div>
+                <div>
+                    <input class="form-input" name="TypeSlug" type="text" value="<% GetValueText( .TextAndImageBlock.TypeSlug ) %>" readonly/>
+                </div>
+                <div class="form-field-name">
+                    <% .GetProcessedTextBySlug( 'Number' ) %> :
+                </div>
+                <div>
+                    <input class="form-input" name="Number" type="text" value="<% GetValueText( .TextAndImageBlock.Number ) %>" readonly/>
+                </div>
+                <div class="form-field-name">
+                    <% .GetProcessedTextBySlug( 'Language Code Array' ) %> :
+                </div>
+                <div>
+                    <input class="form-input" name="LanguageCodeArray" type="text" value="<% GetValueText( .TextAndImageBlock.LanguageCodeArray ) %>" readonly/>
+                </div>
+                <div class="form-field-name">
+                    <% .GetProcessedTextBySlug( 'Title' ) %> :
+                </div>
+                <div>
+                    <div>
+                        <? foreach ( var language_code; LanguageCodeArray ) { ?>
+                            <input class="form-translation form-input" name="Title" type="text" value="<% GetValueText( GetTranslatedText( .TextAndImageBlock.Title, language_code ) ) %>" readonly/>
+                        <? } ?>
+                    </div>
+                </div>
+                <div class="form-field-name">
+                    <% .GetProcessedTextBySlug( 'Text' ) %> :
+                </div>
+                <div>
+                    <div>
+                        <? foreach ( var language_code; LanguageCodeArray ) { ?>
+                            <textarea class="form-translation form-textarea" name="Text" readonly><% GetTranslatedText( .TextAndImageBlock.Text, language_code ) %></textarea>
+                        <? } ?>
+                    </div>
+                </div>
+                <div class="form-field-name">
+                    <% .GetProcessedTextBySlug( 'Image Path' ) %> :
+                </div>
+                <div>
+                    <input class="form-input" name="ImagePath" type="text" value="<% .TextAndImageBlock.ImagePath %>" readonly/>
+                    <div class="form-upload-container">
+                        <img class="form-upload-image" src="<% .TextAndImageBlock.ImagePath %>" onerror="this.src='/static/image/admin/missing_image.svg'"/>
+                    </div>
+                </div>
+                <div class="form-field-name">
+                    <% .GetProcessedTextBySlug( 'Image Vertical Position' ) %> :
+                </div>
+                <div>
+                    <input class="form-input" name="ImageVerticalPosition" type="text" value="<% GetValueText( .TextAndImageBlock.ImageVerticalPosition ) %>" readonly/>
+                </div>
+                <div class="form-field-name">
+                    <% .GetProcessedTextBySlug( 'Image Horizontal Position' ) %> :
+                </div>
+                <div>
+                    <input class="form-input" name="ImageHorizontalPosition" type="text" value="<% GetValueText( .TextAndImageBlock.ImageHorizontalPosition ) %>" readonly/>
+                </div>
+                <div class="form-field-name">
+                    <% .GetProcessedTextBySlug( 'Image Side' ) %> :
+                </div>
+                <div>
+                    <input class="form-input" name="ImageSide" type="text" value="<% GetValueText( .TextAndImageBlock.ImageSide ) %>" readonly/>
+                </div>
+                <div class="form-field-name">
+                    <% .GetProcessedTextBySlug( 'Video Path' ) %> :
+                </div>
+                <div>
+                    <input class="form-input" name="VideoPath" type="text" value="<% .TextAndImageBlock.VideoPath %>" readonly/>
+                    <div class="form-upload-container">
+                        <video class="form-upload-video" src="<% .TextAndImageBlock.VideoPath %>" type="video/mp4" onerror="this.src='/static/video/admin/missing_video.mp4'"></video>
+                    </div>
+                </div>
+                <a class="justify-self-start form-button form-button-large cancel-button" href="<% .ListRoute %>">
+                </a>
+                <button class="justify-self-end form-button-large form-button form-button-large remove-button" type="submit">
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<? include 'BLOCK/page_footer.php'; ?>

@@ -807,6 +807,9 @@ html {
     display: flex;
   }
 }
+.block-image {
+  width: 100%;
+}
 .block-column {
   width: 100%;
 }
@@ -1469,9 +1472,4 @@ body:not(.is-scrolled) .scroll-top-button {
 .text {
   display: flex;
   flex-direction: column;
-}
-@media (max-width: 64.98em) {
-  .image-text + .text-image {
-    margin-top: -4rem;
-  }
 }

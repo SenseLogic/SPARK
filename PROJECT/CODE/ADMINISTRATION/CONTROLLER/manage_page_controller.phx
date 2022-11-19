@@ -19,11 +19,11 @@ class MANAGE_PAGE_CONTROLLER extends CONTROLLER
 
         .Title = 'Manage a page';
         .BlockArray = GetDatabaseBlockArray();
-        .BlockBySlugMap = GetValidBlockBySlugMap( .BlockArray );
+        .BlockByIdMap = GetValidBlockByIdMap( .BlockArray );
         .PageArray = GetDatabasePageArray();
         .PageSubPageArray = GetDatabasePageSubPageArray();
-        .PageBySlugMap = GetValidPageBySlugMap( .PageArray, .PageSubPageArray, .BlockArray, .BlockBySlugMap );
-        .Page = GetValidPageById( .PageBySlugMap, page_id );
+        .PageByIdMap = GetValidPageByIdMap( .PageArray, .PageSubPageArray, .BlockArray, .BlockByIdMap );
+        .Page = GetValidPageById( .PageByIdMap, page_id );
         .ListRoute = '/admin/page/manage/' .. page_id;
 
         SetSessionValue( 'ListRoute', GetRequest() );

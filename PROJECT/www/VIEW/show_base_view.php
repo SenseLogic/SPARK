@@ -83,7 +83,7 @@
 </script>
 <div>
     <?php require __DIR__ . '/' . 'PAGE/loader_page.php'; ?>
-    <?php foreach ( $this->PageBySlugMap as  $page_slug =>  $page ) { ?>
+    <?php foreach ( $this->PageByIdMap as  $page_id =>  $page ) { ?>
         <div class="extended-container view is-hidden" data-view-name="<?php echo $page->Route; ?>">
             <?php require __DIR__ . '/' . 'PAGE/' . $page->TypeSlug . '_page.php'; ?>
         </div>

@@ -1,0 +1,35 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/text_block_model.php';
+
+// -- TYPES
+
+class DO_EDIT_TEXT_BLOCK_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code,
+        text_block_id
+        )
+    {
+        parent::constructor( language_code );
+
+        var page_id = GetPostValue( 'PageId' );
+        var block_id = GetPostValue( 'BlockId' );
+        var type_slug = GetPostValue( 'TypeSlug' );
+        var number = GetPostValue( 'Number' );
+        var language_code_array = GetJsonObject( GetPostValue( 'LanguageCodeArray' ) );
+        var title = GetPostValue( 'Title' );
+        var text = GetPostValue( 'Text' );
+
+        SetDatabaseTextBlock( text_block_id, page_id, block_id, type_slug, number, language_code_array, title, text );
+
+        Redirect( FindSessionValue( 'ListRoute', '/admin/text-block' ) );
+    }
+}
+
+// -- STATEMENTS
+
+var do_edit_text_block_controller = new DO_EDIT_TEXT_BLOCK_CONTROLLER( var language_code, var text_block_id );

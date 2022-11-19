@@ -1,5 +1,5 @@
 <?php
-     $article_array = $this->PageBySlugMap[ 'articles' ]->SubPageArray;
+     $article_array = $this->ArticlesPageArray[ 0 ]->SubPageArray;
 ?>
 
 

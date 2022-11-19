@@ -1,0 +1,10 @@
+CONTACT_PAGE
+
+    Id Route Number LanguageCodeArray Title ImagePath
+
+        %contact
+            ~ contact
+            ~ 1
+            ~ { en ~ fr }
+            ~ Contact
+            ~ /static/image/article/clouds.jpg

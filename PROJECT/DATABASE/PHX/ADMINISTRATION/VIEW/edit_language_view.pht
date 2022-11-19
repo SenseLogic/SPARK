@@ -1,0 +1,84 @@
+<? include 'BLOCK/page_header.php'; ?>
+<script>
+    // -- FUNCTIONS
+
+    function IsValidEditLanguageForm()
+    {
+        var
+            edit_language_form,
+            it_is_valid_edit_language_form,
+            code_field,
+            number_field,
+            text_field;
+
+        edit_language_form = document.EditLanguageForm;
+        code_field = edit_language_form.Code;
+        number_field = edit_language_form.Number;
+        text_field = edit_language_form.Text;
+
+        code_field.RemoveClass( "form-field-error" );
+        number_field.RemoveClass( "form-field-error" );
+        text_field.RemoveClass( "form-field-error" );
+
+        it_is_valid_edit_language_form = true;
+
+        if ( code_field.value === "" )
+        {
+            code_field.AddClass( "form-field-error" );
+
+            it_is_valid_edit_language_form = false;
+        }
+
+        if ( number_field.value === "" )
+        {
+            number_field.AddClass( "form-field-error" );
+
+            it_is_valid_edit_language_form = false;
+        }
+
+        if ( text_field.value === "" )
+        {
+            text_field.AddClass( "form-field-error" );
+
+            it_is_valid_edit_language_form = false;
+        }
+
+        return it_is_valid_edit_language_form;
+    }
+</script>
+<div id="edit-language-view">
+    <div class="page-section form-section">
+        <form class="form-centered" name="EditLanguageForm" onsubmit="return IsValidEditLanguageForm()" action="/admin/language/edit/<% .Language.Id %>" method="post">
+            <div class="form-container">
+                <div class="form-field-name">
+                    <% .GetProcessedTextBySlug( 'Code' ) %> :
+                </div>
+                <div>
+                    <input class="form-input" name="Code" type="text" value="<% GetValueText( .Language.Code ) %>"/>
+                </div>
+                <div class="form-field-name">
+                    <% .GetProcessedTextBySlug( 'Number' ) %> :
+                </div>
+                <div>
+                    <input class="form-input" name="Number" type="text" value="<% GetValueText( .Language.Number ) %>"/>
+                </div>
+                <div class="form-field-name">
+                    <% .GetProcessedTextBySlug( 'Text' ) %> :
+                </div>
+                <div>
+                    <div>
+                        <input class="multilingual-input form-input" name="Text" type="text" value="<% GetValueText( .Language.Text ) %>" hidden/>
+                        <? foreach ( var language_code; LanguageCodeArray ) { ?>
+                            <input class="multilingual-input-translation form-translation form-input" data-language-code="<% language_code %>" placeholder="<% .GetProcessedTextBySlug( language_code ) %>"/>
+                        <? } ?>
+                    </div>
+                </div>
+                <a class="justify-self-start form-button form-button-large cancel-button" href="<% .ListRoute %>">
+                </a>
+                <button class="justify-self-end form-button form-button-large apply-button" type="submit">
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<? include 'BLOCK/page_footer.php'; ?>

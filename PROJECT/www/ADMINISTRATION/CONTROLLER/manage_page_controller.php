@@ -19,11 +19,11 @@ class MANAGE_PAGE_CONTROLLER extends CONTROLLER
 
         $this->Title = 'Manage a page';
         $this->BlockArray = GetDatabaseBlockArray();
-        $this->BlockBySlugMap = GetValidBlockBySlugMap( $this->BlockArray );
+        $this->BlockByIdMap = GetValidBlockByIdMap( $this->BlockArray );
         $this->PageArray = GetDatabasePageArray();
         $this->PageSubPageArray = GetDatabasePageSubPageArray();
-        $this->PageBySlugMap = GetValidPageBySlugMap( $this->PageArray, $this->PageSubPageArray, $this->BlockArray, $this->BlockBySlugMap );
-        $this->Page = GetValidPageById( $this->PageBySlugMap, $page_id );
+        $this->PageByIdMap = GetValidPageByIdMap( $this->PageArray, $this->PageSubPageArray, $this->BlockArray, $this->BlockByIdMap );
+        $this->Page = GetValidPageById( $this->PageByIdMap, $page_id );
         $this->ListRoute = '/admin/page/manage/' . $page_id;
 
         SetSessionValue( 'ListRoute', GetRequest() );

@@ -1,0 +1,36 @@
+<? include 'BLOCK/page_header.php'; ?>
+<div id="remove-language-view">
+    <div class="page-section form-section">
+        <form class="form-centered" action="/admin/language/remove/<% .Language.Id %>" method="post">
+            <div class="form-container">
+                <div class="form-field-name">
+                    <% .GetProcessedTextBySlug( 'Code' ) %> :
+                </div>
+                <div>
+                    <input class="form-input" name="Code" type="text" value="<% GetValueText( .Language.Code ) %>" readonly/>
+                </div>
+                <div class="form-field-name">
+                    <% .GetProcessedTextBySlug( 'Number' ) %> :
+                </div>
+                <div>
+                    <input class="form-input" name="Number" type="text" value="<% GetValueText( .Language.Number ) %>" readonly/>
+                </div>
+                <div class="form-field-name">
+                    <% .GetProcessedTextBySlug( 'Text' ) %> :
+                </div>
+                <div>
+                    <div>
+                        <? foreach ( var language_code; LanguageCodeArray ) { ?>
+                            <input class="form-translation form-input" name="Text" type="text" value="<% GetValueText( GetTranslatedText( .Language.Text, language_code ) ) %>" readonly/>
+                        <? } ?>
+                    </div>
+                </div>
+                <a class="justify-self-start form-button form-button-large cancel-button" href="<% .ListRoute %>">
+                </a>
+                <button class="justify-self-end form-button-large form-button form-button-large remove-button" type="submit">
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<? include 'BLOCK/page_footer.php'; ?>

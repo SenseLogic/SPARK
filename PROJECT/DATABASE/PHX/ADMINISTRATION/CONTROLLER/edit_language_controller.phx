@@ -1,0 +1,29 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/language_model.php';
+
+// -- TYPES
+
+class EDIT_LANGUAGE_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code,
+        language_id
+        )
+    {
+        parent::constructor( language_code );
+
+        .Title = 'Edit a language';
+        .Language = GetDatabaseLanguageById( language_id );
+        .ListRoute = FindSessionValue( 'ListRoute', '/admin/language' );
+
+        import '../VIEW/edit_language_view.php';
+    }
+}
+
+// -- STATEMENTS
+
+var edit_language_controller = new EDIT_LANGUAGE_CONTROLLER( var language_code, var language_id );

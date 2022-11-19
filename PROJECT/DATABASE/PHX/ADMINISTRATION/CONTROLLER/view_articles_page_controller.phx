@@ -1,0 +1,29 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/articles_page_model.php';
+
+// -- TYPES
+
+class VIEW_ARTICLES_PAGE_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code,
+        articles_page_id
+        )
+    {
+        parent::constructor( language_code );
+
+        .Title = 'View a articles page';
+        .ArticlesPage = GetDatabaseArticlesPageById( articles_page_id );
+        .ListRoute = FindSessionValue( 'ListRoute', '/admin/articles-page' );
+
+        import '../VIEW/view_articles_page_view.php';
+    }
+}
+
+// -- STATEMENTS
+
+var view_articles_page_controller = new VIEW_ARTICLES_PAGE_CONTROLLER( var language_code, var articles_page_id );

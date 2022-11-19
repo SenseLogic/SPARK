@@ -10,15 +10,7 @@ function GetDatabaseBlockTypeArray(
         var_dump( $statement->errorInfo() );
     }
 
-     $block_type_array = [];
-
-    while (  $block_type = $statement->fetchObject() )
-    {
-        $block_type->Id = ( int )( $block_type->Id );
-        array_push( $block_type_array, $block_type );
-    }
-
-    return $block_type_array;
+    return GetDatabaseObjectArray( $statement );
 }
 
 // ~~
@@ -37,7 +29,6 @@ function GetDatabaseBlockTypeBySlugMap(
 
     while (  $block_type = $statement->fetchObject() )
     {
-        $block_type->Id = ( int )( $block_type->Id );
         $block_type_by_slug_map[ $block_type->Slug ] = $block_type;
     }
 
@@ -47,33 +38,32 @@ function GetDatabaseBlockTypeBySlugMap(
 // ~~
 
 function GetDatabaseBlockTypeById(
-    int $id
+    string $id
     )
 {
      $statement = GetDatabaseStatement( 'select `Id`, `Slug`, `Name` from `BLOCK_TYPE` where `Id` = ? limit 1' );
-    $statement->bindParam( 1, $id, PDO::PARAM_INT );
+    $statement->bindParam( 1, $id, PDO::PARAM_STR );
 
     if ( !$statement->execute() )
     {
         var_dump( $statement->errorInfo() );
     }
 
-     $block_type = $statement->fetchObject();
-    $block_type->Id = ( int )( $block_type->Id );
-
-    return $block_type;
+    return $statement->fetchObject();
 }
 
 // ~~
 
 function AddDatabaseBlockType(
+    string $id,
     string $slug,
     string $name
     )
 {
-     $statement = GetDatabaseStatement( 'insert into `BLOCK_TYPE` ( `Slug`, `Name` ) values ( ?, ? )' );
-    $statement->bindParam( 1, $slug, PDO::PARAM_STR );
-    $statement->bindParam( 2, $name, PDO::PARAM_STR );
+     $statement = GetDatabaseStatement( 'insert into `BLOCK_TYPE` ( `Id`, `Slug`, `Name` ) values ( ?, ?, ? )' );
+    $statement->bindParam( 1, $id, PDO::PARAM_STR );
+    $statement->bindParam( 2, $slug, PDO::PARAM_STR );
+    $statement->bindParam( 3, $name, PDO::PARAM_STR );
 
     if ( !$statement->execute() )
     {
@@ -86,13 +76,15 @@ function AddDatabaseBlockType(
 // ~~
 
 function PutDatabaseBlockType(
+    string $id,
     string $slug,
     string $name
     )
 {
-     $statement = GetDatabaseStatement( 'replace into `BLOCK_TYPE` ( `Slug`, `Name` ) values ( ?, ? )' );
-    $statement->bindParam( 1, $slug, PDO::PARAM_STR );
-    $statement->bindParam( 2, $name, PDO::PARAM_STR );
+     $statement = GetDatabaseStatement( 'replace into `BLOCK_TYPE` ( `Id`, `Slug`, `Name` ) values ( ?, ?, ? )' );
+    $statement->bindParam( 1, $id, PDO::PARAM_STR );
+    $statement->bindParam( 2, $slug, PDO::PARAM_STR );
+    $statement->bindParam( 3, $name, PDO::PARAM_STR );
 
     if ( !$statement->execute() )
     {
@@ -105,7 +97,7 @@ function PutDatabaseBlockType(
 // ~~
 
 function SetDatabaseBlockType(
-    int $id,
+    string $id,
     string $slug,
     string $name
     )
@@ -113,7 +105,7 @@ function SetDatabaseBlockType(
      $statement = GetDatabaseStatement( 'update `BLOCK_TYPE` set `Slug` = ?, `Name` = ? where Id = ?' );
     $statement->bindParam( 1, $slug, PDO::PARAM_STR );
     $statement->bindParam( 2, $name, PDO::PARAM_STR );
-    $statement->bindParam( 3, $id, PDO::PARAM_INT );
+    $statement->bindParam( 3, $id, PDO::PARAM_STR );
 
     if ( !$statement->execute() )
     {
@@ -124,11 +116,11 @@ function SetDatabaseBlockType(
 // ~~
 
 function RemoveDatabaseBlockTypeById(
-    int $id
+    string $id
     )
 {
      $statement = GetDatabaseStatement( 'delete from `BLOCK_TYPE` where `Id` = ?' );
-    $statement->bindParam( 1, $id, PDO::PARAM_INT );
+    $statement->bindParam( 1, $id, PDO::PARAM_STR );
 
     if ( !$statement->execute() )
     {

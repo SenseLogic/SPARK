@@ -10,40 +10,30 @@ function GetDatabaseContactArray(
         var_dump( statement.errorInfo() );
     }
 
-    var contact_array = [];
-
-    while ( var contact = statement.fetchObject() )
-    {
-        contact.Id = ( int )( contact.Id );
-        array_push( contact_array, contact );
-    }
-
-    return contact_array;
+    return GetDatabaseObjectArray( statement );
 }
 
 // ~~
 
 function GetDatabaseContactById(
-    int id
+    string id
     )
 {
     var statement = GetDatabaseStatement( 'select `Id`, `Name`, `Company`, `Email`, `Phone`, `Subject`, `Message`, `DateTime` from `CONTACT` where `Id` = ? limit 1' );
-    statement.bindParam( 1, id, PDO::PARAM_INT );
+    statement.bindParam( 1, id, PDO::PARAM_STR );
 
     if ( !statement.execute() )
     {
         var_dump( statement.errorInfo() );
     }
 
-    var contact = statement.fetchObject();
-    contact.Id = ( int )( contact.Id );
-
-    return contact;
+    return statement.fetchObject();
 }
 
 // ~~
 
 function AddDatabaseContact(
+    string id,
     string name,
     string company,
     string email,
@@ -52,13 +42,14 @@ function AddDatabaseContact(
     string message
     )
 {
-    var statement = GetDatabaseStatement( 'insert into `CONTACT` ( `Name`, `Company`, `Email`, `Phone`, `Subject`, `Message`, `DateTime` ) values ( ?, ?, ?, ?, ?, ?, now() )' );
-    statement.bindParam( 1, name, PDO::PARAM_STR );
-    statement.bindParam( 2, company, PDO::PARAM_STR );
-    statement.bindParam( 3, email, PDO::PARAM_STR );
-    statement.bindParam( 4, phone, PDO::PARAM_STR );
-    statement.bindParam( 5, subject, PDO::PARAM_STR );
-    statement.bindParam( 6, message, PDO::PARAM_STR );
+    var statement = GetDatabaseStatement( 'insert into `CONTACT` ( `Id`, `Name`, `Company`, `Email`, `Phone`, `Subject`, `Message`, `DateTime` ) values ( ?, ?, ?, ?, ?, ?, ?, now() )' );
+    statement.bindParam( 1, id, PDO::PARAM_STR );
+    statement.bindParam( 2, name, PDO::PARAM_STR );
+    statement.bindParam( 3, company, PDO::PARAM_STR );
+    statement.bindParam( 4, email, PDO::PARAM_STR );
+    statement.bindParam( 5, phone, PDO::PARAM_STR );
+    statement.bindParam( 6, subject, PDO::PARAM_STR );
+    statement.bindParam( 7, message, PDO::PARAM_STR );
 
     if ( !statement.execute() )
     {
@@ -71,6 +62,7 @@ function AddDatabaseContact(
 // ~~
 
 function PutDatabaseContact(
+    string id,
     string name,
     string company,
     string email,
@@ -79,13 +71,14 @@ function PutDatabaseContact(
     string message
     )
 {
-    var statement = GetDatabaseStatement( 'replace into `CONTACT` ( `Name`, `Company`, `Email`, `Phone`, `Subject`, `Message`, `DateTime` ) values ( ?, ?, ?, ?, ?, ?, now() )' );
-    statement.bindParam( 1, name, PDO::PARAM_STR );
-    statement.bindParam( 2, company, PDO::PARAM_STR );
-    statement.bindParam( 3, email, PDO::PARAM_STR );
-    statement.bindParam( 4, phone, PDO::PARAM_STR );
-    statement.bindParam( 5, subject, PDO::PARAM_STR );
-    statement.bindParam( 6, message, PDO::PARAM_STR );
+    var statement = GetDatabaseStatement( 'replace into `CONTACT` ( `Id`, `Name`, `Company`, `Email`, `Phone`, `Subject`, `Message`, `DateTime` ) values ( ?, ?, ?, ?, ?, ?, ?, now() )' );
+    statement.bindParam( 1, id, PDO::PARAM_STR );
+    statement.bindParam( 2, name, PDO::PARAM_STR );
+    statement.bindParam( 3, company, PDO::PARAM_STR );
+    statement.bindParam( 4, email, PDO::PARAM_STR );
+    statement.bindParam( 5, phone, PDO::PARAM_STR );
+    statement.bindParam( 6, subject, PDO::PARAM_STR );
+    statement.bindParam( 7, message, PDO::PARAM_STR );
 
     if ( !statement.execute() )
     {
@@ -98,7 +91,7 @@ function PutDatabaseContact(
 // ~~
 
 function SetDatabaseContact(
-    int id,
+    string id,
     string name,
     string company,
     string email,
@@ -116,7 +109,7 @@ function SetDatabaseContact(
     statement.bindParam( 5, subject, PDO::PARAM_STR );
     statement.bindParam( 6, message, PDO::PARAM_STR );
     statement.bindParam( 7, date_time, PDO::PARAM_STR );
-    statement.bindParam( 8, id, PDO::PARAM_INT );
+    statement.bindParam( 8, id, PDO::PARAM_STR );
 
     if ( !statement.execute() )
     {
@@ -127,11 +120,11 @@ function SetDatabaseContact(
 // ~~
 
 function RemoveDatabaseContactById(
-    int id
+    string id
     )
 {
     var statement = GetDatabaseStatement( 'delete from `CONTACT` where `Id` = ?' );
-    statement.bindParam( 1, id, PDO::PARAM_INT );
+    statement.bindParam( 1, id, PDO::PARAM_STR );
 
     if ( !statement.execute() )
     {

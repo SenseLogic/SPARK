@@ -15,10 +15,11 @@ class DO_ADD_BLOCK_TYPE_CONTROLLER extends CONTROLLER
     {
         parent::__construct( $language_code );
 
+         $id = GetPostValue( 'Id' );
          $slug = GetPostValue( 'Slug' );
          $name = GetPostValue( 'Name' );
 
-        AddDatabaseBlockType( $slug, $name );
+        AddDatabaseBlockType( $id, $slug, $name );
 
         Redirect( FindSessionValue( 'ListRoute', '/admin/block-type' ) );
     }

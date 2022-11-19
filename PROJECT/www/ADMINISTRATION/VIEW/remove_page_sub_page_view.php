@@ -4,16 +4,16 @@
         <form class="form-centered" action="/admin/page-sub-page/remove/<?php echo htmlspecialchars( $this->PageSubPage->Id ); ?>" method="post">
             <div class="form-container">
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Page Slug' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Page Id' ) ); ?> :
                 </div>
                 <div>
-                    <input class="form-input" name="PageSlug" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->PageSubPage->PageSlug ) ); ?>" readonly/>
+                    <input class="form-input" name="PageId" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->PageSubPage->PageId ) ); ?>" readonly/>
                 </div>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Sub Page Slug' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Sub Page Id' ) ); ?> :
                 </div>
                 <div>
-                    <input class="form-input" name="SubPageSlug" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->PageSubPage->SubPageSlug ) ); ?>" readonly/>
+                    <input class="form-input" name="SubPageId" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->PageSubPage->SubPageId ) ); ?>" readonly/>
                 </div>
                 <div class="form-field-name">
                     <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Number' ) ); ?> :

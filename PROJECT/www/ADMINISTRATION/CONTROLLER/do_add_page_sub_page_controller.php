@@ -15,11 +15,12 @@ class DO_ADD_PAGE_SUB_PAGE_CONTROLLER extends CONTROLLER
     {
         parent::__construct( $language_code );
 
-         $page_slug = GetPostValue( 'PageSlug' );
-         $sub_page_slug = GetPostValue( 'SubPageSlug' );
+         $id = GetPostValue( 'Id' );
+         $page_id = GetPostValue( 'PageId' );
+         $sub_page_id = GetPostValue( 'SubPageId' );
          $number = GetPostValue( 'Number' );
 
-        AddDatabasePageSubPage( $page_slug, $sub_page_slug, $number );
+        AddDatabasePageSubPage( $id, $page_id, $sub_page_id, $number );
 
         Redirect( FindSessionValue( 'ListRoute', '/admin/page-sub-page' ) );
     }

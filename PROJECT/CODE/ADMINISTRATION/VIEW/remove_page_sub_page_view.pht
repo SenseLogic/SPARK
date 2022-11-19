@@ -4,16 +4,16 @@
         <form class="form-centered" action="/admin/page-sub-page/remove/<% .PageSubPage.Id %>" method="post">
             <div class="form-container">
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Page Slug' ) %> :
+                    <% .GetProcessedTextBySlug( 'Page Id' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="PageSlug" type="text" value="<% GetValueText( .PageSubPage.PageSlug ) %>" readonly/>
+                    <input class="form-input" name="PageId" type="text" value="<% GetValueText( .PageSubPage.PageId ) %>" readonly/>
                 </div>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Sub Page Slug' ) %> :
+                    <% .GetProcessedTextBySlug( 'Sub Page Id' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="SubPageSlug" type="text" value="<% GetValueText( .PageSubPage.SubPageSlug ) %>" readonly/>
+                    <input class="form-input" name="SubPageId" type="text" value="<% GetValueText( .PageSubPage.SubPageId ) %>" readonly/>
                 </div>
                 <div class="form-field-name">
                     <% .GetProcessedTextBySlug( 'Number' ) %> :

@@ -15,10 +15,11 @@ class DO_ADD_BLOCK_CATEGORY_CONTROLLER extends CONTROLLER
     {
         parent::__construct( $language_code );
 
+         $id = GetPostValue( 'Id' );
          $slug = GetPostValue( 'Slug' );
          $name = GetPostValue( 'Name' );
 
-        AddDatabaseBlockCategory( $slug, $name );
+        AddDatabaseBlockCategory( $id, $slug, $name );
 
         Redirect( FindSessionValue( 'ListRoute', '/admin/block-category' ) );
     }

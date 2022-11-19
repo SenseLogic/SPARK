@@ -6,7 +6,7 @@
                 <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Slug' ) ); ?> :
             </div>
             <div>
-                <input class="form-input" name="Slug" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Page->Slug ) ); ?>" readonly/>
+                <input class="form-input" name="Slug" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Page->Id ) ); ?>" readonly/>
             </div>
             <div class="form-field-name">
                 <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Type Slug' ) ); ?> :
@@ -65,7 +65,7 @@
                             <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Slug' ) ); ?> :
                         </div>
                         <div>
-                            <input class="form-input" name="Slug" type="text" value="<?php echo htmlspecialchars( GetValueText( $block->Slug ) ); ?>" readonly/>
+                            <input class="form-input" name="Slug" type="text" value="<?php echo htmlspecialchars( GetValueText( $block->Id ) ); ?>" readonly/>
                         </div>
                         <div class="form-field-name">
                             <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Type Slug' ) ); ?> :
@@ -107,7 +107,7 @@
                             </a>
                             <a class="form-button remove-button" href="/admin/block/remove/<?php echo htmlspecialchars( $block->Id ); ?>">
                             </a>
-                            <a class="form-button add-button" href="/admin/block/add?PageSlug=<?php echo $this->Page->Slug; ?>&Number=<?php echo $added_block_number; ?>">
+                            <a class="form-button add-button" href="/admin/block/add?PageSlug=<?php echo $this->Page->Id; ?>&Number=<?php echo $added_block_number; ?>">
                             </a>
                         <?php } ?>
                     </div>
@@ -116,7 +116,7 @@
         <?php } ?>
     </div>
     <div class="form-extended form-centered margin-top-1rem margin-bottom-1rem">
-        <a class="form-button form-button-large add-button" href="/admin/block/add?PageSlug=<?php echo $this->Page->Slug; ?>&Number=<?php echo $added_block_number; ?>">
+        <a class="form-button form-button-large add-button" href="/admin/block/add?PageSlug=<?php echo $this->Page->Id; ?>&Number=<?php echo $added_block_number; ?>">
         </a>
     </div>
     <div class="form-title">
@@ -133,7 +133,7 @@
                             <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Slug' ) ); ?> :
                         </div>
                         <div>
-                            <input class="form-input" name="Slug" type="text" value="<?php echo htmlspecialchars( GetValueText( $sub_page->Slug ) ); ?>" readonly/>
+                            <input class="form-input" name="Slug" type="text" value="<?php echo htmlspecialchars( GetValueText( $sub_page->Id ) ); ?>" readonly/>
                         </div>
                         <div class="form-field-name">
                             <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Type Slug' ) ); ?> :
@@ -181,7 +181,7 @@
                             </a>
                             <a class="form-button remove-button" href="/admin/page/remove/<?php echo htmlspecialchars( $sub_page->Id ); ?>">
                             </a>
-                            <a class="form-button add-button" href="/admin/page-sub-page/add?PageSlug=<?php echo $this->Page->Slug; ?>&Number=<?php echo $added_sub_page_number; ?>">
+                            <a class="form-button add-button" href="/admin/page-sub-page/add?PageSlug=<?php echo $this->Page->Id; ?>&Number=<?php echo $added_sub_page_number; ?>">
                             </a>
                         <?php } ?>
                     </div>
@@ -190,7 +190,7 @@
         <?php } ?>
     </div>
     <div class="form-extended form-centered margin-top-1rem margin-bottom-1rem">
-        <a class="form-button form-button-large add-button" href="/admin/page-sub-page/add?PageSlug=<?php echo $this->Page->Slug; ?>&Number=<?php echo $added_sub_page_number; ?>">
+        <a class="form-button form-button-large add-button" href="/admin/page-sub-page/add?PageSlug=<?php echo $this->Page->Id; ?>&Number=<?php echo $added_sub_page_number; ?>">
         </a>
     </div>
     <div>

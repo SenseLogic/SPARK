@@ -1,0 +1,27 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/text_and_image_block_model.php';
+
+// -- TYPES
+
+class DO_REMOVE_TEXT_AND_IMAGE_BLOCK_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code,
+        text_and_image_block_id
+        )
+    {
+        parent::constructor( language_code );
+
+        RemoveDatabaseTextAndImageBlockById( text_and_image_block_id );
+
+        Redirect( FindSessionValue( 'ListRoute', '/admin/text-and-image-block' ) );
+    }
+}
+
+// -- STATEMENTS
+
+var do_remove_text_and_image_block_controller = new DO_REMOVE_TEXT_AND_IMAGE_BLOCK_CONTROLLER( var language_code, var text_and_image_block_id );

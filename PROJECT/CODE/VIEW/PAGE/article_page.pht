@@ -4,7 +4,7 @@
     <? include '../BLOCK/header_menu.php'; ?>
     <? include '../BLOCK/page_heading.php'; ?>
     <? include '../BLOCK/block_list.php'; ?>
-    <? var page_array = .PageBySlugMap[ 'articles' ].SubPageArray; ?>
+    <? var page_array = .ArticlesPageArray[ 0 ].SubPageArray; ?>
     <? include '../BLOCK/adjacent_page_list.php'; ?>
     <? include '../BLOCK/page_padding.php'; ?>
     <? include '../BLOCK/footer_menu.php'; ?>

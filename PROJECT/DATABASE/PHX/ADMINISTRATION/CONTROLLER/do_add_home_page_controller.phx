@@ -1,0 +1,39 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/home_page_model.php';
+
+// -- TYPES
+
+class DO_ADD_HOME_PAGE_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code
+        )
+    {
+        parent::constructor( language_code );
+
+        var id = GetPostValue( 'Id' );
+        var route = GetPostValue( 'Route' );
+        var type_slug = GetPostValue( 'TypeSlug' );
+        var number = GetPostValue( 'Number' );
+        var language_code_array = GetJsonObject( GetPostValue( 'LanguageCodeArray' ) );
+        var is_active = GetPostValue( 'IsActive' );
+        var title = GetPostValue( 'Title' );
+        var text = GetPostValue( 'Text' );
+        var image_path = GetPostValue( 'ImagePath' );
+        var image_vertical_position = GetPostValue( 'ImageVerticalPosition' );
+        var image_horizontal_position = GetPostValue( 'ImageHorizontalPosition' );
+        var video_path = GetPostValue( 'VideoPath' );
+
+        AddDatabaseHomePage( id, route, type_slug, number, language_code_array, is_active, title, text, image_path, image_vertical_position, image_horizontal_position, video_path );
+
+        Redirect( FindSessionValue( 'ListRoute', '/admin/home-page' ) );
+    }
+}
+
+// -- STATEMENTS
+
+var do_add_home_page_controller = new DO_ADD_HOME_PAGE_CONTROLLER( var language_code );

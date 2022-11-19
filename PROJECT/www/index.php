@@ -207,6 +207,7 @@ function Route(
             else if ( $it_is_post_request
                       && $path_value_count === 3
                       && $path_value_array[ 2 ] === 'add'
+                      && HasPostValue( 'Id' )
                       && HasPostValue( 'Slug' )
                       && HasPostValue( 'Text' ) )
             {
@@ -260,6 +261,78 @@ function Route(
             }
         }
         else if ( $path_value_count >= 2
+                  && $path_value_array[ 1 ] === 'language' )
+        {
+            if ( $it_is_get_request
+                 && $path_value_count === 2 )
+            {
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_languages_controller.php';
+            }
+            else if ( $it_is_get_request
+                      && $path_value_count === 3
+                      && $path_value_array[ 2 ] === 'add' )
+            {
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/add_language_controller.php';
+            }
+            else if ( $it_is_post_request
+                      && $path_value_count === 3
+                      && $path_value_array[ 2 ] === 'add'
+                      && HasPostValue( 'Id' )
+                      && HasPostValue( 'Code' )
+                      && HasPostValue( 'Number' )
+                      && HasPostValue( 'Text' ) )
+            {
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_add_language_controller.php';
+            }
+            else if ( $it_is_get_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'view' )
+            {
+                 $language_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_language_controller.php';
+            }
+            else if ( $it_is_get_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'edit' )
+            {
+                 $language_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/edit_language_controller.php';
+            }
+            else if ( $it_is_post_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'edit'
+                      && HasPostValue( 'Code' )
+                      && HasPostValue( 'Number' )
+                      && HasPostValue( 'Text' ) )
+            {
+                 $language_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_edit_language_controller.php';
+            }
+            else if ( $it_is_get_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'remove' )
+            {
+                 $language_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/remove_language_controller.php';
+            }
+            else if ( $it_is_post_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'remove' )
+            {
+                 $language_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_remove_language_controller.php';
+            }
+            else
+            {
+                require_once __DIR__ . '/' . 'CONTROLLER/show_error_controller.php';
+            }
+        }
+        else if ( $path_value_count >= 2
                   && $path_value_array[ 1 ] === 'page-type' )
         {
             if ( $it_is_get_request
@@ -276,6 +349,7 @@ function Route(
             else if ( $it_is_post_request
                       && $path_value_count === 3
                       && $path_value_array[ 2 ] === 'add'
+                      && HasPostValue( 'Id' )
                       && HasPostValue( 'Slug' )
                       && HasPostValue( 'Title' ) )
             {
@@ -329,84 +403,527 @@ function Route(
             }
         }
         else if ( $path_value_count >= 2
-                  && $path_value_array[ 1 ] === 'page' )
+                  && $path_value_array[ 1 ] === 'home-page' )
         {
             if ( $it_is_get_request
                  && $path_value_count === 2 )
             {
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_pages_controller.php';
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_home_pages_controller.php';
             }
             else if ( $it_is_get_request
                       && $path_value_count === 3
                       && $path_value_array[ 2 ] === 'add' )
             {
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/add_page_controller.php';
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/add_home_page_controller.php';
             }
             else if ( $it_is_post_request
                       && $path_value_count === 3
                       && $path_value_array[ 2 ] === 'add'
-                      && HasPostValue( 'Slug' )
-                      && HasPostValue( 'TypeSlug' )
+                      && HasPostValue( 'Id' )
                       && HasPostValue( 'Route' )
+                      && HasPostValue( 'TypeSlug' )
+                      && HasPostValue( 'Number' )
+                      && HasPostValue( 'LanguageCodeArray' )
+                      && HasPostValue( 'IsActive' )
                       && HasPostValue( 'Title' )
                       && HasPostValue( 'Text' )
                       && HasPostValue( 'ImagePath' )
                       && HasPostValue( 'ImageVerticalPosition' )
                       && HasPostValue( 'ImageHorizontalPosition' )
-                      && HasPostValue( 'VideoPath' )
-                      && HasPostValue( 'IsActive' ) )
+                      && HasPostValue( 'VideoPath' ) )
             {
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_add_page_controller.php';
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_add_home_page_controller.php';
             }
             else if ( $it_is_get_request
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'view' )
             {
-                 $page_id = $path_value_array[ 3 ];
+                 $home_page_id = $path_value_array[ 3 ];
 
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_page_controller.php';
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_home_page_controller.php';
             }
             else if ( $it_is_get_request
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'edit' )
             {
-                 $page_id = $path_value_array[ 3 ];
+                 $home_page_id = $path_value_array[ 3 ];
 
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/edit_page_controller.php';
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/edit_home_page_controller.php';
             }
             else if ( $it_is_post_request
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'edit'
-                      && HasPostValue( 'Slug' )
-                      && HasPostValue( 'TypeSlug' )
                       && HasPostValue( 'Route' )
+                      && HasPostValue( 'TypeSlug' )
+                      && HasPostValue( 'Number' )
+                      && HasPostValue( 'LanguageCodeArray' )
+                      && HasPostValue( 'IsActive' )
                       && HasPostValue( 'Title' )
                       && HasPostValue( 'Text' )
                       && HasPostValue( 'ImagePath' )
                       && HasPostValue( 'ImageVerticalPosition' )
                       && HasPostValue( 'ImageHorizontalPosition' )
-                      && HasPostValue( 'VideoPath' )
-                      && HasPostValue( 'IsActive' ) )
+                      && HasPostValue( 'VideoPath' ) )
             {
-                 $page_id = $path_value_array[ 3 ];
+                 $home_page_id = $path_value_array[ 3 ];
 
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_edit_page_controller.php';
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_edit_home_page_controller.php';
             }
             else if ( $it_is_get_request
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'remove' )
             {
-                 $page_id = $path_value_array[ 3 ];
+                 $home_page_id = $path_value_array[ 3 ];
 
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/remove_page_controller.php';
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/remove_home_page_controller.php';
             }
             else if ( $it_is_post_request
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'remove' )
             {
-                 $page_id = $path_value_array[ 3 ];
+                 $home_page_id = $path_value_array[ 3 ];
 
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_remove_page_controller.php';
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_remove_home_page_controller.php';
+            }
+            else
+            {
+                require_once __DIR__ . '/' . 'CONTROLLER/show_error_controller.php';
+            }
+        }
+        else if ( $path_value_count >= 2
+                  && $path_value_array[ 1 ] === 'article-page' )
+        {
+            if ( $it_is_get_request
+                 && $path_value_count === 2 )
+            {
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_article_pages_controller.php';
+            }
+            else if ( $it_is_get_request
+                      && $path_value_count === 3
+                      && $path_value_array[ 2 ] === 'add' )
+            {
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/add_article_page_controller.php';
+            }
+            else if ( $it_is_post_request
+                      && $path_value_count === 3
+                      && $path_value_array[ 2 ] === 'add'
+                      && HasPostValue( 'Id' )
+                      && HasPostValue( 'Route' )
+                      && HasPostValue( 'TypeSlug' )
+                      && HasPostValue( 'Number' )
+                      && HasPostValue( 'LanguageCodeArray' )
+                      && HasPostValue( 'IsActive' )
+                      && HasPostValue( 'Title' )
+                      && HasPostValue( 'Text' )
+                      && HasPostValue( 'ImagePath' )
+                      && HasPostValue( 'ImageVerticalPosition' )
+                      && HasPostValue( 'ImageHorizontalPosition' )
+                      && HasPostValue( 'VideoPath' ) )
+            {
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_add_article_page_controller.php';
+            }
+            else if ( $it_is_get_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'view' )
+            {
+                 $article_page_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_article_page_controller.php';
+            }
+            else if ( $it_is_get_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'edit' )
+            {
+                 $article_page_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/edit_article_page_controller.php';
+            }
+            else if ( $it_is_post_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'edit'
+                      && HasPostValue( 'Route' )
+                      && HasPostValue( 'TypeSlug' )
+                      && HasPostValue( 'Number' )
+                      && HasPostValue( 'LanguageCodeArray' )
+                      && HasPostValue( 'IsActive' )
+                      && HasPostValue( 'Title' )
+                      && HasPostValue( 'Text' )
+                      && HasPostValue( 'ImagePath' )
+                      && HasPostValue( 'ImageVerticalPosition' )
+                      && HasPostValue( 'ImageHorizontalPosition' )
+                      && HasPostValue( 'VideoPath' ) )
+            {
+                 $article_page_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_edit_article_page_controller.php';
+            }
+            else if ( $it_is_get_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'remove' )
+            {
+                 $article_page_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/remove_article_page_controller.php';
+            }
+            else if ( $it_is_post_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'remove' )
+            {
+                 $article_page_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_remove_article_page_controller.php';
+            }
+            else
+            {
+                require_once __DIR__ . '/' . 'CONTROLLER/show_error_controller.php';
+            }
+        }
+        else if ( $path_value_count >= 2
+                  && $path_value_array[ 1 ] === 'articles-page' )
+        {
+            if ( $it_is_get_request
+                 && $path_value_count === 2 )
+            {
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_articles_pages_controller.php';
+            }
+            else if ( $it_is_get_request
+                      && $path_value_count === 3
+                      && $path_value_array[ 2 ] === 'add' )
+            {
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/add_articles_page_controller.php';
+            }
+            else if ( $it_is_post_request
+                      && $path_value_count === 3
+                      && $path_value_array[ 2 ] === 'add'
+                      && HasPostValue( 'Id' )
+                      && HasPostValue( 'Route' )
+                      && HasPostValue( 'TypeSlug' )
+                      && HasPostValue( 'Number' )
+                      && HasPostValue( 'LanguageCodeArray' )
+                      && HasPostValue( 'IsActive' )
+                      && HasPostValue( 'Title' )
+                      && HasPostValue( 'Text' )
+                      && HasPostValue( 'ImagePath' )
+                      && HasPostValue( 'ImageVerticalPosition' )
+                      && HasPostValue( 'ImageHorizontalPosition' )
+                      && HasPostValue( 'VideoPath' ) )
+            {
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_add_articles_page_controller.php';
+            }
+            else if ( $it_is_get_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'view' )
+            {
+                 $articles_page_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_articles_page_controller.php';
+            }
+            else if ( $it_is_get_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'edit' )
+            {
+                 $articles_page_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/edit_articles_page_controller.php';
+            }
+            else if ( $it_is_post_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'edit'
+                      && HasPostValue( 'Route' )
+                      && HasPostValue( 'TypeSlug' )
+                      && HasPostValue( 'Number' )
+                      && HasPostValue( 'LanguageCodeArray' )
+                      && HasPostValue( 'IsActive' )
+                      && HasPostValue( 'Title' )
+                      && HasPostValue( 'Text' )
+                      && HasPostValue( 'ImagePath' )
+                      && HasPostValue( 'ImageVerticalPosition' )
+                      && HasPostValue( 'ImageHorizontalPosition' )
+                      && HasPostValue( 'VideoPath' ) )
+            {
+                 $articles_page_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_edit_articles_page_controller.php';
+            }
+            else if ( $it_is_get_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'remove' )
+            {
+                 $articles_page_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/remove_articles_page_controller.php';
+            }
+            else if ( $it_is_post_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'remove' )
+            {
+                 $articles_page_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_remove_articles_page_controller.php';
+            }
+            else
+            {
+                require_once __DIR__ . '/' . 'CONTROLLER/show_error_controller.php';
+            }
+        }
+        else if ( $path_value_count >= 2
+                  && $path_value_array[ 1 ] === 'cookie-policy-page' )
+        {
+            if ( $it_is_get_request
+                 && $path_value_count === 2 )
+            {
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_cookie_policy_pages_controller.php';
+            }
+            else if ( $it_is_get_request
+                      && $path_value_count === 3
+                      && $path_value_array[ 2 ] === 'add' )
+            {
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/add_cookie_policy_page_controller.php';
+            }
+            else if ( $it_is_post_request
+                      && $path_value_count === 3
+                      && $path_value_array[ 2 ] === 'add'
+                      && HasPostValue( 'Id' )
+                      && HasPostValue( 'Route' )
+                      && HasPostValue( 'TypeSlug' )
+                      && HasPostValue( 'Number' )
+                      && HasPostValue( 'LanguageCodeArray' )
+                      && HasPostValue( 'IsActive' )
+                      && HasPostValue( 'Title' )
+                      && HasPostValue( 'Text' )
+                      && HasPostValue( 'ImagePath' )
+                      && HasPostValue( 'ImageVerticalPosition' )
+                      && HasPostValue( 'ImageHorizontalPosition' )
+                      && HasPostValue( 'VideoPath' ) )
+            {
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_add_cookie_policy_page_controller.php';
+            }
+            else if ( $it_is_get_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'view' )
+            {
+                 $cookie_policy_page_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_cookie_policy_page_controller.php';
+            }
+            else if ( $it_is_get_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'edit' )
+            {
+                 $cookie_policy_page_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/edit_cookie_policy_page_controller.php';
+            }
+            else if ( $it_is_post_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'edit'
+                      && HasPostValue( 'Route' )
+                      && HasPostValue( 'TypeSlug' )
+                      && HasPostValue( 'Number' )
+                      && HasPostValue( 'LanguageCodeArray' )
+                      && HasPostValue( 'IsActive' )
+                      && HasPostValue( 'Title' )
+                      && HasPostValue( 'Text' )
+                      && HasPostValue( 'ImagePath' )
+                      && HasPostValue( 'ImageVerticalPosition' )
+                      && HasPostValue( 'ImageHorizontalPosition' )
+                      && HasPostValue( 'VideoPath' ) )
+            {
+                 $cookie_policy_page_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_edit_cookie_policy_page_controller.php';
+            }
+            else if ( $it_is_get_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'remove' )
+            {
+                 $cookie_policy_page_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/remove_cookie_policy_page_controller.php';
+            }
+            else if ( $it_is_post_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'remove' )
+            {
+                 $cookie_policy_page_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_remove_cookie_policy_page_controller.php';
+            }
+            else
+            {
+                require_once __DIR__ . '/' . 'CONTROLLER/show_error_controller.php';
+            }
+        }
+        else if ( $path_value_count >= 2
+                  && $path_value_array[ 1 ] === 'legal-notice-page' )
+        {
+            if ( $it_is_get_request
+                 && $path_value_count === 2 )
+            {
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_legal_notice_pages_controller.php';
+            }
+            else if ( $it_is_get_request
+                      && $path_value_count === 3
+                      && $path_value_array[ 2 ] === 'add' )
+            {
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/add_legal_notice_page_controller.php';
+            }
+            else if ( $it_is_post_request
+                      && $path_value_count === 3
+                      && $path_value_array[ 2 ] === 'add'
+                      && HasPostValue( 'Id' )
+                      && HasPostValue( 'Route' )
+                      && HasPostValue( 'TypeSlug' )
+                      && HasPostValue( 'Number' )
+                      && HasPostValue( 'LanguageCodeArray' )
+                      && HasPostValue( 'IsActive' )
+                      && HasPostValue( 'Title' )
+                      && HasPostValue( 'Text' )
+                      && HasPostValue( 'ImagePath' )
+                      && HasPostValue( 'ImageVerticalPosition' )
+                      && HasPostValue( 'ImageHorizontalPosition' )
+                      && HasPostValue( 'VideoPath' ) )
+            {
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_add_legal_notice_page_controller.php';
+            }
+            else if ( $it_is_get_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'view' )
+            {
+                 $legal_notice_page_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_legal_notice_page_controller.php';
+            }
+            else if ( $it_is_get_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'edit' )
+            {
+                 $legal_notice_page_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/edit_legal_notice_page_controller.php';
+            }
+            else if ( $it_is_post_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'edit'
+                      && HasPostValue( 'Route' )
+                      && HasPostValue( 'TypeSlug' )
+                      && HasPostValue( 'Number' )
+                      && HasPostValue( 'LanguageCodeArray' )
+                      && HasPostValue( 'IsActive' )
+                      && HasPostValue( 'Title' )
+                      && HasPostValue( 'Text' )
+                      && HasPostValue( 'ImagePath' )
+                      && HasPostValue( 'ImageVerticalPosition' )
+                      && HasPostValue( 'ImageHorizontalPosition' )
+                      && HasPostValue( 'VideoPath' ) )
+            {
+                 $legal_notice_page_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_edit_legal_notice_page_controller.php';
+            }
+            else if ( $it_is_get_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'remove' )
+            {
+                 $legal_notice_page_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/remove_legal_notice_page_controller.php';
+            }
+            else if ( $it_is_post_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'remove' )
+            {
+                 $legal_notice_page_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_remove_legal_notice_page_controller.php';
+            }
+            else
+            {
+                require_once __DIR__ . '/' . 'CONTROLLER/show_error_controller.php';
+            }
+        }
+        else if ( $path_value_count >= 2
+                  && $path_value_array[ 1 ] === 'contact-page' )
+        {
+            if ( $it_is_get_request
+                 && $path_value_count === 2 )
+            {
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_contact_pages_controller.php';
+            }
+            else if ( $it_is_get_request
+                      && $path_value_count === 3
+                      && $path_value_array[ 2 ] === 'add' )
+            {
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/add_contact_page_controller.php';
+            }
+            else if ( $it_is_post_request
+                      && $path_value_count === 3
+                      && $path_value_array[ 2 ] === 'add'
+                      && HasPostValue( 'Id' )
+                      && HasPostValue( 'Route' )
+                      && HasPostValue( 'TypeSlug' )
+                      && HasPostValue( 'Number' )
+                      && HasPostValue( 'LanguageCodeArray' )
+                      && HasPostValue( 'IsActive' )
+                      && HasPostValue( 'Title' )
+                      && HasPostValue( 'Text' )
+                      && HasPostValue( 'ImagePath' )
+                      && HasPostValue( 'ImageVerticalPosition' )
+                      && HasPostValue( 'ImageHorizontalPosition' )
+                      && HasPostValue( 'VideoPath' ) )
+            {
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_add_contact_page_controller.php';
+            }
+            else if ( $it_is_get_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'view' )
+            {
+                 $contact_page_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_contact_page_controller.php';
+            }
+            else if ( $it_is_get_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'edit' )
+            {
+                 $contact_page_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/edit_contact_page_controller.php';
+            }
+            else if ( $it_is_post_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'edit'
+                      && HasPostValue( 'Route' )
+                      && HasPostValue( 'TypeSlug' )
+                      && HasPostValue( 'Number' )
+                      && HasPostValue( 'LanguageCodeArray' )
+                      && HasPostValue( 'IsActive' )
+                      && HasPostValue( 'Title' )
+                      && HasPostValue( 'Text' )
+                      && HasPostValue( 'ImagePath' )
+                      && HasPostValue( 'ImageVerticalPosition' )
+                      && HasPostValue( 'ImageHorizontalPosition' )
+                      && HasPostValue( 'VideoPath' ) )
+            {
+                 $contact_page_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_edit_contact_page_controller.php';
+            }
+            else if ( $it_is_get_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'remove' )
+            {
+                 $contact_page_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/remove_contact_page_controller.php';
+            }
+            else if ( $it_is_post_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'remove' )
+            {
+                 $contact_page_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_remove_contact_page_controller.php';
             }
             else
             {
@@ -430,8 +947,9 @@ function Route(
             else if ( $it_is_post_request
                       && $path_value_count === 3
                       && $path_value_array[ 2 ] === 'add'
-                      && HasPostValue( 'PageSlug' )
-                      && HasPostValue( 'SubPageSlug' )
+                      && HasPostValue( 'Id' )
+                      && HasPostValue( 'PageId' )
+                      && HasPostValue( 'SubPageId' )
                       && HasPostValue( 'Number' ) )
             {
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_add_page_sub_page_controller.php';
@@ -455,8 +973,8 @@ function Route(
             else if ( $it_is_post_request
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'edit'
-                      && HasPostValue( 'PageSlug' )
-                      && HasPostValue( 'SubPageSlug' )
+                      && HasPostValue( 'PageId' )
+                      && HasPostValue( 'SubPageId' )
                       && HasPostValue( 'Number' ) )
             {
                  $page_sub_page_id = $path_value_array[ 3 ];
@@ -501,6 +1019,7 @@ function Route(
             else if ( $it_is_post_request
                       && $path_value_count === 3
                       && $path_value_array[ 2 ] === 'add'
+                      && HasPostValue( 'Id' )
                       && HasPostValue( 'Slug' )
                       && HasPostValue( 'Name' ) )
             {
@@ -570,6 +1089,7 @@ function Route(
             else if ( $it_is_post_request
                       && $path_value_count === 3
                       && $path_value_array[ 2 ] === 'add'
+                      && HasPostValue( 'Id' )
                       && HasPostValue( 'Slug' )
                       && HasPostValue( 'Name' ) )
             {
@@ -623,86 +1143,255 @@ function Route(
             }
         }
         else if ( $path_value_count >= 2
-                  && $path_value_array[ 1 ] === 'block' )
+                  && $path_value_array[ 1 ] === 'text-block' )
         {
             if ( $it_is_get_request
                  && $path_value_count === 2 )
             {
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_blocks_controller.php';
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_text_blocks_controller.php';
             }
             else if ( $it_is_get_request
                       && $path_value_count === 3
                       && $path_value_array[ 2 ] === 'add' )
             {
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/add_block_controller.php';
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/add_text_block_controller.php';
             }
             else if ( $it_is_post_request
                       && $path_value_count === 3
                       && $path_value_array[ 2 ] === 'add'
-                      && HasPostValue( 'PageSlug' )
-                      && HasPostValue( 'BlockSlug' )
-                      && HasPostValue( 'Slug' )
+                      && HasPostValue( 'Id' )
+                      && HasPostValue( 'PageId' )
+                      && HasPostValue( 'BlockId' )
                       && HasPostValue( 'TypeSlug' )
                       && HasPostValue( 'Number' )
+                      && HasPostValue( 'LanguageCodeArray' )
                       && HasPostValue( 'Title' )
-                      && HasPostValue( 'Text' )
-                      && HasPostValue( 'ImagePath' )
-                      && HasPostValue( 'ImageVerticalPosition' )
-                      && HasPostValue( 'ImageHorizontalPosition' )
-                      && HasPostValue( 'VideoPath' ) )
+                      && HasPostValue( 'Text' ) )
             {
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_add_block_controller.php';
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_add_text_block_controller.php';
             }
             else if ( $it_is_get_request
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'view' )
             {
-                 $block_id = $path_value_array[ 3 ];
+                 $text_block_id = $path_value_array[ 3 ];
 
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_block_controller.php';
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_text_block_controller.php';
             }
             else if ( $it_is_get_request
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'edit' )
             {
-                 $block_id = $path_value_array[ 3 ];
+                 $text_block_id = $path_value_array[ 3 ];
 
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/edit_block_controller.php';
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/edit_text_block_controller.php';
             }
             else if ( $it_is_post_request
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'edit'
-                      && HasPostValue( 'PageSlug' )
-                      && HasPostValue( 'BlockSlug' )
-                      && HasPostValue( 'Slug' )
+                      && HasPostValue( 'PageId' )
+                      && HasPostValue( 'BlockId' )
                       && HasPostValue( 'TypeSlug' )
                       && HasPostValue( 'Number' )
+                      && HasPostValue( 'LanguageCodeArray' )
                       && HasPostValue( 'Title' )
-                      && HasPostValue( 'Text' )
-                      && HasPostValue( 'ImagePath' )
-                      && HasPostValue( 'ImageVerticalPosition' )
-                      && HasPostValue( 'ImageHorizontalPosition' )
-                      && HasPostValue( 'VideoPath' ) )
+                      && HasPostValue( 'Text' ) )
             {
-                 $block_id = $path_value_array[ 3 ];
+                 $text_block_id = $path_value_array[ 3 ];
 
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_edit_block_controller.php';
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_edit_text_block_controller.php';
             }
             else if ( $it_is_get_request
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'remove' )
             {
-                 $block_id = $path_value_array[ 3 ];
+                 $text_block_id = $path_value_array[ 3 ];
 
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/remove_block_controller.php';
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/remove_text_block_controller.php';
             }
             else if ( $it_is_post_request
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'remove' )
             {
-                 $block_id = $path_value_array[ 3 ];
+                 $text_block_id = $path_value_array[ 3 ];
 
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_remove_block_controller.php';
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_remove_text_block_controller.php';
+            }
+            else
+            {
+                require_once __DIR__ . '/' . 'CONTROLLER/show_error_controller.php';
+            }
+        }
+        else if ( $path_value_count >= 2
+                  && $path_value_array[ 1 ] === 'image-block' )
+        {
+            if ( $it_is_get_request
+                 && $path_value_count === 2 )
+            {
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_image_blocks_controller.php';
+            }
+            else if ( $it_is_get_request
+                      && $path_value_count === 3
+                      && $path_value_array[ 2 ] === 'add' )
+            {
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/add_image_block_controller.php';
+            }
+            else if ( $it_is_post_request
+                      && $path_value_count === 3
+                      && $path_value_array[ 2 ] === 'add'
+                      && HasPostValue( 'Id' )
+                      && HasPostValue( 'PageId' )
+                      && HasPostValue( 'BlockId' )
+                      && HasPostValue( 'TypeSlug' )
+                      && HasPostValue( 'Number' )
+                      && HasPostValue( 'LanguageCodeArray' )
+                      && HasPostValue( 'Title' )
+                      && HasPostValue( 'ImagePath' )
+                      && HasPostValue( 'ImageVerticalPosition' )
+                      && HasPostValue( 'ImageHorizontalPosition' )
+                      && HasPostValue( 'VideoPath' ) )
+            {
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_add_image_block_controller.php';
+            }
+            else if ( $it_is_get_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'view' )
+            {
+                 $image_block_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_image_block_controller.php';
+            }
+            else if ( $it_is_get_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'edit' )
+            {
+                 $image_block_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/edit_image_block_controller.php';
+            }
+            else if ( $it_is_post_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'edit'
+                      && HasPostValue( 'PageId' )
+                      && HasPostValue( 'BlockId' )
+                      && HasPostValue( 'TypeSlug' )
+                      && HasPostValue( 'Number' )
+                      && HasPostValue( 'LanguageCodeArray' )
+                      && HasPostValue( 'Title' )
+                      && HasPostValue( 'ImagePath' )
+                      && HasPostValue( 'ImageVerticalPosition' )
+                      && HasPostValue( 'ImageHorizontalPosition' )
+                      && HasPostValue( 'VideoPath' ) )
+            {
+                 $image_block_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_edit_image_block_controller.php';
+            }
+            else if ( $it_is_get_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'remove' )
+            {
+                 $image_block_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/remove_image_block_controller.php';
+            }
+            else if ( $it_is_post_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'remove' )
+            {
+                 $image_block_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_remove_image_block_controller.php';
+            }
+            else
+            {
+                require_once __DIR__ . '/' . 'CONTROLLER/show_error_controller.php';
+            }
+        }
+        else if ( $path_value_count >= 2
+                  && $path_value_array[ 1 ] === 'text-and-image-block' )
+        {
+            if ( $it_is_get_request
+                 && $path_value_count === 2 )
+            {
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_text_and_image_blocks_controller.php';
+            }
+            else if ( $it_is_get_request
+                      && $path_value_count === 3
+                      && $path_value_array[ 2 ] === 'add' )
+            {
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/add_text_and_image_block_controller.php';
+            }
+            else if ( $it_is_post_request
+                      && $path_value_count === 3
+                      && $path_value_array[ 2 ] === 'add'
+                      && HasPostValue( 'Id' )
+                      && HasPostValue( 'PageId' )
+                      && HasPostValue( 'BlockId' )
+                      && HasPostValue( 'TypeSlug' )
+                      && HasPostValue( 'Number' )
+                      && HasPostValue( 'LanguageCodeArray' )
+                      && HasPostValue( 'Title' )
+                      && HasPostValue( 'Text' )
+                      && HasPostValue( 'ImagePath' )
+                      && HasPostValue( 'ImageVerticalPosition' )
+                      && HasPostValue( 'ImageHorizontalPosition' )
+                      && HasPostValue( 'ImageSide' )
+                      && HasPostValue( 'VideoPath' ) )
+            {
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_add_text_and_image_block_controller.php';
+            }
+            else if ( $it_is_get_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'view' )
+            {
+                 $text_and_image_block_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_text_and_image_block_controller.php';
+            }
+            else if ( $it_is_get_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'edit' )
+            {
+                 $text_and_image_block_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/edit_text_and_image_block_controller.php';
+            }
+            else if ( $it_is_post_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'edit'
+                      && HasPostValue( 'PageId' )
+                      && HasPostValue( 'BlockId' )
+                      && HasPostValue( 'TypeSlug' )
+                      && HasPostValue( 'Number' )
+                      && HasPostValue( 'LanguageCodeArray' )
+                      && HasPostValue( 'Title' )
+                      && HasPostValue( 'Text' )
+                      && HasPostValue( 'ImagePath' )
+                      && HasPostValue( 'ImageVerticalPosition' )
+                      && HasPostValue( 'ImageHorizontalPosition' )
+                      && HasPostValue( 'ImageSide' )
+                      && HasPostValue( 'VideoPath' ) )
+            {
+                 $text_and_image_block_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_edit_text_and_image_block_controller.php';
+            }
+            else if ( $it_is_get_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'remove' )
+            {
+                 $text_and_image_block_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/remove_text_and_image_block_controller.php';
+            }
+            else if ( $it_is_post_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'remove' )
+            {
+                 $text_and_image_block_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_remove_text_and_image_block_controller.php';
             }
             else
             {
@@ -726,6 +1415,7 @@ function Route(
             else if ( $it_is_post_request
                       && $path_value_count === 3
                       && $path_value_array[ 2 ] === 'add'
+                      && HasPostValue( 'Id' )
                       && HasPostValue( 'Name' )
                       && HasPostValue( 'Company' )
                       && HasPostValue( 'Email' )
@@ -804,6 +1494,7 @@ function Route(
             else if ( $it_is_post_request
                       && $path_value_count === 3
                       && $path_value_array[ 2 ] === 'add'
+                      && HasPostValue( 'Id' )
                       && HasPostValue( 'Email' )
                       && HasPostValue( 'Pseudonym' )
                       && HasPostValue( 'Password' )

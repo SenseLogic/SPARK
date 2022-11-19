@@ -1,0 +1,31 @@
+ARTICLE_PAGE
+
+    Id Route Number LanguageCodeArray Title ImagePath
+
+        %article-1
+            ~ articles/1
+            ~ 1
+            ~ { en ~ fr }
+            ~ Article 1
+            ~ /static/image/article/california.jpg
+
+        %article-2
+            ~ articles/2
+            ~ 2
+            ~ { en ~ fr }
+            ~ Article 2
+            ~ /static/image/article/castle.jpg
+
+        %article-3
+            ~ articles/3
+            ~ 3
+            ~ { en ~ fr }
+            ~ Article 3
+            ~ /static/image/article/road.jpg
+
+        %article-4
+            ~ articles/4
+            ~ 4
+            ~ { en ~ fr }
+            ~ Article 4
+            ~ /static/image/article/tree.jpg

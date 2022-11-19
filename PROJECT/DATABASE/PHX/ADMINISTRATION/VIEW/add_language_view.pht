@@ -1,0 +1,148 @@
+<? include 'BLOCK/page_header.php'; ?>
+<script>
+    // -- FUNCTIONS
+
+    function IsValidAddLanguageForm()
+    {
+        var
+            add_language_form,
+            it_is_valid_add_language_form,
+            id_field,
+            code_field,
+            number_field,
+            text_field;
+
+        add_language_form = document.AddLanguageForm;
+        id_field = add_language_form.Id;
+        code_field = add_language_form.Code;
+        number_field = add_language_form.Number;
+        text_field = add_language_form.Text;
+
+        id_field.RemoveClass( "form-field-error" );
+        code_field.RemoveClass( "form-field-error" );
+        number_field.RemoveClass( "form-field-error" );
+        text_field.RemoveClass( "form-field-error" );
+
+        it_is_valid_add_language_form = true;
+
+        if ( id_field.value === "" )
+        {
+            id_field.AddClass( "form-field-error" );
+
+            it_is_valid_add_language_form = false;
+        }
+
+        if ( code_field.value === "" )
+        {
+            code_field.AddClass( "form-field-error" );
+
+            it_is_valid_add_language_form = false;
+        }
+
+        if ( number_field.value === "" )
+        {
+            number_field.AddClass( "form-field-error" );
+
+            it_is_valid_add_language_form = false;
+        }
+
+        if ( text_field.value === "" )
+        {
+            text_field.AddClass( "form-field-error" );
+
+            it_is_valid_add_language_form = false;
+        }
+
+        return it_is_valid_add_language_form;
+    }
+</script>
+<div id="add-language-view">
+    <div class="page-section form-section">
+        <form class="form-centered" name="AddLanguageForm" onsubmit="return IsValidAddLanguageForm()" action="/admin/language/add" method="post">
+            <div class="form-container">
+                <?
+                    var field_name = 'Id';
+
+                    if ( HasQueryValue( field_name ) )
+                    {
+                        var field_value = GetQueryValue( field_name );
+                    }
+                    else
+                    {
+                        field_value = '';
+                    }
+                ?>
+                <div class="form-field-name">
+                    <% .GetProcessedTextBySlug( 'Id' ) %> :
+                </div>
+                <div>
+                    <input class="form-input" name="Id" type="text" value="<# field_value #>"/>
+                </div>
+                <?
+                    var field_name = 'Code';
+
+                    if ( HasQueryValue( field_name ) )
+                    {
+                        var field_value = GetQueryValue( field_name );
+                    }
+                    else
+                    {
+                        field_value = '';
+                    }
+                ?>
+                <div class="form-field-name">
+                    <% .GetProcessedTextBySlug( 'Code' ) %> :
+                </div>
+                <div>
+                    <input class="form-input" name="Code" type="text" value="<# field_value #>"/>
+                </div>
+                <?
+                    var field_name = 'Number';
+
+                    if ( HasQueryValue( field_name ) )
+                    {
+                        var field_value = GetQueryValue( field_name );
+                    }
+                    else
+                    {
+                        field_value = '';
+                    }
+                ?>
+                <div class="form-field-name">
+                    <% .GetProcessedTextBySlug( 'Number' ) %> :
+                </div>
+                <div>
+                    <input class="form-input" name="Number" type="text" value="<# field_value #>"/>
+                </div>
+                <?
+                    var field_name = 'Text';
+
+                    if ( HasQueryValue( field_name ) )
+                    {
+                        var field_value = GetQueryValue( field_name );
+                    }
+                    else
+                    {
+                        field_value = '';
+                    }
+                ?>
+                <div class="form-field-name">
+                    <% .GetProcessedTextBySlug( 'Text' ) %> :
+                </div>
+                <div>
+                    <div>
+                        <input class="multilingual-input form-input" name="Text" type="text" value="<# field_value #>" hidden/>
+                        <? foreach ( var language_code; LanguageCodeArray ) { ?>
+                            <input class="multilingual-input-translation form-translation form-input" data-language-code="<% language_code %>" placeholder="<% .GetProcessedTextBySlug( language_code ) %>"/>
+                        <? } ?>
+                    </div>
+                </div>
+                <a class="justify-self-start form-button form-button-large cancel-button" href="<% .ListRoute %>">
+                </a>
+                <button class="justify-self-end form-button form-button-large apply-button" type="submit">
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<? include 'BLOCK/page_footer.php'; ?>

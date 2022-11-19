@@ -15,6 +15,7 @@ class DO_ADD_CONTACT_CONTROLLER extends CONTROLLER
     {
         parent::__construct( $language_code );
 
+         $id = GetPostValue( 'Id' );
          $name = GetPostValue( 'Name' );
          $company = GetPostValue( 'Company' );
          $email = GetPostValue( 'Email' );
@@ -22,7 +23,7 @@ class DO_ADD_CONTACT_CONTROLLER extends CONTROLLER
          $subject = GetPostValue( 'Subject' );
          $message = GetPostValue( 'Message' );
 
-        AddDatabaseContact( $name, $company, $email, $phone, $subject, $message );
+        AddDatabaseContact( $id, $name, $company, $email, $phone, $subject, $message );
 
         Redirect( FindSessionValue( 'ListRoute', '/admin/contact' ) );
     }

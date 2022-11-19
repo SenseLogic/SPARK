@@ -7,23 +7,33 @@
         var
             add_user_form,
             it_is_valid_add_user_form,
+            id_field,
             email_field,
             pseudonym_field,
             password_field,
             role_field;
 
         add_user_form = document.AddUserForm;
+        id_field = add_user_form.Id;
         email_field = add_user_form.Email;
         pseudonym_field = add_user_form.Pseudonym;
         password_field = add_user_form.Password;
         role_field = add_user_form.Role;
 
+        id_field.RemoveClass( "form-field-error" );
         email_field.RemoveClass( "form-field-error" );
         pseudonym_field.RemoveClass( "form-field-error" );
         password_field.RemoveClass( "form-field-error" );
         role_field.RemoveClass( "form-field-error" );
 
         it_is_valid_add_user_form = true;
+
+        if ( id_field.value === "" )
+        {
+            id_field.AddClass( "form-field-error" );
+
+            it_is_valid_add_user_form = false;
+        }
 
         if ( email_field.value === "" )
         {
@@ -60,6 +70,24 @@
     <div class="page-section form-section">
         <form class="form-centered" name="AddUserForm" onsubmit="return IsValidAddUserForm()" action="/admin/user/add" method="post">
             <div class="form-container">
+                <?
+                    var field_name = 'Id';
+
+                    if ( HasQueryValue( field_name ) )
+                    {
+                        var field_value = GetQueryValue( field_name );
+                    }
+                    else
+                    {
+                        field_value = '';
+                    }
+                ?>
+                <div class="form-field-name">
+                    <% .GetProcessedTextBySlug( 'Id' ) %> :
+                </div>
+                <div>
+                    <input class="form-input" name="Id" type="text" value="<# field_value #>"/>
+                </div>
                 <?
                     var field_name = 'Email';
 

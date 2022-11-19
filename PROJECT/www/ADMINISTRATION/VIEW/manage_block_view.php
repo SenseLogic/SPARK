@@ -6,7 +6,7 @@
                 <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Slug' ) ); ?> :
             </div>
             <div>
-                <input class="form-input" name="Slug" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Block->Slug ) ); ?>" readonly/>
+                <input class="form-input" name="Slug" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Block->Id ) ); ?>" readonly/>
             </div>
             <div class="form-field-name">
                 <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Type Slug' ) ); ?> :
@@ -65,7 +65,7 @@
                             <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Slug' ) ); ?> :
                         </div>
                         <div>
-                            <input class="form-input" name="Slug" type="text" value="<?php echo htmlspecialchars( GetValueText( $sub_block->Slug ) ); ?>" readonly/>
+                            <input class="form-input" name="Slug" type="text" value="<?php echo htmlspecialchars( GetValueText( $sub_block->Id ) ); ?>" readonly/>
                         </div>
                         <div class="form-field-name">
                             <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Type Slug' ) ); ?> :
@@ -107,7 +107,7 @@
                             </a>
                             <a class="form-button remove-button" href="/admin/block/remove/<?php echo htmlspecialchars( $sub_block->Id ); ?>">
                             </a>
-                            <a class="form-button add-button" href="/admin/block/add?BlockSlug=<?php echo $this->Block->Slug; ?>&Number=<?php echo $added_sub_block_number; ?>">
+                            <a class="form-button add-button" href="/admin/block/add?BlockSlug=<?php echo $this->Block->Id; ?>&Number=<?php echo $added_sub_block_number; ?>">
                             </a>
                         <?php } ?>
                     </div>
@@ -116,7 +116,7 @@
         <?php } ?>
     </div>
     <div class="form-extended form-centered margin-top-1rem margin-bottom-1rem">
-        <a class="form-button form-button-large add-button" href="/admin/block/add?BlockSlug=<?php echo $this->Block->Slug; ?>&Number=<?php echo $added_sub_block_number; ?>">
+        <a class="form-button form-button-large add-button" href="/admin/block/add?BlockSlug=<?php echo $this->Block->Id; ?>&Number=<?php echo $added_sub_block_number; ?>">
         </a>
     </div>
     <div>

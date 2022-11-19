@@ -1,0 +1,29 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/image_block_model.php';
+
+// -- TYPES
+
+class VIEW_IMAGE_BLOCK_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code,
+        image_block_id
+        )
+    {
+        parent::constructor( language_code );
+
+        .Title = 'View a image block';
+        .ImageBlock = GetDatabaseImageBlockById( image_block_id );
+        .ListRoute = FindSessionValue( 'ListRoute', '/admin/image-block' );
+
+        import '../VIEW/view_image_block_view.php';
+    }
+}
+
+// -- STATEMENTS
+
+var view_image_block_controller = new VIEW_IMAGE_BLOCK_CONTROLLER( var language_code, var image_block_id );

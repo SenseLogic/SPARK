@@ -1,0 +1,27 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/home_page_model.php';
+
+// -- TYPES
+
+class ADD_HOME_PAGE_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code
+        )
+    {
+        parent::constructor( language_code );
+
+        .Title = 'Add a home page';
+        .ListRoute = FindSessionValue( 'ListRoute', '/admin/home-page' );
+
+        import '../VIEW/add_home_page_view.php';
+    }
+}
+
+// -- STATEMENTS
+
+var add_home_page_controller = new ADD_HOME_PAGE_CONTROLLER( var language_code );

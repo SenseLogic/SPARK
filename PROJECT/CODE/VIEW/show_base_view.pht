@@ -83,7 +83,7 @@
 </script>
 <div>
     <? include 'PAGE/loader_page.php'; ?>
-    <? foreach ( var page_slug => var page; .PageBySlugMap ) { ?>
+    <? foreach ( var page_id => var page; .PageByIdMap ) { ?>
         <div class="extended-container view is-hidden" data-view-name="<# page.Route #>">
             <? include 'PAGE/' .. page.TypeSlug .. '_page.php'; ?>
         </div>

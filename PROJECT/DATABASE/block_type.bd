@@ -1,0 +1,15 @@
+BLOCK_TYPE
+
+    Slug Name
+
+        text
+            ~ Text
+              ¨fr:Texte
+
+        image
+            ~ Image
+              ¨fr:Image
+
+        text_and_image
+            ~ Text and image
+              ¨fr:Texte et image

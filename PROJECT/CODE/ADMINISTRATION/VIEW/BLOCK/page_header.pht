@@ -18,6 +18,15 @@
                         </a>
                     </div>
                     <div class="page-menu-item">
+                        <a href="/admin/language">
+                            <span class="form-button form-button-large language-button">
+                            </span>
+                            <span class="form-button-tooltip">
+                                <% .GetProcessedTextBySlug( 'Language' ) %>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="page-menu-item">
                         <a href="/admin/page-type">
                             <span class="form-button form-button-large page-type-button">
                             </span>
@@ -27,20 +36,56 @@
                         </a>
                     </div>
                     <div class="page-menu-item">
-                        <a href="/admin/page/manage">
-                            <span class="form-button form-button-large page-manager-button">
+                        <a href="/admin/home-page">
+                            <span class="form-button form-button-large home-page-button">
                             </span>
                             <span class="form-button-tooltip">
-                                <% .GetProcessedTextBySlug( 'Page manager' ) %>
+                                <% .GetProcessedTextBySlug( 'Home page' ) %>
                             </span>
                         </a>
                     </div>
                     <div class="page-menu-item">
-                        <a href="/admin/page">
-                            <span class="form-button form-button-large page-button">
+                        <a href="/admin/article-page">
+                            <span class="form-button form-button-large article-page-button">
                             </span>
                             <span class="form-button-tooltip">
-                                <% .GetProcessedTextBySlug( 'Page' ) %>
+                                <% .GetProcessedTextBySlug( 'Article page' ) %>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="page-menu-item">
+                        <a href="/admin/articles-page">
+                            <span class="form-button form-button-large articles-page-button">
+                            </span>
+                            <span class="form-button-tooltip">
+                                <% .GetProcessedTextBySlug( 'Articles page' ) %>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="page-menu-item">
+                        <a href="/admin/cookie-policy-page">
+                            <span class="form-button form-button-large cookie-policy-page-button">
+                            </span>
+                            <span class="form-button-tooltip">
+                                <% .GetProcessedTextBySlug( 'Cookie policy page' ) %>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="page-menu-item">
+                        <a href="/admin/legal-notice-page">
+                            <span class="form-button form-button-large legal-notice-page-button">
+                            </span>
+                            <span class="form-button-tooltip">
+                                <% .GetProcessedTextBySlug( 'Legal notice page' ) %>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="page-menu-item">
+                        <a href="/admin/contact-page">
+                            <span class="form-button form-button-large contact-page-button">
+                            </span>
+                            <span class="form-button-tooltip">
+                                <% .GetProcessedTextBySlug( 'Contact page' ) %>
                             </span>
                         </a>
                     </div>
@@ -72,20 +117,29 @@
                         </a>
                     </div>
                     <div class="page-menu-item">
-                        <a href="/admin/block/manage">
-                            <span class="form-button form-button-large block-manager-button">
+                        <a href="/admin/text-block">
+                            <span class="form-button form-button-large text-block-button">
                             </span>
                             <span class="form-button-tooltip">
-                                <% .GetProcessedTextBySlug( 'Block manager' ) %>
+                                <% .GetProcessedTextBySlug( 'Text block' ) %>
                             </span>
                         </a>
                     </div>
                     <div class="page-menu-item">
-                        <a href="/admin/block">
-                            <span class="form-button form-button-large block-button">
+                        <a href="/admin/image-block">
+                            <span class="form-button form-button-large image-block-button">
                             </span>
                             <span class="form-button-tooltip">
-                                <% .GetProcessedTextBySlug( 'Block' ) %>
+                                <% .GetProcessedTextBySlug( 'Image block' ) %>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="page-menu-item">
+                        <a href="/admin/text-and-image-block">
+                            <span class="form-button form-button-large text-and-image-block-button">
+                            </span>
+                            <span class="form-button-tooltip">
+                                <% .GetProcessedTextBySlug( 'Text and image block' ) %>
                             </span>
                         </a>
                     </div>

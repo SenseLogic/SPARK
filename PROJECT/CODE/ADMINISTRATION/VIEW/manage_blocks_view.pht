@@ -13,7 +13,7 @@
                     <% .GetProcessedTextBySlug( 'Slug' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="Slug" type="text" value="<% GetValueText( block.Slug ) %>" readonly/>
+                    <input class="form-input" name="Slug" type="text" value="<% GetValueText( block.Id ) %>" readonly/>
                 </div>
                 <div class="form-field-name">
                     <% .GetProcessedTextBySlug( 'Type Slug' ) %> :

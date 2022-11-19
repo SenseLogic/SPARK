@@ -6,7 +6,7 @@
                 <% .GetProcessedTextBySlug( 'Slug' ) %> :
             </div>
             <div>
-                <input class="form-input" name="Slug" type="text" value="<% GetValueText( .Page.Slug ) %>" readonly/>
+                <input class="form-input" name="Slug" type="text" value="<% GetValueText( .Page.Id ) %>" readonly/>
             </div>
             <div class="form-field-name">
                 <% .GetProcessedTextBySlug( 'Type Slug' ) %> :
@@ -65,7 +65,7 @@
                             <% .GetProcessedTextBySlug( 'Slug' ) %> :
                         </div>
                         <div>
-                            <input class="form-input" name="Slug" type="text" value="<% GetValueText( block.Slug ) %>" readonly/>
+                            <input class="form-input" name="Slug" type="text" value="<% GetValueText( block.Id ) %>" readonly/>
                         </div>
                         <div class="form-field-name">
                             <% .GetProcessedTextBySlug( 'Type Slug' ) %> :
@@ -107,7 +107,7 @@
                             </a>
                             <a class="form-button remove-button" href="/admin/block/remove/<% block.Id %>">
                             </a>
-                            <a class="form-button add-button" href="/admin/block/add?PageSlug=<# .Page.Slug #>&Number=<# added_block_number #>">
+                            <a class="form-button add-button" href="/admin/block/add?PageSlug=<# .Page.Id #>&Number=<# added_block_number #>">
                             </a>
                         <? } ?>
                     </div>
@@ -116,7 +116,7 @@
         <? } ?>
     </div>
     <div class="form-extended form-centered margin-top-1rem margin-bottom-1rem">
-        <a class="form-button form-button-large add-button" href="/admin/block/add?PageSlug=<# .Page.Slug #>&Number=<# added_block_number #>">
+        <a class="form-button form-button-large add-button" href="/admin/block/add?PageSlug=<# .Page.Id #>&Number=<# added_block_number #>">
         </a>
     </div>
     <div class="form-title">
@@ -133,7 +133,7 @@
                             <% .GetProcessedTextBySlug( 'Slug' ) %> :
                         </div>
                         <div>
-                            <input class="form-input" name="Slug" type="text" value="<% GetValueText( sub_page.Slug ) %>" readonly/>
+                            <input class="form-input" name="Slug" type="text" value="<% GetValueText( sub_page.Id ) %>" readonly/>
                         </div>
                         <div class="form-field-name">
                             <% .GetProcessedTextBySlug( 'Type Slug' ) %> :
@@ -181,7 +181,7 @@
                             </a>
                             <a class="form-button remove-button" href="/admin/page/remove/<% sub_page.Id %>">
                             </a>
-                            <a class="form-button add-button" href="/admin/page-sub-page/add?PageSlug=<# .Page.Slug #>&Number=<# added_sub_page_number #>">
+                            <a class="form-button add-button" href="/admin/page-sub-page/add?PageSlug=<# .Page.Id #>&Number=<# added_sub_page_number #>">
                             </a>
                         <? } ?>
                     </div>
@@ -190,7 +190,7 @@
         <? } ?>
     </div>
     <div class="form-extended form-centered margin-top-1rem margin-bottom-1rem">
-        <a class="form-button form-button-large add-button" href="/admin/page-sub-page/add?PageSlug=<# .Page.Slug #>&Number=<# added_sub_page_number #>">
+        <a class="form-button form-button-large add-button" href="/admin/page-sub-page/add?PageSlug=<# .Page.Id #>&Number=<# added_sub_page_number #>">
         </a>
     </div>
     <div>
