@@ -4,6 +4,12 @@
         <form class="form-centered" action="/admin/article-page/remove/<% .ArticlePage.Id %>" method="post">
             <div class="form-container">
                 <div class="form-field-name">
+                    <% .GetProcessedTextBySlug( 'Page Id' ) %> :
+                </div>
+                <div>
+                    <input class="form-input" name="PageId" type="text" value="<% GetValueText( .ArticlePage.PageId ) %>" readonly/>
+                </div>
+                <div class="form-field-name">
                     <% .GetProcessedTextBySlug( 'Route' ) %> :
                 </div>
                 <div>

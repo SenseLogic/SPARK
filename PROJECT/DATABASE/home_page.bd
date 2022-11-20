@@ -2,7 +2,7 @@ HOME_PAGE
 
     Id Route Number LanguageCodeArray Title ImagePath
 
-        %home
+        %home-page
             ~ home
             ~ 1
             ~ { en ~ fr }

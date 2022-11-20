@@ -2,7 +2,7 @@ CONTACT_PAGE
 
     Id Route Number LanguageCodeArray Title ImagePath
 
-        %contact
+        %contact-page
             ~ contact
             ~ 1
             ~ { en ~ fr }

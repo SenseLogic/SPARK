@@ -38,7 +38,8 @@ function GetValidBlockByIdMap(
 
     foreach ( $block_array as  $block )
     {
-        if ( isset( $block_by_id_map[ $block->BlockId ] ) )
+        if ( property_exists( $block, 'BlockId' )
+             && isset( $block_by_id_map[ $block->BlockId ] ) )
         {
             array_push(
                 $block_by_id_map[ $block->BlockId ]->SubBlockArray,

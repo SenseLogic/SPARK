@@ -8,7 +8,6 @@
             edit_text_and_image_block_form,
             it_is_valid_edit_text_and_image_block_form,
             page_id_field,
-            block_id_field,
             type_slug_field,
             number_field,
             language_code_array_field,
@@ -22,7 +21,6 @@
 
         edit_text_and_image_block_form = document.EditTextAndImageBlockForm;
         page_id_field = edit_text_and_image_block_form.PageId;
-        block_id_field = edit_text_and_image_block_form.BlockId;
         type_slug_field = edit_text_and_image_block_form.TypeSlug;
         number_field = edit_text_and_image_block_form.Number;
         language_code_array_field = edit_text_and_image_block_form.LanguageCodeArray;
@@ -35,7 +33,6 @@
         video_path_field = edit_text_and_image_block_form.VideoPath;
 
         page_id_field.RemoveClass( "form-field-error" );
-        block_id_field.RemoveClass( "form-field-error" );
         type_slug_field.RemoveClass( "form-field-error" );
         number_field.RemoveClass( "form-field-error" );
         language_code_array_field.RemoveClass( "form-field-error" );
@@ -52,13 +49,6 @@
         if ( page_id_field.value === "" )
         {
             page_id_field.AddClass( "form-field-error" );
-
-            it_is_valid_edit_text_and_image_block_form = false;
-        }
-
-        if ( block_id_field.value === "" )
-        {
-            block_id_field.AddClass( "form-field-error" );
 
             it_is_valid_edit_text_and_image_block_form = false;
         }
@@ -138,12 +128,6 @@
                 </div>
                 <div>
                     <input class="form-input" name="PageId" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->TextAndImageBlock->PageId ) ); ?>"/>
-                </div>
-                <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Block Id' ) ); ?> :
-                </div>
-                <div>
-                    <input class="form-input" name="BlockId" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->TextAndImageBlock->BlockId ) ); ?>"/>
                 </div>
                 <div class="form-field-name">
                     <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Type Slug' ) ); ?> :

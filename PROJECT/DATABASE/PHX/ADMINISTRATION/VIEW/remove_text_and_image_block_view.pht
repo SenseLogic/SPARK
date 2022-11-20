@@ -10,12 +10,6 @@
                     <input class="form-input" name="PageId" type="text" value="<% GetValueText( .TextAndImageBlock.PageId ) %>" readonly/>
                 </div>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Block Id' ) %> :
-                </div>
-                <div>
-                    <input class="form-input" name="BlockId" type="text" value="<% GetValueText( .TextAndImageBlock.BlockId ) %>" readonly/>
-                </div>
-                <div class="form-field-name">
                     <% .GetProcessedTextBySlug( 'Type Slug' ) %> :
                 </div>
                 <div>

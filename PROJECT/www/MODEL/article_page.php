@@ -3,7 +3,7 @@
 function GetDatabaseArticlePageArray(
     )
 {
-     $statement = GetDatabaseStatement( 'select `Id`, `Route`, `TypeSlug`, `Number`, `LanguageCodeArray`, `IsActive`, `Title`, `Text`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `VideoPath` from `ARTICLE_PAGE`' );
+     $statement = GetDatabaseStatement( 'select `Id`, `PageId`, `Route`, `TypeSlug`, `Number`, `LanguageCodeArray`, `IsActive`, `Title`, `Text`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `VideoPath` from `ARTICLE_PAGE`' );
 
     if ( !$statement->execute() )
     {
@@ -27,7 +27,7 @@ function GetDatabaseArticlePageArray(
 function GetSortedDatabaseArticlePageArray(
     )
 {
-     $statement = GetDatabaseStatement( 'select `Id`, `Route`, `TypeSlug`, `Number`, `LanguageCodeArray`, `IsActive`, `Title`, `Text`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `VideoPath` from `ARTICLE_PAGE` order by `Number` asc' );
+     $statement = GetDatabaseStatement( 'select `Id`, `PageId`, `Route`, `TypeSlug`, `Number`, `LanguageCodeArray`, `IsActive`, `Title`, `Text`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `VideoPath` from `ARTICLE_PAGE` order by `Number` asc' );
 
     if ( !$statement->execute() )
     {
@@ -52,7 +52,7 @@ function GetDatabaseArticlePageById(
     string $id
     )
 {
-     $statement = GetDatabaseStatement( 'select `Id`, `Route`, `TypeSlug`, `Number`, `LanguageCodeArray`, `IsActive`, `Title`, `Text`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `VideoPath` from `ARTICLE_PAGE` where `Id` = ? limit 1' );
+     $statement = GetDatabaseStatement( 'select `Id`, `PageId`, `Route`, `TypeSlug`, `Number`, `LanguageCodeArray`, `IsActive`, `Title`, `Text`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `VideoPath` from `ARTICLE_PAGE` where `Id` = ? limit 1' );
     $statement->bindParam( 1, $id, PDO::PARAM_STR );
 
     if ( !$statement->execute() )
@@ -71,6 +71,7 @@ function GetDatabaseArticlePageById(
 
 function AddDatabaseArticlePage(
     string $id,
+    string $page_id,
     string $route,
     string $type_slug,
     float $number,
@@ -84,20 +85,21 @@ function AddDatabaseArticlePage(
     string $video_path
     )
 {
-     $statement = GetDatabaseStatement( 'insert into `ARTICLE_PAGE` ( `Id`, `Route`, `TypeSlug`, `Number`, `LanguageCodeArray`, `IsActive`, `Title`, `Text`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `VideoPath` ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )' );
+     $statement = GetDatabaseStatement( 'insert into `ARTICLE_PAGE` ( `Id`, `PageId`, `Route`, `TypeSlug`, `Number`, `LanguageCodeArray`, `IsActive`, `Title`, `Text`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `VideoPath` ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )' );
     $statement->bindParam( 1, $id, PDO::PARAM_STR );
-    $statement->bindParam( 2, $route, PDO::PARAM_STR );
-    $statement->bindParam( 3, $type_slug, PDO::PARAM_STR );
-    $statement->bindParam( 4, $number, PDO::PARAM_STR );
+    $statement->bindParam( 2, $page_id, PDO::PARAM_STR );
+    $statement->bindParam( 3, $route, PDO::PARAM_STR );
+    $statement->bindParam( 4, $type_slug, PDO::PARAM_STR );
+    $statement->bindParam( 5, $number, PDO::PARAM_STR );
     $language_code_array = json_encode( $language_code_array );
-    $statement->bindParam( 5, $language_code_array, PDO::PARAM_STR );
-    $statement->bindParam( 6, $is_active, PDO::PARAM_BOOL );
-    $statement->bindParam( 7, $title, PDO::PARAM_STR );
-    $statement->bindParam( 8, $text, PDO::PARAM_STR );
-    $statement->bindParam( 9, $image_path, PDO::PARAM_STR );
-    $statement->bindParam( 10, $image_vertical_position, PDO::PARAM_STR );
-    $statement->bindParam( 11, $image_horizontal_position, PDO::PARAM_STR );
-    $statement->bindParam( 12, $video_path, PDO::PARAM_STR );
+    $statement->bindParam( 6, $language_code_array, PDO::PARAM_STR );
+    $statement->bindParam( 7, $is_active, PDO::PARAM_BOOL );
+    $statement->bindParam( 8, $title, PDO::PARAM_STR );
+    $statement->bindParam( 9, $text, PDO::PARAM_STR );
+    $statement->bindParam( 10, $image_path, PDO::PARAM_STR );
+    $statement->bindParam( 11, $image_vertical_position, PDO::PARAM_STR );
+    $statement->bindParam( 12, $image_horizontal_position, PDO::PARAM_STR );
+    $statement->bindParam( 13, $video_path, PDO::PARAM_STR );
 
     if ( !$statement->execute() )
     {
@@ -111,6 +113,7 @@ function AddDatabaseArticlePage(
 
 function PutDatabaseArticlePage(
     string $id,
+    string $page_id,
     string $route,
     string $type_slug,
     float $number,
@@ -124,20 +127,21 @@ function PutDatabaseArticlePage(
     string $video_path
     )
 {
-     $statement = GetDatabaseStatement( 'replace into `ARTICLE_PAGE` ( `Id`, `Route`, `TypeSlug`, `Number`, `LanguageCodeArray`, `IsActive`, `Title`, `Text`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `VideoPath` ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )' );
+     $statement = GetDatabaseStatement( 'replace into `ARTICLE_PAGE` ( `Id`, `PageId`, `Route`, `TypeSlug`, `Number`, `LanguageCodeArray`, `IsActive`, `Title`, `Text`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `VideoPath` ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )' );
     $statement->bindParam( 1, $id, PDO::PARAM_STR );
-    $statement->bindParam( 2, $route, PDO::PARAM_STR );
-    $statement->bindParam( 3, $type_slug, PDO::PARAM_STR );
-    $statement->bindParam( 4, $number, PDO::PARAM_STR );
+    $statement->bindParam( 2, $page_id, PDO::PARAM_STR );
+    $statement->bindParam( 3, $route, PDO::PARAM_STR );
+    $statement->bindParam( 4, $type_slug, PDO::PARAM_STR );
+    $statement->bindParam( 5, $number, PDO::PARAM_STR );
     $language_code_array = json_encode( $language_code_array );
-    $statement->bindParam( 5, $language_code_array, PDO::PARAM_STR );
-    $statement->bindParam( 6, $is_active, PDO::PARAM_BOOL );
-    $statement->bindParam( 7, $title, PDO::PARAM_STR );
-    $statement->bindParam( 8, $text, PDO::PARAM_STR );
-    $statement->bindParam( 9, $image_path, PDO::PARAM_STR );
-    $statement->bindParam( 10, $image_vertical_position, PDO::PARAM_STR );
-    $statement->bindParam( 11, $image_horizontal_position, PDO::PARAM_STR );
-    $statement->bindParam( 12, $video_path, PDO::PARAM_STR );
+    $statement->bindParam( 6, $language_code_array, PDO::PARAM_STR );
+    $statement->bindParam( 7, $is_active, PDO::PARAM_BOOL );
+    $statement->bindParam( 8, $title, PDO::PARAM_STR );
+    $statement->bindParam( 9, $text, PDO::PARAM_STR );
+    $statement->bindParam( 10, $image_path, PDO::PARAM_STR );
+    $statement->bindParam( 11, $image_vertical_position, PDO::PARAM_STR );
+    $statement->bindParam( 12, $image_horizontal_position, PDO::PARAM_STR );
+    $statement->bindParam( 13, $video_path, PDO::PARAM_STR );
 
     if ( !$statement->execute() )
     {
@@ -151,6 +155,7 @@ function PutDatabaseArticlePage(
 
 function SetDatabaseArticlePage(
     string $id,
+    string $page_id,
     string $route,
     string $type_slug,
     float $number,
@@ -164,20 +169,21 @@ function SetDatabaseArticlePage(
     string $video_path
     )
 {
-     $statement = GetDatabaseStatement( 'update `ARTICLE_PAGE` set `Route` = ?, `TypeSlug` = ?, `Number` = ?, `LanguageCodeArray` = ?, `IsActive` = ?, `Title` = ?, `Text` = ?, `ImagePath` = ?, `ImageVerticalPosition` = ?, `ImageHorizontalPosition` = ?, `VideoPath` = ? where Id = ?' );
-    $statement->bindParam( 1, $route, PDO::PARAM_STR );
-    $statement->bindParam( 2, $type_slug, PDO::PARAM_STR );
-    $statement->bindParam( 3, $number, PDO::PARAM_STR );
+     $statement = GetDatabaseStatement( 'update `ARTICLE_PAGE` set `PageId` = ?, `Route` = ?, `TypeSlug` = ?, `Number` = ?, `LanguageCodeArray` = ?, `IsActive` = ?, `Title` = ?, `Text` = ?, `ImagePath` = ?, `ImageVerticalPosition` = ?, `ImageHorizontalPosition` = ?, `VideoPath` = ? where Id = ?' );
+    $statement->bindParam( 1, $page_id, PDO::PARAM_STR );
+    $statement->bindParam( 2, $route, PDO::PARAM_STR );
+    $statement->bindParam( 3, $type_slug, PDO::PARAM_STR );
+    $statement->bindParam( 4, $number, PDO::PARAM_STR );
     $language_code_array = json_encode( $language_code_array );
-    $statement->bindParam( 4, $language_code_array, PDO::PARAM_STR );
-    $statement->bindParam( 5, $is_active, PDO::PARAM_BOOL );
-    $statement->bindParam( 6, $title, PDO::PARAM_STR );
-    $statement->bindParam( 7, $text, PDO::PARAM_STR );
-    $statement->bindParam( 8, $image_path, PDO::PARAM_STR );
-    $statement->bindParam( 9, $image_vertical_position, PDO::PARAM_STR );
-    $statement->bindParam( 10, $image_horizontal_position, PDO::PARAM_STR );
-    $statement->bindParam( 11, $video_path, PDO::PARAM_STR );
-    $statement->bindParam( 12, $id, PDO::PARAM_STR );
+    $statement->bindParam( 5, $language_code_array, PDO::PARAM_STR );
+    $statement->bindParam( 6, $is_active, PDO::PARAM_BOOL );
+    $statement->bindParam( 7, $title, PDO::PARAM_STR );
+    $statement->bindParam( 8, $text, PDO::PARAM_STR );
+    $statement->bindParam( 9, $image_path, PDO::PARAM_STR );
+    $statement->bindParam( 10, $image_vertical_position, PDO::PARAM_STR );
+    $statement->bindParam( 11, $image_horizontal_position, PDO::PARAM_STR );
+    $statement->bindParam( 12, $video_path, PDO::PARAM_STR );
+    $statement->bindParam( 13, $id, PDO::PARAM_STR );
 
     if ( !$statement->execute() )
     {

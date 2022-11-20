@@ -10,12 +10,6 @@
                     <input class="form-input" name="PageId" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->TextBlock->PageId ) ); ?>" readonly/>
                 </div>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Block Id' ) ); ?> :
-                </div>
-                <div>
-                    <input class="form-input" name="BlockId" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->TextBlock->BlockId ) ); ?>" readonly/>
-                </div>
-                <div class="form-field-name">
                     <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Type Slug' ) ); ?> :
                 </div>
                 <div>

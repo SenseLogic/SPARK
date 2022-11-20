@@ -3,7 +3,7 @@
 function GetDatabaseImageBlockArray(
     )
 {
-     $statement = GetDatabaseStatement( 'select `Id`, `PageId`, `BlockId`, `TypeSlug`, `Number`, `LanguageCodeArray`, `Title`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `VideoPath` from `IMAGE_BLOCK`' );
+     $statement = GetDatabaseStatement( 'select `Id`, `PageId`, `TypeSlug`, `Number`, `LanguageCodeArray`, `Title`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `VideoPath` from `IMAGE_BLOCK`' );
 
     if ( !$statement->execute() )
     {
@@ -27,7 +27,7 @@ function GetDatabaseImageBlockArray(
 function GetSortedDatabaseImageBlockArray(
     )
 {
-     $statement = GetDatabaseStatement( 'select `Id`, `PageId`, `BlockId`, `TypeSlug`, `Number`, `LanguageCodeArray`, `Title`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `VideoPath` from `IMAGE_BLOCK` order by `Number` asc' );
+     $statement = GetDatabaseStatement( 'select `Id`, `PageId`, `TypeSlug`, `Number`, `LanguageCodeArray`, `Title`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `VideoPath` from `IMAGE_BLOCK` order by `Number` asc' );
 
     if ( !$statement->execute() )
     {
@@ -52,7 +52,7 @@ function GetDatabaseImageBlockById(
     string $id
     )
 {
-     $statement = GetDatabaseStatement( 'select `Id`, `PageId`, `BlockId`, `TypeSlug`, `Number`, `LanguageCodeArray`, `Title`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `VideoPath` from `IMAGE_BLOCK` where `Id` = ? limit 1' );
+     $statement = GetDatabaseStatement( 'select `Id`, `PageId`, `TypeSlug`, `Number`, `LanguageCodeArray`, `Title`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `VideoPath` from `IMAGE_BLOCK` where `Id` = ? limit 1' );
     $statement->bindParam( 1, $id, PDO::PARAM_STR );
 
     if ( !$statement->execute() )
@@ -72,7 +72,6 @@ function GetDatabaseImageBlockById(
 function AddDatabaseImageBlock(
     string $id,
     string $page_id,
-    string $block_id,
     string $type_slug,
     float $number,
     array $language_code_array,
@@ -83,19 +82,18 @@ function AddDatabaseImageBlock(
     string $video_path
     )
 {
-     $statement = GetDatabaseStatement( 'insert into `IMAGE_BLOCK` ( `Id`, `PageId`, `BlockId`, `TypeSlug`, `Number`, `LanguageCodeArray`, `Title`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `VideoPath` ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )' );
+     $statement = GetDatabaseStatement( 'insert into `IMAGE_BLOCK` ( `Id`, `PageId`, `TypeSlug`, `Number`, `LanguageCodeArray`, `Title`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `VideoPath` ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )' );
     $statement->bindParam( 1, $id, PDO::PARAM_STR );
     $statement->bindParam( 2, $page_id, PDO::PARAM_STR );
-    $statement->bindParam( 3, $block_id, PDO::PARAM_STR );
-    $statement->bindParam( 4, $type_slug, PDO::PARAM_STR );
-    $statement->bindParam( 5, $number, PDO::PARAM_STR );
+    $statement->bindParam( 3, $type_slug, PDO::PARAM_STR );
+    $statement->bindParam( 4, $number, PDO::PARAM_STR );
     $language_code_array = json_encode( $language_code_array );
-    $statement->bindParam( 6, $language_code_array, PDO::PARAM_STR );
-    $statement->bindParam( 7, $title, PDO::PARAM_STR );
-    $statement->bindParam( 8, $image_path, PDO::PARAM_STR );
-    $statement->bindParam( 9, $image_vertical_position, PDO::PARAM_STR );
-    $statement->bindParam( 10, $image_horizontal_position, PDO::PARAM_STR );
-    $statement->bindParam( 11, $video_path, PDO::PARAM_STR );
+    $statement->bindParam( 5, $language_code_array, PDO::PARAM_STR );
+    $statement->bindParam( 6, $title, PDO::PARAM_STR );
+    $statement->bindParam( 7, $image_path, PDO::PARAM_STR );
+    $statement->bindParam( 8, $image_vertical_position, PDO::PARAM_STR );
+    $statement->bindParam( 9, $image_horizontal_position, PDO::PARAM_STR );
+    $statement->bindParam( 10, $video_path, PDO::PARAM_STR );
 
     if ( !$statement->execute() )
     {
@@ -110,7 +108,6 @@ function AddDatabaseImageBlock(
 function PutDatabaseImageBlock(
     string $id,
     string $page_id,
-    string $block_id,
     string $type_slug,
     float $number,
     array $language_code_array,
@@ -121,19 +118,18 @@ function PutDatabaseImageBlock(
     string $video_path
     )
 {
-     $statement = GetDatabaseStatement( 'replace into `IMAGE_BLOCK` ( `Id`, `PageId`, `BlockId`, `TypeSlug`, `Number`, `LanguageCodeArray`, `Title`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `VideoPath` ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )' );
+     $statement = GetDatabaseStatement( 'replace into `IMAGE_BLOCK` ( `Id`, `PageId`, `TypeSlug`, `Number`, `LanguageCodeArray`, `Title`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `VideoPath` ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )' );
     $statement->bindParam( 1, $id, PDO::PARAM_STR );
     $statement->bindParam( 2, $page_id, PDO::PARAM_STR );
-    $statement->bindParam( 3, $block_id, PDO::PARAM_STR );
-    $statement->bindParam( 4, $type_slug, PDO::PARAM_STR );
-    $statement->bindParam( 5, $number, PDO::PARAM_STR );
+    $statement->bindParam( 3, $type_slug, PDO::PARAM_STR );
+    $statement->bindParam( 4, $number, PDO::PARAM_STR );
     $language_code_array = json_encode( $language_code_array );
-    $statement->bindParam( 6, $language_code_array, PDO::PARAM_STR );
-    $statement->bindParam( 7, $title, PDO::PARAM_STR );
-    $statement->bindParam( 8, $image_path, PDO::PARAM_STR );
-    $statement->bindParam( 9, $image_vertical_position, PDO::PARAM_STR );
-    $statement->bindParam( 10, $image_horizontal_position, PDO::PARAM_STR );
-    $statement->bindParam( 11, $video_path, PDO::PARAM_STR );
+    $statement->bindParam( 5, $language_code_array, PDO::PARAM_STR );
+    $statement->bindParam( 6, $title, PDO::PARAM_STR );
+    $statement->bindParam( 7, $image_path, PDO::PARAM_STR );
+    $statement->bindParam( 8, $image_vertical_position, PDO::PARAM_STR );
+    $statement->bindParam( 9, $image_horizontal_position, PDO::PARAM_STR );
+    $statement->bindParam( 10, $video_path, PDO::PARAM_STR );
 
     if ( !$statement->execute() )
     {
@@ -148,7 +144,6 @@ function PutDatabaseImageBlock(
 function SetDatabaseImageBlock(
     string $id,
     string $page_id,
-    string $block_id,
     string $type_slug,
     float $number,
     array $language_code_array,
@@ -159,19 +154,18 @@ function SetDatabaseImageBlock(
     string $video_path
     )
 {
-     $statement = GetDatabaseStatement( 'update `IMAGE_BLOCK` set `PageId` = ?, `BlockId` = ?, `TypeSlug` = ?, `Number` = ?, `LanguageCodeArray` = ?, `Title` = ?, `ImagePath` = ?, `ImageVerticalPosition` = ?, `ImageHorizontalPosition` = ?, `VideoPath` = ? where Id = ?' );
+     $statement = GetDatabaseStatement( 'update `IMAGE_BLOCK` set `PageId` = ?, `TypeSlug` = ?, `Number` = ?, `LanguageCodeArray` = ?, `Title` = ?, `ImagePath` = ?, `ImageVerticalPosition` = ?, `ImageHorizontalPosition` = ?, `VideoPath` = ? where Id = ?' );
     $statement->bindParam( 1, $page_id, PDO::PARAM_STR );
-    $statement->bindParam( 2, $block_id, PDO::PARAM_STR );
-    $statement->bindParam( 3, $type_slug, PDO::PARAM_STR );
-    $statement->bindParam( 4, $number, PDO::PARAM_STR );
+    $statement->bindParam( 2, $type_slug, PDO::PARAM_STR );
+    $statement->bindParam( 3, $number, PDO::PARAM_STR );
     $language_code_array = json_encode( $language_code_array );
-    $statement->bindParam( 5, $language_code_array, PDO::PARAM_STR );
-    $statement->bindParam( 6, $title, PDO::PARAM_STR );
-    $statement->bindParam( 7, $image_path, PDO::PARAM_STR );
-    $statement->bindParam( 8, $image_vertical_position, PDO::PARAM_STR );
-    $statement->bindParam( 9, $image_horizontal_position, PDO::PARAM_STR );
-    $statement->bindParam( 10, $video_path, PDO::PARAM_STR );
-    $statement->bindParam( 11, $id, PDO::PARAM_STR );
+    $statement->bindParam( 4, $language_code_array, PDO::PARAM_STR );
+    $statement->bindParam( 5, $title, PDO::PARAM_STR );
+    $statement->bindParam( 6, $image_path, PDO::PARAM_STR );
+    $statement->bindParam( 7, $image_vertical_position, PDO::PARAM_STR );
+    $statement->bindParam( 8, $image_horizontal_position, PDO::PARAM_STR );
+    $statement->bindParam( 9, $video_path, PDO::PARAM_STR );
+    $statement->bindParam( 10, $id, PDO::PARAM_STR );
 
     if ( !$statement->execute() )
     {

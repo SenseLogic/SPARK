@@ -7,6 +7,7 @@
         var
             edit_article_page_form,
             it_is_valid_edit_article_page_form,
+            page_id_field,
             route_field,
             type_slug_field,
             number_field,
@@ -20,6 +21,7 @@
             video_path_field;
 
         edit_article_page_form = document.EditArticlePageForm;
+        page_id_field = edit_article_page_form.PageId;
         route_field = edit_article_page_form.Route;
         type_slug_field = edit_article_page_form.TypeSlug;
         number_field = edit_article_page_form.Number;
@@ -32,6 +34,7 @@
         image_horizontal_position_field = edit_article_page_form.ImageHorizontalPosition;
         video_path_field = edit_article_page_form.VideoPath;
 
+        page_id_field.RemoveClass( "form-field-error" );
         route_field.RemoveClass( "form-field-error" );
         type_slug_field.RemoveClass( "form-field-error" );
         number_field.RemoveClass( "form-field-error" );
@@ -45,6 +48,13 @@
         video_path_field.RemoveClass( "form-field-error" );
 
         it_is_valid_edit_article_page_form = true;
+
+        if ( page_id_field.value === "" )
+        {
+            page_id_field.AddClass( "form-field-error" );
+
+            it_is_valid_edit_article_page_form = false;
+        }
 
         if ( route_field.value === "" )
         {
@@ -103,6 +113,12 @@
     <div class="page-section form-section">
         <form class="form-centered" name="EditArticlePageForm" onsubmit="return IsValidEditArticlePageForm()" action="/admin/article-page/edit/<?php echo htmlspecialchars( $this->ArticlePage->Id ); ?>" method="post">
             <div class="form-container">
+                <div class="form-field-name">
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Page Id' ) ); ?> :
+                </div>
+                <div>
+                    <input class="form-input" name="PageId" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->ArticlePage->PageId ) ); ?>"/>
+                </div>
                 <div class="form-field-name">
                     <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Route' ) ); ?> :
                 </div>

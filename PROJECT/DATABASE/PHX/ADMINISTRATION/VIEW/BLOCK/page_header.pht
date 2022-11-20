@@ -90,15 +90,6 @@
                         </a>
                     </div>
                     <div class="page-menu-item">
-                        <a href="/admin/page-sub-page">
-                            <span class="form-button form-button-large page-sub-page-button">
-                            </span>
-                            <span class="form-button-tooltip">
-                                <% .GetProcessedTextBySlug( 'Page sub page' ) %>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="page-menu-item">
                         <a href="/admin/block-category">
                             <span class="form-button form-button-large block-category-button">
                             </span>

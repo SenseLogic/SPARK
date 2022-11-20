@@ -9,7 +9,6 @@
             it_is_valid_add_text_and_image_block_form,
             id_field,
             page_id_field,
-            block_id_field,
             type_slug_field,
             number_field,
             language_code_array_field,
@@ -24,7 +23,6 @@
         add_text_and_image_block_form = document.AddTextAndImageBlockForm;
         id_field = add_text_and_image_block_form.Id;
         page_id_field = add_text_and_image_block_form.PageId;
-        block_id_field = add_text_and_image_block_form.BlockId;
         type_slug_field = add_text_and_image_block_form.TypeSlug;
         number_field = add_text_and_image_block_form.Number;
         language_code_array_field = add_text_and_image_block_form.LanguageCodeArray;
@@ -38,7 +36,6 @@
 
         id_field.RemoveClass( "form-field-error" );
         page_id_field.RemoveClass( "form-field-error" );
-        block_id_field.RemoveClass( "form-field-error" );
         type_slug_field.RemoveClass( "form-field-error" );
         number_field.RemoveClass( "form-field-error" );
         language_code_array_field.RemoveClass( "form-field-error" );
@@ -62,13 +59,6 @@
         if ( page_id_field.value === "" )
         {
             page_id_field.AddClass( "form-field-error" );
-
-            it_is_valid_add_text_and_image_block_form = false;
-        }
-
-        if ( block_id_field.value === "" )
-        {
-            block_id_field.AddClass( "form-field-error" );
 
             it_is_valid_add_text_and_image_block_form = false;
         }
@@ -178,24 +168,6 @@
                 </div>
                 <div>
                     <input class="form-input" name="PageId" type="text" value="<?php echo $field_value; ?>"/>
-                </div>
-                <?php
-                     $field_name = 'BlockId';
-
-                    if ( HasQueryValue( $field_name ) )
-                    {
-                         $field_value = GetQueryValue( $field_name );
-                    }
-                    else
-                    {
-                        $field_value = '';
-                    }
-                ?>
-                <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Block Id' ) ); ?> :
-                </div>
-                <div>
-                    <input class="form-input" name="BlockId" type="text" value="<?php echo $field_value; ?>"/>
                 </div>
                 <?php
                      $field_name = 'TypeSlug';

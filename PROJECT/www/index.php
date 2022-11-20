@@ -508,6 +508,7 @@ function Route(
                       && $path_value_count === 3
                       && $path_value_array[ 2 ] === 'add'
                       && HasPostValue( 'Id' )
+                      && HasPostValue( 'PageId' )
                       && HasPostValue( 'Route' )
                       && HasPostValue( 'TypeSlug' )
                       && HasPostValue( 'Number' )
@@ -541,6 +542,7 @@ function Route(
             else if ( $it_is_post_request
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'edit'
+                      && HasPostValue( 'PageId' )
                       && HasPostValue( 'Route' )
                       && HasPostValue( 'TypeSlug' )
                       && HasPostValue( 'Number' )
@@ -931,78 +933,6 @@ function Route(
             }
         }
         else if ( $path_value_count >= 2
-                  && $path_value_array[ 1 ] === 'page-sub-page' )
-        {
-            if ( $it_is_get_request
-                 && $path_value_count === 2 )
-            {
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_page_sub_pages_controller.php';
-            }
-            else if ( $it_is_get_request
-                      && $path_value_count === 3
-                      && $path_value_array[ 2 ] === 'add' )
-            {
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/add_page_sub_page_controller.php';
-            }
-            else if ( $it_is_post_request
-                      && $path_value_count === 3
-                      && $path_value_array[ 2 ] === 'add'
-                      && HasPostValue( 'Id' )
-                      && HasPostValue( 'PageId' )
-                      && HasPostValue( 'SubPageId' )
-                      && HasPostValue( 'Number' ) )
-            {
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_add_page_sub_page_controller.php';
-            }
-            else if ( $it_is_get_request
-                      && $path_value_count === 4
-                      && $path_value_array[ 2 ] === 'view' )
-            {
-                 $page_sub_page_id = $path_value_array[ 3 ];
-
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_page_sub_page_controller.php';
-            }
-            else if ( $it_is_get_request
-                      && $path_value_count === 4
-                      && $path_value_array[ 2 ] === 'edit' )
-            {
-                 $page_sub_page_id = $path_value_array[ 3 ];
-
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/edit_page_sub_page_controller.php';
-            }
-            else if ( $it_is_post_request
-                      && $path_value_count === 4
-                      && $path_value_array[ 2 ] === 'edit'
-                      && HasPostValue( 'PageId' )
-                      && HasPostValue( 'SubPageId' )
-                      && HasPostValue( 'Number' ) )
-            {
-                 $page_sub_page_id = $path_value_array[ 3 ];
-
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_edit_page_sub_page_controller.php';
-            }
-            else if ( $it_is_get_request
-                      && $path_value_count === 4
-                      && $path_value_array[ 2 ] === 'remove' )
-            {
-                 $page_sub_page_id = $path_value_array[ 3 ];
-
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/remove_page_sub_page_controller.php';
-            }
-            else if ( $it_is_post_request
-                      && $path_value_count === 4
-                      && $path_value_array[ 2 ] === 'remove' )
-            {
-                 $page_sub_page_id = $path_value_array[ 3 ];
-
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_remove_page_sub_page_controller.php';
-            }
-            else
-            {
-                require_once __DIR__ . '/' . 'CONTROLLER/show_error_controller.php';
-            }
-        }
-        else if ( $path_value_count >= 2
                   && $path_value_array[ 1 ] === 'block-category' )
         {
             if ( $it_is_get_request
@@ -1161,7 +1091,6 @@ function Route(
                       && $path_value_array[ 2 ] === 'add'
                       && HasPostValue( 'Id' )
                       && HasPostValue( 'PageId' )
-                      && HasPostValue( 'BlockId' )
                       && HasPostValue( 'TypeSlug' )
                       && HasPostValue( 'Number' )
                       && HasPostValue( 'LanguageCodeArray' )
@@ -1190,7 +1119,6 @@ function Route(
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'edit'
                       && HasPostValue( 'PageId' )
-                      && HasPostValue( 'BlockId' )
                       && HasPostValue( 'TypeSlug' )
                       && HasPostValue( 'Number' )
                       && HasPostValue( 'LanguageCodeArray' )
@@ -1241,7 +1169,6 @@ function Route(
                       && $path_value_array[ 2 ] === 'add'
                       && HasPostValue( 'Id' )
                       && HasPostValue( 'PageId' )
-                      && HasPostValue( 'BlockId' )
                       && HasPostValue( 'TypeSlug' )
                       && HasPostValue( 'Number' )
                       && HasPostValue( 'LanguageCodeArray' )
@@ -1273,7 +1200,6 @@ function Route(
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'edit'
                       && HasPostValue( 'PageId' )
-                      && HasPostValue( 'BlockId' )
                       && HasPostValue( 'TypeSlug' )
                       && HasPostValue( 'Number' )
                       && HasPostValue( 'LanguageCodeArray' )
@@ -1327,7 +1253,6 @@ function Route(
                       && $path_value_array[ 2 ] === 'add'
                       && HasPostValue( 'Id' )
                       && HasPostValue( 'PageId' )
-                      && HasPostValue( 'BlockId' )
                       && HasPostValue( 'TypeSlug' )
                       && HasPostValue( 'Number' )
                       && HasPostValue( 'LanguageCodeArray' )
@@ -1361,7 +1286,6 @@ function Route(
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'edit'
                       && HasPostValue( 'PageId' )
-                      && HasPostValue( 'BlockId' )
                       && HasPostValue( 'TypeSlug' )
                       && HasPostValue( 'Number' )
                       && HasPostValue( 'LanguageCodeArray' )

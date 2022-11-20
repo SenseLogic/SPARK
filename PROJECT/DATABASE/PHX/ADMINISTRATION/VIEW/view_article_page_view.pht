@@ -3,6 +3,12 @@
     <div class="page-section form-section">
         <div class="form-container">
             <div class="form-field-name">
+                <% .GetProcessedTextBySlug( 'Page Id' ) %> :
+            </div>
+            <div>
+                    <input class="form-input" name="PageId" type="text" value="<% GetValueText( .ArticlePage.PageId ) %>" readonly/>
+            </div>
+            <div class="form-field-name">
                 <% .GetProcessedTextBySlug( 'Route' ) %> :
             </div>
             <div>

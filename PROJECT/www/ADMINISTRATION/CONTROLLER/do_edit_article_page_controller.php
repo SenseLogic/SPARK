@@ -16,6 +16,7 @@ class DO_EDIT_ARTICLE_PAGE_CONTROLLER extends CONTROLLER
     {
         parent::__construct( $language_code );
 
+         $page_id = GetPostValue( 'PageId' );
          $route = GetPostValue( 'Route' );
          $type_slug = GetPostValue( 'TypeSlug' );
          $number = GetPostValue( 'Number' );
@@ -28,7 +29,7 @@ class DO_EDIT_ARTICLE_PAGE_CONTROLLER extends CONTROLLER
          $image_horizontal_position = GetPostValue( 'ImageHorizontalPosition' );
          $video_path = GetPostValue( 'VideoPath' );
 
-        SetDatabaseArticlePage( $article_page_id, $route, $type_slug, $number, $language_code_array, $is_active, $title, $text, $image_path, $image_vertical_position, $image_horizontal_position, $video_path );
+        SetDatabaseArticlePage( $article_page_id, $page_id, $route, $type_slug, $number, $language_code_array, $is_active, $title, $text, $image_path, $image_vertical_position, $image_horizontal_position, $video_path );
 
         Redirect( FindSessionValue( 'ListRoute', '/admin/article-page' ) );
     }

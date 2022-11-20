@@ -2,7 +2,7 @@ ARTICLES_PAGE
 
     Id Route Number LanguageCodeArray Title ImagePath
 
-        %articles
+        %articles-page
             ~ articles
             ~ 1
             ~ { en ~ fr }

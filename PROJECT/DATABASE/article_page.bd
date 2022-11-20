@@ -2,28 +2,28 @@ ARTICLE_PAGE
 
     Id Route Number LanguageCodeArray Title ImagePath
 
-        %article-1
+        %article-page-1
             ~ articles/1
             ~ 1
             ~ { en ~ fr }
             ~ Article 1
             ~ /static/image/article/california.jpg
 
-        %article-2
+        %article-page-2
             ~ articles/2
             ~ 2
             ~ { en ~ fr }
             ~ Article 2
             ~ /static/image/article/castle.jpg
 
-        %article-3
+        %article-page-3
             ~ articles/3
             ~ 3
             ~ { en ~ fr }
             ~ Article 3
             ~ /static/image/article/road.jpg
 
-        %article-4
+        %article-page-4
             ~ articles/4
             ~ 4
             ~ { en ~ fr }

@@ -3,6 +3,12 @@
     <div class="page-section form-section">
         <div class="form-container">
             <div class="form-field-name">
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Page Id' ) ); ?> :
+            </div>
+            <div>
+                    <input class="form-input" name="PageId" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->ArticlePage->PageId ) ); ?>" readonly/>
+            </div>
+            <div class="form-field-name">
                 <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Route' ) ); ?> :
             </div>
             <div>

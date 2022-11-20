@@ -13,7 +13,6 @@ import '../MODEL/legal_notice_page_model.php';
 import '../MODEL/cookie_policy_page_model.php';
 import '../MODEL/article_page_model.php';
 import '../MODEL/articles_page_model.php';
-import '../MODEL/page_sub_page_model.php';
 
 // -- TYPES
 
@@ -37,7 +36,6 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
         .CookiePolicyPageArray = GetDatabaseCookiePolicyPageArray();
         .LegalNoticePageArray = GetDatabaseLegalNoticePageArray();
         .ContactPageArray = GetDatabaseContactPageArray();
-        .PageSubPageArray = GetDatabasePageSubPageArray();
 
         .BlockArray = array_merge( .TextBlockArray, .ImageBlockArray, .TextAndImageBlockArray );
         .BlockArray = GetActiveBlockArray( .BlockArray, language_code );
@@ -45,7 +43,7 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
 
         .PageArray = array_merge( .HomePageArray, .ArticlePageArray, .ArticlesPageArray, .CookiePolicyPageArray, .LegalNoticePageArray, .ContactPageArray );
         .PageArray = GetActivePageArray( .PageArray, language_code );
-        .PageByIdMap = GetValidPageByIdMap( .PageArray, .PageSubPageArray, .BlockArray, .BlockByIdMap, language_code );
+        .PageByIdMap = GetValidPageByIdMap( .PageArray, .BlockArray, .BlockByIdMap, language_code );
 
         .ImagePathArray = [];
 

@@ -13,7 +13,6 @@ require_once __DIR__ . '/' . '../MODEL/legal_notice_page_model.php';
 require_once __DIR__ . '/' . '../MODEL/cookie_policy_page_model.php';
 require_once __DIR__ . '/' . '../MODEL/article_page_model.php';
 require_once __DIR__ . '/' . '../MODEL/articles_page_model.php';
-require_once __DIR__ . '/' . '../MODEL/page_sub_page_model.php';
 
 // -- TYPES
 
@@ -37,7 +36,6 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
         $this->CookiePolicyPageArray = GetDatabaseCookiePolicyPageArray();
         $this->LegalNoticePageArray = GetDatabaseLegalNoticePageArray();
         $this->ContactPageArray = GetDatabaseContactPageArray();
-        $this->PageSubPageArray = GetDatabasePageSubPageArray();
 
         $this->BlockArray = array_merge( $this->TextBlockArray, $this->ImageBlockArray, $this->TextAndImageBlockArray );
         $this->BlockArray = GetActiveBlockArray( $this->BlockArray, $language_code );
@@ -45,7 +43,7 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
 
         $this->PageArray = array_merge( $this->HomePageArray, $this->ArticlePageArray, $this->ArticlesPageArray, $this->CookiePolicyPageArray, $this->LegalNoticePageArray, $this->ContactPageArray );
         $this->PageArray = GetActivePageArray( $this->PageArray, $language_code );
-        $this->PageByIdMap = GetValidPageByIdMap( $this->PageArray, $this->PageSubPageArray, $this->BlockArray, $this->BlockByIdMap, $language_code );
+        $this->PageByIdMap = GetValidPageByIdMap( $this->PageArray, $this->BlockArray, $this->BlockByIdMap, $language_code );
 
         $this->ImagePathArray = [];
 

@@ -8,6 +8,7 @@
             add_article_page_form,
             it_is_valid_add_article_page_form,
             id_field,
+            page_id_field,
             route_field,
             type_slug_field,
             number_field,
@@ -22,6 +23,7 @@
 
         add_article_page_form = document.AddArticlePageForm;
         id_field = add_article_page_form.Id;
+        page_id_field = add_article_page_form.PageId;
         route_field = add_article_page_form.Route;
         type_slug_field = add_article_page_form.TypeSlug;
         number_field = add_article_page_form.Number;
@@ -35,6 +37,7 @@
         video_path_field = add_article_page_form.VideoPath;
 
         id_field.RemoveClass( "form-field-error" );
+        page_id_field.RemoveClass( "form-field-error" );
         route_field.RemoveClass( "form-field-error" );
         type_slug_field.RemoveClass( "form-field-error" );
         number_field.RemoveClass( "form-field-error" );
@@ -52,6 +55,13 @@
         if ( id_field.value === "" )
         {
             id_field.AddClass( "form-field-error" );
+
+            it_is_valid_add_article_page_form = false;
+        }
+
+        if ( page_id_field.value === "" )
+        {
+            page_id_field.AddClass( "form-field-error" );
 
             it_is_valid_add_article_page_form = false;
         }
@@ -130,6 +140,24 @@
                 </div>
                 <div>
                     <input class="form-input" name="Id" type="text" value="<?php echo $field_value; ?>"/>
+                </div>
+                <?php
+                     $field_name = 'PageId';
+
+                    if ( HasQueryValue( $field_name ) )
+                    {
+                         $field_value = GetQueryValue( $field_name );
+                    }
+                    else
+                    {
+                        $field_value = '';
+                    }
+                ?>
+                <div class="form-field-name">
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Page Id' ) ); ?> :
+                </div>
+                <div>
+                    <input class="form-input" name="PageId" type="text" value="<?php echo $field_value; ?>"/>
                 </div>
                 <?php
                      $field_name = 'Route';

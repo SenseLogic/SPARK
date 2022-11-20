@@ -27,7 +27,6 @@ function GetActivePageArray(
 
 function GetValidPageByIdMap(
     array &$page_array,
-    array &$page_sub_page_array,
     array &$block_array,
     array &$block_by_id_map,
     string $language_code
@@ -39,7 +38,6 @@ function GetValidPageByIdMap(
     {
         $page->BlockArray = [];
         $page->SubPageArray = [];
-        $page->PageSubPageArray = [];
         $page_by_id_map[ $page->Id ] = $page;
     }
 
@@ -54,19 +52,14 @@ function GetValidPageByIdMap(
         }
     }
 
-    foreach ( $page_sub_page_array as  $page_sub_page )
+    foreach ( $page_array as  $page )
     {
-        if ( isset( $page_by_id_map[ $page_sub_page->PageId ] )
-             && isset( $page_by_id_map[ $page_sub_page->SubPageId ] ) )
+        if ( property_exists( $page, 'PageId' )
+             && isset( $page_by_id_map[ $page->PageId ] ) )
         {
             array_push(
-                $page_by_id_map[ $page_sub_page->PageId ]->SubPageArray,
-                $page_by_id_map[ $page_sub_page->SubPageId ]
-                );
-
-            array_push(
-                $page_by_id_map[ $page_sub_page->PageId ]->PageSubPageArray,
-                $page_sub_page
+                $page_by_id_map[ $page->PageId ]->SubPageArray,
+                $page
                 );
         }
     }
