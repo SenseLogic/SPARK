@@ -1,0 +1,11 @@
+PAGE
+
+    Id Route TypeSlug Number LanguageCodeArray Title ImagePath
+
+        %article-list-page
+            ~ articles
+            ~ article-list
+            ~ 1
+            ~ { en ~ fr }
+            ~ Articles
+            ~ /static/image/article/beach.jpg

@@ -85,7 +85,7 @@
     <? include 'PAGE/loader_page.php'; ?>
     <? foreach ( var page_id => var page; .PageByIdMap ) { ?>
         <div class="extended-container view is-hidden" data-view-name="<# page.Route #>">
-            <? include 'PAGE/' .. page.TypeSlug .. '_page.php'; ?>
+            <? include 'PAGE/' .. str_replace( '-', '_', page.TypeSlug ) .. '_page.php'; ?>
         </div>
     <? } ?>
     <? include 'BLOCK/scroll_top_button.php'; ?>

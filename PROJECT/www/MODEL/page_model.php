@@ -1,5 +1,6 @@
 <?php // -- IMPORTS
 
+require_once __DIR__ . '/' . 'page.php';
 require_once __DIR__ . '/' . 'page_type.php';
 
 // -- FUNCTIONS
@@ -28,8 +29,7 @@ function GetActivePageArray(
 function GetValidPageByIdMap(
     array &$page_array,
     array &$block_array,
-    array &$block_by_id_map,
-    string $language_code
+    array &$block_by_id_map
     )
 {
      $page_by_id_map = [];

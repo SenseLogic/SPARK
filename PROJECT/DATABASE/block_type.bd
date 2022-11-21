@@ -1,15 +1,18 @@
 BLOCK_TYPE
 
-    Slug Name
+    Id Slug Name
 
-        text
+        %text-block-type
+            ~ text
             ~ Text
               ¨fr:Texte
 
-        image
+        %image-block-type
+            ~ image
             ~ Image
               ¨fr:Image
 
-        text_and_image
+        %text-and-image-block-type
+            ~ text-and-image
             ~ Text and image
               ¨fr:Texte et image

@@ -1,18 +1,12 @@
 <?php // -- IMPORTS
 
 require_once __DIR__ . '/' . 'view_controller.php';
-require_once __DIR__ . '/' . '../MODEL/block_type_model.php';
+require_once __DIR__ . '/' . '../MODEL/block_model.php';
 require_once __DIR__ . '/' . '../MODEL/image_block_model.php';
+require_once __DIR__ . '/' . '../MODEL/language_model.php';
+require_once __DIR__ . '/' . '../MODEL/page_model.php';
 require_once __DIR__ . '/' . '../MODEL/text_block_model.php';
 require_once __DIR__ . '/' . '../MODEL/text_and_image_block_model.php';
-require_once __DIR__ . '/' . '../MODEL/block_model.php';
-require_once __DIR__ . '/' . '../MODEL/page_model.php';
-require_once __DIR__ . '/' . '../MODEL/home_page_model.php';
-require_once __DIR__ . '/' . '../MODEL/contact_page_model.php';
-require_once __DIR__ . '/' . '../MODEL/legal_notice_page_model.php';
-require_once __DIR__ . '/' . '../MODEL/cookie_policy_page_model.php';
-require_once __DIR__ . '/' . '../MODEL/article_page_model.php';
-require_once __DIR__ . '/' . '../MODEL/articles_page_model.php';
 
 // -- TYPES
 
@@ -26,24 +20,24 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-        $this->BlockTypeBySlugMap = GetDatabaseBlockTypeBySlugMap();
+        $this->LanguageArray = GetDatabaseLanguageArray();
+
+        $this->PageArray = GetDatabasePageArray();
+        $this->PageArray = GetActivePageArray( $this->PageArray, $language_code );
+
         $this->TextBlockArray = GetDatabaseTextBlockArray();
+        $this->TextBlockArray = GetActiveBlockArray( $this->TextBlockArray, $language_code );
         $this->ImageBlockArray = GetDatabaseImageBlockArray();
+        $this->ImageBlockArray = GetActiveBlockArray( $this->ImageBlockArray, $language_code );
         $this->TextAndImageBlockArray = GetDatabaseTextAndImageBlockArray();
-        $this->HomePageArray = GetDatabaseHomePageArray();
-        $this->ArticlePageArray = GetDatabaseArticlePageArray();
-        $this->ArticlesPageArray = GetDatabaseArticlesPageArray();
-        $this->CookiePolicyPageArray = GetDatabaseCookiePolicyPageArray();
-        $this->LegalNoticePageArray = GetDatabaseLegalNoticePageArray();
-        $this->ContactPageArray = GetDatabaseContactPageArray();
+        $this->TextAndImageBlockArray = GetActiveBlockArray( $this->TextAndImageBlockArray, $language_code );
 
         $this->BlockArray = array_merge( $this->TextBlockArray, $this->ImageBlockArray, $this->TextAndImageBlockArray );
-        $this->BlockArray = GetActiveBlockArray( $this->BlockArray, $language_code );
-        $this->BlockByIdMap = GetValidBlockByIdMap( $this->BlockArray, $language_code );
+        $this->BlockByIdMap = GetValidBlockByIdMap( $this->BlockArray );
 
-        $this->PageArray = array_merge( $this->HomePageArray, $this->ArticlePageArray, $this->ArticlesPageArray, $this->CookiePolicyPageArray, $this->LegalNoticePageArray, $this->ContactPageArray );
-        $this->PageArray = GetActivePageArray( $this->PageArray, $language_code );
-        $this->PageByIdMap = GetValidPageByIdMap( $this->PageArray, $this->BlockArray, $this->BlockByIdMap, $language_code );
+        $this->PageArray = array_merge( $this->PageArray );
+        $this->PageByIdMap = GetValidPageByIdMap( $this->PageArray, $this->BlockArray, $this->BlockByIdMap );
+        $this->PageArrayByTypeSlugMap = GetPageArrayByTypeSlugMap( $this->PageArray );
 
         $this->ImagePathArray = [];
 

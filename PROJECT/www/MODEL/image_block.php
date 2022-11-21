@@ -3,30 +3,6 @@
 function GetDatabaseImageBlockArray(
     )
 {
-     $statement = GetDatabaseStatement( 'select `Id`, `PageId`, `TypeSlug`, `Number`, `LanguageCodeArray`, `Title`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `VideoPath` from `IMAGE_BLOCK`' );
-
-    if ( !$statement->execute() )
-    {
-        var_dump( $statement->errorInfo() );
-    }
-
-     $image_block_array = [];
-
-    while (  $image_block = $statement->fetchObject() )
-    {
-        $image_block->Number = ( float )( $image_block->Number );
-        $image_block->LanguageCodeArray = json_decode( $image_block->LanguageCodeArray );
-        array_push( $image_block_array, $image_block );
-    }
-
-    return $image_block_array;
-}
-
-// ~~
-
-function GetSortedDatabaseImageBlockArray(
-    )
-{
      $statement = GetDatabaseStatement( 'select `Id`, `PageId`, `TypeSlug`, `Number`, `LanguageCodeArray`, `Title`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `VideoPath` from `IMAGE_BLOCK` order by `Number` asc' );
 
     if ( !$statement->execute() )

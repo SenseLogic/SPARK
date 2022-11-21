@@ -1402,7 +1402,7 @@ body.is-scrolled .header-menu:not(.is-open) {
 .page-heading-title {
   font-size: 2rem;
 }
-.page-heading-text {
+.page-heading-teaser {
   margin-top: 1rem;
   font-size: 1.5rem;
 }

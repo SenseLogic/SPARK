@@ -1,0 +1,29 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/page_model.php';
+
+// -- TYPES
+
+class EDIT_PAGE_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code,
+        page_id
+        )
+    {
+        parent::constructor( language_code );
+
+        .Title = 'Edit a page';
+        .Page = GetDatabasePageById( page_id );
+        .ListRoute = FindSessionValue( 'ListRoute', '/admin/page' );
+
+        import '../VIEW/edit_page_view.php';
+    }
+}
+
+// -- STATEMENTS
+
+var edit_page_controller = new EDIT_PAGE_CONTROLLER( var language_code, var page_id );

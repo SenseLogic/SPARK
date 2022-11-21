@@ -36,56 +36,11 @@
                         </a>
                     </div>
                     <div class="page-menu-item">
-                        <a href="/admin/home-page">
-                            <span class="form-button form-button-large home-page-button">
+                        <a href="/admin/page">
+                            <span class="form-button form-button-large page-button">
                             </span>
                             <span class="form-button-tooltip">
-                                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Home page' ) ); ?>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="page-menu-item">
-                        <a href="/admin/article-page">
-                            <span class="form-button form-button-large article-page-button">
-                            </span>
-                            <span class="form-button-tooltip">
-                                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Article page' ) ); ?>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="page-menu-item">
-                        <a href="/admin/articles-page">
-                            <span class="form-button form-button-large articles-page-button">
-                            </span>
-                            <span class="form-button-tooltip">
-                                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Articles page' ) ); ?>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="page-menu-item">
-                        <a href="/admin/cookie-policy-page">
-                            <span class="form-button form-button-large cookie-policy-page-button">
-                            </span>
-                            <span class="form-button-tooltip">
-                                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Cookie policy page' ) ); ?>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="page-menu-item">
-                        <a href="/admin/legal-notice-page">
-                            <span class="form-button form-button-large legal-notice-page-button">
-                            </span>
-                            <span class="form-button-tooltip">
-                                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Legal notice page' ) ); ?>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="page-menu-item">
-                        <a href="/admin/contact-page">
-                            <span class="form-button form-button-large contact-page-button">
-                            </span>
-                            <span class="form-button-tooltip">
-                                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Contact page' ) ); ?>
+                                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Page' ) ); ?>
                             </span>
                         </a>
                     </div>

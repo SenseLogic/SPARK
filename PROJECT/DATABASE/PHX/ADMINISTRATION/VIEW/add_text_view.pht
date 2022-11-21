@@ -29,7 +29,7 @@
             it_is_valid_add_text_form = false;
         }
 
-        if ( slug_field.value === "" )
+        if ( !IsSlugText( slug_field.value ) )
         {
             slug_field.AddClass( "form-field-error" );
 

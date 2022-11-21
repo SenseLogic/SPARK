@@ -722,23 +722,8 @@ textarea {
 .page-type-button {
   background: url("/static/image/admin/page_type_icon.svg") no-repeat center center/contain;
 }
-.home-page-button {
-  background: url("/static/image/admin/home_page_icon.svg") no-repeat center center/contain;
-}
-.article-page-button {
-  background: url("/static/image/admin/article_page_icon.svg") no-repeat center center/contain;
-}
-.articles-page-button {
-  background: url("/static/image/admin/articles_page_icon.svg") no-repeat center center/contain;
-}
-.cookie-policy-page-button {
-  background: url("/static/image/admin/cookie_policy_page_icon.svg") no-repeat center center/contain;
-}
-.legal-notice-page-button {
-  background: url("/static/image/admin/legal_notice_page_icon.svg") no-repeat center center/contain;
-}
-.contact-page-button {
-  background: url("/static/image/admin/contact_page_icon.svg") no-repeat center center/contain;
+.page-button {
+  background: url("/static/image/admin/page_icon.svg") no-repeat center center/contain;
 }
 .block-category-button {
   background: url("/static/image/admin/block_category_icon.svg") no-repeat center center/contain;
@@ -770,22 +755,7 @@ textarea {
 .page-type-table {
   grid-template-columns: repeat(3, auto);
 }
-.home-page-table {
-  grid-template-columns: repeat(12, auto);
-}
-.article-page-table {
-  grid-template-columns: repeat(13, auto);
-}
-.articles-page-table {
-  grid-template-columns: repeat(12, auto);
-}
-.cookie-policy-page-table {
-  grid-template-columns: repeat(12, auto);
-}
-.legal-notice-page-table {
-  grid-template-columns: repeat(12, auto);
-}
-.contact-page-table {
+.page-table {
   grid-template-columns: repeat(12, auto);
 }
 .block-category-table {

@@ -3,30 +3,6 @@
 function GetDatabaseTextBlockArray(
     )
 {
-     $statement = GetDatabaseStatement( 'select `Id`, `PageId`, `TypeSlug`, `Number`, `LanguageCodeArray`, `Title`, `Text` from `TEXT_BLOCK`' );
-
-    if ( !$statement->execute() )
-    {
-        var_dump( $statement->errorInfo() );
-    }
-
-     $text_block_array = [];
-
-    while (  $text_block = $statement->fetchObject() )
-    {
-        $text_block->Number = ( float )( $text_block->Number );
-        $text_block->LanguageCodeArray = json_decode( $text_block->LanguageCodeArray );
-        array_push( $text_block_array, $text_block );
-    }
-
-    return $text_block_array;
-}
-
-// ~~
-
-function GetSortedDatabaseTextBlockArray(
-    )
-{
      $statement = GetDatabaseStatement( 'select `Id`, `PageId`, `TypeSlug`, `Number`, `LanguageCodeArray`, `Title`, `Text` from `TEXT_BLOCK` order by `Number` asc' );
 
     if ( !$statement->execute() )

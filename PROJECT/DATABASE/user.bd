@@ -1,7 +1,21 @@
 USER
 
-    Email Pseudonym Password Role
+    Id Pseudonym Password Role Email
 
-        administrator@spark-project.com ~ administrator ~ xyz ~ administrator
-        editor@spark-project.com ~ editor ~ xyz ~ editor
-        guest@spark-project.com ~ guest ~ xyz ~ guest
+        %administrator-user
+            ~ administrator 
+            ~ xyz 
+            ~ administrator
+            ~ administrator@agc-automotive.com
+
+        %editor-user 
+            ~ editor 
+            ~ xyz 
+            ~ editor
+            ~ editor@agc-automotive.com
+
+        %guest-user
+            ~ guest 
+            ~ xyz 
+            ~ guest
+            ~ guest@agc-automotive.com

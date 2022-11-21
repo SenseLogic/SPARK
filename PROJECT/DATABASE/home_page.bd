@@ -1,8 +1,9 @@
-HOME_PAGE
+PAGE
 
-    Id Route Number LanguageCodeArray Title ImagePath
+    Id Route TypeSlug Number LanguageCodeArray Title ImagePath
 
         %home-page
+            ~ home
             ~ home
             ~ 1
             ~ { en ~ fr }

@@ -16,12 +16,12 @@ class DO_EDIT_USER_CONTROLLER extends CONTROLLER
     {
         parent::constructor( language_code );
 
-        var email = GetPostValue( 'Email' );
         var pseudonym = GetPostValue( 'Pseudonym' );
         var password = GetPostValue( 'Password' );
         var role = GetPostValue( 'Role' );
+        var email = GetPostValue( 'Email' );
 
-        SetDatabaseUser( user_id, email, pseudonym, password, role );
+        SetDatabaseUser( user_id, pseudonym, password, role, email );
 
         Redirect( FindSessionValue( 'ListRoute', '/admin/user' ) );
     }

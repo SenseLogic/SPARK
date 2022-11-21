@@ -1,11 +1,13 @@
 LANGUAGE
 
-    Code Number Text
+    Id Code Number Text
 
-        en
+        %en-language
+            ~ en
             ~ 1
             ~ EN
 
-        fr
+        %fr-language
+            ~ fr
             ~ 2
             ~ FR

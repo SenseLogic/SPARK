@@ -1,8 +1,9 @@
-COOKIE_POLICY_PAGE
+PAGE
 
-    Id Route Number LanguageCodeArray Title ImagePath
+    Id Route TypeSlug Number LanguageCodeArray Title ImagePath
 
         %cookie-policy-page
+            ~ cookie-policy
             ~ cookie-policy
             ~ 1
             ~ { en ~ fr }

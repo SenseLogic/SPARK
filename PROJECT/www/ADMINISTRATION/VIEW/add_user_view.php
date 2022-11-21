@@ -8,36 +8,29 @@
             add_user_form,
             it_is_valid_add_user_form,
             id_field,
-            email_field,
             pseudonym_field,
             password_field,
-            role_field;
+            role_field,
+            email_field;
 
         add_user_form = document.AddUserForm;
         id_field = add_user_form.Id;
-        email_field = add_user_form.Email;
         pseudonym_field = add_user_form.Pseudonym;
         password_field = add_user_form.Password;
         role_field = add_user_form.Role;
+        email_field = add_user_form.Email;
 
         id_field.RemoveClass( "form-field-error" );
-        email_field.RemoveClass( "form-field-error" );
         pseudonym_field.RemoveClass( "form-field-error" );
         password_field.RemoveClass( "form-field-error" );
         role_field.RemoveClass( "form-field-error" );
+        email_field.RemoveClass( "form-field-error" );
 
         it_is_valid_add_user_form = true;
 
         if ( id_field.value === "" )
         {
             id_field.AddClass( "form-field-error" );
-
-            it_is_valid_add_user_form = false;
-        }
-
-        if ( email_field.value === "" )
-        {
-            email_field.AddClass( "form-field-error" );
 
             it_is_valid_add_user_form = false;
         }
@@ -59,6 +52,13 @@
         if ( role_field.value === "" )
         {
             role_field.AddClass( "form-field-error" );
+
+            it_is_valid_add_user_form = false;
+        }
+
+        if ( email_field.value === "" )
+        {
+            email_field.AddClass( "form-field-error" );
 
             it_is_valid_add_user_form = false;
         }
@@ -87,24 +87,6 @@
                 </div>
                 <div>
                     <input class="form-input" name="Id" type="text" value="<?php echo $field_value; ?>"/>
-                </div>
-                <?php
-                     $field_name = 'Email';
-
-                    if ( HasQueryValue( $field_name ) )
-                    {
-                         $field_value = GetQueryValue( $field_name );
-                    }
-                    else
-                    {
-                        $field_value = '';
-                    }
-                ?>
-                <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Email' ) ); ?> :
-                </div>
-                <div>
-                    <input class="form-input" name="Email" type="text" value="<?php echo $field_value; ?>"/>
                 </div>
                 <?php
                      $field_name = 'Pseudonym';
@@ -159,6 +141,24 @@
                 </div>
                 <div>
                     <input class="form-input" name="Role" type="text" value="<?php echo $field_value; ?>"/>
+                </div>
+                <?php
+                     $field_name = 'Email';
+
+                    if ( HasQueryValue( $field_name ) )
+                    {
+                         $field_value = GetQueryValue( $field_name );
+                    }
+                    else
+                    {
+                        $field_value = '';
+                    }
+                ?>
+                <div class="form-field-name">
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Email' ) ); ?> :
+                </div>
+                <div>
+                    <input class="form-input" name="Email" type="text" value="<?php echo $field_value; ?>"/>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="<?php echo htmlspecialchars( $this->ListRoute ); ?>">
                 </a>

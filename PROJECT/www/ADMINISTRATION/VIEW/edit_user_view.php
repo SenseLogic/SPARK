@@ -7,30 +7,23 @@
         var
             edit_user_form,
             it_is_valid_edit_user_form,
-            email_field,
             pseudonym_field,
             password_field,
-            role_field;
+            role_field,
+            email_field;
 
         edit_user_form = document.EditUserForm;
-        email_field = edit_user_form.Email;
         pseudonym_field = edit_user_form.Pseudonym;
         password_field = edit_user_form.Password;
         role_field = edit_user_form.Role;
+        email_field = edit_user_form.Email;
 
-        email_field.RemoveClass( "form-field-error" );
         pseudonym_field.RemoveClass( "form-field-error" );
         password_field.RemoveClass( "form-field-error" );
         role_field.RemoveClass( "form-field-error" );
+        email_field.RemoveClass( "form-field-error" );
 
         it_is_valid_edit_user_form = true;
-
-        if ( email_field.value === "" )
-        {
-            email_field.AddClass( "form-field-error" );
-
-            it_is_valid_edit_user_form = false;
-        }
 
         if ( pseudonym_field.value === "" )
         {
@@ -53,6 +46,13 @@
             it_is_valid_edit_user_form = false;
         }
 
+        if ( email_field.value === "" )
+        {
+            email_field.AddClass( "form-field-error" );
+
+            it_is_valid_edit_user_form = false;
+        }
+
         return it_is_valid_edit_user_form;
     }
 </script>
@@ -60,12 +60,6 @@
     <div class="page-section form-section">
         <form class="form-centered" name="EditUserForm" onsubmit="return IsValidEditUserForm()" action="/admin/user/edit/<?php echo htmlspecialchars( $this->User->Id ); ?>" method="post">
             <div class="form-container">
-                <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Email' ) ); ?> :
-                </div>
-                <div>
-                    <input class="form-input" name="Email" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->User->Email ) ); ?>"/>
-                </div>
                 <div class="form-field-name">
                     <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Pseudonym' ) ); ?> :
                 </div>
@@ -83,6 +77,12 @@
                 </div>
                 <div>
                     <input class="form-input" name="Role" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->User->Role ) ); ?>"/>
+                </div>
+                <div class="form-field-name">
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Email' ) ); ?> :
+                </div>
+                <div>
+                    <input class="form-input" name="Email" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->User->Email ) ); ?>"/>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="<?php echo htmlspecialchars( $this->ListRoute ); ?>">
                 </a>

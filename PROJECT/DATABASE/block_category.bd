@@ -1,11 +1,13 @@
 BLOCK_CATEGORY
 
-    Slug Name
+    Id Slug Name
 
-        heading
+        %heading-block-category
+            ~ heading
             ~ Heading
               ¨fr:Entête
 
-        content
+        %content-block-category
+            ~ content
             ~ Content
               ¨fr:Contenu

@@ -1,0 +1,10 @@
+<style file="article_list_page.styl">
+</style>
+<div class="page">
+    <? include '../BLOCK/header_menu.php'; ?>
+    <? var article_page_array = .PageArrayByTypeSlugMap[ 'article' ]; ?>
+    <? include '../BLOCK/article_carousel.php'; ?>
+    <? include '../BLOCK/block_list.php'; ?>
+    <? include '../BLOCK/page_padding.php'; ?>
+    <? include '../BLOCK/footer_menu.php'; ?>
+</div>

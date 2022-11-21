@@ -25,7 +25,7 @@
         font-size: 2rem;
     }
 
-    .page-heading-text
+    .page-heading-teaser
     {
         margin-top: 1rem;
 
@@ -36,8 +36,8 @@
     <div class="page-heading-title">
         <# .GetProcessedText( var page.Title ) #>
     </div>
-    <div class="page-heading-text">
-        <# .GetProcessedText( page.Text ) #>
+    <div class="page-heading-teaser">
+        <# .GetProcessedText( page.Teaser ) #>
     </div>
     <? include 'scroll_down_reminder.php'; ?>
 </div>

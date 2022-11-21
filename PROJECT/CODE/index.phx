@@ -403,18 +403,18 @@ function Route(
             }
         }
         else if ( path_value_count >= 2
-                  && path_value_array[ 1 ] === 'home-page' )
+                  && path_value_array[ 1 ] === 'page' )
         {
             if ( it_is_get_request
                  && path_value_count === 2 )
             {
-                import 'ADMINISTRATION/CONTROLLER/view_home_pages_controller.php';
+                import 'ADMINISTRATION/CONTROLLER/view_pages_controller.php';
             }
             else if ( it_is_get_request
                       && path_value_count === 3
                       && path_value_array[ 2 ] === 'add' )
             {
-                import 'ADMINISTRATION/CONTROLLER/add_home_page_controller.php';
+                import 'ADMINISTRATION/CONTROLLER/add_page_controller.php';
             }
             else if ( it_is_post_request
                       && path_value_count === 3
@@ -426,29 +426,29 @@ function Route(
                       && HasPostValue( 'LanguageCodeArray' )
                       && HasPostValue( 'IsActive' )
                       && HasPostValue( 'Title' )
-                      && HasPostValue( 'Text' )
+                      && HasPostValue( 'Teaser' )
                       && HasPostValue( 'ImagePath' )
                       && HasPostValue( 'ImageVerticalPosition' )
                       && HasPostValue( 'ImageHorizontalPosition' )
                       && HasPostValue( 'VideoPath' ) )
             {
-                import 'ADMINISTRATION/CONTROLLER/do_add_home_page_controller.php';
+                import 'ADMINISTRATION/CONTROLLER/do_add_page_controller.php';
             }
             else if ( it_is_get_request
                       && path_value_count === 4
                       && path_value_array[ 2 ] === 'view' )
             {
-                var home_page_id = path_value_array[ 3 ];
+                var page_id = path_value_array[ 3 ];
 
-                import 'ADMINISTRATION/CONTROLLER/view_home_page_controller.php';
+                import 'ADMINISTRATION/CONTROLLER/view_page_controller.php';
             }
             else if ( it_is_get_request
                       && path_value_count === 4
                       && path_value_array[ 2 ] === 'edit' )
             {
-                var home_page_id = path_value_array[ 3 ];
+                var page_id = path_value_array[ 3 ];
 
-                import 'ADMINISTRATION/CONTROLLER/edit_home_page_controller.php';
+                import 'ADMINISTRATION/CONTROLLER/edit_page_controller.php';
             }
             else if ( it_is_post_request
                       && path_value_count === 4
@@ -459,473 +459,31 @@ function Route(
                       && HasPostValue( 'LanguageCodeArray' )
                       && HasPostValue( 'IsActive' )
                       && HasPostValue( 'Title' )
-                      && HasPostValue( 'Text' )
+                      && HasPostValue( 'Teaser' )
                       && HasPostValue( 'ImagePath' )
                       && HasPostValue( 'ImageVerticalPosition' )
                       && HasPostValue( 'ImageHorizontalPosition' )
                       && HasPostValue( 'VideoPath' ) )
             {
-                var home_page_id = path_value_array[ 3 ];
+                var page_id = path_value_array[ 3 ];
 
-                import 'ADMINISTRATION/CONTROLLER/do_edit_home_page_controller.php';
+                import 'ADMINISTRATION/CONTROLLER/do_edit_page_controller.php';
             }
             else if ( it_is_get_request
                       && path_value_count === 4
                       && path_value_array[ 2 ] === 'remove' )
             {
-                var home_page_id = path_value_array[ 3 ];
+                var page_id = path_value_array[ 3 ];
 
-                import 'ADMINISTRATION/CONTROLLER/remove_home_page_controller.php';
+                import 'ADMINISTRATION/CONTROLLER/remove_page_controller.php';
             }
             else if ( it_is_post_request
                       && path_value_count === 4
                       && path_value_array[ 2 ] === 'remove' )
             {
-                var home_page_id = path_value_array[ 3 ];
+                var page_id = path_value_array[ 3 ];
 
-                import 'ADMINISTRATION/CONTROLLER/do_remove_home_page_controller.php';
-            }
-            else
-            {
-                import 'CONTROLLER/show_error_controller.php';
-            }
-        }
-        else if ( path_value_count >= 2
-                  && path_value_array[ 1 ] === 'article-page' )
-        {
-            if ( it_is_get_request
-                 && path_value_count === 2 )
-            {
-                import 'ADMINISTRATION/CONTROLLER/view_article_pages_controller.php';
-            }
-            else if ( it_is_get_request
-                      && path_value_count === 3
-                      && path_value_array[ 2 ] === 'add' )
-            {
-                import 'ADMINISTRATION/CONTROLLER/add_article_page_controller.php';
-            }
-            else if ( it_is_post_request
-                      && path_value_count === 3
-                      && path_value_array[ 2 ] === 'add'
-                      && HasPostValue( 'Id' )
-                      && HasPostValue( 'PageId' )
-                      && HasPostValue( 'Route' )
-                      && HasPostValue( 'TypeSlug' )
-                      && HasPostValue( 'Number' )
-                      && HasPostValue( 'LanguageCodeArray' )
-                      && HasPostValue( 'IsActive' )
-                      && HasPostValue( 'Title' )
-                      && HasPostValue( 'Text' )
-                      && HasPostValue( 'ImagePath' )
-                      && HasPostValue( 'ImageVerticalPosition' )
-                      && HasPostValue( 'ImageHorizontalPosition' )
-                      && HasPostValue( 'VideoPath' ) )
-            {
-                import 'ADMINISTRATION/CONTROLLER/do_add_article_page_controller.php';
-            }
-            else if ( it_is_get_request
-                      && path_value_count === 4
-                      && path_value_array[ 2 ] === 'view' )
-            {
-                var article_page_id = path_value_array[ 3 ];
-
-                import 'ADMINISTRATION/CONTROLLER/view_article_page_controller.php';
-            }
-            else if ( it_is_get_request
-                      && path_value_count === 4
-                      && path_value_array[ 2 ] === 'edit' )
-            {
-                var article_page_id = path_value_array[ 3 ];
-
-                import 'ADMINISTRATION/CONTROLLER/edit_article_page_controller.php';
-            }
-            else if ( it_is_post_request
-                      && path_value_count === 4
-                      && path_value_array[ 2 ] === 'edit'
-                      && HasPostValue( 'PageId' )
-                      && HasPostValue( 'Route' )
-                      && HasPostValue( 'TypeSlug' )
-                      && HasPostValue( 'Number' )
-                      && HasPostValue( 'LanguageCodeArray' )
-                      && HasPostValue( 'IsActive' )
-                      && HasPostValue( 'Title' )
-                      && HasPostValue( 'Text' )
-                      && HasPostValue( 'ImagePath' )
-                      && HasPostValue( 'ImageVerticalPosition' )
-                      && HasPostValue( 'ImageHorizontalPosition' )
-                      && HasPostValue( 'VideoPath' ) )
-            {
-                var article_page_id = path_value_array[ 3 ];
-
-                import 'ADMINISTRATION/CONTROLLER/do_edit_article_page_controller.php';
-            }
-            else if ( it_is_get_request
-                      && path_value_count === 4
-                      && path_value_array[ 2 ] === 'remove' )
-            {
-                var article_page_id = path_value_array[ 3 ];
-
-                import 'ADMINISTRATION/CONTROLLER/remove_article_page_controller.php';
-            }
-            else if ( it_is_post_request
-                      && path_value_count === 4
-                      && path_value_array[ 2 ] === 'remove' )
-            {
-                var article_page_id = path_value_array[ 3 ];
-
-                import 'ADMINISTRATION/CONTROLLER/do_remove_article_page_controller.php';
-            }
-            else
-            {
-                import 'CONTROLLER/show_error_controller.php';
-            }
-        }
-        else if ( path_value_count >= 2
-                  && path_value_array[ 1 ] === 'articles-page' )
-        {
-            if ( it_is_get_request
-                 && path_value_count === 2 )
-            {
-                import 'ADMINISTRATION/CONTROLLER/view_articles_pages_controller.php';
-            }
-            else if ( it_is_get_request
-                      && path_value_count === 3
-                      && path_value_array[ 2 ] === 'add' )
-            {
-                import 'ADMINISTRATION/CONTROLLER/add_articles_page_controller.php';
-            }
-            else if ( it_is_post_request
-                      && path_value_count === 3
-                      && path_value_array[ 2 ] === 'add'
-                      && HasPostValue( 'Id' )
-                      && HasPostValue( 'Route' )
-                      && HasPostValue( 'TypeSlug' )
-                      && HasPostValue( 'Number' )
-                      && HasPostValue( 'LanguageCodeArray' )
-                      && HasPostValue( 'IsActive' )
-                      && HasPostValue( 'Title' )
-                      && HasPostValue( 'Text' )
-                      && HasPostValue( 'ImagePath' )
-                      && HasPostValue( 'ImageVerticalPosition' )
-                      && HasPostValue( 'ImageHorizontalPosition' )
-                      && HasPostValue( 'VideoPath' ) )
-            {
-                import 'ADMINISTRATION/CONTROLLER/do_add_articles_page_controller.php';
-            }
-            else if ( it_is_get_request
-                      && path_value_count === 4
-                      && path_value_array[ 2 ] === 'view' )
-            {
-                var articles_page_id = path_value_array[ 3 ];
-
-                import 'ADMINISTRATION/CONTROLLER/view_articles_page_controller.php';
-            }
-            else if ( it_is_get_request
-                      && path_value_count === 4
-                      && path_value_array[ 2 ] === 'edit' )
-            {
-                var articles_page_id = path_value_array[ 3 ];
-
-                import 'ADMINISTRATION/CONTROLLER/edit_articles_page_controller.php';
-            }
-            else if ( it_is_post_request
-                      && path_value_count === 4
-                      && path_value_array[ 2 ] === 'edit'
-                      && HasPostValue( 'Route' )
-                      && HasPostValue( 'TypeSlug' )
-                      && HasPostValue( 'Number' )
-                      && HasPostValue( 'LanguageCodeArray' )
-                      && HasPostValue( 'IsActive' )
-                      && HasPostValue( 'Title' )
-                      && HasPostValue( 'Text' )
-                      && HasPostValue( 'ImagePath' )
-                      && HasPostValue( 'ImageVerticalPosition' )
-                      && HasPostValue( 'ImageHorizontalPosition' )
-                      && HasPostValue( 'VideoPath' ) )
-            {
-                var articles_page_id = path_value_array[ 3 ];
-
-                import 'ADMINISTRATION/CONTROLLER/do_edit_articles_page_controller.php';
-            }
-            else if ( it_is_get_request
-                      && path_value_count === 4
-                      && path_value_array[ 2 ] === 'remove' )
-            {
-                var articles_page_id = path_value_array[ 3 ];
-
-                import 'ADMINISTRATION/CONTROLLER/remove_articles_page_controller.php';
-            }
-            else if ( it_is_post_request
-                      && path_value_count === 4
-                      && path_value_array[ 2 ] === 'remove' )
-            {
-                var articles_page_id = path_value_array[ 3 ];
-
-                import 'ADMINISTRATION/CONTROLLER/do_remove_articles_page_controller.php';
-            }
-            else
-            {
-                import 'CONTROLLER/show_error_controller.php';
-            }
-        }
-        else if ( path_value_count >= 2
-                  && path_value_array[ 1 ] === 'cookie-policy-page' )
-        {
-            if ( it_is_get_request
-                 && path_value_count === 2 )
-            {
-                import 'ADMINISTRATION/CONTROLLER/view_cookie_policy_pages_controller.php';
-            }
-            else if ( it_is_get_request
-                      && path_value_count === 3
-                      && path_value_array[ 2 ] === 'add' )
-            {
-                import 'ADMINISTRATION/CONTROLLER/add_cookie_policy_page_controller.php';
-            }
-            else if ( it_is_post_request
-                      && path_value_count === 3
-                      && path_value_array[ 2 ] === 'add'
-                      && HasPostValue( 'Id' )
-                      && HasPostValue( 'Route' )
-                      && HasPostValue( 'TypeSlug' )
-                      && HasPostValue( 'Number' )
-                      && HasPostValue( 'LanguageCodeArray' )
-                      && HasPostValue( 'IsActive' )
-                      && HasPostValue( 'Title' )
-                      && HasPostValue( 'Text' )
-                      && HasPostValue( 'ImagePath' )
-                      && HasPostValue( 'ImageVerticalPosition' )
-                      && HasPostValue( 'ImageHorizontalPosition' )
-                      && HasPostValue( 'VideoPath' ) )
-            {
-                import 'ADMINISTRATION/CONTROLLER/do_add_cookie_policy_page_controller.php';
-            }
-            else if ( it_is_get_request
-                      && path_value_count === 4
-                      && path_value_array[ 2 ] === 'view' )
-            {
-                var cookie_policy_page_id = path_value_array[ 3 ];
-
-                import 'ADMINISTRATION/CONTROLLER/view_cookie_policy_page_controller.php';
-            }
-            else if ( it_is_get_request
-                      && path_value_count === 4
-                      && path_value_array[ 2 ] === 'edit' )
-            {
-                var cookie_policy_page_id = path_value_array[ 3 ];
-
-                import 'ADMINISTRATION/CONTROLLER/edit_cookie_policy_page_controller.php';
-            }
-            else if ( it_is_post_request
-                      && path_value_count === 4
-                      && path_value_array[ 2 ] === 'edit'
-                      && HasPostValue( 'Route' )
-                      && HasPostValue( 'TypeSlug' )
-                      && HasPostValue( 'Number' )
-                      && HasPostValue( 'LanguageCodeArray' )
-                      && HasPostValue( 'IsActive' )
-                      && HasPostValue( 'Title' )
-                      && HasPostValue( 'Text' )
-                      && HasPostValue( 'ImagePath' )
-                      && HasPostValue( 'ImageVerticalPosition' )
-                      && HasPostValue( 'ImageHorizontalPosition' )
-                      && HasPostValue( 'VideoPath' ) )
-            {
-                var cookie_policy_page_id = path_value_array[ 3 ];
-
-                import 'ADMINISTRATION/CONTROLLER/do_edit_cookie_policy_page_controller.php';
-            }
-            else if ( it_is_get_request
-                      && path_value_count === 4
-                      && path_value_array[ 2 ] === 'remove' )
-            {
-                var cookie_policy_page_id = path_value_array[ 3 ];
-
-                import 'ADMINISTRATION/CONTROLLER/remove_cookie_policy_page_controller.php';
-            }
-            else if ( it_is_post_request
-                      && path_value_count === 4
-                      && path_value_array[ 2 ] === 'remove' )
-            {
-                var cookie_policy_page_id = path_value_array[ 3 ];
-
-                import 'ADMINISTRATION/CONTROLLER/do_remove_cookie_policy_page_controller.php';
-            }
-            else
-            {
-                import 'CONTROLLER/show_error_controller.php';
-            }
-        }
-        else if ( path_value_count >= 2
-                  && path_value_array[ 1 ] === 'legal-notice-page' )
-        {
-            if ( it_is_get_request
-                 && path_value_count === 2 )
-            {
-                import 'ADMINISTRATION/CONTROLLER/view_legal_notice_pages_controller.php';
-            }
-            else if ( it_is_get_request
-                      && path_value_count === 3
-                      && path_value_array[ 2 ] === 'add' )
-            {
-                import 'ADMINISTRATION/CONTROLLER/add_legal_notice_page_controller.php';
-            }
-            else if ( it_is_post_request
-                      && path_value_count === 3
-                      && path_value_array[ 2 ] === 'add'
-                      && HasPostValue( 'Id' )
-                      && HasPostValue( 'Route' )
-                      && HasPostValue( 'TypeSlug' )
-                      && HasPostValue( 'Number' )
-                      && HasPostValue( 'LanguageCodeArray' )
-                      && HasPostValue( 'IsActive' )
-                      && HasPostValue( 'Title' )
-                      && HasPostValue( 'Text' )
-                      && HasPostValue( 'ImagePath' )
-                      && HasPostValue( 'ImageVerticalPosition' )
-                      && HasPostValue( 'ImageHorizontalPosition' )
-                      && HasPostValue( 'VideoPath' ) )
-            {
-                import 'ADMINISTRATION/CONTROLLER/do_add_legal_notice_page_controller.php';
-            }
-            else if ( it_is_get_request
-                      && path_value_count === 4
-                      && path_value_array[ 2 ] === 'view' )
-            {
-                var legal_notice_page_id = path_value_array[ 3 ];
-
-                import 'ADMINISTRATION/CONTROLLER/view_legal_notice_page_controller.php';
-            }
-            else if ( it_is_get_request
-                      && path_value_count === 4
-                      && path_value_array[ 2 ] === 'edit' )
-            {
-                var legal_notice_page_id = path_value_array[ 3 ];
-
-                import 'ADMINISTRATION/CONTROLLER/edit_legal_notice_page_controller.php';
-            }
-            else if ( it_is_post_request
-                      && path_value_count === 4
-                      && path_value_array[ 2 ] === 'edit'
-                      && HasPostValue( 'Route' )
-                      && HasPostValue( 'TypeSlug' )
-                      && HasPostValue( 'Number' )
-                      && HasPostValue( 'LanguageCodeArray' )
-                      && HasPostValue( 'IsActive' )
-                      && HasPostValue( 'Title' )
-                      && HasPostValue( 'Text' )
-                      && HasPostValue( 'ImagePath' )
-                      && HasPostValue( 'ImageVerticalPosition' )
-                      && HasPostValue( 'ImageHorizontalPosition' )
-                      && HasPostValue( 'VideoPath' ) )
-            {
-                var legal_notice_page_id = path_value_array[ 3 ];
-
-                import 'ADMINISTRATION/CONTROLLER/do_edit_legal_notice_page_controller.php';
-            }
-            else if ( it_is_get_request
-                      && path_value_count === 4
-                      && path_value_array[ 2 ] === 'remove' )
-            {
-                var legal_notice_page_id = path_value_array[ 3 ];
-
-                import 'ADMINISTRATION/CONTROLLER/remove_legal_notice_page_controller.php';
-            }
-            else if ( it_is_post_request
-                      && path_value_count === 4
-                      && path_value_array[ 2 ] === 'remove' )
-            {
-                var legal_notice_page_id = path_value_array[ 3 ];
-
-                import 'ADMINISTRATION/CONTROLLER/do_remove_legal_notice_page_controller.php';
-            }
-            else
-            {
-                import 'CONTROLLER/show_error_controller.php';
-            }
-        }
-        else if ( path_value_count >= 2
-                  && path_value_array[ 1 ] === 'contact-page' )
-        {
-            if ( it_is_get_request
-                 && path_value_count === 2 )
-            {
-                import 'ADMINISTRATION/CONTROLLER/view_contact_pages_controller.php';
-            }
-            else if ( it_is_get_request
-                      && path_value_count === 3
-                      && path_value_array[ 2 ] === 'add' )
-            {
-                import 'ADMINISTRATION/CONTROLLER/add_contact_page_controller.php';
-            }
-            else if ( it_is_post_request
-                      && path_value_count === 3
-                      && path_value_array[ 2 ] === 'add'
-                      && HasPostValue( 'Id' )
-                      && HasPostValue( 'Route' )
-                      && HasPostValue( 'TypeSlug' )
-                      && HasPostValue( 'Number' )
-                      && HasPostValue( 'LanguageCodeArray' )
-                      && HasPostValue( 'IsActive' )
-                      && HasPostValue( 'Title' )
-                      && HasPostValue( 'Text' )
-                      && HasPostValue( 'ImagePath' )
-                      && HasPostValue( 'ImageVerticalPosition' )
-                      && HasPostValue( 'ImageHorizontalPosition' )
-                      && HasPostValue( 'VideoPath' ) )
-            {
-                import 'ADMINISTRATION/CONTROLLER/do_add_contact_page_controller.php';
-            }
-            else if ( it_is_get_request
-                      && path_value_count === 4
-                      && path_value_array[ 2 ] === 'view' )
-            {
-                var contact_page_id = path_value_array[ 3 ];
-
-                import 'ADMINISTRATION/CONTROLLER/view_contact_page_controller.php';
-            }
-            else if ( it_is_get_request
-                      && path_value_count === 4
-                      && path_value_array[ 2 ] === 'edit' )
-            {
-                var contact_page_id = path_value_array[ 3 ];
-
-                import 'ADMINISTRATION/CONTROLLER/edit_contact_page_controller.php';
-            }
-            else if ( it_is_post_request
-                      && path_value_count === 4
-                      && path_value_array[ 2 ] === 'edit'
-                      && HasPostValue( 'Route' )
-                      && HasPostValue( 'TypeSlug' )
-                      && HasPostValue( 'Number' )
-                      && HasPostValue( 'LanguageCodeArray' )
-                      && HasPostValue( 'IsActive' )
-                      && HasPostValue( 'Title' )
-                      && HasPostValue( 'Text' )
-                      && HasPostValue( 'ImagePath' )
-                      && HasPostValue( 'ImageVerticalPosition' )
-                      && HasPostValue( 'ImageHorizontalPosition' )
-                      && HasPostValue( 'VideoPath' ) )
-            {
-                var contact_page_id = path_value_array[ 3 ];
-
-                import 'ADMINISTRATION/CONTROLLER/do_edit_contact_page_controller.php';
-            }
-            else if ( it_is_get_request
-                      && path_value_count === 4
-                      && path_value_array[ 2 ] === 'remove' )
-            {
-                var contact_page_id = path_value_array[ 3 ];
-
-                import 'ADMINISTRATION/CONTROLLER/remove_contact_page_controller.php';
-            }
-            else if ( it_is_post_request
-                      && path_value_count === 4
-                      && path_value_array[ 2 ] === 'remove' )
-            {
-                var contact_page_id = path_value_array[ 3 ];
-
-                import 'ADMINISTRATION/CONTROLLER/do_remove_contact_page_controller.php';
+                import 'ADMINISTRATION/CONTROLLER/do_remove_page_controller.php';
             }
             else
             {
@@ -1419,10 +977,10 @@ function Route(
                       && path_value_count === 3
                       && path_value_array[ 2 ] === 'add'
                       && HasPostValue( 'Id' )
-                      && HasPostValue( 'Email' )
                       && HasPostValue( 'Pseudonym' )
                       && HasPostValue( 'Password' )
-                      && HasPostValue( 'Role' ) )
+                      && HasPostValue( 'Role' )
+                      && HasPostValue( 'Email' ) )
             {
                 import 'ADMINISTRATION/CONTROLLER/do_add_user_controller.php';
             }
@@ -1445,10 +1003,10 @@ function Route(
             else if ( it_is_post_request
                       && path_value_count === 4
                       && path_value_array[ 2 ] === 'edit'
-                      && HasPostValue( 'Email' )
                       && HasPostValue( 'Pseudonym' )
                       && HasPostValue( 'Password' )
-                      && HasPostValue( 'Role' ) )
+                      && HasPostValue( 'Role' )
+                      && HasPostValue( 'Email' ) )
             {
                 var user_id = path_value_array[ 3 ];
 

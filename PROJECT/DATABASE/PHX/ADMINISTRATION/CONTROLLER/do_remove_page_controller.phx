@@ -1,0 +1,27 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/page_model.php';
+
+// -- TYPES
+
+class DO_REMOVE_PAGE_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code,
+        page_id
+        )
+    {
+        parent::constructor( language_code );
+
+        RemoveDatabasePageById( page_id );
+
+        Redirect( FindSessionValue( 'ListRoute', '/admin/page' ) );
+    }
+}
+
+// -- STATEMENTS
+
+var do_remove_page_controller = new DO_REMOVE_PAGE_CONTROLLER( var language_code, var page_id );

@@ -1,21 +1,27 @@
 PAGE_TYPE
 
-    Slug Title
+    Id Slug Title
 
-        home
+        %home-page-type
+            ~ home
             ~ Home
 
-        article
+        %article-page-type
+            ~ article
             ~ Article
 
-        articles
+        %article-list-page-type
+            ~ article-list
             ~ Articles
 
-        cookie_policy
+        %cookie-policy-page-type
+            ~ cookie-policy
             ~ Cookie policy
 
-        legal_notice
+        %legal-notice-page-type
+            ~ legal-notice
             ~ Legal notice
 
-        contact
+        %contact-page-type
+            ~ contact
             ~ Contact

@@ -85,7 +85,7 @@
     <?php require __DIR__ . '/' . 'PAGE/loader_page.php'; ?>
     <?php foreach ( $this->PageByIdMap as  $page_id =>  $page ) { ?>
         <div class="extended-container view is-hidden" data-view-name="<?php echo $page->Route; ?>">
-            <?php require __DIR__ . '/' . 'PAGE/' . $page->TypeSlug . '_page.php'; ?>
+            <?php require __DIR__ . '/' . 'PAGE/' . str_replace( '-', '_', $page->TypeSlug ) . '_page.php'; ?>
         </div>
     <?php } ?>
     <?php require __DIR__ . '/' . 'BLOCK/scroll_top_button.php'; ?>

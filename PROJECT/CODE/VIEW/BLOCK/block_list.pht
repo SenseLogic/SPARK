@@ -3,6 +3,6 @@
 <?
     foreach ( var block; var page.BlockArray )
     {
-        include block.TypeSlug .. '.php';
+        include str_replace( '-', '_', block.TypeSlug ) .. '.php';
     }
 ?>
