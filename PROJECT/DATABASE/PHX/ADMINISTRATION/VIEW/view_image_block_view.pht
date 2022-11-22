@@ -9,6 +9,12 @@
                     <input class="form-input" name="PageId" type="text" value="<% GetValueText( .ImageBlock.PageId ) %>" readonly/>
             </div>
             <div class="form-field-name">
+                <% .GetProcessedTextBySlug( 'Category Slug' ) %> :
+            </div>
+            <div>
+                    <input class="form-input" name="CategorySlug" type="text" value="<% GetValueText( .ImageBlock.CategorySlug ) %>" readonly/>
+            </div>
+            <div class="form-field-name">
                 <% .GetProcessedTextBySlug( 'Type Slug' ) %> :
             </div>
             <div>
@@ -33,6 +39,16 @@
                 <div>
                     <? foreach ( var language_code; LanguageCodeArray ) { ?>
                         <input class="form-translation form-input" name="Title" type="text" value="<% GetValueText( GetTranslatedText( .ImageBlock.Title, language_code ) ) %>" readonly/>
+                    <? } ?>
+                </div>
+            </div>
+            <div class="form-field-name">
+                <% .GetProcessedTextBySlug( 'Text' ) %> :
+            </div>
+            <div>
+                <div>
+                    <? foreach ( var language_code; LanguageCodeArray ) { ?>
+                        <textarea class="form-translation form-textarea" name="Text" readonly><% GetTranslatedText( .ImageBlock.Text, language_code ) %></textarea>
                     <? } ?>
                 </div>
             </div>

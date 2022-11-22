@@ -9,6 +9,12 @@
                     <input class="form-input" name="PageId" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->ImageBlock->PageId ) ); ?>" readonly/>
             </div>
             <div class="form-field-name">
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Category Slug' ) ); ?> :
+            </div>
+            <div>
+                    <input class="form-input" name="CategorySlug" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->ImageBlock->CategorySlug ) ); ?>" readonly/>
+            </div>
+            <div class="form-field-name">
                 <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Type Slug' ) ); ?> :
             </div>
             <div>
@@ -33,6 +39,16 @@
                 <div>
                     <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
                         <input class="form-translation form-input" name="Title" type="text" value="<?php echo htmlspecialchars( GetValueText( GetTranslatedText( $this->ImageBlock->Title, $language_code ) ) ); ?>" readonly/>
+                    <?php } ?>
+                </div>
+            </div>
+            <div class="form-field-name">
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Text' ) ); ?> :
+            </div>
+            <div>
+                <div>
+                    <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
+                        <textarea class="form-translation form-textarea" name="Text" readonly><?php echo htmlspecialchars( GetTranslatedText( $this->ImageBlock->Text, $language_code ) ); ?></textarea>
                     <?php } ?>
                 </div>
             </div>

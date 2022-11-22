@@ -8,10 +8,12 @@
             edit_image_block_form,
             it_is_valid_edit_image_block_form,
             page_id_field,
+            category_slug_field,
             type_slug_field,
             number_field,
             language_code_array_field,
             title_field,
+            text_field,
             image_path_field,
             image_vertical_position_field,
             image_horizontal_position_field,
@@ -19,20 +21,24 @@
 
         edit_image_block_form = document.EditImageBlockForm;
         page_id_field = edit_image_block_form.PageId;
+        category_slug_field = edit_image_block_form.CategorySlug;
         type_slug_field = edit_image_block_form.TypeSlug;
         number_field = edit_image_block_form.Number;
         language_code_array_field = edit_image_block_form.LanguageCodeArray;
         title_field = edit_image_block_form.Title;
+        text_field = edit_image_block_form.Text;
         image_path_field = edit_image_block_form.ImagePath;
         image_vertical_position_field = edit_image_block_form.ImageVerticalPosition;
         image_horizontal_position_field = edit_image_block_form.ImageHorizontalPosition;
         video_path_field = edit_image_block_form.VideoPath;
 
         page_id_field.RemoveClass( "form-field-error" );
+        category_slug_field.RemoveClass( "form-field-error" );
         type_slug_field.RemoveClass( "form-field-error" );
         number_field.RemoveClass( "form-field-error" );
         language_code_array_field.RemoveClass( "form-field-error" );
         title_field.RemoveClass( "form-field-error" );
+        text_field.RemoveClass( "form-field-error" );
         image_path_field.RemoveClass( "form-field-error" );
         image_vertical_position_field.RemoveClass( "form-field-error" );
         image_horizontal_position_field.RemoveClass( "form-field-error" );
@@ -43,6 +49,13 @@
         if ( page_id_field.value === "" )
         {
             page_id_field.AddClass( "form-field-error" );
+
+            it_is_valid_edit_image_block_form = false;
+        }
+
+        if ( category_slug_field.value === "" )
+        {
+            category_slug_field.AddClass( "form-field-error" );
 
             it_is_valid_edit_image_block_form = false;
         }
@@ -64,6 +77,13 @@
         if ( language_code_array_field.value === "" )
         {
             language_code_array_field.AddClass( "form-field-error" );
+
+            it_is_valid_edit_image_block_form = false;
+        }
+
+        if ( text_field.value === "" )
+        {
+            text_field.AddClass( "form-field-error" );
 
             it_is_valid_edit_image_block_form = false;
         }
@@ -110,6 +130,12 @@
                     <input class="form-input" name="PageId" type="text" value="<% GetValueText( .ImageBlock.PageId ) %>"/>
                 </div>
                 <div class="form-field-name">
+                    <% .GetProcessedTextBySlug( 'Category Slug' ) %> :
+                </div>
+                <div>
+                    <input class="form-input" name="CategorySlug" type="text" value="<% GetValueText( .ImageBlock.CategorySlug ) %>"/>
+                </div>
+                <div class="form-field-name">
                     <% .GetProcessedTextBySlug( 'Type Slug' ) %> :
                 </div>
                 <div>
@@ -135,6 +161,17 @@
                         <input class="multilingual-input form-input" name="Title" type="text" value="<% GetValueText( .ImageBlock.Title ) %>" hidden/>
                         <? foreach ( var language_code; LanguageCodeArray ) { ?>
                             <input class="multilingual-input-translation form-translation form-input" data-language-code="<% language_code %>" placeholder="<% .GetProcessedTextBySlug( language_code ) %>"/>
+                        <? } ?>
+                    </div>
+                </div>
+                <div class="form-field-name">
+                    <% .GetProcessedTextBySlug( 'Text' ) %> :
+                </div>
+                <div>
+                    <div>
+                        <textarea class="multilingual-input form-textarea" name="Text" hidden><% .ImageBlock.Text %></textarea>
+                        <? foreach ( var language_code; LanguageCodeArray ) { ?>
+                            <textarea class="multilingual-input-translation form-translation form-textarea" data-language-code="<% language_code %>" placeholder="<% .GetProcessedTextBySlug( language_code ) %>"></textarea>
                         <? } ?>
                     </div>
                 </div>

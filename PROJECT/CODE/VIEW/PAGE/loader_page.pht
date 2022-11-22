@@ -20,14 +20,12 @@
         0%
         {
             opacity: 0;
-
             background: linear-gradient( #FFFFFF, #FFFFFF );
         }
 
         100%
         {
             opacity: 1;
-
             background: linear-gradient( #FFFFFF, #FFFFFF );
         }
     }
@@ -104,6 +102,7 @@
         bottom: var( --progress );
         left: 0;
         right: 0;
+
         overflow: hidden;
     }
 
@@ -114,6 +113,7 @@
         bottom: 0;
         left: 0;
         right: 0;
+
         overflow: hidden;
     }
 
@@ -126,12 +126,14 @@
     .loader-page-logo-upper-slider .loader-page-logo-background
     {
         transform: translateY( 0 );
+
         background: url( "/static/image/loader/initial_logo.svg" ) no-repeat center center / contain;
     }
 
     .loader-page-logo-lower-slider .loader-page-logo-background
     {
         transform: translateY( calc( 0% - calc( 100% - var( --progress ) ) ) );
+
         background: url( "/static/image/loader/final_logo.svg" ) no-repeat center center / contain;
     }
 </style>

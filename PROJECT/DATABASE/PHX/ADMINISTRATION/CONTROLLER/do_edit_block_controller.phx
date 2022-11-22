@@ -1,0 +1,33 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/block_model.php';
+
+// -- TYPES
+
+class DO_EDIT_BLOCK_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code,
+        block_id
+        )
+    {
+        parent::constructor( language_code );
+
+        var page_id = GetPostValue( 'PageId' );
+        var category_slug = GetPostValue( 'CategorySlug' );
+        var type_slug = GetPostValue( 'TypeSlug' );
+        var number = GetPostValue( 'Number' );
+        var language_code_array = GetJsonObject( GetPostValue( 'LanguageCodeArray' ) );
+
+        SetDatabaseBlock( block_id, page_id, category_slug, type_slug, number, language_code_array );
+
+        Redirect( FindSessionValue( 'ListRoute', '/admin/block' ) );
+    }
+}
+
+// -- STATEMENTS
+
+var do_edit_block_controller = new DO_EDIT_BLOCK_CONTROLLER( var language_code, var block_id );

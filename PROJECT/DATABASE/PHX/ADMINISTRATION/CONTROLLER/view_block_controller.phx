@@ -1,0 +1,29 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/block_model.php';
+
+// -- TYPES
+
+class VIEW_BLOCK_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code,
+        block_id
+        )
+    {
+        parent::constructor( language_code );
+
+        .Title = 'View a block';
+        .Block = GetDatabaseBlockById( block_id );
+        .ListRoute = FindSessionValue( 'ListRoute', '/admin/block' );
+
+        import '../VIEW/view_block_view.php';
+    }
+}
+
+// -- STATEMENTS
+
+var view_block_controller = new VIEW_BLOCK_CONTROLLER( var language_code, var block_id );

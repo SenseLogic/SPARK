@@ -17,13 +17,14 @@ class DO_ADD_TEXT_BLOCK_CONTROLLER extends CONTROLLER
 
         var id = GetPostValue( 'Id' );
         var page_id = GetPostValue( 'PageId' );
+        var category_slug = GetPostValue( 'CategorySlug' );
         var type_slug = GetPostValue( 'TypeSlug' );
         var number = GetPostValue( 'Number' );
         var language_code_array = GetJsonObject( GetPostValue( 'LanguageCodeArray' ) );
         var title = GetPostValue( 'Title' );
         var text = GetPostValue( 'Text' );
 
-        AddDatabaseTextBlock( id, page_id, type_slug, number, language_code_array, title, text );
+        AddDatabaseTextBlock( id, page_id, category_slug, type_slug, number, language_code_array, title, text );
 
         Redirect( FindSessionValue( 'ListRoute', '/admin/text-block' ) );
     }

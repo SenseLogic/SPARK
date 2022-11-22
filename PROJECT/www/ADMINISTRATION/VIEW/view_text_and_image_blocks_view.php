@@ -18,6 +18,9 @@
                 <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Page Id' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Category Slug' ) ); ?>
+            </div>
+            <div class="form-column-name sortable-table-column">
                 <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Type Slug' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
@@ -54,6 +57,9 @@
                 <div class="sortable-table-row filter-row filter-content">
                     <div class="sortable-table-cell filter-cell">
                         <?php echo htmlspecialchars( GetValueText( $text_and_image_block->PageId ) ); ?>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <?php echo htmlspecialchars( GetValueText( $text_and_image_block->CategorySlug ) ); ?>
                     </div>
                     <div class="sortable-table-cell filter-cell">
                         <?php echo htmlspecialchars( GetValueText( $text_and_image_block->TypeSlug ) ); ?>
@@ -121,6 +127,12 @@
                         </div>
                         <div>
                                 <input class="form-input" name="PageId" type="text" value="<?php echo htmlspecialchars( GetValueText( $text_and_image_block->PageId ) ); ?>" readonly/>
+                        </div>
+                        <div class="form-field-name">
+                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Category Slug' ) ); ?> :
+                        </div>
+                        <div>
+                                <input class="form-input" name="CategorySlug" type="text" value="<?php echo htmlspecialchars( GetValueText( $text_and_image_block->CategorySlug ) ); ?>" readonly/>
                         </div>
                         <div class="form-field-name">
                             <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Type Slug' ) ); ?> :

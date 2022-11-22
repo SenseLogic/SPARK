@@ -18,6 +18,9 @@
                 <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Page Id' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Category Slug' ) ); ?>
+            </div>
+            <div class="form-column-name sortable-table-column">
                 <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Type Slug' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
@@ -28,6 +31,9 @@
             </div>
             <div class="form-column-name sortable-table-column">
                 <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Title' ) ); ?>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Text' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
                 <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Image Path' ) ); ?>
@@ -50,6 +56,9 @@
                         <?php echo htmlspecialchars( GetValueText( $image_block->PageId ) ); ?>
                     </div>
                     <div class="sortable-table-cell filter-cell">
+                        <?php echo htmlspecialchars( GetValueText( $image_block->CategorySlug ) ); ?>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
                         <?php echo htmlspecialchars( GetValueText( $image_block->TypeSlug ) ); ?>
                     </div>
                     <div class="sortable-table-cell filter-cell">
@@ -63,6 +72,15 @@
                             <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
                                 <div class="form-translation">
                                     <?php echo htmlspecialchars( GetValueText( GetTranslatedText( $image_block->Title, $language_code ) ) ); ?>
+                                </div>
+                            <?php } ?>
+                        </div>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <div>
+                            <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
+                                <div class="form-translation">
+                                    <?php echo htmlspecialchars( GetTranslatedText( $image_block->Text, $language_code ) ); ?>
                                 </div>
                             <?php } ?>
                         </div>
@@ -105,6 +123,12 @@
                                 <input class="form-input" name="PageId" type="text" value="<?php echo htmlspecialchars( GetValueText( $image_block->PageId ) ); ?>" readonly/>
                         </div>
                         <div class="form-field-name">
+                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Category Slug' ) ); ?> :
+                        </div>
+                        <div>
+                                <input class="form-input" name="CategorySlug" type="text" value="<?php echo htmlspecialchars( GetValueText( $image_block->CategorySlug ) ); ?>" readonly/>
+                        </div>
+                        <div class="form-field-name">
                             <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Type Slug' ) ); ?> :
                         </div>
                         <div>
@@ -129,6 +153,16 @@
                             <div>
                                 <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
                                     <input class="form-translation form-input" name="Title" type="text" value="<?php echo htmlspecialchars( GetValueText( GetTranslatedText( $image_block->Title, $language_code ) ) ); ?>" readonly/>
+                                <?php } ?>
+                            </div>
+                        </div>
+                        <div class="form-field-name">
+                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Text' ) ); ?> :
+                        </div>
+                        <div>
+                            <div>
+                                <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
+                                    <textarea class="form-translation form-textarea" name="Text" readonly><?php echo htmlspecialchars( GetTranslatedText( $image_block->Text, $language_code ) ); ?></textarea>
                                 <?php } ?>
                             </div>
                         </div>

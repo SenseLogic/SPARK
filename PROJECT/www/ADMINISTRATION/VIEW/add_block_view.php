@@ -1,0 +1,199 @@
+<?php require __DIR__ . '/' . 'BLOCK/page_header.php'; ?>
+<script>
+    // -- FUNCTIONS
+
+    function IsValidAddBlockForm()
+    {
+        var
+            add_block_form,
+            it_is_valid_add_block_form,
+            id_field,
+            page_id_field,
+            category_slug_field,
+            type_slug_field,
+            number_field,
+            language_code_array_field;
+
+        add_block_form = document.AddBlockForm;
+        id_field = add_block_form.Id;
+        page_id_field = add_block_form.PageId;
+        category_slug_field = add_block_form.CategorySlug;
+        type_slug_field = add_block_form.TypeSlug;
+        number_field = add_block_form.Number;
+        language_code_array_field = add_block_form.LanguageCodeArray;
+
+        id_field.RemoveClass( "form-field-error" );
+        page_id_field.RemoveClass( "form-field-error" );
+        category_slug_field.RemoveClass( "form-field-error" );
+        type_slug_field.RemoveClass( "form-field-error" );
+        number_field.RemoveClass( "form-field-error" );
+        language_code_array_field.RemoveClass( "form-field-error" );
+
+        it_is_valid_add_block_form = true;
+
+        if ( id_field.value === "" )
+        {
+            id_field.AddClass( "form-field-error" );
+
+            it_is_valid_add_block_form = false;
+        }
+
+        if ( page_id_field.value === "" )
+        {
+            page_id_field.AddClass( "form-field-error" );
+
+            it_is_valid_add_block_form = false;
+        }
+
+        if ( category_slug_field.value === "" )
+        {
+            category_slug_field.AddClass( "form-field-error" );
+
+            it_is_valid_add_block_form = false;
+        }
+
+        if ( type_slug_field.value === "" )
+        {
+            type_slug_field.AddClass( "form-field-error" );
+
+            it_is_valid_add_block_form = false;
+        }
+
+        if ( !IsNumericText( number_field.value ) )
+        {
+            number_field.AddClass( "form-field-error" );
+
+            it_is_valid_add_block_form = false;
+        }
+
+        if ( language_code_array_field.value === "" )
+        {
+            language_code_array_field.AddClass( "form-field-error" );
+
+            it_is_valid_add_block_form = false;
+        }
+
+        return it_is_valid_add_block_form;
+    }
+</script>
+<div id="add-block-view">
+    <div class="page-section form-section">
+        <form class="form-centered" name="AddBlockForm" onsubmit="return IsValidAddBlockForm()" action="/admin/block/add" method="post">
+            <div class="form-container">
+                <?php
+                     $field_name = 'Id';
+
+                    if ( HasQueryValue( $field_name ) )
+                    {
+                         $field_value = GetQueryValue( $field_name );
+                    }
+                    else
+                    {
+                        $field_value = '';
+                    }
+                ?>
+                <div class="form-field-name">
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Id' ) ); ?> :
+                </div>
+                <div>
+                    <input class="form-input" name="Id" type="text" value="<?php echo $field_value; ?>"/>
+                </div>
+                <?php
+                     $field_name = 'PageId';
+
+                    if ( HasQueryValue( $field_name ) )
+                    {
+                         $field_value = GetQueryValue( $field_name );
+                    }
+                    else
+                    {
+                        $field_value = '';
+                    }
+                ?>
+                <div class="form-field-name">
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Page Id' ) ); ?> :
+                </div>
+                <div>
+                    <input class="form-input" name="PageId" type="text" value="<?php echo $field_value; ?>"/>
+                </div>
+                <?php
+                     $field_name = 'CategorySlug';
+
+                    if ( HasQueryValue( $field_name ) )
+                    {
+                         $field_value = GetQueryValue( $field_name );
+                    }
+                    else
+                    {
+                        $field_value = '';
+                    }
+                ?>
+                <div class="form-field-name">
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Category Slug' ) ); ?> :
+                </div>
+                <div>
+                    <input class="form-input" name="CategorySlug" type="text" value="<?php echo $field_value; ?>"/>
+                </div>
+                <?php
+                     $field_name = 'TypeSlug';
+
+                    if ( HasQueryValue( $field_name ) )
+                    {
+                         $field_value = GetQueryValue( $field_name );
+                    }
+                    else
+                    {
+                        $field_value = '';
+                    }
+                ?>
+                <div class="form-field-name">
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Type Slug' ) ); ?> :
+                </div>
+                <div>
+                    <input class="form-input" name="TypeSlug" type="text" value="<?php echo $field_value; ?>"/>
+                </div>
+                <?php
+                     $field_name = 'Number';
+
+                    if ( HasQueryValue( $field_name ) )
+                    {
+                         $field_value = GetQueryValue( $field_name );
+                    }
+                    else
+                    {
+                        $field_value = '';
+                    }
+                ?>
+                <div class="form-field-name">
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Number' ) ); ?> :
+                </div>
+                <div>
+                    <input class="form-input" name="Number" type="text" value="<?php echo $field_value; ?>"/>
+                </div>
+                <?php
+                     $field_name = 'LanguageCodeArray';
+
+                    if ( HasQueryValue( $field_name ) )
+                    {
+                         $field_value = GetQueryValue( $field_name );
+                    }
+                    else
+                    {
+                        $field_value = '';
+                    }
+                ?>
+                <div class="form-field-name">
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Language Code Array' ) ); ?> :
+                </div>
+                <div>
+                    <input class="form-input" name="LanguageCodeArray" type="text" value="<?php echo $field_value; ?>"/>
+                </div>
+                <a class="justify-self-start form-button form-button-large cancel-button" href="<?php echo htmlspecialchars( $this->ListRoute ); ?>">
+                </a>
+                <button class="justify-self-end form-button form-button-large apply-button" type="submit">
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<?php require __DIR__ . '/' . 'BLOCK/page_footer.php'; ?>

@@ -9,10 +9,12 @@
             it_is_valid_add_image_block_form,
             id_field,
             page_id_field,
+            category_slug_field,
             type_slug_field,
             number_field,
             language_code_array_field,
             title_field,
+            text_field,
             image_path_field,
             image_vertical_position_field,
             image_horizontal_position_field,
@@ -21,10 +23,12 @@
         add_image_block_form = document.AddImageBlockForm;
         id_field = add_image_block_form.Id;
         page_id_field = add_image_block_form.PageId;
+        category_slug_field = add_image_block_form.CategorySlug;
         type_slug_field = add_image_block_form.TypeSlug;
         number_field = add_image_block_form.Number;
         language_code_array_field = add_image_block_form.LanguageCodeArray;
         title_field = add_image_block_form.Title;
+        text_field = add_image_block_form.Text;
         image_path_field = add_image_block_form.ImagePath;
         image_vertical_position_field = add_image_block_form.ImageVerticalPosition;
         image_horizontal_position_field = add_image_block_form.ImageHorizontalPosition;
@@ -32,10 +36,12 @@
 
         id_field.RemoveClass( "form-field-error" );
         page_id_field.RemoveClass( "form-field-error" );
+        category_slug_field.RemoveClass( "form-field-error" );
         type_slug_field.RemoveClass( "form-field-error" );
         number_field.RemoveClass( "form-field-error" );
         language_code_array_field.RemoveClass( "form-field-error" );
         title_field.RemoveClass( "form-field-error" );
+        text_field.RemoveClass( "form-field-error" );
         image_path_field.RemoveClass( "form-field-error" );
         image_vertical_position_field.RemoveClass( "form-field-error" );
         image_horizontal_position_field.RemoveClass( "form-field-error" );
@@ -57,6 +63,13 @@
             it_is_valid_add_image_block_form = false;
         }
 
+        if ( category_slug_field.value === "" )
+        {
+            category_slug_field.AddClass( "form-field-error" );
+
+            it_is_valid_add_image_block_form = false;
+        }
+
         if ( type_slug_field.value === "" )
         {
             type_slug_field.AddClass( "form-field-error" );
@@ -74,6 +87,13 @@
         if ( language_code_array_field.value === "" )
         {
             language_code_array_field.AddClass( "form-field-error" );
+
+            it_is_valid_add_image_block_form = false;
+        }
+
+        if ( text_field.value === "" )
+        {
+            text_field.AddClass( "form-field-error" );
 
             it_is_valid_add_image_block_form = false;
         }
@@ -150,6 +170,24 @@
                     <input class="form-input" name="PageId" type="text" value="<?php echo $field_value; ?>"/>
                 </div>
                 <?php
+                     $field_name = 'CategorySlug';
+
+                    if ( HasQueryValue( $field_name ) )
+                    {
+                         $field_value = GetQueryValue( $field_name );
+                    }
+                    else
+                    {
+                        $field_value = '';
+                    }
+                ?>
+                <div class="form-field-name">
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Category Slug' ) ); ?> :
+                </div>
+                <div>
+                    <input class="form-input" name="CategorySlug" type="text" value="<?php echo $field_value; ?>"/>
+                </div>
+                <?php
                      $field_name = 'TypeSlug';
 
                     if ( HasQueryValue( $field_name ) )
@@ -223,6 +261,29 @@
                         <input class="multilingual-input form-input" name="Title" type="text" value="<?php echo $field_value; ?>" hidden/>
                         <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
                             <input class="multilingual-input-translation form-translation form-input" data-language-code="<?php echo htmlspecialchars( $language_code ); ?>" placeholder="<?php echo htmlspecialchars( $this->GetProcessedTextBySlug( $language_code ) ); ?>"/>
+                        <?php } ?>
+                    </div>
+                </div>
+                <?php
+                     $field_name = 'Text';
+
+                    if ( HasQueryValue( $field_name ) )
+                    {
+                         $field_value = GetQueryValue( $field_name );
+                    }
+                    else
+                    {
+                        $field_value = '';
+                    }
+                ?>
+                <div class="form-field-name">
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Text' ) ); ?> :
+                </div>
+                <div>
+                    <div>
+                        <textarea class="multilingual-input form-textarea" name="Text" hidden><?php echo $field_value; ?></textarea>
+                        <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
+                            <textarea class="multilingual-input-translation form-translation form-textarea" data-language-code="<?php echo htmlspecialchars( $language_code ); ?>" placeholder="<?php echo htmlspecialchars( $this->GetProcessedTextBySlug( $language_code ) ); ?>"></textarea>
                         <?php } ?>
                     </div>
                 </div>

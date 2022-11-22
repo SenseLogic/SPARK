@@ -17,13 +17,14 @@ class DO_EDIT_TEXT_BLOCK_CONTROLLER extends CONTROLLER
         parent::constructor( language_code );
 
         var page_id = GetPostValue( 'PageId' );
+        var category_slug = GetPostValue( 'CategorySlug' );
         var type_slug = GetPostValue( 'TypeSlug' );
         var number = GetPostValue( 'Number' );
         var language_code_array = GetJsonObject( GetPostValue( 'LanguageCodeArray' ) );
         var title = GetPostValue( 'Title' );
         var text = GetPostValue( 'Text' );
 
-        SetDatabaseTextBlock( text_block_id, page_id, type_slug, number, language_code_array, title, text );
+        SetDatabaseTextBlock( text_block_id, page_id, category_slug, type_slug, number, language_code_array, title, text );
 
         Redirect( FindSessionValue( 'ListRoute', '/admin/text-block' ) );
     }

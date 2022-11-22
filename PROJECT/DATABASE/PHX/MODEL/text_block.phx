@@ -3,7 +3,7 @@
 function GetDatabaseTextBlockArray(
     )
 {
-    var statement = GetDatabaseStatement( 'select `Id`, `PageId`, `TypeSlug`, `Number`, `LanguageCodeArray`, `Title`, `Text` from `TEXT_BLOCK` order by `Number` asc' );
+    var statement = GetDatabaseStatement( 'select `Id`, `PageId`, `CategorySlug`, `TypeSlug`, `Number`, `LanguageCodeArray`, `Title`, `Text` from `TEXT_BLOCK` order by `Number` asc' );
 
     if ( !statement.execute() )
     {
@@ -28,7 +28,7 @@ function GetDatabaseTextBlockById(
     string id
     )
 {
-    var statement = GetDatabaseStatement( 'select `Id`, `PageId`, `TypeSlug`, `Number`, `LanguageCodeArray`, `Title`, `Text` from `TEXT_BLOCK` where `Id` = ? limit 1' );
+    var statement = GetDatabaseStatement( 'select `Id`, `PageId`, `CategorySlug`, `TypeSlug`, `Number`, `LanguageCodeArray`, `Title`, `Text` from `TEXT_BLOCK` where `Id` = ? limit 1' );
     statement.bindParam( 1, id, PDO::PARAM_STR );
 
     if ( !statement.execute() )
@@ -48,6 +48,7 @@ function GetDatabaseTextBlockById(
 function AddDatabaseTextBlock(
     string id,
     string page_id,
+    string category_slug,
     string type_slug,
     float number,
     array language_code_array,
@@ -55,15 +56,16 @@ function AddDatabaseTextBlock(
     string text
     )
 {
-    var statement = GetDatabaseStatement( 'insert into `TEXT_BLOCK` ( `Id`, `PageId`, `TypeSlug`, `Number`, `LanguageCodeArray`, `Title`, `Text` ) values ( ?, ?, ?, ?, ?, ?, ? )' );
+    var statement = GetDatabaseStatement( 'insert into `TEXT_BLOCK` ( `Id`, `PageId`, `CategorySlug`, `TypeSlug`, `Number`, `LanguageCodeArray`, `Title`, `Text` ) values ( ?, ?, ?, ?, ?, ?, ?, ? )' );
     statement.bindParam( 1, id, PDO::PARAM_STR );
     statement.bindParam( 2, page_id, PDO::PARAM_STR );
-    statement.bindParam( 3, type_slug, PDO::PARAM_STR );
-    statement.bindParam( 4, number, PDO::PARAM_STR );
+    statement.bindParam( 3, category_slug, PDO::PARAM_STR );
+    statement.bindParam( 4, type_slug, PDO::PARAM_STR );
+    statement.bindParam( 5, number, PDO::PARAM_STR );
     language_code_array = json_encode( language_code_array );
-    statement.bindParam( 5, language_code_array, PDO::PARAM_STR );
-    statement.bindParam( 6, title, PDO::PARAM_STR );
-    statement.bindParam( 7, text, PDO::PARAM_STR );
+    statement.bindParam( 6, language_code_array, PDO::PARAM_STR );
+    statement.bindParam( 7, title, PDO::PARAM_STR );
+    statement.bindParam( 8, text, PDO::PARAM_STR );
 
     if ( !statement.execute() )
     {
@@ -78,6 +80,7 @@ function AddDatabaseTextBlock(
 function PutDatabaseTextBlock(
     string id,
     string page_id,
+    string category_slug,
     string type_slug,
     float number,
     array language_code_array,
@@ -85,15 +88,16 @@ function PutDatabaseTextBlock(
     string text
     )
 {
-    var statement = GetDatabaseStatement( 'replace into `TEXT_BLOCK` ( `Id`, `PageId`, `TypeSlug`, `Number`, `LanguageCodeArray`, `Title`, `Text` ) values ( ?, ?, ?, ?, ?, ?, ? )' );
+    var statement = GetDatabaseStatement( 'replace into `TEXT_BLOCK` ( `Id`, `PageId`, `CategorySlug`, `TypeSlug`, `Number`, `LanguageCodeArray`, `Title`, `Text` ) values ( ?, ?, ?, ?, ?, ?, ?, ? )' );
     statement.bindParam( 1, id, PDO::PARAM_STR );
     statement.bindParam( 2, page_id, PDO::PARAM_STR );
-    statement.bindParam( 3, type_slug, PDO::PARAM_STR );
-    statement.bindParam( 4, number, PDO::PARAM_STR );
+    statement.bindParam( 3, category_slug, PDO::PARAM_STR );
+    statement.bindParam( 4, type_slug, PDO::PARAM_STR );
+    statement.bindParam( 5, number, PDO::PARAM_STR );
     language_code_array = json_encode( language_code_array );
-    statement.bindParam( 5, language_code_array, PDO::PARAM_STR );
-    statement.bindParam( 6, title, PDO::PARAM_STR );
-    statement.bindParam( 7, text, PDO::PARAM_STR );
+    statement.bindParam( 6, language_code_array, PDO::PARAM_STR );
+    statement.bindParam( 7, title, PDO::PARAM_STR );
+    statement.bindParam( 8, text, PDO::PARAM_STR );
 
     if ( !statement.execute() )
     {
@@ -108,6 +112,7 @@ function PutDatabaseTextBlock(
 function SetDatabaseTextBlock(
     string id,
     string page_id,
+    string category_slug,
     string type_slug,
     float number,
     array language_code_array,
@@ -115,15 +120,16 @@ function SetDatabaseTextBlock(
     string text
     )
 {
-    var statement = GetDatabaseStatement( 'update `TEXT_BLOCK` set `PageId` = ?, `TypeSlug` = ?, `Number` = ?, `LanguageCodeArray` = ?, `Title` = ?, `Text` = ? where Id = ?' );
+    var statement = GetDatabaseStatement( 'update `TEXT_BLOCK` set `PageId` = ?, `CategorySlug` = ?, `TypeSlug` = ?, `Number` = ?, `LanguageCodeArray` = ?, `Title` = ?, `Text` = ? where Id = ?' );
     statement.bindParam( 1, page_id, PDO::PARAM_STR );
-    statement.bindParam( 2, type_slug, PDO::PARAM_STR );
-    statement.bindParam( 3, number, PDO::PARAM_STR );
+    statement.bindParam( 2, category_slug, PDO::PARAM_STR );
+    statement.bindParam( 3, type_slug, PDO::PARAM_STR );
+    statement.bindParam( 4, number, PDO::PARAM_STR );
     language_code_array = json_encode( language_code_array );
-    statement.bindParam( 4, language_code_array, PDO::PARAM_STR );
-    statement.bindParam( 5, title, PDO::PARAM_STR );
-    statement.bindParam( 6, text, PDO::PARAM_STR );
-    statement.bindParam( 7, id, PDO::PARAM_STR );
+    statement.bindParam( 5, language_code_array, PDO::PARAM_STR );
+    statement.bindParam( 6, title, PDO::PARAM_STR );
+    statement.bindParam( 7, text, PDO::PARAM_STR );
+    statement.bindParam( 8, id, PDO::PARAM_STR );
 
     if ( !statement.execute() )
     {

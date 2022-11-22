@@ -1,0 +1,115 @@
+<? include 'BLOCK/page_header.php'; ?>
+<div id="view-blocks-view">
+    <div class="form-limited form-centered margin-bottom-1rem">
+        <div class="tool-container">
+            <? var filter_name = "BlockFilter"; ?>
+            <? include 'BLOCK/filter.php'; ?>
+            <? var list_mode_name = "BlockListMode"; ?>
+            <? include 'BLOCK/list_mode.php'; ?>
+            <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                <a class="form-button form-button-large add-button" href="/admin/block/add">
+                </a>
+            <? } ?>
+        </div>
+    </div>
+    <div class="cell-list page-section form-section is-hidden">
+        <div class="form-container table-container block-table sortable-table">
+            <div class="form-column-name sortable-table-column">
+                <% .GetProcessedTextBySlug( 'Page Id' ) %>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <% .GetProcessedTextBySlug( 'Category Slug' ) %>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <% .GetProcessedTextBySlug( 'Type Slug' ) %>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <% .GetProcessedTextBySlug( 'Number' ) %>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <% .GetProcessedTextBySlug( 'Language Code Array' ) %>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <% .GetProcessedTextBySlug( 'Action' ) %>
+            </div>
+            <? foreach ( var block; .BlockArray ) { ?>
+                <div class="sortable-table-row filter-row filter-content">
+                    <div class="sortable-table-cell filter-cell">
+                        <% GetValueText( block.PageId ) %>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <% GetValueText( block.CategorySlug ) %>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <% GetValueText( block.TypeSlug ) %>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <% GetValueText( block.Number ) %>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <% GetValueText( block.LanguageCodeArray ) %>
+                    </div>
+                    <div class="form-centered sortable-table-cell">
+                        <a class="form-button view-button" href="/admin/block/view/<% block.Id %>">
+                        </a>
+                        <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                            <a class="form-button edit-button" href="/admin/block/edit/<% block.Id %>">
+                            </a>
+                            <a class="form-button remove-button" href="/admin/block/remove/<% block.Id %>">
+                            </a>
+                        <? } ?>
+                    </div>
+                </div>
+            <? } ?>
+        </div>
+    </div>
+    <div class="card-list is-hidden">
+        <? foreach ( var block; .BlockArray ) { ?>
+            <div class="card-container filter-row">
+                <div class="card">
+                    <div class="form-container">
+                        <div class="form-field-name">
+                            <% .GetProcessedTextBySlug( 'Page Id' ) %> :
+                        </div>
+                        <div>
+                                <input class="form-input" name="PageId" type="text" value="<% GetValueText( block.PageId ) %>" readonly/>
+                        </div>
+                        <div class="form-field-name">
+                            <% .GetProcessedTextBySlug( 'Category Slug' ) %> :
+                        </div>
+                        <div>
+                                <input class="form-input" name="CategorySlug" type="text" value="<% GetValueText( block.CategorySlug ) %>" readonly/>
+                        </div>
+                        <div class="form-field-name">
+                            <% .GetProcessedTextBySlug( 'Type Slug' ) %> :
+                        </div>
+                        <div>
+                                <input class="form-input" name="TypeSlug" type="text" value="<% GetValueText( block.TypeSlug ) %>" readonly/>
+                        </div>
+                        <div class="form-field-name">
+                            <% .GetProcessedTextBySlug( 'Number' ) %> :
+                        </div>
+                        <div>
+                                <input class="form-input" name="Number" type="text" value="<% GetValueText( block.Number ) %>" readonly/>
+                        </div>
+                        <div class="form-field-name">
+                            <% .GetProcessedTextBySlug( 'Language Code Array' ) %> :
+                        </div>
+                        <div>
+                                <input class="form-input" name="LanguageCodeArray" type="text" value="<% GetValueText( block.LanguageCodeArray ) %>" readonly/>
+                        </div>
+                    </div>
+                    <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                        <div class="form-toolbar">
+                            <a class="form-button edit-button" href="/admin/block/edit/<% block.Id %>">
+                            </a>
+                            <a class="form-button remove-button" href="/admin/block/remove/<% block.Id %>">
+                            </a>
+                        </div>
+                    <? } ?>
+                </div>
+            </div>
+        <? } ?>
+    </div>
+</div>
+<? include 'BLOCK/page_footer.php'; ?>

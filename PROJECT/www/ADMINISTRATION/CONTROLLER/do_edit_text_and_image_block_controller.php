@@ -17,6 +17,7 @@ class DO_EDIT_TEXT_AND_IMAGE_BLOCK_CONTROLLER extends CONTROLLER
         parent::__construct( $language_code );
 
          $page_id = GetPostValue( 'PageId' );
+         $category_slug = GetPostValue( 'CategorySlug' );
          $type_slug = GetPostValue( 'TypeSlug' );
          $number = GetPostValue( 'Number' );
          $language_code_array = GetJsonObject( GetPostValue( 'LanguageCodeArray' ) );
@@ -28,7 +29,7 @@ class DO_EDIT_TEXT_AND_IMAGE_BLOCK_CONTROLLER extends CONTROLLER
          $image_side = GetPostValue( 'ImageSide' );
          $video_path = GetPostValue( 'VideoPath' );
 
-        SetDatabaseTextAndImageBlock( $text_and_image_block_id, $page_id, $type_slug, $number, $language_code_array, $title, $text, $image_path, $image_vertical_position, $image_horizontal_position, $image_side, $video_path );
+        SetDatabaseTextAndImageBlock( $text_and_image_block_id, $page_id, $category_slug, $type_slug, $number, $language_code_array, $title, $text, $image_path, $image_vertical_position, $image_horizontal_position, $image_side, $video_path );
 
         Redirect( FindSessionValue( 'ListRoute', '/admin/text-and-image-block' ) );
     }

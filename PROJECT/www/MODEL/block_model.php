@@ -1,5 +1,6 @@
 <?php // -- IMPORTS
 
+require_once __DIR__ . '/' . 'block.php';
 require_once __DIR__ . '/' . 'block_type.php';
 
 // -- FUNCTIONS

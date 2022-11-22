@@ -17,13 +17,14 @@ class DO_ADD_TEXT_BLOCK_CONTROLLER extends CONTROLLER
 
          $id = GetPostValue( 'Id' );
          $page_id = GetPostValue( 'PageId' );
+         $category_slug = GetPostValue( 'CategorySlug' );
          $type_slug = GetPostValue( 'TypeSlug' );
          $number = GetPostValue( 'Number' );
          $language_code_array = GetJsonObject( GetPostValue( 'LanguageCodeArray' ) );
          $title = GetPostValue( 'Title' );
          $text = GetPostValue( 'Text' );
 
-        AddDatabaseTextBlock( $id, $page_id, $type_slug, $number, $language_code_array, $title, $text );
+        AddDatabaseTextBlock( $id, $page_id, $category_slug, $type_slug, $number, $language_code_array, $title, $text );
 
         Redirect( FindSessionValue( 'ListRoute', '/admin/text-block' ) );
     }

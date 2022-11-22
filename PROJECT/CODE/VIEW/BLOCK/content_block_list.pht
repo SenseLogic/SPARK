@@ -1,0 +1,11 @@
+<style file="content_block_list.styl">
+</style>
+<?
+    foreach ( var block; var page.BlockArray )
+    {
+        if ( block.CategorySlug === 'content' )
+        {
+            include str_replace( '-', '_', block.TypeSlug ) .. '.php';
+        }
+    }
+?>

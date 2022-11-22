@@ -63,6 +63,15 @@
                         </a>
                     </div>
                     <div class="page-menu-item">
+                        <a href="/admin/block">
+                            <span class="form-button form-button-large block-button">
+                            </span>
+                            <span class="form-button-tooltip">
+                                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Block' ) ); ?>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="page-menu-item">
                         <a href="/admin/text-block">
                             <span class="form-button form-button-large text-block-button">
                             </span>

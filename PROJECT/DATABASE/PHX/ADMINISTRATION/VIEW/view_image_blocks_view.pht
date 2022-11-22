@@ -18,6 +18,9 @@
                 <% .GetProcessedTextBySlug( 'Page Id' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
+                <% .GetProcessedTextBySlug( 'Category Slug' ) %>
+            </div>
+            <div class="form-column-name sortable-table-column">
                 <% .GetProcessedTextBySlug( 'Type Slug' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
@@ -28,6 +31,9 @@
             </div>
             <div class="form-column-name sortable-table-column">
                 <% .GetProcessedTextBySlug( 'Title' ) %>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <% .GetProcessedTextBySlug( 'Text' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
                 <% .GetProcessedTextBySlug( 'Image Path' ) %>
@@ -50,6 +56,9 @@
                         <% GetValueText( image_block.PageId ) %>
                     </div>
                     <div class="sortable-table-cell filter-cell">
+                        <% GetValueText( image_block.CategorySlug ) %>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
                         <% GetValueText( image_block.TypeSlug ) %>
                     </div>
                     <div class="sortable-table-cell filter-cell">
@@ -63,6 +72,15 @@
                             <? foreach ( var language_code; LanguageCodeArray ) { ?>
                                 <div class="form-translation">
                                     <% GetValueText( GetTranslatedText( image_block.Title, language_code ) ) %>
+                                </div>
+                            <? } ?>
+                        </div>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <div>
+                            <? foreach ( var language_code; LanguageCodeArray ) { ?>
+                                <div class="form-translation">
+                                    <% GetTranslatedText( image_block.Text, language_code ) %>
                                 </div>
                             <? } ?>
                         </div>
@@ -105,6 +123,12 @@
                                 <input class="form-input" name="PageId" type="text" value="<% GetValueText( image_block.PageId ) %>" readonly/>
                         </div>
                         <div class="form-field-name">
+                            <% .GetProcessedTextBySlug( 'Category Slug' ) %> :
+                        </div>
+                        <div>
+                                <input class="form-input" name="CategorySlug" type="text" value="<% GetValueText( image_block.CategorySlug ) %>" readonly/>
+                        </div>
+                        <div class="form-field-name">
                             <% .GetProcessedTextBySlug( 'Type Slug' ) %> :
                         </div>
                         <div>
@@ -129,6 +153,16 @@
                             <div>
                                 <? foreach ( var language_code; LanguageCodeArray ) { ?>
                                     <input class="form-translation form-input" name="Title" type="text" value="<% GetValueText( GetTranslatedText( image_block.Title, language_code ) ) %>" readonly/>
+                                <? } ?>
+                            </div>
+                        </div>
+                        <div class="form-field-name">
+                            <% .GetProcessedTextBySlug( 'Text' ) %> :
+                        </div>
+                        <div>
+                            <div>
+                                <? foreach ( var language_code; LanguageCodeArray ) { ?>
+                                    <textarea class="form-translation form-textarea" name="Text" readonly><% GetTranslatedText( image_block.Text, language_code ) %></textarea>
                                 <? } ?>
                             </div>
                         </div>

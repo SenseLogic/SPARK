@@ -9,6 +9,12 @@
                     <input class="form-input" name="PageId" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->TextAndImageBlock->PageId ) ); ?>" readonly/>
             </div>
             <div class="form-field-name">
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Category Slug' ) ); ?> :
+            </div>
+            <div>
+                    <input class="form-input" name="CategorySlug" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->TextAndImageBlock->CategorySlug ) ); ?>" readonly/>
+            </div>
+            <div class="form-field-name">
                 <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Type Slug' ) ); ?> :
             </div>
             <div>
