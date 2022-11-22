@@ -5,6 +5,16 @@ require_once __DIR__ . '/' . 'page_type.php';
 
 // -- FUNCTIONS
 
+function GetBlockComparison(
+    object &$first_block,
+    object &$second_block
+    )
+{
+    return $first_block->Number <=> $second_block->Number;
+}
+
+// ~~
+
 function GetActivePageArray(
     array &$page_array,
     string $language_code
@@ -54,6 +64,8 @@ function GetValidPageByIdMap(
 
     foreach ( $page_array as  $page )
     {
+        SortArrayByValue( $page->BlockArray, 'GetBlockComparison' );
+
         if ( property_exists( $page, 'PageId' )
              && isset( $page_by_id_map[ $page->PageId ] ) )
         {

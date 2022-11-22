@@ -9,9 +9,10 @@ spark-project
     LANGUAGE | sorted, dropped
 
         Id : TUID | key, unique
-        Code : STRING
+        Code : STRING | processed
         Number : STRING | ascending
         Text : STRING | is_multilingual
+        IsActive : BOOL = "true" | is_enumeration, enumeration 0~False^1~True, has_default_value, default_value 1
 
     PAGE_TYPE | dropped
 

@@ -24,6 +24,9 @@
                 <% .GetProcessedTextBySlug( 'Text' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
+                <% .GetProcessedTextBySlug( 'Is Active' ) %>
+            </div>
+            <div class="form-column-name sortable-table-column">
                 <% .GetProcessedTextBySlug( 'Action' ) %>
             </div>
             <? foreach ( var language; .LanguageArray ) { ?>
@@ -42,6 +45,9 @@
                                 </div>
                             <? } ?>
                         </div>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <% GetValueText( language.IsActive ) %>
                     </div>
                     <div class="form-centered sortable-table-cell">
                         <a class="form-button view-button" href="/admin/language/view/<% language.Id %>">
@@ -83,6 +89,12 @@
                                     <input class="form-translation form-input" name="Text" type="text" value="<% GetValueText( GetTranslatedText( language.Text, language_code ) ) %>" readonly/>
                                 <? } ?>
                             </div>
+                        </div>
+                        <div class="form-field-name">
+                            <% .GetProcessedTextBySlug( 'Is Active' ) %> :
+                        </div>
+                        <div>
+                                <input class="form-input" name="IsActive" type="text" value="<% GetValueText( language.IsActive ) %>" readonly/>
                         </div>
                     </div>
                     <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>

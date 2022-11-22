@@ -24,6 +24,9 @@
                 <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Text' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Is Active' ) ); ?>
+            </div>
+            <div class="form-column-name sortable-table-column">
                 <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Action' ) ); ?>
             </div>
             <?php foreach ( $this->LanguageArray as  $language ) { ?>
@@ -42,6 +45,9 @@
                                 </div>
                             <?php } ?>
                         </div>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <?php echo htmlspecialchars( GetValueText( $language->IsActive ) ); ?>
                     </div>
                     <div class="form-centered sortable-table-cell">
                         <a class="form-button view-button" href="/admin/language/view/<?php echo htmlspecialchars( $language->Id ); ?>">
@@ -83,6 +89,12 @@
                                     <input class="form-translation form-input" name="Text" type="text" value="<?php echo htmlspecialchars( GetValueText( GetTranslatedText( $language->Text, $language_code ) ) ); ?>" readonly/>
                                 <?php } ?>
                             </div>
+                        </div>
+                        <div class="form-field-name">
+                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Is Active' ) ); ?> :
+                        </div>
+                        <div>
+                                <input class="form-input" name="IsActive" type="text" value="<?php echo htmlspecialchars( GetValueText( $language->IsActive ) ); ?>" readonly/>
                         </div>
                     </div>
                     <?php if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>

@@ -19,8 +19,9 @@ class DO_EDIT_LANGUAGE_CONTROLLER extends CONTROLLER
          $code = GetPostValue( 'Code' );
          $number = GetPostValue( 'Number' );
          $text = GetPostValue( 'Text' );
+         $is_active = GetPostValue( 'IsActive' );
 
-        SetDatabaseLanguage( $language_id, $code, $number, $text );
+        SetDatabaseLanguage( $language_id, $code, $number, $text, $is_active );
 
         Redirect( FindSessionValue( 'ListRoute', '/admin/language' ) );
     }

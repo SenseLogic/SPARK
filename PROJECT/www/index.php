@@ -280,7 +280,8 @@ function Route(
                       && HasPostValue( 'Id' )
                       && HasPostValue( 'Code' )
                       && HasPostValue( 'Number' )
-                      && HasPostValue( 'Text' ) )
+                      && HasPostValue( 'Text' )
+                      && HasPostValue( 'IsActive' ) )
             {
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_add_language_controller.php';
             }
@@ -305,7 +306,8 @@ function Route(
                       && $path_value_array[ 2 ] === 'edit'
                       && HasPostValue( 'Code' )
                       && HasPostValue( 'Number' )
-                      && HasPostValue( 'Text' ) )
+                      && HasPostValue( 'Text' )
+                      && HasPostValue( 'IsActive' ) )
             {
                  $language_id = $path_value_array[ 3 ];
 

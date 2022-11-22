@@ -1,13 +1,15 @@
 LANGUAGE
 
-    Id Code Number Text
+    Id Code Number Text IsActive
 
         %en-language
             ~ en
             ~ 1
             ~ EN
+            ~ true
 
         %fr-language
             ~ fr
             ~ 2
             ~ FR
+            ~ true

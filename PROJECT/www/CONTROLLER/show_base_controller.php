@@ -21,10 +21,11 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
         parent::__construct( $language_code );
 
         $this->LanguageArray = GetDatabaseLanguageArray();
-
+        $this->LanguageArray = GetActiveLanguageArray( $this->LanguageArray );
         $this->PageArray = GetDatabasePageArray();
         $this->PageArray = GetActivePageArray( $this->PageArray, $language_code );
-
+        $this->BlockArray = GetDatabaseBlockArray();
+        $this->BlockArray = GetActiveBlockArray( $this->BlockArray, $language_code );
         $this->TextBlockArray = GetDatabaseTextBlockArray();
         $this->TextBlockArray = GetActiveBlockArray( $this->TextBlockArray, $language_code );
         $this->ImageBlockArray = GetDatabaseImageBlockArray();
@@ -32,7 +33,9 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
         $this->TextAndImageBlockArray = GetDatabaseTextAndImageBlockArray();
         $this->TextAndImageBlockArray = GetActiveBlockArray( $this->TextAndImageBlockArray, $language_code );
 
-        $this->BlockArray = array_merge( $this->TextBlockArray, $this->ImageBlockArray, $this->TextAndImageBlockArray );
+        $this->Language = GetLanguageByCode( $this->LanguageArray, $language_code );
+
+        $this->BlockArray = array_merge( $this->BlockArray, $this->TextBlockArray, $this->ImageBlockArray, $this->TextAndImageBlockArray );
         $this->BlockByIdMap = GetValidBlockByIdMap( $this->BlockArray );
 
         $this->PageArray = array_merge( $this->PageArray );

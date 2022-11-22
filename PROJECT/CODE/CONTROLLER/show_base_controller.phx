@@ -21,10 +21,11 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
         parent::constructor( language_code );
 
         .LanguageArray = GetDatabaseLanguageArray();
-
+        .LanguageArray = GetActiveLanguageArray( .LanguageArray );
         .PageArray = GetDatabasePageArray();
         .PageArray = GetActivePageArray( .PageArray, language_code );
-
+        .BlockArray = GetDatabaseBlockArray();
+        .BlockArray = GetActiveBlockArray( .BlockArray, language_code );
         .TextBlockArray = GetDatabaseTextBlockArray();
         .TextBlockArray = GetActiveBlockArray( .TextBlockArray, language_code );
         .ImageBlockArray = GetDatabaseImageBlockArray();
@@ -32,7 +33,9 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
         .TextAndImageBlockArray = GetDatabaseTextAndImageBlockArray();
         .TextAndImageBlockArray = GetActiveBlockArray( .TextAndImageBlockArray, language_code );
 
-        .BlockArray = array_merge( .TextBlockArray, .ImageBlockArray, .TextAndImageBlockArray );
+        .Language = GetLanguageByCode( .LanguageArray, language_code );
+
+        .BlockArray = array_merge( .BlockArray, .TextBlockArray, .ImageBlockArray, .TextAndImageBlockArray );
         .BlockByIdMap = GetValidBlockByIdMap( .BlockArray );
 
         .PageArray = array_merge( .PageArray );

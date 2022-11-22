@@ -24,6 +24,12 @@
                     <? } ?>
                 </div>
             </div>
+            <div class="form-field-name">
+                <% .GetProcessedTextBySlug( 'Is Active' ) %> :
+            </div>
+            <div>
+                    <input class="form-input" name="IsActive" type="text" value="<% GetValueText( .Language.IsActive ) %>" readonly/>
+            </div>
             <a class="justify-self-start form-button form-button-large cancel-button" href="<% .ListRoute %>">
             </a>
         </div>

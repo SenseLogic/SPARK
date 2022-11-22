@@ -25,6 +25,12 @@
                         <?php } ?>
                     </div>
                 </div>
+                <div class="form-field-name">
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Is Active' ) ); ?> :
+                </div>
+                <div>
+                    <input class="form-input" name="IsActive" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Language->IsActive ) ); ?>" readonly/>
+                </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="<?php echo htmlspecialchars( $this->ListRoute ); ?>">
                 </a>
                 <button class="justify-self-end form-button-large form-button form-button-large remove-button" type="submit">

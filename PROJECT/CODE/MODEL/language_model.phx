@@ -1,3 +1,22 @@
 // -- IMPORTS
 
 import 'language.php';
+
+// -- FUNCTION
+
+function GetActiveLanguageArray(
+    array &language_array
+    )
+{
+    var active_language_array = [];
+
+    foreach ( var language; language_array )
+    {
+        if ( language.IsActive )
+        {
+            array_push( active_language_array, language );
+        }
+    }
+
+    return active_language_array;
+}
