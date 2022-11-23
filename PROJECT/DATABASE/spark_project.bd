@@ -1,0 +1,15 @@
+@include text.bd
+@include language.bd
+@include page_type.bd
+@include home_page.bd
+@include article_page.bd
+@include article_list_page.bd
+@include cookie_policy_page.bd
+@include legal_notice_page.bd
+@include contact_page.bd
+@include block_category.bd
+@include block_type.bd
+@include text_block.bd
+@include image_block.bd
+@include text_and_image_block.bd
+@include user.bd
