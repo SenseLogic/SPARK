@@ -9,7 +9,7 @@
 
     .article-carousel-strip
     {
-        height: 100vh;
+        height: var( --viewport-height );
     }
 
     .article-carousel-slide

@@ -819,7 +819,7 @@ html {
 .page {
   position: relative;
   height: auto;
-  min-height: 100vh;
+  min-height: var(--viewport-height);
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -936,7 +936,7 @@ html {
 }
 .contact-page-heading {
   position: relative;
-  min-height: 100vh;
+  min-height: var(--viewport-height);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -944,7 +944,7 @@ html {
 .loader-page {
   z-index: 10000;
   position: relative;
-  height: 100vh;
+  height: var(--viewport-height);
   width: 100%;
   background: #fff;
 }
@@ -958,7 +958,7 @@ body.is-appearing .loader-page {
   left: 0;
   right: 0;
   background: linear-gradient(#fff, #fff);
-  background-size: auto 100vh;
+  background-size: auto var(--viewport-height);
   animation: loader-page-slider-appearing-animation 1s;
 }
 body.is-appearing .loader-page-slider {
@@ -1050,7 +1050,7 @@ body.is-appearing .loader-page-logo {
     bottom: 0;
   }
   100% {
-    bottom: 100vh;
+    bottom: var(--viewport-height);
   }
 }
 @-webkit-keyframes loader-page-slider-disappearing-animation {
@@ -1058,7 +1058,7 @@ body.is-appearing .loader-page-logo {
     bottom: 0;
   }
   100% {
-    bottom: 100vh;
+    bottom: var(--viewport-height);
   }
 }
 @-o-keyframes loader-page-slider-disappearing-animation {
@@ -1066,7 +1066,7 @@ body.is-appearing .loader-page-logo {
     bottom: 0;
   }
   100% {
-    bottom: 100vh;
+    bottom: var(--viewport-height);
   }
 }
 @keyframes loader-page-slider-disappearing-animation {
@@ -1074,7 +1074,7 @@ body.is-appearing .loader-page-logo {
     bottom: 0;
   }
   100% {
-    bottom: 100vh;
+    bottom: var(--viewport-height);
   }
 }
 @-moz-keyframes loader-page-logo-appearing-animation {
@@ -1136,7 +1136,7 @@ body.is-appearing .loader-page-logo {
   display: flex;
 }
 .article-carousel-strip {
-  height: 100vh;
+  height: var(--viewport-height);
 }
 .article-carousel-slide {
   height: 100%;
@@ -1332,7 +1332,7 @@ body.is-scrolled .header-menu:not(.is-open) {
 }
 @media (max-width: 64.98em) {
   .header-menu.is-open {
-    min-height: 100vh;
+    min-height: var(--viewport-height);
     background-color: rgba(0,0,0,0.5);
   }
 }
@@ -1415,7 +1415,7 @@ body.is-scrolled .header-menu:not(.is-open) {
 .page-heading {
   position: relative;
   margin-bottom: 2rem;
-  min-height: 100vh;
+  min-height: var(--viewport-height);
   padding: 6rem;
   display: flex;
   flex-direction: column;

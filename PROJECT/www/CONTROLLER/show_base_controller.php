@@ -33,7 +33,8 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
         $this->TextAndImageBlockArray = GetDatabaseTextAndImageBlockArray();
         $this->TextAndImageBlockArray = GetActiveBlockArray( $this->TextAndImageBlockArray, $language_code );
 
-        $this->Language = GetLanguageByCode( $this->LanguageArray, $language_code );
+        $this->LanguageByCodeMap = GetLanguageByCodeMap( $this->LanguageArray );
+        $this->Language = GetLanguageByCode( $this->LanguageByCodeMap, $language_code );
 
         $this->BlockArray = array_merge( $this->BlockArray, $this->TextBlockArray, $this->ImageBlockArray, $this->TextAndImageBlockArray );
         $this->BlockByIdMap = GetValidBlockByIdMap( $this->BlockArray );

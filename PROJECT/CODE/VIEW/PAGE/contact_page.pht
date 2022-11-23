@@ -3,7 +3,7 @@
     {
         position: relative;
 
-        min-height: 100vh;
+        min-height: var( --viewport-height );
 
         display: flex;
         justify-content: center;
@@ -17,7 +17,7 @@
         <? include '../BLOCK/scroll_down_reminder.php'; ?>
     </div>
     <? include '../BLOCK/contact_map.php'; ?>
-    <? include '../BLOCK/content_block_list.php'; ?>
+    <? include '../BLOCK/page_content_block_list.php'; ?>
     <? include '../BLOCK/page_padding.php'; ?>
     <? include '../BLOCK/footer_menu.php'; ?>
 </div>

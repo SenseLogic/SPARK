@@ -8,4 +8,5 @@
 <script src="/static/script/vista_tracking.js?v=<?php echo VersionTimestamp; ?>"></script>
 <script src="/static/script/vista_carousel.js?v=<?php echo VersionTimestamp; ?>"></script>
 <script src="/static/script/vista_video.js?v=<?php echo VersionTimestamp; ?>"></script>
+<script src="/static/script/vista_viewport.js?v=<?php echo VersionTimestamp; ?>"></script>
 <script src="/static/script/base.js?v=<?php echo VersionTimestamp; ?>"></script>

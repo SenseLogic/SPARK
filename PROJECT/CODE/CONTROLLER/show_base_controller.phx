@@ -33,7 +33,8 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
         .TextAndImageBlockArray = GetDatabaseTextAndImageBlockArray();
         .TextAndImageBlockArray = GetActiveBlockArray( .TextAndImageBlockArray, language_code );
 
-        .Language = GetLanguageByCode( .LanguageArray, language_code );
+        .LanguageByCodeMap = GetLanguageByCodeMap( .LanguageArray );
+        .Language = GetLanguageByCode( .LanguageByCodeMap, language_code );
 
         .BlockArray = array_merge( .BlockArray, .TextBlockArray, .ImageBlockArray, .TextAndImageBlockArray );
         .BlockByIdMap = GetValidBlockByIdMap( .BlockArray );
