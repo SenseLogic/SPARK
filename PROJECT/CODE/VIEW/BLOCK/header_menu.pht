@@ -7,9 +7,6 @@
         left: 0;
         right: 0;
 
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-
         display: flex;
         justify-content: center;
         align-items: center;
@@ -38,6 +35,8 @@
     {
         height: 100%;
         width: 100%;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
 
         display: flex;
         justify-content: flex-start;
@@ -104,6 +103,8 @@
     {
         height: 100%;
         width: 100%;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
 
         display: none;
         flex-direction: column;

@@ -286,6 +286,39 @@ function GetQuotedText(
 
 // ~~
 
+function GetLeftPaddedText(
+    string text,
+    int character_count,
+    string padding
+    )
+{
+    return str_pad( text, character_count, padding, STR_PAD_LEFT );
+}
+
+// ~~
+
+function GetRightPaddedText(
+    string text,
+    int character_count,
+    string padding
+    )
+{
+    return str_pad( text, character_count, padding, STR_PAD_RIGHT );
+}
+
+// ~~
+
+function GetSidePaddedText(
+    string text,
+    int character_count,
+    string padding
+    )
+{
+    return str_pad( text, character_count, padding, STR_PAD_BOTH );
+}
+
+// ~~
+
 function HasPrefix(
     string text,
     string prefix

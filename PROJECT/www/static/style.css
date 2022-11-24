@@ -1319,8 +1319,6 @@ body.is-appearing .loader-page-logo {
   top: 0;
   left: 0;
   right: 0;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1339,6 +1337,8 @@ body.is-scrolled .header-menu:not(.is-open) {
 .header-menu-button-container {
   height: 100%;
   width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -1383,6 +1383,8 @@ body.is-scrolled .header-menu:not(.is-open) {
 .header-menu-mobile-button-container {
   height: 100%;
   width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   display: none;
   flex-direction: column;
   justify-content: center;

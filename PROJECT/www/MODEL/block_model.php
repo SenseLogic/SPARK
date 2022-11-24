@@ -5,6 +5,41 @@ require_once __DIR__ . '/' . 'block_type.php';
 
 // -- FUNCTIONS
 
+function LinkBlockArray(
+    array &$block_array
+    )
+{
+     $block_count = count( $block_array );
+     $block_index = 0;
+
+    foreach ( $block_array as  $block )
+    {
+        $block->BlockIndex = $block_index;
+
+        if ( $block_index === 0 )
+        {
+            $block->PriorBlock = $block_array[ $block_count - 1 ];
+        }
+        else
+        {
+            $block->PriorBlock = $block_array[ $block_index - 1 ];
+        }
+
+        if ( $block_index === $block_count - 1 )
+        {
+            $block->NextBlock = $block_array[ 0 ];
+        }
+        else
+        {
+            $block->NextBlock = $block_array[ $block_index + 1 ];
+        }
+
+        ++$block_index;
+    }
+}
+
+// ~~
+
 function GetActiveBlockArray(
     array &$block_array,
     string $language_code

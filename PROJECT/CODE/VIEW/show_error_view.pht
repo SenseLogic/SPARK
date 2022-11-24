@@ -7,7 +7,7 @@
     <style>
         html
         {
-            height: var( --viewport-height );
+            height: 100vh;
             width: 100vw;
 
             background: url( "/static/image/error/404.jpg" ) no-repeat center center / contain, url( "/static/image/error/background.png" ) center center / cover;

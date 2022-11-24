@@ -1,9 +1,45 @@
 <?php // -- IMPORTS
 
+require_once __DIR__ . '/' . 'block.php';
 require_once __DIR__ . '/' . 'page.php';
 require_once __DIR__ . '/' . 'page_type.php';
 
 // -- FUNCTIONS
+
+function LinkPageArray(
+    array &$page_array
+    )
+{
+     $page_count = count( $page_array );
+     $page_index = 0;
+
+    foreach ( $page_array as  $page )
+    {
+        $page->PageIndex = $page_index;
+
+        if ( $page_index === 0 )
+        {
+            $page->PriorPage = $page_array[ $page_count - 1 ];
+        }
+        else
+        {
+            $page->PriorPage = $page_array[ $page_index - 1 ];
+        }
+
+        if ( $page_index === $page_count - 1 )
+        {
+            $page->NextPage = $page_array[ 0 ];
+        }
+        else
+        {
+            $page->NextPage = $page_array[ $page_index + 1 ];
+        }
+
+        ++$page_index;
+    }
+}
+
+// ~~
 
 function GetBlockComparison(
     object &$first_block,
@@ -66,6 +102,9 @@ function GetValidPageByIdMap(
     {
         SortArrayByValue( $page->BlockArray, 'GetBlockComparison' );
 
+        $page->HeadingBlockArray = GetBlockArrayByCategorySlug( $page->BlockArray, 'heading' );
+        $page->ContentBlockArray = GetBlockArrayByCategorySlug( $page->BlockArray, 'content' );
+
         if ( property_exists( $page, 'PageId' )
              && isset( $page_by_id_map[ $page->PageId ] ) )
         {
@@ -74,6 +113,13 @@ function GetValidPageByIdMap(
                 $page
                 );
         }
+    }
+
+    foreach ( $page_array as  $page )
+    {
+        LinkBlockArray( $page->HeadingBlockArray );
+        LinkBlockArray( $page->ContentBlockArray );
+        LinkPageArray( $page->SubPageArray );
     }
 
     return $page_by_id_map;
