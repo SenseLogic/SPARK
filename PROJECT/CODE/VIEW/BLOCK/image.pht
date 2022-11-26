@@ -1,6 +1,10 @@
 <style file="image.styl">
+    .image
+    {
+        width: 100%;
+
+        display: flex;
+    }
 </style>
-<div class="y-translation-opacity-transition block appearing-block image">
-    <div class="block-image block-image-column" style="background: url( '<# var block.ImagePath #>' ) no-repeat <# block.ImageHorizontalPosition #> <# block.ImageVerticalPosition #> / cover, url( '<# block.ImagePath #>.preload.jpg' ) no-repeat <# block.ImageHorizontalPosition #> <# block.ImageVerticalPosition #> / cover">
-    </div>
+<div class="y-translation-opacity-transition block appearing-block image" style="padding-top: <# var block.MinimumHeight #>; background: url( '<# block.ImagePath #>' ) no-repeat <# block.ImageHorizontalPosition #> <# block.ImageVerticalPosition #> / cover, url( '<# block.ImagePath #>.preload.jpg' ) no-repeat <# block.ImageHorizontalPosition #> <# block.ImageVerticalPosition #> / cover">
 </div>

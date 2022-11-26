@@ -30,6 +30,9 @@
                 <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Language Code Array' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Minimum Height' ) ); ?>
+            </div>
+            <div class="form-column-name sortable-table-column">
                 <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Title' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
@@ -54,6 +57,9 @@
                     </div>
                     <div class="sortable-table-cell filter-cell">
                         <?php echo htmlspecialchars( GetValueText( $text_block->LanguageCodeArray ) ); ?>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <?php echo htmlspecialchars( GetValueText( $text_block->MinimumHeight ) ); ?>
                     </div>
                     <div class="sortable-table-cell filter-cell">
                         <div>
@@ -121,6 +127,12 @@
                         </div>
                         <div>
                                 <input class="form-input" name="LanguageCodeArray" type="text" value="<?php echo htmlspecialchars( GetValueText( $text_block->LanguageCodeArray ) ); ?>" readonly/>
+                        </div>
+                        <div class="form-field-name">
+                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Minimum Height' ) ); ?> :
+                        </div>
+                        <div>
+                                <input class="form-input" name="MinimumHeight" type="text" value="<?php echo htmlspecialchars( GetValueText( $text_block->MinimumHeight ) ); ?>" readonly/>
                         </div>
                         <div class="form-field-name">
                             <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Title' ) ); ?> :

@@ -33,6 +33,12 @@
                     <input class="form-input" name="LanguageCodeArray" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->TextBlock->LanguageCodeArray ) ); ?>" readonly/>
             </div>
             <div class="form-field-name">
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Minimum Height' ) ); ?> :
+            </div>
+            <div>
+                    <input class="form-input" name="MinimumHeight" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->TextBlock->MinimumHeight ) ); ?>" readonly/>
+            </div>
+            <div class="form-field-name">
                 <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Title' ) ); ?> :
             </div>
             <div>

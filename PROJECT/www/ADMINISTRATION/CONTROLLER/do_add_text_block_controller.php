@@ -21,10 +21,11 @@ class DO_ADD_TEXT_BLOCK_CONTROLLER extends CONTROLLER
          $type_slug = GetPostValue( 'TypeSlug' );
          $number = GetPostValue( 'Number' );
          $language_code_array = GetJsonObject( GetPostValue( 'LanguageCodeArray' ) );
+         $minimum_height = GetPostValue( 'MinimumHeight' );
          $title = GetPostValue( 'Title' );
          $text = GetPostValue( 'Text' );
 
-        AddDatabaseTextBlock( $id, $page_id, $category_slug, $type_slug, $number, $language_code_array, $title, $text );
+        AddDatabaseTextBlock( $id, $page_id, $category_slug, $type_slug, $number, $language_code_array, $minimum_height, $title, $text );
 
         Redirect( FindSessionValue( 'ListRoute', '/admin/text-block' ) );
     }

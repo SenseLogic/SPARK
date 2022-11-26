@@ -33,6 +33,12 @@
                     <input class="form-input" name="LanguageCodeArray" type="text" value="<% GetValueText( .ImageBlock.LanguageCodeArray ) %>" readonly/>
             </div>
             <div class="form-field-name">
+                <% .GetProcessedTextBySlug( 'Minimum Height' ) %> :
+            </div>
+            <div>
+                    <input class="form-input" name="MinimumHeight" type="text" value="<% GetValueText( .ImageBlock.MinimumHeight ) %>" readonly/>
+            </div>
+            <div class="form-field-name">
                 <% .GetProcessedTextBySlug( 'Title' ) %> :
             </div>
             <div>

@@ -12,6 +12,7 @@
             type_slug_field,
             number_field,
             language_code_array_field,
+            minimum_height_field,
             title_field,
             text_field,
             image_path_field,
@@ -26,6 +27,7 @@
         type_slug_field = edit_text_and_image_block_form.TypeSlug;
         number_field = edit_text_and_image_block_form.Number;
         language_code_array_field = edit_text_and_image_block_form.LanguageCodeArray;
+        minimum_height_field = edit_text_and_image_block_form.MinimumHeight;
         title_field = edit_text_and_image_block_form.Title;
         text_field = edit_text_and_image_block_form.Text;
         image_path_field = edit_text_and_image_block_form.ImagePath;
@@ -39,6 +41,7 @@
         type_slug_field.RemoveClass( "form-field-error" );
         number_field.RemoveClass( "form-field-error" );
         language_code_array_field.RemoveClass( "form-field-error" );
+        minimum_height_field.RemoveClass( "form-field-error" );
         title_field.RemoveClass( "form-field-error" );
         text_field.RemoveClass( "form-field-error" );
         image_path_field.RemoveClass( "form-field-error" );
@@ -80,6 +83,13 @@
         if ( language_code_array_field.value === "" )
         {
             language_code_array_field.AddClass( "form-field-error" );
+
+            it_is_valid_edit_text_and_image_block_form = false;
+        }
+
+        if ( minimum_height_field.value === "" )
+        {
+            minimum_height_field.AddClass( "form-field-error" );
 
             it_is_valid_edit_text_and_image_block_form = false;
         }
@@ -162,6 +172,12 @@
                 </div>
                 <div>
                     <input class="form-input" name="LanguageCodeArray" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->TextAndImageBlock->LanguageCodeArray ) ); ?>"/>
+                </div>
+                <div class="form-field-name">
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Minimum Height' ) ); ?> :
+                </div>
+                <div>
+                    <input class="form-input" name="MinimumHeight" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->TextAndImageBlock->MinimumHeight ) ); ?>"/>
                 </div>
                 <div class="form-field-name">
                     <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Title' ) ); ?> :

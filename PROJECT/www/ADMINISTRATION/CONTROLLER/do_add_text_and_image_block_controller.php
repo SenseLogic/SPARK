@@ -21,6 +21,7 @@ class DO_ADD_TEXT_AND_IMAGE_BLOCK_CONTROLLER extends CONTROLLER
          $type_slug = GetPostValue( 'TypeSlug' );
          $number = GetPostValue( 'Number' );
          $language_code_array = GetJsonObject( GetPostValue( 'LanguageCodeArray' ) );
+         $minimum_height = GetPostValue( 'MinimumHeight' );
          $title = GetPostValue( 'Title' );
          $text = GetPostValue( 'Text' );
          $image_path = GetPostValue( 'ImagePath' );
@@ -29,7 +30,7 @@ class DO_ADD_TEXT_AND_IMAGE_BLOCK_CONTROLLER extends CONTROLLER
          $image_side = GetPostValue( 'ImageSide' );
          $video_path = GetPostValue( 'VideoPath' );
 
-        AddDatabaseTextAndImageBlock( $id, $page_id, $category_slug, $type_slug, $number, $language_code_array, $title, $text, $image_path, $image_vertical_position, $image_horizontal_position, $image_side, $video_path );
+        AddDatabaseTextAndImageBlock( $id, $page_id, $category_slug, $type_slug, $number, $language_code_array, $minimum_height, $title, $text, $image_path, $image_vertical_position, $image_horizontal_position, $image_side, $video_path );
 
         Redirect( FindSessionValue( 'ListRoute', '/admin/text-and-image-block' ) );
     }

@@ -64,6 +64,7 @@ spark-project
         TypeSlug : BLOCK_TYPE.Slug = "text"
         Number : FLOAT32 | ascending
         LanguageCodeArray : LIST[ LANGUAGE.Code ] | count 2
+        MinimumHeight : STRING = "0"
         Title : STRING = "{{latin 1 1 4 6}}¨fr:{{latin 1 1 4 6}}" | optional, is_multilingual
         Text : STRING = "{{latin 2 4 5 10}}¨fr:{{latin 2 4 5 10}}" | is_multilingual_text
 
@@ -75,6 +76,7 @@ spark-project
         TypeSlug : BLOCK_TYPE.Slug = "image"
         Number : FLOAT32 | ascending
         LanguageCodeArray : LIST[ LANGUAGE.Code ] | count 2
+        MinimumHeight : STRING = "56.25%"
         Title : STRING = "{{latin 1 1 4 6}}¨fr:{{latin 1 1 4 6}}" | optional, is_multilingual
         Text : STRING = "{{latin 2 4 5 10}}¨fr:{{latin 2 4 5 10}}" | is_multilingual_text
         ImagePath : STRING = "/static/image/article/autumn.jpg|/static/image/article/castle.jpg|/static/image/article/drink.jpg|/static/image/article/groynes.jpg|/static/image/article/mountains.jpg|/static/image/article/spring.jpg" | is_image
@@ -90,6 +92,7 @@ spark-project
         TypeSlug : BLOCK_TYPE.Slug = "text-and-image"
         Number : FLOAT32 | ascending
         LanguageCodeArray : LIST[ LANGUAGE.Code ] | count 2
+        MinimumHeight : STRING = "56.25%"
         Title : STRING = "{{latin 1 1 4 6}}¨fr:{{latin 1 1 4 6}}" | optional, is_multilingual
         Text : STRING = "{{latin 2 4 5 10}}¨fr:{{latin 2 4 5 10}}" | is_multilingual_text
         ImagePath : STRING = "/static/image/article/autumn.jpg|/static/image/article/castle.jpg|/static/image/article/drink.jpg|/static/image/article/groynes.jpg|/static/image/article/mountains.jpg|/static/image/article/spring.jpg" | is_image

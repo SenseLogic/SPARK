@@ -771,13 +771,13 @@ textarea {
   grid-template-columns: repeat(6, auto);
 }
 .text-block-table {
-  grid-template-columns: repeat(8, auto);
+  grid-template-columns: repeat(9, auto);
 }
 .image-block-table {
-  grid-template-columns: repeat(12, auto);
+  grid-template-columns: repeat(13, auto);
 }
 .text-and-image-block-table {
-  grid-template-columns: repeat(13, auto);
+  grid-template-columns: repeat(14, auto);
 }
 .contact-table {
   grid-template-columns: repeat(8, auto);

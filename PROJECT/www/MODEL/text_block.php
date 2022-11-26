@@ -3,7 +3,7 @@
 function GetDatabaseTextBlockArray(
     )
 {
-     $statement = GetDatabaseStatement( 'select `Id`, `PageId`, `CategorySlug`, `TypeSlug`, `Number`, `LanguageCodeArray`, `Title`, `Text` from `TEXT_BLOCK` order by `Number` asc' );
+     $statement = GetDatabaseStatement( 'select `Id`, `PageId`, `CategorySlug`, `TypeSlug`, `Number`, `LanguageCodeArray`, `MinimumHeight`, `Title`, `Text` from `TEXT_BLOCK` order by `Number` asc' );
 
     if ( !$statement->execute() )
     {
@@ -28,7 +28,7 @@ function GetDatabaseTextBlockById(
     string $id
     )
 {
-     $statement = GetDatabaseStatement( 'select `Id`, `PageId`, `CategorySlug`, `TypeSlug`, `Number`, `LanguageCodeArray`, `Title`, `Text` from `TEXT_BLOCK` where `Id` = ? limit 1' );
+     $statement = GetDatabaseStatement( 'select `Id`, `PageId`, `CategorySlug`, `TypeSlug`, `Number`, `LanguageCodeArray`, `MinimumHeight`, `Title`, `Text` from `TEXT_BLOCK` where `Id` = ? limit 1' );
     $statement->bindParam( 1, $id, PDO::PARAM_STR );
 
     if ( !$statement->execute() )
@@ -52,11 +52,12 @@ function AddDatabaseTextBlock(
     string $type_slug,
     float $number,
     array $language_code_array,
+    string $minimum_height,
     string $title,
     string $text
     )
 {
-     $statement = GetDatabaseStatement( 'insert into `TEXT_BLOCK` ( `Id`, `PageId`, `CategorySlug`, `TypeSlug`, `Number`, `LanguageCodeArray`, `Title`, `Text` ) values ( ?, ?, ?, ?, ?, ?, ?, ? )' );
+     $statement = GetDatabaseStatement( 'insert into `TEXT_BLOCK` ( `Id`, `PageId`, `CategorySlug`, `TypeSlug`, `Number`, `LanguageCodeArray`, `MinimumHeight`, `Title`, `Text` ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ? )' );
     $statement->bindParam( 1, $id, PDO::PARAM_STR );
     $statement->bindParam( 2, $page_id, PDO::PARAM_STR );
     $statement->bindParam( 3, $category_slug, PDO::PARAM_STR );
@@ -64,8 +65,9 @@ function AddDatabaseTextBlock(
     $statement->bindParam( 5, $number, PDO::PARAM_STR );
     $language_code_array = json_encode( $language_code_array );
     $statement->bindParam( 6, $language_code_array, PDO::PARAM_STR );
-    $statement->bindParam( 7, $title, PDO::PARAM_STR );
-    $statement->bindParam( 8, $text, PDO::PARAM_STR );
+    $statement->bindParam( 7, $minimum_height, PDO::PARAM_STR );
+    $statement->bindParam( 8, $title, PDO::PARAM_STR );
+    $statement->bindParam( 9, $text, PDO::PARAM_STR );
 
     if ( !$statement->execute() )
     {
@@ -84,11 +86,12 @@ function PutDatabaseTextBlock(
     string $type_slug,
     float $number,
     array $language_code_array,
+    string $minimum_height,
     string $title,
     string $text
     )
 {
-     $statement = GetDatabaseStatement( 'replace into `TEXT_BLOCK` ( `Id`, `PageId`, `CategorySlug`, `TypeSlug`, `Number`, `LanguageCodeArray`, `Title`, `Text` ) values ( ?, ?, ?, ?, ?, ?, ?, ? )' );
+     $statement = GetDatabaseStatement( 'replace into `TEXT_BLOCK` ( `Id`, `PageId`, `CategorySlug`, `TypeSlug`, `Number`, `LanguageCodeArray`, `MinimumHeight`, `Title`, `Text` ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ? )' );
     $statement->bindParam( 1, $id, PDO::PARAM_STR );
     $statement->bindParam( 2, $page_id, PDO::PARAM_STR );
     $statement->bindParam( 3, $category_slug, PDO::PARAM_STR );
@@ -96,8 +99,9 @@ function PutDatabaseTextBlock(
     $statement->bindParam( 5, $number, PDO::PARAM_STR );
     $language_code_array = json_encode( $language_code_array );
     $statement->bindParam( 6, $language_code_array, PDO::PARAM_STR );
-    $statement->bindParam( 7, $title, PDO::PARAM_STR );
-    $statement->bindParam( 8, $text, PDO::PARAM_STR );
+    $statement->bindParam( 7, $minimum_height, PDO::PARAM_STR );
+    $statement->bindParam( 8, $title, PDO::PARAM_STR );
+    $statement->bindParam( 9, $text, PDO::PARAM_STR );
 
     if ( !$statement->execute() )
     {
@@ -116,20 +120,22 @@ function SetDatabaseTextBlock(
     string $type_slug,
     float $number,
     array $language_code_array,
+    string $minimum_height,
     string $title,
     string $text
     )
 {
-     $statement = GetDatabaseStatement( 'update `TEXT_BLOCK` set `PageId` = ?, `CategorySlug` = ?, `TypeSlug` = ?, `Number` = ?, `LanguageCodeArray` = ?, `Title` = ?, `Text` = ? where Id = ?' );
+     $statement = GetDatabaseStatement( 'update `TEXT_BLOCK` set `PageId` = ?, `CategorySlug` = ?, `TypeSlug` = ?, `Number` = ?, `LanguageCodeArray` = ?, `MinimumHeight` = ?, `Title` = ?, `Text` = ? where Id = ?' );
     $statement->bindParam( 1, $page_id, PDO::PARAM_STR );
     $statement->bindParam( 2, $category_slug, PDO::PARAM_STR );
     $statement->bindParam( 3, $type_slug, PDO::PARAM_STR );
     $statement->bindParam( 4, $number, PDO::PARAM_STR );
     $language_code_array = json_encode( $language_code_array );
     $statement->bindParam( 5, $language_code_array, PDO::PARAM_STR );
-    $statement->bindParam( 6, $title, PDO::PARAM_STR );
-    $statement->bindParam( 7, $text, PDO::PARAM_STR );
-    $statement->bindParam( 8, $id, PDO::PARAM_STR );
+    $statement->bindParam( 6, $minimum_height, PDO::PARAM_STR );
+    $statement->bindParam( 7, $title, PDO::PARAM_STR );
+    $statement->bindParam( 8, $text, PDO::PARAM_STR );
+    $statement->bindParam( 9, $id, PDO::PARAM_STR );
 
     if ( !$statement->execute() )
     {
