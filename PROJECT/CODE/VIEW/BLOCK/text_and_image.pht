@@ -46,7 +46,7 @@
         flex-direction: column;
         grid-area: text;
         justify-content: center;
-        align-items: center;
+        align-items: start;
 
         color: BlackColor;
 
