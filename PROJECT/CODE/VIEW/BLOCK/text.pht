@@ -1,7 +1,7 @@
 <style file="text.styl">
     .text
     {
-        padding: 2rem;
+        padding: var( --block-padding );
 
         display: flex;
         flex-direction: column;
@@ -9,11 +9,6 @@
         align-items: start;
 
         color: BlackColor;
-
-        +Media( min-width-65em )
-        {
-            padding: 5rem;
-        }
     }
 </style>
 <div class="y-translation-opacity-transition block block-text-column appearing-block text" style="min-height: <# var block.MinimumHeight #>">

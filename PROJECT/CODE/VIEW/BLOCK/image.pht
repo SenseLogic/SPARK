@@ -2,6 +2,7 @@
     .image
     {
         width: 100%;
+        max-height: var( --viewport-height );
 
         display: flex;
     }

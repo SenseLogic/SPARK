@@ -620,6 +620,9 @@ MakeYTranslationOpacityTransition( ".is-visible", 1.8s, ease, 10% );
 
 .page
 {
+    --page-margin: 2rem;
+    --page-padding: 2rem;
+
     position: relative;
 
     height: auto;
@@ -628,11 +631,26 @@ MakeYTranslationOpacityTransition( ".is-visible", 1.8s, ease, 10% );
 
     display: flex;
     flex-direction: column;
+
+    +Media( min-width-65em )
+    {
+        --page-margin: 4rem;
+        --page-padding: 4rem;
+    }
 }
 
 .block
 {
+    --block-margin: 2rem;
+    --block-padding: 2rem;
+
     margin-bottom: 2rem;
+
+    +Media( min-width-65em )
+    {
+        --block-margin: 4rem;
+        --block-padding: 4rem;
+    }
 }
 
 .block-title
