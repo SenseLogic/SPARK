@@ -1,6 +1,6 @@
 .text
 {
-    padding: 2rem;
+    padding: var( --block-padding );
 
     display: flex;
     flex-direction: column;
@@ -8,9 +8,4 @@
     align-items: start;
 
     color: BlackColor;
-
-    +Media( min-width-65em )
-    {
-        padding: 5rem;
-    }
 }

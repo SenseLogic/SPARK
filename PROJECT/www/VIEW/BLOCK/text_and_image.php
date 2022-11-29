@@ -56,11 +56,6 @@
 
 
 
-
-
-
-
-
 <div class="y-translation-opacity-transition block appearing-block text-and-image image-side-<?php echo  $block->ImageSide; ?>">
     <div class="text-and-image-text">
         <div class="block-title">

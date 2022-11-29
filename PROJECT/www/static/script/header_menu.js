@@ -35,5 +35,7 @@ AddEventListener(
                     );
             }
             );
+
+        CloseHeaderMenu();
     }
     );
