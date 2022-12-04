@@ -1,5 +1,5 @@
 cd DATABASE
-call make.bat
+call remake.bat
 cd ..\CODE
 call make.bat
 cd ..
