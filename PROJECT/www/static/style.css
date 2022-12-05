@@ -400,14 +400,14 @@ a:hover {
   --info-color-900: #d8f2fe;
   --info-contrast-color: #000;
   --success-color: #36d399;
-  --success-color-210: SuccessColor100;
+  --success-color-210: #0a2b1f;
   --success-color-200: #13573e;
   --success-color-300: #1d825d;
   --success-color-400: #26ae7c;
   --success-color-600: #5edcad;
   --success-color-700: #86e5c2;
   --success-color-800: #afedd6;
-  --success-color-890: SuccessColor900;
+  --success-color-890: #d7f6eb;
   --success-contrast-color: #000;
   --warning-color: #fbbd23;
   --warning-color-100: #382801;
