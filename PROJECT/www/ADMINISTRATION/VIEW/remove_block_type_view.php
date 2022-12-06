@@ -13,11 +13,7 @@
                     <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Name' ) ); ?> :
                 </div>
                 <div>
-                    <div>
-                        <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
-                            <input class="form-translation form-input" name="Name" type="text" value="<?php echo htmlspecialchars( GetValueText( GetTranslatedText( $this->BlockType->Name, $language_code ) ) ); ?>" readonly/>
-                        <?php } ?>
-                    </div>
+                    <input class="form-input" name="Name" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->BlockType->Name ) ); ?>" readonly/>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="<?php echo htmlspecialchars( $this->ListRoute ); ?>">
                 </a>

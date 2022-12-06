@@ -29,13 +29,7 @@
                         <?php echo htmlspecialchars( GetValueText( $page_type->Slug ) ); ?>
                     </div>
                     <div class="sortable-table-cell filter-cell">
-                        <div>
-                            <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
-                                <div class="form-translation">
-                                    <?php echo htmlspecialchars( GetValueText( GetTranslatedText( $page_type->Title, $language_code ) ) ); ?>
-                                </div>
-                            <?php } ?>
-                        </div>
+                        <?php echo htmlspecialchars( GetValueText( $page_type->Title ) ); ?>
                     </div>
                     <div class="form-centered sortable-table-cell">
                         <a class="form-button view-button" href="/admin/page-type/view/<?php echo htmlspecialchars( $page_type->Id ); ?>">
@@ -66,11 +60,7 @@
                             <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Title' ) ); ?> :
                         </div>
                         <div>
-                            <div>
-                                <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
-                                    <input class="form-translation form-input" name="Title" type="text" value="<?php echo htmlspecialchars( GetValueText( GetTranslatedText( $page_type->Title, $language_code ) ) ); ?>" readonly/>
-                                <?php } ?>
-                            </div>
+                                <input class="form-input" name="Title" type="text" value="<?php echo htmlspecialchars( GetValueText( $page_type->Title ) ); ?>" readonly/>
                         </div>
                     </div>
                     <?php if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>

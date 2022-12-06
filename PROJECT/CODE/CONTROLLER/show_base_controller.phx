@@ -2,11 +2,8 @@
 
 import 'view_controller.php';
 import '../MODEL/block_model.php';
-import '../MODEL/image_block_model.php';
 import '../MODEL/language_model.php';
 import '../MODEL/page_model.php';
-import '../MODEL/text_block_model.php';
-import '../MODEL/text_and_image_block_model.php';
 
 // -- TYPES
 
@@ -15,10 +12,13 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
     // -- CONSTRUCTORS
 
     method constructor(
-        string language_code
+        string language_code,
+        string route
         )
     {
         parent::constructor( language_code );
+
+        .Route = route;
 
         .LanguageArray = GetDatabaseLanguageArray();
         .LanguageArray = GetActiveLanguageArray( .LanguageArray );
@@ -26,21 +26,16 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
         .PageArray = GetActivePageArray( .PageArray, language_code );
         .BlockArray = GetDatabaseBlockArray();
         .BlockArray = GetActiveBlockArray( .BlockArray, language_code );
-        .TextBlockArray = GetDatabaseTextBlockArray();
-        .TextBlockArray = GetActiveBlockArray( .TextBlockArray, language_code );
-        .ImageBlockArray = GetDatabaseImageBlockArray();
-        .ImageBlockArray = GetActiveBlockArray( .ImageBlockArray, language_code );
-        .TextAndImageBlockArray = GetDatabaseTextAndImageBlockArray();
-        .TextAndImageBlockArray = GetActiveBlockArray( .TextAndImageBlockArray, language_code );
 
         .LanguageByCodeMap = GetLanguageByCodeMap( .LanguageArray );
         .Language = GetLanguageByCode( .LanguageByCodeMap, language_code );
 
-        .BlockArray = array_merge( .BlockArray, .TextBlockArray, .ImageBlockArray, .TextAndImageBlockArray );
+        .BlockArray = array_merge( .BlockArray );
         .BlockByIdMap = GetValidBlockByIdMap( .BlockArray );
 
         .PageArray = array_merge( .PageArray );
         .PageByIdMap = GetValidPageByIdMap( .PageArray, .BlockArray, .BlockByIdMap );
+        .PageByRouteMap = GetPageByRouteMap( .PageArray );
         .PageArrayByTypeSlugMap = GetPageArrayByTypeSlugMap( .PageArray );
 
         .ImagePathArray = [];
@@ -73,4 +68,4 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
-var show_base_controller = new SHOW_BASE_CONTROLLER( var language_code );
+var show_base_controller = new SHOW_BASE_CONTROLLER( var language_code, var route );

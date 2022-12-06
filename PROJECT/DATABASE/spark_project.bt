@@ -53,6 +53,9 @@ DefineLineTag( '    * ', '<div class="paragraph bullet-3">', '</div>' );
 DefineLineTag( '      * ', '<div class="paragraph bullet-4">', '</div>' );
 DefineLineTag( '', '<div class="paragraph">', '</div>' );
 
+DefineTag( '<wrapper></div>', '' );
+DefineTag( '<div class="paragraph"></wrapper>', '' );
+
 DefineDualTag( '**', '<b>', '</b>' );
 DefineDualTag( '%%', '<i>', '</i>' );
 DefineDualTag( '__', '<u>', '</u>' );
@@ -74,6 +77,7 @@ DefineTag( '([', "<span class=\"link-button\" onclick=\"ShowView( '" );
 DefineTag( '][', "' )\">" );
 DefineTag( '])', '</span>' );
 
+
 DefineColorTag( 'red' );
 DefineColorTag( 'green', '#0F0' );
 DefineStyleTag( 'color' );
@@ -94,6 +98,7 @@ function Route(
         language_code = GetBrowserLanguageCode( LanguageCodeArray, DefaultLanguageCode );
     }
 
+    var route = GetRoute( path_value_array, 'home' );
     var path_value_count = count( path_value_array );
     var it_is_get_request = IsGetRequest();
     var it_is_post_request = IsPostRequest();

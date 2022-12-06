@@ -1,7 +1,18 @@
 .image
 {
-    width: 100%;
     max-height: var( --viewport-height );
+    width: 100%;
+    padding: 1rem;
 
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+
+    color: WhiteColor;
+
+    +Media( min-width-65em )
+    {
+        padding: 2rem;
+    }
 }

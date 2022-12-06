@@ -2,11 +2,8 @@
 
 require_once __DIR__ . '/' . 'view_controller.php';
 require_once __DIR__ . '/' . '../MODEL/block_model.php';
-require_once __DIR__ . '/' . '../MODEL/image_block_model.php';
 require_once __DIR__ . '/' . '../MODEL/language_model.php';
 require_once __DIR__ . '/' . '../MODEL/page_model.php';
-require_once __DIR__ . '/' . '../MODEL/text_block_model.php';
-require_once __DIR__ . '/' . '../MODEL/text_and_image_block_model.php';
 
 // -- TYPES
 
@@ -15,10 +12,13 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
     // -- CONSTRUCTORS
 
     function __construct(
-        string $language_code
+        string $language_code,
+        string $route
         )
     {
         parent::__construct( $language_code );
+
+        $this->Route = $route;
 
         $this->LanguageArray = GetDatabaseLanguageArray();
         $this->LanguageArray = GetActiveLanguageArray( $this->LanguageArray );
@@ -26,21 +26,16 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
         $this->PageArray = GetActivePageArray( $this->PageArray, $language_code );
         $this->BlockArray = GetDatabaseBlockArray();
         $this->BlockArray = GetActiveBlockArray( $this->BlockArray, $language_code );
-        $this->TextBlockArray = GetDatabaseTextBlockArray();
-        $this->TextBlockArray = GetActiveBlockArray( $this->TextBlockArray, $language_code );
-        $this->ImageBlockArray = GetDatabaseImageBlockArray();
-        $this->ImageBlockArray = GetActiveBlockArray( $this->ImageBlockArray, $language_code );
-        $this->TextAndImageBlockArray = GetDatabaseTextAndImageBlockArray();
-        $this->TextAndImageBlockArray = GetActiveBlockArray( $this->TextAndImageBlockArray, $language_code );
 
         $this->LanguageByCodeMap = GetLanguageByCodeMap( $this->LanguageArray );
         $this->Language = GetLanguageByCode( $this->LanguageByCodeMap, $language_code );
 
-        $this->BlockArray = array_merge( $this->BlockArray, $this->TextBlockArray, $this->ImageBlockArray, $this->TextAndImageBlockArray );
+        $this->BlockArray = array_merge( $this->BlockArray );
         $this->BlockByIdMap = GetValidBlockByIdMap( $this->BlockArray );
 
         $this->PageArray = array_merge( $this->PageArray );
         $this->PageByIdMap = GetValidPageByIdMap( $this->PageArray, $this->BlockArray, $this->BlockByIdMap );
+        $this->PageByRouteMap = GetPageByRouteMap( $this->PageArray );
         $this->PageArrayByTypeSlugMap = GetPageArrayByTypeSlugMap( $this->PageArray );
 
         $this->ImagePathArray = [];
@@ -73,4 +68,4 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
 
 // -- STATEMENTS
 
- $show_base_controller = new SHOW_BASE_CONTROLLER(  $language_code );
+ $show_base_controller = new SHOW_BASE_CONTROLLER(  $language_code,  $route );

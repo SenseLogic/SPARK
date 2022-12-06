@@ -1,0 +1,22 @@
+<? include 'BLOCK/page_header.php'; ?>
+<div id="view-block-content-view">
+    <div class="page-section form-section">
+        <div class="form-container">
+            <div class="form-field-name">
+                <% .GetProcessedTextBySlug( 'Slug' ) %> :
+            </div>
+            <div>
+                    <input class="form-input" name="Slug" type="text" value="<% GetValueText( .BlockContent.Slug ) %>" readonly/>
+            </div>
+            <div class="form-field-name">
+                <% .GetProcessedTextBySlug( 'Name' ) %> :
+            </div>
+            <div>
+                    <input class="form-input" name="Name" type="text" value="<% GetValueText( .BlockContent.Name ) %>" readonly/>
+            </div>
+            <a class="justify-self-start form-button form-button-large cancel-button" href="<% .ListRoute %>">
+            </a>
+        </div>
+    </div>
+</div>
+<? include 'BLOCK/page_footer.php'; ?>

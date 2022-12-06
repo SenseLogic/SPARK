@@ -12,11 +12,7 @@
                 <% .GetProcessedTextBySlug( 'Name' ) %> :
             </div>
             <div>
-                <div>
-                    <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                        <input class="form-translation form-input" name="Name" type="text" value="<% GetValueText( GetTranslatedText( .BlockType.Name, language_code ) ) %>" readonly/>
-                    <? } ?>
-                </div>
+                    <input class="form-input" name="Name" type="text" value="<% GetValueText( .BlockType.Name ) %>" readonly/>
             </div>
             <a class="justify-self-start form-button form-button-large cancel-button" href="<% .ListRoute %>">
             </a>

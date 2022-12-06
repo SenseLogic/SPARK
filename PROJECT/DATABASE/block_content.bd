@@ -1,0 +1,7 @@
+BLOCK_CONTENT
+
+    Id Slug Name
+
+        %text-block-content
+            ~ text
+            ~ Text

@@ -33,11 +33,15 @@
     }
 </style>
 <div class="page-heading" style="background: linear-gradient( rgba( 0, 0, 0, 0.1 ), rgba( 0, 0, 0, 0.1 ) ), url( '<# var page.ImagePath #>' ) no-repeat <# page.ImageHorizontalPosition #> <# page.ImageVerticalPosition #> / cover, url( '<# page.ImagePath #>.preload.jpg' ) no-repeat <# page.ImageHorizontalPosition #> <# page.ImageVerticalPosition #> / cover">
-    <div class="page-heading-title">
-        <# .GetProcessedText( var page.Title ) #>
-    </div>
-    <div class="page-heading-teaser">
-        <# .GetProcessedText( page.Teaser ) #>
-    </div>
+    <? if ( page.Title !== '' ) { ?>
+        <div class="page-heading-title">
+            <# .GetProcessedText( page.Title ) #>
+        </div>
+    <? } ?>
+    <? if ( page.Teaser !== '' ) { ?>
+        <div class="page-heading-teaser">
+            <# .GetProcessedText( page.Teaser ) #>
+        </div>
+    <? } ?>
     <? include 'scroll_down_reminder.php'; ?>
 </div>

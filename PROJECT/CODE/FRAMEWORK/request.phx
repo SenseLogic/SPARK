@@ -56,10 +56,18 @@ function GetPathValueArray(
 // ~~
 
 function GetRoute(
-    array &path_value_array
+    array &path_value_array,
+    string default_value = ''
     )
 {
-    return implode( '/', path_value_array );
+    if ( count( path_value_array ) === 0 )
+    {
+        return default_value;
+    }
+    else
+    {
+        return implode( '/', path_value_array );
+    }
 }
 
 // ~~

@@ -1,8 +1,20 @@
+<?php
+     $meta_title = 'Spark Project';
+     $meta_description = 'Spark Project';
+
+    if ( isset( $this->PageByRouteMap[ $this->Route ] ) )
+    {
+         $page = $this->PageByRouteMap[ $this->Route ];
+
+        $meta_title = $page->MetaTitle;
+        $meta_description = $page->MetaDescription;
+    }
+?>
 <meta charset="utf-8"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-<meta name="title" content="Spark Project"/>
-<meta name="description" content="Spark Project"/>
+<meta name="title" content="<?php echo $meta_title; ?>"/>
+<meta name="description" content="<?php echo $meta_description; ?>"/>
 <meta name="keywords" content="spark, project"/>
 <meta name="author" content="Spark Team"/>
 <meta name="language" content="English"/>

@@ -5,14 +5,11 @@ BLOCK_TYPE
         %text-block-type
             ~ text
             ~ Text
-              ¨fr:Texte
 
         %image-block-type
             ~ image
             ~ Image
-              ¨fr:Image
 
         %text-and-image-block-type
             ~ text-and-image
             ~ Text and image
-              ¨fr:Texte et image

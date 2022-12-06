@@ -43,12 +43,7 @@
                     <% .GetProcessedTextBySlug( 'Title' ) %> :
                 </div>
                 <div>
-                    <div>
-                        <input class="multilingual-input form-input" name="Title" type="text" value="<% GetValueText( .PageType.Title ) %>" hidden/>
-                        <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <input class="multilingual-input-translation form-translation form-input" data-language-code="<% language_code %>" placeholder="<% .GetProcessedTextBySlug( language_code ) %>"/>
-                        <? } ?>
-                    </div>
+                    <input class="form-input" name="Title" type="text" value="<% GetValueText( .PageType.Title ) %>"/>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="<% .ListRoute %>">
                 </a>

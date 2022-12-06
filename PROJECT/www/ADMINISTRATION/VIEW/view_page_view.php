@@ -82,6 +82,18 @@
                     <video class="form-upload-video" src="<?php echo htmlspecialchars( $this->Page->VideoPath ); ?>" type="video/mp4" onerror="this.src='/static/video/admin/missing_video.mp4'"></video>
                 </div>
             </div>
+            <div class="form-field-name">
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Meta Title' ) ); ?> :
+            </div>
+            <div>
+                    <input class="form-input" name="MetaTitle" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Page->MetaTitle ) ); ?>" readonly/>
+            </div>
+            <div class="form-field-name">
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Meta Description' ) ); ?> :
+            </div>
+            <div>
+                    <input class="form-input" name="MetaDescription" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Page->MetaDescription ) ); ?>" readonly/>
+            </div>
             <a class="justify-self-start form-button form-button-large cancel-button" href="<?php echo htmlspecialchars( $this->ListRoute ); ?>">
             </a>
         </div>

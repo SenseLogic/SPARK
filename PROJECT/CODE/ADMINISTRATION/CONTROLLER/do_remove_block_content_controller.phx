@@ -1,0 +1,27 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/block_content_model.php';
+
+// -- TYPES
+
+class DO_REMOVE_BLOCK_CONTENT_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code,
+        block_content_id
+        )
+    {
+        parent::constructor( language_code );
+
+        RemoveDatabaseBlockContentById( block_content_id );
+
+        Redirect( FindSessionValue( 'ListRoute', '/admin/block-content' ) );
+    }
+}
+
+// -- STATEMENTS
+
+var do_remove_block_content_controller = new DO_REMOVE_BLOCK_CONTENT_CONTROLLER( var language_code, var block_content_id );

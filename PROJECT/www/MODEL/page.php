@@ -3,7 +3,7 @@
 function GetDatabasePageArray(
     )
 {
-     $statement = GetDatabaseStatement( 'select `Id`, `Route`, `TypeSlug`, `Number`, `LanguageCodeArray`, `IsActive`, `Title`, `Teaser`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `VideoPath` from `PAGE` order by `Number` asc' );
+     $statement = GetDatabaseStatement( 'select `Id`, `Route`, `TypeSlug`, `Number`, `LanguageCodeArray`, `IsActive`, `Title`, `Teaser`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `VideoPath`, `MetaTitle`, `MetaDescription` from `PAGE` order by `Number` asc' );
 
     if ( !$statement->execute() )
     {
@@ -28,7 +28,7 @@ function GetDatabasePageById(
     string $id
     )
 {
-     $statement = GetDatabaseStatement( 'select `Id`, `Route`, `TypeSlug`, `Number`, `LanguageCodeArray`, `IsActive`, `Title`, `Teaser`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `VideoPath` from `PAGE` where `Id` = ? limit 1' );
+     $statement = GetDatabaseStatement( 'select `Id`, `Route`, `TypeSlug`, `Number`, `LanguageCodeArray`, `IsActive`, `Title`, `Teaser`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `VideoPath`, `MetaTitle`, `MetaDescription` from `PAGE` where `Id` = ? limit 1' );
     $statement->bindParam( 1, $id, PDO::PARAM_STR );
 
     if ( !$statement->execute() )
@@ -57,10 +57,12 @@ function AddDatabasePage(
     string $image_path,
     string $image_vertical_position,
     string $image_horizontal_position,
-    string $video_path
+    string $video_path,
+    string $meta_title,
+    string $meta_description
     )
 {
-     $statement = GetDatabaseStatement( 'insert into `PAGE` ( `Id`, `Route`, `TypeSlug`, `Number`, `LanguageCodeArray`, `IsActive`, `Title`, `Teaser`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `VideoPath` ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )' );
+     $statement = GetDatabaseStatement( 'insert into `PAGE` ( `Id`, `Route`, `TypeSlug`, `Number`, `LanguageCodeArray`, `IsActive`, `Title`, `Teaser`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `VideoPath`, `MetaTitle`, `MetaDescription` ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )' );
     $statement->bindParam( 1, $id, PDO::PARAM_STR );
     $statement->bindParam( 2, $route, PDO::PARAM_STR );
     $statement->bindParam( 3, $type_slug, PDO::PARAM_STR );
@@ -74,6 +76,8 @@ function AddDatabasePage(
     $statement->bindParam( 10, $image_vertical_position, PDO::PARAM_STR );
     $statement->bindParam( 11, $image_horizontal_position, PDO::PARAM_STR );
     $statement->bindParam( 12, $video_path, PDO::PARAM_STR );
+    $statement->bindParam( 13, $meta_title, PDO::PARAM_STR );
+    $statement->bindParam( 14, $meta_description, PDO::PARAM_STR );
 
     if ( !$statement->execute() )
     {
@@ -97,10 +101,12 @@ function PutDatabasePage(
     string $image_path,
     string $image_vertical_position,
     string $image_horizontal_position,
-    string $video_path
+    string $video_path,
+    string $meta_title,
+    string $meta_description
     )
 {
-     $statement = GetDatabaseStatement( 'replace into `PAGE` ( `Id`, `Route`, `TypeSlug`, `Number`, `LanguageCodeArray`, `IsActive`, `Title`, `Teaser`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `VideoPath` ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )' );
+     $statement = GetDatabaseStatement( 'replace into `PAGE` ( `Id`, `Route`, `TypeSlug`, `Number`, `LanguageCodeArray`, `IsActive`, `Title`, `Teaser`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `VideoPath`, `MetaTitle`, `MetaDescription` ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )' );
     $statement->bindParam( 1, $id, PDO::PARAM_STR );
     $statement->bindParam( 2, $route, PDO::PARAM_STR );
     $statement->bindParam( 3, $type_slug, PDO::PARAM_STR );
@@ -114,6 +120,8 @@ function PutDatabasePage(
     $statement->bindParam( 10, $image_vertical_position, PDO::PARAM_STR );
     $statement->bindParam( 11, $image_horizontal_position, PDO::PARAM_STR );
     $statement->bindParam( 12, $video_path, PDO::PARAM_STR );
+    $statement->bindParam( 13, $meta_title, PDO::PARAM_STR );
+    $statement->bindParam( 14, $meta_description, PDO::PARAM_STR );
 
     if ( !$statement->execute() )
     {
@@ -137,10 +145,12 @@ function SetDatabasePage(
     string $image_path,
     string $image_vertical_position,
     string $image_horizontal_position,
-    string $video_path
+    string $video_path,
+    string $meta_title,
+    string $meta_description
     )
 {
-     $statement = GetDatabaseStatement( 'update `PAGE` set `Route` = ?, `TypeSlug` = ?, `Number` = ?, `LanguageCodeArray` = ?, `IsActive` = ?, `Title` = ?, `Teaser` = ?, `ImagePath` = ?, `ImageVerticalPosition` = ?, `ImageHorizontalPosition` = ?, `VideoPath` = ? where Id = ?' );
+     $statement = GetDatabaseStatement( 'update `PAGE` set `Route` = ?, `TypeSlug` = ?, `Number` = ?, `LanguageCodeArray` = ?, `IsActive` = ?, `Title` = ?, `Teaser` = ?, `ImagePath` = ?, `ImageVerticalPosition` = ?, `ImageHorizontalPosition` = ?, `VideoPath` = ?, `MetaTitle` = ?, `MetaDescription` = ? where Id = ?' );
     $statement->bindParam( 1, $route, PDO::PARAM_STR );
     $statement->bindParam( 2, $type_slug, PDO::PARAM_STR );
     $statement->bindParam( 3, $number, PDO::PARAM_STR );
@@ -153,7 +163,9 @@ function SetDatabasePage(
     $statement->bindParam( 9, $image_vertical_position, PDO::PARAM_STR );
     $statement->bindParam( 10, $image_horizontal_position, PDO::PARAM_STR );
     $statement->bindParam( 11, $video_path, PDO::PARAM_STR );
-    $statement->bindParam( 12, $id, PDO::PARAM_STR );
+    $statement->bindParam( 12, $meta_title, PDO::PARAM_STR );
+    $statement->bindParam( 13, $meta_description, PDO::PARAM_STR );
+    $statement->bindParam( 14, $id, PDO::PARAM_STR );
 
     if ( !$statement->execute() )
     {
@@ -173,6 +185,82 @@ function RemoveDatabasePageById(
     if ( !$statement->execute() )
     {
         var_dump( $statement->errorInfo() );
+    }
+}
+
+// ~~
+
+function GetPageArrayByRouteMap(
+    array &$page_array
+    )
+{
+     $page_array_by_route_map = [];
+
+    foreach ( $page_array as  $page )
+    {
+        if ( !isset( $page_array_by_route_map[ $page->Route ] ) )
+        {
+            $page_array_by_route_map[ $page->Route ] = [ $page ];
+        }
+        else
+        {
+            array_push( $page_array_by_route_map[ $page->Route ], $page );
+        }
+    }
+
+    return $page_array_by_route_map;
+}
+
+// ~~
+
+function GetPageArrayByRoute(
+    array &$page_array,
+    string $route
+    )
+{
+     $page_array_by_route = [];
+
+    foreach ( $page_array as  $page )
+    {
+        if ( $page->Route === $route )
+        {
+            array_push( $page_array_by_route, $page );
+        }
+    }
+
+    return $page_array_by_route;
+}
+
+// ~~
+
+function GetPageByRouteMap(
+    array &$page_array
+    )
+{
+     $page_by_route_map = [];
+
+    foreach ( $page_array as  $page )
+    {
+        $page_by_route_map[ $page->Route ] = $page;
+    }
+
+    return $page_by_route_map;
+}
+
+// ~~
+
+function GetPageByRoute(
+    array &$page_by_route_map,
+    string $route
+    )
+{
+    if ( isset( $page_by_route_map[ $route ] ) )
+    {
+        return $page_by_route_map[ $route ];
+    }
+    else
+    {
+        return null;
     }
 }
 

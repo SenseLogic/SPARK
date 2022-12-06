@@ -63,38 +63,20 @@
                         </a>
                     </div>
                     <div class="page-menu-item">
+                        <a href="/admin/block-content">
+                            <span class="form-button form-button-large block-content-button">
+                            </span>
+                            <span class="form-button-tooltip">
+                                <% .GetProcessedTextBySlug( 'Block content' ) %>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="page-menu-item">
                         <a href="/admin/block">
                             <span class="form-button form-button-large block-button">
                             </span>
                             <span class="form-button-tooltip">
                                 <% .GetProcessedTextBySlug( 'Block' ) %>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="page-menu-item">
-                        <a href="/admin/text-block">
-                            <span class="form-button form-button-large text-block-button">
-                            </span>
-                            <span class="form-button-tooltip">
-                                <% .GetProcessedTextBySlug( 'Text block' ) %>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="page-menu-item">
-                        <a href="/admin/image-block">
-                            <span class="form-button form-button-large image-block-button">
-                            </span>
-                            <span class="form-button-tooltip">
-                                <% .GetProcessedTextBySlug( 'Image block' ) %>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="page-menu-item">
-                        <a href="/admin/text-and-image-block">
-                            <span class="form-button form-button-large text-and-image-block-button">
-                            </span>
-                            <span class="form-button-tooltip">
-                                <% .GetProcessedTextBySlug( 'Text and image block' ) %>
                             </span>
                         </a>
                     </div>

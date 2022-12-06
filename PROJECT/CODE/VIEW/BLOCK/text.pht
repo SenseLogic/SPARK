@@ -12,10 +12,5 @@
     }
 </style>
 <div class="y-translation-opacity-transition block block-text-column appearing-block text" style="min-height: <# var block.MinimumHeight #>">
-    <div class="block-title">
-        <# .GetProcessedText( block.Title ) #>
-    </div>
-    <div class="block-text">
-        <# .GetProcessedMultilineText( block.Text ) #>
-    </div>
+    <? include str_replace( '-', '_', block.ContentSlug ) .. '_content.php'; ?>
 </div>

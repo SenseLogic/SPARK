@@ -18,11 +18,20 @@ class DO_EDIT_BLOCK_CONTROLLER extends CONTROLLER
 
          $page_id = GetPostValue( 'PageId' );
          $category_slug = GetPostValue( 'CategorySlug' );
+         $content_slug = GetPostValue( 'ContentSlug' );
          $type_slug = GetPostValue( 'TypeSlug' );
          $number = GetPostValue( 'Number' );
          $language_code_array = GetJsonObject( GetPostValue( 'LanguageCodeArray' ) );
+         $minimum_height = GetPostValue( 'MinimumHeight' );
+         $title = GetPostValue( 'Title' );
+         $text = GetPostValue( 'Text' );
+         $image_path = GetPostValue( 'ImagePath' );
+         $image_vertical_position = GetPostValue( 'ImageVerticalPosition' );
+         $image_horizontal_position = GetPostValue( 'ImageHorizontalPosition' );
+         $image_side = GetPostValue( 'ImageSide' );
+         $video_path = GetPostValue( 'VideoPath' );
 
-        SetDatabaseBlock( $block_id, $page_id, $category_slug, $type_slug, $number, $language_code_array );
+        SetDatabaseBlock( $block_id, $page_id, $category_slug, $content_slug, $type_slug, $number, $language_code_array, $minimum_height, $title, $text, $image_path, $image_vertical_position, $image_horizontal_position, $image_side, $video_path );
 
         Redirect( FindSessionValue( 'ListRoute', '/admin/block' ) );
     }

@@ -18,7 +18,9 @@
             image_path_field,
             image_vertical_position_field,
             image_horizontal_position_field,
-            video_path_field;
+            video_path_field,
+            meta_title_field,
+            meta_description_field;
 
         add_page_form = document.AddPageForm;
         id_field = add_page_form.Id;
@@ -33,6 +35,8 @@
         image_vertical_position_field = add_page_form.ImageVerticalPosition;
         image_horizontal_position_field = add_page_form.ImageHorizontalPosition;
         video_path_field = add_page_form.VideoPath;
+        meta_title_field = add_page_form.MetaTitle;
+        meta_description_field = add_page_form.MetaDescription;
 
         id_field.RemoveClass( "form-field-error" );
         route_field.RemoveClass( "form-field-error" );
@@ -46,6 +50,8 @@
         image_vertical_position_field.RemoveClass( "form-field-error" );
         image_horizontal_position_field.RemoveClass( "form-field-error" );
         video_path_field.RemoveClass( "form-field-error" );
+        meta_title_field.RemoveClass( "form-field-error" );
+        meta_description_field.RemoveClass( "form-field-error" );
 
         it_is_valid_add_page_form = true;
 
@@ -102,6 +108,20 @@
         if ( image_horizontal_position_field.value === "" )
         {
             image_horizontal_position_field.AddClass( "form-field-error" );
+
+            it_is_valid_add_page_form = false;
+        }
+
+        if ( meta_title_field.value === "" )
+        {
+            meta_title_field.AddClass( "form-field-error" );
+
+            it_is_valid_add_page_form = false;
+        }
+
+        if ( meta_description_field.value === "" )
+        {
+            meta_description_field.AddClass( "form-field-error" );
 
             it_is_valid_add_page_form = false;
         }
@@ -379,6 +399,42 @@
                         </label>
                         <img class="form-delete-icon" src="/static/image/admin/remove_icon.svg" onclick="HandleFileInputDeleteButtonClickEvent( this )"/>
                     </div>
+                </div>
+                <?php
+                     $field_name = 'MetaTitle';
+
+                    if ( HasQueryValue( $field_name ) )
+                    {
+                         $field_value = GetQueryValue( $field_name );
+                    }
+                    else
+                    {
+                        $field_value = '';
+                    }
+                ?>
+                <div class="form-field-name">
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Meta Title' ) ); ?> :
+                </div>
+                <div>
+                    <input class="form-input" name="MetaTitle" type="text" value="<?php echo $field_value; ?>"/>
+                </div>
+                <?php
+                     $field_name = 'MetaDescription';
+
+                    if ( HasQueryValue( $field_name ) )
+                    {
+                         $field_value = GetQueryValue( $field_name );
+                    }
+                    else
+                    {
+                        $field_value = '';
+                    }
+                ?>
+                <div class="form-field-name">
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Meta Description' ) ); ?> :
+                </div>
+                <div>
+                    <input class="form-input" name="MetaDescription" type="text" value="<?php echo $field_value; ?>"/>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="<?php echo htmlspecialchars( $this->ListRoute ); ?>">
                 </a>

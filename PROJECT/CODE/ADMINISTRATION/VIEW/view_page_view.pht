@@ -82,6 +82,18 @@
                     <video class="form-upload-video" src="<% .Page.VideoPath %>" type="video/mp4" onerror="this.src='/static/video/admin/missing_video.mp4'"></video>
                 </div>
             </div>
+            <div class="form-field-name">
+                <% .GetProcessedTextBySlug( 'Meta Title' ) %> :
+            </div>
+            <div>
+                    <input class="form-input" name="MetaTitle" type="text" value="<% GetValueText( .Page.MetaTitle ) %>" readonly/>
+            </div>
+            <div class="form-field-name">
+                <% .GetProcessedTextBySlug( 'Meta Description' ) %> :
+            </div>
+            <div>
+                    <input class="form-input" name="MetaDescription" type="text" value="<% GetValueText( .Page.MetaDescription ) %>" readonly/>
+            </div>
             <a class="justify-self-start form-button form-button-large cancel-button" href="<% .ListRoute %>">
             </a>
         </div>

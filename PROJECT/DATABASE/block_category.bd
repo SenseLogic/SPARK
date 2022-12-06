@@ -5,9 +5,7 @@ BLOCK_CATEGORY
         %heading-block-category
             ~ heading
             ~ Heading
-              ¨fr:Entête
 
         %content-block-category
             ~ content
             ~ Content
-              ¨fr:Contenu

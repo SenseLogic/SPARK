@@ -27,8 +27,10 @@ class DO_EDIT_PAGE_CONTROLLER extends CONTROLLER
          $image_vertical_position = GetPostValue( 'ImageVerticalPosition' );
          $image_horizontal_position = GetPostValue( 'ImageHorizontalPosition' );
          $video_path = GetPostValue( 'VideoPath' );
+         $meta_title = GetPostValue( 'MetaTitle' );
+         $meta_description = GetPostValue( 'MetaDescription' );
 
-        SetDatabasePage( $page_id, $route, $type_slug, $number, $language_code_array, $is_active, $title, $teaser, $image_path, $image_vertical_position, $image_horizontal_position, $video_path );
+        SetDatabasePage( $page_id, $route, $type_slug, $number, $language_code_array, $is_active, $title, $teaser, $image_path, $image_vertical_position, $image_horizontal_position, $video_path, $meta_title, $meta_description );
 
         Redirect( FindSessionValue( 'ListRoute', '/admin/page' ) );
     }

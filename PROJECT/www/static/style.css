@@ -1391,9 +1391,19 @@ body.is-scrolled .header-menu:not(.is-open) {
   background: url("/static/image/header/close_button.svg") no-repeat center center/contain;
 }
 .image {
-  width: 100%;
   max-height: var(--viewport-height);
+  width: 100%;
+  padding: 1rem;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  color: #fff;
+}
+@media (min-width: 65em) {
+  .image {
+    padding: 2rem;
+  }
 }
 .page-heading {
   position: relative;

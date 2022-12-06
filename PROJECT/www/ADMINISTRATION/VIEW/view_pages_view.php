@@ -48,6 +48,12 @@
                 <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Video Path' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Meta Title' ) ); ?>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Meta Description' ) ); ?>
+            </div>
+            <div class="form-column-name sortable-table-column">
                 <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Action' ) ); ?>
             </div>
             <?php foreach ( $this->PageArray as  $page ) { ?>
@@ -96,6 +102,12 @@
                     </div>
                     <div class="sortable-table-cell filter-cell">
                         <?php echo htmlspecialchars( GetValueText( $page->VideoPath ) ); ?>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <?php echo htmlspecialchars( GetValueText( $page->MetaTitle ) ); ?>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <?php echo htmlspecialchars( GetValueText( $page->MetaDescription ) ); ?>
                     </div>
                     <div class="form-centered sortable-table-cell">
                         <a class="form-button view-button" href="/admin/page/view/<?php echo htmlspecialchars( $page->Id ); ?>">
@@ -195,6 +207,18 @@
                             <div class="form-upload-container">
                                 <video class="form-upload-video" src="<?php echo htmlspecialchars( $page->VideoPath ); ?>" type="video/mp4" onerror="this.src='/static/video/admin/missing_video.mp4'"></video>
                             </div>
+                        </div>
+                        <div class="form-field-name">
+                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Meta Title' ) ); ?> :
+                        </div>
+                        <div>
+                                <input class="form-input" name="MetaTitle" type="text" value="<?php echo htmlspecialchars( GetValueText( $page->MetaTitle ) ); ?>" readonly/>
+                        </div>
+                        <div class="form-field-name">
+                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Meta Description' ) ); ?> :
+                        </div>
+                        <div>
+                                <input class="form-input" name="MetaDescription" type="text" value="<?php echo htmlspecialchars( GetValueText( $page->MetaDescription ) ); ?>" readonly/>
                         </div>
                     </div>
                     <?php if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>

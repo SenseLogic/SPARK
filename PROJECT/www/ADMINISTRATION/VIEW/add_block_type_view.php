@@ -102,12 +102,7 @@
                     <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Name' ) ); ?> :
                 </div>
                 <div>
-                    <div>
-                        <input class="multilingual-input form-input" name="Name" type="text" value="<?php echo $field_value; ?>" hidden/>
-                        <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
-                            <input class="multilingual-input-translation form-translation form-input" data-language-code="<?php echo htmlspecialchars( $language_code ); ?>" placeholder="<?php echo htmlspecialchars( $this->GetProcessedTextBySlug( $language_code ) ); ?>"/>
-                        <?php } ?>
-                    </div>
+                    <input class="form-input" name="Name" type="text" value="<?php echo $field_value; ?>"/>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="<?php echo htmlspecialchars( $this->ListRoute ); ?>">
                 </a>

@@ -1,0 +1,10 @@
+<? if ( var block.Title !== '' ) { ?>
+    <div class="block-title">
+        <# .GetProcessedText( block.Title ) #>
+    </div>
+<? } ?>
+<? if ( block.Text !== '' ) { ?>
+    <div class="block-text">
+        <# .GetProcessedMultilineText( block.Text ) #>
+    </div>
+<? } ?>
