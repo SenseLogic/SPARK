@@ -24,18 +24,18 @@
 <meta name="HandheldFriendly" content="true"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
-<meta name="theme-color" content="#FFFFFF" />
-<meta name="msapplication-config" content="/browserconfig.xml" />
-<meta name="msapplication-TileColor" content="#FFFFFF" />
-<meta name="msapplication-TileImage" content="/favicon-512x512.png" />
-<meta name="twitter:card" content="Spark Project" />
+<meta name="theme-color" content="#FFFFFF"/>
+<meta name="msapplication-config" content="/browserconfig.xml"/>
+<meta name="msapplication-TileColor" content="#FFFFFF"/>
+<meta name="msapplication-TileImage" content="/favicon-512x512.png"/>
+<meta name="twitter:card" content="Spark Project"/>
 <meta name="twitter:title" content="Spark Project"/>
-<meta name="twitter:description" content="Spark Project" />
-<meta name="twitter:image" content="/favicon-512x512.png" />
-<meta property="og:type" content="website" />
-<meta property="og:site_name" content="Spark Project" />
+<meta name="twitter:description" content="Spark Project"/>
+<meta name="twitter:image" content="/favicon-512x512.png"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Spark Project"/>
 <meta property="og:title" content="Spark Project"/>
-<meta property="og:description" content="Spark Project" />
+<meta property="og:description" content="Spark Project"/>
 <meta property="og:url" content="https://www.spark-project.com/"/>
 <meta property="og:image" content="/favicon-512x512.png"/>
 <title>Spark Project</title>

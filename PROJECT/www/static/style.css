@@ -756,6 +756,54 @@ html {
 .linebreak {
   margin-bottom: 0.8em;
 }
+.white {
+  color: #fff;
+}
+.black {
+  color: #fff;
+}
+.red {
+  color: #f87272;
+}
+.green {
+  color: #36d399;
+}
+.blue {
+  color: #3abff8;
+}
+.orange {
+  color: #fbbd23;
+}
+.text-50 {
+  font-size: 0.5rem;
+}
+.text-60 {
+  font-size: 0.6rem;
+}
+.text-70 {
+  font-size: 0.7rem;
+}
+.text-80 {
+  font-size: 0.8rem;
+}
+.text-90 {
+  font-size: 0.9rem;
+}
+.text-100 {
+  font-size: 1rem;
+}
+.text-125 {
+  font-size: 1.25rem;
+}
+.text-150 {
+  font-size: 1.5rem;
+}
+.text-175 {
+  font-size: 1.75rem;
+}
+.text-200 {
+  font-size: 2rem;
+}
 .title-1 {
   font-size: 2rem;
 }
