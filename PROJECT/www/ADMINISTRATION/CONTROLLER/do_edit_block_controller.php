@@ -16,6 +16,7 @@ class DO_EDIT_BLOCK_CONTROLLER extends CONTROLLER
     {
         parent::__construct( $language_code );
 
+         $slug = GetPostValue( 'Slug' );
          $page_id = GetPostValue( 'PageId' );
          $category_slug = GetPostValue( 'CategorySlug' );
          $content_slug = GetPostValue( 'ContentSlug' );
@@ -31,7 +32,7 @@ class DO_EDIT_BLOCK_CONTROLLER extends CONTROLLER
          $image_side = GetPostValue( 'ImageSide' );
          $video_path = GetPostValue( 'VideoPath' );
 
-        SetDatabaseBlock( $block_id, $page_id, $category_slug, $content_slug, $type_slug, $number, $language_code_array, $minimum_height, $title, $text, $image_path, $image_vertical_position, $image_horizontal_position, $image_side, $video_path );
+        SetDatabaseBlock( $block_id, $slug, $page_id, $category_slug, $content_slug, $type_slug, $number, $language_code_array, $minimum_height, $title, $text, $image_path, $image_vertical_position, $image_horizontal_position, $image_side, $video_path );
 
         Redirect( FindSessionValue( 'ListRoute', '/admin/block' ) );
     }

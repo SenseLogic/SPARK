@@ -16,6 +16,7 @@ class DO_ADD_BLOCK_CONTROLLER extends CONTROLLER
         parent::__construct( $language_code );
 
          $id = GetPostValue( 'Id' );
+         $slug = GetPostValue( 'Slug' );
          $page_id = GetPostValue( 'PageId' );
          $category_slug = GetPostValue( 'CategorySlug' );
          $content_slug = GetPostValue( 'ContentSlug' );
@@ -31,7 +32,7 @@ class DO_ADD_BLOCK_CONTROLLER extends CONTROLLER
          $image_side = GetPostValue( 'ImageSide' );
          $video_path = GetPostValue( 'VideoPath' );
 
-        AddDatabaseBlock( $id, $page_id, $category_slug, $content_slug, $type_slug, $number, $language_code_array, $minimum_height, $title, $text, $image_path, $image_vertical_position, $image_horizontal_position, $image_side, $video_path );
+        AddDatabaseBlock( $id, $slug, $page_id, $category_slug, $content_slug, $type_slug, $number, $language_code_array, $minimum_height, $title, $text, $image_path, $image_vertical_position, $image_horizontal_position, $image_side, $video_path );
 
         Redirect( FindSessionValue( 'ListRoute', '/admin/block' ) );
     }

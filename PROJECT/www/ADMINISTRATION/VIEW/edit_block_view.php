@@ -7,6 +7,7 @@
         var
             edit_block_form,
             it_is_valid_edit_block_form,
+            slug_field,
             page_id_field,
             category_slug_field,
             content_slug_field,
@@ -23,6 +24,7 @@
             video_path_field;
 
         edit_block_form = document.EditBlockForm;
+        slug_field = edit_block_form.Slug;
         page_id_field = edit_block_form.PageId;
         category_slug_field = edit_block_form.CategorySlug;
         content_slug_field = edit_block_form.ContentSlug;
@@ -38,6 +40,7 @@
         image_side_field = edit_block_form.ImageSide;
         video_path_field = edit_block_form.VideoPath;
 
+        slug_field.RemoveClass( "form-field-error" );
         page_id_field.RemoveClass( "form-field-error" );
         category_slug_field.RemoveClass( "form-field-error" );
         content_slug_field.RemoveClass( "form-field-error" );
@@ -54,6 +57,13 @@
         video_path_field.RemoveClass( "form-field-error" );
 
         it_is_valid_edit_block_form = true;
+
+        if ( slug_field.value === "" )
+        {
+            slug_field.AddClass( "form-field-error" );
+
+            it_is_valid_edit_block_form = false;
+        }
 
         if ( page_id_field.value === "" )
         {
@@ -111,6 +121,12 @@
     <div class="page-section form-section">
         <form class="form-centered" name="EditBlockForm" onsubmit="return IsValidEditBlockForm()" action="/admin/block/edit/<?php echo htmlspecialchars( $this->Block->Id ); ?>" method="post">
             <div class="form-container">
+                <div class="form-field-name">
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Slug' ) ); ?> :
+                </div>
+                <div>
+                    <input class="form-input" name="Slug" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Block->Slug ) ); ?>"/>
+                </div>
                 <div class="form-field-name">
                     <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Page Id' ) ); ?> :
                 </div>

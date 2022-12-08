@@ -53,9 +53,6 @@ DefineLineTag( '    * ', '<div class="paragraph bullet-3">', '</div>' );
 DefineLineTag( '      * ', '<div class="paragraph bullet-4">', '</div>' );
 DefineLineTag( '', '<div class="paragraph">', '</div>' );
 
-DefineTag( '<wrapper></div>', '' );
-DefineTag( '<div class="paragraph"></wrapper>', '' );
-
 DefineDualTag( '**', '<b>', '</b>' );
 DefineDualTag( '%%', '<i>', '</i>' );
 DefineDualTag( '__', '<u>', '</u>' );
@@ -77,6 +74,10 @@ DefineTag( '([', "<span class=\"link-button\" onclick=\"ShowView( '" );
 DefineTag( '][', "' )\">" );
 DefineTag( '])', '</span>' );
 
+DefineTag( '<wrapper>', '<div><wrap>' );
+DefineTag( '</wrapper>', '</wrap></div>' );
+DefineTag( '<wrap></div>', '' );
+DefineTag( '<div class="paragraph"></wrap>', '' );
 
 DefineColorTag( 'red' );
 DefineColorTag( 'green', '#0F0' );

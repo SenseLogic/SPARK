@@ -15,6 +15,9 @@
     <div class="cell-list page-section form-section is-hidden">
         <div class="form-container table-container page-table sortable-table">
             <div class="form-column-name sortable-table-column">
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Slug' ) ); ?>
+            </div>
+            <div class="form-column-name sortable-table-column">
                 <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Route' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
@@ -58,6 +61,9 @@
             </div>
             <?php foreach ( $this->PageArray as  $page ) { ?>
                 <div class="sortable-table-row filter-row filter-content">
+                    <div class="sortable-table-cell filter-cell">
+                        <?php echo htmlspecialchars( GetValueText( $page->Slug ) ); ?>
+                    </div>
                     <div class="sortable-table-cell filter-cell">
                         <?php echo htmlspecialchars( GetValueText( $page->Route ) ); ?>
                     </div>
@@ -128,6 +134,12 @@
             <div class="card-container filter-row">
                 <div class="card">
                     <div class="form-container">
+                        <div class="form-field-name">
+                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Slug' ) ); ?> :
+                        </div>
+                        <div>
+                                <input class="form-input" name="Slug" type="text" value="<?php echo htmlspecialchars( GetValueText( $page->Slug ) ); ?>" readonly/>
+                        </div>
                         <div class="form-field-name">
                             <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Route' ) ); ?> :
                         </div>

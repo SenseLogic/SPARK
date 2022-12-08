@@ -16,6 +16,7 @@ class DO_ADD_PAGE_CONTROLLER extends CONTROLLER
         parent::constructor( language_code );
 
         var id = GetPostValue( 'Id' );
+        var slug = GetPostValue( 'Slug' );
         var route = GetPostValue( 'Route' );
         var type_slug = GetPostValue( 'TypeSlug' );
         var number = GetPostValue( 'Number' );
@@ -30,7 +31,7 @@ class DO_ADD_PAGE_CONTROLLER extends CONTROLLER
         var meta_title = GetPostValue( 'MetaTitle' );
         var meta_description = GetPostValue( 'MetaDescription' );
 
-        AddDatabasePage( id, route, type_slug, number, language_code_array, is_active, title, teaser, image_path, image_vertical_position, image_horizontal_position, video_path, meta_title, meta_description );
+        AddDatabasePage( id, slug, route, type_slug, number, language_code_array, is_active, title, teaser, image_path, image_vertical_position, image_horizontal_position, video_path, meta_title, meta_description );
 
         Redirect( FindSessionValue( 'ListRoute', '/admin/page' ) );
     }

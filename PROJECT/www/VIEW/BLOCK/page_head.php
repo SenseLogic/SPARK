@@ -6,8 +6,15 @@
     {
          $page = $this->PageByRouteMap[ $this->Route ];
 
-        $meta_title = $page->MetaTitle;
-        $meta_description = $page->MetaDescription;
+        if ( property_exists( $page, 'MetaTitle' ) )
+        {
+            $meta_title = $page->MetaTitle;
+        }
+
+        if ( property_exists( $page, 'MetaDescription' ) )
+        {
+            $meta_description = $page->MetaDescription;
+        }
     }
 ?>
 <meta charset="utf-8"/>

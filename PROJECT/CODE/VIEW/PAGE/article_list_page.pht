@@ -1,6 +1,6 @@
 <style file="article_list_page.styl">
 </style>
-<div class="page">
+<div id="<# var page.Slug #>" class="page">
     <? include '../BLOCK/header_menu.php'; ?>
     <? var article_page_array = .PageArrayByTypeSlugMap[ 'article' ]; ?>
     <? include '../BLOCK/article_carousel.php'; ?>

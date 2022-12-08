@@ -16,6 +16,7 @@ class DO_EDIT_PAGE_CONTROLLER extends CONTROLLER
     {
         parent::__construct( $language_code );
 
+         $slug = GetPostValue( 'Slug' );
          $route = GetPostValue( 'Route' );
          $type_slug = GetPostValue( 'TypeSlug' );
          $number = GetPostValue( 'Number' );
@@ -30,7 +31,7 @@ class DO_EDIT_PAGE_CONTROLLER extends CONTROLLER
          $meta_title = GetPostValue( 'MetaTitle' );
          $meta_description = GetPostValue( 'MetaDescription' );
 
-        SetDatabasePage( $page_id, $route, $type_slug, $number, $language_code_array, $is_active, $title, $teaser, $image_path, $image_vertical_position, $image_horizontal_position, $video_path, $meta_title, $meta_description );
+        SetDatabasePage( $page_id, $slug, $route, $type_slug, $number, $language_code_array, $is_active, $title, $teaser, $image_path, $image_vertical_position, $image_horizontal_position, $video_path, $meta_title, $meta_description );
 
         Redirect( FindSessionValue( 'ListRoute', '/admin/page' ) );
     }

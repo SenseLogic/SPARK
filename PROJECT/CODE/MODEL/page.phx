@@ -3,7 +3,7 @@
 function GetDatabasePageArray(
     )
 {
-    var statement = GetDatabaseStatement( 'select `Id`, `Route`, `TypeSlug`, `Number`, `LanguageCodeArray`, `IsActive`, `Title`, `Teaser`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `VideoPath`, `MetaTitle`, `MetaDescription` from `PAGE` order by `Number` asc' );
+    var statement = GetDatabaseStatement( 'select `Id`, `Slug`, `Route`, `TypeSlug`, `Number`, `LanguageCodeArray`, `IsActive`, `Title`, `Teaser`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `VideoPath`, `MetaTitle`, `MetaDescription` from `PAGE` order by `Number` asc' );
 
     if ( !statement.execute() )
     {
@@ -28,7 +28,7 @@ function GetDatabasePageById(
     string id
     )
 {
-    var statement = GetDatabaseStatement( 'select `Id`, `Route`, `TypeSlug`, `Number`, `LanguageCodeArray`, `IsActive`, `Title`, `Teaser`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `VideoPath`, `MetaTitle`, `MetaDescription` from `PAGE` where `Id` = ? limit 1' );
+    var statement = GetDatabaseStatement( 'select `Id`, `Slug`, `Route`, `TypeSlug`, `Number`, `LanguageCodeArray`, `IsActive`, `Title`, `Teaser`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `VideoPath`, `MetaTitle`, `MetaDescription` from `PAGE` where `Id` = ? limit 1' );
     statement.bindParam( 1, id, PDO::PARAM_STR );
 
     if ( !statement.execute() )
@@ -47,6 +47,7 @@ function GetDatabasePageById(
 
 function AddDatabasePage(
     string id,
+    string slug,
     string route,
     string type_slug,
     float number,
@@ -62,22 +63,23 @@ function AddDatabasePage(
     string meta_description
     )
 {
-    var statement = GetDatabaseStatement( 'insert into `PAGE` ( `Id`, `Route`, `TypeSlug`, `Number`, `LanguageCodeArray`, `IsActive`, `Title`, `Teaser`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `VideoPath`, `MetaTitle`, `MetaDescription` ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )' );
+    var statement = GetDatabaseStatement( 'insert into `PAGE` ( `Id`, `Slug`, `Route`, `TypeSlug`, `Number`, `LanguageCodeArray`, `IsActive`, `Title`, `Teaser`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `VideoPath`, `MetaTitle`, `MetaDescription` ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )' );
     statement.bindParam( 1, id, PDO::PARAM_STR );
-    statement.bindParam( 2, route, PDO::PARAM_STR );
-    statement.bindParam( 3, type_slug, PDO::PARAM_STR );
-    statement.bindParam( 4, number, PDO::PARAM_STR );
+    statement.bindParam( 2, slug, PDO::PARAM_STR );
+    statement.bindParam( 3, route, PDO::PARAM_STR );
+    statement.bindParam( 4, type_slug, PDO::PARAM_STR );
+    statement.bindParam( 5, number, PDO::PARAM_STR );
     language_code_array = json_encode( language_code_array );
-    statement.bindParam( 5, language_code_array, PDO::PARAM_STR );
-    statement.bindParam( 6, is_active, PDO::PARAM_BOOL );
-    statement.bindParam( 7, title, PDO::PARAM_STR );
-    statement.bindParam( 8, teaser, PDO::PARAM_STR );
-    statement.bindParam( 9, image_path, PDO::PARAM_STR );
-    statement.bindParam( 10, image_vertical_position, PDO::PARAM_STR );
-    statement.bindParam( 11, image_horizontal_position, PDO::PARAM_STR );
-    statement.bindParam( 12, video_path, PDO::PARAM_STR );
-    statement.bindParam( 13, meta_title, PDO::PARAM_STR );
-    statement.bindParam( 14, meta_description, PDO::PARAM_STR );
+    statement.bindParam( 6, language_code_array, PDO::PARAM_STR );
+    statement.bindParam( 7, is_active, PDO::PARAM_BOOL );
+    statement.bindParam( 8, title, PDO::PARAM_STR );
+    statement.bindParam( 9, teaser, PDO::PARAM_STR );
+    statement.bindParam( 10, image_path, PDO::PARAM_STR );
+    statement.bindParam( 11, image_vertical_position, PDO::PARAM_STR );
+    statement.bindParam( 12, image_horizontal_position, PDO::PARAM_STR );
+    statement.bindParam( 13, video_path, PDO::PARAM_STR );
+    statement.bindParam( 14, meta_title, PDO::PARAM_STR );
+    statement.bindParam( 15, meta_description, PDO::PARAM_STR );
 
     if ( !statement.execute() )
     {
@@ -91,6 +93,7 @@ function AddDatabasePage(
 
 function PutDatabasePage(
     string id,
+    string slug,
     string route,
     string type_slug,
     float number,
@@ -106,8 +109,54 @@ function PutDatabasePage(
     string meta_description
     )
 {
-    var statement = GetDatabaseStatement( 'replace into `PAGE` ( `Id`, `Route`, `TypeSlug`, `Number`, `LanguageCodeArray`, `IsActive`, `Title`, `Teaser`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `VideoPath`, `MetaTitle`, `MetaDescription` ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )' );
+    var statement = GetDatabaseStatement( 'replace into `PAGE` ( `Id`, `Slug`, `Route`, `TypeSlug`, `Number`, `LanguageCodeArray`, `IsActive`, `Title`, `Teaser`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `VideoPath`, `MetaTitle`, `MetaDescription` ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )' );
     statement.bindParam( 1, id, PDO::PARAM_STR );
+    statement.bindParam( 2, slug, PDO::PARAM_STR );
+    statement.bindParam( 3, route, PDO::PARAM_STR );
+    statement.bindParam( 4, type_slug, PDO::PARAM_STR );
+    statement.bindParam( 5, number, PDO::PARAM_STR );
+    language_code_array = json_encode( language_code_array );
+    statement.bindParam( 6, language_code_array, PDO::PARAM_STR );
+    statement.bindParam( 7, is_active, PDO::PARAM_BOOL );
+    statement.bindParam( 8, title, PDO::PARAM_STR );
+    statement.bindParam( 9, teaser, PDO::PARAM_STR );
+    statement.bindParam( 10, image_path, PDO::PARAM_STR );
+    statement.bindParam( 11, image_vertical_position, PDO::PARAM_STR );
+    statement.bindParam( 12, image_horizontal_position, PDO::PARAM_STR );
+    statement.bindParam( 13, video_path, PDO::PARAM_STR );
+    statement.bindParam( 14, meta_title, PDO::PARAM_STR );
+    statement.bindParam( 15, meta_description, PDO::PARAM_STR );
+
+    if ( !statement.execute() )
+    {
+        var_dump( statement.errorInfo() );
+    }
+
+    return GetDatabaseAddedId( statement );
+}
+
+// ~~
+
+function SetDatabasePage(
+    string id,
+    string slug,
+    string route,
+    string type_slug,
+    float number,
+    array language_code_array,
+    bool is_active,
+    string title,
+    string teaser,
+    string image_path,
+    string image_vertical_position,
+    string image_horizontal_position,
+    string video_path,
+    string meta_title,
+    string meta_description
+    )
+{
+    var statement = GetDatabaseStatement( 'update `PAGE` set `Slug` = ?, `Route` = ?, `TypeSlug` = ?, `Number` = ?, `LanguageCodeArray` = ?, `IsActive` = ?, `Title` = ?, `Teaser` = ?, `ImagePath` = ?, `ImageVerticalPosition` = ?, `ImageHorizontalPosition` = ?, `VideoPath` = ?, `MetaTitle` = ?, `MetaDescription` = ? where Id = ?' );
+    statement.bindParam( 1, slug, PDO::PARAM_STR );
     statement.bindParam( 2, route, PDO::PARAM_STR );
     statement.bindParam( 3, type_slug, PDO::PARAM_STR );
     statement.bindParam( 4, number, PDO::PARAM_STR );
@@ -122,50 +171,7 @@ function PutDatabasePage(
     statement.bindParam( 12, video_path, PDO::PARAM_STR );
     statement.bindParam( 13, meta_title, PDO::PARAM_STR );
     statement.bindParam( 14, meta_description, PDO::PARAM_STR );
-
-    if ( !statement.execute() )
-    {
-        var_dump( statement.errorInfo() );
-    }
-
-    return GetDatabaseAddedId( statement );
-}
-
-// ~~
-
-function SetDatabasePage(
-    string id,
-    string route,
-    string type_slug,
-    float number,
-    array language_code_array,
-    bool is_active,
-    string title,
-    string teaser,
-    string image_path,
-    string image_vertical_position,
-    string image_horizontal_position,
-    string video_path,
-    string meta_title,
-    string meta_description
-    )
-{
-    var statement = GetDatabaseStatement( 'update `PAGE` set `Route` = ?, `TypeSlug` = ?, `Number` = ?, `LanguageCodeArray` = ?, `IsActive` = ?, `Title` = ?, `Teaser` = ?, `ImagePath` = ?, `ImageVerticalPosition` = ?, `ImageHorizontalPosition` = ?, `VideoPath` = ?, `MetaTitle` = ?, `MetaDescription` = ? where Id = ?' );
-    statement.bindParam( 1, route, PDO::PARAM_STR );
-    statement.bindParam( 2, type_slug, PDO::PARAM_STR );
-    statement.bindParam( 3, number, PDO::PARAM_STR );
-    language_code_array = json_encode( language_code_array );
-    statement.bindParam( 4, language_code_array, PDO::PARAM_STR );
-    statement.bindParam( 5, is_active, PDO::PARAM_BOOL );
-    statement.bindParam( 6, title, PDO::PARAM_STR );
-    statement.bindParam( 7, teaser, PDO::PARAM_STR );
-    statement.bindParam( 8, image_path, PDO::PARAM_STR );
-    statement.bindParam( 9, image_vertical_position, PDO::PARAM_STR );
-    statement.bindParam( 10, image_horizontal_position, PDO::PARAM_STR );
-    statement.bindParam( 11, video_path, PDO::PARAM_STR );
-    statement.bindParam( 12, meta_title, PDO::PARAM_STR );
-    statement.bindParam( 13, meta_description, PDO::PARAM_STR );
-    statement.bindParam( 14, id, PDO::PARAM_STR );
+    statement.bindParam( 15, id, PDO::PARAM_STR );
 
     if ( !statement.execute() )
     {

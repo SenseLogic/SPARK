@@ -7,6 +7,7 @@
         var
             edit_page_form,
             it_is_valid_edit_page_form,
+            slug_field,
             route_field,
             type_slug_field,
             number_field,
@@ -22,6 +23,7 @@
             meta_description_field;
 
         edit_page_form = document.EditPageForm;
+        slug_field = edit_page_form.Slug;
         route_field = edit_page_form.Route;
         type_slug_field = edit_page_form.TypeSlug;
         number_field = edit_page_form.Number;
@@ -36,6 +38,7 @@
         meta_title_field = edit_page_form.MetaTitle;
         meta_description_field = edit_page_form.MetaDescription;
 
+        slug_field.RemoveClass( "form-field-error" );
         route_field.RemoveClass( "form-field-error" );
         type_slug_field.RemoveClass( "form-field-error" );
         number_field.RemoveClass( "form-field-error" );
@@ -51,6 +54,13 @@
         meta_description_field.RemoveClass( "form-field-error" );
 
         it_is_valid_edit_page_form = true;
+
+        if ( slug_field.value === "" )
+        {
+            slug_field.AddClass( "form-field-error" );
+
+            it_is_valid_edit_page_form = false;
+        }
 
         if ( route_field.value === "" )
         {
@@ -123,6 +133,12 @@
     <div class="page-section form-section">
         <form class="form-centered" name="EditPageForm" onsubmit="return IsValidEditPageForm()" action="/admin/page/edit/<?php echo htmlspecialchars( $this->Page->Id ); ?>" method="post">
             <div class="form-container">
+                <div class="form-field-name">
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Slug' ) ); ?> :
+                </div>
+                <div>
+                    <input class="form-input" name="Slug" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Page->Slug ) ); ?>"/>
+                </div>
                 <div class="form-field-name">
                     <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Route' ) ); ?> :
                 </div>

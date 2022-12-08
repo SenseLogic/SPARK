@@ -4,6 +4,12 @@
         <form class="form-centered" action="/admin/page/remove/<?php echo htmlspecialchars( $this->Page->Id ); ?>" method="post">
             <div class="form-container">
                 <div class="form-field-name">
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Slug' ) ); ?> :
+                </div>
+                <div>
+                    <input class="form-input" name="Slug" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Page->Slug ) ); ?>" readonly/>
+                </div>
+                <div class="form-field-name">
                     <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Route' ) ); ?> :
                 </div>
                 <div>

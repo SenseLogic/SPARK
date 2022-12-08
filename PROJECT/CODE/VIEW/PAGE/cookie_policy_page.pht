@@ -1,6 +1,6 @@
 <style file="cookie_policy_page.styl">
 </style>
-<div class="page">
+<div id="<# var page.Slug #>" class="page">
     <? include '../BLOCK/header_menu.php'; ?>
     <? include '../BLOCK/page_heading.php'; ?>
     <? include '../BLOCK/page_content_block_list.php'; ?>

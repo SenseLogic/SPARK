@@ -1,6 +1,6 @@
 
 
-<div class="page">
+<div id="<?php echo  $page->Slug; ?>" class="page">
     <?php require __DIR__ . '/' . '../BLOCK/header_menu.php'; ?>
     <?php  $article_page_array = $this->PageArrayByTypeSlugMap[ 'article' ]; ?>
     <?php require __DIR__ . '/' . '../BLOCK/article_carousel.php'; ?>

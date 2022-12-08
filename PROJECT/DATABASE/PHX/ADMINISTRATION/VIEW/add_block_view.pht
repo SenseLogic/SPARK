@@ -8,6 +8,7 @@
             add_block_form,
             it_is_valid_add_block_form,
             id_field,
+            slug_field,
             page_id_field,
             category_slug_field,
             content_slug_field,
@@ -25,6 +26,7 @@
 
         add_block_form = document.AddBlockForm;
         id_field = add_block_form.Id;
+        slug_field = add_block_form.Slug;
         page_id_field = add_block_form.PageId;
         category_slug_field = add_block_form.CategorySlug;
         content_slug_field = add_block_form.ContentSlug;
@@ -41,6 +43,7 @@
         video_path_field = add_block_form.VideoPath;
 
         id_field.RemoveClass( "form-field-error" );
+        slug_field.RemoveClass( "form-field-error" );
         page_id_field.RemoveClass( "form-field-error" );
         category_slug_field.RemoveClass( "form-field-error" );
         content_slug_field.RemoveClass( "form-field-error" );
@@ -61,6 +64,13 @@
         if ( id_field.value === "" )
         {
             id_field.AddClass( "form-field-error" );
+
+            it_is_valid_add_block_form = false;
+        }
+
+        if ( slug_field.value === "" )
+        {
+            slug_field.AddClass( "form-field-error" );
 
             it_is_valid_add_block_form = false;
         }
@@ -138,6 +148,24 @@
                 </div>
                 <div>
                     <input class="form-input" name="Id" type="text" value="<# field_value #>"/>
+                </div>
+                <?
+                    var field_name = 'Slug';
+
+                    if ( HasQueryValue( field_name ) )
+                    {
+                        var field_value = GetQueryValue( field_name );
+                    }
+                    else
+                    {
+                        field_value = '';
+                    }
+                ?>
+                <div class="form-field-name">
+                    <% .GetProcessedTextBySlug( 'Slug' ) %> :
+                </div>
+                <div>
+                    <input class="form-input" name="Slug" type="text" value="<# field_value #>"/>
                 </div>
                 <?
                     var field_name = 'PageId';

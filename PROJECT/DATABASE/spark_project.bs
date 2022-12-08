@@ -23,6 +23,7 @@ spark-project
     PAGE | sorted, dropped
 
         Id : TUID | key, unique
+        Slug : STRING = ""
         Route : STRING | processed
         TypeSlug : PAGE_TYPE.Slug | processed
         Number : FLOAT32 | ascending
@@ -58,6 +59,7 @@ spark-project
     BLOCK | sorted, dropped, count 50
 
         Id : TUID | key, unique
+        Slug : STRING = ""
         PageId : TUID = "{{PAGE.Id}}"
         CategorySlug : BLOCK_CATEGORY.Slug = "content" | processed
         ContentSlug : BLOCK_CONTENT.Slug = "text"

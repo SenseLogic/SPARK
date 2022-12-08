@@ -753,7 +753,7 @@ textarea {
   grid-template-columns: repeat(3, auto);
 }
 .page-table {
-  grid-template-columns: repeat(14, auto);
+  grid-template-columns: repeat(15, auto);
 }
 .block-category-table {
   grid-template-columns: repeat(3, auto);
@@ -765,7 +765,7 @@ textarea {
   grid-template-columns: repeat(3, auto);
 }
 .block-table {
-  grid-template-columns: repeat(15, auto);
+  grid-template-columns: repeat(16, auto);
 }
 .contact-table {
   grid-template-columns: repeat(8, auto);

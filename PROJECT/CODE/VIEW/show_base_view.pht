@@ -24,6 +24,8 @@
         route
         )
     {
+        CloseHeaderMenu();
+
         if ( route !== undefined )
         {
             SetRoute( "/<# .LanguageCode #>/" + route.RemovePrefix( "/" ) );
@@ -109,9 +111,12 @@
             var
                 view_element;
 
-            for ( view_element of GetElements( ".view" ) )
+            if ( ViewName !== OldViewName )
             {
-                FadeView( view_element );
+                for ( view_element of GetElements( ".view" ) )
+                {
+                    FadeView( view_element );
+                }
             }
 
             if ( SectionName === "" )
@@ -120,7 +125,14 @@
             }
             else
             {
-                SetScrollPosition( GetElementById( ViewName + "/" + SectionName ) );
+                DelayCall(
+                    function (
+                        )
+                    {
+                        SetScrollPosition( GetElement( SectionName ).GetTopPosition() - 48 * GetRemRatio() );
+                    },
+                    ( ViewName === OldViewName ) ? 0 : 0.2
+                    );
             }
         }
         );

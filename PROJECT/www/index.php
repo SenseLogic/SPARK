@@ -52,9 +52,6 @@ DefineLineTag( '    * ', '<div class="paragraph bullet-3">', '</div>' );
 DefineLineTag( '      * ', '<div class="paragraph bullet-4">', '</div>' );
 DefineLineTag( '', '<div class="paragraph">', '</div>' );
 
-DefineTag( '<wrapper></div>', '' );
-DefineTag( '<div class="paragraph"></wrapper>', '' );
-
 DefineDualTag( '**', '<b>', '</b>' );
 DefineDualTag( '%%', '<i>', '</i>' );
 DefineDualTag( '__', '<u>', '</u>' );
@@ -76,6 +73,10 @@ DefineTag( '([', "<span class=\"link-button\" onclick=\"ShowView( '" );
 DefineTag( '][', "' )\">" );
 DefineTag( '])', '</span>' );
 
+DefineTag( '<wrapper>', '<div><wrap>' );
+DefineTag( '</wrapper>', '</wrap></div>' );
+DefineTag( '<wrap></div>', '' );
+DefineTag( '<div class="paragraph"></wrap>', '' );
 
 DefineColorTag( 'red' );
 DefineColorTag( 'green', '#0F0' );
@@ -427,6 +428,7 @@ function Route(
                       && $path_value_count === 3
                       && $path_value_array[ 2 ] === 'add'
                       && HasPostValue( 'Id' )
+                      && HasPostValue( 'Slug' )
                       && HasPostValue( 'Route' )
                       && HasPostValue( 'TypeSlug' )
                       && HasPostValue( 'Number' )
@@ -462,6 +464,7 @@ function Route(
             else if ( $it_is_post_request
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'edit'
+                      && HasPostValue( 'Slug' )
                       && HasPostValue( 'Route' )
                       && HasPostValue( 'TypeSlug' )
                       && HasPostValue( 'Number' )
@@ -729,6 +732,7 @@ function Route(
                       && $path_value_count === 3
                       && $path_value_array[ 2 ] === 'add'
                       && HasPostValue( 'Id' )
+                      && HasPostValue( 'Slug' )
                       && HasPostValue( 'PageId' )
                       && HasPostValue( 'CategorySlug' )
                       && HasPostValue( 'ContentSlug' )
@@ -765,6 +769,7 @@ function Route(
             else if ( $it_is_post_request
                       && $path_value_count === 4
                       && $path_value_array[ 2 ] === 'edit'
+                      && HasPostValue( 'Slug' )
                       && HasPostValue( 'PageId' )
                       && HasPostValue( 'CategorySlug' )
                       && HasPostValue( 'ContentSlug' )
