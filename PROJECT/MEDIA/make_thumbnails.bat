@@ -1,0 +1,2 @@
+call make_folder_thumbnails article
+pause
