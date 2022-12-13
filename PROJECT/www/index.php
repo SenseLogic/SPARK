@@ -73,6 +73,9 @@ DefineTag( '([', "<span class=\"link-button\" onclick=\"ShowView( '" );
 DefineTag( '][', "' )\">" );
 DefineTag( '])', '</span>' );
 
+DefineTag( '<div<', '<div class="' );
+DefineTag( '<span<', '<span class="' );
+
 DefineTag( '<wrapper>', '<div><wrap>' );
 DefineTag( '</wrapper>', '</wrap></div>' );
 DefineTag( '<wrap></div>', '' );
