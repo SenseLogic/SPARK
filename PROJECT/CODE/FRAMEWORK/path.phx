@@ -1,5 +1,14 @@
 // -- FUNCTIONS
 
+function GetSlugPath(
+    string slug
+    )
+{
+    return str_replace( '-', '_', slug );
+}
+
+// ~~
+
 function GetPhysicalPath(
     string logical_path
     )
