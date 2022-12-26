@@ -49,8 +49,11 @@
     function ResizeView(
         )
     {
-        EmitEvent( "update-view" );
-        InitializeAutohideVideos();
+        if ( !IsMobileBrowser() )
+        {
+            EmitEvent( "update-view" );
+            InitializeAutohideVideos();
+        }
     }
 
     // ~~

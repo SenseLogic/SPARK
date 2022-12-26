@@ -18,6 +18,6 @@
         }
     }
 </style>
-<div id="<# var block.Slug #>" class="y-translation-opacity-transition block appearing-block image" style="padding-top: <# block.MinimumHeight #>; background: url( '<# block.ImagePath #>' ) no-repeat <# block.ImageHorizontalPosition #> <# block.ImageVerticalPosition #> / cover, url( '<# block.ImagePath #>.preload.jpg' ) no-repeat <# block.ImageHorizontalPosition #> <# block.ImageVerticalPosition #> / cover">
+<div id="<# var block.Slug #>" class="y-translation-opacity-transition block appearing-block image" style="padding-top: <# block.MinimumHeight #>; background: url( '<# block.ImagePath #>' ) no-repeat <# block.ImageHorizontalPosition #> <# block.ImageVerticalPosition #> / cover, url( '<# GetPreloadImagePath( block.ImagePath ) #>' ) no-repeat <# block.ImageHorizontalPosition #> <# block.ImageVerticalPosition #> / cover">
     <? include str_replace( '-', '_', block.ContentSlug ) .. '_content.php'; ?>
 </div>

@@ -12,7 +12,7 @@
 </style>
 <div id="<# var page.Slug #>" class="page">
     <? include '../BLOCK/header_menu.php'; ?>
-    <div class="contact-page-heading" style="background: linear-gradient( rgba( 0, 0, 0, 0.1 ), rgba( 0, 0, 0, 0.1 ) ), url( '<# page.ImagePath #>' ) no-repeat center center / cover, url( '<# page.ImagePath #>.preload.jpg' ) no-repeat center center / cover">
+    <div class="contact-page-heading" style="background: linear-gradient( rgba( 0, 0, 0, 0.1 ), rgba( 0, 0, 0, 0.1 ) ), url( '<# page.ImagePath #>' ) no-repeat center center / cover, url( '<# GetPreloadImagePath( page.ImagePath ) #>' ) no-repeat center center / cover">
         <? include '../BLOCK/contact_form.php'; ?>
         <? include '../BLOCK/scroll_down_reminder.php'; ?>
     </div>

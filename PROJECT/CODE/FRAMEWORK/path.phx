@@ -9,6 +9,15 @@ function GetSlugPath(
 
 // ~~
 
+function GetPreloadImagePath(
+    string image_path
+    )
+{
+    return str_replace( [ '.medium.jpg', '.small.jpg' ], '', image_path ) .. '.preload.jpg';
+}
+
+// ~~
+
 function GetPhysicalPath(
     string logical_path
     )

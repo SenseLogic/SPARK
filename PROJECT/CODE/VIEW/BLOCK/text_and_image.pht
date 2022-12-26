@@ -60,6 +60,6 @@
     <div class="text-and-image-text">
         <? include str_replace( '-', '_', block.ContentSlug ) .. '_content.php'; ?>
     </div>
-    <div class="text-and-image-image" style="padding-top: <# block.MinimumHeight #>; background: url( '<# block.ImagePath #>' ) no-repeat <# block.ImageHorizontalPosition #> <# block.ImageVerticalPosition #> / cover, url( '<# block.ImagePath #>.preload.jpg' ) no-repeat <# block.ImageHorizontalPosition #> <# block.ImageVerticalPosition #> / cover">
+    <div class="text-and-image-image" style="padding-top: <# block.MinimumHeight #>; background: url( '<# block.ImagePath #>' ) no-repeat <# block.ImageHorizontalPosition #> <# block.ImageVerticalPosition #> / cover, url( '<# GetPreloadImagePath( block.ImagePath ) #>' ) no-repeat <# block.ImageHorizontalPosition #> <# block.ImageVerticalPosition #> / cover">
     </div>
 </div>

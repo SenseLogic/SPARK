@@ -62,7 +62,7 @@
     <div id="article-carousel-strip" class="article-carousel-strip">
         <?php for (  $article_page_index = 0; $article_page_index <= $article_page_count; ++$article_page_index ) { ?>
             <?php  $article_page = $article_page_array[ $article_page_index % $article_page_count ]; ?>
-            <div class="article-carousel-slide" style="background: linear-gradient( rgba( 0, 0, 0, 0.1 ), rgba( 0, 0, 0, 0.1 ) ), url( '<?php echo $article_page->ImagePath; ?>' ) no-repeat <?php echo $article_page->ImageHorizontalPosition; ?> <?php echo $article_page->ImageVerticalPosition; ?> / cover, url( '<?php echo $article_page->ImagePath; ?>.preload.jpg' ) no-repeat <?php echo $article_page->ImageHorizontalPosition; ?> <?php echo $article_page->ImageVerticalPosition; ?> / cover" onclick="ShowView( '<?php echo $article_page->Route; ?>' )">
+            <div class="article-carousel-slide" style="background: linear-gradient( rgba( 0, 0, 0, 0.1 ), rgba( 0, 0, 0, 0.1 ) ), url( '<?php echo $article_page->ImagePath; ?>' ) no-repeat <?php echo $article_page->ImageHorizontalPosition; ?> <?php echo $article_page->ImageVerticalPosition; ?> / cover, url( '<?php echo GetPreloadImagePath( $article_page->ImagePath ); ?>' ) no-repeat <?php echo $article_page->ImageHorizontalPosition; ?> <?php echo $article_page->ImageVerticalPosition; ?> / cover" onclick="ShowView( '<?php echo $article_page->Route; ?>' )">
                 <div class="article-carousel-slide-text">
                     <?php echo $this->GetTranslatedText( $article_page->Teaser ); ?>
                 </div>
