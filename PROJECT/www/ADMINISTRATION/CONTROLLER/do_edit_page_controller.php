@@ -23,6 +23,7 @@ class DO_EDIT_PAGE_CONTROLLER extends CONTROLLER
          $language_code_array = GetJsonObject( GetPostValue( 'LanguageCodeArray' ) );
          $is_active = GetPostValue( 'IsActive' );
          $title = GetPostValue( 'Title' );
+         $heading = GetPostValue( 'Heading' );
          $teaser = GetPostValue( 'Teaser' );
          $image_path = GetPostValue( 'ImagePath' );
          $image_vertical_position = GetPostValue( 'ImageVerticalPosition' );
@@ -30,8 +31,9 @@ class DO_EDIT_PAGE_CONTROLLER extends CONTROLLER
          $video_path = GetPostValue( 'VideoPath' );
          $meta_title = GetPostValue( 'MetaTitle' );
          $meta_description = GetPostValue( 'MetaDescription' );
+         $meta_image_path = GetPostValue( 'MetaImagePath' );
 
-        SetDatabasePage( $page_id, $slug, $route, $type_slug, $number, $language_code_array, $is_active, $title, $teaser, $image_path, $image_vertical_position, $image_horizontal_position, $video_path, $meta_title, $meta_description );
+        SetDatabasePage( $page_id, $slug, $route, $type_slug, $number, $language_code_array, $is_active, $title, $heading, $teaser, $image_path, $image_vertical_position, $image_horizontal_position, $video_path, $meta_title, $meta_description, $meta_image_path );
 
         Redirect( FindSessionValue( 'ListRoute', '/admin/page' ) );
     }

@@ -15,13 +15,15 @@
             language_code_array_field,
             is_active_field,
             title_field,
+            heading_field,
             teaser_field,
             image_path_field,
             image_vertical_position_field,
             image_horizontal_position_field,
             video_path_field,
             meta_title_field,
-            meta_description_field;
+            meta_description_field,
+            meta_image_path_field;
 
         add_page_form = document.AddPageForm;
         id_field = add_page_form.Id;
@@ -32,6 +34,7 @@
         language_code_array_field = add_page_form.LanguageCodeArray;
         is_active_field = add_page_form.IsActive;
         title_field = add_page_form.Title;
+        heading_field = add_page_form.Heading;
         teaser_field = add_page_form.Teaser;
         image_path_field = add_page_form.ImagePath;
         image_vertical_position_field = add_page_form.ImageVerticalPosition;
@@ -39,6 +42,7 @@
         video_path_field = add_page_form.VideoPath;
         meta_title_field = add_page_form.MetaTitle;
         meta_description_field = add_page_form.MetaDescription;
+        meta_image_path_field = add_page_form.MetaImagePath;
 
         id_field.RemoveClass( "form-field-error" );
         slug_field.RemoveClass( "form-field-error" );
@@ -48,6 +52,7 @@
         language_code_array_field.RemoveClass( "form-field-error" );
         is_active_field.RemoveClass( "form-field-error" );
         title_field.RemoveClass( "form-field-error" );
+        heading_field.RemoveClass( "form-field-error" );
         teaser_field.RemoveClass( "form-field-error" );
         image_path_field.RemoveClass( "form-field-error" );
         image_vertical_position_field.RemoveClass( "form-field-error" );
@@ -55,6 +60,7 @@
         video_path_field.RemoveClass( "form-field-error" );
         meta_title_field.RemoveClass( "form-field-error" );
         meta_description_field.RemoveClass( "form-field-error" );
+        meta_image_path_field.RemoveClass( "form-field-error" );
 
         it_is_valid_add_page_form = true;
 
@@ -118,20 +124,6 @@
         if ( image_horizontal_position_field.value === "" )
         {
             image_horizontal_position_field.AddClass( "form-field-error" );
-
-            it_is_valid_add_page_form = false;
-        }
-
-        if ( meta_title_field.value === "" )
-        {
-            meta_title_field.AddClass( "form-field-error" );
-
-            it_is_valid_add_page_form = false;
-        }
-
-        if ( meta_description_field.value === "" )
-        {
-            meta_description_field.AddClass( "form-field-error" );
 
             it_is_valid_add_page_form = false;
         }
@@ -296,6 +288,29 @@
                     </div>
                 </div>
                 <?php
+                     $field_name = 'Heading';
+
+                    if ( HasQueryValue( $field_name ) )
+                    {
+                         $field_value = GetQueryValue( $field_name );
+                    }
+                    else
+                    {
+                        $field_value = '';
+                    }
+                ?>
+                <div class="form-field-name">
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Heading' ) ); ?> :
+                </div>
+                <div>
+                    <div>
+                        <input class="multilingual-input form-input" name="Heading" type="text" value="<?php echo $field_value; ?>" hidden/>
+                        <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
+                            <input class="multilingual-input-translation form-translation form-input" data-language-code="<?php echo htmlspecialchars( $language_code ); ?>" placeholder="<?php echo htmlspecialchars( $this->GetProcessedTextBySlug( $language_code ) ); ?>"/>
+                        <?php } ?>
+                    </div>
+                </div>
+                <?php
                      $field_name = 'Teaser';
 
                     if ( HasQueryValue( $field_name ) )
@@ -444,7 +459,12 @@
                     <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Meta Title' ) ); ?> :
                 </div>
                 <div>
-                    <input class="form-input" name="MetaTitle" type="text" value="<?php echo $field_value; ?>"/>
+                    <div>
+                        <input class="multilingual-input form-input" name="MetaTitle" type="text" value="<?php echo $field_value; ?>" hidden/>
+                        <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
+                            <input class="multilingual-input-translation form-translation form-input" data-language-code="<?php echo htmlspecialchars( $language_code ); ?>" placeholder="<?php echo htmlspecialchars( $this->GetProcessedTextBySlug( $language_code ) ); ?>"/>
+                        <?php } ?>
+                    </div>
                 </div>
                 <?php
                      $field_name = 'MetaDescription';
@@ -462,7 +482,37 @@
                     <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Meta Description' ) ); ?> :
                 </div>
                 <div>
-                    <input class="form-input" name="MetaDescription" type="text" value="<?php echo $field_value; ?>"/>
+                    <div>
+                        <textarea class="multilingual-input form-textarea" name="MetaDescription" hidden><?php echo $field_value; ?></textarea>
+                        <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
+                            <textarea class="multilingual-input-translation form-translation form-textarea" data-language-code="<?php echo htmlspecialchars( $language_code ); ?>" placeholder="<?php echo htmlspecialchars( $this->GetProcessedTextBySlug( $language_code ) ); ?>"></textarea>
+                        <?php } ?>
+                    </div>
+                </div>
+                <?php
+                     $field_name = 'MetaImagePath';
+
+                    if ( HasQueryValue( $field_name ) )
+                    {
+                         $field_value = GetQueryValue( $field_name );
+                    }
+                    else
+                    {
+                        $field_value = '';
+                    }
+                ?>
+                <div class="form-field-name">
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Meta Image Path' ) ); ?> :
+                </div>
+                <div>
+                    <input class="form-input" name="MetaImagePath" type="text" value="<?php echo $field_value; ?>" oninput="HandleImagePathInputChangeEvent( this )"/>
+                    <div class="form-upload-container">
+                        <img class="form-upload-image" src="<?php echo $field_value; ?>" onerror="this.src='/static/image/admin/missing_image.svg'"/>
+                        <label class="form-upload-button">
+                            <img class="form-upload-icon" src="/static/image/admin/upload_icon.svg"/><input class="form-upload-file" type="file" accept="image/jpeg, image/png, image/webp, image/gif, image/svg" onchange="HandleImageFileInputChangeEvent( this )"/>
+                        </label>
+                        <img class="form-delete-icon" src="/static/image/admin/remove_icon.svg" onclick="HandleFileInputDeleteButtonClickEvent( this )"/>
+                    </div>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="<?php echo htmlspecialchars( $this->ListRoute ); ?>">
                 </a>

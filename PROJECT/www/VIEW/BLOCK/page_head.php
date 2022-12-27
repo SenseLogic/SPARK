@@ -1,6 +1,7 @@
 <?php
      $meta_title = 'Spark Project';
      $meta_description = 'Spark Project';
+     $meta_image_path = '/favicon-512x512.png';
 
     if ( isset( $this->PageByRouteMap[ $this->Route ] ) )
     {
@@ -14,6 +15,11 @@
         if ( property_exists( $page, 'MetaDescription' ) )
         {
             $meta_description = $page->MetaDescription;
+        }
+
+        if ( property_exists( $page, 'MetaImagePath' ) )
+        {
+            $meta_image_path = $page->MetaImagePath;
         }
     }
 ?>
@@ -35,16 +41,16 @@
 <meta name="msapplication-config" content="/browserconfig.xml"/>
 <meta name="msapplication-TileColor" content="#FFFFFF"/>
 <meta name="msapplication-TileImage" content="/favicon-512x512.png"/>
-<meta name="twitter:card" content="Spark Project"/>
-<meta name="twitter:title" content="Spark Project"/>
-<meta name="twitter:description" content="Spark Project"/>
+<meta name="twitter:card" content="<?php echo $meta_title; ?>"/>
+<meta name="twitter:title" content="<?php echo $meta_title; ?>"/>
+<meta name="twitter:description" content="<?php echo $meta_description; ?>"/>
 <meta name="twitter:image" content="/favicon-512x512.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="Spark Project"/>
-<meta property="og:title" content="Spark Project"/>
-<meta property="og:description" content="Spark Project"/>
+<meta property="og:title" content="<?php echo $meta_title; ?>"/>
+<meta property="og:description" content="<?php echo $meta_description; ?>"/>
 <meta property="og:url" content="https://www.spark-project.com/"/>
-<meta property="og:image" content="/favicon-512x512.png"/>
+<meta property="og:image" content="<?php echo $meta_image_path; ?>"/>
 <title>Spark Project</title>
 <link rel="icon" href="/favicon.ico"/>
 <link rel="icon" sizes="48x48" href="/favicon-48x48.png"/>

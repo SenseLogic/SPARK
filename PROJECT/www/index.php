@@ -438,13 +438,15 @@ function Route(
                       && HasPostValue( 'LanguageCodeArray' )
                       && HasPostValue( 'IsActive' )
                       && HasPostValue( 'Title' )
+                      && HasPostValue( 'Heading' )
                       && HasPostValue( 'Teaser' )
                       && HasPostValue( 'ImagePath' )
                       && HasPostValue( 'ImageVerticalPosition' )
                       && HasPostValue( 'ImageHorizontalPosition' )
                       && HasPostValue( 'VideoPath' )
                       && HasPostValue( 'MetaTitle' )
-                      && HasPostValue( 'MetaDescription' ) )
+                      && HasPostValue( 'MetaDescription' )
+                      && HasPostValue( 'MetaImagePath' ) )
             {
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_add_page_controller.php';
             }
@@ -474,13 +476,15 @@ function Route(
                       && HasPostValue( 'LanguageCodeArray' )
                       && HasPostValue( 'IsActive' )
                       && HasPostValue( 'Title' )
+                      && HasPostValue( 'Heading' )
                       && HasPostValue( 'Teaser' )
                       && HasPostValue( 'ImagePath' )
                       && HasPostValue( 'ImageVerticalPosition' )
                       && HasPostValue( 'ImageHorizontalPosition' )
                       && HasPostValue( 'VideoPath' )
                       && HasPostValue( 'MetaTitle' )
-                      && HasPostValue( 'MetaDescription' ) )
+                      && HasPostValue( 'MetaDescription' )
+                      && HasPostValue( 'MetaImagePath' ) )
             {
                  $page_id = $path_value_array[ 3 ];
 

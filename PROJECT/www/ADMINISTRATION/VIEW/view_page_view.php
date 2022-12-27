@@ -49,6 +49,16 @@
                 </div>
             </div>
             <div class="form-field-name">
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Heading' ) ); ?> :
+            </div>
+            <div>
+                <div>
+                    <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
+                        <input class="form-translation form-input" name="Heading" type="text" value="<?php echo htmlspecialchars( GetValueText( GetTranslatedText( $this->Page->Heading, $language_code ) ) ); ?>" readonly/>
+                    <?php } ?>
+                </div>
+            </div>
+            <div class="form-field-name">
                 <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Teaser' ) ); ?> :
             </div>
             <div>
@@ -92,13 +102,30 @@
                 <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Meta Title' ) ); ?> :
             </div>
             <div>
-                    <input class="form-input" name="MetaTitle" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Page->MetaTitle ) ); ?>" readonly/>
+                <div>
+                    <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
+                        <input class="form-translation form-input" name="MetaTitle" type="text" value="<?php echo htmlspecialchars( GetValueText( GetTranslatedText( $this->Page->MetaTitle, $language_code ) ) ); ?>" readonly/>
+                    <?php } ?>
+                </div>
             </div>
             <div class="form-field-name">
                 <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Meta Description' ) ); ?> :
             </div>
             <div>
-                    <input class="form-input" name="MetaDescription" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Page->MetaDescription ) ); ?>" readonly/>
+                <div>
+                    <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
+                        <textarea class="form-translation form-textarea" name="MetaDescription" readonly><?php echo htmlspecialchars( GetTranslatedText( $this->Page->MetaDescription, $language_code ) ); ?></textarea>
+                    <?php } ?>
+                </div>
+            </div>
+            <div class="form-field-name">
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Meta Image Path' ) ); ?> :
+            </div>
+            <div>
+                <input class="form-input" name="MetaImagePath" type="text" value="<?php echo htmlspecialchars( $this->Page->MetaImagePath ); ?>" readonly/>
+                <div class="form-upload-container">
+                    <img class="form-upload-image" src="<?php echo htmlspecialchars( $this->Page->MetaImagePath ); ?>" onerror="this.src='/static/image/admin/missing_image.svg'"/>
+                </div>
             </div>
             <a class="justify-self-start form-button form-button-large cancel-button" href="<?php echo htmlspecialchars( $this->ListRoute ); ?>">
             </a>

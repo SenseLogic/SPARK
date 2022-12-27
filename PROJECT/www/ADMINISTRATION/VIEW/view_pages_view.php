@@ -36,6 +36,9 @@
                 <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Title' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Heading' ) ); ?>
+            </div>
+            <div class="form-column-name sortable-table-column">
                 <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Teaser' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
@@ -55,6 +58,9 @@
             </div>
             <div class="form-column-name sortable-table-column">
                 <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Meta Description' ) ); ?>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Meta Image Path' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
                 <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Action' ) ); ?>
@@ -92,6 +98,15 @@
                         <div>
                             <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
                                 <div class="form-translation">
+                                    <?php echo htmlspecialchars( GetValueText( GetTranslatedText( $page->Heading, $language_code ) ) ); ?>
+                                </div>
+                            <?php } ?>
+                        </div>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <div>
+                            <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
+                                <div class="form-translation">
                                     <?php echo htmlspecialchars( GetTranslatedText( $page->Teaser, $language_code ) ); ?>
                                 </div>
                             <?php } ?>
@@ -110,10 +125,25 @@
                         <?php echo htmlspecialchars( GetValueText( $page->VideoPath ) ); ?>
                     </div>
                     <div class="sortable-table-cell filter-cell">
-                        <?php echo htmlspecialchars( GetValueText( $page->MetaTitle ) ); ?>
+                        <div>
+                            <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
+                                <div class="form-translation">
+                                    <?php echo htmlspecialchars( GetValueText( GetTranslatedText( $page->MetaTitle, $language_code ) ) ); ?>
+                                </div>
+                            <?php } ?>
+                        </div>
                     </div>
                     <div class="sortable-table-cell filter-cell">
-                        <?php echo htmlspecialchars( GetValueText( $page->MetaDescription ) ); ?>
+                        <div>
+                            <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
+                                <div class="form-translation">
+                                    <?php echo htmlspecialchars( GetTranslatedText( $page->MetaDescription, $language_code ) ); ?>
+                                </div>
+                            <?php } ?>
+                        </div>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <?php echo htmlspecialchars( GetValueText( $page->MetaImagePath ) ); ?>
                     </div>
                     <div class="form-centered sortable-table-cell">
                         <a class="form-button view-button" href="/admin/page/view/<?php echo htmlspecialchars( $page->Id ); ?>">
@@ -181,6 +211,16 @@
                             </div>
                         </div>
                         <div class="form-field-name">
+                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Heading' ) ); ?> :
+                        </div>
+                        <div>
+                            <div>
+                                <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
+                                    <input class="form-translation form-input" name="Heading" type="text" value="<?php echo htmlspecialchars( GetValueText( GetTranslatedText( $page->Heading, $language_code ) ) ); ?>" readonly/>
+                                <?php } ?>
+                            </div>
+                        </div>
+                        <div class="form-field-name">
                             <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Teaser' ) ); ?> :
                         </div>
                         <div>
@@ -224,13 +264,30 @@
                             <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Meta Title' ) ); ?> :
                         </div>
                         <div>
-                                <input class="form-input" name="MetaTitle" type="text" value="<?php echo htmlspecialchars( GetValueText( $page->MetaTitle ) ); ?>" readonly/>
+                            <div>
+                                <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
+                                    <input class="form-translation form-input" name="MetaTitle" type="text" value="<?php echo htmlspecialchars( GetValueText( GetTranslatedText( $page->MetaTitle, $language_code ) ) ); ?>" readonly/>
+                                <?php } ?>
+                            </div>
                         </div>
                         <div class="form-field-name">
                             <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Meta Description' ) ); ?> :
                         </div>
                         <div>
-                                <input class="form-input" name="MetaDescription" type="text" value="<?php echo htmlspecialchars( GetValueText( $page->MetaDescription ) ); ?>" readonly/>
+                            <div>
+                                <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
+                                    <textarea class="form-translation form-textarea" name="MetaDescription" readonly><?php echo htmlspecialchars( GetTranslatedText( $page->MetaDescription, $language_code ) ); ?></textarea>
+                                <?php } ?>
+                            </div>
+                        </div>
+                        <div class="form-field-name">
+                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Meta Image Path' ) ); ?> :
+                        </div>
+                        <div>
+                            <input class="form-input" name="MetaImagePath" type="text" value="<?php echo htmlspecialchars( $page->MetaImagePath ); ?>" readonly/>
+                            <div class="form-upload-container">
+                                <img class="form-upload-image" src="<?php echo htmlspecialchars( $page->MetaImagePath ); ?>" onerror="this.src='/static/image/admin/missing_image.svg'"/>
+                            </div>
                         </div>
                     </div>
                     <?php if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
