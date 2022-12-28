@@ -55,7 +55,7 @@ function ContainsText(
     string searched_text
     )
 {
-    return str_contains( text, searched_text );
+    return strpos( text, searched_text ) !== false;
 }
 
 // ~~
@@ -80,6 +80,7 @@ function ReplaceTexts(
     do
     {
         var prior_text = text;
+
         text = str_replace( old_text, new_text, text );
     }
     while ( text !== prior_text );
@@ -282,6 +283,25 @@ function GetQuotedText(
     )
 {
     return addslashes( text );
+}
+
+// ~~
+
+function GetCsvText(
+    string text
+    )
+{
+    if ( strpos( text, '"' ) !== false
+         || strpos( text, ',' ) !== false
+         || strpos( text, "\r" ) !== false
+         || strpos( text, "\n" ) !== false )
+    {
+        return '"' .. ReplaceText( text, '"', '""' ) .. '"';
+    }
+    else
+    {
+        return text;
+    }
 }
 
 // ~~
