@@ -1,2 +1,2 @@
-call make_folder_posters article
+call make_folder_posters article %1
 pause
