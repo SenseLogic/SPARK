@@ -1,2 +1,3 @@
-..\..\..\TOOL\BIT\bit --split 50m
+call define.bat
+%TOOL%\BIT\bit --split 50m
 pause

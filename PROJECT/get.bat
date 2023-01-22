@@ -1,3 +1,4 @@
+call define.bat
 @echo on
 call npm install -g npm
 pause

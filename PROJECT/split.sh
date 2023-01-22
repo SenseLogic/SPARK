@@ -1,3 +1,4 @@
 #!/bin/sh
 set -x
-../../../TOOL/BIT/bit --split 50m
+source ./define.sh
+$TOOL/BIT/bit --split 50m

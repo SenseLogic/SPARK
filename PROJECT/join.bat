@@ -1,2 +1,3 @@
-..\..\..\TOOL\BIT\bit --join
+call define.bat
+%TOOL%\BIT\bit --join
 pause

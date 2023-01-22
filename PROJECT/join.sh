@@ -1,3 +1,4 @@
 #!/bin/sh
 set -x
-../../../TOOL/BIT/bit --join
+source ./define.sh
+$TOOL/BIT/bit --join
