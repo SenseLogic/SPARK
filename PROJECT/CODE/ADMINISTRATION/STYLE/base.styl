@@ -5,25 +5,21 @@
 
 // -- CONSTANTS
 
-PageTitleBackgroundColor = #84A5C9;
-PageMenuBackgroundColor = #5886B5;
-TooltipBackgroundColor = #628DB9;
-PageBodyBackgroundColor = #EBEDEE;
-RowHoverBackgroundColor = #F1F7F7;
+BlackColor = #000000;
+GrayColor = #808080;
+WhiteColor = #FFFFFF;
 
-PrimaryInsetColor = rgba( 0, 0, 0, 0.15 );
-PrimaryShadowColor = rgba( 0, 0, 0, 0.10 );
-SecondaryShadowColor = rgba( 0, 0, 0, 0.13 );
+RedColor = #E20048;
+BlueColor = #001E68;
 
-ScrollbarColor = #A0BAD5;
-ScrollbarHoverColor = #8DABCD;
-ScrollbarBackgroundColor = #C4D0DD;
+BorderColor = #CCCCCC;
 
 // -- ELEMENTS
 
 html
 {
-    background: #FFFFFF;
+    background: WhiteColor;
+    color: BlueColor;
 }
 
 body
@@ -37,7 +33,8 @@ a
     color: inherit;
 }
 
-a:hover
+a:hover,
+a:visited
 {
     color: inherit;
 
@@ -58,36 +55,10 @@ textarea:focus
     outline: none;
 }
 
-html,
-body,
-body *,
-button,
 input,
 textarea
 {
-    scrollbar-width: thin;
-    scrollbar-color: ScrollbarColor ScrollbarBackgroundColor;
-}
-
-::-webkit-scrollbar
-{
-    height: 0.6rem;
-    width: 0.6rem;
-}
-
-::-webkit-scrollbar-thumb
-{
-    background-color: ScrollbarColor;
-}
-
-::-webkit-scrollbar-thumb:hover
-{
-    background-color: ScrollbarHoverColor;
-}
-
-::-webkit-scrollbar-track
-{
-    background-color: ScrollbarBackgroundColor;
+    color: BlackColor;
 }
 
 // -- CLASSES
@@ -101,9 +72,44 @@ MakeSortableTableColumn();
 
 // ~~
 
+.color-black
+{
+    color: BlackColor;
+}
+
+.color-gray
+{
+    color: GrayColor;
+}
+
+.color-white
+{
+    color: WhiteColor;
+}
+
+.color-red
+{
+    color: RedColor;
+}
+
+.color-blue
+{
+    color: BlueColor;
+}
+
 .is-hidden
 {
     display: none !important;
+}
+
+.margin-top-auto
+{
+    margin-top: auto !important;
+}
+
+.margin-top-50pem
+{
+    margin-top: 0.5rem !important;
 }
 
 .margin-top-1rem
@@ -116,6 +122,21 @@ MakeSortableTableColumn();
     margin-top: 2rem !important;
 }
 
+.margin-top-3rem
+{
+    margin-top: 3rem !important;
+}
+
+.margin-bottom-auto
+{
+    margin-bottom: auto !important;
+}
+
+.margin-bottom-50pem
+{
+    margin-bottom: 0.5rem !important;
+}
+
 .margin-bottom-1rem
 {
     margin-bottom: 1rem !important;
@@ -126,20 +147,138 @@ MakeSortableTableColumn();
     margin-bottom: 2rem !important;
 }
 
-.title
+.margin-bottom-3rem
 {
-    box-shadow: 0 0 0.6rem PrimaryInsetColor inset;
+    margin-bottom: 3rem !important;
 }
 
-.image,
-.video
+.margin-left-auto
 {
-    box-shadow: 0 0.6rem 1.2rem PrimaryShadowColor, 0 0.4rem 0.4rem SecondaryShadowColor;
+    margin-left: auto !important;
 }
 
-.input
+.margin-left-50pem
 {
-    box-shadow: 0 0.3rem 0.6rem PrimaryShadowColor, 0 0.2rem 0.2rem SecondaryShadowColor;
+    margin-left: 0.5rem !important;
+}
+
+.margin-left-1rem
+{
+    margin-left: 1rem !important;
+}
+
+.margin-left-2rem
+{
+    margin-left: 2rem !important;
+}
+
+.margin-left-3rem
+{
+    margin-left: 3rem !important;
+}
+
+.margin-right-auto
+{
+    margin-right: auto !important;
+}
+
+.margin-right-50pem
+{
+    margin-right: 0.5rem !important;
+}
+
+.margin-right-1rem
+{
+    margin-right: 1rem !important;
+}
+
+.margin-right-2rem
+{
+    margin-right: 2rem !important;
+}
+
+.margin-right-3rem
+{
+    margin-right: 3rem !important;
+}
+
+.width-30rem
+{
+    width: 30rem !important;
+}
+
+.padding-1rem
+{
+    padding: 1rem !important;
+}
+
+.padding-2rem
+{
+    padding: 2rem !important;
+}
+
+.flex-direction-column
+{
+    flex-direction: column !important;
+}
+
+.tree-container
+{
+    position: relative;
+    margin-top: 0.25rem;
+}
+
+.tree-container .tree-container
+{
+    margin-left: 2em;
+}
+
+.tree-button
+{
+    color: BlueColor;
+}
+
+.tree-button:hover
+{
+    color: RedColor;
+}
+
+.tree-toggle-button
+{
+    position: absolute;
+    height: 1rem;
+    width: 1rem;
+    transform: translate( -1.5rem, 0.2rem );
+    background: url( "/static/image/admin/red_right_caret_icon.svg" ) no-repeat center center / contain;
+    cursor: pointer;
+}
+
+.tree-toggle-button:hover
+{
+    transform: translate( -1.5rem, 0.2rem ) scale( 1.2 );
+}
+
+.tree-toggle-button + *
+{
+    margin-top: -1rem;
+}
+
+.tree-toggle-button.is-open
+{
+    background: url( "/static/image/admin/red_down_caret_icon.svg" ) no-repeat center center / contain;
+}
+
+.tree-toggle-button:not(.is-open) ~ .tree-container
+{
+    display: none;
+}
+
+.logo-image
+{
+    height: 6rem;
+    width: 15rem;
+
+    background: url( "/static/image/admin/logo.svg" ) no-repeat center center / contain;
 }
 
 .page-container
@@ -147,87 +286,59 @@ MakeSortableTableColumn();
     min-height: 100vh;
 
     display: grid;
-    grid-template-rows: 3rem 1fr;
-    grid-template-columns: 3rem 1fr;
+    grid-template-rows: 2.5rem auto 1fr;
+    grid-template-columns: 1fr;
     grid-template-areas: \
-        "menu title" \
-        "menu body";
+        "menu" \
+        "title" \
+        "body";
 }
 
 .page-menu
 {
     z-index: 1000;
     position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
 
-    min-height: 100vh;
-    width: 3rem;
+    height: 2.5rem;
 
     display: flex;
+    justify-content: center;
+    align-items: center;
     grid-area: menu;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    gap: 1.5rem;
 
-    background-color: PageMenuBackgroundColor;
-    box-shadow: 0 0 0.6rem PrimaryInsetColor inset;
+    background-color: WhiteColor;
 }
 
-.page-menu-content
+.page-menu-button,
+.page-menu-button:visited
 {
-    z-index: 1000;
-    position: fixed;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    color: GrayColor;
 
-    overflow-y: auto;
-    scrollbar-width: none !important;
-    min-height: 100vh;
-    max-height: 100%;
-    padding: 1rem 0.5rem 0.5rem 0.5rem;
-
-    display: flex;
-    flex-direction: column;
+    font-size: 1rem;
 }
 
-.page-menu-content::-webkit-scrollbar
+.page-menu-button:hover
 {
-    display: none !important;
-}
-
-.page-menu-item
-{
-    padding-bottom: 0.5rem;
-}
-
-.page-menu-item a
-{
-    display: flex;
-}
-
-.page-menu-title
-{
-    margin-left: 0.25rem;
-
-    font-size: 1.25rem;
-    color: #FFFFFF;
+    color: RedColor;
 }
 
 .page-title
 {
     grid-area: title;
-}
-
-.page-title-content
-{
-    z-index: 900;
-    position: fixed;
-
-    height: 3rem;
-    width: 100%;
-    max-width: calc( 100vw - 3rem );
-    padding: 0.25rem;
-
-    background-color: PageTitleBackgroundColor;
-    box-shadow: 0 0 0.6rem PrimaryInsetColor inset;
-
     font-size: 1.5rem;
+    padding: 1rem;
+    width: 100vw;
     text-align: center;
-    color: #FFFFFF;
+    color: RedColor;
+    text-transform: uppercase;
 }
 
 .page-body
@@ -235,21 +346,17 @@ MakeSortableTableColumn();
     padding: 1rem;
 
     grid-area: body;
-
-    background-color: PageBodyBackgroundColor;
-}
-
-.page-body-content
-{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-bottom: 2rem;
 }
 
 .page-section
 {
+    border: 1px solid BorderColor;
     border-radius: 0.5rem;
     padding: 1rem;
-
-    background-color: #FFFFFF;
-    box-shadow: 0 0.6rem 1.2rem PrimaryShadowColor, 0 0.4rem 0.4rem SecondaryShadowColor;
 }
 
 .page-section + .page-section
@@ -299,9 +406,10 @@ MakeSortableTableColumn();
 {
     min-height: 2rem;
     width: 100%;
-    border: 1 * Pxm solid #CCCCCC;
+    border: 1 * Pxm solid BorderColor;
     border-radius: 0.25rem;
     padding: 0.25rem;
+    background-color: WhiteColor;
 
     display: block;
 }
@@ -312,7 +420,7 @@ MakeSortableTableColumn();
     height: 2.25rem;
     min-height: 2.25rem;
     width: 100%;
-    border: 1 * Pxm solid #CCCCCC;
+    border: 1 * Pxm solid BorderColor;
     border-radius: 0.25rem;
     padding: 0.25rem;
 
@@ -334,9 +442,6 @@ MakeSortableTableColumn();
     width: auto;
     max-width: 80%;
     border-radius: 0.25rem;
-
-    background: repeating-conic-gradient( #E8E8E8 0% 25%, transparent 0% 50% ) 50% / 20px 20px;
-    box-shadow: 0 0.6rem 1.2rem PrimaryShadowColor, 0 0.4rem 0.4rem SecondaryShadowColor;
 }
 
 .form-upload-button
@@ -388,6 +493,14 @@ MakeSortableTableColumn();
     align-items: center;
 }
 
+.form-text-button
+{
+    padding: 0.5rem 1rem;
+    background-color: RedColor;
+    color: WhiteColor;
+    border-radius: 0.25rem;
+}
+
 .form-button
 {
     height: 1.2rem;
@@ -424,10 +537,7 @@ MakeSortableTableColumn();
 
     display: inline-block;
 
-    background-color: TooltipBackgroundColor;
-    box-shadow: 0 0.6rem 1.2rem PrimaryShadowColor, 0 0.4rem 0.4rem SecondaryShadowColor;
-
-    color: #FFFFFF;
+    color: WhiteColor;
 }
 
 .form-title
@@ -476,11 +586,9 @@ MakeSortableTableColumn();
 
 .card
 {
+    border: 1px solid BorderColor;
     border-radius: 0.5rem;
     padding: 1rem;
-
-    background-color: #FFFFFF;
-    box-shadow: 0 0.6rem 1.2rem PrimaryShadowColor, 0 0.4rem 0.4rem SecondaryShadowColor;
 }
 
 .tool-container
@@ -519,12 +627,9 @@ MakeSortableTableColumn();
 .filter-input
 {
     width: 100%;
-    border: 1 * Pxm solid #CCCCCC;
+    border: 1 * Pxm solid BorderColor;
     border-radius: 0.5rem;
     padding: 0.25rem 1rem;
-
-    background-color: white;
-    box-shadow: 0 0.3rem 0.6rem PrimaryShadowColor, 0 0.2rem 0.2rem SecondaryShadowColor;
 }
 
 .filter-apply-button
@@ -546,7 +651,7 @@ MakeSortableTableColumn();
 
 .filter-row:hover .filter-cell
 {
-    background-color: RowHoverBackgroundColor;
+    background-color: #F1F7F7;
 }
 
 .disconnect-button

@@ -14,7 +14,7 @@ class CONNECT_USER_CONTROLLER extends CONTROLLER
     {
         parent::__construct( $language_code );
 
-        $this->Title = 'Sign In';
+        $this->Title = '';
 
         require_once __DIR__ . '/' . '../VIEW/connect_user_view.php';
     }

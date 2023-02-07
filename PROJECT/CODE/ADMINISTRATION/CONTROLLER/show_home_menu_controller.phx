@@ -1,0 +1,24 @@
+// -- IMPORTS
+
+import 'controller.php';
+
+// -- TYPES
+
+class SHOW_HOME_MENU_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        )
+    {
+        parent::constructor( 'en' );
+
+        .Title = '';
+
+        import '../VIEW/show_home_menu_view.php';
+    }
+}
+
+// -- STATEMENTS
+
+var show_home_menu_controller = new SHOW_HOME_MENU_CONTROLLER();

@@ -14,7 +14,7 @@ class CONNECT_USER_CONTROLLER extends CONTROLLER
     {
         parent::constructor( language_code );
 
-        .Title = 'Sign In';
+        .Title = '';
 
         import '../VIEW/connect_user_view.php';
     }

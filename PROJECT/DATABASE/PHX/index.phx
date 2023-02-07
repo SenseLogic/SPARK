@@ -115,8 +115,7 @@ function Route(
         DefineText( 'en', 'English' );
         DefineText( 'fr', 'French' );
 
-        if ( path_value_count === 1
-             || !user_is_connected )
+        if ( !user_is_connected )
         {
             if ( it_is_get_request )
             {
@@ -124,7 +123,7 @@ function Route(
             }
             else if ( it_is_post_request )
             {
-                var path = '/admin/text';
+                var path = '/admin';
 
                 import 'ADMINISTRATION/CONTROLLER/do_connect_user_controller.php';
             }
@@ -132,6 +131,10 @@ function Route(
             {
                 import 'CONTROLLER/show_error_controller.php';
             }
+        }
+        else if ( path_value_count === 1 )
+        {
+            import 'ADMINISTRATION/CONTROLLER/show_home_menu_controller.php';
         }
         else if ( it_is_post_request
                   && path_value_count == 3

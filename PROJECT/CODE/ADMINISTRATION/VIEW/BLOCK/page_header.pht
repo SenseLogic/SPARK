@@ -7,114 +7,47 @@
         <? include 'page_body.php'; ?>
         <div class="extended-container page-container">
             <div class="page-menu">
-                <div class="page-menu-content">
-                    <div class="page-menu-item">
-                        <a href="/admin/text">
-                            <span class="form-button form-button-large text-button">
-                            </span>
-                            <span class="form-button-tooltip">
-                                <% .GetProcessedTextBySlug( 'Text' ) %>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="page-menu-item">
-                        <a href="/admin/language">
-                            <span class="form-button form-button-large language-button">
-                            </span>
-                            <span class="form-button-tooltip">
-                                <% .GetProcessedTextBySlug( 'Language' ) %>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="page-menu-item">
-                        <a href="/admin/page-type">
-                            <span class="form-button form-button-large page-type-button">
-                            </span>
-                            <span class="form-button-tooltip">
-                                <% .GetProcessedTextBySlug( 'Page type' ) %>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="page-menu-item">
-                        <a href="/admin/page">
-                            <span class="form-button form-button-large page-button">
-                            </span>
-                            <span class="form-button-tooltip">
-                                <% .GetProcessedTextBySlug( 'Page' ) %>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="page-menu-item">
-                        <a href="/admin/block-category">
-                            <span class="form-button form-button-large block-category-button">
-                            </span>
-                            <span class="form-button-tooltip">
-                                <% .GetProcessedTextBySlug( 'Block category' ) %>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="page-menu-item">
-                        <a href="/admin/block-type">
-                            <span class="form-button form-button-large block-type-button">
-                            </span>
-                            <span class="form-button-tooltip">
-                                <% .GetProcessedTextBySlug( 'Block type' ) %>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="page-menu-item">
-                        <a href="/admin/block-content">
-                            <span class="form-button form-button-large block-content-button">
-                            </span>
-                            <span class="form-button-tooltip">
-                                <% .GetProcessedTextBySlug( 'Block content' ) %>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="page-menu-item">
-                        <a href="/admin/block">
-                            <span class="form-button form-button-large block-button">
-                            </span>
-                            <span class="form-button-tooltip">
-                                <% .GetProcessedTextBySlug( 'Block' ) %>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="page-menu-item">
-                        <a href="/admin/contact">
-                            <span class="form-button form-button-large contact-button">
-                            </span>
-                            <span class="form-button-tooltip">
-                                <% .GetProcessedTextBySlug( 'Contact' ) %>
-                            </span>
-                        </a>
-                    </div>
+                <a class="margin-right-auto page-menu-button" href="/admin">
+                    <% .GetProcessedTextBySlug( 'Home' ) %>
+                </a>
+                    <a class="page-menu-button" href="/admin/text">
+                        <% .GetProcessedTextBySlug( 'Text' ) %>
+                    </a>
+                    <a class="page-menu-button" href="/admin/language">
+                        <% .GetProcessedTextBySlug( 'Language' ) %>
+                    </a>
+                    <a class="page-menu-button" href="/admin/page-type">
+                        <% .GetProcessedTextBySlug( 'Page type' ) %>
+                    </a>
+                    <a class="page-menu-button" href="/admin/page">
+                        <% .GetProcessedTextBySlug( 'Page' ) %>
+                    </a>
+                    <a class="page-menu-button" href="/admin/block-category">
+                        <% .GetProcessedTextBySlug( 'Block category' ) %>
+                    </a>
+                    <a class="page-menu-button" href="/admin/block-type">
+                        <% .GetProcessedTextBySlug( 'Block type' ) %>
+                    </a>
+                    <a class="page-menu-button" href="/admin/block-content">
+                        <% .GetProcessedTextBySlug( 'Block content' ) %>
+                    </a>
+                    <a class="page-menu-button" href="/admin/block">
+                        <% .GetProcessedTextBySlug( 'Block' ) %>
+                    </a>
+                    <a class="page-menu-button" href="/admin/contact">
+                        <% .GetProcessedTextBySlug( 'Contact' ) %>
+                    </a>
                     <? if ( HasSessionMinimumUserRole( 'administrator' ) ) { ?>
-                        <div class="page-menu-item">
-                            <a href="/admin/user">
-                                <span class="form-button form-button-large user-button">
-                                </span>
-                                <span class="form-button-tooltip">
-                                    <% .GetProcessedTextBySlug( 'User' ) %>
-                                </span>
-                            </a>
-                        </div>
-                    <? } ?>
-                    <div class="page-menu-item">
-                        <a href="/admin/disconnect">
-                            <span class="form-button form-button-large disconnect-button">
-                            </span>
-                            <span class="form-button-tooltip">
-                                <% .GetProcessedTextBySlug( 'Disconnect' ) %>
-                            </span>
+                        <a class="page-menu-button" href="/admin/user">
                         </a>
-                    </div>
-                </div>
+                    <? } ?>
+                <a class="margin-left-auto page-menu-button" href="/admin/disconnect">
+                    <% .GetProcessedTextBySlug( 'Logout' ) %>
+                </a>
             </div>
-            <div class="page-title">
-                <div class="page-title-content">
+            <? if ( .Title !== '' ) { ?>
+                <div class="page-title">
                     <% .GetProcessedTextBySlug( .Title ) %>
                 </div>
-            </div>
+            <? } ?>
             <div class="page-body">
-                <div class="page-body-content">

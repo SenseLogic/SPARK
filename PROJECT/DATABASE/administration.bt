@@ -745,53 +745,28 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
         <? include 'page_body.php'; ?>
         <div class="extended-container page-container">
             <div class="page-menu">
-                <div class="page-menu-content"><#
-                    <~!Equals<>{#style#}<>user<><~{#is_managed#}<><div class="page-menu-item">
-                        <a href="/admin/{#style#}/manage">
-                            <span class="form-button form-button-large {#style#}-manager-button">
-                            </span>
-                            <span class="form-button-tooltip">
-                                <\% .GetProcessedTextBySlug( '{#sentence#} manager' ) %\>
-                            </span>
+                <a class="margin-right-auto page-menu-button" href="/admin">
+                    <% .GetProcessedTextBySlug( 'Home' ) %>
+                </a><#
+                    <~!Equals<>{#style#}<>user<><~{#is_managed#}<><a class="page-menu-button" href="/admin/{#style#}/manage">
+                        <\% .GetProcessedTextBySlug( '{#sentence#} manager' ) %\>
+                    </a>
+                    ~><a class="page-menu-button" href="/admin/{#style#}">
+                        <\% .GetProcessedTextBySlug( '{#sentence#}' ) %\>
+                    </a><><? if ( HasSessionMinimumUserRole( 'administrator' ) ) { ?>
+                        <a class="page-menu-button" href="/admin/{#style#}">
                         </a>
-                    </div>
-                    ~><div class="page-menu-item">
-                        <a href="/admin/{#style#}">
-                            <span class="form-button form-button-large {#style#}-button">
-                            </span>
-                            <span class="form-button-tooltip">
-                                <\% .GetProcessedTextBySlug( '{#sentence#}' ) %\>
-                            </span>
-                        </a>
-                    </div><><? if ( HasSessionMinimumUserRole( 'administrator' ) ) { ?>
-                        <div class="page-menu-item">
-                            <a href="/admin/{#style#}">
-                                <span class="form-button form-button-large {#style#}-button">
-                                </span>
-                                <span class="form-button-tooltip">
-                                    <\% .GetProcessedTextBySlug( '{#sentence#}' ) %\>
-                                </span>
-                            </a>
-                        </div>
                     <? } ?>~>#>
-                    <div class="page-menu-item">
-                        <a href="/admin/disconnect">
-                            <span class="form-button form-button-large disconnect-button">
-                            </span>
-                            <span class="form-button-tooltip">
-                                <\% .GetProcessedTextBySlug( 'Disconnect' ) %\>
-                            </span>
-                        </a>
-                    </div>
-                </div>
+                <a class="margin-left-auto page-menu-button" href="/admin/disconnect">
+                    <% .GetProcessedTextBySlug( 'Logout' ) %>
+                </a>
             </div>
-            <div class="page-title">
-                <div class="page-title-content">
-                    <\% .GetProcessedTextBySlug( .Title ) %\>
+            <? if ( .Title !== '' ) { ?>
+                <div class="page-title">
+                    <% .GetProcessedTextBySlug( .Title ) %>
                 </div>
-            </div>
+            <? } ?>
             <div class="page-body">
-                <div class="page-body-content">
 %%PHX/ADMINISTRATION/STYLE/button.styl
 // -- CLASSES
 <#<~{#is_managed#}<>
@@ -813,3 +788,29 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
     grid-template-columns: repeat( {#stored_column_count#}, auto );
 }
 #>
+%%PHX/ADMINISTRATION/VIEW/show_home_menu_view.pht
+<? include 'BLOCK/page_header.php'; ?>
+<div class="form-centered">
+    <div class="margin-top-2rem logo-image">
+    </div>
+</div>
+<div class="form-centered">
+    <div class="margin-top-2rem"><#
+        <~!Equals<>{#style#}<>user<><~{#is_managed#}<><div class="tree-container">
+            <a class="tree-button" href="/admin/{#style#}/manage">
+                <\% .GetProcessedTextBySlug( '{#sentence#} manager' ) %\>
+            </a>
+        </div>
+        ~><div class="tree-container">
+            <a class="tree-button" href="/admin/{#style#}">
+                <\% .GetProcessedTextBySlug( '{#sentence#}' ) %\>
+            </a>
+        </div><><? if ( HasSessionMinimumUserRole( 'administrator' ) ) { ?>
+            <div class="tree-container">
+                <a class="tree-button" href="/admin/{#style#}">
+                </a>
+            </div>
+        <? } ?>~>#>
+    </div>
+</div>
+<? include 'BLOCK/page_footer.php'; ?>
