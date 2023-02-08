@@ -8,7 +8,8 @@ cp spark_project_dump.sql remote_spark_project_dump.sql
 ../$TOOL/BASIL/basil --sql --phoenix --force-drop spark_project.bs spark_project.bd spark_project.bt administration.bt
 read key
 ../$TOOL/CYCLONE/cyclone mysql 127.0.0.1 3306 root root spark_project.sql spark_project_data.sql
-# rm PHX/ADMINISTRATION/VIEW/show_home_menu_view.phx
+# rm PHX/ADMINISTRATION/VIEW/show_home_menu_view.pht
+# rm PHX/ADMINISTRATION/VIEW/BLOCK/page_header.pht
 cp PHX/index.phx ../CODE/
 cp PHX/ADMINISTRATION/CONTROLLER/*.phx ../CODE/ADMINISTRATION/CONTROLLER
 cp PHX/ADMINISTRATION/STYLE/*.styl ../CODE/ADMINISTRATION/STYLE

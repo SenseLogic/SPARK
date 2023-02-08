@@ -7,9 +7,9 @@
   outline: 0 none;
   border: 0 none;
   padding: 0;
+  line-height: inherit;
   font-family: inherit;
   font-size: inherit;
-  line-height: inherit;
 }
 body {
   margin: 0;
@@ -480,9 +480,9 @@ textarea {
 }
 .tree-toggle-button {
   position: absolute;
+  transform: translate(-1.5rem, 0.2rem);
   height: 1rem;
   width: 1rem;
-  transform: translate(-1.5rem, 0.2rem);
   background: url("/static/image/admin/red_right_caret_icon.svg") no-repeat center center/contain;
   cursor: pointer;
 }
@@ -499,8 +499,8 @@ textarea {
   display: none;
 }
 .logo-image {
-  height: 6rem;
-  width: 15rem;
+  height: 8rem;
+  width: 100%;
   background: url("/static/image/admin/logo.svg") no-repeat center center/contain;
 }
 .page-container {
@@ -517,41 +517,42 @@ textarea {
   left: 0;
   right: 0;
   height: 2.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  grid-area: menu;
   padding-left: 1rem;
   padding-right: 1rem;
+  display: flex;
   gap: 1.5rem;
+  grid-area: menu;
+  justify-content: center;
+  align-items: center;
   background-color: #fff;
 }
 .page-menu-button,
 .page-menu-button:visited {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
-  color: #808080;
+  line-height: 1.1;
   font-size: 1rem;
+  color: #808080;
 }
 .page-menu-button:hover {
   color: #e20048;
 }
 .page-title {
+  width: 100vw;
+  padding: 1rem;
   grid-area: title;
   font-size: 1.5rem;
-  padding: 1rem;
-  width: 100vw;
   text-align: center;
-  color: #e20048;
   text-transform: uppercase;
+  color: #e20048;
 }
 .page-body {
   padding: 1rem;
-  grid-area: body;
+  padding-bottom: 2rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding-bottom: 2rem;
+  grid-area: body;
 }
 .page-section {
   border: 1px solid #ccc;
@@ -573,7 +574,7 @@ textarea {
   max-width: 30rem;
 }
 .form-limited {
-  max-width: calc(100vw - 5rem);
+  max-width: calc(100vw - 2rem);
 }
 .form-extended {
   grid-column: 1/-1;
@@ -592,8 +593,8 @@ textarea {
   border: 0.0625rem solid #ccc;
   border-radius: 0.25rem;
   padding: 0.25rem;
-  background-color: #fff;
   display: block;
+  background-color: #fff;
 }
 .form-textarea {
   overflow: hidden;
@@ -649,10 +650,10 @@ textarea {
   align-items: center;
 }
 .form-text-button {
+  border-radius: 0.25rem;
   padding: 0.5rem 1rem;
   background-color: #e20048;
   color: #fff;
-  border-radius: 0.25rem;
 }
 .form-button {
   height: 1.2rem;
@@ -802,6 +803,9 @@ textarea {
 .page-type-button {
   background: url("/static/image/admin/page_type_icon.svg") no-repeat center center/contain;
 }
+.page-manager-button {
+  background: url("/static/image/admin/page_manager_icon.svg") no-repeat center center/contain;
+}
 .page-button {
   background: url("/static/image/admin/page_icon.svg") no-repeat center center/contain;
 }
@@ -813,6 +817,9 @@ textarea {
 }
 .block-content-button {
   background: url("/static/image/admin/block_content_icon.svg") no-repeat center center/contain;
+}
+.block-manager-button {
+  background: url("/static/image/admin/block_manager_icon.svg") no-repeat center center/contain;
 }
 .block-button {
   background: url("/static/image/admin/block_icon.svg") no-repeat center center/contain;

@@ -20,7 +20,7 @@ spark-project
         Slug : STRING | is_slug
         Title : STRING = "{{latin 1 1 4 6}}¨fr:{{latin 1 1 4 6}}" | optional
 
-    PAGE | sorted, dropped
+    PAGE | managed, sorted, dropped
 
         Id : TUID | key, unique
         Slug : STRING = ""
@@ -58,7 +58,7 @@ spark-project
         Slug : STRING | mapped, is_slug
         Name : STRING = "{{latin 1 1 4 6}}"
 
-    BLOCK | sorted, dropped, count 50
+    BLOCK | managed, sorted, dropped, count 50
 
         Id : TUID | key, unique
         Slug : STRING = ""

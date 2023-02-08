@@ -10,37 +10,44 @@
                 <a class="margin-right-auto page-menu-button" href="/admin">
                     <% .GetProcessedTextBySlug( 'Home' ) %>
                 </a>
-                    <a class="page-menu-button" href="/admin/text">
-                        <% .GetProcessedTextBySlug( 'Text' ) %>
+                <a class="page-menu-button" href="/admin/text">
+                    <% .GetProcessedTextBySlug( 'Texts' ) %>
+                </a>
+                <a class="page-menu-button" href="/admin/language">
+                    <% .GetProcessedTextBySlug( 'Languages' ) %>
+                </a>
+                <a class="page-menu-button" href="/admin/page-type">
+                    <% .GetProcessedTextBySlug( 'Page types' ) %>
+                </a>
+                <a class="page-menu-button" href="/admin/page/manage">
+                    <% .GetProcessedTextBySlug( 'Page manager' ) %>
+                </a>
+                <a class="page-menu-button" href="/admin/page">
+                    <% .GetProcessedTextBySlug( 'Pages' ) %>
+                </a>
+                <a class="page-menu-button" href="/admin/block-category">
+                    <% .GetProcessedTextBySlug( 'Block categories' ) %>
+                </a>
+                <a class="page-menu-button" href="/admin/block-type">
+                    <% .GetProcessedTextBySlug( 'Block types' ) %>
+                </a>
+                <a class="page-menu-button" href="/admin/block-content">
+                    <% .GetProcessedTextBySlug( 'Block contents' ) %>
+                </a>
+                <a class="page-menu-button" href="/admin/block/manage">
+                    <% .GetProcessedTextBySlug( 'Block manager' ) %>
+                </a>
+                <a class="page-menu-button" href="/admin/block">
+                    <% .GetProcessedTextBySlug( 'Blocks' ) %>
+                </a>
+                <a class="page-menu-button" href="/admin/contact">
+                    <% .GetProcessedTextBySlug( 'Contacts' ) %>
+                </a>
+                <? if ( HasSessionMinimumUserRole( 'administrator' ) ) { ?>
+                    <a class="page-menu-button" href="/admin/user">
+                        <% .GetProcessedTextBySlug( 'Users' ) %>
                     </a>
-                    <a class="page-menu-button" href="/admin/language">
-                        <% .GetProcessedTextBySlug( 'Language' ) %>
-                    </a>
-                    <a class="page-menu-button" href="/admin/page-type">
-                        <% .GetProcessedTextBySlug( 'Page type' ) %>
-                    </a>
-                    <a class="page-menu-button" href="/admin/page">
-                        <% .GetProcessedTextBySlug( 'Page' ) %>
-                    </a>
-                    <a class="page-menu-button" href="/admin/block-category">
-                        <% .GetProcessedTextBySlug( 'Block category' ) %>
-                    </a>
-                    <a class="page-menu-button" href="/admin/block-type">
-                        <% .GetProcessedTextBySlug( 'Block type' ) %>
-                    </a>
-                    <a class="page-menu-button" href="/admin/block-content">
-                        <% .GetProcessedTextBySlug( 'Block content' ) %>
-                    </a>
-                    <a class="page-menu-button" href="/admin/block">
-                        <% .GetProcessedTextBySlug( 'Block' ) %>
-                    </a>
-                    <a class="page-menu-button" href="/admin/contact">
-                        <% .GetProcessedTextBySlug( 'Contact' ) %>
-                    </a>
-                    <? if ( HasSessionMinimumUserRole( 'administrator' ) ) { ?>
-                        <a class="page-menu-button" href="/admin/user">
-                        </a>
-                    <? } ?>
+                <? } ?>
                 <a class="margin-left-auto page-menu-button" href="/admin/disconnect">
                     <% .GetProcessedTextBySlug( 'Logout' ) %>
                 </a>

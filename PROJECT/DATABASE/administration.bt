@@ -748,15 +748,16 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                 <a class="margin-right-auto page-menu-button" href="/admin">
                     <% .GetProcessedTextBySlug( 'Home' ) %>
                 </a><#
-                    <~!Equals<>{#style#}<>user<><~{#is_managed#}<><a class="page-menu-button" href="/admin/{#style#}/manage">
-                        <\% .GetProcessedTextBySlug( '{#sentence#} manager' ) %\>
+                <~!Equals<>{#style#}<>user<><~{#is_managed#}<><a class="page-menu-button" href="/admin/{#style#}/manage">
+                    <\% .GetProcessedTextBySlug( '{#sentence#} manager' ) %\>
+                </a>
+                ~><a class="page-menu-button" href="/admin/{#style#}">
+                    <\% .GetProcessedTextBySlug( '<~Plural<>{#sentence#}~>' ) %\>
+                </a><><? if ( HasSessionMinimumUserRole( 'administrator' ) ) { ?>
+                    <a class="page-menu-button" href="/admin/{#style#}">
+                        <\% .GetProcessedTextBySlug( '<~Plural<>{#sentence#}~>' ) %\>
                     </a>
-                    ~><a class="page-menu-button" href="/admin/{#style#}">
-                        <\% .GetProcessedTextBySlug( '{#sentence#}' ) %\>
-                    </a><><? if ( HasSessionMinimumUserRole( 'administrator' ) ) { ?>
-                        <a class="page-menu-button" href="/admin/{#style#}">
-                        </a>
-                    <? } ?>~>#>
+                <? } ?>~>#>
                 <a class="margin-left-auto page-menu-button" href="/admin/disconnect">
                     <% .GetProcessedTextBySlug( 'Logout' ) %>
                 </a>
@@ -803,11 +804,12 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
         </div>
         ~><div class="tree-container">
             <a class="tree-button" href="/admin/{#style#}">
-                <\% .GetProcessedTextBySlug( '{#sentence#}' ) %\>
+                <\% .GetProcessedTextBySlug( '<~Plural<>{#sentence#}~>' ) %\>
             </a>
         </div><><? if ( HasSessionMinimumUserRole( 'administrator' ) ) { ?>
             <div class="tree-container">
                 <a class="tree-button" href="/admin/{#style#}">
+                    <\% .GetProcessedTextBySlug( '<~Plural<>{#sentence#}~>' ) %\>
                 </a>
             </div>
         <? } ?>~>#>
