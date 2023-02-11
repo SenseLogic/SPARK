@@ -1,16 +1,16 @@
 <?php // -- IMPORTS
 
-require_once __DIR__ . '/' . 'controller.php';
+require_once __DIR__ . '/' . 'view_controller.php';
 require_once __DIR__ . '/' . '../../MODEL/block_model.php';
 
 // -- TYPES
 
-class MANAGE_BLOCK_CONTROLLER extends CONTROLLER
+class MANAGE_BLOCK_CONTROLLER extends VIEW_CONTROLLER
 {
     // -- CONSTRUCTORS
 
     function __construct(
-        int $block_id
+        string $block_id
         )
     {
         parent::__construct();

@@ -17,7 +17,6 @@ function GetDatabaseTextBySlug(
     }
 
      $text = $statement->fetchObject();
-    $text->Id = ( int )( $text->Id );
 
     return $text;
 }

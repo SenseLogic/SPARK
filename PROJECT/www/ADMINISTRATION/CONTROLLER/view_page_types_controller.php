@@ -1,11 +1,11 @@
 <?php // -- IMPORTS
 
-require_once __DIR__ . '/' . 'controller.php';
+require_once __DIR__ . '/' . 'view_controller.php';
 require_once __DIR__ . '/' . '../../MODEL/page_type_model.php';
 
 // -- TYPES
 
-class VIEW_PAGE_TYPES_CONTROLLER extends CONTROLLER
+class VIEW_PAGE_TYPES_CONTROLLER extends VIEW_CONTROLLER
 {
     // -- CONSTRUCTORS
 

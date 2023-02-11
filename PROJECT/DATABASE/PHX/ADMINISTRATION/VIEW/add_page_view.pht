@@ -85,7 +85,7 @@
             it_is_valid_add_page_form = false;
         }
 
-        if ( type_slug_field.value === "" )
+        if ( !IsSlugText( type_slug_field.value ) )
         {
             type_slug_field.AddClass( "form-field-error" );
 
@@ -205,7 +205,12 @@
                     <% .GetProcessedTextBySlug( 'Type Slug' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="TypeSlug" type="text" value="<# field_value #>"/>
+                    <select class="form-select" name="TypeSlug">
+                        <? var page_type_array = .PageTypeArray; ?>
+                        <? foreach ( var page_type; page_type_array ) { ?>
+                            <option value="<% GetValueText( page_type.Slug ) %>"<? if ( GetValueText( page_type.Slug ) === field_value ) echo ' selected'; ?>><% GetUntranslatedText( page_type.Title ) %></option>
+                        <? } ?>
+                    </select>
                 </div>
                 <?
                     var field_name = 'Number';

@@ -1,8 +1,6 @@
 <?php // -- IMPORTS
 
-require_once __DIR__ . '/' . 'block.php';
 require_once __DIR__ . '/' . 'page.php';
-require_once __DIR__ . '/' . 'page_type.php';
 
 // -- FUNCTIONS
 
@@ -83,7 +81,6 @@ function GetValidPageByIdMap(
     foreach ( $page_array as  $page )
     {
         $page->BlockArray = [];
-        $page->SubPageArray = [];
         $page_by_id_map[ $page->Id ] = $page;
     }
 
@@ -104,22 +101,12 @@ function GetValidPageByIdMap(
 
         $page->HeadingBlockArray = GetBlockArrayByCategorySlug( $page->BlockArray, 'heading' );
         $page->ContentBlockArray = GetBlockArrayByCategorySlug( $page->BlockArray, 'content' );
-
-        if ( property_exists( $page, 'PageId' )
-             && isset( $page_by_id_map[ $page->PageId ] ) )
-        {
-            array_push(
-                $page_by_id_map[ $page->PageId ]->SubPageArray,
-                $page
-                );
-        }
     }
 
     foreach ( $page_array as  $page )
     {
         LinkBlockArray( $page->HeadingBlockArray );
         LinkBlockArray( $page->ContentBlockArray );
-        LinkPageArray( $page->SubPageArray );
     }
 
     return $page_by_id_map;
@@ -129,7 +116,7 @@ function GetValidPageByIdMap(
 
 function GetValidPageById(
     array &$page_by_id_map,
-    int $id
+    string $id
     )
 {
     foreach ( $page_by_id_map as  $page_id =>  $page )
@@ -141,4 +128,42 @@ function GetValidPageById(
     }
 
     return null;
+}
+
+// ~~
+
+function GetPageBySlugMap(
+    array &$page_array
+    )
+{
+     $page_by_slug_map = [];
+
+    foreach ( $page_array as  $page )
+    {
+        $page_by_slug_map[ $page->Slug ] = $page;
+    }
+
+    return $page_by_slug_map;
+}
+
+// ~~
+
+function GetValidPageByIdOrSlug(
+    array &$page_by_id_map,
+    array &$page_by_slug_map,
+    string $id_or_slug
+    )
+{
+    if ( HasKey( $page_by_id_map, $id_or_slug ) )
+    {
+        return $page_by_id_map[ $id_or_slug ];
+    }
+    else if ( HasKey( $page_by_slug_map, $id_or_slug ) )
+    {
+        return $page_by_slug_map[ $id_or_slug ];
+    }
+    else
+    {
+        return null;
+    }
 }

@@ -56,7 +56,7 @@
 
 
 
-<div id="<?php echo  $block->Slug; ?>" class="y-translation-opacity-transition block appearing-block text-and-image image-side-<?php echo $block->ImageSide; ?>">
+<div id="<?php echo  $block->Id; ?>" class="y-translation-opacity-transition block appearing-block text-and-image image-side-<?php echo $block->ImageSide; ?>">
     <div class="text-and-image-text">
         <?php require __DIR__ . '/' . str_replace( '-', '_', $block->ContentSlug ) . '_content.php'; ?>
     </div>

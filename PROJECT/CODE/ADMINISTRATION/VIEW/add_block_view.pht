@@ -82,21 +82,21 @@
             it_is_valid_add_block_form = false;
         }
 
-        if ( category_slug_field.value === "" )
+        if ( !IsSlugText( category_slug_field.value ) )
         {
             category_slug_field.AddClass( "form-field-error" );
 
             it_is_valid_add_block_form = false;
         }
 
-        if ( content_slug_field.value === "" )
+        if ( !IsSlugText( content_slug_field.value ) )
         {
             content_slug_field.AddClass( "form-field-error" );
 
             it_is_valid_add_block_form = false;
         }
 
-        if ( type_slug_field.value === "" )
+        if ( !IsSlugText( type_slug_field.value ) )
         {
             type_slug_field.AddClass( "form-field-error" );
 
@@ -183,7 +183,12 @@
                     <% .GetProcessedTextBySlug( 'Page Id' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="PageId" type="text" value="<# field_value #>"/>
+                    <select class="form-select" name="PageId">
+                        <? var page_array = .PageArray; ?>
+                        <? foreach ( var page; page_array ) { ?>
+                            <option value="<% GetValueText( page.Id ) %>"<? if ( GetValueText( page.Id ) === field_value ) echo ' selected'; ?>><% GetUntranslatedText( page.Title ) %></option>
+                        <? } ?>
+                    </select>
                 </div>
                 <?
                     var field_name = 'CategorySlug';
@@ -201,7 +206,12 @@
                     <% .GetProcessedTextBySlug( 'Category Slug' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="CategorySlug" type="text" value="<# field_value #>"/>
+                    <select class="form-select" name="CategorySlug">
+                        <? var block_category_array = .BlockCategoryArray; ?>
+                        <? foreach ( var block_category; block_category_array ) { ?>
+                            <option value="<% GetValueText( block_category.Slug ) %>"<? if ( GetValueText( block_category.Slug ) === field_value ) echo ' selected'; ?>><% GetUntranslatedText( block_category.Name ) %></option>
+                        <? } ?>
+                    </select>
                 </div>
                 <?
                     var field_name = 'ContentSlug';
@@ -219,7 +229,12 @@
                     <% .GetProcessedTextBySlug( 'Content Slug' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="ContentSlug" type="text" value="<# field_value #>"/>
+                    <select class="form-select" name="ContentSlug">
+                        <? var block_content_array = .BlockContentArray; ?>
+                        <? foreach ( var block_content; block_content_array ) { ?>
+                            <option value="<% GetValueText( block_content.Slug ) %>"<? if ( GetValueText( block_content.Slug ) === field_value ) echo ' selected'; ?>><% GetUntranslatedText( block_content.Name ) %></option>
+                        <? } ?>
+                    </select>
                 </div>
                 <?
                     var field_name = 'TypeSlug';
@@ -237,7 +252,12 @@
                     <% .GetProcessedTextBySlug( 'Type Slug' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="TypeSlug" type="text" value="<# field_value #>"/>
+                    <select class="form-select" name="TypeSlug">
+                        <? var block_type_array = .BlockTypeArray; ?>
+                        <? foreach ( var block_type; block_type_array ) { ?>
+                            <option value="<% GetValueText( block_type.Slug ) %>"<? if ( GetValueText( block_type.Slug ) === field_value ) echo ' selected'; ?>><% GetUntranslatedText( block_type.Name ) %></option>
+                        <? } ?>
+                    </select>
                 </div>
                 <?
                     var field_name = 'Number';

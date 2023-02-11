@@ -1,0 +1,29 @@
+// -- IMPORTS
+
+import 'controller.php';
+import '../../MODEL/page_model.php';
+import '../../MODEL/page_type_model.php';
+import '../../MODEL/block_category_model.php';
+import '../../MODEL/block_content_model.php';
+import '../../MODEL/block_model.php';
+import '../../MODEL/block_type_model.php';
+
+// -- TYPES
+
+class VIEW_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        )
+    {
+        parent::constructor();
+
+        .PageArray = GetDatabasePageArray();
+        .PageTypeArray = GetDatabasePageTypeArray();
+        .BlockArray = GetDatabaseBlockArray();
+        .BlockCategoryArray = GetDatabaseBlockCategoryArray();
+        .BlockContentArray = GetDatabaseBlockContentArray();
+        .BlockTypeArray = GetDatabaseBlockTypeArray();
+    }
+}

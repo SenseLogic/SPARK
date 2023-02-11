@@ -338,7 +338,7 @@ MakeSortableTableColumn();
 
 .page-title
 {
-    width: 100vw;
+    width: var( --viewport-width );
     padding: 1rem;
 
     grid-area: title;
@@ -390,7 +390,7 @@ MakeSortableTableColumn();
 
 .form-limited
 {
-    max-width: calc( 100vw - 2rem );
+    max-width: calc( var( --viewport-width ) - 2rem );
 }
 
 .form-extended

@@ -1,10 +1,10 @@
 <?php // -- IMPORTS
 
-require_once __DIR__ . '/' . 'controller.php';
+require_once __DIR__ . '/' . 'view_controller.php';
 
 // -- TYPES
 
-class SHOW_HOME_MENU_CONTROLLER extends CONTROLLER
+class SHOW_HOME_MENU_CONTROLLER extends VIEW_CONTROLLER
 {
     // -- CONSTRUCTORS
 

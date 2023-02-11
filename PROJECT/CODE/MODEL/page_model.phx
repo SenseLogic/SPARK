@@ -1,8 +1,6 @@
 // -- IMPORTS
 
-import 'block.php';
 import 'page.php';
-import 'page_type.php';
 
 // -- FUNCTIONS
 
@@ -83,7 +81,6 @@ function GetValidPageByIdMap(
     foreach ( var page; page_array )
     {
         page.BlockArray = [];
-        page.SubPageArray = [];
         page_by_id_map[ page.Id ] = page;
     }
 
@@ -104,22 +101,12 @@ function GetValidPageByIdMap(
 
         page.HeadingBlockArray = GetBlockArrayByCategorySlug( page.BlockArray, 'heading' );
         page.ContentBlockArray = GetBlockArrayByCategorySlug( page.BlockArray, 'content' );
-
-        if ( property_exists( page, 'PageId' )
-             && isset( page_by_id_map[ page.PageId ] ) )
-        {
-            array_push(
-                page_by_id_map[ page.PageId ].SubPageArray,
-                page
-                );
-        }
     }
 
     foreach ( var page; page_array )
     {
         LinkBlockArray( page.HeadingBlockArray );
         LinkBlockArray( page.ContentBlockArray );
-        LinkPageArray( page.SubPageArray );
     }
 
     return page_by_id_map;
@@ -129,7 +116,7 @@ function GetValidPageByIdMap(
 
 function GetValidPageById(
     array &page_by_id_map,
-    int id
+    string id
     )
 {
     foreach ( var page_id => var page; page_by_id_map )
@@ -141,4 +128,42 @@ function GetValidPageById(
     }
 
     return null;
+}
+
+// ~~
+
+function GetPageBySlugMap(
+    array &page_array
+    )
+{
+    var page_by_slug_map = [];
+
+    foreach ( var page; page_array )
+    {
+        page_by_slug_map[ page.Slug ] = page;
+    }
+
+    return page_by_slug_map;
+}
+
+// ~~
+
+function GetValidPageByIdOrSlug(
+    array &page_by_id_map,
+    array &page_by_slug_map,
+    string id_or_slug
+    )
+{
+    if ( HasKey( page_by_id_map, id_or_slug ) )
+    {
+        return page_by_id_map[ id_or_slug ];
+    }
+    else if ( HasKey( page_by_slug_map, id_or_slug ) )
+    {
+        return page_by_slug_map[ id_or_slug ];
+    }
+    else
+    {
+        return null;
+    }
 }

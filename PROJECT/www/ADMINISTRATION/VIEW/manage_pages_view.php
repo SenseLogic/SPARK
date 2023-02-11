@@ -10,22 +10,16 @@
         <div class="page-section form-section filter-row">
             <div class="form-container">
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Slug' ) ); ?> :
+                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Route' ) ); ?> :
                 </div>
                 <div>
-                    <input class="form-input" name="Slug" type="text" value="<?php echo htmlspecialchars( GetValueText( $page->Id ) ); ?>" readonly/>
+                    <input class="form-input" name="Route" type="text" value="<?php echo htmlspecialchars( GetValueText( $page->Route ) ); ?>" readonly/>
                 </div>
                 <div class="form-field-name">
                     <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Type Slug' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="TypeSlug" type="text" value="<?php echo htmlspecialchars( GetValueText( $page->TypeSlug ) ); ?>" readonly/>
-                </div>
-                <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Route' ) ); ?> :
-                </div>
-                <div>
-                    <input class="form-input" name="Route" type="text" value="<?php echo htmlspecialchars( GetValueText( $page->Route ) ); ?>" readonly/>
                 </div>
                 <div class="form-field-name">
                     <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Title' ) ); ?> :

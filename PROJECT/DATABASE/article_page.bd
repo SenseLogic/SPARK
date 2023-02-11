@@ -1,8 +1,9 @@
 PAGE
 
-    Id Route TypeSlug Number LanguageCodeArray Title ImagePath
+    Id Slug Route TypeSlug Number LanguageCodeArray Title ImagePath
 
         %article-1-article-page
+            ~ article-1-article
             ~ articles/1
             ~ article
             ~ 1
@@ -11,6 +12,7 @@ PAGE
             ~ /static/image/article/california.jpg
 
         %article-2-article-page
+            ~ article-2-article
             ~ articles/2
             ~ article
             ~ 2
@@ -19,6 +21,7 @@ PAGE
             ~ /static/image/article/castle.jpg
 
         %article-3-article-page
+            ~ article-3-article
             ~ articles/3
             ~ article
             ~ 3
@@ -27,6 +30,7 @@ PAGE
             ~ /static/image/article/road.jpg
 
         %article-4-article-page
+            ~ article-4-article
             ~ articles/4
             ~ article
             ~ 4

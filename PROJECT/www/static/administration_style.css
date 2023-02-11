@@ -7,9 +7,9 @@
   outline: 0 none;
   border: 0 none;
   padding: 0;
-  line-height: inherit;
   font-family: inherit;
   font-size: inherit;
+  line-height: inherit;
 }
 body {
   margin: 0;
@@ -538,7 +538,7 @@ textarea {
   color: #e20048;
 }
 .page-title {
-  width: 100vw;
+  width: var(--viewport-width);
   padding: 1rem;
   grid-area: title;
   font-size: 1.5rem;
@@ -574,7 +574,7 @@ textarea {
   max-width: 30rem;
 }
 .form-limited {
-  max-width: calc(100vw - 2rem);
+  max-width: calc(var(--viewport-width) - 2rem);
 }
 .form-extended {
   grid-column: 1/-1;

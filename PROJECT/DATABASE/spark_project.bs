@@ -18,14 +18,14 @@ spark-project
 
         Id : TUID | key, unique
         Slug : STRING | is_slug
-        Title : STRING = "{{latin 1 1 4 6}}¨fr:{{latin 1 1 4 6}}" | optional
+        Title : STRING = "{{latin 1 1 4 6}}" | optional
 
     PAGE | managed, sorted, dropped
 
         Id : TUID | key, unique
         Slug : STRING = ""
         Route : STRING | processed
-        TypeSlug : PAGE_TYPE.Slug | processed
+        TypeSlug : PAGE_TYPE.Slug | processed, is_slug, is_reference, reference page_type~.PageTypeArray~page_type.Slug~GetUntranslatedText( page_type.Title )
         Number : FLOAT32 | ascending
         LanguageCodeArray : LIST[ LANGUAGE.Code ]
         IsActive : BOOL = "true" | is_enumeration, enumeration 0~False^1~True, has_default_value, default_value 1
@@ -44,13 +44,13 @@ spark-project
 
         Id : TUID | key, unique
         Slug : STRING | mapped, is_slug
-        Name : STRING = "{{latin 1 1 4 6}}¨fr:{{latin 1 1 4 6}}"
+        Name : STRING = "{{latin 1 1 4 6}}"
 
     BLOCK_TYPE | dropped
 
         Id : TUID | key, unique
         Slug : STRING | mapped, is_slug
-        Name : STRING = "{{latin 1 1 4 6}}¨fr:{{latin 1 1 4 6}}"
+        Name : STRING = "{{latin 1 1 4 6}}"
 
     BLOCK_CONTENT | dropped
 
@@ -62,10 +62,10 @@ spark-project
 
         Id : TUID | key, unique
         Slug : STRING = ""
-        PageId : TUID = "{{PAGE.Id}}"
-        CategorySlug : BLOCK_CATEGORY.Slug = "content" | processed
-        ContentSlug : BLOCK_CONTENT.Slug = "text"
-        TypeSlug : BLOCK_TYPE.Slug | processed
+        PageId : TUID = "{{PAGE.Id}}" | is_reference, reference page~.PageArray~page.Id~GetUntranslatedText( page.Title )
+        CategorySlug : BLOCK_CATEGORY.Slug = "content" | processed, is_slug, is_reference, reference block_category~.BlockCategoryArray~block_category.Slug~GetUntranslatedText( block_category.Name )
+        ContentSlug : BLOCK_CONTENT.Slug = "text" | is_slug, is_reference, reference block_content~.BlockContentArray~block_content.Slug~GetUntranslatedText( block_content.Name )
+        TypeSlug : BLOCK_TYPE.Slug | processed, is_slug, is_reference, reference block_type~.BlockTypeArray~block_type.Slug~GetUntranslatedText( block_type.Name )
         Number : FLOAT32 | ascending
         LanguageCodeArray : LIST[ LANGUAGE.Code ] = "{ en ~ fr }"
         MinimumHeight : STRING = "56.25%"

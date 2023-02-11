@@ -1,11 +1,11 @@
 // -- IMPORTS
 
-import 'controller.php';
+import 'view_controller.php';
 import '../../MODEL/text_model.php';
 
 // -- TYPES
 
-class DO_EDIT_TEXT_CONTROLLER extends CONTROLLER
+class DO_EDIT_TEXT_CONTROLLER extends VIEW_CONTROLLER
 {
     // -- CONSTRUCTORS
 

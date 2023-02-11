@@ -10,22 +10,16 @@
         <div class="page-section form-section filter-row">
             <div class="form-container">
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Slug' ) %> :
+                    <% .GetProcessedTextBySlug( 'Route' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="Slug" type="text" value="<% GetValueText( page.Id ) %>" readonly/>
+                    <input class="form-input" name="Route" type="text" value="<% GetValueText( page.Route ) %>" readonly/>
                 </div>
                 <div class="form-field-name">
                     <% .GetProcessedTextBySlug( 'Type Slug' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="TypeSlug" type="text" value="<% GetValueText( page.TypeSlug ) %>" readonly/>
-                </div>
-                <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Route' ) %> :
-                </div>
-                <div>
-                    <input class="form-input" name="Route" type="text" value="<% GetValueText( page.Route ) %>" readonly/>
                 </div>
                 <div class="form-field-name">
                     <% .GetProcessedTextBySlug( 'Title' ) %> :

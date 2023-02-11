@@ -1,10 +1,10 @@
 <?php // -- IMPORTS
 
-require_once __DIR__ . '/' . 'controller.php';
+require_once __DIR__ . '/' . 'view_controller.php';
 
 // -- TYPES
 
-class CONNECT_USER_CONTROLLER extends CONTROLLER
+class CONNECT_USER_CONTROLLER extends VIEW_CONTROLLER
 {
     // -- CONSTRUCTORS
 

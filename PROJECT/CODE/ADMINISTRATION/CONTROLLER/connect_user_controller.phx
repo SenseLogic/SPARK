@@ -1,10 +1,10 @@
 // -- IMPORTS
 
-import 'controller.php';
+import 'view_controller.php';
 
 // -- TYPES
 
-class CONNECT_USER_CONTROLLER extends CONTROLLER
+class CONNECT_USER_CONTROLLER extends VIEW_CONTROLLER
 {
     // -- CONSTRUCTORS
 

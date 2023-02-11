@@ -75,7 +75,7 @@
             it_is_valid_edit_page_form = false;
         }
 
-        if ( type_slug_field.value === "" )
+        if ( !IsSlugText( type_slug_field.value ) )
         {
             type_slug_field.AddClass( "form-field-error" );
 
@@ -141,7 +141,12 @@
                     <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Type Slug' ) ); ?> :
                 </div>
                 <div>
-                    <input class="form-input" name="TypeSlug" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Page->TypeSlug ) ); ?>"/>
+                    <select class="form-select" name="TypeSlug">
+                        <?php  $page_type_array = $this->PageTypeArray; ?>
+                        <?php foreach ( $page_type_array as  $page_type ) { ?>
+                            <option value="<?php echo htmlspecialchars( GetValueText( $page_type->Slug ) ); ?>"<?php if ( $this->Page->TypeSlug === $page_type->Slug ) echo ' selected'; ?>><?php echo htmlspecialchars( GetUntranslatedText( $page_type->Title ) ); ?></option>
+                        <?php } ?>
+                    </select>
                 </div>
                 <div class="form-field-name">
                     <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Number' ) ); ?> :

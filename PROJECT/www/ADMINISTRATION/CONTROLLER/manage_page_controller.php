@@ -1,18 +1,17 @@
 <?php // -- IMPORTS
 
-require_once __DIR__ . '/' . 'controller.php';
+require_once __DIR__ . '/' . 'view_controller.php';
 require_once __DIR__ . '/' . '../../MODEL/block_model.php';
 require_once __DIR__ . '/' . '../../MODEL/page_model.php';
-require_once __DIR__ . '/' . '../../MODEL/page_sub_page_model.php';
 
 // -- TYPES
 
-class MANAGE_PAGE_CONTROLLER extends CONTROLLER
+class MANAGE_PAGE_CONTROLLER extends VIEW_CONTROLLER
 {
     // -- CONSTRUCTORS
 
     function __construct(
-        int $page_id
+        string $page_id_or_slug
         )
     {
         parent::__construct();
@@ -21,10 +20,10 @@ class MANAGE_PAGE_CONTROLLER extends CONTROLLER
         $this->BlockArray = GetDatabaseBlockArray();
         $this->BlockByIdMap = GetValidBlockByIdMap( $this->BlockArray );
         $this->PageArray = GetDatabasePageArray();
-        $this->PageSubPageArray = GetDatabasePageSubPageArray();
-        $this->PageByIdMap = GetValidPageByIdMap( $this->PageArray, $this->PageSubPageArray, $this->BlockArray, $this->BlockByIdMap );
-        $this->Page = GetValidPageById( $this->PageByIdMap, $page_id );
-        $this->ListRoute = '/admin/page/manage/' . $page_id;
+        $this->PageByIdMap = GetValidPageByIdMap( $this->PageArray, $this->BlockArray, $this->BlockByIdMap );
+        $this->PageBySlugMap = GetPageBySlugMap( $this->PageByIdMap );
+        $this->Page = GetValidPageByIdOrSlug( $this->PageByIdMap, $this->PageBySlugMap, $page_id_or_slug );
+        $this->ListRoute = '/admin/page/manage/' . $page_id_or_slug;
 
         SetSessionValue( 'ListRoute', GetRequest() );
 
@@ -34,4 +33,4 @@ class MANAGE_PAGE_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
- $manage_page_controller = new MANAGE_PAGE_CONTROLLER(  $page_id );
+ $manage_page_controller = new MANAGE_PAGE_CONTROLLER(  $page_id_or_slug );

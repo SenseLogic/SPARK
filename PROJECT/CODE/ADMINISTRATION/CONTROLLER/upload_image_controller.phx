@@ -28,7 +28,18 @@ class UPLOAD_IMAGE_CONTROLLER extends CONTROLLER
                      || HasSuffix( target_file_path, '.jpeg' ) )
                 {
                     var image = ReadJpegImage( target_file_path );
-                    WriteJpegImage( image, target_file_path, 80 );
+
+                    var default_image = CreateLimitedImage( image, 2073600 );
+                    WriteJpegImage( default_image, target_file_path, 70 );
+                    ReleaseImage( default_image );
+
+                    var medium_image = CreateLimitedImage( image, 921600 );
+                    WriteJpegImage( medium_image, target_file_path .. ".medium.jpg", 70 );
+                    ReleaseImage( medium_image );
+
+                    var small_image = CreateLimitedImage( image, 230400 );
+                    WriteJpegImage( small_image, target_file_path .. ".small.jpg", 70 );
+                    ReleaseImage( small_image );
 
                     var preload_image = CreateLimitedImage( image, 147456 );
                     WriteJpegImage( preload_image, target_file_path .. ".preload.jpg", 50 );

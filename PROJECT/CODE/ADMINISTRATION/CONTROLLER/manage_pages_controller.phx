@@ -1,13 +1,12 @@
 // -- IMPORTS
 
-import 'controller.php';
+import 'view_controller.php';
 import '../../MODEL/block_model.php';
 import '../../MODEL/page_model.php';
-import '../../MODEL/page_sub_page_model.php';
 
 // -- TYPES
 
-class MANAGE_PAGES_CONTROLLER extends CONTROLLER
+class MANAGE_PAGES_CONTROLLER extends VIEW_CONTROLLER
 {
     // -- CONSTRUCTORS
 
@@ -20,8 +19,7 @@ class MANAGE_PAGES_CONTROLLER extends CONTROLLER
         .BlockArray = GetDatabaseBlockArray();
         .BlockByIdMap = GetValidBlockByIdMap( .BlockArray );
         .PageArray = GetDatabasePageArray();
-        .PageSubPageArray = GetDatabasePageSubPageArray();
-        .PageByIdMap = GetValidPageByIdMap( .PageArray, .PageSubPageArray, .BlockArray, .BlockByIdMap );
+        .PageByIdMap = GetValidPageByIdMap( .PageArray, .BlockArray, .BlockByIdMap );
         .ListRoute = '/admin/page/manage';
 
         SetSessionValue( 'ListRoute', .ListRoute );

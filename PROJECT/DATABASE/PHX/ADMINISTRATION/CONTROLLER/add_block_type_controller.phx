@@ -1,11 +1,11 @@
 // -- IMPORTS
 
-import 'controller.php';
+import 'view_controller.php';
 import '../../MODEL/block_type_model.php';
 
 // -- TYPES
 
-class ADD_BLOCK_TYPE_CONTROLLER extends CONTROLLER
+class ADD_BLOCK_TYPE_CONTROLLER extends VIEW_CONTROLLER
 {
     // -- CONSTRUCTORS
 

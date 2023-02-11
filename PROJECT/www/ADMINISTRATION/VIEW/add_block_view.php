@@ -82,21 +82,21 @@
             it_is_valid_add_block_form = false;
         }
 
-        if ( category_slug_field.value === "" )
+        if ( !IsSlugText( category_slug_field.value ) )
         {
             category_slug_field.AddClass( "form-field-error" );
 
             it_is_valid_add_block_form = false;
         }
 
-        if ( content_slug_field.value === "" )
+        if ( !IsSlugText( content_slug_field.value ) )
         {
             content_slug_field.AddClass( "form-field-error" );
 
             it_is_valid_add_block_form = false;
         }
 
-        if ( type_slug_field.value === "" )
+        if ( !IsSlugText( type_slug_field.value ) )
         {
             type_slug_field.AddClass( "form-field-error" );
 
@@ -183,7 +183,12 @@
                     <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Page Id' ) ); ?> :
                 </div>
                 <div>
-                    <input class="form-input" name="PageId" type="text" value="<?php echo $field_value; ?>"/>
+                    <select class="form-select" name="PageId">
+                        <?php  $page_array = $this->PageArray; ?>
+                        <?php foreach ( $page_array as  $page ) { ?>
+                            <option value="<?php echo htmlspecialchars( GetValueText( $page->Id ) ); ?>"<?php if ( GetValueText( $page->Id ) === $field_value ) echo ' selected'; ?>><?php echo htmlspecialchars( GetUntranslatedText( $page->Title ) ); ?></option>
+                        <?php } ?>
+                    </select>
                 </div>
                 <?php
                      $field_name = 'CategorySlug';
@@ -201,7 +206,12 @@
                     <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Category Slug' ) ); ?> :
                 </div>
                 <div>
-                    <input class="form-input" name="CategorySlug" type="text" value="<?php echo $field_value; ?>"/>
+                    <select class="form-select" name="CategorySlug">
+                        <?php  $block_category_array = $this->BlockCategoryArray; ?>
+                        <?php foreach ( $block_category_array as  $block_category ) { ?>
+                            <option value="<?php echo htmlspecialchars( GetValueText( $block_category->Slug ) ); ?>"<?php if ( GetValueText( $block_category->Slug ) === $field_value ) echo ' selected'; ?>><?php echo htmlspecialchars( GetUntranslatedText( $block_category->Name ) ); ?></option>
+                        <?php } ?>
+                    </select>
                 </div>
                 <?php
                      $field_name = 'ContentSlug';
@@ -219,7 +229,12 @@
                     <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Content Slug' ) ); ?> :
                 </div>
                 <div>
-                    <input class="form-input" name="ContentSlug" type="text" value="<?php echo $field_value; ?>"/>
+                    <select class="form-select" name="ContentSlug">
+                        <?php  $block_content_array = $this->BlockContentArray; ?>
+                        <?php foreach ( $block_content_array as  $block_content ) { ?>
+                            <option value="<?php echo htmlspecialchars( GetValueText( $block_content->Slug ) ); ?>"<?php if ( GetValueText( $block_content->Slug ) === $field_value ) echo ' selected'; ?>><?php echo htmlspecialchars( GetUntranslatedText( $block_content->Name ) ); ?></option>
+                        <?php } ?>
+                    </select>
                 </div>
                 <?php
                      $field_name = 'TypeSlug';
@@ -237,7 +252,12 @@
                     <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Type Slug' ) ); ?> :
                 </div>
                 <div>
-                    <input class="form-input" name="TypeSlug" type="text" value="<?php echo $field_value; ?>"/>
+                    <select class="form-select" name="TypeSlug">
+                        <?php  $block_type_array = $this->BlockTypeArray; ?>
+                        <?php foreach ( $block_type_array as  $block_type ) { ?>
+                            <option value="<?php echo htmlspecialchars( GetValueText( $block_type->Slug ) ); ?>"<?php if ( GetValueText( $block_type->Slug ) === $field_value ) echo ' selected'; ?>><?php echo htmlspecialchars( GetUntranslatedText( $block_type->Name ) ); ?></option>
+                        <?php } ?>
+                    </select>
                 </div>
                 <?php
                      $field_name = 'Number';

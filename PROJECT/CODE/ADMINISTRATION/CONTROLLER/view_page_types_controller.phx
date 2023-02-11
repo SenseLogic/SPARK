@@ -1,11 +1,11 @@
 // -- IMPORTS
 
-import 'controller.php';
+import 'view_controller.php';
 import '../../MODEL/page_type_model.php';
 
 // -- TYPES
 
-class VIEW_PAGE_TYPES_CONTROLLER extends CONTROLLER
+class VIEW_PAGE_TYPES_CONTROLLER extends VIEW_CONTROLLER
 {
     // -- CONSTRUCTORS
 

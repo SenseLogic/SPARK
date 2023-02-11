@@ -1,12 +1,12 @@
 <#%%PHX/ADMINISTRATION/CONTROLLER/add_{#variable#}_controller.phx
 // -- IMPORTS
 
-import 'controller.php';
+import 'view_controller.php';
 import '../../MODEL/{#variable#}_model.php';
 
 // -- TYPES
 
-class ADD_{#type#}_CONTROLLER extends CONTROLLER
+class ADD_{#type#}_CONTROLLER extends VIEW_CONTROLLER
 {
     // -- CONSTRUCTORS
 
@@ -29,12 +29,12 @@ var add_{#variable#}_controller = new ADD_{#type#}_CONTROLLER( var language_code
 %%PHX/ADMINISTRATION/CONTROLLER/do_add_{#variable#}_controller.phx
 // -- IMPORTS
 
-import 'controller.php';
+import 'view_controller.php';
 import '../../MODEL/{#variable#}_model.php';
 
 // -- TYPES
 
-class DO_ADD_{#type#}_CONTROLLER extends CONTROLLER
+class DO_ADD_{#type#}_CONTROLLER extends VIEW_CONTROLLER
 {
     // -- CONSTRUCTORS
 
@@ -59,12 +59,12 @@ var do_add_{#variable#}_controller = new DO_ADD_{#type#}_CONTROLLER( var languag
 %%PHX/ADMINISTRATION/CONTROLLER/edit_{#variable#}_controller.phx
 // -- IMPORTS
 
-import 'controller.php';
+import 'view_controller.php';
 import '../../MODEL/{#variable#}_model.php';
 
 // -- TYPES
 
-class EDIT_{#type#}_CONTROLLER extends CONTROLLER
+class EDIT_{#type#}_CONTROLLER extends VIEW_CONTROLLER
 {
     // -- CONSTRUCTORS
 
@@ -89,12 +89,12 @@ var edit_{#variable#}_controller = new EDIT_{#type#}_CONTROLLER( var language_co
 %%PHX/ADMINISTRATION/CONTROLLER/do_edit_{#variable#}_controller.phx
 // -- IMPORTS
 
-import 'controller.php';
+import 'view_controller.php';
 import '../../MODEL/{#variable#}_model.php';
 
 // -- TYPES
 
-class DO_EDIT_{#type#}_CONTROLLER extends CONTROLLER
+class DO_EDIT_{#type#}_CONTROLLER extends VIEW_CONTROLLER
 {
     // -- CONSTRUCTORS
 
@@ -120,12 +120,12 @@ var do_edit_{#variable#}_controller = new DO_EDIT_{#type#}_CONTROLLER( var langu
 %%PHX/ADMINISTRATION/CONTROLLER/remove_{#variable#}_controller.phx
 // -- IMPORTS
 
-import 'controller.php';
+import 'view_controller.php';
 import '../../MODEL/{#variable#}_model.php';
 
 // -- TYPES
 
-class REMOVE_{#type#}_CONTROLLER extends CONTROLLER
+class REMOVE_{#type#}_CONTROLLER extends VIEW_CONTROLLER
 {
     // -- CONSTRUCTORS
 
@@ -150,12 +150,12 @@ var remove_{#variable#}_controller = new REMOVE_{#type#}_CONTROLLER( var languag
 %%PHX/ADMINISTRATION/CONTROLLER/do_remove_{#variable#}_controller.phx
 // -- IMPORTS
 
-import 'controller.php';
+import 'view_controller.php';
 import '../../MODEL/{#variable#}_model.php';
 
 // -- TYPES
 
-class DO_REMOVE_{#type#}_CONTROLLER extends CONTROLLER
+class DO_REMOVE_{#type#}_CONTROLLER extends VIEW_CONTROLLER
 {
     // -- CONSTRUCTORS
 
@@ -178,12 +178,12 @@ var do_remove_{#variable#}_controller = new DO_REMOVE_{#type#}_CONTROLLER( var l
 %%PHX/ADMINISTRATION/CONTROLLER/view_{#variable#}_controller.phx
 // -- IMPORTS
 
-import 'controller.php';
+import 'view_controller.php';
 import '../../MODEL/{#variable#}_model.php';
 
 // -- TYPES
 
-class VIEW_{#type#}_CONTROLLER extends CONTROLLER
+class VIEW_{#type#}_CONTROLLER extends VIEW_CONTROLLER
 {
     // -- CONSTRUCTORS
 
@@ -208,12 +208,12 @@ var view_{#variable#}_controller = new VIEW_{#type#}_CONTROLLER( var language_co
 %%PHX/ADMINISTRATION/CONTROLLER/view_<~Plural<>{#variable#}~>_controller.phx
 // -- IMPORTS
 
-import 'controller.php';
+import 'view_controller.php';
 import '../../MODEL/{#variable#}_model.php';
 
 // -- TYPES
 
-class VIEW_<~Plural<>{#type#}~>_CONTROLLER extends CONTROLLER
+class VIEW_<~Plural<>{#type#}~>_CONTROLLER extends VIEW_CONTROLLER
 {
     // -- CONSTRUCTORS
 

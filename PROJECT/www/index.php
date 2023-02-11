@@ -114,6 +114,9 @@ function Route(
     {
         DefineText( 'en', 'English' );
         DefineText( 'fr', 'French' );
+        DefineText( 'Type Slug', 'Type' );
+        DefineText( 'Category Slug', 'Category' );
+        DefineText( 'Content Slug', 'Content' );
 
         if ( !$user_is_connected )
         {
@@ -182,7 +185,7 @@ function Route(
                   && $path_value_array[ 1 ] === 'page'
                   && $path_value_array[ 2 ] === 'manage' )
         {
-             $page_id = $path_value_array[ 3 ];
+             $page_id_or_slug = $path_value_array[ 3 ];
 
             require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/manage_page_controller.php';
         }

@@ -1,18 +1,17 @@
 // -- IMPORTS
 
-import 'controller.php';
+import 'view_controller.php';
 import '../../MODEL/block_model.php';
 import '../../MODEL/page_model.php';
-import '../../MODEL/page_sub_page_model.php';
 
 // -- TYPES
 
-class MANAGE_PAGE_CONTROLLER extends CONTROLLER
+class MANAGE_PAGE_CONTROLLER extends VIEW_CONTROLLER
 {
     // -- CONSTRUCTORS
 
     method constructor(
-        int page_id
+        string page_id_or_slug
         )
     {
         parent::constructor();
@@ -21,10 +20,10 @@ class MANAGE_PAGE_CONTROLLER extends CONTROLLER
         .BlockArray = GetDatabaseBlockArray();
         .BlockByIdMap = GetValidBlockByIdMap( .BlockArray );
         .PageArray = GetDatabasePageArray();
-        .PageSubPageArray = GetDatabasePageSubPageArray();
-        .PageByIdMap = GetValidPageByIdMap( .PageArray, .PageSubPageArray, .BlockArray, .BlockByIdMap );
-        .Page = GetValidPageById( .PageByIdMap, page_id );
-        .ListRoute = '/admin/page/manage/' .. page_id;
+        .PageByIdMap = GetValidPageByIdMap( .PageArray, .BlockArray, .BlockByIdMap );
+        .PageBySlugMap = GetPageBySlugMap( .PageByIdMap );
+        .Page = GetValidPageByIdOrSlug( .PageByIdMap, .PageBySlugMap, page_id_or_slug );
+        .ListRoute = '/admin/page/manage/' .. page_id_or_slug;
 
         SetSessionValue( 'ListRoute', GetRequest() );
 
@@ -34,4 +33,4 @@ class MANAGE_PAGE_CONTROLLER extends CONTROLLER
 
 // -- STATEMENTS
 
-var manage_page_controller = new MANAGE_PAGE_CONTROLLER( var page_id );
+var manage_page_controller = new MANAGE_PAGE_CONTROLLER( var page_id_or_slug );

@@ -1,7 +1,6 @@
 // -- IMPORTS
 
 import 'block.php';
-import 'block_type.php';
 
 // -- FUNCTIONS
 
@@ -68,20 +67,7 @@ function GetValidBlockByIdMap(
 
     foreach ( var block; block_array )
     {
-        block.SubBlockArray = [];
         block_by_id_map[ block.Id ] = block;
-    }
-
-    foreach ( var block; block_array )
-    {
-        if ( property_exists( block, 'BlockId' )
-             && isset( block_by_id_map[ block.BlockId ] ) )
-        {
-            array_push(
-                block_by_id_map[ block.BlockId ].SubBlockArray,
-                block
-                );
-        }
     }
 
     return block_by_id_map;
@@ -91,7 +77,7 @@ function GetValidBlockByIdMap(
 
 function GetValidBlockById(
     array &block_by_id_map,
-    int id
+    string id
     )
 {
     foreach ( var block_id => var block; block_by_id_map )

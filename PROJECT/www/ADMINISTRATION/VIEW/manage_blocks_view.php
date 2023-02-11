@@ -10,12 +10,6 @@
         <div class="page-section form-section filter-row">
             <div class="form-container">
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Slug' ) ); ?> :
-                </div>
-                <div>
-                    <input class="form-input" name="Slug" type="text" value="<?php echo htmlspecialchars( GetValueText( $block->Id ) ); ?>" readonly/>
-                </div>
-                <div class="form-field-name">
                     <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Type Slug' ) ); ?> :
                 </div>
                 <div>

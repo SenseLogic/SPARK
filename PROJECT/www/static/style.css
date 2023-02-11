@@ -7,9 +7,9 @@
   outline: 0 none;
   border: 0 none;
   padding: 0;
-  line-height: inherit;
   font-family: inherit;
   font-size: inherit;
+  line-height: inherit;
 }
 body {
   margin: 0;
