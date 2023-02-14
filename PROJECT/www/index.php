@@ -114,9 +114,9 @@ function Route(
     {
         DefineText( 'en', 'English' );
         DefineText( 'fr', 'French' );
-        DefineText( 'Type Slug', 'Type' );
-        DefineText( 'Category Slug', 'Category' );
-        DefineText( 'Content Slug', 'Content' );
+        DefineText( 'Type Slug :', 'Type :' );
+        DefineText( 'Category Slug :', 'Category :' );
+        DefineText( 'Content Slug :', 'Content :' );
 
         if ( !$user_is_connected )
         {

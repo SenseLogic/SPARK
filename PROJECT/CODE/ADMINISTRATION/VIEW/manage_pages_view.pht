@@ -8,39 +8,9 @@
     </div>
     <? foreach ( var page; .PageArray ) { ?>
         <div class="page-section form-section filter-row">
-            <div class="form-container">
-                <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Route' ) %> :
-                </div>
-                <div>
-                    <input class="form-input" name="Route" type="text" value="<% GetValueText( page.Route ) %>" readonly/>
-                </div>
-                <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Type Slug' ) %> :
-                </div>
-                <div>
-                    <input class="form-input" name="TypeSlug" type="text" value="<% GetValueText( page.TypeSlug ) %>" readonly/>
-                </div>
-                <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Title' ) %> :
-                </div>
-                <div>
-                    <div>
-                        <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <input class="form-translation form-input" name="Title" type="text" value="<% GetValueText( GetTranslatedText( page.Title, language_code ) ) %>" readonly/>
-                        <? } ?>
-                    </div>
-                </div>
-                <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Image Path' ) %> :
-                </div>
-                <div>
-                    <input class="form-input" name="ImagePath" type="text" value="<% page.ImagePath %>" readonly/>
-                    <div class="form-upload-container">
-                        <img class="form-upload-image" src="<% page.ImagePath %>" onerror="this.src='/static/image/admin/missing_image.svg'"/>
-                    </div>
-                </div>
-            </div>
+            <?
+                include 'BLOCK/PREVIEW/page.php';
+            ?>
             <div class="form-toolbar">
                 <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
                     <a class="form-button manage-button" href="/admin/page/manage/<% page.Id %>">

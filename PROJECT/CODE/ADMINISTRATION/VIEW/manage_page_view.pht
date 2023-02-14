@@ -1,43 +1,12 @@
 <? include 'BLOCK/page_header.php'; ?>
 <div id="manage-page-view">
     <div class="page-section form-section">
-        <div class="form-container">
-            <div class="form-field-name">
-                <% .GetProcessedTextBySlug( 'Route' ) %> :
-            </div>
-            <div>
-                <input class="form-input" name="Route" type="text" value="<% GetValueText( .Page.Route ) %>" readonly/>
-            </div>
-            <div class="form-field-name">
-                <% .GetProcessedTextBySlug( 'Type Slug' ) %> :
-            </div>
-            <div>
-                <input class="form-input" name="TypeSlug" type="text" value="<% GetValueText( .Page.TypeSlug ) %>" readonly/>
-            </div>
-            <div class="form-field-name">
-                <% .GetProcessedTextBySlug( 'Title' ) %> :
-            </div>
-            <div>
-                <div>
-                    <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                        <input class="form-translation form-input" name="Title" type="text" value="<% GetValueText( GetTranslatedText( .Page.Title, language_code ) ) %>" readonly/>
-                    <? } ?>
-                </div>
-            </div>
-            <div class="form-field-name">
-                <% .GetProcessedTextBySlug( 'Image Path' ) %> :
-            </div>
-            <div>
-                <input class="form-input" name="ImagePath" type="text" value="<% .Page.ImagePath %>" readonly/>
-                <div class="form-upload-container">
-                    <img class="form-upload-image" src="<% .Page.ImagePath %>" onerror="this.src='/static/image/admin/missing_image.svg'"/>
-                </div>
-            </div>
-        </div>
+        <?
+            var page = .Page;
+            include 'BLOCK/PREVIEW/page.php';
+        ?>
         <div class="form-toolbar">
             <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
-                <a class="form-button manage-button" href="/admin/page/manage/<% .Page.Id %>">
-                </a>
                 <a class="form-button edit-button" href="/admin/page/edit/<% .Page.Id %>">
                 </a>
                 <a class="form-button remove-button" href="/admin/page/remove/<% .Page.Id %>">
@@ -54,39 +23,9 @@
             <? added_block_number = GetAddedElementNumber( .Page.BlockArray, block_index ); ?>
             <div class="card-container filter-row">
                 <div class="card">
-                    <div class="form-container">
-                        <div class="form-field-name">
-                            <% .GetProcessedTextBySlug( 'Type Slug' ) %> :
-                        </div>
-                        <div>
-                            <input class="form-input" name="TypeSlug" type="text" value="<% GetValueText( block.TypeSlug ) %>" readonly/>
-                        </div>
-                        <div class="form-field-name">
-                            <% .GetProcessedTextBySlug( 'Number' ) %> :
-                        </div>
-                        <div>
-                            <input class="form-input" name="Number" type="text" value="<% GetValueText( .Page.BlockArray[ block_index ].Number ) %>" readonly/>
-                        </div>
-                        <div class="form-field-name">
-                            <% .GetProcessedTextBySlug( 'Title' ) %> :
-                        </div>
-                        <div>
-                            <div>
-                                <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                                    <input class="form-translation form-input" name="Title" type="text" value="<% GetValueText( GetTranslatedText( block.Title, language_code ) ) %>" readonly/>
-                                <? } ?>
-                            </div>
-                        </div>
-                        <div class="form-field-name">
-                            <% .GetProcessedTextBySlug( 'Image Path' ) %> :
-                        </div>
-                        <div>
-                            <input class="form-input" name="ImagePath" type="text" value="<% block.ImagePath %>" readonly/>
-                            <div class="form-upload-container">
-                                <img class="form-upload-image" src="<% block.ImagePath %>" onerror="this.src='/static/image/admin/missing_image.svg'"/>
-                            </div>
-                        </div>
-                    </div>
+                    <?
+                        include 'BLOCK/PREVIEW/block.php';
+                    ?>
                     <div class="form-toolbar">
                         <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
                             <a class="form-button manage-button" href="/admin/block/manage/<% block.Id %>">

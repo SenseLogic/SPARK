@@ -5,6 +5,7 @@
 <script src="/static/script/vista_request.js?v=<# VersionTimestamp #>"></script>
 <script src="/static/script/vista_storage.js?v=<# VersionTimestamp #>"></script>
 <script src="/static/script/vista_scroll.js?v=<# VersionTimestamp #>"></script>
+<script src="/static/script/vista_viewport.js?v=<# VersionTimestamp #>"></script>
 <script src="/static/script/vista_sortable_grid.js?v=<# VersionTimestamp #>"></script>
 <script src="/static/script/vista_sortable_table.js?v=<# VersionTimestamp #>"></script>
 <script src="/static/script/vista_multilingual_input.js?v=<# VersionTimestamp #>"></script>

@@ -1,43 +1,12 @@
 <? include 'BLOCK/page_header.php'; ?>
 <div id="manage-block-view">
     <div class="page-section form-section">
-        <div class="form-container">
-            <div class="form-field-name">
-                <% .GetProcessedTextBySlug( 'Type Slug' ) %> :
-            </div>
-            <div>
-                <input class="form-input" name="TypeSlug" type="text" value="<% GetValueText( .Block.TypeSlug ) %>" readonly/>
-            </div>
-            <div class="form-field-name">
-                <% .GetProcessedTextBySlug( 'Number' ) %> :
-            </div>
-            <div>
-                <input class="form-input" name="Number" type="text" value="<% GetValueText( .Block.Number ) %>" readonly/>
-            </div>
-            <div class="form-field-name">
-                <% .GetProcessedTextBySlug( 'Text' ) %> :
-            </div>
-            <div>
-                <div>
-                    <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                        <textarea class="form-translation form-textarea" name="Text" readonly><% GetTranslatedText( .Block.Text, language_code ) %></textarea>
-                    <? } ?>
-                </div>
-            </div>
-            <div class="form-field-name">
-                <% .GetProcessedTextBySlug( 'Image Path' ) %> :
-            </div>
-            <div>
-                <input class="form-input" name="ImagePath" type="text" value="<% .Block.ImagePath %>" readonly/>
-                <div class="form-upload-container">
-                    <img class="form-upload-image" src="<% .Block.ImagePath %>" onerror="this.src='/static/image/admin/missing_image.svg'"/>
-                </div>
-            </div>
-        </div>
+        <?
+            var block = .Block;
+            include 'BLOCK/PREVIEW/block.php';
+        ?>
         <div class="form-toolbar">
             <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
-                <a class="form-button manage-button" href="/admin/block/manage/<% .Block.Id %>">
-                </a>
                 <a class="form-button edit-button" href="/admin/block/edit/<% .Block.Id %>">
                 </a>
                 <a class="form-button remove-button" href="/admin/block/remove/<% .Block.Id %>">

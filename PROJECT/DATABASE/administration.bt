@@ -768,19 +768,6 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                 </div>
             <? } ?>
             <div class="page-body">
-%%PHX/ADMINISTRATION/STYLE/button.styl
-// -- CLASSES
-<#<~{#is_managed#}<>
-.{#style#}-manager-button
-{
-    background: url( "/static/image/admin/{#variable#}_manager_icon.svg" ) no-repeat center center / contain;
-}
-~>
-.{#style#}-button
-{
-    background: url( "/static/image/admin/{#variable#}_icon.svg" ) no-repeat center center / contain;
-}
-#>
 %%PHX/ADMINISTRATION/STYLE/table.styl
 // -- CLASSES
 <#

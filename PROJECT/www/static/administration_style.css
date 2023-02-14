@@ -538,7 +538,7 @@ textarea {
   color: #e20048;
 }
 .page-title {
-  width: var(--viewport-width);
+  width: calc(var(--viewport-width) - 1.2rem);
   padding: 1rem;
   grid-area: title;
   font-size: 1.5rem;
@@ -794,42 +794,6 @@ textarea {
 .debug-outline * {
   outline: 0.00625rem solid rgba(255,0,0,0.5);
 }
-.text-button {
-  background: url("/static/image/admin/text_icon.svg") no-repeat center center/contain;
-}
-.language-button {
-  background: url("/static/image/admin/language_icon.svg") no-repeat center center/contain;
-}
-.page-type-button {
-  background: url("/static/image/admin/page_type_icon.svg") no-repeat center center/contain;
-}
-.page-manager-button {
-  background: url("/static/image/admin/page_manager_icon.svg") no-repeat center center/contain;
-}
-.page-button {
-  background: url("/static/image/admin/page_icon.svg") no-repeat center center/contain;
-}
-.block-category-button {
-  background: url("/static/image/admin/block_category_icon.svg") no-repeat center center/contain;
-}
-.block-type-button {
-  background: url("/static/image/admin/block_type_icon.svg") no-repeat center center/contain;
-}
-.block-content-button {
-  background: url("/static/image/admin/block_content_icon.svg") no-repeat center center/contain;
-}
-.block-manager-button {
-  background: url("/static/image/admin/block_manager_icon.svg") no-repeat center center/contain;
-}
-.block-button {
-  background: url("/static/image/admin/block_icon.svg") no-repeat center center/contain;
-}
-.contact-button {
-  background: url("/static/image/admin/contact_icon.svg") no-repeat center center/contain;
-}
-.user-button {
-  background: url("/static/image/admin/user_icon.svg") no-repeat center center/contain;
-}
 .text-table {
   grid-template-columns: repeat(3, auto);
 }
@@ -859,4 +823,63 @@ textarea {
 }
 .user-table {
   grid-template-columns: repeat(5, auto);
+}
+@font-face {
+  font-family: "Ubuntu";
+  src: url("font/ubuntu_light.woff2") format("woff2"), url("font/ubuntu_light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Ubuntu";
+  src: url("font/ubuntu_light_italic.woff2") format("woff2"), url("font/ubuntu_light_italic.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+  font-display: block;
+}
+@font-face {
+  font-family: "Ubuntu";
+  src: url("font/ubuntu_regular.woff2") format("woff2"), url("font/ubuntu_regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Ubuntu";
+  src: url("font/ubuntu_regular_italic.woff2") format("woff2"), url("font/ubuntu_regular_italic.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+  font-display: block;
+}
+@font-face {
+  font-family: "Ubuntu";
+  src: url("font/ubuntu_medium.woff2") format("woff2"), url("font/ubuntu_medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Ubuntu";
+  src: url("font/ubuntu_medium_italic.woff2") format("woff2"), url("font/ubuntu_medium_italic.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+  font-display: block;
+}
+@font-face {
+  font-family: "Ubuntu";
+  src: url("font/ubuntu_bold.woff2") format("woff2"), url("font/ubuntu_bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Ubuntu";
+  src: url("font/ubuntu_bold_italic.woff2") format("woff2"), url("font/ubuntu_bold_italic.woff") format("woff");
+  font-weight: 700;
+  font-style: italic;
+  font-display: block;
+}
+.font-family-ubuntu {
+  font-family: "Ubuntu", sans-serif;
 }
