@@ -27,7 +27,7 @@
                 <div>
                     <input class="form-input" name="Email" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->User->Email ) ); ?>" readonly/>
                 </div>
-                <a class="justify-self-start form-button form-button-large cancel-button" href="<?php echo htmlspecialchars( $this->ListRoute ); ?>">
+                <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
                 </a>
                 <button class="justify-self-end form-button-large form-button form-button-large remove-button" type="submit">
                 </button>

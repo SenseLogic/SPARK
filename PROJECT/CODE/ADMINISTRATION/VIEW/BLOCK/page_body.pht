@@ -1,4 +1,5 @@
 <script src="/static/script/vista_base.js?v=<# VersionTimestamp #>"></script>
+<script src="/static/script/vista_browser.js?v=<# VersionTimestamp #>"></script>
 <script src="/static/script/vista_text.js?v=<# VersionTimestamp #>"></script>
 <script src="/static/script/vista_element.js?v=<# VersionTimestamp #>"></script>
 <script src="/static/script/vista_animation.js?v=<# VersionTimestamp #>"></script>

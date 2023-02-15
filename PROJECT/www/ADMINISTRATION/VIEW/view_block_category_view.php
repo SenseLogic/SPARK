@@ -14,7 +14,7 @@
             <div>
                     <input class="form-input" name="Name" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->BlockCategory->Name ) ); ?>" readonly/>
             </div>
-            <a class="justify-self-start form-button form-button-large cancel-button" href="<?php echo htmlspecialchars( $this->ListRoute ); ?>">
+            <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
             </a>
         </div>
     </div>

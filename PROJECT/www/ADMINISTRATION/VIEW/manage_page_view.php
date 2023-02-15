@@ -19,7 +19,7 @@
     </div>
     <div class="margin-top-1rem margin-bottom-2rem card-list">
         <?php  $added_block_number = 1; ?>
-        <?php foreach ( $this->Page->BlockArray as  $block_index =>  $block ) { ?>
+        <?php foreach ( $this->Page->SortedBlockArray as  $block_index =>  $block ) { ?>
             <?php $added_block_number = GetAddedElementNumber( $this->Page->BlockArray, $block_index ); ?>
             <div class="card-container filter-row">
                 <div class="card">
@@ -47,7 +47,7 @@
         </a>
     </div>
     <div>
-        <a class="justify-self-start form-button form-button-large cancel-button" href="/admin/page/manage">
+        <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
         </a>
     </div>
 </div>

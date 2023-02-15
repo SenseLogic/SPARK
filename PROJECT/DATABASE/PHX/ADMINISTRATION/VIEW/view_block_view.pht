@@ -106,7 +106,7 @@
                     <video class="form-upload-video" src="<% .Block.VideoPath %>" type="video/mp4" onerror="this.src='/static/video/admin/missing_video.mp4'"></video>
                 </div>
             </div>
-            <a class="justify-self-start form-button form-button-large cancel-button" href="<% .ListRoute %>">
+            <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
             </a>
         </div>
     </div>

@@ -15,7 +15,7 @@
         </div>
     </div>
     <div>
-        <a class="justify-self-start form-button form-button-large cancel-button" href="/admin/block/manage">
+        <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
         </a>
     </div>
 </div>

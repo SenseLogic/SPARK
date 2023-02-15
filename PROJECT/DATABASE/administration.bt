@@ -367,7 +367,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                     <textarea class="form-textarea" name="{%attribute%}"><\# field_value #\></textarea><>
                     <input class="form-input" name="{%attribute%}" type="text" value="<\# field_value #\>"/>~>~>~>~>~>~>~>
                 </div>~>¨%>
-                <a class="justify-self-start form-button form-button-large cancel-button" href="<\% .ListRoute %\>">
+                <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
                 </a>
                 <button class="justify-self-end form-button form-button-large apply-button" type="submit">
                 </button>
@@ -501,7 +501,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                     <textarea class="form-textarea" name="{%attribute%}"><\% .{#attribute#}.{%attribute%} %\></textarea><>
                     <input class="form-input" name="{%attribute%}" type="text" value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>"/>~>~>~>~>~>~>~>
                 </div>~>$>
-                <a class="justify-self-start form-button form-button-large cancel-button" href="<\% .ListRoute %\>">
+                <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
                 </a>
                 <button class="justify-self-end form-button form-button-large apply-button" type="submit">
                 </button>
@@ -553,7 +553,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                     <textarea class="form-textarea" name="{%attribute%}" readonly><\% .{#attribute#}.{%attribute%} %\></textarea><>
                     <input class="form-input" name="{%attribute%}" type="text" value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" readonly/>~>~>~>~>~>
                 </div>~>$>
-                <a class="justify-self-start form-button form-button-large cancel-button" href="<\% .ListRoute %\>">
+                <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
                 </a>
                 <button class="justify-self-end form-button-large form-button form-button-large remove-button" type="submit">
                 </button>
@@ -604,7 +604,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                     <textarea class="form-textarea" name="{%attribute%}" readonly><\% .{#attribute#}.{%attribute%} %\></textarea><>
                     <input class="form-input" name="{%attribute%}" type="text" value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" readonly/>~>~>~>~>~>
             </div>~>$>
-            <a class="justify-self-start form-button form-button-large cancel-button" href="<\% .ListRoute %\>">
+            <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
             </a>
         </div>
     </div><~{#has_custom_block#}<>

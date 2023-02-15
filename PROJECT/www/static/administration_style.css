@@ -697,25 +697,21 @@ textarea {
   grid-template-columns: 1fr;
   grid-gap: 1rem;
 }
-@media (min-width: 80em) {
+@media (min-width: 120em) {
   .card-list {
     grid-template-columns: 1fr 1fr;
   }
 }
-@media (min-width: 120em) {
-  .card-list {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-@media min-width-160em {
-  .card-list {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-}
 .card {
+  max-width: calc(var(--viewport-width) - 3rem - 0.5px);
   border: 1px solid #ccc;
   border-radius: 0.5rem;
   padding: 1rem;
+}
+@media (min-width: 120em) {
+  .card {
+    max-width: calc(var(--viewport-width) * 0.5 - 2rem - 0.5px);
+  }
 }
 .tool-container {
   width: 100%;

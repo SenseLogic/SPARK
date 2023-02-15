@@ -45,7 +45,7 @@
                 <div>
                     <input class="form-input" name="Title" type="text" value="<% GetValueText( .PageType.Title ) %>"/>
                 </div>
-                <a class="justify-self-start form-button form-button-large cancel-button" href="<% .ListRoute %>">
+                <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
                 </a>
                 <button class="justify-self-end form-button form-button-large apply-button" type="submit">
                 </button>

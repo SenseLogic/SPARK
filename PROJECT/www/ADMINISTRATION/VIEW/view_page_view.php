@@ -127,7 +127,7 @@
                     <img class="form-upload-image" src="<?php echo htmlspecialchars( $this->Page->MetaImagePath ); ?>" onerror="this.src='/static/image/admin/missing_image.svg'"/>
                 </div>
             </div>
-            <a class="justify-self-start form-button form-button-large cancel-button" href="<?php echo htmlspecialchars( $this->ListRoute ); ?>">
+            <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
             </a>
         </div>
     </div>

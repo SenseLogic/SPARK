@@ -19,7 +19,7 @@
                         <? } ?>
                     </div>
                 </div>
-                <a class="justify-self-start form-button form-button-large cancel-button" href="<% .ListRoute %>">
+                <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
                 </a>
                 <button class="justify-self-end form-button-large form-button form-button-large remove-button" type="submit">
                 </button>

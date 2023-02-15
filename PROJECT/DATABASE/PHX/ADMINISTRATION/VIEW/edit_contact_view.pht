@@ -132,7 +132,7 @@
                 <div>
                     <input class="form-input" name="DateTime" type="text" value="<% GetValueText( .Contact.DateTime ) %>"/>
                 </div>
-                <a class="justify-self-start form-button form-button-large cancel-button" href="<% .ListRoute %>">
+                <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
                 </a>
                 <button class="justify-self-end form-button form-button-large apply-button" type="submit">
                 </button>

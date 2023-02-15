@@ -14,6 +14,9 @@ class SHOW_HOME_MENU_CONTROLLER extends VIEW_CONTROLLER
         parent::__construct( 'en' );
 
         $this->Title = '';
+        $this->ListRoute = '/admin';
+
+        SetSessionValue( 'ListRoute', $this->ListRoute );
 
         require_once __DIR__ . '/' . '../VIEW/show_home_menu_view.php';
     }

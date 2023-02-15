@@ -107,6 +107,12 @@ function GetValidPageByIdMap(
     {
         LinkBlockArray( $page->HeadingBlockArray );
         LinkBlockArray( $page->ContentBlockArray );
+
+        $page->SortedBlockArray
+            = array_merge(
+                $page->HeadingBlockArray,
+                $page->ContentBlockArray
+                );
     }
 
     return $page_by_id_map;
