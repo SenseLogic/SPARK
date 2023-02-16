@@ -18,7 +18,7 @@
 <form class="margin-top-auto margin-bottom-auto flex-direction-column form-centered" name="ConnectUser" action="/admin" method="post">
     <div class="logo-image">
     </div>
-    <div class="margin-top-2rem width-30rem page-section">
+    <div class="margin-top-3rem width-30rem page-section">
         <div class="form-field-name">
             <% .GetProcessedTextBySlug( "Username" ) %>
         </div>

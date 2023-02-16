@@ -1,12 +1,13 @@
 // -- IMPORTS
 
 import 'controller.php';
-import '../../MODEL/page_model.php';
-import '../../MODEL/page_type_model.php';
 import '../../MODEL/block_category_model.php';
 import '../../MODEL/block_content_model.php';
 import '../../MODEL/block_model.php';
 import '../../MODEL/block_type_model.php';
+import '../../MODEL/page_model.php';
+import '../../MODEL/page_type_model.php';
+import '../../MODEL/text_model.php';
 
 // -- TYPES
 
@@ -19,11 +20,31 @@ class VIEW_CONTROLLER extends CONTROLLER
     {
         parent::constructor();
 
+        .TextArray = GetDatabaseTextArray();
+        .TextBySlugMap = GetTextBySlugMap( .TextArray );
         .PageArray = GetDatabasePageArray();
         .PageTypeArray = GetDatabasePageTypeArray();
         .BlockArray = GetDatabaseBlockArray();
         .BlockCategoryArray = GetDatabaseBlockCategoryArray();
         .BlockContentArray = GetDatabaseBlockContentArray();
         .BlockTypeArray = GetDatabaseBlockTypeArray();
+    }
+
+    // -- INQUIRIES
+
+    method GetTextBySlug(
+        string slug
+        )
+    {
+        if ( array_key_exists( slug, .TextBySlugMap ) )
+        {
+            return .TextBySlugMap[ slug ];
+        }
+        else
+        {
+            return slug;
+        }
+
+        return GetTextBySlug( slug );
     }
 }

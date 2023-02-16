@@ -1,6 +1,6 @@
 // -- VARIABLES
 
-var TextMap = [];
+var TextBySlugMap = [];
 var ProcessedTagArray = [];
 var ProcessedTagDefinitionArray = [];
 var ProcessedDualTagArray = [];
@@ -799,9 +799,9 @@ function DefineText(
     )
 {
     global
-        TextMap;
+        TextBySlugMap;
 
-    TextMap[ slug ] = text;
+    TextBySlugMap[ slug ] = text;
 }
 
 // ~~
@@ -811,11 +811,11 @@ function GetTextBySlug(
     )
 {
     global
-        TextMap;
+        TextBySlugMap;
 
-    if ( array_key_exists( slug, TextMap ) )
+    if ( array_key_exists( slug, TextBySlugMap ) )
     {
-        return TextMap[ slug ];
+        return TextBySlugMap[ slug ];
     }
     else
     {

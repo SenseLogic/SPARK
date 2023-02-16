@@ -20,6 +20,15 @@ class CONTROLLER
 
     // -- INQUIRIES
 
+    function GetTextBySlug(
+        string $slug
+        )
+    {
+        return GetTextBySlug( $slug );
+    }
+
+    // ~~
+
     function GetUntranslatedText(
         string $text
         )
@@ -51,7 +60,7 @@ class CONTROLLER
         string $slug
         )
     {
-        return $this->GetTranslatedNumber( GetTextBySlug( $slug ) );
+        return $this->GetTranslatedNumber( $this->GetTextBySlug( $slug ) );
     }
 
     // ~~
@@ -78,7 +87,7 @@ class CONTROLLER
         string $slug
         )
     {
-        return $this->GetProcessedText( GetTextBySlug( $slug ) );
+        return $this->GetProcessedText( $this->GetTextBySlug( $slug ) );
     }
 
     // ~~
@@ -96,6 +105,6 @@ class CONTROLLER
         string $slug
         )
     {
-        return $this->GetProcessedMultilineText( GetTextBySlug( $slug ) );
+        return $this->GetProcessedMultilineText( $this->GetTextBySlug( $slug ) );
     }
 }

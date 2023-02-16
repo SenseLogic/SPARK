@@ -20,6 +20,15 @@ class CONTROLLER
 
     // -- INQUIRIES
 
+    method GetTextBySlug(
+        string slug
+        )
+    {
+        return GetTextBySlug( slug );
+    }
+
+    // ~~
+
     method GetUntranslatedText(
         string text
         )
@@ -51,7 +60,7 @@ class CONTROLLER
         string slug
         )
     {
-        return .GetTranslatedNumber( GetTextBySlug( slug ) );
+        return .GetTranslatedNumber( .GetTextBySlug( slug ) );
     }
 
     // ~~
@@ -78,7 +87,7 @@ class CONTROLLER
         string slug
         )
     {
-        return .GetProcessedText( GetTextBySlug( slug ) );
+        return .GetProcessedText( .GetTextBySlug( slug ) );
     }
 
     // ~~
@@ -96,6 +105,6 @@ class CONTROLLER
         string slug
         )
     {
-        return .GetProcessedMultilineText( GetTextBySlug( slug ) );
+        return .GetProcessedMultilineText( .GetTextBySlug( slug ) );
     }
 }
