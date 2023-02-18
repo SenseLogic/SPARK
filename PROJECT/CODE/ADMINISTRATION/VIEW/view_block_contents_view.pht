@@ -15,13 +15,13 @@
     <div class="cell-list page-section form-section is-hidden">
         <div class="form-container table-container block-content-table sortable-table">
             <div class="form-column-name sortable-table-column">
-                <% .GetProcessedTextBySlug( 'Slug' ) %>
+                <% GetTextBySlug( 'Slug' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetProcessedTextBySlug( 'Name' ) %>
+                <% GetTextBySlug( 'Name' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetProcessedTextBySlug( 'Action' ) %>
+                <% GetTextBySlug( 'Action' ) %>
             </div>
             <? foreach ( var block_content; .BlockContentArray ) { ?>
                 <div class="sortable-table-row filter-row filter-content">
@@ -51,16 +51,16 @@
                 <div class="card">
                     <div class="form-container">
                         <div class="form-field-name">
-                            <% .GetProcessedTextBySlug( 'Slug' ) %> :
+                            <% GetTextBySlug( 'Slug' ) %> :
                         </div>
                         <div>
-                                <input class="form-input" name="Slug" type="text" value="<% GetValueText( block_content.Slug ) %>" readonly/>
+                            <input-component class_="form-input" name_="Slug" type_="text" value_="<% GetValueText( block_content.Slug ) %>" readonly_></input-component>
                         </div>
                         <div class="form-field-name">
-                            <% .GetProcessedTextBySlug( 'Name' ) %> :
+                            <% GetTextBySlug( 'Name' ) %> :
                         </div>
                         <div>
-                                <input class="form-input" name="Name" type="text" value="<% GetValueText( block_content.Name ) %>" readonly/>
+                            <input-component class_="form-input" name_="Name" type_="text" value_="<% GetValueText( block_content.Name ) %>" readonly_></input-component>
                         </div>
                     </div>
                     <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>

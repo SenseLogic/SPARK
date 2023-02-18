@@ -20,6 +20,9 @@ import 'FRAMEWORK/user.php';
 
 define( 'DefaultLanguageCode', 'en' );
 define( 'LanguageCodeArray', [ 'en', 'fr' ] );
+define( 'LanguageNameArray', [ 'English', 'French' ] );
+define( 'LanguageCodes', 'en,fr' );
+define( 'LanguageNames', 'English,French' );
 
 if ( GetServerName() === 'localhost' )
 {
@@ -114,9 +117,14 @@ function Route(
     {
         DefineText( 'en', 'English' );
         DefineText( 'fr', 'French' );
-        DefineText( 'Type Slug :', 'Type :' );
-        DefineText( 'Category Slug :', 'Category :' );
-        DefineText( 'Content Slug :', 'Content :' );
+
+        DefineText( 'Category Slug', 'Category' );
+        DefineText( 'Content Slug', 'Content' );
+        DefineText( 'Image Path', 'Image' );
+        DefineText( 'Language Code Array', 'Languages' );
+        DefineText( 'Page Id', 'Page' );
+        DefineText( 'Type Slug', 'Type' );
+        DefineText( 'Video Path', 'Video' );
 
         if ( !user_is_connected )
         {

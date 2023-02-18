@@ -15,7 +15,7 @@
         </div>
     </div>
     <div class="form-title">
-        <% .GetProcessedTextBySlug( 'Blocks' ) %> :
+        <% GetTextBySlug( 'Blocks' ) %> :
     </div>
     <div class="margin-top-1rem margin-bottom-2rem card-list">
         <? var added_block_number = 1; ?>

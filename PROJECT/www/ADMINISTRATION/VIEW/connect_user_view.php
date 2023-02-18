@@ -20,16 +20,16 @@
     </div>
     <div class="margin-top-3rem width-30rem page-section">
         <div class="form-field-name">
-            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( "Username" ) ); ?>
+            <?php echo htmlspecialchars( GetTextBySlug( "Username" ) ); ?>
         </div>
         <input class="margin-top-50pem form-input" name="Pseudonym" type="text"/>
         <div class="margin-top-1rem form-field-name">
-            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( "Password" ) ); ?>
+            <?php echo htmlspecialchars( GetTextBySlug( "Password" ) ); ?>
         </div>
         <input class="margin-top-50pem form-input" name="Password" type="password"/>
         <div class="margin-top-2rem form-extended form-centered">
             <button class="form-text-button" type="submit">
-                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( "Sign in" ) ); ?>
+                <?php echo htmlspecialchars( GetTextBySlug( "Sign in" ) ); ?>
             </button>
         </div>
     </div>

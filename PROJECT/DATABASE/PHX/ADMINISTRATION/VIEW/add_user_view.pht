@@ -83,10 +83,10 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Id' ) %> :
+                    <% GetTextBySlug( 'Id' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="Id" type="text" value="<# field_value #>"/>
+                    <input-component class_="form-input" name_="Id" type_="text" value_="<% GetValueText( field_value ) %>"></input-component>
                 </div>
                 <?
                     var field_name = 'Pseudonym';
@@ -101,10 +101,10 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Pseudonym' ) %> :
+                    <% GetTextBySlug( 'Pseudonym' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="Pseudonym" type="text" value="<# field_value #>"/>
+                    <input-component class_="form-input" name_="Pseudonym" type_="text" value_="<% GetValueText( field_value ) %>"></input-component>
                 </div>
                 <?
                     var field_name = 'Password';
@@ -119,10 +119,10 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Password' ) %> :
+                    <% GetTextBySlug( 'Password' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="Password" type="text" value="<# field_value #>"/>
+                    <input-component class_="form-input" name_="Password" type_="text" value_="<% GetValueText( field_value ) %>"></input-component>
                 </div>
                 <?
                     var field_name = 'Role';
@@ -137,10 +137,10 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Role' ) %> :
+                    <% GetTextBySlug( 'Role' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="Role" type="text" value="<# field_value #>"/>
+                    <input-component class_="form-input" name_="Role" type_="text" value_="<% GetValueText( field_value ) %>"></input-component>
                 </div>
                 <?
                     var field_name = 'Email';
@@ -155,10 +155,10 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Email' ) %> :
+                    <% GetTextBySlug( 'Email' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="Email" type="text" value="<# field_value #>"/>
+                    <input-component class_="form-input" name_="Email" type_="text" value_="<% GetValueText( field_value ) %>"></input-component>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
                 </a>

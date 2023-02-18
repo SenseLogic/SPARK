@@ -15,19 +15,19 @@
     <div class="cell-list page-section form-section is-hidden">
         <div class="form-container table-container language-table sortable-table">
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Code' ) ); ?>
+                <?php echo htmlspecialchars( GetTextBySlug( 'Code' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Number' ) ); ?>
+                <?php echo htmlspecialchars( GetTextBySlug( 'Number' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Text' ) ); ?>
+                <?php echo htmlspecialchars( GetTextBySlug( 'Text' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Is Active' ) ); ?>
+                <?php echo htmlspecialchars( GetTextBySlug( 'Is Active' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Action' ) ); ?>
+                <?php echo htmlspecialchars( GetTextBySlug( 'Action' ) ); ?>
             </div>
             <?php foreach ( $this->LanguageArray as  $language ) { ?>
                 <div class="sortable-table-row filter-row filter-content">
@@ -69,32 +69,31 @@
                 <div class="card">
                     <div class="form-container">
                         <div class="form-field-name">
-                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Code' ) ); ?> :
+                            <?php echo htmlspecialchars( GetTextBySlug( 'Code' ) ); ?> :
                         </div>
                         <div>
-                                <input class="form-input" name="Code" type="text" value="<?php echo htmlspecialchars( GetValueText( $language->Code ) ); ?>" readonly/>
+                            <input-component class_="form-input" name_="Code" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $language->Code ) ); ?>" readonly_></input-component>
                         </div>
                         <div class="form-field-name">
-                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Number' ) ); ?> :
+                            <?php echo htmlspecialchars( GetTextBySlug( 'Number' ) ); ?> :
                         </div>
                         <div>
-                                <input class="form-input" name="Number" type="text" value="<?php echo htmlspecialchars( GetValueText( $language->Number ) ); ?>" readonly/>
+                            <input-component class_="form-input" name_="Number" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $language->Number ) ); ?>" readonly_></input-component>
                         </div>
                         <div class="form-field-name">
-                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Text' ) ); ?> :
+                            <?php echo htmlspecialchars( GetTextBySlug( 'Text' ) ); ?> :
                         </div>
                         <div>
-                            <div>
-                                <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
-                                    <input class="form-translation form-input" name="Text" type="text" value="<?php echo htmlspecialchars( GetValueText( GetTranslatedText( $language->Text, $language_code ) ) ); ?>" readonly/>
-                                <?php } ?>
-                            </div>
+                            <input-component class_="form-input" name_="Text" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $language->Text ) ); ?>" readonly_ language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></input-component>
                         </div>
                         <div class="form-field-name">
-                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Is Active' ) ); ?> :
+                            <?php echo htmlspecialchars( GetTextBySlug( 'Is Active' ) ); ?> :
                         </div>
                         <div>
-                                <input class="form-input" name="IsActive" type="text" value="<?php echo htmlspecialchars( GetValueText( $language->IsActive ) ); ?>" readonly/>
+                            <select class="form-select" name="IsActive" readonly>
+                                <option value="0"<?php if ( $language->IsActive === '0' ) echo ' selected'; ?>>False</option>
+                                <option value="1"<?php if ( $language->IsActive === '1' ) echo ' selected'; ?>>True</option>
+                            </select>
                         </div>
                     </div>
                     <?php if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>

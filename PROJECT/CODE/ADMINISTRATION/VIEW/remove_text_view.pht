@@ -4,20 +4,16 @@
         <form class="form-centered" action="/admin/text/remove/<% .Text.Id %>" method="post">
             <div class="form-container">
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Slug' ) %> :
+                    <% GetTextBySlug( 'Slug' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="Slug" type="text" value="<% GetValueText( .Text.Slug ) %>" readonly/>
+                    <input-component class_="form-input" name_="Slug" type_="text" value_="<% GetValueText( .Text.Slug ) %>" readonly_></input-component>
                 </div>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Text' ) %> :
+                    <% GetTextBySlug( 'Text' ) %> :
                 </div>
                 <div>
-                    <div>
-                        <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <textarea class="form-translation form-textarea" name="Text" readonly><% GetTranslatedText( .Text.Text, language_code ) %></textarea>
-                        <? } ?>
-                    </div>
+                    <multilingual-textarea-component class_="form-textarea" name_="Text" readonly_ language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"><% .Text.Text %></textarea-component>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
                 </a>

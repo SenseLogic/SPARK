@@ -4,75 +4,87 @@
         <form class="form-centered" action="/admin/block/remove/<?php echo htmlspecialchars( $this->Block->Id ); ?>" method="post">
             <div class="form-container">
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Slug' ) ); ?> :
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Slug' ) ); ?> :
                 </div>
                 <div>
-                    <input class="form-input" name="Slug" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Block->Slug ) ); ?>" readonly/>
+                    <input-component class_="form-input" name_="Slug" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $this->Block->Slug ) ); ?>" readonly_></input-component>
                 </div>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Page Id' ) ); ?> :
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Page Id' ) ); ?> :
                 </div>
                 <div>
-                    <input class="form-input" name="PageId" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Block->PageId ) ); ?>" readonly/>
-                </div>
-                <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Category Slug' ) ); ?> :
-                </div>
-                <div>
-                    <input class="form-input" name="CategorySlug" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Block->CategorySlug ) ); ?>" readonly/>
-                </div>
-                <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Content Slug' ) ); ?> :
-                </div>
-                <div>
-                    <input class="form-input" name="ContentSlug" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Block->ContentSlug ) ); ?>" readonly/>
-                </div>
-                <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Type Slug' ) ); ?> :
-                </div>
-                <div>
-                    <input class="form-input" name="TypeSlug" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Block->TypeSlug ) ); ?>" readonly/>
-                </div>
-                <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Number' ) ); ?> :
-                </div>
-                <div>
-                    <input class="form-input" name="Number" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Block->Number ) ); ?>" readonly/>
-                </div>
-                <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Language Code Array' ) ); ?> :
-                </div>
-                <div>
-                    <input class="form-input" name="LanguageCodeArray" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Block->LanguageCodeArray ) ); ?>" readonly/>
-                </div>
-                <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Minimum Height' ) ); ?> :
-                </div>
-                <div>
-                    <input class="form-input" name="MinimumHeight" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Block->MinimumHeight ) ); ?>" readonly/>
-                </div>
-                <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Title' ) ); ?> :
-                </div>
-                <div>
-                    <div>
-                        <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
-                            <input class="form-translation form-input" name="Title" type="text" value="<?php echo htmlspecialchars( GetValueText( GetTranslatedText( $this->Block->Title, $language_code ) ) ); ?>" readonly/>
+                    <select class="form-select" name="PageId" readonly>
+                        <?php  $page_array = $this->PageArray; ?>
+                        <?php foreach ( $page_array as  $page ) { ?>
+                            <option value="<?php echo htmlspecialchars( GetValueText( $page->Id ) ); ?>"<?php if ( $this->Block->PageId === $page->Id ) echo ' selected'; ?>><?php echo htmlspecialchars( GetUntranslatedText( $page->Title ) ); ?></option>
                         <?php } ?>
-                    </div>
+                    </select>
                 </div>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Text' ) ); ?> :
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Category Slug' ) ); ?> :
                 </div>
                 <div>
-                    <div>
-                        <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
-                            <textarea class="form-translation form-textarea" name="Text" readonly><?php echo htmlspecialchars( GetTranslatedText( $this->Block->Text, $language_code ) ); ?></textarea>
+                    <select class="form-select" name="CategorySlug" readonly>
+                        <?php  $block_category_array = $this->BlockCategoryArray; ?>
+                        <?php foreach ( $block_category_array as  $block_category ) { ?>
+                            <option value="<?php echo htmlspecialchars( GetValueText( $block_category->Slug ) ); ?>"<?php if ( $this->Block->CategorySlug === $block_category->Slug ) echo ' selected'; ?>><?php echo htmlspecialchars( GetUntranslatedText( $block_category->Name ) ); ?></option>
                         <?php } ?>
-                    </div>
+                    </select>
                 </div>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Image Path' ) ); ?> :
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Content Slug' ) ); ?> :
+                </div>
+                <div>
+                    <select class="form-select" name="ContentSlug" readonly>
+                        <?php  $block_content_array = $this->BlockContentArray; ?>
+                        <?php foreach ( $block_content_array as  $block_content ) { ?>
+                            <option value="<?php echo htmlspecialchars( GetValueText( $block_content->Slug ) ); ?>"<?php if ( $this->Block->ContentSlug === $block_content->Slug ) echo ' selected'; ?>><?php echo htmlspecialchars( GetUntranslatedText( $block_content->Name ) ); ?></option>
+                        <?php } ?>
+                    </select>
+                </div>
+                <div class="form-field-name">
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Type Slug' ) ); ?> :
+                </div>
+                <div>
+                    <select class="form-select" name="TypeSlug" readonly>
+                        <?php  $block_type_array = $this->BlockTypeArray; ?>
+                        <?php foreach ( $block_type_array as  $block_type ) { ?>
+                            <option value="<?php echo htmlspecialchars( GetValueText( $block_type->Slug ) ); ?>"<?php if ( $this->Block->TypeSlug === $block_type->Slug ) echo ' selected'; ?>><?php echo htmlspecialchars( GetUntranslatedText( $block_type->Name ) ); ?></option>
+                        <?php } ?>
+                    </select>
+                </div>
+                <div class="form-field-name">
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Number' ) ); ?> :
+                </div>
+                <div>
+                    <input-component class_="form-input" name_="Number" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $this->Block->Number ) ); ?>" readonly_></input-component>
+                </div>
+                <div class="form-field-name">
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Language Code Array' ) ); ?> :
+                </div>
+                <div>
+                    <input-component class_="form-input" name_="LanguageCodeArray" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $this->Block->LanguageCodeArray ) ); ?>" readonly_></input-component>
+                </div>
+                <div class="form-field-name">
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Minimum Height' ) ); ?> :
+                </div>
+                <div>
+                    <input-component class_="form-input" name_="MinimumHeight" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $this->Block->MinimumHeight ) ); ?>" readonly_></input-component>
+                </div>
+                <div class="form-field-name">
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Title' ) ); ?> :
+                </div>
+                <div>
+                    <multilingual-input-component class_="form-input" name_="Title" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $this->Block->Title ) ); ?>" readonly_ language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></input-component>
+                </div>
+                <div class="form-field-name">
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Text' ) ); ?> :
+                </div>
+                <div>
+                    <multilingual-textarea-component class_="form-textarea" name_="Text" readonly_ language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"><?php echo htmlspecialchars( $this->Block->Text ); ?></textarea-component>
+                </div>
+                <div class="form-field-name">
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Image Path' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="ImagePath" type="text" value="<?php echo htmlspecialchars( $this->Block->ImagePath ); ?>" readonly/>
@@ -81,25 +93,52 @@
                     </div>
                 </div>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Image Vertical Position' ) ); ?> :
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Image Vertical Position' ) ); ?> :
                 </div>
                 <div>
-                    <input class="form-input" name="ImageVerticalPosition" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Block->ImageVerticalPosition ) ); ?>" readonly/>
+                    <select class="form-select" name="ImageVerticalPosition" readonly>
+                        <option value="top"<?php if ( $this->Block->ImageVerticalPosition === 'top' ) echo ' selected'; ?>>Top</option>
+                        <option value="10%"<?php if ( $this->Block->ImageVerticalPosition === '10%' ) echo ' selected'; ?>>10%</option>
+                        <option value="20%"<?php if ( $this->Block->ImageVerticalPosition === '20%' ) echo ' selected'; ?>>20%</option>
+                        <option value="30%"<?php if ( $this->Block->ImageVerticalPosition === '30%' ) echo ' selected'; ?>>30%</option>
+                        <option value="40%"<?php if ( $this->Block->ImageVerticalPosition === '40%' ) echo ' selected'; ?>>40%</option>
+                        <option value="center"<?php if ( $this->Block->ImageVerticalPosition === 'center' ) echo ' selected'; ?>>Center</option>
+                        <option value="60%"<?php if ( $this->Block->ImageVerticalPosition === '60%' ) echo ' selected'; ?>>60%</option>
+                        <option value="70%"<?php if ( $this->Block->ImageVerticalPosition === '70%' ) echo ' selected'; ?>>70%</option>
+                        <option value="80%"<?php if ( $this->Block->ImageVerticalPosition === '80%' ) echo ' selected'; ?>>80%</option>
+                        <option value="90%"<?php if ( $this->Block->ImageVerticalPosition === '90%' ) echo ' selected'; ?>>90%</option>
+                        <option value="bottom"<?php if ( $this->Block->ImageVerticalPosition === 'bottom' ) echo ' selected'; ?>>Bottom</option>
+                    </select>
                 </div>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Image Horizontal Position' ) ); ?> :
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Image Horizontal Position' ) ); ?> :
                 </div>
                 <div>
-                    <input class="form-input" name="ImageHorizontalPosition" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Block->ImageHorizontalPosition ) ); ?>" readonly/>
+                    <select class="form-select" name="ImageHorizontalPosition" readonly>
+                        <option value="left"<?php if ( $this->Block->ImageHorizontalPosition === 'left' ) echo ' selected'; ?>>Left</option>
+                        <option value="10%"<?php if ( $this->Block->ImageHorizontalPosition === '10%' ) echo ' selected'; ?>>10%</option>
+                        <option value="20%"<?php if ( $this->Block->ImageHorizontalPosition === '20%' ) echo ' selected'; ?>>20%</option>
+                        <option value="30%"<?php if ( $this->Block->ImageHorizontalPosition === '30%' ) echo ' selected'; ?>>30%</option>
+                        <option value="40%"<?php if ( $this->Block->ImageHorizontalPosition === '40%' ) echo ' selected'; ?>>40%</option>
+                        <option value="center"<?php if ( $this->Block->ImageHorizontalPosition === 'center' ) echo ' selected'; ?>>Center</option>
+                        <option value="60%"<?php if ( $this->Block->ImageHorizontalPosition === '60%' ) echo ' selected'; ?>>60%</option>
+                        <option value="70%"<?php if ( $this->Block->ImageHorizontalPosition === '70%' ) echo ' selected'; ?>>70%</option>
+                        <option value="80%"<?php if ( $this->Block->ImageHorizontalPosition === '80%' ) echo ' selected'; ?>>80%</option>
+                        <option value="90%"<?php if ( $this->Block->ImageHorizontalPosition === '90%' ) echo ' selected'; ?>>90%</option>
+                        <option value="right"<?php if ( $this->Block->ImageHorizontalPosition === 'right' ) echo ' selected'; ?>>Right</option>
+                    </select>
                 </div>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Image Side' ) ); ?> :
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Image Side' ) ); ?> :
                 </div>
                 <div>
-                    <input class="form-input" name="ImageSide" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Block->ImageSide ) ); ?>" readonly/>
+                    <select class="form-select" name="ImageSide" readonly>
+                        <option value="left"<?php if ( $this->Block->ImageSide === 'left' ) echo ' selected'; ?>>Left</option>
+                        <option value="right"<?php if ( $this->Block->ImageSide === 'right' ) echo ' selected'; ?>>Right</option>
+                    </select>
                 </div>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Video Path' ) ); ?> :
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Video Path' ) ); ?> :
                 </div>
                 <div>
                     <input class="form-input" name="VideoPath" type="text" value="<?php echo htmlspecialchars( $this->Block->VideoPath ); ?>" readonly/>

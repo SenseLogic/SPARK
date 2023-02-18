@@ -1,18 +1,18 @@
 <div class="form-container">
     <div class="form-field-name">
-        <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Route' ) ); ?> :
+        <?php echo htmlspecialchars( GetTextBySlug( 'Route' ) ); ?> :
     </div>
     <div>
         <input class="form-input" name="Route" type="text" value="<?php echo htmlspecialchars( GetValueText(  $page->Route ) ); ?>" readonly/>
     </div>
     <div class="form-field-name">
-        <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Type Slug' ) ); ?> :
+        <?php echo htmlspecialchars( GetTextBySlug( 'Type Slug' ) ); ?> :
     </div>
     <div>
         <input class="form-input" name="TypeSlug" type="text" value="<?php echo htmlspecialchars( GetValueText( $page->TypeSlug ) ); ?>" readonly/>
     </div>
     <div class="form-field-name">
-        <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Title' ) ); ?> :
+        <?php echo htmlspecialchars( GetTextBySlug( 'Title' ) ); ?> :
     </div>
     <div>
         <div>
@@ -22,7 +22,7 @@
         </div>
     </div>
     <div class="form-field-name">
-        <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Image Path' ) ); ?> :
+        <?php echo htmlspecialchars( GetTextBySlug( 'Image Path' ) ); ?> :
     </div>
     <div>
         <input class="form-input" name="ImagePath" type="text" value="<?php echo htmlspecialchars( $page->ImagePath ); ?>" readonly/>

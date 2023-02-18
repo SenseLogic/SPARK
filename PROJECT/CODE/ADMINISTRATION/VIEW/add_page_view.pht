@@ -148,10 +148,10 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Id' ) %> :
+                    <% GetTextBySlug( 'Id' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="Id" type="text" value="<# field_value #>"/>
+                    <input-component class_="form-input" name_="Id" type_="text" value_="<% GetValueText( field_value ) %>"></input-component>
                 </div>
                 <?
                     var field_name = 'Slug';
@@ -166,10 +166,10 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Slug' ) %> :
+                    <% GetTextBySlug( 'Slug' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="Slug" type="text" value="<# field_value #>"/>
+                    <input-component class_="form-input" name_="Slug" type_="text" value_="<% GetValueText( field_value ) %>"></input-component>
                 </div>
                 <?
                     var field_name = 'Route';
@@ -184,10 +184,10 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Route' ) %> :
+                    <% GetTextBySlug( 'Route' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="Route" type="text" value="<# field_value #>"/>
+                    <input-component class_="form-input" name_="Route" type_="text" value_="<% GetValueText( field_value ) %>"></input-component>
                 </div>
                 <?
                     var field_name = 'TypeSlug';
@@ -202,7 +202,7 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Type Slug' ) %> :
+                    <% GetTextBySlug( 'Type Slug' ) %> :
                 </div>
                 <div>
                     <select class="form-select" name="TypeSlug">
@@ -225,10 +225,10 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Number' ) %> :
+                    <% GetTextBySlug( 'Number' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="Number" type="text" value="<# field_value #>"/>
+                    <input-component class_="form-input" name_="Number" type_="text" value_="<% GetValueText( field_value ) %>"></input-component>
                 </div>
                 <?
                     var field_name = 'LanguageCodeArray';
@@ -243,10 +243,10 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Language Code Array' ) %> :
+                    <% GetTextBySlug( 'Language Code Array' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="LanguageCodeArray" type="text" value="<# field_value #>"/>
+                    <input-component class_="form-input" name_="LanguageCodeArray" type_="text" value_="<% GetValueText( field_value ) %>"></input-component>
                 </div>
                 <?
                     var field_name = 'IsActive';
@@ -261,7 +261,7 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Is Active' ) %> :
+                    <% GetTextBySlug( 'Is Active' ) %> :
                 </div>
                 <div>
                     <select class="form-select" name="IsActive">
@@ -282,15 +282,10 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Title' ) %> :
+                    <% GetTextBySlug( 'Title' ) %> :
                 </div>
                 <div>
-                    <div>
-                        <input class="multilingual-input form-input" name="Title" type="text" value="<# field_value #>" hidden/>
-                        <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <input class="multilingual-input-translation form-translation form-input" data-language-code="<% language_code %>" placeholder="<% .GetProcessedTextBySlug( language_code ) %>"/>
-                        <? } ?>
-                    </div>
+                    <multilingual-input-component class_="form-input" name_="Title" type_="text" value_="<% GetValueText( field_value ) %>" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></input-component>
                 </div>
                 <?
                     var field_name = 'Heading';
@@ -305,15 +300,10 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Heading' ) %> :
+                    <% GetTextBySlug( 'Heading' ) %> :
                 </div>
                 <div>
-                    <div>
-                        <input class="multilingual-input form-input" name="Heading" type="text" value="<# field_value #>" hidden/>
-                        <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <input class="multilingual-input-translation form-translation form-input" data-language-code="<% language_code %>" placeholder="<% .GetProcessedTextBySlug( language_code ) %>"/>
-                        <? } ?>
-                    </div>
+                    <multilingual-input-component class_="form-input" name_="Heading" type_="text" value_="<% GetValueText( field_value ) %>" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></input-component>
                 </div>
                 <?
                     var field_name = 'Teaser';
@@ -328,15 +318,10 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Teaser' ) %> :
+                    <% GetTextBySlug( 'Teaser' ) %> :
                 </div>
                 <div>
-                    <div>
-                        <textarea class="multilingual-input form-textarea" name="Teaser" hidden><# field_value #></textarea>
-                        <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <textarea class="multilingual-input-translation form-translation form-textarea" data-language-code="<% language_code %>" placeholder="<% .GetProcessedTextBySlug( language_code ) %>"></textarea>
-                        <? } ?>
-                    </div>
+                    <multilingual-textarea-component class_="form-textarea" name_="Teaser" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"><% field_value %></textarea-component>
                 </div>
                 <?
                     var field_name = 'ImagePath';
@@ -351,7 +336,7 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Image Path' ) %> :
+                    <% GetTextBySlug( 'Image Path' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="ImagePath" type="text" value="<# field_value #>" oninput="HandleImagePathInputChangeEvent( this )"/>
@@ -376,7 +361,7 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Image Vertical Position' ) %> :
+                    <% GetTextBySlug( 'Image Vertical Position' ) %> :
                 </div>
                 <div>
                     <select class="form-select" name="ImageVerticalPosition">
@@ -406,7 +391,7 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Image Horizontal Position' ) %> :
+                    <% GetTextBySlug( 'Image Horizontal Position' ) %> :
                 </div>
                 <div>
                     <select class="form-select" name="ImageHorizontalPosition">
@@ -436,7 +421,7 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Video Path' ) %> :
+                    <% GetTextBySlug( 'Video Path' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="VideoPath" type="text" value="<# field_value #>" oninput="HandleVideoPathInputChangeEvent( this )"/>
@@ -461,15 +446,10 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Meta Title' ) %> :
+                    <% GetTextBySlug( 'Meta Title' ) %> :
                 </div>
                 <div>
-                    <div>
-                        <input class="multilingual-input form-input" name="MetaTitle" type="text" value="<# field_value #>" hidden/>
-                        <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <input class="multilingual-input-translation form-translation form-input" data-language-code="<% language_code %>" placeholder="<% .GetProcessedTextBySlug( language_code ) %>"/>
-                        <? } ?>
-                    </div>
+                    <multilingual-input-component class_="form-input" name_="MetaTitle" type_="text" value_="<% GetValueText( field_value ) %>" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></input-component>
                 </div>
                 <?
                     var field_name = 'MetaDescription';
@@ -484,15 +464,10 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Meta Description' ) %> :
+                    <% GetTextBySlug( 'Meta Description' ) %> :
                 </div>
                 <div>
-                    <div>
-                        <textarea class="multilingual-input form-textarea" name="MetaDescription" hidden><# field_value #></textarea>
-                        <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <textarea class="multilingual-input-translation form-translation form-textarea" data-language-code="<% language_code %>" placeholder="<% .GetProcessedTextBySlug( language_code ) %>"></textarea>
-                        <? } ?>
-                    </div>
+                    <multilingual-textarea-component class_="form-textarea" name_="MetaDescription" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"><% field_value %></textarea-component>
                 </div>
                 <?
                     var field_name = 'MetaImagePath';
@@ -507,7 +482,7 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Meta Image Path' ) %> :
+                    <% GetTextBySlug( 'Meta Image Path' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="MetaImagePath" type="text" value="<# field_value #>" oninput="HandleImagePathInputChangeEvent( this )"/>

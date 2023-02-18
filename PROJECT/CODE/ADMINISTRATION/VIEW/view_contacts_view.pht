@@ -15,28 +15,28 @@
     <div class="cell-list page-section form-section is-hidden">
         <div class="form-container table-container contact-table sortable-table">
             <div class="form-column-name sortable-table-column">
-                <% .GetProcessedTextBySlug( 'Name' ) %>
+                <% GetTextBySlug( 'Name' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetProcessedTextBySlug( 'Company' ) %>
+                <% GetTextBySlug( 'Company' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetProcessedTextBySlug( 'Email' ) %>
+                <% GetTextBySlug( 'Email' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetProcessedTextBySlug( 'Phone' ) %>
+                <% GetTextBySlug( 'Phone' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetProcessedTextBySlug( 'Subject' ) %>
+                <% GetTextBySlug( 'Subject' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetProcessedTextBySlug( 'Message' ) %>
+                <% GetTextBySlug( 'Message' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetProcessedTextBySlug( 'Date Time' ) %>
+                <% GetTextBySlug( 'Date Time' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetProcessedTextBySlug( 'Action' ) %>
+                <% GetTextBySlug( 'Action' ) %>
             </div>
             <? foreach ( var contact; .ContactArray ) { ?>
                 <div class="sortable-table-row filter-row filter-content">
@@ -81,46 +81,46 @@
                 <div class="card">
                     <div class="form-container">
                         <div class="form-field-name">
-                            <% .GetProcessedTextBySlug( 'Name' ) %> :
+                            <% GetTextBySlug( 'Name' ) %> :
                         </div>
                         <div>
-                                <input class="form-input" name="Name" type="text" value="<% GetValueText( contact.Name ) %>" readonly/>
+                            <input-component class_="form-input" name_="Name" type_="text" value_="<% GetValueText( contact.Name ) %>" readonly_></input-component>
                         </div>
                         <div class="form-field-name">
-                            <% .GetProcessedTextBySlug( 'Company' ) %> :
+                            <% GetTextBySlug( 'Company' ) %> :
                         </div>
                         <div>
-                                <input class="form-input" name="Company" type="text" value="<% GetValueText( contact.Company ) %>" readonly/>
+                            <input-component class_="form-input" name_="Company" type_="text" value_="<% GetValueText( contact.Company ) %>" readonly_></input-component>
                         </div>
                         <div class="form-field-name">
-                            <% .GetProcessedTextBySlug( 'Email' ) %> :
+                            <% GetTextBySlug( 'Email' ) %> :
                         </div>
                         <div>
-                                <input class="form-input" name="Email" type="text" value="<% GetValueText( contact.Email ) %>" readonly/>
+                            <input-component class_="form-input" name_="Email" type_="text" value_="<% GetValueText( contact.Email ) %>" readonly_></input-component>
                         </div>
                         <div class="form-field-name">
-                            <% .GetProcessedTextBySlug( 'Phone' ) %> :
+                            <% GetTextBySlug( 'Phone' ) %> :
                         </div>
                         <div>
-                                <input class="form-input" name="Phone" type="text" value="<% GetValueText( contact.Phone ) %>" readonly/>
+                            <input-component class_="form-input" name_="Phone" type_="text" value_="<% GetValueText( contact.Phone ) %>" readonly_></input-component>
                         </div>
                         <div class="form-field-name">
-                            <% .GetProcessedTextBySlug( 'Subject' ) %> :
+                            <% GetTextBySlug( 'Subject' ) %> :
                         </div>
                         <div>
-                                <input class="form-input" name="Subject" type="text" value="<% GetValueText( contact.Subject ) %>" readonly/>
+                            <input-component class_="form-input" name_="Subject" type_="text" value_="<% GetValueText( contact.Subject ) %>" readonly_></input-component>
                         </div>
                         <div class="form-field-name">
-                            <% .GetProcessedTextBySlug( 'Message' ) %> :
+                            <% GetTextBySlug( 'Message' ) %> :
                         </div>
                         <div>
-                                <textarea class="form-textarea" name="Message" readonly><% contact.Message %></textarea>
+                            <textarea-component class_="form-textarea" name_="Message" readonly_><% contact.Message %></textarea-component>
                         </div>
                         <div class="form-field-name">
-                            <% .GetProcessedTextBySlug( 'Date Time' ) %> :
+                            <% GetTextBySlug( 'Date Time' ) %> :
                         </div>
                         <div>
-                                <input class="form-input" name="DateTime" type="text" value="<% GetValueText( contact.DateTime ) %>" readonly/>
+                            <input-component class_="form-input" name_="DateTime" type_="text" value_="<% GetValueText( contact.DateTime ) %>" readonly_></input-component>
                         </div>
                     </div>
                     <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>

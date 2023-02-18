@@ -4,32 +4,31 @@
         <form class="form-centered" action="/admin/language/remove/<% .Language.Id %>" method="post">
             <div class="form-container">
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Code' ) %> :
+                    <% GetTextBySlug( 'Code' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="Code" type="text" value="<% GetValueText( .Language.Code ) %>" readonly/>
+                    <input-component class_="form-input" name_="Code" type_="text" value_="<% GetValueText( .Language.Code ) %>" readonly_></input-component>
                 </div>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Number' ) %> :
+                    <% GetTextBySlug( 'Number' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="Number" type="text" value="<% GetValueText( .Language.Number ) %>" readonly/>
+                    <input-component class_="form-input" name_="Number" type_="text" value_="<% GetValueText( .Language.Number ) %>" readonly_></input-component>
                 </div>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Text' ) %> :
+                    <% GetTextBySlug( 'Text' ) %> :
                 </div>
                 <div>
-                    <div>
-                        <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <input class="form-translation form-input" name="Text" type="text" value="<% GetValueText( GetTranslatedText( .Language.Text, language_code ) ) %>" readonly/>
-                        <? } ?>
-                    </div>
+                    <multilingual-input-component class_="form-input" name_="Text" type_="text" value_="<% GetValueText( .Language.Text ) %>" readonly_ language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></input-component>
                 </div>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Is Active' ) %> :
+                    <% GetTextBySlug( 'Is Active' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="IsActive" type="text" value="<% GetValueText( .Language.IsActive ) %>" readonly/>
+                    <select class="form-select" name="IsActive" readonly>
+                        <option value="0"<? if ( .Language.IsActive === '0' ) echo ' selected'; ?>>False</option>
+                        <option value="1"<? if ( .Language.IsActive === '1' ) echo ' selected'; ?>>True</option>
+                    </select>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
                 </a>

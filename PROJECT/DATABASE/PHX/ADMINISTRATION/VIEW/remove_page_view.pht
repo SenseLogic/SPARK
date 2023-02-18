@@ -4,73 +4,69 @@
         <form class="form-centered" action="/admin/page/remove/<% .Page.Id %>" method="post">
             <div class="form-container">
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Slug' ) %> :
+                    <% GetTextBySlug( 'Slug' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="Slug" type="text" value="<% GetValueText( .Page.Slug ) %>" readonly/>
+                    <input-component class_="form-input" name_="Slug" type_="text" value_="<% GetValueText( .Page.Slug ) %>" readonly_></input-component>
                 </div>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Route' ) %> :
+                    <% GetTextBySlug( 'Route' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="Route" type="text" value="<% GetValueText( .Page.Route ) %>" readonly/>
+                    <input-component class_="form-input" name_="Route" type_="text" value_="<% GetValueText( .Page.Route ) %>" readonly_></input-component>
                 </div>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Type Slug' ) %> :
+                    <% GetTextBySlug( 'Type Slug' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="TypeSlug" type="text" value="<% GetValueText( .Page.TypeSlug ) %>" readonly/>
-                </div>
-                <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Number' ) %> :
-                </div>
-                <div>
-                    <input class="form-input" name="Number" type="text" value="<% GetValueText( .Page.Number ) %>" readonly/>
-                </div>
-                <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Language Code Array' ) %> :
-                </div>
-                <div>
-                    <input class="form-input" name="LanguageCodeArray" type="text" value="<% GetValueText( .Page.LanguageCodeArray ) %>" readonly/>
-                </div>
-                <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Is Active' ) %> :
-                </div>
-                <div>
-                    <input class="form-input" name="IsActive" type="text" value="<% GetValueText( .Page.IsActive ) %>" readonly/>
-                </div>
-                <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Title' ) %> :
-                </div>
-                <div>
-                    <div>
-                        <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <input class="form-translation form-input" name="Title" type="text" value="<% GetValueText( GetTranslatedText( .Page.Title, language_code ) ) %>" readonly/>
+                    <select class="form-select" name="TypeSlug" readonly>
+                        <? var page_type_array = .PageTypeArray; ?>
+                        <? foreach ( var page_type; page_type_array ) { ?>
+                            <option value="<% GetValueText( page_type.Slug ) %>"<? if ( .Page.TypeSlug === page_type.Slug ) echo ' selected'; ?>><% GetUntranslatedText( page_type.Title ) %></option>
                         <? } ?>
-                    </div>
+                    </select>
                 </div>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Heading' ) %> :
+                    <% GetTextBySlug( 'Number' ) %> :
                 </div>
                 <div>
-                    <div>
-                        <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <input class="form-translation form-input" name="Heading" type="text" value="<% GetValueText( GetTranslatedText( .Page.Heading, language_code ) ) %>" readonly/>
-                        <? } ?>
-                    </div>
+                    <input-component class_="form-input" name_="Number" type_="text" value_="<% GetValueText( .Page.Number ) %>" readonly_></input-component>
                 </div>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Teaser' ) %> :
+                    <% GetTextBySlug( 'Language Code Array' ) %> :
                 </div>
                 <div>
-                    <div>
-                        <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <textarea class="form-translation form-textarea" name="Teaser" readonly><% GetTranslatedText( .Page.Teaser, language_code ) %></textarea>
-                        <? } ?>
-                    </div>
+                    <input-component class_="form-input" name_="LanguageCodeArray" type_="text" value_="<% GetValueText( .Page.LanguageCodeArray ) %>" readonly_></input-component>
                 </div>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Image Path' ) %> :
+                    <% GetTextBySlug( 'Is Active' ) %> :
+                </div>
+                <div>
+                    <select class="form-select" name="IsActive" readonly>
+                        <option value="0"<? if ( .Page.IsActive === '0' ) echo ' selected'; ?>>False</option>
+                        <option value="1"<? if ( .Page.IsActive === '1' ) echo ' selected'; ?>>True</option>
+                    </select>
+                </div>
+                <div class="form-field-name">
+                    <% GetTextBySlug( 'Title' ) %> :
+                </div>
+                <div>
+                    <multilingual-input-component class_="form-input" name_="Title" type_="text" value_="<% GetValueText( .Page.Title ) %>" readonly_ language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></input-component>
+                </div>
+                <div class="form-field-name">
+                    <% GetTextBySlug( 'Heading' ) %> :
+                </div>
+                <div>
+                    <multilingual-input-component class_="form-input" name_="Heading" type_="text" value_="<% GetValueText( .Page.Heading ) %>" readonly_ language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></input-component>
+                </div>
+                <div class="form-field-name">
+                    <% GetTextBySlug( 'Teaser' ) %> :
+                </div>
+                <div>
+                    <multilingual-textarea-component class_="form-textarea" name_="Teaser" readonly_ language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"><% .Page.Teaser %></textarea-component>
+                </div>
+                <div class="form-field-name">
+                    <% GetTextBySlug( 'Image Path' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="ImagePath" type="text" value="<% .Page.ImagePath %>" readonly/>
@@ -79,19 +75,43 @@
                     </div>
                 </div>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Image Vertical Position' ) %> :
+                    <% GetTextBySlug( 'Image Vertical Position' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="ImageVerticalPosition" type="text" value="<% GetValueText( .Page.ImageVerticalPosition ) %>" readonly/>
+                    <select class="form-select" name="ImageVerticalPosition" readonly>
+                        <option value="top"<? if ( .Page.ImageVerticalPosition === 'top' ) echo ' selected'; ?>>Top</option>
+                        <option value="10%"<? if ( .Page.ImageVerticalPosition === '10%' ) echo ' selected'; ?>>10%</option>
+                        <option value="20%"<? if ( .Page.ImageVerticalPosition === '20%' ) echo ' selected'; ?>>20%</option>
+                        <option value="30%"<? if ( .Page.ImageVerticalPosition === '30%' ) echo ' selected'; ?>>30%</option>
+                        <option value="40%"<? if ( .Page.ImageVerticalPosition === '40%' ) echo ' selected'; ?>>40%</option>
+                        <option value="center"<? if ( .Page.ImageVerticalPosition === 'center' ) echo ' selected'; ?>>Center</option>
+                        <option value="60%"<? if ( .Page.ImageVerticalPosition === '60%' ) echo ' selected'; ?>>60%</option>
+                        <option value="70%"<? if ( .Page.ImageVerticalPosition === '70%' ) echo ' selected'; ?>>70%</option>
+                        <option value="80%"<? if ( .Page.ImageVerticalPosition === '80%' ) echo ' selected'; ?>>80%</option>
+                        <option value="90%"<? if ( .Page.ImageVerticalPosition === '90%' ) echo ' selected'; ?>>90%</option>
+                        <option value="bottom"<? if ( .Page.ImageVerticalPosition === 'bottom' ) echo ' selected'; ?>>Bottom</option>
+                    </select>
                 </div>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Image Horizontal Position' ) %> :
+                    <% GetTextBySlug( 'Image Horizontal Position' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="ImageHorizontalPosition" type="text" value="<% GetValueText( .Page.ImageHorizontalPosition ) %>" readonly/>
+                    <select class="form-select" name="ImageHorizontalPosition" readonly>
+                        <option value="left"<? if ( .Page.ImageHorizontalPosition === 'left' ) echo ' selected'; ?>>Left</option>
+                        <option value="10%"<? if ( .Page.ImageHorizontalPosition === '10%' ) echo ' selected'; ?>>10%</option>
+                        <option value="20%"<? if ( .Page.ImageHorizontalPosition === '20%' ) echo ' selected'; ?>>20%</option>
+                        <option value="30%"<? if ( .Page.ImageHorizontalPosition === '30%' ) echo ' selected'; ?>>30%</option>
+                        <option value="40%"<? if ( .Page.ImageHorizontalPosition === '40%' ) echo ' selected'; ?>>40%</option>
+                        <option value="center"<? if ( .Page.ImageHorizontalPosition === 'center' ) echo ' selected'; ?>>Center</option>
+                        <option value="60%"<? if ( .Page.ImageHorizontalPosition === '60%' ) echo ' selected'; ?>>60%</option>
+                        <option value="70%"<? if ( .Page.ImageHorizontalPosition === '70%' ) echo ' selected'; ?>>70%</option>
+                        <option value="80%"<? if ( .Page.ImageHorizontalPosition === '80%' ) echo ' selected'; ?>>80%</option>
+                        <option value="90%"<? if ( .Page.ImageHorizontalPosition === '90%' ) echo ' selected'; ?>>90%</option>
+                        <option value="right"<? if ( .Page.ImageHorizontalPosition === 'right' ) echo ' selected'; ?>>Right</option>
+                    </select>
                 </div>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Video Path' ) %> :
+                    <% GetTextBySlug( 'Video Path' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="VideoPath" type="text" value="<% .Page.VideoPath %>" readonly/>
@@ -100,27 +120,19 @@
                     </div>
                 </div>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Meta Title' ) %> :
+                    <% GetTextBySlug( 'Meta Title' ) %> :
                 </div>
                 <div>
-                    <div>
-                        <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <input class="form-translation form-input" name="MetaTitle" type="text" value="<% GetValueText( GetTranslatedText( .Page.MetaTitle, language_code ) ) %>" readonly/>
-                        <? } ?>
-                    </div>
+                    <multilingual-input-component class_="form-input" name_="MetaTitle" type_="text" value_="<% GetValueText( .Page.MetaTitle ) %>" readonly_ language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></input-component>
                 </div>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Meta Description' ) %> :
+                    <% GetTextBySlug( 'Meta Description' ) %> :
                 </div>
                 <div>
-                    <div>
-                        <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <textarea class="form-translation form-textarea" name="MetaDescription" readonly><% GetTranslatedText( .Page.MetaDescription, language_code ) %></textarea>
-                        <? } ?>
-                    </div>
+                    <multilingual-textarea-component class_="form-textarea" name_="MetaDescription" readonly_ language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"><% .Page.MetaDescription %></textarea-component>
                 </div>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Meta Image Path' ) %> :
+                    <% GetTextBySlug( 'Meta Image Path' ) %> :
                 </div>
                 <div>
                     <input class="form-input" name="MetaImagePath" type="text" value="<% .Page.MetaImagePath %>" readonly/>

@@ -8,53 +8,53 @@
         <div class="extended-container page-container">
             <div class="page-menu">
                 <a class="margin-right-auto page-menu-button" href="/admin">
-                    <% .GetProcessedTextBySlug( 'Home' ) %>
+                    <% GetTextBySlug( 'Home' ) %>
                 </a>
                 <a class="page-menu-button" href="/admin/text">
-                    <% .GetProcessedTextBySlug( 'Texts' ) %>
+                    <% GetTextBySlug( 'Texts' ) %>
                 </a>
                 <a class="page-menu-button" href="/admin/language">
-                    <% .GetProcessedTextBySlug( 'Languages' ) %>
+                    <% GetTextBySlug( 'Languages' ) %>
                 </a>
                 <a class="page-menu-button" href="/admin/page-type">
-                    <% .GetProcessedTextBySlug( 'Page types' ) %>
+                    <% GetTextBySlug( 'Page types' ) %>
                 </a>
                 <a class="page-menu-button" href="/admin/page/manage">
-                    <% .GetProcessedTextBySlug( 'Page manager' ) %>
+                    <% GetTextBySlug( 'Page manager' ) %>
                 </a>
                 <a class="page-menu-button" href="/admin/page">
-                    <% .GetProcessedTextBySlug( 'Pages' ) %>
+                    <% GetTextBySlug( 'Pages' ) %>
                 </a>
                 <a class="page-menu-button" href="/admin/block-category">
-                    <% .GetProcessedTextBySlug( 'Block categories' ) %>
+                    <% GetTextBySlug( 'Block categories' ) %>
                 </a>
                 <a class="page-menu-button" href="/admin/block-type">
-                    <% .GetProcessedTextBySlug( 'Block types' ) %>
+                    <% GetTextBySlug( 'Block types' ) %>
                 </a>
                 <a class="page-menu-button" href="/admin/block-content">
-                    <% .GetProcessedTextBySlug( 'Block contents' ) %>
+                    <% GetTextBySlug( 'Block contents' ) %>
                 </a>
                 <a class="page-menu-button" href="/admin/block/manage">
-                    <% .GetProcessedTextBySlug( 'Block manager' ) %>
+                    <% GetTextBySlug( 'Block manager' ) %>
                 </a>
                 <a class="page-menu-button" href="/admin/block">
-                    <% .GetProcessedTextBySlug( 'Blocks' ) %>
+                    <% GetTextBySlug( 'Blocks' ) %>
                 </a>
                 <a class="page-menu-button" href="/admin/contact">
-                    <% .GetProcessedTextBySlug( 'Contacts' ) %>
+                    <% GetTextBySlug( 'Contacts' ) %>
                 </a>
                 <? if ( HasSessionMinimumUserRole( 'administrator' ) ) { ?>
                     <a class="page-menu-button" href="/admin/user">
-                        <% .GetProcessedTextBySlug( 'Users' ) %>
+                        <% GetTextBySlug( 'Users' ) %>
                     </a>
                 <? } ?>
                 <a class="margin-left-auto page-menu-button" href="/admin/disconnect">
-                    <% .GetProcessedTextBySlug( 'Logout' ) %>
+                    <% GetTextBySlug( 'Logout' ) %>
                 </a>
             </div>
             <? if ( .Title !== '' ) { ?>
                 <div class="page-title">
-                    <% .GetProcessedTextBySlug( .Title ) %>
+                    <% GetTextBySlug( .Title ) %>
                 </div>
             <? } ?>
             <div class="page-body">

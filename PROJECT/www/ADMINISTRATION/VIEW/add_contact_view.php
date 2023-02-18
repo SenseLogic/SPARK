@@ -103,10 +103,10 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Id' ) ); ?> :
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Id' ) ); ?> :
                 </div>
                 <div>
-                    <input class="form-input" name="Id" type="text" value="<?php echo $field_value; ?>"/>
+                    <input-component class_="form-input" name_="Id" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
                      $field_name = 'Name';
@@ -121,10 +121,10 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Name' ) ); ?> :
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Name' ) ); ?> :
                 </div>
                 <div>
-                    <input class="form-input" name="Name" type="text" value="<?php echo $field_value; ?>"/>
+                    <input-component class_="form-input" name_="Name" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
                      $field_name = 'Company';
@@ -139,10 +139,10 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Company' ) ); ?> :
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Company' ) ); ?> :
                 </div>
                 <div>
-                    <input class="form-input" name="Company" type="text" value="<?php echo $field_value; ?>"/>
+                    <input-component class_="form-input" name_="Company" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
                      $field_name = 'Email';
@@ -157,10 +157,10 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Email' ) ); ?> :
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Email' ) ); ?> :
                 </div>
                 <div>
-                    <input class="form-input" name="Email" type="text" value="<?php echo $field_value; ?>"/>
+                    <input-component class_="form-input" name_="Email" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
                      $field_name = 'Phone';
@@ -175,10 +175,10 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Phone' ) ); ?> :
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Phone' ) ); ?> :
                 </div>
                 <div>
-                    <input class="form-input" name="Phone" type="text" value="<?php echo $field_value; ?>"/>
+                    <input-component class_="form-input" name_="Phone" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
                      $field_name = 'Subject';
@@ -193,10 +193,10 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Subject' ) ); ?> :
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Subject' ) ); ?> :
                 </div>
                 <div>
-                    <input class="form-input" name="Subject" type="text" value="<?php echo $field_value; ?>"/>
+                    <input-component class_="form-input" name_="Subject" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
                      $field_name = 'Message';
@@ -211,10 +211,10 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Message' ) ); ?> :
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Message' ) ); ?> :
                 </div>
                 <div>
-                    <textarea class="form-textarea" name="Message"><?php echo $field_value; ?></textarea>
+                    <textarea-component class_="form-textarea" name_="Message"><?php echo htmlspecialchars( $field_value ); ?></textarea-component>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
                 </a>

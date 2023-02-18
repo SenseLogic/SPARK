@@ -4,46 +4,46 @@
         <form class="form-centered" action="/admin/contact/remove/<% .Contact.Id %>" method="post">
             <div class="form-container">
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Name' ) %> :
+                    <% GetTextBySlug( 'Name' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="Name" type="text" value="<% GetValueText( .Contact.Name ) %>" readonly/>
+                    <input-component class_="form-input" name_="Name" type_="text" value_="<% GetValueText( .Contact.Name ) %>" readonly_></input-component>
                 </div>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Company' ) %> :
+                    <% GetTextBySlug( 'Company' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="Company" type="text" value="<% GetValueText( .Contact.Company ) %>" readonly/>
+                    <input-component class_="form-input" name_="Company" type_="text" value_="<% GetValueText( .Contact.Company ) %>" readonly_></input-component>
                 </div>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Email' ) %> :
+                    <% GetTextBySlug( 'Email' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="Email" type="text" value="<% GetValueText( .Contact.Email ) %>" readonly/>
+                    <input-component class_="form-input" name_="Email" type_="text" value_="<% GetValueText( .Contact.Email ) %>" readonly_></input-component>
                 </div>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Phone' ) %> :
+                    <% GetTextBySlug( 'Phone' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="Phone" type="text" value="<% GetValueText( .Contact.Phone ) %>" readonly/>
+                    <input-component class_="form-input" name_="Phone" type_="text" value_="<% GetValueText( .Contact.Phone ) %>" readonly_></input-component>
                 </div>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Subject' ) %> :
+                    <% GetTextBySlug( 'Subject' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="Subject" type="text" value="<% GetValueText( .Contact.Subject ) %>" readonly/>
+                    <input-component class_="form-input" name_="Subject" type_="text" value_="<% GetValueText( .Contact.Subject ) %>" readonly_></input-component>
                 </div>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Message' ) %> :
+                    <% GetTextBySlug( 'Message' ) %> :
                 </div>
                 <div>
-                    <textarea class="form-textarea" name="Message" readonly><% .Contact.Message %></textarea>
+                    <textarea-component class_="form-textarea" name_="Message" readonly_><% .Contact.Message %></textarea-component>
                 </div>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Date Time' ) %> :
+                    <% GetTextBySlug( 'Date Time' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="DateTime" type="text" value="<% GetValueText( .Contact.DateTime ) %>" readonly/>
+                    <input-component class_="form-input" name_="DateTime" type_="text" value_="<% GetValueText( .Contact.DateTime ) %>" readonly_></input-component>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
                 </a>

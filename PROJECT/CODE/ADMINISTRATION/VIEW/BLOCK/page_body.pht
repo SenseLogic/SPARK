@@ -1,15 +1,19 @@
 <script src="/static/script/vista_base.js?v=<# VersionTimestamp #>"></script>
 <script src="/static/script/vista_browser.js?v=<# VersionTimestamp #>"></script>
+<script src="/static/script/vista_math.js?v=<# VersionTimestamp #>"></script>
 <script src="/static/script/vista_text.js?v=<# VersionTimestamp #>"></script>
 <script src="/static/script/vista_element.js?v=<# VersionTimestamp #>"></script>
 <script src="/static/script/vista_animation.js?v=<# VersionTimestamp #>"></script>
+<script src="/static/script/vista_data.js?v=<# VersionTimestamp #>"></script>
+<script src="/static/script/vista_component.js?v=<# VersionTimestamp #>"></script>
+<script src="/static/script/vista_breakpoint.js?v=<# VersionTimestamp #>"></script>
+<script src="/static/script/vista_input.js?v=<# VersionTimestamp #>"></script>
 <script src="/static/script/vista_request.js?v=<# VersionTimestamp #>"></script>
 <script src="/static/script/vista_storage.js?v=<# VersionTimestamp #>"></script>
 <script src="/static/script/vista_scroll.js?v=<# VersionTimestamp #>"></script>
 <script src="/static/script/vista_viewport.js?v=<# VersionTimestamp #>"></script>
 <script src="/static/script/vista_sortable_grid.js?v=<# VersionTimestamp #>"></script>
 <script src="/static/script/vista_sortable_table.js?v=<# VersionTimestamp #>"></script>
-<script src="/static/script/vista_multilingual_input.js?v=<# VersionTimestamp #>"></script>
 <script>
     // -- FUNCTIONS
 
@@ -137,19 +141,7 @@
         }
     }
 
-    // ~~
-
-    function InitializeTextAreas(
-        )
-    {
-        GetElements( ".form-textarea" )
-            .SetContentHeight()
-            .AddEventListener( "input", ( event ) => event.target.SetContentHeight() );
-    }
-
     // -- STATEMENTS
 
     DelayCall( InitializeSortableTableColumns );
-    DelayCall( InitializeMultilingualInputs );
-    DelayCall( InitializeTextAreas );
 </script>

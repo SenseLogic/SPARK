@@ -15,13 +15,13 @@
     <div class="cell-list page-section form-section is-hidden">
         <div class="form-container table-container page-type-table sortable-table">
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Slug' ) ); ?>
+                <?php echo htmlspecialchars( GetTextBySlug( 'Slug' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Title' ) ); ?>
+                <?php echo htmlspecialchars( GetTextBySlug( 'Title' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Action' ) ); ?>
+                <?php echo htmlspecialchars( GetTextBySlug( 'Action' ) ); ?>
             </div>
             <?php foreach ( $this->PageTypeArray as  $page_type ) { ?>
                 <div class="sortable-table-row filter-row filter-content">
@@ -51,16 +51,16 @@
                 <div class="card">
                     <div class="form-container">
                         <div class="form-field-name">
-                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Slug' ) ); ?> :
+                            <?php echo htmlspecialchars( GetTextBySlug( 'Slug' ) ); ?> :
                         </div>
                         <div>
-                                <input class="form-input" name="Slug" type="text" value="<?php echo htmlspecialchars( GetValueText( $page_type->Slug ) ); ?>" readonly/>
+                            <input-component class_="form-input" name_="Slug" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $page_type->Slug ) ); ?>" readonly_></input-component>
                         </div>
                         <div class="form-field-name">
-                            <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Title' ) ); ?> :
+                            <?php echo htmlspecialchars( GetTextBySlug( 'Title' ) ); ?> :
                         </div>
                         <div>
-                                <input class="form-input" name="Title" type="text" value="<?php echo htmlspecialchars( GetValueText( $page_type->Title ) ); ?>" readonly/>
+                            <input-component class_="form-input" name_="Title" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $page_type->Title ) ); ?>" readonly_></input-component>
                         </div>
                     </div>
                     <?php if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>

@@ -3,46 +3,46 @@
     <div class="page-section form-section">
         <div class="form-container">
             <div class="form-field-name">
-                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Name' ) ); ?> :
+                <?php echo htmlspecialchars( GetTextBySlug( 'Name' ) ); ?> :
             </div>
             <div>
-                    <input class="form-input" name="Name" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Contact->Name ) ); ?>" readonly/>
+                <input-component class_="form-input" name_="Name" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $this->Contact->Name ) ); ?>" readonly_></input-component>
             </div>
             <div class="form-field-name">
-                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Company' ) ); ?> :
+                <?php echo htmlspecialchars( GetTextBySlug( 'Company' ) ); ?> :
             </div>
             <div>
-                    <input class="form-input" name="Company" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Contact->Company ) ); ?>" readonly/>
+                <input-component class_="form-input" name_="Company" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $this->Contact->Company ) ); ?>" readonly_></input-component>
             </div>
             <div class="form-field-name">
-                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Email' ) ); ?> :
+                <?php echo htmlspecialchars( GetTextBySlug( 'Email' ) ); ?> :
             </div>
             <div>
-                    <input class="form-input" name="Email" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Contact->Email ) ); ?>" readonly/>
+                <input-component class_="form-input" name_="Email" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $this->Contact->Email ) ); ?>" readonly_></input-component>
             </div>
             <div class="form-field-name">
-                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Phone' ) ); ?> :
+                <?php echo htmlspecialchars( GetTextBySlug( 'Phone' ) ); ?> :
             </div>
             <div>
-                    <input class="form-input" name="Phone" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Contact->Phone ) ); ?>" readonly/>
+                <input-component class_="form-input" name_="Phone" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $this->Contact->Phone ) ); ?>" readonly_></input-component>
             </div>
             <div class="form-field-name">
-                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Subject' ) ); ?> :
+                <?php echo htmlspecialchars( GetTextBySlug( 'Subject' ) ); ?> :
             </div>
             <div>
-                    <input class="form-input" name="Subject" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Contact->Subject ) ); ?>" readonly/>
+                <input-component class_="form-input" name_="Subject" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $this->Contact->Subject ) ); ?>" readonly_></input-component>
             </div>
             <div class="form-field-name">
-                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Message' ) ); ?> :
+                <?php echo htmlspecialchars( GetTextBySlug( 'Message' ) ); ?> :
             </div>
             <div>
-                    <textarea class="form-textarea" name="Message" readonly><?php echo htmlspecialchars( $this->Contact->Message ); ?></textarea>
+                <textarea-component class_="form-textarea" name_="Message" readonly_><?php echo htmlspecialchars( $this->Contact->Message ); ?></textarea-component>
             </div>
             <div class="form-field-name">
-                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Date Time' ) ); ?> :
+                <?php echo htmlspecialchars( GetTextBySlug( 'Date Time' ) ); ?> :
             </div>
             <div>
-                    <input class="form-input" name="DateTime" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->Contact->DateTime ) ); ?>" readonly/>
+                <input-component class_="form-input" name_="DateTime" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $this->Contact->DateTime ) ); ?>" readonly_></input-component>
             </div>
             <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
             </a>

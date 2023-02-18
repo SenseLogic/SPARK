@@ -323,7 +323,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                     include 'BLOCK/{#variable#}_{%variable%}_field.php';
                 ?><>
                 <div class="form-field-name">
-                    <\% .GetProcessedTextBySlug( '{%title%}' ) %\> :
+                    <\% GetTextBySlug( '{%title%}' ) %\> :
                 </div>
                 <div><~{%is_image%}<>
                     <input class="form-input" name="{%attribute%}" type="text" value="<\# field_value #\>" oninput="HandleImagePathInputChangeEvent( this )"/>
@@ -346,26 +346,16 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                         <option value="{*enumeration_1*}"<? if ( field_value === '{*enumeration_1*}' ) echo ' selected'; ?>>{*enumeration_2*}</option>~>
                     </select><><~{%is_reference%}<>
                     <select class="form-select" name="{%attribute%}"><~{%is_optional%}<>
-                        <option value=""><\% .GetProcessedTextBySlug( 'None' ) %\></option>~><~Split<>reference_<>{%reference%}<>~<>
+                        <option value=""><\% GetTextBySlug( 'None' ) %\></option>~><~Split<>reference_<>{%reference%}<>~<>
                         <? var {*reference_1*}_array = {*reference_2*}; ?>
                         <? foreach ( var {*reference_1*}; {*reference_1*}_array ) { ?>
                             <option value="<\% GetValueText( {*reference_3*} ) %\>"<? if ( GetValueText( {*reference_3*} ) === field_value ) echo ' selected'; ?>><\% {*reference_4*} %\></option>~>
                         <? } ?>
                     </select><><~{%is_multilingual_text%}<>
-                    <div>
-                        <textarea class="multilingual-input form-textarea" name="{%attribute%}" hidden><\# field_value #\></textarea>
-                        <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <textarea class="multilingual-input-translation form-translation form-textarea" data-language-code="<\% language_code %\>" placeholder="<\% .GetProcessedTextBySlug( language_code ) %\>"></textarea>
-                        <? } ?>
-                    </div><><~{%is_multilingual%}<>
-                    <div>
-                        <input class="multilingual-input form-input" name="{%attribute%}" type="text" value="<\# field_value #\>" hidden/>
-                        <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <input class="multilingual-input-translation form-translation form-input" data-language-code="<\% language_code %\>" placeholder="<\% .GetProcessedTextBySlug( language_code ) %\>"/>
-                        <? } ?>
-                    </div><><~{%is_text%}<>
-                    <textarea class="form-textarea" name="{%attribute%}"><\# field_value #\></textarea><>
-                    <input class="form-input" name="{%attribute%}" type="text" value="<\# field_value #\>"/>~>~>~>~>~>~>~>
+                    <multilingual-textarea-component class_="form-textarea" name_="{%attribute%}" language-codes="<\# LanguageCodes #\>" language-names="<\# LanguageNames #\>"><\% field_value %\></textarea-component><><~{%is_multilingual%}<>
+                    <multilingual-input-component class_="form-input" name_="{%attribute%}" type_="text" value_="<\% GetValueText( field_value ) %\>" language-codes="<\# LanguageCodes #\>" language-names="<\# LanguageNames #\>"></input-component><><~{%is_text%}<>
+                    <textarea-component class_="form-textarea" name_="{%attribute%}"><\% field_value %\></textarea-component><>
+                    <input-component class_="form-input" name_="{%attribute%}" type_="text" value_="<\% GetValueText( field_value ) %\>"></input-component>~>~>~>~>~>~>~>
                 </div>~>¨%>
                 <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
                 </a>
@@ -457,7 +447,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                     include 'BLOCK/{#variable#}_{%variable%}_field.php';
                 ?><>
                 <div class="form-field-name">
-                    <\% .GetProcessedTextBySlug( '{%title%}' ) %\> :
+                    <\% GetTextBySlug( '{%title%}' ) %\> :
                 </div>
                 <div><~{%is_image%}<>
                     <input class="form-input" name="{%attribute%}" type="text" value="<\% .{#attribute#}.{%attribute%} %\>" oninput="HandleImagePathInputChangeEvent( this )"/>
@@ -480,26 +470,16 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                         <option value="{*enumeration_1*}"<? if ( .{#attribute#}.{%attribute%} === '{*enumeration_1*}' ) echo ' selected'; ?>>{*enumeration_2*}</option>~>
                     </select><><~{%is_reference%}<>
                     <select class="form-select" name="{%attribute%}"><~{%is_optional%}<>
-                        <option value=""><\% .GetProcessedTextBySlug( 'None' ) %\></option>~><~Split<>reference_<>{%reference%}<>~<>
+                        <option value=""><\% GetTextBySlug( 'None' ) %\></option>~><~Split<>reference_<>{%reference%}<>~<>
                         <? var {*reference_1*}_array = {*reference_2*}; ?>
                         <? foreach ( var {*reference_1*}; {*reference_1*}_array ) { ?>
                             <option value="<\% GetValueText( {*reference_3*} ) %\>"<? if ( .{#attribute#}.{%attribute%} === {*reference_3*} ) echo ' selected'; ?>><\% {*reference_4*} %\></option>~>
                         <? } ?>
                     </select><><~{%is_multilingual_text%}<>
-                    <div>
-                        <textarea class="multilingual-input form-textarea" name="{%attribute%}" hidden><\% .{#attribute#}.{%attribute%} %\></textarea>
-                        <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <textarea class="multilingual-input-translation form-translation form-textarea" data-language-code="<\% language_code %\>" placeholder="<\% .GetProcessedTextBySlug( language_code ) %\>"></textarea>
-                        <? } ?>
-                    </div><><~{%is_multilingual%}<>
-                    <div>
-                        <input class="multilingual-input form-input" name="{%attribute%}" type="text" value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" hidden/>
-                        <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <input class="multilingual-input-translation form-translation form-input" data-language-code="<\% language_code %\>" placeholder="<\% .GetProcessedTextBySlug( language_code ) %\>"/>
-                        <? } ?>
-                    </div><><~{%is_text%}<>
-                    <textarea class="form-textarea" name="{%attribute%}"><\% .{#attribute#}.{%attribute%} %\></textarea><>
-                    <input class="form-input" name="{%attribute%}" type="text" value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>"/>~>~>~>~>~>~>~>
+                    <multilingual-textarea-component class_="form-textarea" name_="{%attribute%}" language-codes="<\# LanguageCodes #\>" language-names="<\# LanguageNames #\>"><\% .{#attribute#}.{%attribute%} %\></textarea-component><><~{%is_multilingual%}<>
+                    <multilingual-input-component class_="form-input" name_="{%attribute%}" type_="text" value_="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" language-codes="<\# LanguageCodes #\>" language-names="<\# LanguageNames #\>"></input-component><><~{%is_text%}<>
+                    <textarea-component class_="form-textarea" name_="{%attribute%}"><\% .{#attribute#}.{%attribute%} %\></textarea-component><>
+                    <input-component class_="form-input" name_="{%attribute%}" type_="text" value_="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>"></input-component>~>~>~>~>~>~>~>
                 </div>~>$>
                 <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
                 </a>
@@ -529,7 +509,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                     include 'BLOCK/{#variable#}_{%variable%}_field.php';
                 ?><>
                 <div class="form-field-name">
-                    <\% .GetProcessedTextBySlug( '{%title%}' ) %\> :
+                    <\% GetTextBySlug( '{%title%}' ) %\> :
                 </div>
                 <div><~{%is_image%}<>
                     <input class="form-input" name="{%attribute%}" type="text" value="<\% .{#attribute#}.{%attribute%} %\>" readonly/>
@@ -539,19 +519,21 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                     <input class="form-input" name="{%attribute%}" type="text" value="<\% .{#attribute#}.{%attribute%} %\>" readonly/>
                     <div class="form-upload-container">
                         <video class="form-upload-video" src="<\% .{#attribute#}.{%attribute%} %\>" type="video/mp4" onerror="this.src='/static/video/admin/missing_video.mp4'"></video>
-                    </div><><~{%is_multilingual_text%}<>
-                    <div>
-                        <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <textarea class="form-translation form-textarea" name="{%attribute%}" readonly><\% GetTranslatedText( .{#attribute#}.{%attribute%}, language_code ) %\></textarea>
+                    </div><><~{%is_enumeration%}<>
+                    <select class="form-select" name="{%attribute%}" readonly><~Map<>enumeration_<>{%enumeration%}<>^<>~<>
+                        <option value="{*enumeration_1*}"<? if ( .{#attribute#}.{%attribute%} === '{*enumeration_1*}' ) echo ' selected'; ?>>{*enumeration_2*}</option>~>
+                    </select><><~{%is_reference%}<>
+                    <select class="form-select" name="{%attribute%}" readonly><~{%is_optional%}<>
+                        <option value=""><\% GetTextBySlug( 'None' ) %\></option>~><~Split<>reference_<>{%reference%}<>~<>
+                        <? var {*reference_1*}_array = {*reference_2*}; ?>
+                        <? foreach ( var {*reference_1*}; {*reference_1*}_array ) { ?>
+                            <option value="<\% GetValueText( {*reference_3*} ) %\>"<? if ( .{#attribute#}.{%attribute%} === {*reference_3*} ) echo ' selected'; ?>><\% {*reference_4*} %\></option>~>
                         <? } ?>
-                    </div><><~{%is_multilingual%}<>
-                    <div>
-                        <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <input class="form-translation form-input" name="{%attribute%}" type="text" value="<\% GetValueText( GetTranslatedText( .{#attribute#}.{%attribute%}, language_code ) ) %\>" readonly/>
-                        <? } ?>
-                    </div><><~{%is_text%}<>
-                    <textarea class="form-textarea" name="{%attribute%}" readonly><\% .{#attribute#}.{%attribute%} %\></textarea><>
-                    <input class="form-input" name="{%attribute%}" type="text" value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" readonly/>~>~>~>~>~>
+                    </select><><~{%is_multilingual_text%}<>
+                    <multilingual-textarea-component class_="form-textarea" name_="{%attribute%}" readonly_ language-codes="<\# LanguageCodes #\>" language-names="<\# LanguageNames #\>"><\% .{#attribute#}.{%attribute%} %\></textarea-component><><~{%is_multilingual%}<>
+                    <multilingual-input-component class_="form-input" name_="{%attribute%}" type_="text" value_="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" readonly_ language-codes="<\# LanguageCodes #\>" language-names="<\# LanguageNames #\>"></input-component><><~{%is_text%}<>
+                    <textarea-component class_="form-textarea" name_="{%attribute%}" readonly_><\% .{#attribute#}.{%attribute%} %\></textarea-component><>
+                    <input-component class_="form-input" name_="{%attribute%}" type_="text" value_="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" readonly_></input-component>~>~>~>~>~>~>~>
                 </div>~>$>
                 <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
                 </a>
@@ -580,7 +562,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                 include 'BLOCK/{#variable#}_{%variable%}_field.php';
             ?><>
             <div class="form-field-name">
-                <\% .GetProcessedTextBySlug( '{%title%}' ) %\> :
+                <\% GetTextBySlug( '{%title%}' ) %\> :
             </div>
             <div><~{%is_image%}<>
                 <input class="form-input" name="{%attribute%}" type="text" value="<\% .{#attribute#}.{%attribute%} %\>" readonly/>
@@ -590,19 +572,21 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                 <input class="form-input" name="{%attribute%}" type="text" value="<\% .{#attribute#}.{%attribute%} %\>" readonly/>
                 <div class="form-upload-container">
                     <video class="form-upload-video" src="<\% .{#attribute#}.{%attribute%} %\>" type="video/mp4" onerror="this.src='/static/video/admin/missing_video.mp4'"></video>
-                </div><><~{%is_multilingual_text%}<>
-                <div>
-                    <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                        <textarea class="form-translation form-textarea" name="{%attribute%}" readonly><\% GetTranslatedText( .{#attribute#}.{%attribute%}, language_code ) %\></textarea>
+                </div><><~{%is_enumeration%}<>
+                <select class="form-select" name="{%attribute%}" readonly><~Map<>enumeration_<>{%enumeration%}<>^<>~<>
+                    <option value="{*enumeration_1*}"<? if ( .{#attribute#}.{%attribute%} === '{*enumeration_1*}' ) echo ' selected'; ?>>{*enumeration_2*}</option>~>
+                </select><><~{%is_reference%}<>
+                <select class="form-select" name="{%attribute%}" readonly><~{%is_optional%}<>
+                    <option value=""><\% GetTextBySlug( 'None' ) %\></option>~><~Split<>reference_<>{%reference%}<>~<>
+                    <? var {*reference_1*}_array = {*reference_2*}; ?>
+                    <? foreach ( var {*reference_1*}; {*reference_1*}_array ) { ?>
+                        <option value="<\% GetValueText( {*reference_3*} ) %\>"<? if ( .{#attribute#}.{%attribute%} === {*reference_3*} ) echo ' selected'; ?>><\% {*reference_4*} %\></option>~>
                     <? } ?>
-                </div><><~{%is_multilingual%}<>
-                <div>
-                    <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                        <input class="form-translation form-input" name="{%attribute%}" type="text" value="<\% GetValueText( GetTranslatedText( .{#attribute#}.{%attribute%}, language_code ) ) %\>" readonly/>
-                    <? } ?>
-                </div><><~{%is_text%}<>
-                    <textarea class="form-textarea" name="{%attribute%}" readonly><\% .{#attribute#}.{%attribute%} %\></textarea><>
-                    <input class="form-input" name="{%attribute%}" type="text" value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" readonly/>~>~>~>~>~>
+                </select><><~{%is_multilingual_text%}<>
+                <textarea-component class_="form-textarea" name_="{%attribute%}" readonly_ language-codes="<\# LanguageCodes #\>" language-names="<\# LanguageNames #\>"><\% .{#attribute#}.{%attribute%} %\></textarea-component><><~{%is_multilingual%}<>
+                <input-component class_="form-input" name_="{%attribute%}" type_="text" value_="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" readonly_ language-codes="<\# LanguageCodes #\>" language-names="<\# LanguageNames #\>"></input-component><><~{%is_text%}<>
+                <textarea-component class_="form-textarea" name_="{%attribute%}" readonly_><\% .{#attribute#}.{%attribute%} %\></textarea-component><>
+                <input-component class_="form-input" name_="{%attribute%}" type_="text" value_="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" readonly_></input-component>~>~>~>~>~>~>~>
             </div>~>$>
             <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
             </a>
@@ -633,10 +617,10 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
     <div class="cell-list page-section form-section is-hidden">
         <div class="form-container table-container {#style#}-table sortable-table"><$
             <div class="form-column-name sortable-table-column">
-                <\% .GetProcessedTextBySlug( '<~TitleCase<>{%attribute%}~>' ) %\>
+                <\% GetTextBySlug( '<~TitleCase<>{%attribute%}~>' ) %\>
             </div>$>
             <div class="form-column-name sortable-table-column">
-                <\% .GetProcessedTextBySlug( 'Action' ) %\>
+                <\% GetTextBySlug( 'Action' ) %\>
             </div>
             <? foreach ( var {#variable#}; .{#attribute#}Array ) { ?>
                 <div class="sortable-table-row filter-row filter-content"><$
@@ -690,7 +674,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                             include 'BLOCK/{#variable#}_{%variable%}_field.php';
                         ?><>
                         <div class="form-field-name">
-                            <\% .GetProcessedTextBySlug( '{%title%}' ) %\> :
+                            <\% GetTextBySlug( '{%title%}' ) %\> :
                         </div>
                         <div><~{%is_image%}<>
                             <input class="form-input" name="{%attribute%}" type="text" value="<\% {#variable#}.{%attribute%} %\>" readonly/>
@@ -700,19 +684,21 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                             <input class="form-input" name="{%attribute%}" type="text" value="<\% {#variable#}.{%attribute%} %\>" readonly/>
                             <div class="form-upload-container">
                                 <video class="form-upload-video" src="<\% {#variable#}.{%attribute%} %\>" type="video/mp4" onerror="this.src='/static/video/admin/missing_video.mp4'"></video>
-                            </div><><~{%is_multilingual_text%}<>
-                            <div>
-                                <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                                    <textarea class="form-translation form-textarea" name="{%attribute%}" readonly><\% GetTranslatedText( {#variable#}.{%attribute%}, language_code ) %\></textarea>
+                            </div><><~{%is_enumeration%}<>
+                            <select class="form-select" name="{%attribute%}" readonly><~Map<>enumeration_<>{%enumeration%}<>^<>~<>
+                                <option value="{*enumeration_1*}"<? if ( {#variable#}.{%attribute%} === '{*enumeration_1*}' ) echo ' selected'; ?>>{*enumeration_2*}</option>~>
+                            </select><><~{%is_reference%}<>
+                            <select class="form-select" name="{%attribute%}" readonly><~{%is_optional%}<>
+                                <option value=""><\% GetTextBySlug( 'None' ) %\></option>~><~Split<>reference_<>{%reference%}<>~<>
+                                <? var {*reference_1*}_array = {*reference_2*}; ?>
+                                <? foreach ( var {*reference_1*}; {*reference_1*}_array ) { ?>
+                                    <option value="<\% GetValueText( {*reference_3*} ) %\>"<? if ( {#variable#}.{%attribute%} === {*reference_3*} ) echo ' selected'; ?>><\% {*reference_4*} %\></option>~>
                                 <? } ?>
-                            </div><><~{%is_multilingual%}<>
-                            <div>
-                                <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                                    <input class="form-translation form-input" name="{%attribute%}" type="text" value="<\% GetValueText( GetTranslatedText( {#variable#}.{%attribute%}, language_code ) ) %\>" readonly/>
-                                <? } ?>
-                            </div><><~{%is_text%}<>
-                                <textarea class="form-textarea" name="{%attribute%}" readonly><\% {#variable#}.{%attribute%} %\></textarea><>
-                                <input class="form-input" name="{%attribute%}" type="text" value="<\% GetValueText( {#variable#}.{%attribute%} ) %\>" readonly/>~>~>~>~>~>
+                            </select><><~{%is_multilingual_text%}<>
+                            <textarea-component class_="form-textarea" name_="{%attribute%}" readonly_ language-codes="<\# LanguageCodes #\>" language-names="<\# LanguageNames #\>"><\% {#variable#}.{%attribute%} %\></textarea-component><><~{%is_multilingual%}<>
+                            <input-component class_="form-input" name_="{%attribute%}" type_="text" value_="<\% GetValueText( {#variable#}.{%attribute%} ) %\>" readonly_ language-codes="<\# LanguageCodes #\>" language-names="<\# LanguageNames #\>"></input-component><><~{%is_text%}<>
+                            <textarea-component class_="form-textarea" name_="{%attribute%}" readonly_><\% {#variable#}.{%attribute%} %\></textarea-component><>
+                            <input-component class_="form-input" name_="{%attribute%}" type_="text" value_="<\% GetValueText( {#variable#}.{%attribute%} ) %\>" readonly_></input-component>~>~>~>~>~>~>~>
                         </div>~>$>
                     </div>
                     <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
@@ -746,25 +732,25 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
         <div class="extended-container page-container">
             <div class="page-menu">
                 <a class="margin-right-auto page-menu-button" href="/admin">
-                    <% .GetProcessedTextBySlug( 'Home' ) %>
+                    <% GetTextBySlug( 'Home' ) %>
                 </a><#
                 <~!Equals<>{#style#}<>user<><~{#is_managed#}<><a class="page-menu-button" href="/admin/{#style#}/manage">
-                    <\% .GetProcessedTextBySlug( '{#sentence#} manager' ) %\>
+                    <\% GetTextBySlug( '{#sentence#} manager' ) %\>
                 </a>
                 ~><a class="page-menu-button" href="/admin/{#style#}">
-                    <\% .GetProcessedTextBySlug( '<~Plural<>{#sentence#}~>' ) %\>
+                    <\% GetTextBySlug( '<~Plural<>{#sentence#}~>' ) %\>
                 </a><><? if ( HasSessionMinimumUserRole( 'administrator' ) ) { ?>
                     <a class="page-menu-button" href="/admin/{#style#}">
-                        <\% .GetProcessedTextBySlug( '<~Plural<>{#sentence#}~>' ) %\>
+                        <\% GetTextBySlug( '<~Plural<>{#sentence#}~>' ) %\>
                     </a>
                 <? } ?>~>#>
                 <a class="margin-left-auto page-menu-button" href="/admin/disconnect">
-                    <% .GetProcessedTextBySlug( 'Logout' ) %>
+                    <% GetTextBySlug( 'Logout' ) %>
                 </a>
             </div>
             <? if ( .Title !== '' ) { ?>
                 <div class="page-title">
-                    <% .GetProcessedTextBySlug( .Title ) %>
+                    <% GetTextBySlug( .Title ) %>
                 </div>
             <? } ?>
             <div class="page-body">
@@ -786,17 +772,17 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
     <div class="margin-top-2rem"><#
         <~!Equals<>{#style#}<>user<><~{#is_managed#}<><div class="tree-container">
             <a class="tree-button" href="/admin/{#style#}/manage">
-                <\% .GetProcessedTextBySlug( '{#sentence#} manager' ) %\>
+                <\% GetTextBySlug( '{#sentence#} manager' ) %\>
             </a>
         </div>
         ~><div class="tree-container">
             <a class="tree-button" href="/admin/{#style#}">
-                <\% .GetProcessedTextBySlug( '<~Plural<>{#sentence#}~>' ) %\>
+                <\% GetTextBySlug( '<~Plural<>{#sentence#}~>' ) %\>
             </a>
         </div><><? if ( HasSessionMinimumUserRole( 'administrator' ) ) { ?>
             <div class="tree-container">
                 <a class="tree-button" href="/admin/{#style#}">
-                    <\% .GetProcessedTextBySlug( '<~Plural<>{#sentence#}~>' ) %\>
+                    <\% GetTextBySlug( '<~Plural<>{#sentence#}~>' ) %\>
                 </a>
             </div>
         <? } ?>~>#>

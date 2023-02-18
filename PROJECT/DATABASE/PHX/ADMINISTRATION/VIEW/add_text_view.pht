@@ -63,10 +63,10 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Id' ) %> :
+                    <% GetTextBySlug( 'Id' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="Id" type="text" value="<# field_value #>"/>
+                    <input-component class_="form-input" name_="Id" type_="text" value_="<% GetValueText( field_value ) %>"></input-component>
                 </div>
                 <?
                     var field_name = 'Slug';
@@ -81,10 +81,10 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Slug' ) %> :
+                    <% GetTextBySlug( 'Slug' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="Slug" type="text" value="<# field_value #>"/>
+                    <input-component class_="form-input" name_="Slug" type_="text" value_="<% GetValueText( field_value ) %>"></input-component>
                 </div>
                 <?
                     var field_name = 'Text';
@@ -99,15 +99,10 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Text' ) %> :
+                    <% GetTextBySlug( 'Text' ) %> :
                 </div>
                 <div>
-                    <div>
-                        <textarea class="multilingual-input form-textarea" name="Text" hidden><# field_value #></textarea>
-                        <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <textarea class="multilingual-input-translation form-translation form-textarea" data-language-code="<% language_code %>" placeholder="<% .GetProcessedTextBySlug( language_code ) %>"></textarea>
-                        <? } ?>
-                    </div>
+                    <multilingual-textarea-component class_="form-textarea" name_="Text" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"><% field_value %></textarea-component>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
                 </a>

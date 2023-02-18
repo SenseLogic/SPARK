@@ -3,75 +3,87 @@
     <div class="page-section form-section">
         <div class="form-container">
             <div class="form-field-name">
-                <% .GetProcessedTextBySlug( 'Slug' ) %> :
+                <% GetTextBySlug( 'Slug' ) %> :
             </div>
             <div>
-                    <input class="form-input" name="Slug" type="text" value="<% GetValueText( .Block.Slug ) %>" readonly/>
+                <input-component class_="form-input" name_="Slug" type_="text" value_="<% GetValueText( .Block.Slug ) %>" readonly_></input-component>
             </div>
             <div class="form-field-name">
-                <% .GetProcessedTextBySlug( 'Page Id' ) %> :
+                <% GetTextBySlug( 'Page Id' ) %> :
             </div>
             <div>
-                    <input class="form-input" name="PageId" type="text" value="<% GetValueText( .Block.PageId ) %>" readonly/>
-            </div>
-            <div class="form-field-name">
-                <% .GetProcessedTextBySlug( 'Category Slug' ) %> :
-            </div>
-            <div>
-                    <input class="form-input" name="CategorySlug" type="text" value="<% GetValueText( .Block.CategorySlug ) %>" readonly/>
-            </div>
-            <div class="form-field-name">
-                <% .GetProcessedTextBySlug( 'Content Slug' ) %> :
-            </div>
-            <div>
-                    <input class="form-input" name="ContentSlug" type="text" value="<% GetValueText( .Block.ContentSlug ) %>" readonly/>
-            </div>
-            <div class="form-field-name">
-                <% .GetProcessedTextBySlug( 'Type Slug' ) %> :
-            </div>
-            <div>
-                    <input class="form-input" name="TypeSlug" type="text" value="<% GetValueText( .Block.TypeSlug ) %>" readonly/>
-            </div>
-            <div class="form-field-name">
-                <% .GetProcessedTextBySlug( 'Number' ) %> :
-            </div>
-            <div>
-                    <input class="form-input" name="Number" type="text" value="<% GetValueText( .Block.Number ) %>" readonly/>
-            </div>
-            <div class="form-field-name">
-                <% .GetProcessedTextBySlug( 'Language Code Array' ) %> :
-            </div>
-            <div>
-                    <input class="form-input" name="LanguageCodeArray" type="text" value="<% GetValueText( .Block.LanguageCodeArray ) %>" readonly/>
-            </div>
-            <div class="form-field-name">
-                <% .GetProcessedTextBySlug( 'Minimum Height' ) %> :
-            </div>
-            <div>
-                    <input class="form-input" name="MinimumHeight" type="text" value="<% GetValueText( .Block.MinimumHeight ) %>" readonly/>
-            </div>
-            <div class="form-field-name">
-                <% .GetProcessedTextBySlug( 'Title' ) %> :
-            </div>
-            <div>
-                <div>
-                    <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                        <input class="form-translation form-input" name="Title" type="text" value="<% GetValueText( GetTranslatedText( .Block.Title, language_code ) ) %>" readonly/>
+                <select class="form-select" name="PageId" readonly>
+                    <? var page_array = .PageArray; ?>
+                    <? foreach ( var page; page_array ) { ?>
+                        <option value="<% GetValueText( page.Id ) %>"<? if ( .Block.PageId === page.Id ) echo ' selected'; ?>><% GetUntranslatedText( page.Title ) %></option>
                     <? } ?>
-                </div>
+                </select>
             </div>
             <div class="form-field-name">
-                <% .GetProcessedTextBySlug( 'Text' ) %> :
+                <% GetTextBySlug( 'Category Slug' ) %> :
             </div>
             <div>
-                <div>
-                    <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                        <textarea class="form-translation form-textarea" name="Text" readonly><% GetTranslatedText( .Block.Text, language_code ) %></textarea>
+                <select class="form-select" name="CategorySlug" readonly>
+                    <? var block_category_array = .BlockCategoryArray; ?>
+                    <? foreach ( var block_category; block_category_array ) { ?>
+                        <option value="<% GetValueText( block_category.Slug ) %>"<? if ( .Block.CategorySlug === block_category.Slug ) echo ' selected'; ?>><% GetUntranslatedText( block_category.Name ) %></option>
                     <? } ?>
-                </div>
+                </select>
             </div>
             <div class="form-field-name">
-                <% .GetProcessedTextBySlug( 'Image Path' ) %> :
+                <% GetTextBySlug( 'Content Slug' ) %> :
+            </div>
+            <div>
+                <select class="form-select" name="ContentSlug" readonly>
+                    <? var block_content_array = .BlockContentArray; ?>
+                    <? foreach ( var block_content; block_content_array ) { ?>
+                        <option value="<% GetValueText( block_content.Slug ) %>"<? if ( .Block.ContentSlug === block_content.Slug ) echo ' selected'; ?>><% GetUntranslatedText( block_content.Name ) %></option>
+                    <? } ?>
+                </select>
+            </div>
+            <div class="form-field-name">
+                <% GetTextBySlug( 'Type Slug' ) %> :
+            </div>
+            <div>
+                <select class="form-select" name="TypeSlug" readonly>
+                    <? var block_type_array = .BlockTypeArray; ?>
+                    <? foreach ( var block_type; block_type_array ) { ?>
+                        <option value="<% GetValueText( block_type.Slug ) %>"<? if ( .Block.TypeSlug === block_type.Slug ) echo ' selected'; ?>><% GetUntranslatedText( block_type.Name ) %></option>
+                    <? } ?>
+                </select>
+            </div>
+            <div class="form-field-name">
+                <% GetTextBySlug( 'Number' ) %> :
+            </div>
+            <div>
+                <input-component class_="form-input" name_="Number" type_="text" value_="<% GetValueText( .Block.Number ) %>" readonly_></input-component>
+            </div>
+            <div class="form-field-name">
+                <% GetTextBySlug( 'Language Code Array' ) %> :
+            </div>
+            <div>
+                <input-component class_="form-input" name_="LanguageCodeArray" type_="text" value_="<% GetValueText( .Block.LanguageCodeArray ) %>" readonly_></input-component>
+            </div>
+            <div class="form-field-name">
+                <% GetTextBySlug( 'Minimum Height' ) %> :
+            </div>
+            <div>
+                <input-component class_="form-input" name_="MinimumHeight" type_="text" value_="<% GetValueText( .Block.MinimumHeight ) %>" readonly_></input-component>
+            </div>
+            <div class="form-field-name">
+                <% GetTextBySlug( 'Title' ) %> :
+            </div>
+            <div>
+                <input-component class_="form-input" name_="Title" type_="text" value_="<% GetValueText( .Block.Title ) %>" readonly_ language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></input-component>
+            </div>
+            <div class="form-field-name">
+                <% GetTextBySlug( 'Text' ) %> :
+            </div>
+            <div>
+                <textarea-component class_="form-textarea" name_="Text" readonly_ language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"><% .Block.Text %></textarea-component>
+            </div>
+            <div class="form-field-name">
+                <% GetTextBySlug( 'Image Path' ) %> :
             </div>
             <div>
                 <input class="form-input" name="ImagePath" type="text" value="<% .Block.ImagePath %>" readonly/>
@@ -80,25 +92,52 @@
                 </div>
             </div>
             <div class="form-field-name">
-                <% .GetProcessedTextBySlug( 'Image Vertical Position' ) %> :
+                <% GetTextBySlug( 'Image Vertical Position' ) %> :
             </div>
             <div>
-                    <input class="form-input" name="ImageVerticalPosition" type="text" value="<% GetValueText( .Block.ImageVerticalPosition ) %>" readonly/>
+                <select class="form-select" name="ImageVerticalPosition" readonly>
+                    <option value="top"<? if ( .Block.ImageVerticalPosition === 'top' ) echo ' selected'; ?>>Top</option>
+                    <option value="10%"<? if ( .Block.ImageVerticalPosition === '10%' ) echo ' selected'; ?>>10%</option>
+                    <option value="20%"<? if ( .Block.ImageVerticalPosition === '20%' ) echo ' selected'; ?>>20%</option>
+                    <option value="30%"<? if ( .Block.ImageVerticalPosition === '30%' ) echo ' selected'; ?>>30%</option>
+                    <option value="40%"<? if ( .Block.ImageVerticalPosition === '40%' ) echo ' selected'; ?>>40%</option>
+                    <option value="center"<? if ( .Block.ImageVerticalPosition === 'center' ) echo ' selected'; ?>>Center</option>
+                    <option value="60%"<? if ( .Block.ImageVerticalPosition === '60%' ) echo ' selected'; ?>>60%</option>
+                    <option value="70%"<? if ( .Block.ImageVerticalPosition === '70%' ) echo ' selected'; ?>>70%</option>
+                    <option value="80%"<? if ( .Block.ImageVerticalPosition === '80%' ) echo ' selected'; ?>>80%</option>
+                    <option value="90%"<? if ( .Block.ImageVerticalPosition === '90%' ) echo ' selected'; ?>>90%</option>
+                    <option value="bottom"<? if ( .Block.ImageVerticalPosition === 'bottom' ) echo ' selected'; ?>>Bottom</option>
+                </select>
             </div>
             <div class="form-field-name">
-                <% .GetProcessedTextBySlug( 'Image Horizontal Position' ) %> :
+                <% GetTextBySlug( 'Image Horizontal Position' ) %> :
             </div>
             <div>
-                    <input class="form-input" name="ImageHorizontalPosition" type="text" value="<% GetValueText( .Block.ImageHorizontalPosition ) %>" readonly/>
+                <select class="form-select" name="ImageHorizontalPosition" readonly>
+                    <option value="left"<? if ( .Block.ImageHorizontalPosition === 'left' ) echo ' selected'; ?>>Left</option>
+                    <option value="10%"<? if ( .Block.ImageHorizontalPosition === '10%' ) echo ' selected'; ?>>10%</option>
+                    <option value="20%"<? if ( .Block.ImageHorizontalPosition === '20%' ) echo ' selected'; ?>>20%</option>
+                    <option value="30%"<? if ( .Block.ImageHorizontalPosition === '30%' ) echo ' selected'; ?>>30%</option>
+                    <option value="40%"<? if ( .Block.ImageHorizontalPosition === '40%' ) echo ' selected'; ?>>40%</option>
+                    <option value="center"<? if ( .Block.ImageHorizontalPosition === 'center' ) echo ' selected'; ?>>Center</option>
+                    <option value="60%"<? if ( .Block.ImageHorizontalPosition === '60%' ) echo ' selected'; ?>>60%</option>
+                    <option value="70%"<? if ( .Block.ImageHorizontalPosition === '70%' ) echo ' selected'; ?>>70%</option>
+                    <option value="80%"<? if ( .Block.ImageHorizontalPosition === '80%' ) echo ' selected'; ?>>80%</option>
+                    <option value="90%"<? if ( .Block.ImageHorizontalPosition === '90%' ) echo ' selected'; ?>>90%</option>
+                    <option value="right"<? if ( .Block.ImageHorizontalPosition === 'right' ) echo ' selected'; ?>>Right</option>
+                </select>
             </div>
             <div class="form-field-name">
-                <% .GetProcessedTextBySlug( 'Image Side' ) %> :
+                <% GetTextBySlug( 'Image Side' ) %> :
             </div>
             <div>
-                    <input class="form-input" name="ImageSide" type="text" value="<% GetValueText( .Block.ImageSide ) %>" readonly/>
+                <select class="form-select" name="ImageSide" readonly>
+                    <option value="left"<? if ( .Block.ImageSide === 'left' ) echo ' selected'; ?>>Left</option>
+                    <option value="right"<? if ( .Block.ImageSide === 'right' ) echo ' selected'; ?>>Right</option>
+                </select>
             </div>
             <div class="form-field-name">
-                <% .GetProcessedTextBySlug( 'Video Path' ) %> :
+                <% GetTextBySlug( 'Video Path' ) %> :
             </div>
             <div>
                 <input class="form-input" name="VideoPath" type="text" value="<% .Block.VideoPath %>" readonly/>

@@ -1,18 +1,18 @@
 <div class="form-container">
     <div class="form-field-name">
-        <% .GetProcessedTextBySlug( 'Route' ) %> :
+        <% GetTextBySlug( 'Route' ) %> :
     </div>
     <div>
         <input class="form-input" name="Route" type="text" value="<% GetValueText( var page.Route ) %>" readonly/>
     </div>
     <div class="form-field-name">
-        <% .GetProcessedTextBySlug( 'Type Slug' ) %> :
+        <% GetTextBySlug( 'Type Slug' ) %> :
     </div>
     <div>
         <input class="form-input" name="TypeSlug" type="text" value="<% GetValueText( page.TypeSlug ) %>" readonly/>
     </div>
     <div class="form-field-name">
-        <% .GetProcessedTextBySlug( 'Title' ) %> :
+        <% GetTextBySlug( 'Title' ) %> :
     </div>
     <div>
         <div>
@@ -22,7 +22,7 @@
         </div>
     </div>
     <div class="form-field-name">
-        <% .GetProcessedTextBySlug( 'Image Path' ) %> :
+        <% GetTextBySlug( 'Image Path' ) %> :
     </div>
     <div>
         <input class="form-input" name="ImagePath" type="text" value="<% page.ImagePath %>" readonly/>

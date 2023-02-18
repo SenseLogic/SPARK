@@ -103,10 +103,10 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Id' ) %> :
+                    <% GetTextBySlug( 'Id' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="Id" type="text" value="<# field_value #>"/>
+                    <input-component class_="form-input" name_="Id" type_="text" value_="<% GetValueText( field_value ) %>"></input-component>
                 </div>
                 <?
                     var field_name = 'Name';
@@ -121,10 +121,10 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Name' ) %> :
+                    <% GetTextBySlug( 'Name' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="Name" type="text" value="<# field_value #>"/>
+                    <input-component class_="form-input" name_="Name" type_="text" value_="<% GetValueText( field_value ) %>"></input-component>
                 </div>
                 <?
                     var field_name = 'Company';
@@ -139,10 +139,10 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Company' ) %> :
+                    <% GetTextBySlug( 'Company' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="Company" type="text" value="<# field_value #>"/>
+                    <input-component class_="form-input" name_="Company" type_="text" value_="<% GetValueText( field_value ) %>"></input-component>
                 </div>
                 <?
                     var field_name = 'Email';
@@ -157,10 +157,10 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Email' ) %> :
+                    <% GetTextBySlug( 'Email' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="Email" type="text" value="<# field_value #>"/>
+                    <input-component class_="form-input" name_="Email" type_="text" value_="<% GetValueText( field_value ) %>"></input-component>
                 </div>
                 <?
                     var field_name = 'Phone';
@@ -175,10 +175,10 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Phone' ) %> :
+                    <% GetTextBySlug( 'Phone' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="Phone" type="text" value="<# field_value #>"/>
+                    <input-component class_="form-input" name_="Phone" type_="text" value_="<% GetValueText( field_value ) %>"></input-component>
                 </div>
                 <?
                     var field_name = 'Subject';
@@ -193,10 +193,10 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Subject' ) %> :
+                    <% GetTextBySlug( 'Subject' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="Subject" type="text" value="<# field_value #>"/>
+                    <input-component class_="form-input" name_="Subject" type_="text" value_="<% GetValueText( field_value ) %>"></input-component>
                 </div>
                 <?
                     var field_name = 'Message';
@@ -211,10 +211,10 @@
                     }
                 ?>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Message' ) %> :
+                    <% GetTextBySlug( 'Message' ) %> :
                 </div>
                 <div>
-                    <textarea class="form-textarea" name="Message"><# field_value #></textarea>
+                    <textarea-component class_="form-textarea" name_="Message"><% field_value %></textarea-component>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
                 </a>

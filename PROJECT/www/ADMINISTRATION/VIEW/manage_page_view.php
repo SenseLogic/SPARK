@@ -15,7 +15,7 @@
         </div>
     </div>
     <div class="form-title">
-        <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Blocks' ) ); ?> :
+        <?php echo htmlspecialchars( GetTextBySlug( 'Blocks' ) ); ?> :
     </div>
     <div class="margin-top-1rem margin-bottom-2rem card-list">
         <?php  $added_block_number = 1; ?>

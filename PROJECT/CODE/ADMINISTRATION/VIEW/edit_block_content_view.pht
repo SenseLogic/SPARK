@@ -41,16 +41,16 @@
         <form class="form-centered" name="EditBlockContentForm" onsubmit="return IsValidEditBlockContentForm()" action="/admin/block-content/edit/<% .BlockContent.Id %>" method="post">
             <div class="form-container">
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Slug' ) %> :
+                    <% GetTextBySlug( 'Slug' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="Slug" type="text" value="<% GetValueText( .BlockContent.Slug ) %>"/>
+                    <input-component class_="form-input" name_="Slug" type_="text" value_="<% GetValueText( .BlockContent.Slug ) %>"></input-component>
                 </div>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Name' ) %> :
+                    <% GetTextBySlug( 'Name' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="Name" type="text" value="<% GetValueText( .BlockContent.Name ) %>"/>
+                    <input-component class_="form-input" name_="Name" type_="text" value_="<% GetValueText( .BlockContent.Name ) %>"></input-component>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
                 </a>

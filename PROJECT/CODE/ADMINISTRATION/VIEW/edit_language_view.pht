@@ -62,30 +62,25 @@
         <form class="form-centered" name="EditLanguageForm" onsubmit="return IsValidEditLanguageForm()" action="/admin/language/edit/<% .Language.Id %>" method="post">
             <div class="form-container">
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Code' ) %> :
+                    <% GetTextBySlug( 'Code' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="Code" type="text" value="<% GetValueText( .Language.Code ) %>"/>
+                    <input-component class_="form-input" name_="Code" type_="text" value_="<% GetValueText( .Language.Code ) %>"></input-component>
                 </div>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Number' ) %> :
+                    <% GetTextBySlug( 'Number' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="Number" type="text" value="<% GetValueText( .Language.Number ) %>"/>
+                    <input-component class_="form-input" name_="Number" type_="text" value_="<% GetValueText( .Language.Number ) %>"></input-component>
                 </div>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Text' ) %> :
+                    <% GetTextBySlug( 'Text' ) %> :
                 </div>
                 <div>
-                    <div>
-                        <input class="multilingual-input form-input" name="Text" type="text" value="<% GetValueText( .Language.Text ) %>" hidden/>
-                        <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                            <input class="multilingual-input-translation form-translation form-input" data-language-code="<% language_code %>" placeholder="<% .GetProcessedTextBySlug( language_code ) %>"/>
-                        <? } ?>
-                    </div>
+                    <multilingual-input-component class_="form-input" name_="Text" type_="text" value_="<% GetValueText( .Language.Text ) %>" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></input-component>
                 </div>
                 <div class="form-field-name">
-                    <% .GetProcessedTextBySlug( 'Is Active' ) %> :
+                    <% GetTextBySlug( 'Is Active' ) %> :
                 </div>
                 <div>
                     <select class="form-select" name="IsActive">

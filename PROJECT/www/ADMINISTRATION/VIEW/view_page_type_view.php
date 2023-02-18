@@ -3,16 +3,16 @@
     <div class="page-section form-section">
         <div class="form-container">
             <div class="form-field-name">
-                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Slug' ) ); ?> :
+                <?php echo htmlspecialchars( GetTextBySlug( 'Slug' ) ); ?> :
             </div>
             <div>
-                    <input class="form-input" name="Slug" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->PageType->Slug ) ); ?>" readonly/>
+                <input-component class_="form-input" name_="Slug" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $this->PageType->Slug ) ); ?>" readonly_></input-component>
             </div>
             <div class="form-field-name">
-                <?php echo htmlspecialchars( $this->GetProcessedTextBySlug( 'Title' ) ); ?> :
+                <?php echo htmlspecialchars( GetTextBySlug( 'Title' ) ); ?> :
             </div>
             <div>
-                    <input class="form-input" name="Title" type="text" value="<?php echo htmlspecialchars( GetValueText( $this->PageType->Title ) ); ?>" readonly/>
+                <input-component class_="form-input" name_="Title" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $this->PageType->Title ) ); ?>" readonly_></input-component>
             </div>
             <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
             </a>

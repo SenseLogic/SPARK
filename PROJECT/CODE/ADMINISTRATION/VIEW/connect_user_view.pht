@@ -20,16 +20,16 @@
     </div>
     <div class="margin-top-3rem width-30rem page-section">
         <div class="form-field-name">
-            <% .GetProcessedTextBySlug( "Username" ) %>
+            <% GetTextBySlug( "Username" ) %>
         </div>
         <input class="margin-top-50pem form-input" name="Pseudonym" type="text"/>
         <div class="margin-top-1rem form-field-name">
-            <% .GetProcessedTextBySlug( "Password" ) %>
+            <% GetTextBySlug( "Password" ) %>
         </div>
         <input class="margin-top-50pem form-input" name="Password" type="password"/>
         <div class="margin-top-2rem form-extended form-centered">
             <button class="form-text-button" type="submit">
-                <% .GetProcessedTextBySlug( "Sign in" ) %>
+                <% GetTextBySlug( "Sign in" ) %>
             </button>
         </div>
     </div>

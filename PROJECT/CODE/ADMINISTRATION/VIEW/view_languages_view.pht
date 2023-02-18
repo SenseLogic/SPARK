@@ -15,19 +15,19 @@
     <div class="cell-list page-section form-section is-hidden">
         <div class="form-container table-container language-table sortable-table">
             <div class="form-column-name sortable-table-column">
-                <% .GetProcessedTextBySlug( 'Code' ) %>
+                <% GetTextBySlug( 'Code' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetProcessedTextBySlug( 'Number' ) %>
+                <% GetTextBySlug( 'Number' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetProcessedTextBySlug( 'Text' ) %>
+                <% GetTextBySlug( 'Text' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetProcessedTextBySlug( 'Is Active' ) %>
+                <% GetTextBySlug( 'Is Active' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetProcessedTextBySlug( 'Action' ) %>
+                <% GetTextBySlug( 'Action' ) %>
             </div>
             <? foreach ( var language; .LanguageArray ) { ?>
                 <div class="sortable-table-row filter-row filter-content">
@@ -69,32 +69,31 @@
                 <div class="card">
                     <div class="form-container">
                         <div class="form-field-name">
-                            <% .GetProcessedTextBySlug( 'Code' ) %> :
+                            <% GetTextBySlug( 'Code' ) %> :
                         </div>
                         <div>
-                                <input class="form-input" name="Code" type="text" value="<% GetValueText( language.Code ) %>" readonly/>
+                            <input-component class_="form-input" name_="Code" type_="text" value_="<% GetValueText( language.Code ) %>" readonly_></input-component>
                         </div>
                         <div class="form-field-name">
-                            <% .GetProcessedTextBySlug( 'Number' ) %> :
+                            <% GetTextBySlug( 'Number' ) %> :
                         </div>
                         <div>
-                                <input class="form-input" name="Number" type="text" value="<% GetValueText( language.Number ) %>" readonly/>
+                            <input-component class_="form-input" name_="Number" type_="text" value_="<% GetValueText( language.Number ) %>" readonly_></input-component>
                         </div>
                         <div class="form-field-name">
-                            <% .GetProcessedTextBySlug( 'Text' ) %> :
+                            <% GetTextBySlug( 'Text' ) %> :
                         </div>
                         <div>
-                            <div>
-                                <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                                    <input class="form-translation form-input" name="Text" type="text" value="<% GetValueText( GetTranslatedText( language.Text, language_code ) ) %>" readonly/>
-                                <? } ?>
-                            </div>
+                            <input-component class_="form-input" name_="Text" type_="text" value_="<% GetValueText( language.Text ) %>" readonly_ language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></input-component>
                         </div>
                         <div class="form-field-name">
-                            <% .GetProcessedTextBySlug( 'Is Active' ) %> :
+                            <% GetTextBySlug( 'Is Active' ) %> :
                         </div>
                         <div>
-                                <input class="form-input" name="IsActive" type="text" value="<% GetValueText( language.IsActive ) %>" readonly/>
+                            <select class="form-select" name="IsActive" readonly>
+                                <option value="0"<? if ( language.IsActive === '0' ) echo ' selected'; ?>>False</option>
+                                <option value="1"<? if ( language.IsActive === '1' ) echo ' selected'; ?>>True</option>
+                            </select>
                         </div>
                     </div>
                     <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>

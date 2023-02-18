@@ -15,55 +15,55 @@
     <div class="cell-list page-section form-section is-hidden">
         <div class="form-container table-container page-table sortable-table">
             <div class="form-column-name sortable-table-column">
-                <% .GetProcessedTextBySlug( 'Slug' ) %>
+                <% GetTextBySlug( 'Slug' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetProcessedTextBySlug( 'Route' ) %>
+                <% GetTextBySlug( 'Route' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetProcessedTextBySlug( 'Type Slug' ) %>
+                <% GetTextBySlug( 'Type Slug' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetProcessedTextBySlug( 'Number' ) %>
+                <% GetTextBySlug( 'Number' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetProcessedTextBySlug( 'Language Code Array' ) %>
+                <% GetTextBySlug( 'Language Code Array' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetProcessedTextBySlug( 'Is Active' ) %>
+                <% GetTextBySlug( 'Is Active' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetProcessedTextBySlug( 'Title' ) %>
+                <% GetTextBySlug( 'Title' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetProcessedTextBySlug( 'Heading' ) %>
+                <% GetTextBySlug( 'Heading' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetProcessedTextBySlug( 'Teaser' ) %>
+                <% GetTextBySlug( 'Teaser' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetProcessedTextBySlug( 'Image Path' ) %>
+                <% GetTextBySlug( 'Image Path' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetProcessedTextBySlug( 'Image Vertical Position' ) %>
+                <% GetTextBySlug( 'Image Vertical Position' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetProcessedTextBySlug( 'Image Horizontal Position' ) %>
+                <% GetTextBySlug( 'Image Horizontal Position' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetProcessedTextBySlug( 'Video Path' ) %>
+                <% GetTextBySlug( 'Video Path' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetProcessedTextBySlug( 'Meta Title' ) %>
+                <% GetTextBySlug( 'Meta Title' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetProcessedTextBySlug( 'Meta Description' ) %>
+                <% GetTextBySlug( 'Meta Description' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetProcessedTextBySlug( 'Meta Image Path' ) %>
+                <% GetTextBySlug( 'Meta Image Path' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% .GetProcessedTextBySlug( 'Action' ) %>
+                <% GetTextBySlug( 'Action' ) %>
             </div>
             <? foreach ( var page; .PageArray ) { ?>
                 <div class="sortable-table-row filter-row filter-content">
@@ -165,73 +165,69 @@
                 <div class="card">
                     <div class="form-container">
                         <div class="form-field-name">
-                            <% .GetProcessedTextBySlug( 'Slug' ) %> :
+                            <% GetTextBySlug( 'Slug' ) %> :
                         </div>
                         <div>
-                                <input class="form-input" name="Slug" type="text" value="<% GetValueText( page.Slug ) %>" readonly/>
+                            <input-component class_="form-input" name_="Slug" type_="text" value_="<% GetValueText( page.Slug ) %>" readonly_></input-component>
                         </div>
                         <div class="form-field-name">
-                            <% .GetProcessedTextBySlug( 'Route' ) %> :
+                            <% GetTextBySlug( 'Route' ) %> :
                         </div>
                         <div>
-                                <input class="form-input" name="Route" type="text" value="<% GetValueText( page.Route ) %>" readonly/>
+                            <input-component class_="form-input" name_="Route" type_="text" value_="<% GetValueText( page.Route ) %>" readonly_></input-component>
                         </div>
                         <div class="form-field-name">
-                            <% .GetProcessedTextBySlug( 'Type Slug' ) %> :
+                            <% GetTextBySlug( 'Type Slug' ) %> :
                         </div>
                         <div>
-                                <input class="form-input" name="TypeSlug" type="text" value="<% GetValueText( page.TypeSlug ) %>" readonly/>
-                        </div>
-                        <div class="form-field-name">
-                            <% .GetProcessedTextBySlug( 'Number' ) %> :
-                        </div>
-                        <div>
-                                <input class="form-input" name="Number" type="text" value="<% GetValueText( page.Number ) %>" readonly/>
-                        </div>
-                        <div class="form-field-name">
-                            <% .GetProcessedTextBySlug( 'Language Code Array' ) %> :
-                        </div>
-                        <div>
-                                <input class="form-input" name="LanguageCodeArray" type="text" value="<% GetValueText( page.LanguageCodeArray ) %>" readonly/>
-                        </div>
-                        <div class="form-field-name">
-                            <% .GetProcessedTextBySlug( 'Is Active' ) %> :
-                        </div>
-                        <div>
-                                <input class="form-input" name="IsActive" type="text" value="<% GetValueText( page.IsActive ) %>" readonly/>
-                        </div>
-                        <div class="form-field-name">
-                            <% .GetProcessedTextBySlug( 'Title' ) %> :
-                        </div>
-                        <div>
-                            <div>
-                                <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                                    <input class="form-translation form-input" name="Title" type="text" value="<% GetValueText( GetTranslatedText( page.Title, language_code ) ) %>" readonly/>
+                            <select class="form-select" name="TypeSlug" readonly>
+                                <? var page_type_array = .PageTypeArray; ?>
+                                <? foreach ( var page_type; page_type_array ) { ?>
+                                    <option value="<% GetValueText( page_type.Slug ) %>"<? if ( page.TypeSlug === page_type.Slug ) echo ' selected'; ?>><% GetUntranslatedText( page_type.Title ) %></option>
                                 <? } ?>
-                            </div>
+                            </select>
                         </div>
                         <div class="form-field-name">
-                            <% .GetProcessedTextBySlug( 'Heading' ) %> :
+                            <% GetTextBySlug( 'Number' ) %> :
                         </div>
                         <div>
-                            <div>
-                                <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                                    <input class="form-translation form-input" name="Heading" type="text" value="<% GetValueText( GetTranslatedText( page.Heading, language_code ) ) %>" readonly/>
-                                <? } ?>
-                            </div>
+                            <input-component class_="form-input" name_="Number" type_="text" value_="<% GetValueText( page.Number ) %>" readonly_></input-component>
                         </div>
                         <div class="form-field-name">
-                            <% .GetProcessedTextBySlug( 'Teaser' ) %> :
+                            <% GetTextBySlug( 'Language Code Array' ) %> :
                         </div>
                         <div>
-                            <div>
-                                <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                                    <textarea class="form-translation form-textarea" name="Teaser" readonly><% GetTranslatedText( page.Teaser, language_code ) %></textarea>
-                                <? } ?>
-                            </div>
+                            <input-component class_="form-input" name_="LanguageCodeArray" type_="text" value_="<% GetValueText( page.LanguageCodeArray ) %>" readonly_></input-component>
                         </div>
                         <div class="form-field-name">
-                            <% .GetProcessedTextBySlug( 'Image Path' ) %> :
+                            <% GetTextBySlug( 'Is Active' ) %> :
+                        </div>
+                        <div>
+                            <select class="form-select" name="IsActive" readonly>
+                                <option value="0"<? if ( page.IsActive === '0' ) echo ' selected'; ?>>False</option>
+                                <option value="1"<? if ( page.IsActive === '1' ) echo ' selected'; ?>>True</option>
+                            </select>
+                        </div>
+                        <div class="form-field-name">
+                            <% GetTextBySlug( 'Title' ) %> :
+                        </div>
+                        <div>
+                            <input-component class_="form-input" name_="Title" type_="text" value_="<% GetValueText( page.Title ) %>" readonly_ language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></input-component>
+                        </div>
+                        <div class="form-field-name">
+                            <% GetTextBySlug( 'Heading' ) %> :
+                        </div>
+                        <div>
+                            <input-component class_="form-input" name_="Heading" type_="text" value_="<% GetValueText( page.Heading ) %>" readonly_ language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></input-component>
+                        </div>
+                        <div class="form-field-name">
+                            <% GetTextBySlug( 'Teaser' ) %> :
+                        </div>
+                        <div>
+                            <textarea-component class_="form-textarea" name_="Teaser" readonly_ language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"><% page.Teaser %></textarea-component>
+                        </div>
+                        <div class="form-field-name">
+                            <% GetTextBySlug( 'Image Path' ) %> :
                         </div>
                         <div>
                             <input class="form-input" name="ImagePath" type="text" value="<% page.ImagePath %>" readonly/>
@@ -240,19 +236,43 @@
                             </div>
                         </div>
                         <div class="form-field-name">
-                            <% .GetProcessedTextBySlug( 'Image Vertical Position' ) %> :
+                            <% GetTextBySlug( 'Image Vertical Position' ) %> :
                         </div>
                         <div>
-                                <input class="form-input" name="ImageVerticalPosition" type="text" value="<% GetValueText( page.ImageVerticalPosition ) %>" readonly/>
+                            <select class="form-select" name="ImageVerticalPosition" readonly>
+                                <option value="top"<? if ( page.ImageVerticalPosition === 'top' ) echo ' selected'; ?>>Top</option>
+                                <option value="10%"<? if ( page.ImageVerticalPosition === '10%' ) echo ' selected'; ?>>10%</option>
+                                <option value="20%"<? if ( page.ImageVerticalPosition === '20%' ) echo ' selected'; ?>>20%</option>
+                                <option value="30%"<? if ( page.ImageVerticalPosition === '30%' ) echo ' selected'; ?>>30%</option>
+                                <option value="40%"<? if ( page.ImageVerticalPosition === '40%' ) echo ' selected'; ?>>40%</option>
+                                <option value="center"<? if ( page.ImageVerticalPosition === 'center' ) echo ' selected'; ?>>Center</option>
+                                <option value="60%"<? if ( page.ImageVerticalPosition === '60%' ) echo ' selected'; ?>>60%</option>
+                                <option value="70%"<? if ( page.ImageVerticalPosition === '70%' ) echo ' selected'; ?>>70%</option>
+                                <option value="80%"<? if ( page.ImageVerticalPosition === '80%' ) echo ' selected'; ?>>80%</option>
+                                <option value="90%"<? if ( page.ImageVerticalPosition === '90%' ) echo ' selected'; ?>>90%</option>
+                                <option value="bottom"<? if ( page.ImageVerticalPosition === 'bottom' ) echo ' selected'; ?>>Bottom</option>
+                            </select>
                         </div>
                         <div class="form-field-name">
-                            <% .GetProcessedTextBySlug( 'Image Horizontal Position' ) %> :
+                            <% GetTextBySlug( 'Image Horizontal Position' ) %> :
                         </div>
                         <div>
-                                <input class="form-input" name="ImageHorizontalPosition" type="text" value="<% GetValueText( page.ImageHorizontalPosition ) %>" readonly/>
+                            <select class="form-select" name="ImageHorizontalPosition" readonly>
+                                <option value="left"<? if ( page.ImageHorizontalPosition === 'left' ) echo ' selected'; ?>>Left</option>
+                                <option value="10%"<? if ( page.ImageHorizontalPosition === '10%' ) echo ' selected'; ?>>10%</option>
+                                <option value="20%"<? if ( page.ImageHorizontalPosition === '20%' ) echo ' selected'; ?>>20%</option>
+                                <option value="30%"<? if ( page.ImageHorizontalPosition === '30%' ) echo ' selected'; ?>>30%</option>
+                                <option value="40%"<? if ( page.ImageHorizontalPosition === '40%' ) echo ' selected'; ?>>40%</option>
+                                <option value="center"<? if ( page.ImageHorizontalPosition === 'center' ) echo ' selected'; ?>>Center</option>
+                                <option value="60%"<? if ( page.ImageHorizontalPosition === '60%' ) echo ' selected'; ?>>60%</option>
+                                <option value="70%"<? if ( page.ImageHorizontalPosition === '70%' ) echo ' selected'; ?>>70%</option>
+                                <option value="80%"<? if ( page.ImageHorizontalPosition === '80%' ) echo ' selected'; ?>>80%</option>
+                                <option value="90%"<? if ( page.ImageHorizontalPosition === '90%' ) echo ' selected'; ?>>90%</option>
+                                <option value="right"<? if ( page.ImageHorizontalPosition === 'right' ) echo ' selected'; ?>>Right</option>
+                            </select>
                         </div>
                         <div class="form-field-name">
-                            <% .GetProcessedTextBySlug( 'Video Path' ) %> :
+                            <% GetTextBySlug( 'Video Path' ) %> :
                         </div>
                         <div>
                             <input class="form-input" name="VideoPath" type="text" value="<% page.VideoPath %>" readonly/>
@@ -261,27 +281,19 @@
                             </div>
                         </div>
                         <div class="form-field-name">
-                            <% .GetProcessedTextBySlug( 'Meta Title' ) %> :
+                            <% GetTextBySlug( 'Meta Title' ) %> :
                         </div>
                         <div>
-                            <div>
-                                <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                                    <input class="form-translation form-input" name="MetaTitle" type="text" value="<% GetValueText( GetTranslatedText( page.MetaTitle, language_code ) ) %>" readonly/>
-                                <? } ?>
-                            </div>
+                            <input-component class_="form-input" name_="MetaTitle" type_="text" value_="<% GetValueText( page.MetaTitle ) %>" readonly_ language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></input-component>
                         </div>
                         <div class="form-field-name">
-                            <% .GetProcessedTextBySlug( 'Meta Description' ) %> :
+                            <% GetTextBySlug( 'Meta Description' ) %> :
                         </div>
                         <div>
-                            <div>
-                                <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                                    <textarea class="form-translation form-textarea" name="MetaDescription" readonly><% GetTranslatedText( page.MetaDescription, language_code ) %></textarea>
-                                <? } ?>
-                            </div>
+                            <textarea-component class_="form-textarea" name_="MetaDescription" readonly_ language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"><% page.MetaDescription %></textarea-component>
                         </div>
                         <div class="form-field-name">
-                            <% .GetProcessedTextBySlug( 'Meta Image Path' ) %> :
+                            <% GetTextBySlug( 'Meta Image Path' ) %> :
                         </div>
                         <div>
                             <input class="form-input" name="MetaImagePath" type="text" value="<% page.MetaImagePath %>" readonly/>
