@@ -87,7 +87,7 @@
                     <% GetTextBySlug( 'Id' ) %> :
                 </div>
                 <div>
-                    <input-component class_="form-input" name_="Id" type_="text" value_="<% GetValueText( field_value ) %>"></input-component>
+                    <input-component result-class="form-input" result-name="Id" type_="text" result-value="<% GetValueText( field_value ) %>"></input-component>
                 </div>
                 <?
                     var field_name = 'Code';
@@ -105,7 +105,7 @@
                     <% GetTextBySlug( 'Code' ) %> :
                 </div>
                 <div>
-                    <input-component class_="form-input" name_="Code" type_="text" value_="<% GetValueText( field_value ) %>"></input-component>
+                    <input-component result-class="form-input" result-name="Code" type_="text" result-value="<% GetValueText( field_value ) %>"></input-component>
                 </div>
                 <?
                     var field_name = 'Number';
@@ -123,7 +123,7 @@
                     <% GetTextBySlug( 'Number' ) %> :
                 </div>
                 <div>
-                    <input-component class_="form-input" name_="Number" type_="text" value_="<% GetValueText( field_value ) %>"></input-component>
+                    <input-component result-class="form-input" result-name="Number" type_="text" result-value="<% GetValueText( field_value ) %>"></input-component>
                 </div>
                 <?
                     var field_name = 'Text';
@@ -141,7 +141,7 @@
                     <% GetTextBySlug( 'Text' ) %> :
                 </div>
                 <div>
-                    <multilingual-input-component class_="form-input" name_="Text" type_="text" value_="<% GetValueText( field_value ) %>" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></input-component>
+                    <multilingual-input-component result-class="form-multilingual-input-container" result-class="form-textarea" result-name="Text" type_="text" result-value="<% GetValueText( field_value ) %>" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></input-component>
                 </div>
                 <?
                     var field_name = 'IsActive';

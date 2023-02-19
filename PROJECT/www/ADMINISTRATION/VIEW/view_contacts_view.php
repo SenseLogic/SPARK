@@ -84,43 +84,43 @@
                             <?php echo htmlspecialchars( GetTextBySlug( 'Name' ) ); ?> :
                         </div>
                         <div>
-                            <input-component class_="form-input" name_="Name" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $contact->Name ) ); ?>" readonly_></input-component>
+                            <input-component result-class="form-input" result-name="Name" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $contact->Name ) ); ?>" result-readonly></input-component>
                         </div>
                         <div class="form-field-name">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Company' ) ); ?> :
                         </div>
                         <div>
-                            <input-component class_="form-input" name_="Company" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $contact->Company ) ); ?>" readonly_></input-component>
+                            <input-component result-class="form-input" result-name="Company" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $contact->Company ) ); ?>" result-readonly></input-component>
                         </div>
                         <div class="form-field-name">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Email' ) ); ?> :
                         </div>
                         <div>
-                            <input-component class_="form-input" name_="Email" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $contact->Email ) ); ?>" readonly_></input-component>
+                            <input-component result-class="form-input" result-name="Email" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $contact->Email ) ); ?>" result-readonly></input-component>
                         </div>
                         <div class="form-field-name">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Phone' ) ); ?> :
                         </div>
                         <div>
-                            <input-component class_="form-input" name_="Phone" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $contact->Phone ) ); ?>" readonly_></input-component>
+                            <input-component result-class="form-input" result-name="Phone" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $contact->Phone ) ); ?>" result-readonly></input-component>
                         </div>
                         <div class="form-field-name">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Subject' ) ); ?> :
                         </div>
                         <div>
-                            <input-component class_="form-input" name_="Subject" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $contact->Subject ) ); ?>" readonly_></input-component>
+                            <input-component result-class="form-input" result-name="Subject" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $contact->Subject ) ); ?>" result-readonly></input-component>
                         </div>
                         <div class="form-field-name">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Message' ) ); ?> :
                         </div>
                         <div>
-                            <textarea-component class_="form-textarea" name_="Message" readonly_><?php echo htmlspecialchars( $contact->Message ); ?></textarea-component>
+                            <textarea-component result-class="form-textarea" result-name="Message" result-readonly><?php echo htmlspecialchars( $contact->Message ); ?></textarea-component>
                         </div>
                         <div class="form-field-name">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Date Time' ) ); ?> :
                         </div>
                         <div>
-                            <input-component class_="form-input" name_="DateTime" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $contact->DateTime ) ); ?>" readonly_></input-component>
+                            <input-component result-class="form-input" result-name="DateTime" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $contact->DateTime ) ); ?>" result-readonly></input-component>
                         </div>
                     </div>
                     <?php if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>

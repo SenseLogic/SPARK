@@ -144,7 +144,7 @@
                             <?php echo htmlspecialchars( GetTextBySlug( 'Slug' ) ); ?> :
                         </div>
                         <div>
-                            <input-component class_="form-input" name_="Slug" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $block->Slug ) ); ?>" readonly_></input-component>
+                            <input-component result-class="form-input" result-name="Slug" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $block->Slug ) ); ?>" result-readonly></input-component>
                         </div>
                         <div class="form-field-name">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Page Id' ) ); ?> :
@@ -194,40 +194,37 @@
                             <?php echo htmlspecialchars( GetTextBySlug( 'Number' ) ); ?> :
                         </div>
                         <div>
-                            <input-component class_="form-input" name_="Number" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $block->Number ) ); ?>" readonly_></input-component>
+                            <input-component result-class="form-input" result-name="Number" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $block->Number ) ); ?>" result-readonly></input-component>
                         </div>
                         <div class="form-field-name">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Language Code Array' ) ); ?> :
                         </div>
                         <div>
-                            <input-component class_="form-input" name_="LanguageCodeArray" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $block->LanguageCodeArray ) ); ?>" readonly_></input-component>
+                            <input-component result-class="form-input" result-name="LanguageCodeArray" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $block->LanguageCodeArray ) ); ?>" result-readonly></input-component>
                         </div>
                         <div class="form-field-name">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Minimum Height' ) ); ?> :
                         </div>
                         <div>
-                            <input-component class_="form-input" name_="MinimumHeight" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $block->MinimumHeight ) ); ?>" readonly_></input-component>
+                            <input-component result-class="form-input" result-name="MinimumHeight" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $block->MinimumHeight ) ); ?>" result-readonly></input-component>
                         </div>
                         <div class="form-field-name">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Title' ) ); ?> :
                         </div>
                         <div>
-                            <input-component class_="form-input" name_="Title" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $block->Title ) ); ?>" readonly_ language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></input-component>
+                            <input-component result-class="form-input" result-name="Title" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $block->Title ) ); ?>" result-readonly language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></input-component>
                         </div>
                         <div class="form-field-name">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Text' ) ); ?> :
                         </div>
                         <div>
-                            <textarea-component class_="form-textarea" name_="Text" readonly_ language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"><?php echo htmlspecialchars( $block->Text ); ?></textarea-component>
+                            <textarea-component result-class="form-textarea" result-name="Text" result-readonly language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"><?php echo htmlspecialchars( $block->Text ); ?></textarea-component>
                         </div>
                         <div class="form-field-name">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Image Path' ) ); ?> :
                         </div>
                         <div>
-                            <input class="form-input" name="ImagePath" type="text" value="<?php echo htmlspecialchars( $block->ImagePath ); ?>" readonly/>
-                            <div class="form-upload-container">
-                                <img class="form-upload-image" src="<?php echo htmlspecialchars( $block->ImagePath ); ?>" onerror="this.src='/static/image/admin/missing_image.svg'"/>
-                            </div>
+                            <image-path-input-component container-class="form-upload-container" result-class="form-input" result-name="ImagePath" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $block->ImagePath ) ); ?>" result-readonly image-class="form-upload-image" image-error-code="this.src='/static/image/admin/missing_image.svg'"></image-path-input-component>
                         </div>
                         <div class="form-field-name">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Image Vertical Position' ) ); ?> :
@@ -278,10 +275,7 @@
                             <?php echo htmlspecialchars( GetTextBySlug( 'Video Path' ) ); ?> :
                         </div>
                         <div>
-                            <input class="form-input" name="VideoPath" type="text" value="<?php echo htmlspecialchars( $block->VideoPath ); ?>" readonly/>
-                            <div class="form-upload-container">
-                                <video class="form-upload-video" src="<?php echo htmlspecialchars( $block->VideoPath ); ?>" type="video/mp4" onerror="this.src='/static/video/admin/missing_video.mp4'"></video>
-                            </div>
+                            <video-path-input-component container-class="form-upload-container" result-class="form-input" result-name="VideoPath" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $block->VideoPath ) ); ?>" result-readonly video-class="form-upload-video" video-error-code="this.src='/static/video/admin/missing_video.mp4'"></video-path-input-component>
                         </div>
                     </div>
                     <?php if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>

@@ -66,25 +66,25 @@
                             <?php echo htmlspecialchars( GetTextBySlug( 'Pseudonym' ) ); ?> :
                         </div>
                         <div>
-                            <input-component class_="form-input" name_="Pseudonym" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $user->Pseudonym ) ); ?>" readonly_></input-component>
+                            <input-component result-class="form-input" result-name="Pseudonym" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $user->Pseudonym ) ); ?>" result-readonly></input-component>
                         </div>
                         <div class="form-field-name">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Password' ) ); ?> :
                         </div>
                         <div>
-                            <input-component class_="form-input" name_="Password" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $user->Password ) ); ?>" readonly_></input-component>
+                            <input-component result-class="form-input" result-name="Password" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $user->Password ) ); ?>" result-readonly></input-component>
                         </div>
                         <div class="form-field-name">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Role' ) ); ?> :
                         </div>
                         <div>
-                            <input-component class_="form-input" name_="Role" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $user->Role ) ); ?>" readonly_></input-component>
+                            <input-component result-class="form-input" result-name="Role" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $user->Role ) ); ?>" result-readonly></input-component>
                         </div>
                         <div class="form-field-name">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Email' ) ); ?> :
                         </div>
                         <div>
-                            <input-component class_="form-input" name_="Email" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $user->Email ) ); ?>" readonly_></input-component>
+                            <input-component result-class="form-input" result-name="Email" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $user->Email ) ); ?>" result-readonly></input-component>
                         </div>
                     </div>
                     <?php if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>

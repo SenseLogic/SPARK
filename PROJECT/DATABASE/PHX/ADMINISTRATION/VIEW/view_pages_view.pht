@@ -168,13 +168,13 @@
                             <% GetTextBySlug( 'Slug' ) %> :
                         </div>
                         <div>
-                            <input-component class_="form-input" name_="Slug" type_="text" value_="<% GetValueText( page.Slug ) %>" readonly_></input-component>
+                            <input-component result-class="form-input" result-name="Slug" type_="text" result-value="<% GetValueText( page.Slug ) %>" result-readonly></input-component>
                         </div>
                         <div class="form-field-name">
                             <% GetTextBySlug( 'Route' ) %> :
                         </div>
                         <div>
-                            <input-component class_="form-input" name_="Route" type_="text" value_="<% GetValueText( page.Route ) %>" readonly_></input-component>
+                            <input-component result-class="form-input" result-name="Route" type_="text" result-value="<% GetValueText( page.Route ) %>" result-readonly></input-component>
                         </div>
                         <div class="form-field-name">
                             <% GetTextBySlug( 'Type Slug' ) %> :
@@ -191,13 +191,13 @@
                             <% GetTextBySlug( 'Number' ) %> :
                         </div>
                         <div>
-                            <input-component class_="form-input" name_="Number" type_="text" value_="<% GetValueText( page.Number ) %>" readonly_></input-component>
+                            <input-component result-class="form-input" result-name="Number" type_="text" result-value="<% GetValueText( page.Number ) %>" result-readonly></input-component>
                         </div>
                         <div class="form-field-name">
                             <% GetTextBySlug( 'Language Code Array' ) %> :
                         </div>
                         <div>
-                            <input-component class_="form-input" name_="LanguageCodeArray" type_="text" value_="<% GetValueText( page.LanguageCodeArray ) %>" readonly_></input-component>
+                            <input-component result-class="form-input" result-name="LanguageCodeArray" type_="text" result-value="<% GetValueText( page.LanguageCodeArray ) %>" result-readonly></input-component>
                         </div>
                         <div class="form-field-name">
                             <% GetTextBySlug( 'Is Active' ) %> :
@@ -212,28 +212,25 @@
                             <% GetTextBySlug( 'Title' ) %> :
                         </div>
                         <div>
-                            <input-component class_="form-input" name_="Title" type_="text" value_="<% GetValueText( page.Title ) %>" readonly_ language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></input-component>
+                            <input-component result-class="form-input" result-name="Title" type_="text" result-value="<% GetValueText( page.Title ) %>" result-readonly language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></input-component>
                         </div>
                         <div class="form-field-name">
                             <% GetTextBySlug( 'Heading' ) %> :
                         </div>
                         <div>
-                            <input-component class_="form-input" name_="Heading" type_="text" value_="<% GetValueText( page.Heading ) %>" readonly_ language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></input-component>
+                            <input-component result-class="form-input" result-name="Heading" type_="text" result-value="<% GetValueText( page.Heading ) %>" result-readonly language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></input-component>
                         </div>
                         <div class="form-field-name">
                             <% GetTextBySlug( 'Teaser' ) %> :
                         </div>
                         <div>
-                            <textarea-component class_="form-textarea" name_="Teaser" readonly_ language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"><% page.Teaser %></textarea-component>
+                            <textarea-component result-class="form-textarea" result-name="Teaser" result-readonly language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"><% page.Teaser %></textarea-component>
                         </div>
                         <div class="form-field-name">
                             <% GetTextBySlug( 'Image Path' ) %> :
                         </div>
                         <div>
-                            <input class="form-input" name="ImagePath" type="text" value="<% page.ImagePath %>" readonly/>
-                            <div class="form-upload-container">
-                                <img class="form-upload-image" src="<% page.ImagePath %>" onerror="this.src='/static/image/admin/missing_image.svg'"/>
-                            </div>
+                            <image-path-input-component container-class="form-upload-container" result-class="form-input" result-name="ImagePath" type_="text" result-value="<% GetValueText( page.ImagePath ) %>" result-readonly image-class="form-upload-image" image-error-code="this.src='/static/image/admin/missing_image.svg'"></image-path-input-component>
                         </div>
                         <div class="form-field-name">
                             <% GetTextBySlug( 'Image Vertical Position' ) %> :
@@ -275,31 +272,25 @@
                             <% GetTextBySlug( 'Video Path' ) %> :
                         </div>
                         <div>
-                            <input class="form-input" name="VideoPath" type="text" value="<% page.VideoPath %>" readonly/>
-                            <div class="form-upload-container">
-                                <video class="form-upload-video" src="<% page.VideoPath %>" type="video/mp4" onerror="this.src='/static/video/admin/missing_video.mp4'"></video>
-                            </div>
+                            <video-path-input-component container-class="form-upload-container" result-class="form-input" result-name="VideoPath" type_="text" result-value="<% GetValueText( page.VideoPath ) %>" result-readonly video-class="form-upload-video" video-error-code="this.src='/static/video/admin/missing_video.mp4'"></video-path-input-component>
                         </div>
                         <div class="form-field-name">
                             <% GetTextBySlug( 'Meta Title' ) %> :
                         </div>
                         <div>
-                            <input-component class_="form-input" name_="MetaTitle" type_="text" value_="<% GetValueText( page.MetaTitle ) %>" readonly_ language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></input-component>
+                            <input-component result-class="form-input" result-name="MetaTitle" type_="text" result-value="<% GetValueText( page.MetaTitle ) %>" result-readonly language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></input-component>
                         </div>
                         <div class="form-field-name">
                             <% GetTextBySlug( 'Meta Description' ) %> :
                         </div>
                         <div>
-                            <textarea-component class_="form-textarea" name_="MetaDescription" readonly_ language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"><% page.MetaDescription %></textarea-component>
+                            <textarea-component result-class="form-textarea" result-name="MetaDescription" result-readonly language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"><% page.MetaDescription %></textarea-component>
                         </div>
                         <div class="form-field-name">
                             <% GetTextBySlug( 'Meta Image Path' ) %> :
                         </div>
                         <div>
-                            <input class="form-input" name="MetaImagePath" type="text" value="<% page.MetaImagePath %>" readonly/>
-                            <div class="form-upload-container">
-                                <img class="form-upload-image" src="<% page.MetaImagePath %>" onerror="this.src='/static/image/admin/missing_image.svg'"/>
-                            </div>
+                            <image-path-input-component container-class="form-upload-container" result-class="form-input" result-name="MetaImagePath" type_="text" result-value="<% GetValueText( page.MetaImagePath ) %>" result-readonly image-class="form-upload-image" image-error-code="this.src='/static/image/admin/missing_image.svg'"></image-path-input-component>
                         </div>
                     </div>
                     <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>

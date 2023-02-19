@@ -6,19 +6,19 @@
                 <?php echo htmlspecialchars( GetTextBySlug( 'Code' ) ); ?> :
             </div>
             <div>
-                <input-component class_="form-input" name_="Code" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $this->Language->Code ) ); ?>" readonly_></input-component>
+                <input-component result-class="form-input" result-name="Code" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $this->Language->Code ) ); ?>" result-readonly></input-component>
             </div>
             <div class="form-field-name">
                 <?php echo htmlspecialchars( GetTextBySlug( 'Number' ) ); ?> :
             </div>
             <div>
-                <input-component class_="form-input" name_="Number" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $this->Language->Number ) ); ?>" readonly_></input-component>
+                <input-component result-class="form-input" result-name="Number" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $this->Language->Number ) ); ?>" result-readonly></input-component>
             </div>
             <div class="form-field-name">
                 <?php echo htmlspecialchars( GetTextBySlug( 'Text' ) ); ?> :
             </div>
             <div>
-                <input-component class_="form-input" name_="Text" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $this->Language->Text ) ); ?>" readonly_ language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></input-component>
+                <input-component result-class="form-input" result-name="Text" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $this->Language->Text ) ); ?>" result-readonly language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></input-component>
             </div>
             <div class="form-field-name">
                 <?php echo htmlspecialchars( GetTextBySlug( 'Is Active' ) ); ?> :

@@ -147,7 +147,7 @@
                     <% GetTextBySlug( 'Id' ) %> :
                 </div>
                 <div>
-                    <input-component class_="form-input" name_="Id" type_="text" value_="<% GetValueText( field_value ) %>"></input-component>
+                    <input-component result-class="form-input" result-name="Id" type_="text" result-value="<% GetValueText( field_value ) %>"></input-component>
                 </div>
                 <?
                     var field_name = 'Slug';
@@ -165,7 +165,7 @@
                     <% GetTextBySlug( 'Slug' ) %> :
                 </div>
                 <div>
-                    <input-component class_="form-input" name_="Slug" type_="text" value_="<% GetValueText( field_value ) %>"></input-component>
+                    <input-component result-class="form-input" result-name="Slug" type_="text" result-value="<% GetValueText( field_value ) %>"></input-component>
                 </div>
                 <?
                     var field_name = 'PageId';
@@ -275,7 +275,7 @@
                     <% GetTextBySlug( 'Number' ) %> :
                 </div>
                 <div>
-                    <input-component class_="form-input" name_="Number" type_="text" value_="<% GetValueText( field_value ) %>"></input-component>
+                    <input-component result-class="form-input" result-name="Number" type_="text" result-value="<% GetValueText( field_value ) %>"></input-component>
                 </div>
                 <?
                     var field_name = 'LanguageCodeArray';
@@ -293,7 +293,7 @@
                     <% GetTextBySlug( 'Language Code Array' ) %> :
                 </div>
                 <div>
-                    <input-component class_="form-input" name_="LanguageCodeArray" type_="text" value_="<% GetValueText( field_value ) %>"></input-component>
+                    <input-component result-class="form-input" result-name="LanguageCodeArray" type_="text" result-value="<% GetValueText( field_value ) %>"></input-component>
                 </div>
                 <?
                     var field_name = 'MinimumHeight';
@@ -311,7 +311,7 @@
                     <% GetTextBySlug( 'Minimum Height' ) %> :
                 </div>
                 <div>
-                    <input-component class_="form-input" name_="MinimumHeight" type_="text" value_="<% GetValueText( field_value ) %>"></input-component>
+                    <input-component result-class="form-input" result-name="MinimumHeight" type_="text" result-value="<% GetValueText( field_value ) %>"></input-component>
                 </div>
                 <?
                     var field_name = 'Title';
@@ -329,7 +329,7 @@
                     <% GetTextBySlug( 'Title' ) %> :
                 </div>
                 <div>
-                    <multilingual-input-component class_="form-input" name_="Title" type_="text" value_="<% GetValueText( field_value ) %>" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></input-component>
+                    <multilingual-input-component result-class="form-multilingual-input-container" result-class="form-textarea" result-name="Title" type_="text" result-value="<% GetValueText( field_value ) %>" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></input-component>
                 </div>
                 <?
                     var field_name = 'Text';
@@ -347,7 +347,7 @@
                     <% GetTextBySlug( 'Text' ) %> :
                 </div>
                 <div>
-                    <multilingual-textarea-component class_="form-textarea" name_="Text" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"><% field_value %></textarea-component>
+                    <multilingual-textarea-component result-class="form-multilingual-textarea-container" result-class="form-textarea" result-name="Text" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"><% field_value %></textarea-component>
                 </div>
                 <?
                     var field_name = 'ImagePath';
@@ -365,14 +365,7 @@
                     <% GetTextBySlug( 'Image Path' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="ImagePath" type="text" value="<# field_value #>" oninput="HandleImagePathInputChangeEvent( this )"/>
-                    <div class="form-upload-container">
-                        <img class="form-upload-image" src="<# field_value #>" onerror="this.src='/static/image/admin/missing_image.svg'"/>
-                        <label class="form-upload-button">
-                            <img class="form-upload-icon" src="/static/image/admin/upload_icon.svg"/><input class="form-upload-file" type="file" accept="image/jpeg, image/png, image/webp, image/gif, image/svg" onchange="HandleImageFileInputChangeEvent( this )"/>
-                        </label>
-                        <img class="form-delete-icon" src="/static/image/admin/remove_icon.svg" onclick="HandleFileInputDeleteButtonClickEvent( this )"/>
-                    </div>
+                    <image-path-input-component container-class="form-upload-container" result-class="form-input" result-name="ImagePath" type_="text" result-value="<% GetValueText( field_value ) %>" image-class="form-upload-image" image-error-code="this.src='/static/image/admin/missing_image.svg'" upload-button-class="form-upload-button" upload-button-image-class="form-upload-icon" upload-button-image-path="/static/image/admin/upload_icon.svg" upload-button-code="HandleImageFileInputChangeEvent( this )" delete-button-image-class="form-delete-icon" delete-image-code="HandleFileInputDeleteButtonClickEvent( this )"></image-path-input-component>
                 </div>
                 <?
                     var field_name = 'ImageVerticalPosition';
@@ -471,14 +464,7 @@
                     <% GetTextBySlug( 'Video Path' ) %> :
                 </div>
                 <div>
-                    <input class="form-input" name="VideoPath" type="text" value="<# field_value #>" oninput="HandleVideoPathInputChangeEvent( this )"/>
-                    <div class="form-upload-container">
-                        <video class="form-upload-video" src="<# field_value #>" type="video/mp4" onerror="this.src='/static/video/admin/missing_video.mp4'"></video>
-                        <label class="form-upload-button">
-                            <img class="form-upload-icon" src="/static/image/admin/upload_icon.svg"/><input class="form-upload-file" type="file" accept="video/mp4" onchange="HandleVideoFileInputChangeEvent( this )"/>
-                        </label>
-                        <img class="form-delete-icon" src="/static/image/admin/remove_icon.svg" onclick="HandleFileInputDeleteButtonClickEvent( this )"/>
-                    </div>
+                    <video-path-input-component container-class="form-upload-container" result-class="form-input" result-name="VideoPath" type_="text" result-value="<% GetValueText( field_value ) %>" video-class="form-upload-video" video-error-code="this.src='/static/video/admin/missing_video.mp4'" upload-button-class="form-upload-button" upload-button-image-class="form-upload-icon" upload-button-image-path="/static/video/admin/upload_icon.svg" upload-button-code="HandleVideoFileInputChangeEvent( this )" delete-button-image-class="form-delete-icon" delete-button-code="HandleFileInputDeleteButtonClickEvent( this )"></video-path-input-component>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
                 </a>

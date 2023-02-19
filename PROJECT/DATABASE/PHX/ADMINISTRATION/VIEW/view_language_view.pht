@@ -6,19 +6,19 @@
                 <% GetTextBySlug( 'Code' ) %> :
             </div>
             <div>
-                <input-component class_="form-input" name_="Code" type_="text" value_="<% GetValueText( .Language.Code ) %>" readonly_></input-component>
+                <input-component result-class="form-input" result-name="Code" type_="text" result-value="<% GetValueText( .Language.Code ) %>" result-readonly></input-component>
             </div>
             <div class="form-field-name">
                 <% GetTextBySlug( 'Number' ) %> :
             </div>
             <div>
-                <input-component class_="form-input" name_="Number" type_="text" value_="<% GetValueText( .Language.Number ) %>" readonly_></input-component>
+                <input-component result-class="form-input" result-name="Number" type_="text" result-value="<% GetValueText( .Language.Number ) %>" result-readonly></input-component>
             </div>
             <div class="form-field-name">
                 <% GetTextBySlug( 'Text' ) %> :
             </div>
             <div>
-                <input-component class_="form-input" name_="Text" type_="text" value_="<% GetValueText( .Language.Text ) %>" readonly_ language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></input-component>
+                <input-component result-class="form-input" result-name="Text" type_="text" result-value="<% GetValueText( .Language.Text ) %>" result-readonly language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></input-component>
             </div>
             <div class="form-field-name">
                 <% GetTextBySlug( 'Is Active' ) %> :

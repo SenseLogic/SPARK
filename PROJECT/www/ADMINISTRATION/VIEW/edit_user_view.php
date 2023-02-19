@@ -64,25 +64,25 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Pseudonym' ) ); ?> :
                 </div>
                 <div>
-                    <input-component class_="form-input" name_="Pseudonym" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $this->User->Pseudonym ) ); ?>"></input-component>
+                    <input-component result-class="form-input" result-name="Pseudonym" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $this->User->Pseudonym ) ); ?>"></input-component>
                 </div>
                 <div class="form-field-name">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Password' ) ); ?> :
                 </div>
                 <div>
-                    <input-component class_="form-input" name_="Password" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $this->User->Password ) ); ?>"></input-component>
+                    <input-component result-class="form-input" result-name="Password" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $this->User->Password ) ); ?>"></input-component>
                 </div>
                 <div class="form-field-name">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Role' ) ); ?> :
                 </div>
                 <div>
-                    <input-component class_="form-input" name_="Role" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $this->User->Role ) ); ?>"></input-component>
+                    <input-component result-class="form-input" result-name="Role" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $this->User->Role ) ); ?>"></input-component>
                 </div>
                 <div class="form-field-name">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Email' ) ); ?> :
                 </div>
                 <div>
-                    <input-component class_="form-input" name_="Email" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $this->User->Email ) ); ?>"></input-component>
+                    <input-component result-class="form-input" result-name="Email" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $this->User->Email ) ); ?>"></input-component>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
                 </a>

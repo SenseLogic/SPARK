@@ -326,22 +326,8 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                     <\% GetTextBySlug( '{%title%}' ) %\> :
                 </div>
                 <div><~{%is_image%}<>
-                    <input class="form-input" name="{%attribute%}" type="text" value="<\# field_value #\>" oninput="HandleImagePathInputChangeEvent( this )"/>
-                    <div class="form-upload-container">
-                        <img class="form-upload-image" src="<\# field_value #\>" onerror="this.src='/static/image/admin/missing_image.svg'"/>
-                        <label class="form-upload-button">
-                            <img class="form-upload-icon" src="/static/image/admin/upload_icon.svg"/><input class="form-upload-file" type="file" accept="image/jpeg, image/png, image/webp, image/gif, image/svg" onchange="HandleImageFileInputChangeEvent( this )"/>
-                        </label>
-                        <img class="form-delete-icon" src="/static/image/admin/remove_icon.svg" onclick="HandleFileInputDeleteButtonClickEvent( this )"/>
-                    </div><><~{%is_video%}<>
-                    <input class="form-input" name="{%attribute%}" type="text" value="<\# field_value #\>" oninput="HandleVideoPathInputChangeEvent( this )"/>
-                    <div class="form-upload-container">
-                        <video class="form-upload-video" src="<\# field_value #\>" type="video/mp4" onerror="this.src='/static/video/admin/missing_video.mp4'"></video>
-                        <label class="form-upload-button">
-                            <img class="form-upload-icon" src="/static/image/admin/upload_icon.svg"/><input class="form-upload-file" type="file" accept="video/mp4" onchange="HandleVideoFileInputChangeEvent( this )"/>
-                        </label>
-                        <img class="form-delete-icon" src="/static/image/admin/remove_icon.svg" onclick="HandleFileInputDeleteButtonClickEvent( this )"/>
-                    </div><><~{%is_enumeration%}<>
+                    <image-path-input-component container-class="form-upload-container" result-class="form-input" result-name="{%attribute%}" type_="text" result-value="<\% GetValueText( field_value ) %\>" image-class="form-upload-image" image-error-code="this.src='/static/image/admin/missing_image.svg'" upload-button-class="form-upload-button" upload-button-image-class="form-upload-icon" upload-button-image-path="/static/image/admin/upload_icon.svg" upload-button-code="HandleImageFileInputChangeEvent( this )" delete-button-image-class="form-delete-icon" delete-image-code="HandleFileInputDeleteButtonClickEvent( this )"></image-path-input-component><><~{%is_video%}<>
+                    <video-path-input-component container-class="form-upload-container" result-class="form-input" result-name="{%attribute%}" type_="text" result-value="<\% GetValueText( field_value ) %\>" video-class="form-upload-video" video-error-code="this.src='/static/video/admin/missing_video.mp4'" upload-button-class="form-upload-button" upload-button-image-class="form-upload-icon" upload-button-image-path="/static/video/admin/upload_icon.svg" upload-button-code="HandleVideoFileInputChangeEvent( this )" delete-button-image-class="form-delete-icon" delete-button-code="HandleFileInputDeleteButtonClickEvent( this )"></video-path-input-component><><~{%is_enumeration%}<>
                     <select class="form-select" name="{%attribute%}"><~Map<>enumeration_<>{%enumeration%}<>^<>~<>
                         <option value="{*enumeration_1*}"<? if ( field_value === '{*enumeration_1*}' ) echo ' selected'; ?>>{*enumeration_2*}</option>~>
                     </select><><~{%is_reference%}<>
@@ -352,8 +338,8 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                             <option value="<\% GetValueText( {*reference_3*} ) %\>"<? if ( GetValueText( {*reference_3*} ) === field_value ) echo ' selected'; ?>><\% {*reference_4*} %\></option>~>
                         <? } ?>
                     </select><><~{%is_multilingual_text%}<>
-                    <multilingual-textarea-component result-class="form-textarea" result-name="{%attribute%}" language-codes="<\# LanguageCodes #\>" language-names="<\# LanguageNames #\>"><\% field_value %\></textarea-component><><~{%is_multilingual%}<>
-                    <multilingual-input-component result-class="form-input" result-name="{%attribute%}" type_="text" result-value="<\% GetValueText( field_value ) %\>" language-codes="<\# LanguageCodes #\>" language-names="<\# LanguageNames #\>"></input-component><><~{%is_text%}<>
+                    <multilingual-textarea-component result-class="form-multilingual-textarea-container" result-class="form-textarea" result-name="{%attribute%}" language-codes="<\# LanguageCodes #\>" language-names="<\# LanguageNames #\>"><\% field_value %\></textarea-component><><~{%is_multilingual%}<>
+                    <multilingual-input-component result-class="form-multilingual-input-container" result-class="form-textarea" result-name="{%attribute%}" type_="text" result-value="<\% GetValueText( field_value ) %\>" language-codes="<\# LanguageCodes #\>" language-names="<\# LanguageNames #\>"></input-component><><~{%is_text%}<>
                     <textarea-component result-class="form-textarea" result-name="{%attribute%}"><\% field_value %\></textarea-component><>
                     <input-component result-class="form-input" result-name="{%attribute%}" type_="text" result-value="<\% GetValueText( field_value ) %\>"></input-component>~>~>~>~>~>~>~>
                 </div>~>¨%>
@@ -450,22 +436,8 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                     <\% GetTextBySlug( '{%title%}' ) %\> :
                 </div>
                 <div><~{%is_image%}<>
-                    <input class="form-input" name="{%attribute%}" type="text" value="<\% .{#attribute#}.{%attribute%} %\>" oninput="HandleImagePathInputChangeEvent( this )"/>
-                    <div class="form-upload-container">
-                        <img class="form-upload-image" src="<\% .{#attribute#}.{%attribute%} %\>" onerror="this.src='/static/image/admin/missing_image.svg'"/>
-                        <label class="form-upload-button">
-                            <img class="form-upload-icon" src="/static/image/admin/upload_icon.svg"/><input class="form-upload-file" type="file" accept="image/jpeg, image/png, image/webp, image/gif, image/svg" onchange="HandleImageFileInputChangeEvent( this )"/>
-                        </label>
-                        <img class="form-delete-icon" src="/static/image/admin/remove_icon.svg" onclick="HandleFileInputDeleteButtonClickEvent( this )"/>
-                    </div><><~{%is_video%}<>
-                    <input class="form-input" name="{%attribute%}" type="text" value="<\% .{#attribute#}.{%attribute%} %\>" oninput="HandleVideoPathInputChangeEvent( this )"/>
-                    <div class="form-upload-container">
-                        <video class="form-upload-video" src="<\% .{#attribute#}.{%attribute%} %\>" type="video/mp4" onerror="this.src='/static/video/admin/missing_video.mp4'"></video>
-                        <label class="form-upload-button">
-                            <img class="form-upload-icon" src="/static/image/admin/upload_icon.svg"/><input class="form-upload-file" type="file" accept="video/mp4" onchange="HandleVideoFileInputChangeEvent( this )"/>
-                        </label>
-                        <img class="form-delete-icon" src="/static/image/admin/remove_icon.svg" onclick="HandleFileInputDeleteButtonClickEvent( this )"/>
-                    </div><><~{%is_enumeration%}<>
+                    <image-path-input-component container-class="form-upload-container" result-class="form-input" result-name="{%attribute%}" type_="text" result-value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" image-class="form-upload-image" image-error-code="this.src='/static/image/admin/missing_image.svg'" upload-button-class="form-upload-button" upload-button-image-class="form-upload-icon" upload-button-image-path="/static/image/admin/upload_icon.svg" upload-button-code="HandleImageFileInputChangeEvent( this )" delete-button-image-class="form-delete-icon" delete-image-code="HandleFileInputDeleteButtonClickEvent( this )"></image-path-input-component><><~{%is_video%}<>
+                    <video-path-input-component container-class="form-upload-container" result-class="form-input" result-name="{%attribute%}" type_="text" result-value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" video-class="form-upload-video" video-error-code="this.src='/static/video/admin/missing_video.mp4'" upload-button-class="form-upload-button" upload-button-image-class="form-upload-icon" upload-button-image-path="/static/video/admin/upload_icon.svg" upload-button-code="HandleVideoFileInputChangeEvent( this )" delete-button-image-class="form-delete-icon" delete-button-code="HandleFileInputDeleteButtonClickEvent( this )"></video-path-input-component><><~{%is_enumeration%}<>
                     <select class="form-select" name="{%attribute%}"><~Map<>enumeration_<>{%enumeration%}<>^<>~<>
                         <option value="{*enumeration_1*}"<? if ( .{#attribute#}.{%attribute%} === '{*enumeration_1*}' ) echo ' selected'; ?>>{*enumeration_2*}</option>~>
                     </select><><~{%is_reference%}<>
@@ -476,8 +448,8 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                             <option value="<\% GetValueText( {*reference_3*} ) %\>"<? if ( .{#attribute#}.{%attribute%} === {*reference_3*} ) echo ' selected'; ?>><\% {*reference_4*} %\></option>~>
                         <? } ?>
                     </select><><~{%is_multilingual_text%}<>
-                    <multilingual-textarea-component result-class="form-textarea" result-name="{%attribute%}" language-codes="<\# LanguageCodes #\>" language-names="<\# LanguageNames #\>"><\% .{#attribute#}.{%attribute%} %\></textarea-component><><~{%is_multilingual%}<>
-                    <multilingual-input-component result-class="form-input" result-name="{%attribute%}" type_="text" result-value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" language-codes="<\# LanguageCodes #\>" language-names="<\# LanguageNames #\>"></input-component><><~{%is_text%}<>
+                    <multilingual-textarea-component result-class="form-multilingual-textarea-container" result-class="form-textarea" result-name="{%attribute%}" language-codes="<\# LanguageCodes #\>" language-names="<\# LanguageNames #\>"><\% .{#attribute#}.{%attribute%} %\></textarea-component><><~{%is_multilingual%}<>
+                    <multilingual-input-component result-class="form-multilingual-input-container" result-class="form-textarea" result-name="{%attribute%}" type_="text" result-value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" language-codes="<\# LanguageCodes #\>" language-names="<\# LanguageNames #\>"></input-component><><~{%is_text%}<>
                     <textarea-component result-class="form-textarea" result-name="{%attribute%}"><\% .{#attribute#}.{%attribute%} %\></textarea-component><>
                     <input-component result-class="form-input" result-name="{%attribute%}" type_="text" result-value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>"></input-component>~>~>~>~>~>~>~>
                 </div>~>$>
@@ -512,14 +484,8 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                     <\% GetTextBySlug( '{%title%}' ) %\> :
                 </div>
                 <div><~{%is_image%}<>
-                    <input class="form-input" name="{%attribute%}" type="text" value="<\% .{#attribute#}.{%attribute%} %\>" readonly/>
-                    <div class="form-upload-container">
-                        <img class="form-upload-image" src="<\% .{#attribute#}.{%attribute%} %\>" onerror="this.src='/static/image/admin/missing_image.svg'"/>
-                    </div><><~{%is_video%}<>
-                    <input class="form-input" name="{%attribute%}" type="text" value="<\% .{#attribute#}.{%attribute%} %\>" readonly/>
-                    <div class="form-upload-container">
-                        <video class="form-upload-video" src="<\% .{#attribute#}.{%attribute%} %\>" type="video/mp4" onerror="this.src='/static/video/admin/missing_video.mp4'"></video>
-                    </div><><~{%is_enumeration%}<>
+                    <image-path-input-component container-class="form-upload-container" result-class="form-input" result-name="{%attribute%}" type_="text" result-value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" result-readonly image-class="form-upload-image" image-error-code="this.src='/static/image/admin/missing_image.svg'"></image-path-input-component><><~{%is_video%}<>
+                    <video-path-input-component container-class="form-upload-container" result-class="form-input" result-name="{%attribute%}" type_="text" result-value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" result-readonly video-class="form-upload-video" video-error-code="this.src='/static/video/admin/missing_video.mp4'"></video-path-input-component><><~{%is_enumeration%}<>
                     <select class="form-select" name="{%attribute%}" readonly><~Map<>enumeration_<>{%enumeration%}<>^<>~<>
                         <option value="{*enumeration_1*}"<? if ( .{#attribute#}.{%attribute%} === '{*enumeration_1*}' ) echo ' selected'; ?>>{*enumeration_2*}</option>~>
                     </select><><~{%is_reference%}<>
@@ -530,8 +496,8 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                             <option value="<\% GetValueText( {*reference_3*} ) %\>"<? if ( .{#attribute#}.{%attribute%} === {*reference_3*} ) echo ' selected'; ?>><\% {*reference_4*} %\></option>~>
                         <? } ?>
                     </select><><~{%is_multilingual_text%}<>
-                    <multilingual-textarea-component result-class="form-textarea" result-name="{%attribute%}" result-readonly language-codes="<\# LanguageCodes #\>" language-names="<\# LanguageNames #\>"><\% .{#attribute#}.{%attribute%} %\></textarea-component><><~{%is_multilingual%}<>
-                    <multilingual-input-component result-class="form-input" result-name="{%attribute%}" type_="text" result-value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" result-readonly language-codes="<\# LanguageCodes #\>" language-names="<\# LanguageNames #\>"></input-component><><~{%is_text%}<>
+                    <multilingual-textarea-component result-class="form-multilingual-textarea-container" result-class="form-textarea" result-name="{%attribute%}" result-readonly language-codes="<\# LanguageCodes #\>" language-names="<\# LanguageNames #\>"><\% .{#attribute#}.{%attribute%} %\></textarea-component><><~{%is_multilingual%}<>
+                    <multilingual-input-component result-class="form-multilingual-input-container" result-class="form-textarea" result-name="{%attribute%}" type_="text" result-value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" result-readonly language-codes="<\# LanguageCodes #\>" language-names="<\# LanguageNames #\>"></input-component><><~{%is_text%}<>
                     <textarea-component result-class="form-textarea" result-name="{%attribute%}" result-readonly><\% .{#attribute#}.{%attribute%} %\></textarea-component><>
                     <input-component result-class="form-input" result-name="{%attribute%}" type_="text" result-value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" result-readonly></input-component>~>~>~>~>~>~>~>
                 </div>~>$>
@@ -565,14 +531,8 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                 <\% GetTextBySlug( '{%title%}' ) %\> :
             </div>
             <div><~{%is_image%}<>
-                <input class="form-input" name="{%attribute%}" type="text" value="<\% .{#attribute#}.{%attribute%} %\>" readonly/>
-                <div class="form-upload-container">
-                    <img class="form-upload-image" src="<\% .{#attribute#}.{%attribute%} %\>" onerror="this.src='/static/image/admin/missing_image.svg'"/>
-                </div><><~{%is_video%}<>
-                <input class="form-input" name="{%attribute%}" type="text" value="<\% .{#attribute#}.{%attribute%} %\>" readonly/>
-                <div class="form-upload-container">
-                    <video class="form-upload-video" src="<\% .{#attribute#}.{%attribute%} %\>" type="video/mp4" onerror="this.src='/static/video/admin/missing_video.mp4'"></video>
-                </div><><~{%is_enumeration%}<>
+                <image-path-input-component container-class="form-upload-container" result-class="form-input" result-name="{%attribute%}" type_="text" result-value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" result-readonly image-class="form-upload-image" image-error-code="this.src='/static/image/admin/missing_image.svg'"></image-path-input-component><><~{%is_video%}<>
+                <video-path-input-component container-class="form-upload-container" result-class="form-input" result-name="{%attribute%}" type_="text" result-value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" result-readonly video-class="form-upload-video" video-error-code="this.src='/static/video/admin/missing_video.mp4'"></video-path-input-component><><~{%is_enumeration%}<>
                 <select class="form-select" name="{%attribute%}" readonly><~Map<>enumeration_<>{%enumeration%}<>^<>~<>
                     <option value="{*enumeration_1*}"<? if ( .{#attribute#}.{%attribute%} === '{*enumeration_1*}' ) echo ' selected'; ?>>{*enumeration_2*}</option>~>
                 </select><><~{%is_reference%}<>
@@ -677,14 +637,8 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                             <\% GetTextBySlug( '{%title%}' ) %\> :
                         </div>
                         <div><~{%is_image%}<>
-                            <input class="form-input" name="{%attribute%}" type="text" value="<\% {#variable#}.{%attribute%} %\>" readonly/>
-                            <div class="form-upload-container">
-                                <img class="form-upload-image" src="<\% {#variable#}.{%attribute%} %\>" onerror="this.src='/static/image/admin/missing_image.svg'"/>
-                            </div><><~{%is_video%}<>
-                            <input class="form-input" name="{%attribute%}" type="text" value="<\% {#variable#}.{%attribute%} %\>" readonly/>
-                            <div class="form-upload-container">
-                                <video class="form-upload-video" src="<\% {#variable#}.{%attribute%} %\>" type="video/mp4" onerror="this.src='/static/video/admin/missing_video.mp4'"></video>
-                            </div><><~{%is_enumeration%}<>
+                            <image-path-input-component container-class="form-upload-container" result-class="form-input" result-name="{%attribute%}" type_="text" result-value="<\% GetValueText( {#variable#}.{%attribute%} ) %\>" result-readonly image-class="form-upload-image" image-error-code="this.src='/static/image/admin/missing_image.svg'"></image-path-input-component><><~{%is_video%}<>
+                            <video-path-input-component container-class="form-upload-container" result-class="form-input" result-name="{%attribute%}" type_="text" result-value="<\% GetValueText( {#variable#}.{%attribute%} ) %\>" result-readonly video-class="form-upload-video" video-error-code="this.src='/static/video/admin/missing_video.mp4'"></video-path-input-component><><~{%is_enumeration%}<>
                             <select class="form-select" name="{%attribute%}" readonly><~Map<>enumeration_<>{%enumeration%}<>^<>~<>
                                 <option value="{*enumeration_1*}"<? if ( {#variable#}.{%attribute%} === '{*enumeration_1*}' ) echo ' selected'; ?>>{*enumeration_2*}</option>~>
                             </select><><~{%is_reference%}<>

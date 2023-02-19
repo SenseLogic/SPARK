@@ -66,25 +66,25 @@
                             <% GetTextBySlug( 'Pseudonym' ) %> :
                         </div>
                         <div>
-                            <input-component class_="form-input" name_="Pseudonym" type_="text" value_="<% GetValueText( user.Pseudonym ) %>" readonly_></input-component>
+                            <input-component result-class="form-input" result-name="Pseudonym" type_="text" result-value="<% GetValueText( user.Pseudonym ) %>" result-readonly></input-component>
                         </div>
                         <div class="form-field-name">
                             <% GetTextBySlug( 'Password' ) %> :
                         </div>
                         <div>
-                            <input-component class_="form-input" name_="Password" type_="text" value_="<% GetValueText( user.Password ) %>" readonly_></input-component>
+                            <input-component result-class="form-input" result-name="Password" type_="text" result-value="<% GetValueText( user.Password ) %>" result-readonly></input-component>
                         </div>
                         <div class="form-field-name">
                             <% GetTextBySlug( 'Role' ) %> :
                         </div>
                         <div>
-                            <input-component class_="form-input" name_="Role" type_="text" value_="<% GetValueText( user.Role ) %>" readonly_></input-component>
+                            <input-component result-class="form-input" result-name="Role" type_="text" result-value="<% GetValueText( user.Role ) %>" result-readonly></input-component>
                         </div>
                         <div class="form-field-name">
                             <% GetTextBySlug( 'Email' ) %> :
                         </div>
                         <div>
-                            <input-component class_="form-input" name_="Email" type_="text" value_="<% GetValueText( user.Email ) %>" readonly_></input-component>
+                            <input-component result-class="form-input" result-name="Email" type_="text" result-value="<% GetValueText( user.Email ) %>" result-readonly></input-component>
                         </div>
                     </div>
                     <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>

@@ -7,43 +7,43 @@
                     <% GetTextBySlug( 'Name' ) %> :
                 </div>
                 <div>
-                    <input-component class_="form-input" name_="Name" type_="text" value_="<% GetValueText( .Contact.Name ) %>" readonly_></input-component>
+                    <input-component result-class="form-input" result-name="Name" type_="text" result-value="<% GetValueText( .Contact.Name ) %>" result-readonly></input-component>
                 </div>
                 <div class="form-field-name">
                     <% GetTextBySlug( 'Company' ) %> :
                 </div>
                 <div>
-                    <input-component class_="form-input" name_="Company" type_="text" value_="<% GetValueText( .Contact.Company ) %>" readonly_></input-component>
+                    <input-component result-class="form-input" result-name="Company" type_="text" result-value="<% GetValueText( .Contact.Company ) %>" result-readonly></input-component>
                 </div>
                 <div class="form-field-name">
                     <% GetTextBySlug( 'Email' ) %> :
                 </div>
                 <div>
-                    <input-component class_="form-input" name_="Email" type_="text" value_="<% GetValueText( .Contact.Email ) %>" readonly_></input-component>
+                    <input-component result-class="form-input" result-name="Email" type_="text" result-value="<% GetValueText( .Contact.Email ) %>" result-readonly></input-component>
                 </div>
                 <div class="form-field-name">
                     <% GetTextBySlug( 'Phone' ) %> :
                 </div>
                 <div>
-                    <input-component class_="form-input" name_="Phone" type_="text" value_="<% GetValueText( .Contact.Phone ) %>" readonly_></input-component>
+                    <input-component result-class="form-input" result-name="Phone" type_="text" result-value="<% GetValueText( .Contact.Phone ) %>" result-readonly></input-component>
                 </div>
                 <div class="form-field-name">
                     <% GetTextBySlug( 'Subject' ) %> :
                 </div>
                 <div>
-                    <input-component class_="form-input" name_="Subject" type_="text" value_="<% GetValueText( .Contact.Subject ) %>" readonly_></input-component>
+                    <input-component result-class="form-input" result-name="Subject" type_="text" result-value="<% GetValueText( .Contact.Subject ) %>" result-readonly></input-component>
                 </div>
                 <div class="form-field-name">
                     <% GetTextBySlug( 'Message' ) %> :
                 </div>
                 <div>
-                    <textarea-component class_="form-textarea" name_="Message" readonly_><% .Contact.Message %></textarea-component>
+                    <textarea-component result-class="form-textarea" result-name="Message" result-readonly><% .Contact.Message %></textarea-component>
                 </div>
                 <div class="form-field-name">
                     <% GetTextBySlug( 'Date Time' ) %> :
                 </div>
                 <div>
-                    <input-component class_="form-input" name_="DateTime" type_="text" value_="<% GetValueText( .Contact.DateTime ) %>" readonly_></input-component>
+                    <input-component result-class="form-input" result-name="DateTime" type_="text" result-value="<% GetValueText( .Contact.DateTime ) %>" result-readonly></input-component>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
                 </a>

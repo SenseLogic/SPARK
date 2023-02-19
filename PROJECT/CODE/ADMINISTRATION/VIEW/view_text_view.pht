@@ -6,13 +6,13 @@
                 <% GetTextBySlug( 'Slug' ) %> :
             </div>
             <div>
-                <input-component class_="form-input" name_="Slug" type_="text" value_="<% GetValueText( .Text.Slug ) %>" readonly_></input-component>
+                <input-component result-class="form-input" result-name="Slug" type_="text" result-value="<% GetValueText( .Text.Slug ) %>" result-readonly></input-component>
             </div>
             <div class="form-field-name">
                 <% GetTextBySlug( 'Text' ) %> :
             </div>
             <div>
-                <textarea-component class_="form-textarea" name_="Text" readonly_ language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"><% .Text.Text %></textarea-component>
+                <textarea-component result-class="form-textarea" result-name="Text" result-readonly language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"><% .Text.Text %></textarea-component>
             </div>
             <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
             </a>

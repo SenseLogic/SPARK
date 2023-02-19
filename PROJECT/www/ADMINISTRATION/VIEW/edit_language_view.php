@@ -65,19 +65,19 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Code' ) ); ?> :
                 </div>
                 <div>
-                    <input-component class_="form-input" name_="Code" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $this->Language->Code ) ); ?>"></input-component>
+                    <input-component result-class="form-input" result-name="Code" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $this->Language->Code ) ); ?>"></input-component>
                 </div>
                 <div class="form-field-name">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Number' ) ); ?> :
                 </div>
                 <div>
-                    <input-component class_="form-input" name_="Number" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $this->Language->Number ) ); ?>"></input-component>
+                    <input-component result-class="form-input" result-name="Number" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $this->Language->Number ) ); ?>"></input-component>
                 </div>
                 <div class="form-field-name">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Text' ) ); ?> :
                 </div>
                 <div>
-                    <multilingual-input-component class_="form-input" name_="Text" type_="text" value_="<?php echo htmlspecialchars( GetValueText( $this->Language->Text ) ); ?>" language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></input-component>
+                    <multilingual-input-component result-class="form-multilingual-input-container" result-class="form-textarea" result-name="Text" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $this->Language->Text ) ); ?>" language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></input-component>
                 </div>
                 <div class="form-field-name">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Is Active' ) ); ?> :
