@@ -329,7 +329,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Title' ) ); ?> :
                 </div>
                 <div>
-                    <multilingual-input-component result-class="form-multilingual-input-container" result-class="form-textarea" result-name="Title" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></input-component>
+                    <multilingual-input-component container-class="form-multilingual-input-container" result-class="form-textarea" result-name="Title" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-input-component>
                 </div>
                 <?php
                      $field_name = 'Text';
@@ -347,7 +347,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Text' ) ); ?> :
                 </div>
                 <div>
-                    <multilingual-textarea-component result-class="form-multilingual-textarea-container" result-class="form-textarea" result-name="Text" language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"><?php echo htmlspecialchars( $field_value ); ?></textarea-component>
+                    <multilingual-textarea-component container-class="form-multilingual-textarea-container" result-class="form-textarea" result-name="Text" language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"><?php echo htmlspecialchars( $field_value ); ?></multilingual-textarea-component>
                 </div>
                 <?php
                      $field_name = 'ImagePath';
@@ -365,7 +365,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Image Path' ) ); ?> :
                 </div>
                 <div>
-                    <image-path-input-component container-class="form-upload-container" result-class="form-input" result-name="ImagePath" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" image-class="form-upload-image" image-error-code="this.src='/static/image/admin/missing_image.svg'" upload-button-class="form-upload-button" upload-button-image-class="form-upload-icon" upload-button-image-path="/static/image/admin/upload_icon.svg" upload-button-code="HandleImageFileInputChangeEvent( this )" delete-button-image-class="form-delete-icon" delete-image-code="HandleFileInputDeleteButtonClickEvent( this )"></image-path-input-component>
+                    <image-path-input-component container-class="form-upload-container" result-class="form-input" result-name="ImagePath" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" image-class="form-upload-image" error-image-path="/static/image/admin/missing_image.svg" upload-button-class="form-upload-button" upload-button-image-class="form-upload-icon" upload-button-image-path="/static/image/admin/upload_icon.svg" upload-api-url="/admin/upload/image" delete-button-image-class="form-delete-icon" delete-image-code="HandleFileInputDeleteButtonClickEvent( this )"></image-path-input-component>
                 </div>
                 <?php
                      $field_name = 'ImageVerticalPosition';
@@ -464,7 +464,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Video Path' ) ); ?> :
                 </div>
                 <div>
-                    <video-path-input-component container-class="form-upload-container" result-class="form-input" result-name="VideoPath" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" video-class="form-upload-video" video-error-code="this.src='/static/video/admin/missing_video.mp4'" upload-button-class="form-upload-button" upload-button-image-class="form-upload-icon" upload-button-image-path="/static/video/admin/upload_icon.svg" upload-button-code="HandleVideoFileInputChangeEvent( this )" delete-button-image-class="form-delete-icon" delete-button-code="HandleFileInputDeleteButtonClickEvent( this )"></video-path-input-component>
+                    <video-path-input-component container-class="form-upload-container" result-class="form-input" result-name="VideoPath" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" video-class="form-upload-video" error-video-path="/static/video/admin/missing_video.mp4" upload-button-class="form-upload-button" upload-button-image-class="form-upload-icon" upload-button-image-path="/static/image/admin/upload_icon.svg" upload-api-url="/admin/upload/video" delete-button-image-class="form-delete-icon" delete-api-url="/admin/delete/file"></video-path-input-component>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
                 </a>

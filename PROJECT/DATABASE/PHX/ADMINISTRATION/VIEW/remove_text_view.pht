@@ -13,7 +13,7 @@
                     <% GetTextBySlug( 'Text' ) %> :
                 </div>
                 <div>
-                    <multilingual-textarea-component result-class="form-multilingual-textarea-container" result-class="form-textarea" result-name="Text" result-readonly language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"><% .Text.Text %></textarea-component>
+                    <multilingual-textarea-component container-class="form-multilingual-textarea-container" result-class="form-textarea" result-name="Text" result-readonly language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"><% .Text.Text %></multilingual-textarea-component>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
                 </a>

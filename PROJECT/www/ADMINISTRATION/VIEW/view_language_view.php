@@ -18,7 +18,7 @@
                 <?php echo htmlspecialchars( GetTextBySlug( 'Text' ) ); ?> :
             </div>
             <div>
-                <input-component result-class="form-input" result-name="Text" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $this->Language->Text ) ); ?>" result-readonly language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></input-component>
+                <multilingual-input-component container-class="form-input" result-name="Text" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $this->Language->Text ) ); ?>" result-readonly language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-input-component>
             </div>
             <div class="form-field-name">
                 <?php echo htmlspecialchars( GetTextBySlug( 'Is Active' ) ); ?> :

@@ -66,7 +66,7 @@
                             <% GetTextBySlug( 'Text' ) %> :
                         </div>
                         <div>
-                            <textarea-component result-class="form-textarea" result-name="Text" result-readonly language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"><% text.Text %></textarea-component>
+                            <multilingual-textarea-component container-class="form-textarea" result-name="Text" result-readonly language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"><% text.Text %></multilingual-textarea-component>
                         </div>
                     </div>
                     <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>

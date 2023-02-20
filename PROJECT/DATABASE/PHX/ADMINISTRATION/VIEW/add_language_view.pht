@@ -141,7 +141,7 @@
                     <% GetTextBySlug( 'Text' ) %> :
                 </div>
                 <div>
-                    <multilingual-input-component result-class="form-multilingual-input-container" result-class="form-textarea" result-name="Text" type_="text" result-value="<% GetValueText( field_value ) %>" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></input-component>
+                    <multilingual-input-component container-class="form-multilingual-input-container" result-class="form-textarea" result-name="Text" type_="text" result-value="<% GetValueText( field_value ) %>" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-input-component>
                 </div>
                 <?
                     var field_name = 'IsActive';

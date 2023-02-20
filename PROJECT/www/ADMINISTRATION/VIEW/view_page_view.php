@@ -50,25 +50,25 @@
                 <?php echo htmlspecialchars( GetTextBySlug( 'Title' ) ); ?> :
             </div>
             <div>
-                <input-component result-class="form-input" result-name="Title" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->Title ) ); ?>" result-readonly language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></input-component>
+                <multilingual-input-component container-class="form-input" result-name="Title" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->Title ) ); ?>" result-readonly language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-input-component>
             </div>
             <div class="form-field-name">
                 <?php echo htmlspecialchars( GetTextBySlug( 'Heading' ) ); ?> :
             </div>
             <div>
-                <input-component result-class="form-input" result-name="Heading" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->Heading ) ); ?>" result-readonly language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></input-component>
+                <multilingual-input-component container-class="form-input" result-name="Heading" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->Heading ) ); ?>" result-readonly language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-input-component>
             </div>
             <div class="form-field-name">
                 <?php echo htmlspecialchars( GetTextBySlug( 'Teaser' ) ); ?> :
             </div>
             <div>
-                <textarea-component result-class="form-textarea" result-name="Teaser" result-readonly language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"><?php echo htmlspecialchars( $this->Page->Teaser ); ?></textarea-component>
+                <multilingual-textarea-component container-class="form-textarea" result-name="Teaser" result-readonly language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"><?php echo htmlspecialchars( $this->Page->Teaser ); ?></multilingual-textarea-component>
             </div>
             <div class="form-field-name">
                 <?php echo htmlspecialchars( GetTextBySlug( 'Image Path' ) ); ?> :
             </div>
             <div>
-                <image-path-input-component container-class="form-upload-container" result-class="form-input" result-name="ImagePath" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->ImagePath ) ); ?>" result-readonly image-class="form-upload-image" image-error-code="this.src='/static/image/admin/missing_image.svg'"></image-path-input-component>
+                <image-path-input-component container-class="form-upload-container" result-class="form-input" result-name="ImagePath" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->ImagePath ) ); ?>" result-readonly image-class="form-upload-image" error-image-path="/static/image/admin/missing_image.svg"></image-path-input-component>
             </div>
             <div class="form-field-name">
                 <?php echo htmlspecialchars( GetTextBySlug( 'Image Vertical Position' ) ); ?> :
@@ -110,25 +110,25 @@
                 <?php echo htmlspecialchars( GetTextBySlug( 'Video Path' ) ); ?> :
             </div>
             <div>
-                <video-path-input-component container-class="form-upload-container" result-class="form-input" result-name="VideoPath" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->VideoPath ) ); ?>" result-readonly video-class="form-upload-video" video-error-code="this.src='/static/video/admin/missing_video.mp4'"></video-path-input-component>
+                <video-path-input-component container-class="form-upload-container" result-class="form-input" result-name="VideoPath" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->VideoPath ) ); ?>" result-readonly video-class="form-upload-video" error-video-path="/static/video/admin/missing_video.mp4"></video-path-input-component>
             </div>
             <div class="form-field-name">
                 <?php echo htmlspecialchars( GetTextBySlug( 'Meta Title' ) ); ?> :
             </div>
             <div>
-                <input-component result-class="form-input" result-name="MetaTitle" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->MetaTitle ) ); ?>" result-readonly language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></input-component>
+                <multilingual-input-component container-class="form-input" result-name="MetaTitle" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->MetaTitle ) ); ?>" result-readonly language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-input-component>
             </div>
             <div class="form-field-name">
                 <?php echo htmlspecialchars( GetTextBySlug( 'Meta Description' ) ); ?> :
             </div>
             <div>
-                <textarea-component result-class="form-textarea" result-name="MetaDescription" result-readonly language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"><?php echo htmlspecialchars( $this->Page->MetaDescription ); ?></textarea-component>
+                <multilingual-textarea-component container-class="form-textarea" result-name="MetaDescription" result-readonly language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"><?php echo htmlspecialchars( $this->Page->MetaDescription ); ?></multilingual-textarea-component>
             </div>
             <div class="form-field-name">
                 <?php echo htmlspecialchars( GetTextBySlug( 'Meta Image Path' ) ); ?> :
             </div>
             <div>
-                <image-path-input-component container-class="form-upload-container" result-class="form-input" result-name="MetaImagePath" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->MetaImagePath ) ); ?>" result-readonly image-class="form-upload-image" image-error-code="this.src='/static/image/admin/missing_image.svg'"></image-path-input-component>
+                <image-path-input-component container-class="form-upload-container" result-class="form-input" result-name="MetaImagePath" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->MetaImagePath ) ); ?>" result-readonly image-class="form-upload-image" error-image-path="/static/image/admin/missing_image.svg"></image-path-input-component>
             </div>
             <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
             </a>

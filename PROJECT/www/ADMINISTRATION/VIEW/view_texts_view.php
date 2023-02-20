@@ -66,7 +66,7 @@
                             <?php echo htmlspecialchars( GetTextBySlug( 'Text' ) ); ?> :
                         </div>
                         <div>
-                            <textarea-component result-class="form-textarea" result-name="Text" result-readonly language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"><?php echo htmlspecialchars( $text->Text ); ?></textarea-component>
+                            <multilingual-textarea-component container-class="form-textarea" result-name="Text" result-readonly language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"><?php echo htmlspecialchars( $text->Text ); ?></multilingual-textarea-component>
                         </div>
                     </div>
                     <?php if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>

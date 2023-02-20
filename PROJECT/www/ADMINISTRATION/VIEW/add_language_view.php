@@ -141,7 +141,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Text' ) ); ?> :
                 </div>
                 <div>
-                    <multilingual-input-component result-class="form-multilingual-input-container" result-class="form-textarea" result-name="Text" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></input-component>
+                    <multilingual-input-component container-class="form-multilingual-input-container" result-class="form-textarea" result-name="Text" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-input-component>
                 </div>
                 <?php
                      $field_name = 'IsActive';
