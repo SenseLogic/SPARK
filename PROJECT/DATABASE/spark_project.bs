@@ -27,7 +27,7 @@ spark-project
         Route : STRING | processed
         TypeSlug : PAGE_TYPE.Slug | processed, is_slug, is_reference, reference page_type~.PageTypeArray~page_type.Slug~GetUntranslatedText( page_type.Title )
         Number : FLOAT32 | ascending
-        LanguageCodeArray : LIST[ LANGUAGE.Code ]
+        LanguageCodeArray : LIST[ LANGUAGE.Code ] | is_list
         IsActive : BOOL = "true" | is_enumeration, enumeration 0~False^1~True, has_default_value, default_value 1
         Title : STRING = "{{latin 1 1 4 6}}¨fr:{{latin 1 1 4 6}}" | optional, is_multilingual
         Heading : STRING = "{{Title}}" | optional, is_multilingual

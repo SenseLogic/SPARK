@@ -63,7 +63,7 @@
                     <% GetTextBySlug( 'Language Code Array' ) %> :
                 </div>
                 <div>
-                    <input-component result-class="form-input" result-name="LanguageCodeArray" type_="text" result-value="<% GetValueText( .Block.LanguageCodeArray ) %>" result-readonly></input-component>
+                    <input-list-component result-class="form-input" result-name="LanguageCodeArray" type_="text" result-value="<% GetValueText( .Block.LanguageCodeArray ) %>" result-readonly></input-list-component>
                 </div>
                 <div class="form-field-name">
                     <% GetTextBySlug( 'Minimum Height' ) %> :

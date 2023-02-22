@@ -158,7 +158,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Language Code Array' ) ); ?> :
                 </div>
                 <div>
-                    <input-component result-class="form-input" result-name="LanguageCodeArray" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->LanguageCodeArray ) ); ?>"></input-component>
+                    <input-list-component result-class="form-input" result-name="LanguageCodeArray" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->LanguageCodeArray ) ); ?>"></input-list-component>
                 </div>
                 <div class="form-field-name">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Is Active' ) ); ?> :

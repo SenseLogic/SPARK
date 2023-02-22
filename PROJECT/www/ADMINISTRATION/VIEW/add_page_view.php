@@ -246,7 +246,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Language Code Array' ) ); ?> :
                 </div>
                 <div>
-                    <input-component result-class="form-input" result-name="LanguageCodeArray" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
+                    <input-list-component result-class="form-input" result-name="LanguageCodeArray" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-list-component>
                 </div>
                 <?php
                      $field_name = 'IsActive';

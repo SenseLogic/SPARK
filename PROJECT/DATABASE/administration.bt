@@ -337,11 +337,15 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                         <? foreach ( var {*reference_1*}; {*reference_1*}_array ) { ?>
                             <option value="<\% GetValueText( {*reference_3*} ) %\>"<? if ( GetValueText( {*reference_3*} ) === field_value ) echo ' selected'; ?>><\% {*reference_4*} %\></option>~>
                         <? } ?>
-                    </select><><~{%is_multilingual_text%}<>
+                    </select><><~{%is_multilingual_text_list%}<>
+                    <multilingual-textarea-list-component container-class="form-multilingual-textarea-container" result-class="form-textarea" result-name="{%attribute%}" language-codes="<\# LanguageCodes #\>" language-names="<\# LanguageNames #\>"><\% field_value %\></multilingual-textarea-list-component><><~{%is_multilingual_list%}<>
+                    <multilingual-input-list-component container-class="form-multilingual-input-container" result-class="form-textarea" result-name="{%attribute%}" type_="text" result-value="<\% GetValueText( field_value ) %\>" language-codes="<\# LanguageCodes #\>" language-names="<\# LanguageNames #\>"></multilingual-input-list-component><><~{%is_text_list%}<>
+                    <textarea-list-component result-class="form-textarea" result-name="{%attribute%}"><\% field_value %\></textarea-list-component><><~{%is_list%}<>
+                    <input-list-component result-class="form-input" result-name="{%attribute%}" type_="text" result-value="<\% GetValueText( field_value ) %\>"></input-list-component><><~{%is_multilingual_text%}<>
                     <multilingual-textarea-component container-class="form-multilingual-textarea-container" result-class="form-textarea" result-name="{%attribute%}" language-codes="<\# LanguageCodes #\>" language-names="<\# LanguageNames #\>"><\% field_value %\></multilingual-textarea-component><><~{%is_multilingual%}<>
                     <multilingual-input-component container-class="form-multilingual-input-container" result-class="form-textarea" result-name="{%attribute%}" type_="text" result-value="<\% GetValueText( field_value ) %\>" language-codes="<\# LanguageCodes #\>" language-names="<\# LanguageNames #\>"></multilingual-input-component><><~{%is_text%}<>
                     <textarea-component result-class="form-textarea" result-name="{%attribute%}"><\% field_value %\></textarea-component><>
-                    <input-component result-class="form-input" result-name="{%attribute%}" type_="text" result-value="<\% GetValueText( field_value ) %\>"></input-component>~>~>~>~>~>~>~>
+                    <input-component result-class="form-input" result-name="{%attribute%}" type_="text" result-value="<\% GetValueText( field_value ) %\>"></input-component>~>~>~>~>~>~>~>~>~>~>~>
                 </div>~>¨%>
                 <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
                 </a>
@@ -447,11 +451,15 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                         <? foreach ( var {*reference_1*}; {*reference_1*}_array ) { ?>
                             <option value="<\% GetValueText( {*reference_3*} ) %\>"<? if ( .{#attribute#}.{%attribute%} === {*reference_3*} ) echo ' selected'; ?>><\% {*reference_4*} %\></option>~>
                         <? } ?>
-                    </select><><~{%is_multilingual_text%}<>
+                    </select><><~{%is_multilingual_text_list%}<>
+                    <multilingual-textarea-list-component container-class="form-multilingual-textarea-container" result-class="form-textarea" result-name="{%attribute%}" language-codes="<\# LanguageCodes #\>" language-names="<\# LanguageNames #\>"><\% .{#attribute#}.{%attribute%} %\></multilingual-textarea-list-component><><~{%is_multilingual_list%}<>
+                    <multilingual-input-list-component container-class="form-multilingual-input-container" result-class="form-textarea" result-name="{%attribute%}" type_="text" result-value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" language-codes="<\# LanguageCodes #\>" language-names="<\# LanguageNames #\>"></multilingual-input-list-component><><~{%is_text_list%}<>
+                    <textarea-list-component result-class="form-textarea" result-name="{%attribute%}"><\% .{#attribute#}.{%attribute%} %\></textarea-list-component><><~{%is_list%}<>
+                    <input-list-component result-class="form-input" result-name="{%attribute%}" type_="text" result-value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>"></input-list-component><><~{%is_multilingual_text%}<>
                     <multilingual-textarea-component container-class="form-multilingual-textarea-container" result-class="form-textarea" result-name="{%attribute%}" language-codes="<\# LanguageCodes #\>" language-names="<\# LanguageNames #\>"><\% .{#attribute#}.{%attribute%} %\></multilingual-textarea-component><><~{%is_multilingual%}<>
                     <multilingual-input-component container-class="form-multilingual-input-container" result-class="form-textarea" result-name="{%attribute%}" type_="text" result-value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" language-codes="<\# LanguageCodes #\>" language-names="<\# LanguageNames #\>"></multilingual-input-component><><~{%is_text%}<>
                     <textarea-component result-class="form-textarea" result-name="{%attribute%}"><\% .{#attribute#}.{%attribute%} %\></textarea-component><>
-                    <input-component result-class="form-input" result-name="{%attribute%}" type_="text" result-value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>"></input-component>~>~>~>~>~>~>~>
+                    <input-component result-class="form-input" result-name="{%attribute%}" type_="text" result-value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>"></input-component>~>~>~>~>~>~>~>~>~>~>~>
                 </div>~>$>
                 <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
                 </a>
@@ -495,11 +503,15 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                         <? foreach ( var {*reference_1*}; {*reference_1*}_array ) { ?>
                             <option value="<\% GetValueText( {*reference_3*} ) %\>"<? if ( .{#attribute#}.{%attribute%} === {*reference_3*} ) echo ' selected'; ?>><\% {*reference_4*} %\></option>~>
                         <? } ?>
-                    </select><><~{%is_multilingual_text%}<>
+                    </select><><~{%is_multilingual_text_list%}<>
+                    <multilingual-textarea-list-component container-class="form-multilingual-textarea-container" result-class="form-textarea" result-name="{%attribute%}" result-readonly language-codes="<\# LanguageCodes #\>" language-names="<\# LanguageNames #\>"><\% .{#attribute#}.{%attribute%} %\></multilingual-textarea-list-component><><~{%is_multilingual_list%}<>
+                    <multilingual-input-list-component container-class="form-multilingual-input-container" result-class="form-textarea" result-name="{%attribute%}" type_="text" result-value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" result-readonly language-codes="<\# LanguageCodes #\>" language-names="<\# LanguageNames #\>"></multilingual-input-list-component><><~{%is_text_list%}<>
+                    <textarea-list-component result-class="form-textarea" result-name="{%attribute%}" result-readonly><\% .{#attribute#}.{%attribute%} %\></textarea-list-component><><~{%is_list%}<>
+                    <input-list-component result-class="form-input" result-name="{%attribute%}" type_="text" result-value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" result-readonly></input-list-component><><~{%is_multilingual_text%}<>
                     <multilingual-textarea-component container-class="form-multilingual-textarea-container" result-class="form-textarea" result-name="{%attribute%}" result-readonly language-codes="<\# LanguageCodes #\>" language-names="<\# LanguageNames #\>"><\% .{#attribute#}.{%attribute%} %\></multilingual-textarea-component><><~{%is_multilingual%}<>
                     <multilingual-input-component container-class="form-multilingual-input-container" result-class="form-textarea" result-name="{%attribute%}" type_="text" result-value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" result-readonly language-codes="<\# LanguageCodes #\>" language-names="<\# LanguageNames #\>"></multilingual-input-component><><~{%is_text%}<>
                     <textarea-component result-class="form-textarea" result-name="{%attribute%}" result-readonly><\% .{#attribute#}.{%attribute%} %\></textarea-component><>
-                    <input-component result-class="form-input" result-name="{%attribute%}" type_="text" result-value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" result-readonly></input-component>~>~>~>~>~>~>~>
+                    <input-component result-class="form-input" result-name="{%attribute%}" type_="text" result-value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" result-readonly></input-component>~>~>~>~>~>~>~>~>~>~>~>
                 </div>~>$>
                 <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
                 </a>
@@ -542,11 +554,15 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                     <? foreach ( var {*reference_1*}; {*reference_1*}_array ) { ?>
                         <option value="<\% GetValueText( {*reference_3*} ) %\>"<? if ( .{#attribute#}.{%attribute%} === {*reference_3*} ) echo ' selected'; ?>><\% {*reference_4*} %\></option>~>
                     <? } ?>
-                </select><><~{%is_multilingual_text%}<>
+                </select><><~{%is_multilingual_text_list%}<>
+                <multilingual-textarea-list-component container-class="form-textarea" result-name="{%attribute%}" result-readonly language-codes="<\# LanguageCodes #\>" language-names="<\# LanguageNames #\>"><\% .{#attribute#}.{%attribute%} %\></multilingual-textarea-list-component><><~{%is_multilingual_list%}<>
+                <multilingual-input-list-component container-class="form-input" result-name="{%attribute%}" type_="text" result-value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" result-readonly language-codes="<\# LanguageCodes #\>" language-names="<\# LanguageNames #\>"></multilingual-input-list-component><><~{%is_text_list%}<>
+                <textarea-list-component result-class="form-textarea" result-name="{%attribute%}" result-readonly><\% .{#attribute#}.{%attribute%} %\></textarea-list-component><><~{%is_list%}<>
+                <input-list-component result-class="form-input" result-name="{%attribute%}" type_="text" result-value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" result-readonly></input-list-component><><~{%is_multilingual_text%}<>
                 <multilingual-textarea-component container-class="form-textarea" result-name="{%attribute%}" result-readonly language-codes="<\# LanguageCodes #\>" language-names="<\# LanguageNames #\>"><\% .{#attribute#}.{%attribute%} %\></multilingual-textarea-component><><~{%is_multilingual%}<>
                 <multilingual-input-component container-class="form-input" result-name="{%attribute%}" type_="text" result-value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" result-readonly language-codes="<\# LanguageCodes #\>" language-names="<\# LanguageNames #\>"></multilingual-input-component><><~{%is_text%}<>
                 <textarea-component result-class="form-textarea" result-name="{%attribute%}" result-readonly><\% .{#attribute#}.{%attribute%} %\></textarea-component><>
-                <input-component result-class="form-input" result-name="{%attribute%}" type_="text" result-value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" result-readonly></input-component>~>~>~>~>~>~>~>
+                <input-component result-class="form-input" result-name="{%attribute%}" type_="text" result-value="<\% GetValueText( .{#attribute#}.{%attribute%} ) %\>" result-readonly></input-component>~>~>~>~>~>~>~>~>~>~>~>
             </div>~>$>
             <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
             </a>
@@ -648,11 +664,15 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                                 <? foreach ( var {*reference_1*}; {*reference_1*}_array ) { ?>
                                     <option value="<\% GetValueText( {*reference_3*} ) %\>"<? if ( {#variable#}.{%attribute%} === {*reference_3*} ) echo ' selected'; ?>><\% {*reference_4*} %\></option>~>
                                 <? } ?>
-                            </select><><~{%is_multilingual_text%}<>
+                            </select><><~{%is_multilingual_text_list%}<>
+                            <multilingual-textarea-list-component container-class="form-textarea" result-name="{%attribute%}" result-readonly language-codes="<\# LanguageCodes #\>" language-names="<\# LanguageNames #\>"><\% {#variable#}.{%attribute%} %\></multilingual-textarea-list-component><><~{%is_multilingual_list%}<>
+                            <multilingual-input-list-component container-class="form-input" result-name="{%attribute%}" type_="text" result-value="<\% GetValueText( {#variable#}.{%attribute%} ) %\>" result-readonly language-codes="<\# LanguageCodes #\>" language-names="<\# LanguageNames #\>"></multilingual-input-list-component><><~{%is_text_list%}<>
+                            <textarea-list-component result-class="form-textarea" result-name="{%attribute%}" result-readonly><\% {#variable#}.{%attribute%} %\></textarea-list-component><><~{%is_list%}<>
+                            <input-list-component result-class="form-input" result-name="{%attribute%}" type_="text" result-value="<\% GetValueText( {#variable#}.{%attribute%} ) %\>" result-readonly></input-list-component><><~{%is_multilingual_text%}<>
                             <multilingual-textarea-component container-class="form-textarea" result-name="{%attribute%}" result-readonly language-codes="<\# LanguageCodes #\>" language-names="<\# LanguageNames #\>"><\% {#variable#}.{%attribute%} %\></multilingual-textarea-component><><~{%is_multilingual%}<>
                             <multilingual-input-component container-class="form-input" result-name="{%attribute%}" type_="text" result-value="<\% GetValueText( {#variable#}.{%attribute%} ) %\>" result-readonly language-codes="<\# LanguageCodes #\>" language-names="<\# LanguageNames #\>"></multilingual-input-component><><~{%is_text%}<>
                             <textarea-component result-class="form-textarea" result-name="{%attribute%}" result-readonly><\% {#variable#}.{%attribute%} %\></textarea-component><>
-                            <input-component result-class="form-input" result-name="{%attribute%}" type_="text" result-value="<\% GetValueText( {#variable#}.{%attribute%} ) %\>" result-readonly></input-component>~>~>~>~>~>~>~>
+                            <input-component result-class="form-input" result-name="{%attribute%}" type_="text" result-value="<\% GetValueText( {#variable#}.{%attribute%} ) %\>" result-readonly></input-component>~>~>~>~>~>~>~>~>~>~>~>
                         </div>~>$>
                     </div>
                     <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
