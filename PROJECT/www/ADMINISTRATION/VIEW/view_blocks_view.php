@@ -200,7 +200,7 @@
                             <?php echo htmlspecialchars( GetTextBySlug( 'Language Code Array' ) ); ?> :
                         </div>
                         <div>
-                            <input-list-component result-class="form-input" result-name="LanguageCodeArray" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $block->LanguageCodeArray ) ); ?>" result-readonly></input-list-component>
+                            <input-list-component container-class="form-list" result-class="form-input" result-name="LanguageCodeArray" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $block->LanguageCodeArray ) ); ?>" result-readonly value-container-class="form-value-container" value-class="form-input form-value" value-add-button-class="form-value-add-button" value-add-button-image-class="form-value-add-button-image" value-add-button-image-path="/static/image/admin/add_icon.svg" value-remove-button-class="form-value-remove-button" value-remove-button-image-class="form-value-remove-button-image" value-remove-button-image-path="/static/image/admin/remove_icon.svg"></input-list-component>
                         </div>
                         <div class="form-field-name">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Minimum Height' ) ); ?> :
@@ -224,7 +224,7 @@
                             <?php echo htmlspecialchars( GetTextBySlug( 'Image Path' ) ); ?> :
                         </div>
                         <div>
-                            <image-path-input-component container-class="form-upload-container" result-class="form-input" result-name="ImagePath" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $block->ImagePath ) ); ?>" result-readonly image-class="form-upload-image" error-image-path="/static/image/admin/missing_image.svg"></image-path-input-component>
+                            <image-path-input-component container-class="form-upload-container" result-class="form-input form-upload-input" result-name="ImagePath" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $block->ImagePath ) ); ?>" result-readonly image-class="form-upload-image" error-image-path="/static/image/admin/missing_image.svg"></image-path-input-component>
                         </div>
                         <div class="form-field-name">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Image Vertical Position' ) ); ?> :
@@ -275,7 +275,7 @@
                             <?php echo htmlspecialchars( GetTextBySlug( 'Video Path' ) ); ?> :
                         </div>
                         <div>
-                            <video-path-input-component container-class="form-upload-container" result-class="form-input" result-name="VideoPath" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $block->VideoPath ) ); ?>" result-readonly video-class="form-upload-video" error-video-path="/static/video/admin/missing_video.mp4"></video-path-input-component>
+                            <video-path-input-component container-class="form-upload-container" result-class="form-input form-upload-input" result-name="VideoPath" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $block->VideoPath ) ); ?>" result-readonly video-class="form-upload-video" error-video-path="/static/video/admin/missing_video.mp4"></video-path-input-component>
                         </div>
                     </div>
                     <?php if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>

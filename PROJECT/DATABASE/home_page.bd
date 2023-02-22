@@ -1,8 +1,9 @@
 PAGE
 
-    Id Route TypeSlug Number LanguageCodeArray Title ImagePath
+    Id Slug Route TypeSlug Number LanguageCodeArray Title ImagePath
 
         %home-page
+            ~ home
             ~ home
             ~ home
             ~ 1

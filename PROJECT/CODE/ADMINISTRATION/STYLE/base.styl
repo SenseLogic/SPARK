@@ -436,12 +436,27 @@ MakeSortableTableColumn();
     display: block;
 }
 
-.form-upload-container
+.form-input:not([hidden]) + .form-input:not([hidden]),
+.form-textarea:not([hidden]) + .form-textarea:not([hidden])
 {
     margin-top: 0.5rem;
+}
 
-    display: flex;
+.form-upload-container
+{
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto auto auto 1fr;
+    grid-template-areas : \
+        "input input input input" \
+        "preview upload-button delete-button .";
+    gap: 0.5rem;
     align-items: center;
+}
+
+.form-upload-input
+{
+    grid-area: input;
 }
 
 .form-upload-image,
@@ -449,22 +464,22 @@ MakeSortableTableColumn();
 {
     height: 12.5rem;
     width: auto;
-    max-width: 80%;
+    max-width: 50vw;
     border-radius: 0.25rem;
+
+    grid-area: preview;
 }
 
 .form-upload-button
 {
-    margin-bottom: 0;
-
     display: flex;
+    grid-area: upload-button;
 
     cursor: pointer;
 }
 
 .form-upload-icon
 {
-    margin-left: 0.5rem;
     height: 1rem;
 }
 
@@ -475,10 +490,53 @@ MakeSortableTableColumn();
     width: 0;
 }
 
-.form-delete-icon
+.form-upload-delete-button
 {
-    margin-left: 0.25rem;
+    display: flex;
+    grid-area: delete-button;
+
+    cursor: pointer;
+}
+
+.form-upload-delete-icon
+{
     height: 1rem;
+}
+
+.form-list
+{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-value-container
+{
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr auto auto;
+    grid-template-areas: \
+        "value add-button remove-button";
+    gap: 0.5rem;
+}
+
+.form-value
+{
+    grid-area: value;
+}
+
+.form-value-add-button
+{
+    display: flex;
+    grid-area: add-button;
+
+    cursor: pointer;
+}
+
+.form-value-remove-button
+{
+    display: flex;
+    grid-area: remove-button;
 
     cursor: pointer;
 }

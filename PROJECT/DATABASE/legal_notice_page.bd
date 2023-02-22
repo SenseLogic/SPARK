@@ -1,8 +1,9 @@
 PAGE
 
-    Id Route TypeSlug Number LanguageCodeArray Title ImagePath
+    Id Slug Route TypeSlug Number LanguageCodeArray Title ImagePath
 
         %legal-notice-page
+            ~ legal-notice
             ~ legal-notice
             ~ legal-notice
             ~ 1
