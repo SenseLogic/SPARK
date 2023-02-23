@@ -60,13 +60,13 @@
                             <% GetTextBySlug( 'Slug' ) %> :
                         </div>
                         <div>
-                            <input-component result-class="form-input" result-name="Slug" type_="text" result-value="<% GetValueText( text.Slug ) %>" result-readonly></input-component>
+                            <input-component result-class="form-input" result-name="Slug" result-value="<% GetValueText( text.Slug ) %>" result-readonly></input-component>
                         </div>
                         <div class="form-field-name">
                             <% GetTextBySlug( 'Text' ) %> :
                         </div>
                         <div>
-                            <multilingual-textarea-component container-class="form-textarea" result-name="Text" result-readonly language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"><% text.Text %></multilingual-textarea-component>
+                            <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Text" result-value="<% GetValueText( text.Text ) %>" result-readonly language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-text-input-component>
                         </div>
                     </div>
                     <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>

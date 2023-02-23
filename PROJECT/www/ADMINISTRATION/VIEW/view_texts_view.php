@@ -60,13 +60,13 @@
                             <?php echo htmlspecialchars( GetTextBySlug( 'Slug' ) ); ?> :
                         </div>
                         <div>
-                            <input-component result-class="form-input" result-name="Slug" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $text->Slug ) ); ?>" result-readonly></input-component>
+                            <input-component result-class="form-input" result-name="Slug" result-value="<?php echo htmlspecialchars( GetValueText( $text->Slug ) ); ?>" result-readonly></input-component>
                         </div>
                         <div class="form-field-name">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Text' ) ); ?> :
                         </div>
                         <div>
-                            <multilingual-textarea-component container-class="form-textarea" result-name="Text" result-readonly language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"><?php echo htmlspecialchars( $text->Text ); ?></multilingual-textarea-component>
+                            <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Text" result-value="<?php echo htmlspecialchars( GetValueText( $text->Text ) ); ?>" result-readonly language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-text-input-component>
                         </div>
                     </div>
                     <?php if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>

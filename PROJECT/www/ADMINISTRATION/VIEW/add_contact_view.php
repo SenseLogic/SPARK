@@ -106,7 +106,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Id' ) ); ?> :
                 </div>
                 <div>
-                    <input-component result-class="form-input" result-name="Id" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
+                    <input-component result-class="form-input" result-name="Id" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
                      $field_name = 'Name';
@@ -124,7 +124,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Name' ) ); ?> :
                 </div>
                 <div>
-                    <input-component result-class="form-input" result-name="Name" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
+                    <input-component result-class="form-input" result-name="Name" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
                      $field_name = 'Company';
@@ -142,7 +142,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Company' ) ); ?> :
                 </div>
                 <div>
-                    <input-component result-class="form-input" result-name="Company" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
+                    <input-component result-class="form-input" result-name="Company" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
                      $field_name = 'Email';
@@ -160,7 +160,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Email' ) ); ?> :
                 </div>
                 <div>
-                    <input-component result-class="form-input" result-name="Email" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
+                    <input-component result-class="form-input" result-name="Email" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
                      $field_name = 'Phone';
@@ -178,7 +178,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Phone' ) ); ?> :
                 </div>
                 <div>
-                    <input-component result-class="form-input" result-name="Phone" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
+                    <input-component result-class="form-input" result-name="Phone" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
                      $field_name = 'Subject';
@@ -196,7 +196,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Subject' ) ); ?> :
                 </div>
                 <div>
-                    <input-component result-class="form-input" result-name="Subject" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
+                    <input-component result-class="form-input" result-name="Subject" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
                      $field_name = 'Message';
@@ -214,7 +214,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Message' ) ); ?> :
                 </div>
                 <div>
-                    <textarea-component result-class="form-textarea" result-name="Message"><?php echo htmlspecialchars( $field_value ); ?></textarea-component>
+                    <text-input-component result-class="form-textarea" result-name="Message" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></text-input-component>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
                 </a>

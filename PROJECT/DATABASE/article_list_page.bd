@@ -3,7 +3,7 @@ PAGE
     Id Slug Route TypeSlug Number LanguageCodeArray Title ImagePath
 
         %article-list-page
-            ~ articles
+            ~ article-list
             ~ articles
             ~ article-list
             ~ 1

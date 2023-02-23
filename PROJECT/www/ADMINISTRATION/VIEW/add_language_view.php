@@ -87,7 +87,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Id' ) ); ?> :
                 </div>
                 <div>
-                    <input-component result-class="form-input" result-name="Id" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
+                    <input-component result-class="form-input" result-name="Id" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
                      $field_name = 'Code';
@@ -105,7 +105,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Code' ) ); ?> :
                 </div>
                 <div>
-                    <input-component result-class="form-input" result-name="Code" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
+                    <input-component result-class="form-input" result-name="Code" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
                      $field_name = 'Number';
@@ -123,7 +123,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Number' ) ); ?> :
                 </div>
                 <div>
-                    <input-component result-class="form-input" result-name="Number" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
+                    <input-component result-class="form-input" result-name="Number" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
                      $field_name = 'Text';
@@ -141,7 +141,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Text' ) ); ?> :
                 </div>
                 <div>
-                    <multilingual-input-component container-class="form-multilingual-input-container" result-class="form-textarea" result-name="Text" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-input-component>
+                    <multilingual-input-component container-class="form-multilingual-container" result-class="form-input" result-name="Text" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-input-component>
                 </div>
                 <?php
                      $field_name = 'IsActive';

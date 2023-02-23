@@ -87,7 +87,7 @@
                     <% GetTextBySlug( 'Id' ) %> :
                 </div>
                 <div>
-                    <input-component result-class="form-input" result-name="Id" type_="text" result-value="<% GetValueText( field_value ) %>"></input-component>
+                    <input-component result-class="form-input" result-name="Id" result-value="<% GetValueText( field_value ) %>"></input-component>
                 </div>
                 <?
                     var field_name = 'Code';
@@ -105,7 +105,7 @@
                     <% GetTextBySlug( 'Code' ) %> :
                 </div>
                 <div>
-                    <input-component result-class="form-input" result-name="Code" type_="text" result-value="<% GetValueText( field_value ) %>"></input-component>
+                    <input-component result-class="form-input" result-name="Code" result-value="<% GetValueText( field_value ) %>"></input-component>
                 </div>
                 <?
                     var field_name = 'Number';
@@ -123,7 +123,7 @@
                     <% GetTextBySlug( 'Number' ) %> :
                 </div>
                 <div>
-                    <input-component result-class="form-input" result-name="Number" type_="text" result-value="<% GetValueText( field_value ) %>"></input-component>
+                    <input-component result-class="form-input" result-name="Number" result-value="<% GetValueText( field_value ) %>"></input-component>
                 </div>
                 <?
                     var field_name = 'Text';
@@ -141,7 +141,7 @@
                     <% GetTextBySlug( 'Text' ) %> :
                 </div>
                 <div>
-                    <multilingual-input-component container-class="form-multilingual-input-container" result-class="form-textarea" result-name="Text" type_="text" result-value="<% GetValueText( field_value ) %>" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-input-component>
+                    <multilingual-input-component container-class="form-multilingual-container" result-class="form-input" result-name="Text" result-value="<% GetValueText( field_value ) %>" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-input-component>
                 </div>
                 <?
                     var field_name = 'IsActive';

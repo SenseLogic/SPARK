@@ -94,43 +94,43 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Name' ) ); ?> :
                 </div>
                 <div>
-                    <input-component result-class="form-input" result-name="Name" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $this->Contact->Name ) ); ?>"></input-component>
+                    <input-component result-class="form-input" result-name="Name" result-value="<?php echo htmlspecialchars( GetValueText( $this->Contact->Name ) ); ?>"></input-component>
                 </div>
                 <div class="form-field-name">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Company' ) ); ?> :
                 </div>
                 <div>
-                    <input-component result-class="form-input" result-name="Company" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $this->Contact->Company ) ); ?>"></input-component>
+                    <input-component result-class="form-input" result-name="Company" result-value="<?php echo htmlspecialchars( GetValueText( $this->Contact->Company ) ); ?>"></input-component>
                 </div>
                 <div class="form-field-name">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Email' ) ); ?> :
                 </div>
                 <div>
-                    <input-component result-class="form-input" result-name="Email" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $this->Contact->Email ) ); ?>"></input-component>
+                    <input-component result-class="form-input" result-name="Email" result-value="<?php echo htmlspecialchars( GetValueText( $this->Contact->Email ) ); ?>"></input-component>
                 </div>
                 <div class="form-field-name">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Phone' ) ); ?> :
                 </div>
                 <div>
-                    <input-component result-class="form-input" result-name="Phone" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $this->Contact->Phone ) ); ?>"></input-component>
+                    <input-component result-class="form-input" result-name="Phone" result-value="<?php echo htmlspecialchars( GetValueText( $this->Contact->Phone ) ); ?>"></input-component>
                 </div>
                 <div class="form-field-name">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Subject' ) ); ?> :
                 </div>
                 <div>
-                    <input-component result-class="form-input" result-name="Subject" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $this->Contact->Subject ) ); ?>"></input-component>
+                    <input-component result-class="form-input" result-name="Subject" result-value="<?php echo htmlspecialchars( GetValueText( $this->Contact->Subject ) ); ?>"></input-component>
                 </div>
                 <div class="form-field-name">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Message' ) ); ?> :
                 </div>
                 <div>
-                    <textarea-component result-class="form-textarea" result-name="Message"><?php echo htmlspecialchars( $this->Contact->Message ); ?></textarea-component>
+                    <text-input-component result-class="form-textarea" result-name="Message" result-value="<?php echo htmlspecialchars( GetValueText( $this->Contact->Message ) ); ?>"></text-input-component>
                 </div>
                 <div class="form-field-name">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Date Time' ) ); ?> :
                 </div>
                 <div>
-                    <input-component result-class="form-input" result-name="DateTime" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $this->Contact->DateTime ) ); ?>"></input-component>
+                    <input-component result-class="form-input" result-name="DateTime" result-value="<?php echo htmlspecialchars( GetValueText( $this->Contact->DateTime ) ); ?>"></input-component>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
                 </a>

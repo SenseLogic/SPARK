@@ -44,13 +44,13 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Slug' ) ); ?> :
                 </div>
                 <div>
-                    <input-component result-class="form-input" result-name="Slug" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $this->Text->Slug ) ); ?>"></input-component>
+                    <input-component result-class="form-input" result-name="Slug" result-value="<?php echo htmlspecialchars( GetValueText( $this->Text->Slug ) ); ?>"></input-component>
                 </div>
                 <div class="form-field-name">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Text' ) ); ?> :
                 </div>
                 <div>
-                    <multilingual-textarea-component container-class="form-multilingual-textarea-container" result-class="form-textarea" result-name="Text" language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"><?php echo htmlspecialchars( $this->Text->Text ); ?></multilingual-textarea-component>
+                    <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Text" result-value="<?php echo htmlspecialchars( GetValueText( $this->Text->Text ) ); ?>" language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-text-input-component>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
                 </a>

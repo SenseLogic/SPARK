@@ -190,7 +190,6 @@ th {
   text-align: inherit;
 }
 label {
-  margin-bottom: 0.5rem;
   display: inline-block;
 }
 button {
@@ -610,71 +609,6 @@ textarea {
 .form-textarea:not([hidden]) + .form-textarea:not([hidden]) {
   margin-top: 0.5rem;
 }
-.form-upload-container {
-  display: grid;
-  grid-template-rows: auto auto;
-  grid-template-columns: auto auto auto 1fr;
-  grid-template-areas: "input input input input" "preview upload-button delete-button .";
-  gap: 0.5rem;
-  align-items: center;
-}
-.form-upload-input {
-  grid-area: input;
-}
-.form-upload-image,
-.form-upload-video {
-  height: 12.5rem;
-  width: auto;
-  max-width: 50vw;
-  border-radius: 0.25rem;
-  grid-area: preview;
-}
-.form-upload-button {
-  display: flex;
-  grid-area: upload-button;
-  cursor: pointer;
-}
-.form-upload-icon {
-  height: 1rem;
-}
-.form-upload-file {
-  overflow: hidden;
-  height: 0;
-  width: 0;
-}
-.form-upload-delete-button {
-  display: flex;
-  grid-area: delete-button;
-  cursor: pointer;
-}
-.form-upload-delete-icon {
-  height: 1rem;
-}
-.form-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-.form-value-container {
-  display: grid;
-  grid-template-rows: auto;
-  grid-template-columns: 1fr auto auto;
-  grid-template-areas: "value add-button remove-button";
-  gap: 0.5rem;
-}
-.form-value {
-  grid-area: value;
-}
-.form-value-add-button {
-  display: flex;
-  grid-area: add-button;
-  cursor: pointer;
-}
-.form-value-remove-button {
-  display: flex;
-  grid-area: remove-button;
-  cursor: pointer;
-}
 .form-field-name {
   padding-top: 0.25rem;
   font-weight: 700;
@@ -717,6 +651,69 @@ textarea {
   padding: 0.25rem 0.75rem 0.25rem 0.5rem;
   display: inline-block;
   color: #fff;
+}
+.form-upload-container {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: auto auto auto 1fr;
+  grid-template-areas: "input input input input" "preview upload-button delete-button .";
+  gap: 0.5rem;
+  align-items: center;
+}
+.form-upload-input {
+  grid-area: input;
+}
+.form-upload-image,
+.form-upload-video {
+  height: 12.5rem;
+  width: auto;
+  max-width: 50vw;
+  border-radius: 0.25rem;
+  grid-area: preview;
+}
+.form-upload-button {
+  grid-area: upload-button;
+}
+.form-upload-file {
+  overflow: hidden;
+  height: 0;
+  width: 0;
+}
+.form-delete-button {
+  grid-area: delete-button;
+}
+.form-upload-button + .form-delete-button {
+  margin-left: 0;
+}
+.form-multilingual-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.form-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.form-value-container {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr auto auto;
+  grid-template-areas: "value add-button remove-button";
+  gap: 0.5rem;
+  align-items: center;
+}
+.form-value {
+  grid-area: value;
+}
+.form-add-value-button {
+  grid-area: add-button;
+}
+.form-remove-value-button {
+  grid-area: remove-button;
+}
+.form-add-value-button + .form-remove-value-button {
+  margin-left: 0;
 }
 .form-title {
   margin-top: 1.5rem;
@@ -821,6 +818,12 @@ textarea {
 }
 .list-button {
   background: url("/static/image/admin/list_icon.svg") no-repeat center center/contain;
+}
+.upload-button {
+  background: url("/static/image/admin/upload_icon.svg") no-repeat center center/contain;
+}
+.delete-button {
+  background: url("/static/image/admin/delete_icon.svg") no-repeat center center/contain;
 }
 .table-container {
   align-items: start;

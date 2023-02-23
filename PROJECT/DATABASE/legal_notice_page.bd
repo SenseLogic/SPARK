@@ -1,6 +1,6 @@
 PAGE
 
-    Id Slug Route TypeSlug Number LanguageCodeArray Title ImagePath
+    Id Slug Route TypeSlug Number LanguageCodeArray Title Teaser ImagePath
 
         %legal-notice-page
             ~ legal-notice
@@ -10,4 +10,6 @@ PAGE
             ~ { en ~ fr }
             ~ Legal notice
               ¨fr:Mention légale
+            ~ Legal\\nnotice
+              ¨fr:Mention\\nlégale"'
             ~ /static/image/article/mountains.jpg

@@ -66,7 +66,7 @@
                     <% GetTextBySlug( 'Id' ) %> :
                 </div>
                 <div>
-                    <input-component result-class="form-input" result-name="Id" type_="text" result-value="<% GetValueText( field_value ) %>"></input-component>
+                    <input-component result-class="form-input" result-name="Id" result-value="<% GetValueText( field_value ) %>"></input-component>
                 </div>
                 <?
                     var field_name = 'Slug';
@@ -84,7 +84,7 @@
                     <% GetTextBySlug( 'Slug' ) %> :
                 </div>
                 <div>
-                    <input-component result-class="form-input" result-name="Slug" type_="text" result-value="<% GetValueText( field_value ) %>"></input-component>
+                    <input-component result-class="form-input" result-name="Slug" result-value="<% GetValueText( field_value ) %>"></input-component>
                 </div>
                 <?
                     var field_name = 'Text';
@@ -102,7 +102,7 @@
                     <% GetTextBySlug( 'Text' ) %> :
                 </div>
                 <div>
-                    <multilingual-textarea-component container-class="form-multilingual-textarea-container" result-class="form-textarea" result-name="Text" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"><% field_value %></multilingual-textarea-component>
+                    <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Text" result-value="<% GetValueText( field_value ) %>" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-text-input-component>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
                 </a>

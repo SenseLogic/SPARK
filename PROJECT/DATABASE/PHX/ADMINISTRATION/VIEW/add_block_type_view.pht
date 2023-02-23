@@ -66,7 +66,7 @@
                     <% GetTextBySlug( 'Id' ) %> :
                 </div>
                 <div>
-                    <input-component result-class="form-input" result-name="Id" type_="text" result-value="<% GetValueText( field_value ) %>"></input-component>
+                    <input-component result-class="form-input" result-name="Id" result-value="<% GetValueText( field_value ) %>"></input-component>
                 </div>
                 <?
                     var field_name = 'Slug';
@@ -84,7 +84,7 @@
                     <% GetTextBySlug( 'Slug' ) %> :
                 </div>
                 <div>
-                    <input-component result-class="form-input" result-name="Slug" type_="text" result-value="<% GetValueText( field_value ) %>"></input-component>
+                    <input-component result-class="form-input" result-name="Slug" result-value="<% GetValueText( field_value ) %>"></input-component>
                 </div>
                 <?
                     var field_name = 'Name';
@@ -102,7 +102,7 @@
                     <% GetTextBySlug( 'Name' ) %> :
                 </div>
                 <div>
-                    <input-component result-class="form-input" result-name="Name" type_="text" result-value="<% GetValueText( field_value ) %>"></input-component>
+                    <input-component result-class="form-input" result-name="Name" result-value="<% GetValueText( field_value ) %>"></input-component>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
                 </a>

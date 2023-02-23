@@ -86,7 +86,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Id' ) ); ?> :
                 </div>
                 <div>
-                    <input-component result-class="form-input" result-name="Id" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
+                    <input-component result-class="form-input" result-name="Id" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
                      $field_name = 'Pseudonym';
@@ -104,7 +104,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Pseudonym' ) ); ?> :
                 </div>
                 <div>
-                    <input-component result-class="form-input" result-name="Pseudonym" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
+                    <input-component result-class="form-input" result-name="Pseudonym" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
                      $field_name = 'Password';
@@ -122,7 +122,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Password' ) ); ?> :
                 </div>
                 <div>
-                    <input-component result-class="form-input" result-name="Password" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
+                    <input-component result-class="form-input" result-name="Password" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
                      $field_name = 'Role';
@@ -140,7 +140,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Role' ) ); ?> :
                 </div>
                 <div>
-                    <input-component result-class="form-input" result-name="Role" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
+                    <input-component result-class="form-input" result-name="Role" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
                      $field_name = 'Email';
@@ -158,7 +158,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Email' ) ); ?> :
                 </div>
                 <div>
-                    <input-component result-class="form-input" result-name="Email" type_="text" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
+                    <input-component result-class="form-input" result-name="Email" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
                 </a>

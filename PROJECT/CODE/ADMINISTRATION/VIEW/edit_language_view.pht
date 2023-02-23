@@ -65,19 +65,19 @@
                     <% GetTextBySlug( 'Code' ) %> :
                 </div>
                 <div>
-                    <input-component result-class="form-input" result-name="Code" type_="text" result-value="<% GetValueText( .Language.Code ) %>"></input-component>
+                    <input-component result-class="form-input" result-name="Code" result-value="<% GetValueText( .Language.Code ) %>"></input-component>
                 </div>
                 <div class="form-field-name">
                     <% GetTextBySlug( 'Number' ) %> :
                 </div>
                 <div>
-                    <input-component result-class="form-input" result-name="Number" type_="text" result-value="<% GetValueText( .Language.Number ) %>"></input-component>
+                    <input-component result-class="form-input" result-name="Number" result-value="<% GetValueText( .Language.Number ) %>"></input-component>
                 </div>
                 <div class="form-field-name">
                     <% GetTextBySlug( 'Text' ) %> :
                 </div>
                 <div>
-                    <multilingual-input-component container-class="form-multilingual-input-container" result-class="form-textarea" result-name="Text" type_="text" result-value="<% GetValueText( .Language.Text ) %>" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-input-component>
+                    <multilingual-input-component container-class="form-multilingual-container" result-class="form-input" result-name="Text" result-value="<% GetValueText( .Language.Text ) %>" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-input-component>
                 </div>
                 <div class="form-field-name">
                     <% GetTextBySlug( 'Is Active' ) %> :
