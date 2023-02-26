@@ -3,7 +3,7 @@
 function GetDatabaseBlockArray(
     )
 {
-    var statement = GetDatabaseStatement( 'select `Id`, `Slug`, `PageId`, `CategorySlug`, `ContentSlug`, `TypeSlug`, `Number`, `LanguageCodeArray`, `MinimumHeight`, `Title`, `Text`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `ImageSide`, `VideoPath` from `BLOCK` order by `Number` asc' );
+    var statement = GetDatabaseStatement( 'select `Id`, `Slug`, `PageId`, `CategorySlug`, `TypeSlug`, `ContentSlug`, `Number`, `LanguageCodeArray`, `MinimumHeight`, `Title`, `TitleArray`, `Teaser`, `TeaserArray`, `Text`, `TextArray`, `Route`, `RouteArray`, `ImageSide`, `ImageLegend`, `ImageLegendArray`, `ImagePath`, `ImagePathArray`, `ImageVerticalPosition`, `ImageVerticalPositionArray`, `ImageHorizontalPosition`, `ImageHorizontalPositionArray`, `VideoPath`, `VideoPathArray` from `BLOCK` order by `Number` asc' );
 
     if ( !statement.execute() )
     {
@@ -16,6 +16,15 @@ function GetDatabaseBlockArray(
     {
         block.Number = ( float )( block.Number );
         block.LanguageCodeArray = json_decode( block.LanguageCodeArray );
+        block.TitleArray = json_decode( block.TitleArray );
+        block.TeaserArray = json_decode( block.TeaserArray );
+        block.TextArray = json_decode( block.TextArray );
+        block.RouteArray = json_decode( block.RouteArray );
+        block.ImageLegendArray = json_decode( block.ImageLegendArray );
+        block.ImagePathArray = json_decode( block.ImagePathArray );
+        block.ImageVerticalPositionArray = json_decode( block.ImageVerticalPositionArray );
+        block.ImageHorizontalPositionArray = json_decode( block.ImageHorizontalPositionArray );
+        block.VideoPathArray = json_decode( block.VideoPathArray );
         array_push( block_array, block );
     }
 
@@ -28,7 +37,7 @@ function GetDatabaseBlockById(
     string id
     )
 {
-    var statement = GetDatabaseStatement( 'select `Id`, `Slug`, `PageId`, `CategorySlug`, `ContentSlug`, `TypeSlug`, `Number`, `LanguageCodeArray`, `MinimumHeight`, `Title`, `Text`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `ImageSide`, `VideoPath` from `BLOCK` where `Id` = ? limit 1' );
+    var statement = GetDatabaseStatement( 'select `Id`, `Slug`, `PageId`, `CategorySlug`, `TypeSlug`, `ContentSlug`, `Number`, `LanguageCodeArray`, `MinimumHeight`, `Title`, `TitleArray`, `Teaser`, `TeaserArray`, `Text`, `TextArray`, `Route`, `RouteArray`, `ImageSide`, `ImageLegend`, `ImageLegendArray`, `ImagePath`, `ImagePathArray`, `ImageVerticalPosition`, `ImageVerticalPositionArray`, `ImageHorizontalPosition`, `ImageHorizontalPositionArray`, `VideoPath`, `VideoPathArray` from `BLOCK` where `Id` = ? limit 1' );
     statement.bindParam( 1, id, PDO::PARAM_STR );
 
     if ( !statement.execute() )
@@ -39,6 +48,15 @@ function GetDatabaseBlockById(
     var block = statement.fetchObject();
     block.Number = ( float )( block.Number );
     block.LanguageCodeArray = json_decode( block.LanguageCodeArray );
+    block.TitleArray = json_decode( block.TitleArray );
+    block.TeaserArray = json_decode( block.TeaserArray );
+    block.TextArray = json_decode( block.TextArray );
+    block.RouteArray = json_decode( block.RouteArray );
+    block.ImageLegendArray = json_decode( block.ImageLegendArray );
+    block.ImagePathArray = json_decode( block.ImagePathArray );
+    block.ImageVerticalPositionArray = json_decode( block.ImageVerticalPositionArray );
+    block.ImageHorizontalPositionArray = json_decode( block.ImageHorizontalPositionArray );
+    block.VideoPathArray = json_decode( block.VideoPathArray );
 
     return block;
 }
@@ -50,38 +68,71 @@ function AddDatabaseBlock(
     string slug,
     string page_id,
     string category_slug,
-    string content_slug,
     string type_slug,
+    string content_slug,
     float number,
     array language_code_array,
     string minimum_height,
     string title,
+    array title_array,
+    string teaser,
+    array teaser_array,
     string text,
-    string image_path,
-    string image_vertical_position,
-    string image_horizontal_position,
+    array text_array,
+    string route,
+    array route_array,
     string image_side,
-    string video_path
+    string image_legend,
+    array image_legend_array,
+    string image_path,
+    array image_path_array,
+    string image_vertical_position,
+    array image_vertical_position_array,
+    string image_horizontal_position,
+    array image_horizontal_position_array,
+    string video_path,
+    array video_path_array
     )
 {
-    var statement = GetDatabaseStatement( 'insert into `BLOCK` ( `Id`, `Slug`, `PageId`, `CategorySlug`, `ContentSlug`, `TypeSlug`, `Number`, `LanguageCodeArray`, `MinimumHeight`, `Title`, `Text`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `ImageSide`, `VideoPath` ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )' );
+    var statement = GetDatabaseStatement( 'insert into `BLOCK` ( `Id`, `Slug`, `PageId`, `CategorySlug`, `TypeSlug`, `ContentSlug`, `Number`, `LanguageCodeArray`, `MinimumHeight`, `Title`, `TitleArray`, `Teaser`, `TeaserArray`, `Text`, `TextArray`, `Route`, `RouteArray`, `ImageSide`, `ImageLegend`, `ImageLegendArray`, `ImagePath`, `ImagePathArray`, `ImageVerticalPosition`, `ImageVerticalPositionArray`, `ImageHorizontalPosition`, `ImageHorizontalPositionArray`, `VideoPath`, `VideoPathArray` ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )' );
     statement.bindParam( 1, id, PDO::PARAM_STR );
     statement.bindParam( 2, slug, PDO::PARAM_STR );
     statement.bindParam( 3, page_id, PDO::PARAM_STR );
     statement.bindParam( 4, category_slug, PDO::PARAM_STR );
-    statement.bindParam( 5, content_slug, PDO::PARAM_STR );
-    statement.bindParam( 6, type_slug, PDO::PARAM_STR );
+    statement.bindParam( 5, type_slug, PDO::PARAM_STR );
+    statement.bindParam( 6, content_slug, PDO::PARAM_STR );
     statement.bindParam( 7, number, PDO::PARAM_STR );
     language_code_array = json_encode( language_code_array );
     statement.bindParam( 8, language_code_array, PDO::PARAM_STR );
     statement.bindParam( 9, minimum_height, PDO::PARAM_STR );
     statement.bindParam( 10, title, PDO::PARAM_STR );
-    statement.bindParam( 11, text, PDO::PARAM_STR );
-    statement.bindParam( 12, image_path, PDO::PARAM_STR );
-    statement.bindParam( 13, image_vertical_position, PDO::PARAM_STR );
-    statement.bindParam( 14, image_horizontal_position, PDO::PARAM_STR );
-    statement.bindParam( 15, image_side, PDO::PARAM_STR );
-    statement.bindParam( 16, video_path, PDO::PARAM_STR );
+    title_array = json_encode( title_array );
+    statement.bindParam( 11, title_array, PDO::PARAM_STR );
+    statement.bindParam( 12, teaser, PDO::PARAM_STR );
+    teaser_array = json_encode( teaser_array );
+    statement.bindParam( 13, teaser_array, PDO::PARAM_STR );
+    statement.bindParam( 14, text, PDO::PARAM_STR );
+    text_array = json_encode( text_array );
+    statement.bindParam( 15, text_array, PDO::PARAM_STR );
+    statement.bindParam( 16, route, PDO::PARAM_STR );
+    route_array = json_encode( route_array );
+    statement.bindParam( 17, route_array, PDO::PARAM_STR );
+    statement.bindParam( 18, image_side, PDO::PARAM_STR );
+    statement.bindParam( 19, image_legend, PDO::PARAM_STR );
+    image_legend_array = json_encode( image_legend_array );
+    statement.bindParam( 20, image_legend_array, PDO::PARAM_STR );
+    statement.bindParam( 21, image_path, PDO::PARAM_STR );
+    image_path_array = json_encode( image_path_array );
+    statement.bindParam( 22, image_path_array, PDO::PARAM_STR );
+    statement.bindParam( 23, image_vertical_position, PDO::PARAM_STR );
+    image_vertical_position_array = json_encode( image_vertical_position_array );
+    statement.bindParam( 24, image_vertical_position_array, PDO::PARAM_STR );
+    statement.bindParam( 25, image_horizontal_position, PDO::PARAM_STR );
+    image_horizontal_position_array = json_encode( image_horizontal_position_array );
+    statement.bindParam( 26, image_horizontal_position_array, PDO::PARAM_STR );
+    statement.bindParam( 27, video_path, PDO::PARAM_STR );
+    video_path_array = json_encode( video_path_array );
+    statement.bindParam( 28, video_path_array, PDO::PARAM_STR );
 
     if ( !statement.execute() )
     {
@@ -98,38 +149,71 @@ function PutDatabaseBlock(
     string slug,
     string page_id,
     string category_slug,
-    string content_slug,
     string type_slug,
+    string content_slug,
     float number,
     array language_code_array,
     string minimum_height,
     string title,
+    array title_array,
+    string teaser,
+    array teaser_array,
     string text,
-    string image_path,
-    string image_vertical_position,
-    string image_horizontal_position,
+    array text_array,
+    string route,
+    array route_array,
     string image_side,
-    string video_path
+    string image_legend,
+    array image_legend_array,
+    string image_path,
+    array image_path_array,
+    string image_vertical_position,
+    array image_vertical_position_array,
+    string image_horizontal_position,
+    array image_horizontal_position_array,
+    string video_path,
+    array video_path_array
     )
 {
-    var statement = GetDatabaseStatement( 'replace into `BLOCK` ( `Id`, `Slug`, `PageId`, `CategorySlug`, `ContentSlug`, `TypeSlug`, `Number`, `LanguageCodeArray`, `MinimumHeight`, `Title`, `Text`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `ImageSide`, `VideoPath` ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )' );
+    var statement = GetDatabaseStatement( 'replace into `BLOCK` ( `Id`, `Slug`, `PageId`, `CategorySlug`, `TypeSlug`, `ContentSlug`, `Number`, `LanguageCodeArray`, `MinimumHeight`, `Title`, `TitleArray`, `Teaser`, `TeaserArray`, `Text`, `TextArray`, `Route`, `RouteArray`, `ImageSide`, `ImageLegend`, `ImageLegendArray`, `ImagePath`, `ImagePathArray`, `ImageVerticalPosition`, `ImageVerticalPositionArray`, `ImageHorizontalPosition`, `ImageHorizontalPositionArray`, `VideoPath`, `VideoPathArray` ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )' );
     statement.bindParam( 1, id, PDO::PARAM_STR );
     statement.bindParam( 2, slug, PDO::PARAM_STR );
     statement.bindParam( 3, page_id, PDO::PARAM_STR );
     statement.bindParam( 4, category_slug, PDO::PARAM_STR );
-    statement.bindParam( 5, content_slug, PDO::PARAM_STR );
-    statement.bindParam( 6, type_slug, PDO::PARAM_STR );
+    statement.bindParam( 5, type_slug, PDO::PARAM_STR );
+    statement.bindParam( 6, content_slug, PDO::PARAM_STR );
     statement.bindParam( 7, number, PDO::PARAM_STR );
     language_code_array = json_encode( language_code_array );
     statement.bindParam( 8, language_code_array, PDO::PARAM_STR );
     statement.bindParam( 9, minimum_height, PDO::PARAM_STR );
     statement.bindParam( 10, title, PDO::PARAM_STR );
-    statement.bindParam( 11, text, PDO::PARAM_STR );
-    statement.bindParam( 12, image_path, PDO::PARAM_STR );
-    statement.bindParam( 13, image_vertical_position, PDO::PARAM_STR );
-    statement.bindParam( 14, image_horizontal_position, PDO::PARAM_STR );
-    statement.bindParam( 15, image_side, PDO::PARAM_STR );
-    statement.bindParam( 16, video_path, PDO::PARAM_STR );
+    title_array = json_encode( title_array );
+    statement.bindParam( 11, title_array, PDO::PARAM_STR );
+    statement.bindParam( 12, teaser, PDO::PARAM_STR );
+    teaser_array = json_encode( teaser_array );
+    statement.bindParam( 13, teaser_array, PDO::PARAM_STR );
+    statement.bindParam( 14, text, PDO::PARAM_STR );
+    text_array = json_encode( text_array );
+    statement.bindParam( 15, text_array, PDO::PARAM_STR );
+    statement.bindParam( 16, route, PDO::PARAM_STR );
+    route_array = json_encode( route_array );
+    statement.bindParam( 17, route_array, PDO::PARAM_STR );
+    statement.bindParam( 18, image_side, PDO::PARAM_STR );
+    statement.bindParam( 19, image_legend, PDO::PARAM_STR );
+    image_legend_array = json_encode( image_legend_array );
+    statement.bindParam( 20, image_legend_array, PDO::PARAM_STR );
+    statement.bindParam( 21, image_path, PDO::PARAM_STR );
+    image_path_array = json_encode( image_path_array );
+    statement.bindParam( 22, image_path_array, PDO::PARAM_STR );
+    statement.bindParam( 23, image_vertical_position, PDO::PARAM_STR );
+    image_vertical_position_array = json_encode( image_vertical_position_array );
+    statement.bindParam( 24, image_vertical_position_array, PDO::PARAM_STR );
+    statement.bindParam( 25, image_horizontal_position, PDO::PARAM_STR );
+    image_horizontal_position_array = json_encode( image_horizontal_position_array );
+    statement.bindParam( 26, image_horizontal_position_array, PDO::PARAM_STR );
+    statement.bindParam( 27, video_path, PDO::PARAM_STR );
+    video_path_array = json_encode( video_path_array );
+    statement.bindParam( 28, video_path_array, PDO::PARAM_STR );
 
     if ( !statement.execute() )
     {
@@ -146,38 +230,71 @@ function SetDatabaseBlock(
     string slug,
     string page_id,
     string category_slug,
-    string content_slug,
     string type_slug,
+    string content_slug,
     float number,
     array language_code_array,
     string minimum_height,
     string title,
+    array title_array,
+    string teaser,
+    array teaser_array,
     string text,
-    string image_path,
-    string image_vertical_position,
-    string image_horizontal_position,
+    array text_array,
+    string route,
+    array route_array,
     string image_side,
-    string video_path
+    string image_legend,
+    array image_legend_array,
+    string image_path,
+    array image_path_array,
+    string image_vertical_position,
+    array image_vertical_position_array,
+    string image_horizontal_position,
+    array image_horizontal_position_array,
+    string video_path,
+    array video_path_array
     )
 {
-    var statement = GetDatabaseStatement( 'update `BLOCK` set `Slug` = ?, `PageId` = ?, `CategorySlug` = ?, `ContentSlug` = ?, `TypeSlug` = ?, `Number` = ?, `LanguageCodeArray` = ?, `MinimumHeight` = ?, `Title` = ?, `Text` = ?, `ImagePath` = ?, `ImageVerticalPosition` = ?, `ImageHorizontalPosition` = ?, `ImageSide` = ?, `VideoPath` = ? where Id = ?' );
+    var statement = GetDatabaseStatement( 'update `BLOCK` set `Slug` = ?, `PageId` = ?, `CategorySlug` = ?, `TypeSlug` = ?, `ContentSlug` = ?, `Number` = ?, `LanguageCodeArray` = ?, `MinimumHeight` = ?, `Title` = ?, `TitleArray` = ?, `Teaser` = ?, `TeaserArray` = ?, `Text` = ?, `TextArray` = ?, `Route` = ?, `RouteArray` = ?, `ImageSide` = ?, `ImageLegend` = ?, `ImageLegendArray` = ?, `ImagePath` = ?, `ImagePathArray` = ?, `ImageVerticalPosition` = ?, `ImageVerticalPositionArray` = ?, `ImageHorizontalPosition` = ?, `ImageHorizontalPositionArray` = ?, `VideoPath` = ?, `VideoPathArray` = ? where Id = ?' );
     statement.bindParam( 1, slug, PDO::PARAM_STR );
     statement.bindParam( 2, page_id, PDO::PARAM_STR );
     statement.bindParam( 3, category_slug, PDO::PARAM_STR );
-    statement.bindParam( 4, content_slug, PDO::PARAM_STR );
-    statement.bindParam( 5, type_slug, PDO::PARAM_STR );
+    statement.bindParam( 4, type_slug, PDO::PARAM_STR );
+    statement.bindParam( 5, content_slug, PDO::PARAM_STR );
     statement.bindParam( 6, number, PDO::PARAM_STR );
     language_code_array = json_encode( language_code_array );
     statement.bindParam( 7, language_code_array, PDO::PARAM_STR );
     statement.bindParam( 8, minimum_height, PDO::PARAM_STR );
     statement.bindParam( 9, title, PDO::PARAM_STR );
-    statement.bindParam( 10, text, PDO::PARAM_STR );
-    statement.bindParam( 11, image_path, PDO::PARAM_STR );
-    statement.bindParam( 12, image_vertical_position, PDO::PARAM_STR );
-    statement.bindParam( 13, image_horizontal_position, PDO::PARAM_STR );
-    statement.bindParam( 14, image_side, PDO::PARAM_STR );
-    statement.bindParam( 15, video_path, PDO::PARAM_STR );
-    statement.bindParam( 16, id, PDO::PARAM_STR );
+    title_array = json_encode( title_array );
+    statement.bindParam( 10, title_array, PDO::PARAM_STR );
+    statement.bindParam( 11, teaser, PDO::PARAM_STR );
+    teaser_array = json_encode( teaser_array );
+    statement.bindParam( 12, teaser_array, PDO::PARAM_STR );
+    statement.bindParam( 13, text, PDO::PARAM_STR );
+    text_array = json_encode( text_array );
+    statement.bindParam( 14, text_array, PDO::PARAM_STR );
+    statement.bindParam( 15, route, PDO::PARAM_STR );
+    route_array = json_encode( route_array );
+    statement.bindParam( 16, route_array, PDO::PARAM_STR );
+    statement.bindParam( 17, image_side, PDO::PARAM_STR );
+    statement.bindParam( 18, image_legend, PDO::PARAM_STR );
+    image_legend_array = json_encode( image_legend_array );
+    statement.bindParam( 19, image_legend_array, PDO::PARAM_STR );
+    statement.bindParam( 20, image_path, PDO::PARAM_STR );
+    image_path_array = json_encode( image_path_array );
+    statement.bindParam( 21, image_path_array, PDO::PARAM_STR );
+    statement.bindParam( 22, image_vertical_position, PDO::PARAM_STR );
+    image_vertical_position_array = json_encode( image_vertical_position_array );
+    statement.bindParam( 23, image_vertical_position_array, PDO::PARAM_STR );
+    statement.bindParam( 24, image_horizontal_position, PDO::PARAM_STR );
+    image_horizontal_position_array = json_encode( image_horizontal_position_array );
+    statement.bindParam( 25, image_horizontal_position_array, PDO::PARAM_STR );
+    statement.bindParam( 26, video_path, PDO::PARAM_STR );
+    video_path_array = json_encode( video_path_array );
+    statement.bindParam( 27, video_path_array, PDO::PARAM_STR );
+    statement.bindParam( 28, id, PDO::PARAM_STR );
 
     if ( !statement.execute() )
     {
@@ -197,6 +314,82 @@ function RemoveDatabaseBlockById(
     if ( !statement.execute() )
     {
         var_dump( statement.errorInfo() );
+    }
+}
+
+// ~~
+
+function GetBlockArrayByPageIdMap(
+    array &block_array
+    )
+{
+    var block_array_by_page_id_map = [];
+
+    foreach ( var block; block_array )
+    {
+        if ( !isset( block_array_by_page_id_map[ block.PageId ] ) )
+        {
+            block_array_by_page_id_map[ block.PageId ] = [ block ];
+        }
+        else
+        {
+            array_push( block_array_by_page_id_map[ block.PageId ], block );
+        }
+    }
+
+    return block_array_by_page_id_map;
+}
+
+// ~~
+
+function GetBlockArrayByPageId(
+    array &block_array,
+    string page_id
+    )
+{
+    var block_array_by_page_id = [];
+
+    foreach ( var block; block_array )
+    {
+        if ( block.PageId === page_id )
+        {
+            array_push( block_array_by_page_id, block );
+        }
+    }
+
+    return block_array_by_page_id;
+}
+
+// ~~
+
+function GetBlockByPageIdMap(
+    array &block_array
+    )
+{
+    var block_by_page_id_map = [];
+
+    foreach ( var block; block_array )
+    {
+        block_by_page_id_map[ block.PageId ] = block;
+    }
+
+    return block_by_page_id_map;
+}
+
+// ~~
+
+function GetBlockByPageId(
+    array &block_by_page_id_map,
+    string page_id
+    )
+{
+    if ( isset( block_by_page_id_map[ page_id ] ) )
+    {
+        return block_by_page_id_map[ page_id ];
+    }
+    else
+    {
+        return null;
     }
 }
 
@@ -269,82 +462,6 @@ function GetBlockByCategorySlug(
     if ( isset( block_by_category_slug_map[ category_slug ] ) )
     {
         return block_by_category_slug_map[ category_slug ];
-    }
-    else
-    {
-        return null;
-    }
-}
-
-// ~~
-
-function GetBlockArrayByTypeSlugMap(
-    array &block_array
-    )
-{
-    var block_array_by_type_slug_map = [];
-
-    foreach ( var block; block_array )
-    {
-        if ( !isset( block_array_by_type_slug_map[ block.TypeSlug ] ) )
-        {
-            block_array_by_type_slug_map[ block.TypeSlug ] = [ block ];
-        }
-        else
-        {
-            array_push( block_array_by_type_slug_map[ block.TypeSlug ], block );
-        }
-    }
-
-    return block_array_by_type_slug_map;
-}
-
-// ~~
-
-function GetBlockArrayByTypeSlug(
-    array &block_array,
-    string type_slug
-    )
-{
-    var block_array_by_type_slug = [];
-
-    foreach ( var block; block_array )
-    {
-        if ( block.TypeSlug === type_slug )
-        {
-            array_push( block_array_by_type_slug, block );
-        }
-    }
-
-    return block_array_by_type_slug;
-}
-
-// ~~
-
-function GetBlockByTypeSlugMap(
-    array &block_array
-    )
-{
-    var block_by_type_slug_map = [];
-
-    foreach ( var block; block_array )
-    {
-        block_by_type_slug_map[ block.TypeSlug ] = block;
-    }
-
-    return block_by_type_slug_map;
-}
-
-// ~~
-
-function GetBlockByTypeSlug(
-    array &block_by_type_slug_map,
-    string type_slug
-    )
-{
-    if ( isset( block_by_type_slug_map[ type_slug ] ) )
-    {
-        return block_by_type_slug_map[ type_slug ];
     }
     else
     {

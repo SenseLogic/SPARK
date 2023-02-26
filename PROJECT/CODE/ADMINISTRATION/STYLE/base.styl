@@ -522,6 +522,11 @@ MakeSortableTableColumn();
     align-items: center;
 }
 
+.form-upload-container.is-readonly
+{
+    gap: 0;
+}
+
 .form-upload-input
 {
     grid-area: input;
@@ -574,6 +579,11 @@ MakeSortableTableColumn();
     gap: 0.5rem;
 }
 
+.form-list-container.is-readonly
+{
+    gap: 0;
+}
+
 .form-value-container
 {
     display: grid;
@@ -583,6 +593,11 @@ MakeSortableTableColumn();
         "value add-button remove-button";
     gap: 0.5rem;
     align-items: center;
+}
+
+.form-list-container.is-readonly .form-value-container
+{
+    gap: 0;
 }
 
 .form-value

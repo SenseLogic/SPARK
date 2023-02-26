@@ -54,13 +54,13 @@
                             <?php echo htmlspecialchars( GetTextBySlug( 'Slug' ) ); ?> :
                         </div>
                         <div>
-                            <input-component result-class="form-input" result-name="Slug" result-value="<?php echo htmlspecialchars( GetValueText( $page_type->Slug ) ); ?>" result-readonly></input-component>
+                            <input-component result-class="form-input" result-name="Slug" result-value="<?php echo htmlspecialchars( GetValueText( $page_type->Slug ) ); ?>" is-readonly></input-component>
                         </div>
                         <div class="form-field-name">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Title' ) ); ?> :
                         </div>
                         <div>
-                            <input-component result-class="form-input" result-name="Title" result-value="<?php echo htmlspecialchars( GetValueText( $page_type->Title ) ); ?>" result-readonly></input-component>
+                            <input-component result-class="form-input" result-name="Title" result-value="<?php echo htmlspecialchars( GetValueText( $page_type->Title ) ); ?>" is-readonly></input-component>
                         </div>
                     </div>
                     <?php if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>

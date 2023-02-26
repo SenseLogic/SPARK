@@ -6,13 +6,13 @@
                 <% GetTextBySlug( 'Slug' ) %> :
             </div>
             <div>
-                <input-component result-class="form-input" result-name="Slug" result-value="<% GetValueText( .Page.Slug ) %>" result-readonly></input-component>
+                <input-component result-class="form-input" result-name="Slug" result-value="<% GetValueText( .Page.Slug ) %>" is-readonly></input-component>
             </div>
             <div class="form-field-name">
                 <% GetTextBySlug( 'Route' ) %> :
             </div>
             <div>
-                <input-component result-class="form-input" result-name="Route" result-value="<% GetValueText( .Page.Route ) %>" result-readonly></input-component>
+                <input-component result-class="form-input" result-name="Route" result-value="<% GetValueText( .Page.Route ) %>" is-readonly></input-component>
             </div>
             <div class="form-field-name">
                 <% GetTextBySlug( 'Type Slug' ) %> :
@@ -29,13 +29,13 @@
                 <% GetTextBySlug( 'Number' ) %> :
             </div>
             <div>
-                <input-component result-class="form-input" result-name="Number" result-value="<% GetValueText( .Page.Number ) %>" result-readonly></input-component>
+                <input-component result-class="form-input" result-name="Number" result-value="<% GetValueText( .Page.Number ) %>" is-readonly></input-component>
             </div>
             <div class="form-field-name">
                 <% GetTextBySlug( 'Language Code Array' ) %> :
             </div>
             <div>
-                <input-list-component container-class="form-list-container" result-class="form-input" result-name="LanguageCodeArray" result-value="<% GetValueText( .Page.LanguageCodeArray ) %>" result-readonly value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></input-list-component>
+                <input-list-component container-class="form-list-container" result-class="form-input" result-name="LanguageCodeArray" result-value="<% GetValueText( .Page.LanguageCodeArray ) %>" is-readonly value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></input-list-component>
             </div>
             <div class="form-field-name">
                 <% GetTextBySlug( 'Is Active' ) %> :
@@ -50,25 +50,25 @@
                 <% GetTextBySlug( 'Title' ) %> :
             </div>
             <div>
-                <multilingual-input-component container-class="form-multilingual-container" result-class="form-input" result-name="Title" result-value="<% GetValueText( .Page.Title ) %>" result-readonly language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-input-component>
+                <multilingual-input-component container-class="form-multilingual-container" result-class="form-input" result-name="Title" result-value="<% GetValueText( .Page.Title ) %>" is-readonly language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-input-component>
             </div>
             <div class="form-field-name">
                 <% GetTextBySlug( 'Heading' ) %> :
             </div>
             <div>
-                <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Heading" result-value="<% GetValueText( .Page.Heading ) %>" result-readonly language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-text-input-component>
+                <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Heading" result-value="<% GetValueText( .Page.Heading ) %>" is-readonly language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-text-input-component>
             </div>
             <div class="form-field-name">
                 <% GetTextBySlug( 'Teaser' ) %> :
             </div>
             <div>
-                <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Teaser" result-value="<% GetValueText( .Page.Teaser ) %>" result-readonly language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-text-input-component>
+                <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Teaser" result-value="<% GetValueText( .Page.Teaser ) %>" is-readonly language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-text-input-component>
             </div>
             <div class="form-field-name">
                 <% GetTextBySlug( 'Image Path' ) %> :
             </div>
             <div>
-                <image-path-input-component container-class="form-upload-container" result-class="form-input form-upload-input" result-name="ImagePath" result-value="<% GetValueText( .Page.ImagePath ) %>" result-readonly image-class="form-upload-image" error-image-path="/static/image/admin/missing_image.svg"></image-path-input-component>
+                <image-path-input-component container-class="form-upload-container" result-class="form-input form-upload-input" result-name="ImagePath" result-value="<% GetValueText( .Page.ImagePath ) %>" is-readonly image-class="form-upload-image" error-image-path="/static/image/admin/missing_image.svg"></image-path-input-component>
             </div>
             <div class="form-field-name">
                 <% GetTextBySlug( 'Image Vertical Position' ) %> :
@@ -110,25 +110,25 @@
                 <% GetTextBySlug( 'Video Path' ) %> :
             </div>
             <div>
-                <video-path-input-component container-class="form-upload-container" result-class="form-input form-upload-input" result-name="VideoPath" result-value="<% GetValueText( .Page.VideoPath ) %>" result-readonly video-class="form-upload-video" error-video-path="/static/video/admin/missing_video.mp4"></video-path-input-component>
+                <video-path-input-component container-class="form-upload-container" result-class="form-input form-upload-input" result-name="VideoPath" result-value="<% GetValueText( .Page.VideoPath ) %>" is-readonly video-class="form-upload-video" error-video-path="/static/video/admin/missing_video.mp4"></video-path-input-component>
             </div>
             <div class="form-field-name">
                 <% GetTextBySlug( 'Meta Title' ) %> :
             </div>
             <div>
-                <multilingual-input-component container-class="form-multilingual-container" result-class="form-input" result-name="MetaTitle" result-value="<% GetValueText( .Page.MetaTitle ) %>" result-readonly language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-input-component>
+                <multilingual-input-component container-class="form-multilingual-container" result-class="form-input" result-name="MetaTitle" result-value="<% GetValueText( .Page.MetaTitle ) %>" is-readonly language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-input-component>
             </div>
             <div class="form-field-name">
                 <% GetTextBySlug( 'Meta Description' ) %> :
             </div>
             <div>
-                <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="MetaDescription" result-value="<% GetValueText( .Page.MetaDescription ) %>" result-readonly language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-text-input-component>
+                <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="MetaDescription" result-value="<% GetValueText( .Page.MetaDescription ) %>" is-readonly language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-text-input-component>
             </div>
             <div class="form-field-name">
                 <% GetTextBySlug( 'Meta Image Path' ) %> :
             </div>
             <div>
-                <image-path-input-component container-class="form-upload-container" result-class="form-input form-upload-input" result-name="MetaImagePath" result-value="<% GetValueText( .Page.MetaImagePath ) %>" result-readonly image-class="form-upload-image" error-image-path="/static/image/admin/missing_image.svg"></image-path-input-component>
+                <image-path-input-component container-class="form-upload-container" result-class="form-input form-upload-input" result-name="MetaImagePath" result-value="<% GetValueText( .Page.MetaImagePath ) %>" is-readonly image-class="form-upload-image" error-image-path="/static/image/admin/missing_image.svg"></image-path-input-component>
             </div>
             <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
             </a>

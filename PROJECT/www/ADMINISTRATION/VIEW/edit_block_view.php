@@ -10,51 +10,87 @@
             slug_field,
             page_id_field,
             category_slug_field,
-            content_slug_field,
             type_slug_field,
+            content_slug_field,
             number_field,
             language_code_array_field,
             minimum_height_field,
             title_field,
+            title_array_field,
+            teaser_field,
+            teaser_array_field,
             text_field,
-            image_path_field,
-            image_vertical_position_field,
-            image_horizontal_position_field,
+            text_array_field,
+            route_field,
+            route_array_field,
             image_side_field,
-            video_path_field;
+            image_legend_field,
+            image_legend_array_field,
+            image_path_field,
+            image_path_array_field,
+            image_vertical_position_field,
+            image_vertical_position_array_field,
+            image_horizontal_position_field,
+            image_horizontal_position_array_field,
+            video_path_field,
+            video_path_array_field;
 
         edit_block_form = document.EditBlockForm;
         slug_field = edit_block_form.Slug;
         page_id_field = edit_block_form.PageId;
         category_slug_field = edit_block_form.CategorySlug;
-        content_slug_field = edit_block_form.ContentSlug;
         type_slug_field = edit_block_form.TypeSlug;
+        content_slug_field = edit_block_form.ContentSlug;
         number_field = edit_block_form.Number;
         language_code_array_field = edit_block_form.LanguageCodeArray;
         minimum_height_field = edit_block_form.MinimumHeight;
         title_field = edit_block_form.Title;
+        title_array_field = edit_block_form.TitleArray;
+        teaser_field = edit_block_form.Teaser;
+        teaser_array_field = edit_block_form.TeaserArray;
         text_field = edit_block_form.Text;
-        image_path_field = edit_block_form.ImagePath;
-        image_vertical_position_field = edit_block_form.ImageVerticalPosition;
-        image_horizontal_position_field = edit_block_form.ImageHorizontalPosition;
+        text_array_field = edit_block_form.TextArray;
+        route_field = edit_block_form.Route;
+        route_array_field = edit_block_form.RouteArray;
         image_side_field = edit_block_form.ImageSide;
+        image_legend_field = edit_block_form.ImageLegend;
+        image_legend_array_field = edit_block_form.ImageLegendArray;
+        image_path_field = edit_block_form.ImagePath;
+        image_path_array_field = edit_block_form.ImagePathArray;
+        image_vertical_position_field = edit_block_form.ImageVerticalPosition;
+        image_vertical_position_array_field = edit_block_form.ImageVerticalPositionArray;
+        image_horizontal_position_field = edit_block_form.ImageHorizontalPosition;
+        image_horizontal_position_array_field = edit_block_form.ImageHorizontalPositionArray;
         video_path_field = edit_block_form.VideoPath;
+        video_path_array_field = edit_block_form.VideoPathArray;
 
         slug_field.RemoveClass( "form-field-error" );
         page_id_field.RemoveClass( "form-field-error" );
         category_slug_field.RemoveClass( "form-field-error" );
-        content_slug_field.RemoveClass( "form-field-error" );
         type_slug_field.RemoveClass( "form-field-error" );
+        content_slug_field.RemoveClass( "form-field-error" );
         number_field.RemoveClass( "form-field-error" );
         language_code_array_field.RemoveClass( "form-field-error" );
         minimum_height_field.RemoveClass( "form-field-error" );
         title_field.RemoveClass( "form-field-error" );
+        title_array_field.RemoveClass( "form-field-error" );
+        teaser_field.RemoveClass( "form-field-error" );
+        teaser_array_field.RemoveClass( "form-field-error" );
         text_field.RemoveClass( "form-field-error" );
-        image_path_field.RemoveClass( "form-field-error" );
-        image_vertical_position_field.RemoveClass( "form-field-error" );
-        image_horizontal_position_field.RemoveClass( "form-field-error" );
+        text_array_field.RemoveClass( "form-field-error" );
+        route_field.RemoveClass( "form-field-error" );
+        route_array_field.RemoveClass( "form-field-error" );
         image_side_field.RemoveClass( "form-field-error" );
+        image_legend_field.RemoveClass( "form-field-error" );
+        image_legend_array_field.RemoveClass( "form-field-error" );
+        image_path_field.RemoveClass( "form-field-error" );
+        image_path_array_field.RemoveClass( "form-field-error" );
+        image_vertical_position_field.RemoveClass( "form-field-error" );
+        image_vertical_position_array_field.RemoveClass( "form-field-error" );
+        image_horizontal_position_field.RemoveClass( "form-field-error" );
+        image_horizontal_position_array_field.RemoveClass( "form-field-error" );
         video_path_field.RemoveClass( "form-field-error" );
+        video_path_array_field.RemoveClass( "form-field-error" );
 
         it_is_valid_edit_block_form = true;
 
@@ -79,16 +115,16 @@
             it_is_valid_edit_block_form = false;
         }
 
-        if ( !IsSlugText( content_slug_field.value ) )
+        if ( !IsSlugText( type_slug_field.value ) )
         {
-            content_slug_field.AddClass( "form-field-error" );
+            type_slug_field.AddClass( "form-field-error" );
 
             it_is_valid_edit_block_form = false;
         }
 
-        if ( !IsSlugText( type_slug_field.value ) )
+        if ( !IsSlugText( content_slug_field.value ) )
         {
-            type_slug_field.AddClass( "form-field-error" );
+            content_slug_field.AddClass( "form-field-error" );
 
             it_is_valid_edit_block_form = false;
         }
@@ -150,17 +186,6 @@
                     </select>
                 </div>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( GetTextBySlug( 'Content Slug' ) ); ?> :
-                </div>
-                <div>
-                    <select class="form-select" name="ContentSlug">
-                        <?php  $block_content_array = $this->BlockContentArray; ?>
-                        <?php foreach ( $block_content_array as  $block_content ) { ?>
-                            <option value="<?php echo htmlspecialchars( GetValueText( $block_content->Slug ) ); ?>"<?php if ( $this->Block->ContentSlug === $block_content->Slug ) echo ' selected'; ?>><?php echo htmlspecialchars( GetUntranslatedText( $block_content->Name ) ); ?></option>
-                        <?php } ?>
-                    </select>
-                </div>
-                <div class="form-field-name">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Type Slug' ) ); ?> :
                 </div>
                 <div>
@@ -168,6 +193,17 @@
                         <?php  $block_type_array = $this->BlockTypeArray; ?>
                         <?php foreach ( $block_type_array as  $block_type ) { ?>
                             <option value="<?php echo htmlspecialchars( GetValueText( $block_type->Slug ) ); ?>"<?php if ( $this->Block->TypeSlug === $block_type->Slug ) echo ' selected'; ?>><?php echo htmlspecialchars( GetUntranslatedText( $block_type->Name ) ); ?></option>
+                        <?php } ?>
+                    </select>
+                </div>
+                <div class="form-field-name">
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Content Slug' ) ); ?> :
+                </div>
+                <div>
+                    <select class="form-select" name="ContentSlug">
+                        <?php  $block_content_array = $this->BlockContentArray; ?>
+                        <?php foreach ( $block_content_array as  $block_content ) { ?>
+                            <option value="<?php echo htmlspecialchars( GetValueText( $block_content->Slug ) ); ?>"<?php if ( $this->Block->ContentSlug === $block_content->Slug ) echo ' selected'; ?>><?php echo htmlspecialchars( GetUntranslatedText( $block_content->Name ) ); ?></option>
                         <?php } ?>
                     </select>
                 </div>
@@ -193,7 +229,25 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Title' ) ); ?> :
                 </div>
                 <div>
-                    <multilingual-input-component container-class="form-multilingual-container" result-class="form-input" result-name="Title" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->Title ) ); ?>" language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-input-component>
+                    <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Title" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->Title ) ); ?>" language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-text-input-component>
+                </div>
+                <div class="form-field-name">
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Title Array' ) ); ?> :
+                </div>
+                <div>
+                    <multilingual-text-input-list-component container-class="form-multilingual-text-input-container" result-class="form-textarea" result-name="TitleArray" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->TitleArray ) ); ?>" value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-text-input-list-component>
+                </div>
+                <div class="form-field-name">
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Teaser' ) ); ?> :
+                </div>
+                <div>
+                    <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Teaser" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->Teaser ) ); ?>" language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-text-input-component>
+                </div>
+                <div class="form-field-name">
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Teaser Array' ) ); ?> :
+                </div>
+                <div>
+                    <multilingual-text-input-list-component container-class="form-multilingual-text-input-container" result-class="form-textarea" result-name="TeaserArray" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->TeaserArray ) ); ?>" value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-text-input-list-component>
                 </div>
                 <div class="form-field-name">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Text' ) ); ?> :
@@ -202,10 +256,56 @@
                     <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Text" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->Text ) ); ?>" language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-text-input-component>
                 </div>
                 <div class="form-field-name">
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Text Array' ) ); ?> :
+                </div>
+                <div>
+                    <multilingual-text-input-list-component container-class="form-multilingual-text-input-container" result-class="form-textarea" result-name="TextArray" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->TextArray ) ); ?>" value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-text-input-list-component>
+                </div>
+                <div class="form-field-name">
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Route' ) ); ?> :
+                </div>
+                <div>
+                    <multilingual-input-component container-class="form-multilingual-container" result-class="form-input" result-name="Route" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->Route ) ); ?>" language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-input-component>
+                </div>
+                <div class="form-field-name">
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Route Array' ) ); ?> :
+                </div>
+                <div>
+                    <multilingual-input-list-component container-class="form-multilingual-input-container" result-class="form-input" result-name="RouteArray" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->RouteArray ) ); ?>" value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-input-list-component>
+                </div>
+                <div class="form-field-name">
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Image Side' ) ); ?> :
+                </div>
+                <div>
+                    <select class="form-select" name="ImageSide">
+                        <option value="left"<?php if ( $this->Block->ImageSide === 'left' ) echo ' selected'; ?>>Left</option>
+                        <option value="right"<?php if ( $this->Block->ImageSide === 'right' ) echo ' selected'; ?>>Right</option>
+                        <option value="top"<?php if ( $this->Block->ImageSide === 'top' ) echo ' selected'; ?>>Top</option>
+                    </select>
+                </div>
+                <div class="form-field-name">
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Image Legend' ) ); ?> :
+                </div>
+                <div>
+                    <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="ImageLegend" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->ImageLegend ) ); ?>" language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-text-input-component>
+                </div>
+                <div class="form-field-name">
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Image Legend Array' ) ); ?> :
+                </div>
+                <div>
+                    <multilingual-text-input-list-component container-class="form-multilingual-text-input-container" result-class="form-textarea" result-name="ImageLegendArray" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->ImageLegendArray ) ); ?>" value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-text-input-list-component>
+                </div>
+                <div class="form-field-name">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Image Path' ) ); ?> :
                 </div>
                 <div>
                     <image-path-input-component container-class="form-upload-container" result-class="form-input form-upload-input" result-name="ImagePath" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->ImagePath ) ); ?>" image-class="form-upload-image" error-image-path="/static/image/admin/missing_image.svg" upload-button-container-class="form-upload-button-container" upload-button-class="form-button upload-button form-upload-button" upload-api-url="/admin/upload/image" delete-button-class="form-button delete-button form-delete-button" delete-api-url="/admin/delete/file"></image-path-input-component>
+                </div>
+                <div class="form-field-name">
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Image Path Array' ) ); ?> :
+                </div>
+                <div>
+                    <input-list-component container-class="form-list-container" result-class="form-input" result-name="ImagePathArray" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->ImagePathArray ) ); ?>" value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></input-list-component>
                 </div>
                 <div class="form-field-name">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Image Vertical Position' ) ); ?> :
@@ -226,6 +326,12 @@
                     </select>
                 </div>
                 <div class="form-field-name">
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Image Vertical Position Array' ) ); ?> :
+                </div>
+                <div>
+                    <input-list-component container-class="form-list-container" result-class="form-input" result-name="ImageVerticalPositionArray" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->ImageVerticalPositionArray ) ); ?>" value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></input-list-component>
+                </div>
+                <div class="form-field-name">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Image Horizontal Position' ) ); ?> :
                 </div>
                 <div>
@@ -244,19 +350,22 @@
                     </select>
                 </div>
                 <div class="form-field-name">
-                    <?php echo htmlspecialchars( GetTextBySlug( 'Image Side' ) ); ?> :
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Image Horizontal Position Array' ) ); ?> :
                 </div>
                 <div>
-                    <select class="form-select" name="ImageSide">
-                        <option value="left"<?php if ( $this->Block->ImageSide === 'left' ) echo ' selected'; ?>>Left</option>
-                        <option value="right"<?php if ( $this->Block->ImageSide === 'right' ) echo ' selected'; ?>>Right</option>
-                    </select>
+                    <input-list-component container-class="form-list-container" result-class="form-input" result-name="ImageHorizontalPositionArray" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->ImageHorizontalPositionArray ) ); ?>" value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></input-list-component>
                 </div>
                 <div class="form-field-name">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Video Path' ) ); ?> :
                 </div>
                 <div>
                     <video-path-input-component container-class="form-upload-container" result-class="form-input form-upload-input" result-name="VideoPath" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->VideoPath ) ); ?>" video-class="form-upload-video" error-video-path="/static/video/admin/missing_video.mp4" upload-button-container-class="form-upload-button-container" upload-button-class="form-button upload-button form-upload-button" upload-api-url="/admin/upload/video" delete-button-class="form-button delete-button form-delete-button" delete-api-url="/admin/delete/file"></video-path-input-component>
+                </div>
+                <div class="form-field-name">
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Video Path Array' ) ); ?> :
+                </div>
+                <div>
+                    <video-path-input-list-component container-class="form-multilingual-text-input-container" result-class="form-textarea" result-name="VideoPathArray" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->VideoPathArray ) ); ?>" value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></video-path-input-list-component>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
                 </a>

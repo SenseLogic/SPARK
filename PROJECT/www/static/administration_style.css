@@ -660,6 +660,9 @@ textarea {
   gap: 0.5rem;
   align-items: center;
 }
+.form-upload-container.is-readonly {
+  gap: 0;
+}
 .form-upload-input {
   grid-area: input;
 }
@@ -695,6 +698,9 @@ textarea {
   flex-direction: column;
   gap: 0.5rem;
 }
+.form-list-container.is-readonly {
+  gap: 0;
+}
 .form-value-container {
   display: grid;
   grid-template-rows: auto;
@@ -702,6 +708,9 @@ textarea {
   grid-template-areas: "value add-button remove-button";
   gap: 0.5rem;
   align-items: center;
+}
+.form-list-container.is-readonly .form-value-container {
+  gap: 0;
 }
 .form-value {
   grid-area: value;
@@ -853,7 +862,10 @@ textarea {
   grid-template-columns: repeat(3, auto);
 }
 .block-table {
-  grid-template-columns: repeat(16, auto);
+  grid-template-columns: repeat(28, auto);
+}
+.block-table {
+  grid-template-columns: repeat(28, auto);
 }
 .contact-table {
   grid-template-columns: repeat(8, auto);

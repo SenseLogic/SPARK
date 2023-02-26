@@ -56,6 +56,11 @@
             </a>
         </div>
         <div class="tree-container">
+            <a class="tree-button" href="/admin/block">
+                <% GetTextBySlug( 'Blocks' ) %>
+            </a>
+        </div>
+        <div class="tree-container">
             <a class="tree-button" href="/admin/contact">
                 <% GetTextBySlug( 'Contacts' ) %>
             </a>

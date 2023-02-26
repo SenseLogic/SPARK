@@ -54,13 +54,13 @@
                             <% GetTextBySlug( 'Slug' ) %> :
                         </div>
                         <div>
-                            <input-component result-class="form-input" result-name="Slug" result-value="<% GetValueText( block_content.Slug ) %>" result-readonly></input-component>
+                            <input-component result-class="form-input" result-name="Slug" result-value="<% GetValueText( block_content.Slug ) %>" is-readonly></input-component>
                         </div>
                         <div class="form-field-name">
                             <% GetTextBySlug( 'Name' ) %> :
                         </div>
                         <div>
-                            <input-component result-class="form-input" result-name="Name" result-value="<% GetValueText( block_content.Name ) %>" result-readonly></input-component>
+                            <input-component result-class="form-input" result-name="Name" result-value="<% GetValueText( block_content.Name ) %>" is-readonly></input-component>
                         </div>
                     </div>
                     <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>

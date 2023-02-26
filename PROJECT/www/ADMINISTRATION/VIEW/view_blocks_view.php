@@ -24,10 +24,10 @@
                 <?php echo htmlspecialchars( GetTextBySlug( 'Category Slug' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( GetTextBySlug( 'Content Slug' ) ); ?>
+                <?php echo htmlspecialchars( GetTextBySlug( 'Type Slug' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( GetTextBySlug( 'Type Slug' ) ); ?>
+                <?php echo htmlspecialchars( GetTextBySlug( 'Content Slug' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
                 <?php echo htmlspecialchars( GetTextBySlug( 'Number' ) ); ?>
@@ -42,22 +42,58 @@
                 <?php echo htmlspecialchars( GetTextBySlug( 'Title' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
+                <?php echo htmlspecialchars( GetTextBySlug( 'Title Array' ) ); ?>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <?php echo htmlspecialchars( GetTextBySlug( 'Teaser' ) ); ?>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <?php echo htmlspecialchars( GetTextBySlug( 'Teaser Array' ) ); ?>
+            </div>
+            <div class="form-column-name sortable-table-column">
                 <?php echo htmlspecialchars( GetTextBySlug( 'Text' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( GetTextBySlug( 'Image Path' ) ); ?>
+                <?php echo htmlspecialchars( GetTextBySlug( 'Text Array' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( GetTextBySlug( 'Image Vertical Position' ) ); ?>
+                <?php echo htmlspecialchars( GetTextBySlug( 'Route' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( GetTextBySlug( 'Image Horizontal Position' ) ); ?>
+                <?php echo htmlspecialchars( GetTextBySlug( 'Route Array' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
                 <?php echo htmlspecialchars( GetTextBySlug( 'Image Side' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
+                <?php echo htmlspecialchars( GetTextBySlug( 'Image Legend' ) ); ?>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <?php echo htmlspecialchars( GetTextBySlug( 'Image Legend Array' ) ); ?>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <?php echo htmlspecialchars( GetTextBySlug( 'Image Path' ) ); ?>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <?php echo htmlspecialchars( GetTextBySlug( 'Image Path Array' ) ); ?>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <?php echo htmlspecialchars( GetTextBySlug( 'Image Vertical Position' ) ); ?>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <?php echo htmlspecialchars( GetTextBySlug( 'Image Vertical Position Array' ) ); ?>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <?php echo htmlspecialchars( GetTextBySlug( 'Image Horizontal Position' ) ); ?>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <?php echo htmlspecialchars( GetTextBySlug( 'Image Horizontal Position Array' ) ); ?>
+            </div>
+            <div class="form-column-name sortable-table-column">
                 <?php echo htmlspecialchars( GetTextBySlug( 'Video Path' ) ); ?>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <?php echo htmlspecialchars( GetTextBySlug( 'Video Path Array' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
                 <?php echo htmlspecialchars( GetTextBySlug( 'Action' ) ); ?>
@@ -74,10 +110,10 @@
                         <?php echo htmlspecialchars( GetValueText( $block->CategorySlug ) ); ?>
                     </div>
                     <div class="sortable-table-cell filter-cell">
-                        <?php echo htmlspecialchars( GetValueText( $block->ContentSlug ) ); ?>
+                        <?php echo htmlspecialchars( GetValueText( $block->TypeSlug ) ); ?>
                     </div>
                     <div class="sortable-table-cell filter-cell">
-                        <?php echo htmlspecialchars( GetValueText( $block->TypeSlug ) ); ?>
+                        <?php echo htmlspecialchars( GetValueText( $block->ContentSlug ) ); ?>
                     </div>
                     <div class="sortable-table-cell filter-cell">
                         <?php echo htmlspecialchars( GetValueText( $block->Number ) ); ?>
@@ -92,10 +128,25 @@
                         <div>
                             <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
                                 <div class="form-translation">
-                                    <?php echo htmlspecialchars( GetValueText( GetTranslatedText( $block->Title, $language_code ) ) ); ?>
+                                    <?php echo htmlspecialchars( GetTranslatedText( $block->Title, $language_code ) ); ?>
                                 </div>
                             <?php } ?>
                         </div>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <?php echo htmlspecialchars( GetValueText( $block->TitleArray ) ); ?>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <div>
+                            <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
+                                <div class="form-translation">
+                                    <?php echo htmlspecialchars( GetTranslatedText( $block->Teaser, $language_code ) ); ?>
+                                </div>
+                            <?php } ?>
+                        </div>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <?php echo htmlspecialchars( GetValueText( $block->TeaserArray ) ); ?>
                     </div>
                     <div class="sortable-table-cell filter-cell">
                         <div>
@@ -107,19 +158,58 @@
                         </div>
                     </div>
                     <div class="sortable-table-cell filter-cell">
-                        <?php echo htmlspecialchars( GetValueText( $block->ImagePath ) ); ?>
+                        <?php echo htmlspecialchars( GetValueText( $block->TextArray ) ); ?>
                     </div>
                     <div class="sortable-table-cell filter-cell">
-                        <?php echo htmlspecialchars( GetValueText( $block->ImageVerticalPosition ) ); ?>
+                        <div>
+                            <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
+                                <div class="form-translation">
+                                    <?php echo htmlspecialchars( GetValueText( GetTranslatedText( $block->Route, $language_code ) ) ); ?>
+                                </div>
+                            <?php } ?>
+                        </div>
                     </div>
                     <div class="sortable-table-cell filter-cell">
-                        <?php echo htmlspecialchars( GetValueText( $block->ImageHorizontalPosition ) ); ?>
+                        <?php echo htmlspecialchars( GetValueText( $block->RouteArray ) ); ?>
                     </div>
                     <div class="sortable-table-cell filter-cell">
                         <?php echo htmlspecialchars( GetValueText( $block->ImageSide ) ); ?>
                     </div>
                     <div class="sortable-table-cell filter-cell">
+                        <div>
+                            <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
+                                <div class="form-translation">
+                                    <?php echo htmlspecialchars( GetTranslatedText( $block->ImageLegend, $language_code ) ); ?>
+                                </div>
+                            <?php } ?>
+                        </div>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <?php echo htmlspecialchars( GetValueText( $block->ImageLegendArray ) ); ?>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <?php echo htmlspecialchars( GetValueText( $block->ImagePath ) ); ?>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <?php echo htmlspecialchars( GetValueText( $block->ImagePathArray ) ); ?>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <?php echo htmlspecialchars( GetValueText( $block->ImageVerticalPosition ) ); ?>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <?php echo htmlspecialchars( GetValueText( $block->ImageVerticalPositionArray ) ); ?>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <?php echo htmlspecialchars( GetValueText( $block->ImageHorizontalPosition ) ); ?>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <?php echo htmlspecialchars( GetValueText( $block->ImageHorizontalPositionArray ) ); ?>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
                         <?php echo htmlspecialchars( GetValueText( $block->VideoPath ) ); ?>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <?php echo htmlspecialchars( GetValueText( $block->VideoPathArray ) ); ?>
                     </div>
                     <div class="form-centered sortable-table-cell">
                         <a class="form-button view-button" href="/admin/block/view/<?php echo htmlspecialchars( $block->Id ); ?>">
@@ -144,7 +234,7 @@
                             <?php echo htmlspecialchars( GetTextBySlug( 'Slug' ) ); ?> :
                         </div>
                         <div>
-                            <input-component result-class="form-input" result-name="Slug" result-value="<?php echo htmlspecialchars( GetValueText( $block->Slug ) ); ?>" result-readonly></input-component>
+                            <input-component result-class="form-input" result-name="Slug" result-value="<?php echo htmlspecialchars( GetValueText( $block->Slug ) ); ?>" is-readonly></input-component>
                         </div>
                         <div class="form-field-name">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Page Id' ) ); ?> :
@@ -169,17 +259,6 @@
                             </select>
                         </div>
                         <div class="form-field-name">
-                            <?php echo htmlspecialchars( GetTextBySlug( 'Content Slug' ) ); ?> :
-                        </div>
-                        <div>
-                            <select class="form-select" name="ContentSlug" readonly>
-                                <?php  $block_content_array = $this->BlockContentArray; ?>
-                                <?php foreach ( $block_content_array as  $block_content ) { ?>
-                                    <option value="<?php echo htmlspecialchars( GetValueText( $block_content->Slug ) ); ?>"<?php if ( $block->ContentSlug === $block_content->Slug ) echo ' selected'; ?>><?php echo htmlspecialchars( GetUntranslatedText( $block_content->Name ) ); ?></option>
-                                <?php } ?>
-                            </select>
-                        </div>
-                        <div class="form-field-name">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Type Slug' ) ); ?> :
                         </div>
                         <div>
@@ -191,40 +270,115 @@
                             </select>
                         </div>
                         <div class="form-field-name">
+                            <?php echo htmlspecialchars( GetTextBySlug( 'Content Slug' ) ); ?> :
+                        </div>
+                        <div>
+                            <select class="form-select" name="ContentSlug" readonly>
+                                <?php  $block_content_array = $this->BlockContentArray; ?>
+                                <?php foreach ( $block_content_array as  $block_content ) { ?>
+                                    <option value="<?php echo htmlspecialchars( GetValueText( $block_content->Slug ) ); ?>"<?php if ( $block->ContentSlug === $block_content->Slug ) echo ' selected'; ?>><?php echo htmlspecialchars( GetUntranslatedText( $block_content->Name ) ); ?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
+                        <div class="form-field-name">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Number' ) ); ?> :
                         </div>
                         <div>
-                            <input-component result-class="form-input" result-name="Number" result-value="<?php echo htmlspecialchars( GetValueText( $block->Number ) ); ?>" result-readonly></input-component>
+                            <input-component result-class="form-input" result-name="Number" result-value="<?php echo htmlspecialchars( GetValueText( $block->Number ) ); ?>" is-readonly></input-component>
                         </div>
                         <div class="form-field-name">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Language Code Array' ) ); ?> :
                         </div>
                         <div>
-                            <input-list-component container-class="form-list-container" result-class="form-list-container" result-name="LanguageCodeArray" result-value="<?php echo htmlspecialchars( GetValueText( $block->LanguageCodeArray ) ); ?>" result-readonly value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></input-list-component>
+                            <input-list-component container-class="form-list-container" result-class="form-list-container" result-name="LanguageCodeArray" result-value="<?php echo htmlspecialchars( GetValueText( $block->LanguageCodeArray ) ); ?>" is-readonly value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></input-list-component>
                         </div>
                         <div class="form-field-name">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Minimum Height' ) ); ?> :
                         </div>
                         <div>
-                            <input-component result-class="form-input" result-name="MinimumHeight" result-value="<?php echo htmlspecialchars( GetValueText( $block->MinimumHeight ) ); ?>" result-readonly></input-component>
+                            <input-component result-class="form-input" result-name="MinimumHeight" result-value="<?php echo htmlspecialchars( GetValueText( $block->MinimumHeight ) ); ?>" is-readonly></input-component>
                         </div>
                         <div class="form-field-name">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Title' ) ); ?> :
                         </div>
                         <div>
-                            <multilingual-input-component container-class="form-multilingual-container" result-class="form-input" result-name="Title" result-value="<?php echo htmlspecialchars( GetValueText( $block->Title ) ); ?>" result-readonly language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-input-component>
+                            <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Title" result-value="<?php echo htmlspecialchars( GetValueText( $block->Title ) ); ?>" is-readonly language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-text-input-component>
+                        </div>
+                        <div class="form-field-name">
+                            <?php echo htmlspecialchars( GetTextBySlug( 'Title Array' ) ); ?> :
+                        </div>
+                        <div>
+                            <multilingual-text-input-list-component container-class="form-list-container" result-class="form-textarea" result-name="TitleArray" result-value="<?php echo htmlspecialchars( GetValueText( $block->TitleArray ) ); ?>" is-readonly value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-text-input-list-component>
+                        </div>
+                        <div class="form-field-name">
+                            <?php echo htmlspecialchars( GetTextBySlug( 'Teaser' ) ); ?> :
+                        </div>
+                        <div>
+                            <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Teaser" result-value="<?php echo htmlspecialchars( GetValueText( $block->Teaser ) ); ?>" is-readonly language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-text-input-component>
+                        </div>
+                        <div class="form-field-name">
+                            <?php echo htmlspecialchars( GetTextBySlug( 'Teaser Array' ) ); ?> :
+                        </div>
+                        <div>
+                            <multilingual-text-input-list-component container-class="form-list-container" result-class="form-textarea" result-name="TeaserArray" result-value="<?php echo htmlspecialchars( GetValueText( $block->TeaserArray ) ); ?>" is-readonly value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-text-input-list-component>
                         </div>
                         <div class="form-field-name">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Text' ) ); ?> :
                         </div>
                         <div>
-                            <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Text" result-value="<?php echo htmlspecialchars( GetValueText( $block->Text ) ); ?>" result-readonly language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-text-input-component>
+                            <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Text" result-value="<?php echo htmlspecialchars( GetValueText( $block->Text ) ); ?>" is-readonly language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-text-input-component>
+                        </div>
+                        <div class="form-field-name">
+                            <?php echo htmlspecialchars( GetTextBySlug( 'Text Array' ) ); ?> :
+                        </div>
+                        <div>
+                            <multilingual-text-input-list-component container-class="form-list-container" result-class="form-textarea" result-name="TextArray" result-value="<?php echo htmlspecialchars( GetValueText( $block->TextArray ) ); ?>" is-readonly value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-text-input-list-component>
+                        </div>
+                        <div class="form-field-name">
+                            <?php echo htmlspecialchars( GetTextBySlug( 'Route' ) ); ?> :
+                        </div>
+                        <div>
+                            <multilingual-input-component container-class="form-multilingual-container" result-class="form-input" result-name="Route" result-value="<?php echo htmlspecialchars( GetValueText( $block->Route ) ); ?>" is-readonly language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-input-component>
+                        </div>
+                        <div class="form-field-name">
+                            <?php echo htmlspecialchars( GetTextBySlug( 'Route Array' ) ); ?> :
+                        </div>
+                        <div>
+                            <multilingual-input-list-component container-class="form-list-container" result-class="form-input" result-name="RouteArray" result-value="<?php echo htmlspecialchars( GetValueText( $block->RouteArray ) ); ?>" is-readonly value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-input-list-component>
+                        </div>
+                        <div class="form-field-name">
+                            <?php echo htmlspecialchars( GetTextBySlug( 'Image Side' ) ); ?> :
+                        </div>
+                        <div>
+                            <select class="form-select" name="ImageSide" readonly>
+                                <option value="left"<?php if ( $block->ImageSide === 'left' ) echo ' selected'; ?>>Left</option>
+                                <option value="right"<?php if ( $block->ImageSide === 'right' ) echo ' selected'; ?>>Right</option>
+                                <option value="top"<?php if ( $block->ImageSide === 'top' ) echo ' selected'; ?>>Top</option>
+                            </select>
+                        </div>
+                        <div class="form-field-name">
+                            <?php echo htmlspecialchars( GetTextBySlug( 'Image Legend' ) ); ?> :
+                        </div>
+                        <div>
+                            <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="ImageLegend" result-value="<?php echo htmlspecialchars( GetValueText( $block->ImageLegend ) ); ?>" is-readonly language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-text-input-component>
+                        </div>
+                        <div class="form-field-name">
+                            <?php echo htmlspecialchars( GetTextBySlug( 'Image Legend Array' ) ); ?> :
+                        </div>
+                        <div>
+                            <multilingual-text-input-list-component container-class="form-list-container" result-class="form-textarea" result-name="ImageLegendArray" result-value="<?php echo htmlspecialchars( GetValueText( $block->ImageLegendArray ) ); ?>" is-readonly value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-text-input-list-component>
                         </div>
                         <div class="form-field-name">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Image Path' ) ); ?> :
                         </div>
                         <div>
-                            <image-path-input-component container-class="form-upload-container" result-class="form-input form-upload-input" result-name="ImagePath" result-value="<?php echo htmlspecialchars( GetValueText( $block->ImagePath ) ); ?>" result-readonly image-class="form-upload-image" error-image-path="/static/image/admin/missing_image.svg"></image-path-input-component>
+                            <image-path-input-component container-class="form-upload-container" result-class="form-input form-upload-input" result-name="ImagePath" result-value="<?php echo htmlspecialchars( GetValueText( $block->ImagePath ) ); ?>" is-readonly image-class="form-upload-image" error-image-path="/static/image/admin/missing_image.svg"></image-path-input-component>
+                        </div>
+                        <div class="form-field-name">
+                            <?php echo htmlspecialchars( GetTextBySlug( 'Image Path Array' ) ); ?> :
+                        </div>
+                        <div>
+                            <image-path-input-list-component container-class="form-list-container" result-class="form-textarea" result-name="ImagePathArray" result-value="<?php echo htmlspecialchars( GetValueText( $block->ImagePathArray ) ); ?>" is-readonly value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></image-path-input-list-component>
                         </div>
                         <div class="form-field-name">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Image Vertical Position' ) ); ?> :
@@ -245,6 +399,12 @@
                             </select>
                         </div>
                         <div class="form-field-name">
+                            <?php echo htmlspecialchars( GetTextBySlug( 'Image Vertical Position Array' ) ); ?> :
+                        </div>
+                        <div>
+                            <input-list-component container-class="form-list-container" result-class="form-list-container" result-name="ImageVerticalPositionArray" result-value="<?php echo htmlspecialchars( GetValueText( $block->ImageVerticalPositionArray ) ); ?>" is-readonly value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></input-list-component>
+                        </div>
+                        <div class="form-field-name">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Image Horizontal Position' ) ); ?> :
                         </div>
                         <div>
@@ -263,19 +423,22 @@
                             </select>
                         </div>
                         <div class="form-field-name">
-                            <?php echo htmlspecialchars( GetTextBySlug( 'Image Side' ) ); ?> :
+                            <?php echo htmlspecialchars( GetTextBySlug( 'Image Horizontal Position Array' ) ); ?> :
                         </div>
                         <div>
-                            <select class="form-select" name="ImageSide" readonly>
-                                <option value="left"<?php if ( $block->ImageSide === 'left' ) echo ' selected'; ?>>Left</option>
-                                <option value="right"<?php if ( $block->ImageSide === 'right' ) echo ' selected'; ?>>Right</option>
-                            </select>
+                            <input-list-component container-class="form-list-container" result-class="form-list-container" result-name="ImageHorizontalPositionArray" result-value="<?php echo htmlspecialchars( GetValueText( $block->ImageHorizontalPositionArray ) ); ?>" is-readonly value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></input-list-component>
                         </div>
                         <div class="form-field-name">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Video Path' ) ); ?> :
                         </div>
                         <div>
-                            <video-path-input-component container-class="form-upload-container" result-class="form-input form-upload-input" result-name="VideoPath" result-value="<?php echo htmlspecialchars( GetValueText( $block->VideoPath ) ); ?>" result-readonly video-class="form-upload-video" error-video-path="/static/video/admin/missing_video.mp4"></video-path-input-component>
+                            <video-path-input-component container-class="form-upload-container" result-class="form-input form-upload-input" result-name="VideoPath" result-value="<?php echo htmlspecialchars( GetValueText( $block->VideoPath ) ); ?>" is-readonly video-class="form-upload-video" error-video-path="/static/video/admin/missing_video.mp4"></video-path-input-component>
+                        </div>
+                        <div class="form-field-name">
+                            <?php echo htmlspecialchars( GetTextBySlug( 'Video Path Array' ) ); ?> :
+                        </div>
+                        <div>
+                            <video-path-input-list-component container-class="form-list-container" result-class="form-textarea" result-name="VideoPathArray" result-value="<?php echo htmlspecialchars( GetValueText( $block->VideoPathArray ) ); ?>" is-readonly value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></video-path-input-list-component>
                         </div>
                     </div>
                     <?php if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>

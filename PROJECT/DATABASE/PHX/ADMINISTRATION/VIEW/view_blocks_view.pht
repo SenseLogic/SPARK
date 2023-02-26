@@ -24,10 +24,10 @@
                 <% GetTextBySlug( 'Category Slug' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% GetTextBySlug( 'Content Slug' ) %>
+                <% GetTextBySlug( 'Type Slug' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% GetTextBySlug( 'Type Slug' ) %>
+                <% GetTextBySlug( 'Content Slug' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
                 <% GetTextBySlug( 'Number' ) %>
@@ -42,22 +42,58 @@
                 <% GetTextBySlug( 'Title' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
+                <% GetTextBySlug( 'Title Array' ) %>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <% GetTextBySlug( 'Teaser' ) %>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <% GetTextBySlug( 'Teaser Array' ) %>
+            </div>
+            <div class="form-column-name sortable-table-column">
                 <% GetTextBySlug( 'Text' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% GetTextBySlug( 'Image Path' ) %>
+                <% GetTextBySlug( 'Text Array' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% GetTextBySlug( 'Image Vertical Position' ) %>
+                <% GetTextBySlug( 'Route' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% GetTextBySlug( 'Image Horizontal Position' ) %>
+                <% GetTextBySlug( 'Route Array' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
                 <% GetTextBySlug( 'Image Side' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
+                <% GetTextBySlug( 'Image Legend' ) %>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <% GetTextBySlug( 'Image Legend Array' ) %>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <% GetTextBySlug( 'Image Path' ) %>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <% GetTextBySlug( 'Image Path Array' ) %>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <% GetTextBySlug( 'Image Vertical Position' ) %>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <% GetTextBySlug( 'Image Vertical Position Array' ) %>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <% GetTextBySlug( 'Image Horizontal Position' ) %>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <% GetTextBySlug( 'Image Horizontal Position Array' ) %>
+            </div>
+            <div class="form-column-name sortable-table-column">
                 <% GetTextBySlug( 'Video Path' ) %>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <% GetTextBySlug( 'Video Path Array' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
                 <% GetTextBySlug( 'Action' ) %>
@@ -74,10 +110,10 @@
                         <% GetValueText( block.CategorySlug ) %>
                     </div>
                     <div class="sortable-table-cell filter-cell">
-                        <% GetValueText( block.ContentSlug ) %>
+                        <% GetValueText( block.TypeSlug ) %>
                     </div>
                     <div class="sortable-table-cell filter-cell">
-                        <% GetValueText( block.TypeSlug ) %>
+                        <% GetValueText( block.ContentSlug ) %>
                     </div>
                     <div class="sortable-table-cell filter-cell">
                         <% GetValueText( block.Number ) %>
@@ -92,10 +128,25 @@
                         <div>
                             <? foreach ( var language_code; LanguageCodeArray ) { ?>
                                 <div class="form-translation">
-                                    <% GetValueText( GetTranslatedText( block.Title, language_code ) ) %>
+                                    <% GetTranslatedText( block.Title, language_code ) %>
                                 </div>
                             <? } ?>
                         </div>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <% GetValueText( block.TitleArray ) %>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <div>
+                            <? foreach ( var language_code; LanguageCodeArray ) { ?>
+                                <div class="form-translation">
+                                    <% GetTranslatedText( block.Teaser, language_code ) %>
+                                </div>
+                            <? } ?>
+                        </div>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <% GetValueText( block.TeaserArray ) %>
                     </div>
                     <div class="sortable-table-cell filter-cell">
                         <div>
@@ -107,19 +158,58 @@
                         </div>
                     </div>
                     <div class="sortable-table-cell filter-cell">
-                        <% GetValueText( block.ImagePath ) %>
+                        <% GetValueText( block.TextArray ) %>
                     </div>
                     <div class="sortable-table-cell filter-cell">
-                        <% GetValueText( block.ImageVerticalPosition ) %>
+                        <div>
+                            <? foreach ( var language_code; LanguageCodeArray ) { ?>
+                                <div class="form-translation">
+                                    <% GetValueText( GetTranslatedText( block.Route, language_code ) ) %>
+                                </div>
+                            <? } ?>
+                        </div>
                     </div>
                     <div class="sortable-table-cell filter-cell">
-                        <% GetValueText( block.ImageHorizontalPosition ) %>
+                        <% GetValueText( block.RouteArray ) %>
                     </div>
                     <div class="sortable-table-cell filter-cell">
                         <% GetValueText( block.ImageSide ) %>
                     </div>
                     <div class="sortable-table-cell filter-cell">
+                        <div>
+                            <? foreach ( var language_code; LanguageCodeArray ) { ?>
+                                <div class="form-translation">
+                                    <% GetTranslatedText( block.ImageLegend, language_code ) %>
+                                </div>
+                            <? } ?>
+                        </div>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <% GetValueText( block.ImageLegendArray ) %>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <% GetValueText( block.ImagePath ) %>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <% GetValueText( block.ImagePathArray ) %>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <% GetValueText( block.ImageVerticalPosition ) %>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <% GetValueText( block.ImageVerticalPositionArray ) %>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <% GetValueText( block.ImageHorizontalPosition ) %>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <% GetValueText( block.ImageHorizontalPositionArray ) %>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
                         <% GetValueText( block.VideoPath ) %>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <% GetValueText( block.VideoPathArray ) %>
                     </div>
                     <div class="form-centered sortable-table-cell">
                         <a class="form-button view-button" href="/admin/block/view/<% block.Id %>">
@@ -144,7 +234,7 @@
                             <% GetTextBySlug( 'Slug' ) %> :
                         </div>
                         <div>
-                            <input-component result-class="form-input" result-name="Slug" result-value="<% GetValueText( block.Slug ) %>" result-readonly></input-component>
+                            <input-component result-class="form-input" result-name="Slug" result-value="<% GetValueText( block.Slug ) %>" is-readonly></input-component>
                         </div>
                         <div class="form-field-name">
                             <% GetTextBySlug( 'Page Id' ) %> :
@@ -169,17 +259,6 @@
                             </select>
                         </div>
                         <div class="form-field-name">
-                            <% GetTextBySlug( 'Content Slug' ) %> :
-                        </div>
-                        <div>
-                            <select class="form-select" name="ContentSlug" readonly>
-                                <? var block_content_array = .BlockContentArray; ?>
-                                <? foreach ( var block_content; block_content_array ) { ?>
-                                    <option value="<% GetValueText( block_content.Slug ) %>"<? if ( block.ContentSlug === block_content.Slug ) echo ' selected'; ?>><% GetUntranslatedText( block_content.Name ) %></option>
-                                <? } ?>
-                            </select>
-                        </div>
-                        <div class="form-field-name">
                             <% GetTextBySlug( 'Type Slug' ) %> :
                         </div>
                         <div>
@@ -191,40 +270,115 @@
                             </select>
                         </div>
                         <div class="form-field-name">
+                            <% GetTextBySlug( 'Content Slug' ) %> :
+                        </div>
+                        <div>
+                            <select class="form-select" name="ContentSlug" readonly>
+                                <? var block_content_array = .BlockContentArray; ?>
+                                <? foreach ( var block_content; block_content_array ) { ?>
+                                    <option value="<% GetValueText( block_content.Slug ) %>"<? if ( block.ContentSlug === block_content.Slug ) echo ' selected'; ?>><% GetUntranslatedText( block_content.Name ) %></option>
+                                <? } ?>
+                            </select>
+                        </div>
+                        <div class="form-field-name">
                             <% GetTextBySlug( 'Number' ) %> :
                         </div>
                         <div>
-                            <input-component result-class="form-input" result-name="Number" result-value="<% GetValueText( block.Number ) %>" result-readonly></input-component>
+                            <input-component result-class="form-input" result-name="Number" result-value="<% GetValueText( block.Number ) %>" is-readonly></input-component>
                         </div>
                         <div class="form-field-name">
                             <% GetTextBySlug( 'Language Code Array' ) %> :
                         </div>
                         <div>
-                            <input-list-component container-class="form-list-container" result-class="form-list-container" result-name="LanguageCodeArray" result-value="<% GetValueText( block.LanguageCodeArray ) %>" result-readonly value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></input-list-component>
+                            <input-list-component container-class="form-list-container" result-class="form-list-container" result-name="LanguageCodeArray" result-value="<% GetValueText( block.LanguageCodeArray ) %>" is-readonly value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></input-list-component>
                         </div>
                         <div class="form-field-name">
                             <% GetTextBySlug( 'Minimum Height' ) %> :
                         </div>
                         <div>
-                            <input-component result-class="form-input" result-name="MinimumHeight" result-value="<% GetValueText( block.MinimumHeight ) %>" result-readonly></input-component>
+                            <input-component result-class="form-input" result-name="MinimumHeight" result-value="<% GetValueText( block.MinimumHeight ) %>" is-readonly></input-component>
                         </div>
                         <div class="form-field-name">
                             <% GetTextBySlug( 'Title' ) %> :
                         </div>
                         <div>
-                            <multilingual-input-component container-class="form-multilingual-container" result-class="form-input" result-name="Title" result-value="<% GetValueText( block.Title ) %>" result-readonly language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-input-component>
+                            <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Title" result-value="<% GetValueText( block.Title ) %>" is-readonly language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-text-input-component>
+                        </div>
+                        <div class="form-field-name">
+                            <% GetTextBySlug( 'Title Array' ) %> :
+                        </div>
+                        <div>
+                            <multilingual-text-input-list-component container-class="form-list-container" result-class="form-textarea" result-name="TitleArray" result-value="<% GetValueText( block.TitleArray ) %>" is-readonly value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-text-input-list-component>
+                        </div>
+                        <div class="form-field-name">
+                            <% GetTextBySlug( 'Teaser' ) %> :
+                        </div>
+                        <div>
+                            <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Teaser" result-value="<% GetValueText( block.Teaser ) %>" is-readonly language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-text-input-component>
+                        </div>
+                        <div class="form-field-name">
+                            <% GetTextBySlug( 'Teaser Array' ) %> :
+                        </div>
+                        <div>
+                            <multilingual-text-input-list-component container-class="form-list-container" result-class="form-textarea" result-name="TeaserArray" result-value="<% GetValueText( block.TeaserArray ) %>" is-readonly value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-text-input-list-component>
                         </div>
                         <div class="form-field-name">
                             <% GetTextBySlug( 'Text' ) %> :
                         </div>
                         <div>
-                            <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Text" result-value="<% GetValueText( block.Text ) %>" result-readonly language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-text-input-component>
+                            <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Text" result-value="<% GetValueText( block.Text ) %>" is-readonly language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-text-input-component>
+                        </div>
+                        <div class="form-field-name">
+                            <% GetTextBySlug( 'Text Array' ) %> :
+                        </div>
+                        <div>
+                            <multilingual-text-input-list-component container-class="form-list-container" result-class="form-textarea" result-name="TextArray" result-value="<% GetValueText( block.TextArray ) %>" is-readonly value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-text-input-list-component>
+                        </div>
+                        <div class="form-field-name">
+                            <% GetTextBySlug( 'Route' ) %> :
+                        </div>
+                        <div>
+                            <multilingual-input-component container-class="form-multilingual-container" result-class="form-input" result-name="Route" result-value="<% GetValueText( block.Route ) %>" is-readonly language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-input-component>
+                        </div>
+                        <div class="form-field-name">
+                            <% GetTextBySlug( 'Route Array' ) %> :
+                        </div>
+                        <div>
+                            <multilingual-input-list-component container-class="form-list-container" result-class="form-input" result-name="RouteArray" result-value="<% GetValueText( block.RouteArray ) %>" is-readonly value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-input-list-component>
+                        </div>
+                        <div class="form-field-name">
+                            <% GetTextBySlug( 'Image Side' ) %> :
+                        </div>
+                        <div>
+                            <select class="form-select" name="ImageSide" readonly>
+                                <option value="left"<? if ( block.ImageSide === 'left' ) echo ' selected'; ?>>Left</option>
+                                <option value="right"<? if ( block.ImageSide === 'right' ) echo ' selected'; ?>>Right</option>
+                                <option value="top"<? if ( block.ImageSide === 'top' ) echo ' selected'; ?>>Top</option>
+                            </select>
+                        </div>
+                        <div class="form-field-name">
+                            <% GetTextBySlug( 'Image Legend' ) %> :
+                        </div>
+                        <div>
+                            <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="ImageLegend" result-value="<% GetValueText( block.ImageLegend ) %>" is-readonly language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-text-input-component>
+                        </div>
+                        <div class="form-field-name">
+                            <% GetTextBySlug( 'Image Legend Array' ) %> :
+                        </div>
+                        <div>
+                            <multilingual-text-input-list-component container-class="form-list-container" result-class="form-textarea" result-name="ImageLegendArray" result-value="<% GetValueText( block.ImageLegendArray ) %>" is-readonly value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-text-input-list-component>
                         </div>
                         <div class="form-field-name">
                             <% GetTextBySlug( 'Image Path' ) %> :
                         </div>
                         <div>
-                            <image-path-input-component container-class="form-upload-container" result-class="form-input form-upload-input" result-name="ImagePath" result-value="<% GetValueText( block.ImagePath ) %>" result-readonly image-class="form-upload-image" error-image-path="/static/image/admin/missing_image.svg"></image-path-input-component>
+                            <image-path-input-component container-class="form-upload-container" result-class="form-input form-upload-input" result-name="ImagePath" result-value="<% GetValueText( block.ImagePath ) %>" is-readonly image-class="form-upload-image" error-image-path="/static/image/admin/missing_image.svg"></image-path-input-component>
+                        </div>
+                        <div class="form-field-name">
+                            <% GetTextBySlug( 'Image Path Array' ) %> :
+                        </div>
+                        <div>
+                            <image-path-input-list-component container-class="form-list-container" result-class="form-textarea" result-name="ImagePathArray" result-value="<% GetValueText( block.ImagePathArray ) %>" is-readonly value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></image-path-input-list-component>
                         </div>
                         <div class="form-field-name">
                             <% GetTextBySlug( 'Image Vertical Position' ) %> :
@@ -245,6 +399,12 @@
                             </select>
                         </div>
                         <div class="form-field-name">
+                            <% GetTextBySlug( 'Image Vertical Position Array' ) %> :
+                        </div>
+                        <div>
+                            <input-list-component container-class="form-list-container" result-class="form-list-container" result-name="ImageVerticalPositionArray" result-value="<% GetValueText( block.ImageVerticalPositionArray ) %>" is-readonly value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></input-list-component>
+                        </div>
+                        <div class="form-field-name">
                             <% GetTextBySlug( 'Image Horizontal Position' ) %> :
                         </div>
                         <div>
@@ -263,19 +423,22 @@
                             </select>
                         </div>
                         <div class="form-field-name">
-                            <% GetTextBySlug( 'Image Side' ) %> :
+                            <% GetTextBySlug( 'Image Horizontal Position Array' ) %> :
                         </div>
                         <div>
-                            <select class="form-select" name="ImageSide" readonly>
-                                <option value="left"<? if ( block.ImageSide === 'left' ) echo ' selected'; ?>>Left</option>
-                                <option value="right"<? if ( block.ImageSide === 'right' ) echo ' selected'; ?>>Right</option>
-                            </select>
+                            <input-list-component container-class="form-list-container" result-class="form-list-container" result-name="ImageHorizontalPositionArray" result-value="<% GetValueText( block.ImageHorizontalPositionArray ) %>" is-readonly value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></input-list-component>
                         </div>
                         <div class="form-field-name">
                             <% GetTextBySlug( 'Video Path' ) %> :
                         </div>
                         <div>
-                            <video-path-input-component container-class="form-upload-container" result-class="form-input form-upload-input" result-name="VideoPath" result-value="<% GetValueText( block.VideoPath ) %>" result-readonly video-class="form-upload-video" error-video-path="/static/video/admin/missing_video.mp4"></video-path-input-component>
+                            <video-path-input-component container-class="form-upload-container" result-class="form-input form-upload-input" result-name="VideoPath" result-value="<% GetValueText( block.VideoPath ) %>" is-readonly video-class="form-upload-video" error-video-path="/static/video/admin/missing_video.mp4"></video-path-input-component>
+                        </div>
+                        <div class="form-field-name">
+                            <% GetTextBySlug( 'Video Path Array' ) %> :
+                        </div>
+                        <div>
+                            <video-path-input-list-component container-class="form-list-container" result-class="form-textarea" result-name="VideoPathArray" result-value="<% GetValueText( block.VideoPathArray ) %>" is-readonly value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></video-path-input-list-component>
                         </div>
                     </div>
                     <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>

@@ -84,43 +84,43 @@
                             <% GetTextBySlug( 'Name' ) %> :
                         </div>
                         <div>
-                            <input-component result-class="form-input" result-name="Name" result-value="<% GetValueText( contact.Name ) %>" result-readonly></input-component>
+                            <input-component result-class="form-input" result-name="Name" result-value="<% GetValueText( contact.Name ) %>" is-readonly></input-component>
                         </div>
                         <div class="form-field-name">
                             <% GetTextBySlug( 'Company' ) %> :
                         </div>
                         <div>
-                            <input-component result-class="form-input" result-name="Company" result-value="<% GetValueText( contact.Company ) %>" result-readonly></input-component>
+                            <input-component result-class="form-input" result-name="Company" result-value="<% GetValueText( contact.Company ) %>" is-readonly></input-component>
                         </div>
                         <div class="form-field-name">
                             <% GetTextBySlug( 'Email' ) %> :
                         </div>
                         <div>
-                            <input-component result-class="form-input" result-name="Email" result-value="<% GetValueText( contact.Email ) %>" result-readonly></input-component>
+                            <input-component result-class="form-input" result-name="Email" result-value="<% GetValueText( contact.Email ) %>" is-readonly></input-component>
                         </div>
                         <div class="form-field-name">
                             <% GetTextBySlug( 'Phone' ) %> :
                         </div>
                         <div>
-                            <input-component result-class="form-input" result-name="Phone" result-value="<% GetValueText( contact.Phone ) %>" result-readonly></input-component>
+                            <input-component result-class="form-input" result-name="Phone" result-value="<% GetValueText( contact.Phone ) %>" is-readonly></input-component>
                         </div>
                         <div class="form-field-name">
                             <% GetTextBySlug( 'Subject' ) %> :
                         </div>
                         <div>
-                            <input-component result-class="form-input" result-name="Subject" result-value="<% GetValueText( contact.Subject ) %>" result-readonly></input-component>
+                            <input-component result-class="form-input" result-name="Subject" result-value="<% GetValueText( contact.Subject ) %>" is-readonly></input-component>
                         </div>
                         <div class="form-field-name">
                             <% GetTextBySlug( 'Message' ) %> :
                         </div>
                         <div>
-                            <text-input-component result-class="form-textarea" result-name="Message" result-value="<% GetValueText( contact.Message ) %>" result-readonly></text-input-component>
+                            <text-input-component result-class="form-textarea" result-name="Message" result-value="<% GetValueText( contact.Message ) %>" is-readonly></text-input-component>
                         </div>
                         <div class="form-field-name">
                             <% GetTextBySlug( 'Date Time' ) %> :
                         </div>
                         <div>
-                            <input-component result-class="form-input" result-name="DateTime" result-value="<% GetValueText( contact.DateTime ) %>" result-readonly></input-component>
+                            <input-component result-class="form-input" result-name="DateTime" result-value="<% GetValueText( contact.DateTime ) %>" is-readonly></input-component>
                         </div>
                     </div>
                     <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
