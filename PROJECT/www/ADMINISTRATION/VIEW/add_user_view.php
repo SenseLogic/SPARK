@@ -1,4 +1,5 @@
 <?php require __DIR__ . '/' . 'BLOCK/page_header.php'; ?>
+
 <script>
     // -- FUNCTIONS
 
@@ -82,11 +83,11 @@
                         $field_value = '';
                     }
                 ?>
-                <div class="form-field-name">
+                <div class="form-field-name" data-is-column-title data-column-name="Id">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Id' ) ); ?> :
                 </div>
                 <div>
-                    <input-component result-class="form-input" result-name="Id" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
+                    <input-component data-is-column-value data-column-name="Id" result-class="form-input" result-name="Id" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
                      $field_name = 'Pseudonym';
@@ -100,11 +101,11 @@
                         $field_value = '';
                     }
                 ?>
-                <div class="form-field-name">
+                <div class="form-field-name" data-is-column-title data-column-name="Pseudonym">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Pseudonym' ) ); ?> :
                 </div>
                 <div>
-                    <input-component result-class="form-input" result-name="Pseudonym" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
+                    <input-component data-is-column-value data-column-name="Pseudonym" result-class="form-input" result-name="Pseudonym" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
                      $field_name = 'Password';
@@ -118,11 +119,11 @@
                         $field_value = '';
                     }
                 ?>
-                <div class="form-field-name">
+                <div class="form-field-name" data-is-column-title data-column-name="Password">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Password' ) ); ?> :
                 </div>
                 <div>
-                    <input-component result-class="form-input" result-name="Password" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
+                    <input-component data-is-column-value data-column-name="Password" result-class="form-input" result-name="Password" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
                      $field_name = 'Role';
@@ -136,11 +137,11 @@
                         $field_value = '';
                     }
                 ?>
-                <div class="form-field-name">
+                <div class="form-field-name" data-is-column-title data-column-name="Role">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Role' ) ); ?> :
                 </div>
                 <div>
-                    <input-component result-class="form-input" result-name="Role" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
+                    <input-component data-is-column-value data-column-name="Role" result-class="form-input" result-name="Role" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
                      $field_name = 'Email';
@@ -154,11 +155,11 @@
                         $field_value = '';
                     }
                 ?>
-                <div class="form-field-name">
+                <div class="form-field-name" data-is-column-title data-column-name="Email">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Email' ) ); ?> :
                 </div>
                 <div>
-                    <input-component result-class="form-input" result-name="Email" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
+                    <input-component data-is-column-value data-column-name="Email" result-class="form-input" result-name="Email" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
                 </a>
@@ -168,4 +169,5 @@
         </form>
     </div>
 </div>
+
 <?php require __DIR__ . '/' . 'BLOCK/page_footer.php'; ?>

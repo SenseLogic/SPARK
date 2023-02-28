@@ -1,4 +1,5 @@
 <?php require __DIR__ . '/' . 'BLOCK/page_header.php'; ?>
+
 <script>
     // -- FUNCTIONS
 
@@ -40,17 +41,17 @@
     <div class="page-section form-section">
         <form class="form-centered" name="EditBlockContentForm" onsubmit="return IsValidEditBlockContentForm()" action="/admin/block-content/edit/<?php echo htmlspecialchars( $this->BlockContent->Id ); ?>" method="post">
             <div class="form-container">
-                <div class="form-field-name">
+                <div class="form-field-name" data-is-column-title data-column-name="Slug">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Slug' ) ); ?> :
                 </div>
                 <div>
-                    <input-component result-class="form-input" result-name="Slug" result-value="<?php echo htmlspecialchars( GetValueText( $this->BlockContent->Slug ) ); ?>"></input-component>
+                    <input-component data-is-column-value data-column-name="Slug" result-class="form-input" result-name="Slug" result-value="<?php echo htmlspecialchars( GetValueText( $this->BlockContent->Slug ) ); ?>"></input-component>
                 </div>
-                <div class="form-field-name">
+                <div class="form-field-name" data-is-column-title data-column-name="Name">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Name' ) ); ?> :
                 </div>
                 <div>
-                    <input-component result-class="form-input" result-name="Name" result-value="<?php echo htmlspecialchars( GetValueText( $this->BlockContent->Name ) ); ?>"></input-component>
+                    <input-component data-is-column-value data-column-name="Name" result-class="form-input" result-name="Name" result-value="<?php echo htmlspecialchars( GetValueText( $this->BlockContent->Name ) ); ?>"></input-component>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
                 </a>
@@ -60,4 +61,5 @@
         </form>
     </div>
 </div>
+
 <?php require __DIR__ . '/' . 'BLOCK/page_footer.php'; ?>

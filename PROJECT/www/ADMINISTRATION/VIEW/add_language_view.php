@@ -1,4 +1,5 @@
 <?php require __DIR__ . '/' . 'BLOCK/page_header.php'; ?>
+
 <script>
     // -- FUNCTIONS
 
@@ -83,11 +84,11 @@
                         $field_value = '';
                     }
                 ?>
-                <div class="form-field-name">
+                <div class="form-field-name" data-is-column-title data-column-name="Id">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Id' ) ); ?> :
                 </div>
                 <div>
-                    <input-component result-class="form-input" result-name="Id" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
+                    <input-component data-is-column-value data-column-name="Id" result-class="form-input" result-name="Id" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
                      $field_name = 'Code';
@@ -101,11 +102,11 @@
                         $field_value = '';
                     }
                 ?>
-                <div class="form-field-name">
+                <div class="form-field-name" data-is-column-title data-column-name="Code">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Code' ) ); ?> :
                 </div>
                 <div>
-                    <input-component result-class="form-input" result-name="Code" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
+                    <input-component data-is-column-value data-column-name="Code" result-class="form-input" result-name="Code" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
                      $field_name = 'Number';
@@ -119,11 +120,11 @@
                         $field_value = '';
                     }
                 ?>
-                <div class="form-field-name">
+                <div class="form-field-name" data-is-column-title data-column-name="Number">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Number' ) ); ?> :
                 </div>
                 <div>
-                    <input-component result-class="form-input" result-name="Number" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
+                    <input-component data-is-column-value data-column-name="Number" result-class="form-input" result-name="Number" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
                      $field_name = 'Text';
@@ -137,11 +138,11 @@
                         $field_value = '';
                     }
                 ?>
-                <div class="form-field-name">
+                <div class="form-field-name" data-is-column-title data-column-name="Text">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Text' ) ); ?> :
                 </div>
                 <div>
-                    <multilingual-input-component container-class="form-multilingual-container" result-class="form-input" result-name="Text" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-input-component>
+                    <multilingual-input-component data-is-column-value data-column-name="Text" container-class="form-multilingual-container" result-class="form-input" result-name="Text" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-input-component>
                 </div>
                 <?php
                      $field_name = 'IsActive';
@@ -155,11 +156,11 @@
                         $field_value = '1';
                     }
                 ?>
-                <div class="form-field-name">
+                <div class="form-field-name" data-is-column-title data-column-name="IsActive">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Is Active' ) ); ?> :
                 </div>
                 <div>
-                    <select class="form-select" name="IsActive">
+                    <select data-is-column-value data-column-name="IsActive"class="form-select" name="IsActive">
                         <option value="0"<?php if ( $field_value === '0' ) echo ' selected'; ?>>False</option>
                         <option value="1"<?php if ( $field_value === '1' ) echo ' selected'; ?>>True</option>
                     </select>
@@ -172,4 +173,5 @@
         </form>
     </div>
 </div>
+
 <?php require __DIR__ . '/' . 'BLOCK/page_footer.php'; ?>

@@ -1,4 +1,5 @@
 <?php require __DIR__ . '/' . 'BLOCK/page_header.php'; ?>
+
 <div id="view-languages-view">
     <div class="form-limited form-centered margin-bottom-1rem">
         <div class="tool-container">
@@ -68,29 +69,29 @@
             <div class="card-container filter-row">
                 <div class="card">
                     <div class="form-container">
-                        <div class="form-field-name">
+                        <div class="form-field-name" data-is-column-title data-column-name="Code">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Code' ) ); ?> :
                         </div>
                         <div>
-                            <input-component result-class="form-input" result-name="Code" result-value="<?php echo htmlspecialchars( GetValueText( $language->Code ) ); ?>" is-readonly></input-component>
+                            <input-component data-is-column-value data-column-name="Code" result-class="form-input" result-name="Code" result-value="<?php echo htmlspecialchars( GetValueText( $language->Code ) ); ?>" is-readonly></input-component>
                         </div>
-                        <div class="form-field-name">
+                        <div class="form-field-name" data-is-column-title data-column-name="Number">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Number' ) ); ?> :
                         </div>
                         <div>
-                            <input-component result-class="form-input" result-name="Number" result-value="<?php echo htmlspecialchars( GetValueText( $language->Number ) ); ?>" is-readonly></input-component>
+                            <input-component data-is-column-value data-column-name="Number" result-class="form-input" result-name="Number" result-value="<?php echo htmlspecialchars( GetValueText( $language->Number ) ); ?>" is-readonly></input-component>
                         </div>
-                        <div class="form-field-name">
+                        <div class="form-field-name" data-is-column-title data-column-name="Text">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Text' ) ); ?> :
                         </div>
                         <div>
-                            <multilingual-input-component container-class="form-multilingual-container" result-class="form-input" result-name="Text" result-value="<?php echo htmlspecialchars( GetValueText( $language->Text ) ); ?>" is-readonly language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-input-component>
+                            <multilingual-input-component data-is-column-value data-column-name="Text" container-class="form-multilingual-container" result-class="form-input" result-name="Text" result-value="<?php echo htmlspecialchars( GetValueText( $language->Text ) ); ?>" is-readonly language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-input-component>
                         </div>
-                        <div class="form-field-name">
+                        <div class="form-field-name" data-is-column-title data-column-name="IsActive">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Is Active' ) ); ?> :
                         </div>
                         <div>
-                            <select class="form-select" name="IsActive" readonly>
+                            <select data-is-column-value data-column-name="IsActive"class="form-select" name="IsActive" readonly>
                                 <option value="0"<?php if ( $language->IsActive === '0' ) echo ' selected'; ?>>False</option>
                                 <option value="1"<?php if ( $language->IsActive === '1' ) echo ' selected'; ?>>True</option>
                             </select>
@@ -109,4 +110,5 @@
         <?php } ?>
     </div>
 </div>
+
 <?php require __DIR__ . '/' . 'BLOCK/page_footer.php'; ?>

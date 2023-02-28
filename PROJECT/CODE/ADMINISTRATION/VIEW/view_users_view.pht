@@ -1,4 +1,5 @@
 <? include 'BLOCK/page_header.php'; ?>
+
 <div id="view-users-view">
     <div class="form-limited form-centered margin-bottom-1rem">
         <div class="tool-container">
@@ -62,29 +63,29 @@
             <div class="card-container filter-row">
                 <div class="card">
                     <div class="form-container">
-                        <div class="form-field-name">
+                        <div class="form-field-name" data-is-column-title data-column-name="Pseudonym">
                             <% GetTextBySlug( 'Pseudonym' ) %> :
                         </div>
                         <div>
-                            <input-component result-class="form-input" result-name="Pseudonym" result-value="<% GetValueText( user.Pseudonym ) %>" is-readonly></input-component>
+                            <input-component data-is-column-value data-column-name="Pseudonym" result-class="form-input" result-name="Pseudonym" result-value="<% GetValueText( user.Pseudonym ) %>" is-readonly></input-component>
                         </div>
-                        <div class="form-field-name">
+                        <div class="form-field-name" data-is-column-title data-column-name="Password">
                             <% GetTextBySlug( 'Password' ) %> :
                         </div>
                         <div>
-                            <input-component result-class="form-input" result-name="Password" result-value="<% GetValueText( user.Password ) %>" is-readonly></input-component>
+                            <input-component data-is-column-value data-column-name="Password" result-class="form-input" result-name="Password" result-value="<% GetValueText( user.Password ) %>" is-readonly></input-component>
                         </div>
-                        <div class="form-field-name">
+                        <div class="form-field-name" data-is-column-title data-column-name="Role">
                             <% GetTextBySlug( 'Role' ) %> :
                         </div>
                         <div>
-                            <input-component result-class="form-input" result-name="Role" result-value="<% GetValueText( user.Role ) %>" is-readonly></input-component>
+                            <input-component data-is-column-value data-column-name="Role" result-class="form-input" result-name="Role" result-value="<% GetValueText( user.Role ) %>" is-readonly></input-component>
                         </div>
-                        <div class="form-field-name">
+                        <div class="form-field-name" data-is-column-title data-column-name="Email">
                             <% GetTextBySlug( 'Email' ) %> :
                         </div>
                         <div>
-                            <input-component result-class="form-input" result-name="Email" result-value="<% GetValueText( user.Email ) %>" is-readonly></input-component>
+                            <input-component data-is-column-value data-column-name="Email" result-class="form-input" result-name="Email" result-value="<% GetValueText( user.Email ) %>" is-readonly></input-component>
                         </div>
                     </div>
                     <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
@@ -100,4 +101,5 @@
         <? } ?>
     </div>
 </div>
+
 <? include 'BLOCK/page_footer.php'; ?>

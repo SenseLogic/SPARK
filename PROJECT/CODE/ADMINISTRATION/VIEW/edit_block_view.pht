@@ -1,4 +1,5 @@
 <? include 'BLOCK/page_header.php'; ?>
+
 <script>
     // -- FUNCTIONS
 
@@ -157,161 +158,161 @@
     <div class="page-section form-section">
         <form class="form-centered" name="EditBlockForm" onsubmit="return IsValidEditBlockForm()" action="/admin/block/edit/<% .Block.Id %>" method="post">
             <div class="form-container">
-                <div class="form-field-name">
+                <div class="form-field-name" data-is-column-title data-column-name="Slug">
                     <% GetTextBySlug( 'Slug' ) %> :
                 </div>
                 <div>
-                    <input-component result-class="form-input" result-name="Slug" result-value="<% GetValueText( .Block.Slug ) %>"></input-component>
+                    <input-component data-is-column-value data-column-name="Slug" result-class="form-input" result-name="Slug" result-value="<% GetValueText( .Block.Slug ) %>"></input-component>
                 </div>
-                <div class="form-field-name">
+                <div class="form-field-name" data-is-column-title data-column-name="PageId">
                     <% GetTextBySlug( 'Page Id' ) %> :
                 </div>
                 <div>
-                    <select class="form-select" name="PageId">
+                    <select data-is-column-value data-column-name="PageId"class="form-select" name="PageId">
                         <? var page_array = .PageArray; ?>
                         <? foreach ( var page; page_array ) { ?>
                             <option value="<% GetValueText( page.Id ) %>"<? if ( .Block.PageId === page.Id ) echo ' selected'; ?>><% GetUntranslatedText( page.Title ) %></option>
                         <? } ?>
                     </select>
                 </div>
-                <div class="form-field-name">
+                <div class="form-field-name" data-is-column-title data-column-name="CategorySlug">
                     <% GetTextBySlug( 'Category Slug' ) %> :
                 </div>
                 <div>
-                    <select class="form-select" name="CategorySlug">
+                    <select data-is-column-value data-column-name="CategorySlug"class="form-select" name="CategorySlug">
                         <? var block_category_array = .BlockCategoryArray; ?>
                         <? foreach ( var block_category; block_category_array ) { ?>
                             <option value="<% GetValueText( block_category.Slug ) %>"<? if ( .Block.CategorySlug === block_category.Slug ) echo ' selected'; ?>><% GetUntranslatedText( block_category.Name ) %></option>
                         <? } ?>
                     </select>
                 </div>
-                <div class="form-field-name">
+                <div class="form-field-name" data-is-column-title data-column-name="TypeSlug">
                     <% GetTextBySlug( 'Type Slug' ) %> :
                 </div>
                 <div>
-                    <select class="form-select" name="TypeSlug">
+                    <select data-is-column-value data-column-name="TypeSlug"class="form-select" name="TypeSlug">
                         <? var block_type_array = .BlockTypeArray; ?>
                         <? foreach ( var block_type; block_type_array ) { ?>
                             <option value="<% GetValueText( block_type.Slug ) %>"<? if ( .Block.TypeSlug === block_type.Slug ) echo ' selected'; ?>><% GetUntranslatedText( block_type.Name ) %></option>
                         <? } ?>
                     </select>
                 </div>
-                <div class="form-field-name">
+                <div class="form-field-name" data-is-column-title data-column-name="ContentSlug">
                     <% GetTextBySlug( 'Content Slug' ) %> :
                 </div>
                 <div>
-                    <select class="form-select" name="ContentSlug">
+                    <select data-is-column-value data-column-name="ContentSlug"class="form-select" name="ContentSlug">
                         <? var block_content_array = .BlockContentArray; ?>
                         <? foreach ( var block_content; block_content_array ) { ?>
                             <option value="<% GetValueText( block_content.Slug ) %>"<? if ( .Block.ContentSlug === block_content.Slug ) echo ' selected'; ?>><% GetUntranslatedText( block_content.Name ) %></option>
                         <? } ?>
                     </select>
                 </div>
-                <div class="form-field-name">
+                <div class="form-field-name" data-is-column-title data-column-name="Number">
                     <% GetTextBySlug( 'Number' ) %> :
                 </div>
                 <div>
-                    <input-component result-class="form-input" result-name="Number" result-value="<% GetValueText( .Block.Number ) %>"></input-component>
+                    <input-component data-is-column-value data-column-name="Number" result-class="form-input" result-name="Number" result-value="<% GetValueText( .Block.Number ) %>"></input-component>
                 </div>
-                <div class="form-field-name">
+                <div class="form-field-name" data-is-column-title data-column-name="LanguageCodeArray">
                     <% GetTextBySlug( 'Language Code Array' ) %> :
                 </div>
                 <div>
-                    <input-list-component container-class="form-list-container" result-class="form-input" result-name="LanguageCodeArray" result-value="<% GetValueText( .Block.LanguageCodeArray ) %>" value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></input-list-component>
+                    <input-list-component data-is-column-value data-column-name="LanguageCodeArray" container-class="form-list-container" result-class="form-input" result-name="LanguageCodeArray" result-value="<% GetValueText( .Block.LanguageCodeArray ) %>" value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></input-list-component>
                 </div>
-                <div class="form-field-name">
+                <div class="form-field-name" data-is-column-title data-column-name="MinimumHeight">
                     <% GetTextBySlug( 'Minimum Height' ) %> :
                 </div>
                 <div>
-                    <input-component result-class="form-input" result-name="MinimumHeight" result-value="<% GetValueText( .Block.MinimumHeight ) %>"></input-component>
+                    <input-component data-is-column-value data-column-name="MinimumHeight" result-class="form-input" result-name="MinimumHeight" result-value="<% GetValueText( .Block.MinimumHeight ) %>"></input-component>
                 </div>
-                <div class="form-field-name">
+                <div class="form-field-name" data-is-column-title data-column-name="Title">
                     <% GetTextBySlug( 'Title' ) %> :
                 </div>
                 <div>
-                    <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Title" result-value="<% GetValueText( .Block.Title ) %>" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-text-input-component>
+                    <multilingual-text-input-component data-is-column-value data-column-name="Title" container-class="form-multilingual-container" result-class="form-textarea" result-name="Title" result-value="<% GetValueText( .Block.Title ) %>" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-text-input-component>
                 </div>
-                <div class="form-field-name">
+                <div class="form-field-name" data-is-column-title data-column-name="TitleArray">
                     <% GetTextBySlug( 'Title Array' ) %> :
                 </div>
                 <div>
-                    <multilingual-text-input-list-component container-class="form-multilingual-text-input-container" result-class="form-textarea" result-name="TitleArray" result-value="<% GetValueText( .Block.TitleArray ) %>" value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-text-input-list-component>
+                    <multilingual-text-input-list-component data-is-column-value data-column-name="TitleArray" container-class="form-multilingual-text-input-container" result-class="form-textarea" result-name="TitleArray" result-value="<% GetValueText( .Block.TitleArray ) %>" value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-text-input-list-component>
                 </div>
-                <div class="form-field-name">
+                <div class="form-field-name" data-is-column-title data-column-name="Teaser">
                     <% GetTextBySlug( 'Teaser' ) %> :
                 </div>
                 <div>
-                    <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Teaser" result-value="<% GetValueText( .Block.Teaser ) %>" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-text-input-component>
+                    <multilingual-text-input-component data-is-column-value data-column-name="Teaser" container-class="form-multilingual-container" result-class="form-textarea" result-name="Teaser" result-value="<% GetValueText( .Block.Teaser ) %>" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-text-input-component>
                 </div>
-                <div class="form-field-name">
+                <div class="form-field-name" data-is-column-title data-column-name="TeaserArray">
                     <% GetTextBySlug( 'Teaser Array' ) %> :
                 </div>
                 <div>
-                    <multilingual-text-input-list-component container-class="form-multilingual-text-input-container" result-class="form-textarea" result-name="TeaserArray" result-value="<% GetValueText( .Block.TeaserArray ) %>" value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-text-input-list-component>
+                    <multilingual-text-input-list-component data-is-column-value data-column-name="TeaserArray" container-class="form-multilingual-text-input-container" result-class="form-textarea" result-name="TeaserArray" result-value="<% GetValueText( .Block.TeaserArray ) %>" value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-text-input-list-component>
                 </div>
-                <div class="form-field-name">
+                <div class="form-field-name" data-is-column-title data-column-name="Text">
                     <% GetTextBySlug( 'Text' ) %> :
                 </div>
                 <div>
-                    <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Text" result-value="<% GetValueText( .Block.Text ) %>" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-text-input-component>
+                    <multilingual-text-input-component data-is-column-value data-column-name="Text" container-class="form-multilingual-container" result-class="form-textarea" result-name="Text" result-value="<% GetValueText( .Block.Text ) %>" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-text-input-component>
                 </div>
-                <div class="form-field-name">
+                <div class="form-field-name" data-is-column-title data-column-name="TextArray">
                     <% GetTextBySlug( 'Text Array' ) %> :
                 </div>
                 <div>
-                    <multilingual-text-input-list-component container-class="form-multilingual-text-input-container" result-class="form-textarea" result-name="TextArray" result-value="<% GetValueText( .Block.TextArray ) %>" value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-text-input-list-component>
+                    <multilingual-text-input-list-component data-is-column-value data-column-name="TextArray" container-class="form-multilingual-text-input-container" result-class="form-textarea" result-name="TextArray" result-value="<% GetValueText( .Block.TextArray ) %>" value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-text-input-list-component>
                 </div>
-                <div class="form-field-name">
+                <div class="form-field-name" data-is-column-title data-column-name="Route">
                     <% GetTextBySlug( 'Route' ) %> :
                 </div>
                 <div>
-                    <multilingual-input-component container-class="form-multilingual-container" result-class="form-input" result-name="Route" result-value="<% GetValueText( .Block.Route ) %>" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-input-component>
+                    <multilingual-input-component data-is-column-value data-column-name="Route" container-class="form-multilingual-container" result-class="form-input" result-name="Route" result-value="<% GetValueText( .Block.Route ) %>" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-input-component>
                 </div>
-                <div class="form-field-name">
+                <div class="form-field-name" data-is-column-title data-column-name="RouteArray">
                     <% GetTextBySlug( 'Route Array' ) %> :
                 </div>
                 <div>
-                    <multilingual-input-list-component container-class="form-multilingual-input-container" result-class="form-input" result-name="RouteArray" result-value="<% GetValueText( .Block.RouteArray ) %>" value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-input-list-component>
+                    <multilingual-input-list-component data-is-column-value data-column-name="RouteArray" container-class="form-multilingual-input-container" result-class="form-input" result-name="RouteArray" result-value="<% GetValueText( .Block.RouteArray ) %>" value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-input-list-component>
                 </div>
-                <div class="form-field-name">
+                <div class="form-field-name" data-is-column-title data-column-name="ImageSide">
                     <% GetTextBySlug( 'Image Side' ) %> :
                 </div>
                 <div>
-                    <select class="form-select" name="ImageSide">
+                    <select data-is-column-value data-column-name="ImageSide"class="form-select" name="ImageSide">
                         <option value="left"<? if ( .Block.ImageSide === 'left' ) echo ' selected'; ?>>Left</option>
                         <option value="right"<? if ( .Block.ImageSide === 'right' ) echo ' selected'; ?>>Right</option>
                         <option value="top"<? if ( .Block.ImageSide === 'top' ) echo ' selected'; ?>>Top</option>
                     </select>
                 </div>
-                <div class="form-field-name">
+                <div class="form-field-name" data-is-column-title data-column-name="ImageLegend">
                     <% GetTextBySlug( 'Image Legend' ) %> :
                 </div>
                 <div>
-                    <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="ImageLegend" result-value="<% GetValueText( .Block.ImageLegend ) %>" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-text-input-component>
+                    <multilingual-text-input-component data-is-column-value data-column-name="ImageLegend" container-class="form-multilingual-container" result-class="form-textarea" result-name="ImageLegend" result-value="<% GetValueText( .Block.ImageLegend ) %>" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-text-input-component>
                 </div>
-                <div class="form-field-name">
+                <div class="form-field-name" data-is-column-title data-column-name="ImageLegendArray">
                     <% GetTextBySlug( 'Image Legend Array' ) %> :
                 </div>
                 <div>
-                    <multilingual-text-input-list-component container-class="form-multilingual-text-input-container" result-class="form-textarea" result-name="ImageLegendArray" result-value="<% GetValueText( .Block.ImageLegendArray ) %>" value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-text-input-list-component>
+                    <multilingual-text-input-list-component data-is-column-value data-column-name="ImageLegendArray" container-class="form-multilingual-text-input-container" result-class="form-textarea" result-name="ImageLegendArray" result-value="<% GetValueText( .Block.ImageLegendArray ) %>" value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-text-input-list-component>
                 </div>
-                <div class="form-field-name">
+                <div class="form-field-name" data-is-column-title data-column-name="ImagePath">
                     <% GetTextBySlug( 'Image Path' ) %> :
                 </div>
                 <div>
-                    <image-path-input-component container-class="form-upload-container" result-class="form-input form-upload-input" result-name="ImagePath" result-value="<% GetValueText( .Block.ImagePath ) %>" image-class="form-upload-image" error-image-path="/static/image/admin/missing_image.svg" upload-button-container-class="form-upload-button-container" upload-button-class="form-button upload-button form-upload-button" upload-api-url="/admin/upload/image" delete-button-class="form-button delete-button form-delete-button" delete-api-url="/admin/delete/file"></image-path-input-component>
+                    <image-path-input-component data-is-column-value data-column-name="ImagePath" container-class="form-upload-container" result-class="form-input form-upload-input" result-name="ImagePath" result-value="<% GetValueText( .Block.ImagePath ) %>" image-class="form-upload-image" error-image-path="/static/image/admin/missing_image.svg" upload-button-container-class="form-upload-button-container" upload-button-class="form-button upload-button form-upload-button" upload-api-url="/admin/upload/image" delete-button-class="form-button delete-button form-delete-button" delete-api-url="/admin/delete/file"></image-path-input-component>
                 </div>
-                <div class="form-field-name">
+                <div class="form-field-name" data-is-column-title data-column-name="ImagePathArray">
                     <% GetTextBySlug( 'Image Path Array' ) %> :
                 </div>
                 <div>
-                    <input-list-component container-class="form-list-container" result-class="form-input" result-name="ImagePathArray" result-value="<% GetValueText( .Block.ImagePathArray ) %>" value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></input-list-component>
+                    <input-list-component data-is-column-value data-column-name="ImagePathArray" container-class="form-list-container" result-class="form-input" result-name="ImagePathArray" result-value="<% GetValueText( .Block.ImagePathArray ) %>" value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></input-list-component>
                 </div>
-                <div class="form-field-name">
+                <div class="form-field-name" data-is-column-title data-column-name="ImageVerticalPosition">
                     <% GetTextBySlug( 'Image Vertical Position' ) %> :
                 </div>
                 <div>
-                    <select class="form-select" name="ImageVerticalPosition">
+                    <select data-is-column-value data-column-name="ImageVerticalPosition"class="form-select" name="ImageVerticalPosition">
                         <option value="top"<? if ( .Block.ImageVerticalPosition === 'top' ) echo ' selected'; ?>>Top</option>
                         <option value="10%"<? if ( .Block.ImageVerticalPosition === '10%' ) echo ' selected'; ?>>10%</option>
                         <option value="20%"<? if ( .Block.ImageVerticalPosition === '20%' ) echo ' selected'; ?>>20%</option>
@@ -325,17 +326,17 @@
                         <option value="bottom"<? if ( .Block.ImageVerticalPosition === 'bottom' ) echo ' selected'; ?>>Bottom</option>
                     </select>
                 </div>
-                <div class="form-field-name">
+                <div class="form-field-name" data-is-column-title data-column-name="ImageVerticalPositionArray">
                     <% GetTextBySlug( 'Image Vertical Position Array' ) %> :
                 </div>
                 <div>
-                    <input-list-component container-class="form-list-container" result-class="form-input" result-name="ImageVerticalPositionArray" result-value="<% GetValueText( .Block.ImageVerticalPositionArray ) %>" value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></input-list-component>
+                    <input-list-component data-is-column-value data-column-name="ImageVerticalPositionArray" container-class="form-list-container" result-class="form-input" result-name="ImageVerticalPositionArray" result-value="<% GetValueText( .Block.ImageVerticalPositionArray ) %>" value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></input-list-component>
                 </div>
-                <div class="form-field-name">
+                <div class="form-field-name" data-is-column-title data-column-name="ImageHorizontalPosition">
                     <% GetTextBySlug( 'Image Horizontal Position' ) %> :
                 </div>
                 <div>
-                    <select class="form-select" name="ImageHorizontalPosition">
+                    <select data-is-column-value data-column-name="ImageHorizontalPosition"class="form-select" name="ImageHorizontalPosition">
                         <option value="left"<? if ( .Block.ImageHorizontalPosition === 'left' ) echo ' selected'; ?>>Left</option>
                         <option value="10%"<? if ( .Block.ImageHorizontalPosition === '10%' ) echo ' selected'; ?>>10%</option>
                         <option value="20%"<? if ( .Block.ImageHorizontalPosition === '20%' ) echo ' selected'; ?>>20%</option>
@@ -349,23 +350,23 @@
                         <option value="right"<? if ( .Block.ImageHorizontalPosition === 'right' ) echo ' selected'; ?>>Right</option>
                     </select>
                 </div>
-                <div class="form-field-name">
+                <div class="form-field-name" data-is-column-title data-column-name="ImageHorizontalPositionArray">
                     <% GetTextBySlug( 'Image Horizontal Position Array' ) %> :
                 </div>
                 <div>
-                    <input-list-component container-class="form-list-container" result-class="form-input" result-name="ImageHorizontalPositionArray" result-value="<% GetValueText( .Block.ImageHorizontalPositionArray ) %>" value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></input-list-component>
+                    <input-list-component data-is-column-value data-column-name="ImageHorizontalPositionArray" container-class="form-list-container" result-class="form-input" result-name="ImageHorizontalPositionArray" result-value="<% GetValueText( .Block.ImageHorizontalPositionArray ) %>" value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></input-list-component>
                 </div>
-                <div class="form-field-name">
+                <div class="form-field-name" data-is-column-title data-column-name="VideoPath">
                     <% GetTextBySlug( 'Video Path' ) %> :
                 </div>
                 <div>
-                    <video-path-input-component container-class="form-upload-container" result-class="form-input form-upload-input" result-name="VideoPath" result-value="<% GetValueText( .Block.VideoPath ) %>" video-class="form-upload-video" error-video-path="/static/video/admin/missing_video.mp4" upload-button-container-class="form-upload-button-container" upload-button-class="form-button upload-button form-upload-button" upload-api-url="/admin/upload/video" delete-button-class="form-button delete-button form-delete-button" delete-api-url="/admin/delete/file"></video-path-input-component>
+                    <video-path-input-component data-is-column-value data-column-name="VideoPath" container-class="form-upload-container" result-class="form-input form-upload-input" result-name="VideoPath" result-value="<% GetValueText( .Block.VideoPath ) %>" video-class="form-upload-video" error-video-path="/static/video/admin/missing_video.mp4" upload-button-container-class="form-upload-button-container" upload-button-class="form-button upload-button form-upload-button" upload-api-url="/admin/upload/video" delete-button-class="form-button delete-button form-delete-button" delete-api-url="/admin/delete/file"></video-path-input-component>
                 </div>
-                <div class="form-field-name">
+                <div class="form-field-name" data-is-column-title data-column-name="VideoPathArray">
                     <% GetTextBySlug( 'Video Path Array' ) %> :
                 </div>
                 <div>
-                    <video-path-input-list-component container-class="form-multilingual-text-input-container" result-class="form-textarea" result-name="VideoPathArray" result-value="<% GetValueText( .Block.VideoPathArray ) %>" value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></video-path-input-list-component>
+                    <video-path-input-list-component data-is-column-value data-column-name="VideoPathArray" container-class="form-multilingual-text-input-container" result-class="form-textarea" result-name="VideoPathArray" result-value="<% GetValueText( .Block.VideoPathArray ) %>" value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></video-path-input-list-component>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
                 </a>
@@ -375,4 +376,5 @@
         </form>
     </div>
 </div>
+<? include 'BLOCK/block_footer.php'; ?>
 <? include 'BLOCK/page_footer.php'; ?>

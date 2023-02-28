@@ -1,4 +1,5 @@
 <?php require __DIR__ . '/' . 'BLOCK/page_header.php'; ?>
+
 <div id="view-block-categories-view">
     <div class="form-limited form-centered margin-bottom-1rem">
         <div class="tool-container">
@@ -50,17 +51,17 @@
             <div class="card-container filter-row">
                 <div class="card">
                     <div class="form-container">
-                        <div class="form-field-name">
+                        <div class="form-field-name" data-is-column-title data-column-name="Slug">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Slug' ) ); ?> :
                         </div>
                         <div>
-                            <input-component result-class="form-input" result-name="Slug" result-value="<?php echo htmlspecialchars( GetValueText( $block_category->Slug ) ); ?>" is-readonly></input-component>
+                            <input-component data-is-column-value data-column-name="Slug" result-class="form-input" result-name="Slug" result-value="<?php echo htmlspecialchars( GetValueText( $block_category->Slug ) ); ?>" is-readonly></input-component>
                         </div>
-                        <div class="form-field-name">
+                        <div class="form-field-name" data-is-column-title data-column-name="Name">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Name' ) ); ?> :
                         </div>
                         <div>
-                            <input-component result-class="form-input" result-name="Name" result-value="<?php echo htmlspecialchars( GetValueText( $block_category->Name ) ); ?>" is-readonly></input-component>
+                            <input-component data-is-column-value data-column-name="Name" result-class="form-input" result-name="Name" result-value="<?php echo htmlspecialchars( GetValueText( $block_category->Name ) ); ?>" is-readonly></input-component>
                         </div>
                     </div>
                     <?php if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
@@ -76,4 +77,5 @@
         <?php } ?>
     </div>
 </div>
+
 <?php require __DIR__ . '/' . 'BLOCK/page_footer.php'; ?>

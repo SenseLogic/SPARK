@@ -1,4 +1,5 @@
 <?php require __DIR__ . '/' . 'BLOCK/page_header.php'; ?>
+
 <div id="view-contacts-view">
     <div class="form-limited form-centered margin-bottom-1rem">
         <div class="tool-container">
@@ -80,47 +81,47 @@
             <div class="card-container filter-row">
                 <div class="card">
                     <div class="form-container">
-                        <div class="form-field-name">
+                        <div class="form-field-name" data-is-column-title data-column-name="Name">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Name' ) ); ?> :
                         </div>
                         <div>
-                            <input-component result-class="form-input" result-name="Name" result-value="<?php echo htmlspecialchars( GetValueText( $contact->Name ) ); ?>" is-readonly></input-component>
+                            <input-component data-is-column-value data-column-name="Name" result-class="form-input" result-name="Name" result-value="<?php echo htmlspecialchars( GetValueText( $contact->Name ) ); ?>" is-readonly></input-component>
                         </div>
-                        <div class="form-field-name">
+                        <div class="form-field-name" data-is-column-title data-column-name="Company">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Company' ) ); ?> :
                         </div>
                         <div>
-                            <input-component result-class="form-input" result-name="Company" result-value="<?php echo htmlspecialchars( GetValueText( $contact->Company ) ); ?>" is-readonly></input-component>
+                            <input-component data-is-column-value data-column-name="Company" result-class="form-input" result-name="Company" result-value="<?php echo htmlspecialchars( GetValueText( $contact->Company ) ); ?>" is-readonly></input-component>
                         </div>
-                        <div class="form-field-name">
+                        <div class="form-field-name" data-is-column-title data-column-name="Email">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Email' ) ); ?> :
                         </div>
                         <div>
-                            <input-component result-class="form-input" result-name="Email" result-value="<?php echo htmlspecialchars( GetValueText( $contact->Email ) ); ?>" is-readonly></input-component>
+                            <input-component data-is-column-value data-column-name="Email" result-class="form-input" result-name="Email" result-value="<?php echo htmlspecialchars( GetValueText( $contact->Email ) ); ?>" is-readonly></input-component>
                         </div>
-                        <div class="form-field-name">
+                        <div class="form-field-name" data-is-column-title data-column-name="Phone">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Phone' ) ); ?> :
                         </div>
                         <div>
-                            <input-component result-class="form-input" result-name="Phone" result-value="<?php echo htmlspecialchars( GetValueText( $contact->Phone ) ); ?>" is-readonly></input-component>
+                            <input-component data-is-column-value data-column-name="Phone" result-class="form-input" result-name="Phone" result-value="<?php echo htmlspecialchars( GetValueText( $contact->Phone ) ); ?>" is-readonly></input-component>
                         </div>
-                        <div class="form-field-name">
+                        <div class="form-field-name" data-is-column-title data-column-name="Subject">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Subject' ) ); ?> :
                         </div>
                         <div>
-                            <input-component result-class="form-input" result-name="Subject" result-value="<?php echo htmlspecialchars( GetValueText( $contact->Subject ) ); ?>" is-readonly></input-component>
+                            <input-component data-is-column-value data-column-name="Subject" result-class="form-input" result-name="Subject" result-value="<?php echo htmlspecialchars( GetValueText( $contact->Subject ) ); ?>" is-readonly></input-component>
                         </div>
-                        <div class="form-field-name">
+                        <div class="form-field-name" data-is-column-title data-column-name="Message">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Message' ) ); ?> :
                         </div>
                         <div>
-                            <text-input-component result-class="form-textarea" result-name="Message" result-value="<?php echo htmlspecialchars( GetValueText( $contact->Message ) ); ?>" is-readonly></text-input-component>
+                            <text-input-component data-is-column-value data-column-name="Message" result-class="form-textarea" result-name="Message" result-value="<?php echo htmlspecialchars( GetValueText( $contact->Message ) ); ?>" is-readonly></text-input-component>
                         </div>
-                        <div class="form-field-name">
+                        <div class="form-field-name" data-is-column-title data-column-name="DateTime">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Date Time' ) ); ?> :
                         </div>
                         <div>
-                            <input-component result-class="form-input" result-name="DateTime" result-value="<?php echo htmlspecialchars( GetValueText( $contact->DateTime ) ); ?>" is-readonly></input-component>
+                            <input-component data-is-column-value data-column-name="DateTime" result-class="form-input" result-name="DateTime" result-value="<?php echo htmlspecialchars( GetValueText( $contact->DateTime ) ); ?>" is-readonly></input-component>
                         </div>
                     </div>
                     <?php if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
@@ -136,4 +137,5 @@
         <?php } ?>
     </div>
 </div>
+
 <?php require __DIR__ . '/' . 'BLOCK/page_footer.php'; ?>
