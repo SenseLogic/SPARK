@@ -164,24 +164,24 @@
         <? foreach ( var page; .PageArray ) { ?>
             <div class="card-container filter-row">
                 <div class="card">
-                    <div class="form-container">
+                    <div class="form-container" data-is-row data-table-name="PAGE">
                         <div class="form-field-name" data-is-column-title data-column-name="Slug">
                             <% GetTextBySlug( 'Slug' ) %> :
                         </div>
-                        <div>
-                            <input-component data-is-column-value data-column-name="Slug" result-class="form-input" result-name="Slug" result-value="<% GetValueText( page.Slug ) %>" is-readonly></input-component>
+                        <div class="form-field-value" data-is-column-value data-column-name="Slug">
+                            <input-component result-class="form-input" result-name="Slug" result-value="<% GetValueText( page.Slug ) %>" is-readonly></input-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="Route">
                             <% GetTextBySlug( 'Route' ) %> :
                         </div>
-                        <div>
-                            <input-component data-is-column-value data-column-name="Route" result-class="form-input" result-name="Route" result-value="<% GetValueText( page.Route ) %>" is-readonly></input-component>
+                        <div class="form-field-value" data-is-column-value data-column-name="Route">
+                            <input-component result-class="form-input" result-name="Route" result-value="<% GetValueText( page.Route ) %>" is-readonly></input-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="TypeSlug">
                             <% GetTextBySlug( 'Type Slug' ) %> :
                         </div>
-                        <div>
-                            <select data-is-column-value data-column-name="TypeSlug"class="form-select" name="TypeSlug" readonly>
+                        <div class="form-field-value" data-is-column-value data-column-name="TypeSlug">
+                            <select class="form-select" name="TypeSlug" readonly>
                                 <? var page_type_array = .PageTypeArray; ?>
                                 <? foreach ( var page_type; page_type_array ) { ?>
                                     <option value="<% GetValueText( page_type.Slug ) %>"<? if ( page.TypeSlug === page_type.Slug ) echo ' selected'; ?>><% GetUntranslatedText( page_type.Title ) %></option>
@@ -191,20 +191,20 @@
                         <div class="form-field-name" data-is-column-title data-column-name="Number">
                             <% GetTextBySlug( 'Number' ) %> :
                         </div>
-                        <div>
-                            <input-component data-is-column-value data-column-name="Number" result-class="form-input" result-name="Number" result-value="<% GetValueText( page.Number ) %>" is-readonly></input-component>
+                        <div class="form-field-value" data-is-column-value data-column-name="Number">
+                            <input-component result-class="form-input" result-name="Number" result-value="<% GetValueText( page.Number ) %>" is-readonly></input-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="LanguageCodeArray">
                             <% GetTextBySlug( 'Language Code Array' ) %> :
                         </div>
-                        <div>
-                            <input-list-component data-is-column-value data-column-name="LanguageCodeArray" container-class="form-list-container" result-class="form-list-container" result-name="LanguageCodeArray" result-value="<% GetValueText( page.LanguageCodeArray ) %>" is-readonly value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></input-list-component>
+                        <div class="form-field-value" data-is-column-value data-column-name="LanguageCodeArray">
+                            <input-list-component container-class="form-list-container" result-class="form-list-container" result-name="LanguageCodeArray" result-value="<% GetValueText( page.LanguageCodeArray ) %>" is-readonly value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></input-list-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="IsActive">
                             <% GetTextBySlug( 'Is Active' ) %> :
                         </div>
-                        <div>
-                            <select data-is-column-value data-column-name="IsActive"class="form-select" name="IsActive" readonly>
+                        <div class="form-field-value" data-is-column-value data-column-name="IsActive">
+                            <select class="form-select" name="IsActive" readonly>
                                 <option value="0"<? if ( page.IsActive === '0' ) echo ' selected'; ?>>False</option>
                                 <option value="1"<? if ( page.IsActive === '1' ) echo ' selected'; ?>>True</option>
                             </select>
@@ -212,32 +212,32 @@
                         <div class="form-field-name" data-is-column-title data-column-name="Title">
                             <% GetTextBySlug( 'Title' ) %> :
                         </div>
-                        <div>
-                            <multilingual-input-component data-is-column-value data-column-name="Title" container-class="form-multilingual-container" result-class="form-input" result-name="Title" result-value="<% GetValueText( page.Title ) %>" is-readonly language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-input-component>
+                        <div class="form-field-value" data-is-column-value data-column-name="Title">
+                            <multilingual-input-component container-class="form-multilingual-container" result-class="form-input" result-name="Title" result-value="<% GetValueText( page.Title ) %>" is-readonly language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-input-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="Heading">
                             <% GetTextBySlug( 'Heading' ) %> :
                         </div>
-                        <div>
-                            <multilingual-text-input-component data-is-column-value data-column-name="Heading" container-class="form-multilingual-container" result-class="form-textarea" result-name="Heading" result-value="<% GetValueText( page.Heading ) %>" is-readonly language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-text-input-component>
+                        <div class="form-field-value" data-is-column-value data-column-name="Heading">
+                            <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Heading" result-value="<% GetValueText( page.Heading ) %>" is-readonly language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-text-input-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="Teaser">
                             <% GetTextBySlug( 'Teaser' ) %> :
                         </div>
-                        <div>
-                            <multilingual-text-input-component data-is-column-value data-column-name="Teaser" container-class="form-multilingual-container" result-class="form-textarea" result-name="Teaser" result-value="<% GetValueText( page.Teaser ) %>" is-readonly language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-text-input-component>
+                        <div class="form-field-value" data-is-column-value data-column-name="Teaser">
+                            <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Teaser" result-value="<% GetValueText( page.Teaser ) %>" is-readonly language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-text-input-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="ImagePath">
                             <% GetTextBySlug( 'Image Path' ) %> :
                         </div>
-                        <div>
-                            <image-path-input-component data-is-column-value data-column-name="ImagePath" container-class="form-upload-container" result-class="form-input form-upload-input" result-name="ImagePath" result-value="<% GetValueText( page.ImagePath ) %>" is-readonly image-class="form-upload-image" error-image-path="/static/image/admin/missing_image.svg"></image-path-input-component>
+                        <div class="form-field-value" data-is-column-value data-column-name="ImagePath">
+                            <image-path-input-component container-class="form-upload-container" result-class="form-input form-upload-input" result-name="ImagePath" result-value="<% GetValueText( page.ImagePath ) %>" is-readonly image-class="form-upload-image" error-image-path="/static/image/admin/missing_image.svg"></image-path-input-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="ImageVerticalPosition">
                             <% GetTextBySlug( 'Image Vertical Position' ) %> :
                         </div>
-                        <div>
-                            <select data-is-column-value data-column-name="ImageVerticalPosition"class="form-select" name="ImageVerticalPosition" readonly>
+                        <div class="form-field-value" data-is-column-value data-column-name="ImageVerticalPosition">
+                            <select class="form-select" name="ImageVerticalPosition" readonly>
                                 <option value="top"<? if ( page.ImageVerticalPosition === 'top' ) echo ' selected'; ?>>Top</option>
                                 <option value="10%"<? if ( page.ImageVerticalPosition === '10%' ) echo ' selected'; ?>>10%</option>
                                 <option value="20%"<? if ( page.ImageVerticalPosition === '20%' ) echo ' selected'; ?>>20%</option>
@@ -254,8 +254,8 @@
                         <div class="form-field-name" data-is-column-title data-column-name="ImageHorizontalPosition">
                             <% GetTextBySlug( 'Image Horizontal Position' ) %> :
                         </div>
-                        <div>
-                            <select data-is-column-value data-column-name="ImageHorizontalPosition"class="form-select" name="ImageHorizontalPosition" readonly>
+                        <div class="form-field-value" data-is-column-value data-column-name="ImageHorizontalPosition">
+                            <select class="form-select" name="ImageHorizontalPosition" readonly>
                                 <option value="left"<? if ( page.ImageHorizontalPosition === 'left' ) echo ' selected'; ?>>Left</option>
                                 <option value="10%"<? if ( page.ImageHorizontalPosition === '10%' ) echo ' selected'; ?>>10%</option>
                                 <option value="20%"<? if ( page.ImageHorizontalPosition === '20%' ) echo ' selected'; ?>>20%</option>
@@ -272,26 +272,26 @@
                         <div class="form-field-name" data-is-column-title data-column-name="VideoPath">
                             <% GetTextBySlug( 'Video Path' ) %> :
                         </div>
-                        <div>
-                            <video-path-input-component data-is-column-value data-column-name="VideoPath" container-class="form-upload-container" result-class="form-input form-upload-input" result-name="VideoPath" result-value="<% GetValueText( page.VideoPath ) %>" is-readonly video-class="form-upload-video" error-video-path="/static/video/admin/missing_video.mp4"></video-path-input-component>
+                        <div class="form-field-value" data-is-column-value data-column-name="VideoPath">
+                            <video-path-input-component container-class="form-upload-container" result-class="form-input form-upload-input" result-name="VideoPath" result-value="<% GetValueText( page.VideoPath ) %>" is-readonly video-class="form-upload-video" error-video-path="/static/video/admin/missing_video.mp4"></video-path-input-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="MetaTitle">
                             <% GetTextBySlug( 'Meta Title' ) %> :
                         </div>
-                        <div>
-                            <multilingual-input-component data-is-column-value data-column-name="MetaTitle" container-class="form-multilingual-container" result-class="form-input" result-name="MetaTitle" result-value="<% GetValueText( page.MetaTitle ) %>" is-readonly language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-input-component>
+                        <div class="form-field-value" data-is-column-value data-column-name="MetaTitle">
+                            <multilingual-input-component container-class="form-multilingual-container" result-class="form-input" result-name="MetaTitle" result-value="<% GetValueText( page.MetaTitle ) %>" is-readonly language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-input-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="MetaDescription">
                             <% GetTextBySlug( 'Meta Description' ) %> :
                         </div>
-                        <div>
-                            <multilingual-text-input-component data-is-column-value data-column-name="MetaDescription" container-class="form-multilingual-container" result-class="form-textarea" result-name="MetaDescription" result-value="<% GetValueText( page.MetaDescription ) %>" is-readonly language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-text-input-component>
+                        <div class="form-field-value" data-is-column-value data-column-name="MetaDescription">
+                            <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="MetaDescription" result-value="<% GetValueText( page.MetaDescription ) %>" is-readonly language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-text-input-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="MetaImagePath">
                             <% GetTextBySlug( 'Meta Image Path' ) %> :
                         </div>
-                        <div>
-                            <image-path-input-component data-is-column-value data-column-name="MetaImagePath" container-class="form-upload-container" result-class="form-input form-upload-input" result-name="MetaImagePath" result-value="<% GetValueText( page.MetaImagePath ) %>" is-readonly image-class="form-upload-image" error-image-path="/static/image/admin/missing_image.svg"></image-path-input-component>
+                        <div class="form-field-value" data-is-column-value data-column-name="MetaImagePath">
+                            <image-path-input-component container-class="form-upload-container" result-class="form-input form-upload-input" result-name="MetaImagePath" result-value="<% GetValueText( page.MetaImagePath ) %>" is-readonly image-class="form-upload-image" error-image-path="/static/image/admin/missing_image.svg"></image-path-input-component>
                         </div>
                     </div>
                     <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>

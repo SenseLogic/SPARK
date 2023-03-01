@@ -40,9 +40,6 @@
                 <a class="page-menu-button" href="/admin/block">
                     <% GetTextBySlug( 'Blocks' ) %>
                 </a>
-                <a class="page-menu-button" href="/admin/block">
-                    <% GetTextBySlug( 'Blocks' ) %>
-                </a>
                 <a class="page-menu-button" href="/admin/contact">
                     <% GetTextBySlug( 'Contacts' ) %>
                 </a>

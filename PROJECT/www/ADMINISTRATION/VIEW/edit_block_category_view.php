@@ -40,18 +40,18 @@
 <div id="edit-block-category-view">
     <div class="page-section form-section">
         <form class="form-centered" name="EditBlockCategoryForm" onsubmit="return IsValidEditBlockCategoryForm()" action="/admin/block-category/edit/<?php echo htmlspecialchars( $this->BlockCategory->Id ); ?>" method="post">
-            <div class="form-container">
+            <div class="form-container" data-is-row data-table-name="BLOCK_CATEGORY">
                 <div class="form-field-name" data-is-column-title data-column-name="Slug">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Slug' ) ); ?> :
                 </div>
-                <div>
-                    <input-component data-is-column-value data-column-name="Slug" result-class="form-input" result-name="Slug" result-value="<?php echo htmlspecialchars( GetValueText( $this->BlockCategory->Slug ) ); ?>"></input-component>
+                <div class="form-field-value" data-is-column-value data-column-name="Slug">
+                    <input-component result-class="form-input" result-name="Slug" result-value="<?php echo htmlspecialchars( GetValueText( $this->BlockCategory->Slug ) ); ?>"></input-component>
                 </div>
                 <div class="form-field-name" data-is-column-title data-column-name="Name">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Name' ) ); ?> :
                 </div>
-                <div>
-                    <input-component data-is-column-value data-column-name="Name" result-class="form-input" result-name="Name" result-value="<?php echo htmlspecialchars( GetValueText( $this->BlockCategory->Name ) ); ?>"></input-component>
+                <div class="form-field-value" data-is-column-value data-column-name="Name">
+                    <input-component result-class="form-input" result-name="Name" result-value="<?php echo htmlspecialchars( GetValueText( $this->BlockCategory->Name ) ); ?>"></input-component>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
                 </a>

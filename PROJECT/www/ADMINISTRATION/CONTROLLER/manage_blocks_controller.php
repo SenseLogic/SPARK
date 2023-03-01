@@ -14,9 +14,7 @@ class MANAGE_BLOCKS_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct();
 
-        $this->Title = 'Manage content blocks';
-        $this->BlockArray = GetDatabaseBlockArray();
-        $this->BlockByIdMap = GetValidBlockByIdMap( $this->BlockArray );
+        $this->Title = 'Manage blocks';
         $this->ListRoute = '/admin/block/manage';
 
         SetSessionValue( 'ListRoute', $this->ListRoute );

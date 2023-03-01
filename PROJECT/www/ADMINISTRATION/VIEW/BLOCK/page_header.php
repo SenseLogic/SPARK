@@ -40,9 +40,6 @@
                 <a class="page-menu-button" href="/admin/block">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Blocks' ) ); ?>
                 </a>
-                <a class="page-menu-button" href="/admin/block">
-                    <?php echo htmlspecialchars( GetTextBySlug( 'Blocks' ) ); ?>
-                </a>
                 <a class="page-menu-button" href="/admin/contact">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Contacts' ) ); ?>
                 </a>

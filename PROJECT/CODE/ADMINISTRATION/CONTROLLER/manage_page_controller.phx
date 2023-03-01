@@ -17,11 +17,6 @@ class MANAGE_PAGE_CONTROLLER extends VIEW_CONTROLLER
         parent::constructor();
 
         .Title = 'Manage a page';
-        .BlockArray = GetDatabaseBlockArray();
-        .BlockByIdMap = GetValidBlockByIdMap( .BlockArray );
-        .PageArray = GetDatabasePageArray();
-        .PageByIdMap = GetValidPageByIdMap( .PageArray, .BlockArray, .BlockByIdMap );
-        .PageBySlugMap = GetPageBySlugMap( .PageByIdMap );
         .Page = GetValidPageByIdOrSlug( .PageByIdMap, .PageBySlugMap, page_id_or_slug );
         .ListRoute = '/admin/page/manage/' .. page_id_or_slug;
 

@@ -50,7 +50,7 @@
 <div id="add-block-content-view">
     <div class="page-section form-section">
         <form class="form-centered" name="AddBlockContentForm" onsubmit="return IsValidAddBlockContentForm()" action="/admin/block-content/add" method="post">
-            <div class="form-container">
+            <div class="form-container" data-is-row data-table-name="BLOCK_CONTENT">
                 <?
                     var field_name = 'Id';
 
@@ -66,8 +66,8 @@
                 <div class="form-field-name" data-is-column-title data-column-name="Id">
                     <% GetTextBySlug( 'Id' ) %> :
                 </div>
-                <div>
-                    <input-component data-is-column-value data-column-name="Id" result-class="form-input" result-name="Id" result-value="<% GetValueText( field_value ) %>"></input-component>
+                <div class="form-field-value" data-is-column-value data-column-name="Id">
+                    <input-component result-class="form-input" result-name="Id" result-value="<% GetValueText( field_value ) %>"></input-component>
                 </div>
                 <?
                     var field_name = 'Slug';
@@ -84,8 +84,8 @@
                 <div class="form-field-name" data-is-column-title data-column-name="Slug">
                     <% GetTextBySlug( 'Slug' ) %> :
                 </div>
-                <div>
-                    <input-component data-is-column-value data-column-name="Slug" result-class="form-input" result-name="Slug" result-value="<% GetValueText( field_value ) %>"></input-component>
+                <div class="form-field-value" data-is-column-value data-column-name="Slug">
+                    <input-component result-class="form-input" result-name="Slug" result-value="<% GetValueText( field_value ) %>"></input-component>
                 </div>
                 <?
                     var field_name = 'Name';
@@ -102,8 +102,8 @@
                 <div class="form-field-name" data-is-column-title data-column-name="Name">
                     <% GetTextBySlug( 'Name' ) %> :
                 </div>
-                <div>
-                    <input-component data-is-column-value data-column-name="Name" result-class="form-input" result-name="Name" result-value="<% GetValueText( field_value ) %>"></input-component>
+                <div class="form-field-value" data-is-column-value data-column-name="Name">
+                    <input-component result-class="form-input" result-name="Name" result-value="<% GetValueText( field_value ) %>"></input-component>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
                 </a>

@@ -17,11 +17,6 @@ class MANAGE_PAGE_CONTROLLER extends VIEW_CONTROLLER
         parent::__construct();
 
         $this->Title = 'Manage a page';
-        $this->BlockArray = GetDatabaseBlockArray();
-        $this->BlockByIdMap = GetValidBlockByIdMap( $this->BlockArray );
-        $this->PageArray = GetDatabasePageArray();
-        $this->PageByIdMap = GetValidPageByIdMap( $this->PageArray, $this->BlockArray, $this->BlockByIdMap );
-        $this->PageBySlugMap = GetPageBySlugMap( $this->PageByIdMap );
         $this->Page = GetValidPageByIdOrSlug( $this->PageByIdMap, $this->PageBySlugMap, $page_id_or_slug );
         $this->ListRoute = '/admin/page/manage/' . $page_id_or_slug;
 

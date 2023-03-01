@@ -14,9 +14,7 @@ class MANAGE_BLOCKS_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor();
 
-        .Title = 'Manage content blocks';
-        .BlockArray = GetDatabaseBlockArray();
-        .BlockByIdMap = GetValidBlockByIdMap( .BlockArray );
+        .Title = 'Manage blocks';
         .ListRoute = '/admin/block/manage';
 
         SetSessionValue( 'ListRoute', .ListRoute );

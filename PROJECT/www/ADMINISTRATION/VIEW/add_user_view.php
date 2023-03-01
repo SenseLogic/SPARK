@@ -70,7 +70,7 @@
 <div id="add-user-view">
     <div class="page-section form-section">
         <form class="form-centered" name="AddUserForm" onsubmit="return IsValidAddUserForm()" action="/admin/user/add" method="post">
-            <div class="form-container">
+            <div class="form-container" data-is-row data-table-name="USER">
                 <?php
                      $field_name = 'Id';
 
@@ -86,8 +86,8 @@
                 <div class="form-field-name" data-is-column-title data-column-name="Id">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Id' ) ); ?> :
                 </div>
-                <div>
-                    <input-component data-is-column-value data-column-name="Id" result-class="form-input" result-name="Id" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
+                <div class="form-field-value" data-is-column-value data-column-name="Id">
+                    <input-component result-class="form-input" result-name="Id" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
                      $field_name = 'Pseudonym';
@@ -104,8 +104,8 @@
                 <div class="form-field-name" data-is-column-title data-column-name="Pseudonym">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Pseudonym' ) ); ?> :
                 </div>
-                <div>
-                    <input-component data-is-column-value data-column-name="Pseudonym" result-class="form-input" result-name="Pseudonym" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
+                <div class="form-field-value" data-is-column-value data-column-name="Pseudonym">
+                    <input-component result-class="form-input" result-name="Pseudonym" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
                      $field_name = 'Password';
@@ -122,8 +122,8 @@
                 <div class="form-field-name" data-is-column-title data-column-name="Password">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Password' ) ); ?> :
                 </div>
-                <div>
-                    <input-component data-is-column-value data-column-name="Password" result-class="form-input" result-name="Password" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
+                <div class="form-field-value" data-is-column-value data-column-name="Password">
+                    <input-component result-class="form-input" result-name="Password" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
                      $field_name = 'Role';
@@ -140,8 +140,8 @@
                 <div class="form-field-name" data-is-column-title data-column-name="Role">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Role' ) ); ?> :
                 </div>
-                <div>
-                    <input-component data-is-column-value data-column-name="Role" result-class="form-input" result-name="Role" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
+                <div class="form-field-value" data-is-column-value data-column-name="Role">
+                    <input-component result-class="form-input" result-name="Role" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
                      $field_name = 'Email';
@@ -158,8 +158,8 @@
                 <div class="form-field-name" data-is-column-title data-column-name="Email">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Email' ) ); ?> :
                 </div>
-                <div>
-                    <input-component data-is-column-value data-column-name="Email" result-class="form-input" result-name="Email" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
+                <div class="form-field-value" data-is-column-value data-column-name="Email">
+                    <input-component result-class="form-input" result-name="Email" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
                 </a>

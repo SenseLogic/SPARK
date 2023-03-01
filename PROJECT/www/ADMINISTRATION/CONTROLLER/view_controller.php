@@ -22,12 +22,15 @@ class VIEW_CONTROLLER extends CONTROLLER
 
         $this->TextArray = GetDatabaseTextArray();
         $this->TextBySlugMap = GetTextBySlugMap( $this->TextArray );
-        $this->PageArray = GetDatabasePageArray();
-        $this->PageTypeArray = GetDatabasePageTypeArray();
         $this->BlockArray = GetDatabaseBlockArray();
+        $this->BlockByIdMap = GetValidBlockByIdMap( $this->BlockArray );
         $this->BlockCategoryArray = GetDatabaseBlockCategoryArray();
         $this->BlockContentArray = GetDatabaseBlockContentArray();
         $this->BlockTypeArray = GetDatabaseBlockTypeArray();
+        $this->PageArray = GetDatabasePageArray();
+        $this->PageByIdMap = GetValidPageByIdMap( $this->PageArray, $this->BlockArray, $this->BlockByIdMap );
+        $this->PageBySlugMap = GetPageBySlugMap( $this->PageByIdMap );
+        $this->PageTypeArray = GetDatabasePageTypeArray();
     }
 
     // -- INQUIRIES

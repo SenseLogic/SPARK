@@ -3,7 +3,7 @@
 function GetDatabaseBlockArray(
     )
 {
-    var statement = GetDatabaseStatement( 'select `Id`, `Slug`, `PageId`, `CategorySlug`, `TypeSlug`, `ContentSlug`, `Number`, `LanguageCodeArray`, `MinimumHeight`, `Title`, `TitleArray`, `Teaser`, `TeaserArray`, `Text`, `TextArray`, `Route`, `RouteArray`, `ImageSide`, `ImageLegend`, `ImageLegendArray`, `ImagePath`, `ImagePathArray`, `ImageVerticalPosition`, `ImageVerticalPositionArray`, `ImageHorizontalPosition`, `ImageHorizontalPositionArray`, `VideoPath`, `VideoPathArray` from `BLOCK` order by `Number` asc' );
+    var statement = GetDatabaseStatement( 'select `Id`, `Slug`, `PageId`, `CategorySlug`, `ContentSlug`, `TypeSlug`, `Number`, `LanguageCodeArray`, `MinimumHeight`, `Title`, `TitleArray`, `Teaser`, `TeaserArray`, `Text`, `TextArray`, `Route`, `RouteArray`, `ImageSide`, `ImageLegend`, `ImageLegendArray`, `ImagePath`, `ImagePathArray`, `ImageVerticalPosition`, `ImageVerticalPositionArray`, `ImageHorizontalPosition`, `ImageHorizontalPositionArray`, `VideoPath`, `VideoPathArray` from `BLOCK` order by `Number` asc' );
 
     if ( !statement.execute() )
     {
@@ -37,7 +37,7 @@ function GetDatabaseBlockById(
     string id
     )
 {
-    var statement = GetDatabaseStatement( 'select `Id`, `Slug`, `PageId`, `CategorySlug`, `TypeSlug`, `ContentSlug`, `Number`, `LanguageCodeArray`, `MinimumHeight`, `Title`, `TitleArray`, `Teaser`, `TeaserArray`, `Text`, `TextArray`, `Route`, `RouteArray`, `ImageSide`, `ImageLegend`, `ImageLegendArray`, `ImagePath`, `ImagePathArray`, `ImageVerticalPosition`, `ImageVerticalPositionArray`, `ImageHorizontalPosition`, `ImageHorizontalPositionArray`, `VideoPath`, `VideoPathArray` from `BLOCK` where `Id` = ? limit 1' );
+    var statement = GetDatabaseStatement( 'select `Id`, `Slug`, `PageId`, `CategorySlug`, `ContentSlug`, `TypeSlug`, `Number`, `LanguageCodeArray`, `MinimumHeight`, `Title`, `TitleArray`, `Teaser`, `TeaserArray`, `Text`, `TextArray`, `Route`, `RouteArray`, `ImageSide`, `ImageLegend`, `ImageLegendArray`, `ImagePath`, `ImagePathArray`, `ImageVerticalPosition`, `ImageVerticalPositionArray`, `ImageHorizontalPosition`, `ImageHorizontalPositionArray`, `VideoPath`, `VideoPathArray` from `BLOCK` where `Id` = ? limit 1' );
     statement.bindParam( 1, id, PDO::PARAM_STR );
 
     if ( !statement.execute() )
@@ -68,8 +68,8 @@ function AddDatabaseBlock(
     string slug,
     string page_id,
     string category_slug,
-    string type_slug,
     string content_slug,
+    string type_slug,
     float number,
     array language_code_array,
     string minimum_height,
@@ -94,13 +94,13 @@ function AddDatabaseBlock(
     array video_path_array
     )
 {
-    var statement = GetDatabaseStatement( 'insert into `BLOCK` ( `Id`, `Slug`, `PageId`, `CategorySlug`, `TypeSlug`, `ContentSlug`, `Number`, `LanguageCodeArray`, `MinimumHeight`, `Title`, `TitleArray`, `Teaser`, `TeaserArray`, `Text`, `TextArray`, `Route`, `RouteArray`, `ImageSide`, `ImageLegend`, `ImageLegendArray`, `ImagePath`, `ImagePathArray`, `ImageVerticalPosition`, `ImageVerticalPositionArray`, `ImageHorizontalPosition`, `ImageHorizontalPositionArray`, `VideoPath`, `VideoPathArray` ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )' );
+    var statement = GetDatabaseStatement( 'insert into `BLOCK` ( `Id`, `Slug`, `PageId`, `CategorySlug`, `ContentSlug`, `TypeSlug`, `Number`, `LanguageCodeArray`, `MinimumHeight`, `Title`, `TitleArray`, `Teaser`, `TeaserArray`, `Text`, `TextArray`, `Route`, `RouteArray`, `ImageSide`, `ImageLegend`, `ImageLegendArray`, `ImagePath`, `ImagePathArray`, `ImageVerticalPosition`, `ImageVerticalPositionArray`, `ImageHorizontalPosition`, `ImageHorizontalPositionArray`, `VideoPath`, `VideoPathArray` ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )' );
     statement.bindParam( 1, id, PDO::PARAM_STR );
     statement.bindParam( 2, slug, PDO::PARAM_STR );
     statement.bindParam( 3, page_id, PDO::PARAM_STR );
     statement.bindParam( 4, category_slug, PDO::PARAM_STR );
-    statement.bindParam( 5, type_slug, PDO::PARAM_STR );
-    statement.bindParam( 6, content_slug, PDO::PARAM_STR );
+    statement.bindParam( 5, content_slug, PDO::PARAM_STR );
+    statement.bindParam( 6, type_slug, PDO::PARAM_STR );
     statement.bindParam( 7, number, PDO::PARAM_STR );
     language_code_array = json_encode( language_code_array );
     statement.bindParam( 8, language_code_array, PDO::PARAM_STR );
@@ -149,8 +149,8 @@ function PutDatabaseBlock(
     string slug,
     string page_id,
     string category_slug,
-    string type_slug,
     string content_slug,
+    string type_slug,
     float number,
     array language_code_array,
     string minimum_height,
@@ -175,13 +175,13 @@ function PutDatabaseBlock(
     array video_path_array
     )
 {
-    var statement = GetDatabaseStatement( 'replace into `BLOCK` ( `Id`, `Slug`, `PageId`, `CategorySlug`, `TypeSlug`, `ContentSlug`, `Number`, `LanguageCodeArray`, `MinimumHeight`, `Title`, `TitleArray`, `Teaser`, `TeaserArray`, `Text`, `TextArray`, `Route`, `RouteArray`, `ImageSide`, `ImageLegend`, `ImageLegendArray`, `ImagePath`, `ImagePathArray`, `ImageVerticalPosition`, `ImageVerticalPositionArray`, `ImageHorizontalPosition`, `ImageHorizontalPositionArray`, `VideoPath`, `VideoPathArray` ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )' );
+    var statement = GetDatabaseStatement( 'replace into `BLOCK` ( `Id`, `Slug`, `PageId`, `CategorySlug`, `ContentSlug`, `TypeSlug`, `Number`, `LanguageCodeArray`, `MinimumHeight`, `Title`, `TitleArray`, `Teaser`, `TeaserArray`, `Text`, `TextArray`, `Route`, `RouteArray`, `ImageSide`, `ImageLegend`, `ImageLegendArray`, `ImagePath`, `ImagePathArray`, `ImageVerticalPosition`, `ImageVerticalPositionArray`, `ImageHorizontalPosition`, `ImageHorizontalPositionArray`, `VideoPath`, `VideoPathArray` ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )' );
     statement.bindParam( 1, id, PDO::PARAM_STR );
     statement.bindParam( 2, slug, PDO::PARAM_STR );
     statement.bindParam( 3, page_id, PDO::PARAM_STR );
     statement.bindParam( 4, category_slug, PDO::PARAM_STR );
-    statement.bindParam( 5, type_slug, PDO::PARAM_STR );
-    statement.bindParam( 6, content_slug, PDO::PARAM_STR );
+    statement.bindParam( 5, content_slug, PDO::PARAM_STR );
+    statement.bindParam( 6, type_slug, PDO::PARAM_STR );
     statement.bindParam( 7, number, PDO::PARAM_STR );
     language_code_array = json_encode( language_code_array );
     statement.bindParam( 8, language_code_array, PDO::PARAM_STR );
@@ -230,8 +230,8 @@ function SetDatabaseBlock(
     string slug,
     string page_id,
     string category_slug,
-    string type_slug,
     string content_slug,
+    string type_slug,
     float number,
     array language_code_array,
     string minimum_height,
@@ -256,12 +256,12 @@ function SetDatabaseBlock(
     array video_path_array
     )
 {
-    var statement = GetDatabaseStatement( 'update `BLOCK` set `Slug` = ?, `PageId` = ?, `CategorySlug` = ?, `TypeSlug` = ?, `ContentSlug` = ?, `Number` = ?, `LanguageCodeArray` = ?, `MinimumHeight` = ?, `Title` = ?, `TitleArray` = ?, `Teaser` = ?, `TeaserArray` = ?, `Text` = ?, `TextArray` = ?, `Route` = ?, `RouteArray` = ?, `ImageSide` = ?, `ImageLegend` = ?, `ImageLegendArray` = ?, `ImagePath` = ?, `ImagePathArray` = ?, `ImageVerticalPosition` = ?, `ImageVerticalPositionArray` = ?, `ImageHorizontalPosition` = ?, `ImageHorizontalPositionArray` = ?, `VideoPath` = ?, `VideoPathArray` = ? where Id = ?' );
+    var statement = GetDatabaseStatement( 'update `BLOCK` set `Slug` = ?, `PageId` = ?, `CategorySlug` = ?, `ContentSlug` = ?, `TypeSlug` = ?, `Number` = ?, `LanguageCodeArray` = ?, `MinimumHeight` = ?, `Title` = ?, `TitleArray` = ?, `Teaser` = ?, `TeaserArray` = ?, `Text` = ?, `TextArray` = ?, `Route` = ?, `RouteArray` = ?, `ImageSide` = ?, `ImageLegend` = ?, `ImageLegendArray` = ?, `ImagePath` = ?, `ImagePathArray` = ?, `ImageVerticalPosition` = ?, `ImageVerticalPositionArray` = ?, `ImageHorizontalPosition` = ?, `ImageHorizontalPositionArray` = ?, `VideoPath` = ?, `VideoPathArray` = ? where Id = ?' );
     statement.bindParam( 1, slug, PDO::PARAM_STR );
     statement.bindParam( 2, page_id, PDO::PARAM_STR );
     statement.bindParam( 3, category_slug, PDO::PARAM_STR );
-    statement.bindParam( 4, type_slug, PDO::PARAM_STR );
-    statement.bindParam( 5, content_slug, PDO::PARAM_STR );
+    statement.bindParam( 4, content_slug, PDO::PARAM_STR );
+    statement.bindParam( 5, type_slug, PDO::PARAM_STR );
     statement.bindParam( 6, number, PDO::PARAM_STR );
     language_code_array = json_encode( language_code_array );
     statement.bindParam( 7, language_code_array, PDO::PARAM_STR );
@@ -462,6 +462,82 @@ function GetBlockByCategorySlug(
     if ( isset( block_by_category_slug_map[ category_slug ] ) )
     {
         return block_by_category_slug_map[ category_slug ];
+    }
+    else
+    {
+        return null;
+    }
+}
+
+// ~~
+
+function GetBlockArrayByTypeSlugMap(
+    array &block_array
+    )
+{
+    var block_array_by_type_slug_map = [];
+
+    foreach ( var block; block_array )
+    {
+        if ( !isset( block_array_by_type_slug_map[ block.TypeSlug ] ) )
+        {
+            block_array_by_type_slug_map[ block.TypeSlug ] = [ block ];
+        }
+        else
+        {
+            array_push( block_array_by_type_slug_map[ block.TypeSlug ], block );
+        }
+    }
+
+    return block_array_by_type_slug_map;
+}
+
+// ~~
+
+function GetBlockArrayByTypeSlug(
+    array &block_array,
+    string type_slug
+    )
+{
+    var block_array_by_type_slug = [];
+
+    foreach ( var block; block_array )
+    {
+        if ( block.TypeSlug === type_slug )
+        {
+            array_push( block_array_by_type_slug, block );
+        }
+    }
+
+    return block_array_by_type_slug;
+}
+
+// ~~
+
+function GetBlockByTypeSlugMap(
+    array &block_array
+    )
+{
+    var block_by_type_slug_map = [];
+
+    foreach ( var block; block_array )
+    {
+        block_by_type_slug_map[ block.TypeSlug ] = block;
+    }
+
+    return block_by_type_slug_map;
+}
+
+// ~~
+
+function GetBlockByTypeSlug(
+    array &block_by_type_slug_map,
+    string type_slug
+    )
+{
+    if ( isset( block_by_type_slug_map[ type_slug ] ) )
+    {
+        return block_by_type_slug_map[ type_slug ];
     }
     else
     {

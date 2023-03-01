@@ -864,9 +864,6 @@ textarea {
 .block-table {
   grid-template-columns: repeat(28, auto);
 }
-.block-table {
-  grid-template-columns: repeat(28, auto);
-}
 .contact-table {
   grid-template-columns: repeat(8, auto);
 }

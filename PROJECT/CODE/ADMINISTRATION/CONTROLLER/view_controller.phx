@@ -22,12 +22,15 @@ class VIEW_CONTROLLER extends CONTROLLER
 
         .TextArray = GetDatabaseTextArray();
         .TextBySlugMap = GetTextBySlugMap( .TextArray );
-        .PageArray = GetDatabasePageArray();
-        .PageTypeArray = GetDatabasePageTypeArray();
         .BlockArray = GetDatabaseBlockArray();
+        .BlockByIdMap = GetValidBlockByIdMap( .BlockArray );
         .BlockCategoryArray = GetDatabaseBlockCategoryArray();
         .BlockContentArray = GetDatabaseBlockContentArray();
         .BlockTypeArray = GetDatabaseBlockTypeArray();
+        .PageArray = GetDatabasePageArray();
+        .PageByIdMap = GetValidPageByIdMap( .PageArray, .BlockArray, .BlockByIdMap );
+        .PageBySlugMap = GetPageBySlugMap( .PageByIdMap );
+        .PageTypeArray = GetDatabasePageTypeArray();
     }
 
     // -- INQUIRIES

@@ -56,18 +56,18 @@
         <?php foreach ( $this->TextArray as  $text ) { ?>
             <div class="card-container filter-row">
                 <div class="card">
-                    <div class="form-container">
+                    <div class="form-container" data-is-row data-table-name="TEXT">
                         <div class="form-field-name" data-is-column-title data-column-name="Slug">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Slug' ) ); ?> :
                         </div>
-                        <div>
-                            <input-component data-is-column-value data-column-name="Slug" result-class="form-input" result-name="Slug" result-value="<?php echo htmlspecialchars( GetValueText( $text->Slug ) ); ?>" is-readonly></input-component>
+                        <div class="form-field-value" data-is-column-value data-column-name="Slug">
+                            <input-component result-class="form-input" result-name="Slug" result-value="<?php echo htmlspecialchars( GetValueText( $text->Slug ) ); ?>" is-readonly></input-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="Text">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Text' ) ); ?> :
                         </div>
-                        <div>
-                            <multilingual-text-input-component data-is-column-value data-column-name="Text" container-class="form-multilingual-container" result-class="form-textarea" result-name="Text" result-value="<?php echo htmlspecialchars( GetValueText( $text->Text ) ); ?>" is-readonly language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-text-input-component>
+                        <div class="form-field-value" data-is-column-value data-column-name="Text">
+                            <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Text" result-value="<?php echo htmlspecialchars( GetValueText( $text->Text ) ); ?>" is-readonly language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-text-input-component>
                         </div>
                     </div>
                     <?php if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>

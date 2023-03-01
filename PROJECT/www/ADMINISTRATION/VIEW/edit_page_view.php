@@ -125,24 +125,24 @@
 <div id="edit-page-view">
     <div class="page-section form-section">
         <form class="form-centered" name="EditPageForm" onsubmit="return IsValidEditPageForm()" action="/admin/page/edit/<?php echo htmlspecialchars( $this->Page->Id ); ?>" method="post">
-            <div class="form-container">
+            <div class="form-container" data-is-row data-table-name="PAGE">
                 <div class="form-field-name" data-is-column-title data-column-name="Slug">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Slug' ) ); ?> :
                 </div>
-                <div>
-                    <input-component data-is-column-value data-column-name="Slug" result-class="form-input" result-name="Slug" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->Slug ) ); ?>"></input-component>
+                <div class="form-field-value" data-is-column-value data-column-name="Slug">
+                    <input-component result-class="form-input" result-name="Slug" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->Slug ) ); ?>"></input-component>
                 </div>
                 <div class="form-field-name" data-is-column-title data-column-name="Route">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Route' ) ); ?> :
                 </div>
-                <div>
-                    <input-component data-is-column-value data-column-name="Route" result-class="form-input" result-name="Route" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->Route ) ); ?>"></input-component>
+                <div class="form-field-value" data-is-column-value data-column-name="Route">
+                    <input-component result-class="form-input" result-name="Route" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->Route ) ); ?>"></input-component>
                 </div>
                 <div class="form-field-name" data-is-column-title data-column-name="TypeSlug">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Type Slug' ) ); ?> :
                 </div>
-                <div>
-                    <select data-is-column-value data-column-name="TypeSlug"class="form-select" name="TypeSlug">
+                <div class="form-field-value" data-is-column-value data-column-name="TypeSlug">
+                    <select class="form-select" name="TypeSlug">
                         <?php  $page_type_array = $this->PageTypeArray; ?>
                         <?php foreach ( $page_type_array as  $page_type ) { ?>
                             <option value="<?php echo htmlspecialchars( GetValueText( $page_type->Slug ) ); ?>"<?php if ( $this->Page->TypeSlug === $page_type->Slug ) echo ' selected'; ?>><?php echo htmlspecialchars( GetUntranslatedText( $page_type->Title ) ); ?></option>
@@ -152,20 +152,20 @@
                 <div class="form-field-name" data-is-column-title data-column-name="Number">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Number' ) ); ?> :
                 </div>
-                <div>
-                    <input-component data-is-column-value data-column-name="Number" result-class="form-input" result-name="Number" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->Number ) ); ?>"></input-component>
+                <div class="form-field-value" data-is-column-value data-column-name="Number">
+                    <input-component result-class="form-input" result-name="Number" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->Number ) ); ?>"></input-component>
                 </div>
                 <div class="form-field-name" data-is-column-title data-column-name="LanguageCodeArray">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Language Code Array' ) ); ?> :
                 </div>
-                <div>
-                    <input-list-component data-is-column-value data-column-name="LanguageCodeArray" container-class="form-list-container" result-class="form-input" result-name="LanguageCodeArray" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->LanguageCodeArray ) ); ?>" value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></input-list-component>
+                <div class="form-field-value" data-is-column-value data-column-name="LanguageCodeArray">
+                    <input-list-component container-class="form-list-container" result-class="form-input" result-name="LanguageCodeArray" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->LanguageCodeArray ) ); ?>" value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></input-list-component>
                 </div>
                 <div class="form-field-name" data-is-column-title data-column-name="IsActive">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Is Active' ) ); ?> :
                 </div>
-                <div>
-                    <select data-is-column-value data-column-name="IsActive"class="form-select" name="IsActive">
+                <div class="form-field-value" data-is-column-value data-column-name="IsActive">
+                    <select class="form-select" name="IsActive">
                         <option value="0"<?php if ( $this->Page->IsActive === '0' ) echo ' selected'; ?>>False</option>
                         <option value="1"<?php if ( $this->Page->IsActive === '1' ) echo ' selected'; ?>>True</option>
                     </select>
@@ -173,32 +173,32 @@
                 <div class="form-field-name" data-is-column-title data-column-name="Title">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Title' ) ); ?> :
                 </div>
-                <div>
-                    <multilingual-input-component data-is-column-value data-column-name="Title" container-class="form-multilingual-container" result-class="form-input" result-name="Title" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->Title ) ); ?>" language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-input-component>
+                <div class="form-field-value" data-is-column-value data-column-name="Title">
+                    <multilingual-input-component container-class="form-multilingual-container" result-class="form-input" result-name="Title" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->Title ) ); ?>" language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-input-component>
                 </div>
                 <div class="form-field-name" data-is-column-title data-column-name="Heading">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Heading' ) ); ?> :
                 </div>
-                <div>
-                    <multilingual-text-input-component data-is-column-value data-column-name="Heading" container-class="form-multilingual-container" result-class="form-textarea" result-name="Heading" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->Heading ) ); ?>" language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-text-input-component>
+                <div class="form-field-value" data-is-column-value data-column-name="Heading">
+                    <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Heading" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->Heading ) ); ?>" language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-text-input-component>
                 </div>
                 <div class="form-field-name" data-is-column-title data-column-name="Teaser">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Teaser' ) ); ?> :
                 </div>
-                <div>
-                    <multilingual-text-input-component data-is-column-value data-column-name="Teaser" container-class="form-multilingual-container" result-class="form-textarea" result-name="Teaser" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->Teaser ) ); ?>" language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-text-input-component>
+                <div class="form-field-value" data-is-column-value data-column-name="Teaser">
+                    <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Teaser" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->Teaser ) ); ?>" language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-text-input-component>
                 </div>
                 <div class="form-field-name" data-is-column-title data-column-name="ImagePath">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Image Path' ) ); ?> :
                 </div>
-                <div>
-                    <image-path-input-component data-is-column-value data-column-name="ImagePath" container-class="form-upload-container" result-class="form-input form-upload-input" result-name="ImagePath" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->ImagePath ) ); ?>" image-class="form-upload-image" error-image-path="/static/image/admin/missing_image.svg" upload-button-container-class="form-upload-button-container" upload-button-class="form-button upload-button form-upload-button" upload-api-url="/admin/upload/image" delete-button-class="form-button delete-button form-delete-button" delete-api-url="/admin/delete/file"></image-path-input-component>
+                <div class="form-field-value" data-is-column-value data-column-name="ImagePath">
+                    <image-path-input-component container-class="form-upload-container" result-class="form-input form-upload-input" result-name="ImagePath" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->ImagePath ) ); ?>" image-class="form-upload-image" error-image-path="/static/image/admin/missing_image.svg" upload-button-container-class="form-upload-button-container" upload-button-class="form-button upload-button form-upload-button" upload-api-url="/admin/upload/image" delete-button-class="form-button delete-button form-delete-button" delete-api-url="/admin/delete/file"></image-path-input-component>
                 </div>
                 <div class="form-field-name" data-is-column-title data-column-name="ImageVerticalPosition">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Image Vertical Position' ) ); ?> :
                 </div>
-                <div>
-                    <select data-is-column-value data-column-name="ImageVerticalPosition"class="form-select" name="ImageVerticalPosition">
+                <div class="form-field-value" data-is-column-value data-column-name="ImageVerticalPosition">
+                    <select class="form-select" name="ImageVerticalPosition">
                         <option value="top"<?php if ( $this->Page->ImageVerticalPosition === 'top' ) echo ' selected'; ?>>Top</option>
                         <option value="10%"<?php if ( $this->Page->ImageVerticalPosition === '10%' ) echo ' selected'; ?>>10%</option>
                         <option value="20%"<?php if ( $this->Page->ImageVerticalPosition === '20%' ) echo ' selected'; ?>>20%</option>
@@ -215,8 +215,8 @@
                 <div class="form-field-name" data-is-column-title data-column-name="ImageHorizontalPosition">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Image Horizontal Position' ) ); ?> :
                 </div>
-                <div>
-                    <select data-is-column-value data-column-name="ImageHorizontalPosition"class="form-select" name="ImageHorizontalPosition">
+                <div class="form-field-value" data-is-column-value data-column-name="ImageHorizontalPosition">
+                    <select class="form-select" name="ImageHorizontalPosition">
                         <option value="left"<?php if ( $this->Page->ImageHorizontalPosition === 'left' ) echo ' selected'; ?>>Left</option>
                         <option value="10%"<?php if ( $this->Page->ImageHorizontalPosition === '10%' ) echo ' selected'; ?>>10%</option>
                         <option value="20%"<?php if ( $this->Page->ImageHorizontalPosition === '20%' ) echo ' selected'; ?>>20%</option>
@@ -233,26 +233,26 @@
                 <div class="form-field-name" data-is-column-title data-column-name="VideoPath">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Video Path' ) ); ?> :
                 </div>
-                <div>
-                    <video-path-input-component data-is-column-value data-column-name="VideoPath" container-class="form-upload-container" result-class="form-input form-upload-input" result-name="VideoPath" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->VideoPath ) ); ?>" video-class="form-upload-video" error-video-path="/static/video/admin/missing_video.mp4" upload-button-container-class="form-upload-button-container" upload-button-class="form-button upload-button form-upload-button" upload-api-url="/admin/upload/video" delete-button-class="form-button delete-button form-delete-button" delete-api-url="/admin/delete/file"></video-path-input-component>
+                <div class="form-field-value" data-is-column-value data-column-name="VideoPath">
+                    <video-path-input-component container-class="form-upload-container" result-class="form-input form-upload-input" result-name="VideoPath" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->VideoPath ) ); ?>" video-class="form-upload-video" error-video-path="/static/video/admin/missing_video.mp4" upload-button-container-class="form-upload-button-container" upload-button-class="form-button upload-button form-upload-button" upload-api-url="/admin/upload/video" delete-button-class="form-button delete-button form-delete-button" delete-api-url="/admin/delete/file"></video-path-input-component>
                 </div>
                 <div class="form-field-name" data-is-column-title data-column-name="MetaTitle">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Meta Title' ) ); ?> :
                 </div>
-                <div>
-                    <multilingual-input-component data-is-column-value data-column-name="MetaTitle" container-class="form-multilingual-container" result-class="form-input" result-name="MetaTitle" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->MetaTitle ) ); ?>" language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-input-component>
+                <div class="form-field-value" data-is-column-value data-column-name="MetaTitle">
+                    <multilingual-input-component container-class="form-multilingual-container" result-class="form-input" result-name="MetaTitle" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->MetaTitle ) ); ?>" language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-input-component>
                 </div>
                 <div class="form-field-name" data-is-column-title data-column-name="MetaDescription">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Meta Description' ) ); ?> :
                 </div>
-                <div>
-                    <multilingual-text-input-component data-is-column-value data-column-name="MetaDescription" container-class="form-multilingual-container" result-class="form-textarea" result-name="MetaDescription" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->MetaDescription ) ); ?>" language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-text-input-component>
+                <div class="form-field-value" data-is-column-value data-column-name="MetaDescription">
+                    <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="MetaDescription" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->MetaDescription ) ); ?>" language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-text-input-component>
                 </div>
                 <div class="form-field-name" data-is-column-title data-column-name="MetaImagePath">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Meta Image Path' ) ); ?> :
                 </div>
-                <div>
-                    <image-path-input-component data-is-column-value data-column-name="MetaImagePath" container-class="form-upload-container" result-class="form-input form-upload-input" result-name="MetaImagePath" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->MetaImagePath ) ); ?>" image-class="form-upload-image" error-image-path="/static/image/admin/missing_image.svg" upload-button-container-class="form-upload-button-container" upload-button-class="form-button upload-button form-upload-button" upload-api-url="/admin/upload/image" delete-button-class="form-button delete-button form-delete-button" delete-api-url="/admin/delete/file"></image-path-input-component>
+                <div class="form-field-value" data-is-column-value data-column-name="MetaImagePath">
+                    <image-path-input-component container-class="form-upload-container" result-class="form-input form-upload-input" result-name="MetaImagePath" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->MetaImagePath ) ); ?>" image-class="form-upload-image" error-image-path="/static/image/admin/missing_image.svg" upload-button-container-class="form-upload-button-container" upload-button-class="form-button upload-button form-upload-button" upload-api-url="/admin/upload/image" delete-button-class="form-button delete-button form-delete-button" delete-api-url="/admin/delete/file"></image-path-input-component>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
                 </a>

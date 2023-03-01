@@ -16,10 +16,6 @@ class MANAGE_PAGES_CONTROLLER extends VIEW_CONTROLLER
         parent::__construct();
 
         $this->Title = 'Manage pages';
-        $this->BlockArray = GetDatabaseBlockArray();
-        $this->BlockByIdMap = GetValidBlockByIdMap( $this->BlockArray );
-        $this->PageArray = GetDatabasePageArray();
-        $this->PageByIdMap = GetValidPageByIdMap( $this->PageArray, $this->BlockArray, $this->BlockByIdMap );
         $this->ListRoute = '/admin/page/manage';
 
         SetSessionValue( 'ListRoute', $this->ListRoute );

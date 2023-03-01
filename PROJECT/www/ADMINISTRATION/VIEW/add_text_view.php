@@ -50,7 +50,7 @@
 <div id="add-text-view">
     <div class="page-section form-section">
         <form class="form-centered" name="AddTextForm" onsubmit="return IsValidAddTextForm()" action="/admin/text/add" method="post">
-            <div class="form-container">
+            <div class="form-container" data-is-row data-table-name="TEXT">
                 <?php
                      $field_name = 'Id';
 
@@ -66,8 +66,8 @@
                 <div class="form-field-name" data-is-column-title data-column-name="Id">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Id' ) ); ?> :
                 </div>
-                <div>
-                    <input-component data-is-column-value data-column-name="Id" result-class="form-input" result-name="Id" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
+                <div class="form-field-value" data-is-column-value data-column-name="Id">
+                    <input-component result-class="form-input" result-name="Id" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
                      $field_name = 'Slug';
@@ -84,8 +84,8 @@
                 <div class="form-field-name" data-is-column-title data-column-name="Slug">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Slug' ) ); ?> :
                 </div>
-                <div>
-                    <input-component data-is-column-value data-column-name="Slug" result-class="form-input" result-name="Slug" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
+                <div class="form-field-value" data-is-column-value data-column-name="Slug">
+                    <input-component result-class="form-input" result-name="Slug" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
                      $field_name = 'Text';
@@ -102,8 +102,8 @@
                 <div class="form-field-name" data-is-column-title data-column-name="Text">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Text' ) ); ?> :
                 </div>
-                <div>
-                    <multilingual-text-input-component data-is-column-value data-column-name="Text" container-class="form-multilingual-container" result-class="form-textarea" result-name="Text" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-text-input-component>
+                <div class="form-field-value" data-is-column-value data-column-name="Text">
+                    <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Text" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-text-input-component>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
                 </a>

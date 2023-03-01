@@ -56,11 +56,6 @@
             </a>
         </div>
         <div class="tree-container">
-            <a class="tree-button" href="/admin/block">
-                <?php echo htmlspecialchars( GetTextBySlug( 'Blocks' ) ); ?>
-            </a>
-        </div>
-        <div class="tree-container">
             <a class="tree-button" href="/admin/contact">
                 <?php echo htmlspecialchars( GetTextBySlug( 'Contacts' ) ); ?>
             </a>

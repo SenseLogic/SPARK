@@ -1,51 +1,73 @@
 <script>
     // -- VARIABLES
 
-    var
-        ColumnTitleElementArray,
-        ColumnValueElementArray,
-        TypeSlugColumnValueElement;
-
-    // -- FUNCTIONS
-
-    function HandleTypeSlugColumnValueChangeEvent(
+    function UpdateFieldVisibility(
         )
     {
         var
-            block_has_text_type,
             column_index,
             column_is_hidden,
             column_title_element,
-            column_value_element;
+            column_title_element_array,
+            column_value,
+            column_value_element,
+            column_value_element_array,
+            row_element,
+            row_element_array,
+            type_slug_value,
+            type_slug_value_element,
+            type_slug_value_element_array;
 
-        block_has_text_type = ( TypeSlugColumnValueElement.value === 'text' );
+        row_element_array = GetElements( "[data-is-row]" );
 
-        for ( column_index = 0;
-              column_index < ColumnTitleElementArray.length;
-              ++column_index )
+        for ( row_element of row_element_array )
         {
-            column_title_element = ColumnTitleElementArray[ column_index ];
-            column_value_element = ColumnValueElementArray[ column_index ];
+            column_title_element_array = row_element.GetElements( "[data-is-column-title]" );
+            column_value_element_array = row_element.GetElements( "[data-is-column-value]" );
 
-            column_name = column_title_element.dataset.columnName;
+            type_slug_value = "";
 
-            if ( block_has_text_type )
+            for ( column_value_element of column_value_element_array )
             {
-                column_is_hidden = ( column_name.startsWith( "Image" ) );
+                if ( column_value_element.dataset.columnName === "TypeSlug" )
+                {
+                    type_slug_value = column_value_element.GetFirstChildElement().value;
+
+                    if ( column_value_element.onchange !== UpdateFieldVisibility )
+                    {
+                        column_value_element.onchange = UpdateFieldVisibility;
+                    }
+
+                    break;
+                }
             }
 
-            column_title_element.ToggleClass( "is-hidden", column_is_hidden );
-            column_value_element.ToggleClass( "is-hidden", column_is_hidden );
+            if ( column_title_element_array.length === column_value_element_array.length )
+            {
+                for ( column_index = 0;
+                      column_index < column_title_element_array.length;
+                      ++column_index )
+                {
+                    column_title_element = column_title_element_array[ column_index ];
+                    column_value_element = column_value_element_array[ column_index ];
+                    column_value = column_value_element.GetFirstChildElement().value;
+
+                    column_name = column_title_element.dataset.columnName;
+                    column_is_hidden = false;
+
+                    if ( type_slug_value === "text" )
+                    {
+                        column_is_hidden = ( column_name.startsWith( "Image" ) );
+                    }
+
+                    column_title_element.ToggleClass( "is-hidden", column_is_hidden );
+                    column_value_element.ToggleClass( "is-hidden", column_is_hidden );
+                }
+            }
         }
     }
 
     // -- STATEMENTS
 
-    ColumnTitleElementArray = GetElements( "[data-is-column-title]" );
-    ColumnValueElementArray = GetElements( "[data-is-column-value]" );
-
-    TypeSlugColumnValueElement = GetElement( "[data-is-column-value][data-column-name=\"TypeSlug\"]" );
-    TypeSlugColumnValueElement.onchange = HandleTypeSlugColumnValueChangeEvent;
-
-    HandleTypeSlugColumnValueChangeEvent();
+    UpdateFieldVisibility();
 </script>

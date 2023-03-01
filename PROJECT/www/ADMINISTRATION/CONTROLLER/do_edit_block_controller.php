@@ -19,8 +19,8 @@ class DO_EDIT_BLOCK_CONTROLLER extends VIEW_CONTROLLER
          $slug = GetPostValue( 'Slug' );
          $page_id = GetPostValue( 'PageId' );
          $category_slug = GetPostValue( 'CategorySlug' );
-         $type_slug = GetPostValue( 'TypeSlug' );
          $content_slug = GetPostValue( 'ContentSlug' );
+         $type_slug = GetPostValue( 'TypeSlug' );
          $number = GetPostValue( 'Number' );
          $language_code_array = GetJsonObject( GetPostValue( 'LanguageCodeArray' ) );
          $minimum_height = GetPostValue( 'MinimumHeight' );
@@ -44,7 +44,7 @@ class DO_EDIT_BLOCK_CONTROLLER extends VIEW_CONTROLLER
          $video_path = GetPostValue( 'VideoPath' );
          $video_path_array = GetJsonObject( GetPostValue( 'VideoPathArray' ) );
 
-        SetDatabaseBlock( $block_id, $slug, $page_id, $category_slug, $type_slug, $content_slug, $number, $language_code_array, $minimum_height, $title, $title_array, $teaser, $teaser_array, $text, $text_array, $route, $route_array, $image_side, $image_legend, $image_legend_array, $image_path, $image_path_array, $image_vertical_position, $image_vertical_position_array, $image_horizontal_position, $image_horizontal_position_array, $video_path, $video_path_array );
+        SetDatabaseBlock( $block_id, $slug, $page_id, $category_slug, $content_slug, $type_slug, $number, $language_code_array, $minimum_height, $title, $title_array, $teaser, $teaser_array, $text, $text_array, $route, $route_array, $image_side, $image_legend, $image_legend_array, $image_path, $image_path_array, $image_vertical_position, $image_vertical_position_array, $image_horizontal_position, $image_horizontal_position_array, $video_path, $video_path_array );
 
         Redirect( FindSessionValue( 'ListRoute', '/admin/block' ) );
     }
