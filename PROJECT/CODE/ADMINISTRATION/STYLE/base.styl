@@ -230,13 +230,15 @@ MakeSortableTableColumn();
     margin-top: 0.25rem;
 }
 
-.tree-container .tree-container
+.tree-container > .tree-container
 {
     margin-left: 2em;
 }
 
 .tree-button
 {
+    display: block;
+
     color: BlueColor;
 }
 
@@ -247,7 +249,6 @@ MakeSortableTableColumn();
 
 .tree-toggle-button
 {
-    position: absolute;
     transform: translate( -1.5rem, 0.2rem );
 
     height: 1rem;
