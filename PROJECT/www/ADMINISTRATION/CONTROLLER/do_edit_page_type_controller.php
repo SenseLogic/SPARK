@@ -16,12 +16,16 @@ class DO_EDIT_PAGE_TYPE_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-         $slug = GetPostValue( 'Slug' );
-         $title = GetPostValue( 'Title' );
+        if ( HasSessionMinimumUserRole( 'author' ) )
+        {
 
-        SetDatabasePageType( $page_type_id, $slug, $title );
+             $slug = GetPostValue( 'Slug' );
+             $name = GetPostValue( 'Name' );
 
-        Redirect( FindSessionValue( 'ListRoute', '/admin/page-type' ) );
+            SetDatabasePageType( $page_type_id, $slug, $name );
+
+            Redirect( FindSessionValue( 'ListRoute', '/admin/page-type' ) );
+        }
     }
 }
 

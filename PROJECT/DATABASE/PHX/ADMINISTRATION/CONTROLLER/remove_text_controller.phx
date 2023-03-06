@@ -16,11 +16,14 @@ class REMOVE_TEXT_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        .Title = 'Remove a text';
-        .Text = GetDatabaseTextById( text_id );
-        .ListRoute = FindSessionValue( 'ListRoute', '/admin/text' );
+        if ( HasSessionMinimumUserRole( 'author' ) )
+        {
+            .Title = 'Remove a text';
+            .Text = GetDatabaseTextById( text_id );
+            .ListRoute = FindSessionValue( 'ListRoute', '/admin/text' );
 
-        import '../VIEW/remove_text_view.php';
+            import '../VIEW/remove_text_view.php';
+        }
     }
 }
 

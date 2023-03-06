@@ -25,12 +25,16 @@ class VIEW_CONTROLLER extends CONTROLLER
         .BlockArray = GetDatabaseBlockArray();
         .BlockByIdMap = GetValidBlockByIdMap( .BlockArray );
         .BlockCategoryArray = GetDatabaseBlockCategoryArray();
+        .BlockCategoryBySlugMap = GetElementByKeyMap( .BlockCategoryArray, 'Slug' );
         .BlockContentArray = GetDatabaseBlockContentArray();
+        .BlockContentBySlugMap = GetElementByKeyMap( .BlockContentArray, 'Slug' );
         .BlockTypeArray = GetDatabaseBlockTypeArray();
+        .BlockTypeBySlugMap = GetElementByKeyMap( .BlockTypeArray, 'Slug' );
         .PageArray = GetDatabasePageArray();
         .PageByIdMap = GetValidPageByIdMap( .PageArray, .BlockArray, .BlockByIdMap );
         .PageBySlugMap = GetPageBySlugMap( .PageByIdMap );
         .PageTypeArray = GetDatabasePageTypeArray();
+        .PageTypeBySlugMap = GetElementByKeyMap( .PageTypeArray, 'Slug' );
     }
 
     // -- INQUIRIES

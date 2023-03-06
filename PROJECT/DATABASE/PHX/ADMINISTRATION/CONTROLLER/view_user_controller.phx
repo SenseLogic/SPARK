@@ -16,11 +16,14 @@ class VIEW_USER_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        .Title = 'View a user';
-        .User = GetDatabaseUserById( user_id );
-        .ListRoute = FindSessionValue( 'ListRoute', '/admin/user' );
+        if ( HasSessionMinimumUserRole( 'administrator' ) )
+        {
+            .Title = 'View a user';
+            .User = GetDatabaseUserById( user_id );
+            .ListRoute = FindSessionValue( 'ListRoute', '/admin/user' );
 
-        import '../VIEW/view_user_view.php';
+            import '../VIEW/view_user_view.php';
+        }
     }
 }
 

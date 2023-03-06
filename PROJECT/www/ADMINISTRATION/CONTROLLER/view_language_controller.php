@@ -16,11 +16,14 @@ class VIEW_LANGUAGE_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-        $this->Title = 'View a language';
-        $this->Language = GetDatabaseLanguageById( $language_id );
-        $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/language' );
+        if ( HasSessionMinimumUserRole( 'author' ) )
+        {
+            $this->Title = 'View a language';
+            $this->Language = GetDatabaseLanguageById( $language_id );
+            $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/language' );
 
-        require_once __DIR__ . '/' . '../VIEW/view_language_view.php';
+            require_once __DIR__ . '/' . '../VIEW/view_language_view.php';
+        }
     }
 }
 

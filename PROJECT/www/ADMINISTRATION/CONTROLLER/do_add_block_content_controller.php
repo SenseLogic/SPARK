@@ -15,13 +15,17 @@ class DO_ADD_BLOCK_CONTENT_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-         $id = GetPostValue( 'Id' );
-         $slug = GetPostValue( 'Slug' );
-         $name = GetPostValue( 'Name' );
+        if ( HasSessionMinimumUserRole( 'author' ) )
+        {
 
-        AddDatabaseBlockContent( $id, $slug, $name );
+             $id = GetPostValue( 'Id' );
+             $slug = GetPostValue( 'Slug' );
+             $name = GetPostValue( 'Name' );
 
-        Redirect( FindSessionValue( 'ListRoute', '/admin/block-content' ) );
+            AddDatabaseBlockContent( $id, $slug, $name );
+
+            Redirect( FindSessionValue( 'ListRoute', '/admin/block-content' ) );
+        }
     }
 }
 

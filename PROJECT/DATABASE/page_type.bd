@@ -1,6 +1,6 @@
 PAGE_TYPE
 
-    Id Slug Title
+    Id Slug Name
 
         %home-page-type
             ~ home

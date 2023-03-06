@@ -7,7 +7,7 @@
             <?php require __DIR__ . '/' . 'BLOCK/filter.php'; ?>
             <?php  $list_mode_name = "PageListMode"; ?>
             <?php require __DIR__ . '/' . 'BLOCK/list_mode.php'; ?>
-            <?php if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+            <?php if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
                 <a class="form-button form-button-large add-button" href="/admin/page/add">
                 </a>
             <?php } ?>
@@ -149,7 +149,7 @@
                     <div class="form-centered sortable-table-cell">
                         <a class="form-button view-button" href="/admin/page/view/<?php echo htmlspecialchars( $page->Id ); ?>">
                         </a>
-                        <?php if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                        <?php if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
                             <a class="form-button edit-button" href="/admin/page/edit/<?php echo htmlspecialchars( $page->Id ); ?>">
                             </a>
                             <a class="form-button remove-button" href="/admin/page/remove/<?php echo htmlspecialchars( $page->Id ); ?>">
@@ -184,7 +184,7 @@
                             <select class="form-select" name="TypeSlug" readonly>
                                 <?php  $page_type_array = $this->PageTypeArray; ?>
                                 <?php foreach ( $page_type_array as  $page_type ) { ?>
-                                    <option value="<?php echo htmlspecialchars( GetValueText( $page_type->Slug ) ); ?>"<?php if ( $page->TypeSlug === $page_type->Slug ) echo ' selected'; ?>><?php echo htmlspecialchars( GetUntranslatedText( $page_type->Title ) ); ?></option>
+                                    <option value="<?php echo htmlspecialchars( GetValueText( $page_type->Slug ) ); ?>"<?php if ( $page->TypeSlug === $page_type->Slug ) echo ' selected'; ?>><?php echo htmlspecialchars( GetUntranslatedText( $page_type->Name ) ); ?></option>
                                 <?php } ?>
                             </select>
                         </div>
@@ -294,7 +294,7 @@
                             <image-path-input-component container-class="form-upload-container" result-class="form-input form-upload-input" result-name="MetaImagePath" result-value="<?php echo htmlspecialchars( GetValueText( $page->MetaImagePath ) ); ?>" is-readonly image-class="form-upload-image" error-image-path="/static/image/admin/missing_image.svg"></image-path-input-component>
                         </div>
                     </div>
-                    <?php if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                    <?php if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
                         <div class="form-toolbar">
                             <a class="form-button edit-button" href="/admin/page/edit/<?php echo htmlspecialchars( $page->Id ); ?>">
                             </a>

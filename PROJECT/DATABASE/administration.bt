@@ -16,10 +16,13 @@ class ADD_{#type#}_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        .Title = 'Add a {#locution#}';
-        .ListRoute = FindSessionValue( 'ListRoute', '/admin/{#style#}' );
+        if ( HasSessionMinimumUserRole( '<~{#has_user_role#}<>{#user_role#}<>author~>' ) )
+        {
+            .Title = 'Add a {#locution#}';
+            .ListRoute = FindSessionValue( 'ListRoute', '/admin/{#style#}' );
 
-        import '../VIEW/add_{#variable#}_view.php';
+            import '../VIEW/add_{#variable#}_view.php';
+        }
     }
 }
 
@@ -43,13 +46,17 @@ class DO_ADD_{#type#}_CONTROLLER extends VIEW_CONTROLLER
         )
     {
         parent::constructor( language_code );
+
+        if ( HasSessionMinimumUserRole( '<~{#has_user_role#}<>{#user_role#}<>author~>' ) )
+        {
 <%¨<~{%is_scalar%}<>
-        var {%variable%} = GetPostValue( '{%attribute%}' );<>
-        var {%variable%} = GetJsonObject( GetPostValue( '{%attribute%}' ) );~>¨%>
+            var {%variable%} = GetPostValue( '{%attribute%}' );<>
+            var {%variable%} = GetJsonObject( GetPostValue( '{%attribute%}' ) );~>¨%>
 
-        AddDatabase{#attribute#}( <%¨{%variable%}<~!{%is_last_added%}<>, ~>¨%> );
+            AddDatabase{#attribute#}( <%¨{%variable%}<~!{%is_last_added%}<>, ~>¨%> );
 
-        Redirect( FindSessionValue( 'ListRoute', '/admin/{#style#}' ) );
+            Redirect( FindSessionValue( 'ListRoute', '/admin/{#style#}' ) );
+        }
     }
 }
 
@@ -75,11 +82,14 @@ class EDIT_{#type#}_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        .Title = 'Edit a {#locution#}';
-        .{#attribute#} = GetDatabase{#attribute#}By{#key_attribute#}( {#variable#}_{#key_variable#} );
-        .ListRoute = FindSessionValue( 'ListRoute', '/admin/{#style#}' );
+        if ( HasSessionMinimumUserRole( '<~{#has_user_role#}<>{#user_role#}<>author~>' ) )
+        {
+            .Title = 'Edit a {#locution#}';
+            .{#attribute#} = GetDatabase{#attribute#}By{#key_attribute#}( {#variable#}_{#key_variable#} );
+            .ListRoute = FindSessionValue( 'ListRoute', '/admin/{#style#}' );
 
-        import '../VIEW/edit_{#variable#}_view.php';
+            import '../VIEW/edit_{#variable#}_view.php';
+        }
     }
 }
 
@@ -104,13 +114,17 @@ class DO_EDIT_{#type#}_CONTROLLER extends VIEW_CONTROLLER
         )
     {
         parent::constructor( language_code );
+
+        if ( HasSessionMinimumUserRole( '<~{#has_user_role#}<>{#user_role#}<>author~>' ) )
+        {
 <$<~{%is_scalar%}<>
-        var {%variable%} = GetPostValue( '{%attribute%}' );<>
-        var {%variable%} = GetJsonObject( GetPostValue( '{%attribute%}' ) );~>$>
+            var {%variable%} = GetPostValue( '{%attribute%}' );<>
+            var {%variable%} = GetJsonObject( GetPostValue( '{%attribute%}' ) );~>$>
 
-        SetDatabase{#attribute#}( {#variable#}_{#key_variable#}, <${%variable%}<~!{%is_last_non_key%}<>, ~>$> );
+            SetDatabase{#attribute#}( {#variable#}_{#key_variable#}, <${%variable%}<~!{%is_last_non_key%}<>, ~>$> );
 
-        Redirect( FindSessionValue( 'ListRoute', '/admin/{#style#}' ) );
+            Redirect( FindSessionValue( 'ListRoute', '/admin/{#style#}' ) );
+        }
     }
 }
 
@@ -136,11 +150,14 @@ class REMOVE_{#type#}_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        .Title = 'Remove a {#locution#}';
-        .{#attribute#} = GetDatabase{#attribute#}By{#key_attribute#}( {#variable#}_{#key_variable#} );
-        .ListRoute = FindSessionValue( 'ListRoute', '/admin/{#style#}' );
+        if ( HasSessionMinimumUserRole( '<~{#has_user_role#}<>{#user_role#}<>author~>' ) )
+        {
+            .Title = 'Remove a {#locution#}';
+            .{#attribute#} = GetDatabase{#attribute#}By{#key_attribute#}( {#variable#}_{#key_variable#} );
+            .ListRoute = FindSessionValue( 'ListRoute', '/admin/{#style#}' );
 
-        import '../VIEW/remove_{#variable#}_view.php';
+            import '../VIEW/remove_{#variable#}_view.php';
+        }
     }
 }
 
@@ -166,9 +183,12 @@ class DO_REMOVE_{#type#}_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        RemoveDatabase{#attribute#}By{#key_attribute#}( {#variable#}_{#key_variable#} );
+        if ( HasSessionMinimumUserRole( '<~{#has_user_role#}<>{#user_role#}<>author~>' ) )
+        {
+            RemoveDatabase{#attribute#}By{#key_attribute#}( {#variable#}_{#key_variable#} );
 
-        Redirect( FindSessionValue( 'ListRoute', '/admin/{#style#}' ) );
+            Redirect( FindSessionValue( 'ListRoute', '/admin/{#style#}' ) );
+        }
     }
 }
 
@@ -194,11 +214,14 @@ class VIEW_{#type#}_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        .Title = 'View a {#locution#}';
-        .{#attribute#} = GetDatabase{#attribute#}By{#key_attribute#}( {#variable#}_{#key_variable#} );
-        .ListRoute = FindSessionValue( 'ListRoute', '/admin/{#style#}' );
+        if ( HasSessionMinimumUserRole( '<~{#has_user_role#}<>{#user_role#}<>author~>' ) )
+        {
+            .Title = 'View a {#locution#}';
+            .{#attribute#} = GetDatabase{#attribute#}By{#key_attribute#}( {#variable#}_{#key_variable#} );
+            .ListRoute = FindSessionValue( 'ListRoute', '/admin/{#style#}' );
 
-        import '../VIEW/view_{#variable#}_view.php';
+            import '../VIEW/view_{#variable#}_view.php';
+        }
     }
 }
 
@@ -223,12 +246,15 @@ class VIEW_<~Plural<>{#type#}~>_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        .Title = 'View <~Plural<>{#locution#}~>';
-        .{#attribute#}Array = GetDatabase{#attribute#}Array();
+        if ( HasSessionMinimumUserRole( '<~{#has_user_role#}<>{#user_role#}<>author~>' ) )
+        {
+            .Title = 'View <~Plural<>{#locution#}~>';
+            .{#attribute#}Array = GetDatabase{#attribute#}Array();
 
-        SetSessionValue( 'ListRoute', GetRequest() );
+            SetSessionValue( 'ListRoute', GetRequest() );
 
-        import '../VIEW/view_<~Plural<>{#variable#}~>_view.php';
+            import '../VIEW/view_<~Plural<>{#variable#}~>_view.php';
+        }
     }
 }
 
@@ -605,7 +631,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
             <? include 'BLOCK/filter.php'; ?>
             <? var list_mode_name = "{#attribute#}ListMode"; ?>
             <? include 'BLOCK/list_mode.php'; ?>
-            <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+            <? if ( HasSessionMinimumUserRole( '<~{#has_user_role#}<>{#user_role#}<>author~>' ) ) { ?>
                 <a class="form-button form-button-large add-button" href="/admin/{#style#}/add">
                 </a>
             <? } ?>
@@ -647,7 +673,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                     <div class="form-centered sortable-table-cell">
                         <a class="form-button view-button" href="/admin/{#style#}/view/<\% {#variable#}.{#key_attribute#} %\>">
                         </a>
-                        <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                        <? if ( HasSessionMinimumUserRole( '<~{#has_user_role#}<>{#user_role#}<>author~>' ) ) { ?>
                             <a class="form-button edit-button" href="/admin/{#style#}/edit/<\% {#variable#}.{#key_attribute#} %\>">
                             </a>
                             <a class="form-button remove-button" href="/admin/{#style#}/remove/<\% {#variable#}.{#key_attribute#} %\>">
@@ -699,7 +725,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                             <input-component result-class="form-input" result-name="{%attribute%}" result-value="<\% GetValueText( {#variable#}.{%attribute%} ) %\>" is-readonly></input-component>~>~>~>~>~>~>~>~>~>~>~>~>~>~>
                         </div>~>$>
                     </div>
-                    <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                    <? if ( HasSessionMinimumUserRole( '<~{#has_user_role#}<>{#user_role#}<>author~>' ) ) { ?>
                         <div class="form-toolbar">
                             <a class="form-button edit-button" href="/admin/{#style#}/edit/<\% {#variable#}.{#key_attribute#} %\>">
                             </a>
@@ -733,16 +759,14 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                 <a class="margin-right-auto page-menu-button" href="/admin">
                     <% GetTextBySlug( 'Home' ) %>
                 </a><#
-                <~!Equals<>{#style#}<>user<><~{#is_managed#}<><a class="page-menu-button" href="/admin/{#style#}/manage">
-                    <\% GetTextBySlug( '{#sentence#} manager' ) %\>
-                </a>
-                ~><a class="page-menu-button" href="/admin/{#style#}">
-                    <\% GetTextBySlug( '<~Plural<>{#sentence#}~>' ) %\>
-                </a><><? if ( HasSessionMinimumUserRole( 'administrator' ) ) { ?>
-                    <a class="page-menu-button" href="/admin/{#style#}">
+                <? if ( HasSessionMinimumUserRole( '<~{#has_user_role#}<>{#user_role#}<>author~>' ) ) { ?>
+                    <~{#is_managed#}<><a class="page-menu-button" href="/admin/{#style#}/manage">
+                        <\% GetTextBySlug( '{#sentence#} manager' ) %\>
+                    </a>
+                    ~><a class="page-menu-button" href="/admin/{#style#}">
                         <\% GetTextBySlug( '<~Plural<>{#sentence#}~>' ) %\>
                     </a>
-                <? } ?>~>#>
+                <? } ?>#>
                 <a class="margin-left-auto page-menu-button" href="/admin/disconnect">
                     <% GetTextBySlug( 'Logout' ) %>
                 </a>
@@ -769,22 +793,18 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
 </div>
 <div class="form-centered">
     <div class="margin-top-2rem"><#
-        <~!Equals<>{#style#}<>user<><~{#is_managed#}<><div class="tree-container">
-            <a class="tree-button" href="/admin/{#style#}/manage">
-                <\% GetTextBySlug( '{#sentence#} manager' ) %\>
-            </a>
-        </div>
-        ~><div class="tree-container">
-            <a class="tree-button" href="/admin/{#style#}">
-                <\% GetTextBySlug( '<~Plural<>{#sentence#}~>' ) %\>
-            </a>
-        </div><><? if ( HasSessionMinimumUserRole( 'administrator' ) ) { ?>
-            <div class="tree-container">
+        <? if ( HasSessionMinimumUserRole( '<~{#has_user_role#}<>{#user_role#}<>author~>' ) ) { ?>
+            <~{#is_managed#}<><div class="tree-container">
+                <a class="tree-button" href="/admin/{#style#}/manage">
+                    <\% GetTextBySlug( '{#sentence#} manager' ) %\>
+                </a>
+            </div>
+            ~><div class="tree-container">
                 <a class="tree-button" href="/admin/{#style#}">
                     <\% GetTextBySlug( '<~Plural<>{#sentence#}~>' ) %\>
                 </a>
             </div>
-        <? } ?>~>#>
+        <? } ?>#>
     </div>
 </div>
 <? include 'BLOCK/page_footer.php'; ?>

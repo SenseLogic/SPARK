@@ -33,7 +33,7 @@
                     }
                     );
 
-                filter_row_element.GetElements( "input, textarea" ).Iterate(
+                filter_row_element.GetElements( "input, textarea, select" ).Iterate(
                     function (
                         input_element
                         )

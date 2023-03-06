@@ -16,12 +16,16 @@ class DO_EDIT_BLOCK_CATEGORY_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-         $slug = GetPostValue( 'Slug' );
-         $name = GetPostValue( 'Name' );
+        if ( HasSessionMinimumUserRole( 'author' ) )
+        {
 
-        SetDatabaseBlockCategory( $block_category_id, $slug, $name );
+             $slug = GetPostValue( 'Slug' );
+             $name = GetPostValue( 'Name' );
 
-        Redirect( FindSessionValue( 'ListRoute', '/admin/block-category' ) );
+            SetDatabaseBlockCategory( $block_category_id, $slug, $name );
+
+            Redirect( FindSessionValue( 'ListRoute', '/admin/block-category' ) );
+        }
     }
 }
 

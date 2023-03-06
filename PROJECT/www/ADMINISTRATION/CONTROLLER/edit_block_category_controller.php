@@ -16,11 +16,14 @@ class EDIT_BLOCK_CATEGORY_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-        $this->Title = 'Edit a block category';
-        $this->BlockCategory = GetDatabaseBlockCategoryById( $block_category_id );
-        $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/block-category' );
+        if ( HasSessionMinimumUserRole( 'author' ) )
+        {
+            $this->Title = 'Edit a block category';
+            $this->BlockCategory = GetDatabaseBlockCategoryById( $block_category_id );
+            $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/block-category' );
 
-        require_once __DIR__ . '/' . '../VIEW/edit_block_category_view.php';
+            require_once __DIR__ . '/' . '../VIEW/edit_block_category_view.php';
+        }
     }
 }
 

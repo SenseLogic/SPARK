@@ -7,7 +7,7 @@
             <?php require __DIR__ . '/' . 'BLOCK/filter.php'; ?>
             <?php  $list_mode_name = "UserListMode"; ?>
             <?php require __DIR__ . '/' . 'BLOCK/list_mode.php'; ?>
-            <?php if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+            <?php if ( HasSessionMinimumUserRole( 'administrator' ) ) { ?>
                 <a class="form-button form-button-large add-button" href="/admin/user/add">
                 </a>
             <?php } ?>
@@ -47,7 +47,7 @@
                     <div class="form-centered sortable-table-cell">
                         <a class="form-button view-button" href="/admin/user/view/<?php echo htmlspecialchars( $user->Id ); ?>">
                         </a>
-                        <?php if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                        <?php if ( HasSessionMinimumUserRole( 'administrator' ) ) { ?>
                             <a class="form-button edit-button" href="/admin/user/edit/<?php echo htmlspecialchars( $user->Id ); ?>">
                             </a>
                             <a class="form-button remove-button" href="/admin/user/remove/<?php echo htmlspecialchars( $user->Id ); ?>">
@@ -88,7 +88,7 @@
                             <input-component result-class="form-input" result-name="Email" result-value="<?php echo htmlspecialchars( GetValueText( $user->Email ) ); ?>" is-readonly></input-component>
                         </div>
                     </div>
-                    <?php if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                    <?php if ( HasSessionMinimumUserRole( 'administrator' ) ) { ?>
                         <div class="form-toolbar">
                             <a class="form-button edit-button" href="/admin/user/edit/<?php echo htmlspecialchars( $user->Id ); ?>">
                             </a>

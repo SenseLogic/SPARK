@@ -16,9 +16,12 @@ class DO_REMOVE_LANGUAGE_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        RemoveDatabaseLanguageById( language_id );
+        if ( HasSessionMinimumUserRole( 'author' ) )
+        {
+            RemoveDatabaseLanguageById( language_id );
 
-        Redirect( FindSessionValue( 'ListRoute', '/admin/language' ) );
+            Redirect( FindSessionValue( 'ListRoute', '/admin/language' ) );
+        }
     }
 }
 

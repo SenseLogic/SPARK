@@ -16,9 +16,12 @@ class DO_REMOVE_CONTACT_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        RemoveDatabaseContactById( contact_id );
+        if ( HasSessionMinimumUserRole( 'author' ) )
+        {
+            RemoveDatabaseContactById( contact_id );
 
-        Redirect( FindSessionValue( 'ListRoute', '/admin/contact' ) );
+            Redirect( FindSessionValue( 'ListRoute', '/admin/contact' ) );
+        }
     }
 }
 

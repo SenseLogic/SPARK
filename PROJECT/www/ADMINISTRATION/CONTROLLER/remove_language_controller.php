@@ -16,11 +16,14 @@ class REMOVE_LANGUAGE_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-        $this->Title = 'Remove a language';
-        $this->Language = GetDatabaseLanguageById( $language_id );
-        $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/language' );
+        if ( HasSessionMinimumUserRole( 'author' ) )
+        {
+            $this->Title = 'Remove a language';
+            $this->Language = GetDatabaseLanguageById( $language_id );
+            $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/language' );
 
-        require_once __DIR__ . '/' . '../VIEW/remove_language_view.php';
+            require_once __DIR__ . '/' . '../VIEW/remove_language_view.php';
+        }
     }
 }
 

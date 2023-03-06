@@ -12,7 +12,7 @@
                 require __DIR__ . '/' . 'BLOCK/PREVIEW/block.php';
             ?>
             <div class="form-toolbar">
-                <?php if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                <?php if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
                     <a class="form-button manage-button" href="/admin/block/manage/<?php echo htmlspecialchars( $block->Id ); ?>">
                     </a>
                     <a class="form-button edit-button" href="/admin/block/edit/<?php echo htmlspecialchars( $block->Id ); ?>">

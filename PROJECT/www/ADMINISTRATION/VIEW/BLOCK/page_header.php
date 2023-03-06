@@ -10,39 +10,57 @@
                 <a class="margin-right-auto page-menu-button" href="/admin">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Home' ) ); ?>
                 </a>
-                <a class="page-menu-button" href="/admin/text">
-                    <?php echo htmlspecialchars( GetTextBySlug( 'Texts' ) ); ?>
-                </a>
-                <a class="page-menu-button" href="/admin/language">
-                    <?php echo htmlspecialchars( GetTextBySlug( 'Languages' ) ); ?>
-                </a>
-                <a class="page-menu-button" href="/admin/page-type">
-                    <?php echo htmlspecialchars( GetTextBySlug( 'Page types' ) ); ?>
-                </a>
-                <a class="page-menu-button" href="/admin/page/manage">
-                    <?php echo htmlspecialchars( GetTextBySlug( 'Page manager' ) ); ?>
-                </a>
-                <a class="page-menu-button" href="/admin/page">
-                    <?php echo htmlspecialchars( GetTextBySlug( 'Pages' ) ); ?>
-                </a>
-                <a class="page-menu-button" href="/admin/block-category">
-                    <?php echo htmlspecialchars( GetTextBySlug( 'Block categories' ) ); ?>
-                </a>
-                <a class="page-menu-button" href="/admin/block-type">
-                    <?php echo htmlspecialchars( GetTextBySlug( 'Block types' ) ); ?>
-                </a>
-                <a class="page-menu-button" href="/admin/block-content">
-                    <?php echo htmlspecialchars( GetTextBySlug( 'Block contents' ) ); ?>
-                </a>
-                <a class="page-menu-button" href="/admin/block/manage">
-                    <?php echo htmlspecialchars( GetTextBySlug( 'Block manager' ) ); ?>
-                </a>
-                <a class="page-menu-button" href="/admin/block">
-                    <?php echo htmlspecialchars( GetTextBySlug( 'Blocks' ) ); ?>
-                </a>
-                <a class="page-menu-button" href="/admin/contact">
-                    <?php echo htmlspecialchars( GetTextBySlug( 'Contacts' ) ); ?>
-                </a>
+                <?php if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
+                    <a class="page-menu-button" href="/admin/text">
+                        <?php echo htmlspecialchars( GetTextBySlug( 'Texts' ) ); ?>
+                    </a>
+                <?php } ?>
+                <?php if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
+                    <a class="page-menu-button" href="/admin/language">
+                        <?php echo htmlspecialchars( GetTextBySlug( 'Languages' ) ); ?>
+                    </a>
+                <?php } ?>
+                <?php if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
+                    <a class="page-menu-button" href="/admin/page-type">
+                        <?php echo htmlspecialchars( GetTextBySlug( 'Page types' ) ); ?>
+                    </a>
+                <?php } ?>
+                <?php if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
+                    <a class="page-menu-button" href="/admin/page/manage">
+                        <?php echo htmlspecialchars( GetTextBySlug( 'Page manager' ) ); ?>
+                    </a>
+                    <a class="page-menu-button" href="/admin/page">
+                        <?php echo htmlspecialchars( GetTextBySlug( 'Pages' ) ); ?>
+                    </a>
+                <?php } ?>
+                <?php if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
+                    <a class="page-menu-button" href="/admin/block-category">
+                        <?php echo htmlspecialchars( GetTextBySlug( 'Block categories' ) ); ?>
+                    </a>
+                <?php } ?>
+                <?php if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
+                    <a class="page-menu-button" href="/admin/block-type">
+                        <?php echo htmlspecialchars( GetTextBySlug( 'Block types' ) ); ?>
+                    </a>
+                <?php } ?>
+                <?php if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
+                    <a class="page-menu-button" href="/admin/block-content">
+                        <?php echo htmlspecialchars( GetTextBySlug( 'Block contents' ) ); ?>
+                    </a>
+                <?php } ?>
+                <?php if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
+                    <a class="page-menu-button" href="/admin/block/manage">
+                        <?php echo htmlspecialchars( GetTextBySlug( 'Block manager' ) ); ?>
+                    </a>
+                    <a class="page-menu-button" href="/admin/block">
+                        <?php echo htmlspecialchars( GetTextBySlug( 'Blocks' ) ); ?>
+                    </a>
+                <?php } ?>
+                <?php if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
+                    <a class="page-menu-button" href="/admin/contact">
+                        <?php echo htmlspecialchars( GetTextBySlug( 'Contacts' ) ); ?>
+                    </a>
+                <?php } ?>
                 <?php if ( HasSessionMinimumUserRole( 'administrator' ) ) { ?>
                     <a class="page-menu-button" href="/admin/user">
                         <?php echo htmlspecialchars( GetTextBySlug( 'Users' ) ); ?>

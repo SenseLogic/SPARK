@@ -15,12 +15,15 @@ class VIEW_BLOCK_CATEGORIES_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-        $this->Title = 'View block categories';
-        $this->BlockCategoryArray = GetDatabaseBlockCategoryArray();
+        if ( HasSessionMinimumUserRole( 'author' ) )
+        {
+            $this->Title = 'View block categories';
+            $this->BlockCategoryArray = GetDatabaseBlockCategoryArray();
 
-        SetSessionValue( 'ListRoute', GetRequest() );
+            SetSessionValue( 'ListRoute', GetRequest() );
 
-        require_once __DIR__ . '/' . '../VIEW/view_block_categories_view.php';
+            require_once __DIR__ . '/' . '../VIEW/view_block_categories_view.php';
+        }
     }
 }
 

@@ -15,10 +15,13 @@ class ADD_USER_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        .Title = 'Add a user';
-        .ListRoute = FindSessionValue( 'ListRoute', '/admin/user' );
+        if ( HasSessionMinimumUserRole( 'administrator' ) )
+        {
+            .Title = 'Add a user';
+            .ListRoute = FindSessionValue( 'ListRoute', '/admin/user' );
 
-        import '../VIEW/add_user_view.php';
+            import '../VIEW/add_user_view.php';
+        }
     }
 }
 

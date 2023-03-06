@@ -15,12 +15,15 @@ class VIEW_TEXTS_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-        $this->Title = 'View texts';
-        $this->TextArray = GetDatabaseTextArray();
+        if ( HasSessionMinimumUserRole( 'author' ) )
+        {
+            $this->Title = 'View texts';
+            $this->TextArray = GetDatabaseTextArray();
 
-        SetSessionValue( 'ListRoute', GetRequest() );
+            SetSessionValue( 'ListRoute', GetRequest() );
 
-        require_once __DIR__ . '/' . '../VIEW/view_texts_view.php';
+            require_once __DIR__ . '/' . '../VIEW/view_texts_view.php';
+        }
     }
 }
 

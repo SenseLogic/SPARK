@@ -10,16 +10,16 @@
             it_is_valid_add_page_type_form,
             id_field,
             slug_field,
-            title_field;
+            name_field;
 
         add_page_type_form = document.AddPageTypeForm;
         id_field = add_page_type_form.Id;
         slug_field = add_page_type_form.Slug;
-        title_field = add_page_type_form.Title;
+        name_field = add_page_type_form.Name;
 
         id_field.RemoveClass( "form-field-error" );
         slug_field.RemoveClass( "form-field-error" );
-        title_field.RemoveClass( "form-field-error" );
+        name_field.RemoveClass( "form-field-error" );
 
         it_is_valid_add_page_type_form = true;
 
@@ -81,7 +81,7 @@
                     <input-component result-class="form-input" result-name="Slug" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
-                     $field_name = 'Title';
+                     $field_name = 'Name';
 
                     if ( HasQueryValue( $field_name ) )
                     {
@@ -92,11 +92,11 @@
                         $field_value = '';
                     }
                 ?>
-                <div class="form-field-name" data-is-column-title data-column-name="Title">
-                    <?php echo htmlspecialchars( GetTextBySlug( 'Title' ) ); ?> :
+                <div class="form-field-name" data-is-column-title data-column-name="Name">
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Name' ) ); ?> :
                 </div>
-                <div class="form-field-value" data-is-column-value data-column-name="Title">
-                    <input-component result-class="form-input" result-name="Title" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
+                <div class="form-field-value" data-is-column-value data-column-name="Name">
+                    <input-component result-class="form-input" result-name="Name" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
                 </a>

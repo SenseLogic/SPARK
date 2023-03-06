@@ -15,10 +15,13 @@ class ADD_BLOCK_CONTENT_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-        $this->Title = 'Add a block content';
-        $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/block-content' );
+        if ( HasSessionMinimumUserRole( 'author' ) )
+        {
+            $this->Title = 'Add a block content';
+            $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/block-content' );
 
-        require_once __DIR__ . '/' . '../VIEW/add_block_content_view.php';
+            require_once __DIR__ . '/' . '../VIEW/add_block_content_view.php';
+        }
     }
 }
 

@@ -16,9 +16,12 @@ class DO_REMOVE_PAGE_TYPE_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        RemoveDatabasePageTypeById( page_type_id );
+        if ( HasSessionMinimumUserRole( 'author' ) )
+        {
+            RemoveDatabasePageTypeById( page_type_id );
 
-        Redirect( FindSessionValue( 'ListRoute', '/admin/page-type' ) );
+            Redirect( FindSessionValue( 'ListRoute', '/admin/page-type' ) );
+        }
     }
 }
 

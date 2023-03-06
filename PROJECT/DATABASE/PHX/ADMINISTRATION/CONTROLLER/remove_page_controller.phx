@@ -16,11 +16,14 @@ class REMOVE_PAGE_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        .Title = 'Remove a page';
-        .Page = GetDatabasePageById( page_id );
-        .ListRoute = FindSessionValue( 'ListRoute', '/admin/page' );
+        if ( HasSessionMinimumUserRole( 'contributor' ) )
+        {
+            .Title = 'Remove a page';
+            .Page = GetDatabasePageById( page_id );
+            .ListRoute = FindSessionValue( 'ListRoute', '/admin/page' );
 
-        import '../VIEW/remove_page_view.php';
+            import '../VIEW/remove_page_view.php';
+        }
     }
 }
 

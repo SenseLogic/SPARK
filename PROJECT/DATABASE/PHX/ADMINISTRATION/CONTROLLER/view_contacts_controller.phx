@@ -15,12 +15,15 @@ class VIEW_CONTACTS_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        .Title = 'View contacts';
-        .ContactArray = GetDatabaseContactArray();
+        if ( HasSessionMinimumUserRole( 'author' ) )
+        {
+            .Title = 'View contacts';
+            .ContactArray = GetDatabaseContactArray();
 
-        SetSessionValue( 'ListRoute', GetRequest() );
+            SetSessionValue( 'ListRoute', GetRequest() );
 
-        import '../VIEW/view_contacts_view.php';
+            import '../VIEW/view_contacts_view.php';
+        }
     }
 }
 

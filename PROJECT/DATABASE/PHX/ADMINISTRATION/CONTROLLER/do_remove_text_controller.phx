@@ -16,9 +16,12 @@ class DO_REMOVE_TEXT_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        RemoveDatabaseTextById( text_id );
+        if ( HasSessionMinimumUserRole( 'author' ) )
+        {
+            RemoveDatabaseTextById( text_id );
 
-        Redirect( FindSessionValue( 'ListRoute', '/admin/text' ) );
+            Redirect( FindSessionValue( 'ListRoute', '/admin/text' ) );
+        }
     }
 }
 

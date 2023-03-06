@@ -3,19 +3,31 @@ USER
     Id Pseudonym Password Role Email
 
         %administrator-user
-            ~ administrator 
-            ~ xyz 
+            ~ administrator
+            ~ xyz
             ~ administrator
             ~ administrator@agc-automotive.com
 
-        %editor-user 
-            ~ editor 
-            ~ xyz 
+        %editor-user
+            ~ editor
+            ~ xyz
             ~ editor
             ~ editor@agc-automotive.com
 
+        %author-user
+            ~ author
+            ~ xyz
+            ~ author
+            ~ author@agc-automotive.com
+
+        %contributor-user
+            ~ contributor
+            ~ xyz
+            ~ contributor
+            ~ contributor@agc-automotive.com
+
         %guest-user
-            ~ guest 
-            ~ xyz 
+            ~ guest
+            ~ xyz
             ~ guest
             ~ guest@agc-automotive.com

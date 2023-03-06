@@ -15,12 +15,15 @@ class VIEW_BLOCK_CONTENTS_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-        $this->Title = 'View block contents';
-        $this->BlockContentArray = GetDatabaseBlockContentArray();
+        if ( HasSessionMinimumUserRole( 'author' ) )
+        {
+            $this->Title = 'View block contents';
+            $this->BlockContentArray = GetDatabaseBlockContentArray();
 
-        SetSessionValue( 'ListRoute', GetRequest() );
+            SetSessionValue( 'ListRoute', GetRequest() );
 
-        require_once __DIR__ . '/' . '../VIEW/view_block_contents_view.php';
+            require_once __DIR__ . '/' . '../VIEW/view_block_contents_view.php';
+        }
     }
 }
 

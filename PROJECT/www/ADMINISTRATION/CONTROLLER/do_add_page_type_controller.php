@@ -15,13 +15,17 @@ class DO_ADD_PAGE_TYPE_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-         $id = GetPostValue( 'Id' );
-         $slug = GetPostValue( 'Slug' );
-         $title = GetPostValue( 'Title' );
+        if ( HasSessionMinimumUserRole( 'author' ) )
+        {
 
-        AddDatabasePageType( $id, $slug, $title );
+             $id = GetPostValue( 'Id' );
+             $slug = GetPostValue( 'Slug' );
+             $name = GetPostValue( 'Name' );
 
-        Redirect( FindSessionValue( 'ListRoute', '/admin/page-type' ) );
+            AddDatabasePageType( $id, $slug, $name );
+
+            Redirect( FindSessionValue( 'ListRoute', '/admin/page-type' ) );
+        }
     }
 }
 

@@ -16,9 +16,12 @@ class DO_REMOVE_BLOCK_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-        RemoveDatabaseBlockById( $block_id );
+        if ( HasSessionMinimumUserRole( 'contributor' ) )
+        {
+            RemoveDatabaseBlockById( $block_id );
 
-        Redirect( FindSessionValue( 'ListRoute', '/admin/block' ) );
+            Redirect( FindSessionValue( 'ListRoute', '/admin/block' ) );
+        }
     }
 }
 

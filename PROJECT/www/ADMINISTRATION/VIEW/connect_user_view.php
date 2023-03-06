@@ -22,11 +22,11 @@
         <div class="form-field-name">
             <?php echo htmlspecialchars( GetTextBySlug( "Username" ) ); ?>
         </div>
-        <input class="margin-top-50pem form-input" name="Pseudonym" type="text"/>
+        <input class="margin-top-50prm form-input" name="Pseudonym" type="text"/>
         <div class="margin-top-1rem form-field-name">
             <?php echo htmlspecialchars( GetTextBySlug( "Password" ) ); ?>
         </div>
-        <input class="margin-top-50pem form-input" name="Password" type="password"/>
+        <input class="margin-top-50prm form-input" name="Password" type="password"/>
         <div class="margin-top-2rem form-extended form-centered">
             <button class="form-text-button" type="submit">
                 <?php echo htmlspecialchars( GetTextBySlug( "Sign in" ) ); ?>

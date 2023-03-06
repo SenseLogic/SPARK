@@ -15,10 +15,13 @@ class ADD_CONTACT_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-        $this->Title = 'Add a contact';
-        $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/contact' );
+        if ( HasSessionMinimumUserRole( 'author' ) )
+        {
+            $this->Title = 'Add a contact';
+            $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/contact' );
 
-        require_once __DIR__ . '/' . '../VIEW/add_contact_view.php';
+            require_once __DIR__ . '/' . '../VIEW/add_contact_view.php';
+        }
     }
 }
 

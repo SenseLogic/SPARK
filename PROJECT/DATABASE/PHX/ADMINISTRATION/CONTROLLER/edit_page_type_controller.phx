@@ -16,11 +16,14 @@ class EDIT_PAGE_TYPE_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        .Title = 'Edit a page type';
-        .PageType = GetDatabasePageTypeById( page_type_id );
-        .ListRoute = FindSessionValue( 'ListRoute', '/admin/page-type' );
+        if ( HasSessionMinimumUserRole( 'author' ) )
+        {
+            .Title = 'Edit a page type';
+            .PageType = GetDatabasePageTypeById( page_type_id );
+            .ListRoute = FindSessionValue( 'ListRoute', '/admin/page-type' );
 
-        import '../VIEW/edit_page_type_view.php';
+            import '../VIEW/edit_page_type_view.php';
+        }
     }
 }
 

@@ -16,9 +16,12 @@ class DO_REMOVE_BLOCK_CATEGORY_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-        RemoveDatabaseBlockCategoryById( $block_category_id );
+        if ( HasSessionMinimumUserRole( 'author' ) )
+        {
+            RemoveDatabaseBlockCategoryById( $block_category_id );
 
-        Redirect( FindSessionValue( 'ListRoute', '/admin/block-category' ) );
+            Redirect( FindSessionValue( 'ListRoute', '/admin/block-category' ) );
+        }
     }
 }
 

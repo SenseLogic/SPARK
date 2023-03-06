@@ -9,7 +9,7 @@
         <?php echo htmlspecialchars( GetTextBySlug( 'Type Slug' ) ); ?> :
     </div>
     <div>
-        <input class="form-input" name="TypeSlug" type="text" value="<?php echo htmlspecialchars( GetValueText( $page->TypeSlug ) ); ?>" readonly/>
+        <input class="form-input" name="TypeSlug" type="text" value="<?php echo htmlspecialchars( GetValueText( GetElementPropertyByKey( $this->PageTypeBySlugMap, $page->TypeSlug, 'Name', '' ) ) ); ?>" readonly/>
     </div>
     <div class="form-field-name">
         <?php echo htmlspecialchars( GetTextBySlug( 'Title' ) ); ?> :

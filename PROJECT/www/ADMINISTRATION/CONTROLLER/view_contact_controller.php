@@ -16,11 +16,14 @@ class VIEW_CONTACT_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-        $this->Title = 'View a contact';
-        $this->Contact = GetDatabaseContactById( $contact_id );
-        $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/contact' );
+        if ( HasSessionMinimumUserRole( 'author' ) )
+        {
+            $this->Title = 'View a contact';
+            $this->Contact = GetDatabaseContactById( $contact_id );
+            $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/contact' );
 
-        require_once __DIR__ . '/' . '../VIEW/view_contact_view.php';
+            require_once __DIR__ . '/' . '../VIEW/view_contact_view.php';
+        }
     }
 }
 

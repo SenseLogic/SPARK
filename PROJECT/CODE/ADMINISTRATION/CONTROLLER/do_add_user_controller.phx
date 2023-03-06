@@ -15,15 +15,19 @@ class DO_ADD_USER_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        var id = GetPostValue( 'Id' );
-        var pseudonym = GetPostValue( 'Pseudonym' );
-        var password = GetPostValue( 'Password' );
-        var role = GetPostValue( 'Role' );
-        var email = GetPostValue( 'Email' );
+        if ( HasSessionMinimumUserRole( 'administrator' ) )
+        {
 
-        AddDatabaseUser( id, pseudonym, password, role, email );
+            var id = GetPostValue( 'Id' );
+            var pseudonym = GetPostValue( 'Pseudonym' );
+            var password = GetPostValue( 'Password' );
+            var role = GetPostValue( 'Role' );
+            var email = GetPostValue( 'Email' );
 
-        Redirect( FindSessionValue( 'ListRoute', '/admin/user' ) );
+            AddDatabaseUser( id, pseudonym, password, role, email );
+
+            Redirect( FindSessionValue( 'ListRoute', '/admin/user' ) );
+        }
     }
 }
 

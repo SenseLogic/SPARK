@@ -16,11 +16,14 @@ class VIEW_BLOCK_TYPE_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        .Title = 'View a block type';
-        .BlockType = GetDatabaseBlockTypeById( block_type_id );
-        .ListRoute = FindSessionValue( 'ListRoute', '/admin/block-type' );
+        if ( HasSessionMinimumUserRole( 'author' ) )
+        {
+            .Title = 'View a block type';
+            .BlockType = GetDatabaseBlockTypeById( block_type_id );
+            .ListRoute = FindSessionValue( 'ListRoute', '/admin/block-type' );
 
-        import '../VIEW/view_block_type_view.php';
+            import '../VIEW/view_block_type_view.php';
+        }
     }
 }
 

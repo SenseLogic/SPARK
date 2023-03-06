@@ -4,6 +4,18 @@ var UserRoleArray = [ 'guest', 'contributor', 'author', 'editor', 'administrator
 
 // -- FUNCTIONS
 
+function SetUserRoleArray(
+    array user_role_array
+    )
+{
+    global
+        UserRoleArray;
+
+    UserRoleArray = user_role_array;
+}
+
+// ~~
+
 function GetUserRoleIndex(
     string user_role
     )

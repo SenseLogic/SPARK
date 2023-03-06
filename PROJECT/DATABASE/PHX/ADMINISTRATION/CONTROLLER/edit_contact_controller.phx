@@ -16,11 +16,14 @@ class EDIT_CONTACT_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        .Title = 'Edit a contact';
-        .Contact = GetDatabaseContactById( contact_id );
-        .ListRoute = FindSessionValue( 'ListRoute', '/admin/contact' );
+        if ( HasSessionMinimumUserRole( 'author' ) )
+        {
+            .Title = 'Edit a contact';
+            .Contact = GetDatabaseContactById( contact_id );
+            .ListRoute = FindSessionValue( 'ListRoute', '/admin/contact' );
 
-        import '../VIEW/edit_contact_view.php';
+            import '../VIEW/edit_contact_view.php';
+        }
     }
 }
 

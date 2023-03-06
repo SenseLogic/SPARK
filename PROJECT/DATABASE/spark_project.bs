@@ -18,14 +18,14 @@ spark-project
 
         Id : TUID | key, unique
         Slug : STRING | is_slug
-        Title : STRING = "{{latin 1 1 4 6}}" | optional
+        Name : STRING = "{{latin 1 1 4 6}}" | optional
 
-    PAGE | managed, sorted, dropped
+    PAGE | managed, sorted, dropped, has_user_role, user_role contributor
 
         Id : TUID | key, unique
         Slug : STRING = ""
         Route : STRING | processed
-        TypeSlug : PAGE_TYPE.Slug | processed, is_slug, is_reference, reference page_type~.PageTypeArray~page_type.Slug~GetUntranslatedText( page_type.Title )
+        TypeSlug : PAGE_TYPE.Slug | processed, is_slug, is_reference, reference page_type~.PageTypeArray~page_type.Slug~GetUntranslatedText( page_type.Name )
         Number : FLOAT32 | ascending
         LanguageCodeArray : LIST[ LANGUAGE.Code ] | is_list
         IsActive : BOOL = "true" | is_enumeration, enumeration 0~False^1~True, has_default_value, default_value 1
@@ -58,7 +58,7 @@ spark-project
         Slug : STRING | mapped, is_slug
         Name : STRING = "{{latin 1 1 4 6}}"
 
-    BLOCK | managed, sorted, dropped, has_footer, footer block_footer, count 50
+    BLOCK | managed, sorted, dropped, has_footer, footer block_footer, has_user_role, user_role contributor, count 50
 
         Id : TUID | key, unique
         Slug : STRING = ""
@@ -100,7 +100,7 @@ spark-project
         Message : STRING = "{{latin 2 4 5 10}}|{{latin 2 4 5 10}}" | is_text
         DateTime : DATETIME | now, descending
 
-    USER | sorted, dropped
+    USER | sorted, dropped, has_user_role, user_role administrator
 
         Id : TUID | key, unique, mapped
         Pseudonym : STRING

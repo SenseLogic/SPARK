@@ -15,13 +15,17 @@ class DO_ADD_BLOCK_TYPE_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-         $id = GetPostValue( 'Id' );
-         $slug = GetPostValue( 'Slug' );
-         $name = GetPostValue( 'Name' );
+        if ( HasSessionMinimumUserRole( 'author' ) )
+        {
 
-        AddDatabaseBlockType( $id, $slug, $name );
+             $id = GetPostValue( 'Id' );
+             $slug = GetPostValue( 'Slug' );
+             $name = GetPostValue( 'Name' );
 
-        Redirect( FindSessionValue( 'ListRoute', '/admin/block-type' ) );
+            AddDatabaseBlockType( $id, $slug, $name );
+
+            Redirect( FindSessionValue( 'ListRoute', '/admin/block-type' ) );
+        }
     }
 }
 

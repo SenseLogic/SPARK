@@ -15,15 +15,19 @@ class DO_ADD_LANGUAGE_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-         $id = GetPostValue( 'Id' );
-         $code = GetPostValue( 'Code' );
-         $number = GetPostValue( 'Number' );
-         $text = GetPostValue( 'Text' );
-         $is_active = GetPostValue( 'IsActive' );
+        if ( HasSessionMinimumUserRole( 'author' ) )
+        {
 
-        AddDatabaseLanguage( $id, $code, $number, $text, $is_active );
+             $id = GetPostValue( 'Id' );
+             $code = GetPostValue( 'Code' );
+             $number = GetPostValue( 'Number' );
+             $text = GetPostValue( 'Text' );
+             $is_active = GetPostValue( 'IsActive' );
 
-        Redirect( FindSessionValue( 'ListRoute', '/admin/language' ) );
+            AddDatabaseLanguage( $id, $code, $number, $text, $is_active );
+
+            Redirect( FindSessionValue( 'ListRoute', '/admin/language' ) );
+        }
     }
 }
 

@@ -16,12 +16,16 @@ class DO_EDIT_TEXT_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-         $slug = GetPostValue( 'Slug' );
-         $text = GetPostValue( 'Text' );
+        if ( HasSessionMinimumUserRole( 'author' ) )
+        {
 
-        SetDatabaseText( $text_id, $slug, $text );
+             $slug = GetPostValue( 'Slug' );
+             $text = GetPostValue( 'Text' );
 
-        Redirect( FindSessionValue( 'ListRoute', '/admin/text' ) );
+            SetDatabaseText( $text_id, $slug, $text );
+
+            Redirect( FindSessionValue( 'ListRoute', '/admin/text' ) );
+        }
     }
 }
 

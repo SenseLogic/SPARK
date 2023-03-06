@@ -7,7 +7,7 @@
             <?php require __DIR__ . '/' . 'BLOCK/filter.php'; ?>
             <?php  $list_mode_name = "TextListMode"; ?>
             <?php require __DIR__ . '/' . 'BLOCK/list_mode.php'; ?>
-            <?php if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+            <?php if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
                 <a class="form-button form-button-large add-button" href="/admin/text/add">
                 </a>
             <?php } ?>
@@ -41,7 +41,7 @@
                     <div class="form-centered sortable-table-cell">
                         <a class="form-button view-button" href="/admin/text/view/<?php echo htmlspecialchars( $text->Id ); ?>">
                         </a>
-                        <?php if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                        <?php if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
                             <a class="form-button edit-button" href="/admin/text/edit/<?php echo htmlspecialchars( $text->Id ); ?>">
                             </a>
                             <a class="form-button remove-button" href="/admin/text/remove/<?php echo htmlspecialchars( $text->Id ); ?>">
@@ -70,7 +70,7 @@
                             <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Text" result-value="<?php echo htmlspecialchars( GetValueText( $text->Text ) ); ?>" is-readonly language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-text-input-component>
                         </div>
                     </div>
-                    <?php if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                    <?php if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
                         <div class="form-toolbar">
                             <a class="form-button edit-button" href="/admin/text/edit/<?php echo htmlspecialchars( $text->Id ); ?>">
                             </a>

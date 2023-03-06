@@ -16,14 +16,18 @@ class DO_EDIT_LANGUAGE_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-         $code = GetPostValue( 'Code' );
-         $number = GetPostValue( 'Number' );
-         $text = GetPostValue( 'Text' );
-         $is_active = GetPostValue( 'IsActive' );
+        if ( HasSessionMinimumUserRole( 'author' ) )
+        {
 
-        SetDatabaseLanguage( $language_id, $code, $number, $text, $is_active );
+             $code = GetPostValue( 'Code' );
+             $number = GetPostValue( 'Number' );
+             $text = GetPostValue( 'Text' );
+             $is_active = GetPostValue( 'IsActive' );
 
-        Redirect( FindSessionValue( 'ListRoute', '/admin/language' ) );
+            SetDatabaseLanguage( $language_id, $code, $number, $text, $is_active );
+
+            Redirect( FindSessionValue( 'ListRoute', '/admin/language' ) );
+        }
     }
 }
 

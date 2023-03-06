@@ -16,9 +16,12 @@ class DO_REMOVE_BLOCK_TYPE_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        RemoveDatabaseBlockTypeById( block_type_id );
+        if ( HasSessionMinimumUserRole( 'author' ) )
+        {
+            RemoveDatabaseBlockTypeById( block_type_id );
 
-        Redirect( FindSessionValue( 'ListRoute', '/admin/block-type' ) );
+            Redirect( FindSessionValue( 'ListRoute', '/admin/block-type' ) );
+        }
     }
 }
 

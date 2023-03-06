@@ -16,11 +16,14 @@ class EDIT_BLOCK_CONTENT_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        .Title = 'Edit a block content';
-        .BlockContent = GetDatabaseBlockContentById( block_content_id );
-        .ListRoute = FindSessionValue( 'ListRoute', '/admin/block-content' );
+        if ( HasSessionMinimumUserRole( 'author' ) )
+        {
+            .Title = 'Edit a block content';
+            .BlockContent = GetDatabaseBlockContentById( block_content_id );
+            .ListRoute = FindSessionValue( 'ListRoute', '/admin/block-content' );
 
-        import '../VIEW/edit_block_content_view.php';
+            import '../VIEW/edit_block_content_view.php';
+        }
     }
 }
 

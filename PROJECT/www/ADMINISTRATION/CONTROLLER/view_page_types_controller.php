@@ -15,12 +15,15 @@ class VIEW_PAGE_TYPES_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-        $this->Title = 'View page types';
-        $this->PageTypeArray = GetDatabasePageTypeArray();
+        if ( HasSessionMinimumUserRole( 'author' ) )
+        {
+            $this->Title = 'View page types';
+            $this->PageTypeArray = GetDatabasePageTypeArray();
 
-        SetSessionValue( 'ListRoute', GetRequest() );
+            SetSessionValue( 'ListRoute', GetRequest() );
 
-        require_once __DIR__ . '/' . '../VIEW/view_page_types_view.php';
+            require_once __DIR__ . '/' . '../VIEW/view_page_types_view.php';
+        }
     }
 }
 

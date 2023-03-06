@@ -16,14 +16,18 @@ class DO_EDIT_USER_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-         $pseudonym = GetPostValue( 'Pseudonym' );
-         $password = GetPostValue( 'Password' );
-         $role = GetPostValue( 'Role' );
-         $email = GetPostValue( 'Email' );
+        if ( HasSessionMinimumUserRole( 'administrator' ) )
+        {
 
-        SetDatabaseUser( $user_id, $pseudonym, $password, $role, $email );
+             $pseudonym = GetPostValue( 'Pseudonym' );
+             $password = GetPostValue( 'Password' );
+             $role = GetPostValue( 'Role' );
+             $email = GetPostValue( 'Email' );
 
-        Redirect( FindSessionValue( 'ListRoute', '/admin/user' ) );
+            SetDatabaseUser( $user_id, $pseudonym, $password, $role, $email );
+
+            Redirect( FindSessionValue( 'ListRoute', '/admin/user' ) );
+        }
     }
 }
 

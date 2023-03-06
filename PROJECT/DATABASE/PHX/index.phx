@@ -376,7 +376,7 @@ function Route(
                       && path_value_array[ 2 ] === 'add'
                       && HasPostValue( 'Id' )
                       && HasPostValue( 'Slug' )
-                      && HasPostValue( 'Title' ) )
+                      && HasPostValue( 'Name' ) )
             {
                 import 'ADMINISTRATION/CONTROLLER/do_add_page_type_controller.php';
             }
@@ -400,7 +400,7 @@ function Route(
                       && path_value_count === 4
                       && path_value_array[ 2 ] === 'edit'
                       && HasPostValue( 'Slug' )
-                      && HasPostValue( 'Title' ) )
+                      && HasPostValue( 'Name' ) )
             {
                 var page_type_id = path_value_array[ 3 ];
 

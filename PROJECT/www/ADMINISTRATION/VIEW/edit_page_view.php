@@ -145,7 +145,7 @@
                     <select class="form-select" name="TypeSlug">
                         <?php  $page_type_array = $this->PageTypeArray; ?>
                         <?php foreach ( $page_type_array as  $page_type ) { ?>
-                            <option value="<?php echo htmlspecialchars( GetValueText( $page_type->Slug ) ); ?>"<?php if ( $this->Page->TypeSlug === $page_type->Slug ) echo ' selected'; ?>><?php echo htmlspecialchars( GetUntranslatedText( $page_type->Title ) ); ?></option>
+                            <option value="<?php echo htmlspecialchars( GetValueText( $page_type->Slug ) ); ?>"<?php if ( $this->Page->TypeSlug === $page_type->Slug ) echo ' selected'; ?>><?php echo htmlspecialchars( GetUntranslatedText( $page_type->Name ) ); ?></option>
                         <?php } ?>
                     </select>
                 </div>

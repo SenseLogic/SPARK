@@ -15,12 +15,15 @@ class VIEW_BLOCK_TYPES_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        .Title = 'View block types';
-        .BlockTypeArray = GetDatabaseBlockTypeArray();
+        if ( HasSessionMinimumUserRole( 'author' ) )
+        {
+            .Title = 'View block types';
+            .BlockTypeArray = GetDatabaseBlockTypeArray();
 
-        SetSessionValue( 'ListRoute', GetRequest() );
+            SetSessionValue( 'ListRoute', GetRequest() );
 
-        import '../VIEW/view_block_types_view.php';
+            import '../VIEW/view_block_types_view.php';
+        }
     }
 }
 

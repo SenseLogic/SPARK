@@ -16,11 +16,14 @@ class EDIT_BLOCK_TYPE_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-        $this->Title = 'Edit a block type';
-        $this->BlockType = GetDatabaseBlockTypeById( $block_type_id );
-        $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/block-type' );
+        if ( HasSessionMinimumUserRole( 'author' ) )
+        {
+            $this->Title = 'Edit a block type';
+            $this->BlockType = GetDatabaseBlockTypeById( $block_type_id );
+            $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/block-type' );
 
-        require_once __DIR__ . '/' . '../VIEW/edit_block_type_view.php';
+            require_once __DIR__ . '/' . '../VIEW/edit_block_type_view.php';
+        }
     }
 }
 

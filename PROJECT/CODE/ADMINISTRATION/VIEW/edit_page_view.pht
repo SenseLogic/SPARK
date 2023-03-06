@@ -145,7 +145,7 @@
                     <select class="form-select" name="TypeSlug">
                         <? var page_type_array = .PageTypeArray; ?>
                         <? foreach ( var page_type; page_type_array ) { ?>
-                            <option value="<% GetValueText( page_type.Slug ) %>"<? if ( .Page.TypeSlug === page_type.Slug ) echo ' selected'; ?>><% GetUntranslatedText( page_type.Title ) %></option>
+                            <option value="<% GetValueText( page_type.Slug ) %>"<? if ( .Page.TypeSlug === page_type.Slug ) echo ' selected'; ?>><% GetUntranslatedText( page_type.Name ) %></option>
                         <? } ?>
                     </select>
                 </div>

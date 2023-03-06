@@ -5,6 +5,8 @@ Admin
     http://www.spark-project.com/admin/
         administrator / xyz
         editor / xyz
+        author / xyz
+        contributor / xyz
         guest / xyz
 
 FTP

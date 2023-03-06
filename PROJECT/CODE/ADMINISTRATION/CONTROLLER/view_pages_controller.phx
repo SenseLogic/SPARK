@@ -15,12 +15,15 @@ class VIEW_PAGES_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        .Title = 'View pages';
-        .PageArray = GetDatabasePageArray();
+        if ( HasSessionMinimumUserRole( 'contributor' ) )
+        {
+            .Title = 'View pages';
+            .PageArray = GetDatabasePageArray();
 
-        SetSessionValue( 'ListRoute', GetRequest() );
+            SetSessionValue( 'ListRoute', GetRequest() );
 
-        import '../VIEW/view_pages_view.php';
+            import '../VIEW/view_pages_view.php';
+        }
     }
 }
 

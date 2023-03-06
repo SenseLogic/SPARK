@@ -15,12 +15,15 @@ class VIEW_USERS_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-        $this->Title = 'View users';
-        $this->UserArray = GetDatabaseUserArray();
+        if ( HasSessionMinimumUserRole( 'administrator' ) )
+        {
+            $this->Title = 'View users';
+            $this->UserArray = GetDatabaseUserArray();
 
-        SetSessionValue( 'ListRoute', GetRequest() );
+            SetSessionValue( 'ListRoute', GetRequest() );
 
-        require_once __DIR__ . '/' . '../VIEW/view_users_view.php';
+            require_once __DIR__ . '/' . '../VIEW/view_users_view.php';
+        }
     }
 }
 

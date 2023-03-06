@@ -15,12 +15,15 @@ class VIEW_USERS_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        .Title = 'View users';
-        .UserArray = GetDatabaseUserArray();
+        if ( HasSessionMinimumUserRole( 'administrator' ) )
+        {
+            .Title = 'View users';
+            .UserArray = GetDatabaseUserArray();
 
-        SetSessionValue( 'ListRoute', GetRequest() );
+            SetSessionValue( 'ListRoute', GetRequest() );
 
-        import '../VIEW/view_users_view.php';
+            import '../VIEW/view_users_view.php';
+        }
     }
 }
 

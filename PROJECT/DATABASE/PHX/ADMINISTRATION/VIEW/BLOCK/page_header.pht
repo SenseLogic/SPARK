@@ -10,39 +10,57 @@
                 <a class="margin-right-auto page-menu-button" href="/admin">
                     <% GetTextBySlug( 'Home' ) %>
                 </a>
-                <a class="page-menu-button" href="/admin/text">
-                    <% GetTextBySlug( 'Texts' ) %>
-                </a>
-                <a class="page-menu-button" href="/admin/language">
-                    <% GetTextBySlug( 'Languages' ) %>
-                </a>
-                <a class="page-menu-button" href="/admin/page-type">
-                    <% GetTextBySlug( 'Page types' ) %>
-                </a>
-                <a class="page-menu-button" href="/admin/page/manage">
-                    <% GetTextBySlug( 'Page manager' ) %>
-                </a>
-                <a class="page-menu-button" href="/admin/page">
-                    <% GetTextBySlug( 'Pages' ) %>
-                </a>
-                <a class="page-menu-button" href="/admin/block-category">
-                    <% GetTextBySlug( 'Block categories' ) %>
-                </a>
-                <a class="page-menu-button" href="/admin/block-type">
-                    <% GetTextBySlug( 'Block types' ) %>
-                </a>
-                <a class="page-menu-button" href="/admin/block-content">
-                    <% GetTextBySlug( 'Block contents' ) %>
-                </a>
-                <a class="page-menu-button" href="/admin/block/manage">
-                    <% GetTextBySlug( 'Block manager' ) %>
-                </a>
-                <a class="page-menu-button" href="/admin/block">
-                    <% GetTextBySlug( 'Blocks' ) %>
-                </a>
-                <a class="page-menu-button" href="/admin/contact">
-                    <% GetTextBySlug( 'Contacts' ) %>
-                </a>
+                <? if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
+                    <a class="page-menu-button" href="/admin/text">
+                        <% GetTextBySlug( 'Texts' ) %>
+                    </a>
+                <? } ?>
+                <? if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
+                    <a class="page-menu-button" href="/admin/language">
+                        <% GetTextBySlug( 'Languages' ) %>
+                    </a>
+                <? } ?>
+                <? if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
+                    <a class="page-menu-button" href="/admin/page-type">
+                        <% GetTextBySlug( 'Page types' ) %>
+                    </a>
+                <? } ?>
+                <? if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
+                    <a class="page-menu-button" href="/admin/page/manage">
+                        <% GetTextBySlug( 'Page manager' ) %>
+                    </a>
+                    <a class="page-menu-button" href="/admin/page">
+                        <% GetTextBySlug( 'Pages' ) %>
+                    </a>
+                <? } ?>
+                <? if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
+                    <a class="page-menu-button" href="/admin/block-category">
+                        <% GetTextBySlug( 'Block categories' ) %>
+                    </a>
+                <? } ?>
+                <? if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
+                    <a class="page-menu-button" href="/admin/block-type">
+                        <% GetTextBySlug( 'Block types' ) %>
+                    </a>
+                <? } ?>
+                <? if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
+                    <a class="page-menu-button" href="/admin/block-content">
+                        <% GetTextBySlug( 'Block contents' ) %>
+                    </a>
+                <? } ?>
+                <? if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
+                    <a class="page-menu-button" href="/admin/block/manage">
+                        <% GetTextBySlug( 'Block manager' ) %>
+                    </a>
+                    <a class="page-menu-button" href="/admin/block">
+                        <% GetTextBySlug( 'Blocks' ) %>
+                    </a>
+                <? } ?>
+                <? if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
+                    <a class="page-menu-button" href="/admin/contact">
+                        <% GetTextBySlug( 'Contacts' ) %>
+                    </a>
+                <? } ?>
                 <? if ( HasSessionMinimumUserRole( 'administrator' ) ) { ?>
                     <a class="page-menu-button" href="/admin/user">
                         <% GetTextBySlug( 'Users' ) %>

@@ -7,7 +7,7 @@
             <? include 'BLOCK/filter.php'; ?>
             <? var list_mode_name = "PageListMode"; ?>
             <? include 'BLOCK/list_mode.php'; ?>
-            <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+            <? if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
                 <a class="form-button form-button-large add-button" href="/admin/page/add">
                 </a>
             <? } ?>
@@ -149,7 +149,7 @@
                     <div class="form-centered sortable-table-cell">
                         <a class="form-button view-button" href="/admin/page/view/<% page.Id %>">
                         </a>
-                        <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                        <? if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
                             <a class="form-button edit-button" href="/admin/page/edit/<% page.Id %>">
                             </a>
                             <a class="form-button remove-button" href="/admin/page/remove/<% page.Id %>">
@@ -184,7 +184,7 @@
                             <select class="form-select" name="TypeSlug" readonly>
                                 <? var page_type_array = .PageTypeArray; ?>
                                 <? foreach ( var page_type; page_type_array ) { ?>
-                                    <option value="<% GetValueText( page_type.Slug ) %>"<? if ( page.TypeSlug === page_type.Slug ) echo ' selected'; ?>><% GetUntranslatedText( page_type.Title ) %></option>
+                                    <option value="<% GetValueText( page_type.Slug ) %>"<? if ( page.TypeSlug === page_type.Slug ) echo ' selected'; ?>><% GetUntranslatedText( page_type.Name ) %></option>
                                 <? } ?>
                             </select>
                         </div>
@@ -294,7 +294,7 @@
                             <image-path-input-component container-class="form-upload-container" result-class="form-input form-upload-input" result-name="MetaImagePath" result-value="<% GetValueText( page.MetaImagePath ) %>" is-readonly image-class="form-upload-image" error-image-path="/static/image/admin/missing_image.svg"></image-path-input-component>
                         </div>
                     </div>
-                    <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                    <? if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
                         <div class="form-toolbar">
                             <a class="form-button edit-button" href="/admin/page/edit/<% page.Id %>">
                             </a>

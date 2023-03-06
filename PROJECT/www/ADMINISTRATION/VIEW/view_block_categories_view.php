@@ -7,7 +7,7 @@
             <?php require __DIR__ . '/' . 'BLOCK/filter.php'; ?>
             <?php  $list_mode_name = "BlockCategoryListMode"; ?>
             <?php require __DIR__ . '/' . 'BLOCK/list_mode.php'; ?>
-            <?php if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+            <?php if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
                 <a class="form-button form-button-large add-button" href="/admin/block-category/add">
                 </a>
             <?php } ?>
@@ -35,7 +35,7 @@
                     <div class="form-centered sortable-table-cell">
                         <a class="form-button view-button" href="/admin/block-category/view/<?php echo htmlspecialchars( $block_category->Id ); ?>">
                         </a>
-                        <?php if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                        <?php if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
                             <a class="form-button edit-button" href="/admin/block-category/edit/<?php echo htmlspecialchars( $block_category->Id ); ?>">
                             </a>
                             <a class="form-button remove-button" href="/admin/block-category/remove/<?php echo htmlspecialchars( $block_category->Id ); ?>">
@@ -64,7 +64,7 @@
                             <input-component result-class="form-input" result-name="Name" result-value="<?php echo htmlspecialchars( GetValueText( $block_category->Name ) ); ?>" is-readonly></input-component>
                         </div>
                     </div>
-                    <?php if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                    <?php if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
                         <div class="form-toolbar">
                             <a class="form-button edit-button" href="/admin/block-category/edit/<?php echo htmlspecialchars( $block_category->Id ); ?>">
                             </a>

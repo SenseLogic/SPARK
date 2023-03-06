@@ -15,10 +15,13 @@ class ADD_BLOCK_TYPE_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        .Title = 'Add a block type';
-        .ListRoute = FindSessionValue( 'ListRoute', '/admin/block-type' );
+        if ( HasSessionMinimumUserRole( 'author' ) )
+        {
+            .Title = 'Add a block type';
+            .ListRoute = FindSessionValue( 'ListRoute', '/admin/block-type' );
 
-        import '../VIEW/add_block_type_view.php';
+            import '../VIEW/add_block_type_view.php';
+        }
     }
 }
 

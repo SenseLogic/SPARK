@@ -16,12 +16,16 @@ class DO_EDIT_BLOCK_CONTENT_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-         $slug = GetPostValue( 'Slug' );
-         $name = GetPostValue( 'Name' );
+        if ( HasSessionMinimumUserRole( 'author' ) )
+        {
 
-        SetDatabaseBlockContent( $block_content_id, $slug, $name );
+             $slug = GetPostValue( 'Slug' );
+             $name = GetPostValue( 'Name' );
 
-        Redirect( FindSessionValue( 'ListRoute', '/admin/block-content' ) );
+            SetDatabaseBlockContent( $block_content_id, $slug, $name );
+
+            Redirect( FindSessionValue( 'ListRoute', '/admin/block-content' ) );
+        }
     }
 }
 

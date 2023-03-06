@@ -15,13 +15,17 @@ class DO_ADD_TEXT_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        var id = GetPostValue( 'Id' );
-        var slug = GetPostValue( 'Slug' );
-        var text = GetPostValue( 'Text' );
+        if ( HasSessionMinimumUserRole( 'author' ) )
+        {
 
-        AddDatabaseText( id, slug, text );
+            var id = GetPostValue( 'Id' );
+            var slug = GetPostValue( 'Slug' );
+            var text = GetPostValue( 'Text' );
 
-        Redirect( FindSessionValue( 'ListRoute', '/admin/text' ) );
+            AddDatabaseText( id, slug, text );
+
+            Redirect( FindSessionValue( 'ListRoute', '/admin/text' ) );
+        }
     }
 }
 

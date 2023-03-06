@@ -395,14 +395,20 @@ textarea {
 .margin-top-auto {
   margin-top: auto !important;
 }
-.margin-top-50pem {
+.margin-top-50prm {
   margin-top: 0.5rem !important;
 }
 .margin-top-1rem {
   margin-top: 1rem !important;
 }
+.margin-top-150prm {
+  margin-top: 1.5rem !important;
+}
 .margin-top-2rem {
   margin-top: 2rem !important;
+}
+.margin-top-250prm {
+  margin-top: 2.5rem !important;
 }
 .margin-top-3rem {
   margin-top: 3rem !important;
@@ -410,14 +416,20 @@ textarea {
 .margin-bottom-auto {
   margin-bottom: auto !important;
 }
-.margin-bottom-50pem {
+.margin-bottom-50prm {
   margin-bottom: 0.5rem !important;
 }
 .margin-bottom-1rem {
   margin-bottom: 1rem !important;
 }
+.margin-bottom-150prm {
+  margin-bottom: 1.5rem !important;
+}
 .margin-bottom-2rem {
   margin-bottom: 2rem !important;
+}
+.margin-bottom-250prm {
+  margin-bottom: 2.5rem !important;
 }
 .margin-bottom-3rem {
   margin-bottom: 3rem !important;
@@ -425,14 +437,20 @@ textarea {
 .margin-left-auto {
   margin-left: auto !important;
 }
-.margin-left-50pem {
+.margin-left-50prm {
   margin-left: 0.5rem !important;
 }
 .margin-left-1rem {
   margin-left: 1rem !important;
 }
+.margin-left-150prm {
+  margin-left: 1.5rem !important;
+}
 .margin-left-2rem {
   margin-left: 2rem !important;
+}
+.margin-left-250prm {
+  margin-left: 2.5rem !important;
 }
 .margin-left-3rem {
   margin-left: 3rem !important;
@@ -440,14 +458,20 @@ textarea {
 .margin-right-auto {
   margin-right: auto !important;
 }
-.margin-right-50pem {
+.margin-right-50prm {
   margin-right: 0.5rem !important;
 }
 .margin-right-1rem {
   margin-right: 1rem !important;
 }
+.margin-right-150prm {
+  margin-right: 1.5rem !important;
+}
 .margin-right-2rem {
   margin-right: 2rem !important;
+}
+.margin-right-250prm {
+  margin-right: 2.5rem !important;
 }
 .margin-right-3rem {
   margin-right: 3rem !important;
@@ -468,17 +492,17 @@ textarea {
   position: relative;
   margin-top: 0.25rem;
 }
-.tree-container .tree-container {
+.tree-container > .tree-container {
   margin-left: 2em;
 }
 .tree-button {
+  display: block;
   color: #001e68;
 }
 .tree-button:hover {
   color: #e20048;
 }
 .tree-toggle-button {
-  position: absolute;
   transform: translate(-1.5rem, 0.2rem);
   height: 1rem;
   width: 1rem;

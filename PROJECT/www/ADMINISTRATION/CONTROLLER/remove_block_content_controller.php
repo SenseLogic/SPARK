@@ -16,11 +16,14 @@ class REMOVE_BLOCK_CONTENT_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-        $this->Title = 'Remove a block content';
-        $this->BlockContent = GetDatabaseBlockContentById( $block_content_id );
-        $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/block-content' );
+        if ( HasSessionMinimumUserRole( 'author' ) )
+        {
+            $this->Title = 'Remove a block content';
+            $this->BlockContent = GetDatabaseBlockContentById( $block_content_id );
+            $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/block-content' );
 
-        require_once __DIR__ . '/' . '../VIEW/remove_block_content_view.php';
+            require_once __DIR__ . '/' . '../VIEW/remove_block_content_view.php';
+        }
     }
 }
 

@@ -15,10 +15,13 @@ class ADD_LANGUAGE_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        .Title = 'Add a language';
-        .ListRoute = FindSessionValue( 'ListRoute', '/admin/language' );
+        if ( HasSessionMinimumUserRole( 'author' ) )
+        {
+            .Title = 'Add a language';
+            .ListRoute = FindSessionValue( 'ListRoute', '/admin/language' );
 
-        import '../VIEW/add_language_view.php';
+            import '../VIEW/add_language_view.php';
+        }
     }
 }
 

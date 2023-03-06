@@ -16,11 +16,14 @@ class EDIT_TEXT_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        .Title = 'Edit a text';
-        .Text = GetDatabaseTextById( text_id );
-        .ListRoute = FindSessionValue( 'ListRoute', '/admin/text' );
+        if ( HasSessionMinimumUserRole( 'author' ) )
+        {
+            .Title = 'Edit a text';
+            .Text = GetDatabaseTextById( text_id );
+            .ListRoute = FindSessionValue( 'ListRoute', '/admin/text' );
 
-        import '../VIEW/edit_text_view.php';
+            import '../VIEW/edit_text_view.php';
+        }
     }
 }
 

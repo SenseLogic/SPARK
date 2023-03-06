@@ -12,7 +12,7 @@
                 include 'BLOCK/PREVIEW/block.php';
             ?>
             <div class="form-toolbar">
-                <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                <? if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
                     <a class="form-button manage-button" href="/admin/block/manage/<% block.Id %>">
                     </a>
                     <a class="form-button edit-button" href="/admin/block/edit/<% block.Id %>">

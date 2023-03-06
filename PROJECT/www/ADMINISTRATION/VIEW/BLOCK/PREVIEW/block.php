@@ -3,7 +3,7 @@
         <?php echo htmlspecialchars( GetTextBySlug( 'Type Slug' ) ); ?> :
     </div>
     <div>
-        <input class="form-input" name="TypeSlug" type="text" value="<?php echo htmlspecialchars( GetValueText(  $block->TypeSlug ) ); ?>" readonly/>
+        <input class="form-input" name="TypeSlug" type="text" value="<?php echo htmlspecialchars( GetValueText( GetElementPropertyByKey( $this->BlockTypeBySlugMap,  $block->TypeSlug, 'Name', '' ) ) ); ?>" readonly/>
     </div>
     <div class="form-field-name">
         <?php echo htmlspecialchars( GetTextBySlug( 'Number' ) ); ?> :

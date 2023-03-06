@@ -15,10 +15,13 @@ class ADD_USER_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-        $this->Title = 'Add a user';
-        $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/user' );
+        if ( HasSessionMinimumUserRole( 'administrator' ) )
+        {
+            $this->Title = 'Add a user';
+            $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/user' );
 
-        require_once __DIR__ . '/' . '../VIEW/add_user_view.php';
+            require_once __DIR__ . '/' . '../VIEW/add_user_view.php';
+        }
     }
 }
 

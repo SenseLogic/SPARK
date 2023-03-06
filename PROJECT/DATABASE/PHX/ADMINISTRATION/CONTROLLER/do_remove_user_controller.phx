@@ -16,9 +16,12 @@ class DO_REMOVE_USER_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        RemoveDatabaseUserById( user_id );
+        if ( HasSessionMinimumUserRole( 'administrator' ) )
+        {
+            RemoveDatabaseUserById( user_id );
 
-        Redirect( FindSessionValue( 'ListRoute', '/admin/user' ) );
+            Redirect( FindSessionValue( 'ListRoute', '/admin/user' ) );
+        }
     }
 }
 

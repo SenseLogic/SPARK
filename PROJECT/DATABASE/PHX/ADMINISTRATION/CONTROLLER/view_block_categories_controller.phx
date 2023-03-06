@@ -15,12 +15,15 @@ class VIEW_BLOCK_CATEGORIES_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        .Title = 'View block categories';
-        .BlockCategoryArray = GetDatabaseBlockCategoryArray();
+        if ( HasSessionMinimumUserRole( 'author' ) )
+        {
+            .Title = 'View block categories';
+            .BlockCategoryArray = GetDatabaseBlockCategoryArray();
 
-        SetSessionValue( 'ListRoute', GetRequest() );
+            SetSessionValue( 'ListRoute', GetRequest() );
 
-        import '../VIEW/view_block_categories_view.php';
+            import '../VIEW/view_block_categories_view.php';
+        }
     }
 }
 

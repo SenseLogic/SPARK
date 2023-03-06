@@ -15,10 +15,13 @@ class ADD_PAGE_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-        $this->Title = 'Add a page';
-        $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/page' );
+        if ( HasSessionMinimumUserRole( 'contributor' ) )
+        {
+            $this->Title = 'Add a page';
+            $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/page' );
 
-        require_once __DIR__ . '/' . '../VIEW/add_page_view.php';
+            require_once __DIR__ . '/' . '../VIEW/add_page_view.php';
+        }
     }
 }
 

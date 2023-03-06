@@ -16,11 +16,14 @@ class EDIT_USER_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-        $this->Title = 'Edit a user';
-        $this->User = GetDatabaseUserById( $user_id );
-        $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/user' );
+        if ( HasSessionMinimumUserRole( 'administrator' ) )
+        {
+            $this->Title = 'Edit a user';
+            $this->User = GetDatabaseUserById( $user_id );
+            $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/user' );
 
-        require_once __DIR__ . '/' . '../VIEW/edit_user_view.php';
+            require_once __DIR__ . '/' . '../VIEW/edit_user_view.php';
+        }
     }
 }
 

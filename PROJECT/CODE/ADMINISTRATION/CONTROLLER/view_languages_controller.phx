@@ -15,12 +15,15 @@ class VIEW_LANGUAGES_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        .Title = 'View languages';
-        .LanguageArray = GetDatabaseLanguageArray();
+        if ( HasSessionMinimumUserRole( 'author' ) )
+        {
+            .Title = 'View languages';
+            .LanguageArray = GetDatabaseLanguageArray();
 
-        SetSessionValue( 'ListRoute', GetRequest() );
+            SetSessionValue( 'ListRoute', GetRequest() );
 
-        import '../VIEW/view_languages_view.php';
+            import '../VIEW/view_languages_view.php';
+        }
     }
 }
 

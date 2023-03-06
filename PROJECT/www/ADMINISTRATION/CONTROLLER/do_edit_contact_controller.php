@@ -16,17 +16,21 @@ class DO_EDIT_CONTACT_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-         $name = GetPostValue( 'Name' );
-         $company = GetPostValue( 'Company' );
-         $email = GetPostValue( 'Email' );
-         $phone = GetPostValue( 'Phone' );
-         $subject = GetPostValue( 'Subject' );
-         $message = GetPostValue( 'Message' );
-         $date_time = GetPostValue( 'DateTime' );
+        if ( HasSessionMinimumUserRole( 'author' ) )
+        {
 
-        SetDatabaseContact( $contact_id, $name, $company, $email, $phone, $subject, $message, $date_time );
+             $name = GetPostValue( 'Name' );
+             $company = GetPostValue( 'Company' );
+             $email = GetPostValue( 'Email' );
+             $phone = GetPostValue( 'Phone' );
+             $subject = GetPostValue( 'Subject' );
+             $message = GetPostValue( 'Message' );
+             $date_time = GetPostValue( 'DateTime' );
 
-        Redirect( FindSessionValue( 'ListRoute', '/admin/contact' ) );
+            SetDatabaseContact( $contact_id, $name, $company, $email, $phone, $subject, $message, $date_time );
+
+            Redirect( FindSessionValue( 'ListRoute', '/admin/contact' ) );
+        }
     }
 }
 

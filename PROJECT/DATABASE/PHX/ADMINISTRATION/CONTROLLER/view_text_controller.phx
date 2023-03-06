@@ -16,11 +16,14 @@ class VIEW_TEXT_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        .Title = 'View a text';
-        .Text = GetDatabaseTextById( text_id );
-        .ListRoute = FindSessionValue( 'ListRoute', '/admin/text' );
+        if ( HasSessionMinimumUserRole( 'author' ) )
+        {
+            .Title = 'View a text';
+            .Text = GetDatabaseTextById( text_id );
+            .ListRoute = FindSessionValue( 'ListRoute', '/admin/text' );
 
-        import '../VIEW/view_text_view.php';
+            import '../VIEW/view_text_view.php';
+        }
     }
 }
 

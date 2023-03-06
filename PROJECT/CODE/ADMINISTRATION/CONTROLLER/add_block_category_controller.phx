@@ -15,10 +15,13 @@ class ADD_BLOCK_CATEGORY_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        .Title = 'Add a block category';
-        .ListRoute = FindSessionValue( 'ListRoute', '/admin/block-category' );
+        if ( HasSessionMinimumUserRole( 'author' ) )
+        {
+            .Title = 'Add a block category';
+            .ListRoute = FindSessionValue( 'ListRoute', '/admin/block-category' );
 
-        import '../VIEW/add_block_category_view.php';
+            import '../VIEW/add_block_category_view.php';
+        }
     }
 }
 

@@ -16,11 +16,14 @@ class VIEW_PAGE_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-        $this->Title = 'View a page';
-        $this->Page = GetDatabasePageById( $page_id );
-        $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/page' );
+        if ( HasSessionMinimumUserRole( 'contributor' ) )
+        {
+            $this->Title = 'View a page';
+            $this->Page = GetDatabasePageById( $page_id );
+            $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/page' );
 
-        require_once __DIR__ . '/' . '../VIEW/view_page_view.php';
+            require_once __DIR__ . '/' . '../VIEW/view_page_view.php';
+        }
     }
 }
 

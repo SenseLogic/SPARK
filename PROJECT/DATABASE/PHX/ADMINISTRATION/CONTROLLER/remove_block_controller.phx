@@ -16,11 +16,14 @@ class REMOVE_BLOCK_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        .Title = 'Remove a block';
-        .Block = GetDatabaseBlockById( block_id );
-        .ListRoute = FindSessionValue( 'ListRoute', '/admin/block' );
+        if ( HasSessionMinimumUserRole( 'contributor' ) )
+        {
+            .Title = 'Remove a block';
+            .Block = GetDatabaseBlockById( block_id );
+            .ListRoute = FindSessionValue( 'ListRoute', '/admin/block' );
 
-        import '../VIEW/remove_block_view.php';
+            import '../VIEW/remove_block_view.php';
+        }
     }
 }
 

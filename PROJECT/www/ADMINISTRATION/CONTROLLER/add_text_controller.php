@@ -15,10 +15,13 @@ class ADD_TEXT_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-        $this->Title = 'Add a text';
-        $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/text' );
+        if ( HasSessionMinimumUserRole( 'author' ) )
+        {
+            $this->Title = 'Add a text';
+            $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/text' );
 
-        require_once __DIR__ . '/' . '../VIEW/add_text_view.php';
+            require_once __DIR__ . '/' . '../VIEW/add_text_view.php';
+        }
     }
 }
 

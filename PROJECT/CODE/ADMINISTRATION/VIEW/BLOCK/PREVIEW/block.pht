@@ -3,7 +3,7 @@
         <% GetTextBySlug( 'Type Slug' ) %> :
     </div>
     <div>
-        <input class="form-input" name="TypeSlug" type="text" value="<% GetValueText( var block.TypeSlug ) %>" readonly/>
+        <input class="form-input" name="TypeSlug" type="text" value="<% GetValueText( GetElementPropertyByKey( .BlockTypeBySlugMap, var block.TypeSlug, 'Name', '' ) ) %>" readonly/>
     </div>
     <div class="form-field-name">
         <% GetTextBySlug( 'Number' ) %> :

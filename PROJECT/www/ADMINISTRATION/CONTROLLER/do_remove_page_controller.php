@@ -16,9 +16,12 @@ class DO_REMOVE_PAGE_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-        RemoveDatabasePageById( $page_id );
+        if ( HasSessionMinimumUserRole( 'contributor' ) )
+        {
+            RemoveDatabasePageById( $page_id );
 
-        Redirect( FindSessionValue( 'ListRoute', '/admin/page' ) );
+            Redirect( FindSessionValue( 'ListRoute', '/admin/page' ) );
+        }
     }
 }
 
