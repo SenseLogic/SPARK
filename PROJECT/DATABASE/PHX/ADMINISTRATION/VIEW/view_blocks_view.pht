@@ -241,25 +241,25 @@
                             <% GetTextBySlug( 'Page Id' ) %> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="PageId">
-                            <dropdown-component result-class="form-select" result-name="PageId" result-value="<% GetValueText( block.PageId ) %>" is-readonly  option-values="<% GetJsonText( GetElementPropertyArray( .PageArray, 'Id' ) ) %>" option-names="<% GetJsonText( GetUntranslatedElementArray( GetElementPropertyArray( .PageArray, 'Title' ) ) ) %>"></dropdown-component>
+                            <dropdown-component result-class="form-select" result-name="PageId" result-value="<% GetValueText( block.PageId ) %>" is-readonly  option-values="<% GetValueText( GetJsonText( GetElementPropertyArray( .PageArray, 'Id' ) ) ) %>" option-names="<% GetValueText( GetJsonText( GetUntranslatedElementArray( GetElementPropertyArray( .PageArray, 'Title' ) ) ) ) %>"></dropdown-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="CategorySlug">
                             <% GetTextBySlug( 'Category Slug' ) %> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="CategorySlug">
-                            <dropdown-component result-class="form-select" result-name="CategorySlug" result-value="<% GetValueText( block.CategorySlug ) %>" is-readonly  option-values="<% GetJsonText( GetElementPropertyArray( .BlockCategoryArray, 'Slug' ) ) %>" option-names="<% GetJsonText( GetUntranslatedElementArray( GetElementPropertyArray( .BlockCategoryArray, 'Name' ) ) ) %>"></dropdown-component>
+                            <dropdown-component result-class="form-select" result-name="CategorySlug" result-value="<% GetValueText( block.CategorySlug ) %>" is-readonly  option-values="<% GetValueText( GetJsonText( GetElementPropertyArray( .BlockCategoryArray, 'Slug' ) ) ) %>" option-names="<% GetValueText( GetJsonText( GetUntranslatedElementArray( GetElementPropertyArray( .BlockCategoryArray, 'Name' ) ) ) ) %>"></dropdown-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="ContentSlug">
                             <% GetTextBySlug( 'Content Slug' ) %> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="ContentSlug">
-                            <dropdown-component result-class="form-select" result-name="ContentSlug" result-value="<% GetValueText( block.ContentSlug ) %>" is-readonly  option-values="<% GetJsonText( GetElementPropertyArray( .BlockContentArray, 'Slug' ) ) %>" option-names="<% GetJsonText( GetUntranslatedElementArray( GetElementPropertyArray( .BlockContentArray,'Name' ) ) ) %>"></dropdown-component>
+                            <dropdown-component result-class="form-select" result-name="ContentSlug" result-value="<% GetValueText( block.ContentSlug ) %>" is-readonly  option-values="<% GetValueText( GetJsonText( GetElementPropertyArray( .BlockContentArray, 'Slug' ) ) ) %>" option-names="<% GetValueText( GetJsonText( GetUntranslatedElementArray( GetElementPropertyArray( .BlockContentArray,'Name' ) ) ) ) %>"></dropdown-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="TypeSlug">
                             <% GetTextBySlug( 'Type Slug' ) %> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="TypeSlug">
-                            <dropdown-component result-class="form-select" result-name="TypeSlug" result-value="<% GetValueText( block.TypeSlug ) %>" is-readonly  option-values="<% GetJsonText( GetElementPropertyArray( .BlockTypeArray, 'Slug' ) ) %>" option-names="<% GetJsonText( GetUntranslatedElementArray( GetElementPropertyArray( .BlockTypeArray, 'Name' ) ) ) %>"></dropdown-component>
+                            <dropdown-component result-class="form-select" result-name="TypeSlug" result-value="<% GetValueText( block.TypeSlug ) %>" is-readonly  option-values="<% GetValueText( GetJsonText( GetElementPropertyArray( .BlockTypeArray, 'Slug' ) ) ) %>" option-names="<% GetValueText( GetJsonText( GetUntranslatedElementArray( GetElementPropertyArray( .BlockTypeArray, 'Name' ) ) ) ) %>"></dropdown-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="Number">
                             <% GetTextBySlug( 'Number' ) %> :
@@ -283,67 +283,67 @@
                             <% GetTextBySlug( 'Title' ) %> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="Title">
-                            <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Title" result-value="<% GetValueText( block.Title ) %>" is-readonly language-codes="<% GetJsonText( LanguageCodeArray ) %>" language-names="<% GetJsonText( LanguageNameArray ) %>"></multilingual-text-input-component>
+                            <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Title" result-value="<% GetValueText( block.Title ) %>" is-readonly language-codes="<% GetValueText( GetJsonText( LanguageCodeArray ) ) %>" language-names="<% GetValueText( GetJsonText( LanguageNameArray ) ) %>"></multilingual-text-input-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="TitleArray">
                             <% GetTextBySlug( 'Title Array' ) %> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="TitleArray">
-                            <multilingual-text-input-list-component container-class="form-list-container" result-class="form-textarea" result-name="TitleArray" result-value="<% GetValueText( block.TitleArray ) %>" is-readonly value-container-class="form-value-container" value-class="form-input form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<% GetJsonText( LanguageCodeArray ) %>" language-names="<% GetJsonText( LanguageNameArray ) %>"></multilingual-text-input-list-component>
+                            <multilingual-text-input-list-component container-class="form-list-container" result-class="form-textarea" result-name="TitleArray" result-value="<% GetValueText( block.TitleArray ) %>" is-readonly value-container-class="form-value-container" value-class="form-input form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<% GetValueText( GetJsonText( LanguageCodeArray ) ) %>" language-names="<% GetValueText( GetJsonText( LanguageNameArray ) ) %>"></multilingual-text-input-list-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="Teaser">
                             <% GetTextBySlug( 'Teaser' ) %> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="Teaser">
-                            <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Teaser" result-value="<% GetValueText( block.Teaser ) %>" is-readonly language-codes="<% GetJsonText( LanguageCodeArray ) %>" language-names="<% GetJsonText( LanguageNameArray ) %>"></multilingual-text-input-component>
+                            <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Teaser" result-value="<% GetValueText( block.Teaser ) %>" is-readonly language-codes="<% GetValueText( GetJsonText( LanguageCodeArray ) ) %>" language-names="<% GetValueText( GetJsonText( LanguageNameArray ) ) %>"></multilingual-text-input-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="TeaserArray">
                             <% GetTextBySlug( 'Teaser Array' ) %> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="TeaserArray">
-                            <multilingual-text-input-list-component container-class="form-list-container" result-class="form-textarea" result-name="TeaserArray" result-value="<% GetValueText( block.TeaserArray ) %>" is-readonly value-container-class="form-value-container" value-class="form-input form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<% GetJsonText( LanguageCodeArray ) %>" language-names="<% GetJsonText( LanguageNameArray ) %>"></multilingual-text-input-list-component>
+                            <multilingual-text-input-list-component container-class="form-list-container" result-class="form-textarea" result-name="TeaserArray" result-value="<% GetValueText( block.TeaserArray ) %>" is-readonly value-container-class="form-value-container" value-class="form-input form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<% GetValueText( GetJsonText( LanguageCodeArray ) ) %>" language-names="<% GetValueText( GetJsonText( LanguageNameArray ) ) %>"></multilingual-text-input-list-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="Text">
                             <% GetTextBySlug( 'Text' ) %> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="Text">
-                            <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Text" result-value="<% GetValueText( block.Text ) %>" is-readonly language-codes="<% GetJsonText( LanguageCodeArray ) %>" language-names="<% GetJsonText( LanguageNameArray ) %>"></multilingual-text-input-component>
+                            <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Text" result-value="<% GetValueText( block.Text ) %>" is-readonly language-codes="<% GetValueText( GetJsonText( LanguageCodeArray ) ) %>" language-names="<% GetValueText( GetJsonText( LanguageNameArray ) ) %>"></multilingual-text-input-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="TextArray">
                             <% GetTextBySlug( 'Text Array' ) %> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="TextArray">
-                            <multilingual-text-input-list-component container-class="form-list-container" result-class="form-textarea" result-name="TextArray" result-value="<% GetValueText( block.TextArray ) %>" is-readonly value-container-class="form-value-container" value-class="form-input form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<% GetJsonText( LanguageCodeArray ) %>" language-names="<% GetJsonText( LanguageNameArray ) %>"></multilingual-text-input-list-component>
+                            <multilingual-text-input-list-component container-class="form-list-container" result-class="form-textarea" result-name="TextArray" result-value="<% GetValueText( block.TextArray ) %>" is-readonly value-container-class="form-value-container" value-class="form-input form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<% GetValueText( GetJsonText( LanguageCodeArray ) ) %>" language-names="<% GetValueText( GetJsonText( LanguageNameArray ) ) %>"></multilingual-text-input-list-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="Route">
                             <% GetTextBySlug( 'Route' ) %> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="Route">
-                            <multilingual-input-component container-class="form-multilingual-container" result-class="form-input" result-name="Route" result-value="<% GetValueText( block.Route ) %>" is-readonly language-codes="<% GetJsonText( LanguageCodeArray ) %>" language-names="<% GetJsonText( LanguageNameArray ) %>"></multilingual-input-component>
+                            <multilingual-input-component container-class="form-multilingual-container" result-class="form-input" result-name="Route" result-value="<% GetValueText( block.Route ) %>" is-readonly language-codes="<% GetValueText( GetJsonText( LanguageCodeArray ) ) %>" language-names="<% GetValueText( GetJsonText( LanguageNameArray ) ) %>"></multilingual-input-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="RouteArray">
                             <% GetTextBySlug( 'Route Array' ) %> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="RouteArray">
-                            <multilingual-input-list-component container-class="form-list-container" result-class="form-input" result-name="RouteArray" result-value="<% GetValueText( block.RouteArray ) %>" is-readonly value-container-class="form-value-container" value-class="form-input form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<% GetJsonText( LanguageCodeArray ) %>" language-names="<% GetJsonText( LanguageNameArray ) %>"></multilingual-input-list-component>
+                            <multilingual-input-list-component container-class="form-list-container" result-class="form-input" result-name="RouteArray" result-value="<% GetValueText( block.RouteArray ) %>" is-readonly value-container-class="form-value-container" value-class="form-input form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<% GetValueText( GetJsonText( LanguageCodeArray ) ) %>" language-names="<% GetValueText( GetJsonText( LanguageNameArray ) ) %>"></multilingual-input-list-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="ImageSide">
                             <% GetTextBySlug( 'Image Side' ) %> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="ImageSide">
-                            <dropdown-component result-class="form-select" result-name="ImageSide" result-value="<% GetValueText( block.ImageSide ) %>" is-readonly is-optional option-values="<% GetJsonText( [ 'left', 'right' ] ) %>" option-names="<% GetJsonText( [ 'Left', 'Right' ] ) %>"></dropdown-component>
+                            <dropdown-component result-class="form-select" result-name="ImageSide" result-value="<% GetValueText( block.ImageSide ) %>" is-readonly is-optional option-values="<% GetValueText( GetJsonText( [ 'left', 'right' ] ) ) %>" option-names="<% GetValueText( GetJsonText( [ 'Left', 'Right' ] ) ) %>"></dropdown-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="ImageLegend">
                             <% GetTextBySlug( 'Image Legend' ) %> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="ImageLegend">
-                            <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="ImageLegend" result-value="<% GetValueText( block.ImageLegend ) %>" is-readonly language-codes="<% GetJsonText( LanguageCodeArray ) %>" language-names="<% GetJsonText( LanguageNameArray ) %>"></multilingual-text-input-component>
+                            <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="ImageLegend" result-value="<% GetValueText( block.ImageLegend ) %>" is-readonly language-codes="<% GetValueText( GetJsonText( LanguageCodeArray ) ) %>" language-names="<% GetValueText( GetJsonText( LanguageNameArray ) ) %>"></multilingual-text-input-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="ImageLegendArray">
                             <% GetTextBySlug( 'Image Legend Array' ) %> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="ImageLegendArray">
-                            <multilingual-text-input-list-component container-class="form-list-container" result-class="form-textarea" result-name="ImageLegendArray" result-value="<% GetValueText( block.ImageLegendArray ) %>" is-readonly value-container-class="form-value-container" value-class="form-input form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<% GetJsonText( LanguageCodeArray ) %>" language-names="<% GetJsonText( LanguageNameArray ) %>"></multilingual-text-input-list-component>
+                            <multilingual-text-input-list-component container-class="form-list-container" result-class="form-textarea" result-name="ImageLegendArray" result-value="<% GetValueText( block.ImageLegendArray ) %>" is-readonly value-container-class="form-value-container" value-class="form-input form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<% GetValueText( GetJsonText( LanguageCodeArray ) ) %>" language-names="<% GetValueText( GetJsonText( LanguageNameArray ) ) %>"></multilingual-text-input-list-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="ImagePath">
                             <% GetTextBySlug( 'Image Path' ) %> :
@@ -361,25 +361,25 @@
                             <% GetTextBySlug( 'Image Vertical Position' ) %> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="ImageVerticalPosition">
-                            <dropdown-component result-class="form-select" result-name="ImageVerticalPosition" result-value="<% GetValueText( block.ImageVerticalPosition ) %>" is-readonly is-optional option-values="<% GetJsonText( [ 'top', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'bottom'] ) %>" option-names="<% GetJsonText( ['Top', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Bottom' ] ) %>"></dropdown-component>
+                            <dropdown-component result-class="form-select" result-name="ImageVerticalPosition" result-value="<% GetValueText( block.ImageVerticalPosition ) %>" is-readonly is-optional option-values="<% GetValueText( GetJsonText( [ 'top', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'bottom'] ) ) %>" option-names="<% GetValueText( GetJsonText( ['Top', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Bottom' ] ) ) %>"></dropdown-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="ImageVerticalPositionArray">
                             <% GetTextBySlug( 'Image Vertical Position Array' ) %> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="ImageVerticalPositionArray">
-                            <input-list-component container-class="form-list-container" result-class="form-list-container" result-name="ImageVerticalPositionArray" result-value="<% GetValueText( block.ImageVerticalPositionArray ) %>" is-readonly value-container-class="form-value-container" value-class="form-input form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></input-list-component>
+                            <dropdown-component result-class="form-select" result-name="ImageVerticalPositionArray" result-value="<% GetValueText( block.ImageVerticalPositionArray ) %>" is-readonly is-optional option-values="<% GetValueText( GetJsonText( [ 'top', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'bottom'] ) ) %>" option-names="<% GetValueText( GetJsonText( ['Top', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Bottom' ] ) ) %>" value-container-class="form-value-container" value-class="form-select form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></dropdown-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="ImageHorizontalPosition">
                             <% GetTextBySlug( 'Image Horizontal Position' ) %> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="ImageHorizontalPosition">
-                            <dropdown-component result-class="form-select" result-name="ImageHorizontalPosition" result-value="<% GetValueText( block.ImageHorizontalPosition ) %>" is-readonly is-optional option-values="<% GetJsonText( [ 'left', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'right'] ) %>" option-names="<% GetJsonText( ['Left', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Right' ] ) %>"></dropdown-component>
+                            <dropdown-component result-class="form-select" result-name="ImageHorizontalPosition" result-value="<% GetValueText( block.ImageHorizontalPosition ) %>" is-readonly is-optional option-values="<% GetValueText( GetJsonText( [ 'left', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'right'] ) ) %>" option-names="<% GetValueText( GetJsonText( ['Left', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Right' ] ) ) %>"></dropdown-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="ImageHorizontalPositionArray">
                             <% GetTextBySlug( 'Image Horizontal Position Array' ) %> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="ImageHorizontalPositionArray">
-                            <input-list-component container-class="form-list-container" result-class="form-list-container" result-name="ImageHorizontalPositionArray" result-value="<% GetValueText( block.ImageHorizontalPositionArray ) %>" is-readonly value-container-class="form-value-container" value-class="form-input form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></input-list-component>
+                            <dropdown-component result-class="form-select" result-name="ImageHorizontalPositionArray" result-value="<% GetValueText( block.ImageHorizontalPositionArray ) %>" is-readonly is-optional option-values="<% GetValueText( GetJsonText( [ 'left', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'right'] ) ) %>" option-names="<% GetValueText( GetJsonText( ['Left', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Right' ] ) ) %>" value-container-class="form-value-container" value-class="form-select form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></dropdown-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="VideoPath">
                             <% GetTextBySlug( 'Video Path' ) %> :

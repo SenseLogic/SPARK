@@ -142,7 +142,7 @@
                     <% GetTextBySlug( 'Text' ) %> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="Text">
-                    <multilingual-input-component container-class="form-multilingual-container" result-class="form-input" result-name="Text" result-value="<% GetValueText( field_value ) %>" language-codes="<% GetJsonText( LanguageCodeArray ) %>" language-names="<% GetJsonText( LanguageNameArray ) %>"></multilingual-input-component>
+                    <multilingual-input-component container-class="form-multilingual-container" result-class="form-input" result-name="Text" result-value="<% GetValueText( field_value ) %>" language-codes="<% GetValueText( GetJsonText( LanguageCodeArray ) ) %>" language-names="<% GetValueText( GetJsonText( LanguageNameArray ) ) %>"></multilingual-input-component>
                 </div>
                 <?
                     var field_name = 'IsActive';
@@ -160,7 +160,7 @@
                     <% GetTextBySlug( 'Is Active' ) %> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="IsActive">
-                    <dropdown-component result-class="form-select" result-name="IsActive" result-value="<% GetValueText( field_value ) %>"  option-values="<% GetJsonText( [ 0, 1 ] ) %>" option-names="<% GetJsonText( [ 'False', 'True' ] ) %>"></dropdown-component>
+                    <dropdown-component result-class="form-select" result-name="IsActive" result-value="<% GetValueText( field_value ) %>"  option-values="<% GetValueText( GetJsonText( [ 0, 1 ] ) ) %>" option-names="<% GetValueText( GetJsonText( [ 'False', 'True' ] ) ) %>"></dropdown-component>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
                 </a>

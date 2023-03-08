@@ -220,7 +220,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Page Id' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="PageId">
-                    <dropdown-component result-class="form-select" result-name="PageId" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"  option-values="<?php echo htmlspecialchars( GetJsonText( GetElementPropertyArray( $this->PageArray, 'Id' ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetJsonText( GetUntranslatedElementArray( GetElementPropertyArray( $this->PageArray, 'Title' ) ) ) ); ?>"></dropdown-component>
+                    <dropdown-component result-class="form-select" result-name="PageId" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"  option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( GetElementPropertyArray( $this->PageArray, 'Id' ) ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( GetUntranslatedElementArray( GetElementPropertyArray( $this->PageArray, 'Title' ) ) ) ) ); ?>"></dropdown-component>
                 </div>
                 <?php
                      $field_name = 'CategorySlug';
@@ -238,7 +238,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Category Slug' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="CategorySlug">
-                    <dropdown-component result-class="form-select" result-name="CategorySlug" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"  option-values="<?php echo htmlspecialchars( GetJsonText( GetElementPropertyArray( $this->BlockCategoryArray, 'Slug' ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetJsonText( GetUntranslatedElementArray( GetElementPropertyArray( $this->BlockCategoryArray, 'Name' ) ) ) ); ?>"></dropdown-component>
+                    <dropdown-component result-class="form-select" result-name="CategorySlug" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"  option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( GetElementPropertyArray( $this->BlockCategoryArray, 'Slug' ) ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( GetUntranslatedElementArray( GetElementPropertyArray( $this->BlockCategoryArray, 'Name' ) ) ) ) ); ?>"></dropdown-component>
                 </div>
                 <?php
                      $field_name = 'ContentSlug';
@@ -256,7 +256,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Content Slug' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="ContentSlug">
-                    <dropdown-component result-class="form-select" result-name="ContentSlug" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"  option-values="<?php echo htmlspecialchars( GetJsonText( GetElementPropertyArray( $this->BlockContentArray, 'Slug' ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetJsonText( GetUntranslatedElementArray( GetElementPropertyArray( $this->BlockContentArray,'Name' ) ) ) ); ?>"></dropdown-component>
+                    <dropdown-component result-class="form-select" result-name="ContentSlug" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"  option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( GetElementPropertyArray( $this->BlockContentArray, 'Slug' ) ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( GetUntranslatedElementArray( GetElementPropertyArray( $this->BlockContentArray,'Name' ) ) ) ) ); ?>"></dropdown-component>
                 </div>
                 <?php
                      $field_name = 'TypeSlug';
@@ -274,7 +274,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Type Slug' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="TypeSlug">
-                    <dropdown-component result-class="form-select" result-name="TypeSlug" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"  option-values="<?php echo htmlspecialchars( GetJsonText( GetElementPropertyArray( $this->BlockTypeArray, 'Slug' ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetJsonText( GetUntranslatedElementArray( GetElementPropertyArray( $this->BlockTypeArray, 'Name' ) ) ) ); ?>"></dropdown-component>
+                    <dropdown-component result-class="form-select" result-name="TypeSlug" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"  option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( GetElementPropertyArray( $this->BlockTypeArray, 'Slug' ) ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( GetUntranslatedElementArray( GetElementPropertyArray( $this->BlockTypeArray, 'Name' ) ) ) ) ); ?>"></dropdown-component>
                 </div>
                 <?php
                      $field_name = 'Number';
@@ -346,7 +346,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Title' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="Title">
-                    <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Title" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-codes="<?php echo htmlspecialchars( GetJsonText( LanguageCodeArray ) ); ?>" language-names="<?php echo htmlspecialchars( GetJsonText( LanguageNameArray ) ); ?>"></multilingual-text-input-component>
+                    <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Title" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-codes="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageCodeArray ) ) ); ?>" language-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageNameArray ) ) ); ?>"></multilingual-text-input-component>
                 </div>
                 <?php
                      $field_name = 'TitleArray';
@@ -364,7 +364,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Title Array' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="TitleArray">
-                    <multilingual-text-input-list-component container-class="form-list-container" result-class="form-textarea" result-name="TitleArray" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" value-container-class="form-value-container" value-class="form-input form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<?php echo htmlspecialchars( GetJsonText( LanguageCodeArray ) ); ?>" language-names="<?php echo htmlspecialchars( GetJsonText( LanguageNameArray ) ); ?>"></multilingual-text-input-list-component>
+                    <multilingual-text-input-list-component container-class="form-list-container" result-class="form-textarea" result-name="TitleArray" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" value-container-class="form-value-container" value-class="form-input form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageCodeArray ) ) ); ?>" language-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageNameArray ) ) ); ?>"></multilingual-text-input-list-component>
                 </div>
                 <?php
                      $field_name = 'Teaser';
@@ -382,7 +382,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Teaser' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="Teaser">
-                    <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Teaser" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-codes="<?php echo htmlspecialchars( GetJsonText( LanguageCodeArray ) ); ?>" language-names="<?php echo htmlspecialchars( GetJsonText( LanguageNameArray ) ); ?>"></multilingual-text-input-component>
+                    <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Teaser" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-codes="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageCodeArray ) ) ); ?>" language-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageNameArray ) ) ); ?>"></multilingual-text-input-component>
                 </div>
                 <?php
                      $field_name = 'TeaserArray';
@@ -400,7 +400,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Teaser Array' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="TeaserArray">
-                    <multilingual-text-input-list-component container-class="form-list-container" result-class="form-textarea" result-name="TeaserArray" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" value-container-class="form-value-container" value-class="form-input form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<?php echo htmlspecialchars( GetJsonText( LanguageCodeArray ) ); ?>" language-names="<?php echo htmlspecialchars( GetJsonText( LanguageNameArray ) ); ?>"></multilingual-text-input-list-component>
+                    <multilingual-text-input-list-component container-class="form-list-container" result-class="form-textarea" result-name="TeaserArray" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" value-container-class="form-value-container" value-class="form-input form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageCodeArray ) ) ); ?>" language-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageNameArray ) ) ); ?>"></multilingual-text-input-list-component>
                 </div>
                 <?php
                      $field_name = 'Text';
@@ -418,7 +418,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Text' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="Text">
-                    <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Text" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-codes="<?php echo htmlspecialchars( GetJsonText( LanguageCodeArray ) ); ?>" language-names="<?php echo htmlspecialchars( GetJsonText( LanguageNameArray ) ); ?>"></multilingual-text-input-component>
+                    <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Text" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-codes="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageCodeArray ) ) ); ?>" language-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageNameArray ) ) ); ?>"></multilingual-text-input-component>
                 </div>
                 <?php
                      $field_name = 'TextArray';
@@ -436,7 +436,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Text Array' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="TextArray">
-                    <multilingual-text-input-list-component container-class="form-list-container" result-class="form-textarea" result-name="TextArray" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" value-container-class="form-value-container" value-class="form-input form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<?php echo htmlspecialchars( GetJsonText( LanguageCodeArray ) ); ?>" language-names="<?php echo htmlspecialchars( GetJsonText( LanguageNameArray ) ); ?>"></multilingual-text-input-list-component>
+                    <multilingual-text-input-list-component container-class="form-list-container" result-class="form-textarea" result-name="TextArray" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" value-container-class="form-value-container" value-class="form-input form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageCodeArray ) ) ); ?>" language-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageNameArray ) ) ); ?>"></multilingual-text-input-list-component>
                 </div>
                 <?php
                      $field_name = 'Route';
@@ -454,7 +454,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Route' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="Route">
-                    <multilingual-input-component container-class="form-multilingual-container" result-class="form-input" result-name="Route" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-codes="<?php echo htmlspecialchars( GetJsonText( LanguageCodeArray ) ); ?>" language-names="<?php echo htmlspecialchars( GetJsonText( LanguageNameArray ) ); ?>"></multilingual-input-component>
+                    <multilingual-input-component container-class="form-multilingual-container" result-class="form-input" result-name="Route" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-codes="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageCodeArray ) ) ); ?>" language-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageNameArray ) ) ); ?>"></multilingual-input-component>
                 </div>
                 <?php
                      $field_name = 'RouteArray';
@@ -472,7 +472,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Route Array' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="RouteArray">
-                    <multilingual-input-list-component container-class="form-list-container" result-class="form-text-input" result-name="RouteArray" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" value-container-class="form-value-container" value-class="form-input form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<?php echo htmlspecialchars( GetJsonText( LanguageCodeArray ) ); ?>" language-names="<?php echo htmlspecialchars( GetJsonText( LanguageNameArray ) ); ?>"></multilingual-input-list-component>
+                    <multilingual-input-list-component container-class="form-list-container" result-class="form-text-input" result-name="RouteArray" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" value-container-class="form-value-container" value-class="form-input form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageCodeArray ) ) ); ?>" language-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageNameArray ) ) ); ?>"></multilingual-input-list-component>
                 </div>
                 <?php
                      $field_name = 'ImageSide';
@@ -490,7 +490,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Image Side' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="ImageSide">
-                    <dropdown-component result-class="form-select" result-name="ImageSide" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" is-optional option-values="<?php echo htmlspecialchars( GetJsonText( [ 'left', 'right' ] ) ); ?>" option-names="<?php echo htmlspecialchars( GetJsonText( [ 'Left', 'Right' ] ) ); ?>"></dropdown-component>
+                    <dropdown-component result-class="form-select" result-name="ImageSide" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" is-optional option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'left', 'right' ] ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'Left', 'Right' ] ) ) ); ?>"></dropdown-component>
                 </div>
                 <?php
                      $field_name = 'ImageLegend';
@@ -508,7 +508,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Image Legend' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="ImageLegend">
-                    <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="ImageLegend" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-codes="<?php echo htmlspecialchars( GetJsonText( LanguageCodeArray ) ); ?>" language-names="<?php echo htmlspecialchars( GetJsonText( LanguageNameArray ) ); ?>"></multilingual-text-input-component>
+                    <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="ImageLegend" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-codes="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageCodeArray ) ) ); ?>" language-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageNameArray ) ) ); ?>"></multilingual-text-input-component>
                 </div>
                 <?php
                      $field_name = 'ImageLegendArray';
@@ -526,7 +526,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Image Legend Array' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="ImageLegendArray">
-                    <multilingual-text-input-list-component container-class="form-list-container" result-class="form-textarea" result-name="ImageLegendArray" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" value-container-class="form-value-container" value-class="form-input form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<?php echo htmlspecialchars( GetJsonText( LanguageCodeArray ) ); ?>" language-names="<?php echo htmlspecialchars( GetJsonText( LanguageNameArray ) ); ?>"></multilingual-text-input-list-component>
+                    <multilingual-text-input-list-component container-class="form-list-container" result-class="form-textarea" result-name="ImageLegendArray" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" value-container-class="form-value-container" value-class="form-input form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageCodeArray ) ) ); ?>" language-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageNameArray ) ) ); ?>"></multilingual-text-input-list-component>
                 </div>
                 <?php
                      $field_name = 'ImagePath';
@@ -580,7 +580,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Image Vertical Position' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="ImageVerticalPosition">
-                    <dropdown-component result-class="form-select" result-name="ImageVerticalPosition" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" is-optional option-values="<?php echo htmlspecialchars( GetJsonText( [ 'top', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'bottom'] ) ); ?>" option-names="<?php echo htmlspecialchars( GetJsonText( ['Top', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Bottom' ] ) ); ?>"></dropdown-component>
+                    <dropdown-component result-class="form-select" result-name="ImageVerticalPosition" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" is-optional option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'top', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'bottom'] ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( ['Top', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Bottom' ] ) ) ); ?>"></dropdown-component>
                 </div>
                 <?php
                      $field_name = 'ImageVerticalPositionArray';
@@ -598,7 +598,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Image Vertical Position Array' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="ImageVerticalPositionArray">
-                    <input-list-component container-class="form-list-container" result-class="form-input" result-name="ImageVerticalPositionArray" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" value-container-class="form-value-container" value-class="form-input form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></input-list-component>
+                    <dropdown-component result-class="form-select" result-name="ImageVerticalPositionArray" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" is-optional option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'top', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'bottom'] ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( ['Top', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Bottom' ] ) ) ); ?>" value-container-class="form-value-container" value-class="form-select form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></dropdown-component>
                 </div>
                 <?php
                      $field_name = 'ImageHorizontalPosition';
@@ -616,7 +616,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Image Horizontal Position' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="ImageHorizontalPosition">
-                    <dropdown-component result-class="form-select" result-name="ImageHorizontalPosition" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" is-optional option-values="<?php echo htmlspecialchars( GetJsonText( [ 'left', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'right'] ) ); ?>" option-names="<?php echo htmlspecialchars( GetJsonText( ['Left', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Right' ] ) ); ?>"></dropdown-component>
+                    <dropdown-component result-class="form-select" result-name="ImageHorizontalPosition" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" is-optional option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'left', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'right'] ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( ['Left', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Right' ] ) ) ); ?>"></dropdown-component>
                 </div>
                 <?php
                      $field_name = 'ImageHorizontalPositionArray';
@@ -634,7 +634,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Image Horizontal Position Array' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="ImageHorizontalPositionArray">
-                    <input-list-component container-class="form-list-container" result-class="form-input" result-name="ImageHorizontalPositionArray" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" value-container-class="form-value-container" value-class="form-input form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></input-list-component>
+                    <dropdown-component result-class="form-select" result-name="ImageHorizontalPositionArray" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" is-optional option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'left', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'right'] ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( ['Left', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Right' ] ) ) ); ?>" value-container-class="form-value-container" value-class="form-select form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></dropdown-component>
                 </div>
                 <?php
                      $field_name = 'VideoPath';
