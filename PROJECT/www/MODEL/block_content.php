@@ -3,7 +3,7 @@
 function GetDatabaseBlockContentArray(
     )
 {
-     $statement = GetDatabaseStatement( 'select `Id`, `Slug`, `Name` from `BLOCK_CONTENT`' );
+     $statement = GetDatabaseStatement( 'select `Id`, `Slug`, `Name` from `BLOCK_CONTENT` order by `Name` asc' );
 
     if ( !$statement->execute() )
     {

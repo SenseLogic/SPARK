@@ -3,7 +3,7 @@
 function GetDatabaseBlockCategoryArray(
     )
 {
-     $statement = GetDatabaseStatement( 'select `Id`, `Slug`, `Name` from `BLOCK_CATEGORY`' );
+     $statement = GetDatabaseStatement( 'select `Id`, `Slug`, `Name` from `BLOCK_CATEGORY` order by `Name` asc' );
 
     if ( !$statement->execute() )
     {

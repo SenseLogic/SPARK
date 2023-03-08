@@ -3,7 +3,7 @@
 function GetDatabaseBlockContentArray(
     )
 {
-    var statement = GetDatabaseStatement( 'select `Id`, `Slug`, `Name` from `BLOCK_CONTENT`' );
+    var statement = GetDatabaseStatement( 'select `Id`, `Slug`, `Name` from `BLOCK_CONTENT` order by `Name` asc' );
 
     if ( !statement.execute() )
     {

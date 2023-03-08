@@ -3,7 +3,7 @@
 function GetDatabaseBlockCategoryArray(
     )
 {
-    var statement = GetDatabaseStatement( 'select `Id`, `Slug`, `Name` from `BLOCK_CATEGORY`' );
+    var statement = GetDatabaseStatement( 'select `Id`, `Slug`, `Name` from `BLOCK_CATEGORY` order by `Name` asc' );
 
     if ( !statement.execute() )
     {

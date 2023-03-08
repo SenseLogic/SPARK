@@ -3,7 +3,7 @@
 function GetDatabaseBlockTypeArray(
     )
 {
-     $statement = GetDatabaseStatement( 'select `Id`, `Slug`, `Name` from `BLOCK_TYPE`' );
+     $statement = GetDatabaseStatement( 'select `Id`, `Slug`, `Name` from `BLOCK_TYPE` order by `Name` asc' );
 
     if ( !$statement->execute() )
     {

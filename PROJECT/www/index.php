@@ -21,8 +21,6 @@ require_once __DIR__ . '/' . 'FRAMEWORK/user.php';
 define( 'DefaultLanguageCode', 'en' );
 define( 'LanguageCodeArray', [ 'en', 'fr' ] );
 define( 'LanguageNameArray', [ 'English', 'French' ] );
-define( 'LanguageCodes', 'en,fr' );
-define( 'LanguageNames', 'English,French' );
 
 if ( GetServerName() === 'localhost' )
 {

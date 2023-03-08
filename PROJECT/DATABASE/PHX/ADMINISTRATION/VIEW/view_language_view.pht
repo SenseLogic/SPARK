@@ -19,16 +19,13 @@
                 <% GetTextBySlug( 'Text' ) %> :
             </div>
             <div class="form-field-value" data-is-column-value data-column-name="Text">
-                <multilingual-input-component container-class="form-multilingual-container" result-class="form-input" result-name="Text" result-value="<% GetValueText( .Language.Text ) %>" is-readonly language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-input-component>
+                <multilingual-input-component container-class="form-multilingual-container" result-class="form-input" result-name="Text" result-value="<% GetValueText( .Language.Text ) %>" is-readonly language-codes="<% GetJsonText( LanguageCodeArray ) %>" language-names="<% GetJsonText( LanguageNameArray ) %>"></multilingual-input-component>
             </div>
             <div class="form-field-name" data-is-column-title data-column-name="IsActive">
                 <% GetTextBySlug( 'Is Active' ) %> :
             </div>
             <div class="form-field-value" data-is-column-value data-column-name="IsActive">
-                <select class="form-select" name="IsActive" readonly>
-                    <option value="0"<? if ( .Language.IsActive === '0' ) echo ' selected'; ?>>False</option>
-                    <option value="1"<? if ( .Language.IsActive === '1' ) echo ' selected'; ?>>True</option>
-                </select>
+                <dropdown-component result-class="form-select" result-name="IsActive" result-value="<% GetValueText( .Language.IsActive ) %>" is-readonly  option-values="<% GetJsonText( [ 0, 1 ] ) %>" option-names="<% GetJsonText( [ 'False', 'True' ] ) %>"></dropdown-component>
             </div>
             <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
             </a>

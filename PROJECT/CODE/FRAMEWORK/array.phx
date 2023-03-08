@@ -281,3 +281,36 @@ function GetElementArrayByKeyMap(
 
     return element_array_by_key_map;
 }
+
+// ~~
+
+function GetElementPropertyArray(
+    array &element_array,
+    string property_name
+    )
+{
+    var element_property_array = [];
+
+    foreach ( var element; element_array )
+    {
+        array_push( element_property_array, element.property_name );
+    }
+
+    return element_property_array;
+}
+
+// ~~
+
+function GetUntranslatedElementArray(
+    array element_array
+    )
+{
+    var untranslated_element_array = [];
+
+    foreach ( var element; element_array )
+    {
+        array_push( untranslated_element_array, GetUntranslatedText( element ) );
+    }
+
+    return untranslated_element_array;
+}

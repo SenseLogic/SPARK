@@ -142,12 +142,7 @@
                     <% GetTextBySlug( 'Type Slug' ) %> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="TypeSlug">
-                    <select class="form-select" name="TypeSlug">
-                        <? var page_type_array = .PageTypeArray; ?>
-                        <? foreach ( var page_type; page_type_array ) { ?>
-                            <option value="<% GetValueText( page_type.Slug ) %>"<? if ( .Page.TypeSlug === page_type.Slug ) echo ' selected'; ?>><% GetUntranslatedText( page_type.Name ) %></option>
-                        <? } ?>
-                    </select>
+                    <dropdown-component result-class="form-select" result-name="TypeSlug" result-value="<% GetValueText( .Page.TypeSlug ) %>"  option-values="<% GetJsonText( GetElementPropertyArray( .PageTypeArray, 'Slug' ) ) %>" option-names="<% GetJsonText( GetUntranslatedElementArray( GetElementPropertyArray( .PageTypeArray, 'Name' ) ) ) %>"></dropdown-component>
                 </div>
                 <div class="form-field-name" data-is-column-title data-column-name="Number">
                     <% GetTextBySlug( 'Number' ) %> :
@@ -159,34 +154,31 @@
                     <% GetTextBySlug( 'Language Code Array' ) %> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="LanguageCodeArray">
-                    <input-list-component container-class="form-list-container" result-class="form-input" result-name="LanguageCodeArray" result-value="<% GetValueText( .Page.LanguageCodeArray ) %>" value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></input-list-component>
+                    <input-list-component container-class="form-list-container" result-class="form-input" result-name="LanguageCodeArray" result-value="<% GetValueText( .Page.LanguageCodeArray ) %>" value-container-class="form-value-container" value-class="form-input form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></input-list-component>
                 </div>
                 <div class="form-field-name" data-is-column-title data-column-name="IsActive">
                     <% GetTextBySlug( 'Is Active' ) %> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="IsActive">
-                    <select class="form-select" name="IsActive">
-                        <option value="0"<? if ( .Page.IsActive === '0' ) echo ' selected'; ?>>False</option>
-                        <option value="1"<? if ( .Page.IsActive === '1' ) echo ' selected'; ?>>True</option>
-                    </select>
+                    <dropdown-component result-class="form-select" result-name="IsActive" result-value="<% GetValueText( .Page.IsActive ) %>"  option-values="<% GetJsonText( [ 0, 1 ] ) %>" option-names="<% GetJsonText( [ 'False', 'True' ] ) %>"></dropdown-component>
                 </div>
                 <div class="form-field-name" data-is-column-title data-column-name="Title">
                     <% GetTextBySlug( 'Title' ) %> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="Title">
-                    <multilingual-input-component container-class="form-multilingual-container" result-class="form-input" result-name="Title" result-value="<% GetValueText( .Page.Title ) %>" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-input-component>
+                    <multilingual-input-component container-class="form-multilingual-container" result-class="form-input" result-name="Title" result-value="<% GetValueText( .Page.Title ) %>" language-codes="<% GetJsonText( LanguageCodeArray ) %>" language-names="<% GetJsonText( LanguageNameArray ) %>"></multilingual-input-component>
                 </div>
                 <div class="form-field-name" data-is-column-title data-column-name="Heading">
                     <% GetTextBySlug( 'Heading' ) %> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="Heading">
-                    <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Heading" result-value="<% GetValueText( .Page.Heading ) %>" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-text-input-component>
+                    <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Heading" result-value="<% GetValueText( .Page.Heading ) %>" language-codes="<% GetJsonText( LanguageCodeArray ) %>" language-names="<% GetJsonText( LanguageNameArray ) %>"></multilingual-text-input-component>
                 </div>
                 <div class="form-field-name" data-is-column-title data-column-name="Teaser">
                     <% GetTextBySlug( 'Teaser' ) %> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="Teaser">
-                    <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Teaser" result-value="<% GetValueText( .Page.Teaser ) %>" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-text-input-component>
+                    <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Teaser" result-value="<% GetValueText( .Page.Teaser ) %>" language-codes="<% GetJsonText( LanguageCodeArray ) %>" language-names="<% GetJsonText( LanguageNameArray ) %>"></multilingual-text-input-component>
                 </div>
                 <div class="form-field-name" data-is-column-title data-column-name="ImagePath">
                     <% GetTextBySlug( 'Image Path' ) %> :
@@ -198,37 +190,13 @@
                     <% GetTextBySlug( 'Image Vertical Position' ) %> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="ImageVerticalPosition">
-                    <select class="form-select" name="ImageVerticalPosition">
-                        <option value="top"<? if ( .Page.ImageVerticalPosition === 'top' ) echo ' selected'; ?>>Top</option>
-                        <option value="10%"<? if ( .Page.ImageVerticalPosition === '10%' ) echo ' selected'; ?>>10%</option>
-                        <option value="20%"<? if ( .Page.ImageVerticalPosition === '20%' ) echo ' selected'; ?>>20%</option>
-                        <option value="30%"<? if ( .Page.ImageVerticalPosition === '30%' ) echo ' selected'; ?>>30%</option>
-                        <option value="40%"<? if ( .Page.ImageVerticalPosition === '40%' ) echo ' selected'; ?>>40%</option>
-                        <option value="center"<? if ( .Page.ImageVerticalPosition === 'center' ) echo ' selected'; ?>>Center</option>
-                        <option value="60%"<? if ( .Page.ImageVerticalPosition === '60%' ) echo ' selected'; ?>>60%</option>
-                        <option value="70%"<? if ( .Page.ImageVerticalPosition === '70%' ) echo ' selected'; ?>>70%</option>
-                        <option value="80%"<? if ( .Page.ImageVerticalPosition === '80%' ) echo ' selected'; ?>>80%</option>
-                        <option value="90%"<? if ( .Page.ImageVerticalPosition === '90%' ) echo ' selected'; ?>>90%</option>
-                        <option value="bottom"<? if ( .Page.ImageVerticalPosition === 'bottom' ) echo ' selected'; ?>>Bottom</option>
-                    </select>
+                    <dropdown-component result-class="form-select" result-name="ImageVerticalPosition" result-value="<% GetValueText( .Page.ImageVerticalPosition ) %>"  option-values="<% GetJsonText( [ 'top', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'bottom'] ) %>" option-names="<% GetJsonText( ['Top', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Bottom' ] ) %>"></dropdown-component>
                 </div>
                 <div class="form-field-name" data-is-column-title data-column-name="ImageHorizontalPosition">
                     <% GetTextBySlug( 'Image Horizontal Position' ) %> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="ImageHorizontalPosition">
-                    <select class="form-select" name="ImageHorizontalPosition">
-                        <option value="left"<? if ( .Page.ImageHorizontalPosition === 'left' ) echo ' selected'; ?>>Left</option>
-                        <option value="10%"<? if ( .Page.ImageHorizontalPosition === '10%' ) echo ' selected'; ?>>10%</option>
-                        <option value="20%"<? if ( .Page.ImageHorizontalPosition === '20%' ) echo ' selected'; ?>>20%</option>
-                        <option value="30%"<? if ( .Page.ImageHorizontalPosition === '30%' ) echo ' selected'; ?>>30%</option>
-                        <option value="40%"<? if ( .Page.ImageHorizontalPosition === '40%' ) echo ' selected'; ?>>40%</option>
-                        <option value="center"<? if ( .Page.ImageHorizontalPosition === 'center' ) echo ' selected'; ?>>Center</option>
-                        <option value="60%"<? if ( .Page.ImageHorizontalPosition === '60%' ) echo ' selected'; ?>>60%</option>
-                        <option value="70%"<? if ( .Page.ImageHorizontalPosition === '70%' ) echo ' selected'; ?>>70%</option>
-                        <option value="80%"<? if ( .Page.ImageHorizontalPosition === '80%' ) echo ' selected'; ?>>80%</option>
-                        <option value="90%"<? if ( .Page.ImageHorizontalPosition === '90%' ) echo ' selected'; ?>>90%</option>
-                        <option value="right"<? if ( .Page.ImageHorizontalPosition === 'right' ) echo ' selected'; ?>>Right</option>
-                    </select>
+                    <dropdown-component result-class="form-select" result-name="ImageHorizontalPosition" result-value="<% GetValueText( .Page.ImageHorizontalPosition ) %>"  option-values="<% GetJsonText( [ 'left', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'right'] ) %>" option-names="<% GetJsonText( ['Left', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Right' ] ) %>"></dropdown-component>
                 </div>
                 <div class="form-field-name" data-is-column-title data-column-name="VideoPath">
                     <% GetTextBySlug( 'Video Path' ) %> :
@@ -240,13 +208,13 @@
                     <% GetTextBySlug( 'Meta Title' ) %> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="MetaTitle">
-                    <multilingual-input-component container-class="form-multilingual-container" result-class="form-input" result-name="MetaTitle" result-value="<% GetValueText( .Page.MetaTitle ) %>" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-input-component>
+                    <multilingual-input-component container-class="form-multilingual-container" result-class="form-input" result-name="MetaTitle" result-value="<% GetValueText( .Page.MetaTitle ) %>" language-codes="<% GetJsonText( LanguageCodeArray ) %>" language-names="<% GetJsonText( LanguageNameArray ) %>"></multilingual-input-component>
                 </div>
                 <div class="form-field-name" data-is-column-title data-column-name="MetaDescription">
                     <% GetTextBySlug( 'Meta Description' ) %> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="MetaDescription">
-                    <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="MetaDescription" result-value="<% GetValueText( .Page.MetaDescription ) %>" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-text-input-component>
+                    <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="MetaDescription" result-value="<% GetValueText( .Page.MetaDescription ) %>" language-codes="<% GetJsonText( LanguageCodeArray ) %>" language-names="<% GetJsonText( LanguageNameArray ) %>"></multilingual-text-input-component>
                 </div>
                 <div class="form-field-name" data-is-column-title data-column-name="MetaImagePath">
                     <% GetTextBySlug( 'Meta Image Path' ) %> :

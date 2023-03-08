@@ -3,7 +3,7 @@
 function GetDatabaseBlockTypeArray(
     )
 {
-    var statement = GetDatabaseStatement( 'select `Id`, `Slug`, `Name` from `BLOCK_TYPE`' );
+    var statement = GetDatabaseStatement( 'select `Id`, `Slug`, `Name` from `BLOCK_TYPE` order by `Name` asc' );
 
     if ( !statement.execute() )
     {

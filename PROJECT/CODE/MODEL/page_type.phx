@@ -3,7 +3,7 @@
 function GetDatabasePageTypeArray(
     )
 {
-    var statement = GetDatabaseStatement( 'select `Id`, `Slug`, `Name` from `PAGE_TYPE`' );
+    var statement = GetDatabaseStatement( 'select `Id`, `Slug`, `Name` from `PAGE_TYPE` order by `Name` asc' );
 
     if ( !statement.execute() )
     {

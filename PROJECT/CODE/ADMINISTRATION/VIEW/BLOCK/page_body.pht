@@ -17,6 +17,5 @@
 <script>
     // -- STATEMENTS
 
-    DelayCall( InitializeReadonlySelects );
     DelayCall( InitializeSortableTableColumns );
 </script>

@@ -728,8 +728,8 @@ textarea {
 .form-value-container {
   display: grid;
   grid-template-rows: auto;
-  grid-template-columns: 1fr auto auto;
-  grid-template-areas: "value add-button remove-button";
+  grid-template-columns: 1fr auto auto auto;
+  grid-template-areas: "value drag-button add-button remove-button";
   gap: 0.5rem;
   align-items: center;
 }
@@ -738,6 +738,9 @@ textarea {
 }
 .form-value {
   grid-area: value;
+}
+.form-drag-value-button {
+  grid-area: drag-button;
 }
 .form-add-value-button {
   grid-area: add-button;
@@ -842,6 +845,9 @@ textarea {
 }
 .add-button {
   background: url("/static/image/admin/add_icon.svg") no-repeat center center/contain;
+}
+.drag-button {
+  background: url("/static/image/admin/drag_icon.svg") no-repeat center center/contain;
 }
 .cancel-button {
   background: url("/static/image/admin/cancel_icon.svg") no-repeat center center/contain;

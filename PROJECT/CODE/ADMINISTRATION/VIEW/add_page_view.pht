@@ -206,12 +206,7 @@
                     <% GetTextBySlug( 'Type Slug' ) %> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="TypeSlug">
-                    <select class="form-select" name="TypeSlug">
-                        <? var page_type_array = .PageTypeArray; ?>
-                        <? foreach ( var page_type; page_type_array ) { ?>
-                            <option value="<% GetValueText( page_type.Slug ) %>"<? if ( GetValueText( page_type.Slug ) === field_value ) echo ' selected'; ?>><% GetUntranslatedText( page_type.Name ) %></option>
-                        <? } ?>
-                    </select>
+                    <dropdown-component result-class="form-select" result-name="TypeSlug" result-value="<% GetValueText( field_value ) %>"  option-values="<% GetJsonText( GetElementPropertyArray( .PageTypeArray, 'Slug' ) ) %>" option-names="<% GetJsonText( GetUntranslatedElementArray( GetElementPropertyArray( .PageTypeArray, 'Name' ) ) ) %>"></dropdown-component>
                 </div>
                 <?
                     var field_name = 'Number';
@@ -247,7 +242,7 @@
                     <% GetTextBySlug( 'Language Code Array' ) %> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="LanguageCodeArray">
-                    <input-list-component container-class="form-list-container" result-class="form-input" result-name="LanguageCodeArray" result-value="<% GetValueText( field_value ) %>" value-container-class="form-value-container" value-class="form-input form-value" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></input-list-component>
+                    <input-list-component container-class="form-list-container" result-class="form-input" result-name="LanguageCodeArray" result-value="<% GetValueText( field_value ) %>" value-container-class="form-value-container" value-class="form-input form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></input-list-component>
                 </div>
                 <?
                     var field_name = 'IsActive';
@@ -265,10 +260,7 @@
                     <% GetTextBySlug( 'Is Active' ) %> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="IsActive">
-                    <select class="form-select" name="IsActive">
-                        <option value="0"<? if ( field_value === '0' ) echo ' selected'; ?>>False</option>
-                        <option value="1"<? if ( field_value === '1' ) echo ' selected'; ?>>True</option>
-                    </select>
+                    <dropdown-component result-class="form-select" result-name="IsActive" result-value="<% GetValueText( field_value ) %>"  option-values="<% GetJsonText( [ 0, 1 ] ) %>" option-names="<% GetJsonText( [ 'False', 'True' ] ) %>"></dropdown-component>
                 </div>
                 <?
                     var field_name = 'Title';
@@ -286,7 +278,7 @@
                     <% GetTextBySlug( 'Title' ) %> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="Title">
-                    <multilingual-input-component container-class="form-multilingual-container" result-class="form-input" result-name="Title" result-value="<% GetValueText( field_value ) %>" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-input-component>
+                    <multilingual-input-component container-class="form-multilingual-container" result-class="form-input" result-name="Title" result-value="<% GetValueText( field_value ) %>" language-codes="<% GetJsonText( LanguageCodeArray ) %>" language-names="<% GetJsonText( LanguageNameArray ) %>"></multilingual-input-component>
                 </div>
                 <?
                     var field_name = 'Heading';
@@ -304,7 +296,7 @@
                     <% GetTextBySlug( 'Heading' ) %> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="Heading">
-                    <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Heading" result-value="<% GetValueText( field_value ) %>" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-text-input-component>
+                    <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Heading" result-value="<% GetValueText( field_value ) %>" language-codes="<% GetJsonText( LanguageCodeArray ) %>" language-names="<% GetJsonText( LanguageNameArray ) %>"></multilingual-text-input-component>
                 </div>
                 <?
                     var field_name = 'Teaser';
@@ -322,7 +314,7 @@
                     <% GetTextBySlug( 'Teaser' ) %> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="Teaser">
-                    <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Teaser" result-value="<% GetValueText( field_value ) %>" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-text-input-component>
+                    <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Teaser" result-value="<% GetValueText( field_value ) %>" language-codes="<% GetJsonText( LanguageCodeArray ) %>" language-names="<% GetJsonText( LanguageNameArray ) %>"></multilingual-text-input-component>
                 </div>
                 <?
                     var field_name = 'ImagePath';
@@ -358,19 +350,7 @@
                     <% GetTextBySlug( 'Image Vertical Position' ) %> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="ImageVerticalPosition">
-                    <select class="form-select" name="ImageVerticalPosition">
-                        <option value="top"<? if ( field_value === 'top' ) echo ' selected'; ?>>Top</option>
-                        <option value="10%"<? if ( field_value === '10%' ) echo ' selected'; ?>>10%</option>
-                        <option value="20%"<? if ( field_value === '20%' ) echo ' selected'; ?>>20%</option>
-                        <option value="30%"<? if ( field_value === '30%' ) echo ' selected'; ?>>30%</option>
-                        <option value="40%"<? if ( field_value === '40%' ) echo ' selected'; ?>>40%</option>
-                        <option value="center"<? if ( field_value === 'center' ) echo ' selected'; ?>>Center</option>
-                        <option value="60%"<? if ( field_value === '60%' ) echo ' selected'; ?>>60%</option>
-                        <option value="70%"<? if ( field_value === '70%' ) echo ' selected'; ?>>70%</option>
-                        <option value="80%"<? if ( field_value === '80%' ) echo ' selected'; ?>>80%</option>
-                        <option value="90%"<? if ( field_value === '90%' ) echo ' selected'; ?>>90%</option>
-                        <option value="bottom"<? if ( field_value === 'bottom' ) echo ' selected'; ?>>Bottom</option>
-                    </select>
+                    <dropdown-component result-class="form-select" result-name="ImageVerticalPosition" result-value="<% GetValueText( field_value ) %>"  option-values="<% GetJsonText( [ 'top', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'bottom'] ) %>" option-names="<% GetJsonText( ['Top', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Bottom' ] ) %>"></dropdown-component>
                 </div>
                 <?
                     var field_name = 'ImageHorizontalPosition';
@@ -388,19 +368,7 @@
                     <% GetTextBySlug( 'Image Horizontal Position' ) %> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="ImageHorizontalPosition">
-                    <select class="form-select" name="ImageHorizontalPosition">
-                        <option value="left"<? if ( field_value === 'left' ) echo ' selected'; ?>>Left</option>
-                        <option value="10%"<? if ( field_value === '10%' ) echo ' selected'; ?>>10%</option>
-                        <option value="20%"<? if ( field_value === '20%' ) echo ' selected'; ?>>20%</option>
-                        <option value="30%"<? if ( field_value === '30%' ) echo ' selected'; ?>>30%</option>
-                        <option value="40%"<? if ( field_value === '40%' ) echo ' selected'; ?>>40%</option>
-                        <option value="center"<? if ( field_value === 'center' ) echo ' selected'; ?>>Center</option>
-                        <option value="60%"<? if ( field_value === '60%' ) echo ' selected'; ?>>60%</option>
-                        <option value="70%"<? if ( field_value === '70%' ) echo ' selected'; ?>>70%</option>
-                        <option value="80%"<? if ( field_value === '80%' ) echo ' selected'; ?>>80%</option>
-                        <option value="90%"<? if ( field_value === '90%' ) echo ' selected'; ?>>90%</option>
-                        <option value="right"<? if ( field_value === 'right' ) echo ' selected'; ?>>Right</option>
-                    </select>
+                    <dropdown-component result-class="form-select" result-name="ImageHorizontalPosition" result-value="<% GetValueText( field_value ) %>"  option-values="<% GetJsonText( [ 'left', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'right'] ) %>" option-names="<% GetJsonText( ['Left', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Right' ] ) %>"></dropdown-component>
                 </div>
                 <?
                     var field_name = 'VideoPath';
@@ -436,7 +404,7 @@
                     <% GetTextBySlug( 'Meta Title' ) %> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="MetaTitle">
-                    <multilingual-input-component container-class="form-multilingual-container" result-class="form-input" result-name="MetaTitle" result-value="<% GetValueText( field_value ) %>" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-input-component>
+                    <multilingual-input-component container-class="form-multilingual-container" result-class="form-input" result-name="MetaTitle" result-value="<% GetValueText( field_value ) %>" language-codes="<% GetJsonText( LanguageCodeArray ) %>" language-names="<% GetJsonText( LanguageNameArray ) %>"></multilingual-input-component>
                 </div>
                 <?
                     var field_name = 'MetaDescription';
@@ -454,7 +422,7 @@
                     <% GetTextBySlug( 'Meta Description' ) %> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="MetaDescription">
-                    <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="MetaDescription" result-value="<% GetValueText( field_value ) %>" language-codes="<# LanguageCodes #>" language-names="<# LanguageNames #>"></multilingual-text-input-component>
+                    <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="MetaDescription" result-value="<% GetValueText( field_value ) %>" language-codes="<% GetJsonText( LanguageCodeArray ) %>" language-names="<% GetJsonText( LanguageNameArray ) %>"></multilingual-text-input-component>
                 </div>
                 <?
                     var field_name = 'MetaImagePath';

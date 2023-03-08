@@ -3,7 +3,7 @@
 function GetDatabasePageTypeArray(
     )
 {
-     $statement = GetDatabaseStatement( 'select `Id`, `Slug`, `Name` from `PAGE_TYPE`' );
+     $statement = GetDatabaseStatement( 'select `Id`, `Slug`, `Name` from `PAGE_TYPE` order by `Name` asc' );
 
     if ( !$statement->execute() )
     {

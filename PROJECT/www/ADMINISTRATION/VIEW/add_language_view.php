@@ -142,7 +142,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Text' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="Text">
-                    <multilingual-input-component container-class="form-multilingual-container" result-class="form-input" result-name="Text" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-codes="<?php echo LanguageCodes; ?>" language-names="<?php echo LanguageNames; ?>"></multilingual-input-component>
+                    <multilingual-input-component container-class="form-multilingual-container" result-class="form-input" result-name="Text" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-codes="<?php echo htmlspecialchars( GetJsonText( LanguageCodeArray ) ); ?>" language-names="<?php echo htmlspecialchars( GetJsonText( LanguageNameArray ) ); ?>"></multilingual-input-component>
                 </div>
                 <?php
                      $field_name = 'IsActive';
@@ -160,10 +160,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Is Active' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="IsActive">
-                    <select class="form-select" name="IsActive">
-                        <option value="0"<?php if ( $field_value === '0' ) echo ' selected'; ?>>False</option>
-                        <option value="1"<?php if ( $field_value === '1' ) echo ' selected'; ?>>True</option>
-                    </select>
+                    <dropdown-component result-class="form-select" result-name="IsActive" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"  option-values="<?php echo htmlspecialchars( GetJsonText( [ 0, 1 ] ) ); ?>" option-names="<?php echo htmlspecialchars( GetJsonText( [ 'False', 'True' ] ) ); ?>"></dropdown-component>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
                 </a>
