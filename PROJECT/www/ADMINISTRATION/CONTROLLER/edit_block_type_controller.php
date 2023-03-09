@@ -20,7 +20,8 @@ class EDIT_BLOCK_TYPE_CONTROLLER extends VIEW_CONTROLLER
         {
             $this->Title = 'Edit a block type';
             $this->BlockType = GetDatabaseBlockTypeById( $block_type_id );
-            $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/block-type' );
+
+            AddParentRoute();
 
             require_once __DIR__ . '/' . '../VIEW/edit_block_type_view.php';
         }

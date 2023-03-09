@@ -53,7 +53,7 @@
                 <div class="form-field-value" data-is-column-value data-column-name="Text">
                     <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Text" result-value="<?php echo htmlspecialchars( GetValueText( $this->Text->Text ) ); ?>" language-codes="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageCodeArray ) ) ); ?>" language-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageNameArray ) ) ); ?>"></multilingual-text-input-component>
                 </div>
-                <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
+                <a class="justify-self-start form-button form-button-large cancel-button" href="<?php echo htmlspecialchars( GetParentRoute( null, '/admin/text' ) ); ?>">
                 </a>
                 <button class="justify-self-end form-button form-button-large apply-button" type="submit">
                 </button>

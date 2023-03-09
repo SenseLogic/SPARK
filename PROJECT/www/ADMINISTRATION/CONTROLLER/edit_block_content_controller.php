@@ -20,7 +20,8 @@ class EDIT_BLOCK_CONTENT_CONTROLLER extends VIEW_CONTROLLER
         {
             $this->Title = 'Edit a block content';
             $this->BlockContent = GetDatabaseBlockContentById( $block_content_id );
-            $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/block-content' );
+
+            AddParentRoute();
 
             require_once __DIR__ . '/' . '../VIEW/edit_block_content_view.php';
         }

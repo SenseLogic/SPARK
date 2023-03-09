@@ -15,7 +15,7 @@
         </div>
     </div>
     <div>
-        <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
+        <a class="justify-self-start form-button form-button-large cancel-button" href="<?php echo htmlspecialchars( GetParentRoute( null, '/admin/block' ) ); ?>">
         </a>
     </div>
 </div>

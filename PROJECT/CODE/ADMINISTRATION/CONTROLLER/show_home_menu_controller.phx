@@ -14,9 +14,8 @@ class SHOW_HOME_MENU_CONTROLLER extends VIEW_CONTROLLER
         parent::constructor( 'en' );
 
         .Title = '';
-        .ListRoute = '/admin';
 
-        SetSessionValue( 'ListRoute', .ListRoute );
+        AddParentRoute();
 
         import '../VIEW/show_home_menu_view.php';
     }

@@ -24,7 +24,7 @@ class DO_ADD_BLOCK_TYPE_CONTROLLER extends VIEW_CONTROLLER
 
             AddDatabaseBlockType( $id, $slug, $name );
 
-            Redirect( FindSessionValue( 'ListRoute', '/admin/block-type' ) );
+            Redirect( GetParentRoute( null, '/admin/block-type' ) );
         }
     }
 }

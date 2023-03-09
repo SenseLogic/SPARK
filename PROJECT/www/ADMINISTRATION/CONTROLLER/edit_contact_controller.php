@@ -20,7 +20,8 @@ class EDIT_CONTACT_CONTROLLER extends VIEW_CONTROLLER
         {
             $this->Title = 'Edit a contact';
             $this->Contact = GetDatabaseContactById( $contact_id );
-            $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/contact' );
+
+            AddParentRoute();
 
             require_once __DIR__ . '/' . '../VIEW/edit_contact_view.php';
         }

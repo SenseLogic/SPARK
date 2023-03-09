@@ -20,7 +20,8 @@ class EDIT_LANGUAGE_CONTROLLER extends VIEW_CONTROLLER
         {
             .Title = 'Edit a language';
             .Language = GetDatabaseLanguageById( language_id );
-            .ListRoute = FindSessionValue( 'ListRoute', '/admin/language' );
+
+            AddParentRoute();
 
             import '../VIEW/edit_language_view.php';
         }

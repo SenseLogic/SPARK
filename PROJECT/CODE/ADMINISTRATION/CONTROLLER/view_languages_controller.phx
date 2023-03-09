@@ -20,7 +20,7 @@ class VIEW_LANGUAGES_CONTROLLER extends VIEW_CONTROLLER
             .Title = 'View languages';
             .LanguageArray = GetDatabaseLanguageArray();
 
-            SetSessionValue( 'ListRoute', GetRequest() );
+            AddParentRoute();
 
             import '../VIEW/view_languages_view.php';
         }

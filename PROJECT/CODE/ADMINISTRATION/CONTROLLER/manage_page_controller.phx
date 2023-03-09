@@ -18,9 +18,8 @@ class MANAGE_PAGE_CONTROLLER extends VIEW_CONTROLLER
 
         .Title = 'Manage a page';
         .Page = GetValidPageByIdOrSlug( .PageByIdMap, .PageBySlugMap, page_id_or_slug );
-        .ListRoute = '/admin/page/manage/' .. page_id_or_slug;
 
-        SetSessionValue( 'ListRoute', GetRequest() );
+        AddParentRoute();
 
         import '../VIEW/manage_page_view.php';
     }

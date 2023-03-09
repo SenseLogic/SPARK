@@ -72,13 +72,6 @@
             it_is_valid_add_page_form = false;
         }
 
-        if ( slug_field.value === "" )
-        {
-            slug_field.AddClass( "form-field-error" );
-
-            it_is_valid_add_page_form = false;
-        }
-
         if ( route_field.value === "" )
         {
             route_field.AddClass( "form-field-error" );
@@ -332,7 +325,7 @@
                     <% GetTextBySlug( 'Image Path' ) %> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="ImagePath">
-                    <image-path-input-component container-class="form-upload-container" result-class="form-input form-upload-input" result-name="ImagePath" type_="text" result-value="<% GetValueText( field_value ) %>" image-class="form-upload-image" error-image-path="/static/image/admin/missing_image.svg" upload-button-container-class="form-upload-button-container" upload-button-class="form-button upload-button form-upload-button" upload-api-url="/admin/upload/image" delete-button-class="form-button delete-button form-delete-button" delete-api-url="/admin/delete/file"></image-path-input-component>
+                    <image-path-input-component container-class="form-upload-container" result-class="form-input form-upload-input" result-name="ImagePath" result-value="<% GetValueText( field_value ) %>" image-class="form-upload-image" error-image-path="/static/image/admin/missing_image.svg" upload-button-container-class="form-upload-button-container" upload-button-class="form-button upload-button form-upload-button" upload-api-url="/admin/upload/image" delete-button-class="form-button delete-button form-delete-button" delete-api-url="/admin/delete/file"></image-path-input-component>
                 </div>
                 <?
                     var field_name = 'ImageVerticalPosition';
@@ -386,7 +379,7 @@
                     <% GetTextBySlug( 'Video Path' ) %> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="VideoPath">
-                    <video-path-input-component container-class="form-upload-container" result-class="form-input form-upload-input" result-name="VideoPath" type_="text" result-value="<% GetValueText( field_value ) %>" video-class="form-upload-video" error-video-path="/static/video/admin/missing_video.mp4" upload-button-container-class="form-upload-button-container" upload-button-class="form-button upload-button form-upload-button" upload-api-url="/admin/upload/video" delete-button-class="form-button delete-button form-delete-button" delete-api-url="/admin/delete/file"></video-path-input-component>
+                    <video-path-input-component container-class="form-upload-container" result-class="form-input form-upload-input" result-name="VideoPath" result-value="<% GetValueText( field_value ) %>" video-class="form-upload-video" error-video-path="/static/video/admin/missing_video.mp4" upload-button-container-class="form-upload-button-container" upload-button-class="form-button upload-button form-upload-button" upload-api-url="/admin/upload/video" delete-button-class="form-button delete-button form-delete-button" delete-api-url="/admin/delete/file"></video-path-input-component>
                 </div>
                 <?
                     var field_name = 'MetaTitle';
@@ -440,9 +433,9 @@
                     <% GetTextBySlug( 'Meta Image Path' ) %> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="MetaImagePath">
-                    <image-path-input-component container-class="form-upload-container" result-class="form-input form-upload-input" result-name="MetaImagePath" type_="text" result-value="<% GetValueText( field_value ) %>" image-class="form-upload-image" error-image-path="/static/image/admin/missing_image.svg" upload-button-container-class="form-upload-button-container" upload-button-class="form-button upload-button form-upload-button" upload-api-url="/admin/upload/image" delete-button-class="form-button delete-button form-delete-button" delete-api-url="/admin/delete/file"></image-path-input-component>
+                    <image-path-input-component container-class="form-upload-container" result-class="form-input form-upload-input" result-name="MetaImagePath" result-value="<% GetValueText( field_value ) %>" image-class="form-upload-image" error-image-path="/static/image/admin/missing_image.svg" upload-button-container-class="form-upload-button-container" upload-button-class="form-button upload-button form-upload-button" upload-api-url="/admin/upload/image" delete-button-class="form-button delete-button form-delete-button" delete-api-url="/admin/delete/file"></image-path-input-component>
                 </div>
-                <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
+                <a class="justify-self-start form-button form-button-large cancel-button" href="<% GetParentRoute( null, '/admin/page' ) %>">
                 </a>
                 <button class="justify-self-end form-button form-button-large apply-button" type="submit">
                 </button>

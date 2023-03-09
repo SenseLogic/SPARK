@@ -20,7 +20,7 @@ class DO_REMOVE_BLOCK_CATEGORY_CONTROLLER extends VIEW_CONTROLLER
         {
             RemoveDatabaseBlockCategoryById( $block_category_id );
 
-            Redirect( FindSessionValue( 'ListRoute', '/admin/block-category' ) );
+            Redirect( GetParentRoute( null, '/admin/block-category' ) );
         }
     }
 }

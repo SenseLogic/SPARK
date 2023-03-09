@@ -20,7 +20,7 @@ class VIEW_BLOCKS_CONTROLLER extends VIEW_CONTROLLER
             $this->Title = 'View blocks';
             $this->BlockArray = GetDatabaseBlockArray();
 
-            SetSessionValue( 'ListRoute', GetRequest() );
+            AddParentRoute();
 
             require_once __DIR__ . '/' . '../VIEW/view_blocks_view.php';
         }

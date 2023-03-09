@@ -29,7 +29,7 @@ class DO_EDIT_CONTACT_CONTROLLER extends VIEW_CONTROLLER
 
             SetDatabaseContact( $contact_id, $name, $company, $email, $phone, $subject, $message, $date_time );
 
-            Redirect( FindSessionValue( 'ListRoute', '/admin/contact' ) );
+            Redirect( GetParentRoute( null, '/admin/contact' ) );
         }
     }
 }

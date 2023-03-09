@@ -20,7 +20,8 @@ class EDIT_TEXT_CONTROLLER extends VIEW_CONTROLLER
         {
             $this->Title = 'Edit a text';
             $this->Text = GetDatabaseTextById( $text_id );
-            $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/text' );
+
+            AddParentRoute();
 
             require_once __DIR__ . '/' . '../VIEW/edit_text_view.php';
         }

@@ -20,7 +20,8 @@ class VIEW_PAGE_CONTROLLER extends VIEW_CONTROLLER
         {
             .Title = 'View a page';
             .Page = GetDatabasePageById( page_id );
-            .ListRoute = FindSessionValue( 'ListRoute', '/admin/page' );
+
+            AddParentRoute();
 
             import '../VIEW/view_page_view.php';
         }

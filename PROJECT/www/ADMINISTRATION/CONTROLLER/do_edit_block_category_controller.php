@@ -24,7 +24,7 @@ class DO_EDIT_BLOCK_CATEGORY_CONTROLLER extends VIEW_CONTROLLER
 
             SetDatabaseBlockCategory( $block_category_id, $slug, $name );
 
-            Redirect( FindSessionValue( 'ListRoute', '/admin/block-category' ) );
+            Redirect( GetParentRoute( null, '/admin/block-category' ) );
         }
     }
 }

@@ -26,7 +26,7 @@ class DO_ADD_USER_CONTROLLER extends VIEW_CONTROLLER
 
             AddDatabaseUser( $id, $pseudonym, $password, $role, $email );
 
-            Redirect( FindSessionValue( 'ListRoute', '/admin/user' ) );
+            Redirect( GetParentRoute( null, '/admin/user' ) );
         }
     }
 }

@@ -20,7 +20,8 @@ class REMOVE_USER_CONTROLLER extends VIEW_CONTROLLER
         {
             $this->Title = 'Remove a user';
             $this->User = GetDatabaseUserById( $user_id );
-            $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/user' );
+
+            AddParentRoute();
 
             require_once __DIR__ . '/' . '../VIEW/remove_user_view.php';
         }

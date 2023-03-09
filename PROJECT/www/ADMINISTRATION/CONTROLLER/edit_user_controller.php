@@ -20,7 +20,8 @@ class EDIT_USER_CONTROLLER extends VIEW_CONTROLLER
         {
             $this->Title = 'Edit a user';
             $this->User = GetDatabaseUserById( $user_id );
-            $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/user' );
+
+            AddParentRoute();
 
             require_once __DIR__ . '/' . '../VIEW/edit_user_view.php';
         }

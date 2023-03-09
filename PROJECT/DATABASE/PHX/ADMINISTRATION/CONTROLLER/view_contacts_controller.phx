@@ -20,7 +20,7 @@ class VIEW_CONTACTS_CONTROLLER extends VIEW_CONTROLLER
             .Title = 'View contacts';
             .ContactArray = GetDatabaseContactArray();
 
-            SetSessionValue( 'ListRoute', GetRequest() );
+            AddParentRoute();
 
             import '../VIEW/view_contacts_view.php';
         }

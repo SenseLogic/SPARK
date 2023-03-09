@@ -26,7 +26,7 @@ class DO_ADD_LANGUAGE_CONTROLLER extends VIEW_CONTROLLER
 
             AddDatabaseLanguage( $id, $code, $number, $text, $is_active );
 
-            Redirect( FindSessionValue( 'ListRoute', '/admin/language' ) );
+            Redirect( GetParentRoute( null, '/admin/language' ) );
         }
     }
 }

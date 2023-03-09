@@ -24,7 +24,7 @@ class DO_ADD_PAGE_TYPE_CONTROLLER extends VIEW_CONTROLLER
 
             AddDatabasePageType( $id, $slug, $name );
 
-            Redirect( FindSessionValue( 'ListRoute', '/admin/page-type' ) );
+            Redirect( GetParentRoute( null, '/admin/page-type' ) );
         }
     }
 }

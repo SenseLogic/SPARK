@@ -20,7 +20,8 @@ class REMOVE_CONTACT_CONTROLLER extends VIEW_CONTROLLER
         {
             .Title = 'Remove a contact';
             .Contact = GetDatabaseContactById( contact_id );
-            .ListRoute = FindSessionValue( 'ListRoute', '/admin/contact' );
+
+            AddParentRoute();
 
             import '../VIEW/remove_contact_view.php';
         }

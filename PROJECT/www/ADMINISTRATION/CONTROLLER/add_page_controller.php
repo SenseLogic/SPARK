@@ -18,7 +18,8 @@ class ADD_PAGE_CONTROLLER extends VIEW_CONTROLLER
         if ( HasSessionMinimumUserRole( 'contributor' ) )
         {
             $this->Title = 'Add a page';
-            $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/page' );
+
+            AddParentRoute();
 
             require_once __DIR__ . '/' . '../VIEW/add_page_view.php';
         }

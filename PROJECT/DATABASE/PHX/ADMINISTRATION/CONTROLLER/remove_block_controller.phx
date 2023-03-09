@@ -20,7 +20,8 @@ class REMOVE_BLOCK_CONTROLLER extends VIEW_CONTROLLER
         {
             .Title = 'Remove a block';
             .Block = GetDatabaseBlockById( block_id );
-            .ListRoute = FindSessionValue( 'ListRoute', '/admin/block' );
+
+            AddParentRoute();
 
             import '../VIEW/remove_block_view.php';
         }

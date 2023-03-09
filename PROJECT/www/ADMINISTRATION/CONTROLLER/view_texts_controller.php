@@ -20,7 +20,7 @@ class VIEW_TEXTS_CONTROLLER extends VIEW_CONTROLLER
             $this->Title = 'View texts';
             $this->TextArray = GetDatabaseTextArray();
 
-            SetSessionValue( 'ListRoute', GetRequest() );
+            AddParentRoute();
 
             require_once __DIR__ . '/' . '../VIEW/view_texts_view.php';
         }

@@ -18,7 +18,8 @@ class ADD_CONTACT_CONTROLLER extends VIEW_CONTROLLER
         if ( HasSessionMinimumUserRole( 'author' ) )
         {
             $this->Title = 'Add a contact';
-            $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/contact' );
+
+            AddParentRoute();
 
             require_once __DIR__ . '/' . '../VIEW/add_contact_view.php';
         }

@@ -20,7 +20,8 @@ class REMOVE_PAGE_TYPE_CONTROLLER extends VIEW_CONTROLLER
         {
             .Title = 'Remove a page type';
             .PageType = GetDatabasePageTypeById( page_type_id );
-            .ListRoute = FindSessionValue( 'ListRoute', '/admin/page-type' );
+
+            AddParentRoute();
 
             import '../VIEW/remove_page_type_view.php';
         }

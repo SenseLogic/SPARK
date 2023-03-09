@@ -95,13 +95,6 @@
 
         it_is_valid_edit_block_form = true;
 
-        if ( slug_field.value === "" )
-        {
-            slug_field.AddClass( "form-field-error" );
-
-            it_is_valid_edit_block_form = false;
-        }
-
         if ( page_id_field.value === "" )
         {
             page_id_field.AddClass( "form-field-error" );
@@ -282,7 +275,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Image Path Array' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="ImagePathArray">
-                    <image-path-input-list-component container-class="form-multilingual-text-input-container" result-class="form-textarea" result-name="ImagePathArray" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->ImagePathArray ) ); ?>" value-container-class="form-value-container" value-class="form-input form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></image-path-input-list-component>
+                    <image-path-input-list-component container-class="form-multilingual-text-input-container" result-class="form-textarea" result-name="ImagePathArray" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->ImagePathArray ) ); ?>" image-class="form-upload-image" error-image-path="/static/image/admin/missing_image.svg" value-container-class="form-value-container" value-class="form-input form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></image-path-input-list-component>
                 </div>
                 <div class="form-field-name" data-is-column-title data-column-name="ImageVerticalPosition">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Image Vertical Position' ) ); ?> :
@@ -294,7 +287,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Image Vertical Position Array' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="ImageVerticalPositionArray">
-                    <dropdown-component result-class="form-select" result-name="ImageVerticalPositionArray" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->ImageVerticalPositionArray ) ); ?>" is-optional option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'top', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'bottom'] ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( ['Top', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Bottom' ] ) ) ); ?>" value-container-class="form-value-container" value-class="form-select form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></dropdown-component>
+                    <dropdown-list-component result-class="form-select" result-name="ImageVerticalPositionArray" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->ImageVerticalPositionArray ) ); ?>" is-optional option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'top', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'bottom'] ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( ['Top', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Bottom' ] ) ) ); ?>" value-container-class="form-value-container" value-class="form-select form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></dropdown-list-component>
                 </div>
                 <div class="form-field-name" data-is-column-title data-column-name="ImageHorizontalPosition">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Image Horizontal Position' ) ); ?> :
@@ -306,7 +299,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Image Horizontal Position Array' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="ImageHorizontalPositionArray">
-                    <dropdown-component result-class="form-select" result-name="ImageHorizontalPositionArray" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->ImageHorizontalPositionArray ) ); ?>" is-optional option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'left', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'right'] ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( ['Left', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Right' ] ) ) ); ?>" value-container-class="form-value-container" value-class="form-select form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></dropdown-component>
+                    <dropdown-list-component result-class="form-select" result-name="ImageHorizontalPositionArray" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->ImageHorizontalPositionArray ) ); ?>" is-optional option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'left', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'right'] ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( ['Left', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Right' ] ) ) ); ?>" value-container-class="form-value-container" value-class="form-select form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></dropdown-list-component>
                 </div>
                 <div class="form-field-name" data-is-column-title data-column-name="VideoPath">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Video Path' ) ); ?> :
@@ -318,9 +311,9 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Video Path Array' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="VideoPathArray">
-                    <video-path-input-list-component container-class="form-multilingual-text-input-container" result-class="form-textarea" result-name="VideoPathArray" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->VideoPathArray ) ); ?>" value-container-class="form-value-container" value-class="form-input form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></video-path-input-list-component>
+                    <video-path-input-list-component container-class="form-multilingual-text-input-container" result-class="form-textarea" result-name="VideoPathArray" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->VideoPathArray ) ); ?>" video-class="form-upload-video" error-video-path="/static/video/admin/missing_video.mp4" value-container-class="form-value-container" value-class="form-input form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></video-path-input-list-component>
                 </div>
-                <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
+                <a class="justify-self-start form-button form-button-large cancel-button" href="<?php echo htmlspecialchars( GetParentRoute( null, '/admin/block' ) ); ?>">
                 </a>
                 <button class="justify-self-end form-button form-button-large apply-button" type="submit">
                 </button>

@@ -20,7 +20,8 @@ class EDIT_LANGUAGE_CONTROLLER extends VIEW_CONTROLLER
         {
             $this->Title = 'Edit a language';
             $this->Language = GetDatabaseLanguageById( $language_id );
-            $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/language' );
+
+            AddParentRoute();
 
             require_once __DIR__ . '/' . '../VIEW/edit_language_view.php';
         }

@@ -85,7 +85,7 @@
                 <div class="form-field-value" data-is-column-value data-column-name="Email">
                     <input-component result-class="form-input" result-name="Email" result-value="<% GetValueText( .User.Email ) %>"></input-component>
                 </div>
-                <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
+                <a class="justify-self-start form-button form-button-large cancel-button" href="<% GetParentRoute( null, '/admin/user' ) %>">
                 </a>
                 <button class="justify-self-end form-button form-button-large apply-button" type="submit">
                 </button>

@@ -20,7 +20,8 @@ class VIEW_BLOCK_CONTENT_CONTROLLER extends VIEW_CONTROLLER
         {
             .Title = 'View a block content';
             .BlockContent = GetDatabaseBlockContentById( block_content_id );
-            .ListRoute = FindSessionValue( 'ListRoute', '/admin/block-content' );
+
+            AddParentRoute();
 
             import '../VIEW/view_block_content_view.php';
         }

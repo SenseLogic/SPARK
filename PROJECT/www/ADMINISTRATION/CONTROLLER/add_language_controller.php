@@ -18,7 +18,8 @@ class ADD_LANGUAGE_CONTROLLER extends VIEW_CONTROLLER
         if ( HasSessionMinimumUserRole( 'author' ) )
         {
             $this->Title = 'Add a language';
-            $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/language' );
+
+            AddParentRoute();
 
             require_once __DIR__ . '/' . '../VIEW/add_language_view.php';
         }

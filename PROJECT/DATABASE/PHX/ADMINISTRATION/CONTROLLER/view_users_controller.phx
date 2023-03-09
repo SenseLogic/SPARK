@@ -20,7 +20,7 @@ class VIEW_USERS_CONTROLLER extends VIEW_CONTROLLER
             .Title = 'View users';
             .UserArray = GetDatabaseUserArray();
 
-            SetSessionValue( 'ListRoute', GetRequest() );
+            AddParentRoute();
 
             import '../VIEW/view_users_view.php';
         }

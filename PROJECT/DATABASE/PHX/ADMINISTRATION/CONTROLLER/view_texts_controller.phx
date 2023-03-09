@@ -20,7 +20,7 @@ class VIEW_TEXTS_CONTROLLER extends VIEW_CONTROLLER
             .Title = 'View texts';
             .TextArray = GetDatabaseTextArray();
 
-            SetSessionValue( 'ListRoute', GetRequest() );
+            AddParentRoute();
 
             import '../VIEW/view_texts_view.php';
         }

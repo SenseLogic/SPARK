@@ -20,7 +20,8 @@ class VIEW_USER_CONTROLLER extends VIEW_CONTROLLER
         {
             .Title = 'View a user';
             .User = GetDatabaseUserById( user_id );
-            .ListRoute = FindSessionValue( 'ListRoute', '/admin/user' );
+
+            AddParentRoute();
 
             import '../VIEW/view_user_view.php';
         }

@@ -20,7 +20,8 @@ class VIEW_CONTACT_CONTROLLER extends VIEW_CONTROLLER
         {
             $this->Title = 'View a contact';
             $this->Contact = GetDatabaseContactById( $contact_id );
-            $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/contact' );
+
+            AddParentRoute();
 
             require_once __DIR__ . '/' . '../VIEW/view_contact_view.php';
         }

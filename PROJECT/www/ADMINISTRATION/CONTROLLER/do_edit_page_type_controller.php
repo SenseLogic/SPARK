@@ -24,7 +24,7 @@ class DO_EDIT_PAGE_TYPE_CONTROLLER extends VIEW_CONTROLLER
 
             SetDatabasePageType( $page_type_id, $slug, $name );
 
-            Redirect( FindSessionValue( 'ListRoute', '/admin/page-type' ) );
+            Redirect( GetParentRoute( null, '/admin/page-type' ) );
         }
     }
 }

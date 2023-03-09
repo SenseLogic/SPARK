@@ -15,7 +15,7 @@
             <div class="form-field-value" data-is-column-value data-column-name="Name">
                 <input-component result-class="form-input" result-name="Name" result-value="<% GetValueText( .PageType.Name ) %>" is-readonly></input-component>
             </div>
-            <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
+            <a class="justify-self-start form-button form-button-large cancel-button" href="<% GetParentRoute( null, '/admin/page-type' ) %>">
             </a>
         </div>
     </div>

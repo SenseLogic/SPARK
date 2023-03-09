@@ -20,7 +20,8 @@ class EDIT_USER_CONTROLLER extends VIEW_CONTROLLER
         {
             .Title = 'Edit a user';
             .User = GetDatabaseUserById( user_id );
-            .ListRoute = FindSessionValue( 'ListRoute', '/admin/user' );
+
+            AddParentRoute();
 
             import '../VIEW/edit_user_view.php';
         }

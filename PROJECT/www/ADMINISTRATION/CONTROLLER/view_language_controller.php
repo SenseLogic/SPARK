@@ -20,7 +20,8 @@ class VIEW_LANGUAGE_CONTROLLER extends VIEW_CONTROLLER
         {
             $this->Title = 'View a language';
             $this->Language = GetDatabaseLanguageById( $language_id );
-            $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/language' );
+
+            AddParentRoute();
 
             require_once __DIR__ . '/' . '../VIEW/view_language_view.php';
         }

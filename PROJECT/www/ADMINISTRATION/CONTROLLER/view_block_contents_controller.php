@@ -20,7 +20,7 @@ class VIEW_BLOCK_CONTENTS_CONTROLLER extends VIEW_CONTROLLER
             $this->Title = 'View block contents';
             $this->BlockContentArray = GetDatabaseBlockContentArray();
 
-            SetSessionValue( 'ListRoute', GetRequest() );
+            AddParentRoute();
 
             require_once __DIR__ . '/' . '../VIEW/view_block_contents_view.php';
         }

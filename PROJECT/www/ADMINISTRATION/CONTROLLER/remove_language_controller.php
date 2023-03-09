@@ -20,7 +20,8 @@ class REMOVE_LANGUAGE_CONTROLLER extends VIEW_CONTROLLER
         {
             $this->Title = 'Remove a language';
             $this->Language = GetDatabaseLanguageById( $language_id );
-            $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/language' );
+
+            AddParentRoute();
 
             require_once __DIR__ . '/' . '../VIEW/remove_language_view.php';
         }

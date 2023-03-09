@@ -20,7 +20,8 @@ class EDIT_PAGE_CONTROLLER extends VIEW_CONTROLLER
         {
             $this->Title = 'Edit a page';
             $this->Page = GetDatabasePageById( $page_id );
-            $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/page' );
+
+            AddParentRoute();
 
             require_once __DIR__ . '/' . '../VIEW/edit_page_view.php';
         }

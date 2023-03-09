@@ -20,7 +20,7 @@ class VIEW_USERS_CONTROLLER extends VIEW_CONTROLLER
             $this->Title = 'View users';
             $this->UserArray = GetDatabaseUserArray();
 
-            SetSessionValue( 'ListRoute', GetRequest() );
+            AddParentRoute();
 
             require_once __DIR__ . '/' . '../VIEW/view_users_view.php';
         }

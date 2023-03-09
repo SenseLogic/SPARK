@@ -15,7 +15,7 @@
             <div class="form-field-value" data-is-column-value data-column-name="Name">
                 <input-component result-class="form-input" result-name="Name" result-value="<?php echo htmlspecialchars( GetValueText( $this->BlockCategory->Name ) ); ?>" is-readonly></input-component>
             </div>
-            <a class="justify-self-start form-button form-button-large cancel-button" onclick="SetPriorUrl()">
+            <a class="justify-self-start form-button form-button-large cancel-button" href="<?php echo htmlspecialchars( GetParentRoute( null, '/admin/block-category' ) ); ?>">
             </a>
         </div>
     </div>

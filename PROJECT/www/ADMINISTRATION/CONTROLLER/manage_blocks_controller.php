@@ -15,9 +15,8 @@ class MANAGE_BLOCKS_CONTROLLER extends VIEW_CONTROLLER
         parent::__construct();
 
         $this->Title = 'Manage blocks';
-        $this->ListRoute = '/admin/block/manage';
 
-        SetSessionValue( 'ListRoute', $this->ListRoute );
+        AddParentRoute();
 
         require_once __DIR__ . '/' . '../VIEW/manage_blocks_view.php';
     }

@@ -24,7 +24,7 @@ class DO_ADD_TEXT_CONTROLLER extends VIEW_CONTROLLER
 
             AddDatabaseText( $id, $slug, $text );
 
-            Redirect( FindSessionValue( 'ListRoute', '/admin/text' ) );
+            Redirect( GetParentRoute( null, '/admin/text' ) );
         }
     }
 }

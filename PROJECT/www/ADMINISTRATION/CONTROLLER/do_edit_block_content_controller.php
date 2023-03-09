@@ -24,7 +24,7 @@ class DO_EDIT_BLOCK_CONTENT_CONTROLLER extends VIEW_CONTROLLER
 
             SetDatabaseBlockContent( $block_content_id, $slug, $name );
 
-            Redirect( FindSessionValue( 'ListRoute', '/admin/block-content' ) );
+            Redirect( GetParentRoute( null, '/admin/block-content' ) );
         }
     }
 }

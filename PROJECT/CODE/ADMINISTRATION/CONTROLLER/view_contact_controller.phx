@@ -20,7 +20,8 @@ class VIEW_CONTACT_CONTROLLER extends VIEW_CONTROLLER
         {
             .Title = 'View a contact';
             .Contact = GetDatabaseContactById( contact_id );
-            .ListRoute = FindSessionValue( 'ListRoute', '/admin/contact' );
+
+            AddParentRoute();
 
             import '../VIEW/view_contact_view.php';
         }

@@ -18,9 +18,8 @@ class MANAGE_PAGE_CONTROLLER extends VIEW_CONTROLLER
 
         $this->Title = 'Manage a page';
         $this->Page = GetValidPageByIdOrSlug( $this->PageByIdMap, $this->PageBySlugMap, $page_id_or_slug );
-        $this->ListRoute = '/admin/page/manage/' . $page_id_or_slug;
 
-        SetSessionValue( 'ListRoute', GetRequest() );
+        AddParentRoute();
 
         require_once __DIR__ . '/' . '../VIEW/manage_page_view.php';
     }

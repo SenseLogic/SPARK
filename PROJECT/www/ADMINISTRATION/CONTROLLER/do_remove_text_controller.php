@@ -20,7 +20,7 @@ class DO_REMOVE_TEXT_CONTROLLER extends VIEW_CONTROLLER
         {
             RemoveDatabaseTextById( $text_id );
 
-            Redirect( FindSessionValue( 'ListRoute', '/admin/text' ) );
+            Redirect( GetParentRoute( null, '/admin/text' ) );
         }
     }
 }

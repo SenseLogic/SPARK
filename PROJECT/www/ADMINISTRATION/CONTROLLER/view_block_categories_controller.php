@@ -20,7 +20,7 @@ class VIEW_BLOCK_CATEGORIES_CONTROLLER extends VIEW_CONTROLLER
             $this->Title = 'View block categories';
             $this->BlockCategoryArray = GetDatabaseBlockCategoryArray();
 
-            SetSessionValue( 'ListRoute', GetRequest() );
+            AddParentRoute();
 
             require_once __DIR__ . '/' . '../VIEW/view_block_categories_view.php';
         }

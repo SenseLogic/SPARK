@@ -18,7 +18,8 @@ class ADD_BLOCK_CONTROLLER extends VIEW_CONTROLLER
         if ( HasSessionMinimumUserRole( 'contributor' ) )
         {
             .Title = 'Add a block';
-            .ListRoute = FindSessionValue( 'ListRoute', '/admin/block' );
+
+            AddParentRoute();
 
             import '../VIEW/add_block_view.php';
         }

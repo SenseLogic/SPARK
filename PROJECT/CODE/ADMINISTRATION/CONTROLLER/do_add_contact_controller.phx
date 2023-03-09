@@ -28,7 +28,7 @@ class DO_ADD_CONTACT_CONTROLLER extends VIEW_CONTROLLER
 
             AddDatabaseContact( id, name, company, email, phone, subject, message );
 
-            Redirect( FindSessionValue( 'ListRoute', '/admin/contact' ) );
+            Redirect( GetParentRoute( null, '/admin/contact' ) );
         }
     }
 }

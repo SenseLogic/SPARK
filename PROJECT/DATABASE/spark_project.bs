@@ -23,7 +23,7 @@ spark-project
     PAGE | managed, sorted, dropped, has_user_role, user_role contributor
 
         Id : TUID | key, unique
-        Slug : STRING = ""
+        Slug : STRING = "" | optional
         Route : STRING | processed
         TypeSlug : PAGE_TYPE.Slug | processed, is_slug, is_enumeration, enumeration "GetElementPropertyArray( .PageTypeArray, 'Slug' )^GetUntranslatedElementArray( GetElementPropertyArray( .PageTypeArray, 'Name' ) )"
         Number : FLOAT32 | ascending
@@ -61,7 +61,7 @@ spark-project
     BLOCK | managed, sorted, dropped, has_footer, footer block_footer, has_user_role, user_role contributor, count 50
 
         Id : TUID | key, unique
-        Slug : STRING = ""
+        Slug : STRING = "" | optional
         PageId : TUID = "{{PAGE.Id}}" | processed, is_enumeration, enumeration "GetElementPropertyArray( .PageArray, 'Id' )^GetUntranslatedElementArray( GetElementPropertyArray( .PageArray, 'Title' ) )"
         CategorySlug : BLOCK_CATEGORY.Slug = "content" | processed, is_slug, is_enumeration, enumeration "GetElementPropertyArray( .BlockCategoryArray, 'Slug' )^GetUntranslatedElementArray( GetElementPropertyArray( .BlockCategoryArray, 'Name' ) )"
         ContentSlug : BLOCK_CONTENT.Slug = "text" | is_slug, is_enumeration, enumeration "GetElementPropertyArray( .BlockContentArray, 'Slug' )^GetUntranslatedElementArray( GetElementPropertyArray( .BlockContentArray,'Name' ) )"

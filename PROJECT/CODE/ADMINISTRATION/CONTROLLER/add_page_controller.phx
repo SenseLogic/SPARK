@@ -18,7 +18,8 @@ class ADD_PAGE_CONTROLLER extends VIEW_CONTROLLER
         if ( HasSessionMinimumUserRole( 'contributor' ) )
         {
             .Title = 'Add a page';
-            .ListRoute = FindSessionValue( 'ListRoute', '/admin/page' );
+
+            AddParentRoute();
 
             import '../VIEW/add_page_view.php';
         }

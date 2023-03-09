@@ -20,7 +20,7 @@ class VIEW_BLOCK_CONTENTS_CONTROLLER extends VIEW_CONTROLLER
             .Title = 'View block contents';
             .BlockContentArray = GetDatabaseBlockContentArray();
 
-            SetSessionValue( 'ListRoute', GetRequest() );
+            AddParentRoute();
 
             import '../VIEW/view_block_contents_view.php';
         }

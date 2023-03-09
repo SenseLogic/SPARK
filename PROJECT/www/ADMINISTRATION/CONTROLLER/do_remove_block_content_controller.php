@@ -20,7 +20,7 @@ class DO_REMOVE_BLOCK_CONTENT_CONTROLLER extends VIEW_CONTROLLER
         {
             RemoveDatabaseBlockContentById( $block_content_id );
 
-            Redirect( FindSessionValue( 'ListRoute', '/admin/block-content' ) );
+            Redirect( GetParentRoute( null, '/admin/block-content' ) );
         }
     }
 }

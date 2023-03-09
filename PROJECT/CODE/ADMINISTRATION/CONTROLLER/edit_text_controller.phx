@@ -20,7 +20,8 @@ class EDIT_TEXT_CONTROLLER extends VIEW_CONTROLLER
         {
             .Title = 'Edit a text';
             .Text = GetDatabaseTextById( text_id );
-            .ListRoute = FindSessionValue( 'ListRoute', '/admin/text' );
+
+            AddParentRoute();
 
             import '../VIEW/edit_text_view.php';
         }

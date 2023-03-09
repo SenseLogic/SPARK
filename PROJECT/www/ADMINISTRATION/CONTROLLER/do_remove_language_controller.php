@@ -20,7 +20,7 @@ class DO_REMOVE_LANGUAGE_CONTROLLER extends VIEW_CONTROLLER
         {
             RemoveDatabaseLanguageById( $language_id );
 
-            Redirect( FindSessionValue( 'ListRoute', '/admin/language' ) );
+            Redirect( GetParentRoute( null, '/admin/language' ) );
         }
     }
 }

@@ -18,7 +18,8 @@ class ADD_TEXT_CONTROLLER extends VIEW_CONTROLLER
         if ( HasSessionMinimumUserRole( 'author' ) )
         {
             .Title = 'Add a text';
-            .ListRoute = FindSessionValue( 'ListRoute', '/admin/text' );
+
+            AddParentRoute();
 
             import '../VIEW/add_text_view.php';
         }

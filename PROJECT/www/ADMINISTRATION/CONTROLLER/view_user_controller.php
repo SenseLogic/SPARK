@@ -20,7 +20,8 @@ class VIEW_USER_CONTROLLER extends VIEW_CONTROLLER
         {
             $this->Title = 'View a user';
             $this->User = GetDatabaseUserById( $user_id );
-            $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/user' );
+
+            AddParentRoute();
 
             require_once __DIR__ . '/' . '../VIEW/view_user_view.php';
         }

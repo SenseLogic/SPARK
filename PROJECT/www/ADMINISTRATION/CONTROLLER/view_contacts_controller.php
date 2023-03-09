@@ -20,7 +20,7 @@ class VIEW_CONTACTS_CONTROLLER extends VIEW_CONTROLLER
             $this->Title = 'View contacts';
             $this->ContactArray = GetDatabaseContactArray();
 
-            SetSessionValue( 'ListRoute', GetRequest() );
+            AddParentRoute();
 
             require_once __DIR__ . '/' . '../VIEW/view_contacts_view.php';
         }

@@ -26,7 +26,7 @@ class DO_EDIT_LANGUAGE_CONTROLLER extends VIEW_CONTROLLER
 
             SetDatabaseLanguage( language_id, code, number, text, is_active );
 
-            Redirect( FindSessionValue( 'ListRoute', '/admin/language' ) );
+            Redirect( GetParentRoute( null, '/admin/language' ) );
         }
     }
 }

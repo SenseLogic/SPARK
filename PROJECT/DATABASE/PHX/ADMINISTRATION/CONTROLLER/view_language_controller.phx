@@ -20,7 +20,8 @@ class VIEW_LANGUAGE_CONTROLLER extends VIEW_CONTROLLER
         {
             .Title = 'View a language';
             .Language = GetDatabaseLanguageById( language_id );
-            .ListRoute = FindSessionValue( 'ListRoute', '/admin/language' );
+
+            AddParentRoute();
 
             import '../VIEW/view_language_view.php';
         }

@@ -26,7 +26,7 @@ class DO_EDIT_USER_CONTROLLER extends VIEW_CONTROLLER
 
             SetDatabaseUser( $user_id, $pseudonym, $password, $role, $email );
 
-            Redirect( FindSessionValue( 'ListRoute', '/admin/user' ) );
+            Redirect( GetParentRoute( null, '/admin/user' ) );
         }
     }
 }

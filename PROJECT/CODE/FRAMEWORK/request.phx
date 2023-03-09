@@ -72,6 +72,64 @@ function GetRoute(
 
 // ~~
 
+function AddParentRoute(
+    route = null
+    )
+{
+    if ( route === null )
+    {
+        route = GetPath();
+    }
+
+    var route_array = FindSessionValue( "RouteArray", [] );
+
+    for ( var route_index = count( route_array ) - 1;
+          route_index >= 0;
+          --route_index )
+    {
+        if ( route_array[ route_index ] === route )
+        {
+            array_splice( route_array, route_index );
+
+            break;
+        }
+    }
+
+    array_push( route_array, route );
+
+    SetSessionValue( "RouteArray", route_array );
+}
+
+// ~~
+
+function GetParentRoute(
+    route = null,
+    string default_parent_route = ''
+    )
+{
+    if ( route === null )
+    {
+        route = GetPath();
+    }
+
+    var route_array = FindSessionValue( "RouteArray", [] );
+
+    for ( var route_index = 0;
+          route_index < count( route_array );
+          ++route_index )
+    {
+        if ( route_array[ route_index ] === route
+             && route_index > 0 )
+        {
+            return route_array[ route_index - 1 ];
+        }
+    }
+
+    return default_parent_route;
+}
+
+// ~~
+
 function IsGetRequest(
     )
 {

@@ -20,7 +20,8 @@ class VIEW_BLOCK_CATEGORY_CONTROLLER extends VIEW_CONTROLLER
         {
             .Title = 'View a block category';
             .BlockCategory = GetDatabaseBlockCategoryById( block_category_id );
-            .ListRoute = FindSessionValue( 'ListRoute', '/admin/block-category' );
+
+            AddParentRoute();
 
             import '../VIEW/view_block_category_view.php';
         }

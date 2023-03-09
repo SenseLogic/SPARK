@@ -20,7 +20,8 @@ class REMOVE_PAGE_TYPE_CONTROLLER extends VIEW_CONTROLLER
         {
             $this->Title = 'Remove a page type';
             $this->PageType = GetDatabasePageTypeById( $page_type_id );
-            $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/page-type' );
+
+            AddParentRoute();
 
             require_once __DIR__ . '/' . '../VIEW/remove_page_type_view.php';
         }

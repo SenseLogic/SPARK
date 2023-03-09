@@ -18,7 +18,8 @@ class ADD_PAGE_TYPE_CONTROLLER extends VIEW_CONTROLLER
         if ( HasSessionMinimumUserRole( 'author' ) )
         {
             $this->Title = 'Add a page type';
-            $this->ListRoute = FindSessionValue( 'ListRoute', '/admin/page-type' );
+
+            AddParentRoute();
 
             require_once __DIR__ . '/' . '../VIEW/add_page_type_view.php';
         }

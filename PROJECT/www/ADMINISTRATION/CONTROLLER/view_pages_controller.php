@@ -20,7 +20,7 @@ class VIEW_PAGES_CONTROLLER extends VIEW_CONTROLLER
             $this->Title = 'View pages';
             $this->PageArray = GetDatabasePageArray();
 
-            SetSessionValue( 'ListRoute', GetRequest() );
+            AddParentRoute();
 
             require_once __DIR__ . '/' . '../VIEW/view_pages_view.php';
         }

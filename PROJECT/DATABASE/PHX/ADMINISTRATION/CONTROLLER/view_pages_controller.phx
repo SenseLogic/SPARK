@@ -20,7 +20,7 @@ class VIEW_PAGES_CONTROLLER extends VIEW_CONTROLLER
             .Title = 'View pages';
             .PageArray = GetDatabasePageArray();
 
-            SetSessionValue( 'ListRoute', GetRequest() );
+            AddParentRoute();
 
             import '../VIEW/view_pages_view.php';
         }

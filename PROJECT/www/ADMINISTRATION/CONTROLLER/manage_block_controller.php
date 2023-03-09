@@ -17,9 +17,8 @@ class MANAGE_BLOCK_CONTROLLER extends VIEW_CONTROLLER
 
         $this->Title = 'Manage a block';
         $this->Block = GetValidBlockById( $this->BlockByIdMap, $block_id );
-        $this->ListRoute = '/admin/block/manage/' . $block_id;
 
-        SetSessionValue( 'ListRoute', GetRequest() );
+        AddParentRoute();
 
         require_once __DIR__ . '/' . '../VIEW/manage_block_view.php';
     }

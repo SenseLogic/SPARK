@@ -20,7 +20,8 @@ class EDIT_PAGE_CONTROLLER extends VIEW_CONTROLLER
         {
             .Title = 'Edit a page';
             .Page = GetDatabasePageById( page_id );
-            .ListRoute = FindSessionValue( 'ListRoute', '/admin/page' );
+
+            AddParentRoute();
 
             import '../VIEW/edit_page_view.php';
         }

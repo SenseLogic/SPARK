@@ -20,7 +20,7 @@ class DO_REMOVE_CONTACT_CONTROLLER extends VIEW_CONTROLLER
         {
             RemoveDatabaseContactById( contact_id );
 
-            Redirect( FindSessionValue( 'ListRoute', '/admin/contact' ) );
+            Redirect( GetParentRoute( null, '/admin/contact' ) );
         }
     }
 }

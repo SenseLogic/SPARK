@@ -20,7 +20,8 @@ class VIEW_TEXT_CONTROLLER extends VIEW_CONTROLLER
         {
             .Title = 'View a text';
             .Text = GetDatabaseTextById( text_id );
-            .ListRoute = FindSessionValue( 'ListRoute', '/admin/text' );
+
+            AddParentRoute();
 
             import '../VIEW/view_text_view.php';
         }

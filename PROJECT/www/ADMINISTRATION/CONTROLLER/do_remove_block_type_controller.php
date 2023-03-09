@@ -20,7 +20,7 @@ class DO_REMOVE_BLOCK_TYPE_CONTROLLER extends VIEW_CONTROLLER
         {
             RemoveDatabaseBlockTypeById( $block_type_id );
 
-            Redirect( FindSessionValue( 'ListRoute', '/admin/block-type' ) );
+            Redirect( GetParentRoute( null, '/admin/block-type' ) );
         }
     }
 }

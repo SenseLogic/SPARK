@@ -17,9 +17,8 @@ class MANAGE_BLOCK_CONTROLLER extends VIEW_CONTROLLER
 
         .Title = 'Manage a block';
         .Block = GetValidBlockById( .BlockByIdMap, block_id );
-        .ListRoute = '/admin/block/manage/' .. block_id;
 
-        SetSessionValue( 'ListRoute', GetRequest() );
+        AddParentRoute();
 
         import '../VIEW/manage_block_view.php';
     }
