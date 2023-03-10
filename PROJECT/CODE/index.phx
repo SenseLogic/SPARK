@@ -118,11 +118,17 @@ function Route(
 
         DefineText( 'Category Slug', 'Category' );
         DefineText( 'Content Slug', 'Content' );
+        DefineText( 'Image Horizontal Position Array', 'Image Horizontal Positions' );
+        DefineText( 'Image Legend Array', 'Image Legends' );
         DefineText( 'Image Path', 'Image' );
+        DefineText( 'Image Path Array', 'Images' );
+        DefineText( 'Image Vertical Position Array', 'Image Vertical Positions' );
         DefineText( 'Language Code Array', 'Languages' );
         DefineText( 'Page Id', 'Page' );
+        DefineText( 'Route Array', 'Routes' );
         DefineText( 'Type Slug', 'Type' );
         DefineText( 'Video Path', 'Video' );
+        DefineText( 'Video Path Array', 'Videos' );
 
         if ( !user_is_connected )
         {
