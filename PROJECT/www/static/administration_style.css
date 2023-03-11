@@ -724,7 +724,6 @@ textarea {
 .form-multilingual-container {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
 }
 .form-list-container {
   display: flex;
@@ -740,7 +739,6 @@ textarea {
   grid-template-columns: 1fr auto auto auto;
   grid-template-areas: "value drag-button add-button remove-button";
   gap: 0.5rem;
-  align-items: center;
 }
 .form-list-container.is-readonly .form-value-container {
   gap: 0;
