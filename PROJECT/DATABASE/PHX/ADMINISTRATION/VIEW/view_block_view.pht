@@ -2,168 +2,381 @@
 
 <div id="view-block-view">
     <div class="page-section form-section">
-        <div class="form-container" data-is-row data-table-name="BLOCK">
+        <div class="form-container" data-is-row data-table-name="BLOCK"><~false<>
+            <?
+                var field_mode = 'view';
+                var field_name = 'Slug';
+                var field_title = 'Slug';
+                var field_value = .Block.Slug;
+                include 'BLOCK/block_slug_field.php';
+            ?><>
             <div class="form-field-name" data-is-column-title data-column-name="Slug">
                 <% GetTextBySlug( 'Slug' ) %> :
             </div>
             <div class="form-field-value" data-is-column-value data-column-name="Slug">
                 <input-component result-class="form-input" result-name="Slug" result-value="<% GetValueText( .Block.Slug ) %>" is-readonly></input-component>
-            </div>
+            </div><~false<>
+            <?
+                var field_mode = 'view';
+                var field_name = 'PageId';
+                var field_title = 'Page Id';
+                var field_value = .Block.PageId;
+                include 'BLOCK/block_page_id_field.php';
+            ?><>
             <div class="form-field-name" data-is-column-title data-column-name="PageId">
                 <% GetTextBySlug( 'Page Id' ) %> :
             </div>
             <div class="form-field-value" data-is-column-value data-column-name="PageId">
                 <dropdown-component result-class="form-select" result-name="PageId" result-value="<% GetValueText( .Block.PageId ) %>" is-readonly  option-values="<% GetValueText( GetJsonText( GetElementPropertyArray( .PageArray, 'Id' ) ) ) %>" option-names="<% GetValueText( GetJsonText( GetUntranslatedElementArray( GetElementPropertyArray( .PageArray, 'Title' ) ) ) ) %>"></dropdown-component>
-            </div>
+            </div><~false<>
+            <?
+                var field_mode = 'view';
+                var field_name = 'CategorySlug';
+                var field_title = 'Category Slug';
+                var field_value = .Block.CategorySlug;
+                include 'BLOCK/block_category_slug_field.php';
+            ?><>
             <div class="form-field-name" data-is-column-title data-column-name="CategorySlug">
                 <% GetTextBySlug( 'Category Slug' ) %> :
             </div>
             <div class="form-field-value" data-is-column-value data-column-name="CategorySlug">
                 <dropdown-component result-class="form-select" result-name="CategorySlug" result-value="<% GetValueText( .Block.CategorySlug ) %>" is-readonly  option-values="<% GetValueText( GetJsonText( GetElementPropertyArray( .BlockCategoryArray, 'Slug' ) ) ) %>" option-names="<% GetValueText( GetJsonText( GetUntranslatedElementArray( GetElementPropertyArray( .BlockCategoryArray, 'Name' ) ) ) ) %>"></dropdown-component>
-            </div>
+            </div><~false<>
+            <?
+                var field_mode = 'view';
+                var field_name = 'ContentSlug';
+                var field_title = 'Content Slug';
+                var field_value = .Block.ContentSlug;
+                include 'BLOCK/block_content_slug_field.php';
+            ?><>
             <div class="form-field-name" data-is-column-title data-column-name="ContentSlug">
                 <% GetTextBySlug( 'Content Slug' ) %> :
             </div>
             <div class="form-field-value" data-is-column-value data-column-name="ContentSlug">
                 <dropdown-component result-class="form-select" result-name="ContentSlug" result-value="<% GetValueText( .Block.ContentSlug ) %>" is-readonly  option-values="<% GetValueText( GetJsonText( GetElementPropertyArray( .BlockContentArray, 'Slug' ) ) ) %>" option-names="<% GetValueText( GetJsonText( GetUntranslatedElementArray( GetElementPropertyArray( .BlockContentArray,'Name' ) ) ) ) %>"></dropdown-component>
-            </div>
+            </div><~false<>
+            <?
+                var field_mode = 'view';
+                var field_name = 'TypeSlug';
+                var field_title = 'Type Slug';
+                var field_value = .Block.TypeSlug;
+                include 'BLOCK/block_type_slug_field.php';
+            ?><>
             <div class="form-field-name" data-is-column-title data-column-name="TypeSlug">
                 <% GetTextBySlug( 'Type Slug' ) %> :
             </div>
             <div class="form-field-value" data-is-column-value data-column-name="TypeSlug">
                 <dropdown-component result-class="form-select" result-name="TypeSlug" result-value="<% GetValueText( .Block.TypeSlug ) %>" is-readonly  option-values="<% GetValueText( GetJsonText( GetElementPropertyArray( .BlockTypeArray, 'Slug' ) ) ) %>" option-names="<% GetValueText( GetJsonText( GetUntranslatedElementArray( GetElementPropertyArray( .BlockTypeArray, 'Name' ) ) ) ) %>"></dropdown-component>
-            </div>
+            </div><~false<>
+            <?
+                var field_mode = 'view';
+                var field_name = 'Number';
+                var field_title = 'Number';
+                var field_value = .Block.Number;
+                include 'BLOCK/block_number_field.php';
+            ?><>
             <div class="form-field-name" data-is-column-title data-column-name="Number">
                 <% GetTextBySlug( 'Number' ) %> :
             </div>
             <div class="form-field-value" data-is-column-value data-column-name="Number">
                 <input-component result-class="form-input" result-name="Number" result-value="<% GetValueText( .Block.Number ) %>" is-readonly></input-component>
-            </div>
+            </div><~false<>
+            <?
+                var field_mode = 'view';
+                var field_name = 'LanguageCodeArray';
+                var field_title = 'Language Code Array';
+                var field_value = .Block.LanguageCodeArray;
+                include 'BLOCK/block_language_code_array_field.php';
+            ?><>
             <div class="form-field-name" data-is-column-title data-column-name="LanguageCodeArray">
                 <% GetTextBySlug( 'Language Code Array' ) %> :
             </div>
             <div class="form-field-value" data-is-column-value data-column-name="LanguageCodeArray">
                 <input-list-component result-class="form-input" result-name="LanguageCodeArray" result-value="<% GetValueText( .Block.LanguageCodeArray ) %>" is-readonly list-container-class="form-list-container" value-container-class="form-value-container" value-class="form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></input-list-component>
-            </div>
+            </div><~false<>
+            <?
+                var field_mode = 'view';
+                var field_name = 'MinimumHeight';
+                var field_title = 'Minimum Height';
+                var field_value = .Block.MinimumHeight;
+                include 'BLOCK/block_minimum_height_field.php';
+            ?><>
             <div class="form-field-name" data-is-column-title data-column-name="MinimumHeight">
                 <% GetTextBySlug( 'Minimum Height' ) %> :
             </div>
             <div class="form-field-value" data-is-column-value data-column-name="MinimumHeight">
                 <input-component result-class="form-input" result-name="MinimumHeight" result-value="<% GetValueText( .Block.MinimumHeight ) %>" is-readonly></input-component>
-            </div>
+            </div><~false<>
+            <?
+                var field_mode = 'view';
+                var field_name = 'Title';
+                var field_title = 'Title';
+                var field_value = .Block.Title;
+                include 'BLOCK/block_title_field.php';
+            ?><>
             <div class="form-field-name" data-is-column-title data-column-name="Title">
                 <% GetTextBySlug( 'Title' ) %> :
             </div>
             <div class="form-field-value" data-is-column-value data-column-name="Title">
                 <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Title" result-value="<% GetValueText( .Block.Title ) %>" is-readonly language-codes="<% GetValueText( GetJsonText( LanguageCodeArray ) ) %>" language-names="<% GetValueText( GetJsonText( LanguageNameArray ) ) %>"></multilingual-text-input-component>
-            </div>
+            </div><~false<>
+            <?
+                var field_mode = 'view';
+                var field_name = 'TitleArray';
+                var field_title = 'Title Array';
+                var field_value = .Block.TitleArray;
+                include 'BLOCK/block_title_array_field.php';
+            ?><>
             <div class="form-field-name" data-is-column-title data-column-name="TitleArray">
                 <% GetTextBySlug( 'Title Array' ) %> :
             </div>
             <div class="form-field-value" data-is-column-value data-column-name="TitleArray">
                 <multilingual-text-input-list-component container-class="form-multilingual-container" result-name="TitleArray" result-value="<% GetValueText( .Block.TitleArray ) %>" is-readonly list-container-class="form-list-container" value-container-class="form-value-container" value-class="form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<% GetValueText( GetJsonText( LanguageCodeArray ) ) %>" language-names="<% GetValueText( GetJsonText( LanguageNameArray ) ) %>"></multilingual-text-input-list-component>
-            </div>
+            </div><~false<>
+            <?
+                var field_mode = 'view';
+                var field_name = 'Teaser';
+                var field_title = 'Teaser';
+                var field_value = .Block.Teaser;
+                include 'BLOCK/block_teaser_field.php';
+            ?><>
             <div class="form-field-name" data-is-column-title data-column-name="Teaser">
                 <% GetTextBySlug( 'Teaser' ) %> :
             </div>
             <div class="form-field-value" data-is-column-value data-column-name="Teaser">
                 <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Teaser" result-value="<% GetValueText( .Block.Teaser ) %>" is-readonly language-codes="<% GetValueText( GetJsonText( LanguageCodeArray ) ) %>" language-names="<% GetValueText( GetJsonText( LanguageNameArray ) ) %>"></multilingual-text-input-component>
-            </div>
+            </div><~false<>
+            <?
+                var field_mode = 'view';
+                var field_name = 'TeaserArray';
+                var field_title = 'Teaser Array';
+                var field_value = .Block.TeaserArray;
+                include 'BLOCK/block_teaser_array_field.php';
+            ?><>
             <div class="form-field-name" data-is-column-title data-column-name="TeaserArray">
                 <% GetTextBySlug( 'Teaser Array' ) %> :
             </div>
             <div class="form-field-value" data-is-column-value data-column-name="TeaserArray">
                 <multilingual-text-input-list-component container-class="form-multilingual-container" result-name="TeaserArray" result-value="<% GetValueText( .Block.TeaserArray ) %>" is-readonly list-container-class="form-list-container" value-container-class="form-value-container" value-class="form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<% GetValueText( GetJsonText( LanguageCodeArray ) ) %>" language-names="<% GetValueText( GetJsonText( LanguageNameArray ) ) %>"></multilingual-text-input-list-component>
-            </div>
+            </div><~false<>
+            <?
+                var field_mode = 'view';
+                var field_name = 'Text';
+                var field_title = 'Text';
+                var field_value = .Block.Text;
+                include 'BLOCK/block_text_field.php';
+            ?><>
             <div class="form-field-name" data-is-column-title data-column-name="Text">
                 <% GetTextBySlug( 'Text' ) %> :
             </div>
             <div class="form-field-value" data-is-column-value data-column-name="Text">
                 <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="Text" result-value="<% GetValueText( .Block.Text ) %>" is-readonly language-codes="<% GetValueText( GetJsonText( LanguageCodeArray ) ) %>" language-names="<% GetValueText( GetJsonText( LanguageNameArray ) ) %>"></multilingual-text-input-component>
-            </div>
+            </div><~false<>
+            <?
+                var field_mode = 'view';
+                var field_name = 'TextArray';
+                var field_title = 'Text Array';
+                var field_value = .Block.TextArray;
+                include 'BLOCK/block_text_array_field.php';
+            ?><>
             <div class="form-field-name" data-is-column-title data-column-name="TextArray">
                 <% GetTextBySlug( 'Text Array' ) %> :
             </div>
             <div class="form-field-value" data-is-column-value data-column-name="TextArray">
                 <multilingual-text-input-list-component container-class="form-multilingual-container" result-name="TextArray" result-value="<% GetValueText( .Block.TextArray ) %>" is-readonly list-container-class="form-list-container" value-container-class="form-value-container" value-class="form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<% GetValueText( GetJsonText( LanguageCodeArray ) ) %>" language-names="<% GetValueText( GetJsonText( LanguageNameArray ) ) %>"></multilingual-text-input-list-component>
-            </div>
+            </div><~false<>
+            <?
+                var field_mode = 'view';
+                var field_name = 'Route';
+                var field_title = 'Route';
+                var field_value = .Block.Route;
+                include 'BLOCK/block_route_field.php';
+            ?><>
             <div class="form-field-name" data-is-column-title data-column-name="Route">
                 <% GetTextBySlug( 'Route' ) %> :
             </div>
             <div class="form-field-value" data-is-column-value data-column-name="Route">
                 <multilingual-input-component container-class="form-multilingual-container" result-class="form-input" result-name="Route" result-value="<% GetValueText( .Block.Route ) %>" is-readonly language-codes="<% GetValueText( GetJsonText( LanguageCodeArray ) ) %>" language-names="<% GetValueText( GetJsonText( LanguageNameArray ) ) %>"></multilingual-input-component>
-            </div>
+            </div><~false<>
+            <?
+                var field_mode = 'view';
+                var field_name = 'RouteArray';
+                var field_title = 'Route Array';
+                var field_value = .Block.RouteArray;
+                include 'BLOCK/block_route_array_field.php';
+            ?><>
             <div class="form-field-name" data-is-column-title data-column-name="RouteArray">
                 <% GetTextBySlug( 'Route Array' ) %> :
             </div>
             <div class="form-field-value" data-is-column-value data-column-name="RouteArray">
                 <multilingual-input-list-component container-class="form-multilingual-container" result-name="RouteArray" result-value="<% GetValueText( .Block.RouteArray ) %>" is-readonly list-container-class="form-list-container" value-container-class="form-value-container" value-class="form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<% GetValueText( GetJsonText( LanguageCodeArray ) ) %>" language-names="<% GetValueText( GetJsonText( LanguageNameArray ) ) %>"></multilingual-input-list-component>
-            </div>
+            </div><~false<>
+            <?
+                var field_mode = 'view';
+                var field_name = 'ImageSide';
+                var field_title = 'Image Side';
+                var field_value = .Block.ImageSide;
+                include 'BLOCK/block_image_side_field.php';
+            ?><>
             <div class="form-field-name" data-is-column-title data-column-name="ImageSide">
                 <% GetTextBySlug( 'Image Side' ) %> :
             </div>
             <div class="form-field-value" data-is-column-value data-column-name="ImageSide">
                 <dropdown-component result-class="form-select" result-name="ImageSide" result-value="<% GetValueText( .Block.ImageSide ) %>" is-readonly is-optional option-values="<% GetValueText( GetJsonText( [ 'left', 'right' ] ) ) %>" option-names="<% GetValueText( GetJsonText( [ 'Left', 'Right' ] ) ) %>"></dropdown-component>
-            </div>
+            </div><~false<>
+            <?
+                var field_mode = 'view';
+                var field_name = 'ImageLegend';
+                var field_title = 'Image Legend';
+                var field_value = .Block.ImageLegend;
+                include 'BLOCK/block_image_legend_field.php';
+            ?><>
             <div class="form-field-name" data-is-column-title data-column-name="ImageLegend">
                 <% GetTextBySlug( 'Image Legend' ) %> :
             </div>
             <div class="form-field-value" data-is-column-value data-column-name="ImageLegend">
                 <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="ImageLegend" result-value="<% GetValueText( .Block.ImageLegend ) %>" is-readonly language-codes="<% GetValueText( GetJsonText( LanguageCodeArray ) ) %>" language-names="<% GetValueText( GetJsonText( LanguageNameArray ) ) %>"></multilingual-text-input-component>
-            </div>
+            </div><~false<>
+            <?
+                var field_mode = 'view';
+                var field_name = 'ImageLegendArray';
+                var field_title = 'Image Legend Array';
+                var field_value = .Block.ImageLegendArray;
+                include 'BLOCK/block_image_legend_array_field.php';
+            ?><>
             <div class="form-field-name" data-is-column-title data-column-name="ImageLegendArray">
                 <% GetTextBySlug( 'Image Legend Array' ) %> :
             </div>
             <div class="form-field-value" data-is-column-value data-column-name="ImageLegendArray">
                 <multilingual-text-input-list-component container-class="form-multilingual-container" result-name="ImageLegendArray" result-value="<% GetValueText( .Block.ImageLegendArray ) %>" is-readonly list-container-class="form-list-container" value-container-class="form-value-container" value-class="form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<% GetValueText( GetJsonText( LanguageCodeArray ) ) %>" language-names="<% GetValueText( GetJsonText( LanguageNameArray ) ) %>"></multilingual-text-input-list-component>
-            </div>
+            </div><~false<>
+            <?
+                var field_mode = 'view';
+                var field_name = 'ImagePath';
+                var field_title = 'Image Path';
+                var field_value = .Block.ImagePath;
+                include 'BLOCK/block_image_path_field.php';
+            ?><>
             <div class="form-field-name" data-is-column-title data-column-name="ImagePath">
                 <% GetTextBySlug( 'Image Path' ) %> :
             </div>
             <div class="form-field-value" data-is-column-value data-column-name="ImagePath">
                 <image-path-input-component container-class="form-upload-container" result-class="form-input form-upload-input" result-name="ImagePath" result-value="<% GetValueText( .Block.ImagePath ) %>" is-readonly image-class="form-upload-image" error-image-path="/static/image/admin/missing_image.svg" upload-button-container-class="form-upload-button-container" upload-button-class="form-button upload-button form-upload-button" upload-api-url="/admin/upload/image" delete-button-class="form-button delete-button form-delete-button" delete-api-url="/admin/delete/file"></image-path-input-component>
-            </div>
+            </div><~false<>
+            <?
+                var field_mode = 'view';
+                var field_name = 'ImagePathArray';
+                var field_title = 'Image Path Array';
+                var field_value = .Block.ImagePathArray;
+                include 'BLOCK/block_image_path_array_field.php';
+            ?><>
             <div class="form-field-name" data-is-column-title data-column-name="ImagePathArray">
                 <% GetTextBySlug( 'Image Path Array' ) %> :
             </div>
             <div class="form-field-value" data-is-column-value data-column-name="ImagePathArray">
                 <image-path-input-list-component container-class="form-upload-container" result-name="ImagePathArray" result-value="<% GetValueText( .Block.ImagePathArray ) %>" is-readonly image-class="form-upload-image" error-image-path="/static/image/admin/missing_image.svg" upload-button-container-class="form-upload-button-container" upload-button-class="form-button upload-button form-upload-button" upload-api-url="/admin/upload/image" delete-button-class="form-button delete-button form-delete-button" delete-api-url="/admin/delete/file" list-container-class="form-list-container" value-container-class="form-value-container" value-class="form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></image-path-input-list-component>
-            </div>
+            </div><~false<>
+            <?
+                var field_mode = 'view';
+                var field_name = 'ImageVerticalPosition';
+                var field_title = 'Image Vertical Position';
+                var field_value = .Block.ImageVerticalPosition;
+                include 'BLOCK/block_image_vertical_position_field.php';
+            ?><>
             <div class="form-field-name" data-is-column-title data-column-name="ImageVerticalPosition">
                 <% GetTextBySlug( 'Image Vertical Position' ) %> :
             </div>
             <div class="form-field-value" data-is-column-value data-column-name="ImageVerticalPosition">
                 <dropdown-component result-class="form-select" result-name="ImageVerticalPosition" result-value="<% GetValueText( .Block.ImageVerticalPosition ) %>" is-readonly is-optional option-values="<% GetValueText( GetJsonText( [ 'top', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'bottom'] ) ) %>" option-names="<% GetValueText( GetJsonText( ['Top', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Bottom' ] ) ) %>"></dropdown-component>
-            </div>
+            </div><~false<>
+            <?
+                var field_mode = 'view';
+                var field_name = 'ImageVerticalPositionArray';
+                var field_title = 'Image Vertical Position Array';
+                var field_value = .Block.ImageVerticalPositionArray;
+                include 'BLOCK/block_image_vertical_position_array_field.php';
+            ?><>
             <div class="form-field-name" data-is-column-title data-column-name="ImageVerticalPositionArray">
                 <% GetTextBySlug( 'Image Vertical Position Array' ) %> :
             </div>
             <div class="form-field-value" data-is-column-value data-column-name="ImageVerticalPositionArray">
-                <dropdown-list-component result-class="form-select" result-name="ImageVerticalPositionArray" result-value="<% GetValueText( .Block.ImageVerticalPositionArray ) %>" is-readonly is-optional option-values="<% GetValueText( GetJsonText( [ 'top', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'bottom'] ) ) %>" option-names="<% GetValueText( GetJsonText( ['Top', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Bottom' ] ) ) %>" list-container-class="form-list-container" value-container-class="form-value-container" value-class="form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></dropdown-list-component>
-            </div>
+                <dropdown-list-component result-class="form-select" result-name="ImageVerticalPositionArray" result-value="<% GetValueText( .Block.ImageVerticalPositionArray ) %>" is-readonly is-optional option-values="<% GetValueText( GetJsonText( [ 'top', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'bottom'] ) ) %>" option-names="<% GetValueText( GetJsonText( ['Top', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Bottom' ] ) ) %>" list-container-class="form-list-container" value-container-class="form-value-container" value-class="form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></dropdown-list-component><~false<>
+            <?
+                var field_mode = 'view';
+                var field_name = 'ImageHorizontalPosition';
+                var field_title = 'Image Horizontal Position';
+                var field_value = .Block.ImageHorizontalPosition;
+                include 'BLOCK/block_image_horizontal_position_field.php';
+            ?><>
             <div class="form-field-name" data-is-column-title data-column-name="ImageHorizontalPosition">
                 <% GetTextBySlug( 'Image Horizontal Position' ) %> :
             </div>
             <div class="form-field-value" data-is-column-value data-column-name="ImageHorizontalPosition">
                 <dropdown-component result-class="form-select" result-name="ImageHorizontalPosition" result-value="<% GetValueText( .Block.ImageHorizontalPosition ) %>" is-readonly is-optional option-values="<% GetValueText( GetJsonText( [ 'left', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'right'] ) ) %>" option-names="<% GetValueText( GetJsonText( ['Left', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Right' ] ) ) %>"></dropdown-component>
-            </div>
+            </div><~false<>
+            <?
+                var field_mode = 'view';
+                var field_name = 'ImageHorizontalPositionArray';
+                var field_title = 'Image Horizontal Position Array';
+                var field_value = .Block.ImageHorizontalPositionArray;
+                include 'BLOCK/block_image_horizontal_position_array_field.php';
+            ?><>
             <div class="form-field-name" data-is-column-title data-column-name="ImageHorizontalPositionArray">
                 <% GetTextBySlug( 'Image Horizontal Position Array' ) %> :
             </div>
             <div class="form-field-value" data-is-column-value data-column-name="ImageHorizontalPositionArray">
-                <dropdown-list-component result-class="form-select" result-name="ImageHorizontalPositionArray" result-value="<% GetValueText( .Block.ImageHorizontalPositionArray ) %>" is-readonly is-optional option-values="<% GetValueText( GetJsonText( [ 'left', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'right'] ) ) %>" option-names="<% GetValueText( GetJsonText( ['Left', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Right' ] ) ) %>" list-container-class="form-list-container" value-container-class="form-value-container" value-class="form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></dropdown-list-component>
-            </div>
+                <dropdown-list-component result-class="form-select" result-name="ImageHorizontalPositionArray" result-value="<% GetValueText( .Block.ImageHorizontalPositionArray ) %>" is-readonly is-optional option-values="<% GetValueText( GetJsonText( [ 'left', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'right'] ) ) %>" option-names="<% GetValueText( GetJsonText( ['Left', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Right' ] ) ) %>" list-container-class="form-list-container" value-container-class="form-value-container" value-class="form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></dropdown-list-component><~false<>
+            <?
+                var field_mode = 'view';
+                var field_name = 'VideoPath';
+                var field_title = 'Video Path';
+                var field_value = .Block.VideoPath;
+                include 'BLOCK/block_video_path_field.php';
+            ?><>
             <div class="form-field-name" data-is-column-title data-column-name="VideoPath">
                 <% GetTextBySlug( 'Video Path' ) %> :
             </div>
             <div class="form-field-value" data-is-column-value data-column-name="VideoPath">
                 <video-path-input-component container-class="form-upload-container" result-class="form-input form-upload-input" result-name="VideoPath" result-value="<% GetValueText( .Block.VideoPath ) %>" is-readonly video-class="form-upload-video" error-video-path="/static/video/admin/missing_video.mp4" upload-button-container-class="form-upload-button-container" upload-button-class="form-button upload-button form-upload-button" upload-api-url="/admin/upload/video" delete-button-class="form-button delete-button form-delete-button" delete-api-url="/admin/delete/file"></video-path-input-component>
-            </div>
+            </div><~false<>
+            <?
+                var field_mode = 'view';
+                var field_name = 'VideoPathArray';
+                var field_title = 'Video Path Array';
+                var field_value = .Block.VideoPathArray;
+                include 'BLOCK/block_video_path_array_field.php';
+            ?><>
             <div class="form-field-name" data-is-column-title data-column-name="VideoPathArray">
                 <% GetTextBySlug( 'Video Path Array' ) %> :
             </div>
             <div class="form-field-value" data-is-column-value data-column-name="VideoPathArray">
                 <video-path-input-list-component container-class="form-upload-container" result-name="VideoPathArray" result-value="<% GetValueText( .Block.VideoPathArray ) %>" is-readonly video-class="form-upload-video" error-video-path="/static/video/admin/missing_video.mp4" upload-button-container-class="form-upload-button-container" upload-button-class="form-button upload-button form-upload-button" upload-api-url="/admin/upload/video" delete-button-class="form-button delete-button form-delete-button" delete-api-url="/admin/delete/file" list-container-class="form-list-container" value-container-class="form-value-container" value-class="form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></video-path-input-list-component>
+            </div><~false<>
+            <?
+                var field_mode = 'view';
+                var field_name = 'DocumentPath';
+                var field_title = 'Document Path';
+                var field_value = .Block.DocumentPath;
+                include 'BLOCK/block_document_path_field.php';
+            ?><>
+            <div class="form-field-name" data-is-column-title data-column-name="DocumentPath">
+                <% GetTextBySlug( 'Document Path' ) %> :
+            </div>
+            <div class="form-field-value" data-is-column-value data-column-name="DocumentPath">
+                <document-path-input-component container-class="form-upload-container" result-class="form-input form-upload-input" result-name="DocumentPath" result-value="<% GetValueText( .Block.DocumentPath ) %>" is-readonly image-class="form-upload-image" error-image-path="/static/image/admin/missing_image.svg" document-image-path="/static/image/admin/document_icon.svg" upload-button-container-class="form-upload-button-container" upload-button-class="form-button upload-button form-upload-button" upload-api-url="/admin/upload/document" delete-button-class="form-button delete-button form-delete-button" delete-api-url="/admin/delete/file"></document-path-input-component>
+            </div><~false<>
+            <?
+                var field_mode = 'view';
+                var field_name = 'DocumentPathArray';
+                var field_title = 'Document Path Array';
+                var field_value = .Block.DocumentPathArray;
+                include 'BLOCK/block_document_path_array_field.php';
+            ?><>
+            <div class="form-field-name" data-is-column-title data-column-name="DocumentPathArray">
+                <% GetTextBySlug( 'Document Path Array' ) %> :
+            </div>
+            <div class="form-field-value" data-is-column-value data-column-name="DocumentPathArray">
+                <document-path-input-list-component container-class="form-upload-container" result-name="DocumentPathArray" result-value="<% GetValueText( .Block.DocumentPathArray ) %>" is-readonly image-class="form-upload-image" error-image-path="/static/image/admin/missing_image.svg" document-image-path="/static/image/admin/document_icon.svg" upload-button-container-class="form-upload-button-container" upload-button-class="form-button upload-button form-upload-button" upload-api-url="/admin/upload/document" delete-button-class="form-button delete-button form-delete-button" delete-api-url="/admin/delete/file" list-container-class="form-list-container" value-container-class="form-value-container" value-class="form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></document-path-input-list-component>
             </div>
             <a class="justify-self-start form-button form-button-large cancel-button" href="<% GetParentRoute( null, '/admin/block' ) %>">
             </a>

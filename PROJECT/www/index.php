@@ -783,7 +783,9 @@ function Route(
                       && HasPostValue( 'ImageHorizontalPosition' )
                       && HasPostValue( 'ImageHorizontalPositionArray' )
                       && HasPostValue( 'VideoPath' )
-                      && HasPostValue( 'VideoPathArray' ) )
+                      && HasPostValue( 'VideoPathArray' )
+                      && HasPostValue( 'DocumentPath' )
+                      && HasPostValue( 'DocumentPathArray' ) )
             {
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_add_block_controller.php';
             }
@@ -832,7 +834,9 @@ function Route(
                       && HasPostValue( 'ImageHorizontalPosition' )
                       && HasPostValue( 'ImageHorizontalPositionArray' )
                       && HasPostValue( 'VideoPath' )
-                      && HasPostValue( 'VideoPathArray' ) )
+                      && HasPostValue( 'VideoPathArray' )
+                      && HasPostValue( 'DocumentPath' )
+                      && HasPostValue( 'DocumentPathArray' ) )
             {
                  $block_id = $path_value_array[ 3 ];
 

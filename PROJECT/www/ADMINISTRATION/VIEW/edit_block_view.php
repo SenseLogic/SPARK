@@ -34,7 +34,9 @@
             image_horizontal_position_field,
             image_horizontal_position_array_field,
             video_path_field,
-            video_path_array_field;
+            video_path_array_field,
+            document_path_field,
+            document_path_array_field;
 
         edit_block_form = document.EditBlockForm;
         slug_field = edit_block_form.Slug;
@@ -64,6 +66,8 @@
         image_horizontal_position_array_field = edit_block_form.ImageHorizontalPositionArray;
         video_path_field = edit_block_form.VideoPath;
         video_path_array_field = edit_block_form.VideoPathArray;
+        document_path_field = edit_block_form.DocumentPath;
+        document_path_array_field = edit_block_form.DocumentPathArray;
 
         slug_field.RemoveClass( "form-field-error" );
         page_id_field.RemoveClass( "form-field-error" );
@@ -92,6 +96,8 @@
         image_horizontal_position_array_field.RemoveClass( "form-field-error" );
         video_path_field.RemoveClass( "form-field-error" );
         video_path_array_field.RemoveClass( "form-field-error" );
+        document_path_field.RemoveClass( "form-field-error" );
+        document_path_array_field.RemoveClass( "form-field-error" );
 
         it_is_valid_edit_block_form = true;
 
@@ -191,7 +197,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Language Code Array' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="LanguageCodeArray">
-                    <input-list-component result-class="form-input" result-name="LanguageCodeArray" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->LanguageCodeArray ) ); ?>" list-container-class="form-list-container" value-container-class="form-value-container" value-class="form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></input-list-component>
+                    <input-list-component container-class="form-list-container" result-class="form-input" result-name="LanguageCodeArray" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->LanguageCodeArray ) ); ?>" list-container-class="form-list-container" value-container-class="form-value-container" value-class="form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></input-list-component>
                 </div>
                 <div class="form-field-name" data-is-column-title data-column-name="MinimumHeight">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Minimum Height' ) ); ?> :
@@ -312,6 +318,18 @@
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="VideoPathArray">
                     <video-path-input-list-component container-class="form-upload-container" result-class="form-input form-upload-input" result-name="VideoPathArray" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->VideoPathArray ) ); ?>" video-class="form-upload-video" error-video-path="/static/video/admin/missing_video.mp4" upload-button-container-class="form-upload-button-container" upload-button-class="form-button upload-button form-upload-button" upload-api-url="/admin/upload/video" delete-button-class="form-button delete-button form-delete-button" delete-api-url="/admin/delete/file" list-container-class="form-list-container" value-container-class="form-value-container" value-class="form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></video-path-input-list-component>
+                </div>
+                <div class="form-field-name" data-is-column-title data-column-name="DocumentPath">
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Document Path' ) ); ?> :
+                </div>
+                <div class="form-field-value" data-is-column-value data-column-name="DocumentPath">
+                    <document-path-input-component container-class="form-upload-container" result-class="form-input form-upload-input" result-name="DocumentPath" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->DocumentPath ) ); ?>" image-class="form-upload-image" error-image-path="/static/image/admin/missing_image.svg" document-image-path="/static/image/admin/document_icon.svg" upload-button-container-class="form-upload-button-container" upload-button-class="form-button upload-button form-upload-button" upload-api-url="/admin/upload/document" delete-button-class="form-button delete-button form-delete-button" delete-api-url="/admin/delete/file"></document-path-input-component>
+                </div>
+                <div class="form-field-name" data-is-column-title data-column-name="DocumentPathArray">
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Document Path Array' ) ); ?> :
+                </div>
+                <div class="form-field-value" data-is-column-value data-column-name="DocumentPathArray">
+                    <document-path-input-list-component container-class="form-upload-container" result-class="form-input form-upload-input" result-name="DocumentPathArray" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->DocumentPathArray ) ); ?>" image-class="form-upload-image" error-image-path="/static/image/admin/missing_image.svg" document-image-path="/static/image/admin/document_icon.svg" upload-button-container-class="form-upload-button-container" upload-button-class="form-button upload-button form-upload-button" upload-api-url="/admin/upload/document" delete-button-class="form-button delete-button form-delete-button" delete-api-url="/admin/delete/file" list-container-class="form-list-container" value-container-class="form-value-container" value-class="form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></document-path-input-list-component>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="<?php echo htmlspecialchars( GetParentRoute( null, '/admin/block' ) ); ?>">
                 </a>

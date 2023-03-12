@@ -97,6 +97,12 @@
                 <?php echo htmlspecialchars( GetTextBySlug( 'Video Path Array' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
+                <?php echo htmlspecialchars( GetTextBySlug( 'Document Path' ) ); ?>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <?php echo htmlspecialchars( GetTextBySlug( 'Document Path Array' ) ); ?>
+            </div>
+            <div class="form-column-name sortable-table-column">
                 <?php echo htmlspecialchars( GetTextBySlug( 'Action' ) ); ?>
             </div>
             <?php foreach ( $this->BlockArray as  $block ) { ?>
@@ -211,6 +217,12 @@
                     </div>
                     <div class="sortable-table-cell filter-cell">
                         <?php echo htmlspecialchars( GetValueText( $block->VideoPathArray ) ); ?>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <?php echo htmlspecialchars( GetValueText( $block->DocumentPath ) ); ?>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <?php echo htmlspecialchars( GetValueText( $block->DocumentPathArray ) ); ?>
                     </div>
                     <div class="form-centered sortable-table-cell">
                         <a class="form-button view-button" href="/admin/block/view/<?php echo htmlspecialchars( $block->Id ); ?>">
@@ -392,6 +404,18 @@
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="VideoPathArray">
                             <video-path-input-list-component container-class="form-upload-container" result-class="form-input form-upload-input" result-name="VideoPathArray" result-value="<?php echo htmlspecialchars( GetValueText( $block->VideoPathArray ) ); ?>" is-readonly video-class="form-upload-video" error-video-path="/static/video/admin/missing_video.mp4" upload-button-container-class="form-upload-button-container" upload-button-class="form-button upload-button form-upload-button" upload-api-url="/admin/upload/video" delete-button-class="form-button delete-button form-delete-button" delete-api-url="/admin/delete/file" list-container-class="form-list-container" value-container-class="form-value-container" value-class="form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></video-path-input-list-component>
+                        </div>
+                        <div class="form-field-name" data-is-column-title data-column-name="DocumentPath">
+                            <?php echo htmlspecialchars( GetTextBySlug( 'Document Path' ) ); ?> :
+                        </div>
+                        <div class="form-field-value" data-is-column-value data-column-name="DocumentPath">
+                            <document-path-input-component container-class="form-upload-container" result-class="form-input form-upload-input" result-name="DocumentPath" result-value="<?php echo htmlspecialchars( GetValueText( $block->DocumentPath ) ); ?>" is-readonly image-class="form-upload-image" error-image-path="/static/image/admin/missing_image.svg" document-image-path="/static/image/admin/document_icon.svg" upload-button-container-class="form-upload-button-container" upload-button-class="form-button upload-button form-upload-button" upload-api-url="/admin/upload/document" delete-button-class="form-button delete-button form-delete-button" delete-api-url="/admin/delete/file"></document-path-input-component>
+                        </div>
+                        <div class="form-field-name" data-is-column-title data-column-name="DocumentPathArray">
+                            <?php echo htmlspecialchars( GetTextBySlug( 'Document Path Array' ) ); ?> :
+                        </div>
+                        <div class="form-field-value" data-is-column-value data-column-name="DocumentPathArray">
+                            <document-path-input-list-component container-class="form-upload-container" result-class="form-input form-upload-input" result-name="DocumentPathArray" result-value="<?php echo htmlspecialchars( GetValueText( $block->DocumentPathArray ) ); ?>" is-readonly image-class="form-upload-image" error-image-path="/static/image/admin/missing_image.svg" document-image-path="/static/image/admin/document_icon.svg" upload-button-container-class="form-upload-button-container" upload-button-class="form-button upload-button form-upload-button" upload-api-url="/admin/upload/document" delete-button-class="form-button delete-button form-delete-button" delete-api-url="/admin/delete/file" list-container-class="form-list-container" value-container-class="form-value-container" value-class="form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></document-path-input-list-component>
                         </div>
                     </div>
                     <?php if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
