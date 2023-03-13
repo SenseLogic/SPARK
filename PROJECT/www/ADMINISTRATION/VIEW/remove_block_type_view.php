@@ -18,8 +18,8 @@
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="<?php echo htmlspecialchars( GetParentRoute( null, '/admin/block-type' ) ); ?>">
                 </a>
-                <button class="justify-self-end form-button-large form-button form-button-large remove-button" type="submit">
-                </button>
+                <a class="justify-self-end form-button-large form-button form-button-large remove-button" type="this.SubmitForm()">
+                </a>
             </div>
         </form>
     </div>

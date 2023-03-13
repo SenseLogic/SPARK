@@ -107,8 +107,8 @@
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="<?php echo htmlspecialchars( GetParentRoute( null, '/admin/text' ) ); ?>">
                 </a>
-                <button class="justify-self-end form-button form-button-large apply-button" type="submit">
-                </button>
+                <a class="justify-self-end form-button form-button-large apply-button" onclick="this.SubmitForm()">
+                </a>
             </div>
         </form>
     </div>
