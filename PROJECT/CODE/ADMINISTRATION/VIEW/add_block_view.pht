@@ -309,7 +309,7 @@
                     <% GetTextBySlug( 'Language Code Array' ) %> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="LanguageCodeArray">
-                    <input-list-component result-class="form-input" result-name="LanguageCodeArray" result-value="<% GetValueText( field_value ) %>" list-container-class="form-list-container" value-container-class="form-value-container" value-class="form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></input-list-component>
+                    <dropdown-list-component result-class="form-select" result-name="LanguageCodeArray" result-value="<% GetValueText( field_value ) %>"  option-values="<% GetValueText( GetJsonText( [ 'en', 'fr', 'de', 'ja' ,'ru' ] ) ) %>" option-names="<% GetValueText( GetJsonText( [ 'English', 'French', 'German', 'Japanese', 'Russian' ] ) ) %>" list-container-class="form-list-container" value-container-class="form-value-container" value-class="form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></dropdown-list-component>
                 </div>
                 <?
                     var field_name = 'MinimumHeight';

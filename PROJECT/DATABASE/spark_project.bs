@@ -27,7 +27,7 @@ spark-project
         Route : STRING | processed
         TypeSlug : PAGE_TYPE.Slug | processed, is_slug, is_enumeration, enumeration "GetElementPropertyArray( .PageTypeArray, 'Slug' )^GetUntranslatedElementArray( GetElementPropertyArray( .PageTypeArray, 'Name' ) )"
         Number : FLOAT32 | ascending
-        LanguageCodeArray : LIST[ LANGUAGE.Code ] | is_list
+        LanguageCodeArray : LIST[ LANGUAGE.Code ] = "{ en ~ fr }" | is_enumeration_list, enumeration "[ 'en', 'fr', 'de', 'ja' ,'ru' ]^[ 'English', 'French', 'German', 'Japanese', 'Russian' ]"
         IsActive : BOOL = "true" | is_enumeration, enumeration "[ 0, 1 ]^[ 'False', 'True' ]", has_default_value, default_value 1
         Title : STRING = "{{latin 1 1 4 6}}¨fr:{{latin 1 1 4 6}}" | optional, is_multilingual
         Heading : STRING = "{{Title}}" | optional, is_multilingual_text
@@ -67,7 +67,7 @@ spark-project
         ContentSlug : BLOCK_CONTENT.Slug = "text" | is_slug, is_enumeration, enumeration "GetElementPropertyArray( .BlockContentArray, 'Slug' )^GetUntranslatedElementArray( GetElementPropertyArray( .BlockContentArray,'Name' ) )"
         TypeSlug : BLOCK_TYPE.Slug | processed, is_slug, is_enumeration, enumeration "GetElementPropertyArray( .BlockTypeArray, 'Slug' )^GetUntranslatedElementArray( GetElementPropertyArray( .BlockTypeArray, 'Name' ) )"
         Number : FLOAT32 | ascending
-        LanguageCodeArray : LIST[ LANGUAGE.Code ] = "{ en ~ fr }"
+        LanguageCodeArray : LIST[ LANGUAGE.Code ] = "{ en ~ fr }" | is_enumeration_list, enumeration "[ 'en', 'fr', 'de', 'ja' ,'ru' ]^[ 'English', 'French', 'German', 'Japanese', 'Russian' ]"
         MinimumHeight : STRING = "56.25%"
         Title : STRING = "{{latin 1 1 4 6}}¨fr:{{latin 1 1 4 6}}" | optional, is_multilingual_text
         TitleArray : LIST[ STRING ] = "{}" | optional, is_multilingual_text_list

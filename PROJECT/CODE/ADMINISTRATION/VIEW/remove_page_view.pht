@@ -32,7 +32,7 @@
                     <% GetTextBySlug( 'Language Code Array' ) %> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="LanguageCodeArray">
-                    <input-list-component result-class="form-input" result-name="LanguageCodeArray" result-value="<% GetValueText( .Page.LanguageCodeArray ) %>" is-readonly list-container-class="form-list-container" value-container-class="form-value-container" value-class="form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></input-list-component>
+                    <dropdown-list-component result-class="form-select" result-name="LanguageCodeArray" result-value="<% GetValueText( .Page.LanguageCodeArray ) %>" is-readonly  option-values="<% GetValueText( GetJsonText( [ 'en', 'fr', 'de', 'ja' ,'ru' ] ) ) %>" option-names="<% GetValueText( GetJsonText( [ 'English', 'French', 'German', 'Japanese', 'Russian' ] ) ) %>" list-container-class="form-list-container" value-container-class="form-value-container" value-class="form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></dropdown-list-component>
                 </div>
                 <div class="form-field-name" data-is-column-title data-column-name="IsActive">
                     <% GetTextBySlug( 'Is Active' ) %> :
