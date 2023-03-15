@@ -19,12 +19,12 @@ class DO_EDIT_USER_CONTROLLER extends VIEW_CONTROLLER
         if ( HasSessionMinimumUserRole( 'administrator' ) )
         {
 
+             $email = GetPostValue( 'Email' );
              $pseudonym = GetPostValue( 'Pseudonym' );
              $password = GetPostValue( 'Password' );
              $role = GetPostValue( 'Role' );
-             $email = GetPostValue( 'Email' );
 
-            SetDatabaseUser( $user_id, $pseudonym, $password, $role, $email );
+            SetDatabaseUser( $user_id, $email, $pseudonym, $password, $role );
 
             Redirect( GetParentRoute( null, '/admin/user' ) );
         }

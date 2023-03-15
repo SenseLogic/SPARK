@@ -19,12 +19,12 @@ class DO_ADD_USER_CONTROLLER extends VIEW_CONTROLLER
         {
 
              $id = GetPostValue( 'Id' );
+             $email = GetPostValue( 'Email' );
              $pseudonym = GetPostValue( 'Pseudonym' );
              $password = GetPostValue( 'Password' );
              $role = GetPostValue( 'Role' );
-             $email = GetPostValue( 'Email' );
 
-            AddDatabaseUser( $id, $pseudonym, $password, $role, $email );
+            AddDatabaseUser( $id, $email, $pseudonym, $password, $role );
 
             Redirect( GetParentRoute( null, '/admin/user' ) );
         }

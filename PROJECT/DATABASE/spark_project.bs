@@ -105,7 +105,7 @@ spark-project
     USER | sorted, dropped, has_user_role, user_role administrator
 
         Id : TUID | key, unique, mapped
+        Email : STRING | ascending
         Pseudonym : STRING
         Password : STRING
-        Role : STRING
-        Email : STRING | ascending
+        Role : STRING | is_enumeration, enumeration "[ 'guest', 'contributor', 'author', 'editor', 'administrator' ]^[ 'Guest', 'Contributor', 'Author', 'Editor', 'Administrator' ]", has_default_value, default_value contributor

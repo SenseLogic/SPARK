@@ -960,10 +960,10 @@ function Route(
                       && path_value_count === 3
                       && path_value_array[ 2 ] === 'add'
                       && HasPostValue( 'Id' )
+                      && HasPostValue( 'Email' )
                       && HasPostValue( 'Pseudonym' )
                       && HasPostValue( 'Password' )
-                      && HasPostValue( 'Role' )
-                      && HasPostValue( 'Email' ) )
+                      && HasPostValue( 'Role' ) )
             {
                 import 'ADMINISTRATION/CONTROLLER/do_add_user_controller.php';
             }
@@ -986,10 +986,10 @@ function Route(
             else if ( it_is_post_request
                       && path_value_count === 4
                       && path_value_array[ 2 ] === 'edit'
+                      && HasPostValue( 'Email' )
                       && HasPostValue( 'Pseudonym' )
                       && HasPostValue( 'Password' )
-                      && HasPostValue( 'Role' )
-                      && HasPostValue( 'Email' ) )
+                      && HasPostValue( 'Role' ) )
             {
                 var user_id = path_value_array[ 3 ];
 

@@ -9,12 +9,12 @@
 
         if ( property_exists( $page, 'MetaTitle' ) )
         {
-            $meta_title = $page->MetaTitle;
+            $meta_title = GetTranslatedText( $page->MetaTitle, $this->LanguageCode );
         }
 
         if ( property_exists( $page, 'MetaDescription' ) )
         {
-            $meta_description = $page->MetaDescription;
+            $meta_description = GetTranslatedText( $page->MetaDescription, $this->LanguageCode );
         }
 
         if ( property_exists( $page, 'MetaImagePath' ) )

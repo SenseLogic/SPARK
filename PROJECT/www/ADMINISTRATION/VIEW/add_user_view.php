@@ -9,29 +9,36 @@
             add_user_form,
             it_is_valid_add_user_form,
             id_field,
+            email_field,
             pseudonym_field,
             password_field,
-            role_field,
-            email_field;
+            role_field;
 
         add_user_form = document.AddUserForm;
         id_field = add_user_form.Id;
+        email_field = add_user_form.Email;
         pseudonym_field = add_user_form.Pseudonym;
         password_field = add_user_form.Password;
         role_field = add_user_form.Role;
-        email_field = add_user_form.Email;
 
         id_field.RemoveClass( "form-field-error" );
+        email_field.RemoveClass( "form-field-error" );
         pseudonym_field.RemoveClass( "form-field-error" );
         password_field.RemoveClass( "form-field-error" );
         role_field.RemoveClass( "form-field-error" );
-        email_field.RemoveClass( "form-field-error" );
 
         it_is_valid_add_user_form = true;
 
         if ( id_field.value === "" )
         {
             id_field.AddClass( "form-field-error" );
+
+            it_is_valid_add_user_form = false;
+        }
+
+        if ( email_field.value === "" )
+        {
+            email_field.AddClass( "form-field-error" );
 
             it_is_valid_add_user_form = false;
         }
@@ -53,13 +60,6 @@
         if ( role_field.value === "" )
         {
             role_field.AddClass( "form-field-error" );
-
-            it_is_valid_add_user_form = false;
-        }
-
-        if ( email_field.value === "" )
-        {
-            email_field.AddClass( "form-field-error" );
 
             it_is_valid_add_user_form = false;
         }
@@ -88,6 +88,24 @@
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="Id">
                     <input-component result-class="form-input" result-name="Id" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
+                </div>
+                <?php
+                     $field_name = 'Email';
+
+                    if ( HasQueryValue( $field_name ) )
+                    {
+                         $field_value = GetQueryValue( $field_name );
+                    }
+                    else
+                    {
+                        $field_value = '';
+                    }
+                ?>
+                <div class="form-field-name" data-is-column-title data-column-name="Email">
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Email' ) ); ?> :
+                </div>
+                <div class="form-field-value" data-is-column-value data-column-name="Email">
+                    <input-component result-class="form-input" result-name="Email" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
                      $field_name = 'Pseudonym';
@@ -134,32 +152,14 @@
                     }
                     else
                     {
-                        $field_value = '';
+                        $field_value = 'contributor';
                     }
                 ?>
                 <div class="form-field-name" data-is-column-title data-column-name="Role">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Role' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="Role">
-                    <input-component result-class="form-input" result-name="Role" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
-                </div>
-                <?php
-                     $field_name = 'Email';
-
-                    if ( HasQueryValue( $field_name ) )
-                    {
-                         $field_value = GetQueryValue( $field_name );
-                    }
-                    else
-                    {
-                        $field_value = '';
-                    }
-                ?>
-                <div class="form-field-name" data-is-column-title data-column-name="Email">
-                    <?php echo htmlspecialchars( GetTextBySlug( 'Email' ) ); ?> :
-                </div>
-                <div class="form-field-value" data-is-column-value data-column-name="Email">
-                    <input-component result-class="form-input" result-name="Email" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
+                    <dropdown-component result-class="form-select" result-name="Role" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"  option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'guest', 'contributor', 'author', 'editor', 'administrator' ] ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'Guest', 'Contributor', 'Author', 'Editor', 'Administrator' ] ) ) ); ?>"></dropdown-component>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="<?php echo htmlspecialchars( GetParentRoute( null, '/admin/user' ) ); ?>">
                 </a>
