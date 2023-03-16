@@ -2,13 +2,13 @@ spark-project
 
     TEXT | dropped
 
-        Id : TUID | key, unique
+        Id : TUID | key, unique, is_hidden, has_default_expression, default_expression GetRandomTuid()
         Slug : STRING | indexed, is_slug
         Text : STRING = "{{latin 2 4 5 10}}¨fr:{{latin 2 4 5 10}}" | is_multilingual_text
 
     LANGUAGE | sorted, dropped
 
-        Id : TUID | key, unique
+        Id : TUID | key, unique, is_hidden, has_default_expression, default_expression GetRandomTuid()
         Code : STRING | processed
         Number : STRING | ascending
         Text : STRING | is_multilingual
@@ -16,84 +16,86 @@ spark-project
 
     PAGE_TYPE | sorted, dropped
 
-        Id : TUID | key, unique
+        Id : TUID | key, unique, is_hidden, has_default_expression, default_expression GetRandomTuid()
         Slug : STRING | is_slug
         Name : STRING = "{{latin 1 1 4 6}}" | optional, ascending
 
     PAGE | managed, sorted, dropped, has_user_role, user_role contributor
 
-        Id : TUID | key, unique
+        Id : TUID | key, unique, is_hidden, has_default_expression, default_expression GetRandomTuid()
         Slug : STRING = "" | optional
         Route : STRING | processed
         TypeSlug : PAGE_TYPE.Slug | processed, is_slug, is_enumeration, enumeration "GetElementPropertyArray( .PageTypeArray, 'Slug' )^GetUntranslatedElementArray( GetElementPropertyArray( .PageTypeArray, 'Name' ) )"
         Number : FLOAT32 | ascending
-        LanguageCodeArray : LIST[ LANGUAGE.Code ] = "{ en ~ fr }" | is_enumeration_list, enumeration "[ 'en', 'fr', 'de', 'ja' ,'ru' ]^[ 'English', 'French', 'German', 'Japanese', 'Russian' ]"
+        LanguageCodeArray : LIST[ LANGUAGE.Code ] = "{ en ~ fr }" | is_enumeration_list, enumeration "[ 'en', 'fr', 'de', 'ja' ,'ru' ]^[ 'English', 'French', 'German', 'Japanese', 'Russian' ]", has_default_value, default_value "[ \"en\" ]"
         IsActive : BOOL = "true" | is_enumeration, enumeration "[ 0, 1 ]^[ 'False', 'True' ]", has_default_value, default_value 1
         Title : STRING = "{{latin 1 1 4 6}}¨fr:{{latin 1 1 4 6}}" | optional, is_multilingual
         Heading : STRING = "{{Title}}" | optional, is_multilingual_text
         Teaser : STRING = "{{latin 2 4 5 10}}¨fr:{{latin 2 4 5 10}}" | optional, is_multilingual_text
         ImagePath : STRING = "/static/image/article/beach.jpg|/static/image/article/california.jpg|/static/image/article/clouds.jpg|/static/image/article/road.jpg|/static/image/article/sunset.jpg|/static/image/article/tree.jpg" | optional, is_image
-        ImageVerticalPosition : STRING = "bottom|center|top" | is_enumeration, enumeration "[ 'top', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'bottom']^[ 'Top', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Bottom' ]", has_default_value, default_value center
-        ImageHorizontalPosition : STRING = "left|center|right" | is_enumeration, enumeration "[ 'left', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'right']^['Left', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Right' ]", has_default_value, default_value center
+        ImageVerticalPosition : STRING = "bottom|center|top" | is_enumeration, enumeration "[ 'top', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'bottom']^[ 'Top', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Bottom' ]", has_default_value, default_value "center"
+        ImageHorizontalPosition : STRING = "left|center|right" | is_enumeration, enumeration "[ 'left', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'right']^[ 'Left', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Right' ]", has_default_value, default_value "center"
         VideoPath : STRING = "/static/video/article/train.mp4|/static/video/article/bus.mp4" | optional, is_video
         MetaTitle : STRING = "{{Title}}" | optional, is_multilingual
         MetaDescription : STRING = "{{Teaser}}" | optional, is_multilingual_text
-        MetaImagePath : STRING = "{{ImagePath}}" | optional, is_image
+        MetaSubRouteArray : LIST[ STRING ] = "{}" | optional, is_list, has_default_value, default_value "[]"
+        MetaSubTitleArray : LIST[ STRING ] = "{}" | optional, is_multilingual_list, has_default_value, default_value "[]"
+        MetaSubDescriptionArray : LIST[ STRING ] = "{}" | optional, is_multilingual_text_list, has_default_value, default_value "[]"
 
     BLOCK_CATEGORY | sorted, dropped
 
-        Id : TUID | key, unique
+        Id : TUID | key, unique, is_hidden, has_default_expression, default_expression GetRandomTuid()
         Slug : STRING | mapped, is_slug
         Name : STRING = "{{latin 1 1 4 6}}" | ascending
 
     BLOCK_TYPE | sorted, dropped
 
-        Id : TUID | key, unique
+        Id : TUID | key, unique, is_hidden, has_default_expression, default_expression GetRandomTuid()
         Slug : STRING | mapped, is_slug
         Name : STRING = "{{latin 1 1 4 6}}" | ascending
 
     BLOCK_CONTENT | sorted, dropped
 
-        Id : TUID | key, unique
+        Id : TUID | key, unique, is_hidden, has_default_expression, default_expression GetRandomTuid()
         Slug : STRING | mapped, is_slug
         Name : STRING = "{{latin 1 1 4 6}}" | ascending
 
     BLOCK | managed, sorted, dropped, has_footer, footer block_footer, has_user_role, user_role contributor, count 50
 
-        Id : TUID | key, unique
+        Id : TUID | key, unique, is_hidden, has_default_expression, default_expression GetRandomTuid()
         Slug : STRING = "" | optional
         PageId : TUID = "{{PAGE.Id}}" | processed, is_enumeration, enumeration "GetElementPropertyArray( .PageArray, 'Id' )^GetUntranslatedElementArray( GetElementPropertyArray( .PageArray, 'Title' ) )"
         CategorySlug : BLOCK_CATEGORY.Slug = "content" | processed, is_slug, is_enumeration, enumeration "GetElementPropertyArray( .BlockCategoryArray, 'Slug' )^GetUntranslatedElementArray( GetElementPropertyArray( .BlockCategoryArray, 'Name' ) )"
         ContentSlug : BLOCK_CONTENT.Slug = "text" | is_slug, is_enumeration, enumeration "GetElementPropertyArray( .BlockContentArray, 'Slug' )^GetUntranslatedElementArray( GetElementPropertyArray( .BlockContentArray,'Name' ) )"
         TypeSlug : BLOCK_TYPE.Slug | processed, is_slug, is_enumeration, enumeration "GetElementPropertyArray( .BlockTypeArray, 'Slug' )^GetUntranslatedElementArray( GetElementPropertyArray( .BlockTypeArray, 'Name' ) )"
         Number : FLOAT32 | ascending
-        LanguageCodeArray : LIST[ LANGUAGE.Code ] = "{ en ~ fr }" | is_enumeration_list, enumeration "[ 'en', 'fr', 'de', 'ja' ,'ru' ]^[ 'English', 'French', 'German', 'Japanese', 'Russian' ]"
+        LanguageCodeArray : LIST[ LANGUAGE.Code ] = "{ en ~ fr }" | is_enumeration_list, enumeration "[ 'en', 'fr', 'de', 'ja' ,'ru' ]^[ 'English', 'French', 'German', 'Japanese', 'Russian' ]", has_default_value, default_value "[ \"en\" ]"
         MinimumHeight : STRING = "56.25%"
         Title : STRING = "{{latin 1 1 4 6}}¨fr:{{latin 1 1 4 6}}" | optional, is_multilingual_text
-        TitleArray : LIST[ STRING ] = "{}" | optional, is_multilingual_text_list
+        TitleArray : LIST[ STRING ] = "{}" | optional, is_multilingual_text_list, has_default_value, default_value "[]"
         Teaser : STRING = "" | optional, is_multilingual_text
-        TeaserArray : LIST[ STRING ] = "{}" | optional, is_multilingual_text_list
+        TeaserArray : LIST[ STRING ] = "{}" | optional, is_multilingual_text_list, has_default_value, default_value "[]"
         Text : STRING = "{{latin 2 10 5 10}}¨fr:{{latin 2 10 5 10}}" | optional, is_multilingual_text
-        TextArray : LIST[ STRING ] = "{}" | optional, is_multilingual_text_list
+        TextArray : LIST[ STRING ] = "{}" | optional, is_multilingual_text_list, has_default_value, default_value "[]"
         Route : STRING = "" | optional, is_multilingual
-        RouteArray : LIST[ STRING ] = "{}" | optional, is_multilingual_list
+        RouteArray : LIST[ STRING ] = "{}" | optional, is_multilingual_list, has_default_value, default_value "[]"
         ImageSide : STRING = "left|right" | optional, is_enumeration, enumeration "[ 'left', 'right' ]^[ 'Left', 'Right' ]", has_default_value, default_value left
         ImageLegend : STRING = "" | optional, is_multilingual_text
-        ImageLegendArray : LIST[ STRING ] = "{}" | optional, is_multilingual_text_list
+        ImageLegendArray : LIST[ STRING ] = "{}" | optional, is_multilingual_text_list, has_default_value, default_value "[]"
         ImagePath : STRING = "/static/image/article/autumn.jpg|/static/image/article/castle.jpg|/static/image/article/drink.jpg|/static/image/article/groynes.jpg|/static/image/article/mountains.jpg|/static/image/article/spring.jpg" | optional, is_image
-        ImagePathArray : LIST[ STRING ] = "{}" | optional, is_image_list
-        ImageVerticalPosition : STRING = "bottom|center|top" | optional, is_enumeration, enumeration "[ 'top', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'bottom']^['Top', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Bottom' ]", has_default_value, default_value center
-        ImageVerticalPositionArray : LIST[ STRING ] = "{}" | optional, is_enumeration_list, enumeration "[ 'top', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'bottom']^['Top', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Bottom' ]", has_default_value, default_value center
-        ImageHorizontalPosition : STRING = "left|center|right" | optional, is_enumeration, enumeration "[ 'left', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'right']^['Left', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Right' ]", has_default_value, default_value center
-        ImageHorizontalPositionArray : LIST[ STRING ] = "{}" | optional, is_enumeration_list, enumeration "[ 'left', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'right']^['Left', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Right' ]", has_default_value, default_value center
+        ImagePathArray : LIST[ STRING ] = "{}" | optional, is_image_list, has_default_value, default_value "[]"
+        ImageVerticalPosition : STRING = "bottom|center|top" | optional, is_enumeration, enumeration "[ 'top', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'bottom']^[ 'Top', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Bottom' ]", has_default_value, default_value "center"
+        ImageVerticalPositionArray : LIST[ STRING ] = "{}" | optional, is_enumeration_list, enumeration "[ 'top', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'bottom']^[ 'Top', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Bottom' ]", has_default_value, default_value "[]"
+        ImageHorizontalPosition : STRING = "left|center|right" | optional, is_enumeration, enumeration "[ 'left', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'right']^[ 'Left', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Right' ]", has_default_value, default_value "center"
+        ImageHorizontalPositionArray : LIST[ STRING ] = "{}" | optional, is_enumeration_list, enumeration "[ 'left', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'right']^[ 'Left', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Right' ]", has_default_value, default_value "[]"
         VideoPath : STRING = "/static/video/article/train.mp4|/static/video/article/bus.mp4" | optional, is_video
-        VideoPathArray : LIST[ STRING ] = "{}" | optional, is_video_list
+        VideoPathArray : LIST[ STRING ] = "{}" | optional, is_video_list, has_default_value, default_value "[]"
         DocumentPath : STRING = "" | optional, is_document
-        DocumentPathArray : LIST[ STRING ] = "{}" | optional, is_document_list
+        DocumentPathArray : LIST[ STRING ] = "{}" | optional, is_document_list, has_default_value, default_value "[]"
 
     CONTACT | sorted
 
-        Id : TUID | key, unique
+        Id : TUID | key, unique, is_hidden, has_default_expression, default_expression GetRandomTuid()
         Name : STRING
         Company : STRING
         Email : STRING
@@ -104,7 +106,7 @@ spark-project
 
     USER | sorted, dropped, has_user_role, user_role administrator
 
-        Id : TUID | key, unique, mapped
+        Id : TUID | key, unique, mapped, is_hidden, has_default_expression, default_expression GetRandomTuid()
         Email : STRING | ascending
         Pseudonym : STRING
         Password : STRING

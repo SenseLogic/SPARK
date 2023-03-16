@@ -176,13 +176,13 @@
                     }
                     else
                     {
-                        $field_value = '';
+                        $field_value = GetRandomTuid();
                     }
                 ?>
-                <div class="form-field-name" data-is-column-title data-column-name="Id">
+                <div class="form-field-name is-hidden" data-is-column-title data-column-name="Id">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Id' ) ); ?> :
                 </div>
-                <div class="form-field-value" data-is-column-value data-column-name="Id">
+                <div class="form-field-value is-hidden" data-is-column-value data-column-name="Id">
                     <input-component result-class="form-input" result-name="Id" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
@@ -302,7 +302,7 @@
                     }
                     else
                     {
-                        $field_value = '';
+                        $field_value = "[ \"en\" ]";
                     }
                 ?>
                 <div class="form-field-name" data-is-column-title data-column-name="LanguageCodeArray">
@@ -356,7 +356,7 @@
                     }
                     else
                     {
-                        $field_value = '';
+                        $field_value = "[]";
                     }
                 ?>
                 <div class="form-field-name" data-is-column-title data-column-name="TitleArray">
@@ -392,7 +392,7 @@
                     }
                     else
                     {
-                        $field_value = '';
+                        $field_value = "[]";
                     }
                 ?>
                 <div class="form-field-name" data-is-column-title data-column-name="TeaserArray">
@@ -428,7 +428,7 @@
                     }
                     else
                     {
-                        $field_value = '';
+                        $field_value = "[]";
                     }
                 ?>
                 <div class="form-field-name" data-is-column-title data-column-name="TextArray">
@@ -464,7 +464,7 @@
                     }
                     else
                     {
-                        $field_value = '';
+                        $field_value = "[]";
                     }
                 ?>
                 <div class="form-field-name" data-is-column-title data-column-name="RouteArray">
@@ -482,7 +482,7 @@
                     }
                     else
                     {
-                        $field_value = 'left';
+                        $field_value = "left";
                     }
                 ?>
                 <div class="form-field-name" data-is-column-title data-column-name="ImageSide">
@@ -518,7 +518,7 @@
                     }
                     else
                     {
-                        $field_value = '';
+                        $field_value = "[]";
                     }
                 ?>
                 <div class="form-field-name" data-is-column-title data-column-name="ImageLegendArray">
@@ -554,7 +554,7 @@
                     }
                     else
                     {
-                        $field_value = '';
+                        $field_value = "[]";
                     }
                 ?>
                 <div class="form-field-name" data-is-column-title data-column-name="ImagePathArray">
@@ -572,14 +572,14 @@
                     }
                     else
                     {
-                        $field_value = 'center';
+                        $field_value = "center";
                     }
                 ?>
                 <div class="form-field-name" data-is-column-title data-column-name="ImageVerticalPosition">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Image Vertical Position' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="ImageVerticalPosition">
-                    <dropdown-component result-class="form-select" result-name="ImageVerticalPosition" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" is-optional option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'top', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'bottom'] ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( ['Top', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Bottom' ] ) ) ); ?>"></dropdown-component>
+                    <dropdown-component result-class="form-select" result-name="ImageVerticalPosition" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" is-optional option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'top', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'bottom'] ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'Top', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Bottom' ] ) ) ); ?>"></dropdown-component>
                 </div>
                 <?php
                      $field_name = 'ImageVerticalPositionArray';
@@ -590,14 +590,14 @@
                     }
                     else
                     {
-                        $field_value = 'center';
+                        $field_value = "[]";
                     }
                 ?>
                 <div class="form-field-name" data-is-column-title data-column-name="ImageVerticalPositionArray">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Image Vertical Position Array' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="ImageVerticalPositionArray">
-                    <dropdown-list-component result-class="form-select" result-name="ImageVerticalPositionArray" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" is-optional option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'top', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'bottom'] ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( ['Top', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Bottom' ] ) ) ); ?>" list-container-class="form-list-container" value-container-class="form-value-container" value-class="form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></dropdown-list-component>
+                    <dropdown-list-component result-class="form-select" result-name="ImageVerticalPositionArray" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" is-optional option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'top', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'bottom'] ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'Top', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Bottom' ] ) ) ); ?>" list-container-class="form-list-container" value-container-class="form-value-container" value-class="form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></dropdown-list-component>
                 </div>
                 <?php
                      $field_name = 'ImageHorizontalPosition';
@@ -608,14 +608,14 @@
                     }
                     else
                     {
-                        $field_value = 'center';
+                        $field_value = "center";
                     }
                 ?>
                 <div class="form-field-name" data-is-column-title data-column-name="ImageHorizontalPosition">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Image Horizontal Position' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="ImageHorizontalPosition">
-                    <dropdown-component result-class="form-select" result-name="ImageHorizontalPosition" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" is-optional option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'left', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'right'] ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( ['Left', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Right' ] ) ) ); ?>"></dropdown-component>
+                    <dropdown-component result-class="form-select" result-name="ImageHorizontalPosition" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" is-optional option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'left', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'right'] ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'Left', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Right' ] ) ) ); ?>"></dropdown-component>
                 </div>
                 <?php
                      $field_name = 'ImageHorizontalPositionArray';
@@ -626,14 +626,14 @@
                     }
                     else
                     {
-                        $field_value = 'center';
+                        $field_value = "[]";
                     }
                 ?>
                 <div class="form-field-name" data-is-column-title data-column-name="ImageHorizontalPositionArray">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Image Horizontal Position Array' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="ImageHorizontalPositionArray">
-                    <dropdown-list-component result-class="form-select" result-name="ImageHorizontalPositionArray" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" is-optional option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'left', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'right'] ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( ['Left', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Right' ] ) ) ); ?>" list-container-class="form-list-container" value-container-class="form-value-container" value-class="form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></dropdown-list-component>
+                    <dropdown-list-component result-class="form-select" result-name="ImageHorizontalPositionArray" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" is-optional option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'left', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'right'] ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'Left', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Right' ] ) ) ); ?>" list-container-class="form-list-container" value-container-class="form-value-container" value-class="form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></dropdown-list-component>
                 </div>
                 <?php
                      $field_name = 'VideoPath';
@@ -662,7 +662,7 @@
                     }
                     else
                     {
-                        $field_value = '';
+                        $field_value = "[]";
                     }
                 ?>
                 <div class="form-field-name" data-is-column-title data-column-name="VideoPathArray">
@@ -698,7 +698,7 @@
                     }
                     else
                     {
-                        $field_value = '';
+                        $field_value = "[]";
                     }
                 ?>
                 <div class="form-field-name" data-is-column-title data-column-name="DocumentPathArray">

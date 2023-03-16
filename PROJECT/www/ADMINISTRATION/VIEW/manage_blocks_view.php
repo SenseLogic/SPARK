@@ -4,6 +4,10 @@
         <div class="tool-container">
             <?php  $filter_name = "BlockFilter"; ?>
             <?php require __DIR__ . '/' . 'BLOCK/filter.php'; ?>
+            <?php if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
+                <a class="form-button form-button-large add-button" href="/admin/block/add">
+                </a>
+            <?php } ?>
         </div>
     </div>
     <?php foreach ( $this->BlockArray as  $block ) { ?>

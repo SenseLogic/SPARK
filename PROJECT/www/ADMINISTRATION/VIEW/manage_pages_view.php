@@ -4,6 +4,10 @@
         <div class="tool-container">
             <?php  $filter_name = "PageFilter"; ?>
             <?php require __DIR__ . '/' . 'BLOCK/filter.php'; ?>
+            <?php if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
+                <a class="form-button form-button-large add-button" href="/admin/page/add">
+                </a>
+            <?php } ?>
         </div>
     </div>
     <?php foreach ( $this->PageArray as  $page ) { ?>

@@ -80,13 +80,13 @@
                     }
                     else
                     {
-                        $field_value = '';
+                        $field_value = GetRandomTuid();
                     }
                 ?>
-                <div class="form-field-name" data-is-column-title data-column-name="Id">
+                <div class="form-field-name is-hidden" data-is-column-title data-column-name="Id">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Id' ) ); ?> :
                 </div>
-                <div class="form-field-value" data-is-column-value data-column-name="Id">
+                <div class="form-field-value is-hidden" data-is-column-value data-column-name="Id">
                     <input-component result-class="form-input" result-name="Id" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
@@ -152,7 +152,7 @@
                     }
                     else
                     {
-                        $field_value = 'contributor';
+                        $field_value = "contributor";
                     }
                 ?>
                 <div class="form-field-name" data-is-column-title data-column-name="Role">

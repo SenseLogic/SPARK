@@ -3,31 +3,44 @@
      $meta_description = 'Spark Project';
      $meta_image_path = '/favicon-512x512.png';
 
-    if ( isset( $this->PageByRouteMap[ $this->Route ] ) )
+     $sub_route_character_index = GetTextPosition( $this->Route, '/#' );
+
+    if ( $sub_route_character_index !== false )
     {
-         $page = $this->PageByRouteMap[ $this->Route ];
+         $route = substr( $this->Route, 0, $sub_route_character_index );
+         $sub_route = substr( $this->Route, $sub_route_character_index );
+    }
+    else
+    {
+        $route = $this->Route;
+        $sub_route = '';
+    }
 
-        if ( property_exists( $page, 'MetaTitle' ) )
-        {
-            $meta_title = GetTranslatedText( $page->MetaTitle, $this->LanguageCode );
-        }
+    if ( isset( $this->PageByRouteMap[ $route ] ) )
+    {
+         $page = $this->PageByRouteMap[ $route ];
 
-        if ( property_exists( $page, 'MetaDescription' ) )
-        {
-            $meta_description = GetTranslatedText( $page->MetaDescription, $this->LanguageCode );
-        }
+        $meta_title = GetTranslatedText( $page->MetaTitle, $this->LanguageCode );
+        $meta_description = GetTranslatedText( $page->MetaDescription, $this->LanguageCode );
+        $meta_image_path = $page->ImagePath;
 
-        if ( property_exists( $page, 'MetaImagePath' ) )
+        if ( $sub_route !== '' )
         {
-            $meta_image_path = $page->MetaImagePath;
+             $sub_route_index = array_search( $sub_route, $page->SubRouteArray, true );
+
+            if ( $sub_route_index !== false )
+            {
+                $meta_title = GetTranslatedText( $page->MetaSubTitleArray[ $sub_route_index ], $this->LanguageCode );
+                $meta_description = GetTranslatedText( $page->MetaSubDescriptionArray[ $sub_route_index ], $this->LanguageCode );
+            }
         }
     }
 ?>
 <meta charset="utf-8"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-<meta name="title" content="<?php echo $meta_title; ?>"/>
-<meta name="description" content="<?php echo $meta_description; ?>"/>
+<meta name="title" content="<?php echo htmlspecialchars( $meta_title ); ?>"/>
+<meta name="description" content="<?php echo htmlspecialchars( $meta_description ); ?>"/>
 <meta name="keywords" content="spark, project"/>
 <meta name="author" content="Spark Team"/>
 <meta name="language" content="English"/>
@@ -41,16 +54,16 @@
 <meta name="msapplication-config" content="/browserconfig.xml"/>
 <meta name="msapplication-TileColor" content="#FFFFFF"/>
 <meta name="msapplication-TileImage" content="/favicon-512x512.png"/>
-<meta name="twitter:card" content="<?php echo $meta_title; ?>"/>
-<meta name="twitter:title" content="<?php echo $meta_title; ?>"/>
-<meta name="twitter:description" content="<?php echo $meta_description; ?>"/>
+<meta name="twitter:card" content="<?php echo htmlspecialchars( $meta_title ); ?>"/>
+<meta name="twitter:title" content="<?php echo htmlspecialchars( $meta_title ); ?>"/>
+<meta name="twitter:description" content="<?php echo htmlspecialchars( $meta_description ); ?>"/>
 <meta name="twitter:image" content="/favicon-512x512.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="Spark Project"/>
-<meta property="og:title" content="<?php echo $meta_title; ?>"/>
-<meta property="og:description" content="<?php echo $meta_description; ?>"/>
+<meta property="og:title" content="<?php echo htmlspecialchars( $meta_title ); ?>"/>
+<meta property="og:description" content="<?php echo htmlspecialchars( $meta_description ); ?>"/>
 <meta property="og:url" content="https://www.spark-project.com/"/>
-<meta property="og:image" content="<?php echo $meta_image_path; ?>"/>
+<meta property="og:image" content="<?php echo htmlspecialchars( $meta_image_path ); ?>"/>
 <title>Spark Project</title>
 <link rel="icon" href="/favicon.ico"/>
 <link rel="icon" sizes="48x48" href="/favicon-48x48.png"/>

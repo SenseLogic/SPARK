@@ -61,7 +61,13 @@
                 <% GetTextBySlug( 'Meta Description' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% GetTextBySlug( 'Meta Image Path' ) %>
+                <% GetTextBySlug( 'Meta Sub Route Array' ) %>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <% GetTextBySlug( 'Meta Sub Title Array' ) %>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <% GetTextBySlug( 'Meta Sub Description Array' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
                 <% GetTextBySlug( 'Action' ) %>
@@ -144,7 +150,13 @@
                         </div>
                     </div>
                     <div class="sortable-table-cell filter-cell">
-                        <% GetValueText( page.MetaImagePath ) %>
+                        <% GetValueText( page.MetaSubRouteArray ) %>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <% GetValueText( page.MetaSubTitleArray ) %>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <% GetValueText( page.MetaSubDescriptionArray ) %>
                     </div>
                     <div class="form-centered sortable-table-cell">
                         <a class="form-button view-button" href="/admin/page/view/<% page.Id %>">
@@ -235,7 +247,7 @@
                             <% GetTextBySlug( 'Image Horizontal Position' ) %> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="ImageHorizontalPosition">
-                            <dropdown-component result-class="form-select" result-name="ImageHorizontalPosition" result-value="<% GetValueText( page.ImageHorizontalPosition ) %>" is-readonly  option-values="<% GetValueText( GetJsonText( [ 'left', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'right'] ) ) %>" option-names="<% GetValueText( GetJsonText( ['Left', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Right' ] ) ) %>"></dropdown-component>
+                            <dropdown-component result-class="form-select" result-name="ImageHorizontalPosition" result-value="<% GetValueText( page.ImageHorizontalPosition ) %>" is-readonly  option-values="<% GetValueText( GetJsonText( [ 'left', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'right'] ) ) %>" option-names="<% GetValueText( GetJsonText( [ 'Left', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Right' ] ) ) %>"></dropdown-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="VideoPath">
                             <% GetTextBySlug( 'Video Path' ) %> :
@@ -255,11 +267,23 @@
                         <div class="form-field-value" data-is-column-value data-column-name="MetaDescription">
                             <multilingual-text-input-component container-class="form-multilingual-container" result-class="form-textarea" result-name="MetaDescription" result-value="<% GetValueText( page.MetaDescription ) %>" is-readonly language-codes="<% GetValueText( GetJsonText( LanguageCodeArray ) ) %>" language-names="<% GetValueText( GetJsonText( LanguageNameArray ) ) %>"></multilingual-text-input-component>
                         </div>
-                        <div class="form-field-name" data-is-column-title data-column-name="MetaImagePath">
-                            <% GetTextBySlug( 'Meta Image Path' ) %> :
+                        <div class="form-field-name" data-is-column-title data-column-name="MetaSubRouteArray">
+                            <% GetTextBySlug( 'Meta Sub Route Array' ) %> :
                         </div>
-                        <div class="form-field-value" data-is-column-value data-column-name="MetaImagePath">
-                            <image-path-input-component container-class="form-upload-container" result-class="form-input form-upload-input" result-name="MetaImagePath" result-value="<% GetValueText( page.MetaImagePath ) %>" is-readonly image-class="form-upload-image" error-image-path="/static/image/admin/missing_image.svg" upload-button-container-class="form-upload-button-container" upload-button-class="form-button upload-button form-upload-button" upload-api-url="/admin/upload/image" delete-button-class="form-button delete-button form-delete-button" delete-api-url="/admin/delete/file"></image-path-input-component>
+                        <div class="form-field-value" data-is-column-value data-column-name="MetaSubRouteArray">
+                            <input-list-component container-class="form-list-container" result-class="form-list-container" result-name="MetaSubRouteArray" result-value="<% GetValueText( page.MetaSubRouteArray ) %>" is-readonly list-container-class="form-list-container" value-container-class="form-value-container" value-class="form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button"></input-list-component>
+                        </div>
+                        <div class="form-field-name" data-is-column-title data-column-name="MetaSubTitleArray">
+                            <% GetTextBySlug( 'Meta Sub Title Array' ) %> :
+                        </div>
+                        <div class="form-field-value" data-is-column-value data-column-name="MetaSubTitleArray">
+                            <multilingual-input-list-component container-class="form-list-container" result-class="form-input" result-name="MetaSubTitleArray" result-value="<% GetValueText( page.MetaSubTitleArray ) %>" is-readonly list-container-class="form-list-container" value-container-class="form-value-container" value-class="form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<% GetValueText( GetJsonText( LanguageCodeArray ) ) %>" language-names="<% GetValueText( GetJsonText( LanguageNameArray ) ) %>"></multilingual-input-list-component>
+                        </div>
+                        <div class="form-field-name" data-is-column-title data-column-name="MetaSubDescriptionArray">
+                            <% GetTextBySlug( 'Meta Sub Description Array' ) %> :
+                        </div>
+                        <div class="form-field-value" data-is-column-value data-column-name="MetaSubDescriptionArray">
+                            <multilingual-text-input-list-component container-class="form-list-container" result-class="form-textarea" result-name="MetaSubDescriptionArray" result-value="<% GetValueText( page.MetaSubDescriptionArray ) %>" is-readonly list-container-class="form-list-container" value-container-class="form-value-container" value-class="form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<% GetValueText( GetJsonText( LanguageCodeArray ) ) %>" language-names="<% GetValueText( GetJsonText( LanguageNameArray ) ) %>"></multilingual-text-input-list-component>
                         </div>
                     </div>
                     <? if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
