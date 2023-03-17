@@ -33,9 +33,10 @@
                 {
                     type_slug_value = column_value_element.GetFirstChildElement().value;
 
-                    if ( column_value_element.onchange !== UpdateFieldVisibility )
+                    if ( !column_value_element.IsWatched )
                     {
-                        column_value_element.onchange = UpdateFieldVisibility;
+                        column_value_element.AddEventListener( "value-changed", UpdateFieldVisibility );
+                        column_value_element.IsWatched = true;
                     }
 
                     break;

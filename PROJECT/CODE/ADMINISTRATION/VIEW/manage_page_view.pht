@@ -34,7 +34,7 @@
                             </a>
                             <a class="form-button remove-button" href="/admin/block/remove/<% block.Id %>">
                             </a>
-                            <a class="form-button add-button" href="/admin/block/add?PageId=<# .Page.Id #>&Number=<# added_block_number #>">
+                            <a class="form-button add-button" href="/admin/block/add?Slug=<# .Page.Slug .. '-block-' .. rand() #>&PageId=<# .Page.Id #>&Number=<# added_block_number #>">
                             </a>
                         <? } ?>
                     </div>
@@ -43,7 +43,7 @@
         <? } ?>
     </div>
     <div class="form-extended form-centered margin-top-1rem margin-bottom-1rem">
-        <a class="form-button form-button-large add-button" href="/admin/block/add?PageId=<# .Page.Id #>&Number=<# added_block_number #>">
+        <a class="form-button form-button-large add-button" href="/admin/block/add?Slug=<# .Page.Slug .. '-block-' .. rand() #>&PageId=<# .Page.Id #>&Number=<# added_block_number #>">
         </a>
     </div>
     <div>

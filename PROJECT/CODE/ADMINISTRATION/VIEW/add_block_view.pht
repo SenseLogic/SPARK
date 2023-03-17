@@ -111,6 +111,14 @@
             it_is_valid_add_block_form = false;
         }
 
+        if ( !IsSlugText( slug_field.value )
+             && slug_field.value !== ""  )
+        {
+            slug_field.AddClass( "form-field-error" );
+
+            it_is_valid_add_block_form = false;
+        }
+
         if ( page_id_field.value === "" )
         {
             page_id_field.AddClass( "form-field-error" );
@@ -194,7 +202,7 @@
                     }
                     else
                     {
-                        field_value = '';
+                        field_value = "...-page-block-...";
                     }
                 ?>
                 <div class="form-field-name" data-is-column-title data-column-name="Slug">
@@ -230,7 +238,7 @@
                     }
                     else
                     {
-                        field_value = '';
+                        field_value = "content";
                     }
                 ?>
                 <div class="form-field-name" data-is-column-title data-column-name="CategorySlug">
@@ -248,7 +256,7 @@
                     }
                     else
                     {
-                        field_value = '';
+                        field_value = "text";
                     }
                 ?>
                 <div class="form-field-name" data-is-column-title data-column-name="ContentSlug">
@@ -284,7 +292,7 @@
                     }
                     else
                     {
-                        field_value = '';
+                        field_value = "1";
                     }
                 ?>
                 <div class="form-field-name" data-is-column-title data-column-name="Number">
@@ -302,7 +310,7 @@
                     }
                     else
                     {
-                        field_value = "[ \"en\" ]";
+                        field_value = "[ \"en\", \"fr\" ]";
                     }
                 ?>
                 <div class="form-field-name" data-is-column-title data-column-name="LanguageCodeArray">
@@ -320,7 +328,7 @@
                     }
                     else
                     {
-                        field_value = '';
+                        field_value = "56.25%";
                     }
                 ?>
                 <div class="form-field-name" data-is-column-title data-column-name="MinimumHeight">
@@ -471,7 +479,7 @@
                     <% GetTextBySlug( 'Route Array' ) %> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="RouteArray">
-                    <multilingual-input-list-component container-class="form-multilingual-container" result-class="form-text-input" result-name="RouteArray" result-value="<% GetValueText( field_value ) %>" list-container-class="form-list-container" value-container-class="form-value-container" value-class="form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<% GetValueText( GetJsonText( LanguageCodeArray ) ) %>" language-names="<% GetValueText( GetJsonText( LanguageNameArray ) ) %>"></multilingual-input-list-component>
+                    <multilingual-input-list-component container-class="form-multilingual-container" result-class="form-input" result-name="RouteArray" result-value="<% GetValueText( field_value ) %>" list-container-class="form-list-container" value-container-class="form-value-container" value-class="form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<% GetValueText( GetJsonText( LanguageCodeArray ) ) %>" language-names="<% GetValueText( GetJsonText( LanguageNameArray ) ) %>"></multilingual-input-list-component>
                 </div>
                 <?
                     var field_name = 'ImageSide';

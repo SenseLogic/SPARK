@@ -101,6 +101,14 @@
 
         it_is_valid_edit_block_form = true;
 
+        if ( !IsSlugText( slug_field.value )
+             && slug_field.value !== ""  )
+        {
+            slug_field.AddClass( "form-field-error" );
+
+            it_is_valid_edit_block_form = false;
+        }
+
         if ( page_id_field.value === "" )
         {
             page_id_field.AddClass( "form-field-error" );

@@ -34,7 +34,7 @@
                             </a>
                             <a class="form-button remove-button" href="/admin/block/remove/<?php echo htmlspecialchars( $block->Id ); ?>">
                             </a>
-                            <a class="form-button add-button" href="/admin/block/add?PageId=<?php echo $this->Page->Id; ?>&Number=<?php echo $added_block_number; ?>">
+                            <a class="form-button add-button" href="/admin/block/add?Slug=<?php echo $this->Page->Slug . '-block-' . rand(); ?>&PageId=<?php echo $this->Page->Id; ?>&Number=<?php echo $added_block_number; ?>">
                             </a>
                         <?php } ?>
                     </div>
@@ -43,7 +43,7 @@
         <?php } ?>
     </div>
     <div class="form-extended form-centered margin-top-1rem margin-bottom-1rem">
-        <a class="form-button form-button-large add-button" href="/admin/block/add?PageId=<?php echo $this->Page->Id; ?>&Number=<?php echo $added_block_number; ?>">
+        <a class="form-button form-button-large add-button" href="/admin/block/add?Slug=<?php echo $this->Page->Slug . '-block-' . rand(); ?>&PageId=<?php echo $this->Page->Id; ?>&Number=<?php echo $added_block_number; ?>">
         </a>
     </div>
     <div>

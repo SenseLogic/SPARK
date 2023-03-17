@@ -18,7 +18,7 @@
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="<?php echo htmlspecialchars( GetParentRoute( null, '/admin/page-type' ) ); ?>">
                 </a>
-                <a class="justify-self-end form-button-large form-button form-button-large remove-button" type="this.SubmitForm()">
+                <a class="justify-self-end form-button-large form-button form-button-large remove-button" onclick="this.SubmitForm()">
                 </a>
             </div>
         </form>

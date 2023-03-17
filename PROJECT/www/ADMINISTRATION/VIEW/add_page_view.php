@@ -78,6 +78,14 @@
             it_is_valid_add_page_form = false;
         }
 
+        if ( !IsSlugText( slug_field.value )
+             && slug_field.value !== ""  )
+        {
+            slug_field.AddClass( "form-field-error" );
+
+            it_is_valid_add_page_form = false;
+        }
+
         if ( route_field.value === "" )
         {
             route_field.AddClass( "form-field-error" );
@@ -162,7 +170,7 @@
                     }
                     else
                     {
-                        $field_value = '';
+                        $field_value = "...-page";
                     }
                 ?>
                 <div class="form-field-name" data-is-column-title data-column-name="Slug">
@@ -180,7 +188,7 @@
                     }
                     else
                     {
-                        $field_value = '';
+                        $field_value = "...";
                     }
                 ?>
                 <div class="form-field-name" data-is-column-title data-column-name="Route">
@@ -216,7 +224,7 @@
                     }
                     else
                     {
-                        $field_value = '';
+                        $field_value = "1";
                     }
                 ?>
                 <div class="form-field-name" data-is-column-title data-column-name="Number">
@@ -234,7 +242,7 @@
                     }
                     else
                     {
-                        $field_value = "[ \"en\" ]";
+                        $field_value = "[ \"en\", \"fr\" ]";
                     }
                 ?>
                 <div class="form-field-name" data-is-column-title data-column-name="LanguageCodeArray">
@@ -457,7 +465,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Meta Sub Title Array' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="MetaSubTitleArray">
-                    <multilingual-input-list-component container-class="form-multilingual-container" result-class="form-text-input" result-name="MetaSubTitleArray" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" list-container-class="form-list-container" value-container-class="form-value-container" value-class="form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageCodeArray ) ) ); ?>" language-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageNameArray ) ) ); ?>"></multilingual-input-list-component>
+                    <multilingual-input-list-component container-class="form-multilingual-container" result-class="form-input" result-name="MetaSubTitleArray" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" list-container-class="form-list-container" value-container-class="form-value-container" value-class="form-value" drag-button-class="form-button drag-button form-drag-value-button" add-button-class="form-button add-button form-add-value-button" remove-button-class="form-button remove-button form-remove-value-button" language-codes="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageCodeArray ) ) ); ?>" language-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageNameArray ) ) ); ?>"></multilingual-input-list-component>
                 </div>
                 <?php
                      $field_name = 'MetaSubDescriptionArray';

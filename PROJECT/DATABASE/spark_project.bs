@@ -23,11 +23,11 @@ spark-project
     PAGE | managed, sorted, dropped, has_user_role, user_role contributor
 
         Id : TUID | key, unique, is_hidden, has_default_expression, default_expression GetRandomTuid()
-        Slug : STRING = "" | optional
-        Route : STRING | processed
+        Slug : STRING = "" | optional, is_slug, has_default_value, default_value "...-page"
+        Route : STRING = "" | processed, has_default_value, default_value "..."
         TypeSlug : PAGE_TYPE.Slug | processed, is_slug, is_enumeration, enumeration "GetElementPropertyArray( .PageTypeArray, 'Slug' )^GetUntranslatedElementArray( GetElementPropertyArray( .PageTypeArray, 'Name' ) )"
-        Number : FLOAT32 | ascending
-        LanguageCodeArray : LIST[ LANGUAGE.Code ] = "{ en ~ fr }" | is_enumeration_list, enumeration "[ 'en', 'fr', 'de', 'ja' ,'ru' ]^[ 'English', 'French', 'German', 'Japanese', 'Russian' ]", has_default_value, default_value "[ \"en\" ]"
+        Number : FLOAT32 | ascending, has_default_value, default_value 1
+        LanguageCodeArray : LIST[ LANGUAGE.Code ] = "{ en ~ fr }" | is_enumeration_list, enumeration "[ 'en', 'fr', 'de', 'ja' ,'ru' ]^[ 'English', 'French', 'German', 'Japanese', 'Russian' ]", has_default_value, default_value "[ \"en\", \"fr\" ]"
         IsActive : BOOL = "true" | is_enumeration, enumeration "[ 0, 1 ]^[ 'False', 'True' ]", has_default_value, default_value 1
         Title : STRING = "{{latin 1 1 4 6}}¨fr:{{latin 1 1 4 6}}" | optional, is_multilingual
         Heading : STRING = "{{Title}}" | optional, is_multilingual_text
@@ -63,14 +63,14 @@ spark-project
     BLOCK | managed, sorted, dropped, has_footer, footer block_footer, has_user_role, user_role contributor, count 50
 
         Id : TUID | key, unique, is_hidden, has_default_expression, default_expression GetRandomTuid()
-        Slug : STRING = "" | optional
+        Slug : STRING = "" | optional, is_slug, has_default_value, default_value "...-page-block-..."
         PageId : TUID = "{{PAGE.Id}}" | processed, is_enumeration, enumeration "GetElementPropertyArray( .PageArray, 'Id' )^GetUntranslatedElementArray( GetElementPropertyArray( .PageArray, 'Title' ) )"
-        CategorySlug : BLOCK_CATEGORY.Slug = "content" | processed, is_slug, is_enumeration, enumeration "GetElementPropertyArray( .BlockCategoryArray, 'Slug' )^GetUntranslatedElementArray( GetElementPropertyArray( .BlockCategoryArray, 'Name' ) )"
-        ContentSlug : BLOCK_CONTENT.Slug = "text" | is_slug, is_enumeration, enumeration "GetElementPropertyArray( .BlockContentArray, 'Slug' )^GetUntranslatedElementArray( GetElementPropertyArray( .BlockContentArray,'Name' ) )"
+        CategorySlug : BLOCK_CATEGORY.Slug = "content" | processed, is_slug, is_enumeration, enumeration "GetElementPropertyArray( .BlockCategoryArray, 'Slug' )^GetUntranslatedElementArray( GetElementPropertyArray( .BlockCategoryArray, 'Name' ) )", has_default_value, default_value "content"
+        ContentSlug : BLOCK_CONTENT.Slug = "text" | is_slug, is_enumeration, enumeration "GetElementPropertyArray( .BlockContentArray, 'Slug' )^GetUntranslatedElementArray( GetElementPropertyArray( .BlockContentArray,'Name' ) )", has_default_value, default_value "text"
         TypeSlug : BLOCK_TYPE.Slug | processed, is_slug, is_enumeration, enumeration "GetElementPropertyArray( .BlockTypeArray, 'Slug' )^GetUntranslatedElementArray( GetElementPropertyArray( .BlockTypeArray, 'Name' ) )"
-        Number : FLOAT32 | ascending
-        LanguageCodeArray : LIST[ LANGUAGE.Code ] = "{ en ~ fr }" | is_enumeration_list, enumeration "[ 'en', 'fr', 'de', 'ja' ,'ru' ]^[ 'English', 'French', 'German', 'Japanese', 'Russian' ]", has_default_value, default_value "[ \"en\" ]"
-        MinimumHeight : STRING = "56.25%"
+        Number : FLOAT32 | ascending, has_default_value, default_value 1
+        LanguageCodeArray : LIST[ LANGUAGE.Code ] = "{ en ~ fr }" | is_enumeration_list, enumeration "[ 'en', 'fr', 'de', 'ja' ,'ru' ]^[ 'English', 'French', 'German', 'Japanese', 'Russian' ]", has_default_value, default_value "[ \"en\", \"fr\" ]"
+        MinimumHeight : STRING = "56.25%" | has_default_value, default_value "56.25%"
         Title : STRING = "{{latin 1 1 4 6}}¨fr:{{latin 1 1 4 6}}" | optional, is_multilingual_text
         TitleArray : LIST[ STRING ] = "{}" | optional, is_multilingual_text_list, has_default_value, default_value "[]"
         Teaser : STRING = "" | optional, is_multilingual_text
