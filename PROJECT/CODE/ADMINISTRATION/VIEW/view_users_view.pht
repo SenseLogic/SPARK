@@ -67,25 +67,25 @@
                             <% GetTextBySlug( 'Email' ) %> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="Email">
-                            <input-component result-class="form-input" result-name="Email" result-value="<% GetValueText( user.Email ) %>" is-readonly></input-component>
+                            <input-component class="form-component" result-name="Email" result-value="<% GetValueText( user.Email ) %>" is-readonly></input-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="Pseudonym">
                             <% GetTextBySlug( 'Pseudonym' ) %> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="Pseudonym">
-                            <input-component result-class="form-input" result-name="Pseudonym" result-value="<% GetValueText( user.Pseudonym ) %>" is-readonly></input-component>
+                            <input-component class="form-component" result-name="Pseudonym" result-value="<% GetValueText( user.Pseudonym ) %>" is-readonly></input-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="Password">
                             <% GetTextBySlug( 'Password' ) %> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="Password">
-                            <input-component result-class="form-input" result-name="Password" result-value="<% GetValueText( user.Password ) %>" is-readonly></input-component>
+                            <input-component class="form-component" result-name="Password" result-value="<% GetValueText( user.Password ) %>" is-readonly></input-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="Role">
                             <% GetTextBySlug( 'Role' ) %> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="Role">
-                            <dropdown-component result-class="form-select" result-name="Role" result-value="<% GetValueText( user.Role ) %>" is-readonly  option-values="<% GetValueText( GetJsonText( [ 'guest', 'contributor', 'author', 'editor', 'administrator' ] ) ) %>" option-names="<% GetValueText( GetJsonText( [ 'Guest', 'Contributor', 'Author', 'Editor', 'Administrator' ] ) ) %>"></dropdown-component>
+                            <dropdown-component class="form-component" result-name="Role" result-value="<% GetValueText( user.Role ) %>" is-readonly  option-values="<% GetValueText( GetJsonText( [ 'guest', 'contributor', 'author', 'editor', 'administrator' ] ) ) %>" option-names="<% GetValueText( GetJsonText( [ 'Guest', 'Contributor', 'Author', 'Editor', 'Administrator' ] ) ) %>"></dropdown-component>
                         </div>
                     </div>
                     <? if ( HasSessionMinimumUserRole( 'administrator' ) ) { ?>

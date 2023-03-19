@@ -60,7 +60,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Id' ) ); ?> :
                 </div>
                 <div class="form-field-value is-hidden" data-is-column-value data-column-name="Id">
-                    <input-component result-class="form-input" result-name="Id" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
+                    <input-component class="form-component" result-name="Id" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
                      $field_name = 'Slug';
@@ -78,7 +78,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Slug' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="Slug">
-                    <input-component result-class="form-input" result-name="Slug" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
+                    <input-component class="form-component" result-name="Slug" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
                      $field_name = 'Name';
@@ -96,7 +96,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Name' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="Name">
-                    <input-component result-class="form-input" result-name="Name" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
+                    <input-component class="form-component" result-name="Name" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="<?php echo htmlspecialchars( GetParentRoute( null, '/admin/page-type' ) ); ?>">
                 </a>

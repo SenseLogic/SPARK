@@ -65,25 +65,25 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Email' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="Email">
-                    <input-component result-class="form-input" result-name="Email" result-value="<?php echo htmlspecialchars( GetValueText( $this->User->Email ) ); ?>"></input-component>
+                    <input-component class="form-component" result-name="Email" result-value="<?php echo htmlspecialchars( GetValueText( $this->User->Email ) ); ?>"></input-component>
                 </div>
                 <div class="form-field-name" data-is-column-title data-column-name="Pseudonym">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Pseudonym' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="Pseudonym">
-                    <input-component result-class="form-input" result-name="Pseudonym" result-value="<?php echo htmlspecialchars( GetValueText( $this->User->Pseudonym ) ); ?>"></input-component>
+                    <input-component class="form-component" result-name="Pseudonym" result-value="<?php echo htmlspecialchars( GetValueText( $this->User->Pseudonym ) ); ?>"></input-component>
                 </div>
                 <div class="form-field-name" data-is-column-title data-column-name="Password">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Password' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="Password">
-                    <input-component result-class="form-input" result-name="Password" result-value="<?php echo htmlspecialchars( GetValueText( $this->User->Password ) ); ?>"></input-component>
+                    <input-component class="form-component" result-name="Password" result-value="<?php echo htmlspecialchars( GetValueText( $this->User->Password ) ); ?>"></input-component>
                 </div>
                 <div class="form-field-name" data-is-column-title data-column-name="Role">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Role' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="Role">
-                    <dropdown-component result-class="form-select" result-name="Role" result-value="<?php echo htmlspecialchars( GetValueText( $this->User->Role ) ); ?>"  option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'guest', 'contributor', 'author', 'editor', 'administrator' ] ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'Guest', 'Contributor', 'Author', 'Editor', 'Administrator' ] ) ) ); ?>"></dropdown-component>
+                    <dropdown-component class="form-component" result-name="Role" result-value="<?php echo htmlspecialchars( GetValueText( $this->User->Role ) ); ?>"  option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'guest', 'contributor', 'author', 'editor', 'administrator' ] ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'Guest', 'Contributor', 'Author', 'Editor', 'Administrator' ] ) ) ); ?>"></dropdown-component>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="<?php echo htmlspecialchars( GetParentRoute( null, '/admin/user' ) ); ?>">
                 </a>

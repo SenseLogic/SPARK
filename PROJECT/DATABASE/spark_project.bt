@@ -119,6 +119,8 @@ function Route(
 
         DefineText( 'Category Slug', 'Category' );
         DefineText( 'Content Slug', 'Content' );
+        DefineText( 'Document Path', 'Document' );
+        DefineText( 'Document Path Array', 'Documents' );
         DefineText( 'Image Horizontal Position Array', 'Image Horizontal Positions' );
         DefineText( 'Image Legend Array', 'Image Legends' );
         DefineText( 'Image Path', 'Image' );
@@ -127,6 +129,9 @@ function Route(
         DefineText( 'Language Code Array', 'Languages' );
         DefineText( 'Page Id', 'Page' );
         DefineText( 'Route Array', 'Routes' );
+        DefineText( 'Teaser Array', 'Teasers' );
+        DefineText( 'Text Array', 'Texts' );
+        DefineText( 'Title Array', 'Titles' );
         DefineText( 'Type Slug', 'Type' );
         DefineText( 'Video Path', 'Video' );
         DefineText( 'Video Path Array', 'Videos' );

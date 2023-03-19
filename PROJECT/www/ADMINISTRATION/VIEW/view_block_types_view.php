@@ -55,13 +55,13 @@
                             <?php echo htmlspecialchars( GetTextBySlug( 'Slug' ) ); ?> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="Slug">
-                            <input-component result-class="form-input" result-name="Slug" result-value="<?php echo htmlspecialchars( GetValueText( $block_type->Slug ) ); ?>" is-readonly></input-component>
+                            <input-component class="form-component" result-name="Slug" result-value="<?php echo htmlspecialchars( GetValueText( $block_type->Slug ) ); ?>" is-readonly></input-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="Name">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Name' ) ); ?> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="Name">
-                            <input-component result-class="form-input" result-name="Name" result-value="<?php echo htmlspecialchars( GetValueText( $block_type->Name ) ); ?>" is-readonly></input-component>
+                            <input-component class="form-component" result-name="Name" result-value="<?php echo htmlspecialchars( GetValueText( $block_type->Name ) ); ?>" is-readonly></input-component>
                         </div>
                     </div>
                     <?php if ( HasSessionMinimumUserRole( 'author' ) ) { ?>

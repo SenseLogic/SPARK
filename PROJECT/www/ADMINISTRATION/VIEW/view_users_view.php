@@ -67,25 +67,25 @@
                             <?php echo htmlspecialchars( GetTextBySlug( 'Email' ) ); ?> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="Email">
-                            <input-component result-class="form-input" result-name="Email" result-value="<?php echo htmlspecialchars( GetValueText( $user->Email ) ); ?>" is-readonly></input-component>
+                            <input-component class="form-component" result-name="Email" result-value="<?php echo htmlspecialchars( GetValueText( $user->Email ) ); ?>" is-readonly></input-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="Pseudonym">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Pseudonym' ) ); ?> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="Pseudonym">
-                            <input-component result-class="form-input" result-name="Pseudonym" result-value="<?php echo htmlspecialchars( GetValueText( $user->Pseudonym ) ); ?>" is-readonly></input-component>
+                            <input-component class="form-component" result-name="Pseudonym" result-value="<?php echo htmlspecialchars( GetValueText( $user->Pseudonym ) ); ?>" is-readonly></input-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="Password">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Password' ) ); ?> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="Password">
-                            <input-component result-class="form-input" result-name="Password" result-value="<?php echo htmlspecialchars( GetValueText( $user->Password ) ); ?>" is-readonly></input-component>
+                            <input-component class="form-component" result-name="Password" result-value="<?php echo htmlspecialchars( GetValueText( $user->Password ) ); ?>" is-readonly></input-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="Role">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Role' ) ); ?> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="Role">
-                            <dropdown-component result-class="form-select" result-name="Role" result-value="<?php echo htmlspecialchars( GetValueText( $user->Role ) ); ?>" is-readonly  option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'guest', 'contributor', 'author', 'editor', 'administrator' ] ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'Guest', 'Contributor', 'Author', 'Editor', 'Administrator' ] ) ) ); ?>"></dropdown-component>
+                            <dropdown-component class="form-component" result-name="Role" result-value="<?php echo htmlspecialchars( GetValueText( $user->Role ) ); ?>" is-readonly  option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'guest', 'contributor', 'author', 'editor', 'administrator' ] ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'Guest', 'Contributor', 'Author', 'Editor', 'Administrator' ] ) ) ); ?>"></dropdown-component>
                         </div>
                     </div>
                     <?php if ( HasSessionMinimumUserRole( 'administrator' ) ) { ?>

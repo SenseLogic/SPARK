@@ -85,43 +85,43 @@
                             <% GetTextBySlug( 'Name' ) %> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="Name">
-                            <input-component result-class="form-input" result-name="Name" result-value="<% GetValueText( contact.Name ) %>" is-readonly></input-component>
+                            <input-component class="form-component" result-name="Name" result-value="<% GetValueText( contact.Name ) %>" is-readonly></input-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="Company">
                             <% GetTextBySlug( 'Company' ) %> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="Company">
-                            <input-component result-class="form-input" result-name="Company" result-value="<% GetValueText( contact.Company ) %>" is-readonly></input-component>
+                            <input-component class="form-component" result-name="Company" result-value="<% GetValueText( contact.Company ) %>" is-readonly></input-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="Email">
                             <% GetTextBySlug( 'Email' ) %> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="Email">
-                            <input-component result-class="form-input" result-name="Email" result-value="<% GetValueText( contact.Email ) %>" is-readonly></input-component>
+                            <input-component class="form-component" result-name="Email" result-value="<% GetValueText( contact.Email ) %>" is-readonly></input-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="Phone">
                             <% GetTextBySlug( 'Phone' ) %> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="Phone">
-                            <input-component result-class="form-input" result-name="Phone" result-value="<% GetValueText( contact.Phone ) %>" is-readonly></input-component>
+                            <input-component class="form-component" result-name="Phone" result-value="<% GetValueText( contact.Phone ) %>" is-readonly></input-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="Subject">
                             <% GetTextBySlug( 'Subject' ) %> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="Subject">
-                            <input-component result-class="form-input" result-name="Subject" result-value="<% GetValueText( contact.Subject ) %>" is-readonly></input-component>
+                            <input-component class="form-component" result-name="Subject" result-value="<% GetValueText( contact.Subject ) %>" is-readonly></input-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="Message">
                             <% GetTextBySlug( 'Message' ) %> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="Message">
-                            <text-input-component result-class="form-textarea" result-name="Message" result-value="<% GetValueText( contact.Message ) %>" is-readonly></text-input-component>
+                            <text-input-component class="form-component" result-name="Message" result-value="<% GetValueText( contact.Message ) %>" is-readonly></text-input-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="DateTime">
                             <% GetTextBySlug( 'Date Time' ) %> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="DateTime">
-                            <input-component result-class="form-input" result-name="DateTime" result-value="<% GetValueText( contact.DateTime ) %>" is-readonly></input-component>
+                            <input-component class="form-component" result-name="DateTime" result-value="<% GetValueText( contact.DateTime ) %>" is-readonly></input-component>
                         </div>
                     </div>
                     <? if ( HasSessionMinimumUserRole( 'author' ) ) { ?>

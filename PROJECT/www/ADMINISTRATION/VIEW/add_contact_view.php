@@ -107,7 +107,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Id' ) ); ?> :
                 </div>
                 <div class="form-field-value is-hidden" data-is-column-value data-column-name="Id">
-                    <input-component result-class="form-input" result-name="Id" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
+                    <input-component class="form-component" result-name="Id" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
                      $field_name = 'Name';
@@ -125,7 +125,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Name' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="Name">
-                    <input-component result-class="form-input" result-name="Name" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
+                    <input-component class="form-component" result-name="Name" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
                      $field_name = 'Company';
@@ -143,7 +143,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Company' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="Company">
-                    <input-component result-class="form-input" result-name="Company" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
+                    <input-component class="form-component" result-name="Company" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
                      $field_name = 'Email';
@@ -161,7 +161,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Email' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="Email">
-                    <input-component result-class="form-input" result-name="Email" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
+                    <input-component class="form-component" result-name="Email" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
                      $field_name = 'Phone';
@@ -179,7 +179,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Phone' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="Phone">
-                    <input-component result-class="form-input" result-name="Phone" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
+                    <input-component class="form-component" result-name="Phone" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
                      $field_name = 'Subject';
@@ -197,7 +197,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Subject' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="Subject">
-                    <input-component result-class="form-input" result-name="Subject" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
+                    <input-component class="form-component" result-name="Subject" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></input-component>
                 </div>
                 <?php
                      $field_name = 'Message';
@@ -215,7 +215,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Message' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="Message">
-                    <text-input-component result-class="form-textarea" result-name="Message" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></text-input-component>
+                    <text-input-component class="form-component" result-name="Message" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"></text-input-component>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="<?php echo htmlspecialchars( GetParentRoute( null, '/admin/contact' ) ); ?>">
                 </a>

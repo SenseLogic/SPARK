@@ -14,7 +14,7 @@
                 <% GetTextBySlug( 'Email' ) %> :
             </div>
             <div class="form-field-value" data-is-column-value data-column-name="Email">
-                <input-component result-class="form-input" result-name="Email" result-value="<% GetValueText( .User.Email ) %>" is-readonly></input-component>
+                <input-component class="form-component" result-name="Email" result-value="<% GetValueText( .User.Email ) %>" is-readonly></input-component>
             </div><~false<>
             <?
                 var field_mode = 'view';
@@ -27,7 +27,7 @@
                 <% GetTextBySlug( 'Pseudonym' ) %> :
             </div>
             <div class="form-field-value" data-is-column-value data-column-name="Pseudonym">
-                <input-component result-class="form-input" result-name="Pseudonym" result-value="<% GetValueText( .User.Pseudonym ) %>" is-readonly></input-component>
+                <input-component class="form-component" result-name="Pseudonym" result-value="<% GetValueText( .User.Pseudonym ) %>" is-readonly></input-component>
             </div><~false<>
             <?
                 var field_mode = 'view';
@@ -40,7 +40,7 @@
                 <% GetTextBySlug( 'Password' ) %> :
             </div>
             <div class="form-field-value" data-is-column-value data-column-name="Password">
-                <input-component result-class="form-input" result-name="Password" result-value="<% GetValueText( .User.Password ) %>" is-readonly></input-component>
+                <input-component class="form-component" result-name="Password" result-value="<% GetValueText( .User.Password ) %>" is-readonly></input-component>
             </div><~false<>
             <?
                 var field_mode = 'view';
@@ -53,7 +53,7 @@
                 <% GetTextBySlug( 'Role' ) %> :
             </div>
             <div class="form-field-value" data-is-column-value data-column-name="Role">
-                <dropdown-component result-class="form-select" result-name="Role" result-value="<% GetValueText( .User.Role ) %>" is-readonly  option-values="<% GetValueText( GetJsonText( [ 'guest', 'contributor', 'author', 'editor', 'administrator' ] ) ) %>" option-names="<% GetValueText( GetJsonText( [ 'Guest', 'Contributor', 'Author', 'Editor', 'Administrator' ] ) ) %>"></dropdown-component>
+                <dropdown-component class="form-component" result-name="Role" result-value="<% GetValueText( .User.Role ) %>" is-readonly  option-values="<% GetValueText( GetJsonText( [ 'guest', 'contributor', 'author', 'editor', 'administrator' ] ) ) %>" option-names="<% GetValueText( GetJsonText( [ 'Guest', 'Contributor', 'Author', 'Editor', 'Administrator' ] ) ) %>"></dropdown-component>
             </div>
             <a class="justify-self-start form-button form-button-large cancel-button" href="<% GetParentRoute( null, '/admin/user' ) %>">
             </a>

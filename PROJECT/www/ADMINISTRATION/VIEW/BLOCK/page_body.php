@@ -7,7 +7,7 @@
 <script src="/static/script/vista_data.js?v=<?php echo VersionTimestamp; ?>"></script>
 <script src="/static/script/vista_component.js?v=<?php echo VersionTimestamp; ?>"></script>
 <script src="/static/script/vista_breakpoint.js?v=<?php echo VersionTimestamp; ?>"></script>
-<script src="/static/script/vista_input.js?v=<?php echo VersionTimestamp; ?>"></script>
+<script src="/static/script/vista_form.js?v=<?php echo VersionTimestamp; ?>"></script>
 <script src="/static/script/vista_request.js?v=<?php echo VersionTimestamp; ?>"></script>
 <script src="/static/script/vista_storage.js?v=<?php echo VersionTimestamp; ?>"></script>
 <script src="/static/script/vista_scroll.js?v=<?php echo VersionTimestamp; ?>"></script>
