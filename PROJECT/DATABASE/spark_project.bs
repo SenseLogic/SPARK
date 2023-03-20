@@ -90,7 +90,7 @@ spark-project
         ImageHorizontalPositionArray : LIST[ STRING ] = "{}" | optional, is_enumeration_list, enumeration "[ 'left', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'right']^[ 'Left', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Right' ]", has_default_value, default_value "[]"
         VideoPath : STRING = "/static/video/article/train.mp4|/static/video/article/bus.mp4" | optional, is_video
         VideoPathArray : LIST[ STRING ] = "{}" | optional, is_video_list, has_default_value, default_value "[]"
-        DocumentPath : STRING = "" | optional, is_document
+        DocumentPath : STRING = "/static/document/article/logo.pdf|" | optional, is_document
         DocumentPathArray : LIST[ STRING ] = "{}" | optional, is_document_list, has_default_value, default_value "[]"
 
     CONTACT | sorted
