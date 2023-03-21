@@ -18,7 +18,6 @@ class DO_EDIT_PAGE_CONTROLLER extends VIEW_CONTROLLER
 
         if ( HasSessionMinimumUserRole( 'contributor' ) )
         {
-
              $slug = GetPostValue( 'Slug' );
              $route = GetPostValue( 'Route' );
              $type_slug = GetPostValue( 'TypeSlug' );

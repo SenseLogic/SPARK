@@ -17,7 +17,6 @@ class DO_ADD_BLOCK_CONTROLLER extends VIEW_CONTROLLER
 
         if ( HasSessionMinimumUserRole( 'contributor' ) )
         {
-
              $id = GetPostValue( 'Id' );
              $slug = GetPostValue( 'Slug' );
              $page_id = GetPostValue( 'PageId' );

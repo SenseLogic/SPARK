@@ -17,7 +17,6 @@ class DO_ADD_USER_CONTROLLER extends VIEW_CONTROLLER
 
         if ( HasSessionMinimumUserRole( 'administrator' ) )
         {
-
              $id = GetPostValue( 'Id' );
              $email = GetPostValue( 'Email' );
              $pseudonym = GetPostValue( 'Pseudonym' );

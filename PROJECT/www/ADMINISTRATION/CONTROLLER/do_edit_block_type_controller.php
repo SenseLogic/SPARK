@@ -18,7 +18,6 @@ class DO_EDIT_BLOCK_TYPE_CONTROLLER extends VIEW_CONTROLLER
 
         if ( HasSessionMinimumUserRole( 'author' ) )
         {
-
              $slug = GetPostValue( 'Slug' );
              $name = GetPostValue( 'Name' );
 

@@ -18,7 +18,6 @@ class DO_EDIT_BLOCK_CONTROLLER extends VIEW_CONTROLLER
 
         if ( HasSessionMinimumUserRole( 'contributor' ) )
         {
-
              $slug = GetPostValue( 'Slug' );
              $page_id = GetPostValue( 'PageId' );
              $category_slug = GetPostValue( 'CategorySlug' );

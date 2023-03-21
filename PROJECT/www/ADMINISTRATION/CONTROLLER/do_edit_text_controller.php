@@ -18,7 +18,6 @@ class DO_EDIT_TEXT_CONTROLLER extends VIEW_CONTROLLER
 
         if ( HasSessionMinimumUserRole( 'author' ) )
         {
-
              $slug = GetPostValue( 'Slug' );
              $text = GetPostValue( 'Text' );
 

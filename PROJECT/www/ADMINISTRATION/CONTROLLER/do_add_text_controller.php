@@ -17,7 +17,6 @@ class DO_ADD_TEXT_CONTROLLER extends VIEW_CONTROLLER
 
         if ( HasSessionMinimumUserRole( 'author' ) )
         {
-
              $id = GetPostValue( 'Id' );
              $slug = GetPostValue( 'Slug' );
              $text = GetPostValue( 'Text' );

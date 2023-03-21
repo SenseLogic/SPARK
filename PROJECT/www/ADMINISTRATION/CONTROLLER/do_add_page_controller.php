@@ -17,7 +17,6 @@ class DO_ADD_PAGE_CONTROLLER extends VIEW_CONTROLLER
 
         if ( HasSessionMinimumUserRole( 'contributor' ) )
         {
-
              $id = GetPostValue( 'Id' );
              $slug = GetPostValue( 'Slug' );
              $route = GetPostValue( 'Route' );

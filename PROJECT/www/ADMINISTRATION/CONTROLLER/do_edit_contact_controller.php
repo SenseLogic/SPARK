@@ -18,7 +18,6 @@ class DO_EDIT_CONTACT_CONTROLLER extends VIEW_CONTROLLER
 
         if ( HasSessionMinimumUserRole( 'author' ) )
         {
-
              $name = GetPostValue( 'Name' );
              $company = GetPostValue( 'Company' );
              $email = GetPostValue( 'Email' );

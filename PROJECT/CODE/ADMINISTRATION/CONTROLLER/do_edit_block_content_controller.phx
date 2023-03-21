@@ -18,7 +18,6 @@ class DO_EDIT_BLOCK_CONTENT_CONTROLLER extends VIEW_CONTROLLER
 
         if ( HasSessionMinimumUserRole( 'author' ) )
         {
-
             var slug = GetPostValue( 'Slug' );
             var name = GetPostValue( 'Name' );
 

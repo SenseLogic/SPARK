@@ -18,7 +18,6 @@ class DO_EDIT_LANGUAGE_CONTROLLER extends VIEW_CONTROLLER
 
         if ( HasSessionMinimumUserRole( 'author' ) )
         {
-
              $code = GetPostValue( 'Code' );
              $number = GetPostValue( 'Number' );
              $text = GetPostValue( 'Text' );

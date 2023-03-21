@@ -123,6 +123,62 @@ TEXT
             ~ Decline
               ¨fr:Refuser
 
+        %cookie-consent-banner-settings-button-text
+            ~ cookie-consent-banner-settings-button
+            ~ Settings
+              ¨fr:Réglages
+
+        %cookie-consent-dialog-title-text
+            ~ cookie-consent-dialog-title
+            ~ Privacy preferences
+              ¨fr:Préférences de confidentialité
+
+        %cookie-consent-dialog-description-text
+            ~ cookie-consent-dialog-description
+            ~ When you visit any website, it may store or retreive information on your browser, mostly in the form of cookies.^
+              This information is mostly used to make the site work as you expect it. Because we respect your right to privacy,^
+              you can choose not to allow some types of cookies. However, blocking some types of cookies may impact your experience^
+              of the site and ther services we are able to offer.
+
+        %cookie-consent-dialog-necessary-cookies-title-text
+            ~ cookie-consent-dialog-necessary-cookies-title
+            ~ Strictly Necessary Cookies
+
+        %cookie-consent-dialog-necessary-cookies-description-text
+            ~ cookie-consent-dialog-necessary-cookies-description
+            ~ These cookies are necessary for the website to function and cannot be switched off in our systems.^
+              They are usually only set in response to actions made by you which amount to a request for services,^
+              such as setting your privacy preferences, logging in or filling in forms. You can set your browser^
+              to block or alert you about these cookies, but some parts of the site will not then work.^
+              These cookies do not store any personally identifiable information.
+
+        %cookie-consent-dialog-performance-cookies-title-text
+            ~ cookie-consent-dialog-performance-cookies-title
+            ~ Performance Cookies
+
+        %cookie-consent-dialog-performance-cookies-description-text
+            ~ cookie-consent-dialog-performance-cookies-description
+            ~ These cookies allow us to count visits and traffic sources so we can measure and improve the performance of our site.^
+              They help us to know which pages are the most and least popular and see how visitors move around the site.^
+              All information these cookies collect is aggregated and therefore anonymous.^
+              If you do not allow these cookies we will not know when you have visited our site, and will not be able to monitor its performance.
+
+        %cookie-consent-dialog-always-active-label-text
+            ~ cookie-consent-dialog-always-active-label
+            ~ Always Active
+
+        %cookie-consent-dialog-allow-all-button-text
+            ~ cookie-consent-dialog-allow-all-button
+            ~ Allow All
+
+        %cookie-consent-dialog-reject-all-button-text
+            ~ cookie-consent-dialog-reject-all-button
+            ~ Reject All
+
+        %cookie-consent-dialog-confirm-button-text
+            ~ cookie-consent-dialog-confirm-button
+            ~ Confirm My Choices
+
         %cookie-policy-title-text
             ~ cookie-policy-title
             ~ Legal notice

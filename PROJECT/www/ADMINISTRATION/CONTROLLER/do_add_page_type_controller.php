@@ -17,7 +17,6 @@ class DO_ADD_PAGE_TYPE_CONTROLLER extends VIEW_CONTROLLER
 
         if ( HasSessionMinimumUserRole( 'author' ) )
         {
-
              $id = GetPostValue( 'Id' );
              $slug = GetPostValue( 'Slug' );
              $name = GetPostValue( 'Name' );

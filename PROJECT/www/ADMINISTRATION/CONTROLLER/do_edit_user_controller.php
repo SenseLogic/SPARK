@@ -18,7 +18,6 @@ class DO_EDIT_USER_CONTROLLER extends VIEW_CONTROLLER
 
         if ( HasSessionMinimumUserRole( 'administrator' ) )
         {
-
              $email = GetPostValue( 'Email' );
              $pseudonym = GetPostValue( 'Pseudonym' );
              $password = GetPostValue( 'Password' );

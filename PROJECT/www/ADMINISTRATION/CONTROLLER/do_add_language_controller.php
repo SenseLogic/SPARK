@@ -17,7 +17,6 @@ class DO_ADD_LANGUAGE_CONTROLLER extends VIEW_CONTROLLER
 
         if ( HasSessionMinimumUserRole( 'author' ) )
         {
-
              $id = GetPostValue( 'Id' );
              $code = GetPostValue( 'Code' );
              $number = GetPostValue( 'Number' );

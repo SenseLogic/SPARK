@@ -68,6 +68,11 @@
 
 
 
+
+
+
+
+
 <div id="cookie-consent-banner-container" class="cookie-consent-banner-container">
     <div class="cookie-consent-banner-text">
         <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-banner-text' ); ?>
@@ -76,8 +81,11 @@
         <div class="scaled-button cookie-consent-banner-button cookie-consent-banner-accept-button" onclick="HandleCookieConsentBannerAgreeButtonClickEvent()">
             <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-banner-accept-button' ); ?>
         </div>
-        <div class="scaled-button cookie-consent-banner-button cookie-consent-banner-decline-button" onclick="HandleCookieConsentBannerDisacceptButtonClickEvent()">
+        <div class="scaled-button cookie-consent-banner-button cookie-consent-banner-decline-button" onclick="HandleCookieConsentBannerDeclineButtonClickEvent()">
             <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-banner-decline-button' ); ?>
+        </div>
+        <div class="scaled-button cookie-consent-banner-button cookie-consent-banner-settings-button" onclick="HandleCookieConsentBannerSettingsButtonClickEvent()">
+            <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-banner-settings-button' ); ?>
         </div>
     </div>
 </div>
@@ -163,12 +171,21 @@
 
     // ~~
 
-    function HandleCookieConsentBannerDisacceptButtonClickEvent(
+    function HandleCookieConsentBannerDeclineButtonClickEvent(
         )
     {
         SetCookieConsent( "false" );
         ApplyCookieConsent();
         HideCookieConsentBanner();
+    }
+
+    // ~~
+
+    function HandleCookieConsentBannerSettingsButtonClickEvent(
+        )
+    {
+        HideCookieConsentBanner();
+        ShowCookieConsentDialog();
     }
 
     // -- STATEMENTS
@@ -181,9 +198,13 @@
     {
         ApplyCookieConsent();
         HideCookieConsentBanner();
+        ShowCookieConsentButton();
+        HideCookieConsentDialog();
     }
     else
     {
         ShowCookieConsentBanner();
+        HideCookieConsentButton();
+        HideCookieConsentDialog();
     }
 </script>

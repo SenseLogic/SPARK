@@ -17,7 +17,6 @@ class DO_ADD_CONTACT_CONTROLLER extends VIEW_CONTROLLER
 
         if ( HasSessionMinimumUserRole( 'author' ) )
         {
-
              $id = GetPostValue( 'Id' );
              $name = GetPostValue( 'Name' );
              $company = GetPostValue( 'Company' );
