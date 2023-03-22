@@ -17,7 +17,6 @@ class DO_ADD_USER_CONTROLLER extends VIEW_CONTROLLER
 
         if ( HasSessionMinimumUserRole( 'administrator' ) )
         {
-
             var id = GetPostValue( 'Id' );
             var email = GetPostValue( 'Email' );
             var pseudonym = GetPostValue( 'Pseudonym' );

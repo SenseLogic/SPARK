@@ -30,8 +30,8 @@
 
         background-color: WhiteColor;
 
-        font-size: 1rem;
-        color: GrayColor;
+        font-size: 0.9rem;
+        color: GrayColor200;
     }
 
     .cookie-consent-dialog-header
@@ -41,16 +41,21 @@
         align-items: start;
     }
 
-    .cookie-consent-dialog-header-logo
+    .cookie-consent-dialog-header-image
     {
         height: 2rem;
-        width: 2rem;
+        width: auto;
+    }
 
-        background: url( "/static/image/base/logo.svg" ) no-repeat center center / contain;
+    .cookie-consent-dialog-header-title
+    {
+        font-size: 1.2rem;
+        text-align: center;
     }
 
     .cookie-consent-dialog-header-close-button
     {
+        margin-left: 1rem;
         height: 1rem;
         width: 1rem;
 
@@ -72,45 +77,65 @@
         display: flex;
         flex-direction: column;
         gap: 1rem;
-    }
 
-    .cookie-consent-dialog-title
-    {
-        font-weight: 700;
+        color: GrayColor400;
     }
 
     .cookie-consent-dialog-description
     {
         font-size: 0.8rem;
+        color: GrayColor400;
+    }
+
+    .cookie-consent-dialog-button-list
+    {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: space-between;
     }
 
     .cookie-consent-dialog-button
     {
         border-radius: 0.25rem;
-        padding: 0.5rem 1.25rem;
+        padding: 0.25rem 1rem;
 
         display: inline-block;
 
-        background-color: BlueColor;
-
-        font-size: 0.9rem;
         color: WhiteColor;
 
         cursor: pointer;
-        transition: opacity 0.25s ease;
+        transition: background-color 0.25s ease;
     }
 
-    .cookie-consent-dialog-button:hover
+    .cookie-consent-dialog-allow-button,
+    .cookie-consent-dialog-reject-button
     {
-        opacity: 0.9;
+        background-color: BlueColor400;
     }
 
-    .cookie-consent-dialog-content .cookie-consent-dialog-button
+    .cookie-consent-dialog-allow-button:hover,
+    .cookie-consent-dialog-reject-button:hover
     {
-        margin-right: auto;
+        background-color: BlueColor;
     }
 
-    .cookie-consent-dialog-preference-list
+    .cookie-consent-dialog-confirm-button
+    {
+        margin-left: auto;
+        border: 1px solid GrayColor700;
+
+        background-color: GrayColor950;
+
+        color: GrayColor;
+    }
+
+    .cookie-consent-dialog-confirm-button:hover
+    {
+        background-color: WhiteColor;
+    }
+
+    .cookie-consent-dialog-setting-list
     {
         border: 1px solid LightGrayBorderColor;
 
@@ -119,40 +144,56 @@
         gap: 0.5rem;
     }
 
-    .cookie-consent-dialog-preference
+    .cookie-consent-dialog-setting
     {
         display: grid;
         grid-template-rows: auto auto;
-        grid-template-columns: 1fr auto;
+        grid-template-columns: auto 1fr auto;
         grid-template-areas: \
-            "title value" \
-            "description description";
+            "title . value" \
+            "description description description";
     }
 
-    .cookie-consent-dialog-preference-title
+    .cookie-consent-dialog-setting-title
     {
         padding-top: 0.25rem;
         padding-bottom: 0.25rem;
 
         grid-area: title;
 
-        font-size: 0.9rem;
-        font-weight: 600;
+        color: GrayColor200;
+
+        cursor: pointer;
     }
 
-    .cookie-consent-dialog-preference-value
+    .cookie-consent-dialog-setting-title:hover
+    {
+        color: GrayColor400;
+    }
+
+    .cookie-consent-dialog-setting-title-image
+    {
+        margin-left: 0.25rem;
+        height: 0.8rem;
+        width: auto;
+    }
+
+    .cookie-consent-dialog-setting-title:hover .cookie-consent-dialog-setting-title-image
+    {
+        opacity: 0.8;
+    }
+
+    .cookie-consent-dialog-setting-value
     {
         padding-top: 0.25rem;
         padding-bottom: 0.25rem;
 
         grid-area: value;
 
-        font-size: 0.9rem;
-        font-weight: 600;
-        color: BlueColor;
+        color: GreenColor;
     }
 
-    .cookie-consent-dialog-preference-description
+    .cookie-consent-dialog-setting-description
     {
         border-radius: 0.5rem;
         padding: 1rem;
@@ -162,9 +203,11 @@
         background-color: GrayColor950;
 
         font-size: 0.8rem;
+
+        cursor: pointer;
     }
 
-    .cookie-consent-dialog-switch
+    .cookie-consent-dialog-setting-switch
     {
         position: relative;
 
@@ -174,7 +217,7 @@
         display: inline-block;
     }
 
-    .cookie-consent-dialog-switch input
+    .cookie-consent-dialog-setting-input
     {
         height: 0;
         width: 0;
@@ -182,7 +225,7 @@
         opacity: 0;
     }
 
-    .cookie-consent-dialog-slider
+    .cookie-consent-dialog-setting-slider
     {
         position: absolute;
         top: 0;
@@ -192,13 +235,18 @@
 
         border-radius: 1rem;
 
-        background-color: GrayColor900;
+        background-color: GrayColor700;
 
         cursor: pointer;
         transition: 0.4s;
     }
 
-    .cookie-consent-dialog-slider:before
+    .cookie-consent-dialog-setting-slider.is-readonly
+    {
+        cursor: not-allowed;
+    }
+
+    .cookie-consent-dialog-setting-slider:before
     {
         position: absolute;
         bottom: 0.25rem;
@@ -214,74 +262,73 @@
         transition: 0.4s;
     }
 
-    input:checked + .cookie-consent-dialog-slider
+    .cookie-consent-dialog-setting-input:checked + .cookie-consent-dialog-setting-slider
     {
-        background-color: GrayColor600;
+        background-color: GreenColor;
     }
 
-    input:checked + .cookie-consent-dialog-slider:before
+    .cookie-consent-dialog-setting-input:checked + .cookie-consent-dialog-setting-slider:before
     {
         transform: translateX( 1rem );
-    }
-
-    .cookie-consent-dialog-footer
-    {
-        display: flex;
-        gap: 0.5rem;
-        justify-content: end;
     }
 </style>
 <div id="cookie-consent-dialog-container" class="cookie-consent-dialog-container is-hidden">
     <div class="cookie-consent-dialog">
         <div class="cookie-consent-dialog-header">
-            <div class="cookie-consent-dialog-header-logo">
+            <img class="cookie-consent-dialog-header-image" src="/static/image/base/logo.svg"/>
+            <div class="cookie-consent-dialog-header-title">
+                <# .GetProcessedTextBySlug( 'cookie-consent-dialog-title' ) #>
             </div>
             <div class="cookie-consent-dialog-header-close-button" onclick="HandleCookieConsentDialogCloseButtonClickedEvent()">
             </div>
         </div>
         <div class="cookie-consent-dialog-content">
-            <div class="cookie-consent-dialog-title">
-                <# .GetProcessedTextBySlug( 'cookie-consent-dialog-title' ) #>
-            </div>
             <div class="cookie-consent-dialog-description">
                 <# .GetProcessedTextBySlug( 'cookie-consent-dialog-description' ) #>
             </div>
-            <div class="cookie-consent-dialog-button" onclick="HandleCookieConsentDialogAllowAllButtonClickedEvent()">
-                <# .GetProcessedTextBySlug( 'cookie-consent-dialog-allow-all-button' ) #>
+            <div class="cookie-content-dialog-button-list">
+                <div class="cookie-consent-dialog-button cookie-consent-dialog-allow-button" onclick="HandleCookieConsentDialogAllowAllButtonClickedEvent()">
+                    <# .GetProcessedTextBySlug( 'cookie-consent-dialog-allow-all-button' ) #>
+                </div>
+                <div class="cookie-consent-dialog-button cookie-consent-dialog-reject-button" onclick="HandleCookieConsentDialogRejectAllButtonClickedEvent()">
+                    <# .GetProcessedTextBySlug( 'cookie-consent-dialog-reject-all-button' ) #>
+                </div>
             </div>
-            <div class="cookie-consent-dialog-preference-list">
-                <div class="cookie-consent-dialog-preference">
-                    <div class="cookie-consent-dialog-preference-title">
+            <div class="cookie-consent-dialog-setting-list">
+                <div class="cookie-consent-dialog-setting">
+                    <div class="cookie-consent-dialog-setting-title" onclick="CookieConsentDialogSettingDescriptionElementArray[ 0 ].ToggleClass( 'is-hidden' )">
                         <# .GetProcessedTextBySlug( 'cookie-consent-dialog-necessary-cookies-title' ) #>
+                        <image class="cookie-consent-dialog-setting-title-image" src="/static/image/base/help_icon.svg"/>
                     </div>
-                    <div class="cookie-consent-dialog-preference-value">
-                        <# .GetProcessedTextBySlug( 'cookie-consent-dialog-always-active-label' ) #>
+                    <div class="cookie-consent-dialog-setting-value">
+                        <label class="cookie-consent-dialog-setting-switch">
+                            <input class="cookie-consent-dialog-setting-input" type="checkbox" checked="checked" onclick="event.Cancel()">
+                            <span class="cookie-consent-dialog-setting-slider is-readonly"></span>
+                        </label>
                     </div>
-                    <div class="cookie-consent-dialog-preference-description">
+                    <div class="cookie-consent-dialog-setting-description is-hidden" onclick="event.currentTarget.AddClass( 'is-hidden' )">
                         <# .GetProcessedTextBySlug( 'cookie-consent-dialog-necessary-cookies-description' ) #>
                     </div>
                 </div>
-                <div class="cookie-consent-dialog-preference">
-                    <div class="cookie-consent-dialog-preference-title">
+                <div class="cookie-consent-dialog-setting">
+                    <div class="cookie-consent-dialog-setting-title" onclick="CookieConsentDialogSettingDescriptionElementArray[ 1 ].ToggleClass( 'is-hidden' )">
                         <# .GetProcessedTextBySlug( 'cookie-consent-dialog-performance-cookies-title' ) #>
+                        <image class="cookie-consent-dialog-setting-title-image" src="/static/image/base/help_icon.svg"/>
                     </div>
-                    <div class="cookie-consent-dialog-preference-value">
-                        <label class="cookie-consent-dialog-switch">
-                            <input id="cookie-consent-dialog-input" type="checkbox">
-                            <span class="cookie-consent-dialog-slider"></span>
+                    <div class="cookie-consent-dialog-setting-value">
+                        <label class="cookie-consent-dialog-setting-switch">
+                            <input class="cookie-consent-dialog-setting-input" type="checkbox">
+                            <span class="cookie-consent-dialog-setting-slider"></span>
                         </label>
                     </div>
-                    <div class="cookie-consent-dialog-preference-description">
+                    <div class="cookie-consent-dialog-setting-description is-hidden" onclick="event.currentTarget.AddClass( 'is-hidden' )">
                         <# .GetProcessedTextBySlug( 'cookie-consent-dialog-performance-cookies-description' ) #>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="cookie-consent-dialog-footer">
-            <div class="cookie-consent-dialog-button" onclick="HandleCookieConsentDialogRejectAllButtonClickedEvent()">
-                <# .GetProcessedTextBySlug( 'cookie-consent-dialog-reject-all-button' ) #>
-            </div>
-            <div class="cookie-consent-dialog-button" onclick="HandleCookieConsentDialogConfirmButtonClickedEvent()">
+        <div class="cookie-consent-dialog-button-list">
+            <div class="cookie-consent-dialog-button cookie-consent-dialog-confirm-button" onclick="HandleCookieConsentDialogConfirmButtonClickedEvent()">
                 <# .GetProcessedTextBySlug( 'cookie-consent-dialog-confirm-button' ) #>
             </div>
         </div>
@@ -292,14 +339,15 @@
 
     var
         CookieConsentDialogContainerElement,
-        CookieConsentDialogInputElement;
+        CookieConsentDialogSettingInputElementArray,
+        CookieConsentDialogSettingDescriptionElementArray;
 
     // -- FUNCTIONS
 
     function ShowCookieConsentDialog(
         )
     {
-        CookieConsentDialogInputElement.checked = GetCookieConsent();
+        CookieConsentDialogSettingInputElementArray[ 1 ].checked = GetCookieConsent();
         CookieConsentDialogContainerElement.RemoveClass( "is-hidden" );
     }
 
@@ -347,7 +395,7 @@
     function HandleCookieConsentDialogConfirmButtonClickedEvent(
         )
     {
-        if ( CookieConsentDialogInputElement.checked )
+        if ( CookieConsentDialogSettingInputElementArray[ 1 ].checked )
         {
             SetCookieConsent( "true" );
         }
@@ -364,5 +412,6 @@
     // -- STATEMENTS
 
     CookieConsentDialogContainerElement = GetElementById( "cookie-consent-dialog-container" );
-    CookieConsentDialogInputElement = GetElementById( "cookie-consent-dialog-input" );
+    CookieConsentDialogSettingInputElementArray = GetElements( ".cookie-consent-dialog-setting-input" );
+    CookieConsentDialogSettingDescriptionElementArray = GetElements( ".cookie-consent-dialog-setting-description" );
 </script>

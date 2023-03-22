@@ -73,19 +73,40 @@
 
 
 
-<div id="cookie-consent-banner-container" class="cookie-consent-banner-container">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="cookie-consent-banner-container" class="cookie-consent-banner-container is-hidden">
     <div class="cookie-consent-banner-text">
         <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-banner-text' ); ?>
     </div>
+    <div class="cookie-consent-banner-link">
+        <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-banner-link' ); ?>
+    </div>
     <div class="cookie-consent-banner-button-container">
-        <div class="scaled-button cookie-consent-banner-button cookie-consent-banner-accept-button" onclick="HandleCookieConsentBannerAgreeButtonClickEvent()">
+        <div class="cookie-consent-banner-button cookie-consent-banner-settings-button" onclick="HandleCookieConsentBannerSettingsButtonClickEvent()">
+            <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-banner-settings-button' ); ?>
+        </div>
+        <div class="margin-left-auto! cookie-consent-banner-button cookie-consent-banner-accept-button" onclick="HandleCookieConsentBannerAgreeButtonClickEvent()">
             <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-banner-accept-button' ); ?>
         </div>
-        <div class="scaled-button cookie-consent-banner-button cookie-consent-banner-decline-button" onclick="HandleCookieConsentBannerDeclineButtonClickEvent()">
+        <div class="cookie-consent-banner-button cookie-consent-banner-decline-button" onclick="HandleCookieConsentBannerDeclineButtonClickEvent()">
             <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-banner-decline-button' ); ?>
-        </div>
-        <div class="scaled-button cookie-consent-banner-button cookie-consent-banner-settings-button" onclick="HandleCookieConsentBannerSettingsButtonClickEvent()">
-            <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-banner-settings-button' ); ?>
         </div>
     </div>
 </div>
@@ -167,6 +188,7 @@
         SetCookieConsent( "true" );
         ApplyCookieConsent();
         HideCookieConsentBanner();
+        ShowCookieConsentButton();
     }
 
     // ~~
@@ -177,6 +199,7 @@
         SetCookieConsent( "false" );
         ApplyCookieConsent();
         HideCookieConsentBanner();
+        ShowCookieConsentButton();
     }
 
     // ~~
@@ -192,19 +215,15 @@
 
     CookieConsentBannerContainerElement = GetElementById( "cookie-consent-banner-container" );
 
-    // RemoveCookieConsent();
+    RemoveCookieConsent();
 
     if ( HasCookieConsent() )
     {
         ApplyCookieConsent();
-        HideCookieConsentBanner();
         ShowCookieConsentButton();
-        HideCookieConsentDialog();
     }
     else
     {
         ShowCookieConsentBanner();
-        HideCookieConsentButton();
-        HideCookieConsentDialog();
     }
 </script>

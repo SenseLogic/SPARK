@@ -49,8 +49,7 @@ class DO_ADD_{#type#}_CONTROLLER extends VIEW_CONTROLLER
         parent::constructor( language_code );
 
         if ( HasSessionMinimumUserRole( '<~{#has_user_role#}<>{#user_role#}<>author~>' ) )
-        {
-<%¨<~{%is_scalar%}<>
+        {<%¨<~{%is_scalar%}<>
             var {%variable%} = GetPostValue( '{%attribute%}' );<>
             var {%variable%} = GetJsonObject( GetPostValue( '{%attribute%}' ) );~>¨%>
 
@@ -118,8 +117,7 @@ class DO_EDIT_{#type#}_CONTROLLER extends VIEW_CONTROLLER
         parent::constructor( language_code );
 
         if ( HasSessionMinimumUserRole( '<~{#has_user_role#}<>{#user_role#}<>author~>' ) )
-        {
-<$<~{%is_scalar%}<>
+        {<$<~{%is_scalar%}<>
             var {%variable%} = GetPostValue( '{%attribute%}' );<>
             var {%variable%} = GetJsonObject( GetPostValue( '{%attribute%}' ) );~>$>
 

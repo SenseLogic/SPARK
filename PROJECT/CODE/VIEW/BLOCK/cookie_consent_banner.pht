@@ -9,20 +9,19 @@
 
         margin-left: auto;
         margin-right: auto;
-        max-width: 20rem;
+        max-width: @css{ min( 30rem, 100vw - 2rem ) };
         border-top-left-radius: 1rem;
         border-top-right-radius: 1rem;
         padding: 1.25rem;
 
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        gap: 0.5rem;
 
         background-color: WhiteColor;
         box-shadow: 0 0.25rem 0.5rem rgba( 128, 128, 128, 0.5 );
 
-        font-size: 1rem;
+        font-size: 0.9rem;
         color: BlackColor;
     }
 
@@ -35,57 +34,79 @@
 
     .cookie-consent-banner-text
     {
-        text-align: center;
+        color: GrayColor200;
+    }
+
+    .cookie-consent-banner-link
+    {
         color: GrayColor200;
     }
 
     .cookie-consent-banner-button-container
     {
-        margin-top: 1.25rem;
+        margin-top: 0.5rem;
 
         display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
         justify-content: center;
         align-items: center;
     }
 
     .cookie-consent-banner-button
     {
-        margin-left: 0.25rem;
-        margin-right: 0.25rem;
         border-radius: 0.25rem;
         padding: 0.25rem 1rem;
 
         color: WhiteColor;
-    }
 
-    .cookie-consent-banner-accept-button
-    {
-        background-color: RedColor;
-    }
+        cursor: pointer;
 
-    .cookie-consent-banner-decline-button
-    {
-        background-color: GrayColor600;
+        transition: background-color 0.25s ease;
     }
 
     .cookie-consent-banner-settings-button
     {
-        background-color: GrayColor600;
+        border: 1px solid GrayColor700;
+
+        background-color: GrayColor950;
+
+        color: GrayColor;
+    }
+
+    .cookie-consent-banner-settings-button:hover
+    {
+        background-color: WhiteColor;
+    }
+
+    .cookie-consent-banner-accept-button,
+    .cookie-consent-banner-decline-button
+    {
+        background-color: BlueColor400;
+    }
+
+    .cookie-consent-banner-accept-button:hover,
+    .cookie-consent-banner-decline-button:hover
+    {
+        background-color: BlueColor;
     }
 </style>
-<div id="cookie-consent-banner-container" class="cookie-consent-banner-container">
+<div id="cookie-consent-banner-container" class="cookie-consent-banner-container is-hidden">
     <div class="cookie-consent-banner-text">
         <# .GetProcessedTextBySlug( 'cookie-consent-banner-text' ) #>
     </div>
+    <div class="cookie-consent-banner-link">
+        <# .GetProcessedTextBySlug( 'cookie-consent-banner-link' ) #>
+    </div>
     <div class="cookie-consent-banner-button-container">
-        <div class="scaled-button cookie-consent-banner-button cookie-consent-banner-accept-button" onclick="HandleCookieConsentBannerAgreeButtonClickEvent()">
+        <div class="cookie-consent-banner-button cookie-consent-banner-settings-button" onclick="HandleCookieConsentBannerSettingsButtonClickEvent()">
+            <# .GetProcessedTextBySlug( 'cookie-consent-banner-settings-button' ) #>
+        </div>
+        <div class="margin-left-auto! cookie-consent-banner-button cookie-consent-banner-accept-button" onclick="HandleCookieConsentBannerAgreeButtonClickEvent()">
             <# .GetProcessedTextBySlug( 'cookie-consent-banner-accept-button' ) #>
         </div>
-        <div class="scaled-button cookie-consent-banner-button cookie-consent-banner-decline-button" onclick="HandleCookieConsentBannerDeclineButtonClickEvent()">
+        <div class="cookie-consent-banner-button cookie-consent-banner-decline-button" onclick="HandleCookieConsentBannerDeclineButtonClickEvent()">
             <# .GetProcessedTextBySlug( 'cookie-consent-banner-decline-button' ) #>
-        </div>
-        <div class="scaled-button cookie-consent-banner-button cookie-consent-banner-settings-button" onclick="HandleCookieConsentBannerSettingsButtonClickEvent()">
-            <# .GetProcessedTextBySlug( 'cookie-consent-banner-settings-button' ) #>
         </div>
     </div>
 </div>
@@ -167,6 +188,7 @@
         SetCookieConsent( "true" );
         ApplyCookieConsent();
         HideCookieConsentBanner();
+        ShowCookieConsentButton();
     }
 
     // ~~
@@ -177,6 +199,7 @@
         SetCookieConsent( "false" );
         ApplyCookieConsent();
         HideCookieConsentBanner();
+        ShowCookieConsentButton();
     }
 
     // ~~
@@ -192,19 +215,15 @@
 
     CookieConsentBannerContainerElement = GetElementById( "cookie-consent-banner-container" );
 
-    // RemoveCookieConsent();
+    RemoveCookieConsent();
 
     if ( HasCookieConsent() )
     {
         ApplyCookieConsent();
-        HideCookieConsentBanner();
         ShowCookieConsentButton();
-        HideCookieConsentDialog();
     }
     else
     {
         ShowCookieConsentBanner();
-        HideCookieConsentButton();
-        HideCookieConsentDialog();
     }
 </script>
