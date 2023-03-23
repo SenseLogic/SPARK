@@ -82,31 +82,19 @@
 
 
 
-
-
-
-
-
-
-
-
-
 <div id="cookie-consent-banner-container" class="cookie-consent-banner-container is-hidden">
     <div class="cookie-consent-banner-text">
         <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-banner-text' ); ?>
     </div>
-    <div class="cookie-consent-banner-link">
-        <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-banner-link' ); ?>
-    </div>
-    <div class="cookie-consent-banner-button-container">
-        <div class="cookie-consent-banner-button cookie-consent-banner-settings-button" onclick="HandleCookieConsentBannerSettingsButtonClickEvent()">
-            <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-banner-settings-button' ); ?>
+    <div class="cookie-consent-banner-button-list">
+        <div class="cookie-consent-banner-button cookie-consent-banner-accept-all-cookies-button" onclick="HandleCookieConsentBannerAcceptAllCookiesButtonClickEvent()">
+            <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-banner-accept-all-cookies-button' ); ?>
         </div>
-        <div class="margin-left-auto! cookie-consent-banner-button cookie-consent-banner-accept-button" onclick="HandleCookieConsentBannerAgreeButtonClickEvent()">
-            <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-banner-accept-button' ); ?>
+        <div class="cookie-consent-banner-button cookie-consent-banner-accept-required-cookies-button" onclick="HandleCookieConsentBannerAcceptRequiredCookiesButtonClickEvent()">
+            <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-banner-accept-required-cookies-button' ); ?>
         </div>
-        <div class="cookie-consent-banner-button cookie-consent-banner-decline-button" onclick="HandleCookieConsentBannerDeclineButtonClickEvent()">
-            <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-banner-decline-button' ); ?>
+        <div class="cookie-consent-banner-button cookie-consent-banner-privacy-preferences-button" onclick="HandleCookieConsentBannerPrivacyPreferencesButtonClickEvent()">
+            <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-banner-privacy-preferences-button' ); ?>
         </div>
     </div>
 </div>
@@ -182,7 +170,7 @@
 
     // ~~
 
-    function HandleCookieConsentBannerAgreeButtonClickEvent(
+    function HandleCookieConsentBannerAcceptAllCookiesButtonClickEvent(
         )
     {
         SetCookieConsent( "true" );
@@ -193,7 +181,7 @@
 
     // ~~
 
-    function HandleCookieConsentBannerDeclineButtonClickEvent(
+    function HandleCookieConsentBannerAcceptRequiredCookiesButtonClickEvent(
         )
     {
         SetCookieConsent( "false" );
@@ -204,7 +192,7 @@
 
     // ~~
 
-    function HandleCookieConsentBannerSettingsButtonClickEvent(
+    function HandleCookieConsentBannerPrivacyPreferencesButtonClickEvent(
         )
     {
         HideCookieConsentBanner();

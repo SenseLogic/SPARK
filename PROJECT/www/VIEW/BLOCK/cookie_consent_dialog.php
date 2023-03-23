@@ -279,7 +279,7 @@
             <div class="cookie-consent-dialog-header-title">
                 <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-dialog-title' ); ?>
             </div>
-            <div class="cookie-consent-dialog-header-close-button" onclick="HandleCookieConsentDialogCloseButtonClickedEvent()">
+            <div class="cookie-consent-dialog-header-close-button" onclick="HandleCookieConsentDialogCloseButtonClickEvent()">
             </div>
         </div>
         <div class="cookie-consent-dialog-content">
@@ -287,17 +287,17 @@
                 <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-dialog-description' ); ?>
             </div>
             <div class="cookie-content-dialog-button-list">
-                <div class="cookie-consent-dialog-button cookie-consent-dialog-allow-button" onclick="HandleCookieConsentDialogAllowAllButtonClickedEvent()">
-                    <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-dialog-allow-all-button' ); ?>
+                <div class="cookie-consent-dialog-button cookie-consent-dialog-accept-all-cookies-button" onclick="HandleCookieConsentDialogAcceptAllCookiesButtonClickEvent()">
+                    <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-dialog-accept-all-cookies-button' ); ?>
                 </div>
-                <div class="cookie-consent-dialog-button cookie-consent-dialog-reject-button" onclick="HandleCookieConsentDialogRejectAllButtonClickedEvent()">
-                    <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-dialog-reject-all-button' ); ?>
+                <div class="cookie-consent-dialog-button cookie-consent-dialog-accept-required-cookies-button" onclick="HandleCookieConsentDialogAcceptRequiredCookiesButtonClickEvent()">
+                    <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-dialog-accept-required-cookies-button' ); ?>
                 </div>
             </div>
             <div class="cookie-consent-dialog-setting-list">
                 <div class="cookie-consent-dialog-setting">
-                    <div class="cookie-consent-dialog-setting-title" onclick="CookieConsentDialogSettingDescriptionElementArray[ 0 ].ToggleClass( 'is-hidden' )">
-                        <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-dialog-necessary-cookies-title' ); ?>
+                    <div class="cookie-consent-dialog-setting-title" onclick="HandleCookieConsentDialogRequiredCookiesDescriptionButtonClickEvent()">
+                        <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-dialog-required-cookies-title' ); ?>
                         <image class="cookie-consent-dialog-setting-title-image" src="/static/image/base/help_icon.svg"/>
                     </div>
                     <div class="cookie-consent-dialog-setting-value">
@@ -306,12 +306,12 @@
                             <span class="cookie-consent-dialog-setting-slider is-readonly"></span>
                         </label>
                     </div>
-                    <div class="cookie-consent-dialog-setting-description is-hidden" onclick="event.currentTarget.AddClass( 'is-hidden' )">
-                        <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-dialog-necessary-cookies-description' ); ?>
+                    <div class="cookie-consent-dialog-setting-description is-hidden" onclick="HandleCookieConsentDialogRequiredCookiesDescriptionButtonClickEvent()">
+                        <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-dialog-required-cookies-description' ); ?>
                     </div>
                 </div>
                 <div class="cookie-consent-dialog-setting">
-                    <div class="cookie-consent-dialog-setting-title" onclick="CookieConsentDialogSettingDescriptionElementArray[ 1 ].ToggleClass( 'is-hidden' )">
+                    <div class="cookie-consent-dialog-setting-title" onclick="HandleCookieConsentDialogPerformanceCookiesDescriptionButtonClickEvent()">
                         <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-dialog-performance-cookies-title' ); ?>
                         <image class="cookie-consent-dialog-setting-title-image" src="/static/image/base/help_icon.svg"/>
                     </div>
@@ -321,15 +321,15 @@
                             <span class="cookie-consent-dialog-setting-slider"></span>
                         </label>
                     </div>
-                    <div class="cookie-consent-dialog-setting-description is-hidden" onclick="event.currentTarget.AddClass( 'is-hidden' )">
+                    <div class="cookie-consent-dialog-setting-description is-hidden" onclick="HandleCookieConsentDialogPerformanceCookiesDescriptionButtonClickEvent()">
                         <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-dialog-performance-cookies-description' ); ?>
                     </div>
                 </div>
             </div>
         </div>
         <div class="cookie-consent-dialog-button-list">
-            <div class="cookie-consent-dialog-button cookie-consent-dialog-confirm-button" onclick="HandleCookieConsentDialogConfirmButtonClickedEvent()">
-                <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-dialog-confirm-button' ); ?>
+            <div class="cookie-consent-dialog-button cookie-consent-dialog-confirm-choices-button" onclick="HandleCookieConsentDialogConfirmChoicesButtonClickEvent()">
+                <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-dialog-confirm-choices-button' ); ?>
             </div>
         </div>
     </div>
@@ -361,7 +361,7 @@
 
     // ~~
 
-    function HandleCookieConsentDialogCloseButtonClickedEvent(
+    function HandleCookieConsentDialogCloseButtonClickEvent(
         )
     {
         HideCookieConsentDialog();
@@ -370,7 +370,7 @@
 
     // ~~
 
-    function HandleCookieConsentDialogAllowAllButtonClickedEvent(
+    function HandleCookieConsentDialogAcceptAllCookiesButtonClickEvent(
         )
     {
         SetCookieConsent( "true" );
@@ -381,7 +381,7 @@
 
     // ~~
 
-    function HandleCookieConsentDialogRejectAllButtonClickedEvent(
+    function HandleCookieConsentDialogAcceptRequiredCookiesButtonClickEvent(
         )
     {
         SetCookieConsent( "false" );
@@ -392,7 +392,25 @@
 
     // ~~
 
-    function HandleCookieConsentDialogConfirmButtonClickedEvent(
+    function HandleCookieConsentDialogRequiredCookiesDescriptionButtonClickEvent(
+        )
+    {
+        CookieConsentDialogSettingDescriptionElementArray[ 0 ].ToggleClass( 'is-hidden' );
+        CookieConsentDialogSettingDescriptionElementArray[ 1 ].AddClass( 'is-hidden' );
+    }
+
+    // ~~
+
+    function HandleCookieConsentDialogPerformanceCookiesDescriptionButtonClickEvent(
+        )
+    {
+        CookieConsentDialogSettingDescriptionElementArray[ 1 ].ToggleClass( 'is-hidden' )
+        CookieConsentDialogSettingDescriptionElementArray[ 0 ].AddClass( 'is-hidden' )
+    }
+
+    // ~~
+
+    function HandleCookieConsentDialogConfirmChoicesButtonClickEvent(
         )
     {
         if ( CookieConsentDialogSettingInputElementArray[ 1 ].checked )

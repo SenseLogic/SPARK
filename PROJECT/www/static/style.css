@@ -1282,16 +1282,14 @@ body.is-appearing .loader-page-logo {
   position: fixed;
   bottom: 0;
   left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: min( 30rem, 100vw - 2rem );
+  margin-left: 1rem;
+  margin-right: 1rem;
+  max-width: 20rem;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
   padding: 1.25rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
   background-color: #fff;
   box-shadow: 0 0.25rem 0.5rem rgba(128,128,128,0.5);
   font-size: 0.9rem;
@@ -1305,38 +1303,34 @@ body.is-appearing .loader-page-logo {
 .cookie-consent-banner-text {
   color: #333;
 }
-.cookie-consent-banner-link {
-  color: #333;
-}
-.cookie-consent-banner-button-container {
-  margin-top: 0.5rem;
+.cookie-consent-banner-button-list {
+  margin-top: 1rem;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 0.5rem;
-  justify-content: center;
-  align-items: center;
 }
 .cookie-consent-banner-button {
   border-radius: 0.25rem;
   padding: 0.25rem 1rem;
+  text-align: center;
   color: #fff;
   cursor: pointer;
   transition: background-color 0.25s ease;
 }
-.cookie-consent-banner-settings-button {
+.cookie-consent-banner-privacy-preferences-button {
   border: 1px solid #b3b3b3;
   background-color: #f2f2f2;
   color: #808080;
 }
-.cookie-consent-banner-settings-button:hover {
+.cookie-consent-banner-privacy-preferences-button:hover {
   background-color: #fff;
 }
-.cookie-consent-banner-accept-button,
-.cookie-consent-banner-decline-button {
+.cookie-consent-banner-accept-all-cookies-button,
+.cookie-consent-banner-accept-required-cookies-button {
   background-color: #0000a6;
 }
-.cookie-consent-banner-accept-button:hover,
-.cookie-consent-banner-decline-button:hover {
+.cookie-consent-banner-accept-all-cookies-button:hover,
+.cookie-consent-banner-accept-required-cookies-button:hover {
   background-color: #0000d0;
 }
 .cookie-consent-button {
@@ -1369,7 +1363,7 @@ body.is-appearing .loader-page-logo {
   margin-left: 1rem;
   margin-right: 1rem;
   max-height: 80vh;
-  max-width: 40rem;
+  max-width: 30rem;
   border-radius: 1rem;
   padding: 1rem;
   display: flex;
@@ -1428,21 +1422,21 @@ body.is-appearing .loader-page-logo {
   cursor: pointer;
   transition: background-color 0.25s ease;
 }
-.cookie-consent-dialog-allow-button,
-.cookie-consent-dialog-reject-button {
+.cookie-consent-dialog-accept-all-cookies-button,
+.cookie-consent-dialog-accept-required-cookies-button {
   background-color: #0000a6;
 }
-.cookie-consent-dialog-allow-button:hover,
-.cookie-consent-dialog-reject-button:hover {
+.cookie-consent-dialog-accept-all-cookies-button:hover,
+.cookie-consent-dialog-accept-required-cookies-button:hover {
   background-color: #0000d0;
 }
-.cookie-consent-dialog-confirm-button {
+.cookie-consent-dialog-confirm-choices-button {
   margin-left: auto;
   border: 1px solid #b3b3b3;
   background-color: #f2f2f2;
   color: #808080;
 }
-.cookie-consent-dialog-confirm-button:hover {
+.cookie-consent-dialog-confirm-choices-button:hover {
   background-color: #fff;
 }
 .cookie-consent-dialog-setting-list {
