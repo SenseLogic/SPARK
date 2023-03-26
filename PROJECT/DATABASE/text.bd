@@ -108,33 +108,50 @@ TEXT
 
         %cookie-consent-banner-text-text
             ~ cookie-consent-banner-text
+            ~ We use cookies on our website to provide you with the best possible online experience.¶
+              ((cookie-policy)(More information))
+              ¨fr:Nous utilisons des cookies sur notre site Web pour vous offrir la meilleure expérience en ligne possible.¶
+              ((cookie-policy)(Plus d'informations))
+
+        %cookie-consent-banner-accept-all-cookies-button-text
+            ~ cookie-consent-banner-accept-all-cookies-button
+            ~ Accept
+              ¨fr:Accepter
+
+        %cookie-consent-banner-accept-required-cookies-button-text
+            ~ cookie-consent-banner-accept-required-cookies-button
+            ~ Decline
+              ¨fr:Refuser
+
+        %cookie-consent-banner-european-text-text
+            ~ cookie-consent-banner-european-text
             ~ By clicking “Accept All Cookies”, you agree to the storing of cookies on your device to enhance site navigation, analyze site usage, and assist in our marketing efforts.¶
               ([cookie-policy][More information])
               ¨fr:En cliquant sur "Accepter tous les cookies", vous acceptez que des cookies soient stockés sur votre appareil afin d'améliorer la navigation sur le site, d'analyser l'utilisation du site et de contribuer à nos efforts de marketing.¶
                   ([cookie-policy][Plus d'informations])
 
-        %cookie-consent-banner-accept-all-cookies-button-text
-            ~ cookie-consent-banner-accept-all-cookies-button
+        %cookie-consent-banner-european-accept-all-cookies-button-text
+            ~ cookie-consent-banner-european-accept-all-cookies-button
             ~ Accept all cookies
               ¨fr:Accepter tous les cookies
 
-        %cookie-consent-banner-accept-required-cookies-button-text
-            ~ cookie-consent-banner-accept-required-cookies-button
+        %cookie-consent-banner-european-accept-required-cookies-button-text
+            ~ cookie-consent-banner-european-accept-required-cookies-button
             ~ Accept required cookies
               ¨fr:Accepter les cookies nécessaires
 
-        %cookie-consent-banner-privacy-preferences-button-text
-            ~ cookie-consent-banner-privacy-preferences-button
+        %cookie-consent-banner-european-privacy-preferences-button-text
+            ~ cookie-consent-banner-european-privacy-preferences-button
             ~ Privacy preferences
               ¨fr:Préférences de confidentialité
 
-        %cookie-consent-dialog-title-text
-            ~ cookie-consent-dialog-title
+        %cookie-consent-dialog-european-title-text
+            ~ cookie-consent-dialog-european-title
             ~ Privacy preferences
               ¨fr:Préférences de confidentialité
 
-        %cookie-consent-dialog-description-text
-            ~ cookie-consent-dialog-description
+        %cookie-consent-dialog-european-description-text
+            ~ cookie-consent-dialog-european-description
             ~ When you visit any website, it may store or retreive information on your browser, mostly in the form of cookies.^
               This information is mostly used to make the site work as you expect it.^
               Because we respect your right to privacy, you can choose not to allow some types of cookies.^
@@ -144,13 +161,13 @@ TEXT
                   Parce que nous respectons votre droit à la vie privée, vous pouvez choisir de ne pas autoriser certains types de cookies.^
                   Cependant, le blocage de certains types de cookies peut avoir un impact sur votre expérience du site et des services que nous sommes en mesure d'offrir.
 
-        %cookie-consent-dialog-required-cookies-title-text
-            ~ cookie-consent-dialog-required-cookies-title
+        %cookie-consent-dialog-european-required-cookies-title-text
+            ~ cookie-consent-dialog-european-required-cookies-title
             ~ Required Cookies
               ¨fr:Cookies nécessaires
 
-        %cookie-consent-dialog-required-cookies-description-text
-            ~ cookie-consent-dialog-required-cookies-description
+        %cookie-consent-dialog-european-required-cookies-description-text
+            ~ cookie-consent-dialog-european-required-cookies-description
             ~ These cookies are necessary for the website to function and cannot be switched off in our systems.^
               They are usually only set in response to actions made by you which amount to a request for services, such as setting your privacy preferences, logging in or filling in forms.^
               You can set your browser to block or alert you about these cookies, but some parts of the site will not then work.^
@@ -160,13 +177,13 @@ TEXT
                   Vous pouvez configurer votre navigateur pour bloquer ces cookies ou vous en avertir, mais certaines parties du site ne fonctionneront alors pas.^
                   Ces cookies ne stockent aucune information personnelle identifiable.
 
-        %cookie-consent-dialog-performance-cookies-title-text
-            ~ cookie-consent-dialog-performance-cookies-title
+        %cookie-consent-dialog-european-performance-cookies-title-text
+            ~ cookie-consent-dialog-european-performance-cookies-title
             ~ Performance Cookies
               ¨fr:Cookies de performance
 
-        %cookie-consent-dialog-performance-cookies-description-text
-            ~ cookie-consent-dialog-performance-cookies-description
+        %cookie-consent-dialog-european-performance-cookies-description-text
+            ~ cookie-consent-dialog-european-performance-cookies-description
             ~ These cookies allow us to count visits and traffic sources so we can measure and improve the performance of our site.^
               They help us to know which pages are the most and least popular and see how visitors move around the site.^
               All information these cookies collect is aggregated and therefore anonymous.^
@@ -176,18 +193,18 @@ TEXT
                   Toutes les informations collectées par ces cookies sont agrégées et donc anonymes.^
                   Si vous n'autorisez pas ces cookies, nous ne saurons pas quand vous avez visité notre site et nous ne pourrons pas contrôler ses performances.
 
-        %cookie-consent-dialog-accept-all-cookies-button-text
-            ~ cookie-consent-dialog-accept-all-cookies-button
+        %cookie-consent-dialog-european-accept-all-cookies-button-text
+            ~ cookie-consent-dialog-european-accept-all-cookies-button
             ~ Accept all cookies
               ¨fr:Accepter tous les cookies
 
-        %cookie-consent-dialog-accept-required-cookies-button-text
-            ~ cookie-consent-dialog-accept-required-cookies-button
+        %cookie-consent-dialog-european-accept-required-cookies-button-text
+            ~ cookie-consent-dialog-european-accept-required-cookies-button
             ~ Accept required cookies
               ¨fr:Accepter les cookies nécessaires
 
-        %cookie-consent-dialog-confirm-choices-button-text
-            ~ cookie-consent-dialog-confirm-choices-button
+        %cookie-consent-dialog-european-confirm-choices-button-text
+            ~ cookie-consent-dialog-european-confirm-choices-button
             ~ Confirm My Choices
               ¨fr:Confirmer mes choix
 

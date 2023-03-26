@@ -3,21 +3,24 @@
     {
         z-index: 1000;
         position: fixed;
-        bottom: 1rem;
-        left: 1rem;
+        bottom: 0.5rem;
+        left: 0.5rem;
 
         height: 2rem;
         width: 2rem;
 
+        opacity: 0.3;
         background: url( "/static/image/base/cookie_consent_open_button.svg" ) no-repeat center center / contain;
 
         cursor: pointer;
-        transition: transform 0.25s ease;
+        transition: transform 0.25s ease, opacity 0.25s ease;
     }
 
     .cookie-consent-button:hover
     {
         transform: scale( 1.05 );
+
+        opacity: 1;
     }
 </style>
 <div id="cookie-consent-button" class="cookie-consent-button is-hidden" onclick="HandleCookieConsentButtonClickEvent()">
