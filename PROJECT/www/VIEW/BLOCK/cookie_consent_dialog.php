@@ -350,6 +350,8 @@
     {
         CookieConsentDialogSettingInputElementArray[ 1 ].checked = GetCookieConsent();
         CookieConsentDialogContainerElement.RemoveClass( "is-hidden" );
+        CookieConsentDialogSettingDescriptionElementArray[ 0 ].AddClass( 'is-hidden' );
+        CookieConsentDialogSettingDescriptionElementArray[ 1 ].AddClass( 'is-hidden' );
     }
 
     // ~~

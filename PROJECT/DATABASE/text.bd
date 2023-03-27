@@ -109,9 +109,9 @@ TEXT
         %cookie-consent-banner-text-text
             ~ cookie-consent-banner-text
             ~ We use cookies on our website to provide you with the best possible online experience.¶
-              ((cookie-policy)(More information))
+              ([cookie-policy][More information])
               ¨fr:Nous utilisons des cookies sur notre site Web pour vous offrir la meilleure expérience en ligne possible.¶
-              ((cookie-policy)(Plus d'informations))
+                  ([cookie-policy][Plus d'informations])
 
         %cookie-consent-banner-accept-all-cookies-button-text
             ~ cookie-consent-banner-accept-all-cookies-button
@@ -127,44 +127,47 @@ TEXT
             ~ cookie-consent-banner-european-text
             ~ By clicking “Accept All Cookies”, you agree to the storing of cookies on your device to enhance site navigation, analyze site usage, and assist in our marketing efforts.¶
               ([cookie-policy][More information])
-              ¨fr:En cliquant sur "Accepter tous les cookies", vous acceptez que des cookies soient stockés sur votre appareil afin d'améliorer la navigation sur le site, d'analyser l'utilisation du site et de contribuer à nos efforts de marketing.¶
+              ¨fr:En cliquant sur « Accepter tous les cookies », vous acceptez le stockage de cookies sur votre appareil pour améliorer la navigation sur le site, analyser son utilisation et contribuer à nos efforts de marketing.¶
                   ([cookie-policy][Plus d'informations])
 
         %cookie-consent-banner-european-accept-all-cookies-button-text
             ~ cookie-consent-banner-european-accept-all-cookies-button
             ~ Accept all cookies
-              ¨fr:Accepter tous les cookies
+              ¨fr:Autoriser tous les cookies
 
         %cookie-consent-banner-european-accept-required-cookies-button-text
             ~ cookie-consent-banner-european-accept-required-cookies-button
-            ~ Accept required cookies
-              ¨fr:Accepter les cookies nécessaires
+            ~ Reject all
+              ¨fr:Tout refuser
 
         %cookie-consent-banner-european-privacy-preferences-button-text
             ~ cookie-consent-banner-european-privacy-preferences-button
-            ~ Privacy preferences
-              ¨fr:Préférences de confidentialité
+            ~ Cookies Settings
+              ¨fr:Paramètres des cookies
 
         %cookie-consent-dialog-european-title-text
             ~ cookie-consent-dialog-european-title
-            ~ Privacy preferences
-              ¨fr:Préférences de confidentialité
+            ~ Privacy Preference Center
+              ¨fr:Centre de préférences de la confidentialité
 
         %cookie-consent-dialog-european-description-text
             ~ cookie-consent-dialog-european-description
-            ~ When you visit any website, it may store or retreive information on your browser, mostly in the form of cookies.^
-              This information is mostly used to make the site work as you expect it.^
-              Because we respect your right to privacy, you can choose not to allow some types of cookies.^
-              However, blocking some types of cookies may impact your experience of the site and ther services we are able to offer.
-              ¨fr:Lorsque vous visitez un site web, celui-ci peut stocker ou recevoir des informations sur votre navigateur, principalement sous la forme de cookies.^
-                  Ces informations sont principalement utilisées pour que le site fonctionne comme vous l'attendez.^
-                  Parce que nous respectons votre droit à la vie privée, vous pouvez choisir de ne pas autoriser certains types de cookies.^
-                  Cependant, le blocage de certains types de cookies peut avoir un impact sur votre expérience du site et des services que nous sommes en mesure d'offrir.
+            ~ When you visit any website, it may store or retrieve information on your browser, mostly in the form of cookies.^
+              This information might be about you, your preferences or your device and is mostly used to make the site work as you expect it to.^
+              The information does not usually directly identify you, but it can give you a more personalized web experience. Because we respect your right to privacy, you can choose not to allow some types of cookies.^
+              Click on the different category headings to find out more and change our default settings.^
+              However, blocking some types of cookies may impact your experience of the site and the services we are able to offer.
+              ¨fr:Lorsque vous consultez un site Web, des données peuvent être stockées dans votre navigateur ou récupérées à partir de celui-ci, généralement sous la forme de cookies.^
+                  Ces informations peuvent porter sur vous, sur vos préférences ou sur votre appareil et sont principalement utilisées pour s'assurer que le site Web fonctionne correctement.^
+                  Les informations ne permettent généralement pas de vous identifier directement, mais peuvent vous permettre de bénéficier d'une expérience Web personnalisée.^
+                  Parce que nous respectons votre droit à la vie privée, nous vous donnons la possibilité de ne pas autoriser certains types de cookies.^
+                  Cliquez sur les différentes catégories pour obtenir plus de détails sur chacune d'entre elles, et modifier les paramètres par défaut.^
+                  Toutefois, si vous bloquez certains types de cookies, votre expérience de navigation et les services que nous sommes en mesure de vous offrir peuvent être impactés.
 
         %cookie-consent-dialog-european-required-cookies-title-text
             ~ cookie-consent-dialog-european-required-cookies-title
-            ~ Required Cookies
-              ¨fr:Cookies nécessaires
+            ~ Strictly Necessary Cookies
+              ¨fr:Cookies strictement nécessaires
 
         %cookie-consent-dialog-european-required-cookies-description-text
             ~ cookie-consent-dialog-european-required-cookies-description
@@ -172,10 +175,10 @@ TEXT
               They are usually only set in response to actions made by you which amount to a request for services, such as setting your privacy preferences, logging in or filling in forms.^
               You can set your browser to block or alert you about these cookies, but some parts of the site will not then work.^
               These cookies do not store any personally identifiable information.
-              ¨fr:Ces cookies sont nécessaires au fonctionnement du site web et ne peuvent pas être désactivés dans nos systèmes.^
-                  Ils ne sont généralement installés qu'en réponse à des actions que vous effectuez et qui équivalent à une demande de services, comme le réglage de vos préférences en matière de confidentialité, l'ouverture d'une session ou le remplissage de formulaires.^
-                  Vous pouvez configurer votre navigateur pour bloquer ces cookies ou vous en avertir, mais certaines parties du site ne fonctionneront alors pas.^
-                  Ces cookies ne stockent aucune information personnelle identifiable.
+              ¨fr:Ces cookies sont nécessaires au fonctionnement du site Web et ne peuvent pas être désactivés dans nos systèmes.^
+                  Ils sont généralement établis en tant que réponse à des actions que vous avez effectuées et qui constituent une demande de services, telles que la définition de vos préférences en matière de confidentialité, la connexion ou le remplissage de formulaires.^
+                  Vous pouvez configurer votre navigateur afin de bloquer ou être informé de l'existence de ces cookies, mais certaines parties du site Web peuvent être affectées.^
+                  Ces cookies ne stockent aucune information d’identification personnelle.
 
         %cookie-consent-dialog-european-performance-cookies-title-text
             ~ cookie-consent-dialog-european-performance-cookies-title
@@ -188,25 +191,25 @@ TEXT
               They help us to know which pages are the most and least popular and see how visitors move around the site.^
               All information these cookies collect is aggregated and therefore anonymous.^
               If you do not allow these cookies we will not know when you have visited our site, and will not be able to monitor its performance.
-              ¨fr:Ces cookies nous permettent de compter les visites et les sources de trafic afin de mesurer et d'améliorer les performances de notre site.^
-                  Ils nous aident à savoir quelles sont les pages les plus et les moins populaires et à voir comment les visiteurs se déplacent sur le site.^
-                  Toutes les informations collectées par ces cookies sont agrégées et donc anonymes.^
-                  Si vous n'autorisez pas ces cookies, nous ne saurons pas quand vous avez visité notre site et nous ne pourrons pas contrôler ses performances.
+              ¨fr:Ces cookies nous permettent de déterminer le nombre de visites et les sources du trafic, afin de mesurer et d’améliorer les performances de notre site Web.^
+                  Ils nous aident également à identifier les pages les plus / moins visitées et d’évaluer comment les visiteurs naviguent sur le site Web.^
+                  Toutes les informations collectées par ces cookies sont agrégées et donc anonymisées.^
+                  Si vous n'acceptez pas ces cookies, nous ne serons pas informé de votre visite sur notre site.
 
         %cookie-consent-dialog-european-accept-all-cookies-button-text
             ~ cookie-consent-dialog-european-accept-all-cookies-button
-            ~ Accept all cookies
-              ¨fr:Accepter tous les cookies
+            ~ Allow All
+              ¨fr:Tout autoriser
 
         %cookie-consent-dialog-european-accept-required-cookies-button-text
             ~ cookie-consent-dialog-european-accept-required-cookies-button
-            ~ Accept required cookies
-              ¨fr:Accepter les cookies nécessaires
+            ~ Reject All
+              ¨fr:Tout refuser
 
         %cookie-consent-dialog-european-confirm-choices-button-text
             ~ cookie-consent-dialog-european-confirm-choices-button
             ~ Confirm My Choices
-              ¨fr:Confirmer mes choix
+              ¨fr:Confirmer la sélection
 
         %cookie-policy-title-text
             ~ cookie-policy-title
