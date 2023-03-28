@@ -9,6 +9,6 @@
 @include article_list_page.bd
 @include article_page.bd
 @include contact_page.bd
-@include cookie_policy_page.bd
+@include privacy_policy_page.bd
 @include home_page.bd
 @include legal_notice_page.bd

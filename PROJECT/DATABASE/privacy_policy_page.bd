@@ -1,0 +1,13 @@
+PAGE
+
+    Id Slug Route TypeSlug Number LanguageCodeArray Title ImagePath
+
+        %privacy-policy-page
+            ~ privacy-policy
+            ~ privacy-policy
+            ~ privacy-policy
+            ~ 1
+            ~ { en ~ fr }
+            ~ Privacy policy
+              ¨fr:Politique de confidentialité
+            ~ /static/image/article/sunset.jpg

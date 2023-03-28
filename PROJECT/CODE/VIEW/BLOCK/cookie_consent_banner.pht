@@ -1,5 +1,5 @@
 <?
-    var cookie_consent_banner_is_european = true;//( .BrowserLocation.IsAmerica || .BrowserLocation.IsEurope );
+    var cookie_consent_banner_has_settings_button = .BrowserLocation.IsEurope || .BrowserLocation.IsNorthAmerica;
 ?>
 <style file="cookie_consent_banner.styl">
     .cookie-consent-banner-container
@@ -73,26 +73,26 @@
         background-color: WhiteColor;
     }
 
-    .cookie-consent-banner-accept-cookies,
+    .cookie-consent-banner-accept-cookies-button,
     .cookie-consent-banner-reject-cookies-button
     {
         background-color: BlueColor400;
     }
 
-    .cookie-consent-banner-accept-cookies:hover,
+    .cookie-consent-banner-accept-cookies-button:hover,
     .cookie-consent-banner-reject-cookies-button:hover
     {
         background-color: BlueColor;
     }
 </style>
 <div id="cookie-consent-banner-container" class="cookie-consent-banner-container is-hidden">
-    <? if ( cookie_consent_banner_is_european ) { ?>
+    <? if ( cookie_consent_banner_has_settings_button ) { ?>
         <div class="cookie-consent-banner-text">
             <# .GetProcessedTextBySlug( 'cookie-consent-banner-european-text' ) #>
         </div>
         <div class="cookie-consent-banner-button-list">
-            <div class="cookie-consent-banner-button cookie-consent-banner-accept-cookies" onclick="HandleCookieConsentBannerAcceptAllCookiesButtonClickEvent()">
-                <# .GetProcessedTextBySlug( 'cookie-consent-banner-european-accept-cookies' ) #>
+            <div class="cookie-consent-banner-button cookie-consent-banner-accept-cookies-button" onclick="HandleCookieConsentBannerAcceptAllCookiesButtonClickEvent()">
+                <# .GetProcessedTextBySlug( 'cookie-consent-banner-european-accept-cookies-button' ) #>
             </div>
             <div class="cookie-consent-banner-button cookie-consent-banner-reject-cookies-button" onclick="HandleCookieConsentBannerAcceptRequiredCookiesButtonClickEvent()">
                 <# .GetProcessedTextBySlug( 'cookie-consent-banner-european-reject-cookies-button' ) #>
@@ -106,8 +106,8 @@
             <# .GetProcessedTextBySlug( 'cookie-consent-banner-text' ) #>
         </div>
         <div class="cookie-consent-banner-button-list">
-            <div class="cookie-consent-banner-button cookie-consent-banner-accept-cookies" onclick="HandleCookieConsentBannerAcceptAllCookiesButtonClickEvent()">
-                <# .GetProcessedTextBySlug( 'cookie-consent-banner-accept-cookies' ) #>
+            <div class="cookie-consent-banner-button cookie-consent-banner-accept-cookies-button" onclick="HandleCookieConsentBannerAcceptAllCookiesButtonClickEvent()">
+                <# .GetProcessedTextBySlug( 'cookie-consent-banner-accept-cookies-button' ) #>
             </div>
             <div class="cookie-consent-banner-button cookie-consent-banner-reject-cookies-button" onclick="HandleCookieConsentBannerAcceptRequiredCookiesButtonClickEvent()">
                 <# .GetProcessedTextBySlug( 'cookie-consent-banner-reject-cookies-button' ) #>
@@ -193,7 +193,7 @@
         SetCookieConsent( "true" );
         ApplyCookieConsent();
         HideCookieConsentBanner();
-        <? if ( cookie_consent_banner_is_european ) { ?>
+        <? if ( cookie_consent_banner_has_settings_button ) { ?>
             ShowCookieConsentButton();
         <? } ?>
     }
@@ -206,7 +206,7 @@
         SetCookieConsent( "false" );
         ApplyCookieConsent();
         HideCookieConsentBanner();
-        <? if ( cookie_consent_banner_is_european ) { ?>
+        <? if ( cookie_consent_banner_has_settings_button ) { ?>
             ShowCookieConsentButton();
         <? } ?>
     }
@@ -224,7 +224,7 @@
 
     CookieConsentBannerContainerElement = GetElementById( "cookie-consent-banner-container" );
 
-    RemoveCookieConsent();
+    // RemoveCookieConsent();
 
     if ( HasCookieConsent() )
     {

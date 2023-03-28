@@ -157,8 +157,8 @@
         <div class="scaled-button header-menu-button header-menu-desktop-button" data-view-name="articles" onclick="ShowView( 'articles' )">
             <?php echo $this->GetProcessedTextBySlug( 'header-menu-articles-button' ); ?>
         </div>
-        <div class="scaled-button header-menu-button header-menu-desktop-button" data-view-name="cookie-policy" onclick="ShowView( 'cookie-policy' )">
-            <?php echo $this->GetProcessedTextBySlug( 'header-menu-cookie-policy-button' ); ?>
+        <div class="scaled-button header-menu-button header-menu-desktop-button" data-view-name="privacy-policy" onclick="ShowView( 'privacy-policy' )">
+            <?php echo $this->GetProcessedTextBySlug( 'header-menu-privacy-policy-button' ); ?>
         </div>
         <div class="scaled-button header-menu-button header-menu-desktop-button" data-view-name="legal-notice" onclick="ShowView( 'legal-notice' )">
             <?php echo $this->GetProcessedTextBySlug( 'header-menu-legal-notice-button' ); ?>
@@ -182,8 +182,8 @@
         <div class="scaled-button header-menu-mobile-button" data-view-name="articles" onclick="ShowView( 'articles' )">
             <?php echo $this->GetProcessedTextBySlug( 'header-menu-articles-button' ); ?>
         </div>
-        <div class="scaled-button header-menu-mobile-button" data-view-name="cookie-policy" onclick="ShowView( 'cookie-policy' )">
-            <?php echo $this->GetProcessedTextBySlug( 'header-menu-cookie-policy-button' ); ?>
+        <div class="scaled-button header-menu-mobile-button" data-view-name="privacy-policy" onclick="ShowView( 'privacy-policy' )">
+            <?php echo $this->GetProcessedTextBySlug( 'header-menu-privacy-policy-button' ); ?>
         </div>
         <div class="scaled-button header-menu-mobile-button" data-view-name="legal-notice" onclick="ShowView( 'legal-notice' )">
             <?php echo $this->GetProcessedTextBySlug( 'header-menu-legal-notice-button' ); ?>

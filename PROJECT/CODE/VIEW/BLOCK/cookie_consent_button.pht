@@ -10,7 +10,7 @@
         width: 2rem;
 
         opacity: 0.5;
-        background: url( "/static/image/base/cookie_icon.svg" ) no-repeat center center / contain;
+        background: url( "/static/image/base/cookie_consent_button.svg" ) no-repeat center center / contain;
         filter: drop-shadow( 0 0.25rem 0.5rem rgba( 0, 0, 0, 0.4 ) );
 
         cursor: pointer;

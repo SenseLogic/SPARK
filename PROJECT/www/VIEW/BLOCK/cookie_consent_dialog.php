@@ -289,8 +289,8 @@
                 <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-dialog-european-description' ); ?>
             </div>
             <div class="cookie-content-dialog-button-list">
-                <div class="cookie-consent-dialog-button cookie-consent-dialog-accept-cookies" onclick="HandleCookieConsentDialogAcceptAllCookiesButtonClickEvent()">
-                    <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-dialog-european-accept-cookies' ); ?>
+                <div class="cookie-consent-dialog-button cookie-consent-dialog-accept-cookies-button" onclick="HandleCookieConsentDialogAcceptAllCookiesButtonClickEvent()">
+                    <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-dialog-european-accept-cookies-button' ); ?>
                 </div>
                 <div class="cookie-consent-dialog-button cookie-consent-dialog-reject-cookies-button" onclick="HandleCookieConsentDialogAcceptRequiredCookiesButtonClickEvent()">
                     <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-dialog-european-reject-cookies-button' ); ?>
@@ -300,7 +300,7 @@
                 <div class="cookie-consent-dialog-setting">
                     <div class="cookie-consent-dialog-setting-title" onclick="HandleCookieConsentDialogRequiredCookiesDescriptionButtonClickEvent()">
                         <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-dialog-european-required-cookies-title' ); ?>
-                        <image class="cookie-consent-dialog-setting-title-image" src="/static/image/base/help_icon.svg"/>
+                        <image class="cookie-consent-dialog-setting-title-image" src="/static/image/base/cookie_consent_dialog_help_button.svg"/>
                     </div>
                     <div class="cookie-consent-dialog-setting-value">
                         <label class="cookie-consent-dialog-setting-switch">
@@ -315,7 +315,7 @@
                 <div class="cookie-consent-dialog-setting">
                     <div class="cookie-consent-dialog-setting-title" onclick="HandleCookieConsentDialogPerformanceCookiesDescriptionButtonClickEvent()">
                         <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-dialog-european-performance-cookies-title' ); ?>
-                        <image class="cookie-consent-dialog-setting-title-image" src="/static/image/base/help_icon.svg"/>
+                        <image class="cookie-consent-dialog-setting-title-image" src="/static/image/base/cookie_consent_dialog_help_button.svg"/>
                     </div>
                     <div class="cookie-consent-dialog-setting-value">
                         <label class="cookie-consent-dialog-setting-switch">

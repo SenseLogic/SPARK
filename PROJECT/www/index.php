@@ -1043,7 +1043,7 @@ function Route(
                       && ( $path_value_array[ 0 ] === 'home'
                            || $path_value_array[ 0 ] === 'articles'
                            || $path_value_array[ 0 ] === 'contact'
-                           || $path_value_array[ 0 ] === 'cookie-policy'
+                           || $path_value_array[ 0 ] === 'privacy-policy'
                            || $path_value_array[ 0 ] === 'legal-notice' ) )
             {
                 require_once __DIR__ . '/' . 'CONTROLLER/show_base_controller.php';

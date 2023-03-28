@@ -14,9 +14,9 @@ PAGE_TYPE
             ~ article-list
             ~ Articles
 
-        %cookie-policy-page-type
-            ~ cookie-policy
-            ~ Cookie policy
+        %privacy-policy-page-type
+            ~ privacy-policy
+            ~ Privacy policy
 
         %legal-notice-page-type
             ~ legal-notice

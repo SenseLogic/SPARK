@@ -17,10 +17,10 @@ TEXT
             ~ Articles
               ¨fr:Articles
 
-        %header-menu-cookie-policy-button-text
-            ~ header-menu-cookie-policy-button
-            ~ Cookie policy
-              ¨fr:Politique de cookies
+        %header-menu-privacy-policy-button-text
+            ~ header-menu-privacy-policy-button
+            ~ Privacy policy
+              ¨fr:Politique de confidentialité
 
         %header-menu-legal-notice-button-text
             ~ header-menu-legal-notice-button
@@ -109,12 +109,12 @@ TEXT
         %cookie-consent-banner-text-text
             ~ cookie-consent-banner-text
             ~ We use cookies on our website to provide you with the best possible online experience.¶
-              ([cookie-policy][More information])
+              ([privacy-policy][More information])
               ¨fr:Nous utilisons des cookies sur notre site Web pour vous offrir la meilleure expérience en ligne possible.¶
-                  ([cookie-policy][Plus d'informations])
+                  ([privacy-policy][Plus d'informations])
 
-        %cookie-consent-banner-accept-cookies-text
-            ~ cookie-consent-banner-accept-cookies
+        %cookie-consent-banner-accept-cookies-button-text
+            ~ cookie-consent-banner-accept-cookies-button
             ~ Accept
               ¨fr:Accepter
 
@@ -126,12 +126,12 @@ TEXT
         %cookie-consent-banner-european-text-text
             ~ cookie-consent-banner-european-text
             ~ By clicking “Accept All Cookies”, you agree to the storing of cookies on your device to enhance site navigation, analyze site usage, and assist in our marketing efforts.¶
-              ([cookie-policy][More information])
+              ([privacy-policy][More information])
               ¨fr:En cliquant sur « Accepter tous les cookies », vous acceptez le stockage de cookies sur votre appareil pour améliorer la navigation sur le site, analyser son utilisation et contribuer à nos efforts de marketing.¶
-                  ([cookie-policy][Plus d'informations])
+                  ([privacy-policy][Plus d'informations])
 
-        %cookie-consent-banner-european-accept-cookies-text
-            ~ cookie-consent-banner-european-accept-cookies
+        %cookie-consent-banner-european-accept-cookies-button-text
+            ~ cookie-consent-banner-european-accept-cookies-button
             ~ Accept all cookies
               ¨fr:Autoriser tous les cookies
 
@@ -201,8 +201,8 @@ TEXT
                   Toutes les informations collectées par ces cookies sont agrégées et donc anonymisées.^
                   Si vous n'acceptez pas ces cookies, nous ne serons pas informé de votre visite sur notre site.
 
-        %cookie-consent-dialog-european-accept-cookies-text
-            ~ cookie-consent-dialog-european-accept-cookies
+        %cookie-consent-dialog-european-accept-cookies-button-text
+            ~ cookie-consent-dialog-european-accept-cookies-button
             ~ Allow All
               ¨fr:Tout autoriser
 
@@ -216,13 +216,13 @@ TEXT
             ~ Confirm My Choices
               ¨fr:Confirmer la sélection
 
-        %cookie-policy-title-text
-            ~ cookie-policy-title
+        %privacy-policy-title-text
+            ~ privacy-policy-title
             ~ Legal notice
               ¨fr:Mention légale
 
-        %cookie-policy-text-text
-            ~ cookie-policy-text
+        %privacy-policy-text-text
+            ~ privacy-policy-text
             ~ ! Title\\n
               \\n
               Paragraph.\\n
