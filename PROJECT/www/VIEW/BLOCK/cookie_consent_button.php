@@ -23,7 +23,38 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div id="cookie-consent-button" class="cookie-consent-button is-hidden" onclick="HandleCookieConsentButtonClickEvent()">
+    <div class="cookie-consent-button-tooltip">
+        <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-button-european-tooltip' ); ?>
+    </div>
 </div>
 <script>
     // -- VARIABLES

@@ -58,15 +58,15 @@
     height: 1rem;
     width: 1rem;
 
-    background: url( "/static/image/base/cookie_consent_close_button.svg" ) no-repeat center center / contain;
+    background: url( "/static/image/base/black_close_icon.svg" ) no-repeat center center / contain;
 
     cursor: pointer;
     transition: transform 0.25s ease;
 }
 
-.cookie-consent-dialog-header-close-button
+.cookie-consent-dialog-header-close-button:hover
 {
-    transition: transform 0.25s ease;
+    transform: scale( 1.1 );
 }
 
 .cookie-consent-dialog-content
@@ -107,14 +107,14 @@
     transition: background-color 0.25s ease;
 }
 
-.cookie-consent-dialog-accept-all-cookies-button,
-.cookie-consent-dialog-accept-required-cookies-button
+.cookie-consent-dialog-accept-cookies,
+.cookie-consent-dialog-reject-cookies-button
 {
     background-color: BlueColor400;
 }
 
-.cookie-consent-dialog-accept-all-cookies-button:hover,
-.cookie-consent-dialog-accept-required-cookies-button:hover
+.cookie-consent-dialog-accept-cookies:hover,
+.cookie-consent-dialog-reject-cookies-button:hover
 {
     background-color: BlueColor;
 }
@@ -173,7 +173,8 @@
 
 .cookie-consent-dialog-setting-title-image
 {
-    margin-left: 0.25rem;
+    margin-top: 0.1rem;
+    margin-left: 0.35rem;
     height: 0.8rem;
     width: auto;
 }

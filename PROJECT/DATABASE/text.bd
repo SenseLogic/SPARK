@@ -113,13 +113,13 @@ TEXT
               ¨fr:Nous utilisons des cookies sur notre site Web pour vous offrir la meilleure expérience en ligne possible.¶
                   ([cookie-policy][Plus d'informations])
 
-        %cookie-consent-banner-accept-all-cookies-button-text
-            ~ cookie-consent-banner-accept-all-cookies-button
+        %cookie-consent-banner-accept-cookies-text
+            ~ cookie-consent-banner-accept-cookies
             ~ Accept
               ¨fr:Accepter
 
-        %cookie-consent-banner-accept-required-cookies-button-text
-            ~ cookie-consent-banner-accept-required-cookies-button
+        %cookie-consent-banner-reject-cookies-button-text
+            ~ cookie-consent-banner-reject-cookies-button
             ~ Decline
               ¨fr:Refuser
 
@@ -130,18 +130,23 @@ TEXT
               ¨fr:En cliquant sur « Accepter tous les cookies », vous acceptez le stockage de cookies sur votre appareil pour améliorer la navigation sur le site, analyser son utilisation et contribuer à nos efforts de marketing.¶
                   ([cookie-policy][Plus d'informations])
 
-        %cookie-consent-banner-european-accept-all-cookies-button-text
-            ~ cookie-consent-banner-european-accept-all-cookies-button
+        %cookie-consent-banner-european-accept-cookies-text
+            ~ cookie-consent-banner-european-accept-cookies
             ~ Accept all cookies
               ¨fr:Autoriser tous les cookies
 
-        %cookie-consent-banner-european-accept-required-cookies-button-text
-            ~ cookie-consent-banner-european-accept-required-cookies-button
+        %cookie-consent-banner-european-reject-cookies-button-text
+            ~ cookie-consent-banner-european-reject-cookies-button
             ~ Reject all
               ¨fr:Tout refuser
 
-        %cookie-consent-banner-european-privacy-preferences-button-text
-            ~ cookie-consent-banner-european-privacy-preferences-button
+        %cookie-consent-banner-european-cookies-settings-button-text
+            ~ cookie-consent-banner-european-cookies-settings-button
+            ~ Cookies Settings
+              ¨fr:Paramètres des cookies
+
+        %cookie-consent-button-european-tooltip-text
+            ~ cookie-consent-button-european-tooltip
             ~ Cookies Settings
               ¨fr:Paramètres des cookies
 
@@ -196,13 +201,13 @@ TEXT
                   Toutes les informations collectées par ces cookies sont agrégées et donc anonymisées.^
                   Si vous n'acceptez pas ces cookies, nous ne serons pas informé de votre visite sur notre site.
 
-        %cookie-consent-dialog-european-accept-all-cookies-button-text
-            ~ cookie-consent-dialog-european-accept-all-cookies-button
+        %cookie-consent-dialog-european-accept-cookies-text
+            ~ cookie-consent-dialog-european-accept-cookies
             ~ Allow All
               ¨fr:Tout autoriser
 
-        %cookie-consent-dialog-european-accept-required-cookies-button-text
-            ~ cookie-consent-dialog-european-accept-required-cookies-button
+        %cookie-consent-dialog-european-reject-cookies-button-text
+            ~ cookie-consent-dialog-european-reject-cookies-button
             ~ Reject All
               ¨fr:Tout refuser
 

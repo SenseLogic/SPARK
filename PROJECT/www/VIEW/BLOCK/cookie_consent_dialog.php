@@ -273,6 +273,7 @@
 
 
 
+
 <div id="cookie-consent-dialog-container" class="cookie-consent-dialog-container is-hidden">
     <div class="cookie-consent-dialog">
         <div class="cookie-consent-dialog-header">
@@ -288,11 +289,11 @@
                 <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-dialog-european-description' ); ?>
             </div>
             <div class="cookie-content-dialog-button-list">
-                <div class="cookie-consent-dialog-button cookie-consent-dialog-accept-all-cookies-button" onclick="HandleCookieConsentDialogAcceptAllCookiesButtonClickEvent()">
-                    <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-dialog-european-accept-all-cookies-button' ); ?>
+                <div class="cookie-consent-dialog-button cookie-consent-dialog-accept-cookies" onclick="HandleCookieConsentDialogAcceptAllCookiesButtonClickEvent()">
+                    <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-dialog-european-accept-cookies' ); ?>
                 </div>
-                <div class="cookie-consent-dialog-button cookie-consent-dialog-accept-required-cookies-button" onclick="HandleCookieConsentDialogAcceptRequiredCookiesButtonClickEvent()">
-                    <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-dialog-european-accept-required-cookies-button' ); ?>
+                <div class="cookie-consent-dialog-button cookie-consent-dialog-reject-cookies-button" onclick="HandleCookieConsentDialogAcceptRequiredCookiesButtonClickEvent()">
+                    <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-dialog-european-reject-cookies-button' ); ?>
                 </div>
             </div>
             <div class="cookie-consent-dialog-setting-list">

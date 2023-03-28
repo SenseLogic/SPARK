@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="105.83298mm"
-   height="105.67511mm"
-   viewBox="0 0 105.83298 105.67511"
+   width="69.136314mm"
+   height="66.600143mm"
+   viewBox="0 0 69.136316 66.600144"
    version="1.1"
    id="svg5"
    inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
@@ -25,8 +25,8 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="2.3786088"
-     inkscape:cx="168.58594"
-     inkscape:cy="234.59091"
+     inkscape:cx="97.956419"
+     inkscape:cy="162.27973"
      inkscape:window-width="3840"
      inkscape:window-height="2126"
      inkscape:window-x="-11"
@@ -37,14 +37,8 @@
      inkscape:label="Calque 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-62.535981,-52.288476)"><ellipse
-       style="fill:#a9a9a9;fill-opacity:1;stroke:#ffffff;stroke-width:6.14511;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-       id="path4212"
-       cx="115.45247"
-       cy="105.12603"
-       rx="49.843933"
-       ry="49.764999" /><path
-       style="fill:none;stroke:#ffffff;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+     transform="translate(-81.26213,-71.388795)"><path
+       style="fill:#a9a9a9;fill-opacity:1;stroke:#ffffff;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
        d="m 115.81366,72.888828 c -1.83683,0.0047 -3.37213,0.07924 -5.49293,0.439757 -5.78111,0.982738 -11.257421,3.782235 -16.011962,7.148837 -7.69655,5.449783 -11.936812,15.24726 -11.517987,24.641788 0.581212,7.35701 3.065874,14.70484 8.174827,20.17035 5.498916,6.35535 13.743112,9.80271 21.910412,11.05301 8.42438,0.80719 17.06858,-1.75994 23.65257,-7.09636 6.13681,-4.35278 10.26813,-11.06132 11.89231,-18.45786 0.84074,-3.82874 0.43659,-7.76842 -0.21688,-11.570019 -0.41466,-2.412307 -1.85338,-5.540967 -2.32185,-6.966312 -2.87904,0.80206 -6.58024,0.567703 -9.17119,-1.095398 -2.28709,-1.468057 -3.71816,-5.076082 -4.2502,-6.957698 -4.66174,1.358171 -7.47385,0.600489 -9.99462,-1.645793 -2.42417,-2.160184 -3.59222,-5.26217 -2.6755,-9.366336 0,0 -2.64762,-0.30136 -3.977,-0.297966 z"
        id="path391"
        sodipodi:nodetypes="assaaassacacaca" /><ellipse

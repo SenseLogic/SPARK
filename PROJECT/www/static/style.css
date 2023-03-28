@@ -1317,20 +1317,20 @@ body.is-appearing .loader-page-logo {
   cursor: pointer;
   transition: background-color 0.25s ease;
 }
-.cookie-consent-banner-privacy-preferences-button {
+.cookie-consent-banner-cookies-settings-button {
   border: 1px solid #b3b3b3;
   background-color: #f2f2f2;
   color: #808080;
 }
-.cookie-consent-banner-privacy-preferences-button:hover {
+.cookie-consent-banner-cookies-settings-button:hover {
   background-color: #fff;
 }
-.cookie-consent-banner-accept-all-cookies-button,
-.cookie-consent-banner-accept-required-cookies-button {
+.cookie-consent-banner-accept-cookies,
+.cookie-consent-banner-reject-cookies-button {
   background-color: #0000a6;
 }
-.cookie-consent-banner-accept-all-cookies-button:hover,
-.cookie-consent-banner-accept-required-cookies-button:hover {
+.cookie-consent-banner-accept-cookies:hover,
+.cookie-consent-banner-reject-cookies-button:hover {
   background-color: #0000d0;
 }
 .cookie-consent-button {
@@ -1340,13 +1340,31 @@ body.is-appearing .loader-page-logo {
   left: 0.5rem;
   height: 2rem;
   width: 2rem;
-  opacity: 0.3;
-  background: url("/static/image/base/cookie_consent_open_button.svg") no-repeat center center/contain;
+  opacity: 0.5;
+  background: url("/static/image/base/cookie_icon.svg") no-repeat center center/contain;
+  filter: drop-shadow(0 0.25rem 0.5rem rgba(0,0,0,0.4));
   cursor: pointer;
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
 .cookie-consent-button:hover {
   transform: scale(1.05);
+  opacity: 1;
+}
+.cookie-consent-button-tooltip {
+  position: absolute;
+  top: 0.5rem;
+  left: 2.5rem;
+  padding: 0.125rem 0.25rem;
+  display: none;
+  opacity: 0;
+  background-color: #333;
+  font-size: 0.6rem;
+  white-space: nowrap;
+  color: #fff;
+  transition: opacity 0.25s ease;
+}
+.cookie-consent-button:hover .cookie-consent-button-tooltip {
+  display: block;
   opacity: 1;
 }
 .cookie-consent-dialog-container {
@@ -1392,12 +1410,12 @@ body.is-appearing .loader-page-logo {
   margin-left: 1rem;
   height: 1rem;
   width: 1rem;
-  background: url("/static/image/base/cookie_consent_close_button.svg") no-repeat center center/contain;
+  background: url("/static/image/base/black_close_icon.svg") no-repeat center center/contain;
   cursor: pointer;
   transition: transform 0.25s ease;
 }
-.cookie-consent-dialog-header-close-button {
-  transition: transform 0.25s ease;
+.cookie-consent-dialog-header-close-button:hover {
+  transform: scale(1.1);
 }
 .cookie-consent-dialog-content {
   overflow-y: auto;
@@ -1424,12 +1442,12 @@ body.is-appearing .loader-page-logo {
   cursor: pointer;
   transition: background-color 0.25s ease;
 }
-.cookie-consent-dialog-accept-all-cookies-button,
-.cookie-consent-dialog-accept-required-cookies-button {
+.cookie-consent-dialog-accept-cookies,
+.cookie-consent-dialog-reject-cookies-button {
   background-color: #0000a6;
 }
-.cookie-consent-dialog-accept-all-cookies-button:hover,
-.cookie-consent-dialog-accept-required-cookies-button:hover {
+.cookie-consent-dialog-accept-cookies:hover,
+.cookie-consent-dialog-reject-cookies-button:hover {
   background-color: #0000d0;
 }
 .cookie-consent-dialog-confirm-choices-button {
@@ -1466,7 +1484,8 @@ body.is-appearing .loader-page-logo {
   color: #666;
 }
 .cookie-consent-dialog-setting-title-image {
-  margin-left: 0.25rem;
+  margin-top: 0.1rem;
+  margin-left: 0.35rem;
   height: 0.8rem;
   width: auto;
 }

@@ -1,5 +1,5 @@
 <?
-    var cookie_consent_banner_is_european = ( .BrowserLocation.IsAmerica || .BrowserLocation.IsEurope );
+    var cookie_consent_banner_is_european = true;//( .BrowserLocation.IsAmerica || .BrowserLocation.IsEurope );
 ?>
 <style file="cookie_consent_banner.styl">
     .cookie-consent-banner-container
@@ -59,7 +59,7 @@
         transition: background-color 0.25s ease;
     }
 
-    .cookie-consent-banner-privacy-preferences-button
+    .cookie-consent-banner-cookies-settings-button
     {
         border: 1px solid GrayColor700;
 
@@ -68,19 +68,19 @@
         color: GrayColor;
     }
 
-    .cookie-consent-banner-privacy-preferences-button:hover
+    .cookie-consent-banner-cookies-settings-button:hover
     {
         background-color: WhiteColor;
     }
 
-    .cookie-consent-banner-accept-all-cookies-button,
-    .cookie-consent-banner-accept-required-cookies-button
+    .cookie-consent-banner-accept-cookies,
+    .cookie-consent-banner-reject-cookies-button
     {
         background-color: BlueColor400;
     }
 
-    .cookie-consent-banner-accept-all-cookies-button:hover,
-    .cookie-consent-banner-accept-required-cookies-button:hover
+    .cookie-consent-banner-accept-cookies:hover,
+    .cookie-consent-banner-reject-cookies-button:hover
     {
         background-color: BlueColor;
     }
@@ -91,14 +91,14 @@
             <# .GetProcessedTextBySlug( 'cookie-consent-banner-european-text' ) #>
         </div>
         <div class="cookie-consent-banner-button-list">
-            <div class="cookie-consent-banner-button cookie-consent-banner-accept-all-cookies-button" onclick="HandleCookieConsentBannerAcceptAllCookiesButtonClickEvent()">
-                <# .GetProcessedTextBySlug( 'cookie-consent-banner-european-accept-all-cookies-button' ) #>
+            <div class="cookie-consent-banner-button cookie-consent-banner-accept-cookies" onclick="HandleCookieConsentBannerAcceptAllCookiesButtonClickEvent()">
+                <# .GetProcessedTextBySlug( 'cookie-consent-banner-european-accept-cookies' ) #>
             </div>
-            <div class="cookie-consent-banner-button cookie-consent-banner-accept-required-cookies-button" onclick="HandleCookieConsentBannerAcceptRequiredCookiesButtonClickEvent()">
-                <# .GetProcessedTextBySlug( 'cookie-consent-banner-european-accept-required-cookies-button' ) #>
+            <div class="cookie-consent-banner-button cookie-consent-banner-reject-cookies-button" onclick="HandleCookieConsentBannerAcceptRequiredCookiesButtonClickEvent()">
+                <# .GetProcessedTextBySlug( 'cookie-consent-banner-european-reject-cookies-button' ) #>
             </div>
-                <div class="cookie-consent-banner-button cookie-consent-banner-privacy-preferences-button" onclick="HandleCookieConsentBannerPrivacyPreferencesButtonClickEvent()">
-                    <# .GetProcessedTextBySlug( 'cookie-consent-banner-european-privacy-preferences-button' ) #>
+                <div class="cookie-consent-banner-button cookie-consent-banner-cookies-settings-button" onclick="HandleCookieConsentBannerPrivacyPreferencesButtonClickEvent()">
+                    <# .GetProcessedTextBySlug( 'cookie-consent-banner-european-cookies-settings-button' ) #>
                 </div>
         </div>
     <? } else { ?>
@@ -106,11 +106,11 @@
             <# .GetProcessedTextBySlug( 'cookie-consent-banner-text' ) #>
         </div>
         <div class="cookie-consent-banner-button-list">
-            <div class="cookie-consent-banner-button cookie-consent-banner-accept-all-cookies-button" onclick="HandleCookieConsentBannerAcceptAllCookiesButtonClickEvent()">
-                <# .GetProcessedTextBySlug( 'cookie-consent-banner-accept-all-cookies-button' ) #>
+            <div class="cookie-consent-banner-button cookie-consent-banner-accept-cookies" onclick="HandleCookieConsentBannerAcceptAllCookiesButtonClickEvent()">
+                <# .GetProcessedTextBySlug( 'cookie-consent-banner-accept-cookies' ) #>
             </div>
-            <div class="cookie-consent-banner-button cookie-consent-banner-accept-required-cookies-button" onclick="HandleCookieConsentBannerAcceptRequiredCookiesButtonClickEvent()">
-                <# .GetProcessedTextBySlug( 'cookie-consent-banner-accept-required-cookies-button' ) #>
+            <div class="cookie-consent-banner-button cookie-consent-banner-reject-cookies-button" onclick="HandleCookieConsentBannerAcceptRequiredCookiesButtonClickEvent()">
+                <# .GetProcessedTextBySlug( 'cookie-consent-banner-reject-cookies-button' ) #>
             </div>
         </div>
     <? } ?>
