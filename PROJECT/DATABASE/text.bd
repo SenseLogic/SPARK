@@ -132,12 +132,12 @@ TEXT
 
         %cookie-consent-banner-european-accept-cookies-button-text
             ~ cookie-consent-banner-european-accept-cookies-button
-            ~ Accept all cookies
+            ~ Accept All Cookies
               ¨fr:Autoriser tous les cookies
 
         %cookie-consent-banner-european-reject-cookies-button-text
             ~ cookie-consent-banner-european-reject-cookies-button
-            ~ Reject all
+            ~ Reject All
               ¨fr:Tout refuser
 
         %cookie-consent-banner-european-cookies-settings-button-text
@@ -159,7 +159,8 @@ TEXT
             ~ cookie-consent-dialog-european-description
             ~ When you visit any website, it may store or retrieve information on your browser, mostly in the form of cookies.^
               This information might be about you, your preferences or your device and is mostly used to make the site work as you expect it to.^
-              The information does not usually directly identify you, but it can give you a more personalized web experience. Because we respect your right to privacy, you can choose not to allow some types of cookies.^
+              The information does not usually directly identify you, but it can give you a more personalized web experience.^
+              Because we respect your right to privacy, you can choose not to allow some types of cookies.^
               Click on the different category headings to find out more and change our default settings.^
               However, blocking some types of cookies may impact your experience of the site and the services we are able to offer.
               ¨fr:Lorsque vous consultez un site Web, des données peuvent être stockées dans votre navigateur ou récupérées à partir de celui-ci, généralement sous la forme de cookies.^

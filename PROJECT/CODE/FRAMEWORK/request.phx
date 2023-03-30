@@ -441,8 +441,8 @@ function GetBrowserLocation(
     location.IsAmerica = ( location.Longitude < -30 );
     location.IsNorthAmerica = ( location.Longitude < -30 && location.Latitude >= 25 );
     location.IsSouthAmerica = ( location.Longitude < -30 && location.Latitude < 25 );
-    location.IsEurope = ( location.Longitude >= -30 && location.Longitude < 45 && location.Latitude >= 30 );
-    location.IsAfrica = ( location.Longitude >= -30 && location.Longitude < 45 && location.Latitude < 30 );
+    location.IsEurope = ( location.Longitude >= -30 && location.Longitude < 45 && location.Latitude >= 28 );
+    location.IsAfrica = ( location.Longitude >= -30 && location.Longitude < 45 && location.Latitude < 28 );
     location.IsAsia = ( location.Longitude >= 45 && location.Latitude >= -10 );
     location.IsOceania = ( location.Longitude >= 45 && location.Latitude < -10 );
     location.IsJapan

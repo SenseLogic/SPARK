@@ -97,9 +97,9 @@
             <div class="cookie-consent-banner-button cookie-consent-banner-reject-cookies-button" onclick="HandleCookieConsentBannerAcceptRequiredCookiesButtonClickEvent()">
                 <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-banner-european-reject-cookies-button' ); ?>
             </div>
-                <div class="cookie-consent-banner-button cookie-consent-banner-cookies-settings-button" onclick="HandleCookieConsentBannerPrivacyPreferencesButtonClickEvent()">
-                    <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-banner-european-cookies-settings-button' ); ?>
-                </div>
+            <div class="cookie-consent-banner-button cookie-consent-banner-cookies-settings-button" onclick="HandleCookieConsentBannerPrivacyPreferencesButtonClickEvent()">
+                <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-banner-european-cookies-settings-button' ); ?>
+            </div>
         </div>
     <?php } else { ?>
         <div class="cookie-consent-banner-text">
