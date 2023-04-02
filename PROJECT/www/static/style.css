@@ -1432,7 +1432,6 @@ body.is-appearing .loader-page-logo {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  justify-content: space-between;
 }
 .cookie-consent-dialog-button {
   border-radius: 0.25rem;

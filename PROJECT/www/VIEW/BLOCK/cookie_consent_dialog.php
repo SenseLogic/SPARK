@@ -273,7 +273,6 @@
 
 
 
-
 <div id="cookie-consent-dialog-container" class="cookie-consent-dialog-container is-hidden">
     <div class="cookie-consent-dialog">
         <div class="cookie-consent-dialog-header">
@@ -288,7 +287,7 @@
             <div class="cookie-consent-dialog-description">
                 <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-dialog-european-description' ); ?>
             </div>
-            <div class="cookie-content-dialog-button-list">
+            <div class="cookie-consent-dialog-button-list">
                 <div class="cookie-consent-dialog-button cookie-consent-dialog-accept-cookies-button" onclick="HandleCookieConsentDialogAcceptAllCookiesButtonClickEvent()">
                     <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-dialog-european-accept-cookies-button' ); ?>
                 </div>
@@ -300,7 +299,7 @@
                 <div class="cookie-consent-dialog-setting">
                     <div class="cookie-consent-dialog-setting-title" onclick="HandleCookieConsentDialogRequiredCookiesDescriptionButtonClickEvent()">
                         <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-dialog-european-required-cookies-title' ); ?>
-                        <image class="cookie-consent-dialog-setting-title-image" src="/static/image/cookie_consent/help_button.svg"/>
+                        <img class="cookie-consent-dialog-setting-title-image" src="/static/image/cookie_consent/help_button.svg"/>
                     </div>
                     <div class="cookie-consent-dialog-setting-value">
                         <label class="cookie-consent-dialog-setting-switch">
@@ -315,7 +314,7 @@
                 <div class="cookie-consent-dialog-setting">
                     <div class="cookie-consent-dialog-setting-title" onclick="HandleCookieConsentDialogPerformanceCookiesDescriptionButtonClickEvent()">
                         <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-dialog-european-performance-cookies-title' ); ?>
-                        <image class="cookie-consent-dialog-setting-title-image" src="/static/image/cookie_consent/help_button.svg"/>
+                        <img class="cookie-consent-dialog-setting-title-image" src="/static/image/cookie_consent/help_button.svg"/>
                     </div>
                     <div class="cookie-consent-dialog-setting-value">
                         <label class="cookie-consent-dialog-setting-switch">

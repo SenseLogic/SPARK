@@ -29,9 +29,9 @@
         if ( route !== undefined )
         {
             SetRoute( "/<# .LanguageCode #>/" + route.RemovePrefix( "/" ) );
-            TrackRoute();
         }
 
+        TrackRoute();
         OldViewName = ViewName;
         ViewName = GetRoute( "/<# .LanguageCode #>/", "/" );
 

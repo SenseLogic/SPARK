@@ -29,9 +29,9 @@
         if ( route !== undefined )
         {
             SetRoute( "/<?php echo $this->LanguageCode; ?>/" + route.RemovePrefix( "/" ) );
-            TrackRoute();
         }
 
+        TrackRoute();
         OldViewName = ViewName;
         ViewName = GetRoute( "/<?php echo $this->LanguageCode; ?>/", "/" );
 
