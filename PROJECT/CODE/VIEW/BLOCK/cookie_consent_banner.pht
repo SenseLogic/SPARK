@@ -161,11 +161,11 @@
     {
         if ( GetCookieConsent() )
         {
-            EnableGoogleAnalyticsTracking( "G-ABCDEFGHIJ" );
+            EnableGoogleAnalyticsTracking( "<# GoogleAnalyticsTrackingId #>" );
         }
         else
         {
-            DisableGoogleAnalyticsTracking( "G-ABCDEFGHIJ" );
+            DisableGoogleAnalyticsTracking( "<# GoogleAnalyticsTrackingId #>" );
         }
     }
 

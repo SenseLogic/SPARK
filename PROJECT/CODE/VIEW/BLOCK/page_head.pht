@@ -78,5 +78,5 @@
 <link rel="manifest" href="/site.webmanifest"/>
 <link rel="stylesheet" href="/static/style.css?v=<# VersionTimestamp #>"/>
 <? foreach ( var image_path; .ImagePathArray ) { ?>
-    <link rel="preload" href="<# GetPreloadImagePath( image_path ) #>" as="image"/>
+    <link rel="preload" href="<# GetPreloadImagePath( image_path ) #>?v=<# VersionTimestamp #>" as="image"/>
 <? } ?>

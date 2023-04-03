@@ -21,6 +21,7 @@ require_once __DIR__ . '/' . 'FRAMEWORK/user.php';
 define( 'DefaultLanguageCode', 'en' );
 define( 'LanguageCodeArray', [ 'en', 'fr' ] );
 define( 'LanguageNameArray', [ 'English', 'French' ] );
+define( 'GoogleAnalyticsTrackingId', 'G-ABCDEFGHIJ' );
 
 if ( GetServerName() === 'localhost' )
 {

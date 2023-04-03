@@ -62,7 +62,7 @@
     <div id="article-carousel-strip" class="article-carousel-strip">
         <? for ( var article_page_index = 0; article_page_index <= article_page_count; ++article_page_index ) { ?>
             <? var article_page = article_page_array[ article_page_index % article_page_count ]; ?>
-            <div class="article-carousel-slide" style="background: linear-gradient( rgba( 0, 0, 0, 0.1 ), rgba( 0, 0, 0, 0.1 ) ), url( '<# article_page.ImagePath #>' ) no-repeat <# article_page.ImageHorizontalPosition #> <# article_page.ImageVerticalPosition #> / cover, url( '<# GetPreloadImagePath( article_page.ImagePath ) #>' ) no-repeat <# article_page.ImageHorizontalPosition #> <# article_page.ImageVerticalPosition #> / cover" onclick="ShowView( '<# article_page.Route #>' )">
+            <div class="article-carousel-slide" style="background: linear-gradient( rgba( 0, 0, 0, 0.1 ), rgba( 0, 0, 0, 0.1 ) ), url( '<# article_page.ImagePath #>?v=<# VersionTimestamp #>' ) no-repeat <# article_page.ImageHorizontalPosition #> <# article_page.ImageVerticalPosition #> / cover, url( '<# GetPreloadImagePath( article_page.ImagePath ) #>?v=<# VersionTimestamp #>' ) no-repeat <# article_page.ImageHorizontalPosition #> <# article_page.ImageVerticalPosition #> / cover" onclick="ShowView( '<# article_page.Route #>' )">
                 <div class="article-carousel-slide-text">
                     <# .GetTranslatedText( article_page.Teaser ) #>
                 </div>

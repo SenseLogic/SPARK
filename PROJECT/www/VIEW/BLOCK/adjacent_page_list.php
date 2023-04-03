@@ -39,12 +39,12 @@
 
 
 <div class="adjacent-page-list">
-    <div class="zoomed-button adjacent-page-list-button" style="background: url( '<?php echo  $prior_page->ImagePath; ?>' ) no-repeat <?php echo $prior_page->ImageHorizontalPosition; ?> <?php echo $prior_page->ImageVerticalPosition; ?> / cover, url( '<?php echo GetPreloadImagePath( $prior_page->ImagePath ); ?>' ) no-repeat <?php echo $prior_page->ImageHorizontalPosition; ?> <?php echo $prior_page->ImageVerticalPosition; ?> / cover" onclick="ShowView( '<?php echo $prior_page->Route; ?>' )">
+    <div class="zoomed-button adjacent-page-list-button" style="background: url( '<?php echo  $prior_page->ImagePath; ?>?v=<?php echo VersionTimestamp; ?>' ) no-repeat <?php echo $prior_page->ImageHorizontalPosition; ?> <?php echo $prior_page->ImageVerticalPosition; ?> / cover, url( '<?php echo GetPreloadImagePath( $prior_page->ImagePath ); ?>?v=<?php echo VersionTimestamp; ?>' ) no-repeat <?php echo $prior_page->ImageHorizontalPosition; ?> <?php echo $prior_page->ImageVerticalPosition; ?> / cover" onclick="ShowView( '<?php echo $prior_page->Route; ?>' )">
         <div class="adjacent-page-list-button-title">
             <?php echo $this->GetProcessedText( $prior_page->Title ); ?>
         </div>
     </div>
-    <div class="zoomed-button adjacent-page-list-button" style="background: url( '<?php echo  $next_page->ImagePath; ?>' ) no-repeat <?php echo $next_page->ImageHorizontalPosition; ?> <?php echo $next_page->ImageVerticalPosition; ?> / cover, url( '<?php echo GetPreloadImagePath( $next_page->ImagePath ); ?>' ) no-repeat <?php echo $next_page->ImageHorizontalPosition; ?> <?php echo $next_page->ImageVerticalPosition; ?> / cover" onclick="ShowView( '<?php echo $next_page->Route; ?>' )">
+    <div class="zoomed-button adjacent-page-list-button" style="background: url( '<?php echo  $next_page->ImagePath; ?>?v=<?php echo VersionTimestamp; ?>' ) no-repeat <?php echo $next_page->ImageHorizontalPosition; ?> <?php echo $next_page->ImageVerticalPosition; ?> / cover, url( '<?php echo GetPreloadImagePath( $next_page->ImagePath ); ?>?v=<?php echo VersionTimestamp; ?>' ) no-repeat <?php echo $next_page->ImageHorizontalPosition; ?> <?php echo $next_page->ImageVerticalPosition; ?> / cover" onclick="ShowView( '<?php echo $next_page->Route; ?>' )">
         <div class="adjacent-page-list-button-title">
             <?php echo $this->GetProcessedText( $next_page->Title ); ?>
         </div>
