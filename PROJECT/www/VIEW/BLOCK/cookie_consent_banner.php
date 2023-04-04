@@ -1,6 +1,3 @@
-<?php
-     $cookie_consent_banner_has_settings_button = $this->BrowserLocation->IsEurope || $this->BrowserLocation->IsNorthAmerica;
-?>
 
 
 
@@ -85,8 +82,32 @@
 
 
 
-<div id="cookie-consent-banner-container" class="cookie-consent-banner-container is-hidden">
-    <?php if ( $cookie_consent_banner_has_settings_button ) { ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php if ( $this->BrowserLocation->IsEurope ) { ?>
+    <div id="cookie-consent-banner-container" class="cookie-consent-banner-container is-hidden">
         <div class="cookie-consent-banner-text">
             <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-banner-european-text' ); ?>
         </div>
@@ -101,7 +122,26 @@
                 <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-banner-european-cookies-settings-button' ); ?>
             </div>
         </div>
-    <?php } else { ?>
+    </div>
+<?php } else if ( $this->BrowserLocation->IsNorthAmerica ) { ?>
+    <div id="cookie-consent-banner-container" class="cookie-consent-banner-container is-wide is-hidden">
+        <div class="cookie-consent-banner-title">
+            <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-banner-american-title' ); ?>
+        </div>
+        <div class="cookie-consent-banner-text">
+            <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-banner-american-text' ); ?>
+        </div>
+        <div class="cookie-consent-banner-button-list">
+            <div class="cookie-consent-banner-button cookie-consent-banner-cookies-settings-button" onclick="HandleCookieConsentBannerPrivacyPreferencesButtonClickEvent()">
+                <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-banner-american-cookies-settings-button' ); ?>
+            </div>
+            <div class="cookie-consent-banner-button cookie-consent-banner-accept-cookies-button" onclick="HandleCookieConsentBannerAcceptAllCookiesButtonClickEvent()">
+                <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-banner-american-accept-cookies-button' ); ?>
+            </div>
+        </div>
+    </div>
+<?php } else { ?>
+    <div id="cookie-consent-banner-container" class="cookie-consent-banner-container is-hidden">
         <div class="cookie-consent-banner-text">
             <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-banner-text' ); ?>
         </div>
@@ -113,8 +153,8 @@
                 <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-banner-reject-cookies-button' ); ?>
             </div>
         </div>
-    <?php } ?>
-</div>
+    </div>
+<?php } ?>
 <script>
     // -- VARIABLES
 
@@ -193,7 +233,7 @@
         SetCookieConsent( "true" );
         ApplyCookieConsent();
         HideCookieConsentBanner();
-        <?php if ( $cookie_consent_banner_has_settings_button ) { ?>
+        <?php if ( $this->BrowserLocation->IsEurope || $this->BrowserLocation->IsNorthAmerica ) { ?>
             ShowCookieConsentButton();
         <?php } ?>
     }
@@ -206,7 +246,7 @@
         SetCookieConsent( "false" );
         ApplyCookieConsent();
         HideCookieConsentBanner();
-        <?php if ( $cookie_consent_banner_has_settings_button ) { ?>
+        <?php if ( $this->BrowserLocation->IsEurope || $this->BrowserLocation->IsNorthAmerica ) { ?>
             ShowCookieConsentButton();
         <?php } ?>
     }

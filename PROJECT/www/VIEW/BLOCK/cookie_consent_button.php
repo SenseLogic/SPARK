@@ -53,7 +53,11 @@
 
 <div id="cookie-consent-button" class="cookie-consent-button is-hidden" onclick="HandleCookieConsentButtonClickEvent()">
     <div class="cookie-consent-button-tooltip">
-        <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-button-european-tooltip' ); ?>
+        <?php if ( $this->BrowserLocation->IsEurope ) { ?>
+            <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-button-european-tooltip' ); ?>
+        <?php } else { ?>
+            <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-button-american-tooltip' ); ?>
+        <?php } ?>
     </div>
 </div>
 <script>

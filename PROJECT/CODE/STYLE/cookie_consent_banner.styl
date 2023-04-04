@@ -22,6 +22,11 @@
     color: BlackColor;
 }
 
+.cookie-consent-banner-container.is-wide
+{
+    max-width: 30rem;
+}
+
 .cookie-consent-banner-container a,
 .cookie-consent-banner-container a:visited
 {
@@ -29,8 +34,18 @@
     color: GrayColor200;
 }
 
+.cookie-consent-banner-title
+{
+    margin-bottom: 0.5rem;
+
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: GrayColor200;
+}
+
 .cookie-consent-banner-text
 {
+    font-size: 0.8rem;
     color: GrayColor200;
 }
 
@@ -41,6 +56,15 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+}
+
+.cookie-consent-banner-container.is-wide .cookie-consent-banner-button-list
+{
+    +Media( min-width-30em )
+    {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
 
 .cookie-consent-banner-button

@@ -53,7 +53,11 @@
 </style>
 <div id="cookie-consent-button" class="cookie-consent-button is-hidden" onclick="HandleCookieConsentButtonClickEvent()">
     <div class="cookie-consent-button-tooltip">
-        <# .GetProcessedTextBySlug( 'cookie-consent-button-european-tooltip' ) #>
+        <? if ( .BrowserLocation.IsEurope ) { ?>
+            <# .GetProcessedTextBySlug( 'cookie-consent-button-european-tooltip' ) #>
+        <? } else { ?>
+            <# .GetProcessedTextBySlug( 'cookie-consent-button-american-tooltip' ) #>
+        <? } ?>
     </div>
 </div>
 <script>

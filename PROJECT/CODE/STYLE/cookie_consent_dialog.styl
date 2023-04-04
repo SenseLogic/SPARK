@@ -50,6 +50,7 @@
 {
     font-size: 1.2rem;
     text-align: center;
+    font-weight: 500;
 }
 
 .cookie-consent-dialog-header-close-button
@@ -140,6 +141,13 @@
     gap: 0.5rem;
 }
 
+.cookie-consent-dialog-setting-list-title
+{
+    font-size: 1rem;
+    font-weight: 500;
+    color: GrayColor200;
+}
+
 .cookie-consent-dialog-setting
 {
     display: grid;
@@ -149,6 +157,13 @@
         "title . value" \
         "description description description";
     align-items: center;
+}
+
+.cookie-consent-dialog-setting-title-image
+{
+    margin-right: 0.5rem;
+    height: 0.7rem;
+    width: auto;
 }
 
 .cookie-consent-dialog-setting-title
@@ -170,12 +185,9 @@
     color: GrayColor400;
 }
 
-.cookie-consent-dialog-setting-title-image
+.cookie-consent-dialog-setting-title.is-grayed
 {
-    margin-top: 0.1rem;
-    margin-left: 0.35rem;
-    height: 0.8rem;
-    width: auto;
+    opacity: 0.6;
 }
 
 .cookie-consent-dialog-setting-title:hover .cookie-consent-dialog-setting-title-image

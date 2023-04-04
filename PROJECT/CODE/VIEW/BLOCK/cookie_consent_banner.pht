@@ -1,6 +1,3 @@
-<?
-    var cookie_consent_banner_has_settings_button = .BrowserLocation.IsEurope || .BrowserLocation.IsNorthAmerica;
-?>
 <style file="cookie_consent_banner.styl">
     .cookie-consent-banner-container
     {
@@ -26,6 +23,11 @@
         color: BlackColor;
     }
 
+    .cookie-consent-banner-container.is-wide
+    {
+        max-width: 30rem;
+    }
+
     .cookie-consent-banner-container a,
     .cookie-consent-banner-container a:visited
     {
@@ -33,8 +35,18 @@
         color: GrayColor200;
     }
 
+    .cookie-consent-banner-title
+    {
+        margin-bottom: 0.5rem;
+
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: GrayColor200;
+    }
+
     .cookie-consent-banner-text
     {
+        font-size: 0.8rem;
         color: GrayColor200;
     }
 
@@ -45,6 +57,15 @@
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
+    }
+
+    .cookie-consent-banner-container.is-wide .cookie-consent-banner-button-list
+    {
+        +Media( min-width-30em )
+        {
+            flex-direction: row;
+            justify-content: space-between;
+        }
     }
 
     .cookie-consent-banner-button
@@ -85,8 +106,8 @@
         background-color: BlueColor;
     }
 </style>
-<div id="cookie-consent-banner-container" class="cookie-consent-banner-container is-hidden">
-    <? if ( cookie_consent_banner_has_settings_button ) { ?>
+<? if ( .BrowserLocation.IsEurope ) { ?>
+    <div id="cookie-consent-banner-container" class="cookie-consent-banner-container is-hidden">
         <div class="cookie-consent-banner-text">
             <# .GetProcessedTextBySlug( 'cookie-consent-banner-european-text' ) #>
         </div>
@@ -101,7 +122,26 @@
                 <# .GetProcessedTextBySlug( 'cookie-consent-banner-european-cookies-settings-button' ) #>
             </div>
         </div>
-    <? } else { ?>
+    </div>
+<? } else if ( .BrowserLocation.IsNorthAmerica ) { ?>
+    <div id="cookie-consent-banner-container" class="cookie-consent-banner-container is-wide is-hidden">
+        <div class="cookie-consent-banner-title">
+            <# .GetProcessedTextBySlug( 'cookie-consent-banner-american-title' ) #>
+        </div>
+        <div class="cookie-consent-banner-text">
+            <# .GetProcessedTextBySlug( 'cookie-consent-banner-american-text' ) #>
+        </div>
+        <div class="cookie-consent-banner-button-list">
+            <div class="cookie-consent-banner-button cookie-consent-banner-cookies-settings-button" onclick="HandleCookieConsentBannerPrivacyPreferencesButtonClickEvent()">
+                <# .GetProcessedTextBySlug( 'cookie-consent-banner-american-cookies-settings-button' ) #>
+            </div>
+            <div class="cookie-consent-banner-button cookie-consent-banner-accept-cookies-button" onclick="HandleCookieConsentBannerAcceptAllCookiesButtonClickEvent()">
+                <# .GetProcessedTextBySlug( 'cookie-consent-banner-american-accept-cookies-button' ) #>
+            </div>
+        </div>
+    </div>
+<? } else { ?>
+    <div id="cookie-consent-banner-container" class="cookie-consent-banner-container is-hidden">
         <div class="cookie-consent-banner-text">
             <# .GetProcessedTextBySlug( 'cookie-consent-banner-text' ) #>
         </div>
@@ -113,8 +153,8 @@
                 <# .GetProcessedTextBySlug( 'cookie-consent-banner-reject-cookies-button' ) #>
             </div>
         </div>
-    <? } ?>
-</div>
+    </div>
+<? } ?>
 <script>
     // -- VARIABLES
 
@@ -193,7 +233,7 @@
         SetCookieConsent( "true" );
         ApplyCookieConsent();
         HideCookieConsentBanner();
-        <? if ( cookie_consent_banner_has_settings_button ) { ?>
+        <? if ( .BrowserLocation.IsEurope || .BrowserLocation.IsNorthAmerica ) { ?>
             ShowCookieConsentButton();
         <? } ?>
     }
@@ -206,7 +246,7 @@
         SetCookieConsent( "false" );
         ApplyCookieConsent();
         HideCookieConsentBanner();
-        <? if ( cookie_consent_banner_has_settings_button ) { ?>
+        <? if ( .BrowserLocation.IsEurope || .BrowserLocation.IsNorthAmerica ) { ?>
             ShowCookieConsentButton();
         <? } ?>
     }

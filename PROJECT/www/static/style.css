@@ -1295,12 +1295,22 @@ body.is-appearing .loader-page-logo {
   font-size: 0.9rem;
   color: #000;
 }
+.cookie-consent-banner-container.is-wide {
+  max-width: 30rem;
+}
 .cookie-consent-banner-container a,
 .cookie-consent-banner-container a:visited {
   text-decoration: underline;
   color: #333;
 }
+.cookie-consent-banner-title {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #333;
+}
 .cookie-consent-banner-text {
+  font-size: 0.8rem;
   color: #333;
 }
 .cookie-consent-banner-button-list {
@@ -1308,6 +1318,12 @@ body.is-appearing .loader-page-logo {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+}
+@media (min-width: 30em) {
+  .cookie-consent-banner-container.is-wide .cookie-consent-banner-button-list {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 .cookie-consent-banner-button {
   border-radius: 0.25rem;
@@ -1405,6 +1421,7 @@ body.is-appearing .loader-page-logo {
 .cookie-consent-dialog-header-title {
   font-size: 1.2rem;
   text-align: center;
+  font-weight: 500;
 }
 .cookie-consent-dialog-header-close-button {
   margin-left: 1rem;
@@ -1463,12 +1480,22 @@ body.is-appearing .loader-page-logo {
   flex-direction: column;
   gap: 0.5rem;
 }
+.cookie-consent-dialog-setting-list-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
 .cookie-consent-dialog-setting {
   display: grid;
   grid-template-rows: auto auto;
   grid-template-columns: auto 1fr auto;
   grid-template-areas: "title . value" "description description description";
   align-items: center;
+}
+.cookie-consent-dialog-setting-title-image {
+  margin-right: 0.5rem;
+  height: 0.7rem;
+  width: auto;
 }
 .cookie-consent-dialog-setting-title {
   padding-top: 0.25rem;
@@ -1482,11 +1509,8 @@ body.is-appearing .loader-page-logo {
 .cookie-consent-dialog-setting-title:hover {
   color: #666;
 }
-.cookie-consent-dialog-setting-title-image {
-  margin-top: 0.1rem;
-  margin-left: 0.35rem;
-  height: 0.8rem;
-  width: auto;
+.cookie-consent-dialog-setting-title.is-grayed {
+  opacity: 0.6;
 }
 .cookie-consent-dialog-setting-title:hover .cookie-consent-dialog-setting-title-image {
   opacity: 0.8;
