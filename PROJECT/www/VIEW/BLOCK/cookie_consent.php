@@ -437,16 +437,9 @@
 
 
 
-
-
-
-
-
-
-
 <?php if ( $this->BrowserLocation->IsEurope ) { ?>
     <div id="cookie-consent-banner-container" class="cookie-consent-banner-container is-hidden">
-        <div class="cookie-consent-banner-text">
+        <div class="cookie-consent-banner-text is-small">
             <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-banner-european-text' ); ?>
         </div>
         <div class="cookie-consent-banner-button-list">
@@ -466,7 +459,7 @@
         <div class="cookie-consent-banner-title">
             <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-banner-american-title' ); ?>
         </div>
-        <div class="cookie-consent-banner-text">
+        <div class="cookie-consent-banner-text is-small">
             <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-banner-american-text' ); ?>
         </div>
         <div class="cookie-consent-banner-button-list">
@@ -517,12 +510,9 @@
                 <div class="cookie-consent-dialog-description">
                     <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-dialog-european-description' ); ?>
                 </div>
-                <div class="cookie-consent-dialog-button-list">
-                    <div class="cookie-consent-dialog-button cookie-consent-dialog-accept-cookies-button" onclick="HandleCookieConsentDialogAcceptAllCookiesButtonClickEvent()">
+                <div class="cookie-consent-dialog-left-button-list">
+                    <div id="cookie-consent-dialog-accept-all-cookies-button" class="cookie-consent-dialog-button" onclick="HandleCookieConsentDialogAcceptAllCookiesButtonClickEvent()">
                         <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-dialog-european-accept-cookies-button' ); ?>
-                    </div>
-                    <div class="cookie-consent-dialog-button cookie-consent-dialog-reject-cookies-button" onclick="HandleCookieConsentDialogAcceptRequiredCookiesButtonClickEvent()">
-                        <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-dialog-european-reject-cookies-button' ); ?>
                     </div>
                 </div>
                 <div class="cookie-consent-dialog-setting-list">
@@ -548,7 +538,7 @@
                         </div>
                         <div class="cookie-consent-dialog-setting-value">
                             <label class="cookie-consent-dialog-setting-switch">
-                                <input class="cookie-consent-dialog-setting-input" type="checkbox"/>
+                                <input class="cookie-consent-dialog-setting-input" type="checkbox" onchange="ToggleCookieConsentDialogAcceptAllCookiesButton()"/>
                                 <span class="cookie-consent-dialog-setting-slider"></span>
                             </label>
                         </div>
@@ -556,14 +546,47 @@
                             <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-dialog-european-performance-cookies-description' ); ?>
                         </div>
                     </div>
+                    <div class="cookie-consent-dialog-setting">
+                        <div class="cookie-consent-dialog-setting-title" onclick="HandleCookieConsentDialogFunctionalCookiesDescriptionButtonClickEvent()">
+                            <img class="cookie-consent-dialog-setting-title-image" src="/static/image/cookie_consent/plus_icon.svg"/>
+                            <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-dialog-european-functional-cookies-title' ); ?>
+                        </div>
+                        <div class="cookie-consent-dialog-setting-value">
+                            <label class="cookie-consent-dialog-setting-switch">
+                                <input class="cookie-consent-dialog-setting-input" type="checkbox" onchange="ToggleCookieConsentDialogAcceptAllCookiesButton()"/>
+                                <span class="cookie-consent-dialog-setting-slider"></span>
+                            </label>
+                        </div>
+                        <div class="cookie-consent-dialog-setting-description is-hidden" onclick="HandleCookieConsentDialogFunctionalCookiesDescriptionButtonClickEvent()">
+                            <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-dialog-european-functional-cookies-description' ); ?>
+                        </div>
+                    </div>
+                    <div class="cookie-consent-dialog-setting">
+                        <div class="cookie-consent-dialog-setting-title" onclick="HandleCookieConsentDialogTargetingCookiesDescriptionButtonClickEvent()">
+                            <img class="cookie-consent-dialog-setting-title-image" src="/static/image/cookie_consent/plus_icon.svg"/>
+                            <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-dialog-european-targeting-cookies-title' ); ?>
+                        </div>
+                        <div class="cookie-consent-dialog-setting-value">
+                            <label class="cookie-consent-dialog-setting-switch">
+                                <input class="cookie-consent-dialog-setting-input" type="checkbox" onchange="ToggleCookieConsentDialogAcceptAllCookiesButton()"/>
+                                <span class="cookie-consent-dialog-setting-slider"></span>
+                            </label>
+                        </div>
+                        <div class="cookie-consent-dialog-setting-description is-hidden" onclick="HandleCookieConsentDialogTargetingCookiesDescriptionButtonClickEvent()">
+                            <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-dialog-european-targeting-cookies-description' ); ?>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="cookie-consent-dialog-button-list">
-                <div class="cookie-consent-dialog-button cookie-consent-dialog-confirm-choices-button" onclick="HandleCookieConsentDialogConfirmChoicesButtonClickEvent()">
+            <div class="cookie-consent-dialog-right-button-list">
+                <div class="cookie-consent-dialog-button" onclick="HandleCookieConsentDialogAcceptRequiredCookiesButtonClickEvent()">
+                    <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-dialog-european-reject-cookies-button' ); ?>
+                </div>
+                <div class="cookie-consent-dialog-button" onclick="HandleCookieConsentDialogConfirmChoicesButtonClickEvent()">
                     <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-dialog-european-confirm-choices-button' ); ?>
                 </div>
             </div>
-        <?php } else if ( $this->BrowserLocation->IsNorthAmerica ) { ?>
+        <?php } else { ?>
             <div class="cookie-consent-dialog-header">
                 <img class="cookie-consent-dialog-header-image" src="/static/image/cookie_consent/logo.svg"/>
                 <div class="cookie-consent-dialog-header-title">
@@ -593,9 +616,9 @@
                         </div>
                     </div>
                     <div class="cookie-consent-dialog-setting">
-                        <div class="cookie-consent-dialog-setting-title" onclick="HandleCookieConsentDialogPerformanceCookiesDescriptionButtonClickEvent()">
+                        <div class="cookie-consent-dialog-setting-title" onclick="HandleCookieConsentDialogTrackingCookiesDescriptionButtonClickEvent()">
                             <img class="cookie-consent-dialog-setting-title-image" src="/static/image/cookie_consent/plus_icon.svg"/>
-                            <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-dialog-american-performance-cookies-title' ); ?>
+                            <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-dialog-american-tracking-cookies-title' ); ?>
                         </div>
                         <div class="cookie-consent-dialog-setting-value">
                             <label class="cookie-consent-dialog-setting-switch">
@@ -604,13 +627,13 @@
                             </label>
                         </div>
                         <div class="cookie-consent-dialog-setting-description is-hidden" onclick="HandleCookieConsentDialogPerformanceCookiesDescriptionButtonClickEvent()">
-                            <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-dialog-american-performance-cookies-description' ); ?>
+                            <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-dialog-american-tracking-cookies-description' ); ?>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="cookie-consent-dialog-button-list">
-                <div class="cookie-consent-dialog-button cookie-consent-dialog-confirm-choices-button" onclick="HandleCookieConsentDialogConfirmChoicesButtonClickEvent()">
+            <div class="cookie-consent-dialog-right-button-list">
+                <div class="cookie-consent-dialog-button" onclick="HandleCookieConsentDialogConfirmChoicesButtonClickEvent()">
                     <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-dialog-american-confirm-choices-button' ); ?>
                 </div>
             </div>
@@ -624,15 +647,119 @@
         CookieConsentBannerContainerElement,
         CookieConsentButtonElement,
         CookieConsentDialogContainerElement,
+        CookieConsentDialogAcceptAllCookiesButtonElement,
         CookieConsentDialogSettingInputElementArray,
         CookieConsentDialogSettingDescriptionElementArray;
 
     // -- FUNCTIONS
 
+    function HasPerformanceCookieConsent(
+        )
+    {
+        return localStorage.getItem( "performance-cookie-consent" ) !== null;
+    }
+
+    // ~~
+
+    function GetPerformanceCookieConsent(
+        )
+    {
+        return localStorage.getItem( "performance-cookie-consent" ) === "true";
+    }
+
+    // ~~
+
+    function SetPerformanceCookieConsent(
+        cookie_consent
+        )
+    {
+        localStorage.setItem( "performance-cookie-consent", cookie_consent ? "true" : "false" );
+    }
+
+    // ~~
+
+    function RemovePerformanceCookieConsent(
+        )
+    {
+        localStorage.removeItem( "performance-cookie-consent" );
+    }
+
+    // ~~
+
+    function HasFunctionalCookieConsent(
+        )
+    {
+        return localStorage.getItem( "functional-cookie-consent" ) !== null;
+    }
+
+    // ~~
+
+    function GetFunctionalCookieConsent(
+        )
+    {
+        return localStorage.getItem( "functional-cookie-consent" ) === "true";
+    }
+
+    // ~~
+
+    function SetFunctionalCookieConsent(
+        cookie_consent
+        )
+    {
+        localStorage.setItem( "functional-cookie-consent", cookie_consent ? "true" : "false" );
+    }
+
+    // ~~
+
+    function RemoveFunctionalCookieConsent(
+        )
+    {
+        localStorage.removeItem( "functional-cookie-consent" );
+    }
+
+    // ~~
+
+    function HasTargetingCookieConsent(
+        )
+    {
+        return localStorage.getItem( "targeting-cookie-consent" ) !== null;
+    }
+
+    // ~~
+
+    function GetTargetingCookieConsent(
+        )
+    {
+        return localStorage.getItem( "targeting-cookie-consent" ) === "true";
+    }
+
+    // ~~
+
+    function SetTargetingCookieConsent(
+        cookie_consent
+        )
+    {
+        localStorage.setItem( "targeting-cookie-consent", cookie_consent ? "true" : "false" );
+    }
+
+    // ~~
+
+    function RemoveTargetingCookies(
+        )
+    {
+        localStorage.removeItem( "targeting-cookie-consent" );
+    }
+
+    // ~~
+
     function HasCookieConsent(
         )
     {
-        return localStorage.getItem( "cookie-consent" ) !== null;
+        return (
+            HasPerformanceCookieConsent()
+            || HasFunctionalCookieConsent()
+            || HasTargetingCookieConsent()
+            );
     }
 
     // ~~
@@ -640,7 +767,11 @@
     function GetCookieConsent(
         )
     {
-        return localStorage.getItem( "cookie-consent" ) === "true";
+        return (
+            GetPerformanceCookieConsent()
+            || GetFunctionalCookieConsent()
+            || GetTargetingCookieConsent()
+            );
     }
 
     // ~~
@@ -649,7 +780,9 @@
         cookie_consent
         )
     {
-        localStorage.setItem( "cookie-consent", cookie_consent );
+        SetPerformanceCookieConsent( cookie_consent );
+        SetFunctionalCookieConsent( cookie_consent );
+        SetTargetingCookieConsent( cookie_consent );
     }
 
     // ~~
@@ -657,7 +790,9 @@
     function RemoveCookieConsent(
         )
     {
-        localStorage.removeItem( "cookie-consent" );
+        RemovePerformanceCookieConsent();
+        RemoveFunctionalCookieConsent();
+        RemoveTargetingCookieConsent();
     }
 
     // ~~
@@ -696,9 +831,10 @@
     function HandleCookieConsentBannerAcceptAllCookiesButtonClickEvent(
         )
     {
-        SetCookieConsent( "true" );
+        SetCookieConsent( true );
         ApplyCookieConsent();
         HideCookieConsentBanner();
+
         <?php if ( $this->BrowserLocation->IsEurope || $this->BrowserLocation->IsNorthAmerica ) { ?>
             ShowCookieConsentButton();
         <?php } ?>
@@ -709,9 +845,10 @@
     function HandleCookieConsentBannerAcceptRequiredCookiesButtonClickEvent(
         )
     {
-        SetCookieConsent( "false" );
+        SetCookieConsent( false );
         ApplyCookieConsent();
         HideCookieConsentBanner();
+
         <?php if ( $this->BrowserLocation->IsEurope || $this->BrowserLocation->IsNorthAmerica ) { ?>
             ShowCookieConsentButton();
         <?php } ?>
@@ -753,13 +890,41 @@
 
     // ~~
 
+    function ToggleCookieConsentDialogAcceptAllCookiesButton(
+        )
+    {
+        <?php if ( $this->BrowserLocation->IsEurope ) { ?>
+            CookieConsentDialogAcceptAllCookiesButtonElement.ToggleClass(
+                'is-hidden',
+                CookieConsentDialogSettingInputElementArray[ 0 ].checked
+                && CookieConsentDialogSettingInputElementArray[ 1 ].checked
+                && CookieConsentDialogSettingInputElementArray[ 2 ].checked
+                );
+        <?php } ?>
+    }
+
+    // ~~
+
     function ShowCookieConsentDialog(
         )
     {
-        CookieConsentDialogSettingInputElementArray[ 0 ].checked = GetCookieConsent();
+        CookieConsentDialogSettingInputElementArray[ 0 ].checked = GetPerformanceCookieConsent();
+
+        <?php if ( $this->BrowserLocation->IsEurope ) { ?>
+            CookieConsentDialogSettingInputElementArray[ 1 ].checked = GetFunctionalCookieConsent();
+            CookieConsentDialogSettingInputElementArray[ 2 ].checked = GetTargetingCookieConsent();
+        <?php } ?>
+
+        ToggleCookieConsentDialogAcceptAllCookiesButton();
+
         CookieConsentDialogContainerElement.RemoveClass( "is-hidden" );
         CookieConsentDialogSettingDescriptionElementArray[ 0 ].AddClass( 'is-hidden' );
         CookieConsentDialogSettingDescriptionElementArray[ 1 ].AddClass( 'is-hidden' );
+
+        <?php if ( $this->BrowserLocation->IsEurope ) { ?>
+            CookieConsentDialogSettingDescriptionElementArray[ 2 ].AddClass( 'is-hidden' );
+            CookieConsentDialogSettingDescriptionElementArray[ 3 ].AddClass( 'is-hidden' );
+        <?php } ?>
     }
 
     // ~~
@@ -784,7 +949,7 @@
     function HandleCookieConsentDialogAcceptAllCookiesButtonClickEvent(
         )
     {
-        SetCookieConsent( "true" );
+        SetCookieConsent( true );
         ApplyCookieConsent();
         HideCookieConsentDialog();
         ShowCookieConsentButton();
@@ -795,7 +960,7 @@
     function HandleCookieConsentDialogAcceptRequiredCookiesButtonClickEvent(
         )
     {
-        SetCookieConsent( "false" );
+        SetCookieConsent( false );
         ApplyCookieConsent();
         HideCookieConsentDialog();
         ShowCookieConsentButton();
@@ -808,6 +973,10 @@
     {
         CookieConsentDialogSettingDescriptionElementArray[ 0 ].ToggleClass( 'is-hidden' );
         CookieConsentDialogSettingDescriptionElementArray[ 1 ].AddClass( 'is-hidden' );
+        <?php if ( $this->BrowserLocation->IsEurope ) { ?>
+            CookieConsentDialogSettingDescriptionElementArray[ 2 ].AddClass( 'is-hidden' );
+            CookieConsentDialogSettingDescriptionElementArray[ 3 ].AddClass( 'is-hidden' );
+        <?php } ?>
     }
 
     // ~~
@@ -815,8 +984,41 @@
     function HandleCookieConsentDialogPerformanceCookiesDescriptionButtonClickEvent(
         )
     {
-        CookieConsentDialogSettingDescriptionElementArray[ 1 ].ToggleClass( 'is-hidden' )
-        CookieConsentDialogSettingDescriptionElementArray[ 0 ].AddClass( 'is-hidden' )
+        CookieConsentDialogSettingDescriptionElementArray[ 0 ].AddClass( 'is-hidden' );
+        CookieConsentDialogSettingDescriptionElementArray[ 1 ].ToggleClass( 'is-hidden' );
+        CookieConsentDialogSettingDescriptionElementArray[ 2 ].AddClass( 'is-hidden' );
+        CookieConsentDialogSettingDescriptionElementArray[ 3 ].AddClass( 'is-hidden' );
+    }
+
+    // ~~
+
+    function HandleCookieConsentDialogFunctionalCookiesDescriptionButtonClickEvent(
+        )
+    {
+        CookieConsentDialogSettingDescriptionElementArray[ 0 ].AddClass( 'is-hidden' );
+        CookieConsentDialogSettingDescriptionElementArray[ 1 ].AddClass( 'is-hidden' );
+        CookieConsentDialogSettingDescriptionElementArray[ 2 ].ToggleClass( 'is-hidden' );
+        CookieConsentDialogSettingDescriptionElementArray[ 3 ].AddClass( 'is-hidden' );
+    }
+
+    // ~~
+
+    function HandleCookieConsentDialogTargetingCookiesDescriptionButtonClickEvent(
+        )
+    {
+        CookieConsentDialogSettingDescriptionElementArray[ 0 ].AddClass( 'is-hidden' );
+        CookieConsentDialogSettingDescriptionElementArray[ 1 ].AddClass( 'is-hidden' );
+        CookieConsentDialogSettingDescriptionElementArray[ 2 ].AddClass( 'is-hidden' );
+        CookieConsentDialogSettingDescriptionElementArray[ 3 ].ToggleClass( 'is-hidden' );
+    }
+
+    // ~~
+
+    function HandleCookieConsentDialogTrackingCookiesDescriptionButtonClickEvent(
+        )
+    {
+        CookieConsentDialogSettingDescriptionElementArray[ 0 ].AddClass( 'is-hidden' );
+        CookieConsentDialogSettingDescriptionElementArray[ 1 ].ToggleClass( 'is-hidden' );
     }
 
     // ~~
@@ -824,14 +1026,15 @@
     function HandleCookieConsentDialogConfirmChoicesButtonClickEvent(
         )
     {
-        if ( CookieConsentDialogSettingInputElementArray[ 0 ].checked )
-        {
-            SetCookieConsent( "true" );
-        }
-        else
-        {
-            SetCookieConsent( "false" );
-        }
+        <?php if ( $this->BrowserLocation->IsEurope ) { ?>
+            SetPerformanceCookieConsent( CookieConsentDialogSettingInputElementArray[ 0 ].checked );
+            SetFunctionalCookieConsent( CookieConsentDialogSettingInputElementArray[ 1 ].checked);
+            SetTargetingCookieConsent( CookieConsentDialogSettingInputElementArray[ 2 ].checked );
+        <?php } else { ?>
+            SetPerformanceCookieConsent( CookieConsentDialogSettingInputElementArray[ 0 ].checked );
+            SetFunctionalCookieConsent( CookieConsentDialogSettingInputElementArray[ 0 ].checked);
+            SetTargetingCookieConsent( CookieConsentDialogSettingInputElementArray[ 0 ].checked );
+        <?php } ?>
 
         ApplyCookieConsent();
         HideCookieConsentDialog();
@@ -843,6 +1046,7 @@
     CookieConsentBannerContainerElement = GetElementById( "cookie-consent-banner-container" );
     CookieConsentButtonElement = GetElementById( "cookie-consent-button" );
     CookieConsentDialogContainerElement = GetElementById( "cookie-consent-dialog-container" );
+    CookieConsentDialogAcceptAllCookiesButtonElement = GetElementById( "cookie-consent-dialog-accept-all-cookies-button" );
     CookieConsentDialogSettingInputElementArray = GetElements( ".cookie-consent-dialog-setting-input" );
     CookieConsentDialogSettingDescriptionElementArray = GetElements( ".cookie-consent-dialog-setting-description" );
 

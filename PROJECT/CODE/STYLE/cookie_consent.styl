@@ -38,15 +38,19 @@
 {
     margin-bottom: 0.5rem;
 
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 500;
     color: GrayColor200;
 }
 
 .cookie-consent-banner-text
 {
-    font-size: 0.8rem;
     color: GrayColor200;
+}
+
+.cookie-consent-banner-text.is-small
+{
+    font-size: 0.8rem;
 }
 
 .cookie-consent-banner-button-list
@@ -207,9 +211,9 @@
 
 .cookie-consent-dialog-header-title
 {
-    font-size: 1.2rem;
-    text-align: center;
+    font-size: 1.1rem;
     font-weight: 500;
+    text-align: center;
 }
 
 .cookie-consent-dialog-header-close-button
@@ -246,11 +250,20 @@
     color: GrayColor400;
 }
 
-.cookie-consent-dialog-button-list
+.cookie-consent-dialog-left-button-list
 {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+    justify-content: start;
+}
+
+.cookie-consent-dialog-right-button-list
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: end;
 }
 
 .cookie-consent-dialog-button
@@ -262,35 +275,15 @@
 
     color: WhiteColor;
 
+    background-color: BlueColor400;
+
     cursor: pointer;
     transition: background-color 0.25s ease;
 }
 
-.cookie-consent-dialog-accept-cookies-button,
-.cookie-consent-dialog-reject-cookies-button
-{
-    background-color: BlueColor400;
-}
-
-.cookie-consent-dialog-accept-cookies-button:hover,
-.cookie-consent-dialog-reject-cookies-button:hover
+.cookie-consent-dialog-button:hover
 {
     background-color: BlueColor;
-}
-
-.cookie-consent-dialog-confirm-choices-button
-{
-    margin-left: auto;
-    border: 1px solid GrayColor700;
-
-    background-color: GrayColor950;
-
-    color: GrayColor;
-}
-
-.cookie-consent-dialog-confirm-choices-button:hover
-{
-    background-color: WhiteColor;
 }
 
 .cookie-consent-dialog-setting-list
@@ -321,7 +314,7 @@
 .cookie-consent-dialog-setting-title-image
 {
     margin-right: 0.5rem;
-    height: 0.7rem;
+    height: 0.5rem;
     width: auto;
 }
 
