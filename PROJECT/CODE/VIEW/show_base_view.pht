@@ -94,9 +94,7 @@
         </div>
     <? } ?>
     <? include 'BLOCK/scroll_top_button.php'; ?>
-    <? include 'BLOCK/cookie_consent_button.php'; ?>
-    <? include 'BLOCK/cookie_consent_dialog.php'; ?>
-    <? include 'BLOCK/cookie_consent_banner.php'; ?>
+    <? include 'BLOCK/cookie_consent.php'; ?>
 </div>
 <script src="/static/script/header_menu.js?v=<# VersionTimestamp #>"></script>
 <script>

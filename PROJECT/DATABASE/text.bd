@@ -162,13 +162,15 @@ TEXT
               The information does not usually directly identify you, but it can give you a more personalized web experience.^
               Because we respect your right to privacy, you can choose not to allow some types of cookies.^
               Click on the different category headings to find out more and change our default settings.^
-              However, blocking some types of cookies may impact your experience of the site and the services we are able to offer.
+              However, blocking some types of cookies may impact your experience of the site and the services we are able to offer.¶
+              ([privacy-policy][Privacy Policy])
               ¨fr:Lorsque vous consultez un site Web, des données peuvent être stockées dans votre navigateur ou récupérées à partir de celui-ci, généralement sous la forme de cookies.^
                   Ces informations peuvent porter sur vous, sur vos préférences ou sur votre appareil et sont principalement utilisées pour s'assurer que le site Web fonctionne correctement.^
                   Les informations ne permettent généralement pas de vous identifier directement, mais peuvent vous permettre de bénéficier d'une expérience Web personnalisée.^
                   Parce que nous respectons votre droit à la vie privée, nous vous donnons la possibilité de ne pas autoriser certains types de cookies.^
                   Cliquez sur les différentes catégories pour obtenir plus de détails sur chacune d'entre elles, et modifier les paramètres par défaut.^
-                  Toutefois, si vous bloquez certains types de cookies, votre expérience de navigation et les services que nous sommes en mesure de vous offrir peuvent être impactés.
+                  Toutefois, si vous bloquez certains types de cookies, votre expérience de navigation et les services que nous sommes en mesure de vous offrir peuvent être impactés.¶
+                  ([privacy-policy][Politique de confidentialité])
 
         %cookie-consent-dialog-european-setting-list-title-text
             ~ cookie-consent-dialog-european-setting-list-title
@@ -190,11 +192,13 @@ TEXT
             ~ These cookies are necessary for the website to function and cannot be switched off in our systems.^
               They are usually only set in response to actions made by you which amount to a request for services, such as setting your privacy preferences, logging in or filling in forms.^
               You can set your browser to block or alert you about these cookies, but some parts of the site will not then work.^
-              These cookies do not store any personally identifiable information.
+              These cookies do not store any personally identifiable information.¶
+              ([privacy-policy][Privacy Policy])
               ¨fr:Ces cookies sont nécessaires au fonctionnement du site Web et ne peuvent pas être désactivés dans nos systèmes.^
                   Ils sont généralement établis en tant que réponse à des actions que vous avez effectuées et qui constituent une demande de services, telles que la définition de vos préférences en matière de confidentialité, la connexion ou le remplissage de formulaires.^
                   Vous pouvez configurer votre navigateur afin de bloquer ou être informé de l'existence de ces cookies, mais certaines parties du site Web peuvent être affectées.^
-                  Ces cookies ne stockent aucune information d’identification personnelle.
+                  Ces cookies ne stockent aucune information d’identification personnelle.¶
+                  ([privacy-policy][Politique de confidentialité])
 
         %cookie-consent-dialog-european-performance-cookies-title-text
             ~ cookie-consent-dialog-european-performance-cookies-title

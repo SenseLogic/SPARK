@@ -1,3 +1,162 @@
+.cookie-consent-banner-container
+{
+    z-index: 1000;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    margin-left: 1rem;
+    margin-right: 1rem;
+    max-width: 20rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    padding: 1.25rem;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: WhiteColor;
+    box-shadow: 0 0.25rem 0.5rem rgba( 128, 128, 128, 0.5 );
+
+    font-size: 0.9rem;
+    color: BlackColor;
+}
+
+.cookie-consent-banner-container.is-wide
+{
+    max-width: 30rem;
+}
+
+.cookie-consent-banner-container a,
+.cookie-consent-banner-container a:visited
+{
+    text-decoration: underline;
+    color: GrayColor200;
+}
+
+.cookie-consent-banner-title
+{
+    margin-bottom: 0.5rem;
+
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: GrayColor200;
+}
+
+.cookie-consent-banner-text
+{
+    font-size: 0.8rem;
+    color: GrayColor200;
+}
+
+.cookie-consent-banner-button-list
+{
+    margin-top: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.cookie-consent-banner-container.is-wide .cookie-consent-banner-button-list
+{
+    +Media( min-width-30em )
+    {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.cookie-consent-banner-button
+{
+    border-radius: 0.25rem;
+    padding: 0.25rem 1rem;
+
+    text-align: center;
+    color: WhiteColor;
+
+    cursor: pointer;
+    transition: background-color 0.25s ease;
+}
+
+.cookie-consent-banner-cookies-settings-button
+{
+    border: 1px solid GrayColor700;
+
+    background-color: GrayColor950;
+
+    color: GrayColor;
+}
+
+.cookie-consent-banner-cookies-settings-button:hover
+{
+    background-color: WhiteColor;
+}
+
+.cookie-consent-banner-accept-cookies-button,
+.cookie-consent-banner-reject-cookies-button
+{
+    background-color: BlueColor400;
+}
+
+.cookie-consent-banner-accept-cookies-button:hover,
+.cookie-consent-banner-reject-cookies-button:hover
+{
+    background-color: BlueColor;
+}
+
+.cookie-consent-button
+{
+    z-index: 1000;
+    position: fixed;
+    bottom: 0.5rem;
+    left: 0.5rem;
+
+    height: 2rem;
+    width: 2rem;
+
+    opacity: 0.5;
+    background: url( "/static/image/cookie_consent/cookie_button.svg" ) no-repeat center center / contain;
+    filter: drop-shadow( 0 0.25rem 0.5rem rgba( 0, 0, 0, 0.4 ) );
+
+    cursor: pointer;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.cookie-consent-button:hover
+{
+    transform: scale( 1.05 );
+
+    opacity: 1;
+}
+
+.cookie-consent-button-tooltip
+{
+    position: absolute;
+    top: 0.5rem;
+    left: 2.5rem;
+
+    padding: 0.125rem 0.25rem;
+
+    display: none;
+
+    opacity: 0;
+    background-color: GrayColor200;
+
+    font-size: 0.6rem;
+    white-space: nowrap;
+    color: WhiteColor;
+
+    transition: opacity 0.25s ease;
+}
+
+.cookie-consent-button:hover .cookie-consent-button-tooltip
+{
+    display: block;
+
+    opacity: 1;
+}
+
 .cookie-consent-dialog-container
 {
     z-index: 1000;

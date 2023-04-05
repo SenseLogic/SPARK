@@ -94,9 +94,7 @@
         </div>
     <?php } ?>
     <?php require __DIR__ . '/' . 'BLOCK/scroll_top_button.php'; ?>
-    <?php require __DIR__ . '/' . 'BLOCK/cookie_consent_button.php'; ?>
-    <?php require __DIR__ . '/' . 'BLOCK/cookie_consent_dialog.php'; ?>
-    <?php require __DIR__ . '/' . 'BLOCK/cookie_consent_banner.php'; ?>
+    <?php require __DIR__ . '/' . 'BLOCK/cookie_consent.php'; ?>
 </div>
 <script src="/static/script/header_menu.js?v=<?php echo VersionTimestamp; ?>"></script>
 <script>
