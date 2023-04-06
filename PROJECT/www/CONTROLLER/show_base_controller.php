@@ -62,11 +62,13 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
         $this->Session->Captcha = $this->Captcha;
         $this->Session->Store();
 
-        $this->BrowserAddress = GetBrowserAddress();
-
-        if ( $this->BrowserAddress === '127.0.0.1' )
+        if ( GetServerName() === 'localhost' )
         {
             $this->BrowserAddress = GetRandomAddress();
+        }
+        else
+        {
+            $this->BrowserAddress = GetBrowserAddress();
         }
 
         $this->BrowserLocation = GetBrowserLocation( $this->BrowserAddress );

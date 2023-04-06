@@ -937,37 +937,6 @@
 
     // ~~
 
-    function HandleCookieConsentDialogCloseButtonClickEvent(
-        )
-    {
-        HideCookieConsentDialog();
-        ShowCookieConsentButton();
-    }
-
-    // ~~
-
-    function HandleCookieConsentDialogAcceptAllCookiesButtonClickEvent(
-        )
-    {
-        SetCookieConsent( true );
-        ApplyCookieConsent();
-        HideCookieConsentDialog();
-        ShowCookieConsentButton();
-    }
-
-    // ~~
-
-    function HandleCookieConsentDialogAcceptRequiredCookiesButtonClickEvent(
-        )
-    {
-        SetCookieConsent( false );
-        ApplyCookieConsent();
-        HideCookieConsentDialog();
-        ShowCookieConsentButton();
-    }
-
-    // ~~
-
     function HandleCookieConsentDialogRequiredCookiesDescriptionButtonClickEvent(
         )
     {
@@ -1023,15 +992,46 @@
 
     // ~~
 
+    function HandleCookieConsentDialogCloseButtonClickEvent(
+        )
+    {
+        HideCookieConsentDialog();
+        ShowCookieConsentButton();
+    }
+
+    // ~~
+
+    function HandleCookieConsentDialogAcceptAllCookiesButtonClickEvent(
+        )
+    {
+        SetCookieConsent( true );
+        ApplyCookieConsent();
+        HideCookieConsentDialog();
+        ShowCookieConsentButton();
+    }
+
+    // ~~
+
+    function HandleCookieConsentDialogAcceptRequiredCookiesButtonClickEvent(
+        )
+    {
+        SetCookieConsent( false );
+        ApplyCookieConsent();
+        HideCookieConsentDialog();
+        ShowCookieConsentButton();
+    }
+
+    // ~~
+
     function HandleCookieConsentDialogConfirmChoicesButtonClickEvent(
         )
     {
+        SetPerformanceCookieConsent( CookieConsentDialogSettingInputElementArray[ 0 ].checked );
+
         <?php if ( $this->BrowserLocation->IsEurope ) { ?>
-            SetPerformanceCookieConsent( CookieConsentDialogSettingInputElementArray[ 0 ].checked );
             SetFunctionalCookieConsent( CookieConsentDialogSettingInputElementArray[ 1 ].checked);
             SetTargetingCookieConsent( CookieConsentDialogSettingInputElementArray[ 2 ].checked );
         <?php } else { ?>
-            SetPerformanceCookieConsent( CookieConsentDialogSettingInputElementArray[ 0 ].checked );
             SetFunctionalCookieConsent( CookieConsentDialogSettingInputElementArray[ 0 ].checked);
             SetTargetingCookieConsent( CookieConsentDialogSettingInputElementArray[ 0 ].checked );
         <?php } ?>

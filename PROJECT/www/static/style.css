@@ -761,6 +761,8 @@ html {
 }
 .linebreak {
   margin-bottom: 0.8em;
+  display: block;
+  content: "";
 }
 .white {
   color: #fff;
@@ -1463,8 +1465,8 @@ body.is-appearing .loader-page-logo {
   border-radius: 0.25rem;
   padding: 0.25rem 1rem;
   display: inline-block;
-  color: #fff;
   background-color: #0000a6;
+  color: #fff;
   cursor: pointer;
   transition: background-color 0.25s ease;
 }

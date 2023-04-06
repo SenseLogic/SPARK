@@ -62,11 +62,13 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
         .Session.Captcha = .Captcha;
         .Session.Store();
 
-        .BrowserAddress = GetBrowserAddress();
-
-        if ( .BrowserAddress === '127.0.0.1' )
+        if ( GetServerName() === 'localhost' )
         {
             .BrowserAddress = GetRandomAddress();
+        }
+        else
+        {
+            .BrowserAddress = GetBrowserAddress();
         }
 
         .BrowserLocation = GetBrowserLocation( .BrowserAddress );
