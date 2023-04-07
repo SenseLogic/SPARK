@@ -1295,7 +1295,7 @@ body.is-appearing .loader-page-logo {
   background-color: #fff;
   box-shadow: 0 0.25rem 0.5rem rgba(128,128,128,0.5);
   font-size: 0.9rem;
-  color: #000;
+  color: #333;
 }
 .cookie-consent-banner-container.is-wide {
   max-width: 30rem;
@@ -1335,7 +1335,12 @@ body.is-appearing .loader-page-logo {
   text-align: center;
   color: #fff;
   cursor: pointer;
-  transition: background-color 0.25s ease;
+  transition: color 0.25s ease, background-color 0.25s ease;
+  background-color: #0000a6;
+}
+.cookie-consent-banner-button:hover {
+  color: #fff;
+  background-color: #0000d0;
 }
 .cookie-consent-banner-cookies-settings-button {
   border: 1px solid #b3b3b3;
@@ -1343,15 +1348,8 @@ body.is-appearing .loader-page-logo {
   color: #808080;
 }
 .cookie-consent-banner-cookies-settings-button:hover {
+  color: #808080;
   background-color: #fff;
-}
-.cookie-consent-banner-accept-cookies-button,
-.cookie-consent-banner-reject-cookies-button {
-  background-color: #0000a6;
-}
-.cookie-consent-banner-accept-cookies-button:hover,
-.cookie-consent-banner-reject-cookies-button:hover {
-  background-color: #0000d0;
 }
 .cookie-consent-button {
   z-index: 1000;
@@ -1377,7 +1375,7 @@ body.is-appearing .loader-page-logo {
   padding: 0.125rem 0.25rem;
   display: none;
   opacity: 0;
-  background-color: #333;
+  background-color: #000053;
   font-size: 0.6rem;
   white-space: nowrap;
   color: #fff;
@@ -1468,9 +1466,10 @@ body.is-appearing .loader-page-logo {
   background-color: #0000a6;
   color: #fff;
   cursor: pointer;
-  transition: background-color 0.25s ease;
+  transition: color 0.25s ease, background-color 0.25s ease;
 }
 .cookie-consent-dialog-button:hover {
+  color: #fff;
   background-color: #0000d0;
 }
 .cookie-consent-dialog-setting-list {

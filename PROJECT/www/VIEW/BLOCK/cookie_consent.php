@@ -437,16 +437,35 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <?php if ( $this->BrowserLocation->IsEurope ) { ?>
     <div id="cookie-consent-banner-container" class="cookie-consent-banner-container is-hidden">
         <div class="cookie-consent-banner-text is-small">
             <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-banner-european-text' ); ?>
         </div>
         <div class="cookie-consent-banner-button-list">
-            <div class="cookie-consent-banner-button cookie-consent-banner-accept-cookies-button" onclick="HandleCookieConsentBannerAcceptAllCookiesButtonClickEvent()">
+            <div class="cookie-consent-banner-button" onclick="HandleCookieConsentBannerAcceptAllCookiesButtonClickEvent()">
                 <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-banner-european-accept-cookies-button' ); ?>
             </div>
-            <div class="cookie-consent-banner-button cookie-consent-banner-reject-cookies-button" onclick="HandleCookieConsentBannerAcceptRequiredCookiesButtonClickEvent()">
+            <div class="cookie-consent-banner-button" onclick="HandleCookieConsentBannerAcceptRequiredCookiesButtonClickEvent()">
                 <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-banner-european-reject-cookies-button' ); ?>
             </div>
             <div class="cookie-consent-banner-button cookie-consent-banner-cookies-settings-button" onclick="HandleCookieConsentBannerPrivacyPreferencesButtonClickEvent()">
@@ -466,7 +485,7 @@
             <div class="cookie-consent-banner-button cookie-consent-banner-cookies-settings-button" onclick="HandleCookieConsentBannerPrivacyPreferencesButtonClickEvent()">
                 <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-banner-american-cookies-settings-button' ); ?>
             </div>
-            <div class="cookie-consent-banner-button cookie-consent-banner-accept-cookies-button" onclick="HandleCookieConsentBannerAcceptAllCookiesButtonClickEvent()">
+            <div class="cookie-consent-banner-button" onclick="HandleCookieConsentBannerAcceptAllCookiesButtonClickEvent()">
                 <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-banner-american-accept-cookies-button' ); ?>
             </div>
         </div>
@@ -477,10 +496,10 @@
             <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-banner-text' ); ?>
         </div>
         <div class="cookie-consent-banner-button-list">
-            <div class="cookie-consent-banner-button cookie-consent-banner-accept-cookies-button" onclick="HandleCookieConsentBannerAcceptAllCookiesButtonClickEvent()">
+            <div class="cookie-consent-banner-button" onclick="HandleCookieConsentBannerAcceptAllCookiesButtonClickEvent()">
                 <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-banner-accept-cookies-button' ); ?>
             </div>
-            <div class="cookie-consent-banner-button cookie-consent-banner-reject-cookies-button" onclick="HandleCookieConsentBannerAcceptRequiredCookiesButtonClickEvent()">
+            <div class="cookie-consent-banner-button" onclick="HandleCookieConsentBannerAcceptRequiredCookiesButtonClickEvent()">
                 <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-banner-reject-cookies-button' ); ?>
             </div>
         </div>

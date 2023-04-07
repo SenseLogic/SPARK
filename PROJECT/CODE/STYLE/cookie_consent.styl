@@ -1,3 +1,24 @@
+CookieConsentBackgroundColor = WhiteColor;
+CookieConsentTitleColor = GrayColor200;
+CookieConsentTitleHoverColor = GrayColor400;
+CookieConsentTextColor = GrayColor200;
+CookieConsentContentTextColor = GrayColor400;
+CookieConsentDescriptionTextColor = GrayColor200;
+CookieConsentDescriptionBackgroundColor = GrayColor950;
+CookieConsentTooltipBackgroundColor = BlueColor200;
+CookieConsentTooltipTextColor = WhiteColor;
+CookieConsentPrimaryButtonBackgroundColor = BlueColor400;
+CookieConsentPrimaryButtonTextColor = WhiteColor;
+CookieConsentPrimaryButtonHoverBackgroundColor = BlueColor;
+CookieConsentPrimaryButtonHoverTextColor = WhiteColor;
+CookieConsentSecondaryButtonBackgroundColor = GrayColor950;
+CookieConsentSecondaryButtonTextColor = GrayColor;
+CookieConsentSecondaryButtonHoverBackgroundColor = WhiteColor;
+CookieConsentSecondaryButtonHoverTextColor = GrayColor;
+CookieConsentValueTextColor = GreenColor;
+CookieConsentSliderBackgroundColor = GrayColor700;
+CookieConsentLinkTextColor = GrayColor200;
+
 .cookie-consent-banner-container
 {
     z-index: 1000;
@@ -15,11 +36,11 @@
     display: flex;
     flex-direction: column;
 
-    background-color: WhiteColor;
+    background-color: CookieConsentBackgroundColor;
     box-shadow: 0 0.25rem 0.5rem rgba( 128, 128, 128, 0.5 );
 
     font-size: 0.9rem;
-    color: BlackColor;
+    color: CookieConsentTextColor;
 }
 
 .cookie-consent-banner-container.is-wide
@@ -31,7 +52,7 @@
 .cookie-consent-banner-container a:visited
 {
     text-decoration: underline;
-    color: GrayColor200;
+    color: CookieConsentLinkTextColor;
 }
 
 .cookie-consent-banner-title
@@ -40,12 +61,12 @@
 
     font-size: 1.1rem;
     font-weight: 500;
-    color: GrayColor200;
+    color: CookieConsentTitleColor;
 }
 
 .cookie-consent-banner-text
 {
-    color: GrayColor200;
+    color: CookieConsentTextColor;
 }
 
 .cookie-consent-banner-text.is-small
@@ -77,36 +98,33 @@
     padding: 0.25rem 1rem;
 
     text-align: center;
-    color: WhiteColor;
+    color: CookieConsentPrimaryButtonTextColor;
 
     cursor: pointer;
-    transition: background-color 0.25s ease;
+    transition: color 0.25s ease, background-color 0.25s ease;
+
+    background-color: CookieConsentPrimaryButtonBackgroundColor;
+}
+
+.cookie-consent-banner-button:hover
+{
+    color: CookieConsentPrimaryButtonHoverTextColor;
+    background-color: CookieConsentPrimaryButtonHoverBackgroundColor;
 }
 
 .cookie-consent-banner-cookies-settings-button
 {
     border: 1px solid GrayColor700;
 
-    background-color: GrayColor950;
+    background-color: CookieConsentSecondaryButtonBackgroundColor;
 
-    color: GrayColor;
+    color: CookieConsentSecondaryButtonTextColor;
 }
 
 .cookie-consent-banner-cookies-settings-button:hover
 {
-    background-color: WhiteColor;
-}
-
-.cookie-consent-banner-accept-cookies-button,
-.cookie-consent-banner-reject-cookies-button
-{
-    background-color: BlueColor400;
-}
-
-.cookie-consent-banner-accept-cookies-button:hover,
-.cookie-consent-banner-reject-cookies-button:hover
-{
-    background-color: BlueColor;
+    color: CookieConsentSecondaryButtonHoverTextColor;
+    background-color: CookieConsentSecondaryButtonHoverBackgroundColor;
 }
 
 .cookie-consent-button
@@ -145,11 +163,11 @@
     display: none;
 
     opacity: 0;
-    background-color: GrayColor200;
+    background-color: CookieConsentTooltipBackgroundColor;
 
     font-size: 0.6rem;
     white-space: nowrap;
-    color: WhiteColor;
+    color: CookieConsentTooltipTextColor;
 
     transition: opacity 0.25s ease;
 }
@@ -190,10 +208,10 @@
     flex-direction: column;
     gap: 1rem;
 
-    background-color: WhiteColor;
+    background-color: CookieConsentBackgroundColor;
 
     font-size: 0.9rem;
-    color: GrayColor200;
+    color: CookieConsentTextColor;
 }
 
 .cookie-consent-dialog-header
@@ -241,13 +259,13 @@
     flex-direction: column;
     gap: 1rem;
 
-    color: GrayColor400;
+    color: CookieConsentContentTextColor;
 }
 
 .cookie-consent-dialog-description
 {
     font-size: 0.8rem;
-    color: GrayColor400;
+    color: CookieConsentContentTextColor;
 }
 
 .cookie-consent-dialog-left-button-list
@@ -273,17 +291,18 @@
 
     display: inline-block;
 
-    background-color: BlueColor400;
+    background-color: CookieConsentPrimaryButtonBackgroundColor;
 
-    color: WhiteColor;
+    color: CookieConsentPrimaryButtonTextColor;
 
     cursor: pointer;
-    transition: background-color 0.25s ease;
+    transition: color 0.25s ease, background-color 0.25s ease;
 }
 
 .cookie-consent-dialog-button:hover
 {
-    background-color: BlueColor;
+    color: CookieConsentPrimaryButtonHoverTextColor;
+    background-color: CookieConsentPrimaryButtonHoverBackgroundColor;
 }
 
 .cookie-consent-dialog-setting-list
@@ -297,7 +316,7 @@
 {
     font-size: 1rem;
     font-weight: 500;
-    color: GrayColor200;
+    color: CookieConsentTitleColor;
 }
 
 .cookie-consent-dialog-setting
@@ -327,14 +346,14 @@
     grid-area: title;
     align-items: center;
 
-    color: GrayColor200;
+    color: CookieConsentTitleColor;
 
     cursor: pointer;
 }
 
 .cookie-consent-dialog-setting-title:hover
 {
-    color: GrayColor400;
+    color: CookieConsentTitleHoverColor;
 }
 
 .cookie-consent-dialog-setting-title.is-grayed
@@ -354,7 +373,7 @@
 
     grid-area: value;
 
-    color: GreenColor;
+    color: CookieConsentValueTextColor;
 }
 
 .cookie-consent-dialog-setting-description
@@ -421,14 +440,14 @@
     border-radius: 50%;
 
     content: "";
-    background-color: WhiteColor;
+    background-color: CookieConsentBackgroundColor;
 
     transition: 0.4s;
 }
 
 .cookie-consent-dialog-setting-input:checked + .cookie-consent-dialog-setting-slider
 {
-    background-color: GreenColor;
+    background-color: CookieConsentValueTextColor;
 }
 
 .cookie-consent-dialog-setting-input:checked + .cookie-consent-dialog-setting-slider:before
