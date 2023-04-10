@@ -473,7 +473,7 @@
             </div>
         </div>
     </div>
-<?php } else if ( $this->BrowserLocation->IsNorthAmerica ) { ?>
+<?php } else if ( $this->BrowserLocation->IsAmerica ) { ?>
     <div id="cookie-consent-banner-container" class="cookie-consent-banner-container is-wide is-hidden">
         <div class="cookie-consent-banner-title">
             <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-banner-american-title' ); ?>
@@ -854,7 +854,7 @@
         ApplyCookieConsent();
         HideCookieConsentBanner();
 
-        <?php if ( $this->BrowserLocation->IsEurope || $this->BrowserLocation->IsNorthAmerica ) { ?>
+        <?php if ( $this->BrowserLocation->IsEurope || $this->BrowserLocation->IsAmerica ) { ?>
             ShowCookieConsentButton();
         <?php } ?>
     }
@@ -868,7 +868,7 @@
         ApplyCookieConsent();
         HideCookieConsentBanner();
 
-        <?php if ( $this->BrowserLocation->IsEurope || $this->BrowserLocation->IsNorthAmerica ) { ?>
+        <?php if ( $this->BrowserLocation->IsEurope || $this->BrowserLocation->IsAmerica ) { ?>
             ShowCookieConsentButton();
         <?php } ?>
     }

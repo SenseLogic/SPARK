@@ -446,6 +446,9 @@ function GetBrowserLocation(
     location.IsAsia = ( location.Longitude >= 45 && location.Latitude >= -10 );
     location.IsOceania = ( location.Longitude >= 45 && location.Latitude < -10 );
     location.IsAntarctica = ( location.Latitude < -60 );
+    location.IsJapan
+        = ( location.Longitude >= 125 && location.Longitude < 145
+            && location.Latitude >= 30 && location.Latitude < 50 );
 
     return location;
 }
