@@ -473,7 +473,7 @@
             </div>
         </div>
     </div>
-<? } else if ( .BrowserLocation.IsAmerica ) { ?>
+<? } else if ( .BrowserLocation.IsNorthAmerica ) { ?>
     <div id="cookie-consent-banner-container" class="cookie-consent-banner-container is-wide is-hidden">
         <div class="cookie-consent-banner-title">
             <# .GetProcessedTextBySlug( 'cookie-consent-banner-american-title' ) #>
@@ -854,7 +854,7 @@
         ApplyCookieConsent();
         HideCookieConsentBanner();
 
-        <? if ( .BrowserLocation.IsEurope || .BrowserLocation.IsAmerica ) { ?>
+        <? if ( .BrowserLocation.IsEurope || .BrowserLocation.IsNorthAmerica ) { ?>
             ShowCookieConsentButton();
         <? } ?>
     }
@@ -868,7 +868,7 @@
         ApplyCookieConsent();
         HideCookieConsentBanner();
 
-        <? if ( .BrowserLocation.IsEurope || .BrowserLocation.IsAmerica ) { ?>
+        <? if ( .BrowserLocation.IsEurope || .BrowserLocation.IsNorthAmerica ) { ?>
             ShowCookieConsentButton();
         <? } ?>
     }
