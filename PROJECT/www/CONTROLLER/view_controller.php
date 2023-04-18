@@ -16,6 +16,17 @@ class VIEW_CONTROLLER extends CONTROLLER
     {
         parent::__construct( $language_code );
 
+        if ( GetServerName() === 'localhost' )
+        {
+            $this->BrowserAddress = GetRandomAddress();
+        }
+        else
+        {
+            $this->BrowserAddress = GetBrowserAddress();
+        }
+
+        $this->BrowserLocation = GetBrowserLocation( $this->BrowserAddress );
+
         $this->TextArray = GetDatabaseTextArray();
         $this->TextBySlugMap = GetTextBySlugMap( $this->TextArray );
     }

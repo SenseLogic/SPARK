@@ -62,17 +62,6 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
         $this->Session->Captcha = $this->Captcha;
         $this->Session->Store();
 
-        if ( GetServerName() === 'localhost' )
-        {
-            $this->BrowserAddress = GetRandomAddress();
-        }
-        else
-        {
-            $this->BrowserAddress = GetBrowserAddress();
-        }
-
-        $this->BrowserLocation = GetBrowserLocation( $this->BrowserAddress );
-
         require_once __DIR__ . '/' . '../VIEW/show_base_view.php';
     }
 }

@@ -62,17 +62,6 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
         .Session.Captcha = .Captcha;
         .Session.Store();
 
-        if ( GetServerName() === 'localhost' )
-        {
-            .BrowserAddress = GetRandomAddress();
-        }
-        else
-        {
-            .BrowserAddress = GetBrowserAddress();
-        }
-
-        .BrowserLocation = GetBrowserLocation( .BrowserAddress );
-
         import '../VIEW/show_base_view.php';
     }
 }

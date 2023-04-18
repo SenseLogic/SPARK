@@ -16,6 +16,17 @@ class VIEW_CONTROLLER extends CONTROLLER
     {
         parent::constructor( language_code );
 
+        if ( GetServerName() === 'localhost' )
+        {
+            .BrowserAddress = GetRandomAddress();
+        }
+        else
+        {
+            .BrowserAddress = GetBrowserAddress();
+        }
+
+        .BrowserLocation = GetBrowserLocation( .BrowserAddress );
+
         .TextArray = GetDatabaseTextArray();
         .TextBySlugMap = GetTextBySlugMap( .TextArray );
     }
