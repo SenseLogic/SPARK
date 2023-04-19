@@ -348,7 +348,7 @@ function GetBrowserAddress(
     }
     else if ( isset( _SERVER[ 'HTTP_X_FORWARDED_FOR' ] ) )
     {
-        return _SERVER[ 'HTTP_X_FORWARDED_FOR' ];
+        return trim( explode( ',', _SERVER[ 'HTTP_X_FORWARDED_FOR' ] )[ 0 ] );
     }
     else if ( isset( _SERVER[ 'HTTP_X_FORWARDED' ] ) )
     {

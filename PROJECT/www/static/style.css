@@ -1524,6 +1524,7 @@ body.is-appearing .loader-page-logo {
   grid-area: description;
   background-color: #f2f2f2;
   font-size: 0.8rem;
+  color: #666;
   cursor: pointer;
 }
 .cookie-consent-dialog-setting-switch {

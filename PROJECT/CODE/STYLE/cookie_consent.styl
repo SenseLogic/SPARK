@@ -3,7 +3,7 @@ CookieConsentTitleColor = GrayColor200;
 CookieConsentTitleHoverColor = GrayColor400;
 CookieConsentTextColor = GrayColor200;
 CookieConsentContentTextColor = GrayColor400;
-CookieConsentDescriptionTextColor = GrayColor200;
+CookieConsentDescriptionTextColor = GrayColor400;
 CookieConsentDescriptionBackgroundColor = GrayColor950;
 CookieConsentTooltipBackgroundColor = BlueColor200;
 CookieConsentTooltipTextColor = WhiteColor;
@@ -15,9 +15,13 @@ CookieConsentSecondaryButtonBackgroundColor = GrayColor950;
 CookieConsentSecondaryButtonTextColor = GrayColor;
 CookieConsentSecondaryButtonHoverBackgroundColor = WhiteColor;
 CookieConsentSecondaryButtonHoverTextColor = GrayColor;
-CookieConsentValueTextColor = GreenColor;
-CookieConsentSliderBackgroundColor = GrayColor700;
+CookieConsentSettingActiveColor = GreenColor;
+CookieConsentSettingSliderBackgroundColor = GrayColor700;
+CookieConsentSettingDiscColor = WhiteColor;
+CookieConsentSettingDescriptionBackgroundColor = GrayColor950;
+CookieConsentSettingDescriptionTextColor = GrayColor400;
 CookieConsentLinkTextColor = GrayColor200;
+CookieConsentZIndex = 10000;
 
 .cookie-consent-banner-container
 {
@@ -265,7 +269,7 @@ CookieConsentLinkTextColor = GrayColor200;
 .cookie-consent-dialog-description
 {
     font-size: 0.8rem;
-    color: CookieConsentContentTextColor;
+    color: CookieConsentDescriptionTextColor;
 }
 
 .cookie-consent-dialog-left-button-list
@@ -373,7 +377,7 @@ CookieConsentLinkTextColor = GrayColor200;
 
     grid-area: value;
 
-    color: CookieConsentValueTextColor;
+    color: CookieConsentSettingActiveColor;
 }
 
 .cookie-consent-dialog-setting-description
@@ -383,9 +387,10 @@ CookieConsentLinkTextColor = GrayColor200;
 
     grid-area: description;
 
-    background-color: GrayColor950;
+    background-color: CookieConsentSettingDescriptionBackgroundColor;
 
     font-size: 0.8rem;
+    color: CookieConsentSettingDescriptionTextColor;
 
     cursor: pointer;
 }
@@ -418,7 +423,7 @@ CookieConsentLinkTextColor = GrayColor200;
 
     border-radius: 1rem;
 
-    background-color: GrayColor700;
+    background-color: CookieConsentSettingSliderBackgroundColor;
 
     cursor: pointer;
     transition: 0.4s;
@@ -440,14 +445,14 @@ CookieConsentLinkTextColor = GrayColor200;
     border-radius: 50%;
 
     content: "";
-    background-color: CookieConsentBackgroundColor;
+    background-color: CookieConsentSettingDiscColor;
 
     transition: 0.4s;
 }
 
 .cookie-consent-dialog-setting-input:checked + .cookie-consent-dialog-setting-slider
 {
-    background-color: CookieConsentValueTextColor;
+    background-color: CookieConsentSettingActiveColor;
 }
 
 .cookie-consent-dialog-setting-input:checked + .cookie-consent-dialog-setting-slider:before
