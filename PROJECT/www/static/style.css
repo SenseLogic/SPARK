@@ -355,85 +355,85 @@ a:visited {
   --neutral-color-900: #e6e6e6;
   --neutral-color-950: #f2f2f2;
   --neutral-contrast-color: #000;
-  --primary-color: #0000d0;
-  --primary-color-100: #00002a;
-  --primary-color-200: #000053;
-  --primary-color-300: #00007d;
-  --primary-color-400: #0000a6;
-  --primary-color-600: #0d0dff;
-  --primary-color-700: #4a4aff;
-  --primary-color-800: #8686ff;
-  --primary-color-900: #c3c3ff;
+  --primary-color: #27e;
+  --primary-color-100: #041733;
+  --primary-color-200: #082f65;
+  --primary-color-300: #0c4698;
+  --primary-color-400: #105dca;
+  --primary-color-600: #4e92f1;
+  --primary-color-700: #7aadf5;
+  --primary-color-800: #a7c9f8;
+  --primary-color-900: #d3e4fc;
   --primary-contrast-color: #000;
-  --secondary-color: #0000d0;
-  --secondary-color-100: #00002a;
-  --secondary-color-200: #000053;
-  --secondary-color-300: #00007d;
-  --secondary-color-400: #0000a6;
-  --secondary-color-600: #0d0dff;
-  --secondary-color-700: #4a4aff;
-  --secondary-color-800: #8686ff;
-  --secondary-color-900: #c3c3ff;
+  --secondary-color: #27e;
+  --secondary-color-100: #041733;
+  --secondary-color-200: #082f65;
+  --secondary-color-300: #0c4698;
+  --secondary-color-400: #105dca;
+  --secondary-color-600: #4e92f1;
+  --secondary-color-700: #7aadf5;
+  --secondary-color-800: #a7c9f8;
+  --secondary-color-900: #d3e4fc;
   --secondary-contrast-color: #000;
-  --tertiary-color: #0000d0;
-  --tertiary-color-100: #00002a;
-  --tertiary-color-200: #000053;
-  --tertiary-color-300: #00007d;
-  --tertiary-color-400: #0000a6;
-  --tertiary-color-600: #0d0dff;
-  --tertiary-color-700: #4a4aff;
-  --tertiary-color-800: #8686ff;
-  --tertiary-color-900: #c3c3ff;
+  --tertiary-color: #27e;
+  --tertiary-color-100: #041733;
+  --tertiary-color-200: #082f65;
+  --tertiary-color-300: #0c4698;
+  --tertiary-color-400: #105dca;
+  --tertiary-color-600: #4e92f1;
+  --tertiary-color-700: #7aadf5;
+  --tertiary-color-800: #a7c9f8;
+  --tertiary-color-900: #d3e4fc;
   --tertiary-contrast-color: #000;
-  --accent-color: #f76f00;
-  --accent-color-100: #311600;
-  --accent-color-200: #632c00;
-  --accent-color-300: #944300;
-  --accent-color-400: #c65900;
-  --accent-color-600: #ff8b2d;
-  --accent-color-700: #ffa861;
-  --accent-color-800: #ffc596;
-  --accent-color-900: #ffe2ca;
+  --accent-color: #f37736;
+  --accent-color-100: #381503;
+  --accent-color-200: #702b07;
+  --accent-color-300: #a8400a;
+  --accent-color-400: #e0560d;
+  --accent-color-600: #f5925e;
+  --accent-color-700: #f8ad86;
+  --accent-color-800: #fac9af;
+  --accent-color-900: #fde4d7;
   --accent-contrast-color: #000;
-  --info-color: #0000d0;
-  --info-color-100: #00002a;
-  --info-color-200: #000053;
-  --info-color-300: #00007d;
-  --info-color-400: #0000a6;
-  --info-color-600: #0d0dff;
-  --info-color-700: #4a4aff;
-  --info-color-800: #8686ff;
-  --info-color-900: #c3c3ff;
+  --info-color: #27e;
+  --info-color-100: #041733;
+  --info-color-200: #082f65;
+  --info-color-300: #0c4698;
+  --info-color-400: #105dca;
+  --info-color-600: #4e92f1;
+  --info-color-700: #7aadf5;
+  --info-color-800: #a7c9f8;
+  --info-color-900: #d3e4fc;
   --info-contrast-color: #000;
-  --success-color: #008000;
-  --success-color-210: #001a00;
-  --success-color-200: #030;
-  --success-color-300: #004d00;
-  --success-color-400: #060;
-  --success-color-600: #0c0;
-  --success-color-700: #1aff1a;
-  --success-color-800: #6f6;
-  --success-color-890: #b3ffb3;
+  --success-color: #00a979;
+  --success-color-210: #002218;
+  --success-color-200: #004430;
+  --success-color-300: #006549;
+  --success-color-400: #008761;
+  --success-color-600: #00edaa;
+  --success-color-700: #32ffc5;
+  --success-color-800: #77ffd8;
+  --success-color-890: #bbffec;
   --success-contrast-color: #000;
-  --warning-color: #f76f00;
-  --warning-color-100: #311600;
-  --warning-color-200: #632c00;
-  --warning-color-300: #944300;
-  --warning-color-400: #c65900;
-  --warning-color-600: #ff8b2d;
-  --warning-color-700: #ffa861;
-  --warning-color-800: #ffc596;
-  --warning-color-900: #ffe2ca;
+  --warning-color: #f37736;
+  --warning-color-100: #381503;
+  --warning-color-200: #702b07;
+  --warning-color-300: #a8400a;
+  --warning-color-400: #e0560d;
+  --warning-color-600: #f5925e;
+  --warning-color-700: #f8ad86;
+  --warning-color-800: #fac9af;
+  --warning-color-900: #fde4d7;
   --warning-contrast-color: #000;
-  --error-color: #db0000;
-  --error-color-100: #2c0000;
-  --error-color-200: #580000;
-  --error-color-300: #830000;
-  --error-color-400: #af0000;
-  --error-color-600: #ff1616;
-  --error-color-700: #ff5050;
-  --error-color-800: #ff8b8b;
-  --error-color-900: #ffc5c5;
+  --error-color: #e95147;
+  --error-color-100: #360906;
+  --error-color-200: #6d130d;
+  --error-color-300: #a31c13;
+  --error-color-400: #d9261a;
+  --error-color-600: #ed746c;
+  --error-color-700: #f29791;
+  --error-color-800: #f6b9b5;
+  --error-color-900: #fbdcda;
   --error-contrast-color: #000;
   --tiny-button-border-radius: 0.5rem;
   --small-button-border-radius: 0.5rem;
@@ -487,11 +487,11 @@ td {
 a,
 a:link,
 a:visited {
-  color: #0000d0;
+  color: #27e;
 }
 a:active,
 a:hover {
-  color: #4a4aff;
+  color: #7aadf5;
 }
 html,
 body,
@@ -743,15 +743,14 @@ html {
 .is-hidden {
   display: none !important;
 }
-.button {
-  cursor: pointer;
-}
+.link,
 .link-button {
-  color: #0000d0;
+  color: #27e;
   cursor: pointer;
 }
+.link:hover,
 .link-button:hover {
-  color: #4a4aff;
+  color: #7aadf5;
 }
 .paragraph {
   min-height: 1em;
@@ -771,16 +770,16 @@ html {
   color: #fff;
 }
 .red {
-  color: #db0000;
+  color: #e95147;
 }
 .green {
-  color: #008000;
+  color: #00a979;
 }
 .blue {
-  color: #0000d0;
+  color: #27e;
 }
 .orange {
-  color: #f76f00;
+  color: #f37736;
 }
 .text-50 {
   font-size: 0.5rem;
@@ -1225,7 +1224,7 @@ body.is-appearing .loader-page-logo {
 }
 .contact-form-input:invalid,
 .contact-form-input.is-invalid {
-  border: 0.125rem solid #db0000;
+  border: 0.125rem solid #e95147;
   box-shadow: none;
 }
 .contact-form-input::placeholder {
@@ -1279,8 +1278,8 @@ body.is-appearing .loader-page-logo {
 .contact-map > * {
   display: none;
 }
-.cookie-consent-banner-container {
-  z-index: 1000;
+.cookie-consent-banner {
+  z-index: 10000;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -1297,13 +1296,15 @@ body.is-appearing .loader-page-logo {
   font-size: 0.9rem;
   color: #333;
 }
-.cookie-consent-banner-container.is-wide {
+.cookie-consent-banner.is-wide {
   max-width: 30rem;
 }
-.cookie-consent-banner-container a,
-.cookie-consent-banner-container a:visited {
-  text-decoration: underline;
-  color: #333;
+.cookie-consent-banner .link {
+  text-decoration: none;
+  color: #27e;
+}
+.cookie_consent-banner .link:hover {
+  color: #7aadf5;
 }
 .cookie-consent-banner-title {
   margin-bottom: 0.5rem;
@@ -1324,7 +1325,7 @@ body.is-appearing .loader-page-logo {
   gap: 0.5rem;
 }
 @media (min-width: 30em) {
-  .cookie-consent-banner-container.is-wide .cookie-consent-banner-button-list {
+  .cookie-consent-banner.is-wide .cookie-consent-banner-button-list {
     flex-direction: row;
     justify-content: space-between;
   }
@@ -1332,15 +1333,15 @@ body.is-appearing .loader-page-logo {
 .cookie-consent-banner-button {
   border-radius: 0.25rem;
   padding: 0.25rem 1rem;
+  background-color: #105dca;
   text-align: center;
   color: #fff;
   cursor: pointer;
   transition: color 0.25s ease, background-color 0.25s ease;
-  background-color: #0000a6;
 }
 .cookie-consent-banner-button:hover {
+  background-color: #27e;
   color: #fff;
-  background-color: #0000d0;
 }
 .cookie-consent-banner-cookies-settings-button {
   border: 1px solid #b3b3b3;
@@ -1348,11 +1349,11 @@ body.is-appearing .loader-page-logo {
   color: #808080;
 }
 .cookie-consent-banner-cookies-settings-button:hover {
-  color: #808080;
   background-color: #fff;
+  color: #808080;
 }
 .cookie-consent-button {
-  z-index: 1000;
+  z-index: 10000;
   position: fixed;
   bottom: 0.5rem;
   left: 0.5rem;
@@ -1375,7 +1376,7 @@ body.is-appearing .loader-page-logo {
   padding: 0.125rem 0.25rem;
   display: none;
   opacity: 0;
-  background-color: #000053;
+  background-color: #082f65;
   font-size: 0.6rem;
   white-space: nowrap;
   color: #fff;
@@ -1386,7 +1387,7 @@ body.is-appearing .loader-page-logo {
   opacity: 1;
 }
 .cookie-consent-dialog-container {
-  z-index: 1000;
+  z-index: 10000;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -1411,6 +1412,13 @@ body.is-appearing .loader-page-logo {
   font-size: 0.9rem;
   color: #333;
 }
+.cookie-consent-dialog .link {
+  text-decoration: none;
+  color: #27e;
+}
+.cookie_consent-dialog .link:hover {
+  color: #7aadf5;
+}
 .cookie-consent-dialog-header {
   display: flex;
   justify-content: space-between;
@@ -1421,12 +1429,13 @@ body.is-appearing .loader-page-logo {
   width: auto;
 }
 .cookie-consent-dialog-header-title {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
   font-size: 1.1rem;
   font-weight: 500;
   text-align: center;
 }
 .cookie-consent-dialog-header-close-button {
-  margin-left: 1rem;
   height: 1rem;
   width: 1rem;
   background: url("/static/image/cookie_consent/close_icon.svg") no-repeat center center/contain;
@@ -1463,14 +1472,14 @@ body.is-appearing .loader-page-logo {
   border-radius: 0.25rem;
   padding: 0.25rem 1rem;
   display: inline-block;
-  background-color: #0000a6;
+  background-color: #105dca;
   color: #fff;
   cursor: pointer;
   transition: color 0.25s ease, background-color 0.25s ease;
 }
 .cookie-consent-dialog-button:hover {
+  background-color: #27e;
   color: #fff;
-  background-color: #0000d0;
 }
 .cookie-consent-dialog-setting-list {
   display: flex;
@@ -1516,7 +1525,7 @@ body.is-appearing .loader-page-logo {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
   grid-area: value;
-  color: #008000;
+  color: #00a979;
 }
 .cookie-consent-dialog-setting-description {
   border-radius: 0.5rem;
@@ -1564,7 +1573,7 @@ body.is-appearing .loader-page-logo {
   transition: 0.4s;
 }
 .cookie-consent-dialog-setting-input:checked + .cookie-consent-dialog-setting-slider {
-  background-color: #008000;
+  background-color: #00a979;
 }
 .cookie-consent-dialog-setting-input:checked + .cookie-consent-dialog-setting-slider:before {
   transform: translateX(1rem);

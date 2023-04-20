@@ -10,23 +10,25 @@
     CookieConsentTooltipTextColor = WhiteColor;
     CookieConsentPrimaryButtonBackgroundColor = BlueColor400;
     CookieConsentPrimaryButtonTextColor = WhiteColor;
-    CookieConsentPrimaryButtonHoverBackgroundColor = BlueColor;
-    CookieConsentPrimaryButtonHoverTextColor = WhiteColor;
+    CookieConsentPrimaryButtonBackgroundHoverColor = BlueColor;
+    CookieConsentPrimaryButtonTextHoverColor = WhiteColor;
     CookieConsentSecondaryButtonBackgroundColor = GrayColor950;
     CookieConsentSecondaryButtonTextColor = GrayColor;
-    CookieConsentSecondaryButtonHoverBackgroundColor = WhiteColor;
-    CookieConsentSecondaryButtonHoverTextColor = GrayColor;
+    CookieConsentSecondaryButtonBackgroundHoverColor = WhiteColor;
+    CookieConsentSecondaryButtonTextHoverColor = GrayColor;
     CookieConsentSettingActiveColor = GreenColor;
     CookieConsentSettingSliderBackgroundColor = GrayColor700;
     CookieConsentSettingDiscColor = WhiteColor;
     CookieConsentSettingDescriptionBackgroundColor = GrayColor950;
     CookieConsentSettingDescriptionTextColor = GrayColor400;
-    CookieConsentLinkTextColor = GrayColor200;
+    CookieConsentLinkTextColor = LinkColor;
+    CookieConsentLinkTextHoverColor = LinkHoverColor;
+    CookieConsentLinkTextDecoration = none;
     CookieConsentZIndex = 10000;
 
-    .cookie-consent-banner-container
+    .cookie-consent-banner
     {
-        z-index: 1000;
+        z-index: CookieConsentZIndex;
         position: fixed;
         bottom: 0;
         left: 0;
@@ -48,16 +50,20 @@
         color: CookieConsentTextColor;
     }
 
-    .cookie-consent-banner-container.is-wide
+    .cookie-consent-banner.is-wide
     {
         max-width: 30rem;
     }
 
-    .cookie-consent-banner-container a,
-    .cookie-consent-banner-container a:visited
+    .cookie-consent-banner .link
     {
-        text-decoration: underline;
+        text-decoration: CookieConsentLinkTextDecoration;
         color: CookieConsentLinkTextColor;
+    }
+
+    .cookie_consent-banner .link:hover
+    {
+        color: CookieConsentLinkTextHoverColor;
     }
 
     .cookie-consent-banner-title
@@ -88,7 +94,7 @@
         gap: 0.5rem;
     }
 
-    .cookie-consent-banner-container.is-wide .cookie-consent-banner-button-list
+    .cookie-consent-banner.is-wide .cookie-consent-banner-button-list
     {
         +Media( min-width-30em )
         {
@@ -102,19 +108,20 @@
         border-radius: 0.25rem;
         padding: 0.25rem 1rem;
 
+        background-color: CookieConsentPrimaryButtonBackgroundColor;
+
         text-align: center;
         color: CookieConsentPrimaryButtonTextColor;
 
         cursor: pointer;
         transition: color 0.25s ease, background-color 0.25s ease;
-
-        background-color: CookieConsentPrimaryButtonBackgroundColor;
     }
 
     .cookie-consent-banner-button:hover
     {
-        color: CookieConsentPrimaryButtonHoverTextColor;
-        background-color: CookieConsentPrimaryButtonHoverBackgroundColor;
+        background-color: CookieConsentPrimaryButtonBackgroundHoverColor;
+
+        color: CookieConsentPrimaryButtonTextHoverColor;
     }
 
     .cookie-consent-banner-cookies-settings-button
@@ -128,13 +135,14 @@
 
     .cookie-consent-banner-cookies-settings-button:hover
     {
-        color: CookieConsentSecondaryButtonHoverTextColor;
-        background-color: CookieConsentSecondaryButtonHoverBackgroundColor;
+        background-color: CookieConsentSecondaryButtonBackgroundHoverColor;
+
+        color: CookieConsentSecondaryButtonTextHoverColor;
     }
 
     .cookie-consent-button
     {
-        z-index: 1000;
+        z-index: CookieConsentZIndex;
         position: fixed;
         bottom: 0.5rem;
         left: 0.5rem;
@@ -186,7 +194,7 @@
 
     .cookie-consent-dialog-container
     {
-        z-index: 1000;
+        z-index: CookieConsentZIndex;
         position: fixed;
         top: 0;
         bottom: 0;
@@ -219,6 +227,17 @@
         color: CookieConsentTextColor;
     }
 
+    .cookie-consent-dialog .link
+    {
+        text-decoration: CookieConsentLinkTextDecoration;
+        color: CookieConsentLinkTextColor;
+    }
+
+    .cookie_consent-dialog .link:hover
+    {
+        color: CookieConsentLinkTextHoverColor;
+    }
+
     .cookie-consent-dialog-header
     {
         display: flex;
@@ -234,6 +253,9 @@
 
     .cookie-consent-dialog-header-title
     {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+
         font-size: 1.1rem;
         font-weight: 500;
         text-align: center;
@@ -241,7 +263,6 @@
 
     .cookie-consent-dialog-header-close-button
     {
-        margin-left: 1rem;
         height: 1rem;
         width: 1rem;
 
@@ -306,8 +327,9 @@
 
     .cookie-consent-dialog-button:hover
     {
-        color: CookieConsentPrimaryButtonHoverTextColor;
-        background-color: CookieConsentPrimaryButtonHoverBackgroundColor;
+        background-color: CookieConsentPrimaryButtonBackgroundHoverColor;
+
+        color: CookieConsentPrimaryButtonTextHoverColor;
     }
 
     .cookie-consent-dialog-setting-list
@@ -462,7 +484,7 @@
     }
 </style>
 <? if ( .BrowserLocation.IsEurope ) { ?>
-    <div id="cookie-consent-banner-container" class="cookie-consent-banner-container is-hidden">
+    <div id="cookie-consent-banner" class="cookie-consent-banner is-hidden">
         <div class="cookie-consent-banner-text is-small">
             <# .GetProcessedTextBySlug( 'cookie-consent-banner-european-text' ) #>
         </div>
@@ -479,7 +501,7 @@
         </div>
     </div>
 <? } else if ( .BrowserLocation.IsNorthAmerica ) { ?>
-    <div id="cookie-consent-banner-container" class="cookie-consent-banner-container is-wide is-hidden">
+    <div id="cookie-consent-banner" class="cookie-consent-banner is-wide is-hidden">
         <div class="cookie-consent-banner-title">
             <# .GetProcessedTextBySlug( 'cookie-consent-banner-american-title' ) #>
         </div>
@@ -496,7 +518,7 @@
         </div>
     </div>
 <? } else { ?>
-    <div id="cookie-consent-banner-container" class="cookie-consent-banner-container is-hidden">
+    <div id="cookie-consent-banner" class="cookie-consent-banner is-hidden">
         <div class="cookie-consent-banner-text">
             <# .GetProcessedTextBySlug( 'cookie-consent-banner-text' ) #>
         </div>
@@ -514,7 +536,7 @@
     <div class="cookie-consent-button-tooltip">
         <? if ( .BrowserLocation.IsEurope ) { ?>
             <# .GetProcessedTextBySlug( 'cookie-consent-button-european-tooltip' ) #>
-        <? } else { ?>
+        <? } else if ( .BrowserLocation.IsNorthAmerica ) { ?>
             <# .GetProcessedTextBySlug( 'cookie-consent-button-american-tooltip' ) #>
         <? } ?>
     </div>
@@ -610,7 +632,7 @@
                     <# .GetProcessedTextBySlug( 'cookie-consent-dialog-european-confirm-choices-button' ) #>
                 </div>
             </div>
-        <? } else { ?>
+        <? } else if ( .BrowserLocation.IsNorthAmerica ) { ?>
             <div class="cookie-consent-dialog-header">
                 <img class="cookie-consent-dialog-header-image" src="/static/image/cookie_consent/logo.svg"/>
                 <div class="cookie-consent-dialog-header-title">
@@ -668,7 +690,7 @@
     // -- VARIABLES
 
     var
-        CookieConsentBannerContainerElement,
+        CookieConsentBannerElement,
         CookieConsentButtonElement,
         CookieConsentDialogContainerElement,
         CookieConsentDialogAcceptAllCookiesButtonElement,
@@ -839,7 +861,7 @@
     function ShowCookieConsentBanner(
         )
     {
-        CookieConsentBannerContainerElement.RemoveClass( "is-hidden" );
+        CookieConsentBannerElement.RemoveClass( "is-hidden" );
     }
 
     // ~~
@@ -847,7 +869,7 @@
     function HideCookieConsentBanner(
         )
     {
-        CookieConsentBannerContainerElement.AddClass( "is-hidden" );
+        CookieConsentBannerElement.AddClass( "is-hidden" );
     }
 
     // ~~
@@ -858,10 +880,7 @@
         SetCookieConsent( true );
         ApplyCookieConsent();
         HideCookieConsentBanner();
-
-        <? if ( .BrowserLocation.IsEurope || .BrowserLocation.IsNorthAmerica ) { ?>
-            ShowCookieConsentButton();
-        <? } ?>
+        ShowCookieConsentButton();
     }
 
     // ~~
@@ -872,10 +891,7 @@
         SetCookieConsent( false );
         ApplyCookieConsent();
         HideCookieConsentBanner();
-
-        <? if ( .BrowserLocation.IsEurope || .BrowserLocation.IsNorthAmerica ) { ?>
-            ShowCookieConsentButton();
-        <? } ?>
+        ShowCookieConsentButton();
     }
 
     // ~~
@@ -892,7 +908,9 @@
     function ShowCookieConsentButton(
         )
     {
-        CookieConsentButtonElement.RemoveClass( "is-hidden" );
+        <? if ( .BrowserLocation.IsEurope || .BrowserLocation.IsNorthAmerica ) { ?>
+            CookieConsentButtonElement.RemoveClass( "is-hidden" );
+        <? } ?>
     }
 
     // ~~
@@ -966,6 +984,7 @@
     {
         CookieConsentDialogSettingDescriptionElementArray[ 0 ].ToggleClass( 'is-hidden' );
         CookieConsentDialogSettingDescriptionElementArray[ 1 ].AddClass( 'is-hidden' );
+
         <? if ( .BrowserLocation.IsEurope ) { ?>
             CookieConsentDialogSettingDescriptionElementArray[ 2 ].AddClass( 'is-hidden' );
             CookieConsentDialogSettingDescriptionElementArray[ 3 ].AddClass( 'is-hidden' );
@@ -1067,7 +1086,7 @@
 
     // -- STATEMENTS
 
-    CookieConsentBannerContainerElement = GetElementById( "cookie-consent-banner-container" );
+    CookieConsentBannerElement = GetElementById( "cookie-consent-banner" );
     CookieConsentButtonElement = GetElementById( "cookie-consent-button" );
     CookieConsentDialogContainerElement = GetElementById( "cookie-consent-dialog-container" );
     CookieConsentDialogAcceptAllCookiesButtonElement = GetElementById( "cookie-consent-dialog-accept-all-cookies-button" );

@@ -461,8 +461,30 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <?php if ( $this->BrowserLocation->IsEurope ) { ?>
-    <div id="cookie-consent-banner-container" class="cookie-consent-banner-container is-hidden">
+    <div id="cookie-consent-banner" class="cookie-consent-banner is-hidden">
         <div class="cookie-consent-banner-text is-small">
             <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-banner-european-text' ); ?>
         </div>
@@ -479,7 +501,7 @@
         </div>
     </div>
 <?php } else if ( $this->BrowserLocation->IsNorthAmerica ) { ?>
-    <div id="cookie-consent-banner-container" class="cookie-consent-banner-container is-wide is-hidden">
+    <div id="cookie-consent-banner" class="cookie-consent-banner is-wide is-hidden">
         <div class="cookie-consent-banner-title">
             <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-banner-american-title' ); ?>
         </div>
@@ -496,7 +518,7 @@
         </div>
     </div>
 <?php } else { ?>
-    <div id="cookie-consent-banner-container" class="cookie-consent-banner-container is-hidden">
+    <div id="cookie-consent-banner" class="cookie-consent-banner is-hidden">
         <div class="cookie-consent-banner-text">
             <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-banner-text' ); ?>
         </div>
@@ -514,7 +536,7 @@
     <div class="cookie-consent-button-tooltip">
         <?php if ( $this->BrowserLocation->IsEurope ) { ?>
             <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-button-european-tooltip' ); ?>
-        <?php } else { ?>
+        <?php } else if ( $this->BrowserLocation->IsNorthAmerica ) { ?>
             <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-button-american-tooltip' ); ?>
         <?php } ?>
     </div>
@@ -610,7 +632,7 @@
                     <?php echo $this->GetProcessedTextBySlug( 'cookie-consent-dialog-european-confirm-choices-button' ); ?>
                 </div>
             </div>
-        <?php } else { ?>
+        <?php } else if ( $this->BrowserLocation->IsNorthAmerica ) { ?>
             <div class="cookie-consent-dialog-header">
                 <img class="cookie-consent-dialog-header-image" src="/static/image/cookie_consent/logo.svg"/>
                 <div class="cookie-consent-dialog-header-title">
@@ -668,7 +690,7 @@
     // -- VARIABLES
 
     var
-        CookieConsentBannerContainerElement,
+        CookieConsentBannerElement,
         CookieConsentButtonElement,
         CookieConsentDialogContainerElement,
         CookieConsentDialogAcceptAllCookiesButtonElement,
@@ -839,7 +861,7 @@
     function ShowCookieConsentBanner(
         )
     {
-        CookieConsentBannerContainerElement.RemoveClass( "is-hidden" );
+        CookieConsentBannerElement.RemoveClass( "is-hidden" );
     }
 
     // ~~
@@ -847,7 +869,7 @@
     function HideCookieConsentBanner(
         )
     {
-        CookieConsentBannerContainerElement.AddClass( "is-hidden" );
+        CookieConsentBannerElement.AddClass( "is-hidden" );
     }
 
     // ~~
@@ -858,10 +880,7 @@
         SetCookieConsent( true );
         ApplyCookieConsent();
         HideCookieConsentBanner();
-
-        <?php if ( $this->BrowserLocation->IsEurope || $this->BrowserLocation->IsNorthAmerica ) { ?>
-            ShowCookieConsentButton();
-        <?php } ?>
+        ShowCookieConsentButton();
     }
 
     // ~~
@@ -872,10 +891,7 @@
         SetCookieConsent( false );
         ApplyCookieConsent();
         HideCookieConsentBanner();
-
-        <?php if ( $this->BrowserLocation->IsEurope || $this->BrowserLocation->IsNorthAmerica ) { ?>
-            ShowCookieConsentButton();
-        <?php } ?>
+        ShowCookieConsentButton();
     }
 
     // ~~
@@ -892,7 +908,9 @@
     function ShowCookieConsentButton(
         )
     {
-        CookieConsentButtonElement.RemoveClass( "is-hidden" );
+        <?php if ( $this->BrowserLocation->IsEurope || $this->BrowserLocation->IsNorthAmerica ) { ?>
+            CookieConsentButtonElement.RemoveClass( "is-hidden" );
+        <?php } ?>
     }
 
     // ~~
@@ -966,6 +984,7 @@
     {
         CookieConsentDialogSettingDescriptionElementArray[ 0 ].ToggleClass( 'is-hidden' );
         CookieConsentDialogSettingDescriptionElementArray[ 1 ].AddClass( 'is-hidden' );
+
         <?php if ( $this->BrowserLocation->IsEurope ) { ?>
             CookieConsentDialogSettingDescriptionElementArray[ 2 ].AddClass( 'is-hidden' );
             CookieConsentDialogSettingDescriptionElementArray[ 3 ].AddClass( 'is-hidden' );
@@ -1067,7 +1086,7 @@
 
     // -- STATEMENTS
 
-    CookieConsentBannerContainerElement = GetElementById( "cookie-consent-banner-container" );
+    CookieConsentBannerElement = GetElementById( "cookie-consent-banner" );
     CookieConsentButtonElement = GetElementById( "cookie-consent-button" );
     CookieConsentDialogContainerElement = GetElementById( "cookie-consent-dialog-container" );
     CookieConsentDialogAcceptAllCookiesButtonElement = GetElementById( "cookie-consent-dialog-accept-all-cookies-button" );
