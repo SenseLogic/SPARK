@@ -9,6 +9,8 @@
             <?php if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
                 <a class="form-button edit-button" href="/admin/block/edit/<?php echo htmlspecialchars( $this->Block->Id ); ?>">
                 </a>
+            <?php } ?>
+            <?php if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
                 <a class="form-button remove-button" href="/admin/block/remove/<?php echo htmlspecialchars( $this->Block->Id ); ?>">
                 </a>
             <?php } ?>

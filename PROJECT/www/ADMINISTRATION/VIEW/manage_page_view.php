@@ -30,8 +30,12 @@
                         <?php if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
                             <a class="form-button manage-button" href="/admin/block/manage/<?php echo htmlspecialchars( $block->Id ); ?>">
                             </a>
+                        <?php } ?>
+                        <?php if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
                             <a class="form-button edit-button" href="/admin/block/edit/<?php echo htmlspecialchars( $block->Id ); ?>">
                             </a>
+                        <?php } ?>
+                        <?php if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
                             <a class="form-button remove-button" href="/admin/block/remove/<?php echo htmlspecialchars( $block->Id ); ?>">
                             </a>
                             <a class="form-button add-button" href="/admin/block/add?Slug=<?php echo $this->Page->Slug . '-block-' . rand(); ?>&PageId=<?php echo $this->Page->Id; ?>&Number=<?php echo $added_block_number; ?>">

@@ -50,6 +50,8 @@
                         <?php if ( HasSessionMinimumUserRole( 'administrator' ) ) { ?>
                             <a class="form-button edit-button" href="/admin/user/edit/<?php echo htmlspecialchars( $user->Id ); ?>">
                             </a>
+                        <?php } ?>
+                        <?php if ( HasSessionMinimumUserRole( 'administrator' ) ) { ?>
                             <a class="form-button remove-button" href="/admin/user/remove/<?php echo htmlspecialchars( $user->Id ); ?>">
                             </a>
                         <?php } ?>
@@ -88,14 +90,16 @@
                             <dropdown-component class="form-component" result-name="Role" result-value="<?php echo htmlspecialchars( GetValueText( $user->Role ) ); ?>" is-readonly  option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'guest', 'contributor', 'author', 'editor', 'administrator' ] ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'Guest', 'Contributor', 'Author', 'Editor', 'Administrator' ] ) ) ); ?>"></dropdown-component>
                         </div>
                     </div>
-                    <?php if ( HasSessionMinimumUserRole( 'administrator' ) ) { ?>
-                        <div class="form-toolbar">
+                    <div class="form-toolbar">
+                        <?php if ( HasSessionMinimumUserRole( 'administrator' ) ) { ?>
                             <a class="form-button edit-button" href="/admin/user/edit/<?php echo htmlspecialchars( $user->Id ); ?>">
                             </a>
+                        <?php } ?>
+                        <?php if ( HasSessionMinimumUserRole( 'administrator' ) ) { ?>
                             <a class="form-button remove-button" href="/admin/user/remove/<?php echo htmlspecialchars( $user->Id ); ?>">
                             </a>
-                        </div>
-                    <?php } ?>
+                        <?php } ?>
+                    </div>
                 </div>
             </div>
         <?php } ?>

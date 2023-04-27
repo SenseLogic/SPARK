@@ -38,6 +38,8 @@
                         <?php if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
                             <a class="form-button edit-button" href="/admin/block-content/edit/<?php echo htmlspecialchars( $block_content->Id ); ?>">
                             </a>
+                        <?php } ?>
+                        <?php if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
                             <a class="form-button remove-button" href="/admin/block-content/remove/<?php echo htmlspecialchars( $block_content->Id ); ?>">
                             </a>
                         <?php } ?>
@@ -64,14 +66,16 @@
                             <input-component class="form-component" result-name="Name" result-value="<?php echo htmlspecialchars( GetValueText( $block_content->Name ) ); ?>" is-readonly></input-component>
                         </div>
                     </div>
-                    <?php if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
-                        <div class="form-toolbar">
+                    <div class="form-toolbar">
+                        <?php if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
                             <a class="form-button edit-button" href="/admin/block-content/edit/<?php echo htmlspecialchars( $block_content->Id ); ?>">
                             </a>
+                        <?php } ?>
+                        <?php if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
                             <a class="form-button remove-button" href="/admin/block-content/remove/<?php echo htmlspecialchars( $block_content->Id ); ?>">
                             </a>
-                        </div>
-                    <?php } ?>
+                        <?php } ?>
+                    </div>
                 </div>
             </div>
         <?php } ?>

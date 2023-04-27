@@ -68,6 +68,8 @@
                         <?php if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
                             <a class="form-button edit-button" href="/admin/contact/edit/<?php echo htmlspecialchars( $contact->Id ); ?>">
                             </a>
+                        <?php } ?>
+                        <?php if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
                             <a class="form-button remove-button" href="/admin/contact/remove/<?php echo htmlspecialchars( $contact->Id ); ?>">
                             </a>
                         <?php } ?>
@@ -124,14 +126,16 @@
                             <input-component class="form-component" result-name="DateTime" result-value="<?php echo htmlspecialchars( GetValueText( $contact->DateTime ) ); ?>" is-readonly></input-component>
                         </div>
                     </div>
-                    <?php if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
-                        <div class="form-toolbar">
+                    <div class="form-toolbar">
+                        <?php if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
                             <a class="form-button edit-button" href="/admin/contact/edit/<?php echo htmlspecialchars( $contact->Id ); ?>">
                             </a>
+                        <?php } ?>
+                        <?php if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
                             <a class="form-button remove-button" href="/admin/contact/remove/<?php echo htmlspecialchars( $contact->Id ); ?>">
                             </a>
-                        </div>
-                    <?php } ?>
+                        <?php } ?>
+                    </div>
                 </div>
             </div>
         <?php } ?>

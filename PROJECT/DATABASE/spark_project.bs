@@ -1,12 +1,12 @@
 spark-project
 
-    TEXT | dropped
+    TEXT | dropped, has_user_role, user_role author
 
         Id : TUID | key, unique, is_hidden, has_default_expression, default_expression GetRandomTuid()
         Slug : STRING | indexed, is_slug
         Text : STRING = "{{latin 2 4 5 10}}¨fr:{{latin 2 4 5 10}}" | is_multilingual_text
 
-    LANGUAGE | sorted, dropped
+    LANGUAGE | sorted, dropped, has_user_role, user_role author
 
         Id : TUID | key, unique, is_hidden, has_default_expression, default_expression GetRandomTuid()
         Code : STRING | processed
@@ -14,7 +14,7 @@ spark-project
         Text : STRING | is_multilingual
         IsActive : BOOL = "true" | is_enumeration, enumeration "[ 0, 1 ]^[ 'False', 'True' ]", has_default_value, default_value 1
 
-    PAGE_TYPE | sorted, dropped
+    PAGE_TYPE | sorted, dropped, has_user_role, user_role author
 
         Id : TUID | key, unique, is_hidden, has_default_expression, default_expression GetRandomTuid()
         Slug : STRING | is_slug
@@ -42,19 +42,19 @@ spark-project
         MetaSubTitleArray : LIST[ STRING ] = "{}" | optional, is_multilingual_list, has_default_value, default_value "[]"
         MetaSubDescriptionArray : LIST[ STRING ] = "{}" | optional, is_multilingual_text_list, has_default_value, default_value "[]"
 
-    BLOCK_CATEGORY | sorted, dropped
+    BLOCK_CATEGORY | sorted, dropped, has_user_role, user_role author
 
         Id : TUID | key, unique, is_hidden, has_default_expression, default_expression GetRandomTuid()
         Slug : STRING | mapped, is_slug
         Name : STRING = "{{latin 1 1 4 6}}" | ascending
 
-    BLOCK_TYPE | sorted, dropped
+    BLOCK_TYPE | sorted, dropped, has_user_role, user_role author
 
         Id : TUID | key, unique, is_hidden, has_default_expression, default_expression GetRandomTuid()
         Slug : STRING | mapped, is_slug
         Name : STRING = "{{latin 1 1 4 6}}" | ascending
 
-    BLOCK_CONTENT | sorted, dropped
+    BLOCK_CONTENT | sorted, dropped, has_user_role, user_role author
 
         Id : TUID | key, unique, is_hidden, has_default_expression, default_expression GetRandomTuid()
         Slug : STRING | mapped, is_slug
@@ -93,7 +93,7 @@ spark-project
         DocumentPath : STRING = "/static/document/article/logo.pdf|" | optional, is_document
         DocumentPathArray : LIST[ STRING ] = "{}" | optional, is_document_list, has_default_value, default_value "[]"
 
-    CONTACT | sorted
+    CONTACT | sorted, has_user_role, user_role author
 
         Id : TUID | key, unique, is_hidden, has_default_expression, default_expression GetRandomTuid()
         Name : STRING

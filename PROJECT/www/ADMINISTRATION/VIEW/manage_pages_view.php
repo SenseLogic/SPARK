@@ -19,8 +19,12 @@
                 <?php if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
                     <a class="form-button manage-button" href="/admin/page/manage/<?php echo htmlspecialchars( $page->Id ); ?>">
                     </a>
+                <?php } ?>
+                <?php if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
                     <a class="form-button edit-button" href="/admin/page/edit/<?php echo htmlspecialchars( $page->Id ); ?>">
                     </a>
+                <?php } ?>
+                <?php if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
                     <a class="form-button remove-button" href="/admin/page/remove/<?php echo htmlspecialchars( $page->Id ); ?>">
                     </a>
                 <?php } ?>

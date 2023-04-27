@@ -56,6 +56,8 @@
                         <?php if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
                             <a class="form-button edit-button" href="/admin/language/edit/<?php echo htmlspecialchars( $language->Id ); ?>">
                             </a>
+                        <?php } ?>
+                        <?php if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
                             <a class="form-button remove-button" href="/admin/language/remove/<?php echo htmlspecialchars( $language->Id ); ?>">
                             </a>
                         <?php } ?>
@@ -94,14 +96,16 @@
                             <dropdown-component class="form-component" result-name="IsActive" result-value="<?php echo htmlspecialchars( GetValueText( $language->IsActive ) ); ?>" is-readonly  option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 0, 1 ] ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'False', 'True' ] ) ) ); ?>"></dropdown-component>
                         </div>
                     </div>
-                    <?php if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
-                        <div class="form-toolbar">
+                    <div class="form-toolbar">
+                        <?php if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
                             <a class="form-button edit-button" href="/admin/language/edit/<?php echo htmlspecialchars( $language->Id ); ?>">
                             </a>
+                        <?php } ?>
+                        <?php if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
                             <a class="form-button remove-button" href="/admin/language/remove/<?php echo htmlspecialchars( $language->Id ); ?>">
                             </a>
-                        </div>
-                    <?php } ?>
+                        <?php } ?>
+                    </div>
                 </div>
             </div>
         <?php } ?>

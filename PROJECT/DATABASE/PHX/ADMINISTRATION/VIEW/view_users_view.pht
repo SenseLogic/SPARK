@@ -50,6 +50,8 @@
                         <? if ( HasSessionMinimumUserRole( 'administrator' ) ) { ?>
                             <a class="form-button edit-button" href="/admin/user/edit/<% user.Id %>">
                             </a>
+                        <? } ?>
+                        <? if ( HasSessionMinimumUserRole( 'administrator' ) ) { ?>
                             <a class="form-button remove-button" href="/admin/user/remove/<% user.Id %>">
                             </a>
                         <? } ?>
@@ -88,14 +90,16 @@
                             <dropdown-component class="form-component" result-name="Role" result-value="<% GetValueText( user.Role ) %>" is-readonly  option-values="<% GetValueText( GetJsonText( [ 'guest', 'contributor', 'author', 'editor', 'administrator' ] ) ) %>" option-names="<% GetValueText( GetJsonText( [ 'Guest', 'Contributor', 'Author', 'Editor', 'Administrator' ] ) ) %>"></dropdown-component>
                         </div>
                     </div>
-                    <? if ( HasSessionMinimumUserRole( 'administrator' ) ) { ?>
-                        <div class="form-toolbar">
+                    <div class="form-toolbar">
+                        <? if ( HasSessionMinimumUserRole( 'administrator' ) ) { ?>
                             <a class="form-button edit-button" href="/admin/user/edit/<% user.Id %>">
                             </a>
+                        <? } ?>
+                        <? if ( HasSessionMinimumUserRole( 'administrator' ) ) { ?>
                             <a class="form-button remove-button" href="/admin/user/remove/<% user.Id %>">
                             </a>
-                        </div>
-                    <? } ?>
+                        <? } ?>
+                    </div>
                 </div>
             </div>
         <? } ?>
