@@ -20,12 +20,29 @@ class UPLOAD_IMAGE_CONTROLLER extends CONTROLLER
              $source_file_path = GetUploadedFilePath( 'File' );
              $source_file_name = GetValidFileName( GetUploadedFileName( 'File' ));
              $target_file_name = GetSuffixedFilePath( $source_file_name, '_' . GetCurrentDateTimeSuffix() );
+
+            if ( HasSuffix( $target_file_name, '.jpeg' ) )
+            {
+                $target_file_name = ReplaceSuffix( $target_file_name, '.jpeg', '.jpg' );
+            }
+            else if ( HasSuffix( $target_file_name, '.JPEG' ) )
+            {
+                $target_file_name = ReplaceSuffix( $target_file_name, '.JPEG', '.jpg' );
+            }
+            else if ( HasSuffix( $target_file_name, '.JPG' ) )
+            {
+                $target_file_name = ReplaceSuffix( $target_file_name, '.JPG', '.jpg' );
+            }
+            else if ( HasSuffix( $target_file_name, '.PNG' ) )
+            {
+                $target_file_name = ReplaceSuffix( $target_file_name, '.PNG', '.png' );
+            }
+
              $target_file_path = GetBaseFolderName() . '/upload/image/' . $target_file_name;
 
             if ( MoveUploadedFile( $source_file_path, $target_file_path ) )
             {
-                if ( HasSuffix( $target_file_path, '.jpg' )
-                     || HasSuffix( $target_file_path, '.jpeg' ) )
+                if ( HasSuffix( $target_file_path, '.jpg' ) )
                 {
                      $image = ReadJpegImage( $target_file_path );
 
@@ -44,6 +61,54 @@ class UPLOAD_IMAGE_CONTROLLER extends CONTROLLER
                      $preload_image = CreateLimitedImage( $image, 147456 );
                     WriteJpegImage( $preload_image, $target_file_path . ".preload.jpg", 50 );
                     ReleaseImage( $preload_image );
+
+                    ReleaseImage( $image );
+                }
+                else if ( HasSuffix( $target_file_path, '.png' ) )
+                {
+                     $image = ReadPngImage( $target_file_path );
+
+                    if ( IsOpaqueImage( $image ) )
+                    {
+                         $target_file_name = ReplaceSuffix( $target_file_name, '.png', '.jpg' );
+                         $target_file_path = ReplaceSuffix( $target_file_path, '.png', '.jpg' );
+
+                         $default_image = CreateLimitedImage( $image, 2073600 );
+                        WriteJpegImage( $default_image, $target_file_path, 70 );
+                        ReleaseImage( $default_image );
+
+                         $medium_image = CreateLimitedImage( $image, 921600 );
+                        WriteJpegImage( $medium_image, $target_file_path . ".medium.jpg", 70 );
+                        ReleaseImage( $medium_image );
+
+                         $small_image = CreateLimitedImage( $image, 230400 );
+                        WriteJpegImage( $small_image, $target_file_path . ".small.jpg", 70 );
+                        ReleaseImage( $small_image );
+
+                         $preload_image = CreateLimitedImage( $image, 147456 );
+                        WriteJpegImage( $preload_image, $target_file_path . ".preload.jpg", 50 );
+                        ReleaseImage( $preload_image );
+                    }
+                    else
+                    {
+                        EnableImageTransparency( $image );
+
+                         $default_image = CreateLimitedImage( $image, 2073600, true );
+                        WritePngImage( $default_image, $target_file_path );
+                        ReleaseImage( $default_image );
+
+                         $medium_image = CreateLimitedImage( $image, 921600, true );
+                        WritePngImage( $medium_image, $target_file_path . ".medium.png" );
+                        ReleaseImage( $medium_image );
+
+                         $small_image = CreateLimitedImage( $image, 230400, true );
+                        WritePngImage( $small_image, $target_file_path . ".small.png" );
+                        ReleaseImage( $small_image );
+
+                         $preload_image = CreateLimitedImage( $image, 147456, true );
+                        WritePngImage( $preload_image, $target_file_path . ".preload.png" );
+                        ReleaseImage( $preload_image );
+                    }
 
                     ReleaseImage( $image );
                 }

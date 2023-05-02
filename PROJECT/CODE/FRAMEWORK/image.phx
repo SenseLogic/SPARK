@@ -1,22 +1,77 @@
 // -- FUNCTIONS
 
-function CreateImage(
-    int width,
-    int height
+function IsOpaqueImage(
+    image
     )
 {
-    return imagecreatetruecolor( width, height );
+    var width = imagesx( image );
+    var height = imagesy( image );
+
+    for ( var x = 0; x < width; ++x )
+    {
+        for ( var y = 0; y < height; ++y )
+        {
+            var color = imagecolorat( image, x, y );
+            var transparency = ( color >> 24 ) & 0x7F;
+
+            if ( transparency !== 0 )
+            {
+                return false;
+            }
+        }
+    }
+
+    return true;
+}
+
+// ~~
+
+function EnableImageTransparency(
+    image
+    )
+{
+    imagealphablending( image, false );
+    imagesavealpha( image, true );
+}
+
+// ~~
+
+function DisableImageTransparency(
+    image
+    )
+{
+    imagealphablending( image, true );
+    imagesavealpha( image, false );
+}
+
+// ~~
+
+function CreateImage(
+    int width,
+    int height,
+    bool image_has_alpha = false
+    )
+{
+    var image = imagecreatetruecolor( width, height );
+
+    if ( image_has_alpha )
+    {
+        EnableImageTransparency( image );
+    }
+
+    return image;
 }
 
 // ~~
 
 function CreateCopiedImage(
-    image
+    image,
+    bool image_has_alpha = false
     )
 {
-    var width = imageSX( image );
-    var height = imageSY( image );
-    var new_image = imagecreatetruecolor( width, height );
+    var width = imagesx( image );
+    var height = imagesy( image );
+    var new_image = CreateImage( width, height, image_has_alpha );
 
     imagecopyresampled(
         new_image,
@@ -39,12 +94,13 @@ function CreateCopiedImage(
 function CreateResizedImage(
     image,
     int new_width,
-    int new_height
+    int new_height,
+    bool image_has_alpha = false
     )
 {
-    var old_width = imageSX( image );
-    var old_height = imageSY( image );
-    var new_image = imagecreatetruecolor( new_width, new_height );
+    var old_width = imagesx( image );
+    var old_height = imagesy( image );
+    var new_image = CreateImage( new_width, new_height, image_has_alpha );
 
     imagecopyresampled(
         new_image,
@@ -69,11 +125,12 @@ function CreateConstrainedImage(
     int minimum_width = 0,
     int maximum_width = 32768,
     int minimum_height = 0,
-    int maximum_height = 32768
+    int maximum_height = 32768,
+    bool image_has_alpha = false
     )
 {
-    var old_width = imageSX( image );
-    var old_height = imageSY( image );
+    var old_width = imagesx( image );
+    var old_height = imagesy( image );
 
     if ( old_width > 0
          && old_height > 0 )
@@ -103,7 +160,7 @@ function CreateConstrainedImage(
             new_width = GetInteger( old_width * new_height / old_height );
         }
 
-        var new_image = imagecreatetruecolor( new_width, new_height );
+        var new_image = CreateImage( new_width, new_height, image_has_alpha );
 
         imagecopyresampled(
             new_image,
@@ -122,7 +179,7 @@ function CreateConstrainedImage(
     }
     else
     {
-        return imagecreatetruecolor( 0, 0 );
+        return CreateImage( 0, 0, image_has_alpha );
     }
 }
 
@@ -130,11 +187,12 @@ function CreateConstrainedImage(
 
 function CreateLimitedImage(
     image,
-    int maximum_pixel_count
+    int maximum_pixel_count,
+    bool image_has_alpha = false
     )
 {
-    var old_width = imageSX( image );
-    var old_height = imageSY( image );
+    var old_width = imagesx( image );
+    var old_height = imagesy( image );
 
     if ( old_width > 0
          && old_height > 0 )
@@ -171,7 +229,7 @@ function CreateLimitedImage(
             new_height = 1;
         }
 
-        var new_image = imagecreatetruecolor( new_width, new_height );
+        var new_image = CreateImage( new_width, new_height, image_has_alpha );
 
         imagecopyresampled(
             new_image,
@@ -190,7 +248,7 @@ function CreateLimitedImage(
     }
     else
     {
-        return imagecreatetruecolor( 0, 0 );
+        return CreateImage( 0, 0, image_has_alpha );
     }
 }
 
@@ -850,10 +908,18 @@ function WriteJpegImage(
 // ~~
 
 function ReadPngImage(
-    string image_url
+    string image_url,
+    bool image_has_alpha = false
     )
 {
-    return imagecreatefrompng( image_url );
+    var image = imagecreatefrompng( image_url );
+
+    if ( image_has_alpha )
+    {
+        EnableImageTransparency( image );
+    }
+
+    return image;
 }
 
 // ~~
