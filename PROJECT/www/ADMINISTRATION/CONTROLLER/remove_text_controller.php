@@ -16,7 +16,7 @@ class REMOVE_TEXT_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-        if ( HasSessionMinimumUserRole( 'author' ) )
+        if ( HasSessionMinimumUserRole( 'editor' ) )
         {
             $this->Title = 'Remove a text';
             $this->Text = GetDatabaseTextById( $text_id );

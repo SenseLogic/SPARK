@@ -15,7 +15,7 @@ class ADD_PAGE_TYPE_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-        if ( HasSessionMinimumUserRole( 'author' ) )
+        if ( HasSessionMinimumUserRole( 'editor' ) )
         {
             $this->Title = 'Add a page type';
 

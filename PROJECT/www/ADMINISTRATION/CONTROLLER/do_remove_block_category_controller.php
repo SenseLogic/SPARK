@@ -16,7 +16,7 @@ class DO_REMOVE_BLOCK_CATEGORY_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-        if ( HasSessionMinimumUserRole( 'author' ) )
+        if ( HasSessionMinimumUserRole( 'editor' ) )
         {
             RemoveDatabaseBlockCategoryById( $block_category_id );
 

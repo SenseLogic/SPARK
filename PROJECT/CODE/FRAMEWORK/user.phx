@@ -1,6 +1,6 @@
 // -- VARIABLES
 
-var UserRoleArray = [ 'guest', 'contributor', 'author', 'editor', 'administrator' ];
+var UserRoleArray = [ 'guest', 'assistant', 'contributor', 'writer', 'author', 'editor', 'publisher', 'supervisor', 'manager', 'director', 'administrator' ];
 
 // -- FUNCTIONS
 

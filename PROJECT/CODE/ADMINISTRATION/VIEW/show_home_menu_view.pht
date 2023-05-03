@@ -5,21 +5,21 @@
 </div>
 <div class="form-centered">
     <div class="margin-top-2rem">
-        <? if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
+        <? if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
             <div class="tree-container">
                 <a class="tree-button" href="/admin/text">
                     <% GetTextBySlug( 'Texts' ) %>
                 </a>
             </div>
         <? } ?>
-        <? if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
+        <? if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
             <div class="tree-container">
                 <a class="tree-button" href="/admin/language">
                     <% GetTextBySlug( 'Languages' ) %>
                 </a>
             </div>
         <? } ?>
-        <? if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
+        <? if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
             <div class="tree-container">
                 <a class="tree-button" href="/admin/page-type">
                     <% GetTextBySlug( 'Page types' ) %>
@@ -38,21 +38,21 @@
                 </a>
             </div>
         <? } ?>
-        <? if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
+        <? if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
             <div class="tree-container">
                 <a class="tree-button" href="/admin/block-category">
                     <% GetTextBySlug( 'Block categories' ) %>
                 </a>
             </div>
         <? } ?>
-        <? if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
+        <? if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
             <div class="tree-container">
                 <a class="tree-button" href="/admin/block-type">
                     <% GetTextBySlug( 'Block types' ) %>
                 </a>
             </div>
         <? } ?>
-        <? if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
+        <? if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
             <div class="tree-container">
                 <a class="tree-button" href="/admin/block-content">
                     <% GetTextBySlug( 'Block contents' ) %>
@@ -71,7 +71,7 @@
                 </a>
             </div>
         <? } ?>
-        <? if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
+        <? if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
             <div class="tree-container">
                 <a class="tree-button" href="/admin/contact">
                     <% GetTextBySlug( 'Contacts' ) %>

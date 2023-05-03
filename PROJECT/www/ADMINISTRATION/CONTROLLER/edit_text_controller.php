@@ -16,7 +16,7 @@ class EDIT_TEXT_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-        if ( HasSessionMinimumUserRole( 'author' ) )
+        if ( HasSessionMinimumUserRole( 'contributor' ) )
         {
             $this->Title = 'Edit a text';
             $this->Text = GetDatabaseTextById( $text_id );

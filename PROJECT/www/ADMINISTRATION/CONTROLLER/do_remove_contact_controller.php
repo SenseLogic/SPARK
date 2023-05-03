@@ -16,7 +16,7 @@ class DO_REMOVE_CONTACT_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-        if ( HasSessionMinimumUserRole( 'author' ) )
+        if ( HasSessionMinimumUserRole( 'editor' ) )
         {
             RemoveDatabaseContactById( $contact_id );
 

@@ -16,7 +16,7 @@ class VIEW_TEXT_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        if ( HasSessionMinimumUserRole( 'author' ) )
+        if ( HasSessionMinimumUserRole( 'contributor' ) )
         {
             .Title = 'View a text';
             .Text = GetDatabaseTextById( text_id );

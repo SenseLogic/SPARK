@@ -16,7 +16,7 @@ class REMOVE_BLOCK_CONTENT_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-        if ( HasSessionMinimumUserRole( 'author' ) )
+        if ( HasSessionMinimumUserRole( 'editor' ) )
         {
             $this->Title = 'Remove a block content';
             $this->BlockContent = GetDatabaseBlockContentById( $block_content_id );

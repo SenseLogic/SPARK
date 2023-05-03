@@ -16,7 +16,7 @@ class EDIT_CONTACT_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-        if ( HasSessionMinimumUserRole( 'author' ) )
+        if ( HasSessionMinimumUserRole( 'contributor' ) )
         {
             $this->Title = 'Edit a contact';
             $this->Contact = GetDatabaseContactById( $contact_id );

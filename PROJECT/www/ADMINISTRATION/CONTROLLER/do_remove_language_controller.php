@@ -16,7 +16,7 @@ class DO_REMOVE_LANGUAGE_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-        if ( HasSessionMinimumUserRole( 'author' ) )
+        if ( HasSessionMinimumUserRole( 'editor' ) )
         {
             RemoveDatabaseLanguageById( $language_id );
 

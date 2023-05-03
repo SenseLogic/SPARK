@@ -16,7 +16,7 @@ class DO_REMOVE_BLOCK_TYPE_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-        if ( HasSessionMinimumUserRole( 'author' ) )
+        if ( HasSessionMinimumUserRole( 'editor' ) )
         {
             RemoveDatabaseBlockTypeById( $block_type_id );
 

@@ -7,7 +7,7 @@
             <? include 'BLOCK/filter.php'; ?>
             <? var list_mode_name = "BlockContentListMode"; ?>
             <? include 'BLOCK/list_mode.php'; ?>
-            <? if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
+            <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
                 <a class="form-button form-button-large add-button" href="/admin/block-content/add">
                 </a>
             <? } ?>
@@ -35,11 +35,11 @@
                     <div class="form-centered sortable-table-cell">
                         <a class="form-button view-button" href="/admin/block-content/view/<% block_content.Id %>">
                         </a>
-                        <? if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
+                        <? if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
                             <a class="form-button edit-button" href="/admin/block-content/edit/<% block_content.Id %>">
                             </a>
                         <? } ?>
-                        <? if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
+                        <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
                             <a class="form-button remove-button" href="/admin/block-content/remove/<% block_content.Id %>">
                             </a>
                         <? } ?>
@@ -67,11 +67,11 @@
                         </div>
                     </div>
                     <div class="form-toolbar">
-                        <? if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
+                        <? if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
                             <a class="form-button edit-button" href="/admin/block-content/edit/<% block_content.Id %>">
                             </a>
                         <? } ?>
-                        <? if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
+                        <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
                             <a class="form-button remove-button" href="/admin/block-content/remove/<% block_content.Id %>">
                             </a>
                         <? } ?>

@@ -16,7 +16,7 @@ class DO_REMOVE_BLOCK_CONTENT_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-        if ( HasSessionMinimumUserRole( 'author' ) )
+        if ( HasSessionMinimumUserRole( 'editor' ) )
         {
             RemoveDatabaseBlockContentById( $block_content_id );
 

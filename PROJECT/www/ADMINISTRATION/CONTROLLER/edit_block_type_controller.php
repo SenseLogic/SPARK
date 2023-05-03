@@ -16,7 +16,7 @@ class EDIT_BLOCK_TYPE_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-        if ( HasSessionMinimumUserRole( 'author' ) )
+        if ( HasSessionMinimumUserRole( 'contributor' ) )
         {
             $this->Title = 'Edit a block type';
             $this->BlockType = GetDatabaseBlockTypeById( $block_type_id );

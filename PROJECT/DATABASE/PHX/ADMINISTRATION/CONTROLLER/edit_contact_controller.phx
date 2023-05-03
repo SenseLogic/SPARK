@@ -16,7 +16,7 @@ class EDIT_CONTACT_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        if ( HasSessionMinimumUserRole( 'author' ) )
+        if ( HasSessionMinimumUserRole( 'contributor' ) )
         {
             .Title = 'Edit a contact';
             .Contact = GetDatabaseContactById( contact_id );

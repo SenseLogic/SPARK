@@ -16,7 +16,7 @@ class DO_EDIT_BLOCK_TYPE_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-        if ( HasSessionMinimumUserRole( 'author' ) )
+        if ( HasSessionMinimumUserRole( 'contributor' ) )
         {
              $slug = GetPostValue( 'Slug' );
              $name = GetPostValue( 'Name' );

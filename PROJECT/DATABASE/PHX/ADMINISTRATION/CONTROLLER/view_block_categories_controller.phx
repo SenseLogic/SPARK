@@ -15,7 +15,7 @@ class VIEW_BLOCK_CATEGORIES_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        if ( HasSessionMinimumUserRole( 'author' ) )
+        if ( HasSessionMinimumUserRole( 'contributor' ) )
         {
             .Title = 'View block categories';
             .BlockCategoryArray = GetDatabaseBlockCategoryArray();

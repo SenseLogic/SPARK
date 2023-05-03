@@ -16,7 +16,7 @@ class VIEW_BLOCK_CATEGORY_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-        if ( HasSessionMinimumUserRole( 'author' ) )
+        if ( HasSessionMinimumUserRole( 'contributor' ) )
         {
             $this->Title = 'View a block category';
             $this->BlockCategory = GetDatabaseBlockCategoryById( $block_category_id );

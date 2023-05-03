@@ -16,7 +16,7 @@ class DO_EDIT_LANGUAGE_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        if ( HasSessionMinimumUserRole( 'author' ) )
+        if ( HasSessionMinimumUserRole( 'contributor' ) )
         {
             var code = GetPostValue( 'Code' );
             var number = GetPostValue( 'Number' );

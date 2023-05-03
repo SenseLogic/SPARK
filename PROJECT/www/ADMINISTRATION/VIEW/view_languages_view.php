@@ -7,7 +7,7 @@
             <?php require __DIR__ . '/' . 'BLOCK/filter.php'; ?>
             <?php  $list_mode_name = "LanguageListMode"; ?>
             <?php require __DIR__ . '/' . 'BLOCK/list_mode.php'; ?>
-            <?php if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
+            <?php if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
                 <a class="form-button form-button-large add-button" href="/admin/language/add">
                 </a>
             <?php } ?>
@@ -53,11 +53,11 @@
                     <div class="form-centered sortable-table-cell">
                         <a class="form-button view-button" href="/admin/language/view/<?php echo htmlspecialchars( $language->Id ); ?>">
                         </a>
-                        <?php if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
+                        <?php if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
                             <a class="form-button edit-button" href="/admin/language/edit/<?php echo htmlspecialchars( $language->Id ); ?>">
                             </a>
                         <?php } ?>
-                        <?php if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
+                        <?php if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
                             <a class="form-button remove-button" href="/admin/language/remove/<?php echo htmlspecialchars( $language->Id ); ?>">
                             </a>
                         <?php } ?>
@@ -97,11 +97,11 @@
                         </div>
                     </div>
                     <div class="form-toolbar">
-                        <?php if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
+                        <?php if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
                             <a class="form-button edit-button" href="/admin/language/edit/<?php echo htmlspecialchars( $language->Id ); ?>">
                             </a>
                         <?php } ?>
-                        <?php if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
+                        <?php if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
                             <a class="form-button remove-button" href="/admin/language/remove/<?php echo htmlspecialchars( $language->Id ); ?>">
                             </a>
                         <?php } ?>

@@ -16,7 +16,7 @@ class ADD_{#type#}_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        if ( HasSessionMinimumUserRole( '<~{#has_user_role#}<>{#user_role#}<>editor~>' ) )
+        if ( HasSessionMinimumUserRole( '<~{#has_user_role#}<>{#add_user_role#}<>editor~>' ) )
         {
             .Title = 'Add a {#locution#}';
 
@@ -48,7 +48,7 @@ class DO_ADD_{#type#}_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        if ( HasSessionMinimumUserRole( '<~{#has_user_role#}<>{#user_role#}<>editor~>' ) )
+        if ( HasSessionMinimumUserRole( '<~{#has_user_role#}<>{#add_user_role#}<>editor~>' ) )
         {<%¨<~{%is_scalar%}<>
             var {%variable%} = GetPostValue( '{%attribute%}' );<>
             var {%variable%} = GetJsonObject( GetPostValue( '{%attribute%}' ) );~>¨%>
@@ -82,7 +82,7 @@ class EDIT_{#type#}_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        if ( HasSessionMinimumUserRole( '<~{#has_user_role#}<>{#user_role#}<>author~>' ) )
+        if ( HasSessionMinimumUserRole( '<~{#has_user_role#}<>{#edit_user_role#}<>author~>' ) )
         {
             .Title = 'Edit a {#locution#}';
             .{#attribute#} = GetDatabase{#attribute#}By{#key_attribute#}( {#variable#}_{#key_variable#} );
@@ -116,7 +116,7 @@ class DO_EDIT_{#type#}_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        if ( HasSessionMinimumUserRole( '<~{#has_user_role#}<>{#user_role#}<>author~>' ) )
+        if ( HasSessionMinimumUserRole( '<~{#has_user_role#}<>{#edit_user_role#}<>author~>' ) )
         {<$<~{%is_scalar%}<>
             var {%variable%} = GetPostValue( '{%attribute%}' );<>
             var {%variable%} = GetJsonObject( GetPostValue( '{%attribute%}' ) );~>$>
@@ -150,7 +150,7 @@ class REMOVE_{#type#}_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        if ( HasSessionMinimumUserRole( '<~{#has_user_role#}<>{#user_role#}<>editor~>' ) )
+        if ( HasSessionMinimumUserRole( '<~{#has_user_role#}<>{#remove_user_role#}<>editor~>' ) )
         {
             .Title = 'Remove a {#locution#}';
             .{#attribute#} = GetDatabase{#attribute#}By{#key_attribute#}( {#variable#}_{#key_variable#} );
@@ -184,7 +184,7 @@ class DO_REMOVE_{#type#}_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        if ( HasSessionMinimumUserRole( '<~{#has_user_role#}<>{#user_role#}<>editor~>' ) )
+        if ( HasSessionMinimumUserRole( '<~{#has_user_role#}<>{#remove_user_role#}<>editor~>' ) )
         {
             RemoveDatabase{#attribute#}By{#key_attribute#}( {#variable#}_{#key_variable#} );
 
@@ -215,7 +215,7 @@ class VIEW_{#type#}_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        if ( HasSessionMinimumUserRole( '<~{#has_user_role#}<>{#user_role#}<>contributor~>' ) )
+        if ( HasSessionMinimumUserRole( '<~{#has_user_role#}<>{#view_user_role#}<>contributor~>' ) )
         {
             .Title = 'View a {#locution#}';
             .{#attribute#} = GetDatabase{#attribute#}By{#key_attribute#}( {#variable#}_{#key_variable#} );
@@ -248,7 +248,7 @@ class VIEW_<~Plural<>{#type#}~>_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        if ( HasSessionMinimumUserRole( '<~{#has_user_role#}<>{#user_role#}<>contributor~>' ) )
+        if ( HasSessionMinimumUserRole( '<~{#has_user_role#}<>{#view_user_role#}<>contributor~>' ) )
         {
             .Title = 'View <~Plural<>{#locution#}~>';
             .{#attribute#}Array = GetDatabase{#attribute#}Array();
@@ -608,7 +608,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
             <? include 'BLOCK/filter.php'; ?>
             <? var list_mode_name = "{#attribute#}ListMode"; ?>
             <? include 'BLOCK/list_mode.php'; ?>
-            <? if ( HasSessionMinimumUserRole( '<~{#has_user_role#}<>{#user_role#}<>editor~>' ) ) { ?>
+            <? if ( HasSessionMinimumUserRole( '<~{#has_user_role#}<>{#add_user_role#}<>editor~>' ) ) { ?>
                 <a class="form-button form-button-large add-button" href="/admin/{#style#}/add">
                 </a>
             <? } ?>
@@ -650,11 +650,11 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                     <div class="form-centered sortable-table-cell">
                         <a class="form-button view-button" href="/admin/{#style#}/view/<\% {#variable#}.{#key_attribute#} %\>">
                         </a>
-                        <? if ( HasSessionMinimumUserRole( '<~{#has_user_role#}<>{#user_role#}<>author~>' ) ) { ?>
+                        <? if ( HasSessionMinimumUserRole( '<~{#has_user_role#}<>{#edit_user_role#}<>author~>' ) ) { ?>
                             <a class="form-button edit-button" href="/admin/{#style#}/edit/<\% {#variable#}.{#key_attribute#} %\>">
                             </a>
                         <? } ?>
-                        <? if ( HasSessionMinimumUserRole( '<~{#has_user_role#}<>{#user_role#}<>editor~>' ) ) { ?>
+                        <? if ( HasSessionMinimumUserRole( '<~{#has_user_role#}<>{#remove_user_role#}<>editor~>' ) ) { ?>
                             <a class="form-button remove-button" href="/admin/{#style#}/remove/<\% {#variable#}.{#key_attribute#} %\>">
                             </a>
                         <? } ?>
@@ -698,11 +698,11 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                         </div>~>$>
                     </div>
                     <div class="form-toolbar">
-                        <? if ( HasSessionMinimumUserRole( '<~{#has_user_role#}<>{#user_role#}<>author~>' ) ) { ?>
+                        <? if ( HasSessionMinimumUserRole( '<~{#has_user_role#}<>{#edit_user_role#}<>author~>' ) ) { ?>
                             <a class="form-button edit-button" href="/admin/{#style#}/edit/<\% {#variable#}.{#key_attribute#} %\>">
                             </a>
                         <? } ?>
-                        <? if ( HasSessionMinimumUserRole( '<~{#has_user_role#}<>{#user_role#}<>editor~>' ) ) { ?>
+                        <? if ( HasSessionMinimumUserRole( '<~{#has_user_role#}<>{#remove_user_role#}<>editor~>' ) ) { ?>
                             <a class="form-button remove-button" href="/admin/{#style#}/remove/<\% {#variable#}.{#key_attribute#} %\>">
                             </a>
                         <? } ?>
@@ -733,7 +733,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                 <a class="margin-right-auto page-menu-button" href="/admin">
                     <% GetTextBySlug( 'Home' ) %>
                 </a><#
-                <? if ( HasSessionMinimumUserRole( '<~{#has_user_role#}<>{#user_role#}<>contributor~>' ) ) { ?>
+                <? if ( HasSessionMinimumUserRole( '<~{#has_user_role#}<>{#view_user_role#}<>contributor~>' ) ) { ?>
                     <~{#is_managed#}<><a class="page-menu-button" href="/admin/{#style#}/manage">
                         <\% GetTextBySlug( '{#sentence#} manager' ) %\>
                     </a>
@@ -767,7 +767,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
 </div>
 <div class="form-centered">
     <div class="margin-top-2rem"><#
-        <? if ( HasSessionMinimumUserRole( '<~{#has_user_role#}<>{#user_role#}<>contributor~>' ) ) { ?>
+        <? if ( HasSessionMinimumUserRole( '<~{#has_user_role#}<>{#view_user_role#}<>contributor~>' ) ) { ?>
             <~{#is_managed#}<><div class="tree-container">
                 <a class="tree-button" href="/admin/{#style#}/manage">
                     <\% GetTextBySlug( '{#sentence#} manager' ) %\>

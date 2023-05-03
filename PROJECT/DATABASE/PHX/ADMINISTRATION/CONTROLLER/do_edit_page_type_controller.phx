@@ -16,7 +16,7 @@ class DO_EDIT_PAGE_TYPE_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        if ( HasSessionMinimumUserRole( 'author' ) )
+        if ( HasSessionMinimumUserRole( 'contributor' ) )
         {
             var slug = GetPostValue( 'Slug' );
             var name = GetPostValue( 'Name' );

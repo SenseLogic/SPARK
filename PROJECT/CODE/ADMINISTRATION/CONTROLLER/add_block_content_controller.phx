@@ -15,7 +15,7 @@ class ADD_BLOCK_CONTENT_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        if ( HasSessionMinimumUserRole( 'author' ) )
+        if ( HasSessionMinimumUserRole( 'editor' ) )
         {
             .Title = 'Add a block content';
 
