@@ -15,11 +15,14 @@ class MANAGE_PAGES_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct();
 
-        $this->Title = 'Manage pages';
+        if ( HasSessionMinimumUserRole( 'contributor' ) )
+        {
+            $this->Title = 'Manage pages';
 
-        AddParentRoute();
+            AddParentRoute();
 
-        require_once __DIR__ . '/' . '../VIEW/manage_pages_view.php';
+            require_once __DIR__ . '/' . '../VIEW/manage_pages_view.php';
+        }
     }
 }
 

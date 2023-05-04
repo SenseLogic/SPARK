@@ -15,7 +15,7 @@ class VIEW_PAGE_TYPES_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        if ( HasSessionMinimumUserRole( 'contributor' ) )
+        if ( HasSessionMinimumUserRole( 'author' ) )
         {
             .Title = 'View page types';
             .PageTypeArray = GetDatabasePageTypeArray();

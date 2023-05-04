@@ -7,7 +7,7 @@
             <? include 'BLOCK/filter.php'; ?>
             <? var list_mode_name = "ContactListMode"; ?>
             <? include 'BLOCK/list_mode.php'; ?>
-            <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+            <? if ( HasSessionMinimumUserRole( 'publisher' ) ) { ?>
                 <a class="form-button form-button-large add-button" href="/admin/contact/add">
                 </a>
             <? } ?>
@@ -65,11 +65,11 @@
                     <div class="form-centered sortable-table-cell">
                         <a class="form-button view-button" href="/admin/contact/view/<% contact.Id %>">
                         </a>
-                        <? if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
+                        <? if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
                             <a class="form-button edit-button" href="/admin/contact/edit/<% contact.Id %>">
                             </a>
                         <? } ?>
-                        <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                        <? if ( HasSessionMinimumUserRole( 'publisher' ) ) { ?>
                             <a class="form-button remove-button" href="/admin/contact/remove/<% contact.Id %>">
                             </a>
                         <? } ?>
@@ -127,11 +127,11 @@
                         </div>
                     </div>
                     <div class="form-toolbar">
-                        <? if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
+                        <? if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
                             <a class="form-button edit-button" href="/admin/contact/edit/<% contact.Id %>">
                             </a>
                         <? } ?>
-                        <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                        <? if ( HasSessionMinimumUserRole( 'publisher' ) ) { ?>
                             <a class="form-button remove-button" href="/admin/contact/remove/<% contact.Id %>">
                             </a>
                         <? } ?>

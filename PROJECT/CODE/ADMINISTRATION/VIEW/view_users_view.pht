@@ -87,7 +87,7 @@
                             <% GetTextBySlug( 'Role' ) %> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="Role">
-                            <dropdown-component class="form-component" result-name="Role" result-value="<% GetValueText( user.Role ) %>" is-readonly  option-values="<% GetValueText( GetJsonText( [ 'guest', 'contributor', 'author', 'editor', 'administrator' ] ) ) %>" option-names="<% GetValueText( GetJsonText( [ 'Guest', 'Contributor', 'Author', 'Editor', 'Administrator' ] ) ) %>"></dropdown-component>
+                            <dropdown-component class="form-component" result-name="Role" result-value="<% GetValueText( user.Role ) %>" is-readonly  option-values="<% GetValueText( GetJsonText( [ 'guest', 'contributor', 'author', 'publisher', 'administrator' ] ) ) %>" option-names="<% GetValueText( GetJsonText( [ 'Guest', 'Contributor', 'Author', 'Editor', 'Administrator' ] ) ) %>"></dropdown-component>
                         </div>
                     </div>
                     <div class="form-toolbar">

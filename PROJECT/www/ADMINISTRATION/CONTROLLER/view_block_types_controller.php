@@ -15,7 +15,7 @@ class VIEW_BLOCK_TYPES_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-        if ( HasSessionMinimumUserRole( 'contributor' ) )
+        if ( HasSessionMinimumUserRole( 'author' ) )
         {
             $this->Title = 'View block types';
             $this->BlockTypeArray = GetDatabaseBlockTypeArray();

@@ -15,7 +15,7 @@ class DO_ADD_TEXT_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-        if ( HasSessionMinimumUserRole( 'editor' ) )
+        if ( HasSessionMinimumUserRole( 'publisher' ) )
         {
              $id = GetPostValue( 'Id' );
              $slug = GetPostValue( 'Slug' );

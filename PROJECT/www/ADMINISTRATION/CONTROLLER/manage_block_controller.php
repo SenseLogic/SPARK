@@ -15,12 +15,15 @@ class MANAGE_BLOCK_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct();
 
-        $this->Title = 'Manage a block';
-        $this->Block = GetValidBlockById( $this->BlockByIdMap, $block_id );
+        if ( HasSessionMinimumUserRole( 'contributor' ) )
+        {
+            $this->Title = 'Manage a block';
+            $this->Block = GetValidBlockById( $this->BlockByIdMap, $block_id );
 
-        AddParentRoute();
+            AddParentRoute();
 
-        require_once __DIR__ . '/' . '../VIEW/manage_block_view.php';
+            require_once __DIR__ . '/' . '../VIEW/manage_block_view.php';
+        }
     }
 }
 

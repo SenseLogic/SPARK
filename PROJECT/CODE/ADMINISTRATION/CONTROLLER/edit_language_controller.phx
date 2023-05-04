@@ -16,7 +16,7 @@ class EDIT_LANGUAGE_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        if ( HasSessionMinimumUserRole( 'contributor' ) )
+        if ( HasSessionMinimumUserRole( 'author' ) )
         {
             .Title = 'Edit a language';
             .Language = GetDatabaseLanguageById( language_id );

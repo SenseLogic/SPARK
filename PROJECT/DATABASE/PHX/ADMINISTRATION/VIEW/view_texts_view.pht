@@ -7,7 +7,7 @@
             <? include 'BLOCK/filter.php'; ?>
             <? var list_mode_name = "TextListMode"; ?>
             <? include 'BLOCK/list_mode.php'; ?>
-            <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+            <? if ( HasSessionMinimumUserRole( 'publisher' ) ) { ?>
                 <a class="form-button form-button-large add-button" href="/admin/text/add">
                 </a>
             <? } ?>
@@ -41,11 +41,11 @@
                     <div class="form-centered sortable-table-cell">
                         <a class="form-button view-button" href="/admin/text/view/<% text.Id %>">
                         </a>
-                        <? if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
+                        <? if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
                             <a class="form-button edit-button" href="/admin/text/edit/<% text.Id %>">
                             </a>
                         <? } ?>
-                        <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                        <? if ( HasSessionMinimumUserRole( 'publisher' ) ) { ?>
                             <a class="form-button remove-button" href="/admin/text/remove/<% text.Id %>">
                             </a>
                         <? } ?>
@@ -73,11 +73,11 @@
                         </div>
                     </div>
                     <div class="form-toolbar">
-                        <? if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
+                        <? if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
                             <a class="form-button edit-button" href="/admin/text/edit/<% text.Id %>">
                             </a>
                         <? } ?>
-                        <? if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                        <? if ( HasSessionMinimumUserRole( 'publisher' ) ) { ?>
                             <a class="form-button remove-button" href="/admin/text/remove/<% text.Id %>">
                             </a>
                         <? } ?>

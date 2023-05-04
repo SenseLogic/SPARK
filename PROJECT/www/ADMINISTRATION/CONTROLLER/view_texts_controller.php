@@ -15,7 +15,7 @@ class VIEW_TEXTS_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-        if ( HasSessionMinimumUserRole( 'contributor' ) )
+        if ( HasSessionMinimumUserRole( 'author' ) )
         {
             $this->Title = 'View texts';
             $this->TextArray = GetDatabaseTextArray();

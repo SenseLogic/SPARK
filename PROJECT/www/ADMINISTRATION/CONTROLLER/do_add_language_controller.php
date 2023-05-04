@@ -15,7 +15,7 @@ class DO_ADD_LANGUAGE_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-        if ( HasSessionMinimumUserRole( 'editor' ) )
+        if ( HasSessionMinimumUserRole( 'publisher' ) )
         {
              $id = GetPostValue( 'Id' );
              $code = GetPostValue( 'Code' );

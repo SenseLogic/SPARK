@@ -16,12 +16,15 @@ class MANAGE_PAGE_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct();
 
-        $this->Title = 'Manage a page';
-        $this->Page = GetValidPageByIdOrSlug( $this->PageByIdMap, $this->PageBySlugMap, $page_id_or_slug );
+        if ( HasSessionMinimumUserRole( 'contributor' ) )
+        {
+            $this->Title = 'Manage a page';
+            $this->Page = GetValidPageByIdOrSlug( $this->PageByIdMap, $this->PageBySlugMap, $page_id_or_slug );
 
-        AddParentRoute();
+            AddParentRoute();
 
-        require_once __DIR__ . '/' . '../VIEW/manage_page_view.php';
+            require_once __DIR__ . '/' . '../VIEW/manage_page_view.php';
+        }
     }
 }
 

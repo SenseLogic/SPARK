@@ -14,11 +14,14 @@ class MANAGE_BLOCKS_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct();
 
-        $this->Title = 'Manage blocks';
+        if ( HasSessionMinimumUserRole( 'contributor' ) )
+        {
+            $this->Title = 'Manage blocks';
 
-        AddParentRoute();
+            AddParentRoute();
 
-        require_once __DIR__ . '/' . '../VIEW/manage_blocks_view.php';
+            require_once __DIR__ . '/' . '../VIEW/manage_blocks_view.php';
+        }
     }
 }
 

@@ -16,7 +16,7 @@ class EDIT_BLOCK_CONTENT_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-        if ( HasSessionMinimumUserRole( 'contributor' ) )
+        if ( HasSessionMinimumUserRole( 'author' ) )
         {
             $this->Title = 'Edit a block content';
             $this->BlockContent = GetDatabaseBlockContentById( $block_content_id );

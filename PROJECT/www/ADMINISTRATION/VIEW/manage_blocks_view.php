@@ -4,7 +4,7 @@
         <div class="tool-container">
             <?php  $filter_name = "BlockFilter"; ?>
             <?php require __DIR__ . '/' . 'BLOCK/filter.php'; ?>
-            <?php if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
+            <?php if ( HasSessionMinimumUserRole( 'publisher' ) ) { ?>
                 <a class="form-button form-button-large add-button" href="/admin/block/add">
                 </a>
             <?php } ?>
@@ -20,11 +20,11 @@
                     <a class="form-button manage-button" href="/admin/block/manage/<?php echo htmlspecialchars( $block->Id ); ?>">
                     </a>
                 <?php } ?>
-                <?php if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
+                <?php if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
                     <a class="form-button edit-button" href="/admin/block/edit/<?php echo htmlspecialchars( $block->Id ); ?>">
                     </a>
                 <?php } ?>
-                <?php if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
+                <?php if ( HasSessionMinimumUserRole( 'publisher' ) ) { ?>
                     <a class="form-button remove-button" href="/admin/block/remove/<?php echo htmlspecialchars( $block->Id ); ?>">
                     </a>
                 <?php } ?>

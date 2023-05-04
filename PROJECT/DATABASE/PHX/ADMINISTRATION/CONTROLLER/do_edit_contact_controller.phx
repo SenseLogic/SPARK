@@ -16,7 +16,7 @@ class DO_EDIT_CONTACT_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        if ( HasSessionMinimumUserRole( 'contributor' ) )
+        if ( HasSessionMinimumUserRole( 'author' ) )
         {
             var name = GetPostValue( 'Name' );
             var company = GetPostValue( 'Company' );

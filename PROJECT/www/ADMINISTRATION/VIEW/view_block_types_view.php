@@ -7,7 +7,7 @@
             <?php require __DIR__ . '/' . 'BLOCK/filter.php'; ?>
             <?php  $list_mode_name = "BlockTypeListMode"; ?>
             <?php require __DIR__ . '/' . 'BLOCK/list_mode.php'; ?>
-            <?php if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+            <?php if ( HasSessionMinimumUserRole( 'publisher' ) ) { ?>
                 <a class="form-button form-button-large add-button" href="/admin/block-type/add">
                 </a>
             <?php } ?>
@@ -35,11 +35,11 @@
                     <div class="form-centered sortable-table-cell">
                         <a class="form-button view-button" href="/admin/block-type/view/<?php echo htmlspecialchars( $block_type->Id ); ?>">
                         </a>
-                        <?php if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
+                        <?php if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
                             <a class="form-button edit-button" href="/admin/block-type/edit/<?php echo htmlspecialchars( $block_type->Id ); ?>">
                             </a>
                         <?php } ?>
-                        <?php if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                        <?php if ( HasSessionMinimumUserRole( 'publisher' ) ) { ?>
                             <a class="form-button remove-button" href="/admin/block-type/remove/<?php echo htmlspecialchars( $block_type->Id ); ?>">
                             </a>
                         <?php } ?>
@@ -67,11 +67,11 @@
                         </div>
                     </div>
                     <div class="form-toolbar">
-                        <?php if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
+                        <?php if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
                             <a class="form-button edit-button" href="/admin/block-type/edit/<?php echo htmlspecialchars( $block_type->Id ); ?>">
                             </a>
                         <?php } ?>
-                        <?php if ( HasSessionMinimumUserRole( 'editor' ) ) { ?>
+                        <?php if ( HasSessionMinimumUserRole( 'publisher' ) ) { ?>
                             <a class="form-button remove-button" href="/admin/block-type/remove/<?php echo htmlspecialchars( $block_type->Id ); ?>">
                             </a>
                         <?php } ?>

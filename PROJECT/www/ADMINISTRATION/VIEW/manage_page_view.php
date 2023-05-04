@@ -6,9 +6,11 @@
             require __DIR__ . '/' . 'BLOCK/PREVIEW/page.php';
         ?>
         <div class="form-toolbar">
-            <?php if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
+            <?php if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
                 <a class="form-button edit-button" href="/admin/page/edit/<?php echo htmlspecialchars( $this->Page->Id ); ?>">
                 </a>
+            <?php } ?>
+            <?php if ( HasSessionMinimumUserRole( 'publisher' ) ) { ?>
                 <a class="form-button remove-button" href="/admin/page/remove/<?php echo htmlspecialchars( $this->Page->Id ); ?>">
                 </a>
             <?php } ?>
@@ -31,11 +33,11 @@
                             <a class="form-button manage-button" href="/admin/block/manage/<?php echo htmlspecialchars( $block->Id ); ?>">
                             </a>
                         <?php } ?>
-                        <?php if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
+                        <?php if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
                             <a class="form-button edit-button" href="/admin/block/edit/<?php echo htmlspecialchars( $block->Id ); ?>">
                             </a>
                         <?php } ?>
-                        <?php if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
+                        <?php if ( HasSessionMinimumUserRole( 'publisher' ) ) { ?>
                             <a class="form-button remove-button" href="/admin/block/remove/<?php echo htmlspecialchars( $block->Id ); ?>">
                             </a>
                             <a class="form-button add-button" href="/admin/block/add?Slug=<?php echo $this->Page->Slug . '-block-' . rand(); ?>&PageId=<?php echo $this->Page->Id; ?>&Number=<?php echo $added_block_number; ?>">
@@ -47,8 +49,10 @@
         <?php } ?>
     </div>
     <div class="form-extended form-centered margin-top-1rem margin-bottom-1rem">
-        <a class="form-button form-button-large add-button" href="/admin/block/add?Slug=<?php echo $this->Page->Slug . '-block-' . rand(); ?>&PageId=<?php echo $this->Page->Id; ?>&Number=<?php echo $added_block_number; ?>">
-        </a>
+        <?php if ( HasSessionMinimumUserRole( 'publisher' ) ) { ?>
+            <a class="form-button form-button-large add-button" href="/admin/block/add?Slug=<?php echo $this->Page->Slug . '-block-' . rand(); ?>&PageId=<?php echo $this->Page->Id; ?>&Number=<?php echo $added_block_number; ?>">
+            </a>
+        <?php } ?>
     </div>
     <div>
         <a class="justify-self-start form-button form-button-large cancel-button" href="<?php echo htmlspecialchars( GetParentRoute( null, '/admin/page' ) ); ?>">

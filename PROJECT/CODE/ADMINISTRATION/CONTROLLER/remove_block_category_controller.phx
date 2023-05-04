@@ -16,7 +16,7 @@ class REMOVE_BLOCK_CATEGORY_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        if ( HasSessionMinimumUserRole( 'editor' ) )
+        if ( HasSessionMinimumUserRole( 'publisher' ) )
         {
             .Title = 'Remove a block category';
             .BlockCategory = GetDatabaseBlockCategoryById( block_category_id );

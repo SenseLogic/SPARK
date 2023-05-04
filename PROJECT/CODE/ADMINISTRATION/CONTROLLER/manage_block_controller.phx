@@ -15,12 +15,15 @@ class MANAGE_BLOCK_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor();
 
-        .Title = 'Manage a block';
-        .Block = GetValidBlockById( .BlockByIdMap, block_id );
+        if ( HasSessionMinimumUserRole( 'contributor' ) )
+        {
+            .Title = 'Manage a block';
+            .Block = GetValidBlockById( .BlockByIdMap, block_id );
 
-        AddParentRoute();
+            AddParentRoute();
 
-        import '../VIEW/manage_block_view.php';
+            import '../VIEW/manage_block_view.php';
+        }
     }
 }
 

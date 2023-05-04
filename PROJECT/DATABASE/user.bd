@@ -8,11 +8,11 @@ USER
             ~ administrator
             ~ administrator@agc-automotive.com
 
-        %editor-user
-            ~ editor
+        %publisher-user
+            ~ publisher
             ~ xyz
-            ~ editor
-            ~ editor@agc-automotive.com
+            ~ publisher
+            ~ publisher@agc-automotive.com
 
         %author-user
             ~ author

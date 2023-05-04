@@ -16,7 +16,7 @@ class REMOVE_LANGUAGE_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        if ( HasSessionMinimumUserRole( 'editor' ) )
+        if ( HasSessionMinimumUserRole( 'publisher' ) )
         {
             .Title = 'Remove a language';
             .Language = GetDatabaseLanguageById( language_id );

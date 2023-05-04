@@ -6,9 +6,11 @@
             include 'BLOCK/PREVIEW/page.php';
         ?>
         <div class="form-toolbar">
-            <? if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
+            <? if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
                 <a class="form-button edit-button" href="/admin/page/edit/<% .Page.Id %>">
                 </a>
+            <? } ?>
+            <? if ( HasSessionMinimumUserRole( 'publisher' ) ) { ?>
                 <a class="form-button remove-button" href="/admin/page/remove/<% .Page.Id %>">
                 </a>
             <? } ?>
@@ -31,11 +33,11 @@
                             <a class="form-button manage-button" href="/admin/block/manage/<% block.Id %>">
                             </a>
                         <? } ?>
-                        <? if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
+                        <? if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
                             <a class="form-button edit-button" href="/admin/block/edit/<% block.Id %>">
                             </a>
                         <? } ?>
-                        <? if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>
+                        <? if ( HasSessionMinimumUserRole( 'publisher' ) ) { ?>
                             <a class="form-button remove-button" href="/admin/block/remove/<% block.Id %>">
                             </a>
                             <a class="form-button add-button" href="/admin/block/add?Slug=<# .Page.Slug .. '-block-' .. rand() #>&PageId=<# .Page.Id #>&Number=<# added_block_number #>">
@@ -47,8 +49,10 @@
         <? } ?>
     </div>
     <div class="form-extended form-centered margin-top-1rem margin-bottom-1rem">
-        <a class="form-button form-button-large add-button" href="/admin/block/add?Slug=<# .Page.Slug .. '-block-' .. rand() #>&PageId=<# .Page.Id #>&Number=<# added_block_number #>">
-        </a>
+        <? if ( HasSessionMinimumUserRole( 'publisher' ) ) { ?>
+            <a class="form-button form-button-large add-button" href="/admin/block/add?Slug=<# .Page.Slug .. '-block-' .. rand() #>&PageId=<# .Page.Id #>&Number=<# added_block_number #>">
+            </a>
+        <? } ?>
     </div>
     <div>
         <a class="justify-self-start form-button form-button-large cancel-button" href="<% GetParentRoute( null, '/admin/page' ) %>">

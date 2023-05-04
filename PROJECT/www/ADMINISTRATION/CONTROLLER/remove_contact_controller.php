@@ -16,7 +16,7 @@ class REMOVE_CONTACT_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::__construct( $language_code );
 
-        if ( HasSessionMinimumUserRole( 'editor' ) )
+        if ( HasSessionMinimumUserRole( 'publisher' ) )
         {
             $this->Title = 'Remove a contact';
             $this->Contact = GetDatabaseContactById( $contact_id );

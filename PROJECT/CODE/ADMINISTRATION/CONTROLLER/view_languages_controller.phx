@@ -15,7 +15,7 @@ class VIEW_LANGUAGES_CONTROLLER extends VIEW_CONTROLLER
     {
         parent::constructor( language_code );
 
-        if ( HasSessionMinimumUserRole( 'contributor' ) )
+        if ( HasSessionMinimumUserRole( 'author' ) )
         {
             .Title = 'View languages';
             .LanguageArray = GetDatabaseLanguageArray();

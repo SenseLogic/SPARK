@@ -1,20 +1,20 @@
 spark-project
 
-    TEXT | dropped, has_user_role, view_user_role author, edit_user_role author, add_user_role editor, remove_user_role editor
+    TEXT | dropped, has_user_role, view_user_role author, edit_user_role author, add_user_role publisher, remove_user_role publisher
 
         Id : TUID | key, unique, is_hidden, has_default_expression, default_expression GetRandomTuid()
         Slug : STRING | indexed, is_slug
         Text : STRING = "{{latin 2 4 5 10}}¨fr:{{latin 2 4 5 10}}" | is_multilingual_text
 
-    LANGUAGE | sorted, dropped, has_user_role, view_user_role author, edit_user_role author, add_user_role editor, remove_user_role editor
+    LANGUAGE | sorted, dropped, has_user_role, view_user_role author, edit_user_role author, add_user_role publisher, remove_user_role publisher
 
         Id : TUID | key, unique, is_hidden, has_default_expression, default_expression GetRandomTuid()
         Code : STRING | processed
         Number : STRING | ascending
         Text : STRING | is_multilingual
-        IsActive : BOOL = "true" | is_enumeration, enumeration "[ 0, 1 ]^[ 'False', 'True' ]", has_default_value, default_value 1
+        IsActive : BOOL = "true" | is_enumeration, enumeration "[ '0', '1' ]^[ 'False', 'True' ]", has_default_value, default_value 1
 
-    PAGE_TYPE | sorted, dropped, has_user_role, view_user_role author, edit_user_role author, add_user_role editor, remove_user_role editor
+    PAGE_TYPE | sorted, dropped, has_user_role, view_user_role author, edit_user_role author, add_user_role publisher, remove_user_role publisher
 
         Id : TUID | key, unique, is_hidden, has_default_expression, default_expression GetRandomTuid()
         Slug : STRING | is_slug
@@ -28,7 +28,7 @@ spark-project
         TypeSlug : PAGE_TYPE.Slug | processed, is_slug, is_enumeration, enumeration "GetElementPropertyArray( .PageTypeArray, 'Slug' )^GetUntranslatedElementArray( GetElementPropertyArray( .PageTypeArray, 'Name' ) )"
         Number : FLOAT64 | ascending, has_default_value, default_value 1
         LanguageCodeArray : LIST[ LANGUAGE.Code ] = "{ en ~ fr }" | is_enumeration_list, enumeration "[ 'en', 'fr', 'de', 'ja' ,'ru' ]^[ 'English', 'French', 'German', 'Japanese', 'Russian' ]", has_default_value, default_value "[ \"en\", \"fr\" ]"
-        IsActive : BOOL = "true" | is_enumeration, enumeration "[ 0, 1 ]^[ 'False', 'True' ]", has_default_value, default_value 1
+        IsActive : BOOL = "true" | is_enumeration, enumeration "[ '0', '1' ]^[ 'False', 'True' ]", has_default_value, default_value 1
         Title : STRING = "{{latin 1 1 4 6}}¨fr:{{latin 1 1 4 6}}" | optional, is_multilingual
         Heading : STRING = "{{Title}}" | optional, is_multilingual_text
         Teaser : STRING = "{{latin 2 4 5 10}}¨fr:{{latin 2 4 5 10}}" | optional, is_multilingual_text
@@ -42,19 +42,19 @@ spark-project
         MetaSubTitleArray : LIST[ STRING ] = "{}" | optional, is_multilingual_list, has_default_value, default_value "[]"
         MetaSubDescriptionArray : LIST[ STRING ] = "{}" | optional, is_multilingual_text_list, has_default_value, default_value "[]"
 
-    BLOCK_CATEGORY | sorted, dropped, has_user_role, view_user_role author, edit_user_role author, add_user_role editor, remove_user_role editor
+    BLOCK_CATEGORY | sorted, dropped, has_user_role, view_user_role author, edit_user_role author, add_user_role publisher, remove_user_role publisher
 
         Id : TUID | key, unique, is_hidden, has_default_expression, default_expression GetRandomTuid()
         Slug : STRING | mapped, is_slug
         Name : STRING = "{{latin 1 1 4 6}}" | ascending
 
-    BLOCK_TYPE | sorted, dropped, has_user_role, view_user_role author, edit_user_role author, add_user_role editor, remove_user_role editor
+    BLOCK_TYPE | sorted, dropped, has_user_role, view_user_role author, edit_user_role author, add_user_role publisher, remove_user_role publisher
 
         Id : TUID | key, unique, is_hidden, has_default_expression, default_expression GetRandomTuid()
         Slug : STRING | mapped, is_slug
         Name : STRING = "{{latin 1 1 4 6}}" | ascending
 
-    BLOCK_CONTENT | sorted, dropped, has_user_role, view_user_role author, edit_user_role author, add_user_role editor, remove_user_role editor
+    BLOCK_CONTENT | sorted, dropped, has_user_role, view_user_role author, edit_user_role author, add_user_role publisher, remove_user_role publisher
 
         Id : TUID | key, unique, is_hidden, has_default_expression, default_expression GetRandomTuid()
         Slug : STRING | mapped, is_slug
@@ -93,7 +93,7 @@ spark-project
         DocumentPath : STRING = "/static/document/article/logo.pdf|" | optional, is_document
         DocumentPathArray : LIST[ STRING ] = "{}" | optional, is_document_list, has_default_value, default_value "[]"
 
-    CONTACT | sorted, has_user_role, view_user_role author, edit_user_role author, add_user_role editor, remove_user_role editor
+    CONTACT | sorted, has_user_role, view_user_role author, edit_user_role author, add_user_role publisher, remove_user_role publisher
 
         Id : TUID | key, unique, is_hidden, has_default_expression, default_expression GetRandomTuid()
         Name : STRING
@@ -110,4 +110,4 @@ spark-project
         Email : STRING | ascending
         Pseudonym : STRING
         Password : STRING
-        Role : STRING | is_enumeration, enumeration "[ 'guest', 'contributor', 'author', 'editor', 'administrator' ]^[ 'Guest', 'Contributor', 'Author', 'Editor', 'Administrator' ]", has_default_value, default_value contributor
+        Role : STRING | is_enumeration, enumeration "[ 'guest', 'contributor', 'author', 'publisher', 'administrator' ]^[ 'Guest', 'Contributor', 'Author', 'Editor', 'Administrator' ]", has_default_value, default_value contributor
