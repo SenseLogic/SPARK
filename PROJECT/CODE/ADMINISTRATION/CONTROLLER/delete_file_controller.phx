@@ -19,6 +19,27 @@ class DELETE_FILE_CONTROLLER extends CONTROLLER
         if ( FileExists( file_path )
              && RemoveFile( file_path ) )
         {
+            if ( HasSuffix( file_path, '.jpg' ) )
+            {
+                foreach ( var suffix; [ '.medium.jpg', '.small.jpg', '.preload.jpg' ] )
+                {
+                    if ( FileExists( file_path .. suffix ) )
+                    {
+                        RemoveFile( file_path .. suffix );
+                    }
+                }
+            }
+            else if ( HasSuffix( file_path, '.png' ) )
+            {
+                foreach ( suffix; [ '.medium.png', '.small.png', '.preload.png' ] )
+                {
+                    if ( FileExists( file_path .. suffix ) )
+                    {
+                        RemoveFile( file_path .. suffix );
+                    }
+                }
+            }
+
             SetStatus( 201 );
             SetJsonResponse( file_path );
         }

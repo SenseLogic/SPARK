@@ -18,6 +18,7 @@ class VIEW_PAGES_CONTROLLER extends VIEW_CONTROLLER
         if ( HasSessionMinimumUserRole( 'contributor' ) )
         {
             .Title = 'View pages';
+            .PageArray = GetDatabasePageArray();
 
             AddParentRoute();
 
