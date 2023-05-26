@@ -1,0 +1,73 @@
+// -- IMPORTS
+
+import 'controller.php';
+
+// -- TYPES
+
+class BACKUP_DATABASE_CONTROLLER extends CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code
+        )
+    {
+        parent::constructor( language_code );
+
+        if ( HasSessionMinimumUserRole( 'administrator' ) )
+        {
+            .Title = 'Backup database';
+
+            AddParentRoute();
+
+            include '../VIEW/BLOCK/page_header.php';
+
+            EchoText( '<div class="page-section form-section">' );
+            EchoText( '    <div class="color-black" style="display: flex; flex-direction: column; gap: 0.5rem; width: 100%">' );
+            EchoStyledLine( 'Backup in progress...', 'font-size: 1.5rem', 'color-blue', '        ' );
+
+            var backup_folder_path = 'backup/';
+
+            if ( FolderExists( backup_folder_path ) )
+            {
+                var table_name_array = GetDatabaseTableNameArray();
+
+                foreach ( var table_name; table_name_array )
+                {
+                    EchoLine( 'Reading database table : ' .. table_name );
+                }
+
+                var database_file_text = GetDatabaseSqlText( table_name_array );
+
+                var database_file_path
+                    = backup_folder_path
+                      .. 'database_backup_'
+                      .. GetCurrentDateTimeSuffix()
+                      .. '_'
+                      .. GetRandomText( 32 )
+                      .. '.sql';
+
+                EchoLine( 'Writing database file : <a class="color-blue" href="/' .. database_file_path .. '">' .. database_file_path .. '</a>' );
+
+                WriteTextFile( database_file_path, database_file_text );
+
+                EchoStyledLine( 'Backup completed.', 'font-size: 1.5rem', 'color-blue', '        ' );
+            }
+            else
+            {
+                EchoStyledLine( 'Backup failed.', 'font-size: 1.5rem', 'color-blue', '        ' );
+            }
+
+            EchoText( '    </div>' );
+            EchoText( '<div>' );
+
+            include '../VIEW/BLOCK/page_footer.php';
+        }
+    }
+}
+
+// -- STATEMENTS
+
+ShowErrors();
+
+var backup_database_controller = new BACKUP_DATABASE_CONTROLLER( var language_code );

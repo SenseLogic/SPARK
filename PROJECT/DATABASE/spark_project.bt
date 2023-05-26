@@ -2,6 +2,7 @@
 // -- IMPORTS
 
 import 'FRAMEWORK/error.php';
+import 'FRAMEWORK/base.php';
 import 'FRAMEWORK/global.php';
 import 'FRAMEWORK/random.php';
 import 'FRAMEWORK/text.php';
@@ -191,6 +192,12 @@ function Route(
                   && path_value_array[ 1 ] === 'disconnect' )
         {
             import 'ADMINISTRATION/CONTROLLER/disconnect_user_controller.php';
+        }
+        else if ( it_is_get_request
+                  && path_value_count === 2
+                  && path_value_array[ 1 ] === 'backup' )
+        {
+            import 'ADMINISTRATION/CONTROLLER/backup_database_controller.php';
         }
         else if ( it_is_get_request
                   && path_value_count == 3

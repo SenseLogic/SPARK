@@ -446,6 +446,26 @@ function ReplaceSuffix(
 
 // ~~
 
+function GetRandomText(
+    int character_count = 32,
+    string alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+    )
+{
+    var alphabet_character_count = strlen( alphabet );
+    var random_text = '';
+
+    for( var random_character_index = 0;
+         random_character_index < 32;
+         ++random_character_index )
+    {
+        random_text ..= substr( alphabet, mt_rand( 0, alphabet_character_count - 1 ), 1 );
+    }
+
+    return random_text;
+}
+
+// ~~
+
 function GetLowerCaseText(
     string text
     )

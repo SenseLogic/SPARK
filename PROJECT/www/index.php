@@ -1,6 +1,7 @@
 <?php // -- IMPORTS
 
 require_once __DIR__ . '/' . 'FRAMEWORK/error.php';
+require_once __DIR__ . '/' . 'FRAMEWORK/base.php';
 require_once __DIR__ . '/' . 'FRAMEWORK/global.php';
 require_once __DIR__ . '/' . 'FRAMEWORK/random.php';
 require_once __DIR__ . '/' . 'FRAMEWORK/text.php';
@@ -190,6 +191,12 @@ function Route(
                   && $path_value_array[ 1 ] === 'disconnect' )
         {
             require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/disconnect_user_controller.php';
+        }
+        else if ( $it_is_get_request
+                  && $path_value_count === 2
+                  && $path_value_array[ 1 ] === 'backup' )
+        {
+            require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/backup_database_controller.php';
         }
         else if ( $it_is_get_request
                   && $path_value_count == 3

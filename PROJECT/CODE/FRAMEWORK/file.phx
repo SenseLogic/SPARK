@@ -1,5 +1,14 @@
 // -- FUNCTIONS
 
+function FolderExists(
+    string folder_path
+    )
+{
+    return is_dir( folder_path );
+}
+
+// ~~
+
 function FileExists(
     string file_path
     )
@@ -14,6 +23,16 @@ function RemoveFile(
     )
 {
     return unlink( file_path );
+}
+
+// ~~
+
+function WriteTextFile(
+    string file_path,
+    string file_text
+    )
+{
+    return file_put_contents( file_path, file_text );
 }
 
 // ~~
