@@ -1,0 +1,83 @@
+// -- FUNCTIONS
+
+function GetBasilColumnText(
+    column_value
+    )
+{
+    return str_replace( [ "\\", "~", "^", "\n", "\r", "\t" ], [ "\\\\", "\\~", "\\^", "\\n", "\\r", "\\t" ], column_value );
+}
+
+// ~~
+
+function GetBasilTableText(
+    string table_name
+    )
+{
+    var statement = GetDatabaseStatement( 'select * from `' .. table_name .. '`' );
+
+    if ( !statement.execute() )
+    {
+        var_dump( statement.errorInfo() );
+    }
+
+    var basil_table_text = '';
+    var basil_row_text_array = [];
+
+    while ( var column_array = statement.fetch( PDO::FETCH_ASSOC ) )
+    {
+        var column_name_array = array_keys( column_array );
+        var column_value_array = array_values( column_array );
+        var column_value_count = count( column_value_array );
+
+        if ( basil_table_text === '' )
+        {
+            basil_table_text
+                = table_name .. "\n\n"
+                  .. '    ' .. implode( ' ', column_name_array ) .. "\n\n";
+        }
+
+        var basil_row_text = '';
+
+        for ( var column_value_index = 0;
+              column_value_index < column_value_count;
+              ++column_value_index )
+        {
+            if ( basil_row_text === '' )
+            {
+                basil_row_text ..= '        ';
+            }
+            else
+            {
+                basil_row_text ..= '            ~ ';
+            }
+
+            basil_row_text
+                ..= GetBasilColumnText( column_value_array[ column_value_index ] ) .. "\n";
+        }
+
+        array_push( basil_row_text_array, basil_row_text );
+    }
+
+    sort( basil_row_text_array );
+
+    basil_table_text ..= implode( "\n", basil_row_text_array );
+
+    return basil_table_text;
+}
+
+// ~~
+
+function GetBasilDatabaseText(
+    array table_name_array
+    )
+{
+    var basil_database_text = '';
+
+    foreach ( var table_name; table_name_array )
+    {
+        basil_database_text
+            ..= GetBasilTableText( table_name ) .. "\n";
+    }
+
+    return basil_database_text;
+}

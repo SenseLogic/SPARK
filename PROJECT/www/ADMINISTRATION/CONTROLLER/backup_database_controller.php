@@ -1,5 +1,7 @@
 <?php // -- IMPORTS
 
+require_once __DIR__ . '/' . '../../FRAMEWORK/basil.php';
+require_once __DIR__ . '/' . '../../FRAMEWORK/sql.php';
 require_once __DIR__ . '/' . 'controller.php';
 
 // -- TYPES
@@ -37,19 +39,22 @@ class BACKUP_DATABASE_CONTROLLER extends CONTROLLER
                     EchoLine( 'Reading database table : ' . $table_name );
                 }
 
-                 $database_file_text = GetDatabaseSqlText( $table_name_array );
-
-                 $database_file_path
+                 $file_path
                     = $backup_folder_path
                       . 'database_backup_'
                       . GetCurrentDateTimeSuffix()
                       . '_'
-                      . GetRandomText( 32 )
-                      . '.sql';
+                      . GetRandomText( 32 );
 
-                EchoLine( 'Writing database file : <a class="color-blue" href="/' . $database_file_path . '">' . $database_file_path . '</a>' );
+                 $sql_file_path = $file_path . '.sql';
+                 $sql_file_text = GetSqlDatabaseText( $table_name_array );
+                EchoLine( 'Writing SQL file : <a class="color-blue" href="/' . $sql_file_path . '" download>' . $sql_file_path . '</a>' );
+                WriteTextFile( $sql_file_path, $sql_file_text );
 
-                WriteTextFile( $database_file_path, $database_file_text );
+                 $basil_file_path = $file_path . '.bd';
+                 $basil_file_text = GetBasilDatabaseText( $table_name_array );
+                EchoLine( 'Writing Basil file : <a class="color-blue" href="/' . $basil_file_path . '" download>' . $basil_file_path . '</a>' );
+                WriteTextFile( $basil_file_path, $basil_file_text );
 
                 EchoStyledLine( 'Backup completed.', 'font-size: 1.5rem', 'color-blue', '        ' );
             }
