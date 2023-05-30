@@ -33,7 +33,7 @@ function GetSqlTableText(
 
         var sql_row_text
             = 'replace into `' .. DatabaseName .. '`.`' .. table_name .. "`\n"
-              .. "    ( `\n"
+              .. "    (\n"
               .. "        `" .. implode( '`, `', column_name_array ) .. "`\n"
               .. "    )\n"
               .. "    values\n"
