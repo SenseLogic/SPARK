@@ -32,7 +32,7 @@ function GetSqlTableText(
         var column_value_count = count( column_value_array );
 
         var sql_row_text
-            = 'replace into `' .. DatabaseName .. '`.`' .. table_name .. "`\n"
+            = 'replace into `' .. DatabaseName .. '`.`' .. strtoupper( table_name ) .. "`\n"
               .. "    (\n"
               .. "        `" .. implode( '`, `', column_name_array ) .. "`\n"
               .. "    )\n"

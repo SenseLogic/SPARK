@@ -105,7 +105,8 @@ function GetDatabaseTableObjectArray(
 
 // ~~
 
-function GetDatabaseTableNameArray()
+function GetDatabaseTableNameArray(
+    )
 {
     var statement = GetDatabaseStatement( 'show tables' );
 
@@ -124,4 +125,60 @@ function GetDatabaseTableNameArray()
     sort( table_name_array );
 
     return table_name_array;
+}
+
+// ~~
+
+function GetDatabaseColumnArray(
+    string table_name
+    )
+{
+    var statement
+        = GetDatabaseStatement(
+            "select * from information_schema.columns where table_schema = '"
+            .. DatabaseName
+            .. "' and table_name = '"
+            .. table_name
+            .. "' order by ordinal_position asc"
+            );
+
+    if ( !statement.execute() )
+    {
+        var_dump( statement.errorInfo() );
+    }
+
+    var column_object_array = GetDatabaseObjectArray( statement );
+    var column_array = [];
+
+    foreach ( var column_object; column_object_array )
+    {
+        var column = new stdClass();
+        column.Number = column_object.ORDINAL_POSITION;
+        column.Name = column_object.COLUMN_NAME;
+        column.Type = column_object.COLUMN_TYPE;
+        column.DataType = column_object.DATA_TYPE;
+        column.Capacity = column_object.CHARACTER_MAXIMUM_LENGTH;
+        column.Precision = column_object.NUMERIC_PRECISION;
+
+        array_push( column_array, column );
+    }
+
+    return column_array;
+}
+
+// ~~
+
+function GetDatabaseColumnByNameMap(
+    string table_name
+    )
+{
+    var column_array = GetDatabaseColumnArray( table_name );
+    var column_by_name_map = [];
+
+    foreach ( var column; column_array )
+    {
+        column_by_name_map[ column.Name ] = column;
+    }
+
+    return column_by_name_map;
 }
