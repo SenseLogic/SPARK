@@ -21,7 +21,7 @@ class DELETE_FILE_CONTROLLER extends CONTROLLER
         {
             if ( HasSuffix( $file_path, '.jpg' ) )
             {
-                foreach ( [ '.medium.jpg', '.small.jpg', '.preload.jpg' ] as  $suffix )
+                foreach ( [ '.original.jpg', '.medium.jpg', '.small.jpg', '.preload.jpg' ] as  $suffix )
                 {
                     if ( FileExists( $file_path . $suffix ) )
                     {
@@ -31,7 +31,7 @@ class DELETE_FILE_CONTROLLER extends CONTROLLER
             }
             else if ( HasSuffix( $file_path, '.png' ) )
             {
-                foreach ( [ '.medium.png', '.small.png', '.preload.png' ] as $suffix )
+                foreach ( [ '.original.png', '.medium.png', '.small.png', '.preload.png' ] as $suffix )
                 {
                     if ( FileExists( $file_path . $suffix ) )
                     {

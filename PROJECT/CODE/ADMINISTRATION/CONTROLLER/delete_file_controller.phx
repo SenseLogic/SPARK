@@ -21,7 +21,7 @@ class DELETE_FILE_CONTROLLER extends CONTROLLER
         {
             if ( HasSuffix( file_path, '.jpg' ) )
             {
-                foreach ( var suffix; [ '.medium.jpg', '.small.jpg', '.preload.jpg' ] )
+                foreach ( var suffix; [ '.original.jpg', '.medium.jpg', '.small.jpg', '.preload.jpg' ] )
                 {
                     if ( FileExists( file_path .. suffix ) )
                     {
@@ -31,7 +31,7 @@ class DELETE_FILE_CONTROLLER extends CONTROLLER
             }
             else if ( HasSuffix( file_path, '.png' ) )
             {
-                foreach ( suffix; [ '.medium.png', '.small.png', '.preload.png' ] )
+                foreach ( suffix; [ '.original.png', '.medium.png', '.small.png', '.preload.png' ] )
                 {
                     if ( FileExists( file_path .. suffix ) )
                     {

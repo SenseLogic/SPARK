@@ -46,6 +46,8 @@ class UPLOAD_IMAGE_CONTROLLER extends CONTROLLER
                 {
                      $image = ReadJpegImage( $target_file_path );
 
+                    MoveFile( $target_file_path, $target_file_path . ".original.jpg" );
+
                      $default_image = CreateLimitedImage( $image, 2073600 );
                     WriteJpegImage( $default_image, $target_file_path, 70 );
                     ReleaseImage( $default_image );
@@ -68,10 +70,15 @@ class UPLOAD_IMAGE_CONTROLLER extends CONTROLLER
                 {
                      $image = ReadPngImage( $target_file_path );
 
+                    EnableImageTransparency( $image );
+
                     if ( IsOpaqueImage( $image ) )
                     {
+                         $old_target_file_path = $target_file_path;
                          $target_file_name = ReplaceSuffix( $target_file_name, '.png', '.jpg' );
                          $target_file_path = ReplaceSuffix( $target_file_path, '.png', '.jpg' );
+
+                        MoveFile( $old_target_file_path, $target_file_path . ".original.png" );
 
                          $default_image = CreateLimitedImage( $image, 2073600 );
                         WriteJpegImage( $default_image, $target_file_path, 70 );
@@ -91,7 +98,7 @@ class UPLOAD_IMAGE_CONTROLLER extends CONTROLLER
                     }
                     else
                     {
-                        EnableImageTransparency( $image );
+                        MoveFile( $target_file_path, $target_file_path . ".original.png" );
 
                          $default_image = CreateLimitedImage( $image, 2073600, true );
                         WritePngImage( $default_image, $target_file_path );

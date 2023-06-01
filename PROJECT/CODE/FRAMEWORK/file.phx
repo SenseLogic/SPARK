@@ -18,6 +18,26 @@ function FileExists(
 
 // ~~
 
+function MoveFile(
+    string old_file_path,
+    string new_file_path
+    )
+{
+    return rename( old_file_path, new_file_path );
+}
+
+// ~~
+
+function CopyFile(
+    string old_file_path,
+    string new_file_path
+    )
+{
+    return copy( old_file_path, new_file_path );
+}
+
+// ~~
+
 function RemoveFile(
     string file_path
     )

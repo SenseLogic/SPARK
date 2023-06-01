@@ -4,6 +4,8 @@ function IsOpaqueImage(
     image
     )
 {
+    imagepalettetotruecolor( image );
+
     var width = imagesx( image );
     var height = imagesy( image );
 
@@ -199,24 +201,13 @@ function CreateLimitedImage(
     {
         var new_width = old_width;
         var new_height = old_height;
+        var old_pixel_count = old_width * old_height;
 
-        if ( new_width > new_height )
+        if ( old_pixel_count > maximum_pixel_count )
         {
-            while ( new_width > 1
-                    && new_width * new_height > maximum_pixel_count )
-            {
-                --new_width;
-                new_height = GetInteger( new_width * old_height / old_width );
-            }
-        }
-        else
-        {
-            while ( new_height > 1
-                    && new_width * new_height > maximum_pixel_count )
-            {
-                --new_height;
-                new_width = GetInteger( new_height * old_width / old_height );
-            }
+            var new_size_ratio = sqrt( maximum_pixel_count / old_pixel_count );
+            new_width = intval( old_width * new_size_ratio );
+            new_height = intval( old_height * new_size_ratio );
         }
 
         if ( new_width < 1 )
