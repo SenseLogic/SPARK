@@ -16,6 +16,30 @@ function GetSqlTableText(
     string table_name
     )
 {
+    var column_array = GetDatabaseColumnArray( table_name );
+    var column_by_name_map = GetDatabaseColumnByNameMap( column_array );
+
+    var sql_table_text
+        = 'drop table if exists `' .. DatabaseName .. '`.`' .. strtoupper( table_name ) .. "`;\n\n"
+          .. 'create table if not exists `' .. DatabaseName .. '`.`' .. strtoupper( table_name ) .. "`(\n";
+
+    var primary_key_column_name_array = [];
+
+    foreach ( var column; column_array )
+    {
+        sql_table_text
+            ..= '    `' .. column.Name .. '` ' .. column.Type .. ( column.IsNullable ? '' : ' not' ) .. " null,\n";
+
+        if ( column.IsPrimaryKey )
+        {
+            array_push( primary_key_column_name_array, '`' .. column.Name .. '`' );
+        }
+    }
+
+    sql_table_text
+        ..= '    primary key (' .. implode( ', ', primary_key_column_name_array ) .. ")\n"
+            .. "    ) engine = InnoDB;\n\n";
+
     var statement = GetDatabaseStatement( 'select * from `' .. table_name .. '`' );
 
     if ( !statement.execute() )
@@ -62,8 +86,9 @@ function GetSqlTableText(
     }
 
     sort( sql_row_text_array );
+    sql_table_text ..= implode( "\n", sql_row_text_array );
 
-    return implode( "\n", sql_row_text_array );
+    return sql_table_text;
 }
 
 // ~~

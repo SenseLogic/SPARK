@@ -54,15 +54,17 @@ function GetBasilValueText(
 
 function GetBasilColumnText(
     column_value,
-    column_name
+    column
     )
 {
-    if ( HasPrefix( column_value, '[' )
-         && HasSuffix( column_value, ']' )
-         && ( HasSuffix( column_name, "Array" )
-              || HasSuffix( column_name, "List" )
-              || HasSuffix( column_name, "Map" )
-              || HasSuffix( column_name, "Dictionary" ) ) )
+    if ( ( HasPrefix( column_value, '[' )
+           && HasSuffix( column_value, ']' )
+           && ( HasSuffix( column.Name, "Array" )
+                || HasSuffix( column.Name, "List" ) ) )
+         || ( HasPrefix( column_value, '{' )
+              && HasSuffix( column_value, '}' )
+              && ( HasSuffix( column.Name, "Map" )
+                   || HasSuffix( column.Name, "Dictionary" ) ) ) )
     {
         return GetBasilValueText( GetJsonObject( column_value ) );
     }
@@ -78,6 +80,9 @@ function GetBasilTableText(
     string table_name
     )
 {
+    var column_array = GetDatabaseColumnArray( table_name );
+    var column_by_name_map = GetDatabaseColumnByNameMap( column_array );
+
     var statement = GetDatabaseStatement( 'select * from `' .. table_name .. '`' );
 
     if ( !statement.execute() )
@@ -119,7 +124,7 @@ function GetBasilTableText(
             var column_name = column_name_array[ column_value_index ];
             var column_value = column_value_array[ column_value_index ];
 
-            basil_row_text ..= GetBasilColumnText( column_value, column_name ) .. "\n";
+            basil_row_text ..= GetBasilColumnText( column_value, column_by_name_map[ column_name ] ) .. "\n";
         }
 
         array_push( basil_row_text_array, basil_row_text );

@@ -159,6 +159,9 @@ function GetDatabaseColumnArray(
         column.DataType = column_object.DATA_TYPE;
         column.Capacity = column_object.CHARACTER_MAXIMUM_LENGTH;
         column.Precision = column_object.NUMERIC_PRECISION;
+        column.Default = column_object.COLUMN_DEFAULT;
+        column.IsNullable = ( column_object.IS_NULLABLE === 'YES' );
+        column.IsPrimaryKey = ( column_object.COLUMN_KEY === 'PRI' );
 
         array_push( column_array, column );
     }
@@ -169,10 +172,9 @@ function GetDatabaseColumnArray(
 // ~~
 
 function GetDatabaseColumnByNameMap(
-    string table_name
+    array &column_array
     )
 {
-    var column_array = GetDatabaseColumnArray( table_name );
     var column_by_name_map = [];
 
     foreach ( var column; column_array )
