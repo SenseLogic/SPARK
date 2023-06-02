@@ -62,6 +62,7 @@ DefineDualTag( ',,', '<sub>', '</sub>' );
 DefineDualTag( '^^', '<sup>', '</sup>' );
 
 DefineTag( '~', '&nbsp;' );
+DefineTag( '¦', '<wbr/>' );
 DefineTag( '§', '<br/>' );
 DefineTag( '¶', '<br class="linebreak"/>' );
 DefineTag( '[[[', '<table>' );

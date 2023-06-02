@@ -1,0 +1,56 @@
+.text-and-video
+{
+    display: grid;
+}
+
+.text-and-video.video-side-left
+{
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr;
+    grid-template-areas: \
+        "video" \
+        "text";
+
+    +Media( min-width-65em )
+    {
+        grid-template-rows: 1fr;
+        grid-template-columns: 55% 45%;
+        grid-template-areas: \
+            "video text";
+    }
+}
+
+.text-and-video.video-side-right
+{
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr;
+    grid-template-areas: \
+        "text" \
+        "video";
+
+    +Media( min-width-65em )
+    {
+        grid-template-rows: 1fr;
+        grid-template-columns: 45% 55%;
+        grid-template-areas: \
+            "text video";
+    }
+}
+
+.text-and-video-text
+{
+    padding: var( --block-padding );
+
+    display: flex;
+    flex-direction: column;
+    grid-area: text;
+    justify-content: center;
+    align-items: start;
+
+    color: BlackColor;
+}
+
+.text-and-video-video
+{
+    grid-area: video;
+}
