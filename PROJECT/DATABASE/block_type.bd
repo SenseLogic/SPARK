@@ -13,3 +13,11 @@ BLOCK_TYPE
         %text-and-image-block-type
             ~ text-and-image
             ~ Text and image
+
+        %text-and-video-block-type
+            ~ text-and-video
+            ~ Text and video
+
+        %video-block-type
+            ~ video
+            ~ Video

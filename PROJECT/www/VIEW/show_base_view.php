@@ -85,6 +85,49 @@
             SetUrl( "/" + language_code + "/" + route + "/" );
         }
     }
+
+    // ~~
+
+    function UpdateView(
+        )
+    {
+        var
+            section_element,
+            view_element;
+
+        if ( ViewName !== OldViewName )
+        {
+            for ( view_element of GetElements( ".view" ) )
+            {
+                FadeView( view_element );
+            }
+        }
+
+        if ( SectionName === "" )
+        {
+            SetScrollPosition();
+        }
+        else
+        {
+            section_element = GetElement( SectionName );
+
+            if ( section_element === null )
+            {
+                SetScrollPosition();
+            }
+            else
+            {
+                DelayCall(
+                    function (
+                        )
+                    {
+                        SetScrollPosition( section_element.GetTopPosition() - 48 * GetRemRatio() );
+                    },
+                    ( ViewName === OldViewName ) ? 0.2 : 0
+                    );
+            }
+        }
+    }
 </script>
 <div>
     <?php require __DIR__ . '/' . 'PAGE/loader_page.php'; ?>
@@ -106,39 +149,7 @@
         .AddIntersectionObserver( true, 0.25, "is-visible" )
         .AddIntersectionObserver( false, 0.0, "", "is-visible" );
 
-    AddEventListener(
-        "update-view",
-        function (
-            )
-        {
-            var
-                view_element;
-
-            if ( ViewName !== OldViewName )
-            {
-                for ( view_element of GetElements( ".view" ) )
-                {
-                    FadeView( view_element );
-                }
-            }
-
-            if ( SectionName === "" )
-            {
-                SetScrollPosition();
-            }
-            else
-            {
-                DelayCall(
-                    function (
-                        )
-                    {
-                        SetScrollPosition( GetElement( SectionName ).GetTopPosition() - 48 * GetRemRatio() );
-                    },
-                    ( ViewName === OldViewName ) ? 0 : 0.2
-                    );
-            }
-        }
-        );
+    AddEventListener( "update-view", UpdateView );
 
     InitializeView();
     ShowView();

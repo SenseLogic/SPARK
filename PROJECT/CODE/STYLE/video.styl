@@ -1,5 +1,7 @@
 .video
 {
+    position: relative;
+
     max-height: var( --viewport-height );
     width: 100%;
     padding: 1rem;
@@ -15,4 +17,18 @@
     {
         padding: 2rem;
     }
+}
+
+.video-video
+{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    height: 100%;
+    width: 100%;
+
+    object-fit: cover;
 }

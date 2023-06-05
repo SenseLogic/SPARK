@@ -1,0 +1,41 @@
+<style file="video.styl">
+    .video
+    {
+        position: relative;
+
+        max-height: var( --viewport-height );
+        width: 100%;
+        padding: 1rem;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+
+        color: WhiteColor;
+
+        +Media( min-width-65em )
+        {
+            padding: 2rem;
+        }
+    }
+
+    .video-video
+    {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        height: 100%;
+        width: 100%;
+
+        object-fit: cover;
+    }
+</style>
+<div id="<# var block.Id #>" class="y-translation-opacity-transition block appearing-block video" style="padding-top: <# block.MinimumHeight #>; background: url( '<# block.ImagePath #>?v=<# VersionTimestamp #>' ) no-repeat <# block.ImageHorizontalPosition #> <# block.ImageVerticalPosition #> / cover, url( '<# GetPreloadImagePath( block.ImagePath ) #>?v=<# VersionTimestamp #>' ) no-repeat <# block.ImageHorizontalPosition #> <# block.ImageVerticalPosition #> / cover">
+    <? if ( block.VideoPath !== '' ) { ?>
+        <video class="autoplay-video video-video" data-video-path="<# block.VideoPath #>" muted playsinline loop poster="<# block.ImagePath #>.small.jpg?v=<# VersionTimestamp #>"></video>
+    <? } ?>
+</div>

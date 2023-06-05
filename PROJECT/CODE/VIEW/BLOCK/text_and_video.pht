@@ -1,0 +1,93 @@
+<style file="text_and_video.styl">
+    .text-and-video
+    {
+        display: grid;
+    }
+
+    .text-and-video.video-side-left
+    {
+        grid-template-rows: auto auto;
+        grid-template-columns: 1fr;
+        grid-template-areas: \
+            "video" \
+            "text";
+
+        +Media( min-width-65em )
+        {
+            grid-template-rows: 1fr;
+            grid-template-columns: 55% 45%;
+            grid-template-areas: \
+                "video text";
+        }
+    }
+
+    .text-and-video.video-side-right
+    {
+        grid-template-rows: auto auto;
+        grid-template-columns: 1fr;
+        grid-template-areas: \
+            "text" \
+            "video";
+
+        +Media( min-width-65em )
+        {
+            grid-template-rows: 1fr;
+            grid-template-columns: 45% 55%;
+            grid-template-areas: \
+                "text video";
+        }
+    }
+
+    .text-and-video-text
+    {
+        padding: var( --block-padding );
+
+        display: flex;
+        flex-direction: column;
+        grid-area: text;
+        justify-content: center;
+        align-items: start;
+
+        color: BlackColor;
+    }
+
+    .text-and-video-video
+    {
+        height: 100%;
+
+        grid-area: video;
+    }
+
+    .text-and-video-video-image
+    {
+        position: relative;
+
+        min-height: 100%;
+    }
+
+    .text-and-video-video-video
+    {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        height: 100%;
+        width: 100%;
+
+        object-fit: cover;
+    }
+</style>
+<div id="<# var block.Id #>" class="y-translation-opacity-transition block appearing-block text-and-video video-side-<# block.ImageSide #>">
+    <div class="text-and-video-text">
+        <? include str_replace( '-', '_', block.ContentSlug ) .. '_content.php'; ?>
+    </div>
+    <div class="text-and-video-video">
+        <div class="text-and-video-video-image" style="padding-top: <# block.MinimumHeight #>; background: url( '<# block.ImagePath #>?v=<# VersionTimestamp #>' ) no-repeat <# block.ImageHorizontalPosition #> <# block.ImageVerticalPosition #> / cover, url( '<# GetPreloadImagePath( block.ImagePath ) #>?v=<# VersionTimestamp #>' ) no-repeat <# block.ImageHorizontalPosition #> <# block.ImageVerticalPosition #> / cover">
+            <? if ( block.VideoPath !== '' ) { ?>
+                <video class="autoplay-video text-and-video-video-video" data-video-path="<# block.VideoPath #>" muted playsinline loop poster="<# block.ImagePath #>.small.jpg?v=<# VersionTimestamp #>"></video>
+            <? } ?>
+        </div>
+    </div>
+</div>
