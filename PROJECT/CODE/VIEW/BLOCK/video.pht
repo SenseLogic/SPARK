@@ -36,6 +36,6 @@
 </style>
 <div id="<# var block.Id #>" class="y-translation-opacity-transition block appearing-block video" style="padding-top: <# block.MinimumHeight #>; background: url( '<# block.ImagePath #>?v=<# VersionTimestamp #>' ) no-repeat <# block.ImageHorizontalPosition #> <# block.ImageVerticalPosition #> / cover, url( '<# GetPreloadImagePath( block.ImagePath ) #>?v=<# VersionTimestamp #>' ) no-repeat <# block.ImageHorizontalPosition #> <# block.ImageVerticalPosition #> / cover">
     <? if ( block.VideoPath !== '' ) { ?>
-        <video class="autoplay-video video-video" data-video-path="<# block.VideoPath #>" muted playsinline loop poster="<# block.ImagePath #>.small.jpg?v=<# VersionTimestamp #>"></video>
+        <video class="autoplay-video video-video" data-video-path="<# block.VideoPath #>|<# block.VideoPath #>.medium.mp4@max-width:65em|<# block.VideoPath #>.small.mp4@max-width:35em" muted playsinline loop poster="<# block.ImagePath #>.small.jpg?v=<# VersionTimestamp #>"></video>
     <? } ?>
 </div>

@@ -4,8 +4,8 @@
     CookieConsentTitleHoverColor = GrayColor400;
     CookieConsentTextColor = GrayColor200;
     CookieConsentContentTextColor = GrayColor400;
-    CookieConsentDescriptionTextColor = GrayColor400;
     CookieConsentDescriptionBackgroundColor = GrayColor950;
+    CookieConsentDescriptionTextColor = GrayColor400;
     CookieConsentTooltipBackgroundColor = BlueColor200;
     CookieConsentTooltipTextColor = WhiteColor;
     CookieConsentPrimaryButtonBackgroundColor = BlueColor400;
@@ -96,7 +96,7 @@
 
     .cookie-consent-banner.is-wide .cookie-consent-banner-button-list
     {
-        +Media( min-width-30em )
+        +Media( min-width-35em )
         {
             flex-direction: row;
             justify-content: space-between;

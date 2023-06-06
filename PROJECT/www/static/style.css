@@ -1324,7 +1324,7 @@ body.is-appearing .loader-page-logo {
   flex-direction: column;
   gap: 0.5rem;
 }
-@media (min-width: 30em) {
+@media (min-width: 35em) {
   .cookie-consent-banner.is-wide .cookie-consent-banner-button-list {
     flex-direction: row;
     justify-content: space-between;
