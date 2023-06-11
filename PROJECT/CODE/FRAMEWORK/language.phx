@@ -7,11 +7,11 @@ function GetBrowserLanguageCode(
 {
     if ( isset( _SERVER[ 'HTTP_ACCEPT_LANGUAGE' ] ) )
     {
-        var browser_language_code_array = explode( ',', _SERVER[ 'HTTP_ACCEPT_LANGUAGE' ] );
+        var browser_language_code_array = explode( ',', strtolower( _SERVER[ 'HTTP_ACCEPT_LANGUAGE' ] ) );
 
         foreach ( var browser_language_code; browser_language_code_array )
         {
-            browser_language_code = strtolower( substr( browser_language_code, 0, 2 ) );
+            browser_language_code = substr( browser_language_code, 0, 2 );
 
             var valid_language_code_index = array_search( browser_language_code, valid_language_code_array, true );
 
