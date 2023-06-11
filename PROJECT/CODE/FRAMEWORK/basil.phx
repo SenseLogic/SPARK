@@ -1,5 +1,50 @@
 // -- FUNCTIONS
 
+function GetTuid(
+    string text
+    )
+{
+    if ( text == "" )
+    {
+        return "";
+    }
+    else
+    {
+        var hash = md5( text, true );
+
+        return str_replace( [ '+', '/', '=' ], [ '-', '_', '' ], base64_encode( hash ) );
+    }
+}
+
+// ~~
+
+function GetUuid(
+    string text
+    )
+{
+    if ( text == "" )
+    {
+        return "00000000-0000-0000-0000-000000000000";
+    }
+    else
+    {
+        var hash = md5( text );
+
+        return
+            substr( hash, 0, 8 )
+            .. '-'
+            .. substr( hash, 8, 4 )
+            .. '-'
+            .. substr( hash, 12, 4 )
+            .. '-'
+            .. substr( hash, 16, 4 )
+            .. '-'
+            .. substr( hash, 20, 12 );
+    }
+}
+
+// ~~
+
 function GetBasilValueText(
     value
     )
@@ -18,14 +63,14 @@ function GetBasilValueText(
             {
                 foreach ( var key => var element; value )
                 {
-                    array_push( value_text_array, '{ ' .. GetValueText( key ) .. ' ~ ' .. GetValueText( element ) .. ' }' );
+                    array_push( value_text_array, '{ ' .. GetBasilValueText( key ) .. ' ~ ' .. GetBasilValueText( element ) .. ' }' );
                 }
             }
             else
             {
                 foreach ( var element; value )
                 {
-                    array_push( value_text_array, GetValueText( element ) );
+                    array_push( value_text_array, GetBasilValueText( element ) );
                 }
             }
 
@@ -36,15 +81,10 @@ function GetBasilValueText(
     {
         var value_text = str_replace( [ "\\", "~", "^", "{", "}", "\n", "\r", "\t" ], [ "\\\\", "\\~", "\\{", "\\}", "\\^", "\\n", "\\r", "\\t" ], value );
 
-        if ( value_text.HasPrefix( ' ' ) )
-        {
-            value_text = '^' .. substr( value_text, 1 );
-        }
-
-        if ( value_text.HasSuffix( ' ' ) )
-        {
-            value_text = substr( value_text, 0, value_text.length - 1 ) .. '^';
-        }
+        value_text = ReplacePrefix( value_text, '#', '\\#' );
+        value_text = ReplacePrefix( value_text, '%', '\\%' );
+        value_text = ReplacePrefix( value_text, ' ', '^' );
+        value_text = ReplaceSuffix( value_text, ' ', '^' );
 
         return value_text;
     }
@@ -77,7 +117,9 @@ function GetBasilColumnText(
 // ~~
 
 function GetBasilTableText(
-    string table_name
+    string table_name,
+    array &old_id_array,
+    array &new_id_array
     )
 {
     var column_array = GetDatabaseColumnArray( table_name );
@@ -107,6 +149,8 @@ function GetBasilTableText(
         }
 
         var basil_row_text = '';
+        var id_value = '';
+        var id_value_character_count = 0;
 
         for ( var column_value_index = 0;
               column_value_index < column_value_count;
@@ -125,6 +169,45 @@ function GetBasilTableText(
             var column_value = column_value_array[ column_value_index ];
 
             basil_row_text ..= GetBasilColumnText( column_value, column_by_name_map[ column_name ] ) .. "\n";
+
+            if ( table_name === 'text' && column_value_index === 0
+                 && strtolower( column_name ) === 'id' )
+            {
+                id_value_character_count = strlen( column_value );
+
+                if ( id_value_character_count == 22
+                     || id_value_character_count == 36 )
+                {
+                    id_value = column_value;
+                }
+                else
+                {
+                    id_value_character_count = 0;
+                }
+            }
+            else if ( id_value_character_count !== 0
+                      && strtolower( column_name ) === 'slug' )
+            {
+                foreach ( var slug; [ column_value, column_value .. '-' .. str_replace( '_', '-', strtolower( table_name ) ) ] )
+                {
+                    if ( id_value_character_count == 22 )
+                    {
+                        var old_id = GetTuid( slug );
+                        var new_id = '%' .. slug;
+                    }
+                    else if ( id_value_character_count == 36 )
+                    {
+                        old_id = GetUuid( slug );
+                        new_id = '#' .. slug;
+                    }
+
+                    if ( old_id === id_value )
+                    {
+                        array_push( old_id_array, old_id );
+                        array_push( new_id_array, new_id );
+                    }
+                }
+            }
         }
 
         array_push( basil_row_text_array, basil_row_text );
@@ -143,13 +226,15 @@ function GetBasilDatabaseText(
     array table_name_array
     )
 {
+    var old_id_array = [];
+    var new_id_array = [];
     var basil_database_text = '';
 
     foreach ( var table_name; table_name_array )
     {
         basil_database_text
-            ..= GetBasilTableText( table_name ) .. "\n";
+            ..= GetBasilTableText( table_name, old_id_array, new_id_array ) .. "\n";
     }
 
-    return basil_database_text;
+    return str_replace( old_id_array, new_id_array, basil_database_text );
 }
