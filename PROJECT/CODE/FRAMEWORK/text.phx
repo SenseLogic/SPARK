@@ -1020,7 +1020,7 @@ function GetProcessedMultilineText(
 
     if ( processed_line_tag_count > 0 )
     {
-        var line_array = explode( "\n\n", str_replace( "\r", '', text ) );
+        var line_array = explode( "\n", str_replace( "\r", '', text ) );
         var line_count = count( line_array );
 
         for ( var line_index = 0;
