@@ -18,7 +18,7 @@ class UPLOAD_DOCUMENT_CONTROLLER extends CONTROLLER
         {
              $source_file_path = GetUploadedFilePath( 'File' );
              $source_file_name = GetValidFileName( GetUploadedFileName( 'File' ));
-             $target_file_name = GetSuffixedFilePath( $source_file_name, '_' . GetCurrentDateTimeSuffix() );
+             $target_file_name = GetValidFileName( GetSuffixedFilePath( $source_file_name, '_' . GetCurrentDateTimeSuffix() ) );
              $target_file_path = GetBaseFolderName() . '/upload/document/' . $target_file_name;
 
             if ( MoveUploadedFile( $source_file_path, $target_file_path ) )

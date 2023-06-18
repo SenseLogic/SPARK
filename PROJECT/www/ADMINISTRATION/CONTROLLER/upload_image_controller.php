@@ -19,7 +19,7 @@ class UPLOAD_IMAGE_CONTROLLER extends CONTROLLER
         {
              $source_file_path = GetUploadedFilePath( 'File' );
              $source_file_name = GetValidFileName( GetUploadedFileName( 'File' ));
-             $target_file_name = GetSuffixedFilePath( $source_file_name, '_' . GetCurrentDateTimeSuffix() );
+             $target_file_name = GetValidFileName( GetSuffixedFilePath( $source_file_name, '_' . GetCurrentDateTimeSuffix() ) );
 
             if ( HasSuffix( $target_file_name, '.jpeg' ) )
             {
@@ -38,15 +38,21 @@ class UPLOAD_IMAGE_CONTROLLER extends CONTROLLER
                 $target_file_name = ReplaceSuffix( $target_file_name, '.PNG', '.png' );
             }
 
-             $target_file_path = GetBaseFolderName() . '/upload/image/' . $target_file_name;
+             $media_folder_path = GetBaseFolderName() . '/media/image/';
+             $media_file_path = $media_folder_path . $target_file_name;
 
-            if ( MoveUploadedFile( $source_file_path, $target_file_path ) )
+            CreateFolder( $media_folder_path );
+
+            if ( MoveUploadedFile( $source_file_path, $media_file_path ) )
             {
+                 $target_folder_path = GetBaseFolderName() . '/upload/image/';
+                 $target_file_path = $target_folder_path . $target_file_name;
+
+                CreateFolder( $target_folder_path );
+
                 if ( HasSuffix( $target_file_path, '.jpg' ) )
                 {
-                     $image = ReadJpegImage( $target_file_path );
-
-                    MoveFile( $target_file_path, $target_file_path . ".original.jpg" );
+                     $image = ReadJpegImage( $media_file_path );
 
                      $default_image = CreateLimitedImage( $image, 2073600 );
                     WriteJpegImage( $default_image, $target_file_path, 70 );
@@ -68,17 +74,14 @@ class UPLOAD_IMAGE_CONTROLLER extends CONTROLLER
                 }
                 else if ( HasSuffix( $target_file_path, '.png' ) )
                 {
-                     $image = ReadPngImage( $target_file_path );
+                     $image = ReadPngImage( $media_file_path );
 
                     EnableImageTransparency( $image );
 
                     if ( IsOpaqueImage( $image ) )
                     {
-                         $old_target_file_path = $target_file_path;
                          $target_file_name = ReplaceSuffix( $target_file_name, '.png', '.jpg' );
                          $target_file_path = ReplaceSuffix( $target_file_path, '.png', '.jpg' );
-
-                        MoveFile( $old_target_file_path, $target_file_path . ".original.png" );
 
                          $default_image = CreateLimitedImage( $image, 2073600 );
                         WriteJpegImage( $default_image, $target_file_path, 70 );
@@ -98,8 +101,6 @@ class UPLOAD_IMAGE_CONTROLLER extends CONTROLLER
                     }
                     else
                     {
-                        MoveFile( $target_file_path, $target_file_path . ".original.png" );
-
                          $default_image = CreateLimitedImage( $image, 2073600, true );
                         WritePngImage( $default_image, $target_file_path );
                         ReleaseImage( $default_image );
@@ -118,6 +119,10 @@ class UPLOAD_IMAGE_CONTROLLER extends CONTROLLER
                     }
 
                     ReleaseImage( $image );
+                }
+                else
+                {
+                    MoveFile( $media_file_path, $target_file_path );
                 }
 
                 SetStatus( 201 );

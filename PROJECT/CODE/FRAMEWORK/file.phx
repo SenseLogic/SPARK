@@ -18,6 +18,22 @@ function FileExists(
 
 // ~~
 
+function CreateFolder(
+    string folder_path
+    )
+{
+    if ( !file_exists( folder_path ) )
+    {
+        return mkdir( folder_path, 0777, true );
+    }
+    else
+    {
+        return false;
+    }
+}
+
+// ~~
+
 function MoveFile(
     string old_file_path,
     string new_file_path
