@@ -893,6 +893,7 @@ function WriteJpegImage(
     int quality = -1
     )
 {
+    imageinterlace( image, 1 );
     imagejpeg( image, image_file_path, quality );
 }
 
