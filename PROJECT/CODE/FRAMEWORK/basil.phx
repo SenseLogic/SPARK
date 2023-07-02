@@ -186,7 +186,8 @@ function GetBasilTableText(
                 }
             }
             else if ( id_value_character_count !== 0
-                      && strtolower( column_name ) === 'slug' )
+                      && ( strtolower( column_name ) === 'slug'
+                           || strtolower( column_name ) === 'code' ) )
             {
                 foreach ( var slug; [ column_value, column_value .. '-' .. str_replace( '_', '-', strtolower( table_name ) ) ] )
                 {
