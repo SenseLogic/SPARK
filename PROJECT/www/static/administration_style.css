@@ -906,6 +906,37 @@ textarea {
     max-width: calc(var(--viewport-width) * 0.5 - 2rem - 0.5px);
   }
 }
+.small-card-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1rem;
+}
+@media (min-width: 80em) {
+  .small-card-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 120em) {
+  .small-card-list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+.small-card {
+  max-width: calc(var(--viewport-width) - 2rem - 0.5px);
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+@media (min-width: 80em) {
+  .small-card {
+    max-width: calc(var(--viewport-width) * 0.5 - 2rem - 0.5px);
+  }
+}
+@media (min-width: 120em) {
+  .small-card {
+    max-width: calc(var(--viewport-width) * 0.3333333 - 2rem - 0.5px);
+  }
+}
 .tool-container {
   width: 100%;
   display: flex;

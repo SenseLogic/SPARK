@@ -729,6 +729,45 @@ MakeSortableTableColumn();
     }
 }
 
+.small-card-list
+{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+
+    +Media( min-width-80em )
+    {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    +Media( min-width-120em )
+    {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.small-card-container
+{
+}
+
+.small-card
+{
+    max-width: calc( var( --viewport-width ) - 2rem - 0.5px );
+    border: 1px solid BorderColor;
+    border-radius: 0.5rem;
+    padding: 1rem;
+
+    +Media( min-width-80em )
+    {
+        max-width: calc( var( --viewport-width ) * 0.5 - 2rem - 0.5px );
+    }
+
+    +Media( min-width-120em )
+    {
+        max-width: calc( var( --viewport-width ) * 0.3333333 - 2rem - 0.5px );
+    }
+}
+
 .tool-container
 {
     width: 100%;
