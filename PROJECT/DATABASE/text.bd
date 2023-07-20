@@ -403,37 +403,36 @@ TEXT
               <size<3rem>>BIG</size>\\n
               <weight<100>>THIN</weight>\\n
               ¨fr:! Titre\\n
-              \\n
-              - élément\\n
-              \\n
-              ^ * élément\\n
-              \\n
-              ^ * élément\\n
-              \\n
-              - élément\\n
-              \\n
-              ^ * élément\\n
-              \\n
-              ^ * élément\\n
-              \\n
-              !! Sous-titre\\n
-              \\n
-              **Gras** %%italique%% __souligné__ ,,indice,, \^\^exposant\^\^ :\\n
-              \\n
-              [[[\\n
-              [[ Fruit || Légume ]]\\n
-              [[ pomme || patate ]]\\n
-              [[ orange || carotte ]]\\n
-              [[ kiwi || brocoli ]]\\n
-              ]]]\\n
-              \\n
-              Pour plus d'informations : ((http://www.wikipedia.com)(Wikipedia)).\\n
-              \\n
-              !! Sous-titre\\n
-              \\n
-              <red>ROUGE</red>\\n
-              <green>VERT</green>\\n
-              <color<#00F>>BLEU</color>\\n
-              <size<3rem>>GRAND</size>\\n
-              <weight<100>>FIN</weight>
-
+                  \\n
+                  - élément\\n
+                  \\n
+                  ^ * élément\\n
+                  \\n
+                  ^ * élément\\n
+                  \\n
+                  - élément\\n
+                  \\n
+                  ^ * élément\\n
+                  \\n
+                  ^ * élément\\n
+                  \\n
+                  !! Sous-titre\\n
+                  \\n
+                  **Gras** %%italique%% __souligné__ ,,indice,, \^\^exposant\^\^ :\\n
+                  \\n
+                  [[[\\n
+                  [[ Fruit || Légume ]]\\n
+                  [[ pomme || patate ]]\\n
+                  [[ orange || carotte ]]\\n
+                  [[ kiwi || brocoli ]]\\n
+                  ]]]\\n
+                  \\n
+                  Pour plus d'informations : ((http://www.wikipedia.com)(Wikipedia)).\\n
+                  \\n
+                  !! Sous-titre\\n
+                  \\n
+                  <red>ROUGE</red>\\n
+                  <green>VERT</green>\\n
+                  <color<#00F>>BLEU</color>\\n
+                  <size<3rem>>GRAND</size>\\n
+                  <weight<100>>FIN</weight>
