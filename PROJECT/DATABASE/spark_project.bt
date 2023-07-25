@@ -66,6 +66,8 @@ DefineTag( '~', '&nbsp;' );
 DefineTag( '¦', '<wbr/>' );
 DefineTag( '§', '<br/>' );
 DefineTag( '¶', '<br class="linebreak"/>' );
+DefineTag( '®', '<sup>®</sup>' );
+DefineTag( '™', '<sup>™</sup>' );
 DefineTag( '[[[', '<table>' );
 DefineTag( ']]]', '</table>' );
 DefineTag( '[[', '<tr><td>' );
