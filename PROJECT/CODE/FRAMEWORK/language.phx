@@ -64,28 +64,56 @@ function GetUntranslatedText(
 
 // ~~
 
+function MatchesLanguageSpecifier(
+    string language_tag,
+    string language_specifier
+    )
+{
+    var language_tag_part_array = explode( '-', language_tag .. '--' );
+
+    foreach ( var language_specifier_tag; explode( ',', language_specifier ) )
+    {
+        var language_specifier_tag_part_array = explode( '-', language_specifier_tag .. '--' );
+
+        if ( ( language_tag_part_array[ 0 ] === ''
+               || language_specifier_tag_part_array[ 0 ] === ''
+               || language_tag_part_array[ 0 ] === language_specifier_tag_part_array[ 0 ] )
+             && ( language_tag_part_array[ 1 ] === ''
+                  || language_specifier_tag_part_array[ 1 ] === ''
+                  || language_tag_part_array[ 1 ] === language_specifier_tag_part_array[ 1 ] )
+             && ( language_tag_part_array[ 2 ] === ''
+                  || language_specifier_tag_part_array[ 2 ] === ''
+                  || language_tag_part_array[ 2 ] === language_specifier_tag_part_array[ 2 ] ) )
+        {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+// ~~
+
 function GetTranslatedText(
     string text,
-    string language_code,
-    string default_language_code = 'en'
+    string language_tag,
+    string default_language_tag = 'en'
     )
 {
     var translated_text_array = explode( '¨', text );
 
-    if ( language_code !== default_language_code )
+    if ( language_tag !== default_language_tag )
     {
-        for ( var translated_text_index = 1;
-              translated_text_index < count( translated_text_array );
-              ++translated_text_index )
+        for ( var translated_text_index = count( translated_text_array ) - 1;
+              translated_text_index >= 1;
+              --translated_text_index )
         {
             var translated_text = translated_text_array[ translated_text_index ];
             var colon_character_index = strpos( translated_text, ':' );
 
             if ( colon_character_index !== false )
             {
-                var language_code_array = explode( ',', substr( translated_text, 0, colon_character_index ) );
-
-                if ( in_array( language_code, language_code_array, true ) )
+                if ( MatchesLanguageSpecifier( language_tag, substr( translated_text, 0, colon_character_index ) ) )
                 {
                     return substr( translated_text, colon_character_index + 1 );
                 }

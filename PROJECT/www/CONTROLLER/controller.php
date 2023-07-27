@@ -15,6 +15,7 @@ class CONTROLLER
         $this->Session = new SESSION();
 
         $this->LanguageCode = $language_code;
+        $this->LanguageTag = $language_code;
         $this->LanguageDecimalSeparator = GetLanguageDecimalSeparator( $this->LanguageCode );
     }
 
@@ -24,7 +25,7 @@ class CONTROLLER
         string $text
         )
     {
-        return GetTranslatedText( $text, $this->LanguageCode );
+        return GetTranslatedText( $text, $this->LanguageTag );
     }
 
     // ~~

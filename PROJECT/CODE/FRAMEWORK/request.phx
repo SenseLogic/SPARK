@@ -884,258 +884,327 @@ function GetCapitalLongitudeFromCountryCode(
 
 // ~~
 
-function GetContinentSlugFromCountryCode(
+function GetContinentCodeFromCountryCode(
     string country_code
     )
 {
     switch ( country_code )
     {
-        case 'AF' : return 'asia';
-        case 'AX' : return 'europe';
-        case 'AL' : return 'europe';
-        case 'DZ' : return 'africa';
-        case 'AS' : return 'australia';
-        case 'AD' : return 'europe';
-        case 'AO' : return 'africa';
-        case 'AI' : return 'central-america';
-        case 'AQ' : return 'antarctica';
-        case 'AG' : return 'central-america';
-        case 'AR' : return 'south-america';
-        case 'AM' : return 'europe';
-        case 'AW' : return 'central-america';
-        case 'AU' : return 'australia';
-        case 'AT' : return 'europe';
-        case 'AZ' : return 'europe';
-        case 'BS' : return 'central-america';
-        case 'BH' : return 'asia';
-        case 'BD' : return 'asia';
-        case 'BB' : return 'central-america';
-        case 'BY' : return 'europe';
-        case 'BE' : return 'europe';
-        case 'BZ' : return 'central-america';
-        case 'BJ' : return 'africa';
-        case 'BM' : return 'central-america';
-        case 'BT' : return 'asia';
-        case 'BO' : return 'south-america';
-        case 'BA' : return 'europe';
-        case 'BW' : return 'africa';
-        case 'BR' : return 'south-america';
-        case 'IO' : return 'africa';
-        case 'VG' : return 'central-america';
-        case 'BN' : return 'asia';
-        case 'BG' : return 'europe';
-        case 'BF' : return 'africa';
-        case 'BI' : return 'africa';
-        case 'KH' : return 'asia';
-        case 'CM' : return 'africa';
-        case 'CA' : return 'north-america';
-        case 'CV' : return 'africa';
-        case 'KY' : return 'central-america';
-        case 'CF' : return 'africa';
-        case 'TD' : return 'africa';
-        case 'CL' : return 'south-america';
-        case 'CN' : return 'asia';
-        case 'CX' : return 'australia';
-        case 'CC' : return 'australia';
-        case 'CO' : return 'south-america';
-        case 'KM' : return 'africa';
-        case 'CK' : return 'australia';
-        case 'CR' : return 'central-america';
-        case 'CI' : return 'africa';
-        case 'HR' : return 'europe';
-        case 'CU' : return 'central-america';
-        case 'CW' : return 'central-america';
-        case 'CY' : return 'europe';
-        case 'CZ' : return 'europe';
-        case 'CD' : return 'africa';
-        case 'DK' : return 'europe';
-        case 'DJ' : return 'africa';
-        case 'DM' : return 'central-america';
-        case 'DO' : return 'central-america';
-        case 'EC' : return 'south-america';
-        case 'EG' : return 'africa';
-        case 'SV' : return 'central-america';
-        case 'GQ' : return 'africa';
-        case 'ER' : return 'africa';
-        case 'EE' : return 'europe';
-        case 'ET' : return 'africa';
-        case 'FK' : return 'south-america';
-        case 'FO' : return 'europe';
-        case 'FM' : return 'australia';
-        case 'FJ' : return 'australia';
-        case 'FI' : return 'europe';
-        case 'FR' : return 'europe';
-        case 'PF' : return 'australia';
-        case 'TF' : return 'antarctica';
-        case 'GA' : return 'africa';
-        case 'GE' : return 'europe';
-        case 'DE' : return 'europe';
-        case 'GH' : return 'africa';
-        case 'GI' : return 'europe';
-        case 'GR' : return 'europe';
-        case 'GL' : return 'central-america';
-        case 'GD' : return 'central-america';
-        case 'GU' : return 'australia';
-        case 'GT' : return 'central-america';
-        case 'GG' : return 'europe';
-        case 'GN' : return 'africa';
-        case 'GW' : return 'africa';
-        case 'GY' : return 'south-america';
-        case 'HT' : return 'central-america';
-        case 'HM' : return 'antarctica';
-        case 'HN' : return 'central-america';
-        case 'HK' : return 'asia';
-        case 'HU' : return 'europe';
-        case 'IS' : return 'europe';
-        case 'IN' : return 'asia';
-        case 'ID' : return 'asia';
-        case 'IR' : return 'asia';
-        case 'IQ' : return 'asia';
-        case 'IE' : return 'europe';
-        case 'IM' : return 'europe';
-        case 'IL' : return 'asia';
-        case 'IT' : return 'europe';
-        case 'JM' : return 'central-america';
-        case 'JP' : return 'asia';
-        case 'JE' : return 'europe';
-        case 'JO' : return 'asia';
-        case 'KZ' : return 'asia';
-        case 'KE' : return 'africa';
-        case 'KI' : return 'australia';
-        case 'KO' : return 'europe';
-        case 'KW' : return 'asia';
-        case 'KG' : return 'asia';
-        case 'LA' : return 'asia';
-        case 'LV' : return 'europe';
-        case 'LB' : return 'asia';
-        case 'LS' : return 'africa';
-        case 'LR' : return 'africa';
-        case 'LY' : return 'africa';
-        case 'LI' : return 'europe';
-        case 'LT' : return 'europe';
-        case 'LU' : return 'europe';
-        case 'MO' : return 'asia';
-        case 'MK' : return 'europe';
-        case 'MG' : return 'africa';
-        case 'MW' : return 'africa';
-        case 'MY' : return 'asia';
-        case 'MV' : return 'asia';
-        case 'ML' : return 'africa';
-        case 'MT' : return 'europe';
-        case 'MH' : return 'australia';
-        case 'MR' : return 'africa';
-        case 'MU' : return 'africa';
-        case 'MX' : return 'central-america';
-        case 'MD' : return 'europe';
-        case 'MC' : return 'europe';
-        case 'MN' : return 'asia';
-        case 'ME' : return 'europe';
-        case 'MS' : return 'central-america';
-        case 'MA' : return 'africa';
-        case 'MZ' : return 'africa';
-        case 'MM' : return 'asia';
-        case 'NA' : return 'africa';
-        case 'NR' : return 'australia';
-        case 'NP' : return 'asia';
-        case 'NL' : return 'europe';
-        case 'NC' : return 'australia';
-        case 'NZ' : return 'australia';
-        case 'NI' : return 'central-america';
-        case 'NE' : return 'africa';
-        case 'NG' : return 'africa';
-        case 'NU' : return 'australia';
-        case 'NF' : return 'australia';
-        case 'KP' : return 'asia';
-        case 'MP' : return 'australia';
-        case 'NO' : return 'europe';
-        case 'OM' : return 'asia';
-        case 'PK' : return 'asia';
-        case 'PW' : return 'australia';
-        case 'PS' : return 'asia';
-        case 'PA' : return 'central-america';
-        case 'PG' : return 'australia';
-        case 'PY' : return 'south-america';
-        case 'PE' : return 'south-america';
-        case 'PH' : return 'asia';
-        case 'PN' : return 'australia';
-        case 'PL' : return 'europe';
-        case 'PT' : return 'europe';
-        case 'PR' : return 'central-america';
-        case 'QA' : return 'asia';
-        case 'CG' : return 'africa';
-        case 'RO' : return 'europe';
-        case 'RU' : return 'europe';
-        case 'RW' : return 'africa';
-        case 'BL' : return 'central-america';
-        case 'SH' : return 'africa';
-        case 'KN' : return 'central-america';
-        case 'LC' : return 'central-america';
-        case 'MF' : return 'central-america';
-        case 'PM' : return 'central-america';
-        case 'VC' : return 'central-america';
-        case 'WS' : return 'australia';
-        case 'SM' : return 'europe';
-        case 'ST' : return 'africa';
-        case 'SA' : return 'asia';
-        case 'SN' : return 'africa';
-        case 'RS' : return 'europe';
-        case 'SC' : return 'africa';
-        case 'SL' : return 'africa';
-        case 'SG' : return 'asia';
-        case 'SX' : return 'central-america';
-        case 'SK' : return 'europe';
-        case 'SI' : return 'europe';
-        case 'SB' : return 'australia';
-        case 'SO' : return 'africa';
-        case 'ZA' : return 'africa';
-        case 'GS' : return 'antarctica';
-        case 'KR' : return 'asia';
-        case 'SS' : return 'africa';
-        case 'ES' : return 'europe';
-        case 'LK' : return 'asia';
-        case 'SD' : return 'africa';
-        case 'SR' : return 'south-america';
-        case 'SJ' : return 'europe';
-        case 'SZ' : return 'africa';
-        case 'SE' : return 'europe';
-        case 'CH' : return 'europe';
-        case 'SY' : return 'asia';
-        case 'TW' : return 'asia';
-        case 'TJ' : return 'asia';
-        case 'TZ' : return 'africa';
-        case 'TH' : return 'asia';
-        case 'GM' : return 'africa';
-        case 'TL' : return 'asia';
-        case 'TG' : return 'africa';
-        case 'TK' : return 'australia';
-        case 'TO' : return 'australia';
-        case 'TT' : return 'central-america';
-        case 'TN' : return 'africa';
-        case 'TR' : return 'europe';
-        case 'TM' : return 'asia';
-        case 'TC' : return 'central-america';
-        case 'TV' : return 'australia';
-        case 'UG' : return 'africa';
-        case 'UA' : return 'europe';
-        case 'AE' : return 'asia';
-        case 'GB' : return 'europe';
-        case 'US' : return 'north-america';
-        case 'UY' : return 'south-america';
-        case 'UM' : return 'australia';
-        case 'VI' : return 'central-america';
-        case 'UZ' : return 'asia';
-        case 'VU' : return 'australia';
-        case 'VA' : return 'europe';
-        case 'VE' : return 'south-america';
-        case 'VN' : return 'asia';
-        case 'WF' : return 'australia';
-        case 'EH' : return 'africa';
-        case 'YE' : return 'asia';
-        case 'ZM' : return 'africa';
-        case 'ZW' : return 'africa';
+        case 'AF' : return 'AS';
+        case 'AX' : return 'EU';
+        case 'AL' : return 'EU';
+        case 'DZ' : return 'AF';
+        case 'AS' : return 'OC';
+        case 'AD' : return 'EU';
+        case 'AO' : return 'AF';
+        case 'AI' : return 'CA';
+        case 'AQ' : return 'AN';
+        case 'AG' : return 'CA';
+        case 'AR' : return 'SA';
+        case 'AM' : return 'EU';
+        case 'AW' : return 'CA';
+        case 'AU' : return 'OC';
+        case 'AT' : return 'EU';
+        case 'AZ' : return 'EU';
+        case 'BS' : return 'CA';
+        case 'BH' : return 'AS';
+        case 'BD' : return 'AS';
+        case 'BB' : return 'CA';
+        case 'BY' : return 'EU';
+        case 'BE' : return 'EU';
+        case 'BZ' : return 'CA';
+        case 'BJ' : return 'AF';
+        case 'BM' : return 'CA';
+        case 'BT' : return 'AS';
+        case 'BO' : return 'SA';
+        case 'BA' : return 'EU';
+        case 'BW' : return 'AF';
+        case 'BR' : return 'SA';
+        case 'IO' : return 'AF';
+        case 'VG' : return 'CA';
+        case 'BN' : return 'AS';
+        case 'BG' : return 'EU';
+        case 'BF' : return 'AF';
+        case 'BI' : return 'AF';
+        case 'KH' : return 'AS';
+        case 'CM' : return 'AF';
+        case 'CA' : return 'NA';
+        case 'CV' : return 'AF';
+        case 'KY' : return 'CA';
+        case 'CF' : return 'AF';
+        case 'TD' : return 'AF';
+        case 'CL' : return 'SA';
+        case 'CN' : return 'AS';
+        case 'CX' : return 'OC';
+        case 'CC' : return 'OC';
+        case 'CO' : return 'SA';
+        case 'KM' : return 'AF';
+        case 'CK' : return 'OC';
+        case 'CR' : return 'CA';
+        case 'CI' : return 'AF';
+        case 'HR' : return 'EU';
+        case 'CU' : return 'CA';
+        case 'CW' : return 'CA';
+        case 'CY' : return 'EU';
+        case 'CZ' : return 'EU';
+        case 'CD' : return 'AF';
+        case 'DK' : return 'EU';
+        case 'DJ' : return 'AF';
+        case 'DM' : return 'CA';
+        case 'DO' : return 'CA';
+        case 'EC' : return 'SA';
+        case 'EG' : return 'AF';
+        case 'SV' : return 'CA';
+        case 'GQ' : return 'AF';
+        case 'ER' : return 'AF';
+        case 'EE' : return 'EU';
+        case 'ET' : return 'AF';
+        case 'FK' : return 'SA';
+        case 'FO' : return 'EU';
+        case 'FM' : return 'OC';
+        case 'FJ' : return 'OC';
+        case 'FI' : return 'EU';
+        case 'FR' : return 'EU';
+        case 'PF' : return 'OC';
+        case 'TF' : return 'AN';
+        case 'GA' : return 'AF';
+        case 'GE' : return 'EU';
+        case 'DE' : return 'EU';
+        case 'GH' : return 'AF';
+        case 'GI' : return 'EU';
+        case 'GR' : return 'EU';
+        case 'GL' : return 'CA';
+        case 'GD' : return 'CA';
+        case 'GU' : return 'OC';
+        case 'GT' : return 'CA';
+        case 'GG' : return 'EU';
+        case 'GN' : return 'AF';
+        case 'GW' : return 'AF';
+        case 'GY' : return 'SA';
+        case 'HT' : return 'CA';
+        case 'HM' : return 'AN';
+        case 'HN' : return 'CA';
+        case 'HK' : return 'AS';
+        case 'HU' : return 'EU';
+        case 'IS' : return 'EU';
+        case 'IN' : return 'AS';
+        case 'ID' : return 'AS';
+        case 'IR' : return 'AS';
+        case 'IQ' : return 'AS';
+        case 'IE' : return 'EU';
+        case 'IM' : return 'EU';
+        case 'IL' : return 'AS';
+        case 'IT' : return 'EU';
+        case 'JM' : return 'CA';
+        case 'JP' : return 'AS';
+        case 'JE' : return 'EU';
+        case 'JO' : return 'AS';
+        case 'KZ' : return 'AS';
+        case 'KE' : return 'AF';
+        case 'KI' : return 'OC';
+        case 'KO' : return 'EU';
+        case 'KW' : return 'AS';
+        case 'KG' : return 'AS';
+        case 'LA' : return 'AS';
+        case 'LV' : return 'EU';
+        case 'LB' : return 'AS';
+        case 'LS' : return 'AF';
+        case 'LR' : return 'AF';
+        case 'LY' : return 'AF';
+        case 'LI' : return 'EU';
+        case 'LT' : return 'EU';
+        case 'LU' : return 'EU';
+        case 'MO' : return 'AS';
+        case 'MK' : return 'EU';
+        case 'MG' : return 'AF';
+        case 'MW' : return 'AF';
+        case 'MY' : return 'AS';
+        case 'MV' : return 'AS';
+        case 'ML' : return 'AF';
+        case 'MT' : return 'EU';
+        case 'MH' : return 'OC';
+        case 'MR' : return 'AF';
+        case 'MU' : return 'AF';
+        case 'MX' : return 'CA';
+        case 'MD' : return 'EU';
+        case 'MC' : return 'EU';
+        case 'MN' : return 'AS';
+        case 'ME' : return 'EU';
+        case 'MS' : return 'CA';
+        case 'MA' : return 'AF';
+        case 'MZ' : return 'AF';
+        case 'MM' : return 'AS';
+        case 'NA' : return 'AF';
+        case 'NR' : return 'OC';
+        case 'NP' : return 'AS';
+        case 'NL' : return 'EU';
+        case 'NC' : return 'OC';
+        case 'NZ' : return 'OC';
+        case 'NI' : return 'CA';
+        case 'NE' : return 'AF';
+        case 'NG' : return 'AF';
+        case 'NU' : return 'OC';
+        case 'NF' : return 'OC';
+        case 'KP' : return 'AS';
+        case 'MP' : return 'OC';
+        case 'NO' : return 'EU';
+        case 'OM' : return 'AS';
+        case 'PK' : return 'AS';
+        case 'PW' : return 'OC';
+        case 'PS' : return 'AS';
+        case 'PA' : return 'CA';
+        case 'PG' : return 'OC';
+        case 'PY' : return 'SA';
+        case 'PE' : return 'SA';
+        case 'PH' : return 'AS';
+        case 'PN' : return 'OC';
+        case 'PL' : return 'EU';
+        case 'PT' : return 'EU';
+        case 'PR' : return 'CA';
+        case 'QA' : return 'AS';
+        case 'CG' : return 'AF';
+        case 'RO' : return 'EU';
+        case 'RU' : return 'EU';
+        case 'RW' : return 'AF';
+        case 'BL' : return 'CA';
+        case 'SH' : return 'AF';
+        case 'KN' : return 'CA';
+        case 'LC' : return 'CA';
+        case 'MF' : return 'CA';
+        case 'PM' : return 'CA';
+        case 'VC' : return 'CA';
+        case 'WS' : return 'OC';
+        case 'SM' : return 'EU';
+        case 'ST' : return 'AF';
+        case 'SA' : return 'AS';
+        case 'SN' : return 'AF';
+        case 'RS' : return 'EU';
+        case 'SC' : return 'AF';
+        case 'SL' : return 'AF';
+        case 'SG' : return 'AS';
+        case 'SX' : return 'CA';
+        case 'SK' : return 'EU';
+        case 'SI' : return 'EU';
+        case 'SB' : return 'OC';
+        case 'SO' : return 'AF';
+        case 'ZA' : return 'AF';
+        case 'GS' : return 'AN';
+        case 'KR' : return 'AS';
+        case 'SS' : return 'AF';
+        case 'ES' : return 'EU';
+        case 'LK' : return 'AS';
+        case 'SD' : return 'AF';
+        case 'SR' : return 'SA';
+        case 'SJ' : return 'EU';
+        case 'SZ' : return 'AF';
+        case 'SE' : return 'EU';
+        case 'CH' : return 'EU';
+        case 'SY' : return 'AS';
+        case 'TW' : return 'AS';
+        case 'TJ' : return 'AS';
+        case 'TZ' : return 'AF';
+        case 'TH' : return 'AS';
+        case 'GM' : return 'AF';
+        case 'TL' : return 'AS';
+        case 'TG' : return 'AF';
+        case 'TK' : return 'OC';
+        case 'TO' : return 'OC';
+        case 'TT' : return 'CA';
+        case 'TN' : return 'AF';
+        case 'TR' : return 'EU';
+        case 'TM' : return 'AS';
+        case 'TC' : return 'CA';
+        case 'TV' : return 'OC';
+        case 'UG' : return 'AF';
+        case 'UA' : return 'EU';
+        case 'AE' : return 'AS';
+        case 'GB' : return 'EU';
+        case 'US' : return 'NA';
+        case 'UY' : return 'SA';
+        case 'UM' : return 'OC';
+        case 'VI' : return 'CA';
+        case 'UZ' : return 'AS';
+        case 'VU' : return 'OC';
+        case 'VA' : return 'EU';
+        case 'VE' : return 'SA';
+        case 'VN' : return 'AS';
+        case 'WF' : return 'OC';
+        case 'EH' : return 'AF';
+        case 'YE' : return 'AS';
+        case 'ZM' : return 'AF';
+        case 'ZW' : return 'AF';
     }
 
     return '';
+}
+
+// ~~
+
+function GetContinentSlugFromContinentCode(
+    string continent_code
+    )
+{
+    switch ( continent_code )
+    {
+        case 'AF' : return 'africa';
+        case 'AN' : return 'antarctica';
+        case 'AS' : return 'asia';
+        case 'OC' : return 'oceania';
+        case 'CA' : return 'central-america';
+        case 'EU' : return 'europe';
+        case 'NA' : return 'north-america';
+        case 'SA' : return 'south-america';
+    }
+
+    return '';
+}
+
+// ~~
+
+function GetContinentSlugFromCountryCode(
+    string country_code
+    )
+{
+    return GetContinentSlugFromContinentCode( GetContinentCodeFromCountryCode( country_code ) );
+}
+
+// ~~
+
+function SetLocationContinent(
+    object location
+    )
+{
+    location.ContinentCode = GetContinentCodeFromCountryCode( location.CountryCode );
+    location.ContinentSlug = GetContinentSlugFromContinentCode( location.ContinentCode );
+    location.IsAntarctica = ( location.ContinentCode === 'AN' );
+    location.IsSouthAmerica = ( location.ContinentCode === 'SA' );
+    location.IsCentralAmerica = ( location.ContinentCode === 'CA' );
+    location.IsNorthAmerica = ( location.ContinentCode === 'NA' );
+    location.IsAmerica = ( location.IsSouthAmerica || location.IsCentralAmerica || location.IsNorthAmerica );
+    location.IsAfrica = ( location.ContinentCode === 'AF' );
+    location.IsEurope = ( location.ContinentCode === 'EU' );
+    location.IsOceania = ( location.ContinentCode === 'OC' );
+    location.IsAsia = ( location.ContinentCode === 'AS' );
+    location.IsJapan = ( location.CountryCode === 'JP' );
+}
+
+// ~~
+
+function GetCountryLocation(
+    country_code
+    )
+{
+    var location = new stdClass();
+    location.Service = '';
+    location.Latitude = GetCapitalLatitudeFromCountryCode( country_code );
+    location.Longitude = GetCapitalLongitudeFromCountryCode( country_code );
+    location.CountryCode = country_code;
+    location.TimeZone = GetTimeZoneFromLocation( location.Latitude, location.Longitude, location.CountryCode );
+    location.IsFound = false;
+
+    SetLocationContinent( location );
+
+    return location;
 }
 
 // ~~
@@ -1270,17 +1339,7 @@ function GetBrowserLocation(
         }
     }
 
-    location.ContinentSlug = GetContinentSlugFromCountryCode( location.CountryCode );
-    location.IsAntarctica = ( location.ContinentSlug === 'antarctica' );
-    location.IsSouthAmerica = ( location.ContinentSlug === 'south-america' );
-    location.IsCentralAmerica = ( location.ContinentSlug === 'central-america' );
-    location.IsNorthAmerica = ( location.ContinentSlug === 'north-america' );
-    location.IsAmerica = ( location.IsSouthAmerica || location.IsNorthAmerica );
-    location.IsAfrica = ( location.ContinentSlug === 'africa' );
-    location.IsEurope = ( location.ContinentSlug === 'europe' );
-    location.IsAustralia = ( location.ContinentSlug === 'australia' );
-    location.IsAsia = ( location.ContinentSlug === 'asia' );
-    location.IsJapan = ( location.CountryCode === 'JP' );
+    SetLocationContinent( location );
 
     return location;
 }

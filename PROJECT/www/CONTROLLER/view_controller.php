@@ -16,17 +16,25 @@ class VIEW_CONTROLLER extends CONTROLLER
     {
         parent::__construct( $language_code );
 
-        if ( GetServerName() === 'localhost' )
+        if ( HasQueryValue( 'ip' ) )
         {
-            $this->BrowserAddress = GetRandomAddress();
+            $this->BrowserAddress = GetQueryValue( 'ip' );
         }
         else
         {
             $this->BrowserAddress = GetBrowserAddress();
         }
 
-        $this->BrowserLocation = GetBrowserLocation( $this->BrowserAddress );
+        if ( HasQueryValue( 'cc' ) )
+        {
+            $this->BrowserLocation = GetCountryLocation( GetQueryValue( 'cc' ) );
+        }
+        else
+        {
+            $this->BrowserLocation = GetBrowserLocation( $this->BrowserAddress );
+        }
 
+        $this->LanguageTag = $language_code . '-' . $this->BrowserLocation->CountryCode . '/' . $this->BrowserLocation->ContinentSlug;
         $this->TextArray = GetDatabaseTextArray();
         $this->TextBySlugMap = GetTextBySlugMap( $this->TextArray );
     }

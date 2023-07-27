@@ -26,22 +26,40 @@
     {
         CloseHeaderMenu();
 
-        if ( route !== undefined )
+        if ( route !== undefined
+             && route.startsWith( "/" ) )
         {
-            SetRoute( "/<?php echo $this->LanguageCode; ?>/" + route.RemovePrefix( "/" ) );
+            SetUrl( route );
         }
-
-        TrackRoute();
-        OldViewName = ViewName;
-        ViewName = GetRoute( "/<?php echo $this->LanguageCode; ?>/", "/" );
-
-        if ( ViewName === "" )
+        else if ( route !== undefined
+                  && route.startsWith( "//" ) )
         {
-            ViewName = "home";
+            OpenUrl( route.substring( 1 ) );
         }
+        else if ( route !== undefined
+                  && route.startsWith( "http" ) )
+        {
+            OpenUrl( route );
+        }
+        else
+        {
+            if ( route !== undefined )
+            {
+                SetRoute( "/<?php echo $this->LanguageCode; ?>/" + route.RemovePrefix( "/" ) );
+            }
 
-        SectionName = GetHash();
-        EmitEvent( "update-view" );
+            TrackRoute();
+            OldViewName = ViewName;
+            ViewName = GetRoute( "/<?php echo $this->LanguageCode; ?>/", "/" );
+
+            if ( ViewName === "" )
+            {
+                ViewName = "home";
+            }
+
+            SectionName = GetHash();
+            EmitEvent( "update-view" );
+        }
     }
 
     // ~~

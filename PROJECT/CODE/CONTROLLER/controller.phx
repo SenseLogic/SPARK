@@ -15,6 +15,7 @@ class CONTROLLER
         .Session = new SESSION();
 
         .LanguageCode = language_code;
+        .LanguageTag = language_code;
         .LanguageDecimalSeparator = GetLanguageDecimalSeparator( .LanguageCode );
     }
 
@@ -24,7 +25,7 @@ class CONTROLLER
         string text
         )
     {
-        return GetTranslatedText( text, .LanguageCode );
+        return GetTranslatedText( text, .LanguageTag );
     }
 
     // ~~

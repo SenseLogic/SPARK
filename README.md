@@ -216,19 +216,29 @@ The following instructions describe how to install all the above tools on Window
 
 ## Internationalization
 
-Any string can be internationalized by separating translations with special **language specifiers** :
+Any string can be internationalized by separating translations with **language specifiers**, which can contain one or several language tags.
+
+A language tag can contain a **language code**, a **country code** and a **continent code** :
 
 ```
-Default language text¨de:German text¨fr:French text¨ru:Russian text
+trunk¨en-UK,en--OC:boot¨fr:Coffre¨pt:mala¨pt-BR:porta-malas
 ```
 
-They can contain any HTML **tag** or **entity** :
+Language specifiers are tested from right to left, the first translation being used by default.
+
+Translations can contain HTML **tags** and **entities** :
 
 ```
 A text<br>on two lines.¨fr:Un texte<br>sur deux lignes.
 ```
 
-**Custom HTML tags** can also be defined :
+They can also contain **custom tags** :
+
+```
+A **bold** text§on two lines.¨fr:Un texte en **gras**§sur deux lignes.
+```
+
+They can be freely defined :
 
 ```
 DefineLineTag( '! ', '<div class="paragraph title-1">', '</div>' );

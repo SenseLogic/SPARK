@@ -16,17 +16,25 @@ class VIEW_CONTROLLER extends CONTROLLER
     {
         parent::constructor( language_code );
 
-        if ( GetServerName() === 'localhost' )
+        if ( HasQueryValue( 'ip' ) )
         {
-            .BrowserAddress = GetRandomAddress();
+            .BrowserAddress = GetQueryValue( 'ip' );
         }
         else
         {
             .BrowserAddress = GetBrowserAddress();
         }
 
-        .BrowserLocation = GetBrowserLocation( .BrowserAddress );
+        if ( HasQueryValue( 'cc' ) )
+        {
+            .BrowserLocation = GetCountryLocation( GetQueryValue( 'cc' ) );
+        }
+        else
+        {
+            .BrowserLocation = GetBrowserLocation( .BrowserAddress );
+        }
 
+        .LanguageTag = language_code .. '-' .. .BrowserLocation.CountryCode .. '/' .. .BrowserLocation.ContinentSlug;
         .TextArray = GetDatabaseTextArray();
         .TextBySlugMap = GetTextBySlugMap( .TextArray );
     }
