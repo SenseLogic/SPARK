@@ -1222,120 +1222,124 @@ function GetBrowserLocation(
     location.TimeZone = '';
     location.IsFound = false;
 
-    if ( isset( _SERVER[ 'GEOIP_LATITUDE' ] )
-         && isset( _SERVER[ 'GEOIP_LONGITUDE' ] )
-         && isset( _SERVER[ 'GEOIP_COUNTRY_CODE' ] ) )
+    if ( browser_address !== '127.0.0.1'
+         && browser_address !== '::1' )
     {
-        location.Service = 'geoip';
-        location.CountryCode = _SERVER[ 'GEOIP_COUNTRY_CODE' ];
-        location.Latitude = ( float )_SERVER[ 'GEOIP_LATITUDE' ];
-        location.Longitude = ( float )_SERVER[ 'GEOIP_LONGITUDE' ];
-        location.TimeZone = GetTimeZoneFromLocation( location.Latitude, location.Longitude, location.CountryCode );
-        location.IsFound = true;
-    }
-
-    if ( !location.IsFound )
-    {
-        try
+        if ( isset( _SERVER[ 'GEOIP_LATITUDE' ] )
+             && isset( _SERVER[ 'GEOIP_LONGITUDE' ] )
+             && isset( _SERVER[ 'GEOIP_COUNTRY_CODE' ] ) )
         {
-            var geographic_data = json_decode( file_get_contents( 'http://ip-api.com/json/' .. browser_address ) );
+            location.Service = 'geoip';
+            location.CountryCode = _SERVER[ 'GEOIP_COUNTRY_CODE' ];
+            location.Latitude = ( float )_SERVER[ 'GEOIP_LATITUDE' ];
+            location.Longitude = ( float )_SERVER[ 'GEOIP_LONGITUDE' ];
+            location.TimeZone = GetTimeZoneFromLocation( location.Latitude, location.Longitude, location.CountryCode );
+            location.IsFound = true;
+        }
 
-            if ( geographic_data !== null
-                 && property_exists( geographic_data, 'countryCode' )
-                 && property_exists( geographic_data, 'lat' )
-                 && property_exists( geographic_data, 'lon' )
-                 && property_exists( geographic_data, 'timezone' )
-                 && property_exists( geographic_data, 'status' )
-                 && geographic_data.status === 'success' )
+        if ( !location.IsFound )
+        {
+            try
             {
-                location.Service = 'ip-api.com';
-                location.CountryCode = geographic_data.countryCode;
-                location.Latitude = ( float )geographic_data.lat;
-                location.Longitude = ( float )geographic_data.lon;
-                location.TimeZone = geographic_data.timezone;
-                location.IsFound = true;
+                var geographic_data = json_decode( file_get_contents( 'http://ip-api.com/json/' .. browser_address ) );
+
+                if ( geographic_data !== null
+                     && property_exists( geographic_data, 'countryCode' )
+                     && property_exists( geographic_data, 'lat' )
+                     && property_exists( geographic_data, 'lon' )
+                     && property_exists( geographic_data, 'timezone' )
+                     && property_exists( geographic_data, 'status' )
+                     && geographic_data.status === 'success' )
+                {
+                    location.Service = 'ip-api.com';
+                    location.CountryCode = geographic_data.countryCode;
+                    location.Latitude = ( float )geographic_data.lat;
+                    location.Longitude = ( float )geographic_data.lon;
+                    location.TimeZone = geographic_data.timezone;
+                    location.IsFound = true;
+                }
+            }
+            catch ( Exception var exception )
+            {
             }
         }
-        catch ( Exception var exception )
-        {
-        }
-    }
 
-    if ( !location.IsFound )
-    {
-        try
+        if ( !location.IsFound )
         {
-            var geographic_data = json_decode( file_get_contents( 'http://www.geoplugin.net/json.gp?ip=' .. browser_address ) );
-
-            if ( geographic_data !== null
-                 && property_exists( geographic_data, 'geoplugin_countryCode' )
-                 && property_exists( geographic_data, 'geoplugin_latitude' )
-                 && property_exists( geographic_data, 'geoplugin_longitude' )
-                 && property_exists( geographic_data, 'geoplugin_timezone' )
-                 && property_exists( geographic_data, 'geoplugin_status' )
-                 && geographic_data.geoplugin_countryCode !== null
-                 && geographic_data.geoplugin_status !== 404 )
+            try
             {
-                location.Service = 'geoplugin.net';
-                location.CountryCode = geographic_data.geoplugin_countryCode;
-                location.Latitude = ( float )geographic_data.geoplugin_latitude;
-                location.Longitude = ( float )geographic_data.geoplugin_longitude;
-                location.TimeZone = geographic_data.geoplugin_timezone;
-                location.IsFound = true;
+                var geographic_data = json_decode( file_get_contents( 'http://www.geoplugin.net/json.gp?ip=' .. browser_address ) );
+
+                if ( geographic_data !== null
+                     && property_exists( geographic_data, 'geoplugin_countryCode' )
+                     && property_exists( geographic_data, 'geoplugin_latitude' )
+                     && property_exists( geographic_data, 'geoplugin_longitude' )
+                     && property_exists( geographic_data, 'geoplugin_timezone' )
+                     && property_exists( geographic_data, 'geoplugin_status' )
+                     && geographic_data.geoplugin_countryCode !== null
+                     && geographic_data.geoplugin_status !== 404 )
+                {
+                    location.Service = 'geoplugin.net';
+                    location.CountryCode = geographic_data.geoplugin_countryCode;
+                    location.Latitude = ( float )geographic_data.geoplugin_latitude;
+                    location.Longitude = ( float )geographic_data.geoplugin_longitude;
+                    location.TimeZone = geographic_data.geoplugin_timezone;
+                    location.IsFound = true;
+                }
+            }
+            catch ( Exception var exception )
+            {
             }
         }
-        catch ( Exception var exception )
-        {
-        }
-    }
 
-    if ( !location.IsFound )
-    {
-        try
+        if ( !location.IsFound )
         {
-            var geographic_data = json_decode( file_get_contents( 'https://www.iplocate.io/api/lookup/' .. browser_address ) );
-
-            if ( geographic_data !== null
-                 && property_exists( geographic_data, 'country_code' )
-                 && property_exists( geographic_data, 'latitude' )
-                 && property_exists( geographic_data, 'longitude' )
-                 && property_exists( geographic_data, 'time_zone' )
-                 && geographic_data.country_code !== null )
+            try
             {
-                location.Service = 'iplocate.io';
-                location.CountryCode = geographic_data.country_code;
-                location.Latitude = ( float )geographic_data.latitude;
-                location.Longitude = ( float )geographic_data.longitude;
-                location.TimeZone = geographic_data.time_zone;
-                location.IsFound = true;
+                var geographic_data = json_decode( file_get_contents( 'https://www.iplocate.io/api/lookup/' .. browser_address ) );
+
+                if ( geographic_data !== null
+                     && property_exists( geographic_data, 'country_code' )
+                     && property_exists( geographic_data, 'latitude' )
+                     && property_exists( geographic_data, 'longitude' )
+                     && property_exists( geographic_data, 'time_zone' )
+                     && geographic_data.country_code !== null )
+                {
+                    location.Service = 'iplocate.io';
+                    location.CountryCode = geographic_data.country_code;
+                    location.Latitude = ( float )geographic_data.latitude;
+                    location.Longitude = ( float )geographic_data.longitude;
+                    location.TimeZone = geographic_data.time_zone;
+                    location.IsFound = true;
+                }
+            }
+            catch ( Exception var exception )
+            {
             }
         }
-        catch ( Exception var exception )
-        {
-        }
-    }
 
-    if ( !location.IsFound )
-    {
-        try
+        if ( !location.IsFound )
         {
-            var geographic_data = json_decode( file_get_contents( 'https://api.hostip.info/get_json.php?ip=' .. browser_address ) );
-
-            if ( geographic_data !== null
-                 && property_exists( geographic_data, 'country_code' )
-                 && geographic_data.country_code !== null
-                 && geographic_data.country_code !== 'XX' )
+            try
             {
-                location.Service = 'hostip.info';
-                location.CountryCode = geographic_data.country_code;
-                location.Latitude = GetCapitalLatitudeFromCountryCode( location.CountryCode );
-                location.Longitude = GetCapitalLongitudeFromCountryCode( location.CountryCode );
-                location.TimeZone = GetTimeZoneFromLocation( location.Latitude, location.Longitude, location.CountryCode );
-                location.IsFound = true;
+                var geographic_data = json_decode( file_get_contents( 'https://api.hostip.info/get_json.php?ip=' .. browser_address ) );
+
+                if ( geographic_data !== null
+                     && property_exists( geographic_data, 'country_code' )
+                     && geographic_data.country_code !== null
+                     && geographic_data.country_code !== 'XX' )
+                {
+                    location.Service = 'hostip.info';
+                    location.CountryCode = geographic_data.country_code;
+                    location.Latitude = GetCapitalLatitudeFromCountryCode( location.CountryCode );
+                    location.Longitude = GetCapitalLongitudeFromCountryCode( location.CountryCode );
+                    location.TimeZone = GetTimeZoneFromLocation( location.Latitude, location.Longitude, location.CountryCode );
+                    location.IsFound = true;
+                }
             }
-        }
-        catch ( Exception var exception )
-        {
+            catch ( Exception var exception )
+            {
+            }
         }
     }
 

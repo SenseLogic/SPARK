@@ -16,18 +16,18 @@ class VIEW_CONTROLLER extends CONTROLLER
     {
         parent::__construct( $language_code );
 
-        if ( HasQueryValue( 'ip' ) )
+        if ( HasQueryValue( 'testip' ) )
         {
-            $this->BrowserAddress = GetQueryValue( 'ip' );
+            $this->BrowserAddress = GetQueryValue( 'testip' );
         }
         else
         {
             $this->BrowserAddress = GetBrowserAddress();
         }
 
-        if ( HasQueryValue( 'cc' ) )
+        if ( HasQueryValue( 'testcountry' ) )
         {
-            $this->BrowserLocation = GetCountryLocation( GetQueryValue( 'cc' ) );
+            $this->BrowserLocation = GetCountryLocation( GetQueryValue( 'testcountry' ) );
         }
         else
         {

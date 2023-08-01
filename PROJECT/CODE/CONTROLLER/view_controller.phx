@@ -16,18 +16,18 @@ class VIEW_CONTROLLER extends CONTROLLER
     {
         parent::constructor( language_code );
 
-        if ( HasQueryValue( 'ip' ) )
+        if ( HasQueryValue( 'testip' ) )
         {
-            .BrowserAddress = GetQueryValue( 'ip' );
+            .BrowserAddress = GetQueryValue( 'testip' );
         }
         else
         {
             .BrowserAddress = GetBrowserAddress();
         }
 
-        if ( HasQueryValue( 'cc' ) )
+        if ( HasQueryValue( 'testcountry' ) )
         {
-            .BrowserLocation = GetCountryLocation( GetQueryValue( 'cc' ) );
+            .BrowserLocation = GetCountryLocation( GetQueryValue( 'testcountry' ) );
         }
         else
         {
