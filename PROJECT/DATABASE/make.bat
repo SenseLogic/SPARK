@@ -1,12 +1,8 @@
 call ..\define.bat
-..\%TOOL%\BASIL\basil --sql --exclude-command "drop schema" --exclude-command "create schema" spark_project.bs spark_project.bd
-copy spark_project.sql remote_spark_project.sql
-copy spark_project_schema.sql remote_spark_project_schema.sql
-copy spark_project_data.sql remote_spark_project_data.sql
-copy spark_project_dump.sql remote_spark_project_dump.sql
+..\%TOOL%\BASIL\basil --prefix remote_ --sql --exclude-command "drop schema" --exclude-command "create schema" spark_project.bs spark_project.bd
 ..\%TOOL%\BASIL\basil --sql --phoenix --force-drop spark_project.bs spark_project.bd spark_project.bt administration.bt
 pause
-..\%TOOL%\CYCLONE\cyclone mysql 127.0.0.1 3306 root "" spark_project.sql
+..\%TOOL%\CYCLONE\cyclone --driver mysql --host 127.0.0.1 --port 3306 --user root --password "" spark_project.sql
 rem del PHX/ADMINISTRATION/VIEW/show_home_menu_view.pht
 rem del PHX/ADMINISTRATION/VIEW/BLOCK/page_header.pht
 copy PHX\index.phx ..\CODE\
