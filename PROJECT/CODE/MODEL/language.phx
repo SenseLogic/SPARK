@@ -10,7 +10,15 @@ function GetDatabaseLanguageArray(
         var_dump( statement.errorInfo() );
     }
 
-    return GetDatabaseObjectArray( statement );
+    var language_array = [];
+
+    while ( var language = statement.fetchObject() )
+    {
+        language.Number = ( float )( language.Number );
+        array_push( language_array, language );
+    }
+
+    return language_array;
 }
 
 // ~~
@@ -27,7 +35,10 @@ function GetDatabaseLanguageById(
         var_dump( statement.errorInfo() );
     }
 
-    return statement.fetchObject();
+    var language = statement.fetchObject();
+    language.Number = ( float )( language.Number );
+
+    return language;
 }
 
 // ~~
@@ -35,7 +46,7 @@ function GetDatabaseLanguageById(
 function AddDatabaseLanguage(
     string id,
     string code,
-    string number,
+    float number,
     string text,
     bool is_active
     )
@@ -60,7 +71,7 @@ function AddDatabaseLanguage(
 function PutDatabaseLanguage(
     string id,
     string code,
-    string number,
+    float number,
     string text,
     bool is_active
     )
@@ -85,7 +96,7 @@ function PutDatabaseLanguage(
 function SetDatabaseLanguage(
     string id,
     string code,
-    string number,
+    float number,
     string text,
     bool is_active
     )

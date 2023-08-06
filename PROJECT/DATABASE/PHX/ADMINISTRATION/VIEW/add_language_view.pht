@@ -43,7 +43,7 @@
             it_is_valid_add_language_form = false;
         }
 
-        if ( number_field.value === "" )
+        if ( !IsNumericText( number_field.value ) )
         {
             number_field.AddClass( "form-field-error" );
 

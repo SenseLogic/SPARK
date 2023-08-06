@@ -10,7 +10,7 @@ spark-project
 
         Id : TUID | key, unique, hidden, default_expression GetRandomTuid()
         Code : STRING | processed
-        Number : STRING | ascending
+        Number : FLOAT64 | ascending
         Text : STRING | multilingual
         IsActive : BOOL = "true" | enumeration "[ '0', '1' ]^[ 'False', 'True' ]", default_value 1
 
