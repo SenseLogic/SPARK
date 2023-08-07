@@ -102,7 +102,7 @@ spark-project
         Phone : STRING
         Subject : STRING = "{{latin 1 1 4 6}}|{{latin 1 1 4 6}}"
         Message : STRING = "{{latin 2 4 5 10}}|{{latin 2 4 5 10}}" | text
-        DateTime : DATETIME | now, descending
+        DateTime : DATETIME | generated, descending
 
     USER | sorted, dropped, has_user_role, view_user_role administrator, edit_user_role administrator, add_user_role administrator, remove_user_role administrator
 
