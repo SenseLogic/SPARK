@@ -353,7 +353,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Title' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="Title">
-                    <multilingual-text-input-component class="form-component" result-name="Title" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-codes="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageCodeArray ) ) ); ?>" language-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageNameArray ) ) ); ?>"></multilingual-text-input-component>
+                    <multilingual-text-input-component class="form-component" result-name="Title" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-text-input-component>
                 </div>
                 <?php
                      $field_name = 'TitleArray';
@@ -371,7 +371,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Title Array' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="TitleArray">
-                    <multilingual-text-input-list-component class="form-component" result-name="TitleArray" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-codes="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageCodeArray ) ) ); ?>" language-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageNameArray ) ) ); ?>"></multilingual-text-input-list-component>
+                    <multilingual-text-input-list-component class="form-component" result-name="TitleArray" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-text-input-list-component>
                 </div>
                 <?php
                      $field_name = 'Teaser';
@@ -389,7 +389,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Teaser' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="Teaser">
-                    <multilingual-text-input-component class="form-component" result-name="Teaser" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-codes="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageCodeArray ) ) ); ?>" language-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageNameArray ) ) ); ?>"></multilingual-text-input-component>
+                    <multilingual-text-input-component class="form-component" result-name="Teaser" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-text-input-component>
                 </div>
                 <?php
                      $field_name = 'TeaserArray';
@@ -407,7 +407,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Teaser Array' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="TeaserArray">
-                    <multilingual-text-input-list-component class="form-component" result-name="TeaserArray" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-codes="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageCodeArray ) ) ); ?>" language-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageNameArray ) ) ); ?>"></multilingual-text-input-list-component>
+                    <multilingual-text-input-list-component class="form-component" result-name="TeaserArray" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-text-input-list-component>
                 </div>
                 <?php
                      $field_name = 'Text';
@@ -425,7 +425,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Text' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="Text">
-                    <multilingual-text-input-component class="form-component" result-name="Text" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-codes="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageCodeArray ) ) ); ?>" language-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageNameArray ) ) ); ?>"></multilingual-text-input-component>
+                    <multilingual-text-input-component class="form-component" result-name="Text" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-text-input-component>
                 </div>
                 <?php
                      $field_name = 'TextArray';
@@ -443,7 +443,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Text Array' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="TextArray">
-                    <multilingual-text-input-list-component class="form-component" result-name="TextArray" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-codes="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageCodeArray ) ) ); ?>" language-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageNameArray ) ) ); ?>"></multilingual-text-input-list-component>
+                    <multilingual-text-input-list-component class="form-component" result-name="TextArray" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-text-input-list-component>
                 </div>
                 <?php
                      $field_name = 'Route';
@@ -461,7 +461,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Route' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="Route">
-                    <multilingual-input-component class="form-component" result-name="Route" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-codes="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageCodeArray ) ) ); ?>" language-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageNameArray ) ) ); ?>"></multilingual-input-component>
+                    <multilingual-input-component class="form-component" result-name="Route" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-input-component>
                 </div>
                 <?php
                      $field_name = 'RouteArray';
@@ -479,7 +479,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Route Array' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="RouteArray">
-                    <multilingual-input-list-component class="form-component" result-name="RouteArray" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-codes="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageCodeArray ) ) ); ?>" language-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageNameArray ) ) ); ?>"></multilingual-input-list-component>
+                    <multilingual-input-list-component class="form-component" result-name="RouteArray" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-input-list-component>
                 </div>
                 <?php
                      $field_name = 'ImageSide';
@@ -515,7 +515,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Image Legend' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="ImageLegend">
-                    <multilingual-text-input-component class="form-component" result-name="ImageLegend" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-codes="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageCodeArray ) ) ); ?>" language-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageNameArray ) ) ); ?>"></multilingual-text-input-component>
+                    <multilingual-text-input-component class="form-component" result-name="ImageLegend" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-text-input-component>
                 </div>
                 <?php
                      $field_name = 'ImageLegendArray';
@@ -533,7 +533,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Image Legend Array' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="ImageLegendArray">
-                    <multilingual-text-input-list-component class="form-component" result-name="ImageLegendArray" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-codes="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageCodeArray ) ) ); ?>" language-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageNameArray ) ) ); ?>"></multilingual-text-input-list-component>
+                    <multilingual-text-input-list-component class="form-component" result-name="ImageLegendArray" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-text-input-list-component>
                 </div>
                 <?php
                      $field_name = 'ImagePath';

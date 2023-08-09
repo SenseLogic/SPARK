@@ -78,7 +78,7 @@
                     <% GetTextBySlug( 'Text' ) %> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="Text">
-                    <multilingual-input-component class="form-component" result-name="Text" result-value="<% GetValueText( .Language.Text ) %>" language-codes="<% GetValueText( GetJsonText( LanguageCodeArray ) ) %>" language-names="<% GetValueText( GetJsonText( LanguageNameArray ) ) %>"></multilingual-input-component>
+                    <multilingual-input-component class="form-component" result-name="Text" result-value="<% GetValueText( .Language.Text ) %>" language-tags="<% GetValueText( GetJsonText( LanguageTagArray ) ) %>"></multilingual-input-component>
                 </div>
                 <div class="form-field-name" data-is-column-title data-column-name="IsActive">
                     <% GetTextBySlug( 'Is Active' ) %> :

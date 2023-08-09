@@ -173,19 +173,19 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Title' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="Title">
-                    <multilingual-input-component class="form-component" result-name="Title" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->Title ) ); ?>" language-codes="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageCodeArray ) ) ); ?>" language-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageNameArray ) ) ); ?>"></multilingual-input-component>
+                    <multilingual-input-component class="form-component" result-name="Title" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->Title ) ); ?>" language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-input-component>
                 </div>
                 <div class="form-field-name" data-is-column-title data-column-name="Heading">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Heading' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="Heading">
-                    <multilingual-text-input-component class="form-component" result-name="Heading" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->Heading ) ); ?>" language-codes="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageCodeArray ) ) ); ?>" language-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageNameArray ) ) ); ?>"></multilingual-text-input-component>
+                    <multilingual-text-input-component class="form-component" result-name="Heading" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->Heading ) ); ?>" language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-text-input-component>
                 </div>
                 <div class="form-field-name" data-is-column-title data-column-name="Teaser">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Teaser' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="Teaser">
-                    <multilingual-text-input-component class="form-component" result-name="Teaser" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->Teaser ) ); ?>" language-codes="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageCodeArray ) ) ); ?>" language-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageNameArray ) ) ); ?>"></multilingual-text-input-component>
+                    <multilingual-text-input-component class="form-component" result-name="Teaser" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->Teaser ) ); ?>" language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-text-input-component>
                 </div>
                 <div class="form-field-name" data-is-column-title data-column-name="ImagePath">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Image Path' ) ); ?> :
@@ -215,13 +215,13 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Meta Title' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="MetaTitle">
-                    <multilingual-input-component class="form-component" result-name="MetaTitle" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->MetaTitle ) ); ?>" language-codes="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageCodeArray ) ) ); ?>" language-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageNameArray ) ) ); ?>"></multilingual-input-component>
+                    <multilingual-input-component class="form-component" result-name="MetaTitle" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->MetaTitle ) ); ?>" language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-input-component>
                 </div>
                 <div class="form-field-name" data-is-column-title data-column-name="MetaDescription">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Meta Description' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="MetaDescription">
-                    <multilingual-text-input-component class="form-component" result-name="MetaDescription" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->MetaDescription ) ); ?>" language-codes="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageCodeArray ) ) ); ?>" language-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageNameArray ) ) ); ?>"></multilingual-text-input-component>
+                    <multilingual-text-input-component class="form-component" result-name="MetaDescription" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->MetaDescription ) ); ?>" language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-text-input-component>
                 </div>
                 <div class="form-field-name" data-is-column-title data-column-name="MetaSubRouteArray">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Meta Sub Route Array' ) ); ?> :
@@ -233,13 +233,13 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Meta Sub Title Array' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="MetaSubTitleArray">
-                    <multilingual-input-list-component class="form-component" result-name="MetaSubTitleArray" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->MetaSubTitleArray ) ); ?>" language-codes="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageCodeArray ) ) ); ?>" language-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageNameArray ) ) ); ?>"></multilingual-input-list-component>
+                    <multilingual-input-list-component class="form-component" result-name="MetaSubTitleArray" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->MetaSubTitleArray ) ); ?>" language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-input-list-component>
                 </div>
                 <div class="form-field-name" data-is-column-title data-column-name="MetaSubDescriptionArray">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Meta Sub Description Array' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="MetaSubDescriptionArray">
-                    <multilingual-text-input-list-component class="form-component" result-name="MetaSubDescriptionArray" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->MetaSubDescriptionArray ) ); ?>" language-codes="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageCodeArray ) ) ); ?>" language-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageNameArray ) ) ); ?>"></multilingual-text-input-list-component>
+                    <multilingual-text-input-list-component class="form-component" result-name="MetaSubDescriptionArray" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->MetaSubDescriptionArray ) ); ?>" language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-text-input-list-component>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="<?php echo htmlspecialchars( GetParentRoute( null, '/admin/page' ) ); ?>">
                 </a>

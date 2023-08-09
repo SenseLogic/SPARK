@@ -103,7 +103,7 @@
                     <% GetTextBySlug( 'Text' ) %> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="Text">
-                    <multilingual-text-input-component class="form-component" result-name="Text" result-value="<% GetValueText( field_value ) %>" language-codes="<% GetValueText( GetJsonText( LanguageCodeArray ) ) %>" language-names="<% GetValueText( GetJsonText( LanguageNameArray ) ) %>"></multilingual-text-input-component>
+                    <multilingual-text-input-component class="form-component" result-name="Text" result-value="<% GetValueText( field_value ) %>" language-tags="<% GetValueText( GetJsonText( LanguageTagArray ) ) %>"></multilingual-text-input-component>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="<% GetParentRoute( null, '/admin/text' ) %>">
                 </a>

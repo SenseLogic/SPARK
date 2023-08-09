@@ -297,49 +297,49 @@
                             <?php echo htmlspecialchars( GetTextBySlug( 'Title' ) ); ?> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="Title">
-                            <multilingual-text-input-component class="form-component" result-name="Title" result-value="<?php echo htmlspecialchars( GetValueText( $block->Title ) ); ?>" is-readonly language-codes="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageCodeArray ) ) ); ?>" language-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageNameArray ) ) ); ?>"></multilingual-text-input-component>
+                            <multilingual-text-input-component class="form-component" result-name="Title" result-value="<?php echo htmlspecialchars( GetValueText( $block->Title ) ); ?>" is-readonly language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-text-input-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="TitleArray">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Title Array' ) ); ?> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="TitleArray">
-                            <multilingual-text-input-list-component class="form-component" result-name="TitleArray" result-value="<?php echo htmlspecialchars( GetValueText( $block->TitleArray ) ); ?>" is-readonly language-codes="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageCodeArray ) ) ); ?>" language-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageNameArray ) ) ); ?>"></multilingual-text-input-list-component>
+                            <multilingual-text-input-list-component class="form-component" result-name="TitleArray" result-value="<?php echo htmlspecialchars( GetValueText( $block->TitleArray ) ); ?>" is-readonly language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-text-input-list-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="Teaser">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Teaser' ) ); ?> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="Teaser">
-                            <multilingual-text-input-component class="form-component" result-name="Teaser" result-value="<?php echo htmlspecialchars( GetValueText( $block->Teaser ) ); ?>" is-readonly language-codes="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageCodeArray ) ) ); ?>" language-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageNameArray ) ) ); ?>"></multilingual-text-input-component>
+                            <multilingual-text-input-component class="form-component" result-name="Teaser" result-value="<?php echo htmlspecialchars( GetValueText( $block->Teaser ) ); ?>" is-readonly language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-text-input-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="TeaserArray">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Teaser Array' ) ); ?> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="TeaserArray">
-                            <multilingual-text-input-list-component class="form-component" result-name="TeaserArray" result-value="<?php echo htmlspecialchars( GetValueText( $block->TeaserArray ) ); ?>" is-readonly language-codes="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageCodeArray ) ) ); ?>" language-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageNameArray ) ) ); ?>"></multilingual-text-input-list-component>
+                            <multilingual-text-input-list-component class="form-component" result-name="TeaserArray" result-value="<?php echo htmlspecialchars( GetValueText( $block->TeaserArray ) ); ?>" is-readonly language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-text-input-list-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="Text">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Text' ) ); ?> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="Text">
-                            <multilingual-text-input-component class="form-component" result-name="Text" result-value="<?php echo htmlspecialchars( GetValueText( $block->Text ) ); ?>" is-readonly language-codes="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageCodeArray ) ) ); ?>" language-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageNameArray ) ) ); ?>"></multilingual-text-input-component>
+                            <multilingual-text-input-component class="form-component" result-name="Text" result-value="<?php echo htmlspecialchars( GetValueText( $block->Text ) ); ?>" is-readonly language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-text-input-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="TextArray">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Text Array' ) ); ?> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="TextArray">
-                            <multilingual-text-input-list-component class="form-component" result-name="TextArray" result-value="<?php echo htmlspecialchars( GetValueText( $block->TextArray ) ); ?>" is-readonly language-codes="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageCodeArray ) ) ); ?>" language-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageNameArray ) ) ); ?>"></multilingual-text-input-list-component>
+                            <multilingual-text-input-list-component class="form-component" result-name="TextArray" result-value="<?php echo htmlspecialchars( GetValueText( $block->TextArray ) ); ?>" is-readonly language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-text-input-list-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="Route">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Route' ) ); ?> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="Route">
-                            <multilingual-input-component class="form-component" result-name="Route" result-value="<?php echo htmlspecialchars( GetValueText( $block->Route ) ); ?>" is-readonly language-codes="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageCodeArray ) ) ); ?>" language-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageNameArray ) ) ); ?>"></multilingual-input-component>
+                            <multilingual-input-component class="form-component" result-name="Route" result-value="<?php echo htmlspecialchars( GetValueText( $block->Route ) ); ?>" is-readonly language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-input-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="RouteArray">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Route Array' ) ); ?> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="RouteArray">
-                            <multilingual-input-list-component class="form-component" result-name="RouteArray" result-value="<?php echo htmlspecialchars( GetValueText( $block->RouteArray ) ); ?>" is-readonly language-codes="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageCodeArray ) ) ); ?>" language-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageNameArray ) ) ); ?>"></multilingual-input-list-component>
+                            <multilingual-input-list-component class="form-component" result-name="RouteArray" result-value="<?php echo htmlspecialchars( GetValueText( $block->RouteArray ) ); ?>" is-readonly language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-input-list-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="ImageSide">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Image Side' ) ); ?> :
@@ -351,13 +351,13 @@
                             <?php echo htmlspecialchars( GetTextBySlug( 'Image Legend' ) ); ?> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="ImageLegend">
-                            <multilingual-text-input-component class="form-component" result-name="ImageLegend" result-value="<?php echo htmlspecialchars( GetValueText( $block->ImageLegend ) ); ?>" is-readonly language-codes="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageCodeArray ) ) ); ?>" language-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageNameArray ) ) ); ?>"></multilingual-text-input-component>
+                            <multilingual-text-input-component class="form-component" result-name="ImageLegend" result-value="<?php echo htmlspecialchars( GetValueText( $block->ImageLegend ) ); ?>" is-readonly language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-text-input-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="ImageLegendArray">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Image Legend Array' ) ); ?> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="ImageLegendArray">
-                            <multilingual-text-input-list-component class="form-component" result-name="ImageLegendArray" result-value="<?php echo htmlspecialchars( GetValueText( $block->ImageLegendArray ) ); ?>" is-readonly language-codes="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageCodeArray ) ) ); ?>" language-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageNameArray ) ) ); ?>"></multilingual-text-input-list-component>
+                            <multilingual-text-input-list-component class="form-component" result-name="ImageLegendArray" result-value="<?php echo htmlspecialchars( GetValueText( $block->ImageLegendArray ) ); ?>" is-readonly language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-text-input-list-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="ImagePath">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Image Path' ) ); ?> :
