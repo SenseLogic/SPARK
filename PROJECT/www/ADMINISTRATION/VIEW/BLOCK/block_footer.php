@@ -6,7 +6,7 @@
     {
         var
             column_index,
-            column_is_hidden,
+            column_is_visible,
             column_title_element,
             column_title_element_array,
             column_value,
@@ -54,43 +54,48 @@
                     column_value = column_value_element.GetFirstChildElement().value;
 
                     column_name = column_title_element.dataset.columnName;
-                    column_is_hidden = false;
 
-                    if ( type_slug_value === "image" )
+                    if ( column_name === "Id"
+                         || column_name === "Slug"
+                         || column_name === "PageSlug"
+                         || column_name === "CategorySlug"
+                         || column_name === "TypeSlug"
+                         || column_name === "ContentSlug"
+                         || column_name === "Number"
+                         || column_name === "LanguageCodeArray" )
                     {
-                        column_is_hidden = (
-                            column_name === "TitleArray"
-                            || column_name.startsWith( "Teaser" )
-                            || column_name.startsWith( "Text" )
-                            || column_name.startsWith( "Route" )
-                            || column_name === "ImagePathArray"
+                        column_is_visible = true;
+                    }
+                    else if ( type_slug_value === "image" )
+                    {
+                        column_is_visible = (
+                            column_name === "Title"
+                            || column_name === "ImagePath"
                             || column_name.startsWith( "Video" )
                             );
                     }
                     else if ( type_slug_value === "text" )
                     {
-                        column_is_hidden = (
-                            column_name.startsWith( "Title" )
-                            || column_name.startsWith( "Teaser" )
-                            || column_name.startsWith( "Route" )
-                            || column_name.startsWith( "Image" )
-                            || column_name.startsWith( "Video" )
+                        column_is_visible = (
+                            column_name === "Text"
                             );
                     }
                     else if ( type_slug_value === "text-and-image" )
                     {
-                        column_is_hidden = (
-                            column_name === "TitleArray"
-                            || column_name === "TextArray"
-                            || column_name.startsWith( "Teaser" )
-                            || column_name === "RouteArray"
-                            || column_name === "ImagePathArray"
-                            || column_name.startsWith( "Video" )
+                        column_is_visible = (
+                            column_name === "Title"
+                            || column_name === "Text"
+                            || column_name === "Route"
+                            || column_name === "ImagePath"
                             );
                     }
+                    else
+                    {
+                        column_is_visible = false;
+                    }
 
-                    column_title_element.ToggleClass( "is-hidden", column_is_hidden );
-                    column_value_element.ToggleClass( "is-hidden", column_is_hidden );
+                    column_title_element.ToggleClass( "is-hidden", !column_is_visible );
+                    column_value_element.ToggleClass( "is-hidden", !column_is_visible );
                 }
             }
         }

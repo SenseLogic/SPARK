@@ -15,6 +15,27 @@
 <script src="/static/script/vista_sortable_grid.js?v=<?php echo VersionTimestamp; ?>"></script>
 <script src="/static/script/vista_sortable_table.js?v=<?php echo VersionTimestamp; ?>"></script>
 <script>
+    // -- FUNCTIONS
+
+    function ShowView(
+        route
+        )
+    {
+        if ( route.startsWith( "//" ) )
+        {
+            OpenUrl( route.substring( 1 ) );
+        }
+        else if ( route.startsWith( "/" )
+                  || route.startsWith( "http" ))
+        {
+            OpenUrl( route );
+        }
+        else
+        {
+            SetUrl( "/" + route );
+        }
+    }
+
     // -- STATEMENTS
 
     DelayCall( InitializeSortableTableColumns );

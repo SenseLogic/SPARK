@@ -77,16 +77,15 @@ function GetValidBlockByIdMap(
 
 function GetValidBlockById(
     array &$block_by_id_map,
-    string $id
+    string $block_id
     )
 {
-    foreach ( $block_by_id_map as  $block_id =>  $block )
+    if ( HasKey( $block_by_id_map, $block_id ) )
     {
-        if ( $block->Id === $id )
-        {
-            return $block;
-        }
+        return $block_by_id_map[ $block_id ];
     }
-
-    return null;
+    else
+    {
+        return null;
+    }
 }

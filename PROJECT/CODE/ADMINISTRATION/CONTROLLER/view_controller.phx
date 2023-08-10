@@ -22,6 +22,7 @@ class VIEW_CONTROLLER extends CONTROLLER
 
         .TextArray = GetDatabaseTextArray();
         .TextBySlugMap = GetTextBySlugMap( .TextArray );
+
         .BlockArray = GetDatabaseBlockArray();
         .BlockByIdMap = GetValidBlockByIdMap( .BlockArray );
         .BlockCategoryArray = GetDatabaseBlockCategoryArray();
@@ -30,6 +31,7 @@ class VIEW_CONTROLLER extends CONTROLLER
         .BlockContentBySlugMap = GetElementByKeyMap( .BlockContentArray, 'Slug' );
         .BlockTypeArray = GetDatabaseBlockTypeArray();
         .BlockTypeBySlugMap = GetElementByKeyMap( .BlockTypeArray, 'Slug' );
+
         .PageArray = GetDatabasePageArray();
         .PageByIdMap = GetValidPageByIdMap( .PageArray, .BlockArray, .BlockByIdMap );
         .PageBySlugMap = GetPageBySlugMap( .PageByIdMap );

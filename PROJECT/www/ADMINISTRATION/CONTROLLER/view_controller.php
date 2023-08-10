@@ -22,6 +22,7 @@ class VIEW_CONTROLLER extends CONTROLLER
 
         $this->TextArray = GetDatabaseTextArray();
         $this->TextBySlugMap = GetTextBySlugMap( $this->TextArray );
+
         $this->BlockArray = GetDatabaseBlockArray();
         $this->BlockByIdMap = GetValidBlockByIdMap( $this->BlockArray );
         $this->BlockCategoryArray = GetDatabaseBlockCategoryArray();
@@ -30,6 +31,7 @@ class VIEW_CONTROLLER extends CONTROLLER
         $this->BlockContentBySlugMap = GetElementByKeyMap( $this->BlockContentArray, 'Slug' );
         $this->BlockTypeArray = GetDatabaseBlockTypeArray();
         $this->BlockTypeBySlugMap = GetElementByKeyMap( $this->BlockTypeArray, 'Slug' );
+
         $this->PageArray = GetDatabasePageArray();
         $this->PageByIdMap = GetValidPageByIdMap( $this->PageArray, $this->BlockArray, $this->BlockByIdMap );
         $this->PageBySlugMap = GetPageBySlugMap( $this->PageByIdMap );
