@@ -39,10 +39,13 @@
                         <?php echo htmlspecialchars( GetValueText( $language->Number ) ); ?>
                     </div>
                     <div class="sortable-table-cell filter-cell">
-                        <div>
-                            <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
-                                <div class="form-translation">
-                                    <?php echo htmlspecialchars( GetValueText( GetTranslatedText( $language->Text, $language_code ) ) ); ?>
+                        <div class="form-translation-list">
+                            <?php foreach ( GetTranslationArray( $language->Text, DefaultLanguageCode ) as  $translation ) { ?>
+                                <div class="form-translation-data">
+                                    <?php echo htmlspecialchars( GetValueText( $translation->Data ) ); ?>
+                                </div>
+                                <div class="form-translation-specifier">
+                                    <?php echo htmlspecialchars( GetValueText( $translation->Specifier ) ); ?>
                                 </div>
                             <?php } ?>
                         </div>

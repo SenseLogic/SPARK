@@ -740,8 +740,10 @@ textarea {
 .form-extended {
   grid-column: 1/-1;
 }
-.form-translation + .form-translation {
-  margin-top: 0.25rem;
+.form-translation-list {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.25rem 0.5rem;
 }
 .form-field-error,
 .form-field-error ~ .form-translation {

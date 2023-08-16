@@ -30,10 +30,13 @@
                         <% GetValueText( text.Slug ) %>
                     </div>
                     <div class="sortable-table-cell filter-cell">
-                        <div>
-                            <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                                <div class="form-translation">
-                                    <% GetTranslatedText( text.Text, language_code ) %>
+                        <div class="form-translation-list">
+                            <? foreach ( var translation; GetTranslationArray( text.Text, DefaultLanguageCode ) ) { ?>
+                                <div class="form-translation-data">
+                                    <% GetValueText( translation.Data ) %>
+                                </div>
+                                <div class="form-translation-specifier">
+                                    <% GetValueText( translation.Specifier ) %>
                                 </div>
                             <? } ?>
                         </div>

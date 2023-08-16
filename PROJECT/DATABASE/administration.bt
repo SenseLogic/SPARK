@@ -631,17 +631,23 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                                 var field_value = {#variable#}.{%attribute%};
                                 include 'BLOCK/{#variable#}_{%variable%}_field.php';
                             ?><><~{%?multilingual_text%}<>
-                        <div>
-                            <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                                <div class="form-translation">
-                                    <\% GetTranslatedText( {#variable#}.{%attribute%}, language_code ) %\>
+                        <div class="form-translation-list">
+                            <? foreach ( var translation; GetTranslationArray( {#variable#}.{%attribute%}, DefaultLanguageCode ) ) { ?>
+                                <div class="form-translation-data">
+                                    <\% GetValueText( translation.Data ) %\>
+                                </div>
+                                <div class="form-translation-specifier">
+                                    <\% GetValueText( translation.Specifier ) %\>
                                 </div>
                             <? } ?>
                         </div><><~{%?multilingual%}<>
-                        <div>
-                            <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                                <div class="form-translation">
-                                    <\% GetValueText( GetTranslatedText( {#variable#}.{%attribute%}, language_code ) ) %\>
+                        <div class="form-translation-list">
+                            <? foreach ( var translation; GetTranslationArray( {#variable#}.{%attribute%}, DefaultLanguageCode ) ) { ?>
+                                <div class="form-translation-data">
+                                    <\% GetValueText( translation.Data ) %\>
+                                </div>
+                                <div class="form-translation-specifier">
+                                    <\% GetValueText( translation.Specifier ) %\>
                                 </div>
                             <? } ?>
                         </div><>

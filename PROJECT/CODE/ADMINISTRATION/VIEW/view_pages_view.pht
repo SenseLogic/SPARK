@@ -93,28 +93,37 @@
                         <% GetValueText( page.IsActive ) %>
                     </div>
                     <div class="sortable-table-cell filter-cell">
-                        <div>
-                            <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                                <div class="form-translation">
-                                    <% GetValueText( GetTranslatedText( page.Title, language_code ) ) %>
+                        <div class="form-translation-list">
+                            <? foreach ( var translation; GetTranslationArray( page.Title, DefaultLanguageCode ) ) { ?>
+                                <div class="form-translation-data">
+                                    <% GetValueText( translation.Data ) %>
+                                </div>
+                                <div class="form-translation-specifier">
+                                    <% GetValueText( translation.Specifier ) %>
                                 </div>
                             <? } ?>
                         </div>
                     </div>
                     <div class="sortable-table-cell filter-cell">
-                        <div>
-                            <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                                <div class="form-translation">
-                                    <% GetTranslatedText( page.Heading, language_code ) %>
+                        <div class="form-translation-list">
+                            <? foreach ( var translation; GetTranslationArray( page.Heading, DefaultLanguageCode ) ) { ?>
+                                <div class="form-translation-data">
+                                    <% GetValueText( translation.Data ) %>
+                                </div>
+                                <div class="form-translation-specifier">
+                                    <% GetValueText( translation.Specifier ) %>
                                 </div>
                             <? } ?>
                         </div>
                     </div>
                     <div class="sortable-table-cell filter-cell">
-                        <div>
-                            <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                                <div class="form-translation">
-                                    <% GetTranslatedText( page.Teaser, language_code ) %>
+                        <div class="form-translation-list">
+                            <? foreach ( var translation; GetTranslationArray( page.Teaser, DefaultLanguageCode ) ) { ?>
+                                <div class="form-translation-data">
+                                    <% GetValueText( translation.Data ) %>
+                                </div>
+                                <div class="form-translation-specifier">
+                                    <% GetValueText( translation.Specifier ) %>
                                 </div>
                             <? } ?>
                         </div>
@@ -132,19 +141,25 @@
                         <% GetValueText( page.VideoPath ) %>
                     </div>
                     <div class="sortable-table-cell filter-cell">
-                        <div>
-                            <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                                <div class="form-translation">
-                                    <% GetValueText( GetTranslatedText( page.MetaTitle, language_code ) ) %>
+                        <div class="form-translation-list">
+                            <? foreach ( var translation; GetTranslationArray( page.MetaTitle, DefaultLanguageCode ) ) { ?>
+                                <div class="form-translation-data">
+                                    <% GetValueText( translation.Data ) %>
+                                </div>
+                                <div class="form-translation-specifier">
+                                    <% GetValueText( translation.Specifier ) %>
                                 </div>
                             <? } ?>
                         </div>
                     </div>
                     <div class="sortable-table-cell filter-cell">
-                        <div>
-                            <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                                <div class="form-translation">
-                                    <% GetTranslatedText( page.MetaDescription, language_code ) %>
+                        <div class="form-translation-list">
+                            <? foreach ( var translation; GetTranslationArray( page.MetaDescription, DefaultLanguageCode ) ) { ?>
+                                <div class="form-translation-data">
+                                    <% GetValueText( translation.Data ) %>
+                                </div>
+                                <div class="form-translation-specifier">
+                                    <% GetValueText( translation.Specifier ) %>
                                 </div>
                             <? } ?>
                         </div>

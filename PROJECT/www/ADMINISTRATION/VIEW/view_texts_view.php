@@ -30,10 +30,13 @@
                         <?php echo htmlspecialchars( GetValueText( $text->Slug ) ); ?>
                     </div>
                     <div class="sortable-table-cell filter-cell">
-                        <div>
-                            <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
-                                <div class="form-translation">
-                                    <?php echo htmlspecialchars( GetTranslatedText( $text->Text, $language_code ) ); ?>
+                        <div class="form-translation-list">
+                            <?php foreach ( GetTranslationArray( $text->Text, DefaultLanguageCode ) as  $translation ) { ?>
+                                <div class="form-translation-data">
+                                    <?php echo htmlspecialchars( GetValueText( $translation->Data ) ); ?>
+                                </div>
+                                <div class="form-translation-specifier">
+                                    <?php echo htmlspecialchars( GetValueText( $translation->Specifier ) ); ?>
                                 </div>
                             <?php } ?>
                         </div>

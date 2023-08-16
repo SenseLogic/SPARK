@@ -126,6 +126,67 @@ function GetTranslatedText(
 
 // ~~
 
+function GetTranslationArray(
+    string text,
+    string default_language_tag = ''
+    )
+{
+    var translated_text_array = explode( '¨', text );
+
+    var translation = new stdClass();
+    translation.Specifier = default_language_tag;
+    translation.Data = translated_text_array[ 0 ];
+
+    var translation_array = [];
+    array_push( translation_array, translation );
+
+    for ( var translated_text_index = 1;
+          translated_text_index < count( translated_text_array );
+          ++translated_text_index )
+    {
+        var translated_text = translated_text_array[ translated_text_index ];
+        var colon_character_index = strpos( translated_text, ":" );
+
+        if ( colon_character_index !== false )
+        {
+            translation = new stdClass();
+            translation.Specifier = substr( translated_text, 0, colon_character_index );
+            translation.Data = substr( translated_text, colon_character_index + 1 );
+
+            array_push( translation_array, translation );
+        }
+    }
+
+    return translation_array;
+}
+
+// ~~
+
+function GetMultilingualText(
+    array &translation_array
+    )
+{
+    var multilingual_text = "";
+
+    if ( count( translation_array ) > 0 )
+    {
+        multilingual_text = translation_array[ 0 ].Data;
+
+        for ( var translation_index = 1;
+              translation_index < count( translation_array );
+              ++translation_index )
+        {
+            var translation = translation_array[ translation_index ];
+
+            multilingual_text ..= "¨" .. translation.Specifier .. ":" .. translation.Data;
+        }
+    }
+
+    return multilingual_text;
+}
+
+// ~~
+
 function GetTranslatedNumber(
     string number,
     string decimal_separator

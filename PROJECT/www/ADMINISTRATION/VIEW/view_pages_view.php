@@ -93,28 +93,37 @@
                         <?php echo htmlspecialchars( GetValueText( $page->IsActive ) ); ?>
                     </div>
                     <div class="sortable-table-cell filter-cell">
-                        <div>
-                            <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
-                                <div class="form-translation">
-                                    <?php echo htmlspecialchars( GetValueText( GetTranslatedText( $page->Title, $language_code ) ) ); ?>
+                        <div class="form-translation-list">
+                            <?php foreach ( GetTranslationArray( $page->Title, DefaultLanguageCode ) as  $translation ) { ?>
+                                <div class="form-translation-data">
+                                    <?php echo htmlspecialchars( GetValueText( $translation->Data ) ); ?>
+                                </div>
+                                <div class="form-translation-specifier">
+                                    <?php echo htmlspecialchars( GetValueText( $translation->Specifier ) ); ?>
                                 </div>
                             <?php } ?>
                         </div>
                     </div>
                     <div class="sortable-table-cell filter-cell">
-                        <div>
-                            <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
-                                <div class="form-translation">
-                                    <?php echo htmlspecialchars( GetTranslatedText( $page->Heading, $language_code ) ); ?>
+                        <div class="form-translation-list">
+                            <?php foreach ( GetTranslationArray( $page->Heading, DefaultLanguageCode ) as  $translation ) { ?>
+                                <div class="form-translation-data">
+                                    <?php echo htmlspecialchars( GetValueText( $translation->Data ) ); ?>
+                                </div>
+                                <div class="form-translation-specifier">
+                                    <?php echo htmlspecialchars( GetValueText( $translation->Specifier ) ); ?>
                                 </div>
                             <?php } ?>
                         </div>
                     </div>
                     <div class="sortable-table-cell filter-cell">
-                        <div>
-                            <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
-                                <div class="form-translation">
-                                    <?php echo htmlspecialchars( GetTranslatedText( $page->Teaser, $language_code ) ); ?>
+                        <div class="form-translation-list">
+                            <?php foreach ( GetTranslationArray( $page->Teaser, DefaultLanguageCode ) as  $translation ) { ?>
+                                <div class="form-translation-data">
+                                    <?php echo htmlspecialchars( GetValueText( $translation->Data ) ); ?>
+                                </div>
+                                <div class="form-translation-specifier">
+                                    <?php echo htmlspecialchars( GetValueText( $translation->Specifier ) ); ?>
                                 </div>
                             <?php } ?>
                         </div>
@@ -132,19 +141,25 @@
                         <?php echo htmlspecialchars( GetValueText( $page->VideoPath ) ); ?>
                     </div>
                     <div class="sortable-table-cell filter-cell">
-                        <div>
-                            <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
-                                <div class="form-translation">
-                                    <?php echo htmlspecialchars( GetValueText( GetTranslatedText( $page->MetaTitle, $language_code ) ) ); ?>
+                        <div class="form-translation-list">
+                            <?php foreach ( GetTranslationArray( $page->MetaTitle, DefaultLanguageCode ) as  $translation ) { ?>
+                                <div class="form-translation-data">
+                                    <?php echo htmlspecialchars( GetValueText( $translation->Data ) ); ?>
+                                </div>
+                                <div class="form-translation-specifier">
+                                    <?php echo htmlspecialchars( GetValueText( $translation->Specifier ) ); ?>
                                 </div>
                             <?php } ?>
                         </div>
                     </div>
                     <div class="sortable-table-cell filter-cell">
-                        <div>
-                            <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
-                                <div class="form-translation">
-                                    <?php echo htmlspecialchars( GetTranslatedText( $page->MetaDescription, $language_code ) ); ?>
+                        <div class="form-translation-list">
+                            <?php foreach ( GetTranslationArray( $page->MetaDescription, DefaultLanguageCode ) as  $translation ) { ?>
+                                <div class="form-translation-data">
+                                    <?php echo htmlspecialchars( GetValueText( $translation->Data ) ); ?>
+                                </div>
+                                <div class="form-translation-specifier">
+                                    <?php echo htmlspecialchars( GetValueText( $translation->Specifier ) ); ?>
                                 </div>
                             <?php } ?>
                         </div>
