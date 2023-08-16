@@ -745,6 +745,10 @@ textarea {
   grid-template-columns: 1fr auto;
   gap: 0.25rem 0.5rem;
 }
+.form-translation-specifier {
+  text-align: right;
+  color: #aaa;
+}
 .form-field-error,
 .form-field-error ~ .form-translation {
   outline: solid #f00 1px;

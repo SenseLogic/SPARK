@@ -46,6 +46,8 @@ Edit text
 ReplaceText
     #/CODE/FRAMEWORK/*.ph?
     /CODE/FRAMEWORK/*.ph?
+    #/www/FRAMEWORK/*.*
+    /www/FRAMEWORK/*.*
 DumpChangedLines
 WriteFiles
 

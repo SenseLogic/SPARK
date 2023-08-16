@@ -1,0 +1,49 @@
+<?php function SendEmail(
+    string $server,
+    int $port,
+    string $username,
+    string $password,
+    string $sender_email,
+    string $recipient_email,
+    string $subject,
+    string $message,
+    bool $it_is_logged = false,
+    string $header = "Content-type: text/plain; charset=utf-8"
+    )
+{
+    ini_set( 'SMTP', $server );
+    ini_set( 'smtp_port', $port );
+    ini_set( 'username', $username );
+    ini_set( 'password', $password );
+    ini_set( 'sendmail_from', $sender_email );
+    ini_set( 'sendmail_path', $sender_email );
+
+    if ( $it_is_logged )
+    {
+        PrintLine( 'Sending mail' );
+        PrintLine( 'Server : ' . $server );
+        PrintLine( 'Port : ' . $port );
+        PrintLine( 'Username : ' . $username );
+        PrintLine( 'Sender email : ' . $sender_email );
+        PrintLine( 'Receiver email : ' . $recipient_email );
+        PrintLine( 'Subject : ' . $subject );
+        PrintLine( 'Message :' );
+        PrintLine( $message );
+    }
+
+    if ( !mail(
+            $recipient_email,
+            $subject,
+            $message,
+            $header . "\r\nFrom: " . $sender_email . "\r\n"
+            ) )
+    {
+        PrintError( 'Could not send email (' . GetErrorMessage() . ')' );
+
+        return false;
+    }
+    else
+    {
+        return true;
+    }
+}

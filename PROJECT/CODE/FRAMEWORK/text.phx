@@ -1053,3 +1053,19 @@ function GetProcessedMultilineText(
 
     return GetProcessedText( text );
 }
+
+// ~~
+
+function GetEmbeddedVideoPath(
+    string video_path
+    )
+{
+    if ( HasPrefix( video_path, 'https://www.youtube.com/watch?v=' ) )
+    {
+        return ReplaceText( video_path, 'https://www.youtube.com/watch?v=', 'https://www.youtube.com/embed/' );
+    }
+    else
+    {
+        return '';
+    }
+}

@@ -3,5 +3,5 @@
 /DATABASE/*.sql
 /www/error.log
 /www/php.log
-/www/FRAMEWORK/*.*
+#/www/FRAMEWORK/*.*
 /www/static/script/vista*.*
