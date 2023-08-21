@@ -122,7 +122,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Image Path' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="ImagePath">
-                    <image-path-input-component class="form-component" result-name="ImagePath" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->ImagePath ) ); ?>" is-readonly error-image-path="/static/image/admin/missing_image.svg" upload-api-url="/admin/upload/image" delete-api-url="/admin/delete/file"></image-path-input-component>
+                    <multilingual-image-path-input-component class="form-component" result-name="ImagePath" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->ImagePath ) ); ?>" is-readonly error-image-path="/static/image/admin/missing_image.svg" upload-api-url="/admin/upload/image" delete-api-url="/admin/delete/file" language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-image-path-input-component>
                 </div>
                 <div class="form-field-name" data-is-column-title data-column-name="ImagePathArray">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Image Path Array' ) ); ?> :
@@ -158,7 +158,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Video Path' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="VideoPath">
-                    <video-path-input-component class="form-component" result-name="VideoPath" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->VideoPath ) ); ?>" is-readonly error-video-path="/static/video/admin/missing_video.mp4" upload-api-url="/admin/upload/video" delete-api-url="/admin/delete/file"></video-path-input-component>
+                    <multilingual-video-path-input-component class="form-component" result-name="VideoPath" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->VideoPath ) ); ?>" is-readonly error-video-path="/static/video/admin/missing_video.mp4" upload-api-url="/admin/upload/video" delete-api-url="/admin/delete/file" language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-video-path-input-component>
                 </div>
                 <div class="form-field-name" data-is-column-title data-column-name="VideoPathArray">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Video Path Array' ) ); ?> :
