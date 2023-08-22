@@ -204,6 +204,12 @@ function Route(
             import 'ADMINISTRATION/CONTROLLER/backup_database_controller.php';
         }
         else if ( it_is_get_request
+                  && path_value_count === 2
+                  && path_value_array[ 1 ] === 'sitemap' )
+        {
+            import 'ADMINISTRATION/CONTROLLER/generate_sitemap_controller.php';
+        }
+        else if ( it_is_get_request
                   && path_value_count == 3
                   && path_value_array[ 1 ] === 'page'
                   && path_value_array[ 2 ] === 'manage')
