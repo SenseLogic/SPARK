@@ -19,7 +19,7 @@ class GENERATE_SITEMAP_CONTROLLER extends CONTROLLER
 
         if ( HasSessionMinimumUserRole( 'administrator' ) )
         {
-            .Title = 'Generate sitemap';
+            .Title = 'Update sitemap';
 
             AddParentRoute();
 
@@ -27,7 +27,7 @@ class GENERATE_SITEMAP_CONTROLLER extends CONTROLLER
 
             EchoText( '<div class="page-section form-section">' );
             EchoText( '    <div class="color-black" style="display: flex; flex-direction: column; gap: 0.5rem; width: 100%">' );
-            EchoStyledLine( 'Generation in progress...', 'font-size: 1.5rem', 'color-blue', '        ' );
+            EchoStyledLine( 'Generating sitemap...', 'font-size: 1.5rem', 'color-blue', '        ' );
 
             var modification_date = GetCurrentDate();
             var page_array = GetDatabasePageArray();

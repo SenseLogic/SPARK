@@ -351,8 +351,8 @@ a:visited {
 .form-component .is-translation {
   display: grid;
   grid-template-columns: 1fr 5rem 3rem;
-  column-gap: 0.5rem;
   align-items: start;
+  column-gap: 0.5rem;
 }
 .form-component .is-translation.is-readonly {
   grid-template-columns: 1fr 5rem;
@@ -375,9 +375,9 @@ a:visited {
   grid-template-rows: auto auto;
   grid-template-columns: auto auto auto 1fr;
   grid-template-areas: "input input input input" "preview upload-button delete-button .";
-  column-gap: 0.5rem;
   row-gap: 0.5rem;
   align-items: center;
+  column-gap: 0.5rem;
 }
 .form-component .is-upload-container.is-readonly {
   column-gap: 0;
@@ -416,6 +416,7 @@ a:visited {
 .form-component .is-list-container {
   display: flex;
   flex-direction: column;
+  row-gap: 0.5rem;
   column-gap: 0.5rem;
 }
 .form-component .is-list-container.is-readonly {

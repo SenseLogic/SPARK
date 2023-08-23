@@ -6,7 +6,7 @@ require_once __DIR__ . '/' . 'controller.php';
 
 // -- TYPES
 
-class BACKUP_DATABASE_CONTROLLER extends CONTROLLER
+class MAKE_BACKUP_CONTROLLER extends CONTROLLER
 {
     // -- CONSTRUCTORS
 
@@ -18,7 +18,7 @@ class BACKUP_DATABASE_CONTROLLER extends CONTROLLER
 
         if ( HasSessionMinimumUserRole( 'administrator' ) )
         {
-            $this->Title = 'Backup database';
+            $this->Title = 'Make backup';
 
             AddParentRoute();
 
@@ -76,4 +76,4 @@ class BACKUP_DATABASE_CONTROLLER extends CONTROLLER
 
 ShowErrors();
 
- $backup_database_controller = new BACKUP_DATABASE_CONTROLLER(  $language_code );
+ $make_backup_controller = new MAKE_BACKUP_CONTROLLER(  $language_code );

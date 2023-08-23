@@ -200,13 +200,13 @@ function Route(
                   && $path_value_count === 2
                   && $path_value_array[ 1 ] === 'backup' )
         {
-            require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/backup_database_controller.php';
+            require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/make_backup_controller.php';
         }
         else if ( $it_is_get_request
                   && $path_value_count === 2
                   && $path_value_array[ 1 ] === 'sitemap' )
         {
-            require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/generate_sitemap_controller.php';
+            require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/update_sitemap_controller.php';
         }
         else if ( $it_is_get_request
                   && $path_value_count == 3
