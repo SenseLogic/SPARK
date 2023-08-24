@@ -197,18 +197,6 @@ function Route(
             require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/disconnect_user_controller.php';
         }
         else if ( $it_is_get_request
-                  && $path_value_count === 2
-                  && $path_value_array[ 1 ] === 'backup' )
-        {
-            require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/make_backup_controller.php';
-        }
-        else if ( $it_is_get_request
-                  && $path_value_count === 2
-                  && $path_value_array[ 1 ] === 'sitemap' )
-        {
-            require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/update_sitemap_controller.php';
-        }
-        else if ( $it_is_get_request
                   && $path_value_count == 3
                   && $path_value_array[ 1 ] === 'page'
                   && $path_value_array[ 2 ] === 'manage')
@@ -239,6 +227,20 @@ function Route(
              $block_id = $path_value_array[ 3 ];
 
             require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/manage_block_controller.php';
+        }
+        else if ( $it_is_get_request
+                  && $path_value_count === 3
+                  && $path_value_array[ 1 ] === 'server'
+                  && $path_value_array[ 2 ] === 'backup' )
+        {
+            require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/make_backup_controller.php';
+        }
+        else if ( $it_is_get_request
+                  && $path_value_count === 3
+                  && $path_value_array[ 1 ] === 'server'
+                  && $path_value_array[ 2 ] === 'sitemap' )
+        {
+            require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/update_sitemap_controller.php';
         }
         else if ( $path_value_count >= 2
                   && $path_value_array[ 1 ] === 'text' )

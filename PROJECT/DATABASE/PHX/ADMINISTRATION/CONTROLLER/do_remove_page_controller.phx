@@ -20,7 +20,7 @@ class DO_REMOVE_PAGE_CONTROLLER extends VIEW_CONTROLLER
         {
             RemoveDatabasePageById( page_id );
 
-            Redirect( GetParentRoute( null, '/admin/page' ) );
+            Redirect( GetParentRoute( null, '/admin/page', '*/<% page.Id %>' ) );
         }
     }
 }

@@ -102,9 +102,44 @@ function AddParentRoute(
 
 // ~~
 
+function MatchesRouteFilter(
+    string route,
+    route_filter
+    )
+{
+    if ( route_filter === null )
+    {
+        return false;
+    }
+    else if ( is_array( route_filter ) )
+    {
+        foreach ( var sub_route_filer; route_filter )
+        {
+            if ( MatchesRouteFilter( route, sub_route_filter ) )
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+    else if ( HasPrefix( route_filter, '*' )
+              && HasSuffix( route, substr( route_filter, 1 ) ) )
+    {
+        return true;
+    }
+    else
+    {
+        return route === route_filter;
+    }
+}
+
+// ~~
+
 function GetParentRoute(
     route = null,
-    string default_parent_route = ''
+    string default_parent_route = '',
+    forbidden_parent_route_filter = null
     )
 {
     if ( route === null )
@@ -119,7 +154,8 @@ function GetParentRoute(
           ++route_index )
     {
         if ( route_array[ route_index ] === route
-             && route_index > 0 )
+             && route_index > 0
+             && !MatchesRouteFilter( route_array[ route_index - 1 ], forbidden_parent_route_filter ) )
         {
             return route_array[ route_index - 1 ];
         }

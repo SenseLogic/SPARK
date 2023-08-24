@@ -20,7 +20,7 @@ class DO_REMOVE_BLOCK_CATEGORY_CONTROLLER extends VIEW_CONTROLLER
         {
             RemoveDatabaseBlockCategoryById( $block_category_id );
 
-            Redirect( GetParentRoute( null, '/admin/block-category' ) );
+            Redirect( GetParentRoute( null, '/admin/block-category', '*/<% block_category.Id %>' ) );
         }
     }
 }

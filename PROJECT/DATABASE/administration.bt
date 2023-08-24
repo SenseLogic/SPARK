@@ -188,7 +188,7 @@ class DO_REMOVE_{#type#}_CONTROLLER extends VIEW_CONTROLLER
         {
             RemoveDatabase{#attribute#}By{#key_attribute#}( {#variable#}_{#key_variable#} );
 
-            Redirect( GetParentRoute( null, '/admin/{#style#}' ) );
+            Redirect( GetParentRoute( null, '/admin/{#style#}', '*/<\% {#variable#}.{#key_attribute#} %\>' ) );
         }
     }
 }

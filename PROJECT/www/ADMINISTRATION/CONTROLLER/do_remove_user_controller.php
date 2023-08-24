@@ -20,7 +20,7 @@ class DO_REMOVE_USER_CONTROLLER extends VIEW_CONTROLLER
         {
             RemoveDatabaseUserById( $user_id );
 
-            Redirect( GetParentRoute( null, '/admin/user' ) );
+            Redirect( GetParentRoute( null, '/admin/user', '*/<% user.Id %>' ) );
         }
     }
 }
