@@ -1,14 +1,14 @@
-@include block_category.bd
-@include block_content.bd
-@include block_type.bd
-@include language.bd
-@include page_type.bd
-@include text.bd
-@include user.bd
+@include DATA/block_category.bd
+@include DATA/block_content.bd
+@include DATA/block_type.bd
+@include DATA/language.bd
+@include DATA/page_type.bd
+@include DATA/text.bd
+@include DATA/user.bd
 
-@include article_list_page.bd
-@include article_page.bd
-@include contact_page.bd
-@include privacy_policy_page.bd
-@include home_page.bd
-@include legal_notice_page.bd
+@include DATA/article_list_page.bd
+@include DATA/article_page.bd
+@include DATA/contact_page.bd
+@include DATA/privacy_policy_page.bd
+@include DATA/home_page.bd
+@include DATA/legal_notice_page.bd
