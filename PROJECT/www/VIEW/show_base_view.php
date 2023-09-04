@@ -27,9 +27,9 @@
         CloseHeaderMenu();
 
         if ( route !== undefined
-             && route.startsWith( "/" ) )
+             && route.startsWith( "http" ) )
         {
-            SetUrl( route );
+            OpenUrl( route );
         }
         else if ( route !== undefined
                   && route.startsWith( "//" ) )
@@ -37,9 +37,9 @@
             OpenUrl( route.substring( 1 ) );
         }
         else if ( route !== undefined
-                  && route.startsWith( "http" ) )
+                  && route.startsWith( "/" ) )
         {
-            OpenUrl( route );
+            SetUrl( route );
         }
         else
         {
