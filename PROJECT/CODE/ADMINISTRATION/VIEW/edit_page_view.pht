@@ -76,13 +76,6 @@
             it_is_valid_edit_page_form = false;
         }
 
-        if ( route_field.value === "" )
-        {
-            route_field.AddClass( "form-field-error" );
-
-            it_is_valid_edit_page_form = false;
-        }
-
         if ( !IsSlugText( type_slug_field.value ) )
         {
             type_slug_field.AddClass( "form-field-error" );

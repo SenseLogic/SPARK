@@ -51,7 +51,8 @@ class DO_ADD_{#type#}_CONTROLLER extends VIEW_CONTROLLER
         if ( HasSessionMinimumUserRole( '<~{#has_user_role#}<>{#add_user_role#}<>editor~>' ) )
         {<%¨<~{%is_scalar%}<>
             var {%variable%} = GetPostValue( '{%attribute%}' );<>
-            var {%variable%} = GetJsonObject( GetPostValue( '{%attribute%}' ) );~>¨%>
+            var {%variable%} = GetJsonObject( GetPostValue( '{%attribute%}' ) );~>¨%><%¨<~{%?filled%}<>
+            {%variable%} = GetFilled{#attribute#}{%attribute%}( {%variable%}, {%filled%} );~>¨%>
 
             AddDatabase{#attribute#}( <%¨{%variable%}<~!{%is_last_added%}<>, ~>¨%> );
 

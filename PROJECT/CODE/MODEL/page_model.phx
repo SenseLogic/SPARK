@@ -155,3 +155,33 @@ function GetValidPageByIdOrSlug(
         return null;
     }
 }
+
+// ~~
+
+function GetFilledPageSlug(
+    string slug,
+    string title
+    )
+{
+    if ( slug === '' )
+    {
+        slug = GetSlugText( title ) .. '-page';
+    }
+
+    return slug;
+}
+
+// ~~
+
+function GetFilledPageRoute(
+    string route,
+    string title
+    )
+{
+    if ( route === '' )
+    {
+        route = GetSlugText( title );
+    }
+
+    return route;
+}

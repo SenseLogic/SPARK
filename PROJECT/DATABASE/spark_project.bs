@@ -23,8 +23,8 @@ spark-project
     PAGE | managed, sorted, dropped, has_user_role, view_user_role contributor, edit_user_role contributor, add_user_role contributor, remove_user_role contributor
 
         Id : TUID | key, unique, hidden, default_expression GetRandomTuid()
-        Slug : STRING = "" | optional, is_slug, default_value "...-page"
-        Route : STRING = "" | processed, default_value "..."
+        Slug : STRING = "" | optional, filled title, is_slug, default_value ""
+        Route : STRING = "" | optional, filled title, processed, default_value ""
         TypeSlug : PAGE_TYPE.Slug | processed, is_slug, enumeration "GetElementPropertyArray( .PageTypeArray, 'Slug' )^GetUntranslatedElementArray( GetElementPropertyArray( .PageTypeArray, 'Name' ) )"
         Number : FLOAT64 | ascending, default_value 1
         LanguageCodeArray : LIST[ LANGUAGE.Code ] = "{ en ~ fr }" | enumeration_list "[ 'en', 'fr', 'de', 'ja' ,'ru' ]^[ 'English', 'French', 'German', 'Japanese', 'Russian' ]", default_value "[ \"en\", \"fr\" ]"
