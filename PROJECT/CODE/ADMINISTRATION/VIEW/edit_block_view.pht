@@ -33,6 +33,7 @@
             image_vertical_position_array_field,
             image_horizontal_position_field,
             image_horizontal_position_array_field,
+            image_fit_field,
             video_path_field,
             video_path_array_field,
             document_path_field,
@@ -64,6 +65,7 @@
         image_vertical_position_array_field = edit_block_form.ImageVerticalPositionArray;
         image_horizontal_position_field = edit_block_form.ImageHorizontalPosition;
         image_horizontal_position_array_field = edit_block_form.ImageHorizontalPositionArray;
+        image_fit_field = edit_block_form.ImageFit;
         video_path_field = edit_block_form.VideoPath;
         video_path_array_field = edit_block_form.VideoPathArray;
         document_path_field = edit_block_form.DocumentPath;
@@ -94,6 +96,7 @@
         image_vertical_position_array_field.RemoveClass( "form-field-error" );
         image_horizontal_position_field.RemoveClass( "form-field-error" );
         image_horizontal_position_array_field.RemoveClass( "form-field-error" );
+        image_fit_field.RemoveClass( "form-field-error" );
         video_path_field.RemoveClass( "form-field-error" );
         video_path_array_field.RemoveClass( "form-field-error" );
         document_path_field.RemoveClass( "form-field-error" );
@@ -154,6 +157,48 @@
         if ( minimum_height_field.value === "" )
         {
             minimum_height_field.AddClass( "form-field-error" );
+
+            it_is_valid_edit_block_form = false;
+        }
+
+        if ( image_side_field.value === "" )
+        {
+            image_side_field.AddClass( "form-field-error" );
+
+            it_is_valid_edit_block_form = false;
+        }
+
+        if ( image_vertical_position_field.value === "" )
+        {
+            image_vertical_position_field.AddClass( "form-field-error" );
+
+            it_is_valid_edit_block_form = false;
+        }
+
+        if ( image_vertical_position_array_field.value === "" )
+        {
+            image_vertical_position_array_field.AddClass( "form-field-error" );
+
+            it_is_valid_edit_block_form = false;
+        }
+
+        if ( image_horizontal_position_field.value === "" )
+        {
+            image_horizontal_position_field.AddClass( "form-field-error" );
+
+            it_is_valid_edit_block_form = false;
+        }
+
+        if ( image_horizontal_position_array_field.value === "" )
+        {
+            image_horizontal_position_array_field.AddClass( "form-field-error" );
+
+            it_is_valid_edit_block_form = false;
+        }
+
+        if ( image_fit_field.value === "" )
+        {
+            image_fit_field.AddClass( "form-field-error" );
 
             it_is_valid_edit_block_form = false;
         }
@@ -265,7 +310,7 @@
                     <% GetTextBySlug( 'Image Side' ) %> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="ImageSide">
-                    <dropdown-component class="form-component" result-name="ImageSide" result-value="<% GetValueText( .Block.ImageSide ) %>" is-optional option-values="<% GetValueText( GetJsonText( [ 'left', 'right' ] ) ) %>" option-names="<% GetValueText( GetJsonText( [ 'Left', 'Right' ] ) ) %>"></dropdown-component>
+                    <dropdown-component class="form-component" result-name="ImageSide" result-value="<% GetValueText( .Block.ImageSide ) %>"  option-values="<% GetValueText( GetJsonText( [ 'left', 'right' ] ) ) %>" option-names="<% GetValueText( GetJsonText( [ 'Left', 'Right' ] ) ) %>"></dropdown-component>
                 </div>
                 <div class="form-field-name" data-is-column-title data-column-name="ImageLegend">
                     <% GetTextBySlug( 'Image Legend' ) %> :
@@ -295,25 +340,31 @@
                     <% GetTextBySlug( 'Image Vertical Position' ) %> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="ImageVerticalPosition">
-                    <dropdown-component class="form-component" result-name="ImageVerticalPosition" result-value="<% GetValueText( .Block.ImageVerticalPosition ) %>" is-optional option-values="<% GetValueText( GetJsonText( [ 'top', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'bottom'] ) ) %>" option-names="<% GetValueText( GetJsonText( [ 'Top', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Bottom' ] ) ) %>"></dropdown-component>
+                    <dropdown-component class="form-component" result-name="ImageVerticalPosition" result-value="<% GetValueText( .Block.ImageVerticalPosition ) %>"  option-values="<% GetValueText( GetJsonText( [ 'top', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'bottom'] ) ) %>" option-names="<% GetValueText( GetJsonText( [ 'Top', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Bottom' ] ) ) %>"></dropdown-component>
                 </div>
                 <div class="form-field-name" data-is-column-title data-column-name="ImageVerticalPositionArray">
                     <% GetTextBySlug( 'Image Vertical Position Array' ) %> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="ImageVerticalPositionArray">
-                    <dropdown-list-component class="form-component" result-name="ImageVerticalPositionArray" result-value="<% GetValueText( .Block.ImageVerticalPositionArray ) %>" is-optional option-values="<% GetValueText( GetJsonText( [ 'top', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'bottom'] ) ) %>" option-names="<% GetValueText( GetJsonText( [ 'Top', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Bottom' ] ) ) %>"></dropdown-list-component>
+                    <dropdown-list-component class="form-component" result-name="ImageVerticalPositionArray" result-value="<% GetValueText( .Block.ImageVerticalPositionArray ) %>"  option-values="<% GetValueText( GetJsonText( [ 'top', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'bottom'] ) ) %>" option-names="<% GetValueText( GetJsonText( [ 'Top', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Bottom' ] ) ) %>"></dropdown-list-component>
                 </div>
                 <div class="form-field-name" data-is-column-title data-column-name="ImageHorizontalPosition">
                     <% GetTextBySlug( 'Image Horizontal Position' ) %> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="ImageHorizontalPosition">
-                    <dropdown-component class="form-component" result-name="ImageHorizontalPosition" result-value="<% GetValueText( .Block.ImageHorizontalPosition ) %>" is-optional option-values="<% GetValueText( GetJsonText( [ 'left', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'right'] ) ) %>" option-names="<% GetValueText( GetJsonText( [ 'Left', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Right' ] ) ) %>"></dropdown-component>
+                    <dropdown-component class="form-component" result-name="ImageHorizontalPosition" result-value="<% GetValueText( .Block.ImageHorizontalPosition ) %>"  option-values="<% GetValueText( GetJsonText( [ 'left', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'right'] ) ) %>" option-names="<% GetValueText( GetJsonText( [ 'Left', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Right' ] ) ) %>"></dropdown-component>
                 </div>
                 <div class="form-field-name" data-is-column-title data-column-name="ImageHorizontalPositionArray">
                     <% GetTextBySlug( 'Image Horizontal Position Array' ) %> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="ImageHorizontalPositionArray">
-                    <dropdown-list-component class="form-component" result-name="ImageHorizontalPositionArray" result-value="<% GetValueText( .Block.ImageHorizontalPositionArray ) %>" is-optional option-values="<% GetValueText( GetJsonText( [ 'left', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'right'] ) ) %>" option-names="<% GetValueText( GetJsonText( [ 'Left', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Right' ] ) ) %>"></dropdown-list-component>
+                    <dropdown-list-component class="form-component" result-name="ImageHorizontalPositionArray" result-value="<% GetValueText( .Block.ImageHorizontalPositionArray ) %>"  option-values="<% GetValueText( GetJsonText( [ 'left', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'right'] ) ) %>" option-names="<% GetValueText( GetJsonText( [ 'Left', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Right' ] ) ) %>"></dropdown-list-component>
+                </div>
+                <div class="form-field-name" data-is-column-title data-column-name="ImageFit">
+                    <% GetTextBySlug( 'Image Fit' ) %> :
+                </div>
+                <div class="form-field-value" data-is-column-value data-column-name="ImageFit">
+                    <dropdown-component class="form-component" result-name="ImageFit" result-value="<% GetValueText( .Block.ImageFit ) %>"  option-values="<% GetValueText( GetJsonText( [ 'cover', 'contain'] ) ) %>" option-names="<% GetValueText( GetJsonText( [ 'Cover', 'Contain' ] ) ) %>"></dropdown-component>
                 </div>
                 <div class="form-field-name" data-is-column-title data-column-name="VideoPath">
                     <% GetTextBySlug( 'Video Path' ) %> :

@@ -165,7 +165,7 @@ function GetFilledPageSlug(
 {
     if ( $slug === '' )
     {
-        $slug = GetSlugText( $title ) . '-page';
+        $slug = GetSlugText( GetUntranslatedText( $title ) ) . '-page';
     }
 
     return $slug;
@@ -180,7 +180,7 @@ function GetFilledPageRoute(
 {
     if ( $route === '' )
     {
-        $route = GetSlugText( $title );
+        $route = GetSlugText( GetUntranslatedText( $title ) );
     }
 
     return $route;

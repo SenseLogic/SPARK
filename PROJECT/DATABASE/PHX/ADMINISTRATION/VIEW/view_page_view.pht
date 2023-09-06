@@ -160,6 +160,19 @@
             </div><~false<>
             <?
                 var field_mode = 'view';
+                var field_name = 'ImageFit';
+                var field_title = 'Image Fit';
+                var field_value = .Page.ImageFit;
+                include 'BLOCK/page_image_fit_field.php';
+            ?><>
+            <div class="form-field-name" data-is-column-title data-column-name="ImageFit">
+                <% GetTextBySlug( 'Image Fit' ) %> :
+            </div>
+            <div class="form-field-value" data-is-column-value data-column-name="ImageFit">
+                <dropdown-component class="form-component" result-name="ImageFit" result-value="<% GetValueText( .Page.ImageFit ) %>" is-readonly  option-values="<% GetValueText( GetJsonText( [ 'cover', 'contain'] ) ) %>" option-names="<% GetValueText( GetJsonText( [ 'Cover', 'Contain' ] ) ) %>"></dropdown-component>
+            </div><~false<>
+            <?
+                var field_mode = 'view';
                 var field_name = 'VideoPath';
                 var field_title = 'Video Path';
                 var field_value = .Page.VideoPath;

@@ -354,7 +354,7 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                     var field_title = '{%title%}';
                     include 'BLOCK/{#variable#}_{%variable%}_field.php';
                 ?><>
-                <div class="form-field-name<~{%?hidden%}<> is-hidden~>" data-is-column-title data-column-name="{%attribute%}">
+                <div class="form-field-name<~{%?needed%}<> is-needed~><~{%?hidden%}<> is-hidden~>" data-is-column-title data-column-name="{%attribute%}">
                     <\% GetTextBySlug( '{%title%}' ) %\> :
                 </div>
                 <div class="form-field-value<~{%?hidden%}<> is-hidden~>" data-is-column-value data-column-name="{%attribute%}"><~{%?enumeration_list%}<>
@@ -380,8 +380,8 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                 </div>~>¨%>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="<\% GetParentRoute( null, '/admin/{#style#}' ) %\>">
                 </a>
-                <a class="justify-self-end form-button form-button-large apply-button" onclick="this.SubmitForm()">
-                </a>
+                <span class="justify-self-end form-button form-button-large apply-button" onclick="this.SubmitForm()">
+                </span>
             </div>
         </form>
     </div><~{#has_custom_block#}<>

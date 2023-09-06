@@ -160,6 +160,19 @@
             </div><~false<>
             <?php
                  $field_mode = 'view';
+                 $field_name = 'ImageFit';
+                 $field_title = 'Image Fit';
+                 $field_value = $this->Page->ImageFit;
+                require __DIR__ . '/' . 'BLOCK/page_image_fit_field.php';
+            ?><>
+            <div class="form-field-name" data-is-column-title data-column-name="ImageFit">
+                <?php echo htmlspecialchars( GetTextBySlug( 'Image Fit' ) ); ?> :
+            </div>
+            <div class="form-field-value" data-is-column-value data-column-name="ImageFit">
+                <dropdown-component class="form-component" result-name="ImageFit" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->ImageFit ) ); ?>" is-readonly  option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'cover', 'contain'] ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'Cover', 'Contain' ] ) ) ); ?>"></dropdown-component>
+            </div><~false<>
+            <?php
+                 $field_mode = 'view';
                  $field_name = 'VideoPath';
                  $field_title = 'Video Path';
                  $field_value = $this->Page->VideoPath;

@@ -164,8 +164,8 @@
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="<?php echo htmlspecialchars( GetParentRoute( null, '/admin/language' ) ); ?>">
                 </a>
-                <a class="justify-self-end form-button form-button-large apply-button" onclick="this.SubmitForm()">
-                </a>
+                <span class="justify-self-end form-button form-button-large apply-button" onclick="this.SubmitForm()">
+                </span>
             </div>
         </form>
     </div>

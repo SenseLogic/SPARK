@@ -21,6 +21,7 @@
             image_path_field,
             image_vertical_position_field,
             image_horizontal_position_field,
+            image_fit_field,
             video_path_field,
             meta_title_field,
             meta_description_field,
@@ -42,6 +43,7 @@
         image_path_field = add_page_form.ImagePath;
         image_vertical_position_field = add_page_form.ImageVerticalPosition;
         image_horizontal_position_field = add_page_form.ImageHorizontalPosition;
+        image_fit_field = add_page_form.ImageFit;
         video_path_field = add_page_form.VideoPath;
         meta_title_field = add_page_form.MetaTitle;
         meta_description_field = add_page_form.MetaDescription;
@@ -62,6 +64,7 @@
         image_path_field.RemoveClass( "form-field-error" );
         image_vertical_position_field.RemoveClass( "form-field-error" );
         image_horizontal_position_field.RemoveClass( "form-field-error" );
+        image_fit_field.RemoveClass( "form-field-error" );
         video_path_field.RemoveClass( "form-field-error" );
         meta_title_field.RemoveClass( "form-field-error" );
         meta_description_field.RemoveClass( "form-field-error" );
@@ -115,6 +118,13 @@
             it_is_valid_add_page_form = false;
         }
 
+        if ( title_field.value === "" )
+        {
+            title_field.AddClass( "form-field-error" );
+
+            it_is_valid_add_page_form = false;
+        }
+
         if ( image_vertical_position_field.value === "" )
         {
             image_vertical_position_field.AddClass( "form-field-error" );
@@ -125,6 +135,13 @@
         if ( image_horizontal_position_field.value === "" )
         {
             image_horizontal_position_field.AddClass( "form-field-error" );
+
+            it_is_valid_add_page_form = false;
+        }
+
+        if ( image_fit_field.value === "" )
+        {
+            image_fit_field.AddClass( "form-field-error" );
 
             it_is_valid_add_page_form = false;
         }
@@ -274,7 +291,7 @@
                         $field_value = '';
                     }
                 ?>
-                <div class="form-field-name" data-is-column-title data-column-name="Title">
+                <div class="form-field-name is-needed" data-is-column-title data-column-name="Title">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Title' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="Title">
@@ -369,6 +386,24 @@
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="ImageHorizontalPosition">
                     <dropdown-component class="form-component" result-name="ImageHorizontalPosition" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"  option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'left', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'right'] ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'Left', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Right' ] ) ) ); ?>"></dropdown-component>
+                </div>
+                <?php
+                     $field_name = 'ImageFit';
+
+                    if ( HasQueryValue( $field_name ) )
+                    {
+                         $field_value = GetQueryValue( $field_name );
+                    }
+                    else
+                    {
+                        $field_value = "cover";
+                    }
+                ?>
+                <div class="form-field-name" data-is-column-title data-column-name="ImageFit">
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Image Fit' ) ); ?> :
+                </div>
+                <div class="form-field-value" data-is-column-value data-column-name="ImageFit">
+                    <dropdown-component class="form-component" result-name="ImageFit" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"  option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'cover', 'contain'] ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'Cover', 'Contain' ] ) ) ); ?>"></dropdown-component>
                 </div>
                 <?php
                      $field_name = 'VideoPath';
@@ -480,8 +515,8 @@
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="<?php echo htmlspecialchars( GetParentRoute( null, '/admin/page' ) ); ?>">
                 </a>
-                <a class="justify-self-end form-button form-button-large apply-button" onclick="this.SubmitForm()">
-                </a>
+                <span class="justify-self-end form-button form-button-large apply-button" onclick="this.SubmitForm()">
+                </span>
             </div>
         </form>
     </div>

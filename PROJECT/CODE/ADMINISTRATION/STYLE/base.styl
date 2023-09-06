@@ -100,6 +100,13 @@ MakeSortableTableColumn();
     color: BlueColor;
 }
 
+.is-needed::after
+{
+    content: "*";
+    color: RedColor;
+    float: right;
+}
+
 .is-hidden
 {
     display: none !important;
@@ -472,7 +479,9 @@ MakeSortableTableColumn();
 }
 
 .form-field-error,
-.form-field-error ~ .form-translation
+.form-field-error + div input:not([readonly]),
+.form-field-error + div textarea:not([readonly]),
+.form-field-error + div select:not([readonly])
 {
     outline: solid red 1px;
 }

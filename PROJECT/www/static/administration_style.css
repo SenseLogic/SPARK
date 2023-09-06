@@ -529,6 +529,11 @@ textarea {
 .color-blue {
   color: #001e68;
 }
+.is-needed::after {
+  content: "*";
+  color: #e20048;
+  float: right;
+}
 .is-hidden {
   display: none !important;
 }
@@ -761,7 +766,9 @@ textarea {
   color: #aaa;
 }
 .form-field-error,
-.form-field-error ~ .form-translation {
+.form-field-error + div input:not([readonly]),
+.form-field-error + div textarea:not([readonly]),
+.form-field-error + div select:not([readonly]) {
   outline: solid #f00 1px;
 }
 .form-input,
@@ -1064,7 +1071,7 @@ textarea {
   grid-template-columns: repeat(3, auto);
 }
 .page-table {
-  grid-template-columns: repeat(19, auto);
+  grid-template-columns: repeat(20, auto);
 }
 .block-category-table {
   grid-template-columns: repeat(3, auto);
@@ -1076,7 +1083,7 @@ textarea {
   grid-template-columns: repeat(3, auto);
 }
 .block-table {
-  grid-template-columns: repeat(30, auto);
+  grid-template-columns: repeat(31, auto);
 }
 .contact-table {
   grid-template-columns: repeat(8, auto);

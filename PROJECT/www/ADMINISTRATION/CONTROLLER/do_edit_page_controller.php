@@ -30,6 +30,7 @@ class DO_EDIT_PAGE_CONTROLLER extends VIEW_CONTROLLER
              $image_path = GetPostValue( 'ImagePath' );
              $image_vertical_position = GetPostValue( 'ImageVerticalPosition' );
              $image_horizontal_position = GetPostValue( 'ImageHorizontalPosition' );
+             $image_fit = GetPostValue( 'ImageFit' );
              $video_path = GetPostValue( 'VideoPath' );
              $meta_title = GetPostValue( 'MetaTitle' );
              $meta_description = GetPostValue( 'MetaDescription' );
@@ -37,7 +38,7 @@ class DO_EDIT_PAGE_CONTROLLER extends VIEW_CONTROLLER
              $meta_sub_title_array = GetJsonObject( GetPostValue( 'MetaSubTitleArray' ) );
              $meta_sub_description_array = GetJsonObject( GetPostValue( 'MetaSubDescriptionArray' ) );
 
-            SetDatabasePage( $page_id, $slug, $route, $type_slug, $number, $language_code_array, $is_active, $title, $heading, $teaser, $image_path, $image_vertical_position, $image_horizontal_position, $video_path, $meta_title, $meta_description, $meta_sub_route_array, $meta_sub_title_array, $meta_sub_description_array );
+            SetDatabasePage( $page_id, $slug, $route, $type_slug, $number, $language_code_array, $is_active, $title, $heading, $teaser, $image_path, $image_vertical_position, $image_horizontal_position, $image_fit, $video_path, $meta_title, $meta_description, $meta_sub_route_array, $meta_sub_title_array, $meta_sub_description_array );
 
             Redirect( GetParentRoute( null, '/admin/page' ) );
         }

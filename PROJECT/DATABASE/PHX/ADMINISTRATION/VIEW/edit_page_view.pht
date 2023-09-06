@@ -20,6 +20,7 @@
             image_path_field,
             image_vertical_position_field,
             image_horizontal_position_field,
+            image_fit_field,
             video_path_field,
             meta_title_field,
             meta_description_field,
@@ -40,6 +41,7 @@
         image_path_field = edit_page_form.ImagePath;
         image_vertical_position_field = edit_page_form.ImageVerticalPosition;
         image_horizontal_position_field = edit_page_form.ImageHorizontalPosition;
+        image_fit_field = edit_page_form.ImageFit;
         video_path_field = edit_page_form.VideoPath;
         meta_title_field = edit_page_form.MetaTitle;
         meta_description_field = edit_page_form.MetaDescription;
@@ -59,6 +61,7 @@
         image_path_field.RemoveClass( "form-field-error" );
         image_vertical_position_field.RemoveClass( "form-field-error" );
         image_horizontal_position_field.RemoveClass( "form-field-error" );
+        image_fit_field.RemoveClass( "form-field-error" );
         video_path_field.RemoveClass( "form-field-error" );
         meta_title_field.RemoveClass( "form-field-error" );
         meta_description_field.RemoveClass( "form-field-error" );
@@ -105,6 +108,13 @@
             it_is_valid_edit_page_form = false;
         }
 
+        if ( title_field.value === "" )
+        {
+            title_field.AddClass( "form-field-error" );
+
+            it_is_valid_edit_page_form = false;
+        }
+
         if ( image_vertical_position_field.value === "" )
         {
             image_vertical_position_field.AddClass( "form-field-error" );
@@ -115,6 +125,13 @@
         if ( image_horizontal_position_field.value === "" )
         {
             image_horizontal_position_field.AddClass( "form-field-error" );
+
+            it_is_valid_edit_page_form = false;
+        }
+
+        if ( image_fit_field.value === "" )
+        {
+            image_fit_field.AddClass( "form-field-error" );
 
             it_is_valid_edit_page_form = false;
         }
@@ -197,6 +214,12 @@
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="ImageHorizontalPosition">
                     <dropdown-component class="form-component" result-name="ImageHorizontalPosition" result-value="<% GetValueText( .Page.ImageHorizontalPosition ) %>"  option-values="<% GetValueText( GetJsonText( [ 'left', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'right'] ) ) %>" option-names="<% GetValueText( GetJsonText( [ 'Left', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Right' ] ) ) %>"></dropdown-component>
+                </div>
+                <div class="form-field-name" data-is-column-title data-column-name="ImageFit">
+                    <% GetTextBySlug( 'Image Fit' ) %> :
+                </div>
+                <div class="form-field-value" data-is-column-value data-column-name="ImageFit">
+                    <dropdown-component class="form-component" result-name="ImageFit" result-value="<% GetValueText( .Page.ImageFit ) %>"  option-values="<% GetValueText( GetJsonText( [ 'cover', 'contain'] ) ) %>" option-names="<% GetValueText( GetJsonText( [ 'Cover', 'Contain' ] ) ) %>"></dropdown-component>
                 </div>
                 <div class="form-field-name" data-is-column-title data-column-name="VideoPath">
                     <% GetTextBySlug( 'Video Path' ) %> :

@@ -76,6 +76,12 @@
                 <div class="form-field-value" data-is-column-value data-column-name="ImageHorizontalPosition">
                     <dropdown-component class="form-component" result-name="ImageHorizontalPosition" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->ImageHorizontalPosition ) ); ?>" is-readonly  option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'left', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'right'] ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'Left', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Right' ] ) ) ); ?>"></dropdown-component>
                 </div>
+                <div class="form-field-name" data-is-column-title data-column-name="ImageFit">
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Image Fit' ) ); ?> :
+                </div>
+                <div class="form-field-value" data-is-column-value data-column-name="ImageFit">
+                    <dropdown-component class="form-component" result-name="ImageFit" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->ImageFit ) ); ?>" is-readonly  option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'cover', 'contain'] ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'Cover', 'Contain' ] ) ) ); ?>"></dropdown-component>
+                </div>
                 <div class="form-field-name" data-is-column-title data-column-name="VideoPath">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Video Path' ) ); ?> :
                 </div>
