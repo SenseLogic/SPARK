@@ -4,7 +4,7 @@ function GetTuid(
     string text
     )
 {
-    if ( text == "" )
+    if ( text === "" )
     {
         return "";
     }
@@ -22,7 +22,7 @@ function GetUuid(
     string text
     )
 {
-    if ( text == "" )
+    if ( text === "" )
     {
         return "00000000-0000-0000-0000-000000000000";
     }
@@ -176,8 +176,8 @@ function GetBasilTableText(
             {
                 id_value_character_count = strlen( column_value );
 
-                if ( id_value_character_count == 22
-                     || id_value_character_count == 36 )
+                if ( id_value_character_count === 22
+                     || id_value_character_count === 36 )
                 {
                     id_value = column_value;
                 }
@@ -192,12 +192,12 @@ function GetBasilTableText(
             {
                 foreach ( var slug; [ column_value, column_value .. '-' .. str_replace( '_', '-', strtolower( table_name ) ) ] )
                 {
-                    if ( id_value_character_count == 22 )
+                    if ( id_value_character_count === 22 )
                     {
                         var old_id = GetTuid( slug );
                         var new_id = '%' .. slug;
                     }
-                    else if ( id_value_character_count == 36 )
+                    else if ( id_value_character_count === 36 )
                     {
                         old_id = GetUuid( slug );
                         new_id = '#' .. slug;

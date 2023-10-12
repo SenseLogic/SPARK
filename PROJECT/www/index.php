@@ -163,28 +163,28 @@ function Route(
             require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/show_home_menu_controller.php';
         }
         else if ( $it_is_post_request
-                  && $path_value_count == 3
+                  && $path_value_count === 3
                   && $path_value_array[ 1 ] === 'upload'
                   && $path_value_array[ 2 ] === 'image' )
         {
             require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/upload_image_controller.php';
         }
         else if ( $it_is_post_request
-                  && $path_value_count == 3
+                  && $path_value_count === 3
                   && $path_value_array[ 1 ] === 'upload'
                   && $path_value_array[ 2 ] === 'video' )
         {
             require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/upload_video_controller.php';
         }
         else if ( $it_is_post_request
-                  && $path_value_count == 3
+                  && $path_value_count === 3
                   && $path_value_array[ 1 ] === 'upload'
                   && $path_value_array[ 2 ] === 'document' )
         {
             require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/upload_document_controller.php';
         }
         else if ( $it_is_post_request
-                  && $path_value_count == 3
+                  && $path_value_count === 3
                   && $path_value_array[ 1 ] === 'delete'
                   && $path_value_array[ 2 ] === 'file' )
         {
@@ -197,14 +197,14 @@ function Route(
             require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/disconnect_user_controller.php';
         }
         else if ( $it_is_get_request
-                  && $path_value_count == 3
+                  && $path_value_count === 3
                   && $path_value_array[ 1 ] === 'page'
                   && $path_value_array[ 2 ] === 'manage')
         {
             require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/manage_pages_controller.php';
         }
         else if ( $it_is_get_request
-                  && $path_value_count == 4
+                  && $path_value_count === 4
                   && $path_value_array[ 1 ] === 'page'
                   && $path_value_array[ 2 ] === 'manage' )
         {
@@ -213,14 +213,14 @@ function Route(
             require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/manage_page_controller.php';
         }
         else if ( $it_is_get_request
-                  && $path_value_count == 3
+                  && $path_value_count === 3
                   && $path_value_array[ 1 ] === 'block'
                   && $path_value_array[ 2 ] === 'manage' )
         {
             require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/manage_blocks_controller.php';
         }
         else if ( $it_is_get_request
-                  && $path_value_count == 4
+                  && $path_value_count === 4
                   && $path_value_array[ 1 ] === 'block'
                   && $path_value_array[ 2 ] === 'manage' )
         {
@@ -1072,7 +1072,7 @@ function Route(
             {
                 require_once __DIR__ . '/' . 'CONTROLLER/show_base_controller.php';
             }
-            else if ( $path_value_count == 0 )
+            else if ( $path_value_count === 0 )
             {
                 require_once __DIR__ . '/' . 'CONTROLLER/show_base_controller.php';
             }

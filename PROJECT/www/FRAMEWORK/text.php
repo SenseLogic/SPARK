@@ -196,7 +196,7 @@ function IsInteger(
 {
     return
         is_numeric( $value )
-        && $value == ( int ) $value;
+        && $value === ( int ) $value;
 }
 
 // ~~
@@ -207,7 +207,7 @@ function IsNatural(
 {
     return
         is_numeric( $value )
-        && $value == ( int ) $value
+        && $value === ( int ) $value
         && $value > 0;
 }
 
