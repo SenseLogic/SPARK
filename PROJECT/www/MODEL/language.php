@@ -36,7 +36,11 @@ function GetDatabaseLanguageById(
     }
 
      $language = $statement->fetchObject();
-    $language->Number = ( float )( $language->Number );
+
+    if ( $language )
+    {
+        $language->Number = ( float )( $language->Number );
+    }
 
     return $language;
 }

@@ -47,18 +47,22 @@ function GetDatabaseBlockById(
     }
 
     var block = statement.fetchObject();
-    block.Number = ( float )( block.Number );
-    block.LanguageCodeArray = json_decode( block.LanguageCodeArray );
-    block.TitleArray = json_decode( block.TitleArray );
-    block.TeaserArray = json_decode( block.TeaserArray );
-    block.TextArray = json_decode( block.TextArray );
-    block.RouteArray = json_decode( block.RouteArray );
-    block.ImageLegendArray = json_decode( block.ImageLegendArray );
-    block.ImagePathArray = json_decode( block.ImagePathArray );
-    block.ImageVerticalPositionArray = json_decode( block.ImageVerticalPositionArray );
-    block.ImageHorizontalPositionArray = json_decode( block.ImageHorizontalPositionArray );
-    block.VideoPathArray = json_decode( block.VideoPathArray );
-    block.DocumentPathArray = json_decode( block.DocumentPathArray );
+
+    if ( block )
+    {
+        block.Number = ( float )( block.Number );
+        block.LanguageCodeArray = json_decode( block.LanguageCodeArray );
+        block.TitleArray = json_decode( block.TitleArray );
+        block.TeaserArray = json_decode( block.TeaserArray );
+        block.TextArray = json_decode( block.TextArray );
+        block.RouteArray = json_decode( block.RouteArray );
+        block.ImageLegendArray = json_decode( block.ImageLegendArray );
+        block.ImagePathArray = json_decode( block.ImagePathArray );
+        block.ImageVerticalPositionArray = json_decode( block.ImageVerticalPositionArray );
+        block.ImageHorizontalPositionArray = json_decode( block.ImageHorizontalPositionArray );
+        block.VideoPathArray = json_decode( block.VideoPathArray );
+        block.DocumentPathArray = json_decode( block.DocumentPathArray );
+    }
 
     return block;
 }

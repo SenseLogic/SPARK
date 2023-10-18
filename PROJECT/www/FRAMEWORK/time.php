@@ -694,3 +694,21 @@ function GetTimeZoneFromLocation(
 
     return '';
 }
+
+// ~~
+
+function GetBackoffSecondCount(
+    int $attempt_count,
+    int $minimum_attempt_count = 3,
+    int $maximum_attempt_count = 8
+    )
+{
+    if ( $attempt_count < $minimum_attempt_count )
+    {
+        return 0;
+    }
+    else
+    {
+        return 60 * ( 2 ** min( $attempt_count - $minimum_attempt_count, $maximum_attempt_count ) ) * 15 / 16;
+    }
+}

@@ -699,7 +699,7 @@ function GetTimeZoneFromLocation(
 
 function GetBackoffSecondCount(
     int attempt_count,
-    int minimum_attempt_count = 4,
+    int minimum_attempt_count = 3,
     int maximum_attempt_count = 8
     )
 {
@@ -709,6 +709,6 @@ function GetBackoffSecondCount(
     }
     else
     {
-        return 60 * ( 2 ** min( attempt_count, maximum_attempt_count ) ) * 15 / 16;
+        return 60 * ( 2 ** min( attempt_count - minimum_attempt_count, maximum_attempt_count ) ) * 15 / 16;
     }
 }
