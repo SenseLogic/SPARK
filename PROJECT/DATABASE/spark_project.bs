@@ -106,6 +106,14 @@ spark-project
         Message : STRING = "{{latin 2 4 5 10}}|{{latin 2 4 5 10}}" | text
         DateTime : DATETIME | generated, descending
 
+    CONNECTION | sorted, dropped, has_user_role, view_user_role administrator, edit_user_role administrator, add_user_role administrator, remove_user_role administrator
+
+        Id : TUID | key, unique, mapped, hidden, default_expression GetRandomTuid()
+        BrowserAddress : STRING | indexed, accessed
+        DateTime : DATETIME
+        IsFailed : BOOL = "false" | enumeration "[ '0', '1' ]^[ 'False', 'True' ]", default_value 0
+        AttemptCount : INT64 | default_value 0
+
     USER | sorted, dropped, has_user_role, view_user_role administrator, edit_user_role administrator, add_user_role administrator, remove_user_role administrator
 
         Id : TUID | key, unique, mapped, hidden, default_expression GetRandomTuid()

@@ -1,5 +1,6 @@
 // -- IMPORTS
 
+import '../../MODEL/connection_model.php';
 import 'view_controller.php';
 
 // -- TYPES
@@ -13,6 +14,9 @@ class CONNECT_USER_CONTROLLER extends VIEW_CONTROLLER
         )
     {
         parent::constructor( language_code );
+
+        .BrowserAddress = GetBrowserAddress();
+        .Connection = GetConnection( .BrowserAddress );
 
         .Title = '';
 

@@ -1,6 +1,7 @@
 // -- IMPORTS
 
 import 'controller.php';
+import '../../MODEL/connection_model.php';
 import '../../MODEL/user_model.php';
 
 // -- TYPES
@@ -16,18 +17,40 @@ class DO_CONNECT_USER_CONTROLLER extends CONTROLLER
     {
         parent::constructor( language_code );
 
-        var pseudonym = GetPostValue( 'Pseudonym' );
-        var password = GetPostValue( 'Password' );
-        var user = GetDatabaseUserByPseudonymAndPassword( pseudonym, password );
+        .BrowserAddress = GetBrowserAddress();
+        .Connection = GetConnection( .BrowserAddress );
 
-        if ( user === null )
+        if ( .Connection.BackoffSecondCount > 0 )
         {
-            .Title = 'Sign In';
-
-            import '../VIEW/connect_user_view.php';
+            var user = null;
         }
         else
         {
+            var pseudonym = GetPostValue( 'Pseudonym' );
+            var password = GetPostValue( 'Password' );
+            user = GetDatabaseUserByPseudonymAndPassword( pseudonym, password );
+        }
+
+        .Connection.DateTime = GetCurrentDateTime();
+
+        if ( user === null )
+        {
+            .Connection.IsFailed = true;
+            .Connection.AttemptCount += 1;
+
+            SetConnection( .Connection );
+
+            .Title = 'Sign In';
+
+            Redirect( 'admin' );
+        }
+        else
+        {
+            .Connection.IsFailed = false;
+            .Connection.AttemptCount = 0;
+
+            SetConnection( .Connection );
+
             .Session.User = user;
             .Session.UserIsConnected = true;
             .Session.UserRole = user.Role;

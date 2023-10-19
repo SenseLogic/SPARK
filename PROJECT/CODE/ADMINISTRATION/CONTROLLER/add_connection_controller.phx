@@ -1,0 +1,31 @@
+// -- IMPORTS
+
+import 'view_controller.php';
+import '../../MODEL/connection_model.php';
+
+// -- TYPES
+
+class ADD_CONNECTION_CONTROLLER extends VIEW_CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code
+        )
+    {
+        parent::constructor( language_code );
+
+        if ( HasSessionMinimumUserRole( 'administrator' ) )
+        {
+            .Title = 'Add a connection';
+
+            AddParentRoute();
+
+            import '../VIEW/add_connection_view.php';
+        }
+    }
+}
+
+// -- STATEMENTS
+
+var add_connection_controller = new ADD_CONNECTION_CONTROLLER( var language_code );

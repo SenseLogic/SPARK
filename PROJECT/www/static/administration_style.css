@@ -1058,6 +1058,34 @@ textarea {
 .table-container {
   align-items: start;
 }
+.backoff-message {
+  margin-top: 4rem;
+  max-width: 32rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.backoff-duration {
+  margin-top: 2rem;
+  display: flex;
+  gap: 2rem;
+}
+.backoff-count {
+  height: 7rem;
+  width: 7rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #001e68;
+  color: #fff;
+}
+.backoff-count-text {
+  font-size: 2rem;
+}
+.backoff-count-unit {
+  font-size: 1rem;
+}
 .debug-outline * {
   outline: 0.00625rem solid rgba(255,0,0,0.5);
 }
@@ -1087,6 +1115,9 @@ textarea {
 }
 .contact-table {
   grid-template-columns: repeat(8, auto);
+}
+.connection-table {
+  grid-template-columns: repeat(5, auto);
 }
 .user-table {
   grid-template-columns: repeat(5, auto);

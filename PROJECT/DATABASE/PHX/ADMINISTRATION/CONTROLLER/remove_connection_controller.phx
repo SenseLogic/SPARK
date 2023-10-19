@@ -1,0 +1,33 @@
+// -- IMPORTS
+
+import 'view_controller.php';
+import '../../MODEL/connection_model.php';
+
+// -- TYPES
+
+class REMOVE_CONNECTION_CONTROLLER extends VIEW_CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code,
+        connection_id
+        )
+    {
+        parent::constructor( language_code );
+
+        if ( HasSessionMinimumUserRole( 'administrator' ) )
+        {
+            .Title = 'Remove a connection';
+            .Connection = GetDatabaseConnectionById( connection_id );
+
+            AddParentRoute();
+
+            import '../VIEW/remove_connection_view.php';
+        }
+    }
+}
+
+// -- STATEMENTS
+
+var remove_connection_controller = new REMOVE_CONNECTION_CONTROLLER( var language_code, var connection_id );

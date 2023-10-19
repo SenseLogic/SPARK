@@ -976,6 +976,80 @@ function Route(
             }
         }
         else if ( $path_value_count >= 2
+                  && $path_value_array[ 1 ] === 'connection' )
+        {
+            if ( $it_is_get_request
+                 && $path_value_count === 2 )
+            {
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_connections_controller.php';
+            }
+            else if ( $it_is_get_request
+                      && $path_value_count === 3
+                      && $path_value_array[ 2 ] === 'add' )
+            {
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/add_connection_controller.php';
+            }
+            else if ( $it_is_post_request
+                      && $path_value_count === 3
+                      && $path_value_array[ 2 ] === 'add'
+                      && HasPostValue( 'Id' )
+                      && HasPostValue( 'BrowserAddress' )
+                      && HasPostValue( 'DateTime' )
+                      && HasPostValue( 'IsFailed' )
+                      && HasPostValue( 'AttemptCount' ) )
+            {
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_add_connection_controller.php';
+            }
+            else if ( $it_is_get_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'view' )
+            {
+                 $connection_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_connection_controller.php';
+            }
+            else if ( $it_is_get_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'edit' )
+            {
+                 $connection_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/edit_connection_controller.php';
+            }
+            else if ( $it_is_post_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'edit'
+                      && HasPostValue( 'BrowserAddress' )
+                      && HasPostValue( 'DateTime' )
+                      && HasPostValue( 'IsFailed' )
+                      && HasPostValue( 'AttemptCount' ) )
+            {
+                 $connection_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_edit_connection_controller.php';
+            }
+            else if ( $it_is_get_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'remove' )
+            {
+                 $connection_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/remove_connection_controller.php';
+            }
+            else if ( $it_is_post_request
+                      && $path_value_count === 4
+                      && $path_value_array[ 2 ] === 'remove' )
+            {
+                 $connection_id = $path_value_array[ 3 ];
+
+                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_remove_connection_controller.php';
+            }
+            else
+            {
+                require_once __DIR__ . '/' . 'CONTROLLER/show_error_controller.php';
+            }
+        }
+        else if ( $path_value_count >= 2
                   && $path_value_array[ 1 ] === 'user' )
         {
             if ( $it_is_get_request

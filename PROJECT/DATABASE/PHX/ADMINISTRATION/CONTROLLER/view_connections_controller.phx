@@ -1,0 +1,32 @@
+// -- IMPORTS
+
+import 'view_controller.php';
+import '../../MODEL/connection_model.php';
+
+// -- TYPES
+
+class VIEW_CONNECTIONS_CONTROLLER extends VIEW_CONTROLLER
+{
+    // -- CONSTRUCTORS
+
+    method constructor(
+        string language_code
+        )
+    {
+        parent::constructor( language_code );
+
+        if ( HasSessionMinimumUserRole( 'administrator' ) )
+        {
+            .Title = 'View connections';
+            .ConnectionArray = GetDatabaseConnectionArray();
+
+            AddParentRoute();
+
+            import '../VIEW/view_connections_view.php';
+        }
+    }
+}
+
+// -- STATEMENTS
+
+var view_connections_controller = new VIEW_CONNECTIONS_CONTROLLER( var language_code );

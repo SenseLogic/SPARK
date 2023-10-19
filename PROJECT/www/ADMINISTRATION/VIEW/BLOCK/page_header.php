@@ -62,13 +62,20 @@
                     </a>
                 <?php } ?>
                 <?php if ( HasSessionMinimumUserRole( 'administrator' ) ) { ?>
+                    <a class="page-menu-button" href="/admin/connection">
+                        <?php echo htmlspecialchars( GetTextBySlug( 'Connections' ) ); ?>
+                    </a>
+                <?php } ?>
+                <?php if ( HasSessionMinimumUserRole( 'administrator' ) ) { ?>
                     <a class="page-menu-button" href="/admin/user">
                         <?php echo htmlspecialchars( GetTextBySlug( 'Users' ) ); ?>
                     </a>
                 <?php } ?>
-                <a class="margin-left-auto page-menu-button" href="/admin/disconnect">
-                    <?php echo htmlspecialchars( GetTextBySlug( 'Logout' ) ); ?>
-                </a>
+                <?php if ( $this->Session->UserIsConnected ) { ?>
+                    <a class="margin-left-auto page-menu-button" href="/admin/disconnect">
+                        <?php echo htmlspecialchars( GetTextBySlug( 'Logout' ) ); ?>
+                    </a>
+                <?php } ?>
             </div>
             <?php if ( $this->Title !== '' ) { ?>
                 <div class="page-title">

@@ -1,6 +1,7 @@
 <?php // -- IMPORTS
 
 require_once __DIR__ . '/' . 'controller.php';
+require_once __DIR__ . '/' . '../../MODEL/connection_model.php';
 require_once __DIR__ . '/' . '../../MODEL/user_model.php';
 
 // -- TYPES
@@ -16,18 +17,40 @@ class DO_CONNECT_USER_CONTROLLER extends CONTROLLER
     {
         parent::__construct( $language_code );
 
-         $pseudonym = GetPostValue( 'Pseudonym' );
-         $password = GetPostValue( 'Password' );
-         $user = GetDatabaseUserByPseudonymAndPassword( $pseudonym, $password );
+        $this->BrowserAddress = GetBrowserAddress();
+        $this->Connection = GetConnection( $this->BrowserAddress );
 
-        if ( $user === null )
+        if ( $this->Connection->BackoffSecondCount > 0 )
         {
-            $this->Title = 'Sign In';
-
-            require_once __DIR__ . '/' . '../VIEW/connect_user_view.php';
+             $user = null;
         }
         else
         {
+             $pseudonym = GetPostValue( 'Pseudonym' );
+             $password = GetPostValue( 'Password' );
+            $user = GetDatabaseUserByPseudonymAndPassword( $pseudonym, $password );
+        }
+
+        $this->Connection->DateTime = GetCurrentDateTime();
+
+        if ( $user === null )
+        {
+            $this->Connection->IsFailed = true;
+            $this->Connection->AttemptCount += 1;
+
+            SetConnection( $this->Connection );
+
+            $this->Title = 'Sign In';
+
+            Redirect( 'admin' );
+        }
+        else
+        {
+            $this->Connection->IsFailed = false;
+            $this->Connection->AttemptCount = 0;
+
+            SetConnection( $this->Connection );
+
             $this->Session->User = $user;
             $this->Session->UserIsConnected = true;
             $this->Session->UserRole = $user->Role;

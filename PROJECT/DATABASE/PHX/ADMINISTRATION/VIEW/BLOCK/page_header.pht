@@ -62,6 +62,11 @@
                     </a>
                 <? } ?>
                 <? if ( HasSessionMinimumUserRole( 'administrator' ) ) { ?>
+                    <a class="page-menu-button" href="/admin/connection">
+                        <% GetTextBySlug( 'Connections' ) %>
+                    </a>
+                <? } ?>
+                <? if ( HasSessionMinimumUserRole( 'administrator' ) ) { ?>
                     <a class="page-menu-button" href="/admin/user">
                         <% GetTextBySlug( 'Users' ) %>
                     </a>

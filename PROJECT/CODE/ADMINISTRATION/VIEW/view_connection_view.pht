@@ -1,0 +1,64 @@
+<? include 'BLOCK/page_header.php'; ?>
+
+<div id="view-connection-view">
+    <div class="page-section form-section">
+        <div class="form-container" data-is-row data-table-name="CONNECTION"><~false<>
+            <?
+                var field_mode = 'view';
+                var field_name = 'BrowserAddress';
+                var field_title = 'Browser Address';
+                var field_value = .Connection.BrowserAddress;
+                include 'BLOCK/connection_browser_address_field.php';
+            ?><>
+            <div class="form-field-name" data-is-column-title data-column-name="BrowserAddress">
+                <% GetTextBySlug( 'Browser Address' ) %> :
+            </div>
+            <div class="form-field-value" data-is-column-value data-column-name="BrowserAddress">
+                <input-component class="form-component" result-name="BrowserAddress" result-value="<% GetValueText( .Connection.BrowserAddress ) %>" is-readonly></input-component>
+            </div><~false<>
+            <?
+                var field_mode = 'view';
+                var field_name = 'DateTime';
+                var field_title = 'Date Time';
+                var field_value = .Connection.DateTime;
+                include 'BLOCK/connection_date_time_field.php';
+            ?><>
+            <div class="form-field-name" data-is-column-title data-column-name="DateTime">
+                <% GetTextBySlug( 'Date Time' ) %> :
+            </div>
+            <div class="form-field-value" data-is-column-value data-column-name="DateTime">
+                <input-component class="form-component" result-name="DateTime" result-value="<% GetValueText( .Connection.DateTime ) %>" is-readonly></input-component>
+            </div><~false<>
+            <?
+                var field_mode = 'view';
+                var field_name = 'IsFailed';
+                var field_title = 'Is Failed';
+                var field_value = .Connection.IsFailed;
+                include 'BLOCK/connection_is_failed_field.php';
+            ?><>
+            <div class="form-field-name" data-is-column-title data-column-name="IsFailed">
+                <% GetTextBySlug( 'Is Failed' ) %> :
+            </div>
+            <div class="form-field-value" data-is-column-value data-column-name="IsFailed">
+                <dropdown-component class="form-component" result-name="IsFailed" result-value="<% GetValueText( .Connection.IsFailed ) %>" is-readonly  option-values="<% GetValueText( GetJsonText( [ '0', '1' ] ) ) %>" option-names="<% GetValueText( GetJsonText( [ 'False', 'True' ] ) ) %>"></dropdown-component>
+            </div><~false<>
+            <?
+                var field_mode = 'view';
+                var field_name = 'AttemptCount';
+                var field_title = 'Attempt Count';
+                var field_value = .Connection.AttemptCount;
+                include 'BLOCK/connection_attempt_count_field.php';
+            ?><>
+            <div class="form-field-name" data-is-column-title data-column-name="AttemptCount">
+                <% GetTextBySlug( 'Attempt Count' ) %> :
+            </div>
+            <div class="form-field-value" data-is-column-value data-column-name="AttemptCount">
+                <input-component class="form-component" result-name="AttemptCount" result-value="<% GetValueText( .Connection.AttemptCount ) %>" is-readonly></input-component>
+            </div>
+            <a class="justify-self-start form-button form-button-large cancel-button" href="<% GetParentRoute( null, '/admin/connection' ) %>">
+            </a>
+        </div>
+    </div>
+</div>
+
+<? include 'BLOCK/page_footer.php'; ?>

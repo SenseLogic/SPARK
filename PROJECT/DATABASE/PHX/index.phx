@@ -976,6 +976,80 @@ function Route(
             }
         }
         else if ( path_value_count >= 2
+                  && path_value_array[ 1 ] === 'connection' )
+        {
+            if ( it_is_get_request
+                 && path_value_count === 2 )
+            {
+                import 'ADMINISTRATION/CONTROLLER/view_connections_controller.php';
+            }
+            else if ( it_is_get_request
+                      && path_value_count === 3
+                      && path_value_array[ 2 ] === 'add' )
+            {
+                import 'ADMINISTRATION/CONTROLLER/add_connection_controller.php';
+            }
+            else if ( it_is_post_request
+                      && path_value_count === 3
+                      && path_value_array[ 2 ] === 'add'
+                      && HasPostValue( 'Id' )
+                      && HasPostValue( 'BrowserAddress' )
+                      && HasPostValue( 'DateTime' )
+                      && HasPostValue( 'IsFailed' )
+                      && HasPostValue( 'AttemptCount' ) )
+            {
+                import 'ADMINISTRATION/CONTROLLER/do_add_connection_controller.php';
+            }
+            else if ( it_is_get_request
+                      && path_value_count === 4
+                      && path_value_array[ 2 ] === 'view' )
+            {
+                var connection_id = path_value_array[ 3 ];
+
+                import 'ADMINISTRATION/CONTROLLER/view_connection_controller.php';
+            }
+            else if ( it_is_get_request
+                      && path_value_count === 4
+                      && path_value_array[ 2 ] === 'edit' )
+            {
+                var connection_id = path_value_array[ 3 ];
+
+                import 'ADMINISTRATION/CONTROLLER/edit_connection_controller.php';
+            }
+            else if ( it_is_post_request
+                      && path_value_count === 4
+                      && path_value_array[ 2 ] === 'edit'
+                      && HasPostValue( 'BrowserAddress' )
+                      && HasPostValue( 'DateTime' )
+                      && HasPostValue( 'IsFailed' )
+                      && HasPostValue( 'AttemptCount' ) )
+            {
+                var connection_id = path_value_array[ 3 ];
+
+                import 'ADMINISTRATION/CONTROLLER/do_edit_connection_controller.php';
+            }
+            else if ( it_is_get_request
+                      && path_value_count === 4
+                      && path_value_array[ 2 ] === 'remove' )
+            {
+                var connection_id = path_value_array[ 3 ];
+
+                import 'ADMINISTRATION/CONTROLLER/remove_connection_controller.php';
+            }
+            else if ( it_is_post_request
+                      && path_value_count === 4
+                      && path_value_array[ 2 ] === 'remove' )
+            {
+                var connection_id = path_value_array[ 3 ];
+
+                import 'ADMINISTRATION/CONTROLLER/do_remove_connection_controller.php';
+            }
+            else
+            {
+                import 'CONTROLLER/show_error_controller.php';
+            }
+        }
+        else if ( path_value_count >= 2
                   && path_value_array[ 1 ] === 'user' )
         {
             if ( it_is_get_request

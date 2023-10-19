@@ -62,13 +62,20 @@
                     </a>
                 <? } ?>
                 <? if ( HasSessionMinimumUserRole( 'administrator' ) ) { ?>
+                    <a class="page-menu-button" href="/admin/connection">
+                        <% GetTextBySlug( 'Connections' ) %>
+                    </a>
+                <? } ?>
+                <? if ( HasSessionMinimumUserRole( 'administrator' ) ) { ?>
                     <a class="page-menu-button" href="/admin/user">
                         <% GetTextBySlug( 'Users' ) %>
                     </a>
                 <? } ?>
-                <a class="margin-left-auto page-menu-button" href="/admin/disconnect">
-                    <% GetTextBySlug( 'Logout' ) %>
-                </a>
+                <? if ( .Session.UserIsConnected ) { ?>
+                    <a class="margin-left-auto page-menu-button" href="/admin/disconnect">
+                        <% GetTextBySlug( 'Logout' ) %>
+                    </a>
+                <? } ?>
             </div>
             <? if ( .Title !== '' ) { ?>
                 <div class="page-title">

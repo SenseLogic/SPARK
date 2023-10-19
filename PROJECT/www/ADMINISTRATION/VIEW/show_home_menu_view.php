@@ -80,6 +80,13 @@
         <?php } ?>
         <?php if ( HasSessionMinimumUserRole( 'administrator' ) ) { ?>
             <div class="tree-container">
+                <a class="tree-button" href="/admin/connection">
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Connections' ) ); ?>
+                </a>
+            </div>
+        <?php } ?>
+        <?php if ( HasSessionMinimumUserRole( 'administrator' ) ) { ?>
+            <div class="tree-container">
                 <a class="tree-button" href="/admin/user">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Users' ) ); ?>
                 </a>

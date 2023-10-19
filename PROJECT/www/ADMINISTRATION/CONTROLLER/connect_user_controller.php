@@ -1,5 +1,6 @@
 <?php // -- IMPORTS
 
+require_once __DIR__ . '/' . '../../MODEL/connection_model.php';
 require_once __DIR__ . '/' . 'view_controller.php';
 
 // -- TYPES
@@ -13,6 +14,9 @@ class CONNECT_USER_CONTROLLER extends VIEW_CONTROLLER
         )
     {
         parent::__construct( $language_code );
+
+        $this->BrowserAddress = GetBrowserAddress();
+        $this->Connection = GetConnection( $this->BrowserAddress );
 
         $this->Title = '';
 
