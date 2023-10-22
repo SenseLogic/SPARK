@@ -23,29 +23,6 @@ function GetDatabaseConnectionArray(
 
 // ~~
 
-function GetDatabaseConnectionByIdMap(
-    )
-{
-     $statement = GetDatabaseStatement( 'select `Id`, `BrowserAddress`, `DateTime`, `IsFailed`, `AttemptCount` from `CONNECTION`' );
-
-    if ( !$statement->execute() )
-    {
-        var_dump( $statement->errorInfo() );
-    }
-
-     $connection_by_id_map = [];
-
-    while (  $connection = $statement->fetchObject() )
-    {
-        $connection->AttemptCount = ( int )( $connection->AttemptCount );
-        $connection_by_id_map[ $connection->Id ] = $connection;
-    }
-
-    return $connection_by_id_map;
-}
-
-// ~~
-
 function GetDatabaseConnectionById(
     string $id
     )

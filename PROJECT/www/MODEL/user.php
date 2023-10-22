@@ -15,28 +15,6 @@ function GetDatabaseUserArray(
 
 // ~~
 
-function GetDatabaseUserByIdMap(
-    )
-{
-     $statement = GetDatabaseStatement( 'select `Id`, `Email`, `Pseudonym`, `Password`, `Role` from `USER`' );
-
-    if ( !$statement->execute() )
-    {
-        var_dump( $statement->errorInfo() );
-    }
-
-     $user_by_id_map = [];
-
-    while (  $user = $statement->fetchObject() )
-    {
-        $user_by_id_map[ $user->Id ] = $user;
-    }
-
-    return $user_by_id_map;
-}
-
-// ~~
-
 function GetDatabaseUserById(
     string $id
     )
