@@ -1277,7 +1277,7 @@ function GetBrowserLocation(
         {
             try
             {
-                 $geographic_data = json_decode( file_get_contents( 'http://ip-api.com/json/' . $browser_address ) );
+                 $geographic_data = json_decode( @file_get_contents( 'http://ip-api.com/json/' . $browser_address ) );
 
                 if ( $geographic_data !== null
                      && property_exists( $geographic_data, 'countryCode' )
@@ -1304,7 +1304,7 @@ function GetBrowserLocation(
         {
             try
             {
-                 $geographic_data = json_decode( file_get_contents( 'http://www.geoplugin.net/json.gp?ip=' . $browser_address ) );
+                 $geographic_data = json_decode( @file_get_contents( 'http://www.geoplugin.net/json.gp?ip=' . $browser_address ) );
 
                 if ( $geographic_data !== null
                      && property_exists( $geographic_data, 'geoplugin_countryCode' )
@@ -1332,7 +1332,7 @@ function GetBrowserLocation(
         {
             try
             {
-                 $geographic_data = json_decode( file_get_contents( 'https://www.iplocate.io/api/lookup/' . $browser_address ) );
+                 $geographic_data = json_decode( @file_get_contents( 'https://www.iplocate.io/api/lookup/' . $browser_address ) );
 
                 if ( $geographic_data !== null
                      && property_exists( $geographic_data, 'country_code' )
@@ -1358,7 +1358,7 @@ function GetBrowserLocation(
         {
             try
             {
-                 $geographic_data = json_decode( file_get_contents( 'https://api.hostip.info/get_json.php?ip=' . $browser_address ) );
+                 $geographic_data = json_decode( @file_get_contents( 'https://api.hostip.info/get_json.php?ip=' . $browser_address ) );
 
                 if ( $geographic_data !== null
                      && property_exists( $geographic_data, 'country_code' )
