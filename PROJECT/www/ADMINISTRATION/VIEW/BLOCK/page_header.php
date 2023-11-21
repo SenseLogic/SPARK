@@ -71,9 +71,11 @@
                         <?php echo htmlspecialchars( GetTextBySlug( 'Users' ) ); ?>
                     </a>
                 <?php } ?>
-                <a class="margin-left-auto page-menu-button" href="/admin/disconnect">
-                    <?php echo htmlspecialchars( GetTextBySlug( 'Logout' ) ); ?>
-                </a>
+                <?php if ( $this->Session->UserIsConnected ) { ?>
+                    <a class="margin-left-auto page-menu-button" href="/admin/disconnect">
+                        <?php echo htmlspecialchars( GetTextBySlug( 'Logout' ) ); ?>
+                    </a>
+                <?php } ?>
             </div>
             <?php if ( $this->Title !== '' ) { ?>
                 <div class="page-title">
