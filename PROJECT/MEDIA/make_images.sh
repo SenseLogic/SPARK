@@ -1,6 +1,6 @@
 #!/bin/sh
 set -x
-source ../define.sh
+source ../define_tool.sh
 for f in static/image/article/*.*; do
     convert "$f" -background white -alpha remove -alpha off -resize 2073600@ -quality 70 -strip "../www/$f"
     convert "$f" -background white -alpha remove -alpha off -resize 921600@ -quality 70 -strip "../www/$f.medium.jpg"

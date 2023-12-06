@@ -1,4 +1,3 @@
-call define.bat
 rename MEDIA\static\image\article article
 rename www\static\image\article article
 rename www\static\video\article article

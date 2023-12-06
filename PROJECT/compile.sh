@@ -1,5 +1,5 @@
 #!/bin/sh
 set -x
-source ./define.sh
+source ./define_tool.sh
 cd CODE
 ./build.sh

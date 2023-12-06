@@ -1,6 +1,6 @@
 #!/bin/sh
 set -x
-source ./define.sh
+source ./define_tool.sh
 #rm -fv CODE/FRAMEWORK/*.ph?
 rm -fv CODE/STYLE/VISTA/vista*.*
 rm -fv DATABASE/*.sql

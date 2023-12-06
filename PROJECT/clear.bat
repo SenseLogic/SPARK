@@ -1,4 +1,3 @@
-call define.bat
 rem del /Q CODE\FRAMEWORK\*.ph?
 del /Q CODE\STYLE\VISTA\vista*.*
 del /Q DATABASE\*.sql

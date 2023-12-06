@@ -1,6 +1,6 @@
 #!/bin/sh
 set -x
-source ./define.sh
+source ./define_tool.sh
 ./clean.sh
 mkdir -p CODE/FRAMEWORK/
 cp $TOOL/SPARK/PROJECT/CODE/ADMINISTRATION/CONTROLLER/backup_database_controller.phx CODE/ADMINISTRATION/CONTROLLER/

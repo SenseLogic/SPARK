@@ -71,11 +71,9 @@
                         <% GetTextBySlug( 'Users' ) %>
                     </a>
                 <? } ?>
-                <? if ( .Session.UserIsConnected ) { ?>
-                    <a class="margin-left-auto page-menu-button" href="/admin/disconnect">
-                        <% GetTextBySlug( 'Logout' ) %>
-                    </a>
-                <? } ?>
+                <a class="margin-left-auto page-menu-button" href="/admin/disconnect">
+                    <% GetTextBySlug( 'Logout' ) %>
+                </a>
             </div>
             <? if ( .Title !== '' ) { ?>
                 <div class="page-title">

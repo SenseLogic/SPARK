@@ -1,4 +1,3 @@
-call define.bat
 call clean.bat
 mkdir CODE\FRAMEWORK\
 copy %TOOL%\SPARK\PROJECT\CODE\ADMINISTRATION\CONTROLLER\connect_user_controller.phx CODE\ADMINISTRATION\CONTROLLER\

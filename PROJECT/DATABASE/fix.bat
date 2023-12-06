@@ -1,3 +1,2 @@
-call ..\define.bat
-..\%TOOL%\BAX\bax "*.bd"
+%TOOL%\BAX\bax "*.bd"
 pause

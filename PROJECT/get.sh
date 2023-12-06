@@ -1,6 +1,6 @@
 #!/bin/sh
 set -x
-source ./define.sh
+source ./define_tool.sh
 sudo apt install nodejs
 sudo npm install -g npm
 sudo npm install -g stylus

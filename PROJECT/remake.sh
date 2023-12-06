@@ -1,6 +1,6 @@
 #!/bin/sh
 set -x
-source ./define.sh
+source ./define_tool.sh
 cd DATABASE
 ./remake.sh
 cd ../CODE
