@@ -221,7 +221,7 @@ Any string can be internationalized by separating translations with **language s
 A language tag can contain a **language code**, a **country code** and a **continent code** :
 
 ```
-trunk¨en-UK,en--OC:boot¨fr:Coffre¨pt:mala¨pt-BR:porta-malas
+trunk¨en-UK,en--OC:boot¨fr:coffre¨pt:mala¨pt-BR:porta-malas
 ```
 
 Language specifiers are tested from right to left, the first translation being used by default.
