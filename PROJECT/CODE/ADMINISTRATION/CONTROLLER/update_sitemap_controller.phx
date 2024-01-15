@@ -35,18 +35,42 @@ class GENERATE_SITEMAP_CONTROLLER extends CONTROLLER
 
             foreach ( var page; page_array )
             {
-                foreach ( var language_code; page.LanguageCodeArray )
+                if ( count( page.LanguageCodeArray ) > 0 )
                 {
-                    array_push(
-                        url_array,
-                        "<url>\n  <loc>https://www.spark-project.com/"
-                        .. language_code
-                        .. '/'
-                        .. page.Route
-                        .. "</loc>\n  <lastmod>"
-                        .. modification_date
-                        .. "</lastmod>\n</url>\n"
-                        );
+                    var url = "  <url>\n";
+
+                    foreach ( var language_index => var language_code; page.LanguageCodeArray )
+                    {
+                        if ( language_index === 0 )
+                        {
+                            url
+                                ..= "    <loc>https://www."
+                                    .. DefaultDomainName
+                                    .. "/"
+                                    .. page.Route
+                                    .. "</loc>\n"
+                                    .. "    <xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www."
+                                    .. DefaultDomainName
+                                    .. "/"
+                                    .. page.Route
+                                    .. "\"/>\n";
+                        }
+
+                        url
+                            ..= "    <xhtml:link rel=\"alternate\" hreflang=\""
+                                .. language_code
+                                .. "\" href=\"https://www."
+                                .. DefaultDomainName
+                                .. "/"
+                                .. language_code
+                                .. '/'
+                                .. page.Route
+                                .. "\"/>\n";
+                    }
+
+                    url ..= "    <lastmod>" .. modification_date .. "</lastmod>\n  </url>\n";
+
+                    array_push( url_array, url );
                 }
             }
 
@@ -55,7 +79,8 @@ class GENERATE_SITEMAP_CONTROLLER extends CONTROLLER
             var sitemap_file_path = 'sitemap.xml';
             var sitemap_file_text
                 = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
-                  .. "<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n"
+                  .. "<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\"\n"
+                  .. "        xmlns:xhtml=\"http://www.w3.org/1999/xhtml\">\n"
                   .. JoinArray( url_array, '' )
                   .. "</urlset>\n";
 
