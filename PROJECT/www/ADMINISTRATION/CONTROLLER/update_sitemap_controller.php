@@ -44,12 +44,12 @@ class GENERATE_SITEMAP_CONTROLLER extends CONTROLLER
                         if ( $language_index === 0 )
                         {
                             $url
-                                .= "    <loc>https://www."
+                                .= "    <loc>https://"
                                     . DefaultDomainName
                                     . "/"
                                     . $page->Route
                                     . "</loc>\n"
-                                    . "    <xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www."
+                                    . "    <xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://"
                                     . DefaultDomainName
                                     . "/"
                                     . $page->Route
@@ -59,7 +59,7 @@ class GENERATE_SITEMAP_CONTROLLER extends CONTROLLER
                         $url
                             .= "    <xhtml:link rel=\"alternate\" hreflang=\""
                                 . $language_code
-                                . "\" href=\"https://www."
+                                . "\" href=\"https://"
                                 . DefaultDomainName
                                 . "/"
                                 . $language_code

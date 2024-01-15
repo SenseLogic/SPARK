@@ -19,7 +19,7 @@ require_once __DIR__ . '/' . 'FRAMEWORK/user.php';
 
 // -- CONSTANTS
 
-define( 'DefaultDomainName', 'spark-project.com' );
+define( 'DefaultDomainName', 'www.spark-project.com' );
 define( 'DefaultLanguageCode', 'en' );
 define( 'LanguageTagArray', [ 'en', 'fr', 'de' ] );
 define( 'LanguageCodeArray', [ 'en', 'fr', 'de' ] );
