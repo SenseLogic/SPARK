@@ -110,14 +110,27 @@
         )
     {
         var
+            view_name_was_found,
             section_element,
             view_element;
 
         if ( ViewName !== OldViewName )
         {
+            view_name_was_found = false;
+
             for ( view_element of GetElements( ".view" ) )
             {
                 FadeView( view_element );
+
+                if ( view_element.dataset.viewName === ViewName )
+                {
+                    view_name_was_found = true;
+                }
+            }
+
+            if ( !view_name_was_found )
+            {
+                SetUrl( '/' );
             }
         }
 
