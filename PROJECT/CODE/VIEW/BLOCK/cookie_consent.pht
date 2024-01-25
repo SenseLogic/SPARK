@@ -848,11 +848,23 @@
     {
         if ( GetCookieConsent() )
         {
-            EnableGoogleAnalyticsTracking( "<# GoogleAnalyticsTrackingId #>" );
+            <? if ( defined( 'GoogleAnalyticsTrackingId' ) ) { ?>
+                EnableGoogleAnalyticsTracking( "<# constant( 'GoogleAnalyticsTrackingId' ) #>" );
+            <? } ?>
+
+            <? if ( defined( 'GoogleTagManagerTrackingId' ) ) { ?>
+                EnableGoogleTagManagerTracking( "<# constant( 'GoogleTagManagerTrackingId' ) #>" );
+            <? } ?>
         }
         else
         {
-            DisableGoogleAnalyticsTracking( "<# GoogleAnalyticsTrackingId #>" );
+            <? if ( defined( 'GoogleAnalyticsTrackingId' ) ) { ?>
+                DisableGoogleAnalyticsTracking( "<# constant( 'GoogleAnalyticsTrackingId' ) #>" );
+            <? } ?>
+
+            <? if ( defined( 'GoogleTagManagerTrackingId' ) ) { ?>
+                DisableGoogleTagManagerTracking( "<# constant( 'GoogleTagManagerTrackingId' ) #>" );
+            <? } ?>
         }
     }
 

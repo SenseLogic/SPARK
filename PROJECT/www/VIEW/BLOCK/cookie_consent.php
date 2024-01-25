@@ -848,11 +848,23 @@
     {
         if ( GetCookieConsent() )
         {
-            EnableGoogleAnalyticsTracking( "<?php echo GoogleAnalyticsTrackingId; ?>" );
+            <?php if ( defined( 'GoogleAnalyticsTrackingId' ) ) { ?>
+                EnableGoogleAnalyticsTracking( "<?php echo constant( 'GoogleAnalyticsTrackingId' ); ?>" );
+            <?php } ?>
+
+            <?php if ( defined( 'GoogleTagManagerTrackingId' ) ) { ?>
+                EnableGoogleTagManagerTracking( "<?php echo constant( 'GoogleTagManagerTrackingId' ); ?>" );
+            <?php } ?>
         }
         else
         {
-            DisableGoogleAnalyticsTracking( "<?php echo GoogleAnalyticsTrackingId; ?>" );
+            <?php if ( defined( 'GoogleAnalyticsTrackingId' ) ) { ?>
+                DisableGoogleAnalyticsTracking( "<?php echo constant( 'GoogleAnalyticsTrackingId' ); ?>" );
+            <?php } ?>
+
+            <?php if ( defined( 'GoogleTagManagerTrackingId' ) ) { ?>
+                DisableGoogleTagManagerTracking( "<?php echo constant( 'GoogleTagManagerTrackingId' ); ?>" );
+            <?php } ?>
         }
     }
 
