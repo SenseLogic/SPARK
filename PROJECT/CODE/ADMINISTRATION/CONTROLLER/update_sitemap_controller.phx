@@ -31,12 +31,20 @@ class GENERATE_SITEMAP_CONTROLLER extends CONTROLLER
 
             var modification_date = GetCurrentDate();
             var page_array = GetDatabasePageArray();
+
             var url_array = [];
 
             foreach ( var page; page_array )
             {
                 if ( count( page.LanguageCodeArray ) > 0 )
                 {
+                    var canonical_page_route = RemoveSuffix( '/' .. page.Route, '/' );
+
+                    if ( canonical_page_route === '/home' )
+                    {
+                        var canonical_page_route = '';
+                    }
+
                     var url = "  <url>\n";
 
                     foreach ( var language_index => var language_code; page.LanguageCodeArray )
@@ -46,13 +54,11 @@ class GENERATE_SITEMAP_CONTROLLER extends CONTROLLER
                             url
                                 ..= "    <loc>https://"
                                     .. DefaultDomainName
-                                    .. "/"
-                                    .. page.Route
+                                    .. canonical_page_route
                                     .. "</loc>\n"
                                     .. "    <xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://"
                                     .. DefaultDomainName
-                                    .. "/"
-                                    .. page.Route
+                                    .. canonical_page_route
                                     .. "\"/>\n";
                         }
 
@@ -63,8 +69,7 @@ class GENERATE_SITEMAP_CONTROLLER extends CONTROLLER
                                 .. DefaultDomainName
                                 .. "/"
                                 .. language_code
-                                .. '/'
-                                .. page.Route
+                                .. canonical_page_route
                                 .. "\"/>\n";
                     }
 

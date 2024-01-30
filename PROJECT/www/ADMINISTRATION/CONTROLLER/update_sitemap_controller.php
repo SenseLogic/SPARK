@@ -31,12 +31,20 @@ class GENERATE_SITEMAP_CONTROLLER extends CONTROLLER
 
              $modification_date = GetCurrentDate();
              $page_array = GetDatabasePageArray();
+
              $url_array = [];
 
             foreach ( $page_array as  $page )
             {
                 if ( count( $page->LanguageCodeArray ) > 0 )
                 {
+                     $canonical_page_route = RemoveSuffix( '/' . $page->Route, '/' );
+
+                    if ( $canonical_page_route === '/home' )
+                    {
+                         $canonical_page_route = '';
+                    }
+
                      $url = "  <url>\n";
 
                     foreach ( $page->LanguageCodeArray as  $language_index =>  $language_code )
@@ -46,13 +54,11 @@ class GENERATE_SITEMAP_CONTROLLER extends CONTROLLER
                             $url
                                 .= "    <loc>https://"
                                     . DefaultDomainName
-                                    . "/"
-                                    . $page->Route
+                                    . $canonical_page_route
                                     . "</loc>\n"
                                     . "    <xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://"
                                     . DefaultDomainName
-                                    . "/"
-                                    . $page->Route
+                                    . $canonical_page_route
                                     . "\"/>\n";
                         }
 
@@ -63,8 +69,7 @@ class GENERATE_SITEMAP_CONTROLLER extends CONTROLLER
                                 . DefaultDomainName
                                 . "/"
                                 . $language_code
-                                . '/'
-                                . $page->Route
+                                . $canonical_page_route
                                 . "\"/>\n";
                     }
 
