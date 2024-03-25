@@ -6,28 +6,28 @@ USER
             ~ administrator
             ~ xyz
             ~ administrator
-            ~ administrator@agc-automotive.com
+            ~ administrator@spark-project.com
 
         %publisher-user
             ~ publisher
             ~ xyz
             ~ publisher
-            ~ publisher@agc-automotive.com
+            ~ publisher@spark-project.com
 
         %author-user
             ~ author
             ~ xyz
             ~ author
-            ~ author@agc-automotive.com
+            ~ author@spark-project.com
 
         %contributor-user
             ~ contributor
             ~ xyz
             ~ contributor
-            ~ contributor@agc-automotive.com
+            ~ contributor@spark-project.com
 
         %guest-user
             ~ guest
             ~ xyz
             ~ guest
-            ~ guest@agc-automotive.com
+            ~ guest@spark-project.com

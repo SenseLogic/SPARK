@@ -380,8 +380,8 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                 </div>~>¨%>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="<\% GetParentRoute( null, '/admin/{#style#}' ) %\>">
                 </a>
-                <span class="justify-self-end form-button form-button-large apply-button" onclick="this.SubmitForm()">
-                </span>
+                <button class="justify-self-end form-button form-button-large apply-button">
+                </button>
             </div>
         </form>
     </div><~{#has_custom_block#}<>
@@ -496,8 +496,8 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                 </div>~>$>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="<\% GetParentRoute( null, '/admin/{#style#}' ) %\>">
                 </a>
-                <a class="justify-self-end form-button form-button-large apply-button" onclick="this.SubmitForm()">
-                </a>
+                <button class="justify-self-end form-button form-button-large apply-button">
+                </button>
             </div>
         </form>
     </div><~{#has_custom_block#}<>
@@ -549,8 +549,8 @@ var view_<~Plural<>{#variable#}~>_controller = new VIEW_<~Plural<>{#type#}~>_CON
                 </div>~>$>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="<\% GetParentRoute( null, '/admin/{#style#}' ) %\>">
                 </a>
-                <a class="justify-self-end form-button-large form-button form-button-large remove-button" onclick="this.SubmitForm()">
-                </a>
+                <button class="justify-self-end form-button-large form-button form-button-large remove-button">
+                </button>
             </div>
         </form><~{#has_custom_block#}<>
         <?
