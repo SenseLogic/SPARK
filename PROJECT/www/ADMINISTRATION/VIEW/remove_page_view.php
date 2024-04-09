@@ -100,6 +100,12 @@
                 <div class="form-field-value" data-is-column-value data-column-name="MetaDescription">
                     <multilingual-text-input-component class="form-component" result-name="MetaDescription" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->MetaDescription ) ); ?>" is-readonly language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-text-input-component>
                 </div>
+                <div class="form-field-name" data-is-column-title data-column-name="MetaImagePath">
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Meta Image Path' ) ); ?> :
+                </div>
+                <div class="form-field-value" data-is-column-value data-column-name="MetaImagePath">
+                    <multilingual-image-path-input-component class="form-component" result-name="MetaImagePath" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->MetaImagePath ) ); ?>" is-readonly error-image-path="/static/image/admin/missing_image.svg" upload-api-url="/admin/upload/image" delete-api-url="/admin/delete/file" language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-image-path-input-component>
+                </div>
                 <div class="form-field-name" data-is-column-title data-column-name="MetaSubRouteArray">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Meta Sub Route Array' ) ); ?> :
                 </div>
@@ -120,8 +126,8 @@
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="<?php echo htmlspecialchars( GetParentRoute( null, '/admin/page' ) ); ?>">
                 </a>
-                <a class="justify-self-end form-button-large form-button form-button-large remove-button" onclick="this.SubmitForm()">
-                </a>
+                <button class="justify-self-end form-button-large form-button form-button-large remove-button">
+                </button>
             </div>
         </form>
     </div>

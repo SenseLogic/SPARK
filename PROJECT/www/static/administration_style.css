@@ -1099,7 +1099,7 @@ textarea {
   grid-template-columns: repeat(3, auto);
 }
 .page-table {
-  grid-template-columns: repeat(20, auto);
+  grid-template-columns: repeat(21, auto);
 }
 .block-category-table {
   grid-template-columns: repeat(3, auto);

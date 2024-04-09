@@ -25,6 +25,7 @@
             video_path_field,
             meta_title_field,
             meta_description_field,
+            meta_image_path_field,
             meta_sub_route_array_field,
             meta_sub_title_array_field,
             meta_sub_description_array_field;
@@ -47,6 +48,7 @@
         video_path_field = add_page_form.VideoPath;
         meta_title_field = add_page_form.MetaTitle;
         meta_description_field = add_page_form.MetaDescription;
+        meta_image_path_field = add_page_form.MetaImagePath;
         meta_sub_route_array_field = add_page_form.MetaSubRouteArray;
         meta_sub_title_array_field = add_page_form.MetaSubTitleArray;
         meta_sub_description_array_field = add_page_form.MetaSubDescriptionArray;
@@ -68,6 +70,7 @@
         video_path_field.RemoveClass( "form-field-error" );
         meta_title_field.RemoveClass( "form-field-error" );
         meta_description_field.RemoveClass( "form-field-error" );
+        meta_image_path_field.RemoveClass( "form-field-error" );
         meta_sub_route_array_field.RemoveClass( "form-field-error" );
         meta_sub_title_array_field.RemoveClass( "form-field-error" );
         meta_sub_description_array_field.RemoveClass( "form-field-error" );
@@ -460,6 +463,24 @@
                     <multilingual-text-input-component class="form-component" result-name="MetaDescription" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-text-input-component>
                 </div>
                 <?php
+                     $field_name = 'MetaImagePath';
+
+                    if ( HasQueryValue( $field_name ) )
+                    {
+                         $field_value = GetQueryValue( $field_name );
+                    }
+                    else
+                    {
+                        $field_value = '';
+                    }
+                ?>
+                <div class="form-field-name" data-is-column-title data-column-name="MetaImagePath">
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Meta Image Path' ) ); ?> :
+                </div>
+                <div class="form-field-value" data-is-column-value data-column-name="MetaImagePath">
+                    <multilingual-image-path-input-component class="form-component" result-name="MetaImagePath" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" error-image-path="/static/image/admin/missing_image.svg" upload-api-url="/admin/upload/image" delete-api-url="/admin/delete/file" language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-image-path-input-component>
+                </div>
+                <?php
                      $field_name = 'MetaSubRouteArray';
 
                     if ( HasQueryValue( $field_name ) )
@@ -515,8 +536,8 @@
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="<?php echo htmlspecialchars( GetParentRoute( null, '/admin/page' ) ); ?>">
                 </a>
-                <span class="justify-self-end form-button form-button-large apply-button" onclick="this.SubmitForm()">
-                </span>
+                <button class="justify-self-end form-button form-button-large apply-button">
+                </button>
             </div>
         </form>
     </div>

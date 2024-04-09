@@ -22,7 +22,7 @@
 
         $meta_title = GetTranslatedText( $page->MetaTitle, $this->LanguageCode );
         $meta_description = GetTranslatedText( $page->MetaDescription, $this->LanguageCode );
-        $meta_image_path = $page->ImagePath;
+        $meta_image_path = $page->MetaImagePath;
 
         if ( $sub_route !== '' )
         {
@@ -42,7 +42,7 @@
 <meta name="title" content="<?php echo htmlspecialchars( $meta_title ); ?>"/>
 <meta name="description" content="<?php echo htmlspecialchars( $meta_description ); ?>"/>
 <meta name="keywords" content="spark, project"/>
-<meta name="author" content="Spark Team"/>
+<meta name="author" content="Spark Project Team"/>
 <meta name="language" content="English"/>
 <meta name="robots" content="index, follow"/>
 <meta name="revisit-after" content="30 days"/>

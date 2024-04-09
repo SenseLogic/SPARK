@@ -87,8 +87,8 @@
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="<?php echo htmlspecialchars( GetParentRoute( null, '/admin/user' ) ); ?>">
                 </a>
-                <a class="justify-self-end form-button form-button-large apply-button" onclick="this.SubmitForm()">
-                </a>
+                <button class="justify-self-end form-button form-button-large apply-button">
+                </button>
             </div>
         </form>
     </div>

@@ -212,6 +212,19 @@
             </div><~false<>
             <?php
                  $field_mode = 'view';
+                 $field_name = 'MetaImagePath';
+                 $field_title = 'Meta Image Path';
+                 $field_value = $this->Page->MetaImagePath;
+                require __DIR__ . '/' . 'BLOCK/page_meta_image_path_field.php';
+            ?><>
+            <div class="form-field-name" data-is-column-title data-column-name="MetaImagePath">
+                <?php echo htmlspecialchars( GetTextBySlug( 'Meta Image Path' ) ); ?> :
+            </div>
+            <div class="form-field-value" data-is-column-value data-column-name="MetaImagePath">
+                <multilingual-image-path-input-component class="form-component" result-name="MetaImagePath" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->MetaImagePath ) ); ?>" is-readonly error-image-path="/static/image/admin/missing_image.svg" upload-api-url="/admin/upload/image" delete-api-url="/admin/delete/file" language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-image-path-input-component>
+            </div><~false<>
+            <?php
+                 $field_mode = 'view';
                  $field_name = 'MetaSubRouteArray';
                  $field_title = 'Meta Sub Route Array';
                  $field_value = $this->Page->MetaSubRouteArray;

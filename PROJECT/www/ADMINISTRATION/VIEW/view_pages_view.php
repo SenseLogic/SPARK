@@ -64,6 +64,9 @@
                 <?php echo htmlspecialchars( GetTextBySlug( 'Meta Description' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
+                <?php echo htmlspecialchars( GetTextBySlug( 'Meta Image Path' ) ); ?>
+            </div>
+            <div class="form-column-name sortable-table-column">
                 <?php echo htmlspecialchars( GetTextBySlug( 'Meta Sub Route Array' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
@@ -169,6 +172,9 @@
                                 </div>
                             <?php } ?>
                         </div>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <?php echo htmlspecialchars( GetValueText( $page->MetaImagePath ) ); ?>
                     </div>
                     <div class="sortable-table-cell filter-cell">
                         <?php echo htmlspecialchars( GetValueText( $page->MetaSubRouteArray ) ); ?>
@@ -295,6 +301,12 @@
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="MetaDescription">
                             <multilingual-text-input-component class="form-component" result-name="MetaDescription" result-value="<?php echo htmlspecialchars( GetValueText( $page->MetaDescription ) ); ?>" is-readonly language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-text-input-component>
+                        </div>
+                        <div class="form-field-name" data-is-column-title data-column-name="MetaImagePath">
+                            <?php echo htmlspecialchars( GetTextBySlug( 'Meta Image Path' ) ); ?> :
+                        </div>
+                        <div class="form-field-value" data-is-column-value data-column-name="MetaImagePath">
+                            <multilingual-image-path-input-component class="form-component" result-name="MetaImagePath" result-value="<?php echo htmlspecialchars( GetValueText( $page->MetaImagePath ) ); ?>" is-readonly error-image-path="/static/image/admin/missing_image.svg" upload-api-url="/admin/upload/image" delete-api-url="/admin/delete/file" language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-image-path-input-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="MetaSubRouteArray">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Meta Sub Route Array' ) ); ?> :

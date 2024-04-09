@@ -39,6 +39,7 @@ spark-project
         VideoPath : STRING = "/static/video/article/venice_1.mp4|/static/video/article/venice_2.mp4|/static/video/article/venice_3.mp4|/static/video/article/mountain.mp4" | optional, multilingual_video
         MetaTitle : STRING = "{{Title}}" | optional, multilingual
         MetaDescription : STRING = "{{Teaser}}" | optional, multilingual_text
+        MetaImagePath : STRING = "{{ImagePath}}" | optional, multilingual_image
         MetaSubRouteArray : LIST[ STRING ] = "{}" | optional, list, default_value "[]"
         MetaSubTitleArray : LIST[ STRING ] = "{}" | optional, multilingual_list, default_value "[]"
         MetaSubDescriptionArray : LIST[ STRING ] = "{}" | optional, multilingual_text_list, default_value "[]"

@@ -3,7 +3,7 @@
 function GetDatabasePageArray(
     )
 {
-     $statement = GetDatabaseStatement( 'select `Id`, `Slug`, `Route`, `TypeSlug`, `Number`, `LanguageCodeArray`, `IsActive`, `Title`, `Heading`, `Teaser`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `ImageFit`, `VideoPath`, `MetaTitle`, `MetaDescription`, `MetaSubRouteArray`, `MetaSubTitleArray`, `MetaSubDescriptionArray` from `PAGE` order by `Number` asc' );
+     $statement = GetDatabaseStatement( 'select `Id`, `Slug`, `Route`, `TypeSlug`, `Number`, `LanguageCodeArray`, `IsActive`, `Title`, `Heading`, `Teaser`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `ImageFit`, `VideoPath`, `MetaTitle`, `MetaDescription`, `MetaImagePath`, `MetaSubRouteArray`, `MetaSubTitleArray`, `MetaSubDescriptionArray` from `PAGE` order by `Number` asc' );
 
     if ( !$statement->execute() )
     {
@@ -31,7 +31,7 @@ function GetDatabasePageById(
     string $id
     )
 {
-     $statement = GetDatabaseStatement( 'select `Id`, `Slug`, `Route`, `TypeSlug`, `Number`, `LanguageCodeArray`, `IsActive`, `Title`, `Heading`, `Teaser`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `ImageFit`, `VideoPath`, `MetaTitle`, `MetaDescription`, `MetaSubRouteArray`, `MetaSubTitleArray`, `MetaSubDescriptionArray` from `PAGE` where `Id` = ? limit 1' );
+     $statement = GetDatabaseStatement( 'select `Id`, `Slug`, `Route`, `TypeSlug`, `Number`, `LanguageCodeArray`, `IsActive`, `Title`, `Heading`, `Teaser`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `ImageFit`, `VideoPath`, `MetaTitle`, `MetaDescription`, `MetaImagePath`, `MetaSubRouteArray`, `MetaSubTitleArray`, `MetaSubDescriptionArray` from `PAGE` where `Id` = ? limit 1' );
     $statement->bindParam( 1, $id, PDO::PARAM_STR );
 
     if ( !$statement->execute() )
@@ -73,12 +73,13 @@ function AddDatabasePage(
     string $video_path,
     string $meta_title,
     string $meta_description,
+    string $meta_image_path,
     array $meta_sub_route_array,
     array $meta_sub_title_array,
     array $meta_sub_description_array
     )
 {
-     $statement = GetDatabaseStatement( 'insert into `PAGE` ( `Id`, `Slug`, `Route`, `TypeSlug`, `Number`, `LanguageCodeArray`, `IsActive`, `Title`, `Heading`, `Teaser`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `ImageFit`, `VideoPath`, `MetaTitle`, `MetaDescription`, `MetaSubRouteArray`, `MetaSubTitleArray`, `MetaSubDescriptionArray` ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )' );
+     $statement = GetDatabaseStatement( 'insert into `PAGE` ( `Id`, `Slug`, `Route`, `TypeSlug`, `Number`, `LanguageCodeArray`, `IsActive`, `Title`, `Heading`, `Teaser`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `ImageFit`, `VideoPath`, `MetaTitle`, `MetaDescription`, `MetaImagePath`, `MetaSubRouteArray`, `MetaSubTitleArray`, `MetaSubDescriptionArray` ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )' );
     $statement->bindParam( 1, $id, PDO::PARAM_STR );
     $statement->bindParam( 2, $slug, PDO::PARAM_STR );
     $statement->bindParam( 3, $route, PDO::PARAM_STR );
@@ -97,12 +98,13 @@ function AddDatabasePage(
     $statement->bindParam( 15, $video_path, PDO::PARAM_STR );
     $statement->bindParam( 16, $meta_title, PDO::PARAM_STR );
     $statement->bindParam( 17, $meta_description, PDO::PARAM_STR );
+    $statement->bindParam( 18, $meta_image_path, PDO::PARAM_STR );
     $meta_sub_route_array = json_encode( $meta_sub_route_array );
-    $statement->bindParam( 18, $meta_sub_route_array, PDO::PARAM_STR );
+    $statement->bindParam( 19, $meta_sub_route_array, PDO::PARAM_STR );
     $meta_sub_title_array = json_encode( $meta_sub_title_array );
-    $statement->bindParam( 19, $meta_sub_title_array, PDO::PARAM_STR );
+    $statement->bindParam( 20, $meta_sub_title_array, PDO::PARAM_STR );
     $meta_sub_description_array = json_encode( $meta_sub_description_array );
-    $statement->bindParam( 20, $meta_sub_description_array, PDO::PARAM_STR );
+    $statement->bindParam( 21, $meta_sub_description_array, PDO::PARAM_STR );
 
     if ( !$statement->execute() )
     {
@@ -132,12 +134,13 @@ function PutDatabasePage(
     string $video_path,
     string $meta_title,
     string $meta_description,
+    string $meta_image_path,
     array $meta_sub_route_array,
     array $meta_sub_title_array,
     array $meta_sub_description_array
     )
 {
-     $statement = GetDatabaseStatement( 'replace into `PAGE` ( `Id`, `Slug`, `Route`, `TypeSlug`, `Number`, `LanguageCodeArray`, `IsActive`, `Title`, `Heading`, `Teaser`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `ImageFit`, `VideoPath`, `MetaTitle`, `MetaDescription`, `MetaSubRouteArray`, `MetaSubTitleArray`, `MetaSubDescriptionArray` ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )' );
+     $statement = GetDatabaseStatement( 'replace into `PAGE` ( `Id`, `Slug`, `Route`, `TypeSlug`, `Number`, `LanguageCodeArray`, `IsActive`, `Title`, `Heading`, `Teaser`, `ImagePath`, `ImageVerticalPosition`, `ImageHorizontalPosition`, `ImageFit`, `VideoPath`, `MetaTitle`, `MetaDescription`, `MetaImagePath`, `MetaSubRouteArray`, `MetaSubTitleArray`, `MetaSubDescriptionArray` ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )' );
     $statement->bindParam( 1, $id, PDO::PARAM_STR );
     $statement->bindParam( 2, $slug, PDO::PARAM_STR );
     $statement->bindParam( 3, $route, PDO::PARAM_STR );
@@ -156,12 +159,13 @@ function PutDatabasePage(
     $statement->bindParam( 15, $video_path, PDO::PARAM_STR );
     $statement->bindParam( 16, $meta_title, PDO::PARAM_STR );
     $statement->bindParam( 17, $meta_description, PDO::PARAM_STR );
+    $statement->bindParam( 18, $meta_image_path, PDO::PARAM_STR );
     $meta_sub_route_array = json_encode( $meta_sub_route_array );
-    $statement->bindParam( 18, $meta_sub_route_array, PDO::PARAM_STR );
+    $statement->bindParam( 19, $meta_sub_route_array, PDO::PARAM_STR );
     $meta_sub_title_array = json_encode( $meta_sub_title_array );
-    $statement->bindParam( 19, $meta_sub_title_array, PDO::PARAM_STR );
+    $statement->bindParam( 20, $meta_sub_title_array, PDO::PARAM_STR );
     $meta_sub_description_array = json_encode( $meta_sub_description_array );
-    $statement->bindParam( 20, $meta_sub_description_array, PDO::PARAM_STR );
+    $statement->bindParam( 21, $meta_sub_description_array, PDO::PARAM_STR );
 
     if ( !$statement->execute() )
     {
@@ -191,12 +195,13 @@ function SetDatabasePage(
     string $video_path,
     string $meta_title,
     string $meta_description,
+    string $meta_image_path,
     array $meta_sub_route_array,
     array $meta_sub_title_array,
     array $meta_sub_description_array
     )
 {
-     $statement = GetDatabaseStatement( 'update `PAGE` set `Slug` = ?, `Route` = ?, `TypeSlug` = ?, `Number` = ?, `LanguageCodeArray` = ?, `IsActive` = ?, `Title` = ?, `Heading` = ?, `Teaser` = ?, `ImagePath` = ?, `ImageVerticalPosition` = ?, `ImageHorizontalPosition` = ?, `ImageFit` = ?, `VideoPath` = ?, `MetaTitle` = ?, `MetaDescription` = ?, `MetaSubRouteArray` = ?, `MetaSubTitleArray` = ?, `MetaSubDescriptionArray` = ? where Id = ?' );
+     $statement = GetDatabaseStatement( 'update `PAGE` set `Slug` = ?, `Route` = ?, `TypeSlug` = ?, `Number` = ?, `LanguageCodeArray` = ?, `IsActive` = ?, `Title` = ?, `Heading` = ?, `Teaser` = ?, `ImagePath` = ?, `ImageVerticalPosition` = ?, `ImageHorizontalPosition` = ?, `ImageFit` = ?, `VideoPath` = ?, `MetaTitle` = ?, `MetaDescription` = ?, `MetaImagePath` = ?, `MetaSubRouteArray` = ?, `MetaSubTitleArray` = ?, `MetaSubDescriptionArray` = ? where Id = ?' );
     $statement->bindParam( 1, $slug, PDO::PARAM_STR );
     $statement->bindParam( 2, $route, PDO::PARAM_STR );
     $statement->bindParam( 3, $type_slug, PDO::PARAM_STR );
@@ -214,13 +219,14 @@ function SetDatabasePage(
     $statement->bindParam( 14, $video_path, PDO::PARAM_STR );
     $statement->bindParam( 15, $meta_title, PDO::PARAM_STR );
     $statement->bindParam( 16, $meta_description, PDO::PARAM_STR );
+    $statement->bindParam( 17, $meta_image_path, PDO::PARAM_STR );
     $meta_sub_route_array = json_encode( $meta_sub_route_array );
-    $statement->bindParam( 17, $meta_sub_route_array, PDO::PARAM_STR );
+    $statement->bindParam( 18, $meta_sub_route_array, PDO::PARAM_STR );
     $meta_sub_title_array = json_encode( $meta_sub_title_array );
-    $statement->bindParam( 18, $meta_sub_title_array, PDO::PARAM_STR );
+    $statement->bindParam( 19, $meta_sub_title_array, PDO::PARAM_STR );
     $meta_sub_description_array = json_encode( $meta_sub_description_array );
-    $statement->bindParam( 19, $meta_sub_description_array, PDO::PARAM_STR );
-    $statement->bindParam( 20, $id, PDO::PARAM_STR );
+    $statement->bindParam( 20, $meta_sub_description_array, PDO::PARAM_STR );
+    $statement->bindParam( 21, $id, PDO::PARAM_STR );
 
     if ( !$statement->execute() )
     {
