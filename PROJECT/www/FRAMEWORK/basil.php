@@ -110,7 +110,7 @@ function GetBasilColumnText(
     }
     else
     {
-        return str_replace( [ "\\", "~", "^", "{", "}", "\n", "\r", "\t" ], [ "\\\\", "\\~", "\\{", "\\}", "\\^", "\\n", "\\r", "\\t" ], $column_value );
+        return str_replace( [ '\\', '~', '^', '{', '}', "\n", "\r", "\t" ], [ '\\\\', '\\~', '\\{', '\\}', '\\^', '\\\\n', '', '\\\\t' ], $column_value );
     }
 }
 

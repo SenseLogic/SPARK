@@ -71,9 +71,21 @@
                         <% GetTextBySlug( 'Users' ) %>
                     </a>
                 <? } ?>
-                <a class="margin-left-auto page-menu-button" href="/admin/disconnect">
-                    <% GetTextBySlug( 'Logout' ) %>
-                </a>
+                <? if ( HasSessionMinimumUserRole( 'administrator' ) ) { ?>
+                    <a class="page-menu-button" href="/admin/server/backup">
+                        <% .GetProcessedTextBySlug( 'Backup' ) %>
+                    </a>
+                <? } ?>
+                <? if ( HasSessionMinimumUserRole( 'administrator' ) ) { ?>
+                    <a class="page-menu-button" href="/admin/server/sitemap">
+                        <% .GetProcessedTextBySlug( 'Sitemap' ) %>
+                    </a>
+                <? } ?>
+                <? if ( .Session.UserIsConnected ) { ?>
+                    <a class="margin-left-auto page-menu-button" href="/admin/disconnect">
+                        <% .GetProcessedTextBySlug( 'Logout' ) %>
+                    </a>
+                <? } ?>
             </div>
             <? if ( .Title !== '' ) { ?>
                 <div class="page-title">
