@@ -45,6 +45,15 @@ function GetUuid(
 
 // ~~
 
+function GetBasilText(
+    text
+    )
+{
+    return str_replace( [ "\\", "~", "^", "{", "}", "\n", "\r", "\t" ], [ "\\\\", "\\~", "\\{", "\\}", "\\^", "\\n", "", "\\t" ], text )
+}
+
+// ~~
+
 function GetBasilValueText(
     value
     )
@@ -79,7 +88,7 @@ function GetBasilValueText(
     }
     else
     {
-        var value_text = str_replace( [ "\\", "~", "^", "{", "}", "\n", "\r", "\t" ], [ "\\\\", "\\~", "\\{", "\\}", "\\^", "\\n", "\\r", "\\t" ], value );
+        var value_text = GetBasilText( value );
 
         value_text = ReplacePrefix( value_text, '#', '\\#' );
         value_text = ReplacePrefix( value_text, '%', '\\%' );
@@ -110,7 +119,7 @@ function GetBasilColumnText(
     }
     else
     {
-        return str_replace( [ '\\', '~', '^', '{', '}', "\n", "\r", "\t" ], [ '\\\\', '\\~', '\\{', '\\}', '\\^', '\\\\n', '', '\\\\t' ], column_value );
+        return GetBasilText( column_value );
     }
 }
 

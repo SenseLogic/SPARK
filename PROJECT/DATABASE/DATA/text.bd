@@ -103,8 +103,8 @@ TEXT
 
         %contact-mail-thanks-text-text
             ~ contact-mail-thanks-text
-            ~ Hi,\\n\\nThank you for your interest in Spark Project. We will get back to you as soon as possible.\\n\\nBest regards,\\n\\nThe Spark Project team\\n
-              ¨fr:Bonjour,\\n\\nJe vous remercie de l'intérêt que vous portez à Spark Project. Nous vous répondrons dès que possible.\\n\\nMeilleures salutations,\\n\\nL'équipe de Spark Project.\\n
+            ~ Hi,\n\nThank you for your interest in Spark Project. We will get back to you as soon as possible.\n\nBest regards,\n\nThe Spark Project team\n
+              ¨fr:Bonjour,\n\nJe vous remercie de l'intérêt que vous portez à Spark Project. Nous vous répondrons dès que possible.\n\nMeilleures salutations,\n\nL'équipe de Spark Project.\n
 
         %cookie-consent-banner-text-text
             ~ cookie-consent-banner-text
@@ -353,12 +353,12 @@ TEXT
 
         %privacy-policy-text-text
             ~ privacy-policy-text
-            ~ ! Title\\n
-              \\n
-              Paragraph.\\n
-              \\n
-              !! Subtitle\\n
-              \\n
+            ~ ! Title\n
+              \n
+              Paragraph.\n
+              \n
+              !! Subtitle\n
+              \n
               Paragraph.
 
         %legal-notice-title-text
@@ -368,71 +368,71 @@ TEXT
 
         %legal-notice-text-text
             ~ legal-notice-text
-            ~ ! Title\\n
-              \\n
-              - item\\n
-              \\n
-              ^ * item\\n
-              \\n
-              ^ * item\\n
-              \\n
-              - item\\n
-              \\n
-              ^ * item\\n
-              \\n
-              ^ * item\\n
-              \\n
-              !! Subtitle\\n
-              \\n
-              **Bold** %%italic%% __underlined__ ,,subscript,, \^\^superscript\^\^:\\n
-              \\n
-              [[[\\n
-              [[ Fruit || Vegetable ]]\\n
-              [[ apple || potato ]]\\n
-              [[ orange || carrot ]]\\n
-              [[ kiwi || broccoli ]]\\n
-              ]]]\\n
-              \\n
-              For more information : ((http://www.wikipedia.com)(Wikipedia)).\\n
-              \\n
-              !! Subtitle\\n
-              \\n
-              <red>RED</red>\\n
-              <green>GREEN</green>\\n
-              <color<#00F>>BLUE</color>\\n
-              <size<3rem>>BIG</size>\\n
-              <weight<100>>THIN</weight>\\n
-              ¨fr:! Titre\\n
-                  \\n
-                  - élément\\n
-                  \\n
-                  ^ * élément\\n
-                  \\n
-                  ^ * élément\\n
-                  \\n
-                  - élément\\n
-                  \\n
-                  ^ * élément\\n
-                  \\n
-                  ^ * élément\\n
-                  \\n
-                  !! Sous-titre\\n
-                  \\n
-                  **Gras** %%italique%% __souligné__ ,,indice,, \^\^exposant\^\^ :\\n
-                  \\n
-                  [[[\\n
-                  [[ Fruit || Légume ]]\\n
-                  [[ pomme || patate ]]\\n
-                  [[ orange || carotte ]]\\n
-                  [[ kiwi || brocoli ]]\\n
-                  ]]]\\n
-                  \\n
-                  Pour plus d'informations : ((http://www.wikipedia.com)(Wikipedia)).\\n
-                  \\n
-                  !! Sous-titre\\n
-                  \\n
-                  <red>ROUGE</red>\\n
-                  <green>VERT</green>\\n
-                  <color<#00F>>BLEU</color>\\n
-                  <size<3rem>>GRAND</size>\\n
+            ~ ! Title\n
+              \n
+              - item\n
+              \n
+              ^ * item\n
+              \n
+              ^ * item\n
+              \n
+              - item\n
+              \n
+              ^ * item\n
+              \n
+              ^ * item\n
+              \n
+              !! Subtitle\n
+              \n
+              **Bold** %%italic%% __underlined__ ,,subscript,, \^\^superscript\^\^:\n
+              \n
+              [[[\n
+              [[ Fruit || Vegetable ]]\n
+              [[ apple || potato ]]\n
+              [[ orange || carrot ]]\n
+              [[ kiwi || broccoli ]]\n
+              ]]]\n
+              \n
+              For more information : ((http://www.wikipedia.com)(Wikipedia)).\n
+              \n
+              !! Subtitle\n
+              \n
+              <red>RED</red>\n
+              <green>GREEN</green>\n
+              <color<#00F>>BLUE</color>\n
+              <size<3rem>>BIG</size>\n
+              <weight<100>>THIN</weight>\n
+              ¨fr:! Titre\n
+                  \n
+                  - élément\n
+                  \n
+                  ^ * élément\n
+                  \n
+                  ^ * élément\n
+                  \n
+                  - élément\n
+                  \n
+                  ^ * élément\n
+                  \n
+                  ^ * élément\n
+                  \n
+                  !! Sous-titre\n
+                  \n
+                  **Gras** %%italique%% __souligné__ ,,indice,, \^\^exposant\^\^ :\n
+                  \n
+                  [[[\n
+                  [[ Fruit || Légume ]]\n
+                  [[ pomme || patate ]]\n
+                  [[ orange || carotte ]]\n
+                  [[ kiwi || brocoli ]]\n
+                  ]]]\n
+                  \n
+                  Pour plus d'informations : ((http://www.wikipedia.com)(Wikipedia)).\n
+                  \n
+                  !! Sous-titre\n
+                  \n
+                  <red>ROUGE</red>\n
+                  <green>VERT</green>\n
+                  <color<#00F>>BLEU</color>\n
+                  <size<3rem>>GRAND</size>\n
                   <weight<100>>FIN</weight>

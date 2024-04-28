@@ -1,12 +1,12 @@
 // -- FUNCTIONS
 
-function GetSqlColumnText(
-    column_value
+function GetSqlText(
+    text
     )
 {
     return
         '"'
-        .. str_replace( [ "\\", "\n", "\r", "\t", "\"", "\'" ], [ "\\\\", "\\n", "\\r", "\\t", "\\\"", "\\'" ], column_value )
+        .. str_replace( [ "\\", "\n", "\r", "\t", "\"", "\'" ], [ "\\\\", "\\n", "\\r", "\\t", "\\\"", "\\'" ], text )
         .. '"';
 }
 
@@ -68,7 +68,7 @@ function GetSqlTableText(
               ++column_value_index )
         {
             sql_row_text
-                ..= '        ' .. GetSqlColumnText( column_value_array[ column_value_index ] );
+                ..= '        ' .. GetSqlText( column_value_array[ column_value_index ] );
 
             if ( column_value_index + 1 < column_value_count )
             {
