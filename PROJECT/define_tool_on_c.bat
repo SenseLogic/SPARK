@@ -1,1 +1,0 @@
-setx TOOL "C:\PROJECT\TOOL"

@@ -80,6 +80,7 @@ DefineTag( '))', '</a>' );
 DefineTag( '([', "<span class=\"link-button\" onclick=\"ShowView( '" );
 DefineTag( '][', "' )\">" );
 DefineTag( '])', '</span>' );
+DefineTag( '¬', '' );
 
 DefineTag( '<div<', '<div class="' );
 DefineTag( '<span<', '<span class="' );
