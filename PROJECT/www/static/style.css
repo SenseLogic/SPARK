@@ -740,6 +740,12 @@ html {
   transform: translateY(0);
   opacity: 1;
 }
+.has-debug-outline * {
+  outline: 1px solid #f00 !important;
+}
+.has-debug-outline *:hover {
+  outline: 2px solid #008000 !important;
+}
 .is-hidden {
   display: none !important;
 }

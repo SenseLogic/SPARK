@@ -16,6 +16,8 @@
         $sub_route = '';
     }
 
+     $meta_page_url = $route;
+
     if ( isset( $this->PageByRouteMap[ $route ] ) )
     {
          $page = $this->PageByRouteMap[ $route ];
@@ -23,6 +25,11 @@
         $meta_title = GetTranslatedText( $page->MetaTitle, $this->LanguageCode );
         $meta_description = GetTranslatedText( $page->MetaDescription, $this->LanguageCode );
         $meta_image_path = $page->MetaImagePath;
+
+        if ( $meta_image_path === '' )
+        {
+            $meta_image_path = '/static/image/meta/preview.jpg';
+        }
 
         if ( $sub_route !== '' )
         {
@@ -34,6 +41,16 @@
                 $meta_description = GetTranslatedText( $page->MetaSubDescriptionArray[ $sub_route_index ], $this->LanguageCode );
             }
         }
+    }
+
+    if ( !HasPrefix( $meta_image_path, 'http' ) )
+    {
+        $meta_image_path = 'https://www.spark-project.com' . $meta_image_path;
+    }
+
+    if ( !HasPrefix( $meta_page_url, 'http' ) )
+    {
+        $meta_page_url = 'https://www.spark-project.com/' . $this->LanguageCode . '/' . $meta_page_url;
     }
 ?>
 <meta charset="utf-8"/>
@@ -54,17 +71,28 @@
 <meta name="msapplication-config" content="/browserconfig.xml"/>
 <meta name="msapplication-TileColor" content="#FFFFFF"/>
 <meta name="msapplication-TileImage" content="/favicon-512x512.png"/>
-<meta name="twitter:card" content="<?php echo htmlspecialchars( $meta_title ); ?>"/>
+<meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="<?php echo htmlspecialchars( $meta_title ); ?>"/>
 <meta name="twitter:description" content="<?php echo htmlspecialchars( $meta_description ); ?>"/>
-<meta name="twitter:image" content="/favicon-512x512.png"/>
+<meta name="twitter:image" content="<?php echo htmlspecialchars( $meta_image_path ); ?>"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="Spark Project"/>
 <meta property="og:title" content="<?php echo htmlspecialchars( $meta_title ); ?>"/>
 <meta property="og:description" content="<?php echo htmlspecialchars( $meta_description ); ?>"/>
-<meta property="og:url" content="https://www.spark-project.com/"/>
+<meta property="og:url" content="<?php echo htmlspecialchars( $meta_page_url ); ?>"/>
 <meta property="og:image" content="<?php echo htmlspecialchars( $meta_image_path ); ?>"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "<?php echo htmlspecialchars( $meta_title ); ?>",
+  "description": "<?php echo htmlspecialchars( $meta_description ); ?>",
+  "image": "<?php echo htmlspecialchars( $meta_image_path ); ?>",
+  "url": "<?php echo htmlspecialchars( $meta_page_url ); ?>"
+}
+</script>
 <title>Spark Project</title>
+<link rel="canonical" href="<?php echo htmlspecialchars( $meta_page_url ); ?>">
 <link rel="icon" href="/favicon.ico"/>
 <link rel="icon" sizes="48x48" href="/favicon-48x48.png"/>
 <link rel="icon" sizes="96x96" href="/favicon-96x96.png"/>
