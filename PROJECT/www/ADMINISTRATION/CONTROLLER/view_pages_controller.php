@@ -7,6 +7,12 @@ require_once __DIR__ . '/' . '../../MODEL/page_model.php';
 
 class VIEW_PAGES_CONTROLLER extends VIEW_CONTROLLER
 {
+    // -- ATTRIBUTES
+
+    public
+        $Title,
+        $PageArray;
+
     // -- CONSTRUCTORS
 
     function __construct(

@@ -7,6 +7,12 @@ import '../../MODEL/page_model.php';
 
 class EDIT_PAGE_CONTROLLER extends VIEW_CONTROLLER
 {
+    // -- ATTRIBUTES
+
+    attribute
+        Title,
+        Page;
+
     // -- CONSTRUCTORS
 
     method constructor(

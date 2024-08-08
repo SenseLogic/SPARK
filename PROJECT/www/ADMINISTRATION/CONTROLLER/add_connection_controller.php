@@ -7,6 +7,11 @@ require_once __DIR__ . '/' . '../../MODEL/connection_model.php';
 
 class ADD_CONNECTION_CONTROLLER extends VIEW_CONTROLLER
 {
+    // -- ATTRIBUTES
+
+    public
+        $Title;
+
     // -- CONSTRUCTORS
 
     function __construct(

@@ -18,7 +18,7 @@ function GetValue(
 // ~~
 
 function HasProperty(
-    object &object_,
+    object object_,
     string property_name
     )
 {

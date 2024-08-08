@@ -7,6 +7,12 @@ import '../../MODEL/block_model.php';
 
 class REMOVE_BLOCK_CONTROLLER extends VIEW_CONTROLLER
 {
+    // -- ATTRIBUTES
+
+    attribute
+        Title,
+        Block;
+
     // -- CONSTRUCTORS
 
     method constructor(

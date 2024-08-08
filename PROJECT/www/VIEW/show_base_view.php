@@ -34,7 +34,7 @@
         else if ( route !== undefined
                   && route.startsWith( "//" ) )
         {
-            OpenUrl( route.substring( 1 ) );
+            OpenUrl( route.slice( 1 ) );
         }
         else if ( route !== undefined
                   && route.startsWith( "/" ) )

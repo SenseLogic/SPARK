@@ -7,6 +7,12 @@ import '../../MODEL/block_category_model.php';
 
 class VIEW_BLOCK_CATEGORIES_CONTROLLER extends VIEW_CONTROLLER
 {
+    // -- ATTRIBUTES
+
+    attribute
+        Title,
+        BlockCategoryArray;
+
     // -- CONSTRUCTORS
 
     method constructor(

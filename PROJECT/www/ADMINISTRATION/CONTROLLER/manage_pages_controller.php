@@ -8,6 +8,11 @@ require_once __DIR__ . '/' . '../../MODEL/page_model.php';
 
 class MANAGE_PAGES_CONTROLLER extends VIEW_CONTROLLER
 {
+    // -- ATTRIBUTES
+
+    public
+        $Title;
+
     // -- CONSTRUCTORS
 
     function __construct(

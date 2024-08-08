@@ -7,6 +7,12 @@ require_once __DIR__ . '/' . '../../MODEL/page_type_model.php';
 
 class VIEW_PAGE_TYPE_CONTROLLER extends VIEW_CONTROLLER
 {
+    // -- ATTRIBUTES
+
+    public
+        $Title,
+        $PageType;
+
     // -- CONSTRUCTORS
 
     function __construct(

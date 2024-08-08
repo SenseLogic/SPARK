@@ -50,7 +50,7 @@ function HasValue(
 
 function SortArrayByKey(
     array &array_,
-    key_comparison_function
+    callable key_comparison_function
     )
 {
     uksort( array_, key_comparison_function );
@@ -114,7 +114,7 @@ function SortArrayByDescendingTextualKey(
 
 function SortArrayByValue(
     array &array_,
-    value_comparison_function
+    callable value_comparison_function
     )
 {
     usort( array_, value_comparison_function );

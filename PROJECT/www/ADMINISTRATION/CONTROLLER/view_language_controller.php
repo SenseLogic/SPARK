@@ -7,6 +7,12 @@ require_once __DIR__ . '/' . '../../MODEL/language_model.php';
 
 class VIEW_LANGUAGE_CONTROLLER extends VIEW_CONTROLLER
 {
+    // -- ATTRIBUTES
+
+    public
+        $Title,
+        $Language;
+
     // -- CONSTRUCTORS
 
     function __construct(

@@ -9,6 +9,11 @@ require_once __DIR__ . '/' . 'controller.php';
 
 class GENERATE_SITEMAP_CONTROLLER extends CONTROLLER
 {
+    // -- ATTRIBUTES
+
+    public
+        $Title;
+
     // -- CONSTRUCTORS
 
     function __construct(

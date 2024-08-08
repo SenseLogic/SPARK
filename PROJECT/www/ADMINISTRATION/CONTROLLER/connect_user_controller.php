@@ -7,6 +7,13 @@ require_once __DIR__ . '/' . 'view_controller.php';
 
 class CONNECT_USER_CONTROLLER extends VIEW_CONTROLLER
 {
+    // -- ATTRIBUTES
+
+    public
+        $BrowserAddress,
+        $Connection,
+        $Title;
+
     // -- CONSTRUCTORS
 
     function __construct(

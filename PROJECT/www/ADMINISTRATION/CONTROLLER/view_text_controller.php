@@ -7,6 +7,12 @@ require_once __DIR__ . '/' . '../../MODEL/text_model.php';
 
 class VIEW_TEXT_CONTROLLER extends VIEW_CONTROLLER
 {
+    // -- ATTRIBUTES
+
+    public
+        $Title,
+        $Text;
+
     // -- CONSTRUCTORS
 
     function __construct(

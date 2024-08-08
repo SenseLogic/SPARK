@@ -7,6 +7,12 @@ import '../../MODEL/contact_model.php';
 
 class VIEW_CONTACTS_CONTROLLER extends VIEW_CONTROLLER
 {
+    // -- ATTRIBUTES
+
+    attribute
+        Title,
+        ContactArray;
+
     // -- CONSTRUCTORS
 
     method constructor(

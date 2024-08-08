@@ -7,6 +7,12 @@ import '../../MODEL/text_model.php';
 
 class REMOVE_TEXT_CONTROLLER extends VIEW_CONTROLLER
 {
+    // -- ATTRIBUTES
+
+    attribute
+        Title,
+        Text;
+
     // -- CONSTRUCTORS
 
     method constructor(

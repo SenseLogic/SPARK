@@ -7,6 +7,12 @@ require_once __DIR__ . '/' . '../../MODEL/user_model.php';
 
 class VIEW_USERS_CONTROLLER extends VIEW_CONTROLLER
 {
+    // -- ATTRIBUTES
+
+    public
+        $Title,
+        $UserArray;
+
     // -- CONSTRUCTORS
 
     function __construct(

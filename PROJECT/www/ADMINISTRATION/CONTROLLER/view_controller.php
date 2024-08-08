@@ -13,6 +13,25 @@ require_once __DIR__ . '/' . '../../MODEL/text_model.php';
 
 class VIEW_CONTROLLER extends CONTROLLER
 {
+    // -- ATTRIBUTES
+
+    public
+        $TextArray,
+        $TextBySlugMap,
+        $BlockArray,
+        $BlockByIdMap,
+        $BlockCategoryArray,
+        $BlockCategoryBySlugMap,
+        $BlockContentArray,
+        $BlockContentBySlugMap,
+        $BlockTypeArray,
+        $BlockTypeBySlugMap,
+        $PageArray,
+        $PageByIdMap,
+        $PageBySlugMap,
+        $PageTypeArray,
+        $PageTypeBySlugMap;
+
     // -- CONSTRUCTORS
 
     function __construct(

@@ -6,6 +6,11 @@ import 'view_controller.php';
 
 class SHOW_HOME_MENU_CONTROLLER extends VIEW_CONTROLLER
 {
+    // -- ATTRIBUTES
+
+    attribute
+        Title;
+
     // -- CONSTRUCTORS
 
     method constructor(

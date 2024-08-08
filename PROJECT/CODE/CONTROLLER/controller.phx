@@ -6,6 +6,12 @@ import '../MODEL/session.php';
 
 class CONTROLLER
 {
+    attribute
+        Session,
+        LanguageCode,
+        LanguageTag,
+        LanguageDecimalSeparator;
+
     // -- CONSTRUCTORS
 
     method constructor(

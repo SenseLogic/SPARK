@@ -7,6 +7,12 @@ require_once __DIR__ . '/' . '../../MODEL/contact_model.php';
 
 class EDIT_CONTACT_CONTROLLER extends VIEW_CONTROLLER
 {
+    // -- ATTRIBUTES
+
+    public
+        $Title,
+        $Contact;
+
     // -- CONSTRUCTORS
 
     function __construct(

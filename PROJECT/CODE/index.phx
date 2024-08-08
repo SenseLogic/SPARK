@@ -1191,6 +1191,10 @@ function Route(
 
 // -- STATEMENTS
 
-ShowErrors();
-// PrintRequest();
+if ( GetServerName() === 'localhost' )
+{
+    ShowErrors();
+    // PrintRequest();
+}
+
 Route( GetPath() );

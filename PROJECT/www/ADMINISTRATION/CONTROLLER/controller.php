@@ -6,6 +6,13 @@ require_once __DIR__ . '/' . '../../MODEL/session.php';
 
 class CONTROLLER
 {
+    // -- ATTRIBUTES
+
+    public
+        $Session,
+        $LanguageCode,
+        $LanguageDecimalSeparator;
+
     // -- CONSTRUCTORS
 
     function __construct(

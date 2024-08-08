@@ -7,6 +7,12 @@ import '../../MODEL/user_model.php';
 
 class VIEW_USERS_CONTROLLER extends VIEW_CONTROLLER
 {
+    // -- ATTRIBUTES
+
+    attribute
+        Title,
+        UserArray;
+
     // -- CONSTRUCTORS
 
     method constructor(

@@ -9,6 +9,23 @@ import '../MODEL/page_model.php';
 
 class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
 {
+    // -- ATTRIBUTES
+
+    attribute
+        Route,
+        LanguageArray,
+        PageArray,
+        BlockArray,
+        LanguageByCodeMap,
+        Language,
+        BlockByIdMap,
+        PageByIdMap,
+        PageByRouteMap,
+        PageArrayByTypeSlugMap,
+        ImagePathArray,
+        Captcha,
+        Session;
+
     // -- CONSTRUCTORS
 
     method constructor(

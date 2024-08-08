@@ -7,6 +7,12 @@ require_once __DIR__ . '/' . '../../MODEL/block_model.php';
 
 class VIEW_BLOCKS_CONTROLLER extends VIEW_CONTROLLER
 {
+    // -- ATTRIBUTES
+
+    public
+        $Title,
+        $BlockArray;
+
     // -- CONSTRUCTORS
 
     function __construct(

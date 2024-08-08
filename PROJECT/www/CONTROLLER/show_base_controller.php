@@ -9,6 +9,23 @@ require_once __DIR__ . '/' . '../MODEL/page_model.php';
 
 class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
 {
+    // -- ATTRIBUTES
+
+    public
+        $Route,
+        $LanguageArray,
+        $PageArray,
+        $BlockArray,
+        $LanguageByCodeMap,
+        $Language,
+        $BlockByIdMap,
+        $PageByIdMap,
+        $PageByRouteMap,
+        $PageArrayByTypeSlugMap,
+        $ImagePathArray,
+        $Captcha,
+        $Session;
+
     // -- CONSTRUCTORS
 
     function __construct(

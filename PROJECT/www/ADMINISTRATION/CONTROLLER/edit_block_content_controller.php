@@ -7,6 +7,12 @@ require_once __DIR__ . '/' . '../../MODEL/block_content_model.php';
 
 class EDIT_BLOCK_CONTENT_CONTROLLER extends VIEW_CONTROLLER
 {
+    // -- ATTRIBUTES
+
+    public
+        $Title,
+        $BlockContent;
+
     // -- CONSTRUCTORS
 
     function __construct(

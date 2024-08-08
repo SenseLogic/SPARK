@@ -8,6 +8,12 @@ import '../../MODEL/page_model.php';
 
 class MANAGE_PAGE_CONTROLLER extends VIEW_CONTROLLER
 {
+    // -- ATTRIBUTES
+
+    attribute
+        Title,
+        Page;
+
     // -- CONSTRUCTORS
 
     method constructor(

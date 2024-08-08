@@ -7,6 +7,11 @@ import '../../MODEL/block_category_model.php';
 
 class ADD_BLOCK_CATEGORY_CONTROLLER extends VIEW_CONTROLLER
 {
+    // -- ATTRIBUTES
+
+    attribute
+        Title;
+
     // -- CONSTRUCTORS
 
     method constructor(

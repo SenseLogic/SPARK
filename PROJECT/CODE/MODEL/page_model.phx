@@ -40,8 +40,8 @@ function LinkPageArray(
 // ~~
 
 function GetBlockComparison(
-    object &first_block,
-    object &second_block
+    object first_block,
+    object second_block
     )
 {
     return first_block.Number <=> second_block.Number;

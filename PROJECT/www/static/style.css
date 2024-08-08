@@ -980,7 +980,7 @@ html {
 }
 .loader-page {
   z-index: 10000;
-  position: relative;
+  position: fixed;
   height: var(--viewport-height);
   width: 100%;
   background: #fff;

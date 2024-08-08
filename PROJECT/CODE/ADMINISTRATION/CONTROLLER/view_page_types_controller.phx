@@ -7,6 +7,12 @@ import '../../MODEL/page_type_model.php';
 
 class VIEW_PAGE_TYPES_CONTROLLER extends VIEW_CONTROLLER
 {
+    // -- ATTRIBUTES
+
+    attribute
+        Title,
+        PageTypeArray;
+
     // -- CONSTRUCTORS
 
     method constructor(

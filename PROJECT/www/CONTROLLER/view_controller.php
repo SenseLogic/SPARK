@@ -8,6 +8,15 @@ require_once __DIR__ . '/' . '../MODEL/text_model.php';
 
 class VIEW_CONTROLLER extends CONTROLLER
 {
+    // -- ATTRIBUTES
+
+    public
+        $BrowserAddress,
+        $BrowserLocation,
+        $LanguageTag,
+        $TextArray,
+        $TextBySlugMap;
+
     // -- CONSTRUCTORS
 
     function __construct(

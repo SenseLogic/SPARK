@@ -7,6 +7,12 @@ require_once __DIR__ . '/' . '../../MODEL/contact_model.php';
 
 class VIEW_CONTACTS_CONTROLLER extends VIEW_CONTROLLER
 {
+    // -- ATTRIBUTES
+
+    public
+        $Title,
+        $ContactArray;
+
     // -- CONSTRUCTORS
 
     function __construct(

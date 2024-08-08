@@ -7,6 +7,11 @@ import '../../MODEL/block_model.php';
 
 class MANAGE_BLOCKS_CONTROLLER extends VIEW_CONTROLLER
 {
+    // -- ATTRIBUTES
+
+    attribute
+        Title;
+
     // -- CONSTRUCTORS
 
     method constructor(

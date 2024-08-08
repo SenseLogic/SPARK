@@ -8,6 +8,11 @@ import '../../MODEL/{#variable#}_model.php';
 
 class ADD_{#type#}_CONTROLLER extends VIEW_CONTROLLER
 {
+    // -- ATTRIBUTES
+
+    attribute
+        Title;
+
     // -- CONSTRUCTORS
 
     method constructor(
@@ -74,6 +79,12 @@ import '../../MODEL/{#variable#}_model.php';
 
 class EDIT_{#type#}_CONTROLLER extends VIEW_CONTROLLER
 {
+    // -- ATTRIBUTES
+
+    attribute
+        Title,
+        {#attribute#};
+
     // -- CONSTRUCTORS
 
     method constructor(
@@ -142,6 +153,12 @@ import '../../MODEL/{#variable#}_model.php';
 
 class REMOVE_{#type#}_CONTROLLER extends VIEW_CONTROLLER
 {
+    // -- ATTRIBUTES
+
+    attribute
+        Title,
+        {#attribute#};
+
     // -- CONSTRUCTORS
 
     method constructor(
@@ -207,6 +224,12 @@ import '../../MODEL/{#variable#}_model.php';
 
 class VIEW_{#type#}_CONTROLLER extends VIEW_CONTROLLER
 {
+    // -- ATTRIBUTES
+
+    attribute
+        Title,
+        {#attribute#};
+
     // -- CONSTRUCTORS
 
     method constructor(
@@ -241,6 +264,12 @@ import '../../MODEL/{#variable#}_model.php';
 
 class VIEW_<~Plural<>{#type#}~>_CONTROLLER extends VIEW_CONTROLLER
 {
+    // -- ATTRIBUTES
+
+    attribute
+        Title,
+        {#attribute#}Array;
+
     // -- CONSTRUCTORS
 
     method constructor(

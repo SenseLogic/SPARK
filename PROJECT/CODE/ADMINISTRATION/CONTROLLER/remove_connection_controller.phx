@@ -7,6 +7,12 @@ import '../../MODEL/connection_model.php';
 
 class REMOVE_CONNECTION_CONTROLLER extends VIEW_CONTROLLER
 {
+    // -- ATTRIBUTES
+
+    attribute
+        Title,
+        Connection;
+
     // -- CONSTRUCTORS
 
     method constructor(

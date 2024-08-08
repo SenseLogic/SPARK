@@ -7,6 +7,12 @@ import '../../MODEL/user_model.php';
 
 class REMOVE_USER_CONTROLLER extends VIEW_CONTROLLER
 {
+    // -- ATTRIBUTES
+
+    attribute
+        Title,
+        User;
+
     // -- CONSTRUCTORS
 
     method constructor(

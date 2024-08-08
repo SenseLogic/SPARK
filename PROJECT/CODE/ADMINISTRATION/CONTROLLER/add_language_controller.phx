@@ -7,6 +7,11 @@ import '../../MODEL/language_model.php';
 
 class ADD_LANGUAGE_CONTROLLER extends VIEW_CONTROLLER
 {
+    // -- ATTRIBUTES
+
+    attribute
+        Title;
+
     // -- CONSTRUCTORS
 
     method constructor(

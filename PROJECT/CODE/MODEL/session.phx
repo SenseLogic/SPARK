@@ -2,6 +2,14 @@
 
 class SESSION
 {
+    // -- ATTRIBUTES
+
+    attribute
+        User,
+        UserIsConnected,
+        UserRole,
+        Captcha;
+
     // -- CONSTRUCTORS
 
     method constructor(

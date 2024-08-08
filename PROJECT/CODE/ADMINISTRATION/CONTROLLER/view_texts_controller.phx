@@ -7,6 +7,12 @@ import '../../MODEL/text_model.php';
 
 class VIEW_TEXTS_CONTROLLER extends VIEW_CONTROLLER
 {
+    // -- ATTRIBUTES
+
+    attribute
+        Title,
+        TextArray;
+
     // -- CONSTRUCTORS
 
     method constructor(

@@ -7,6 +7,12 @@ import '../../MODEL/connection_model.php';
 
 class VIEW_CONNECTIONS_CONTROLLER extends VIEW_CONTROLLER
 {
+    // -- ATTRIBUTES
+
+    attribute
+        Title,
+        ConnectionArray;
+
     // -- CONSTRUCTORS
 
     method constructor(

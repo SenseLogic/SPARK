@@ -8,6 +8,11 @@ require_once __DIR__ . '/' . 'controller.php';
 
 class MAKE_BACKUP_CONTROLLER extends CONTROLLER
 {
+    // -- ATTRIBUTES
+
+    public
+        $Title;
+
     // -- CONSTRUCTORS
 
     function __construct(

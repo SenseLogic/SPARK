@@ -7,6 +7,12 @@ require_once __DIR__ . '/' . '../../MODEL/user_model.php';
 
 class REMOVE_USER_CONTROLLER extends VIEW_CONTROLLER
 {
+    // -- ATTRIBUTES
+
+    public
+        $Title,
+        $User;
+
     // -- CONSTRUCTORS
 
     function __construct(

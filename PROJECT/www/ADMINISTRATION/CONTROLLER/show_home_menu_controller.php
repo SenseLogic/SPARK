@@ -6,6 +6,11 @@ require_once __DIR__ . '/' . 'view_controller.php';
 
 class SHOW_HOME_MENU_CONTROLLER extends VIEW_CONTROLLER
 {
+    // -- ATTRIBUTES
+
+    public
+        $Title;
+
     // -- CONSTRUCTORS
 
     function __construct(

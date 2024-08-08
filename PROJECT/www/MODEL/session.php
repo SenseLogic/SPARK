@@ -2,6 +2,14 @@
 
 class SESSION
 {
+    // -- ATTRIBUTES
+
+    public
+        $User,
+        $UserIsConnected,
+        $UserRole,
+        $Captcha;
+
     // -- CONSTRUCTORS
 
     function __construct(
