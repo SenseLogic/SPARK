@@ -1,2 +1,2 @@
-setx TOOL "%1:\PROJECT\TOOL"
+setx TOOL "%1\TOOL"
 pause

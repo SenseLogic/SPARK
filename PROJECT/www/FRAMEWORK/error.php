@@ -138,3 +138,7 @@ if ( $_SERVER[ 'SERVER_NAME' ] === 'localhost' )
 {
     ShowErrors();
 }
+else
+{
+    HideErrors();
+}
