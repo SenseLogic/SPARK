@@ -12,7 +12,7 @@
 
 
 
-<div id="contact-map" class="contact-map" style="background: url( '/static/image/contact/background.jpg' ) no-repeat center center / cover, url( '/static/image/contact/background.jpg.preload.jpg' ) no-repeat center center / cover">
+<div id="contact-map" class="contact-map" style="background: url( '/static/image/contact/background.avif' ) no-repeat center center / cover, url( '/static/image/contact/background.avif.preload.avif' ) no-repeat center center / cover">
 </div>
 <script src="//maps.googleapis.com/maps/api/js?key=RuxfYm8XiqdChb6CmygYRRDMnlIh8xnIKvy2ntc&language=fr&region=BE"></script>
 <script>

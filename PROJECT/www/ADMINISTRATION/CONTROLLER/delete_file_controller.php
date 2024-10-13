@@ -19,9 +19,9 @@ class DELETE_FILE_CONTROLLER extends CONTROLLER
         if ( FileExists( $file_path )
              && RemoveFile( $file_path ) )
         {
-            if ( HasSuffix( $file_path, '.jpg' ) )
+            if ( HasSuffix( $file_path, ImageExtension ) )
             {
-                foreach ( [ '.original.png', '.original.jpg', '.medium.jpg', '.small.jpg', '.preload.jpg' ] as  $suffix )
+                foreach ( [ HugeImageExtension, BigImageExtension, MediumImageExtension, SmallImageExtension, TinyImageExtension, PreloadImageExtension ] as  $suffix )
                 {
                     if ( FileExists( $file_path . $suffix ) )
                     {
@@ -29,9 +29,9 @@ class DELETE_FILE_CONTROLLER extends CONTROLLER
                     }
                 }
             }
-            else if ( HasSuffix( $file_path, '.png' ) )
+            else if ( HasSuffix( $file_path, TransparentImageExtension ) )
             {
-                foreach ( [ '.original.png', '.medium.png', '.small.png', '.preload.png' ] as $suffix )
+                foreach ( [ HugeAlphaImageExtension, BigAlphaImageExtension, MediumAlphaImageExtension, SmallAlphaImageExtension, TinyAlphaImageExtension, PreloadAlphaImageExtension ] as $suffix )
                 {
                     if ( FileExists( $file_path . $suffix ) )
                     {

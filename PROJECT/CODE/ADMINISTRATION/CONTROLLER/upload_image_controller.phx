@@ -19,27 +19,36 @@ class UPLOAD_IMAGE_CONTROLLER extends CONTROLLER
         {
             var source_file_path = GetUploadedFilePath( 'File' );
             var source_file_name = GetValidFileName( GetUploadedFileName( 'File' ));
+            var source_file_extension = GetFileExtension( source_file_name );
+
             var target_file_name = GetValidFileName( GetSuffixedFilePath( source_file_name, '_' .. GetCurrentDateTimeSuffix() ) );
 
-            if ( HasSuffix( target_file_name, '.jpeg' ) )
+            if ( source_file_extension === '.jpg'
+                 || source_file_extension === '.JPG'
+                 || source_file_extension === '.jpeg'
+                 || source_file_extension === '.JPEG' )
             {
-                target_file_name = ReplaceSuffix( target_file_name, '.jpeg', '.jpg' );
+                target_file_name = ReplaceSuffix( target_file_name, source_file_extension, '.jpg' );
             }
-            else if ( HasSuffix( target_file_name, '.JPEG' ) )
+            else if ( source_file_extension === '.png'
+                      || source_file_extension === '.PNG' )
             {
-                target_file_name = ReplaceSuffix( target_file_name, '.JPEG', '.jpg' );
-            }
-            else if ( HasSuffix( target_file_name, '.JPG' ) )
-            {
-                target_file_name = ReplaceSuffix( target_file_name, '.JPG', '.jpg' );
-            }
-            else if ( HasSuffix( target_file_name, '.PNG' ) )
-            {
-                target_file_name = ReplaceSuffix( target_file_name, '.PNG', '.png' );
+                target_file_name = ReplaceSuffix( target_file_name, source_file_extension, '.png' );
             }
 
             var media_folder_path = GetBaseFolderName() .. '/media/image/';
             var media_file_path = media_folder_path .. target_file_name;
+
+            var target_file_extension = GetFileExtension( target_file_name );
+
+            if ( target_file_extension === '.jpg' )
+            {
+                target_file_name = ReplaceSuffix( target_file_name, target_file_extension, ImageExtension );
+            }
+            else if ( target_file_extension === '.png' )
+            {
+                target_file_name = ReplaceSuffix( target_file_name, target_file_extension, AlphaImageExtension );
+            }
 
             CreateFolder( media_folder_path );
 
@@ -52,29 +61,29 @@ class UPLOAD_IMAGE_CONTROLLER extends CONTROLLER
 
                 if ( HasSuffix( target_file_path, '.jpg' ) )
                 {
-                    var image = ReadJpegImage( media_file_path );
+                    var image = ReadImage( media_file_path );
 
-                    var default_image = CreateLimitedImage( image, 2073600 );
-                    WriteJpegImage( default_image, target_file_path, 70 );
-                    ReleaseImage( default_image );
+                    var large_image = CreateLimitedImage( image, 2073600 );
+                    WriteJpegImage( large_image, target_file_path, 70 );
+                    ReleaseImage( large_image );
 
                     var medium_image = CreateLimitedImage( image, 921600 );
-                    WriteJpegImage( medium_image, target_file_path .. ".medium.jpg", 70 );
+                    WriteJpegImage( medium_image, target_file_path .. '.medium.jpg', 70 );
                     ReleaseImage( medium_image );
 
                     var small_image = CreateLimitedImage( image, 230400 );
-                    WriteJpegImage( small_image, target_file_path .. ".small.jpg", 70 );
+                    WriteJpegImage( small_image, target_file_path .. '.small.jpg', 70 );
                     ReleaseImage( small_image );
 
                     var preload_image = CreateLimitedImage( image, 147456 );
-                    WriteJpegImage( preload_image, target_file_path .. ".preload.jpg", 50 );
+                    WriteJpegImage( preload_image, target_file_path .. '.preload.jpg', 50 );
                     ReleaseImage( preload_image );
 
                     ReleaseImage( image );
                 }
                 else if ( HasSuffix( target_file_path, '.png' ) )
                 {
-                    var image = ReadPngImage( media_file_path );
+                    var image = ReadImage( media_file_path );
 
                     EnableImageTransparency( image );
 
@@ -83,40 +92,78 @@ class UPLOAD_IMAGE_CONTROLLER extends CONTROLLER
                         var target_file_name = ReplaceSuffix( target_file_name, '.png', '.jpg' );
                         var target_file_path = ReplaceSuffix( target_file_path, '.png', '.jpg' );
 
-                        var default_image = CreateLimitedImage( image, 2073600 );
-                        WriteJpegImage( default_image, target_file_path, 70 );
-                        ReleaseImage( default_image );
+                        var large_image = CreateLimitedImage( image, 2073600 );
+                        WriteJpegImage( large_image, target_file_path, 70 );
+                        ReleaseImage( large_image );
 
                         var medium_image = CreateLimitedImage( image, 921600 );
-                        WriteJpegImage( medium_image, target_file_path .. ".medium.jpg", 70 );
+                        WriteJpegImage( medium_image, target_file_path .. '.medium.jpg', 70 );
                         ReleaseImage( medium_image );
 
                         var small_image = CreateLimitedImage( image, 230400 );
-                        WriteJpegImage( small_image, target_file_path .. ".small.jpg", 70 );
+                        WriteJpegImage( small_image, target_file_path .. '.small.jpg', 70 );
                         ReleaseImage( small_image );
 
                         var preload_image = CreateLimitedImage( image, 147456 );
-                        WriteJpegImage( preload_image, target_file_path .. ".preload.jpg", 50 );
+                        WriteJpegImage( preload_image, target_file_path .. '.preload.jpg', 50 );
                         ReleaseImage( preload_image );
                     }
                     else
                     {
-                        var default_image = CreateLimitedImage( image, 2073600, true );
-                        WritePngImage( default_image, target_file_path );
-                        ReleaseImage( default_image );
+                        var large_image = CreateLimitedImage( image, 2073600, true );
+                        WritePngImage( large_image, target_file_path );
+                        ReleaseImage( large_image );
 
                         var medium_image = CreateLimitedImage( image, 921600, true );
-                        WritePngImage( medium_image, target_file_path .. ".medium.png" );
+                        WritePngImage( medium_image, target_file_path .. '.medium.png' );
                         ReleaseImage( medium_image );
 
                         var small_image = CreateLimitedImage( image, 230400, true );
-                        WritePngImage( small_image, target_file_path .. ".small.png" );
+                        WritePngImage( small_image, target_file_path .. '.small.png' );
                         ReleaseImage( small_image );
 
                         var preload_image = CreateLimitedImage( image, 147456, true );
-                        WritePngImage( preload_image, target_file_path .. ".preload.png" );
+                        WritePngImage( preload_image, target_file_path .. '.preload.png' );
                         ReleaseImage( preload_image );
                     }
+
+                    ReleaseImage( image );
+                }
+                else if ( HasSuffix( target_file_path, '.avif' ) )
+                {
+                    var image = ReadImage( media_file_path );
+
+                    EnableImageTransparency( image );
+
+                    var target_image_has_alpha = !IsOpaqueImage( image );
+
+                    var huge_image = CreateCappedImage( image, 3840, 7680, target_image_has_alpha );
+                    WriteAvifImage( huge_image, target_file_path .. '.huge.avif', 55 );
+                    ReleaseImage( huge_image );
+
+                    var large_image = CreateCappedImage( image, 1920, 3840, target_image_has_alpha );
+                    WriteAvifImage( large_image, target_file_path, 55 );
+                    ReleaseImage( large_image );
+
+                    var big_image = CreateCappedImage( image, 1280, 2560, target_image_has_alpha );
+                    WriteAvifImage( big_image, target_file_path .. '.big.avif', 55 );
+                    ReleaseImage( big_image );
+
+                    var medium_image = CreateCappedImage( image, 960, 1920, target_image_has_alpha );
+                    WriteAvifImage( medium_image, target_file_path .. '.medium.avif', 55 );
+                    ReleaseImage( medium_image );
+
+                    var small_image = CreateCappedImage( image, 640, 1280, target_image_has_alpha );
+                    WriteAvifImage( small_image, target_file_path .. '.small.avif', 55 );
+                    ReleaseImage( small_image );
+
+                    var tiny_image = CreateCappedImage( image, 480, 960, target_image_has_alpha );
+                    WriteAvifImage( tiny_image, target_file_path .. '.tiny.avif', 55 );
+                    ReleaseImage( tiny_image );
+
+                    var preload_image = CreateCappedImage( image, 360, 720, target_image_has_alpha );
+                    WriteAvifImage( preload_image, target_file_path .. '.preload.avif', 30 );
+                    ReleaseImage( preload_image );
 
                     ReleaseImage( image );
                 }

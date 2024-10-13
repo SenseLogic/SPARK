@@ -1,5 +1,10 @@
 if not exist "..\www\static\image\%1" mkdir "..\www\static\image\%1"
-for %%f in (static\image\%1\*.*) do %TOOL%\REMIX\remix %6 %TOOL%\IMAGE_MAGICK\convert "%%f" -background white -alpha remove -alpha off -resize %2@ -interlace Plane -quality 70 -strip "..\www\static\image\%1\%%~nf.jpg"
-for %%f in (static\image\%1\*.*) do %TOOL%\REMIX\remix %6 %TOOL%\IMAGE_MAGICK\convert "%%f" -background white -alpha remove -alpha off -resize %3@ -interlace Plane -quality 70 -strip "..\www\static\image\%1\%%~nf.jpg.medium.jpg"
-for %%f in (static\image\%1\*.*) do %TOOL%\REMIX\remix %6 %TOOL%\IMAGE_MAGICK\convert "%%f" -background white -alpha remove -alpha off -resize %4@ -interlace Plane -quality 70 -strip "..\www\static\image\%1\%%~nf.jpg.small.jpg"
-for %%f in (static\image\%1\*.*) do %TOOL%\REMIX\remix %6 %TOOL%\IMAGE_MAGICK\convert "%%f" -background white -alpha remove -alpha off -resize %5@ -interlace Plane -quality 50 -strip "..\www\static\image\%1\%%~nf.jpg.preload.jpg"
+for %%f in (static\image\%1\*.*) do (
+    %TOOL%\REMIX\remix %9 %TOOL%\IMAGE_MAGICK\convert "%%f" -resize %2 -quality 55 -strip "..\www\static\image\%1\%%~nf.avif.huge.avif"
+    %TOOL%\REMIX\remix %9 %TOOL%\IMAGE_MAGICK\convert "%%f" -resize %3 -quality 55 -strip "..\www\static\image\%1\%%~nf.avif"
+    %TOOL%\REMIX\remix %9 %TOOL%\IMAGE_MAGICK\convert "%%f" -resize %4 -quality 55 -strip "..\www\static\image\%1\%%~nf.avif.big.avif"
+    %TOOL%\REMIX\remix %9 %TOOL%\IMAGE_MAGICK\convert "%%f" -resize %5 -quality 55 -strip "..\www\static\image\%1\%%~nf.avif.medium.avif"
+    %TOOL%\REMIX\remix %9 %TOOL%\IMAGE_MAGICK\convert "%%f" -resize %6 -quality 55 -strip "..\www\static\image\%1\%%~nf.avif.small.avif"
+    %TOOL%\REMIX\remix %9 %TOOL%\IMAGE_MAGICK\convert "%%f" -resize %7 -quality 55 -strip "..\www\static\image\%1\%%~nf.avif.tiny.avif"
+    %TOOL%\REMIX\remix %9 %TOOL%\IMAGE_MAGICK\convert "%%f" -resize %8 -quality 30 -strip "..\www\static\image\%1\%%~nf.avif.preload.avif"
+)

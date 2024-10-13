@@ -9,7 +9,7 @@ PAGE
             ~ 1
             ~ { en ~ fr }
             ~ Article 1
-            ~ /static/image/article/california.jpg
+            ~ /static/image/article/california.avif
 
         %article-2-article-page
             ~ article-2-article
@@ -18,7 +18,7 @@ PAGE
             ~ 2
             ~ { en ~ fr }
             ~ Article 2
-            ~ /static/image/article/castle.jpg
+            ~ /static/image/article/castle.avif
 
         %article-3-article-page
             ~ article-3-article
@@ -27,7 +27,7 @@ PAGE
             ~ 3
             ~ { en ~ fr }
             ~ Article 3
-            ~ /static/image/article/road.jpg
+            ~ /static/image/article/road.avif
 
         %article-4-article-page
             ~ article-4-article
@@ -36,4 +36,4 @@ PAGE
             ~ 4
             ~ { en ~ fr }
             ~ Article 4
-            ~ /static/image/article/tree.jpg
+            ~ /static/image/article/tree.avif

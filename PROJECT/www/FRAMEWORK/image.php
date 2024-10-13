@@ -122,6 +122,66 @@ function CreateResizedImage(
 
 // ~~
 
+function CreateCappedImage(
+    $image,
+    int $maximum_width,
+    int $maximum_height,
+    bool $image_has_alpha = false
+    )
+{
+     $old_width = imagesx( $image );
+     $old_height = imagesy( $image );
+
+    if ( $old_width > 0
+         && $old_height > 0 )
+    {
+         $new_width = $old_width;
+         $new_height = $old_height;
+
+         $aspect_ratio = $old_width / $old_height;
+
+        $new_width = $maximum_width;
+        $new_height = intval( $maximum_width / $aspect_ratio );
+
+        if ( $new_height > $maximum_height )
+        {
+            $new_height = $maximum_height;
+            $new_width = intval( $maximum_height * $aspect_ratio );
+        }
+
+        if ( $new_width < 1 )
+        {
+            $new_width = 1;
+        }
+
+        if ( $new_height < 1 )
+        {
+            $new_height = 1;
+        }
+
+         $new_image = CreateImage( $new_width, $new_height, $image_has_alpha );
+
+        imagecopyresampled(
+            $new_image,
+            $image,
+            0, 0,
+            0, 0,
+            $new_width,
+            $new_height,
+            $old_width,
+            $old_height
+            );
+
+        return $new_image;
+    }
+    else
+    {
+        return CreateImage( 0, 0, $image_has_alpha );
+    }
+}
+
+// ~~
+
 function CreateConstrainedImage(
     $image,
     int $minimum_width = 0,
@@ -923,4 +983,61 @@ function WritePngImage(
     )
 {
     imagepng( $image, $image_file_path, $quality );
+}
+
+// ~~
+
+function ReadAvifImage(
+    string $image_url,
+    bool $image_has_alpha = false
+    )
+{
+     $image = imagecreatefromavif( $image_url );
+
+    if ( $image_has_alpha )
+    {
+        EnableImageTransparency( $image );
+    }
+
+    return $image;
+}
+
+// ~~
+
+function WriteAvifImage(
+    $image,
+    string $image_file_path = null,
+    int $quality = -1,
+    int $speed = -1
+    )
+{
+    imageavif( $image, $image_file_path, $quality, $speed );
+}
+
+// ~~
+
+function ReadImage(
+    string $image_url,
+    bool $image_has_alpha = false
+    )
+{
+    if ( HasSuffix( $image_url, '.jpg' ) )
+    {
+         $image = imagecreatefromjpeg( $image_url );
+    }
+    else if ( HasSuffix( $image_url, '.png' ) )
+    {
+         $image = imagecreatefrompng( $image_url );
+    }
+    else
+    {
+         $image = imagecreatefromavif( $image_url );
+    }
+
+    if ( $image_has_alpha )
+    {
+        EnableImageTransparency( $image );
+    }
+
+    return $image;
 }

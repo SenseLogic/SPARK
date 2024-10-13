@@ -26,6 +26,22 @@ define( 'LanguageTagArray', [ 'en', 'fr', 'de' ] );
 define( 'LanguageCodeArray', [ 'en', 'fr', 'de' ] );
 define( 'LanguageNameArray', [ 'English', 'French', 'German' ] );
 define( 'GoogleAnalyticsTrackingId', 'G-ABCDEFGHIJ' );
+define( 'ImageExtension', '.avif' );
+define( 'PreloadImageExtension', '.preload.avif' );
+define( 'TinyImageExtension', '.tiny.avif' );
+define( 'SmallImageExtension', '.small.avif' );
+define( 'MediumImageExtension', '.medium.avif' );
+define( 'BigImageExtension', '.big.avif' );
+define( 'LargeImageExtension', '' );
+define( 'HugeImageExtension', '.huge.avif' );
+define( 'AlphaImageExtension', '.avif' );
+define( 'PreloadAlphaImageExtension', '.preload.avif' );
+define( 'TinyAlphaImageExtension', '.tiny.avif' );
+define( 'SmallAlphaImageExtension', '.small.avif' );
+define( 'MediumAlphaImageExtension', '.medium.avif' );
+define( 'BigAlphaImageExtension', '.big.avif' );
+define( 'LargeAlphaImageExtension', '' );
+define( 'HugeAlphaImageExtension', '.huge.avif' );
 
 if ( GetServerName() === 'localhost' )
 {

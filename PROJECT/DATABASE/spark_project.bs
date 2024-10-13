@@ -32,7 +32,7 @@ spark-project
         Title : STRING = "{{latin 1 1 4 6}}¨fr:{{latin 1 1 4 6}}" | needed, multilingual
         Heading : STRING = "{{Title}}" | optional, multilingual_text
         Teaser : STRING = "{{latin 2 4 5 10}}¨fr:{{latin 2 4 5 10}}" | optional, multilingual_text
-        ImagePath : STRING = "/static/image/article/beach.jpg|/static/image/article/california.jpg|/static/image/article/clouds.jpg|/static/image/article/road.jpg|/static/image/article/sunset.jpg|/static/image/article/tree.jpg" | optional, multilingual_image
+        ImagePath : STRING = "/static/image/article/beach.avif|/static/image/article/california.avif|/static/image/article/clouds.avif|/static/image/article/road.avif|/static/image/article/sunset.avif|/static/image/article/tree.avif" | optional, multilingual_image
         ImageVerticalPosition : STRING = "bottom|center|top" | enumeration "[ 'top', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'bottom']^[ 'Top', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Bottom' ]", default_value "center"
         ImageHorizontalPosition : STRING = "left|center|right" | enumeration "[ 'left', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'right']^[ 'Left', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Right' ]", default_value "center"
         ImageFit : STRING = "cover" | enumeration "[ 'cover', 'contain']^[ 'Cover', 'Contain' ]", default_value "cover"
@@ -84,7 +84,7 @@ spark-project
         ImageSide : STRING = "left|right" | enumeration "[ 'left', 'right' ]^[ 'Left', 'Right' ]", default_value left
         ImageLegend : STRING = "" | optional, multilingual_text
         ImageLegendArray : LIST[ STRING ] = "{}" | optional, multilingual_text_list, default_value "[]"
-        ImagePath : STRING = "/static/image/article/autumn.jpg|/static/image/article/castle.jpg|/static/image/article/drink.jpg|/static/image/article/groynes.jpg|/static/image/article/mountains.jpg|/static/image/article/spring.jpg" | optional, multilingual_image
+        ImagePath : STRING = "/static/image/article/autumn.avif|/static/image/article/castle.avif|/static/image/article/drink.avif|/static/image/article/groynes.avif|/static/image/article/mountains.avif|/static/image/article/spring.avif" | optional, multilingual_image
         ImagePathArray : LIST[ STRING ] = "{}" | optional, image_list, default_value "[]"
         ImageVerticalPosition : STRING = "bottom|center|top" | enumeration "[ 'top', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'bottom']^[ 'Top', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Bottom' ]", default_value "center"
         ImageVerticalPositionArray : LIST[ STRING ] = "{}" | enumeration_list "[ 'top', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'bottom']^[ 'Top', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Bottom' ]", default_value "[]"
