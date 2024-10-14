@@ -29,7 +29,7 @@ class DELETE_FILE_CONTROLLER extends CONTROLLER
                     }
                 }
             }
-            else if ( HasSuffix( $file_path, TransparentImageExtension ) )
+            else if ( HasSuffix( $file_path, AlphaImageExtension ) )
             {
                 foreach ( [ HugeAlphaImageExtension, BigAlphaImageExtension, MediumAlphaImageExtension, SmallAlphaImageExtension, TinyAlphaImageExtension, PreloadAlphaImageExtension ] as $suffix )
                 {

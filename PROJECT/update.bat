@@ -28,7 +28,4 @@ copy %TOOL%\SPARK\PROJECT\CODE\MODEL\user_model.phx CODE\MODEL\
 copy %TOOL%\SPARK\PROJECT\CODE\VIEW\show_error_view.pht CODE\VIEW\
 copy %TOOL%\SPARK\PROJECT\DATABASE\administration.bt DATABASE\
 copy %TOOL%\SPARK\PROJECT\DATABASE\api.bt DATABASE\
-mkdir CODE\STYLE\VISTA\
-copy %TOOL%\VISTA\CODE\STYLUS\*.* CODE\STYLE\VISTA\
-mkdir www\static\script\
-copy %TOOL%\VISTA\CODE\JAVASCRIPT\*.* www\static\script\
+call update_vista.bat

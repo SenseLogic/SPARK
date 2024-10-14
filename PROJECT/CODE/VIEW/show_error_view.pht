@@ -10,7 +10,7 @@
             height: 100vh;
             width: 100vw;
 
-            background: url( "/static/image/error/404<# ImageExtension #>" ) no-repeat center center / contain, url( "/static/image/error/background<# ImageExtension #>" ) center center / cover;
+            background: url( "/static/image/error/404<# ImageExtension #>" ) no-repeat center center / contain, url( "/static/image/error/background<# AlphaImageExtension #>" ) center center / cover;
         }
     </style>
     <body>

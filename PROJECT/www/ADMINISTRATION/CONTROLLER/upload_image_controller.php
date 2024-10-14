@@ -21,24 +21,25 @@ class UPLOAD_IMAGE_CONTROLLER extends CONTROLLER
              $source_file_name = GetValidFileName( GetUploadedFileName( 'File' ));
              $source_file_extension = GetFileExtension( $source_file_name );
 
-             $target_file_name = GetValidFileName( GetSuffixedFilePath( $source_file_name, '_' . GetCurrentDateTimeSuffix() ) );
+             $media_file_name = GetValidFileName( GetSuffixedFilePath( $source_file_name, '_' . GetCurrentDateTimeSuffix() ) );
 
             if ( $source_file_extension === '.jpg'
                  || $source_file_extension === '.JPG'
                  || $source_file_extension === '.jpeg'
                  || $source_file_extension === '.JPEG' )
             {
-                $target_file_name = ReplaceSuffix( $target_file_name, $source_file_extension, '.jpg' );
+                $media_file_name = ReplaceSuffix( $media_file_name, $source_file_extension, '.jpg' );
             }
             else if ( $source_file_extension === '.png'
                       || $source_file_extension === '.PNG' )
             {
-                $target_file_name = ReplaceSuffix( $target_file_name, $source_file_extension, '.png' );
+                $media_file_name = ReplaceSuffix( $media_file_name, $source_file_extension, '.png' );
             }
 
              $media_folder_path = GetBaseFolderName() . '/media/image/';
-             $media_file_path = $media_folder_path . $target_file_name;
+             $media_file_path = $media_folder_path . $media_file_name;
 
+             $target_file_name = $media_file_name;
              $target_file_extension = GetFileExtension( $target_file_name );
 
             if ( $target_file_extension === '.jpg' )

@@ -24,7 +24,6 @@ define( 'DefaultLanguageCode', 'en' );
 define( 'LanguageTagArray', [ 'en', 'fr', 'de' ] );
 define( 'LanguageCodeArray', [ 'en', 'fr', 'de' ] );
 define( 'LanguageNameArray', [ 'English', 'French', 'German' ] );
-define( 'GoogleAnalyticsTrackingId', 'G-ABCDEFGHIJ' );
 define( 'ImageExtension', '.avif' );
 define( 'PreloadImageExtension', '.preload.avif' );
 define( 'TinyImageExtension', '.tiny.avif' );
@@ -41,6 +40,7 @@ define( 'MediumAlphaImageExtension', '.medium.avif' );
 define( 'BigAlphaImageExtension', '.big.avif' );
 define( 'LargeAlphaImageExtension', '' );
 define( 'HugeAlphaImageExtension', '.huge.avif' );
+define( 'GoogleAnalyticsTrackingId', 'G-ABCDEFGHIJ' );
 
 if ( GetServerName() === 'localhost' )
 {
