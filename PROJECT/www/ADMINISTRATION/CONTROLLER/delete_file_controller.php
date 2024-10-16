@@ -21,7 +21,7 @@ class DELETE_FILE_CONTROLLER extends CONTROLLER
         {
             if ( HasSuffix( $file_path, ImageExtension ) )
             {
-                foreach ( [ HugeImageExtension, BigImageExtension, MediumImageExtension, SmallImageExtension, TinyImageExtension, PreloadImageExtension ] as  $suffix )
+                foreach ( [ HugeImageExtension, BigImageExtension, LargeImageExtension, WideImageExtension, MediumImageExtension, SmallImageExtension, TinyImageExtension, PreloadImageExtension ] as  $suffix )
                 {
                     if ( FileExists( $file_path . $suffix ) )
                     {
@@ -31,7 +31,7 @@ class DELETE_FILE_CONTROLLER extends CONTROLLER
             }
             else if ( HasSuffix( $file_path, AlphaImageExtension ) )
             {
-                foreach ( [ HugeAlphaImageExtension, BigAlphaImageExtension, MediumAlphaImageExtension, SmallAlphaImageExtension, TinyAlphaImageExtension, PreloadAlphaImageExtension ] as $suffix )
+                foreach ( [ HugeAlphaImageExtension, BigAlphaImageExtension, LargeAlphaImageExtension, WideAlphaImageExtension, MediumAlphaImageExtension, SmallAlphaImageExtension, TinyAlphaImageExtension, PreloadAlphaImageExtension ] as $suffix )
                 {
                     if ( FileExists( $file_path . $suffix ) )
                     {
