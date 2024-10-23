@@ -13,6 +13,7 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
 
     attribute
         Route,
+        PageRoute,
         LanguageArray,
         PageArray,
         BlockArray,
@@ -36,6 +37,12 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
         parent::constructor( language_code );
 
         .Route = route;
+        .PageRoute = explode( '#', .Route )[ 0 ];
+
+        if ( .PageRoute === '' )
+        {
+            .PageRoute = 'home';
+        }
 
         .LanguageArray = GetDatabaseLanguageArray();
         .LanguageArray = GetActiveLanguageArray( .LanguageArray );

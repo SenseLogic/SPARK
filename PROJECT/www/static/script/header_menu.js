@@ -30,8 +30,8 @@ AddEventListener(
             {
                 element.ToggleClass(
                     "is-selected",
-                    element.dataset.viewName === ViewName
-                    || ViewName.startsWith( element.dataset.viewName + "/" )
+                    element.dataset.viewRoute === ViewRoute
+                    || ViewRoute.startsWith( element.dataset.viewRoute + "/" )
                     );
             }
             );

@@ -151,19 +151,19 @@
 </style>
 <div id="header-menu" class="header-menu">
     <div class="large-padded-container header-menu-button-container">
-        <div class="margin-right-auto! scaled-button header-menu-button" data-view-name="home" onclick="ShowView( 'home' )">
+        <div class="margin-right-auto! scaled-button header-menu-button" data-view-route="home" onclick="ShowView( 'home' )">
             <# .GetProcessedTextBySlug( 'header-menu-home-button' ) #>
         </div>
-        <div class="scaled-button header-menu-button header-menu-desktop-button" data-view-name="articles" onclick="ShowView( 'articles' )">
+        <div class="scaled-button header-menu-button header-menu-desktop-button" data-view-route="articles" onclick="ShowView( 'articles' )">
             <# .GetProcessedTextBySlug( 'header-menu-articles-button' ) #>
         </div>
-        <div class="scaled-button header-menu-button header-menu-desktop-button" data-view-name="privacy-policy" onclick="ShowView( 'privacy-policy' )">
+        <div class="scaled-button header-menu-button header-menu-desktop-button" data-view-route="privacy-policy" onclick="ShowView( 'privacy-policy' )">
             <# .GetProcessedTextBySlug( 'header-menu-privacy-policy-button' ) #>
         </div>
-        <div class="scaled-button header-menu-button header-menu-desktop-button" data-view-name="legal-notice" onclick="ShowView( 'legal-notice' )">
+        <div class="scaled-button header-menu-button header-menu-desktop-button" data-view-route="legal-notice" onclick="ShowView( 'legal-notice' )">
             <# .GetProcessedTextBySlug( 'header-menu-legal-notice-button' ) #>
         </div>
-        <div class="margin-right-auto! scaled-button header-menu-button header-menu-desktop-button" data-view-name="contact" onclick="ShowView( 'contact' )">
+        <div class="margin-right-auto! scaled-button header-menu-button header-menu-desktop-button" data-view-route="contact" onclick="ShowView( 'contact' )">
             <# .GetProcessedTextBySlug( 'header-menu-contact-button' ) #>
         </div>
         <div class="scaled-button header-menu-button <# ( .LanguageCode === 'en' ) ? 'is-used' : '' #>" onclick="SetLanguageCode( 'en' )">
@@ -176,19 +176,19 @@
         </div>
     </div>
     <div class="header-menu-mobile-button-container">
-        <div class="scaled-button header-menu-mobile-button" data-view-name="home" onclick="ShowView( 'home' )">
+        <div class="scaled-button header-menu-mobile-button" data-view-route="home" onclick="ShowView( 'home' )">
             <# .GetProcessedTextBySlug( 'header-menu-home-button' ) #>
         </div>
-        <div class="scaled-button header-menu-mobile-button" data-view-name="articles" onclick="ShowView( 'articles' )">
+        <div class="scaled-button header-menu-mobile-button" data-view-route="articles" onclick="ShowView( 'articles' )">
             <# .GetProcessedTextBySlug( 'header-menu-articles-button' ) #>
         </div>
-        <div class="scaled-button header-menu-mobile-button" data-view-name="privacy-policy" onclick="ShowView( 'privacy-policy' )">
+        <div class="scaled-button header-menu-mobile-button" data-view-route="privacy-policy" onclick="ShowView( 'privacy-policy' )">
             <# .GetProcessedTextBySlug( 'header-menu-privacy-policy-button' ) #>
         </div>
-        <div class="scaled-button header-menu-mobile-button" data-view-name="legal-notice" onclick="ShowView( 'legal-notice' )">
+        <div class="scaled-button header-menu-mobile-button" data-view-route="legal-notice" onclick="ShowView( 'legal-notice' )">
             <# .GetProcessedTextBySlug( 'header-menu-legal-notice-button' ) #>
         </div>
-        <div class="scaled-button header-menu-mobile-button" data-view-name="contact" onclick="ShowView( 'contact' )">
+        <div class="scaled-button header-menu-mobile-button" data-view-route="contact" onclick="ShowView( 'contact' )">
             <# .GetProcessedTextBySlug( 'header-menu-contact-button' ) #>
         </div>
         <div class="scaled-button header-menu-icon-button header-menu-close-button" onclick="CloseHeaderMenu()">
@@ -228,8 +228,8 @@
                 {
                     element.ToggleClass(
                         "is-selected",
-                        element.dataset.viewName === ViewName
-                        || ViewName.startsWith( element.dataset.viewName + "/" )
+                        element.dataset.viewRoute === ViewRoute
+                        || ViewRoute.startsWith( element.dataset.viewRoute + "/" )
                         );
                 }
                 );

@@ -87,7 +87,7 @@
   "url": "<?php echo htmlspecialchars( $meta_page_url ); ?>"
 }
 </script>
-<title>Spark Project</title>
+<title>Spark Project | <?php echo htmlspecialchars( $meta_title ); ?></title>
 <link rel="canonical" href="<?php echo htmlspecialchars( $meta_page_url ); ?>">
 <link rel="icon" href="/favicon.ico"/>
 <link rel="icon" sizes="512x512" href="/favicon-512x512.png"/>

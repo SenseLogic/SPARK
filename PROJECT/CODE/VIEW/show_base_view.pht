@@ -3,9 +3,10 @@
     // -- VARIABLES
 
     var
-        OldViewName = "",
-        ViewName,
-        SectionName;
+        OldViewRoute = "",
+        ViewRoute,
+        SectionName,
+        LanguageCode = "<# .LanguageCode #>";
 
     // -- FUNCTIONS
 
@@ -16,6 +17,75 @@
 
         InitializeAutoplayVideos();
         InitializeAutohideVideos();
+    }
+
+
+
+    function SetTitleAndDescription(
+        title,
+        description
+        )
+    {
+        var
+            meta_description_element;
+
+        document.title = title;
+        meta_description_element = GetElement( 'meta[name="description"]' );
+
+        if ( meta_description_element !== null )
+        {
+            meta_description_element.setAttribute( 'content', description );
+        }
+    }
+
+    // ~~
+
+    function HydrateView(
+        route
+        )
+    {
+        var
+            script_element,
+            static_script_element,
+            static_script_element_array,
+            template_content_element,
+            template_element,
+            view_element;
+
+        for ( view_element of GetElements( ".view" ) )
+        {
+            if ( view_element.dataset.viewRoute === ViewRoute )
+            {
+                template_element = view_element.firstElementChild;
+
+                if ( template_element
+                     && template_element.tagName.toLowerCase() === "template" )
+                {
+                    template_content_element = document.importNode( template_element.content, true );
+                    view_element.replaceChild( template_content_element, template_element );
+                    static_script_element_array = template_content_element.querySelectorAll( "script" );
+
+                    for ( static_script_element of static_script_element_array )
+                    {
+                        script_element = document.createElement( "script" );
+
+                        if ( static_script_element.src )
+                        {
+                            script_element.src = static_script_element.src;
+                        }
+                        else
+                        {
+                            script_element.textContent = static_script_element.textContent;
+                        }
+
+                        view_element.appendChild( script_element );
+                        static_script_element.remove();
+                    }
+                }
+
+                break;
+            }
+        }
     }
 
     // ~~
@@ -45,19 +115,21 @@
         {
             if ( route !== undefined )
             {
-                SetRoute( "/<# .LanguageCode #>/" + route.RemovePrefix( "/" ) );
+                SetRoute( "/" + LanguageCode + "/" + route.RemovePrefix( "/" ) );
             }
 
             TrackRoute();
-            OldViewName = ViewName;
-            ViewName = GetRoute( "/<# .LanguageCode #>/", "/" );
+            OldViewRoute = ViewRoute;
+            ViewRoute = GetRoute( "/" + LanguageCode + "/", "/" );
 
-            if ( ViewName === "" )
+            if ( ViewRoute === "" )
             {
-                ViewName = "home";
+                ViewRoute = "home";
             }
 
             SectionName = GetHash();
+
+            HydrateView( ViewRoute );
             EmitEvent( "update-view" );
         }
     }
@@ -80,7 +152,7 @@
         view_element
         )
     {
-        view_element.Fade( view_element.dataset.viewName === ViewName );
+        view_element.Fade( view_element.dataset.viewRoute === ViewRoute );
     }
 
     // ~~
@@ -92,7 +164,7 @@
         var
             route;
 
-        route = GetRoute( "/<# .LanguageCode #>/", "/" );
+        route = GetRoute( "/" + LanguageCode + "/", "/" );
 
         if ( route === "" )
         {
@@ -110,25 +182,25 @@
         )
     {
         var
-            view_name_was_found,
+            view_route_was_found,
             section_element,
             view_element;
 
-        if ( ViewName !== OldViewName )
+        if ( ViewRoute !== OldViewRoute )
         {
-            view_name_was_found = false;
+            view_route_was_found = false;
 
             for ( view_element of GetElements( ".view" ) )
             {
                 FadeView( view_element );
 
-                if ( view_element.dataset.viewName === ViewName )
+                if ( view_element.dataset.viewRoute === ViewRoute )
                 {
-                    view_name_was_found = true;
+                    view_route_was_found = true;
                 }
             }
 
-            if ( !view_name_was_found )
+            if ( !view_route_was_found )
             {
                 SetUrl( '/' );
             }
@@ -154,7 +226,7 @@
                     {
                         SetScrollPosition( section_element.GetTopPosition() - 48 * GetRemRatio() );
                     },
-                    ( ViewName === OldViewName ) ? 0.2 : 0
+                    ( ViewRoute === OldViewRoute ) ? 0.2 : 0
                     );
             }
         }
@@ -163,9 +235,17 @@
 <div>
     <? include 'PAGE/loader_page.php'; ?>
     <? foreach ( var page_id => var page; .PageByIdMap ) { ?>
-        <div class="extended-container view is-hidden" data-view-name="<# page.Route #>">
-            <? include 'PAGE/' .. str_replace( '-', '_', page.TypeSlug ) .. '_page.php'; ?>
-        </div>
+        <? if ( page.Route == .PageRoute ) { ?>
+            <div class="extended-container view is-hidden" data-view-route="<# page.Route #>">
+                <? include 'PAGE/' .. str_replace( '-', '_', page.TypeSlug ) .. '_page.php'; ?>
+            </div>
+        <? } else { ?>
+            <div class="extended-container view is-hidden" data-view-route="<# page.Route #>">
+                <template>
+                    <? include 'PAGE/' .. str_replace( '-', '_', page.TypeSlug ) .. '_page.php'; ?>
+                </template>
+            </div>
+        <? } ?>
     <? } ?>
     <? include 'BLOCK/scroll_top_button.php'; ?>
     <? include 'BLOCK/cookie_consent.php'; ?>

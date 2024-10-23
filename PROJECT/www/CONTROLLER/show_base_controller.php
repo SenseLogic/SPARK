@@ -13,6 +13,7 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
 
     public
         $Route,
+        $PageRoute,
         $LanguageArray,
         $PageArray,
         $BlockArray,
@@ -36,6 +37,12 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
         parent::__construct( $language_code );
 
         $this->Route = $route;
+        $this->PageRoute = explode( '#', $this->Route )[ 0 ];
+
+        if ( $this->PageRoute === '' )
+        {
+            $this->PageRoute = 'home';
+        }
 
         $this->LanguageArray = GetDatabaseLanguageArray();
         $this->LanguageArray = GetActiveLanguageArray( $this->LanguageArray );
