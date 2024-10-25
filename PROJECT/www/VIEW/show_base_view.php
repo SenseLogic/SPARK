@@ -4,38 +4,26 @@
 
     var
         OldViewRoute = "",
-        ViewRoute,
-        SectionName,
-        LanguageCode = "<?php echo $this->LanguageCode; ?>";
+        ViewRoute = "",
+        SectionName = "",
+        LanguageCode = "<?php echo $this->LanguageCode; ?>",
+        ViewElement = null;
 
     // -- FUNCTIONS
 
-    function InitializeView(
+    function GetViewElement(
+        route
         )
     {
-        EmitEvent( "initialize-view" );
-
-        InitializeAutoplayVideos();
-        InitializeAutohideVideos();
-    }
-
-
-
-    function SetTitleAndDescription(
-        title,
-        description
-        )
-    {
-        var
-            meta_description_element;
-
-        document.title = title;
-        meta_description_element = GetElement( 'meta[name="description"]' );
-
-        if ( meta_description_element !== null )
+        for ( view_element of GetElements( ".view" ) )
         {
-            meta_description_element.setAttribute( 'content', description );
+            if ( view_element.dataset.viewRoute === ViewRoute )
+            {
+                return view_element;
+            }
         }
+
+        return null;
     }
 
     // ~~
@@ -52,15 +40,18 @@
             template_element,
             view_element;
 
-        for ( view_element of GetElements( ".view" ) )
+        view_element = GetViewElement( route );
+
+        if ( view_element !== null )
         {
-            if ( view_element.dataset.viewRoute === ViewRoute )
+            if ( !view_element.HasClass( "is-hydrated" ) )
             {
                 template_element = view_element.firstElementChild;
 
                 if ( template_element
                      && template_element.tagName.toLowerCase() === "template" )
                 {
+                    ViewElement = view_element;
                     template_content_element = document.importNode( template_element.content, true );
                     view_element.replaceChild( template_content_element, template_element );
                     static_script_element_array = template_content_element.querySelectorAll( "script" );
@@ -83,7 +74,31 @@
                     }
                 }
 
-                break;
+                view_element.AddClass( "is-hydrated" );
+            }
+        }
+    }
+
+    // ~~
+
+    function InitializeView(
+        route
+        )
+    {
+        view_element = GetViewElement( route );
+
+        if ( view_element !== null )
+        {
+            if ( !view_element.HasClass( "is-initialized" ) )
+            {
+                view_element.GetElements( ".appearing-block" )
+                    .AddIntersectionObserver( true, 0.25, "is-visible" )
+                    .AddIntersectionObserver( false, 0.0, "", "is-visible" );
+
+                InitializeAutoplayVideos( view_element );
+                InitializeAutohideVideos( view_element );
+
+                view_element.AddClass( "is-initialized" );
             }
         }
     }
@@ -130,6 +145,8 @@
             SectionName = GetHash();
 
             HydrateView( ViewRoute );
+            InitializeView( ViewRoute );
+
             EmitEvent( "update-view" );
         }
     }
@@ -255,14 +272,8 @@
     // -- STATEMENTS
 
     HandleScrollEvent( 1, "body", "is-scrolled" );
-
-    GetElements( ".appearing-block" )
-        .AddIntersectionObserver( true, 0.25, "is-visible" )
-        .AddIntersectionObserver( false, 0.0, "", "is-visible" );
-
     AddEventListener( "update-view", UpdateView );
 
-    InitializeView();
     ShowView();
     HandleResizeEvent( ResizeView );
     HandleRouteEvent( ShowView );
