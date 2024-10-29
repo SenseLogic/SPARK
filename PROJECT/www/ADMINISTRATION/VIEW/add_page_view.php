@@ -18,6 +18,7 @@
             title_field,
             heading_field,
             teaser_field,
+            text_field,
             image_path_field,
             image_vertical_position_field,
             image_horizontal_position_field,
@@ -41,6 +42,7 @@
         title_field = add_page_form.Title;
         heading_field = add_page_form.Heading;
         teaser_field = add_page_form.Teaser;
+        text_field = add_page_form.Text;
         image_path_field = add_page_form.ImagePath;
         image_vertical_position_field = add_page_form.ImageVerticalPosition;
         image_horizontal_position_field = add_page_form.ImageHorizontalPosition;
@@ -63,6 +65,7 @@
         title_field.RemoveClass( "form-field-error" );
         heading_field.RemoveClass( "form-field-error" );
         teaser_field.RemoveClass( "form-field-error" );
+        text_field.RemoveClass( "form-field-error" );
         image_path_field.RemoveClass( "form-field-error" );
         image_vertical_position_field.RemoveClass( "form-field-error" );
         image_horizontal_position_field.RemoveClass( "form-field-error" );
@@ -262,7 +265,7 @@
                     <?php echo htmlspecialchars( GetTextBySlug( 'Language Code Array' ) ); ?> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="LanguageCodeArray">
-                    <dropdown-list-component class="form-component" result-name="LanguageCodeArray" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"  option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'en', 'fr', 'de', 'ja' ,'ru' ] ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'English', 'French', 'German', 'Japanese', 'Russian' ] ) ) ); ?>"></dropdown-list-component>
+                    <dropdown-list-component class="form-component" result-name="LanguageCodeArray" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"  option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'en', 'fr', 'de', 'ja', 'ru' ] ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'English', 'French', 'German', 'Japanese', 'Russian' ] ) ) ); ?>"></dropdown-list-component>
                 </div>
                 <?php
                      $field_name = 'IsActive';
@@ -335,6 +338,24 @@
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="Teaser">
                     <multilingual-text-input-component class="form-component" result-name="Teaser" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-text-input-component>
+                </div>
+                <?php
+                     $field_name = 'Text';
+
+                    if ( HasQueryValue( $field_name ) )
+                    {
+                         $field_value = GetQueryValue( $field_name );
+                    }
+                    else
+                    {
+                        $field_value = '';
+                    }
+                ?>
+                <div class="form-field-name" data-is-column-title data-column-name="Text">
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Text' ) ); ?> :
+                </div>
+                <div class="form-field-value" data-is-column-value data-column-name="Text">
+                    <multilingual-text-input-component class="form-component" result-name="Text" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-text-input-component>
                 </div>
                 <?php
                      $field_name = 'ImagePath';

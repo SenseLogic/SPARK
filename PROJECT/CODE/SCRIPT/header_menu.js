@@ -3,7 +3,6 @@
 function OpenHeaderMenu(
     )
 {
-    console.log( "hello" );
     GetElements( ".header-menu" ).AddClass( "is-open" );
     SetScrollPosition( 0 );
 }

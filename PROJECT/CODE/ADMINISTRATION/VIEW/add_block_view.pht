@@ -308,7 +308,7 @@
                     <% GetTextBySlug( 'Content Slug' ) %> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="ContentSlug">
-                    <dropdown-component class="form-component" result-name="ContentSlug" result-value="<% GetValueText( field_value ) %>"  option-values="<% GetValueText( GetJsonText( GetElementPropertyArray( .BlockContentArray, 'Slug' ) ) ) %>" option-names="<% GetValueText( GetJsonText( GetUntranslatedElementArray( GetElementPropertyArray( .BlockContentArray,'Name' ) ) ) ) %>"></dropdown-component>
+                    <dropdown-component class="form-component" result-name="ContentSlug" result-value="<% GetValueText( field_value ) %>"  option-values="<% GetValueText( GetJsonText( GetElementPropertyArray( .BlockContentArray, 'Slug' ) ) ) %>" option-names="<% GetValueText( GetJsonText( GetUntranslatedElementArray( GetElementPropertyArray( .BlockContentArray, 'Name' ) ) ) ) %>"></dropdown-component>
                 </div>
                 <?
                     var field_name = 'TypeSlug';
@@ -362,7 +362,7 @@
                     <% GetTextBySlug( 'Language Code Array' ) %> :
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="LanguageCodeArray">
-                    <dropdown-list-component class="form-component" result-name="LanguageCodeArray" result-value="<% GetValueText( field_value ) %>"  option-values="<% GetValueText( GetJsonText( [ 'en', 'fr', 'de', 'ja' ,'ru' ] ) ) %>" option-names="<% GetValueText( GetJsonText( [ 'English', 'French', 'German', 'Japanese', 'Russian' ] ) ) %>"></dropdown-list-component>
+                    <dropdown-list-component class="form-component" result-name="LanguageCodeArray" result-value="<% GetValueText( field_value ) %>"  option-values="<% GetValueText( GetJsonText( [ 'en', 'fr', 'de', 'ja', 'ru' ] ) ) %>" option-names="<% GetValueText( GetJsonText( [ 'English', 'French', 'German', 'Japanese', 'Russian' ] ) ) %>"></dropdown-list-component>
                 </div>
                 <?
                     var field_name = 'MinimumHeight';

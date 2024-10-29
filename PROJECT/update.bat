@@ -28,4 +28,4 @@ copy %TOOL%\SPARK\PROJECT\CODE\MODEL\user_model.phx CODE\MODEL\
 copy %TOOL%\SPARK\PROJECT\CODE\VIEW\show_error_view.pht CODE\VIEW\
 copy %TOOL%\SPARK\PROJECT\DATABASE\administration.bt DATABASE\
 copy %TOOL%\SPARK\PROJECT\DATABASE\api.bt DATABASE\
-call update_vista.bat
+call install.bat

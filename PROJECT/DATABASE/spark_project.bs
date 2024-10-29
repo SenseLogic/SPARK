@@ -27,11 +27,12 @@ spark-project
         Route : STRING = "" | optional, filled title, processed, default_value ""
         TypeSlug : PAGE_TYPE.Slug | processed, is_slug, enumeration "GetElementPropertyArray( .PageTypeArray, 'Slug' )^GetUntranslatedElementArray( GetElementPropertyArray( .PageTypeArray, 'Name' ) )"
         Number : FLOAT64 | ascending, default_value 1
-        LanguageCodeArray : LIST[ LANGUAGE.Code ] = "{ en ~ fr }" | enumeration_list "[ 'en', 'fr', 'de', 'ja' ,'ru' ]^[ 'English', 'French', 'German', 'Japanese', 'Russian' ]", default_value "[ \"en\", \"fr\" ]"
+        LanguageCodeArray : LIST[ LANGUAGE.Code ] = "{ en ~ fr }" | enumeration_list "[ 'en', 'fr', 'de', 'ja', 'ru' ]^[ 'English', 'French', 'German', 'Japanese', 'Russian' ]", default_value "[ \"en\", \"fr\" ]"
         IsActive : BOOL = "true" | enumeration "[ '0', '1' ]^[ 'False', 'True' ]", default_value 1
         Title : STRING = "{{latin 1 1 4 6}}¨fr:{{latin 1 1 4 6}}" | needed, multilingual
         Heading : STRING = "{{Title}}" | optional, multilingual_text
-        Teaser : STRING = "{{latin 2 4 5 10}}¨fr:{{latin 2 4 5 10}}" | optional, multilingual_text
+        Teaser : STRING = "{{latin 1 2 5 10}}¨fr:{{latin 1 2 5 10}}" | optional, multilingual_text
+        Text : STRING = "{{latin 2 4 5 10}}¨fr:{{latin 2 4 5 10}}" | optional, multilingual_text
         ImagePath : STRING = "/static/image/article/beach.avif|/static/image/article/california.avif|/static/image/article/clouds.avif|/static/image/article/road.avif|/static/image/article/sunset.avif|/static/image/article/tree.avif" | optional, multilingual_image
         ImageVerticalPosition : STRING = "bottom|center|top" | enumeration "[ 'top', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'bottom']^[ 'Top', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Bottom' ]", default_value "center"
         ImageHorizontalPosition : STRING = "left|center|right" | enumeration "[ 'left', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'right']^[ 'Left', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Right' ]", default_value "center"
@@ -68,10 +69,10 @@ spark-project
         Slug : STRING = "" | optional, is_slug, default_value "...-page-block-..."
         PageId : TUID = "{{PAGE.Id}}" | processed, enumeration "GetElementPropertyArray( .PageArray, 'Id' )^GetUntranslatedElementArray( GetElementPropertyArray( .PageArray, 'Title' ) )"
         CategorySlug : BLOCK_CATEGORY.Slug = "content" | processed, is_slug, enumeration "GetElementPropertyArray( .BlockCategoryArray, 'Slug' )^GetUntranslatedElementArray( GetElementPropertyArray( .BlockCategoryArray, 'Name' ) )", default_value "content"
-        ContentSlug : BLOCK_CONTENT.Slug = "text" | is_slug, enumeration "GetElementPropertyArray( .BlockContentArray, 'Slug' )^GetUntranslatedElementArray( GetElementPropertyArray( .BlockContentArray,'Name' ) )", default_value "text"
+        ContentSlug : BLOCK_CONTENT.Slug = "text" | is_slug, enumeration "GetElementPropertyArray( .BlockContentArray, 'Slug' )^GetUntranslatedElementArray( GetElementPropertyArray( .BlockContentArray, 'Name' ) )", default_value "text"
         TypeSlug : BLOCK_TYPE.Slug | processed, is_slug, enumeration "GetElementPropertyArray( .BlockTypeArray, 'Slug' )^GetUntranslatedElementArray( GetElementPropertyArray( .BlockTypeArray, 'Name' ) )"
         Number : FLOAT64 | ascending, default_value 1
-        LanguageCodeArray : LIST[ LANGUAGE.Code ] = "{ en ~ fr }" | enumeration_list "[ 'en', 'fr', 'de', 'ja' ,'ru' ]^[ 'English', 'French', 'German', 'Japanese', 'Russian' ]", default_value "[ \"en\", \"fr\" ]"
+        LanguageCodeArray : LIST[ LANGUAGE.Code ] = "{ en ~ fr }" | enumeration_list "[ 'en', 'fr', 'de', 'ja', 'ru' ]^[ 'English', 'French', 'German', 'Japanese', 'Russian' ]", default_value "[ \"en\", \"fr\" ]"
         MinimumHeight : STRING = "56.25%" | default_value "56.25%"
         Title : STRING = "{{latin 1 1 4 6}}¨fr:{{latin 1 1 4 6}}" | optional, multilingual_text
         TitleArray : LIST[ STRING ] = "{}" | optional, multilingual_text_list, default_value "[]"

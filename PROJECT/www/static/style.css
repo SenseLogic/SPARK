@@ -1740,6 +1740,10 @@ body.is-scrolled .header-menu:not(.is-open) {
   margin-top: 1rem;
   font-size: 1.5rem;
 }
+.page-heading-text {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
 .page-padding {
   flex-grow: 1;
 }

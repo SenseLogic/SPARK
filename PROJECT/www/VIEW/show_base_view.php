@@ -273,7 +273,6 @@
 
     HandleScrollEvent( 1, "body", "is-scrolled" );
     AddEventListener( "update-view", UpdateView );
-
     ShowView();
     HandleResizeEvent( ResizeView );
     HandleRouteEvent( ShowView );

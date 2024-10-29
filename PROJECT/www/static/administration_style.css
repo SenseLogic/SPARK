@@ -466,7 +466,7 @@ html {
   color: #001e68;
 }
 body {
-  min-height: 100vh;
+  min-height: 100dvh;
 }
 a {
   text-decoration: none;
@@ -672,7 +672,7 @@ textarea {
   background: url("/static/image/admin/logo.svg") no-repeat center center/contain;
 }
 .page-container {
-  min-height: 100vh;
+  min-height: 100dvh;
   display: grid;
   grid-template-rows: 2.5rem auto 1fr;
   grid-template-columns: 1fr;
@@ -1099,7 +1099,7 @@ textarea {
   grid-template-columns: repeat(3, auto);
 }
 .page-table {
-  grid-template-columns: repeat(21, auto);
+  grid-template-columns: repeat(22, auto);
 }
 .block-category-table {
   grid-template-columns: repeat(3, auto);
