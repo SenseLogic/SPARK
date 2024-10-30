@@ -3,7 +3,7 @@
     {
         position: relative;
 
-        min-height: var( --viewport-height );
+        min-height: 100dvh;
 
         display: flex;
         justify-content: center;

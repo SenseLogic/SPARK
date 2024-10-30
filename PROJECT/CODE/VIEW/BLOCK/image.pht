@@ -1,7 +1,7 @@
 <style file="image.styl">
     .image
     {
-        max-height: var( --viewport-height );
+        max-height: 100dvh;
         width: 100%;
         padding: 1rem;
 

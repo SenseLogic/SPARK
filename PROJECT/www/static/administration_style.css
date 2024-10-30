@@ -715,7 +715,7 @@ textarea {
   border: 1px solid #e20048;
 }
 .page-title {
-  width: calc(var(--viewport-width) - 1.2rem);
+  width: calc(100lvw - 1.2rem);
   padding: 1rem;
   grid-area: title;
   font-size: 1.5rem;
@@ -751,7 +751,7 @@ textarea {
   max-width: 30rem;
 }
 .form-limited {
-  max-width: calc(var(--viewport-width) - 2rem);
+  max-width: calc(100lvw - 2rem);
 }
 .form-extended {
   grid-column: 1/-1;
@@ -934,14 +934,14 @@ textarea {
   }
 }
 .card {
-  max-width: calc(var(--viewport-width) - 2rem - 0.5px);
+  max-width: calc(100lvw - 2rem - 0.5px);
   border: 1px solid #ccc;
   border-radius: 0.5rem;
   padding: 1rem;
 }
 @media (min-width: 120em) {
   .card {
-    max-width: calc(var(--viewport-width) * 0.5 - 2rem - 0.5px);
+    max-width: calc(100lvw * 0.5 - 2rem - 0.5px);
   }
 }
 .small-card-list {
@@ -960,19 +960,19 @@ textarea {
   }
 }
 .small-card {
-  max-width: calc(var(--viewport-width) - 2rem - 0.5px);
+  max-width: calc(100lvw - 2rem - 0.5px);
   border: 1px solid #ccc;
   border-radius: 0.5rem;
   padding: 1rem;
 }
 @media (min-width: 80em) {
   .small-card {
-    max-width: calc(var(--viewport-width) * 0.5 - 2rem - 0.5px);
+    max-width: calc(100lvw * 0.5 - 2rem - 0.5px);
   }
 }
 @media (min-width: 120em) {
   .small-card {
-    max-width: calc(var(--viewport-width) * 0.3333333 - 2rem - 0.5px);
+    max-width: calc(100lvw * 0.3333333 - 2rem - 0.5px);
   }
 }
 .tool-container {

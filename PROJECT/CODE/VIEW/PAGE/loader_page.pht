@@ -4,7 +4,7 @@
         z-index: 10000;
         position: fixed;
 
-        height: var( --viewport-height );
+        height: 100dvh;
         width: 100%;
 
         background: #FFFFFF;
@@ -39,7 +39,7 @@
         right: 0;
 
         background: linear-gradient( #FFFFFF, #FFFFFF );
-        background-size: auto var( --viewport-height );
+        background-size: auto 100dvh;
 
         animation: loader-page-slider-appearing-animation 1s;
     }
@@ -53,7 +53,7 @@
 
         100%
         {
-            bottom: var( --viewport-height );
+            bottom: 100dvh;
         }
     }
 
