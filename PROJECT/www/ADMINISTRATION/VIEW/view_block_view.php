@@ -225,29 +225,29 @@
             </div><~false<>
             <?php
                  $field_mode = 'view';
-                 $field_name = 'ImageLegend';
-                 $field_title = 'Image Legend';
-                 $field_value = $this->Block->ImageLegend;
-                require __DIR__ . '/' . 'BLOCK/block_image_legend_field.php';
+                 $field_name = 'ImageTitle';
+                 $field_title = 'Image Title';
+                 $field_value = $this->Block->ImageTitle;
+                require __DIR__ . '/' . 'BLOCK/block_image_title_field.php';
             ?><>
-            <div class="form-field-name" data-is-column-title data-column-name="ImageLegend">
-                <?php echo htmlspecialchars( GetTextBySlug( 'Image Legend' ) ); ?> :
+            <div class="form-field-name" data-is-column-title data-column-name="ImageTitle">
+                <?php echo htmlspecialchars( GetTextBySlug( 'Image Title' ) ); ?> :
             </div>
-            <div class="form-field-value" data-is-column-value data-column-name="ImageLegend">
-                <multilingual-text-input-component class="form-component" result-name="ImageLegend" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->ImageLegend ) ); ?>" is-readonly language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-text-input-component>
+            <div class="form-field-value" data-is-column-value data-column-name="ImageTitle">
+                <multilingual-text-input-component class="form-component" result-name="ImageTitle" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->ImageTitle ) ); ?>" is-readonly language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-text-input-component>
             </div><~false<>
             <?php
                  $field_mode = 'view';
-                 $field_name = 'ImageLegendArray';
-                 $field_title = 'Image Legend Array';
-                 $field_value = $this->Block->ImageLegendArray;
-                require __DIR__ . '/' . 'BLOCK/block_image_legend_array_field.php';
+                 $field_name = 'ImageTitleArray';
+                 $field_title = 'Image Title Array';
+                 $field_value = $this->Block->ImageTitleArray;
+                require __DIR__ . '/' . 'BLOCK/block_image_title_array_field.php';
             ?><>
-            <div class="form-field-name" data-is-column-title data-column-name="ImageLegendArray">
-                <?php echo htmlspecialchars( GetTextBySlug( 'Image Legend Array' ) ); ?> :
+            <div class="form-field-name" data-is-column-title data-column-name="ImageTitleArray">
+                <?php echo htmlspecialchars( GetTextBySlug( 'Image Title Array' ) ); ?> :
             </div>
-            <div class="form-field-value" data-is-column-value data-column-name="ImageLegendArray">
-                <multilingual-text-input-list-component class="form-component" result-name="ImageLegendArray" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->ImageLegendArray ) ); ?>" is-readonly language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-text-input-list-component>
+            <div class="form-field-value" data-is-column-value data-column-name="ImageTitleArray">
+                <multilingual-text-input-list-component class="form-component" result-name="ImageTitleArray" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->ImageTitleArray ) ); ?>" is-readonly language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-text-input-list-component>
             </div><~false<>
             <?php
                  $field_mode = 'view';

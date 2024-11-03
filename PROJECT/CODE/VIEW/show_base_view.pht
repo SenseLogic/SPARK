@@ -92,7 +92,7 @@
             if ( !view_element.HasClass( "is-initialized" ) )
             {
                 view_element.GetElements( ".appearing-block" )
-                    .AddIntersectionObserver( true, 0.25, "is-visible" )
+                    .AddIntersectionObserver( true, 0.1, "is-visible" )
                     .AddIntersectionObserver( false, 0.0, "", "is-visible" );
 
                 InitializeAutoplayVideos( view_element );

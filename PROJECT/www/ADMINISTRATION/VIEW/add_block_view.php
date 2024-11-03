@@ -26,8 +26,8 @@
             route_field,
             route_array_field,
             image_side_field,
-            image_legend_field,
-            image_legend_array_field,
+            image_title_field,
+            image_title_array_field,
             image_path_field,
             image_path_array_field,
             image_vertical_position_field,
@@ -59,8 +59,8 @@
         route_field = add_block_form.Route;
         route_array_field = add_block_form.RouteArray;
         image_side_field = add_block_form.ImageSide;
-        image_legend_field = add_block_form.ImageLegend;
-        image_legend_array_field = add_block_form.ImageLegendArray;
+        image_title_field = add_block_form.ImageTitle;
+        image_title_array_field = add_block_form.ImageTitleArray;
         image_path_field = add_block_form.ImagePath;
         image_path_array_field = add_block_form.ImagePathArray;
         image_vertical_position_field = add_block_form.ImageVerticalPosition;
@@ -91,8 +91,8 @@
         route_field.RemoveClass( "form-field-error" );
         route_array_field.RemoveClass( "form-field-error" );
         image_side_field.RemoveClass( "form-field-error" );
-        image_legend_field.RemoveClass( "form-field-error" );
-        image_legend_array_field.RemoveClass( "form-field-error" );
+        image_title_field.RemoveClass( "form-field-error" );
+        image_title_array_field.RemoveClass( "form-field-error" );
         image_path_field.RemoveClass( "form-field-error" );
         image_path_array_field.RemoveClass( "form-field-error" );
         image_vertical_position_field.RemoveClass( "form-field-error" );
@@ -545,7 +545,7 @@
                     <dropdown-component class="form-component" result-name="ImageSide" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>"  option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'left', 'right' ] ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'Left', 'Right' ] ) ) ); ?>"></dropdown-component>
                 </div>
                 <?php
-                     $field_name = 'ImageLegend';
+                     $field_name = 'ImageTitle';
 
                     if ( HasQueryValue( $field_name ) )
                     {
@@ -556,14 +556,14 @@
                         $field_value = '';
                     }
                 ?>
-                <div class="form-field-name" data-is-column-title data-column-name="ImageLegend">
-                    <?php echo htmlspecialchars( GetTextBySlug( 'Image Legend' ) ); ?> :
+                <div class="form-field-name" data-is-column-title data-column-name="ImageTitle">
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Image Title' ) ); ?> :
                 </div>
-                <div class="form-field-value" data-is-column-value data-column-name="ImageLegend">
-                    <multilingual-text-input-component class="form-component" result-name="ImageLegend" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-text-input-component>
+                <div class="form-field-value" data-is-column-value data-column-name="ImageTitle">
+                    <multilingual-text-input-component class="form-component" result-name="ImageTitle" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-text-input-component>
                 </div>
                 <?php
-                     $field_name = 'ImageLegendArray';
+                     $field_name = 'ImageTitleArray';
 
                     if ( HasQueryValue( $field_name ) )
                     {
@@ -574,11 +574,11 @@
                         $field_value = "[]";
                     }
                 ?>
-                <div class="form-field-name" data-is-column-title data-column-name="ImageLegendArray">
-                    <?php echo htmlspecialchars( GetTextBySlug( 'Image Legend Array' ) ); ?> :
+                <div class="form-field-name" data-is-column-title data-column-name="ImageTitleArray">
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Image Title Array' ) ); ?> :
                 </div>
-                <div class="form-field-value" data-is-column-value data-column-name="ImageLegendArray">
-                    <multilingual-text-input-list-component class="form-component" result-name="ImageLegendArray" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-text-input-list-component>
+                <div class="form-field-value" data-is-column-value data-column-name="ImageTitleArray">
+                    <multilingual-text-input-list-component class="form-component" result-name="ImageTitleArray" result-value="<?php echo htmlspecialchars( GetValueText( $field_value ) ); ?>" language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-text-input-list-component>
                 </div>
                 <?php
                      $field_name = 'ImagePath';

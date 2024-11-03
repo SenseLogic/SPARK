@@ -35,8 +35,8 @@ class DO_EDIT_BLOCK_CONTROLLER extends VIEW_CONTROLLER
              $route = GetPostValue( 'Route' );
              $route_array = GetJsonObject( GetPostValue( 'RouteArray' ) );
              $image_side = GetPostValue( 'ImageSide' );
-             $image_legend = GetPostValue( 'ImageLegend' );
-             $image_legend_array = GetJsonObject( GetPostValue( 'ImageLegendArray' ) );
+             $image_title = GetPostValue( 'ImageTitle' );
+             $image_title_array = GetJsonObject( GetPostValue( 'ImageTitleArray' ) );
              $image_path = GetPostValue( 'ImagePath' );
              $image_path_array = GetJsonObject( GetPostValue( 'ImagePathArray' ) );
              $image_vertical_position = GetPostValue( 'ImageVerticalPosition' );
@@ -49,7 +49,7 @@ class DO_EDIT_BLOCK_CONTROLLER extends VIEW_CONTROLLER
              $document_path = GetPostValue( 'DocumentPath' );
              $document_path_array = GetJsonObject( GetPostValue( 'DocumentPathArray' ) );
 
-            SetDatabaseBlock( $block_id, $slug, $page_id, $category_slug, $content_slug, $type_slug, $number, $language_code_array, $minimum_height, $title, $title_array, $teaser, $teaser_array, $text, $text_array, $route, $route_array, $image_side, $image_legend, $image_legend_array, $image_path, $image_path_array, $image_vertical_position, $image_vertical_position_array, $image_horizontal_position, $image_horizontal_position_array, $image_fit, $video_path, $video_path_array, $document_path, $document_path_array );
+            SetDatabaseBlock( $block_id, $slug, $page_id, $category_slug, $content_slug, $type_slug, $number, $language_code_array, $minimum_height, $title, $title_array, $teaser, $teaser_array, $text, $text_array, $route, $route_array, $image_side, $image_title, $image_title_array, $image_path, $image_path_array, $image_vertical_position, $image_vertical_position_array, $image_horizontal_position, $image_horizontal_position_array, $image_fit, $video_path, $video_path_array, $document_path, $document_path_array );
 
             Redirect( GetParentRoute( null, '/admin/block' ) );
         }

@@ -225,29 +225,29 @@
             </div><~false<>
             <?
                 var field_mode = 'view';
-                var field_name = 'ImageLegend';
-                var field_title = 'Image Legend';
-                var field_value = .Block.ImageLegend;
-                include 'BLOCK/block_image_legend_field.php';
+                var field_name = 'ImageTitle';
+                var field_title = 'Image Title';
+                var field_value = .Block.ImageTitle;
+                include 'BLOCK/block_image_title_field.php';
             ?><>
-            <div class="form-field-name" data-is-column-title data-column-name="ImageLegend">
-                <% GetTextBySlug( 'Image Legend' ) %> :
+            <div class="form-field-name" data-is-column-title data-column-name="ImageTitle">
+                <% GetTextBySlug( 'Image Title' ) %> :
             </div>
-            <div class="form-field-value" data-is-column-value data-column-name="ImageLegend">
-                <multilingual-text-input-component class="form-component" result-name="ImageLegend" result-value="<% GetValueText( .Block.ImageLegend ) %>" is-readonly language-tags="<% GetValueText( GetJsonText( LanguageTagArray ) ) %>"></multilingual-text-input-component>
+            <div class="form-field-value" data-is-column-value data-column-name="ImageTitle">
+                <multilingual-text-input-component class="form-component" result-name="ImageTitle" result-value="<% GetValueText( .Block.ImageTitle ) %>" is-readonly language-tags="<% GetValueText( GetJsonText( LanguageTagArray ) ) %>"></multilingual-text-input-component>
             </div><~false<>
             <?
                 var field_mode = 'view';
-                var field_name = 'ImageLegendArray';
-                var field_title = 'Image Legend Array';
-                var field_value = .Block.ImageLegendArray;
-                include 'BLOCK/block_image_legend_array_field.php';
+                var field_name = 'ImageTitleArray';
+                var field_title = 'Image Title Array';
+                var field_value = .Block.ImageTitleArray;
+                include 'BLOCK/block_image_title_array_field.php';
             ?><>
-            <div class="form-field-name" data-is-column-title data-column-name="ImageLegendArray">
-                <% GetTextBySlug( 'Image Legend Array' ) %> :
+            <div class="form-field-name" data-is-column-title data-column-name="ImageTitleArray">
+                <% GetTextBySlug( 'Image Title Array' ) %> :
             </div>
-            <div class="form-field-value" data-is-column-value data-column-name="ImageLegendArray">
-                <multilingual-text-input-list-component class="form-component" result-name="ImageLegendArray" result-value="<% GetValueText( .Block.ImageLegendArray ) %>" is-readonly language-tags="<% GetValueText( GetJsonText( LanguageTagArray ) ) %>"></multilingual-text-input-list-component>
+            <div class="form-field-value" data-is-column-value data-column-name="ImageTitleArray">
+                <multilingual-text-input-list-component class="form-component" result-name="ImageTitleArray" result-value="<% GetValueText( .Block.ImageTitleArray ) %>" is-readonly language-tags="<% GetValueText( GetJsonText( LanguageTagArray ) ) %>"></multilingual-text-input-list-component>
             </div><~false<>
             <?
                 var field_mode = 'view';

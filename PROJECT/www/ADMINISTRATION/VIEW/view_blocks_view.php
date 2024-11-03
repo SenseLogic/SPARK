@@ -67,10 +67,10 @@
                 <?php echo htmlspecialchars( GetTextBySlug( 'Image Side' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( GetTextBySlug( 'Image Legend' ) ); ?>
+                <?php echo htmlspecialchars( GetTextBySlug( 'Image Title' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( GetTextBySlug( 'Image Legend Array' ) ); ?>
+                <?php echo htmlspecialchars( GetTextBySlug( 'Image Title Array' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
                 <?php echo htmlspecialchars( GetTextBySlug( 'Image Path' ) ); ?>
@@ -199,7 +199,7 @@
                     </div>
                     <div class="sortable-table-cell filter-cell">
                         <div class="form-translation-list">
-                            <?php foreach ( GetTranslationArray( $block->ImageLegend, DefaultLanguageCode ) as  $translation ) { ?>
+                            <?php foreach ( GetTranslationArray( $block->ImageTitle, DefaultLanguageCode ) as  $translation ) { ?>
                                 <div class="form-translation-data">
                                     <?php echo htmlspecialchars( GetValueText( $translation->Data ) ); ?>
                                 </div>
@@ -210,7 +210,7 @@
                         </div>
                     </div>
                     <div class="sortable-table-cell filter-cell">
-                        <?php echo htmlspecialchars( GetValueText( $block->ImageLegendArray ) ); ?>
+                        <?php echo htmlspecialchars( GetValueText( $block->ImageTitleArray ) ); ?>
                     </div>
                     <div class="sortable-table-cell filter-cell">
                         <?php echo htmlspecialchars( GetValueText( $block->ImagePath ) ); ?>
@@ -368,17 +368,17 @@
                         <div class="form-field-value" data-is-column-value data-column-name="ImageSide">
                             <dropdown-component class="form-component" result-name="ImageSide" result-value="<?php echo htmlspecialchars( GetValueText( $block->ImageSide ) ); ?>" is-readonly  option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'left', 'right' ] ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( [ 'Left', 'Right' ] ) ) ); ?>"></dropdown-component>
                         </div>
-                        <div class="form-field-name" data-is-column-title data-column-name="ImageLegend">
-                            <?php echo htmlspecialchars( GetTextBySlug( 'Image Legend' ) ); ?> :
+                        <div class="form-field-name" data-is-column-title data-column-name="ImageTitle">
+                            <?php echo htmlspecialchars( GetTextBySlug( 'Image Title' ) ); ?> :
                         </div>
-                        <div class="form-field-value" data-is-column-value data-column-name="ImageLegend">
-                            <multilingual-text-input-component class="form-component" result-name="ImageLegend" result-value="<?php echo htmlspecialchars( GetValueText( $block->ImageLegend ) ); ?>" is-readonly language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-text-input-component>
+                        <div class="form-field-value" data-is-column-value data-column-name="ImageTitle">
+                            <multilingual-text-input-component class="form-component" result-name="ImageTitle" result-value="<?php echo htmlspecialchars( GetValueText( $block->ImageTitle ) ); ?>" is-readonly language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-text-input-component>
                         </div>
-                        <div class="form-field-name" data-is-column-title data-column-name="ImageLegendArray">
-                            <?php echo htmlspecialchars( GetTextBySlug( 'Image Legend Array' ) ); ?> :
+                        <div class="form-field-name" data-is-column-title data-column-name="ImageTitleArray">
+                            <?php echo htmlspecialchars( GetTextBySlug( 'Image Title Array' ) ); ?> :
                         </div>
-                        <div class="form-field-value" data-is-column-value data-column-name="ImageLegendArray">
-                            <multilingual-text-input-list-component class="form-component" result-name="ImageLegendArray" result-value="<?php echo htmlspecialchars( GetValueText( $block->ImageLegendArray ) ); ?>" is-readonly language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-text-input-list-component>
+                        <div class="form-field-value" data-is-column-value data-column-name="ImageTitleArray">
+                            <multilingual-text-input-list-component class="form-component" result-name="ImageTitleArray" result-value="<?php echo htmlspecialchars( GetValueText( $block->ImageTitleArray ) ); ?>" is-readonly language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-text-input-list-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="ImagePath">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Image Path' ) ); ?> :

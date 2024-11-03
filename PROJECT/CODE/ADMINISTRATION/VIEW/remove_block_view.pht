@@ -106,17 +106,17 @@
                 <div class="form-field-value" data-is-column-value data-column-name="ImageSide">
                     <dropdown-component class="form-component" result-name="ImageSide" result-value="<% GetValueText( .Block.ImageSide ) %>" is-readonly  option-values="<% GetValueText( GetJsonText( [ 'left', 'right' ] ) ) %>" option-names="<% GetValueText( GetJsonText( [ 'Left', 'Right' ] ) ) %>"></dropdown-component>
                 </div>
-                <div class="form-field-name" data-is-column-title data-column-name="ImageLegend">
-                    <% GetTextBySlug( 'Image Legend' ) %> :
+                <div class="form-field-name" data-is-column-title data-column-name="ImageTitle">
+                    <% GetTextBySlug( 'Image Title' ) %> :
                 </div>
-                <div class="form-field-value" data-is-column-value data-column-name="ImageLegend">
-                    <multilingual-text-input-component class="form-component" result-name="ImageLegend" result-value="<% GetValueText( .Block.ImageLegend ) %>" is-readonly language-tags="<% GetValueText( GetJsonText( LanguageTagArray ) ) %>"></multilingual-text-input-component>
+                <div class="form-field-value" data-is-column-value data-column-name="ImageTitle">
+                    <multilingual-text-input-component class="form-component" result-name="ImageTitle" result-value="<% GetValueText( .Block.ImageTitle ) %>" is-readonly language-tags="<% GetValueText( GetJsonText( LanguageTagArray ) ) %>"></multilingual-text-input-component>
                 </div>
-                <div class="form-field-name" data-is-column-title data-column-name="ImageLegendArray">
-                    <% GetTextBySlug( 'Image Legend Array' ) %> :
+                <div class="form-field-name" data-is-column-title data-column-name="ImageTitleArray">
+                    <% GetTextBySlug( 'Image Title Array' ) %> :
                 </div>
-                <div class="form-field-value" data-is-column-value data-column-name="ImageLegendArray">
-                    <multilingual-text-input-list-component class="form-component" result-name="ImageLegendArray" result-value="<% GetValueText( .Block.ImageLegendArray ) %>" is-readonly language-tags="<% GetValueText( GetJsonText( LanguageTagArray ) ) %>"></multilingual-text-input-list-component>
+                <div class="form-field-value" data-is-column-value data-column-name="ImageTitleArray">
+                    <multilingual-text-input-list-component class="form-component" result-name="ImageTitleArray" result-value="<% GetValueText( .Block.ImageTitleArray ) %>" is-readonly language-tags="<% GetValueText( GetJsonText( LanguageTagArray ) ) %>"></multilingual-text-input-list-component>
                 </div>
                 <div class="form-field-name" data-is-column-title data-column-name="ImagePath">
                     <% GetTextBySlug( 'Image Path' ) %> :

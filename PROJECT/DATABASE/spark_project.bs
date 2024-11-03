@@ -83,8 +83,8 @@ spark-project
         Route : STRING = "" | optional, multilingual
         RouteArray : LIST[ STRING ] = "{}" | optional, multilingual_list, default_value "[]"
         ImageSide : STRING = "left|right" | enumeration "[ 'left', 'right' ]^[ 'Left', 'Right' ]", default_value left
-        ImageLegend : STRING = "" | optional, multilingual_text
-        ImageLegendArray : LIST[ STRING ] = "{}" | optional, multilingual_text_list, default_value "[]"
+        ImageTitle : STRING = "" | optional, multilingual_text
+        ImageTitleArray : LIST[ STRING ] = "{}" | optional, multilingual_text_list, default_value "[]"
         ImagePath : STRING = "/static/image/article/autumn.avif|/static/image/article/castle.avif|/static/image/article/drink.avif|/static/image/article/groynes.avif|/static/image/article/mountains.avif|/static/image/article/spring.avif" | optional, multilingual_image
         ImagePathArray : LIST[ STRING ] = "{}" | optional, image_list, default_value "[]"
         ImageVerticalPosition : STRING = "bottom|center|top" | enumeration "[ 'top', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'bottom']^[ 'Top', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Bottom' ]", default_value "center"

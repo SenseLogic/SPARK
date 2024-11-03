@@ -25,7 +25,7 @@ class ADD_CONTACT_CONTROLLER extends CONTROLLER
 
         if ( IsValidCaptcha( $captcha, $this->Session->Captcha ) )
         {
-            AddDatabaseContact( $name, $company, $email, $phone, $subject, $message );
+            AddDatabaseContact( GetRandomTuid(), $name, $company, $email, $phone, $subject, $message );
             // .SendEmails( name, company, email, phone, subject, message );
 
             SetStatus( 201 );
@@ -47,6 +47,8 @@ class ADD_CONTACT_CONTROLLER extends CONTROLLER
         string $message
         )
     {
+        $message = ReplaceTexts( text, "<name>", $name );
+
         SendEmail(
             'mail.spark-project.com',
             25,
