@@ -86,7 +86,7 @@
     <div class="text-and-video-video">
         <div class="text-and-video-video-image" style="padding-top: <# block.MinimumHeight #>; background: url( '<# block.ImagePath #>?v=<# VersionTimestamp #>' ) no-repeat <# block.ImageHorizontalPosition #> <# block.ImageVerticalPosition #> / <# block.ImageFit #>, url( '<# GetPreloadImagePath( block.ImagePath ) #>?v=<# VersionTimestamp #>' ) no-repeat <# block.ImageHorizontalPosition #> <# block.ImageVerticalPosition #> / <# block.ImageFit #>">
             <? if ( block.VideoPath !== '' ) { ?>
-                <video class="autoplay-video text-and-video-video-video" data-video-path="<# block.VideoPath #>|<# block.VideoPath #>.medium.mp4@max-width:65em|<# block.VideoPath #>.small.mp4@max-width:35em" muted playsinline loop poster="<# block.ImagePath #>.small.avif?v=<# VersionTimestamp #>"></video>
+                <video class="autoplay-video text-and-video-video-video" data-video-path="<# block.VideoPath #>|<# block.VideoPath #>.wide.mp4@max-width:65em|<# block.VideoPath #>.small.mp4@max-width:35em" muted playsinline loop poster="<# block.ImagePath #>.small.avif?v=<# VersionTimestamp #>"></video>
             <? } ?>
         </div>
     </div>

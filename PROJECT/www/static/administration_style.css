@@ -530,9 +530,9 @@ textarea {
   color: #001e68;
 }
 .is-needed::after {
+  float: right;
   content: "*";
   color: #e20048;
-  float: right;
 }
 .is-hidden {
   display: none !important;
