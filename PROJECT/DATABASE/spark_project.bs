@@ -36,7 +36,7 @@ spark-project
         ImagePath : STRING = "/static/image/article/beach.avif|/static/image/article/california.avif|/static/image/article/clouds.avif|/static/image/article/road.avif|/static/image/article/sunset.avif|/static/image/article/tree.avif" | optional, multilingual_image
         ImageVerticalPosition : STRING = "bottom|center|top" | enumeration "[ 'top', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'bottom']^[ 'Top', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Bottom' ]", default_value "center"
         ImageHorizontalPosition : STRING = "left|center|right" | enumeration "[ 'left', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'right']^[ 'Left', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Right' ]", default_value "center"
-        ImageFit : STRING = "cover" | enumeration "[ 'cover', 'contain']^[ 'Cover', 'Contain' ]", default_value "cover"
+        ImageFit : STRING = "cover" | enumeration "[ 'cover', 'contain' ]^[ 'Cover', 'Contain' ]", default_value "cover"
         VideoPath : STRING = "/static/video/article/venice_1.mp4|/static/video/article/venice_2.mp4|/static/video/article/venice_3.mp4|/static/video/article/mountain.mp4" | optional, multilingual_video
         MetaTitle : STRING = "{{Title}}" | optional, multilingual
         MetaDescription : STRING = "{{Teaser}}" | optional, multilingual_text
@@ -91,7 +91,7 @@ spark-project
         ImageVerticalPositionArray : LIST[ STRING ] = "{}" | enumeration_list "[ 'top', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'bottom']^[ 'Top', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Bottom' ]", default_value "[]"
         ImageHorizontalPosition : STRING = "left|center|right" | enumeration "[ 'left', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'right']^[ 'Left', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Right' ]", default_value "center"
         ImageHorizontalPositionArray : LIST[ STRING ] = "{}" | enumeration_list "[ 'left', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'right']^[ 'Left', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Right' ]", default_value "[]"
-        ImageFit : STRING = "cover" | enumeration "[ 'cover', 'contain']^[ 'Cover', 'Contain' ]", default_value "cover"
+        ImageFit : STRING = "cover" | enumeration "[ 'cover', 'contain' ]^[ 'Cover', 'Contain' ]", default_value "cover"
         VideoPath : STRING = "/static/video/article/venice_1.mp4|/static/video/article/venice_2.mp4|/static/video/article/venice_3.mp4|/static/video/article/mountain.mp4" | optional, multilingual_video
         VideoPathArray : LIST[ STRING ] = "{}" | optional, video_list, default_value "[]"
         DocumentPath : STRING = "/static/document/article/logo.pdf|" | optional, document

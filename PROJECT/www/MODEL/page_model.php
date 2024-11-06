@@ -115,7 +115,7 @@ function GetValidPageByIdMap(
                 );
     }
 
-return $page_by_id_map;
+    return $page_by_id_map;
 }
 
 // ~~

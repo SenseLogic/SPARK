@@ -1180,8 +1180,6 @@ body.is-appearing .loader-page-logo {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-position: center center;
-  background-size: cover;
   cursor: pointer;
 }
 .article-carousel-slide-text {

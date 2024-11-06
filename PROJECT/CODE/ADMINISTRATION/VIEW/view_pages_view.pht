@@ -303,7 +303,7 @@
                             <% GetTextBySlug( 'Image Fit' ) %> :
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="ImageFit">
-                            <dropdown-component class="form-component" result-name="ImageFit" result-value="<% GetValueText( page.ImageFit ) %>" is-readonly  option-values="<% GetValueText( GetJsonText( [ 'cover', 'contain'] ) ) %>" option-names="<% GetValueText( GetJsonText( [ 'Cover', 'Contain' ] ) ) %>"></dropdown-component>
+                            <dropdown-component class="form-component" result-name="ImageFit" result-value="<% GetValueText( page.ImageFit ) %>" is-readonly  option-values="<% GetValueText( GetJsonText( [ 'cover', 'contain' ] ) ) %>" option-names="<% GetValueText( GetJsonText( [ 'Cover', 'Contain' ] ) ) %>"></dropdown-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="VideoPath">
                             <% GetTextBySlug( 'Video Path' ) %> :

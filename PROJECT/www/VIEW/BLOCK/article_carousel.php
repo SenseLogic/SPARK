@@ -55,9 +55,6 @@
 
 
 
-
-
-
 <div id="article-carousel" class="article-carousel">
     <div id="article-carousel-strip" class="article-carousel-strip">
         <?php for (  $article_page_index = 0; $article_page_index <= $article_page_count; ++$article_page_index ) { ?>
