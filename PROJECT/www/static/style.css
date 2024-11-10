@@ -869,6 +869,29 @@ html {
   transform: translateX(-0.9em);
   content: "\2022";
 }
+.numbered-bullet-1 {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1em;
+}
+.numbered-bullet-2 {
+  margin-left: 1em;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1em;
+}
+.numbered-bullet-3 {
+  margin-left: 2em;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1em;
+}
+.numbered-bullet-4 {
+  margin-left: 3em;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1em;
+}
 .view {
   position: absolute;
   top: 0;
