@@ -872,25 +872,25 @@ html {
 .numbered-bullet-1 {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 1em;
+  gap: 0.5em;
 }
 .numbered-bullet-2 {
-  margin-left: 1em;
+  margin-left: 1.5em;
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 1em;
+  gap: 0.5em;
 }
 .numbered-bullet-3 {
-  margin-left: 2em;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 1em;
-}
-.numbered-bullet-4 {
   margin-left: 3em;
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 1em;
+  gap: 0.5em;
+}
+.numbered-bullet-4 {
+  margin-left: 4.5em;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5em;
 }
 .view {
   position: absolute;

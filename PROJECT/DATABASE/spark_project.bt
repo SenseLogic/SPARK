@@ -74,10 +74,10 @@ DefineLineTag( '* ', '<div class="paragraph bullet-1">', '</div>' );
 DefineLineTag( '  * ', '<div class="paragraph bullet-2">', '</div>' );
 DefineLineTag( '    * ', '<div class="paragraph bullet-3">', '</div>' );
 DefineLineTag( '      * ', '<div class="paragraph bullet-4">', '</div>' );
-DefineLineTag( '# ', '<div class="paragraph numbered-bullet-1"><div>', '</div></div>', '</div><div>' );
-DefineLineTag( '  # ', '<div class="paragraph numbered-bullet-2"><div>', '</div></div>', '</div><div>' );
-DefineLineTag( '    # ', '<div class="paragraph numbered-bullet-3"><div>', '</div></div>', '</div><div>' );
-DefineLineTag( '      # ', '<div class="paragraph numbered-bullet-4"><div>', '</div></div>', '</div><div>' );
+DefineLineTag( '# ', '<div class="paragraph numbered-bullet-1"><div>', '</div><div>', '</div></div>' );
+DefineLineTag( '  # ', '<div class="paragraph numbered-bullet-2"><div>', '</div><div>', '</div></div>' );
+DefineLineTag( '    # ', '<div class="paragraph numbered-bullet-3"><div>', '</div><div>', '</div></div>' );
+DefineLineTag( '      # ', '<div class="paragraph numbered-bullet-4"><div>', '</div><div>', '</div></div>' );
 DefineLineTag( '', '<div class="paragraph">', '</div>' );
 
 DefineDualTag( '**', '<b>', '</b>' );

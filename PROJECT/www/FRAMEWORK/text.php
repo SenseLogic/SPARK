@@ -994,18 +994,24 @@ function GetProcessedText(
 function DefineLineTag(
     string $line_tag,
     string $line_tag_opening_definition,
-    string $line_tag_closing_definition,
-    string $line_tag_splitting_definition = ''
+    string $line_tag_inner_definition,
+    string $line_tag_closing_definition = ''
     )
 {
     global
         $ProcessedLineTagArray,
         $ProcessedLineTagDefinitionArray;
 
+    if ( $line_tag_closing_definition === '' )
+    {
+        $line_tag_closing_definition = $line_tag_inner_definition;
+        $line_tag_inner_definition = '';
+    }
+
     array_push( $ProcessedLineTagArray, $line_tag );
     array_push( $ProcessedLineTagDefinitionArray, $line_tag_opening_definition );
+    array_push( $ProcessedLineTagDefinitionArray, $line_tag_inner_definition );
     array_push( $ProcessedLineTagDefinitionArray, $line_tag_closing_definition );
-    array_push( $ProcessedLineTagDefinitionArray, $line_tag_splitting_definition );
 }
 
 // ~~
@@ -1042,10 +1048,10 @@ function GetProcessedMultilineText(
                 {
                      $line_tag_definition_index = $processed_line_tag_index * 3;
                      $line_tag_opening_definition = $ProcessedLineTagDefinitionArray[ $line_tag_definition_index ];
-                     $line_tag_closing_definition = $ProcessedLineTagDefinitionArray[ $line_tag_definition_index + 1 ];
-                     $line_tag_splitting_definition = $ProcessedLineTagDefinitionArray[ $line_tag_definition_index + 2 ];
+                     $line_tag_inner_definition = $ProcessedLineTagDefinitionArray[ $line_tag_definition_index + 1 ];
+                     $line_tag_closing_definition = $ProcessedLineTagDefinitionArray[ $line_tag_definition_index + 2 ];
 
-                    if ( $line_tag_splitting_definition === '' )
+                    if ( $line_tag_inner_definition === '' )
                     {
                         $line_array[ $line_index ]
                             = $line_tag_opening_definition
@@ -1061,7 +1067,7 @@ function GetProcessedMultilineText(
                             $line_array[ $line_index ]
                                 = $line_tag_opening_definition
                                   . substr( $line, $processed_line_tag_character_count, $space_character_index - $processed_line_tag_character_count )
-                                  . $line_tag_splitting_definition
+                                  . $line_tag_inner_definition
                                   . substr( $line, $space_character_index + 1 )
                                   . $line_tag_closing_definition;
                         }
@@ -1070,7 +1076,7 @@ function GetProcessedMultilineText(
                             $line_array[ $line_index ]
                                 = $line_tag_opening_definition
                                   . substr( $line, $processed_line_tag_character_count )
-                                  . $line_tag_splitting_definition
+                                  . $line_tag_inner_definition
                                   . $line_tag_closing_definition;
                         }
                     }

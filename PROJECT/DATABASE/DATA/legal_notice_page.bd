@@ -11,5 +11,56 @@ PAGE
             ~ Legal notice
               ¨fr:Mention légale
             ~ Legal\nnotice
-              ¨fr:Mention\nlégale"'
+              ¨fr:Mention\nlégale
             ~ /static/image/article/mountains.avif
+
+BLOCK
+
+    Id Slug PageId CategorySlug ContentSlug TypeSlug Number LanguageCodeArray Text
+
+        %legal-notice-page-block-1-block
+            ~ legal-notice-page-block-1
+            ~ %legal-notice-page
+            ~ content
+            ~ text
+            ~ text
+            ~ 1
+            ~ { en ~ fr }
+            ~ ! Title\n
+              - item§item\n
+              ^ - item§item\n
+              ^ - item§item\n
+              ^   - item§item\n
+              ^   - item§item\n
+              ^     - item§item\n
+              ^     - item§item\n
+              - item§item\n
+              ^ - item§item\n
+              ^ - item§item\n
+              ^   - item§item\n
+              ^   - item§item\n
+              ^     - item§item\n
+              ^     - item§item\n
+              # 1. item§item\n
+              ^ # A. item§item\n
+              ^ # B. item§item\n
+              ^   # a. item§item\n
+              ^   # b. item§item\n
+              ^     # a. item§item\n
+              ^     # b. item§item\n
+              !! Subtitle\n
+              **Bold** %%italic%% __underlined__ ,,subscript,, \^\^superscript\^\^:\n
+              [[[
+              [[ Fruit || Vegetable ]]
+              [[ apple || potato ]]
+              [[ orange || carrot ]]
+              [[ kiwi || broccoli ]]
+              ]]]\n
+              For more information : ((http://www.wikipedia.com)(Wikipedia)).\n
+              !! Subtitle\n
+              <red>RED</red>\n
+              <green>GREEN</green>\n
+              <color<#00F>>BLUE</color>\n
+              <size<3rem>>BIG</size>\n
+              <weight<100>>THIN</weight>\n
+              **bold**

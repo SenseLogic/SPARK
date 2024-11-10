@@ -47,12 +47,12 @@
     <? } ?>
     <? if ( page.Teaser !== '' ) { ?>
         <div class="page-heading-teaser">
-            <# .GetProcessedText( page.Teaser ) #>
+            <# .GetProcessedMultilineText( page.Teaser ) #>
         </div>
     <? } ?>
     <? if ( page.Text !== '' ) { ?>
         <div class="page-heading-text">
-            <# .GetProcessedText( page.Text ) #>
+            <# .GetProcessedMultilineText( page.Text ) #>
         </div>
     <? } ?>
     <? include 'scroll_down_reminder.php'; ?>
