@@ -34,13 +34,13 @@ BLOCK
               ^   - item§item\n
               ^     - item§item\n
               ^     - item§item\n
-              - item§item\n
-              ^ - item§item\n
-              ^ - item§item\n
-              ^   - item§item\n
-              ^   - item§item\n
-              ^     - item§item\n
-              ^     - item§item\n
+              * item§item\n
+              ^ * item§item\n
+              ^ * item§item\n
+              ^   * item§item\n
+              ^   * item§item\n
+              ^     * item§item\n
+              ^     * item§item\n
               # 1. item§item\n
               ^ # A. item§item\n
               ^ # B. item§item\n
