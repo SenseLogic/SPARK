@@ -829,45 +829,65 @@ html {
 .title-4 {
   font-size: 1.25rem;
 }
-.dash-1 {
+.dash-bullet-1 {
   margin-left: 1em;
 }
-.dash-2 {
+.dash-bullet-2 {
   margin-left: 2em;
 }
-.dash-3 {
+.dash-bullet-3 {
   margin-left: 3em;
 }
-.dash-4 {
+.dash-bullet-4 {
   margin-left: 4em;
 }
-.dash-1::before,
-.dash-2::before,
-.dash-3::before,
-.dash-4::before {
+.dash-bullet-1::before,
+.dash-bullet-2::before,
+.dash-bullet-3::before,
+.dash-bullet-4::before {
   position: absolute;
   transform: translateX(-0.9em);
   content: "-";
 }
-.bullet-1 {
+.round-bullet-1 {
   margin-left: 1em;
 }
-.bullet-2 {
+.round-bullet-2 {
   margin-left: 2em;
 }
-.bullet-3 {
+.round-bullet-3 {
   margin-left: 3em;
 }
-.bullet-4 {
+.round-bullet-4 {
   margin-left: 4em;
 }
-.bullet-1::before,
-.bullet-2::before,
-.bullet-3::before,
-.bullet-4::before {
+.round-bullet-1::before,
+.round-bullet-2::before,
+.round-bullet-3::before,
+.round-bullet-4::before {
   position: absolute;
   transform: translateX(-0.9em);
   content: "\2022";
+}
+.hollow-bullet-1 {
+  margin-left: 1em;
+}
+.hollow-bullet-2 {
+  margin-left: 2em;
+}
+.hollow-bullet-3 {
+  margin-left: 3em;
+}
+.hollow-bullet-4 {
+  margin-left: 4em;
+}
+.hollow-bullet-1::before,
+.hollow-bullet-2::before,
+.hollow-bullet-3::before,
+.hollow-bullet-4::before {
+  position: absolute;
+  transform: translateX(-0.9em);
+  content: "\25E6";
 }
 .numbered-bullet-1 {
   display: grid;

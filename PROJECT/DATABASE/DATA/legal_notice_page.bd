@@ -41,13 +41,20 @@ BLOCK
               ^   * item§item\n
               ^     * item§item\n
               ^     * item§item\n
-              # 1. item§item\n
-              ^ # A. item§item\n
-              ^ # B. item§item\n
-              ^   # a. item§item\n
-              ^   # b. item§item\n
-              ^     # a. item§item\n
-              ^     # b. item§item\n
+              ° item§item\n
+              ^ ° item§item\n
+              ^ ° item§item\n
+              ^   ° item§item\n
+              ^   ° item§item\n
+              ^     ° item§item\n
+              ^     ° item§item\n
+              @ 1. item§item\n
+              ^ @ A. item§item\n
+              ^ @ B. item§item\n
+              ^   @ a. item§item\n
+              ^   @ b. item§item\n
+              ^     @ i. item§item\n
+              ^     @ ii. item§item\n
               !! Subtitle\n
               **Bold** %%italic%% __underlined__ ,,subscript,, \^\^superscript\^\^:\n
               [[[
