@@ -1,5 +1,5 @@
 <script>
-    // -- FUNCTIONS
+    // -- STATEMENTS
 
     DelayCall(
         function (
