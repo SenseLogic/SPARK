@@ -12,7 +12,7 @@
     // -- FUNCTIONS
 
     function GetViewElement(
-        route
+        view_route
         )
     {
         for ( view_element of GetElements( ".view" ) )
@@ -29,7 +29,7 @@
     // ~~
 
     function HydrateView(
-        route
+        view_route
         )
     {
         var
@@ -40,7 +40,7 @@
             template_element,
             view_element;
 
-        view_element = GetViewElement( route );
+        view_element = GetViewElement( view_route );
 
         if ( view_element !== null )
         {
@@ -75,6 +75,14 @@
                 }
 
                 view_element.AddClass( "is-hydrated" );
+
+                EmitEvent(
+                    "hydrate-view",
+                    {
+                        ViewElement : view_element,
+                        ViewRoute : view_route
+                    }
+                    );
             }
         }
     }
@@ -82,10 +90,10 @@
     // ~~
 
     function InitializeView(
-        route
+        view_route
         )
     {
-        view_element = GetViewElement( route );
+        view_element = GetViewElement( view_route );
 
         if ( view_element !== null )
         {
@@ -99,97 +107,15 @@
                 InitializeAutohideVideos( view_element );
 
                 view_element.AddClass( "is-initialized" );
+
+                EmitEvent(
+                    "initialize-view",
+                    {
+                        ViewElement : view_element,
+                        ViewRoute : view_route
+                    }
+                    );
             }
-        }
-    }
-
-    // ~~
-
-    function ShowView(
-        route
-        )
-    {
-        CloseHeaderMenu();
-
-        if ( route !== undefined
-             && route.startsWith( "http" ) )
-        {
-            OpenUrl( route );
-        }
-        else if ( route !== undefined
-                  && route.startsWith( "//" ) )
-        {
-            OpenUrl( route.slice( 1 ) );
-        }
-        else if ( route !== undefined
-                  && route.startsWith( "/" ) )
-        {
-            SetUrl( route );
-        }
-        else
-        {
-            if ( route !== undefined )
-            {
-                SetRoute( "/" + LanguageCode + "/" + route.RemovePrefix( "/" ) );
-            }
-
-            TrackRoute();
-            OldViewRoute = ViewRoute;
-            ViewRoute = GetRoute( "/" + LanguageCode + "/", "/" );
-
-            if ( ViewRoute === "" )
-            {
-                ViewRoute = "home";
-            }
-
-            SectionName = GetHash();
-
-            HydrateView( ViewRoute );
-            InitializeView( ViewRoute );
-
-            EmitEvent( "update-view" );
-        }
-    }
-
-    // ~~
-
-    function ResizeView(
-        )
-    {
-        if ( !IsMobileBrowser() )
-        {
-            EmitEvent( "update-view" );
-            InitializeAutohideVideos();
-        }
-    }
-
-    // ~~
-
-    function FadeView(
-        view_element
-        )
-    {
-        view_element.Fade( view_element.dataset.viewRoute === ViewRoute );
-    }
-
-    // ~~
-
-    function SetLanguageCode(
-        language_code
-        )
-    {
-        var
-            route;
-
-        route = GetRoute( "/" + LanguageCode + "/", "/" );
-
-        if ( route === "" )
-        {
-            SetUrl( "/" + language_code + "/" );
-        }
-        else
-        {
-            SetUrl( "/" + language_code + "/" + route + "/" );
         }
     }
 
@@ -214,6 +140,14 @@
                 if ( view_element.dataset.viewRoute === ViewRoute )
                 {
                     view_route_was_found = true;
+
+                    EmitEvent(
+                        "change-view",
+                        {
+                            ViewElement : view_element,
+                            ViewRoute
+                        }
+                        );
                 }
             }
 
@@ -247,6 +181,111 @@
                     );
             }
         }
+
+        EmitEvent(
+            "update-view",
+            {
+                ViewElement : GetViewElement( ViewRoute ),
+                ViewRoute
+            }
+            );
+    }
+
+    // ~~
+
+    function ShowView(
+        view_route
+        )
+    {
+        CloseHeaderMenu();
+
+        if ( view_route !== undefined
+             && view_route.startsWith( "http" ) )
+        {
+            OpenUrl( view_route );
+        }
+        else if ( view_route !== undefined
+                  && view_route.startsWith( "//" ) )
+        {
+            OpenUrl( view_route.slice( 1 ) );
+        }
+        else if ( view_route !== undefined
+                  && view_route.startsWith( "/" ) )
+        {
+            SetUrl( view_route );
+        }
+        else
+        {
+            if ( view_route !== undefined )
+            {
+                SetRoute( "/" + LanguageCode + "/" + view_route.RemovePrefix( "/" ) );
+            }
+
+            TrackRoute();
+            OldViewRoute = ViewRoute;
+            ViewRoute = GetRoute( "/" + LanguageCode + "/", "/" );
+
+            if ( ViewRoute === "" )
+            {
+                ViewRoute = "home";
+            }
+
+            SectionName = GetHash();
+
+            HydrateView( ViewRoute );
+            InitializeView( ViewRoute );
+            UpdateView();
+
+            EmitEvent(
+                "show-view",
+                {
+                    ViewElement : GetViewElement( ViewRoute ),
+                    ViewRoute
+                }
+                );
+        }
+    }
+
+    // ~~
+
+    function ResizeView(
+        )
+    {
+        if ( !IsMobileBrowser() )
+        {
+            UpdateView();
+            InitializeAutohideVideos();
+        }
+    }
+
+    // ~~
+
+    function FadeView(
+        view_element
+        )
+    {
+        view_element.Fade( view_element.dataset.viewRoute === ViewRoute );
+    }
+
+    // ~~
+
+    function SetLanguageCode(
+        language_code
+        )
+    {
+        var
+            view_route;
+
+        view_route = GetRoute( "/" + LanguageCode + "/", "/" );
+
+        if ( view_route === "" )
+        {
+            SetUrl( "/" + language_code + "/" );
+        }
+        else
+        {
+            SetUrl( "/" + language_code + "/" + view_route + "/" );
+        }
     }
 </script>
 <div>
@@ -272,7 +311,6 @@
     // -- STATEMENTS
 
     HandleScrollEvent( 1, "body", "is-scrolled" );
-    AddEventListener( "update-view", UpdateView );
     ShowView();
     HandleResizeEvent( ResizeView );
     HandleRouteEvent( ShowView );

@@ -14,7 +14,7 @@
 
 <div id="contact-map" class="contact-map" style="background: url( '/static/image/contact/background.avif' ) no-repeat center center / cover, url( '/static/image/contact/background.avif.preload.avif' ) no-repeat center center / cover">
 </div>
-<script src="//maps.googleapis.com/maps/api/js?key=RuxfYm8XiqdChb6CmygYRRDMnlIh8xnIKvy2ntc&language=fr&region=BE"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=M4Q52azGSJGNS0lCOeMwFBQZN6pnxKHsw9EY90P&language=<?php echo $this->LanguageCode; ?>&region=BE"></script>
 <script>
     // -- STATEMENTS
 

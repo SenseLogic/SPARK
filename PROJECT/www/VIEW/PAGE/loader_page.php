@@ -169,6 +169,7 @@
                 )
             {
                 GetElement( "body" ).AddClass( "is-appearing" );
+                EmitEvent( "reveal-view" );
             },
             1
             );
