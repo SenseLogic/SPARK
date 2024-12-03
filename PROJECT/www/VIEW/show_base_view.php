@@ -200,7 +200,9 @@
         CloseHeaderMenu();
 
         if ( view_route !== undefined
-             && view_route.startsWith( "http" ) )
+             && ( view_route.startsWith( "http:" )
+                  || view_route.startsWith( "https:" )
+                  || view_route.startsWith( "mailto:" ) ) )
         {
             OpenUrl( view_route );
         }

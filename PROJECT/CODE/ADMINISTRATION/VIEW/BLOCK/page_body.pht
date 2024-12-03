@@ -26,7 +26,9 @@
             OpenUrl( route.substring( 1 ) );
         }
         else if ( route.startsWith( "/" )
-                  || route.startsWith( "http" ))
+                  || route.startsWith( "http:" )
+                  || route.startsWith( "https:" )
+                  || route.startsWith( "mailto:" ) )
         {
             OpenUrl( route );
         }
