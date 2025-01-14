@@ -2,53 +2,25 @@
 
 <div id="view-language-view">
     <div class="page-section form-section">
-        <div class="form-container" data-is-row data-table-name="LANGUAGE"><~false<>
-            <?
-                var field_mode = 'view';
-                var field_name = 'Code';
-                var field_title = 'Code';
-                var field_value = .Language.Code;
-                include 'BLOCK/language_code_field.php';
-            ?><>
+        <div class="form-container" data-is-row data-table-name="LANGUAGE">
             <div class="form-field-name" data-is-column-title data-column-name="Code">
                 <% GetTextBySlug( 'Code' ) %> :
             </div>
             <div class="form-field-value" data-is-column-value data-column-name="Code">
                 <input-component class="form-component" result-name="Code" result-value="<% GetValueText( .Language.Code ) %>" is-readonly></input-component>
-            </div><~false<>
-            <?
-                var field_mode = 'view';
-                var field_name = 'Number';
-                var field_title = 'Number';
-                var field_value = .Language.Number;
-                include 'BLOCK/language_number_field.php';
-            ?><>
+            </div>
             <div class="form-field-name" data-is-column-title data-column-name="Number">
                 <% GetTextBySlug( 'Number' ) %> :
             </div>
             <div class="form-field-value" data-is-column-value data-column-name="Number">
                 <input-component class="form-component" result-name="Number" result-value="<% GetValueText( .Language.Number ) %>" is-readonly></input-component>
-            </div><~false<>
-            <?
-                var field_mode = 'view';
-                var field_name = 'Text';
-                var field_title = 'Text';
-                var field_value = .Language.Text;
-                include 'BLOCK/language_text_field.php';
-            ?><>
+            </div>
             <div class="form-field-name" data-is-column-title data-column-name="Text">
                 <% GetTextBySlug( 'Text' ) %> :
             </div>
             <div class="form-field-value" data-is-column-value data-column-name="Text">
                 <multilingual-input-component class="form-component" result-name="Text" result-value="<% GetValueText( .Language.Text ) %>" is-readonly language-tags="<% GetValueText( GetJsonText( LanguageTagArray ) ) %>"></multilingual-input-component>
-            </div><~false<>
-            <?
-                var field_mode = 'view';
-                var field_name = 'IsActive';
-                var field_title = 'Is Active';
-                var field_value = .Language.IsActive;
-                include 'BLOCK/language_is_active_field.php';
-            ?><>
+            </div>
             <div class="form-field-name" data-is-column-title data-column-name="IsActive">
                 <% GetTextBySlug( 'Is Active' ) %> :
             </div>

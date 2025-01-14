@@ -2,27 +2,13 @@
 
 <div id="view-text-view">
     <div class="page-section form-section">
-        <div class="form-container" data-is-row data-table-name="TEXT"><~false<>
-            <?
-                var field_mode = 'view';
-                var field_name = 'Slug';
-                var field_title = 'Slug';
-                var field_value = .Text.Slug;
-                include 'BLOCK/text_slug_field.php';
-            ?><>
+        <div class="form-container" data-is-row data-table-name="TEXT">
             <div class="form-field-name" data-is-column-title data-column-name="Slug">
                 <% GetTextBySlug( 'Slug' ) %> :
             </div>
             <div class="form-field-value" data-is-column-value data-column-name="Slug">
                 <input-component class="form-component" result-name="Slug" result-value="<% GetValueText( .Text.Slug ) %>" is-readonly></input-component>
-            </div><~false<>
-            <?
-                var field_mode = 'view';
-                var field_name = 'Text';
-                var field_title = 'Text';
-                var field_value = .Text.Text;
-                include 'BLOCK/text_text_field.php';
-            ?><>
+            </div>
             <div class="form-field-name" data-is-column-title data-column-name="Text">
                 <% GetTextBySlug( 'Text' ) %> :
             </div>
