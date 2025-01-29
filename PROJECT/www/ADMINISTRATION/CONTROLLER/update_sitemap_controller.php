@@ -1,13 +1,11 @@
 <?php // -- IMPORTS
 
-require_once __DIR__ . '/' . '../../FRAMEWORK/basil.php';
-require_once __DIR__ . '/' . '../../FRAMEWORK/sql.php';
 require_once __DIR__ . '/' . '../../MODEL/page_model.php';
 require_once __DIR__ . '/' . 'controller.php';
 
 // -- TYPES
 
-class GENERATE_SITEMAP_CONTROLLER extends CONTROLLER
+class UPDATE_SITEMAP_CONTROLLER extends CONTROLLER
 {
     // -- ATTRIBUTES
 
@@ -108,4 +106,4 @@ class GENERATE_SITEMAP_CONTROLLER extends CONTROLLER
 
 ShowErrors();
 
- $generate_sitemap_controller = new GENERATE_SITEMAP_CONTROLLER(  $language_code );
+ $update_sitemap_controller = new UPDATE_SITEMAP_CONTROLLER(  $language_code );
