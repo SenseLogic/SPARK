@@ -2,32 +2,31 @@
     <div class="form-field-name">
         <?php echo htmlspecialchars( GetTextBySlug( 'Route' ) ); ?> :
     </div>
-    <div>
-        <input class="form-input" name="Route" type="text" value="<?php echo htmlspecialchars( GetValueText(  $page->Route ) ); ?>" readonly/>
+    <div class="form-field-value">
+        <input-component class="form-component" result-name="Route" result-value="<?php echo htmlspecialchars( GetValueText(  $page->Route ) ); ?>" is-readonly></input-component>
     </div>
     <div class="form-field-name">
         <?php echo htmlspecialchars( GetTextBySlug( 'Type Slug' ) ); ?> :
     </div>
-    <div>
-        <input class="form-input" name="TypeSlug" type="text" value="<?php echo htmlspecialchars( GetValueText( GetElementPropertyByKey( $this->PageTypeBySlugMap, $page->TypeSlug, 'Name', '' ) ) ); ?>" readonly/>
+    <div class="form-field-value"">
+        <dropdown-component class="form-component" result-name="TypeSlug" result-value="<?php echo htmlspecialchars( GetValueText( $page->TypeSlug ) ); ?>" is-readonly  option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( GetElementPropertyArray( $this->PageTypeArray, 'Slug' ) ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( GetUntranslatedElementArray( GetElementPropertyArray( $this->PageTypeArray, 'Name' ) ) ) ) ); ?>"></dropdown-component>
     </div>
     <div class="form-field-name">
         <?php echo htmlspecialchars( GetTextBySlug( 'Title' ) ); ?> :
     </div>
-    <div>
-        <div>
-            <?php foreach ( LanguageCodeArray as  $language_code ) { ?>
-                <input class="form-translation form-input" name="Title" type="text" value="<?php echo htmlspecialchars( GetValueText( GetTranslatedText( $page->Title, $language_code ) ) ); ?>" readonly/>
-            <?php } ?>
-        </div>
+    <div class="form-field-value">
+        <multilingual-input-component class="form-component" result-name="Title" result-value="<?php echo htmlspecialchars( GetValueText( $page->Title ) ); ?>" is-readonly language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-input-component>
     </div>
     <div class="form-field-name">
         <?php echo htmlspecialchars( GetTextBySlug( 'Image Path' ) ); ?> :
     </div>
-    <div>
-        <input class="form-input" name="ImagePath" type="text" value="<?php echo htmlspecialchars( $page->ImagePath ); ?>" readonly/>
-        <div class="form-upload-container">
-            <img class="form-upload-image" src="<?php echo htmlspecialchars( $page->ImagePath ); ?>" onerror="this.src='/static/image/admin/missing_image.svg'"/>
-        </div>
+    <div class="form-field-value">
+        <multilingual-image-path-input-component class="form-component" result-name="ImagePath" result-value="<?php echo htmlspecialchars( GetValueText( $page->ImagePath ) ); ?>" is-readonly error-image-path="/static/image/admin/missing_image.svg" upload-api-url="/admin/upload/image" delete-api-url="/admin/delete/file" language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-image-path-input-component>
+    </div>
+    <div class="form-field-name">
+        <?php echo htmlspecialchars( GetTextBySlug( 'Video Path' ) ); ?> :
+    </div>
+    <div class="form-field-value">
+        <multilingual-video-path-input-component class="form-component" result-name="VideoPath" result-value="<?php echo htmlspecialchars( GetValueText( $page->VideoPath ) ); ?>" is-readonly error-video-path="/static/video/admin/missing_video.mp4" upload-api-url="/admin/upload/video" delete-api-url="/admin/delete/file" language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-video-path-input-component>
     </div>
 </div>

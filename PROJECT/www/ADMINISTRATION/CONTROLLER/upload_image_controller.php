@@ -64,21 +64,21 @@ class UPLOAD_IMAGE_CONTROLLER extends CONTROLLER
                 {
                      $image = ReadImage( $media_file_path );
 
-                     $large_image = CreateLimitedImage( $image, 2073600 );
-                    WriteJpegImage( $large_image, $target_file_path, 70 );
-                    ReleaseImage( $large_image );
+                     $preload_image = CreateCappedImage( $image, 512, 1024 );
+                    WriteJpegImage( $preload_image, $target_file_path . '.preload.jpg', 50 );
+                    ReleaseImage( $preload_image );
 
-                     $medium_image = CreateLimitedImage( $image, 921600 );
-                    WriteJpegImage( $medium_image, $target_file_path . '.medium.jpg', 70 );
-                    ReleaseImage( $medium_image );
-
-                     $small_image = CreateLimitedImage( $image, 230400 );
+                     $small_image = CreateCappedImage( $image, 640, 1280 );
                     WriteJpegImage( $small_image, $target_file_path . '.small.jpg', 70 );
                     ReleaseImage( $small_image );
 
-                     $preload_image = CreateLimitedImage( $image, 147456 );
-                    WriteJpegImage( $preload_image, $target_file_path . '.preload.jpg', 50 );
-                    ReleaseImage( $preload_image );
+                     $medium_image = CreateCappedImage( $image, 1280, 2560 );
+                    WriteJpegImage( $medium_image, $target_file_path . '.medium.jpg', 70 );
+                    ReleaseImage( $medium_image );
+
+                     $large_image = CreateCappedImage( $image, 1920, 1920 );
+                    WriteJpegImage( $large_image, $target_file_path, 70 );
+                    ReleaseImage( $large_image );
 
                     ReleaseImage( $image );
                 }
@@ -93,39 +93,39 @@ class UPLOAD_IMAGE_CONTROLLER extends CONTROLLER
                          $target_file_name = ReplaceSuffix( $target_file_name, '.png', '.jpg' );
                          $target_file_path = ReplaceSuffix( $target_file_path, '.png', '.jpg' );
 
-                         $large_image = CreateLimitedImage( $image, 2073600 );
-                        WriteJpegImage( $large_image, $target_file_path, 70 );
-                        ReleaseImage( $large_image );
+                         $preload_image = CreateCappedImage( $image, 512, 1024 );
+                        WriteJpegImage( $preload_image, $target_file_path . '.preload.jpg', 50 );
+                        ReleaseImage( $preload_image );
 
-                         $medium_image = CreateLimitedImage( $image, 921600 );
-                        WriteJpegImage( $medium_image, $target_file_path . '.medium.jpg', 70 );
-                        ReleaseImage( $medium_image );
-
-                         $small_image = CreateLimitedImage( $image, 230400 );
+                         $small_image = CreateCappedImage( $image, 640, 1280 );
                         WriteJpegImage( $small_image, $target_file_path . '.small.jpg', 70 );
                         ReleaseImage( $small_image );
 
-                         $preload_image = CreateLimitedImage( $image, 147456 );
-                        WriteJpegImage( $preload_image, $target_file_path . '.preload.jpg', 50 );
-                        ReleaseImage( $preload_image );
+                         $medium_image = CreateCappedImage( $image, 1280, 2560 );
+                        WriteJpegImage( $medium_image, $target_file_path . '.medium.jpg', 70 );
+                        ReleaseImage( $medium_image );
+
+                         $large_image = CreateCappedImage( $image, 1920, 1920 );
+                        WriteJpegImage( $large_image, $target_file_path, 70 );
+                        ReleaseImage( $large_image );
                     }
                     else
                     {
-                         $large_image = CreateLimitedImage( $image, 2073600, true );
-                        WritePngImage( $large_image, $target_file_path );
-                        ReleaseImage( $large_image );
+                         $preload_image = CreateCappedImage( $image, 512, 1024, true );
+                        WritePngImage( $preload_image, $target_file_path . '.preload.png' );
+                        ReleaseImage( $preload_image );
 
-                         $medium_image = CreateLimitedImage( $image, 921600, true );
-                        WritePngImage( $medium_image, $target_file_path . '.medium.png' );
-                        ReleaseImage( $medium_image );
-
-                         $small_image = CreateLimitedImage( $image, 230400, true );
+                         $small_image = CreateCappedImage( $image, 640, 1280, true );
                         WritePngImage( $small_image, $target_file_path . '.small.png' );
                         ReleaseImage( $small_image );
 
-                         $preload_image = CreateLimitedImage( $image, 147456, true );
-                        WritePngImage( $preload_image, $target_file_path . '.preload.png' );
-                        ReleaseImage( $preload_image );
+                         $medium_image = CreateCappedImage( $image, 1280, 2560, true );
+                        WritePngImage( $medium_image, $target_file_path . '.medium.png' );
+                        ReleaseImage( $medium_image );
+
+                         $large_image = CreateCappedImage( $image, 1920, 1920, true );
+                        WritePngImage( $large_image, $target_file_path );
+                        ReleaseImage( $large_image );
                     }
 
                     ReleaseImage( $image );
@@ -143,31 +143,31 @@ class UPLOAD_IMAGE_CONTROLLER extends CONTROLLER
                     ReleaseImage( $preload_image );
 
                      $tiny_image = CreateCappedImage( $image, 480, 960, $target_image_has_alpha );
-                    WriteAvifImage( $tiny_image, $target_file_path . '.tiny.avif', 55 );
+                    WriteAvifImage( $tiny_image, $target_file_path . '.tiny.avif', 60 );
                     ReleaseImage( $tiny_image );
 
                      $small_image = CreateCappedImage( $image, 640, 1280, $target_image_has_alpha );
-                    WriteAvifImage( $small_image, $target_file_path . '.small.avif', 55 );
+                    WriteAvifImage( $small_image, $target_file_path . '.small.avif', 60 );
                     ReleaseImage( $small_image );
 
                      $medium_image = CreateCappedImage( $image, 960, 1920, $target_image_has_alpha );
-                    WriteAvifImage( $medium_image, $target_file_path . '.medium.avif', 55 );
+                    WriteAvifImage( $medium_image, $target_file_path . '.medium.avif', 60 );
                     ReleaseImage( $medium_image );
 
                      $wide_image = CreateCappedImage( $image, 1280, 2560, $target_image_has_alpha );
-                    WriteAvifImage( $wide_image, $target_file_path . '.wide.avif', 55 );
+                    WriteAvifImage( $wide_image, $target_file_path . '.wide.avif', 60 );
                     ReleaseImage( $wide_image );
 
-                     $large_image = CreateCappedImage( $image, 1920, 3840, $target_image_has_alpha );
-                    WriteAvifImage( $large_image, $target_file_path, 55 );
+                     $large_image = CreateCappedImage( $image, 1920, 1920, $target_image_has_alpha );
+                    WriteAvifImage( $large_image, $target_file_path, 60 );
                     ReleaseImage( $large_image );
 
-                     $big_image = CreateCappedImage( $image, 2560, 5120, $target_image_has_alpha );
-                    WriteAvifImage( $big_image, $target_file_path . '.big.avif', 55 );
+                     $big_image = CreateCappedImage( $image, 2560, 2560, $target_image_has_alpha );
+                    WriteAvifImage( $big_image, $target_file_path . '.big.avif', 60 );
                     ReleaseImage( $big_image );
 
-                     $huge_image = CreateCappedImage( $image, 3840, 7680, $target_image_has_alpha );
-                    WriteAvifImage( $huge_image, $target_file_path . '.huge.avif', 55 );
+                     $huge_image = CreateCappedImage( $image, 3840, 3840, $target_image_has_alpha );
+                    WriteAvifImage( $huge_image, $target_file_path . '.huge.avif', 60 );
                     ReleaseImage( $huge_image );
 
                     ReleaseImage( $image );

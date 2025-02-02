@@ -126,7 +126,8 @@ function CreateCappedImage(
     image,
     int maximum_width,
     int maximum_height,
-    bool image_has_alpha = false
+    bool image_has_alpha = false,
+    bool image_can_be_upscaled = false
     )
 {
     var old_width = imagesx( image );
@@ -140,13 +141,17 @@ function CreateCappedImage(
 
         var aspect_ratio = old_width / old_height;
 
-        new_width = maximum_width;
-        new_height = intval( maximum_width / aspect_ratio );
+        if ( image_can_be_upscaled
+             || new_width > maximum_width )
+        {
+            new_width = maximum_width;
+            new_height = intval( new_width / aspect_ratio );
+        }
 
         if ( new_height > maximum_height )
         {
             new_height = maximum_height;
-            new_width = intval( maximum_height * aspect_ratio );
+            new_width = intval( new_height * aspect_ratio );
         }
 
         if ( new_width < 1 )

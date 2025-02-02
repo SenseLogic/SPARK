@@ -2,32 +2,31 @@
     <div class="form-field-name">
         <% GetTextBySlug( 'Type Slug' ) %> :
     </div>
-    <div>
-        <input class="form-input" name="TypeSlug" type="text" value="<% GetValueText( GetElementPropertyByKey( .BlockTypeBySlugMap, var block.TypeSlug, 'Name', '' ) ) %>" readonly/>
+    <div class="form-field-value">
+        <dropdown-component class="form-component" result-name="TypeSlug" result-value="<% GetValueText( var block.TypeSlug ) %>" is-readonly  option-values="<% GetValueText( GetJsonText( GetElementPropertyArray( .BlockTypeArray, 'Slug' ) ) ) %>" option-names="<% GetValueText( GetJsonText( GetUntranslatedElementArray( GetElementPropertyArray( .BlockTypeArray, 'Name' ) ) ) ) %>"></dropdown-component>
     </div>
     <div class="form-field-name">
         <% GetTextBySlug( 'Number' ) %> :
     </div>
-    <div>
-        <input class="form-input" name="Number" type="text" value="<% GetValueText( block.Number ) %>" readonly/>
+    <div class="form-field-value">
+        <input-component class="form-component" result-name="Number" result-value="<% GetValueText( block.Number ) %>" is-readonly></input-component>
     </div>
     <div class="form-field-name">
         <% GetTextBySlug( 'Text' ) %> :
     </div>
-    <div>
-        <div>
-            <? foreach ( var language_code; LanguageCodeArray ) { ?>
-                <textarea class="form-translation form-textarea" name="Text" readonly><% GetTranslatedText( block.Text, language_code ) %></textarea>
-            <? } ?>
-        </div>
+    <div class="form-field-value">
+        <multilingual-text-input-component class="form-component" result-name="Text" result-value="<% GetValueText( block.Text ) %>" is-readonly language-tags="<% GetValueText( GetJsonText( LanguageTagArray ) ) %>"></multilingual-text-input-component>
     </div>
     <div class="form-field-name">
         <% GetTextBySlug( 'Image Path' ) %> :
     </div>
-    <div>
-        <input class="form-input" name="ImagePath" type="text" value="<% block.ImagePath %>" readonly/>
-        <div class="form-upload-container">
-            <img class="form-upload-image" src="<% block.ImagePath %>" onerror="this.src='/static/image/admin/missing_image.svg'"/>
-        </div>
+    <div class="form-field-value">
+        <multilingual-image-path-input-component class="form-component" result-name="ImagePath" result-value="<% GetValueText( block.ImagePath ) %>" is-readonly error-image-path="/static/image/admin/missing_image.svg" upload-api-url="/admin/upload/image" delete-api-url="/admin/delete/file" language-tags="<% GetValueText( GetJsonText( LanguageTagArray ) ) %>"></multilingual-image-path-input-component>
+    </div>
+    <div class="form-field-name">
+        <% GetTextBySlug( 'Video Path' ) %> :
+    </div>
+    <div class="form-field-value">
+        <multilingual-video-path-input-component class="form-component" result-name="VideoPath" result-value="<% GetValueText( block.VideoPath ) %>" is-readonly error-video-path="/static/video/admin/missing_video.mp4" upload-api-url="/admin/upload/video" delete-api-url="/admin/delete/file" language-tags="<% GetValueText( GetJsonText( LanguageTagArray ) ) %>"></multilingual-video-path-input-component>
     </div>
 </div>
