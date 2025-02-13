@@ -66,7 +66,7 @@ spark-project
     BLOCK | managed, sorted, dropped, has_footer, footer block_footer, has_user_role, view_user_role contributor, edit_user_role contributor, add_user_role contributor, remove_user_role contributor, count 50
 
         Id : TUID | key, unique, hidden, default_expression GetRandomTuid()
-        Slug : STRING = "" | optional, is_slug, default_value "...-page-block-..."
+        Slug : STRING = "" | optional, is_slug, default_value "...-page-..."
         PageId : TUID = "{{PAGE.Id}}" | processed, enumeration "GetElementPropertyArray( .PageArray, 'Id' )^GetUntranslatedElementArray( GetElementPropertyArray( .PageArray, 'Title' ) )"
         CategorySlug : BLOCK_CATEGORY.Slug = "content" | processed, is_slug, enumeration "GetElementPropertyArray( .BlockCategoryArray, 'Slug' )^GetUntranslatedElementArray( GetElementPropertyArray( .BlockCategoryArray, 'Name' ) )", default_value "content"
         ContentSlug : BLOCK_CONTENT.Slug = "text" | is_slug, enumeration "GetElementPropertyArray( .BlockContentArray, 'Slug' )^GetUntranslatedElementArray( GetElementPropertyArray( .BlockContentArray, 'Name' ) )", default_value "text"

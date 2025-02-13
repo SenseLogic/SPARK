@@ -391,7 +391,6 @@ a:visited {
 }
 .form-upload-container.is-readonly {
   column-gap: 0;
-/* gap: 0;*/
 }
 .form-upload-input {
   grid-area: input;
@@ -478,9 +477,6 @@ a:visited {
   grid-gap: 1rem;
   justify-content: center;
   align-items: start;
-}
-.form-component > .form-container {
-  display: block;
 }
 .form-container-small {
   max-width: 30rem;

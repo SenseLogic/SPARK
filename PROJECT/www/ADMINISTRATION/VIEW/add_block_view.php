@@ -247,7 +247,7 @@
                     }
                     else
                     {
-                        $field_value = "...-page-block-...";
+                        $field_value = "...-page-...";
                     }
                 ?>
                 <div class="form-field-name" data-is-column-title data-column-name="Slug">

@@ -40,7 +40,7 @@
     }
 </style>
 <div class="page-heading" style="background: linear-gradient( rgba( 0, 0, 0, 0.1 ), rgba( 0, 0, 0, 0.1 ) ), url( '<# var page.ImagePath #>?v=<# VersionTimestamp #>' ) no-repeat <# page.ImageHorizontalPosition #> <# page.ImageVerticalPosition #> / <# page.ImageFit #>, url( '<# GetPreloadImagePath( page.ImagePath ) #>?v=<# VersionTimestamp #>' ) no-repeat <# page.ImageHorizontalPosition #> <# page.ImageVerticalPosition #> / <# page.ImageFit #>">
-    <? if ( page.Title !== '' ) { ?>
+    <? if ( page.Heading !== '' ) { ?>
         <div class="page-heading-title">
             <# .GetProcessedText( page.Heading ) #>
         </div>

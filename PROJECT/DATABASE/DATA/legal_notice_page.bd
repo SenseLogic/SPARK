@@ -18,8 +18,8 @@ BLOCK
 
     Id Slug PageId CategorySlug ContentSlug TypeSlug Number LanguageCodeArray Text
 
-        %legal-notice-page-block-1-block
-            ~ legal-notice-page-block-1
+        %legal-notice-page-1-block
+            ~ legal-notice-page-1
             ~ %legal-notice-page
             ~ content
             ~ text
