@@ -122,6 +122,28 @@ function ReplaceDualText(
 
 // ~~
 
+function GetRepeatedText(
+    string $text,
+    int $count,
+    string $separator = ''
+    )
+{
+    if ( $count === 0 )
+    {
+        return '';
+    }
+    else if ( $separator === '' )
+    {
+        return str_repeat( $text, $count );
+    }
+    else
+    {
+        return implode( $separator, array_fill( 0, $count, $text ) );
+    }
+}
+
+// ~~
+
 function GetBase64Text(
     string $text
     )
