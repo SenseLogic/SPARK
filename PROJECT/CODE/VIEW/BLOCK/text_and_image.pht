@@ -56,7 +56,7 @@
         grid-area: image;
     }
 </style>
-<div id="<# var block.Id #>" class="y-translation-opacity-transition block appearing-block text-and-image image-side-<# block.ImageSide #>">
+<div id="<# var block.Slug #>" class="y-translation-opacity-transition block appearing-block text-and-image image-side-<# block.ImageSide #>">
     <div class="text-and-image-text">
         <? include str_replace( '-', '_', block.ContentSlug ) .. '_content.php'; ?>
     </div>

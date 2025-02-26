@@ -11,6 +11,6 @@
         color: BlackColor;
     }
 </style>
-<div id="<# var block.Id #>" class="y-translation-opacity-transition block block-text-column appearing-block text" style="min-height: <# block.MinimumHeight #>">
+<div id="<# var block.Slug #>" class="y-translation-opacity-transition block block-text-column appearing-block text" style="min-height: <# block.MinimumHeight #>">
     <? include str_replace( '-', '_', block.ContentSlug ) .. '_content.php'; ?>
 </div>

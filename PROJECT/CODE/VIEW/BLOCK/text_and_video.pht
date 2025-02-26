@@ -79,7 +79,7 @@
         object-fit: cover;
     }
 </style>
-<div id="<# var block.Id #>" class="y-translation-opacity-transition block appearing-block text-and-video video-side-<# block.ImageSide #>">
+<div id="<# var block.Slug #>" class="y-translation-opacity-transition block appearing-block text-and-video video-side-<# block.ImageSide #>">
     <div class="text-and-video-text">
         <? include str_replace( '-', '_', block.ContentSlug ) .. '_content.php'; ?>
     </div>

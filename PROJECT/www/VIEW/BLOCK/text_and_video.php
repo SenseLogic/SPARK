@@ -79,7 +79,7 @@
 
 
 
-<div id="<?php echo  $block->Id; ?>" class="y-translation-opacity-transition block appearing-block text-and-video video-side-<?php echo $block->ImageSide; ?>">
+<div id="<?php echo  $block->Slug; ?>" class="y-translation-opacity-transition block appearing-block text-and-video video-side-<?php echo $block->ImageSide; ?>">
     <div class="text-and-video-text">
         <?php require __DIR__ . '/' . str_replace( '-', '_', $block->ContentSlug ) . '_content.php'; ?>
     </div>
