@@ -32,4 +32,5 @@
         </div>
     <?php } ?>
 </div>
+<?php require __DIR__ . '/' . 'BLOCK/block_footer.php'; ?>
 <?php require __DIR__ . '/' . 'BLOCK/page_footer.php'; ?>

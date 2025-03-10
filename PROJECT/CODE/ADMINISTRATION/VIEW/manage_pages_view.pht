@@ -32,4 +32,5 @@
         </div>
     <? } ?>
 </div>
+<? include 'BLOCK/block_footer.php'; ?>
 <? include 'BLOCK/page_footer.php'; ?>
