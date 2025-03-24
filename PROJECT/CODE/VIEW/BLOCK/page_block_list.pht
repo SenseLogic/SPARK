@@ -1,0 +1,8 @@
+<style file="page_block_list.styl">
+</style>
+<?
+    foreach ( var block; var page.BlockArray )
+    {
+        include str_replace( '-', '_', block.TypeSlug ) .. '.php';
+    }
+?>

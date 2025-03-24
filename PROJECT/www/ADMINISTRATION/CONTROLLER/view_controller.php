@@ -1,8 +1,6 @@
 <?php // -- IMPORTS
 
 require_once __DIR__ . '/' . 'controller.php';
-require_once __DIR__ . '/' . '../../MODEL/block_category_model.php';
-require_once __DIR__ . '/' . '../../MODEL/block_content_model.php';
 require_once __DIR__ . '/' . '../../MODEL/block_model.php';
 require_once __DIR__ . '/' . '../../MODEL/block_type_model.php';
 require_once __DIR__ . '/' . '../../MODEL/page_model.php';
@@ -20,10 +18,6 @@ class VIEW_CONTROLLER extends CONTROLLER
         $TextBySlugMap,
         $BlockArray,
         $BlockByIdMap,
-        $BlockCategoryArray,
-        $BlockCategoryBySlugMap,
-        $BlockContentArray,
-        $BlockContentBySlugMap,
         $BlockTypeArray,
         $BlockTypeBySlugMap,
         $PageArray,
@@ -44,10 +38,6 @@ class VIEW_CONTROLLER extends CONTROLLER
 
         $this->BlockArray = GetDatabaseBlockArray();
         $this->BlockByIdMap = GetValidBlockByIdMap( $this->BlockArray );
-        $this->BlockCategoryArray = GetDatabaseBlockCategoryArray();
-        $this->BlockCategoryBySlugMap = GetElementByKeyMap( $this->BlockCategoryArray, 'Slug' );
-        $this->BlockContentArray = GetDatabaseBlockContentArray();
-        $this->BlockContentBySlugMap = GetElementByKeyMap( $this->BlockContentArray, 'Slug' );
         $this->BlockTypeArray = GetDatabaseBlockTypeArray();
         $this->BlockTypeBySlugMap = GetElementByKeyMap( $this->BlockTypeArray, 'Slug' );
 

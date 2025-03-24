@@ -34,18 +34,8 @@
                     </a>
                 <?php } ?>
                 <?php if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
-                    <a class="page-menu-button" href="/admin/block-category">
-                        <?php echo htmlspecialchars( GetTextBySlug( 'Block categories' ) ); ?>
-                    </a>
-                <?php } ?>
-                <?php if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
                     <a class="page-menu-button" href="/admin/block-type">
                         <?php echo htmlspecialchars( GetTextBySlug( 'Block types' ) ); ?>
-                    </a>
-                <?php } ?>
-                <?php if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
-                    <a class="page-menu-button" href="/admin/block-content">
-                        <?php echo htmlspecialchars( GetTextBySlug( 'Block contents' ) ); ?>
                     </a>
                 <?php } ?>
                 <?php if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>

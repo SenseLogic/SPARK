@@ -10,8 +10,6 @@
             it_is_valid_edit_block_form,
             slug_field,
             page_id_field,
-            category_slug_field,
-            content_slug_field,
             type_slug_field,
             number_field,
             language_code_array_field,
@@ -37,13 +35,13 @@
             video_path_field,
             video_path_array_field,
             document_path_field,
-            document_path_array_field;
+            document_path_array_field,
+            key_array_field,
+            value_array_field;
 
         edit_block_form = document.EditBlockForm;
         slug_field = edit_block_form.Slug;
         page_id_field = edit_block_form.PageId;
-        category_slug_field = edit_block_form.CategorySlug;
-        content_slug_field = edit_block_form.ContentSlug;
         type_slug_field = edit_block_form.TypeSlug;
         number_field = edit_block_form.Number;
         language_code_array_field = edit_block_form.LanguageCodeArray;
@@ -70,11 +68,11 @@
         video_path_array_field = edit_block_form.VideoPathArray;
         document_path_field = edit_block_form.DocumentPath;
         document_path_array_field = edit_block_form.DocumentPathArray;
+        key_array_field = edit_block_form.KeyArray;
+        value_array_field = edit_block_form.ValueArray;
 
         slug_field.RemoveClass( "form-field-error" );
         page_id_field.RemoveClass( "form-field-error" );
-        category_slug_field.RemoveClass( "form-field-error" );
-        content_slug_field.RemoveClass( "form-field-error" );
         type_slug_field.RemoveClass( "form-field-error" );
         number_field.RemoveClass( "form-field-error" );
         language_code_array_field.RemoveClass( "form-field-error" );
@@ -101,6 +99,8 @@
         video_path_array_field.RemoveClass( "form-field-error" );
         document_path_field.RemoveClass( "form-field-error" );
         document_path_array_field.RemoveClass( "form-field-error" );
+        key_array_field.RemoveClass( "form-field-error" );
+        value_array_field.RemoveClass( "form-field-error" );
 
         it_is_valid_edit_block_form = true;
 
@@ -115,20 +115,6 @@
         if ( page_id_field.value === "" )
         {
             page_id_field.AddClass( "form-field-error" );
-
-            it_is_valid_edit_block_form = false;
-        }
-
-        if ( !IsSlugText( category_slug_field.value ) )
-        {
-            category_slug_field.AddClass( "form-field-error" );
-
-            it_is_valid_edit_block_form = false;
-        }
-
-        if ( !IsSlugText( content_slug_field.value ) )
-        {
-            content_slug_field.AddClass( "form-field-error" );
 
             it_is_valid_edit_block_form = false;
         }
@@ -221,18 +207,6 @@
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="PageId">
                     <dropdown-component class="form-component" result-name="PageId" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->PageId ) ); ?>"  option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( GetElementPropertyArray( $this->PageArray, 'Id' ) ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( GetUntranslatedElementArray( GetElementPropertyArray( $this->PageArray, 'Title' ) ) ) ) ); ?>"></dropdown-component>
-                </div>
-                <div class="form-field-name" data-is-column-title data-column-name="CategorySlug">
-                    <?php echo htmlspecialchars( GetTextBySlug( 'Category Slug' ) ); ?> :
-                </div>
-                <div class="form-field-value" data-is-column-value data-column-name="CategorySlug">
-                    <dropdown-component class="form-component" result-name="CategorySlug" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->CategorySlug ) ); ?>"  option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( GetElementPropertyArray( $this->BlockCategoryArray, 'Slug' ) ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( GetUntranslatedElementArray( GetElementPropertyArray( $this->BlockCategoryArray, 'Name' ) ) ) ) ); ?>"></dropdown-component>
-                </div>
-                <div class="form-field-name" data-is-column-title data-column-name="ContentSlug">
-                    <?php echo htmlspecialchars( GetTextBySlug( 'Content Slug' ) ); ?> :
-                </div>
-                <div class="form-field-value" data-is-column-value data-column-name="ContentSlug">
-                    <dropdown-component class="form-component" result-name="ContentSlug" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->ContentSlug ) ); ?>"  option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( GetElementPropertyArray( $this->BlockContentArray, 'Slug' ) ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( GetUntranslatedElementArray( GetElementPropertyArray( $this->BlockContentArray, 'Name' ) ) ) ) ); ?>"></dropdown-component>
                 </div>
                 <div class="form-field-name" data-is-column-title data-column-name="TypeSlug">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Type Slug' ) ); ?> :
@@ -389,6 +363,18 @@
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="DocumentPathArray">
                     <document-path-input-list-component class="form-component" result-name="DocumentPathArray" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->DocumentPathArray ) ); ?>" error-image-path="/static/image/admin/missing_image.svg" document-image-path="/static/image/admin/document_icon.svg" upload-api-url="/admin/upload/document" delete-api-url="/admin/delete/file"></document-path-input-list-component>
+                </div>
+                <div class="form-field-name" data-is-column-title data-column-name="KeyArray">
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Key Array' ) ); ?> :
+                </div>
+                <div class="form-field-value" data-is-column-value data-column-name="KeyArray">
+                    <multilingual-text-input-list-component class="form-component" result-name="KeyArray" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->KeyArray ) ); ?>" language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-text-input-list-component>
+                </div>
+                <div class="form-field-name" data-is-column-title data-column-name="ValueArray">
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Value Array' ) ); ?> :
+                </div>
+                <div class="form-field-value" data-is-column-value data-column-name="ValueArray">
+                    <multilingual-text-input-list-component class="form-component" result-name="ValueArray" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->ValueArray ) ); ?>" language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-text-input-list-component>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="<?php echo htmlspecialchars( GetParentRoute( null, '/admin/block' ) ); ?>">
                 </a>

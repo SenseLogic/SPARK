@@ -58,9 +58,7 @@
                     if ( column_name === "Id"
                          || column_name === "Slug"
                          || column_name === "PageSlug"
-                         || column_name === "CategorySlug"
                          || column_name === "TypeSlug"
-                         || column_name === "ContentSlug"
                          || column_name === "Number"
                          || column_name === "LanguageCodeArray" )
                     {

@@ -1,5 +1,3 @@
-@include DATA/block_category.bd
-@include DATA/block_content.bd
 @include DATA/block_type.bd
 @include DATA/language.bd
 @include DATA/page_type.bd

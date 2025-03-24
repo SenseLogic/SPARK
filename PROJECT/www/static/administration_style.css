@@ -1068,13 +1068,7 @@ textarea {
 .page-table {
   grid-template-columns: repeat(22, auto);
 }
-.block-category-table {
-  grid-template-columns: repeat(3, auto);
-}
 .block-type-table {
-  grid-template-columns: repeat(3, auto);
-}
-.block-content-table {
   grid-template-columns: repeat(3, auto);
 }
 .block-table {

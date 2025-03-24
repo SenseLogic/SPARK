@@ -17,7 +17,7 @@
         <?php require __DIR__ . '/' . '../BLOCK/scroll_down_reminder.php'; ?>
     </div>
     <?php require __DIR__ . '/' . '../BLOCK/contact_map.php'; ?>
-    <?php require __DIR__ . '/' . '../BLOCK/page_content_block_list.php'; ?>
+    <?php require __DIR__ . '/' . '../BLOCK/page_block_list.php'; ?>
     <?php require __DIR__ . '/' . '../BLOCK/page_padding.php'; ?>
     <?php require __DIR__ . '/' . '../BLOCK/footer_menu.php'; ?>
 </div>

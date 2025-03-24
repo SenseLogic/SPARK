@@ -1,8 +1,6 @@
 // -- IMPORTS
 
 import 'controller.php';
-import '../../MODEL/block_category_model.php';
-import '../../MODEL/block_content_model.php';
 import '../../MODEL/block_model.php';
 import '../../MODEL/block_type_model.php';
 import '../../MODEL/page_model.php';
@@ -20,10 +18,6 @@ class VIEW_CONTROLLER extends CONTROLLER
         TextBySlugMap,
         BlockArray,
         BlockByIdMap,
-        BlockCategoryArray,
-        BlockCategoryBySlugMap,
-        BlockContentArray,
-        BlockContentBySlugMap,
         BlockTypeArray,
         BlockTypeBySlugMap,
         PageArray,
@@ -44,10 +38,6 @@ class VIEW_CONTROLLER extends CONTROLLER
 
         .BlockArray = GetDatabaseBlockArray();
         .BlockByIdMap = GetValidBlockByIdMap( .BlockArray );
-        .BlockCategoryArray = GetDatabaseBlockCategoryArray();
-        .BlockCategoryBySlugMap = GetElementByKeyMap( .BlockCategoryArray, 'Slug' );
-        .BlockContentArray = GetDatabaseBlockContentArray();
-        .BlockContentBySlugMap = GetElementByKeyMap( .BlockContentArray, 'Slug' );
         .BlockTypeArray = GetDatabaseBlockTypeArray();
         .BlockTypeBySlugMap = GetElementByKeyMap( .BlockTypeArray, 'Slug' );
 

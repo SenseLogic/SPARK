@@ -40,22 +40,8 @@
         <?php } ?>
         <?php if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
             <div class="tree-container">
-                <a class="tree-button" href="/admin/block-category">
-                    <?php echo htmlspecialchars( GetTextBySlug( 'Block categories' ) ); ?>
-                </a>
-            </div>
-        <?php } ?>
-        <?php if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
-            <div class="tree-container">
                 <a class="tree-button" href="/admin/block-type">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Block types' ) ); ?>
-                </a>
-            </div>
-        <?php } ?>
-        <?php if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
-            <div class="tree-container">
-                <a class="tree-button" href="/admin/block-content">
-                    <?php echo htmlspecialchars( GetTextBySlug( 'Block contents' ) ); ?>
                 </a>
             </div>
         <?php } ?>

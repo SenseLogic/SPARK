@@ -22,12 +22,6 @@
                 <?php echo htmlspecialchars( GetTextBySlug( 'Page Id' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( GetTextBySlug( 'Category Slug' ) ); ?>
-            </div>
-            <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( GetTextBySlug( 'Content Slug' ) ); ?>
-            </div>
-            <div class="form-column-name sortable-table-column">
                 <?php echo htmlspecialchars( GetTextBySlug( 'Type Slug' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
@@ -106,6 +100,12 @@
                 <?php echo htmlspecialchars( GetTextBySlug( 'Document Path Array' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
+                <?php echo htmlspecialchars( GetTextBySlug( 'Key Array' ) ); ?>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <?php echo htmlspecialchars( GetTextBySlug( 'Value Array' ) ); ?>
+            </div>
+            <div class="form-column-name sortable-table-column">
                 <?php echo htmlspecialchars( GetTextBySlug( 'Action' ) ); ?>
             </div>
             <?php foreach ( $this->BlockArray as  $block ) { ?>
@@ -115,12 +115,6 @@
                     </div>
                     <div class="sortable-table-cell filter-cell">
                         <?php echo htmlspecialchars( GetValueText( $block->PageId ) ); ?>
-                    </div>
-                    <div class="sortable-table-cell filter-cell">
-                        <?php echo htmlspecialchars( GetValueText( $block->CategorySlug ) ); ?>
-                    </div>
-                    <div class="sortable-table-cell filter-cell">
-                        <?php echo htmlspecialchars( GetValueText( $block->ContentSlug ) ); ?>
                     </div>
                     <div class="sortable-table-cell filter-cell">
                         <?php echo htmlspecialchars( GetValueText( $block->TypeSlug ) ); ?>
@@ -245,6 +239,12 @@
                     <div class="sortable-table-cell filter-cell">
                         <?php echo htmlspecialchars( GetValueText( $block->DocumentPathArray ) ); ?>
                     </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <?php echo htmlspecialchars( GetValueText( $block->KeyArray ) ); ?>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <?php echo htmlspecialchars( GetValueText( $block->ValueArray ) ); ?>
+                    </div>
                     <div class="form-centered sortable-table-cell">
                         <a class="form-button view-button" href="/admin/block/view/<?php echo htmlspecialchars( $block->Id ); ?>">
                         </a>
@@ -277,18 +277,6 @@
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="PageId">
                             <dropdown-component class="form-component" result-name="PageId" result-value="<?php echo htmlspecialchars( GetValueText( $block->PageId ) ); ?>" is-readonly  option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( GetElementPropertyArray( $this->PageArray, 'Id' ) ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( GetUntranslatedElementArray( GetElementPropertyArray( $this->PageArray, 'Title' ) ) ) ) ); ?>"></dropdown-component>
-                        </div>
-                        <div class="form-field-name" data-is-column-title data-column-name="CategorySlug">
-                            <?php echo htmlspecialchars( GetTextBySlug( 'Category Slug' ) ); ?> :
-                        </div>
-                        <div class="form-field-value" data-is-column-value data-column-name="CategorySlug">
-                            <dropdown-component class="form-component" result-name="CategorySlug" result-value="<?php echo htmlspecialchars( GetValueText( $block->CategorySlug ) ); ?>" is-readonly  option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( GetElementPropertyArray( $this->BlockCategoryArray, 'Slug' ) ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( GetUntranslatedElementArray( GetElementPropertyArray( $this->BlockCategoryArray, 'Name' ) ) ) ) ); ?>"></dropdown-component>
-                        </div>
-                        <div class="form-field-name" data-is-column-title data-column-name="ContentSlug">
-                            <?php echo htmlspecialchars( GetTextBySlug( 'Content Slug' ) ); ?> :
-                        </div>
-                        <div class="form-field-value" data-is-column-value data-column-name="ContentSlug">
-                            <dropdown-component class="form-component" result-name="ContentSlug" result-value="<?php echo htmlspecialchars( GetValueText( $block->ContentSlug ) ); ?>" is-readonly  option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( GetElementPropertyArray( $this->BlockContentArray, 'Slug' ) ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( GetUntranslatedElementArray( GetElementPropertyArray( $this->BlockContentArray, 'Name' ) ) ) ) ); ?>"></dropdown-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="TypeSlug">
                             <?php echo htmlspecialchars( GetTextBySlug( 'Type Slug' ) ); ?> :
@@ -445,6 +433,18 @@
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="DocumentPathArray">
                             <document-path-input-list-component class="form-component" result-name="DocumentPathArray" result-value="<?php echo htmlspecialchars( GetValueText( $block->DocumentPathArray ) ); ?>" is-readonly error-image-path="/static/image/admin/missing_image.svg" document-image-path="/static/image/admin/document_icon.svg" upload-api-url="/admin/upload/document" delete-api-url="/admin/delete/file"></document-path-input-list-component>
+                        </div>
+                        <div class="form-field-name" data-is-column-title data-column-name="KeyArray">
+                            <?php echo htmlspecialchars( GetTextBySlug( 'Key Array' ) ); ?> :
+                        </div>
+                        <div class="form-field-value" data-is-column-value data-column-name="KeyArray">
+                            <multilingual-text-input-list-component class="form-component" result-name="KeyArray" result-value="<?php echo htmlspecialchars( GetValueText( $block->KeyArray ) ); ?>" is-readonly language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-text-input-list-component>
+                        </div>
+                        <div class="form-field-name" data-is-column-title data-column-name="ValueArray">
+                            <?php echo htmlspecialchars( GetTextBySlug( 'Value Array' ) ); ?> :
+                        </div>
+                        <div class="form-field-value" data-is-column-value data-column-name="ValueArray">
+                            <multilingual-text-input-list-component class="form-component" result-name="ValueArray" result-value="<?php echo htmlspecialchars( GetValueText( $block->ValueArray ) ); ?>" is-readonly language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-text-input-list-component>
                         </div>
                     </div>
                     <div class="form-toolbar">

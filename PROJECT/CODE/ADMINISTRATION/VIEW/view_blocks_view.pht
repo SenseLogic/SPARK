@@ -22,12 +22,6 @@
                 <% GetTextBySlug( 'Page Id' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
-                <% GetTextBySlug( 'Category Slug' ) %>
-            </div>
-            <div class="form-column-name sortable-table-column">
-                <% GetTextBySlug( 'Content Slug' ) %>
-            </div>
-            <div class="form-column-name sortable-table-column">
                 <% GetTextBySlug( 'Type Slug' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
@@ -106,6 +100,12 @@
                 <% GetTextBySlug( 'Document Path Array' ) %>
             </div>
             <div class="form-column-name sortable-table-column">
+                <% GetTextBySlug( 'Key Array' ) %>
+            </div>
+            <div class="form-column-name sortable-table-column">
+                <% GetTextBySlug( 'Value Array' ) %>
+            </div>
+            <div class="form-column-name sortable-table-column">
                 <% GetTextBySlug( 'Action' ) %>
             </div>
             <? foreach ( var block; .BlockArray ) { ?>
@@ -115,12 +115,6 @@
                     </div>
                     <div class="sortable-table-cell filter-cell">
                         <% GetValueText( block.PageId ) %>
-                    </div>
-                    <div class="sortable-table-cell filter-cell">
-                        <% GetValueText( block.CategorySlug ) %>
-                    </div>
-                    <div class="sortable-table-cell filter-cell">
-                        <% GetValueText( block.ContentSlug ) %>
                     </div>
                     <div class="sortable-table-cell filter-cell">
                         <% GetValueText( block.TypeSlug ) %>
@@ -245,6 +239,12 @@
                     <div class="sortable-table-cell filter-cell">
                         <% GetValueText( block.DocumentPathArray ) %>
                     </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <% GetValueText( block.KeyArray ) %>
+                    </div>
+                    <div class="sortable-table-cell filter-cell">
+                        <% GetValueText( block.ValueArray ) %>
+                    </div>
                     <div class="form-centered sortable-table-cell">
                         <a class="form-button view-button" href="/admin/block/view/<% block.Id %>">
                         </a>
@@ -277,18 +277,6 @@
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="PageId">
                             <dropdown-component class="form-component" result-name="PageId" result-value="<% GetValueText( block.PageId ) %>" is-readonly  option-values="<% GetValueText( GetJsonText( GetElementPropertyArray( .PageArray, 'Id' ) ) ) %>" option-names="<% GetValueText( GetJsonText( GetUntranslatedElementArray( GetElementPropertyArray( .PageArray, 'Title' ) ) ) ) %>"></dropdown-component>
-                        </div>
-                        <div class="form-field-name" data-is-column-title data-column-name="CategorySlug">
-                            <% GetTextBySlug( 'Category Slug' ) %> :
-                        </div>
-                        <div class="form-field-value" data-is-column-value data-column-name="CategorySlug">
-                            <dropdown-component class="form-component" result-name="CategorySlug" result-value="<% GetValueText( block.CategorySlug ) %>" is-readonly  option-values="<% GetValueText( GetJsonText( GetElementPropertyArray( .BlockCategoryArray, 'Slug' ) ) ) %>" option-names="<% GetValueText( GetJsonText( GetUntranslatedElementArray( GetElementPropertyArray( .BlockCategoryArray, 'Name' ) ) ) ) %>"></dropdown-component>
-                        </div>
-                        <div class="form-field-name" data-is-column-title data-column-name="ContentSlug">
-                            <% GetTextBySlug( 'Content Slug' ) %> :
-                        </div>
-                        <div class="form-field-value" data-is-column-value data-column-name="ContentSlug">
-                            <dropdown-component class="form-component" result-name="ContentSlug" result-value="<% GetValueText( block.ContentSlug ) %>" is-readonly  option-values="<% GetValueText( GetJsonText( GetElementPropertyArray( .BlockContentArray, 'Slug' ) ) ) %>" option-names="<% GetValueText( GetJsonText( GetUntranslatedElementArray( GetElementPropertyArray( .BlockContentArray, 'Name' ) ) ) ) %>"></dropdown-component>
                         </div>
                         <div class="form-field-name" data-is-column-title data-column-name="TypeSlug">
                             <% GetTextBySlug( 'Type Slug' ) %> :
@@ -445,6 +433,18 @@
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="DocumentPathArray">
                             <document-path-input-list-component class="form-component" result-name="DocumentPathArray" result-value="<% GetValueText( block.DocumentPathArray ) %>" is-readonly error-image-path="/static/image/admin/missing_image.svg" document-image-path="/static/image/admin/document_icon.svg" upload-api-url="/admin/upload/document" delete-api-url="/admin/delete/file"></document-path-input-list-component>
+                        </div>
+                        <div class="form-field-name" data-is-column-title data-column-name="KeyArray">
+                            <% GetTextBySlug( 'Key Array' ) %> :
+                        </div>
+                        <div class="form-field-value" data-is-column-value data-column-name="KeyArray">
+                            <multilingual-text-input-list-component class="form-component" result-name="KeyArray" result-value="<% GetValueText( block.KeyArray ) %>" is-readonly language-tags="<% GetValueText( GetJsonText( LanguageTagArray ) ) %>"></multilingual-text-input-list-component>
+                        </div>
+                        <div class="form-field-name" data-is-column-title data-column-name="ValueArray">
+                            <% GetTextBySlug( 'Value Array' ) %> :
+                        </div>
+                        <div class="form-field-value" data-is-column-value data-column-name="ValueArray">
+                            <multilingual-text-input-list-component class="form-component" result-name="ValueArray" result-value="<% GetValueText( block.ValueArray ) %>" is-readonly language-tags="<% GetValueText( GetJsonText( LanguageTagArray ) ) %>"></multilingual-text-input-list-component>
                         </div>
                     </div>
                     <div class="form-toolbar">

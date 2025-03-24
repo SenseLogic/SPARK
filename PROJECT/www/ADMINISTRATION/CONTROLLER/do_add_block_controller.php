@@ -20,8 +20,6 @@ class DO_ADD_BLOCK_CONTROLLER extends VIEW_CONTROLLER
              $id = GetPostValue( 'Id' );
              $slug = GetPostValue( 'Slug' );
              $page_id = GetPostValue( 'PageId' );
-             $category_slug = GetPostValue( 'CategorySlug' );
-             $content_slug = GetPostValue( 'ContentSlug' );
              $type_slug = GetPostValue( 'TypeSlug' );
              $number = GetPostValue( 'Number' );
              $language_code_array = GetJsonObject( GetPostValue( 'LanguageCodeArray' ) );
@@ -48,8 +46,10 @@ class DO_ADD_BLOCK_CONTROLLER extends VIEW_CONTROLLER
              $video_path_array = GetJsonObject( GetPostValue( 'VideoPathArray' ) );
              $document_path = GetPostValue( 'DocumentPath' );
              $document_path_array = GetJsonObject( GetPostValue( 'DocumentPathArray' ) );
+             $key_array = GetJsonObject( GetPostValue( 'KeyArray' ) );
+             $value_array = GetJsonObject( GetPostValue( 'ValueArray' ) );
 
-            AddDatabaseBlock( $id, $slug, $page_id, $category_slug, $content_slug, $type_slug, $number, $language_code_array, $minimum_height, $title, $title_array, $teaser, $teaser_array, $text, $text_array, $route, $route_array, $image_side, $image_title, $image_title_array, $image_path, $image_path_array, $image_vertical_position, $image_vertical_position_array, $image_horizontal_position, $image_horizontal_position_array, $image_fit, $video_path, $video_path_array, $document_path, $document_path_array );
+            AddDatabaseBlock( $id, $slug, $page_id, $type_slug, $number, $language_code_array, $minimum_height, $title, $title_array, $teaser, $teaser_array, $text, $text_array, $route, $route_array, $image_side, $image_title, $image_title_array, $image_path, $image_path_array, $image_vertical_position, $image_vertical_position_array, $image_horizontal_position, $image_horizontal_position_array, $image_fit, $video_path, $video_path_array, $document_path, $document_path_array, $key_array, $value_array );
 
             Redirect( GetParentRoute( null, '/admin/block' ) );
         }

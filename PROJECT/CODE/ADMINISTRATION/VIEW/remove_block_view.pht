@@ -16,18 +16,6 @@
                 <div class="form-field-value" data-is-column-value data-column-name="PageId">
                     <dropdown-component class="form-component" result-name="PageId" result-value="<% GetValueText( .Block.PageId ) %>" is-readonly  option-values="<% GetValueText( GetJsonText( GetElementPropertyArray( .PageArray, 'Id' ) ) ) %>" option-names="<% GetValueText( GetJsonText( GetUntranslatedElementArray( GetElementPropertyArray( .PageArray, 'Title' ) ) ) ) %>"></dropdown-component>
                 </div>
-                <div class="form-field-name" data-is-column-title data-column-name="CategorySlug">
-                    <% GetTextBySlug( 'Category Slug' ) %> :
-                </div>
-                <div class="form-field-value" data-is-column-value data-column-name="CategorySlug">
-                    <dropdown-component class="form-component" result-name="CategorySlug" result-value="<% GetValueText( .Block.CategorySlug ) %>" is-readonly  option-values="<% GetValueText( GetJsonText( GetElementPropertyArray( .BlockCategoryArray, 'Slug' ) ) ) %>" option-names="<% GetValueText( GetJsonText( GetUntranslatedElementArray( GetElementPropertyArray( .BlockCategoryArray, 'Name' ) ) ) ) %>"></dropdown-component>
-                </div>
-                <div class="form-field-name" data-is-column-title data-column-name="ContentSlug">
-                    <% GetTextBySlug( 'Content Slug' ) %> :
-                </div>
-                <div class="form-field-value" data-is-column-value data-column-name="ContentSlug">
-                    <dropdown-component class="form-component" result-name="ContentSlug" result-value="<% GetValueText( .Block.ContentSlug ) %>" is-readonly  option-values="<% GetValueText( GetJsonText( GetElementPropertyArray( .BlockContentArray, 'Slug' ) ) ) %>" option-names="<% GetValueText( GetJsonText( GetUntranslatedElementArray( GetElementPropertyArray( .BlockContentArray, 'Name' ) ) ) ) %>"></dropdown-component>
-                </div>
                 <div class="form-field-name" data-is-column-title data-column-name="TypeSlug">
                     <% GetTextBySlug( 'Type Slug' ) %> :
                 </div>
@@ -183,6 +171,18 @@
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="DocumentPathArray">
                     <document-path-input-list-component class="form-component" result-name="DocumentPathArray" result-value="<% GetValueText( .Block.DocumentPathArray ) %>" is-readonly error-image-path="/static/image/admin/missing_image.svg" document-image-path="/static/image/admin/document_icon.svg" upload-api-url="/admin/upload/document" delete-api-url="/admin/delete/file"></document-path-input-list-component>
+                </div>
+                <div class="form-field-name" data-is-column-title data-column-name="KeyArray">
+                    <% GetTextBySlug( 'Key Array' ) %> :
+                </div>
+                <div class="form-field-value" data-is-column-value data-column-name="KeyArray">
+                    <multilingual-text-input-list-component class="form-component" result-name="KeyArray" result-value="<% GetValueText( .Block.KeyArray ) %>" is-readonly language-tags="<% GetValueText( GetJsonText( LanguageTagArray ) ) %>"></multilingual-text-input-list-component>
+                </div>
+                <div class="form-field-name" data-is-column-title data-column-name="ValueArray">
+                    <% GetTextBySlug( 'Value Array' ) %> :
+                </div>
+                <div class="form-field-value" data-is-column-value data-column-name="ValueArray">
+                    <multilingual-text-input-list-component class="form-component" result-name="ValueArray" result-value="<% GetValueText( .Block.ValueArray ) %>" is-readonly language-tags="<% GetValueText( GetJsonText( LanguageTagArray ) ) %>"></multilingual-text-input-list-component>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="<% GetParentRoute( null, '/admin/block' ) %>">
                 </a>

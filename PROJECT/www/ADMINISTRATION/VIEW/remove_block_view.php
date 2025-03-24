@@ -16,18 +16,6 @@
                 <div class="form-field-value" data-is-column-value data-column-name="PageId">
                     <dropdown-component class="form-component" result-name="PageId" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->PageId ) ); ?>" is-readonly  option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( GetElementPropertyArray( $this->PageArray, 'Id' ) ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( GetUntranslatedElementArray( GetElementPropertyArray( $this->PageArray, 'Title' ) ) ) ) ); ?>"></dropdown-component>
                 </div>
-                <div class="form-field-name" data-is-column-title data-column-name="CategorySlug">
-                    <?php echo htmlspecialchars( GetTextBySlug( 'Category Slug' ) ); ?> :
-                </div>
-                <div class="form-field-value" data-is-column-value data-column-name="CategorySlug">
-                    <dropdown-component class="form-component" result-name="CategorySlug" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->CategorySlug ) ); ?>" is-readonly  option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( GetElementPropertyArray( $this->BlockCategoryArray, 'Slug' ) ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( GetUntranslatedElementArray( GetElementPropertyArray( $this->BlockCategoryArray, 'Name' ) ) ) ) ); ?>"></dropdown-component>
-                </div>
-                <div class="form-field-name" data-is-column-title data-column-name="ContentSlug">
-                    <?php echo htmlspecialchars( GetTextBySlug( 'Content Slug' ) ); ?> :
-                </div>
-                <div class="form-field-value" data-is-column-value data-column-name="ContentSlug">
-                    <dropdown-component class="form-component" result-name="ContentSlug" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->ContentSlug ) ); ?>" is-readonly  option-values="<?php echo htmlspecialchars( GetValueText( GetJsonText( GetElementPropertyArray( $this->BlockContentArray, 'Slug' ) ) ) ); ?>" option-names="<?php echo htmlspecialchars( GetValueText( GetJsonText( GetUntranslatedElementArray( GetElementPropertyArray( $this->BlockContentArray, 'Name' ) ) ) ) ); ?>"></dropdown-component>
-                </div>
                 <div class="form-field-name" data-is-column-title data-column-name="TypeSlug">
                     <?php echo htmlspecialchars( GetTextBySlug( 'Type Slug' ) ); ?> :
                 </div>
@@ -183,6 +171,18 @@
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="DocumentPathArray">
                     <document-path-input-list-component class="form-component" result-name="DocumentPathArray" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->DocumentPathArray ) ); ?>" is-readonly error-image-path="/static/image/admin/missing_image.svg" document-image-path="/static/image/admin/document_icon.svg" upload-api-url="/admin/upload/document" delete-api-url="/admin/delete/file"></document-path-input-list-component>
+                </div>
+                <div class="form-field-name" data-is-column-title data-column-name="KeyArray">
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Key Array' ) ); ?> :
+                </div>
+                <div class="form-field-value" data-is-column-value data-column-name="KeyArray">
+                    <multilingual-text-input-list-component class="form-component" result-name="KeyArray" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->KeyArray ) ); ?>" is-readonly language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-text-input-list-component>
+                </div>
+                <div class="form-field-name" data-is-column-title data-column-name="ValueArray">
+                    <?php echo htmlspecialchars( GetTextBySlug( 'Value Array' ) ); ?> :
+                </div>
+                <div class="form-field-value" data-is-column-value data-column-name="ValueArray">
+                    <multilingual-text-input-list-component class="form-component" result-name="ValueArray" result-value="<?php echo htmlspecialchars( GetValueText( $this->Block->ValueArray ) ); ?>" is-readonly language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-text-input-list-component>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="<?php echo htmlspecialchars( GetParentRoute( null, '/admin/block' ) ); ?>">
                 </a>

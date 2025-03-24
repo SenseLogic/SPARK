@@ -3,7 +3,7 @@
 function GetDatabaseBlockArray(
     )
 {
-     $statement = GetDatabaseStatement( 'select `Id`, `Slug`, `PageId`, `CategorySlug`, `ContentSlug`, `TypeSlug`, `Number`, `LanguageCodeArray`, `MinimumHeight`, `Title`, `TitleArray`, `Teaser`, `TeaserArray`, `Text`, `TextArray`, `Route`, `RouteArray`, `ImageSide`, `ImageTitle`, `ImageTitleArray`, `ImagePath`, `ImagePathArray`, `ImageVerticalPosition`, `ImageVerticalPositionArray`, `ImageHorizontalPosition`, `ImageHorizontalPositionArray`, `ImageFit`, `VideoPath`, `VideoPathArray`, `DocumentPath`, `DocumentPathArray` from `BLOCK` order by `Number` asc' );
+     $statement = GetDatabaseStatement( 'select `Id`, `Slug`, `PageId`, `TypeSlug`, `Number`, `LanguageCodeArray`, `MinimumHeight`, `Title`, `TitleArray`, `Teaser`, `TeaserArray`, `Text`, `TextArray`, `Route`, `RouteArray`, `ImageSide`, `ImageTitle`, `ImageTitleArray`, `ImagePath`, `ImagePathArray`, `ImageVerticalPosition`, `ImageVerticalPositionArray`, `ImageHorizontalPosition`, `ImageHorizontalPositionArray`, `ImageFit`, `VideoPath`, `VideoPathArray`, `DocumentPath`, `DocumentPathArray`, `KeyArray`, `ValueArray` from `BLOCK` order by `Number` asc' );
 
     if ( !$statement->execute() )
     {
@@ -26,6 +26,8 @@ function GetDatabaseBlockArray(
         $block->ImageHorizontalPositionArray = json_decode( $block->ImageHorizontalPositionArray );
         $block->VideoPathArray = json_decode( $block->VideoPathArray );
         $block->DocumentPathArray = json_decode( $block->DocumentPathArray );
+        $block->KeyArray = json_decode( $block->KeyArray );
+        $block->ValueArray = json_decode( $block->ValueArray );
         array_push( $block_array, $block );
     }
 
@@ -38,7 +40,7 @@ function GetDatabaseBlockById(
     string $id
     )
 {
-     $statement = GetDatabaseStatement( 'select `Id`, `Slug`, `PageId`, `CategorySlug`, `ContentSlug`, `TypeSlug`, `Number`, `LanguageCodeArray`, `MinimumHeight`, `Title`, `TitleArray`, `Teaser`, `TeaserArray`, `Text`, `TextArray`, `Route`, `RouteArray`, `ImageSide`, `ImageTitle`, `ImageTitleArray`, `ImagePath`, `ImagePathArray`, `ImageVerticalPosition`, `ImageVerticalPositionArray`, `ImageHorizontalPosition`, `ImageHorizontalPositionArray`, `ImageFit`, `VideoPath`, `VideoPathArray`, `DocumentPath`, `DocumentPathArray` from `BLOCK` where `Id` = ? limit 1' );
+     $statement = GetDatabaseStatement( 'select `Id`, `Slug`, `PageId`, `TypeSlug`, `Number`, `LanguageCodeArray`, `MinimumHeight`, `Title`, `TitleArray`, `Teaser`, `TeaserArray`, `Text`, `TextArray`, `Route`, `RouteArray`, `ImageSide`, `ImageTitle`, `ImageTitleArray`, `ImagePath`, `ImagePathArray`, `ImageVerticalPosition`, `ImageVerticalPositionArray`, `ImageHorizontalPosition`, `ImageHorizontalPositionArray`, `ImageFit`, `VideoPath`, `VideoPathArray`, `DocumentPath`, `DocumentPathArray`, `KeyArray`, `ValueArray` from `BLOCK` where `Id` = ? limit 1' );
     $statement->bindParam( 1, $id, PDO::PARAM_STR );
 
     if ( !$statement->execute() )
@@ -62,6 +64,8 @@ function GetDatabaseBlockById(
         $block->ImageHorizontalPositionArray = json_decode( $block->ImageHorizontalPositionArray );
         $block->VideoPathArray = json_decode( $block->VideoPathArray );
         $block->DocumentPathArray = json_decode( $block->DocumentPathArray );
+        $block->KeyArray = json_decode( $block->KeyArray );
+        $block->ValueArray = json_decode( $block->ValueArray );
     }
 
     return $block;
@@ -73,8 +77,6 @@ function AddDatabaseBlock(
     string $id,
     string $slug,
     string $page_id,
-    string $category_slug,
-    string $content_slug,
     string $type_slug,
     float $number,
     array $language_code_array,
@@ -100,52 +102,56 @@ function AddDatabaseBlock(
     string $video_path,
     array $video_path_array,
     string $document_path,
-    array $document_path_array
+    array $document_path_array,
+    array $key_array,
+    array $value_array
     )
 {
-     $statement = GetDatabaseStatement( 'insert into `BLOCK` ( `Id`, `Slug`, `PageId`, `CategorySlug`, `ContentSlug`, `TypeSlug`, `Number`, `LanguageCodeArray`, `MinimumHeight`, `Title`, `TitleArray`, `Teaser`, `TeaserArray`, `Text`, `TextArray`, `Route`, `RouteArray`, `ImageSide`, `ImageTitle`, `ImageTitleArray`, `ImagePath`, `ImagePathArray`, `ImageVerticalPosition`, `ImageVerticalPositionArray`, `ImageHorizontalPosition`, `ImageHorizontalPositionArray`, `ImageFit`, `VideoPath`, `VideoPathArray`, `DocumentPath`, `DocumentPathArray` ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )' );
+     $statement = GetDatabaseStatement( 'insert into `BLOCK` ( `Id`, `Slug`, `PageId`, `TypeSlug`, `Number`, `LanguageCodeArray`, `MinimumHeight`, `Title`, `TitleArray`, `Teaser`, `TeaserArray`, `Text`, `TextArray`, `Route`, `RouteArray`, `ImageSide`, `ImageTitle`, `ImageTitleArray`, `ImagePath`, `ImagePathArray`, `ImageVerticalPosition`, `ImageVerticalPositionArray`, `ImageHorizontalPosition`, `ImageHorizontalPositionArray`, `ImageFit`, `VideoPath`, `VideoPathArray`, `DocumentPath`, `DocumentPathArray`, `KeyArray`, `ValueArray` ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )' );
     $statement->bindParam( 1, $id, PDO::PARAM_STR );
     $statement->bindParam( 2, $slug, PDO::PARAM_STR );
     $statement->bindParam( 3, $page_id, PDO::PARAM_STR );
-    $statement->bindParam( 4, $category_slug, PDO::PARAM_STR );
-    $statement->bindParam( 5, $content_slug, PDO::PARAM_STR );
-    $statement->bindParam( 6, $type_slug, PDO::PARAM_STR );
-    $statement->bindParam( 7, $number, PDO::PARAM_STR );
+    $statement->bindParam( 4, $type_slug, PDO::PARAM_STR );
+    $statement->bindParam( 5, $number, PDO::PARAM_STR );
     $language_code_array = json_encode( $language_code_array );
-    $statement->bindParam( 8, $language_code_array, PDO::PARAM_STR );
-    $statement->bindParam( 9, $minimum_height, PDO::PARAM_STR );
-    $statement->bindParam( 10, $title, PDO::PARAM_STR );
+    $statement->bindParam( 6, $language_code_array, PDO::PARAM_STR );
+    $statement->bindParam( 7, $minimum_height, PDO::PARAM_STR );
+    $statement->bindParam( 8, $title, PDO::PARAM_STR );
     $title_array = json_encode( $title_array );
-    $statement->bindParam( 11, $title_array, PDO::PARAM_STR );
-    $statement->bindParam( 12, $teaser, PDO::PARAM_STR );
+    $statement->bindParam( 9, $title_array, PDO::PARAM_STR );
+    $statement->bindParam( 10, $teaser, PDO::PARAM_STR );
     $teaser_array = json_encode( $teaser_array );
-    $statement->bindParam( 13, $teaser_array, PDO::PARAM_STR );
-    $statement->bindParam( 14, $text, PDO::PARAM_STR );
+    $statement->bindParam( 11, $teaser_array, PDO::PARAM_STR );
+    $statement->bindParam( 12, $text, PDO::PARAM_STR );
     $text_array = json_encode( $text_array );
-    $statement->bindParam( 15, $text_array, PDO::PARAM_STR );
-    $statement->bindParam( 16, $route, PDO::PARAM_STR );
+    $statement->bindParam( 13, $text_array, PDO::PARAM_STR );
+    $statement->bindParam( 14, $route, PDO::PARAM_STR );
     $route_array = json_encode( $route_array );
-    $statement->bindParam( 17, $route_array, PDO::PARAM_STR );
-    $statement->bindParam( 18, $image_side, PDO::PARAM_STR );
-    $statement->bindParam( 19, $image_title, PDO::PARAM_STR );
+    $statement->bindParam( 15, $route_array, PDO::PARAM_STR );
+    $statement->bindParam( 16, $image_side, PDO::PARAM_STR );
+    $statement->bindParam( 17, $image_title, PDO::PARAM_STR );
     $image_title_array = json_encode( $image_title_array );
-    $statement->bindParam( 20, $image_title_array, PDO::PARAM_STR );
-    $statement->bindParam( 21, $image_path, PDO::PARAM_STR );
+    $statement->bindParam( 18, $image_title_array, PDO::PARAM_STR );
+    $statement->bindParam( 19, $image_path, PDO::PARAM_STR );
     $image_path_array = json_encode( $image_path_array );
-    $statement->bindParam( 22, $image_path_array, PDO::PARAM_STR );
-    $statement->bindParam( 23, $image_vertical_position, PDO::PARAM_STR );
+    $statement->bindParam( 20, $image_path_array, PDO::PARAM_STR );
+    $statement->bindParam( 21, $image_vertical_position, PDO::PARAM_STR );
     $image_vertical_position_array = json_encode( $image_vertical_position_array );
-    $statement->bindParam( 24, $image_vertical_position_array, PDO::PARAM_STR );
-    $statement->bindParam( 25, $image_horizontal_position, PDO::PARAM_STR );
+    $statement->bindParam( 22, $image_vertical_position_array, PDO::PARAM_STR );
+    $statement->bindParam( 23, $image_horizontal_position, PDO::PARAM_STR );
     $image_horizontal_position_array = json_encode( $image_horizontal_position_array );
-    $statement->bindParam( 26, $image_horizontal_position_array, PDO::PARAM_STR );
-    $statement->bindParam( 27, $image_fit, PDO::PARAM_STR );
-    $statement->bindParam( 28, $video_path, PDO::PARAM_STR );
+    $statement->bindParam( 24, $image_horizontal_position_array, PDO::PARAM_STR );
+    $statement->bindParam( 25, $image_fit, PDO::PARAM_STR );
+    $statement->bindParam( 26, $video_path, PDO::PARAM_STR );
     $video_path_array = json_encode( $video_path_array );
-    $statement->bindParam( 29, $video_path_array, PDO::PARAM_STR );
-    $statement->bindParam( 30, $document_path, PDO::PARAM_STR );
+    $statement->bindParam( 27, $video_path_array, PDO::PARAM_STR );
+    $statement->bindParam( 28, $document_path, PDO::PARAM_STR );
     $document_path_array = json_encode( $document_path_array );
-    $statement->bindParam( 31, $document_path_array, PDO::PARAM_STR );
+    $statement->bindParam( 29, $document_path_array, PDO::PARAM_STR );
+    $key_array = json_encode( $key_array );
+    $statement->bindParam( 30, $key_array, PDO::PARAM_STR );
+    $value_array = json_encode( $value_array );
+    $statement->bindParam( 31, $value_array, PDO::PARAM_STR );
 
     if ( !$statement->execute() )
     {
@@ -161,8 +167,6 @@ function PutDatabaseBlock(
     string $id,
     string $slug,
     string $page_id,
-    string $category_slug,
-    string $content_slug,
     string $type_slug,
     float $number,
     array $language_code_array,
@@ -188,52 +192,56 @@ function PutDatabaseBlock(
     string $video_path,
     array $video_path_array,
     string $document_path,
-    array $document_path_array
+    array $document_path_array,
+    array $key_array,
+    array $value_array
     )
 {
-     $statement = GetDatabaseStatement( 'replace into `BLOCK` ( `Id`, `Slug`, `PageId`, `CategorySlug`, `ContentSlug`, `TypeSlug`, `Number`, `LanguageCodeArray`, `MinimumHeight`, `Title`, `TitleArray`, `Teaser`, `TeaserArray`, `Text`, `TextArray`, `Route`, `RouteArray`, `ImageSide`, `ImageTitle`, `ImageTitleArray`, `ImagePath`, `ImagePathArray`, `ImageVerticalPosition`, `ImageVerticalPositionArray`, `ImageHorizontalPosition`, `ImageHorizontalPositionArray`, `ImageFit`, `VideoPath`, `VideoPathArray`, `DocumentPath`, `DocumentPathArray` ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )' );
+     $statement = GetDatabaseStatement( 'replace into `BLOCK` ( `Id`, `Slug`, `PageId`, `TypeSlug`, `Number`, `LanguageCodeArray`, `MinimumHeight`, `Title`, `TitleArray`, `Teaser`, `TeaserArray`, `Text`, `TextArray`, `Route`, `RouteArray`, `ImageSide`, `ImageTitle`, `ImageTitleArray`, `ImagePath`, `ImagePathArray`, `ImageVerticalPosition`, `ImageVerticalPositionArray`, `ImageHorizontalPosition`, `ImageHorizontalPositionArray`, `ImageFit`, `VideoPath`, `VideoPathArray`, `DocumentPath`, `DocumentPathArray`, `KeyArray`, `ValueArray` ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )' );
     $statement->bindParam( 1, $id, PDO::PARAM_STR );
     $statement->bindParam( 2, $slug, PDO::PARAM_STR );
     $statement->bindParam( 3, $page_id, PDO::PARAM_STR );
-    $statement->bindParam( 4, $category_slug, PDO::PARAM_STR );
-    $statement->bindParam( 5, $content_slug, PDO::PARAM_STR );
-    $statement->bindParam( 6, $type_slug, PDO::PARAM_STR );
-    $statement->bindParam( 7, $number, PDO::PARAM_STR );
+    $statement->bindParam( 4, $type_slug, PDO::PARAM_STR );
+    $statement->bindParam( 5, $number, PDO::PARAM_STR );
     $language_code_array = json_encode( $language_code_array );
-    $statement->bindParam( 8, $language_code_array, PDO::PARAM_STR );
-    $statement->bindParam( 9, $minimum_height, PDO::PARAM_STR );
-    $statement->bindParam( 10, $title, PDO::PARAM_STR );
+    $statement->bindParam( 6, $language_code_array, PDO::PARAM_STR );
+    $statement->bindParam( 7, $minimum_height, PDO::PARAM_STR );
+    $statement->bindParam( 8, $title, PDO::PARAM_STR );
     $title_array = json_encode( $title_array );
-    $statement->bindParam( 11, $title_array, PDO::PARAM_STR );
-    $statement->bindParam( 12, $teaser, PDO::PARAM_STR );
+    $statement->bindParam( 9, $title_array, PDO::PARAM_STR );
+    $statement->bindParam( 10, $teaser, PDO::PARAM_STR );
     $teaser_array = json_encode( $teaser_array );
-    $statement->bindParam( 13, $teaser_array, PDO::PARAM_STR );
-    $statement->bindParam( 14, $text, PDO::PARAM_STR );
+    $statement->bindParam( 11, $teaser_array, PDO::PARAM_STR );
+    $statement->bindParam( 12, $text, PDO::PARAM_STR );
     $text_array = json_encode( $text_array );
-    $statement->bindParam( 15, $text_array, PDO::PARAM_STR );
-    $statement->bindParam( 16, $route, PDO::PARAM_STR );
+    $statement->bindParam( 13, $text_array, PDO::PARAM_STR );
+    $statement->bindParam( 14, $route, PDO::PARAM_STR );
     $route_array = json_encode( $route_array );
-    $statement->bindParam( 17, $route_array, PDO::PARAM_STR );
-    $statement->bindParam( 18, $image_side, PDO::PARAM_STR );
-    $statement->bindParam( 19, $image_title, PDO::PARAM_STR );
+    $statement->bindParam( 15, $route_array, PDO::PARAM_STR );
+    $statement->bindParam( 16, $image_side, PDO::PARAM_STR );
+    $statement->bindParam( 17, $image_title, PDO::PARAM_STR );
     $image_title_array = json_encode( $image_title_array );
-    $statement->bindParam( 20, $image_title_array, PDO::PARAM_STR );
-    $statement->bindParam( 21, $image_path, PDO::PARAM_STR );
+    $statement->bindParam( 18, $image_title_array, PDO::PARAM_STR );
+    $statement->bindParam( 19, $image_path, PDO::PARAM_STR );
     $image_path_array = json_encode( $image_path_array );
-    $statement->bindParam( 22, $image_path_array, PDO::PARAM_STR );
-    $statement->bindParam( 23, $image_vertical_position, PDO::PARAM_STR );
+    $statement->bindParam( 20, $image_path_array, PDO::PARAM_STR );
+    $statement->bindParam( 21, $image_vertical_position, PDO::PARAM_STR );
     $image_vertical_position_array = json_encode( $image_vertical_position_array );
-    $statement->bindParam( 24, $image_vertical_position_array, PDO::PARAM_STR );
-    $statement->bindParam( 25, $image_horizontal_position, PDO::PARAM_STR );
+    $statement->bindParam( 22, $image_vertical_position_array, PDO::PARAM_STR );
+    $statement->bindParam( 23, $image_horizontal_position, PDO::PARAM_STR );
     $image_horizontal_position_array = json_encode( $image_horizontal_position_array );
-    $statement->bindParam( 26, $image_horizontal_position_array, PDO::PARAM_STR );
-    $statement->bindParam( 27, $image_fit, PDO::PARAM_STR );
-    $statement->bindParam( 28, $video_path, PDO::PARAM_STR );
+    $statement->bindParam( 24, $image_horizontal_position_array, PDO::PARAM_STR );
+    $statement->bindParam( 25, $image_fit, PDO::PARAM_STR );
+    $statement->bindParam( 26, $video_path, PDO::PARAM_STR );
     $video_path_array = json_encode( $video_path_array );
-    $statement->bindParam( 29, $video_path_array, PDO::PARAM_STR );
-    $statement->bindParam( 30, $document_path, PDO::PARAM_STR );
+    $statement->bindParam( 27, $video_path_array, PDO::PARAM_STR );
+    $statement->bindParam( 28, $document_path, PDO::PARAM_STR );
     $document_path_array = json_encode( $document_path_array );
-    $statement->bindParam( 31, $document_path_array, PDO::PARAM_STR );
+    $statement->bindParam( 29, $document_path_array, PDO::PARAM_STR );
+    $key_array = json_encode( $key_array );
+    $statement->bindParam( 30, $key_array, PDO::PARAM_STR );
+    $value_array = json_encode( $value_array );
+    $statement->bindParam( 31, $value_array, PDO::PARAM_STR );
 
     if ( !$statement->execute() )
     {
@@ -249,8 +257,6 @@ function SetDatabaseBlock(
     string $id,
     string $slug,
     string $page_id,
-    string $category_slug,
-    string $content_slug,
     string $type_slug,
     float $number,
     array $language_code_array,
@@ -276,51 +282,55 @@ function SetDatabaseBlock(
     string $video_path,
     array $video_path_array,
     string $document_path,
-    array $document_path_array
+    array $document_path_array,
+    array $key_array,
+    array $value_array
     )
 {
-     $statement = GetDatabaseStatement( 'update `BLOCK` set `Slug` = ?, `PageId` = ?, `CategorySlug` = ?, `ContentSlug` = ?, `TypeSlug` = ?, `Number` = ?, `LanguageCodeArray` = ?, `MinimumHeight` = ?, `Title` = ?, `TitleArray` = ?, `Teaser` = ?, `TeaserArray` = ?, `Text` = ?, `TextArray` = ?, `Route` = ?, `RouteArray` = ?, `ImageSide` = ?, `ImageTitle` = ?, `ImageTitleArray` = ?, `ImagePath` = ?, `ImagePathArray` = ?, `ImageVerticalPosition` = ?, `ImageVerticalPositionArray` = ?, `ImageHorizontalPosition` = ?, `ImageHorizontalPositionArray` = ?, `ImageFit` = ?, `VideoPath` = ?, `VideoPathArray` = ?, `DocumentPath` = ?, `DocumentPathArray` = ? where Id = ?' );
+     $statement = GetDatabaseStatement( 'update `BLOCK` set `Slug` = ?, `PageId` = ?, `TypeSlug` = ?, `Number` = ?, `LanguageCodeArray` = ?, `MinimumHeight` = ?, `Title` = ?, `TitleArray` = ?, `Teaser` = ?, `TeaserArray` = ?, `Text` = ?, `TextArray` = ?, `Route` = ?, `RouteArray` = ?, `ImageSide` = ?, `ImageTitle` = ?, `ImageTitleArray` = ?, `ImagePath` = ?, `ImagePathArray` = ?, `ImageVerticalPosition` = ?, `ImageVerticalPositionArray` = ?, `ImageHorizontalPosition` = ?, `ImageHorizontalPositionArray` = ?, `ImageFit` = ?, `VideoPath` = ?, `VideoPathArray` = ?, `DocumentPath` = ?, `DocumentPathArray` = ?, `KeyArray` = ?, `ValueArray` = ? where Id = ?' );
     $statement->bindParam( 1, $slug, PDO::PARAM_STR );
     $statement->bindParam( 2, $page_id, PDO::PARAM_STR );
-    $statement->bindParam( 3, $category_slug, PDO::PARAM_STR );
-    $statement->bindParam( 4, $content_slug, PDO::PARAM_STR );
-    $statement->bindParam( 5, $type_slug, PDO::PARAM_STR );
-    $statement->bindParam( 6, $number, PDO::PARAM_STR );
+    $statement->bindParam( 3, $type_slug, PDO::PARAM_STR );
+    $statement->bindParam( 4, $number, PDO::PARAM_STR );
     $language_code_array = json_encode( $language_code_array );
-    $statement->bindParam( 7, $language_code_array, PDO::PARAM_STR );
-    $statement->bindParam( 8, $minimum_height, PDO::PARAM_STR );
-    $statement->bindParam( 9, $title, PDO::PARAM_STR );
+    $statement->bindParam( 5, $language_code_array, PDO::PARAM_STR );
+    $statement->bindParam( 6, $minimum_height, PDO::PARAM_STR );
+    $statement->bindParam( 7, $title, PDO::PARAM_STR );
     $title_array = json_encode( $title_array );
-    $statement->bindParam( 10, $title_array, PDO::PARAM_STR );
-    $statement->bindParam( 11, $teaser, PDO::PARAM_STR );
+    $statement->bindParam( 8, $title_array, PDO::PARAM_STR );
+    $statement->bindParam( 9, $teaser, PDO::PARAM_STR );
     $teaser_array = json_encode( $teaser_array );
-    $statement->bindParam( 12, $teaser_array, PDO::PARAM_STR );
-    $statement->bindParam( 13, $text, PDO::PARAM_STR );
+    $statement->bindParam( 10, $teaser_array, PDO::PARAM_STR );
+    $statement->bindParam( 11, $text, PDO::PARAM_STR );
     $text_array = json_encode( $text_array );
-    $statement->bindParam( 14, $text_array, PDO::PARAM_STR );
-    $statement->bindParam( 15, $route, PDO::PARAM_STR );
+    $statement->bindParam( 12, $text_array, PDO::PARAM_STR );
+    $statement->bindParam( 13, $route, PDO::PARAM_STR );
     $route_array = json_encode( $route_array );
-    $statement->bindParam( 16, $route_array, PDO::PARAM_STR );
-    $statement->bindParam( 17, $image_side, PDO::PARAM_STR );
-    $statement->bindParam( 18, $image_title, PDO::PARAM_STR );
+    $statement->bindParam( 14, $route_array, PDO::PARAM_STR );
+    $statement->bindParam( 15, $image_side, PDO::PARAM_STR );
+    $statement->bindParam( 16, $image_title, PDO::PARAM_STR );
     $image_title_array = json_encode( $image_title_array );
-    $statement->bindParam( 19, $image_title_array, PDO::PARAM_STR );
-    $statement->bindParam( 20, $image_path, PDO::PARAM_STR );
+    $statement->bindParam( 17, $image_title_array, PDO::PARAM_STR );
+    $statement->bindParam( 18, $image_path, PDO::PARAM_STR );
     $image_path_array = json_encode( $image_path_array );
-    $statement->bindParam( 21, $image_path_array, PDO::PARAM_STR );
-    $statement->bindParam( 22, $image_vertical_position, PDO::PARAM_STR );
+    $statement->bindParam( 19, $image_path_array, PDO::PARAM_STR );
+    $statement->bindParam( 20, $image_vertical_position, PDO::PARAM_STR );
     $image_vertical_position_array = json_encode( $image_vertical_position_array );
-    $statement->bindParam( 23, $image_vertical_position_array, PDO::PARAM_STR );
-    $statement->bindParam( 24, $image_horizontal_position, PDO::PARAM_STR );
+    $statement->bindParam( 21, $image_vertical_position_array, PDO::PARAM_STR );
+    $statement->bindParam( 22, $image_horizontal_position, PDO::PARAM_STR );
     $image_horizontal_position_array = json_encode( $image_horizontal_position_array );
-    $statement->bindParam( 25, $image_horizontal_position_array, PDO::PARAM_STR );
-    $statement->bindParam( 26, $image_fit, PDO::PARAM_STR );
-    $statement->bindParam( 27, $video_path, PDO::PARAM_STR );
+    $statement->bindParam( 23, $image_horizontal_position_array, PDO::PARAM_STR );
+    $statement->bindParam( 24, $image_fit, PDO::PARAM_STR );
+    $statement->bindParam( 25, $video_path, PDO::PARAM_STR );
     $video_path_array = json_encode( $video_path_array );
-    $statement->bindParam( 28, $video_path_array, PDO::PARAM_STR );
-    $statement->bindParam( 29, $document_path, PDO::PARAM_STR );
+    $statement->bindParam( 26, $video_path_array, PDO::PARAM_STR );
+    $statement->bindParam( 27, $document_path, PDO::PARAM_STR );
     $document_path_array = json_encode( $document_path_array );
-    $statement->bindParam( 30, $document_path_array, PDO::PARAM_STR );
+    $statement->bindParam( 28, $document_path_array, PDO::PARAM_STR );
+    $key_array = json_encode( $key_array );
+    $statement->bindParam( 29, $key_array, PDO::PARAM_STR );
+    $value_array = json_encode( $value_array );
+    $statement->bindParam( 30, $value_array, PDO::PARAM_STR );
     $statement->bindParam( 31, $id, PDO::PARAM_STR );
 
     if ( !$statement->execute() )
@@ -413,82 +423,6 @@ function GetBlockByPageId(
     if ( isset( $block_by_page_id_map[ $page_id ] ) )
     {
         return $block_by_page_id_map[ $page_id ];
-    }
-    else
-    {
-        return null;
-    }
-}
-
-// ~~
-
-function GetBlockArrayByCategorySlugMap(
-    array &$block_array
-    )
-{
-     $block_array_by_category_slug_map = [];
-
-    foreach ( $block_array as  $block )
-    {
-        if ( !isset( $block_array_by_category_slug_map[ $block->CategorySlug ] ) )
-        {
-            $block_array_by_category_slug_map[ $block->CategorySlug ] = [ $block ];
-        }
-        else
-        {
-            array_push( $block_array_by_category_slug_map[ $block->CategorySlug ], $block );
-        }
-    }
-
-    return $block_array_by_category_slug_map;
-}
-
-// ~~
-
-function GetBlockArrayByCategorySlug(
-    array &$block_array,
-    string $category_slug
-    )
-{
-     $block_array_by_category_slug = [];
-
-    foreach ( $block_array as  $block )
-    {
-        if ( $block->CategorySlug === $category_slug )
-        {
-            array_push( $block_array_by_category_slug, $block );
-        }
-    }
-
-    return $block_array_by_category_slug;
-}
-
-// ~~
-
-function GetBlockByCategorySlugMap(
-    array &$block_array
-    )
-{
-     $block_by_category_slug_map = [];
-
-    foreach ( $block_array as  $block )
-    {
-        $block_by_category_slug_map[ $block->CategorySlug ] = $block;
-    }
-
-    return $block_by_category_slug_map;
-}
-
-// ~~
-
-function GetBlockByCategorySlug(
-    array &$block_by_category_slug_map,
-    string $category_slug
-    )
-{
-    if ( isset( $block_by_category_slug_map[ $category_slug ] ) )
-    {
-        return $block_by_category_slug_map[ $category_slug ];
     }
     else
     {

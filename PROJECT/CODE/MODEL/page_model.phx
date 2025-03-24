@@ -98,21 +98,7 @@ function GetValidPageByIdMap(
     foreach ( var page; page_array )
     {
         SortArrayByValue( page.BlockArray, 'GetBlockComparison' );
-
-        page.HeadingBlockArray = GetBlockArrayByCategorySlug( page.BlockArray, 'heading' );
-        page.ContentBlockArray = GetBlockArrayByCategorySlug( page.BlockArray, 'content' );
-    }
-
-    foreach ( var page; page_array )
-    {
-        LinkBlockArray( page.HeadingBlockArray );
-        LinkBlockArray( page.ContentBlockArray );
-
-        page.SortedBlockArray
-            = array_merge(
-                page.HeadingBlockArray,
-                page.ContentBlockArray
-                );
+        LinkBlockArray( page.BlockArray );
     }
 
     return page_by_id_map;

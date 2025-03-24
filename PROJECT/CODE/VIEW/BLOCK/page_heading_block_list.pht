@@ -1,8 +1,0 @@
-<style file="page_heading_block_list.styl">
-</style>
-<?
-    foreach ( var block; var page.HeadingBlockArray )
-    {
-        include str_replace( '-', '_', block.TypeSlug ) .. '.php';
-    }
-?>

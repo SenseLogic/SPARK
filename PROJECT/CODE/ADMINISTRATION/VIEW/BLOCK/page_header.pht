@@ -34,18 +34,8 @@
                     </a>
                 <? } ?>
                 <? if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
-                    <a class="page-menu-button" href="/admin/block-category">
-                        <% GetTextBySlug( 'Block categories' ) %>
-                    </a>
-                <? } ?>
-                <? if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
                     <a class="page-menu-button" href="/admin/block-type">
                         <% GetTextBySlug( 'Block types' ) %>
-                    </a>
-                <? } ?>
-                <? if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
-                    <a class="page-menu-button" href="/admin/block-content">
-                        <% GetTextBySlug( 'Block contents' ) %>
                     </a>
                 <? } ?>
                 <? if ( HasSessionMinimumUserRole( 'contributor' ) ) { ?>

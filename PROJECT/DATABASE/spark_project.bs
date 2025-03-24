@@ -45,19 +45,7 @@ spark-project
         MetaSubTitleArray : LIST[ STRING ] = "{}" | optional, multilingual_list, default_value "[]"
         MetaSubDescriptionArray : LIST[ STRING ] = "{}" | optional, multilingual_text_list, default_value "[]"
 
-    BLOCK_CATEGORY | sorted, dropped, has_user_role, view_user_role author, edit_user_role author, add_user_role publisher, remove_user_role publisher
-
-        Id : TUID | key, unique, hidden, default_expression GetRandomTuid()
-        Slug : STRING | mapped, is_slug
-        Name : STRING = "{{latin 1 1 4 6}}" | ascending
-
     BLOCK_TYPE | sorted, dropped, has_user_role, view_user_role author, edit_user_role author, add_user_role publisher, remove_user_role publisher
-
-        Id : TUID | key, unique, hidden, default_expression GetRandomTuid()
-        Slug : STRING | mapped, is_slug
-        Name : STRING = "{{latin 1 1 4 6}}" | ascending
-
-    BLOCK_CONTENT | sorted, dropped, has_user_role, view_user_role author, edit_user_role author, add_user_role publisher, remove_user_role publisher
 
         Id : TUID | key, unique, hidden, default_expression GetRandomTuid()
         Slug : STRING | mapped, is_slug
@@ -68,8 +56,6 @@ spark-project
         Id : TUID | key, unique, hidden, default_expression GetRandomTuid()
         Slug : STRING = "" | optional, is_slug, default_value "...-page-..."
         PageId : TUID = "{{PAGE.Id}}" | processed, enumeration "GetElementPropertyArray( .PageArray, 'Id' )^GetUntranslatedElementArray( GetElementPropertyArray( .PageArray, 'Title' ) )"
-        CategorySlug : BLOCK_CATEGORY.Slug = "content" | processed, is_slug, enumeration "GetElementPropertyArray( .BlockCategoryArray, 'Slug' )^GetUntranslatedElementArray( GetElementPropertyArray( .BlockCategoryArray, 'Name' ) )", default_value "content"
-        ContentSlug : BLOCK_CONTENT.Slug = "text" | is_slug, enumeration "GetElementPropertyArray( .BlockContentArray, 'Slug' )^GetUntranslatedElementArray( GetElementPropertyArray( .BlockContentArray, 'Name' ) )", default_value "text"
         TypeSlug : BLOCK_TYPE.Slug | processed, is_slug, enumeration "GetElementPropertyArray( .BlockTypeArray, 'Slug' )^GetUntranslatedElementArray( GetElementPropertyArray( .BlockTypeArray, 'Name' ) )"
         Number : FLOAT64 | ascending, default_value 1
         LanguageCodeArray : LIST[ LANGUAGE.Code ] = "{ en ~ fr }" | enumeration_list "[ 'en', 'fr', 'de', 'ja', 'ru' ]^[ 'English', 'French', 'German', 'Japanese', 'Russian' ]", default_value "[ \"en\", \"fr\" ]"
@@ -96,6 +82,8 @@ spark-project
         VideoPathArray : LIST[ STRING ] = "{}" | optional, video_list, default_value "[]"
         DocumentPath : STRING = "/static/document/article/logo.pdf|" | optional, document
         DocumentPathArray : LIST[ STRING ] = "{}" | optional, document_list, default_value "[]"
+        KeyArray : LIST[ STRING ] = "{}" | optional, multilingual_text_list, default_value "[]"
+        ValueArray : LIST[ STRING ] = "{}" | optional, multilingual_text_list, default_value "[]"
 
     CONTACT | sorted, has_user_role, view_user_role author, edit_user_role author, add_user_role publisher, remove_user_role publisher
 

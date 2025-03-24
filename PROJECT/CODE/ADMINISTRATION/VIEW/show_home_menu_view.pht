@@ -40,22 +40,8 @@
         <? } ?>
         <? if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
             <div class="tree-container">
-                <a class="tree-button" href="/admin/block-category">
-                    <% GetTextBySlug( 'Block categories' ) %>
-                </a>
-            </div>
-        <? } ?>
-        <? if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
-            <div class="tree-container">
                 <a class="tree-button" href="/admin/block-type">
                     <% GetTextBySlug( 'Block types' ) %>
-                </a>
-            </div>
-        <? } ?>
-        <? if ( HasSessionMinimumUserRole( 'author' ) ) { ?>
-            <div class="tree-container">
-                <a class="tree-button" href="/admin/block-content">
-                    <% GetTextBySlug( 'Block contents' ) %>
                 </a>
             </div>
         <? } ?>

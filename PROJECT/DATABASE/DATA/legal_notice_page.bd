@@ -16,13 +16,11 @@ PAGE
 
 BLOCK
 
-    Id Slug PageId CategorySlug ContentSlug TypeSlug Number LanguageCodeArray Text
+    Id Slug PageId TypeSlug Number LanguageCodeArray Text
 
         %legal-notice-page-1-block
-            ~ legal-notice-page-1
-            ~ %legal-notice-page
-            ~ content
             ~ text
+            ~ %legal-notice-page
             ~ text
             ~ 1
             ~ { en ~ fr }

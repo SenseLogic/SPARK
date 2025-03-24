@@ -1316,14 +1316,17 @@ body.is-appearing .loader-page-logo {
   text-align: center;
   color: #fff;
 }
-.contact-map {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+.contact-map-container {
   height: 50vh;
   width: 100%;
 }
-.contact-map > * {
-  display: none;
+.contact-map {
+  height: 100%;
+  width: 100%;
+}
+.contact-map .leaflet-bar,
+.contact-map .leaflet-bar * {
+  border-radius: 0 !important;
 }
 .cookie-consent-banner {
   z-index: 10000;
@@ -1702,7 +1705,7 @@ body.is-scrolled .header-menu:not(.is-open) {
 }
 .header-menu-open-button {
   margin-left: 1rem;
-  background: url("/static/image/header/menu_button.svg") no-repeat center center/contain;
+  background: url("/static/image/header/white_menu_button.svg") no-repeat center center/contain;
 }
 @media (min-width: 65em) {
   .header-menu-open-button {
@@ -1741,7 +1744,7 @@ body.is-scrolled .header-menu:not(.is-open) {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: url("/static/image/header/close_button.svg") no-repeat center center/contain;
+  background: url("/static/image/header/white_close_button.svg") no-repeat center center/contain;
 }
 .image {
   max-height: 100dvh;
@@ -1817,7 +1820,7 @@ body.is-scrolled .scroll-down-reminder {
   height: 0.8rem;
   width: 0.8rem;
   opacity: 1;
-  background: url("/static/image/base/scroll_down_icon.svg") no-repeat center center/contain;
+  background: url("/static/image/base/white_scroll_down_icon.svg") no-repeat center center/contain;
   transition: all 0.25s ease;
   animation: scroll-down-reminder-icon-animation 1s ease infinite;
 }
@@ -1840,7 +1843,7 @@ body.is-scrolled .scroll-down-reminder {
   height: 3rem;
   width: 1.25rem;
   opacity: 1;
-  background: url("/static/image/base/scroll_top_icon.svg") no-repeat center center/contain;
+  background: url("/static/image/base/black_scroll_top_icon.svg") no-repeat center center/contain;
   cursor: pointer;
   transition: opacity 0.25s ease;
 }

@@ -150,8 +150,6 @@ function Route(
         DefineText( 'en', 'English' );
         DefineText( 'fr', 'French' );
 
-        DefineText( 'Category Slug', 'Category' );
-        DefineText( 'Content Slug', 'Content' );
         DefineText( 'Document Path', 'Document' );
         DefineText( 'Document Path Array', 'Documents' );
         DefineText( 'Image Horizontal Position Array', 'Image Horizontal Positions' );
@@ -593,76 +591,6 @@ function Route(
             }
         }
         else if ( $path_value_count >= 2
-                  && $path_value_array[ 1 ] === 'block-category' )
-        {
-            if ( $it_is_get_request
-                 && $path_value_count === 2 )
-            {
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_block_categories_controller.php';
-            }
-            else if ( $it_is_get_request
-                      && $path_value_count === 3
-                      && $path_value_array[ 2 ] === 'add' )
-            {
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/add_block_category_controller.php';
-            }
-            else if ( $it_is_post_request
-                      && $path_value_count === 3
-                      && $path_value_array[ 2 ] === 'add'
-                      && HasPostValue( 'Id' )
-                      && HasPostValue( 'Slug' )
-                      && HasPostValue( 'Name' ) )
-            {
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_add_block_category_controller.php';
-            }
-            else if ( $it_is_get_request
-                      && $path_value_count === 4
-                      && $path_value_array[ 2 ] === 'view' )
-            {
-                 $block_category_id = $path_value_array[ 3 ];
-
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_block_category_controller.php';
-            }
-            else if ( $it_is_get_request
-                      && $path_value_count === 4
-                      && $path_value_array[ 2 ] === 'edit' )
-            {
-                 $block_category_id = $path_value_array[ 3 ];
-
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/edit_block_category_controller.php';
-            }
-            else if ( $it_is_post_request
-                      && $path_value_count === 4
-                      && $path_value_array[ 2 ] === 'edit'
-                      && HasPostValue( 'Slug' )
-                      && HasPostValue( 'Name' ) )
-            {
-                 $block_category_id = $path_value_array[ 3 ];
-
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_edit_block_category_controller.php';
-            }
-            else if ( $it_is_get_request
-                      && $path_value_count === 4
-                      && $path_value_array[ 2 ] === 'remove' )
-            {
-                 $block_category_id = $path_value_array[ 3 ];
-
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/remove_block_category_controller.php';
-            }
-            else if ( $it_is_post_request
-                      && $path_value_count === 4
-                      && $path_value_array[ 2 ] === 'remove' )
-            {
-                 $block_category_id = $path_value_array[ 3 ];
-
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_remove_block_category_controller.php';
-            }
-            else
-            {
-                require_once __DIR__ . '/' . 'CONTROLLER/show_error_controller.php';
-            }
-        }
-        else if ( $path_value_count >= 2
                   && $path_value_array[ 1 ] === 'block-type' )
         {
             if ( $it_is_get_request
@@ -733,76 +661,6 @@ function Route(
             }
         }
         else if ( $path_value_count >= 2
-                  && $path_value_array[ 1 ] === 'block-content' )
-        {
-            if ( $it_is_get_request
-                 && $path_value_count === 2 )
-            {
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_block_contents_controller.php';
-            }
-            else if ( $it_is_get_request
-                      && $path_value_count === 3
-                      && $path_value_array[ 2 ] === 'add' )
-            {
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/add_block_content_controller.php';
-            }
-            else if ( $it_is_post_request
-                      && $path_value_count === 3
-                      && $path_value_array[ 2 ] === 'add'
-                      && HasPostValue( 'Id' )
-                      && HasPostValue( 'Slug' )
-                      && HasPostValue( 'Name' ) )
-            {
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_add_block_content_controller.php';
-            }
-            else if ( $it_is_get_request
-                      && $path_value_count === 4
-                      && $path_value_array[ 2 ] === 'view' )
-            {
-                 $block_content_id = $path_value_array[ 3 ];
-
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/view_block_content_controller.php';
-            }
-            else if ( $it_is_get_request
-                      && $path_value_count === 4
-                      && $path_value_array[ 2 ] === 'edit' )
-            {
-                 $block_content_id = $path_value_array[ 3 ];
-
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/edit_block_content_controller.php';
-            }
-            else if ( $it_is_post_request
-                      && $path_value_count === 4
-                      && $path_value_array[ 2 ] === 'edit'
-                      && HasPostValue( 'Slug' )
-                      && HasPostValue( 'Name' ) )
-            {
-                 $block_content_id = $path_value_array[ 3 ];
-
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_edit_block_content_controller.php';
-            }
-            else if ( $it_is_get_request
-                      && $path_value_count === 4
-                      && $path_value_array[ 2 ] === 'remove' )
-            {
-                 $block_content_id = $path_value_array[ 3 ];
-
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/remove_block_content_controller.php';
-            }
-            else if ( $it_is_post_request
-                      && $path_value_count === 4
-                      && $path_value_array[ 2 ] === 'remove' )
-            {
-                 $block_content_id = $path_value_array[ 3 ];
-
-                require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_remove_block_content_controller.php';
-            }
-            else
-            {
-                require_once __DIR__ . '/' . 'CONTROLLER/show_error_controller.php';
-            }
-        }
-        else if ( $path_value_count >= 2
                   && $path_value_array[ 1 ] === 'block' )
         {
             if ( $it_is_get_request
@@ -822,8 +680,6 @@ function Route(
                       && HasPostValue( 'Id' )
                       && HasPostValue( 'Slug' )
                       && HasPostValue( 'PageId' )
-                      && HasPostValue( 'CategorySlug' )
-                      && HasPostValue( 'ContentSlug' )
                       && HasPostValue( 'TypeSlug' )
                       && HasPostValue( 'Number' )
                       && HasPostValue( 'LanguageCodeArray' )
@@ -849,7 +705,9 @@ function Route(
                       && HasPostValue( 'VideoPath' )
                       && HasPostValue( 'VideoPathArray' )
                       && HasPostValue( 'DocumentPath' )
-                      && HasPostValue( 'DocumentPathArray' ) )
+                      && HasPostValue( 'DocumentPathArray' )
+                      && HasPostValue( 'KeyArray' )
+                      && HasPostValue( 'ValueArray' ) )
             {
                 require_once __DIR__ . '/' . 'ADMINISTRATION/CONTROLLER/do_add_block_controller.php';
             }
@@ -874,8 +732,6 @@ function Route(
                       && $path_value_array[ 2 ] === 'edit'
                       && HasPostValue( 'Slug' )
                       && HasPostValue( 'PageId' )
-                      && HasPostValue( 'CategorySlug' )
-                      && HasPostValue( 'ContentSlug' )
                       && HasPostValue( 'TypeSlug' )
                       && HasPostValue( 'Number' )
                       && HasPostValue( 'LanguageCodeArray' )
@@ -901,7 +757,9 @@ function Route(
                       && HasPostValue( 'VideoPath' )
                       && HasPostValue( 'VideoPathArray' )
                       && HasPostValue( 'DocumentPath' )
-                      && HasPostValue( 'DocumentPathArray' ) )
+                      && HasPostValue( 'DocumentPathArray' )
+                      && HasPostValue( 'KeyArray' )
+                      && HasPostValue( 'ValueArray' ) )
             {
                  $block_id = $path_value_array[ 3 ];
 

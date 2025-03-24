@@ -91,7 +91,7 @@
     {
         margin-left: 1rem;
 
-        background: url( "/static/image/header/menu_button.svg" ) no-repeat center center / contain;
+        background: url( "/static/image/header/white_menu_button.svg" ) no-repeat center center / contain;
 
         +Media( min-width-65em )
         {
@@ -146,7 +146,7 @@
         top: 1rem;
         right: 1rem;
 
-        background: url( "/static/image/header/close_button.svg" ) no-repeat center center / contain;
+        background: url( "/static/image/header/white_close_button.svg" ) no-repeat center center / contain;
     }
 </style>
 <div id="header-menu" class="header-menu">

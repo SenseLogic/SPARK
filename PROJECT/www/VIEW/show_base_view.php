@@ -204,7 +204,7 @@
                     function (
                         )
                     {
-                        SetScrollPosition( section_element.GetTopPosition() - 48 * GetRemRatio() );
+                        SetScrollTop( section_element.GetTopPosition() - 48 * GetRemRatio() );
                     },
                     ( ViewRoute === OldViewRoute ) ? 0.2 : 0
                     );
