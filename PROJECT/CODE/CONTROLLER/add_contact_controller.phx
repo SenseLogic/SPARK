@@ -26,7 +26,7 @@ class ADD_CONTACT_CONTROLLER extends CONTROLLER
         if ( IsValidCaptcha( captcha, .Session.Captcha ) )
         {
             AddDatabaseContact( GetRandomTuid(), name, company, email, phone, subject, message );
-            // .SendEmails( name, company, email, phone, subject, message );
+            .SendEmails( name, company, email, phone, subject, message );
 
             SetStatus( 201 );
         }
@@ -47,34 +47,41 @@ class ADD_CONTACT_CONTROLLER extends CONTROLLER
         string message
         )
     {
-        message = ReplaceTexts( text, "<name>", name );
+        try
+        {
+            message = ReplaceTexts( message, "<name>", name );
 
-        SendEmail(
-            'mail.spark-project.com',
-            25,
-            'contact@spark-project.com',
-            'xyz',
-            'contact@spark-project.com',
-            email,
-            'spark-project.com',
-            .GetTranslatedText( GetDatabaseTextBySlug( 'ContactMailThanksText' ).Text )
-            );
+            SendEmail(
+                'mail.spark-project.com',
+                25,
+                'contact@spark-project.com',
+                'xyz',
+                'contact@spark-project.com',
+                email,
+                'spark-project.com',
+                .GetTranslatedText( GetDatabaseTextBySlug( 'ContactMailThanksText' ).Text )
+                );
 
-        SendEmail(
-            'mail.spark-project.com',
-            25,
-            'contact@spark-project.com',
-            'xyz',
-            'contact@spark-project.com',
-            'contact@spark-project.com',
-            'Contact request from ' .. email .. ' about Spark Project',
-            "Name : " .. name
-            .. "\nCompany : " .. company
-            .. "\nEmail : " .. email
-            .. "\nPhone : " .. phone
-            .. "\nSubject : " .. subject
-            .. "\nMessage : " .. message .. "\n"
-            );
+            SendEmail(
+                'mail.spark-project.com',
+                25,
+                'contact@spark-project.com',
+                'xyz',
+                'contact@spark-project.com',
+                'contact@spark-project.com',
+                'Contact request from ' .. email .. ' about Spark Project',
+                "Name : " .. name
+                .. "\nCompany : " .. company
+                .. "\nEmail : " .. email
+                .. "\nPhone : " .. phone
+                .. "\nSubject : " .. subject
+                .. "\nMessage : " .. message .. "\n"
+                );
+        }
+        catch ( Exception var exception )
+        {
+            PrintError( exception.getMessage() );
+        }
     }
 }
 

@@ -1247,7 +1247,7 @@ function GetCountryLocation(
 
 function GetBrowserLocation(
     string $browser_address,
-    string $ip_api_key = null
+    $ip_api_key = null
     )
 {
      $location = new stdClass();
