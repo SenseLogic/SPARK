@@ -1,6 +1,6 @@
 <div class="form-container">
     <div class="form-field-name">
-        <% GetTextBySlug( 'Type Slug' ) %> :
+        <% GetTextBySlug( 'Type' ) %> :
     </div>
     <div class="form-field-value">
         <dropdown-component class="form-component" result-name="TypeSlug" result-value="<% GetValueText( var block.TypeSlug ) %>" is-readonly  option-values="<% GetValueText( GetJsonText( GetElementPropertyArray( .BlockTypeArray, 'Slug' ) ) ) %>" option-names="<% GetValueText( GetJsonText( GetUntranslatedElementArray( GetElementPropertyArray( .BlockTypeArray, 'Name' ) ) ) ) %>"></dropdown-component>
@@ -11,22 +11,100 @@
     <div class="form-field-value">
         <input-component class="form-component" result-name="Number" result-value="<% GetValueText( block.Number ) %>" is-readonly></input-component>
     </div>
-    <div class="form-field-name">
-        <% GetTextBySlug( 'Text' ) %> :
-    </div>
-    <div class="form-field-value">
-        <multilingual-text-input-component class="form-component" result-name="Text" result-value="<% GetValueText( block.Text ) %>" is-readonly language-tags="<% GetValueText( GetJsonText( LanguageTagArray ) ) %>"></multilingual-text-input-component>
-    </div>
-    <div class="form-field-name">
-        <% GetTextBySlug( 'Image Path' ) %> :
-    </div>
-    <div class="form-field-value">
-        <multilingual-image-path-input-component class="form-component" result-name="ImagePath" result-value="<% GetValueText( block.ImagePath ) %>" is-readonly error-image-path="/static/image/admin/missing_image.svg" upload-api-url="/admin/upload/image" delete-api-url="/admin/delete/file" language-tags="<% GetValueText( GetJsonText( LanguageTagArray ) ) %>"></multilingual-image-path-input-component>
-    </div>
-    <div class="form-field-name">
-        <% GetTextBySlug( 'Video Path' ) %> :
-    </div>
-    <div class="form-field-value">
-        <multilingual-video-path-input-component class="form-component" result-name="VideoPath" result-value="<% GetValueText( block.VideoPath ) %>" is-readonly error-video-path="/static/video/admin/missing_video.mp4" upload-api-url="/admin/upload/video" delete-api-url="/admin/delete/file" language-tags="<% GetValueText( GetJsonText( LanguageTagArray ) ) %>"></multilingual-video-path-input-component>
-    </div>
+    <? if ( block.Title !== '' ) { ?>
+        <div class="form-field-name">
+            <% GetTextBySlug( 'Title' ) %> :
+        </div>
+        <div class="form-field-value">
+            <multilingual-text-input-component class="form-component" result-name="Title" result-value="<% GetValueText( block.Title ) %>" is-readonly language-tags="<% GetValueText( GetJsonText( LanguageTagArray ) ) %>"></multilingual-text-input-component>
+        </div>
+    <? } ?>
+    <? if ( count( block.TitleArray ) !== 0 ) { ?>
+            <div class="form-field-name" data-is-column-title data-column-name="TitleArray">
+                <% GetTextBySlug( 'Title Array' ) %> :
+            </div>
+            <div class="form-field-value" data-is-column-value data-column-name="TitleArray">
+                <multilingual-text-input-list-component class="form-component" result-name="TitleArray" result-value="<% GetValueText( block.TitleArray ) %>" is-readonly language-tags="<% GetValueText( GetJsonText( LanguageTagArray ) ) %>"></multilingual-text-input-list-component>
+            </div>
+    <? } ?>
+    <? if ( block.Teaser !== '' ) { ?>
+        <div class="form-field-name">
+            <% GetTextBySlug( 'Teaser' ) %> :
+        </div>
+        <div class="form-field-value">
+            <multilingual-text-input-component class="form-component" result-name="Teaser" result-value="<% GetValueText( block.Teaser ) %>" is-readonly language-tags="<% GetValueText( GetJsonText( LanguageTagArray ) ) %>"></multilingual-text-input-component>
+        </div>
+    <? } ?>
+    <? if ( count( block.TeaserArray ) !== 0 ) { ?>
+        <div class="form-field-name" data-is-column-title data-column-name="TeaserArray">
+            <% GetTextBySlug( 'Teaser Array' ) %> :
+        </div>
+        <div class="form-field-value" data-is-column-value data-column-name="TeaserArray">
+            <multilingual-text-input-list-component class="form-component" result-name="TeaserArray" result-value="<% GetValueText( block.TeaserArray ) %>" is-readonly language-tags="<% GetValueText( GetJsonText( LanguageTagArray ) ) %>"></multilingual-text-input-list-component>
+        </div>
+    <? } ?>
+    <? if ( block.Text !== '' ) { ?>
+        <div class="form-field-name">
+            <% GetTextBySlug( 'Text' ) %> :
+        </div>
+        <div class="form-field-value">
+            <multilingual-text-input-component class="form-component" result-name="Text" result-value="<% GetValueText( block.Text ) %>" is-readonly language-tags="<% GetValueText( GetJsonText( LanguageTagArray ) ) %>"></multilingual-text-input-component>
+        </div>
+    <? } ?>
+    <? if ( count( block.TextArray ) !== 0 ) { ?>
+        <div class="form-field-name" data-is-column-title data-column-name="TextArray">
+            <% GetTextBySlug( 'Text Array' ) %> :
+        </div>
+        <div class="form-field-value" data-is-column-value data-column-name="TextArray">
+            <multilingual-text-input-list-component class="form-component" result-name="TextArray" result-value="<% GetValueText( block.TextArray ) %>" is-readonly language-tags="<% GetValueText( GetJsonText( LanguageTagArray ) ) %>"></multilingual-text-input-list-component>
+        </div>
+    <? } ?>
+    <? if ( block.ImagePath !== '' ) { ?>
+        <div class="form-field-name">
+            <% GetTextBySlug( 'Image' ) %> :
+        </div>
+        <div class="form-field-value">
+            <multilingual-image-path-input-component class="form-component" result-name="ImagePath" result-value="<% GetValueText( block.ImagePath ) %>" is-readonly error-image-path="/static/image/admin/missing_image.svg" upload-api-url="/admin/upload/image" delete-api-url="/admin/delete/file" language-tags="<% GetValueText( GetJsonText( LanguageTagArray ) ) %>"></multilingual-image-path-input-component>
+        </div>
+    <? } ?>
+    <? if ( count( block.ImagePathArray ) !== 0 ) { ?>
+        <div class="form-field-name" data-is-column-title data-column-name="ImagePathArray">
+            <% GetTextBySlug( 'Image Path Array' ) %> :
+        </div>
+        <div class="form-field-value" data-is-column-value data-column-name="ImagePathArray">
+            <image-path-input-list-component class="form-component" result-name="ImagePathArray" result-value="<% GetValueText( block.ImagePathArray ) %>" is-readonly error-image-path="/static/image/admin/missing_image.svg" upload-api-url="/admin/upload/image" delete-api-url="/admin/delete/file"></image-path-input-list-component>
+        </div>
+    <? } ?>
+    <? if ( block.VideoPath !== '' ) { ?>
+        <div class="form-field-name">
+            <% GetTextBySlug( 'Video' ) %> :
+        </div>
+        <div class="form-field-value">
+            <multilingual-video-path-input-component class="form-component" result-name="VideoPath" result-value="<% GetValueText( block.VideoPath ) %>" is-readonly error-video-path="/static/video/admin/missing_video.mp4" upload-api-url="/admin/upload/video" delete-api-url="/admin/delete/file" language-tags="<% GetValueText( GetJsonText( LanguageTagArray ) ) %>"></multilingual-video-path-input-component>
+        </div>
+    <? } ?>
+    <? if ( count( block.VideoPathArray ) !== 0 ) { ?>
+        <div class="form-field-name" data-is-column-title data-column-name="VideoPathArray">
+            <% GetTextBySlug( 'Video Path Array' ) %> :
+        </div>
+        <div class="form-field-value" data-is-column-value data-column-name="VideoPathArray">
+            <video-path-input-list-component class="form-component" result-name="VideoPathArray" result-value="<% GetValueText( block.VideoPathArray ) %>" is-readonly error-video-path="/static/video/admin/missing_video.mp4" upload-api-url="/admin/upload/video" delete-api-url="/admin/delete/file"></video-path-input-list-component>
+        </div>
+    <? } ?>
+    <? if ( block.DocumentPath !== '' ) { ?>
+        <div class="form-field-name" data-is-column-title data-column-name="DocumentPath">
+            <% GetTextBySlug( 'Document Path' ) %> :
+        </div>
+        <div class="form-field-value" data-is-column-value data-column-name="DocumentPath">
+            <document-path-input-component class="form-component" result-name="DocumentPath" result-value="<% GetValueText( block.DocumentPath ) %>" is-readonly error-image-path="/static/image/admin/missing_image.svg" document-image-path="/static/image/admin/document_icon.svg" upload-api-url="/admin/upload/document" delete-api-url="/admin/delete/file"></document-path-input-component>
+        </div>
+    <? } ?>
+    <? if ( count( block.DocumentPathArray ) !== 0 ) { ?>
+        <div class="form-field-name" data-is-column-title data-column-name="DocumentPathArray">
+            <% GetTextBySlug( 'Document Path Array' ) %> :
+        </div>
+        <div class="form-field-value" data-is-column-value data-column-name="DocumentPathArray">
+            <document-path-input-list-component class="form-component" result-name="DocumentPathArray" result-value="<% GetValueText( block.DocumentPathArray ) %>" is-readonly error-image-path="/static/image/admin/missing_image.svg" document-image-path="/static/image/admin/document_icon.svg" upload-api-url="/admin/upload/document" delete-api-url="/admin/delete/file"></document-path-input-list-component>
+        </div>
+    <? } ?>
 </div>

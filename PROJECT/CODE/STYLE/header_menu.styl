@@ -6,28 +6,26 @@
     left: 0;
     right: 0;
 
+    padding-left: var( --page-padding );
+    padding-right: var( --page-padding );
+
     display: flex;
     justify-content: center;
     align-items: center;
 
-    background-color: transparent;
+    background-color: GrayColor700;
 
     transition: background-color 0.25s ease;
+}
+
+.header-menu *
+{
+    outline: 1px solid red;
 }
 
 body.is-scrolled .header-menu:not(.is-open)
 {
     background-color: rgba( 0, 0, 0, 0.3 );
-}
-
-.header-menu.is-open
-{
-    +Media( max-width-65em )
-    {
-        min-height: 100dvh;
-
-        background-color: rgba( 0, 0, 0, 0.5 );
-    }
 }
 
 .header-menu-button-container
@@ -42,18 +40,17 @@ body.is-scrolled .header-menu:not(.is-open)
     align-items: center;
 }
 
-.header-menu.is-open .header-menu-button-container
-{
-    +Media( max-width-65em )
-    {
-        display: none;
-    }
-}
-
 .header-menu-button
 {
     font-size: 1rem;
     color: WhiteColor;
+
+    cursor: pointer;
+}
+
+.header-menu-button:hover
+{
+    text-decoration: underline;
 }
 
 .header-menu-button.is-selected,
@@ -67,18 +64,29 @@ body.is-scrolled .header-menu:not(.is-open)
     margin-left: 1rem;
 }
 
-.header-menu-desktop-button
+.header-menu-button-icon
 {
-    +Media( max-width-65em )
-    {
-        display: none;
-    }
+    height: 1rem;
+    width: 1rem;
+
+    transition: transform 0.25s ease;
+}
+
+.header-menu-button:hover .header-menu-button-icon
+{
+    transform: scale( 1.1 );
 }
 
 .header-menu-icon-button
 {
     height: 2rem;
     width: 2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
 }
 
 .header-menu-icon-button + .header-menu-icon-button
@@ -86,64 +94,108 @@ body.is-scrolled .header-menu:not(.is-open)
     margin-left: 1rem;
 }
 
-.header-menu-open-button
+.header-menu-desktop-button
 {
-    margin-left: 1rem;
-
-    background: url( "/static/image/header/white_menu_button.svg" ) no-repeat center center / contain;
-
-    +Media( min-width-65em )
+    +Media( max-width-45em )
     {
         display: none;
     }
 }
 
-.header-menu-mobile-button-container
+.header-menu-open-button
 {
-    height: 100%;
-    width: 100%;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    margin-left: 1rem;
 
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.header-menu.is-open .header-menu-mobile-button-container
-{
-    +Media( max-width-65em )
+    +Media( min-width-45em )
     {
-        display: flex;
+        display: none;
     }
 }
 
-.header-menu-mobile-button
+.header-menu-open-button-icon
 {
-    border-radius: 0.5rem;
-    padding: 0.25rem 0.5rem;
+    background: url( "/static/image/base/white_menu_icon.svg" ) no-repeat center center / contain;
+}
 
-    font-size: 2rem;
+.header-menu-modal-container
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    height: 100dvh;
+    width: 100lvw;
+
+    display: none;
+
+    background-color: transparent;
+}
+
+.header-menu.is-open .header-menu-modal-container
+{
+    +Media( max-width-45em )
+    {
+        display: block;
+    }
+}
+
+.header-menu-modal
+{
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    overflow-y: auto;
+    height: 100dvh;
+    width: 50lvw;
+
+    display: block;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: GrayColor;
+}
+
+.header-menu-modal-content
+{
+    height: 100%;
+    padding: 5rem ContentDoublePadding ContentDoublePadding ContentDoublePadding;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.header-menu-modal-button
+{
+    padding: 1rem var( --content-padding );
+
+    font-size: 1.2rem;
     color: WhiteColor;
+
+    cursor: pointer;
+    transition: background-color 0.25s ease;
 }
 
-.header-menu-mobile-button.is-selected,
-.header-menu-mobile-button.is-active
+.header-menu-modal-button:hover
 {
-    font-weight: 700;
-}
+    background-color: GrayColor900;
 
-.header-menu-mobile-button + .header-menu-mobile-button
-{
-    margin-top: 1rem;
+    color: BlackColor;
 }
 
 .header-menu-close-button
 {
     position: absolute;
     top: 1rem;
-    right: 1rem;
+    right: var( --content-padding );
 
-    background: url( "/static/image/header/white_close_button.svg" ) no-repeat center center / contain;
+    cursor: pointer;
+}
+
+.header-menu-close-button-icon
+{
+    background: url( "/static/image/base/white_close_icon.svg" ) no-repeat center center / contain;
 }

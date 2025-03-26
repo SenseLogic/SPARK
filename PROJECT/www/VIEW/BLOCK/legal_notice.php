@@ -5,7 +5,7 @@
 
 
 
-<div class="large-padded-container legal-notice">
+<div class="legal-notice">
     <h1>
         <?php echo $this->GetProcessedTextBySlug( 'legal-notice-title' ); ?>
     </h1>

@@ -330,14 +330,14 @@
     }
 </script>
 <div>
-    <? include 'PAGE/loader_page.php'; ?>
+    <? include 'PAGE/starter_page.php'; ?>
     <? foreach ( var page_id => var page; .PageByIdMap ) { ?>
         <? if ( page.Route == .PageRoute ) { ?>
-            <div class="extended-container view is-hidden" data-view-route="<# page.Route #>">
+            <div class="view is-hidden" data-view-route="<# page.Route #>">
                 <? include 'PAGE/' .. str_replace( '-', '_', page.TypeSlug ) .. '_page.php'; ?>
             </div>
         <? } else { ?>
-            <div class="extended-container view is-hidden" data-view-route="<# page.Route #>">
+            <div class="view is-hidden" data-view-route="<# page.Route #>">
                 <template>
                     <? include 'PAGE/' .. str_replace( '-', '_', page.TypeSlug ) .. '_page.php'; ?>
                 </template>

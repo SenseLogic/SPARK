@@ -5,7 +5,7 @@
         padding-bottom: 3rem;
     }
 </style>
-<div class="large-padded-container legal-notice">
+<div class="legal-notice">
     <h1>
         <# .GetProcessedTextBySlug( 'legal-notice-title' ) #>
     </h1>

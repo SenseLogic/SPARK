@@ -111,7 +111,7 @@
 
 
 
-<div class="narrow-margined-container contact-form">
+<div class="contact-form">
     <form id="contact-form-container" class="contact-form-container" name="ContactForm">
         <div class="contact-form-row">
             <input class="contact-form-input" name="Name" type="text" placeholder="<?php echo $this->GetProcessedTextBySlug( 'contact-form-name-placeholder' ); ?>"/>

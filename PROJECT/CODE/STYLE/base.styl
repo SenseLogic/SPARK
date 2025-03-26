@@ -354,6 +354,9 @@ LargeButtonPadding = 1rem 2rem;
 BigButtonPadding = 1.5rem 3rem;
 HugeButtonPadding = 2rem 4rem;
 
+ContentPadding = 2rem;
+ContentDoublePadding = 4rem;
+
 // -- ELEMENTS
 
 :root
@@ -496,6 +499,9 @@ HugeButtonPadding = 2rem 4rem;
     --large-button-padding: LargeButtonPadding;
     --big-button-padding: BigButtonPadding;
     --huge-button-padding: HugeButtonPadding;
+
+    --content-padding: ContentPadding;
+    --content-double-padding: ContentDoublePadding;
 }
 
 html
@@ -597,11 +603,6 @@ textarea
 
 // -- CLASSES
 
-MakeExtendedContainer();
-MakeMarginedContainer( 1.25rem, 40 * Pxm 5rem 7.5rem 10rem 12.5rem, min-width-40em min-width-60em min-width-80em min-width-100em min-width-120em, "large-" );
-MakeMarginedContainer( 1.25rem, 5rem 7.5rem 10rem 12.5rem 240 * Pxm, min-width-40em min-width-60em min-width-80em min-width-100em min-width-120em, "narrow-" );
-MakePaddedContainer( 1.25rem, 2.5rem 5rem 7.5rem 10rem 12.5rem, min-width-40em min-width-60em min-width-80em min-width-100em min-width-120em, "large-" );
-MakePaddedContainer( 1.25rem, 5rem 7.5rem 10rem 12.5rem 240 * Pxm, min-width-40em min-width-60em min-width-80em min-width-100em min-width-120em, "narrow-" );
 MakeMarginLeftAuto( , , "\!", !important );
 MakeMarginRightAuto( , , "\!", !important );
 MakeOverflowScrollbarHidden();
@@ -613,6 +614,7 @@ SetRootFontSize( 1rem, 1.1rem 1.2rem 1.3rem 1.4rem, min-width-90em min-width-100
 
 MakeScaledButton( 0.25s, ease, 1.1 );
 MakeZoomedButton( 0.8s, ease, 1.05 );
+MakeZoomedBackground( 0.8s, ease, 1.05 );
 MakeYTranslationOpacityTransition( ".is-visible", 1.8s, ease, 10% );
 
 // ~~
@@ -906,8 +908,8 @@ MakeYTranslationOpacityTransition( ".is-visible", 1.8s, ease, 10% );
 
 .page
 {
-    --page-margin: 2rem;
-    --page-padding: 2rem;
+    --page-margin: ContentPadding;
+    --page-padding: ContentPadding;
 
     position: relative;
 
@@ -920,22 +922,22 @@ MakeYTranslationOpacityTransition( ".is-visible", 1.8s, ease, 10% );
 
     +Media( min-width-65em )
     {
-        --page-margin: 4rem;
-        --page-padding: 4rem;
+        --page-margin: ContentDoublePadding;
+        --page-padding: ContentDoublePadding;
     }
 }
 
 .block
 {
-    --block-margin: 2rem;
-    --block-padding: 2rem;
+    --block-margin: ContentPadding;
+    --block-padding: ContentPadding;
 
     margin-bottom: 2rem;
 
     +Media( min-width-65em )
     {
-        --block-margin: 4rem;
-        --block-padding: 4rem;
+        --block-margin: ContentDoublePadding;
+        --block-padding: ContentDoublePadding;
     }
 }
 

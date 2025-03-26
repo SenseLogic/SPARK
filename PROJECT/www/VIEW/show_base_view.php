@@ -330,14 +330,14 @@
     }
 </script>
 <div>
-    <?php require __DIR__ . '/' . 'PAGE/loader_page.php'; ?>
+    <?php require __DIR__ . '/' . 'PAGE/starter_page.php'; ?>
     <?php foreach ( $this->PageByIdMap as  $page_id =>  $page ) { ?>
         <?php if ( $page->Route == $this->PageRoute ) { ?>
-            <div class="extended-container view is-hidden" data-view-route="<?php echo $page->Route; ?>">
+            <div class="view is-hidden" data-view-route="<?php echo $page->Route; ?>">
                 <?php require __DIR__ . '/' . 'PAGE/' . str_replace( '-', '_', $page->TypeSlug ) . '_page.php'; ?>
             </div>
         <?php } else { ?>
-            <div class="extended-container view is-hidden" data-view-route="<?php echo $page->Route; ?>">
+            <div class="view is-hidden" data-view-route="<?php echo $page->Route; ?>">
                 <template>
                     <?php require __DIR__ . '/' . 'PAGE/' . str_replace( '-', '_', $page->TypeSlug ) . '_page.php'; ?>
                 </template>
