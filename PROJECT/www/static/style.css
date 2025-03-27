@@ -1541,9 +1541,6 @@ body.is-appearing .loader-page-logo {
   background-color: #b3b3b3;
   transition: background-color 0.25s ease;
 }
-.header-menu * {
-  outline: 1px solid #f00;
-}
 body.is-scrolled .header-menu:not(.is-open) {
   background-color: rgba(0,0,0,0.3);
 }
@@ -1610,14 +1607,20 @@ body.is-scrolled .header-menu:not(.is-open) {
   position: fixed;
   top: 0;
   left: 0;
+  transform: translateY(100dvh);
+  overflow-y: hidden;
   height: 100dvh;
   width: 100lvw;
-  display: none;
+  opacity: 0;
   background-color: transparent;
+  pointer-events: none;
+  transition: transform 0.5s ease;
 }
-@media (max-width: 44.98em) {
+@media (max-width: 64.98em) {
   .header-menu.is-open .header-menu-modal-container {
-    display: block;
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
   }
 }
 .header-menu-modal {
@@ -1627,15 +1630,15 @@ body.is-scrolled .header-menu:not(.is-open) {
   overflow-y: auto;
   height: 100dvh;
   width: 50lvw;
-  display: block;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background: #808080;
 }
 .header-menu-modal-content {
-  height: 100%;
-  padding: 5rem 4rem 4rem 4rem;
+  min-height: 100%;
+  padding: 5rem var(--content-double-padding) var(--content-double-padding) var(--content-double-padding);
   display: flex;
   flex-direction: column;
   gap: 1rem;

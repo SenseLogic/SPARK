@@ -6,7 +6,7 @@
         <input-component class="form-component" result-name="Route" result-value="<% GetValueText( var page.Route ) %>" is-readonly></input-component>
     </div>
     <div class="form-field-name">
-        <% GetTextBySlug( 'Type' ) %> :
+        <% GetTextBySlug( 'Type Slug' ) %> :
     </div>
     <div class="form-field-value"">
         <dropdown-component class="form-component" result-name="TypeSlug" result-value="<% GetValueText( page.TypeSlug ) %>" is-readonly  option-values="<% GetValueText( GetJsonText( GetElementPropertyArray( .PageTypeArray, 'Slug' ) ) ) %>" option-names="<% GetValueText( GetJsonText( GetUntranslatedElementArray( GetElementPropertyArray( .PageTypeArray, 'Name' ) ) ) ) %>"></dropdown-component>
@@ -37,7 +37,7 @@
     <? } ?>
     <? if ( page.ImagePath !== '' ) { ?>
         <div class="form-field-name">
-            <% GetTextBySlug( 'Image' ) %> :
+            <% GetTextBySlug( 'Image Path' ) %> :
         </div>
         <div class="form-field-value">
             <multilingual-image-path-input-component class="form-component" result-name="ImagePath" result-value="<% GetValueText( page.ImagePath ) %>" is-readonly error-image-path="/static/image/admin/missing_image.svg" upload-api-url="/admin/upload/image" delete-api-url="/admin/delete/file" language-tags="<% GetValueText( GetJsonText( LanguageTagArray ) ) %>"></multilingual-image-path-input-component>
@@ -45,7 +45,7 @@
     <? } ?>
     <? if ( page.VideoPath !== '' ) { ?>
         <div class="form-field-name">
-            <% GetTextBySlug( 'Video' ) %> :
+            <% GetTextBySlug( 'Video Path' ) %> :
         </div>
         <div class="form-field-value">
             <multilingual-video-path-input-component class="form-component" result-name="VideoPath" result-value="<% GetValueText( page.VideoPath ) %>" is-readonly error-video-path="/static/video/admin/missing_video.mp4" upload-api-url="/admin/upload/video" delete-api-url="/admin/delete/file" language-tags="<% GetValueText( GetJsonText( LanguageTagArray ) ) %>"></multilingual-video-path-input-component>

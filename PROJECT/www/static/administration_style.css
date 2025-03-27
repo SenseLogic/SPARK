@@ -835,14 +835,15 @@ textarea {
   top: 0;
   left: 0;
   right: 0;
-  height: 2.5rem;
+  min-height: 2.5rem;
   padding-left: 1rem;
   padding-right: 1rem;
   display: flex;
-  gap: 1.5rem;
+  flex-wrap: wrap;
   grid-area: menu;
   justify-content: center;
   align-items: center;
+  column-gap: 1.5rem;
   background-color: #fff;
 }
 .page-menu-button,
