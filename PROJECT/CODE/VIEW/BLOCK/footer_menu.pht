@@ -2,6 +2,8 @@
     .footer-menu
     {
         height: 3rem;
+        padding-left: var( --page-padding );
+        padding-right: var( --page-padding );
 
         display: flex;
         justify-content: center;

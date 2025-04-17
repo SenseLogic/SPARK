@@ -483,6 +483,7 @@
 
 
 
+
 <?php if ( $this->BrowserLocation->IsEurope ) { ?>
     <div id="cookie-consent-banner" class="cookie-consent-banner is-hidden">
         <div class="cookie-consent-banner-text is-small">

@@ -79,6 +79,7 @@
 
 
 
+
 <div id="<?php echo  $block->Slug; ?>">
 </div>
 <div class="y-translation-opacity-transition block appearing-block text-and-video video-side-<?php echo $block->ImageSide; ?>">

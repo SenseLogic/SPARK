@@ -330,7 +330,7 @@
     }
 </script>
 <div>
-    <?php require __DIR__ . '/' . 'PAGE/starter_page.php'; ?>
+    <?php require __DIR__ . '/' . 'PAGE/loader_page.php'; ?>
     <?php foreach ( $this->PageByIdMap as  $page_id =>  $page ) { ?>
         <?php if ( $page->Route == $this->PageRoute ) { ?>
             <div class="view is-hidden" data-view-route="<?php echo $page->Route; ?>">

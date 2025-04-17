@@ -26,6 +26,8 @@
 
 
 
+
+
 <div class="footer-menu">
     <div class="margin-right-auto! scaled-button footer-menu-button" onclick="ShowView( 'home' )">
         <?php echo $this->GetProcessedTextBySlug( 'footer-menu-home-button' ); ?>

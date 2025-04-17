@@ -40,11 +40,12 @@
 
     .text-and-image-text
     {
+        grid-area: text;
+
         padding: var( --block-padding );
 
         display: flex;
         flex-direction: column;
-        grid-area: text;
         justify-content: center;
         align-items: start;
 

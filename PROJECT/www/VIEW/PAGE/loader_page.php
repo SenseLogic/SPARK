@@ -76,97 +76,30 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div id="loader-page" class="loader-page">
-    <div class="loader-page-slider">
-    </div>
-    <div id="loader-page-logo" class="loader-page-logo">
-        <div class="loader-page-logo-upper-slider">
-            <div class="loader-page-logo-background">
-            </div>
+    <div class="loader-page-panel loader-page-final-panel">
+        <div class="loader-page-logo loader-page-final-logo">
         </div>
-        <div class="loader-page-logo-lower-slider">
-            <div class="loader-page-logo-background">
-            </div>
+    </div>
+    <div class="loader-page-panel loader-page-initial-panel">
+        <div class="loader-page-logo loader-page-initial-logo">
         </div>
     </div>
 </div>
 <script>
     // -- FUNCTIONS
 
-    function HideLoader(
-        )
+    function HideLoader()
     {
-        GetElementById( "loader-page-logo" ).AnimateStyles(
+        GetElementById( "loader-page" ).AnimateStyles(
             {
-                "--progress" : [ ".", "100%" ]
+                "--progress": [ ".", "100%" ]
             },
             [ 0.0, 0.5 ]
             );
 
         DelayCall(
-            function (
-                )
+            function()
             {
                 GetElement( "body" ).AddClass( "is-appearing" );
                 EmitEvent( "reveal-view" );
@@ -175,8 +108,7 @@
             );
 
         DelayCall(
-            function (
-                )
+            function()
             {
                 GetElementById( "loader-page" ).AddClass( "is-hidden" );
             },
@@ -184,8 +116,7 @@
             );
 
         DelayCall(
-            function (
-                )
+            function()
             {
                 GetElement( "body" ).RemoveClass( "is-appearing" );
             },
@@ -193,14 +124,12 @@
             );
     }
 
-    // -- STATEMENTS
-
-    GetElementById( "loader-page-logo" ).AnimateStyles(
+    GetElementById( "loader-page" ).AnimateStyles(
         {
-            "--progress" : [ "0%", "0%", "100%" ]
+            "--progress": [ "0%", "0%", "100%" ]
         },
-        [ 0.0, 1.0, 2.0 ]
-        );
+        [ 0.0, 1.0, 10.0 ]
+    );
 
     DelayCall( HideLoader );
 </script>

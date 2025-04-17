@@ -366,11 +366,12 @@
 
     .cookie-consent-dialog-setting-title
     {
+        grid-area: title;
+
         padding-top: 0.25rem;
         padding-bottom: 0.25rem;
 
         display: flex;
-        grid-area: title;
         align-items: center;
 
         color: CookieConsentTitleColor;
@@ -395,20 +396,20 @@
 
     .cookie-consent-dialog-setting-value
     {
+        grid-area: value;
+
         padding-top: 0.25rem;
         padding-bottom: 0.25rem;
-
-        grid-area: value;
 
         color: CookieConsentSettingActiveColor;
     }
 
     .cookie-consent-dialog-setting-description
     {
+        grid-area: description;
+
         border-radius: 0.5rem;
         padding: 1rem;
-
-        grid-area: description;
 
         background-color: CookieConsentSettingDescriptionBackgroundColor;
 

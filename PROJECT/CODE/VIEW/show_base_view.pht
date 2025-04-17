@@ -330,7 +330,7 @@
     }
 </script>
 <div>
-    <? include 'PAGE/starter_page.php'; ?>
+    <? include 'PAGE/loader_page.php'; ?>
     <? foreach ( var page_id => var page; .PageByIdMap ) { ?>
         <? if ( page.Route == .PageRoute ) { ?>
             <div class="view is-hidden" data-view-route="<# page.Route #>">

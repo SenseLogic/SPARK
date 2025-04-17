@@ -1,137 +1,76 @@
 .loader-page
 {
+    --progress: 0;
+
     z-index: 10000;
     position: fixed;
 
+    overflow: hidden;
     height: 100dvh;
     width: 100%;
 
-    background: #FFFFFF;
+    background: BlueColor800;
+}
+
+@keyframes loader-page-disappearing-animation
+{
+    0%
+    {
+        transform: translateY( 0 );
+    }
+
+    100%
+    {
+        transform: translateY( -100dvh );
+    }
 }
 
 body.is-appearing .loader-page
 {
-    background: transparent;
+    animation: loader-page-disappearing-animation 1s forwards;
 }
 
-@keyframes loader-page-slider-appearing-animation
-{
-    0%
-    {
-        opacity: 0;
-        background: linear-gradient( #FFFFFF, #FFFFFF );
-    }
-
-    100%
-    {
-        opacity: 1;
-        background: linear-gradient( #FFFFFF, #FFFFFF );
-    }
-}
-
-.loader-page-slider
+.loader-page-panel
 {
     position: absolute;
     top: 0;
-    bottom: 50vh;
     left: 0;
     right: 0;
 
-    background: linear-gradient( #FFFFFF, #FFFFFF );
-    background-size: auto 100dvh;
-
-    animation: loader-page-slider-appearing-animation 1s;
+    overflow: hidden;
 }
 
-@keyframes loader-page-slider-disappearing-animation
+.loader-page-initial-panel
 {
-    0%
-    {
-        bottom: 0;
-    }
+    bottom: var( --progress );
 
-    100%
-    {
-        bottom: 100dvh;
-    }
+    background-color: BlueColor800;
 }
 
-body.is-appearing .loader-page-slider
+.loader-page-final-panel
 {
-    animation: loader-page-slider-disappearing-animation 1s forwards;
-}
+    bottom: 0;
 
-@keyframes loader-page-logo-appearing-animation
-{
-    0%
-    {
-        opacity: 0;
-    }
-
-    100%
-    {
-        opacity: 1;
-    }
+    background-color: WhiteColor;
 }
 
 .loader-page-logo
 {
-    --progress: 0;
-
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 50dvh;
+    left: 50lvw;
     transform: translateX( -50% ) translateY( -50% );
 
-    height: 15rem;
-    width: 15rem;
-
-    animation: loader-page-logo-appearing-animation 1s;
+    height: 25rem;
+    width: 25rem;
 }
 
-body.is-appearing .loader-page-logo
+.loader-page-initial-logo
 {
-    display: none;
+    background: url("/static/image/loader/initial_logo.svg") no-repeat center center / contain;
 }
 
-.loader-page-logo-upper-slider
+.loader-page-final-logo
 {
-    position: absolute;
-    top: 0;
-    bottom: var( --progress );
-    left: 0;
-    right: 0;
-
-    overflow: hidden;
-}
-
-.loader-page-logo-lower-slider
-{
-    position: absolute;
-    top: calc( 100% - var( --progress ) );
-    bottom: 0;
-    left: 0;
-    right: 0;
-
-    overflow: hidden;
-}
-
-.loader-page-logo-background
-{
-    height: 15rem;
-    width: 15rem;
-}
-
-.loader-page-logo-upper-slider .loader-page-logo-background
-{
-    transform: translateY( 0 );
-
-    background: url( "/static/image/loader/initial_logo.svg" ) no-repeat center center / contain;
-}
-
-.loader-page-logo-lower-slider .loader-page-logo-background
-{
-    transform: translateY( calc( 0% - calc( 100% - var( --progress ) ) ) );
-
-    background: url( "/static/image/loader/final_logo.svg" ) no-repeat center center / contain;
+    background: url("/static/image/loader/final_logo.svg") no-repeat center center / contain;
 }

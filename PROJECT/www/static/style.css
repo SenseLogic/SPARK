@@ -904,171 +904,76 @@ html {
   align-items: center;
 }
 .loader-page {
+  --progress: 0;
   z-index: 10000;
   position: fixed;
+  overflow: hidden;
   height: 100dvh;
   width: 100%;
-  background: #fff;
+  background: #a7c9f8;
 }
 body.is-appearing .loader-page {
-  background: transparent;
+  animation: loader-page-disappearing-animation 1s forwards;
 }
-.loader-page-slider {
+.loader-page-panel {
   position: absolute;
   top: 0;
-  bottom: 50vh;
   left: 0;
   right: 0;
-  background: linear-gradient(#fff, #fff);
-  background-size: auto 100dvh;
-  animation: loader-page-slider-appearing-animation 1s;
+  overflow: hidden;
 }
-body.is-appearing .loader-page-slider {
-  animation: loader-page-slider-disappearing-animation 1s forwards;
+.loader-page-initial-panel {
+  bottom: var(--progress);
+  background-color: #a7c9f8;
+}
+.loader-page-final-panel {
+  bottom: 0;
+  background-color: #fff;
 }
 .loader-page-logo {
-  --progress: 0;
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 50dvh;
+  left: 50lvw;
   transform: translateX(-50%) translateY(-50%);
-  height: 15rem;
-  width: 15rem;
-  animation: loader-page-logo-appearing-animation 1s;
+  height: 25rem;
+  width: 25rem;
 }
-body.is-appearing .loader-page-logo {
-  display: none;
-}
-.loader-page-logo-upper-slider {
-  position: absolute;
-  top: 0;
-  bottom: var(--progress);
-  left: 0;
-  right: 0;
-  overflow: hidden;
-}
-.loader-page-logo-lower-slider {
-  position: absolute;
-  top: calc(100% - var(--progress));
-  bottom: 0;
-  left: 0;
-  right: 0;
-  overflow: hidden;
-}
-.loader-page-logo-background {
-  height: 15rem;
-  width: 15rem;
-}
-.loader-page-logo-upper-slider .loader-page-logo-background {
-  transform: translateY(0);
+.loader-page-initial-logo {
   background: url("/static/image/loader/initial_logo.svg") no-repeat center center/contain;
 }
-.loader-page-logo-lower-slider .loader-page-logo-background {
-  transform: translateY(calc(0% - calc(100% - var(--progress))));
+.loader-page-final-logo {
   background: url("/static/image/loader/final_logo.svg") no-repeat center center/contain;
 }
-@-moz-keyframes loader-page-slider-appearing-animation {
+@-moz-keyframes loader-page-disappearing-animation {
   0% {
-    opacity: 0;
-    background: linear-gradient(#fff, #fff);
+    transform: translateY(0);
   }
   100% {
-    opacity: 1;
-    background: linear-gradient(#fff, #fff);
+    transform: translateY(-100dvh);
   }
 }
-@-webkit-keyframes loader-page-slider-appearing-animation {
+@-webkit-keyframes loader-page-disappearing-animation {
   0% {
-    opacity: 0;
-    background: linear-gradient(#fff, #fff);
+    transform: translateY(0);
   }
   100% {
-    opacity: 1;
-    background: linear-gradient(#fff, #fff);
+    transform: translateY(-100dvh);
   }
 }
-@-o-keyframes loader-page-slider-appearing-animation {
+@-o-keyframes loader-page-disappearing-animation {
   0% {
-    opacity: 0;
-    background: linear-gradient(#fff, #fff);
+    transform: translateY(0);
   }
   100% {
-    opacity: 1;
-    background: linear-gradient(#fff, #fff);
+    transform: translateY(-100dvh);
   }
 }
-@keyframes loader-page-slider-appearing-animation {
+@keyframes loader-page-disappearing-animation {
   0% {
-    opacity: 0;
-    background: linear-gradient(#fff, #fff);
+    transform: translateY(0);
   }
   100% {
-    opacity: 1;
-    background: linear-gradient(#fff, #fff);
-  }
-}
-@-moz-keyframes loader-page-slider-disappearing-animation {
-  0% {
-    bottom: 0;
-  }
-  100% {
-    bottom: 100dvh;
-  }
-}
-@-webkit-keyframes loader-page-slider-disappearing-animation {
-  0% {
-    bottom: 0;
-  }
-  100% {
-    bottom: 100dvh;
-  }
-}
-@-o-keyframes loader-page-slider-disappearing-animation {
-  0% {
-    bottom: 0;
-  }
-  100% {
-    bottom: 100dvh;
-  }
-}
-@keyframes loader-page-slider-disappearing-animation {
-  0% {
-    bottom: 0;
-  }
-  100% {
-    bottom: 100dvh;
-  }
-}
-@-moz-keyframes loader-page-logo-appearing-animation {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@-webkit-keyframes loader-page-logo-appearing-animation {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@-o-keyframes loader-page-logo-appearing-animation {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes loader-page-logo-appearing-animation {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
+    transform: translateY(-100dvh);
   }
 }
 .adjacent-page-list {
@@ -1436,10 +1341,10 @@ body.is-appearing .loader-page-logo {
   width: auto;
 }
 .cookie-consent-dialog-setting-title {
+  grid-area: title;
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
   display: flex;
-  grid-area: title;
   align-items: center;
   color: #333;
   cursor: pointer;
@@ -1454,15 +1359,15 @@ body.is-appearing .loader-page-logo {
   opacity: 0.8;
 }
 .cookie-consent-dialog-setting-value {
+  grid-area: value;
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
-  grid-area: value;
   color: #00a979;
 }
 .cookie-consent-dialog-setting-description {
+  grid-area: description;
   border-radius: 0.5rem;
   padding: 1rem;
-  grid-area: description;
   background-color: #f2f2f2;
   font-size: 0.8rem;
   color: #666;
@@ -1512,6 +1417,8 @@ body.is-appearing .loader-page-logo {
 }
 .footer-menu {
   height: 3rem;
+  padding-left: var(--page-padding);
+  padding-right: var(--page-padding);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1805,10 +1712,10 @@ body:not(.is-scrolled) .scroll-top-button {
   }
 }
 .text-and-image-text {
+  grid-area: text;
   padding: var(--block-padding);
   display: flex;
   flex-direction: column;
-  grid-area: text;
   justify-content: center;
   align-items: start;
   color: #000;
@@ -1844,17 +1751,17 @@ body:not(.is-scrolled) .scroll-top-button {
   }
 }
 .text-and-video-text {
+  grid-area: text;
   padding: var(--block-padding);
   display: flex;
   flex-direction: column;
-  grid-area: text;
   justify-content: center;
   align-items: start;
   color: #000;
 }
 .text-and-video-video {
-  height: 100%;
   grid-area: video;
+  height: 100%;
 }
 .text-and-video-video-image {
   position: relative;
