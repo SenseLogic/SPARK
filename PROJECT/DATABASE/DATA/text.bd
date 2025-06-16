@@ -101,10 +101,21 @@ TEXT
             ~ Thank you for your interest in Spark Project!
               ¨fr:Merci de l'intérêt que vous portez à Spark Project !
 
+        %contact-mail-thanks-subject-text
+            ~ contact-mail-thanks-subject
+            ~ Thank you for contacting Spark Project
+              ¨fr:Merci d'avoir contacté Spark Project
+
         %contact-mail-thanks-text-text
             ~ contact-mail-thanks-text
-            ~ Hi,\n\nThank you for your interest in Spark Project. We will get back to you as soon as possible.\n\nBest regards,\n\nThe Spark Project team\n
-              ¨fr:Bonjour,\n\nJe vous remercie de l'intérêt que vous portez à Spark Project. Nous vous répondrons dès que possible.\n\nMeilleures salutations,\n\nL'équipe de Spark Project.\n
+            ~ Hi,\n\n
+              Thank you for your interest in Spark Project. We will get back to you as soon as possible.\n\n
+              Best regards,\n\n
+              The Spark Project team
+              ¨fr:Bonjour,\n\n
+                  Nous vous remercions de l'intérêt que vous portez à Spark Project. Nous vous répondrons dans les plus brefs délais.\n\n
+                  Cordialement,\n\n
+                  L'équipe Spark Project.
 
         %cookie-consent-banner-text-text
             ~ cookie-consent-banner-text

@@ -56,7 +56,7 @@ class ADD_CONTACT_CONTROLLER extends CONTROLLER
                 'xyz',
                 'contact@spark-project.com',
                 email,
-                'spark-project.com',
+                .GetTranslatedText( GetDatabaseTextBySlug( 'contact-mail-thanks-subject' ).Text ),
                 ReplaceTexts(
                     .GetTranslatedText( GetDatabaseTextBySlug( 'contact-mail-thanks-text' ).Text ),
                     '<Name>',

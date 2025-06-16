@@ -14,6 +14,7 @@ function GetDatabaseConnectionArray(
 
     while ( var connection = statement.fetchObject() )
     {
+        connection.IsFailed = ( int )( connection.IsFailed );
         connection.AttemptCount = ( int )( connection.AttemptCount );
         array_push( connection_array, connection );
     }
@@ -39,6 +40,7 @@ function GetDatabaseConnectionById(
 
     if ( connection )
     {
+        connection.IsFailed = ( int )( connection.IsFailed );
         connection.AttemptCount = ( int )( connection.AttemptCount );
     }
 
@@ -63,6 +65,7 @@ function GetDatabaseConnectionByBrowserAddress(
 
     if ( connection )
     {
+        connection.IsFailed = ( int )( connection.IsFailed );
         connection.AttemptCount = ( int )( connection.AttemptCount );
     }
 

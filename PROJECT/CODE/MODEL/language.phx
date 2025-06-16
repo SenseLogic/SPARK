@@ -15,6 +15,7 @@ function GetDatabaseLanguageArray(
     while ( var language = statement.fetchObject() )
     {
         language.Number = ( float )( language.Number );
+        language.IsActive = ( int )( language.IsActive );
         array_push( language_array, language );
     }
 
@@ -40,6 +41,7 @@ function GetDatabaseLanguageById(
     if ( language )
     {
         language.Number = ( float )( language.Number );
+        language.IsActive = ( int )( language.IsActive );
     }
 
     return language;

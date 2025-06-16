@@ -16,6 +16,7 @@ function GetDatabasePageArray(
     {
         page.Number = ( float )( page.Number );
         page.LanguageCodeArray = json_decode( page.LanguageCodeArray );
+        page.IsActive = ( int )( page.IsActive );
         page.MetaSubRouteArray = json_decode( page.MetaSubRouteArray );
         page.MetaSubTitleArray = json_decode( page.MetaSubTitleArray );
         page.MetaSubDescriptionArray = json_decode( page.MetaSubDescriptionArray );
@@ -45,6 +46,7 @@ function GetDatabasePageById(
     {
         page.Number = ( float )( page.Number );
         page.LanguageCodeArray = json_decode( page.LanguageCodeArray );
+        page.IsActive = ( int )( page.IsActive );
         page.MetaSubRouteArray = json_decode( page.MetaSubRouteArray );
         page.MetaSubTitleArray = json_decode( page.MetaSubTitleArray );
         page.MetaSubDescriptionArray = json_decode( page.MetaSubDescriptionArray );

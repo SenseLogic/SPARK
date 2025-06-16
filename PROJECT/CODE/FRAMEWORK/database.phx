@@ -12,7 +12,11 @@ function GetDatabaseConnection(
             = new PDO(
                   'mysql:host=' .. DatabaseHost .. ';dbname=' .. DatabaseName,
                   DatabaseUserName,
-                  DatabasePassword
+                  DatabasePassword,
+                  [
+                      PDO::ATTR_EMULATE_PREPARES => false,
+                      PDO::ATTR_STRINGIFY_FETCHES => false
+                  ]
                   );
 
         connection.prepare( "set names 'utf8mb4'" ).execute();

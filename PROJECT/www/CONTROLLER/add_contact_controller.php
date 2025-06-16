@@ -49,8 +49,6 @@ class ADD_CONTACT_CONTROLLER extends CONTROLLER
     {
         try
         {
-            $message = ReplaceTexts( $message, "<name>", $name );
-
             SendEmail(
                 'mail.spark-project.com',
                 25,
@@ -58,8 +56,12 @@ class ADD_CONTACT_CONTROLLER extends CONTROLLER
                 'xyz',
                 'contact@spark-project.com',
                 $email,
-                'spark-project.com',
-                $this->GetTranslatedText( GetDatabaseTextBySlug( 'ContactMailThanksText' )->Text )
+                $this->GetTranslatedText( GetDatabaseTextBySlug( 'contact-mail-thanks-subject' )->Text ),
+                ReplaceTexts(
+                    $this->GetTranslatedText( GetDatabaseTextBySlug( 'contact-mail-thanks-text' )->Text ),
+                    '<Name>',
+                    $name
+                    )
                 );
 
             SendEmail(
