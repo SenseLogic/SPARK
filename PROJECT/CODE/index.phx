@@ -156,6 +156,7 @@ function Route(
         DefineText( 'Image Legend Array', 'Image Legends' );
         DefineText( 'Image Path', 'Image' );
         DefineText( 'Image Path Array', 'Images' );
+        DefineText( 'Image Title Array', 'Image Titles' );
         DefineText( 'Image Vertical Position Array', 'Image Vertical Positions' );
         DefineText( 'Language Code Array', 'Languages' );
         DefineText( 'Page Id', 'Page' );

@@ -65,6 +65,14 @@
             <multilingual-text-input-list-component class="form-component" result-name="TextArray" result-value="<% GetValueText( block.TextArray ) %>" is-readonly language-tags="<% GetValueText( GetJsonText( LanguageTagArray ) ) %>"></multilingual-text-input-list-component>
         </div>
     <? } ?>
+    <? if ( count( block.ImageTitleArray ) !== 0 ) { ?>
+            <div class="form-field-name" data-is-column-title data-column-name="ImageTitleArray">
+                <% GetTextBySlug( 'Image Title Array' ) %> :
+            </div>
+            <div class="form-field-value" data-is-column-value data-column-name="ImageTitleArray">
+                <multilingual-text-input-list-component class="form-component" result-name="ImageTitleArray" result-value="<% GetValueText( block.ImageTitleArray ) %>" is-readonly language-tags="<% GetValueText( GetJsonText( LanguageTagArray ) ) %>"></multilingual-text-input-list-component>
+            </div>
+    <? } ?>
     <? if ( block.ImagePath !== '' ) { ?>
         <div class="form-field-name">
             <% GetTextBySlug( 'Image Path' ) %> :

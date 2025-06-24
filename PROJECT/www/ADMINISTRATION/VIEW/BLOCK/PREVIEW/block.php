@@ -65,6 +65,14 @@
             <multilingual-text-input-list-component class="form-component" result-name="TextArray" result-value="<?php echo htmlspecialchars( GetValueText( $block->TextArray ) ); ?>" is-readonly language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-text-input-list-component>
         </div>
     <?php } ?>
+    <?php if ( count( $block->ImageTitleArray ) !== 0 ) { ?>
+            <div class="form-field-name" data-is-column-title data-column-name="ImageTitleArray">
+                <?php echo htmlspecialchars( GetTextBySlug( 'Image Title Array' ) ); ?> :
+            </div>
+            <div class="form-field-value" data-is-column-value data-column-name="ImageTitleArray">
+                <multilingual-text-input-list-component class="form-component" result-name="ImageTitleArray" result-value="<?php echo htmlspecialchars( GetValueText( $block->ImageTitleArray ) ); ?>" is-readonly language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-text-input-list-component>
+            </div>
+    <?php } ?>
     <?php if ( $block->ImagePath !== '' ) { ?>
         <div class="form-field-name">
             <?php echo htmlspecialchars( GetTextBySlug( 'Image Path' ) ); ?> :
