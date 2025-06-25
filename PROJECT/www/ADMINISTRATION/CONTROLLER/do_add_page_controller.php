@@ -39,8 +39,6 @@ class DO_ADD_PAGE_CONTROLLER extends VIEW_CONTROLLER
              $meta_sub_route_array = GetJsonObject( GetPostValue( 'MetaSubRouteArray' ) );
              $meta_sub_title_array = GetJsonObject( GetPostValue( 'MetaSubTitleArray' ) );
              $meta_sub_description_array = GetJsonObject( GetPostValue( 'MetaSubDescriptionArray' ) );
-            $slug = GetFilledPageSlug( $slug, $title );
-            $route = GetFilledPageRoute( $route, $title );
 
             AddDatabasePage( $id, $slug, $route, $type_slug, $number, $language_code_array, $is_active, $title, $heading, $teaser, $text, $image_path, $image_vertical_position, $image_horizontal_position, $image_fit, $video_path, $meta_title, $meta_description, $meta_image_path, $meta_sub_route_array, $meta_sub_title_array, $meta_sub_description_array );
 
