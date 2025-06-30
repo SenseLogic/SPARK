@@ -943,6 +943,35 @@ function DrawJustifiedText(
 
 // ~~
 
+function ReadAvifImage(
+    string image_url,
+    bool image_has_alpha = false
+    )
+{
+    var image = imagecreatefromavif( image_url );
+
+    if ( image_has_alpha )
+    {
+        EnableImageTransparency( image );
+    }
+
+    return image;
+}
+
+// ~~
+
+function WriteAvifImage(
+    image,
+    image_file_path = null,
+    int quality = -1,
+    int speed = -1
+    )
+{
+    imageavif( image, image_file_path, quality, speed );
+}
+
+// ~~
+
 function ReadJpegImage(
     string image_url
     )
@@ -954,7 +983,7 @@ function ReadJpegImage(
 
 function WriteJpegImage(
     image,
-    string image_file_path = null,
+    image_file_path = null,
     int quality = -1
     )
 {
@@ -983,7 +1012,7 @@ function ReadPngImage(
 
 function WritePngImage(
     image,
-    string image_file_path = null,
+    image_file_path = null,
     int quality = -1
     )
 {
@@ -992,12 +1021,12 @@ function WritePngImage(
 
 // ~~
 
-function ReadAvifImage(
+function ReadWebpImage(
     string image_url,
     bool image_has_alpha = false
     )
 {
-    var image = imagecreatefromavif( image_url );
+    var image = imagecreatefromwebp( image_url );
 
     if ( image_has_alpha )
     {
@@ -1009,14 +1038,13 @@ function ReadAvifImage(
 
 // ~~
 
-function WriteAvifImage(
+function WriteWebpImage(
     image,
-    string image_file_path = null,
-    int quality = -1,
-    int speed = -1
+    image_file_path = null,
+    int quality = -1
     )
 {
-    imageavif( image, image_file_path, quality, speed );
+    imagewebp( image, image_file_path, quality );
 }
 
 // ~~
@@ -1026,7 +1054,11 @@ function ReadImage(
     bool image_has_alpha = false
     )
 {
-    if ( HasSuffix( image_url, '.jpg' ) )
+    if ( HasSuffix( image_url, '.avif' ) )
+    {
+        var image = imagecreatefromavif( image_url );
+    }
+    else if ( HasSuffix( image_url, '.jpg' ) )
     {
         var image = imagecreatefromjpeg( image_url );
     }
@@ -1034,9 +1066,13 @@ function ReadImage(
     {
         var image = imagecreatefrompng( image_url );
     }
+    else if ( HasSuffix( image_url, '.webp' ) )
+    {
+        var image = imagecreatefromwebp( image_url );
+    }
     else
     {
-        var image = imagecreatefromavif( image_url );
+        PrintError( 'Invalid image file extension : ' + image_file_path );
     }
 
     if ( image_has_alpha )
@@ -1045,4 +1081,39 @@ function ReadImage(
     }
 
     return image;
+}
+
+// ~~
+
+function WriteImage(
+    image,
+    image_file_path = null,
+    int quality = -1,
+    int speed = -1
+    )
+{
+    if ( image_file_path === null )
+    {
+        PrintError( 'Null image file path' );
+    }
+    else if ( HasSuffix( image_file_path, '.avif' ) )
+    {
+        imageavif( image, image_file_path, quality, speed );
+    }
+    else if ( HasSuffix( image_file_path, '.jpg' ) )
+    {
+        imagejpeg( image, image_file_path, quality );
+    }
+    else if ( HasSuffix( image_file_path, '.png' ) )
+    {
+        imagepng( image, image_file_path, quality );
+    }
+    else if ( HasSuffix( image_file_path, '.webp' ) )
+    {
+        imagewebp( image, image_file_path, quality );
+    }
+    else
+    {
+        PrintError( 'Invalid image file extension : ' + image_file_path );
+    }
 }

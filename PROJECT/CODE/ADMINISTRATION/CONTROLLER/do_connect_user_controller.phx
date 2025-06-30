@@ -8,6 +8,12 @@ import '../../MODEL/user_model.php';
 
 class DO_CONNECT_USER_CONTROLLER extends CONTROLLER
 {
+    // -- ATTRIBUTES
+
+    attribute
+        BrowserAddress,
+        Connection;
+
     // -- CONSTRUCTORS
 
     method constructor(

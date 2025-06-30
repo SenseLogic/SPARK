@@ -8,6 +8,12 @@ require_once __DIR__ . '/' . '../../MODEL/user_model.php';
 
 class DO_CONNECT_USER_CONTROLLER extends CONTROLLER
 {
+    // -- ATTRIBUTES
+
+    public
+        $BrowserAddress,
+        $Connection;
+
     // -- CONSTRUCTORS
 
     function __construct(

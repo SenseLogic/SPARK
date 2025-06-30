@@ -42,11 +42,19 @@ class UPLOAD_IMAGE_CONTROLLER extends CONTROLLER
              $target_file_name = $media_file_name;
              $target_file_extension = GetFileExtension( $target_file_name );
 
-            if ( $target_file_extension === '.jpg' )
+            if ( $target_file_extension === '.avif' )
+            {
+                $target_file_name = ReplaceSuffix( $target_file_name, $target_file_extension, AlphaImageExtension );
+            }
+            else if ( $target_file_extension === '.jpg' )
             {
                 $target_file_name = ReplaceSuffix( $target_file_name, $target_file_extension, ImageExtension );
             }
             else if ( $target_file_extension === '.png' )
+            {
+                $target_file_name = ReplaceSuffix( $target_file_name, $target_file_extension, AlphaImageExtension );
+            }
+            else if ( $target_file_extension === '.webp' )
             {
                 $target_file_name = ReplaceSuffix( $target_file_name, $target_file_extension, AlphaImageExtension );
             }
@@ -60,7 +68,49 @@ class UPLOAD_IMAGE_CONTROLLER extends CONTROLLER
 
                 CreateFolder( $target_folder_path );
 
-                if ( HasSuffix( $target_file_path, '.jpg' ) )
+                if ( HasSuffix( $target_file_path, '.avif' ) )
+                {
+                     $image = ReadImage( $media_file_path );
+
+                    EnableImageTransparency( $image );
+
+                     $target_image_has_alpha = !IsOpaqueImage( $image );
+
+                     $preload_image = CreateCappedImage( $image, 360, 720, $target_image_has_alpha );
+                    WriteAvifImage( $preload_image, $target_file_path . '.preload.avif', 30 );
+                    ReleaseImage( $preload_image );
+
+                     $tiny_image = CreateCappedImage( $image, 480, 960, $target_image_has_alpha );
+                    WriteAvifImage( $tiny_image, $target_file_path . '.tiny.avif', 60 );
+                    ReleaseImage( $tiny_image );
+
+                     $small_image = CreateCappedImage( $image, 640, 1280, $target_image_has_alpha );
+                    WriteAvifImage( $small_image, $target_file_path . '.small.avif', 60 );
+                    ReleaseImage( $small_image );
+
+                     $medium_image = CreateCappedImage( $image, 960, 1920, $target_image_has_alpha );
+                    WriteAvifImage( $medium_image, $target_file_path . '.medium.avif', 60 );
+                    ReleaseImage( $medium_image );
+
+                     $wide_image = CreateCappedImage( $image, 1280, 2560, $target_image_has_alpha );
+                    WriteAvifImage( $wide_image, $target_file_path . '.wide.avif', 60 );
+                    ReleaseImage( $wide_image );
+
+                     $large_image = CreateCappedImage( $image, 1920, 1920, $target_image_has_alpha );
+                    WriteAvifImage( $large_image, $target_file_path, 60 );
+                    ReleaseImage( $large_image );
+
+                     $big_image = CreateCappedImage( $image, 2560, 2560, $target_image_has_alpha );
+                    WriteAvifImage( $big_image, $target_file_path . '.big.avif', 60 );
+                    ReleaseImage( $big_image );
+
+                     $huge_image = CreateCappedImage( $image, 3840, 3840, $target_image_has_alpha );
+                    WriteAvifImage( $huge_image, $target_file_path . '.huge.avif', 60 );
+                    ReleaseImage( $huge_image );
+
+                    ReleaseImage( $image );
+                }
+                else if ( HasSuffix( $target_file_path, '.jpg' ) )
                 {
                      $image = ReadImage( $media_file_path );
 
@@ -130,45 +180,25 @@ class UPLOAD_IMAGE_CONTROLLER extends CONTROLLER
 
                     ReleaseImage( $image );
                 }
-                else if ( HasSuffix( $target_file_path, '.avif' ) )
+                else if ( HasSuffix( $target_file_path, '.webp' ) )
                 {
                      $image = ReadImage( $media_file_path );
 
-                    EnableImageTransparency( $image );
-
-                     $target_image_has_alpha = !IsOpaqueImage( $image );
-
-                     $preload_image = CreateCappedImage( $image, 360, 720, $target_image_has_alpha );
-                    WriteAvifImage( $preload_image, $target_file_path . '.preload.avif', 30 );
+                     $preload_image = CreateCappedImage( $image, 512, 1024 );
+                    WriteWebpImage( $preload_image, $target_file_path . '.preload.jpg', 50 );
                     ReleaseImage( $preload_image );
 
-                     $tiny_image = CreateCappedImage( $image, 480, 960, $target_image_has_alpha );
-                    WriteAvifImage( $tiny_image, $target_file_path . '.tiny.avif', 60 );
-                    ReleaseImage( $tiny_image );
-
-                     $small_image = CreateCappedImage( $image, 640, 1280, $target_image_has_alpha );
-                    WriteAvifImage( $small_image, $target_file_path . '.small.avif', 60 );
+                     $small_image = CreateCappedImage( $image, 640, 1280 );
+                    WriteWebpImage( $small_image, $target_file_path . '.small.jpg', 70 );
                     ReleaseImage( $small_image );
 
-                     $medium_image = CreateCappedImage( $image, 960, 1920, $target_image_has_alpha );
-                    WriteAvifImage( $medium_image, $target_file_path . '.medium.avif', 60 );
+                     $medium_image = CreateCappedImage( $image, 1280, 2560 );
+                    WriteWebpImage( $medium_image, $target_file_path . '.medium.jpg', 70 );
                     ReleaseImage( $medium_image );
 
-                     $wide_image = CreateCappedImage( $image, 1280, 2560, $target_image_has_alpha );
-                    WriteAvifImage( $wide_image, $target_file_path . '.wide.avif', 60 );
-                    ReleaseImage( $wide_image );
-
-                     $large_image = CreateCappedImage( $image, 1920, 1920, $target_image_has_alpha );
-                    WriteAvifImage( $large_image, $target_file_path, 60 );
+                     $large_image = CreateCappedImage( $image, 1920, 1920 );
+                    WriteWebpImage( $large_image, $target_file_path, 70 );
                     ReleaseImage( $large_image );
-
-                     $big_image = CreateCappedImage( $image, 2560, 2560, $target_image_has_alpha );
-                    WriteAvifImage( $big_image, $target_file_path . '.big.avif', 60 );
-                    ReleaseImage( $big_image );
-
-                     $huge_image = CreateCappedImage( $image, 3840, 3840, $target_image_has_alpha );
-                    WriteAvifImage( $huge_image, $target_file_path . '.huge.avif', 60 );
-                    ReleaseImage( $huge_image );
 
                     ReleaseImage( $image );
                 }
