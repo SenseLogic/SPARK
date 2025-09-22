@@ -18,6 +18,11 @@
 
     var meta_page_url = route;
 
+    if ( route === 'home' )
+    {
+        meta_page_url = '';
+    }
+
     if ( isset( .PageByRouteMap[ route ] ) )
     {
         var page = .PageByRouteMap[ route ];
@@ -52,6 +57,8 @@
     {
         meta_page_url = 'https://www.spark-project.com/' .. .LanguageCode .. '/' .. meta_page_url;
     }
+
+    meta_page_url = RemoveSuffix( meta_page_url, '/' );
 ?>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>

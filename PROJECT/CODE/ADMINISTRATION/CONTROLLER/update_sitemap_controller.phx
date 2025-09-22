@@ -39,7 +39,9 @@ class UPDATE_SITEMAP_CONTROLLER extends CONTROLLER
 
             foreach ( var page; page_array )
             {
-                if ( count( page.LanguageCodeArray ) > 0 )
+                if ( count( page.LanguageCodeArray ) > 0
+                     && !HasPrefix( page.Route, "http:" )
+                     && !HasPrefix( page.Route, "https:" ) )
                 {
                     var canonical_page_route = RemoveSuffix( '/' .. page.Route, '/' );
 
@@ -78,11 +80,11 @@ class UPDATE_SITEMAP_CONTROLLER extends CONTROLLER
 
                     url ..= "    <lastmod>" .. modification_date .. "</lastmod>\n    <changefreq>monthly</changefreq>\n  </url>\n";
 
-                    array_push( url_array, url );
+                    url_array[ canonical_page_route ] = url;
                 }
             }
 
-            SortArrayByAscendingNaturalValue( url_array );
+            SortArrayByAscendingNaturalKey( url_array );
 
             var sitemap_file_path = 'sitemap.xml';
             var sitemap_file_text
