@@ -322,9 +322,12 @@ a:visited {
   color: inherit;
 }
 :root {
-  --primary-font-family: "Ubuntu", sans-serif;
-  --secondary-font-family: "Ubuntu", sans-serif;
-  --tertiary-font-family: "Ubuntu", sans-serif;
+  --primary-latin-font-family: "Ubuntu", sans-serif;
+  --secondary-latin-font-family: "Ubuntu", sans-serif;
+  --tertiary-latin-font-family: "Ubuntu", sans-serif;
+  --primary-japanese-font-family: "Meiryo UI", "Meiryo", "Noto Sans JP", "Yu Gothic", "Hiragino Sans", "MS PGothic", sans-serif;
+  --secondary-japanese-font-family: "Meiryo UI", "Meiryo", "Noto Sans JP", "Yu Gothic", "Hiragino Sans", "MS PGothic", sans-serif;
+  --tertiary-japanese-font-family: "Meiryo UI", "Meiryo", "Noto Sans JP", "Yu Gothic", "Hiragino Sans", "MS PGothic", sans-serif;
   --mono-font-family: MonoFontFamily;
   --base-color: #fff;
   --base-color-100: #333;
@@ -466,6 +469,12 @@ button,
 input,
 textarea {
   font-family: "Ubuntu", sans-serif;
+}
+:lang(ja) body,
+:lang(ja) button,
+:lang(ja) input,
+:lang(ja) textarea {
+  font-family: "Meiryo UI", "Meiryo", "Noto Sans JP", "Yu Gothic", "Hiragino Sans", "MS PGothic", sans-serif;
 }
 sup {
   position: relative;

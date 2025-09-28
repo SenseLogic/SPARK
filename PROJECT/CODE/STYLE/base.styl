@@ -1,8 +1,11 @@
 // -- CONSTANTS
 
-PrimaryFontFamily = "Ubuntu", sans-serif;
-SecondaryFontFamily = "Ubuntu", sans-serif;
-TertiaryFontFamily = "Ubuntu", sans-serif;
+PrimaryLatinFontFamily = "Ubuntu", sans-serif;
+SecondaryLatinFontFamily = "Ubuntu", sans-serif;
+TertiaryLatinFontFamily = "Ubuntu", sans-serif;
+PrimaryJapaneseFontFamily = "Meiryo UI", "Meiryo", "Noto Sans JP", "Yu Gothic", "Hiragino Sans", "MS PGothic", sans-serif;
+SecondaryJapaneseFontFamily = "Meiryo UI", "Meiryo", "Noto Sans JP", "Yu Gothic", "Hiragino Sans", "MS PGothic", sans-serif;
+TertiaryJapaneseFontFamily = "Meiryo UI", "Meiryo", "Noto Sans JP", "Yu Gothic", "Hiragino Sans", "MS PGothic", sans-serif;
 MonospaceFontFamily = monospace;
 
 BlackColor = #000000;
@@ -361,9 +364,12 @@ ContentDoublePadding = 4rem;
 
 :root
 {
-    --primary-font-family: PrimaryFontFamily;
-    --secondary-font-family: SecondaryFontFamily;
-    --tertiary-font-family: TertiaryFontFamily;
+    --primary-latin-font-family: PrimaryLatinFontFamily;
+    --secondary-latin-font-family: SecondaryLatinFontFamily;
+    --tertiary-latin-font-family: TertiaryLatinFontFamily;
+    --primary-japanese-font-family: PrimaryJapaneseFontFamily;
+    --secondary-japanese-font-family: SecondaryJapaneseFontFamily;
+    --tertiary-japanese-font-family: TertiaryJapaneseFontFamily;
     --mono-font-family: MonoFontFamily;
 
     --base-color: BaseColor;
@@ -525,7 +531,15 @@ button,
 input,
 textarea
 {
-    font-family: PrimaryFontFamily;
+    font-family: PrimaryLatinFontFamily;
+}
+
+:lang(ja) body,
+:lang(ja) button,
+:lang(ja) input,
+:lang(ja) textarea 
+{
+    font-family: PrimaryJapaneseFontFamily;
 }
 
 sup
