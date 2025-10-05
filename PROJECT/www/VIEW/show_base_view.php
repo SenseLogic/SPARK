@@ -1,9 +1,11 @@
 <?php require __DIR__ . '/' . 'BLOCK/page_header.php'; ?>
+<?php  $site_is_singlepage = true; ?>
 <script>
     // -- VARIABLES
 
     var
-        OldViewRoute = "",
+        SiteIsSinglepage = <?php echo $site_is_singlepage ? 'true' : 'false'; ?>,
+        OldViewRoute = undefined,
         ViewRoute = "",
         SectionName = "",
         LanguageCode = "<?php echo $this->LanguageCode; ?>",
@@ -158,7 +160,8 @@
             section_element,
             view_element;
 
-        if ( ViewRoute !== OldViewRoute )
+        if ( SiteIsSinglepage
+             && ViewRoute !== OldViewRoute )
         {
             view_route_was_found = false;
 
@@ -206,7 +209,7 @@
                     {
                         SetScrollTop( section_element.GetTopPosition() - 48 * GetRemRatio() );
                     },
-                    ( ViewRoute === OldViewRoute ) ? 0.2 : 0
+                    ( ViewRoute === OldViewRoute && SiteIsSinglepage ) ? 0.2 : 0
                     );
             }
         }
@@ -246,14 +249,23 @@
         {
             SetUrl( view_route );
         }
+        else if ( view_route !== undefined
+                  && !SiteIsSinglepage )
+        {
+            SetUrl( "/" + LanguageCode + "/" + view_route.RemovePrefix( "/" ) );
+        }
         else
         {
-            if ( view_route !== undefined )
+            if ( SiteIsSinglepage )
             {
-                SetRoute( "/" + LanguageCode + "/" + view_route.RemovePrefix( "/" ) );
+                if ( view_route !== undefined )
+                {
+                    SetRoute( "/" + LanguageCode + "/" + view_route.RemovePrefix( "/" ) );
+                }
+
+                TrackRoute();
             }
 
-            TrackRoute();
             OldViewRoute = ViewRoute;
             ViewRoute = GetRoute( "/" + LanguageCode + "/", "/" );
 
@@ -331,18 +343,28 @@
     }
 </script>
 <div>
-    <?php require __DIR__ . '/' . 'PAGE/loader_page.php'; ?>
-    <?php foreach ( $this->PageByIdMap as  $page_id =>  $page ) { ?>
-        <?php if ( $page->Route == $this->PageRoute ) { ?>
-            <div class="view is-hidden" data-view-route="<?php echo $page->Route; ?>">
-                <?php require __DIR__ . '/' . 'PAGE/' . str_replace( '-', '_', $page->TypeSlug ) . '_page.php'; ?>
-            </div>
-        <?php } else { ?>
-            <div class="view is-hidden" data-view-route="<?php echo $page->Route; ?>">
-                <template>
+    <?php require __DIR__ . '/' . 'PAGE/starter_page.php'; ?>
+    <?php if ( $site_is_singlepage ) { ?>
+        <?php foreach ( $this->PageByIdMap as  $page_id =>  $page ) { ?>
+            <?php if ( $page->Route == $this->PageRoute ) { ?>
+                <div class="view is-hidden" data-view-route="<?php echo $page->Route; ?>">
                     <?php require __DIR__ . '/' . 'PAGE/' . str_replace( '-', '_', $page->TypeSlug ) . '_page.php'; ?>
-                </template>
-            </div>
+                </div>
+            <?php } else { ?>
+                <div class="view is-hidden" data-view-route="<?php echo $page->Route; ?>">
+                    <template>
+                        <?php require __DIR__ . '/' . 'PAGE/' . str_replace( '-', '_', $page->TypeSlug ) . '_page.php'; ?>
+                    </template>
+                </div>
+            <?php } ?>
+        <?php } ?>
+    <?php } else { ?>
+        <?php foreach ( $this->PageByIdMap as  $page_id =>  $page ) { ?>
+            <?php if ( $page->Route == $this->PageRoute ) { ?>
+                <div class="view" data-view-route="<?php echo $page->Route; ?>">
+                    <?php require __DIR__ . '/' . 'PAGE/' . str_replace( '-', '_', $page->TypeSlug ) . '_page.php'; ?>
+                </div>
+            <?php } ?>
         <?php } ?>
     <?php } ?>
     <?php require __DIR__ . '/' . 'BLOCK/scroll_top_button.php'; ?>
