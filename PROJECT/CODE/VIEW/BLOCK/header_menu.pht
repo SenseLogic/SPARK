@@ -204,7 +204,7 @@
         background: url( "/static/image/base/white_close_icon.svg" ) no-repeat center center / contain;
     }
 </style>
-<div id="header-menu" class="header-menu">
+<header id="header-menu" class="header-menu">
     <div class="header-menu-button-container">
         <div class="margin-right-auto! header-menu-button" data-view-route="home" onclick="ShowView( 'home' )">
             <# .GetProcessedTextBySlug( 'header-menu-home-button' ) #>
@@ -257,7 +257,7 @@
             </div>
         </div>
     </div>
-</div>
+</header>
 <script file="header_menu.js">
     // -- FUNCTIONS
 

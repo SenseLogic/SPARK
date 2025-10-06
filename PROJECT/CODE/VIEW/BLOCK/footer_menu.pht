@@ -28,7 +28,7 @@
         margin-left: 1rem;
     }
 </style>
-<div class="footer-menu">
+<footer class="footer-menu">
     <div class="margin-right-auto! scaled-button footer-menu-button" onclick="ShowView( 'home' )">
         <# .GetProcessedTextBySlug( 'footer-menu-home-button' ) #>
     </div>
@@ -38,4 +38,4 @@
     <div class="margin-left-auto! scaled-button footer-menu-button" onclick="ShowView( 'legal-notice' )">
         <# .GetProcessedTextBySlug( 'footer-menu-legal-notice-button' ) #>
     </div>
-</div>
+</footer>

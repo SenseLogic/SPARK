@@ -1,7 +1,23 @@
 <?
-    var meta_title = 'Spark Project';
-    var meta_description = 'Spark Project';
+    var meta_title = GetTranslatedText( 'Spark Project', .LanguageCode );
+    var meta_description = GetTranslatedText( 'Spark Project', .LanguageCode );
     var meta_image_path = '/favicon-512x512.png';
+    var meta_keywords = GetTranslatedText( 'spark, project', .LanguageCode );
+    var meta_street_address = GetTranslatedText( 'Atomium Place 1', .LanguageCode );
+    var meta_postal_code = '1000';
+    var meta_city_name = GetTranslatedText( 'Brussels', .LanguageCode );
+    var meta_country_name = 'Belgium';
+    var meta_country_code = 'BE';
+    var meta_latitude = '50.89472';
+    var meta_longitude = '4.34111';
+    var meta_radius = '50000';
+    var meta_offer_name = 'Touristic Services';
+    var meta_service_name = GetTranslatedText( 'Touristic Visit', .LanguageCode );
+    var meta_service_description = GetTranslatedText( 'Visit of the Atomium', .LanguageCode );
+    var meta_opening_hours = GetTranslatedText( 'Mo-Fr 09:00-18:00', .LanguageCode );
+    var meta_contact_phone = '+3223223223';
+    var meta_contact_email = 'contact@spark-project.com';
+    var meta_page_url_array = [ 'https://www.facebook.com/spark-project', 'https://www.linkedin.com/spark-project' ];
 
     var sub_route_character_index = GetTextPosition( .Route, '/#' );
 
@@ -55,16 +71,34 @@
 
     if ( !HasPrefix( meta_page_url, 'http' ) )
     {
-        meta_page_url = 'https://www.spark-project.com/' .. .LanguageCode .. '/' .. meta_page_url;
+        if ( .LanguageCode === DefaultLanguageCode )
+        {
+            meta_page_url = 'https://www.spark-project.com/' .. meta_page_url;
+        }
+        else
+        {
+            meta_page_url = 'https://www.spark-project.com/' .. .LanguageCode .. '/' .. meta_page_url;
+        }
     }
 
     meta_page_url = RemoveSuffix( meta_page_url, '/' );
 ?>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>
 <meta name="title" content="<% meta_title %>"/>
 <meta name="description" content="<% meta_description %>"/>
-<meta name="author" content="Spark Project Team"/>
+<meta name="keywords" content="<% meta_keywords %>"/>
+<meta name="geo.region" content="<% meta_country_code %>"/>
+<meta name="geo.placename" content="<% meta_city_name %>"/>
+<meta name="geo.position" content="<% meta_latitude %>;<% meta_longitude %>"/>
+<meta name="ICBM" content="<% meta_latitude %>, <% meta_longitude %>"/>
+<meta name="DC.title" content="<% meta_title %>"/>
+<meta name="DC.description" content="<% meta_description %>"/>
+<meta name="DC.language" content="<% .LanguageCode %>"/>
+<meta name="DC.coverage" content="<% meta_country_name %>"/>
+<meta name="DC.subject" content="<% meta_offer_name %>"/>
+<meta name="DC.type" content="Service"/>
 <meta name="format-detection" content="telephone=no"/>
 <meta name="mobile-web-app-capable" content="yes"/>
 <meta name="mobile-web-app-status-bar-style" content="black"/>
@@ -84,18 +118,76 @@
 <meta property="og:description" content="<% meta_description %>"/>
 <meta property="og:url" content="<% meta_page_url %>"/>
 <meta property="og:image" content="<% meta_image_path %>"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:locale" content="<% .LanguageCode %>"/>
+<meta property="og:locale:alternate" content="<% .LanguageCode %>"/>
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "<% meta_title %>",
-  "description": "<% meta_description %>",
-  "image": "<% meta_image_path %>",
-  "url": "<% meta_page_url %>"
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "<% meta_title %>",
+    "description": "<% meta_description %>",
+    "image": "<% meta_image_path %>",
+    "url": "<% meta_page_url %>",
+    "address":
+        {
+            "@type": "PostalAddress",
+            "addressCountry": "<% meta_country_code %>",
+            "addressLocality": "<% meta_city_name %>"
+        },
+    "geo":
+        {
+            "@type": "GeoCoordinates",
+            "latitude": "<% meta_latitude %>",
+            "longitude": "<% meta_longitude %>"
+        },
+    "telephone": "<% meta_contact_phone %>",
+    "email": "<% meta_contact_email %>",
+    "openingHours": "<% meta_opening_hours %>",
+    "serviceArea":
+        {
+            "@type": "GeoCircle",
+            "geoMidpoint":
+            {
+                "@type": "GeoCoordinates",
+                "latitude": "<% meta_latitude %>",
+                "longitude": "<% meta_longitude %>"
+            },
+            "geoRadius": "<% meta_radius %>"
+        },
+    "hasOfferCatalog":
+        {
+            "@type": "OfferCatalog",
+            "name": "<% meta_offer_name %>",
+            "itemListElement":
+                [
+                    {
+                        "@type": "Offer",
+                        "itemOffered":
+                        {
+                            "@type": "Service",
+                            "name": "<% meta_service_name %>",
+                            "description": "<% meta_service_description %>"
+                        }
+                    }
+                ]
+        },
+    "sameAs":
+        [
+            "<# JoinArray( meta_page_url_array, '", "' ) #>"
+        ]
 }
 </script>
 <title>Spark Project | <% meta_title %></title>
 <link rel="canonical" href="<% meta_page_url %>">
+<? foreach ( var meta_language_code; LanguageCodeArray ) { ?>
+    <? if ( meta_language_code === DefaultLanguageCode ) { ?>
+        <link rel="alternate" hreflang="x-default" href="https://www.spark-project.com/<% route %>"/>
+    <? } else { ?>
+        <link rel="alternate" hreflang="<% meta_language_code %>" href="https://www.spark-project.com/<% meta_language_code %>/<% route %>"/>
+    <? } ?>
+<? } ?>
 <link rel="icon" href="/favicon.ico"/>
 <link rel="icon" sizes="512x512" href="/favicon-512x512.png"/>
 <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png"/>
