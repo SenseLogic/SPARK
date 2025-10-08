@@ -1,7 +1,7 @@
 <?php if (  $block->Title !== '' ) { ?>
-    <div class="block-title">
+    <h3 class="block-title">
         <?php echo $this->GetProcessedText( $block->Title ); ?>
-    </div>
+    </h3>
 <?php } ?>
 <?php if ( $block->Text !== '' ) { ?>
     <div class="block-text">

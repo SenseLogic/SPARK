@@ -67,7 +67,8 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
         foreach ( var page_id => var page; .PageByIdMap )
         {
             if ( property_exists( page, 'ImagePath' )
-                 && page.ImagePath !== '' )
+                 && page.ImagePath !== ''
+                 && !in_array( page.ImagePath, .ImagePathArray ) )
             {
                 array_push( .ImagePathArray, page.ImagePath );
             }
@@ -76,7 +77,8 @@ class SHOW_BASE_CONTROLLER extends VIEW_CONTROLLER
         foreach ( var block_id => var block; .BlockByIdMap )
         {
             if ( property_exists( block, 'ImagePath' )
-                 && block.ImagePath !== '' )
+                 && block.ImagePath !== ''
+                 && !in_array( block.ImagePath, .ImagePathArray ) )
             {
                 array_push( .ImagePathArray, block.ImagePath );
             }

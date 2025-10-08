@@ -15,6 +15,9 @@ ReplaceText
     spark_project
     spark_project
 ReplaceText
+    sparkproject
+    sparkproject
+ReplaceText
     spark, project
     spark, project
 ReplaceText

@@ -1,23 +1,85 @@
 <?php
-     $meta_title = GetTranslatedText( 'Spark Project', $this->LanguageCode );
-     $meta_description = GetTranslatedText( 'Spark Project', $this->LanguageCode );
+     $meta_title = 'Spark Project';
+     $meta_description = '';
      $meta_image_path = '/favicon-512x512.png';
-     $meta_keywords = GetTranslatedText( 'spark, project', $this->LanguageCode );
-     $meta_street_address = GetTranslatedText( 'Atomium Place 1', $this->LanguageCode );
-     $meta_postal_code = '1000';
-     $meta_city_name = GetTranslatedText( 'Brussels', $this->LanguageCode );
+     $meta_author = 'Spark Project Team';
+     $meta_business_name = 'Spark Project';
+     $meta_business_description = 'Your tourism partner in Brussels';
+     $meta_street_address = 'Atomium Place 1';
+     $meta_postal_code = '1020';
+     $meta_city_name = 'Brussels';
      $meta_country_name = 'Belgium';
      $meta_country_code = 'BE';
      $meta_latitude = '50.89472';
      $meta_longitude = '4.34111';
      $meta_radius = '50000';
      $meta_offer_name = 'Touristic Services';
-     $meta_service_name = GetTranslatedText( 'Touristic Visit', $this->LanguageCode );
-     $meta_service_description = GetTranslatedText( 'Visit of the Atomium', $this->LanguageCode );
-     $meta_opening_hours = GetTranslatedText( 'Mo-Fr 09:00-18:00', $this->LanguageCode );
-     $meta_contact_phone = '+3223223223';
+     $meta_service_array =
+        [
+            [ 'Touristic Visit', 'Explore the iconic Atomium and enjoy breathtaking views of Brussels' ],
+            [ 'Gift Shop', 'Buy unique souvenirs and Atomium-themed gifts' ],
+            [ 'Restaurant', 'Savor Belgian cuisine with a panoramic view at the Atomium Restaurant' ],
+            [ 'Exhibitions', 'Discover fascinating permanent and temporary exhibitions inside the spheres' ],
+            [ 'Guided Tours', 'Join a guided tour to learn about the history, architecture, and symbolism of the Atomium' ],
+            [ 'Events', 'Host or attend cultural events, workshops, and private receptions' ],
+            [ 'Education', 'Take part in educational programs for schools and student groups' ],
+            [ 'Tickets', 'Buy your entry tickets or combined passes online for convenience' ],
+            [ 'Accessibility', 'Find visitor information for accessibility and special assistance' ],
+            [ 'Photo Gallery', 'Browse photos of the Atomium and panoramic views of Brussels' ],
+            [ 'Opening Hours', 'Check current visiting hours and closing days before your visit' ],
+            [ 'Getting There', 'See directions, public transport, and parking information' ],
+            [ 'Contact', 'Get in touch with the Atomium team for inquiries and group bookings' ]
+        ];
+     $meta_contact_phone = '+32 2 456 78 90';
      $meta_contact_email = 'contact@spark-project.com';
-     $meta_page_url_array = [ 'https://www.facebook.com/spark-project', 'https://www.linkedin.com/spark-project' ];
+     $meta_contact_array =
+        [
+            [
+                'Visitor Management',
+                'Mickey Mouse',
+                '+32 2 456 78 90',
+                'booking@atomium.be'
+            ],
+            [
+                'Shop Management',
+                'Donald Duck',
+                '+32 2 456 78 90',
+                'shop@atomium.be'
+            ]
+        ];
+     $meta_schedule_array =
+        [
+            [
+                [
+                    'Monday',
+                    'Tuesday',
+                    'Wednesday',
+                    'Thursday',
+                    'Friday',
+                    'Saturday',
+                    'Sunday'
+                ],
+                '09:00',
+                '18:00',
+                '',
+                ''
+            ]
+        ];
+     $meta_page_url_array =
+        [
+            'https://www.facebook.com/spark-project',
+            'https://www.linkedin.com/spark-project'
+        ];
+     $meta_faq_array =
+        [
+            [ "What are the Atomium’s opening hours?", "The Atomium is open every day from 10:00 to 18:00, with the last admission at 17:30." ],
+            [ "Where is the Atomium located?", "The Atomium is located at Square de l'Atomium, 1020 Brussels, Belgium, near Heysel/Heizel metro station." ],
+            [ "How can I buy tickets for the Atomium?", "You can buy tickets online through the official website at https://atomium.be or at the on-site ticket counter." ],
+            [ "Is the Atomium accessible for people with reduced mobility?", "Yes. The Atomium provides lifts and accessible facilities for visitors with reduced mobility, though some areas may have limited access." ],
+            [ "Does the Atomium have a restaurant?", "Yes, the Atomium has a panoramic restaurant located in the upper sphere, serving Belgian and seasonal dishes." ],
+            [ "Are there exhibitions inside the Atomium?", "Yes. The Atomium hosts a permanent exhibition about its history and architecture, as well as temporary art and design exhibitions." ],
+            [ "Is there parking available near the Atomium?", "Yes. Paid parking is available near the Atomium, and additional parking spaces can be found around the Heysel area." ]
+        ];
 
      $sub_route_character_index = GetTextPosition( $this->Route, '/#' );
 
@@ -45,7 +107,7 @@
 
         $meta_title = GetTranslatedText( $page->MetaTitle, $this->LanguageCode );
         $meta_description = GetTranslatedText( $page->MetaDescription, $this->LanguageCode );
-        $meta_image_path = $page->MetaImagePath;
+        $meta_image_path = GetTranslatedText( $page->MetaImagePath, $this->LanguageCode );
 
         if ( $meta_image_path === '' )
         {
@@ -73,7 +135,14 @@
     {
         if ( $this->LanguageCode === DefaultLanguageCode )
         {
-            $meta_page_url = 'https://www.spark-project.com/' . $meta_page_url;
+            if ( $meta_page_url === '' )
+            {
+                $meta_page_url = 'https://www.spark-project.com';
+            }
+            else
+            {
+                $meta_page_url = 'https://www.spark-project.com/' . $meta_page_url;
+            }
         }
         else
         {
@@ -83,22 +152,16 @@
 
     $meta_page_url = RemoveSuffix( $meta_page_url, '/' );
 ?>
-<meta charset="utf-8"/>
+<meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>
 <meta name="title" content="<?php echo htmlspecialchars( $meta_title ); ?>"/>
 <meta name="description" content="<?php echo htmlspecialchars( $meta_description ); ?>"/>
-<meta name="keywords" content="<?php echo htmlspecialchars( $meta_keywords ); ?>"/>
-<meta name="geo.region" content="<?php echo htmlspecialchars( $meta_country_code ); ?>"/>
-<meta name="geo.placename" content="<?php echo htmlspecialchars( $meta_city_name ); ?>"/>
-<meta name="geo.position" content="<?php echo htmlspecialchars( $meta_latitude ); ?>;<?php echo htmlspecialchars( $meta_longitude ); ?>"/>
-<meta name="ICBM" content="<?php echo htmlspecialchars( $meta_latitude ); ?>, <?php echo htmlspecialchars( $meta_longitude ); ?>"/>
-<meta name="DC.title" content="<?php echo htmlspecialchars( $meta_title ); ?>"/>
-<meta name="DC.description" content="<?php echo htmlspecialchars( $meta_description ); ?>"/>
-<meta name="DC.language" content="<?php echo htmlspecialchars( $this->LanguageCode ); ?>"/>
-<meta name="DC.coverage" content="<?php echo htmlspecialchars( $meta_country_name ); ?>"/>
-<meta name="DC.subject" content="<?php echo htmlspecialchars( $meta_offer_name ); ?>"/>
-<meta name="DC.type" content="Service"/>
+<meta name="author" content="<?php echo htmlspecialchars( $meta_author ); ?>">
+<meta name="geo.region" content="<?php echo htmlspecialchars( GetTranslatedText( $meta_country_code, $this->LanguageCode ) ); ?>"/>
+<meta name="geo.placename" content="<?php echo htmlspecialchars( GetTranslatedText( $meta_city_name, $this->LanguageCode ) ); ?>"/>
+<meta name="geo.position" content="<?php echo htmlspecialchars( GetTranslatedText( $meta_latitude, $this->LanguageCode ) ); ?>;<?php echo htmlspecialchars( GetTranslatedText( $meta_longitude, $this->LanguageCode ) ); ?>"/>
+<meta name="ICBM" content="<?php echo htmlspecialchars( GetTranslatedText( $meta_latitude, $this->LanguageCode ) ); ?>, <?php echo htmlspecialchars( GetTranslatedText( $meta_longitude, $this->LanguageCode ) ); ?>"/>
 <meta name="format-detection" content="telephone=no"/>
 <meta name="mobile-web-app-capable" content="yes"/>
 <meta name="mobile-web-app-status-bar-style" content="black"/>
@@ -108,6 +171,8 @@
 <meta name="msapplication-config" content="/browserconfig.xml"/>
 <meta name="msapplication-TileColor" content="#FFFFFF"/>
 <meta name="msapplication-TileImage" content="/favicon-512x512.png"/>
+<meta name="twitter:site" content="@sparkproject">
+<meta name="twitter:creator" content="@sparkproject">
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="<?php echo htmlspecialchars( $meta_title ); ?>"/>
 <meta name="twitter:description" content="<?php echo htmlspecialchars( $meta_description ); ?>"/>
@@ -120,62 +185,132 @@
 <meta property="og:image" content="<?php echo htmlspecialchars( $meta_image_path ); ?>"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content=""/>
 <meta property="og:locale" content="<?php echo htmlspecialchars( $this->LanguageCode ); ?>"/>
-<meta property="og:locale:alternate" content="<?php echo htmlspecialchars( $this->LanguageCode ); ?>"/>
+<?php foreach ( LanguageCodeArray as  $meta_language_code ) { ?>
+    <?php if ( $meta_language_code !== $this->LanguageCode ) { ?>
+        <meta property="og:locale:alternate" content="<?php echo htmlspecialchars( $meta_language_code ); ?>"/>
+    <?php } ?>
+<?php } ?>
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "<?php echo htmlspecialchars( $meta_title ); ?>",
-    "description": "<?php echo htmlspecialchars( $meta_description ); ?>",
+    "name": "<?php echo htmlspecialchars( GetTranslatedText( $meta_business_name, $this->LanguageCode ) ); ?>",
+    "description": "<?php echo htmlspecialchars( GetTranslatedText( $meta_business_description, $this->LanguageCode ) ); ?>",
     "image": "<?php echo htmlspecialchars( $meta_image_path ); ?>",
     "url": "<?php echo htmlspecialchars( $meta_page_url ); ?>",
     "address":
         {
             "@type": "PostalAddress",
-            "addressCountry": "<?php echo htmlspecialchars( $meta_country_code ); ?>",
-            "addressLocality": "<?php echo htmlspecialchars( $meta_city_name ); ?>"
+            "addressCountry": "<?php echo htmlspecialchars( GetTranslatedText( $meta_country_code, $this->LanguageCode ) ); ?>",
+            "addressLocality": "<?php echo htmlspecialchars( GetTranslatedText( $meta_city_name, $this->LanguageCode ) ); ?>"
         },
     "geo":
         {
             "@type": "GeoCoordinates",
-            "latitude": "<?php echo htmlspecialchars( $meta_latitude ); ?>",
-            "longitude": "<?php echo htmlspecialchars( $meta_longitude ); ?>"
+            "latitude": "<?php echo htmlspecialchars( GetTranslatedText( $meta_latitude, $this->LanguageCode ) ); ?>",
+            "longitude": "<?php echo htmlspecialchars( GetTranslatedText( $meta_longitude, $this->LanguageCode ) ); ?>"
         },
-    "telephone": "<?php echo htmlspecialchars( $meta_contact_phone ); ?>",
-    "email": "<?php echo htmlspecialchars( $meta_contact_email ); ?>",
-    "openingHours": "<?php echo htmlspecialchars( $meta_opening_hours ); ?>",
     "serviceArea":
         {
             "@type": "GeoCircle",
             "geoMidpoint":
             {
                 "@type": "GeoCoordinates",
-                "latitude": "<?php echo htmlspecialchars( $meta_latitude ); ?>",
-                "longitude": "<?php echo htmlspecialchars( $meta_longitude ); ?>"
+                "latitude": "<?php echo htmlspecialchars( GetTranslatedText( $meta_latitude, $this->LanguageCode ) ); ?>",
+                "longitude": "<?php echo htmlspecialchars( GetTranslatedText( $meta_longitude, $this->LanguageCode ) ); ?>"
             },
-            "geoRadius": "<?php echo htmlspecialchars( $meta_radius ); ?>"
+            "geoRadius": "<?php echo htmlspecialchars( GetTranslatedText( $meta_radius, $this->LanguageCode ) ); ?>"
         },
+    "telephone": "<?php echo htmlspecialchars( $meta_contact_phone ); ?>",
+    "email": "<?php echo htmlspecialchars( $meta_contact_email ); ?>",
+    "contactPoint":
+        [
+            <?php foreach ( $meta_contact_array as  $meta_contact ) { ?>
+                {
+                    "@type": "ContactPoint",
+                    "contactType": "<?php echo htmlspecialchars( GetTranslatedText( $meta_contact[ 0 ], $this->LanguageCode ) ); ?>",
+                    "name": "<?php echo htmlspecialchars( GetTranslatedText( $meta_contact[ 1 ], $this->LanguageCode ) ); ?>",
+                    "telephone": "<?php echo htmlspecialchars( GetTranslatedText( $meta_contact[ 2 ], $this->LanguageCode ) ); ?>",
+                    "email": "<?php echo htmlspecialchars( GetTranslatedText( $meta_contact[ 3 ], $this->LanguageCode ) ); ?>"
+                },
+            <?php } ?>
+        ],
+    "openingHoursSpecification":
+        [
+            <?php foreach ( $meta_schedule_array as  $meta_schedule ) { ?>
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek":
+                        [
+                            "<?php echo JoinArray( $meta_schedule[ 0 ], '", "' ); ?>"
+                        ],
+                    "opens": "<?php echo htmlspecialchars( GetTranslatedText( $meta_schedule[ 1 ], $this->LanguageCode ) ); ?>",
+                    "closes": "<?php echo htmlspecialchars( GetTranslatedText( $meta_schedule[ 2 ], $this->LanguageCode ) ); ?>",
+                    <?php if ( $meta_schedule[ 3 ] !== '' ) { ?>
+                        "validFrom": "<?php echo htmlspecialchars( GetTranslatedText( $meta_schedule[ 3 ], $this->LanguageCode ) ); ?>",
+                        "validThrough": "<?php echo htmlspecialchars( GetTranslatedText( $meta_schedule[ 4 ], $this->LanguageCode ) ); ?>",
+                    <?php } ?>
+                },
+            <?php } ?>
+        ],
     "hasOfferCatalog":
         {
             "@type": "OfferCatalog",
             "name": "<?php echo htmlspecialchars( $meta_offer_name ); ?>",
             "itemListElement":
                 [
-                    {
-                        "@type": "Offer",
-                        "itemOffered":
+                    <?php foreach ( $meta_service_array as  $meta_service ) { ?>
                         {
-                            "@type": "Service",
-                            "name": "<?php echo htmlspecialchars( $meta_service_name ); ?>",
-                            "description": "<?php echo htmlspecialchars( $meta_service_description ); ?>"
-                        }
-                    }
+                            "@type": "Offer",
+                            "itemOffered":
+                            {
+                                "@type": "Service",
+                                "name": "<?php echo htmlspecialchars( GetTranslatedText( $meta_service[ 0 ], $this->LanguageCode ) ); ?>",
+                                "description": "<?php echo htmlspecialchars( GetTranslatedText( $meta_service[ 1 ], $this->LanguageCode ) ); ?>"
+                            }
+                        },
+                    <?php } ?>
                 ]
         },
     "sameAs":
         [
             "<?php echo JoinArray( $meta_page_url_array, '", "' ); ?>"
+        ],
+}
+</script>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity":
+        [
+            <?php foreach ( $meta_faq_array as  $meta_faq ) { ?>
+                {
+                    "@type": "Question",
+                    "name": "<?php echo htmlspecialchars( GetTranslatedText( $meta_faq[ 0 ], $this->LanguageCode ) ); ?>",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "<?php echo htmlspecialchars( GetTranslatedText( $meta_faq[ 1 ], $this->LanguageCode ) ); ?>"
+                    }
+                },
+            <?php } ?>
+        ]
+}
+</script>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement":
+        [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "<?php echo htmlspecialchars( $meta_title ); ?>",
+                "item": "<?php echo htmlspecialchars( $meta_page_url ); ?>"
+            }
         ]
 }
 </script>
@@ -188,11 +323,11 @@
         <link rel="alternate" hreflang="<?php echo htmlspecialchars( $meta_language_code ); ?>" href="https://www.spark-project.com/<?php echo htmlspecialchars( $meta_language_code ); ?>/<?php echo htmlspecialchars( $route ); ?>"/>
     <?php } ?>
 <?php } ?>
-<link rel="icon" href="/favicon.ico"/>
-<link rel="icon" sizes="512x512" href="/favicon-512x512.png"/>
-<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png"/>
-<link rel="mask-icon" href="/favicon.svg" color="#FFFFFF"/>
-<link rel="manifest" href="/site.webmanifest"/>
+<link rel="icon" href="https://www.spark-project.com/favicon.ico"/>
+<link rel="icon" sizes="512x512" href="https://www.spark-project.com/favicon-512x512.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.spark-project.com/favicon-180x180.png"/>
+<link rel="mask-icon" href="https://www.spark-project.com/favicon.svg" color="#FFFFFF"/>
+<link rel="manifest" href="https://www.spark-project.com/site.webmanifest"/>
 <link rel="stylesheet" href="/static/style.css?v=<?php echo VersionTimestamp; ?>"/>
 <?php foreach ( $this->ImagePathArray as  $image_path ) { ?>
     <link rel="preload" href="<?php echo GetPreloadImagePath( $image_path ); ?>?v=<?php echo VersionTimestamp; ?>" as="image"/>
