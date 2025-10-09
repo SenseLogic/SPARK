@@ -1,8 +1,10 @@
 <?php
+     $meta_base_url = 'https://www.spark-project.com';
      $meta_title = 'Spark Project';
      $meta_description = '';
      $meta_image_path = '/favicon-512x512.png';
      $meta_author = 'Spark Project Team';
+     $meta_business_url = $meta_base_url;
      $meta_business_name = 'Spark Project';
      $meta_business_description = 'Your tourism partner in Brussels';
      $meta_street_address = 'Atomium Place 1';
@@ -128,7 +130,7 @@
 
     if ( !HasPrefix( $meta_image_path, 'http' ) )
     {
-        $meta_image_path = 'https://www.spark-project.com' . $meta_image_path;
+        $meta_image_path = $meta_base_url . $meta_image_path;
     }
 
     if ( !HasPrefix( $meta_page_url, 'http' ) )
@@ -137,16 +139,16 @@
         {
             if ( $meta_page_url === '' )
             {
-                $meta_page_url = 'https://www.spark-project.com';
+                $meta_page_url = $meta_base_url;
             }
             else
             {
-                $meta_page_url = 'https://www.spark-project.com/' . $meta_page_url;
+                $meta_page_url = $meta_base_url . '/' . $meta_page_url;
             }
         }
         else
         {
-            $meta_page_url = 'https://www.spark-project.com/' . $this->LanguageCode . '/' . $meta_page_url;
+            $meta_page_url = $meta_base_url . '/' . $this->LanguageCode . '/' . $meta_page_url;
         }
     }
 
@@ -195,139 +197,135 @@
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "<?php echo htmlspecialchars( GetTranslatedText( $meta_title, $this->LanguageCode ) ); ?>",
+    "description": "<?php echo htmlspecialchars( GetTranslatedText( $meta_description, $this->LanguageCode ) ); ?>",
+    "image": "<?php echo htmlspecialchars( $meta_image_path ); ?>",
+    "url": "<?php echo htmlspecialchars( $meta_page_url ); ?>"
+}
+</script>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "<?php echo htmlspecialchars( GetTranslatedText( $meta_business_name, $this->LanguageCode ) ); ?>",
     "description": "<?php echo htmlspecialchars( GetTranslatedText( $meta_business_description, $this->LanguageCode ) ); ?>",
-    "image": "<?php echo htmlspecialchars( $meta_image_path ); ?>",
-    "url": "<?php echo htmlspecialchars( $meta_page_url ); ?>",
-    "address":
-        {
-            "@type": "PostalAddress",
-            "addressCountry": "<?php echo htmlspecialchars( GetTranslatedText( $meta_country_code, $this->LanguageCode ) ); ?>",
-            "addressLocality": "<?php echo htmlspecialchars( GetTranslatedText( $meta_city_name, $this->LanguageCode ) ); ?>"
-        },
-    "geo":
-        {
+    "url": "<?php echo htmlspecialchars( $meta_business_url ); ?>",
+    "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "<?php echo htmlspecialchars( GetTranslatedText( $meta_country_code, $this->LanguageCode ) ); ?>",
+        "addressLocality": "<?php echo htmlspecialchars( GetTranslatedText( $meta_city_name, $this->LanguageCode ) ); ?>"
+    },
+    "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "<?php echo htmlspecialchars( GetTranslatedText( $meta_latitude, $this->LanguageCode ) ); ?>",
+        "longitude": "<?php echo htmlspecialchars( GetTranslatedText( $meta_longitude, $this->LanguageCode ) ); ?>"
+    },
+    "serviceArea": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
             "@type": "GeoCoordinates",
             "latitude": "<?php echo htmlspecialchars( GetTranslatedText( $meta_latitude, $this->LanguageCode ) ); ?>",
             "longitude": "<?php echo htmlspecialchars( GetTranslatedText( $meta_longitude, $this->LanguageCode ) ); ?>"
         },
-    "serviceArea":
-        {
-            "@type": "GeoCircle",
-            "geoMidpoint":
-            {
-                "@type": "GeoCoordinates",
-                "latitude": "<?php echo htmlspecialchars( GetTranslatedText( $meta_latitude, $this->LanguageCode ) ); ?>",
-                "longitude": "<?php echo htmlspecialchars( GetTranslatedText( $meta_longitude, $this->LanguageCode ) ); ?>"
-            },
-            "geoRadius": "<?php echo htmlspecialchars( GetTranslatedText( $meta_radius, $this->LanguageCode ) ); ?>"
-        },
+        "geoRadius": "<?php echo htmlspecialchars( GetTranslatedText( $meta_radius, $this->LanguageCode ) ); ?>"
+    },
     "telephone": "<?php echo htmlspecialchars( $meta_contact_phone ); ?>",
     "email": "<?php echo htmlspecialchars( $meta_contact_email ); ?>",
-    "contactPoint":
-        [
-            <?php foreach ( $meta_contact_array as  $meta_contact ) { ?>
-                {
-                    "@type": "ContactPoint",
-                    "contactType": "<?php echo htmlspecialchars( GetTranslatedText( $meta_contact[ 0 ], $this->LanguageCode ) ); ?>",
-                    "name": "<?php echo htmlspecialchars( GetTranslatedText( $meta_contact[ 1 ], $this->LanguageCode ) ); ?>",
-                    "telephone": "<?php echo htmlspecialchars( GetTranslatedText( $meta_contact[ 2 ], $this->LanguageCode ) ); ?>",
-                    "email": "<?php echo htmlspecialchars( GetTranslatedText( $meta_contact[ 3 ], $this->LanguageCode ) ); ?>"
-                },
-            <?php } ?>
-        ],
-    "openingHoursSpecification":
-        [
-            <?php foreach ( $meta_schedule_array as  $meta_schedule ) { ?>
-                {
-                    "@type": "OpeningHoursSpecification",
-                    "dayOfWeek":
-                        [
-                            "<?php echo JoinArray( $meta_schedule[ 0 ], '", "' ); ?>"
-                        ],
-                    "opens": "<?php echo htmlspecialchars( GetTranslatedText( $meta_schedule[ 1 ], $this->LanguageCode ) ); ?>",
-                    "closes": "<?php echo htmlspecialchars( GetTranslatedText( $meta_schedule[ 2 ], $this->LanguageCode ) ); ?>",
-                    <?php if ( $meta_schedule[ 3 ] !== '' ) { ?>
-                        "validFrom": "<?php echo htmlspecialchars( GetTranslatedText( $meta_schedule[ 3 ], $this->LanguageCode ) ); ?>",
-                        "validThrough": "<?php echo htmlspecialchars( GetTranslatedText( $meta_schedule[ 4 ], $this->LanguageCode ) ); ?>",
-                    <?php } ?>
-                },
-            <?php } ?>
-        ],
-    "hasOfferCatalog":
+    "contactPoint": [
+    <?php foreach ( $meta_contact_array as  $meta_contact_index =>  $meta_contact ) { ?>
         {
-            "@type": "OfferCatalog",
-            "name": "<?php echo htmlspecialchars( $meta_offer_name ); ?>",
-            "itemListElement":
-                [
-                    <?php foreach ( $meta_service_array as  $meta_service ) { ?>
-                        {
-                            "@type": "Offer",
-                            "itemOffered":
-                            {
-                                "@type": "Service",
-                                "name": "<?php echo htmlspecialchars( GetTranslatedText( $meta_service[ 0 ], $this->LanguageCode ) ); ?>",
-                                "description": "<?php echo htmlspecialchars( GetTranslatedText( $meta_service[ 1 ], $this->LanguageCode ) ); ?>"
-                            }
-                        },
-                    <?php } ?>
-                ]
-        },
-    "sameAs":
-        [
+            "@type": "ContactPoint",
+            "contactType": "<?php echo htmlspecialchars( GetTranslatedText( $meta_contact[ 0 ], $this->LanguageCode ) ); ?>",
+            "name": "<?php echo htmlspecialchars( GetTranslatedText( $meta_contact[ 1 ], $this->LanguageCode ) ); ?>",
+            "telephone": "<?php echo htmlspecialchars( GetTranslatedText( $meta_contact[ 2 ], $this->LanguageCode ) ); ?>",
+            "email": "<?php echo htmlspecialchars( GetTranslatedText( $meta_contact[ 3 ], $this->LanguageCode ) ); ?>"
+        }<?php echo ( $meta_contact_index + 1 < count( $meta_contact_array ) ) ? ',' : ''; ?>
+    <?php } ?>
+    ],
+    "openingHoursSpecification": [
+    <?php foreach ( $meta_schedule_array as  $meta_schedule_index =>  $meta_schedule ) { ?>
+        {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+                "<?php echo JoinArray( $meta_schedule[ 0 ], '", "' ); ?>"
+            ],
+            "opens": "<?php echo htmlspecialchars( GetTranslatedText( $meta_schedule[ 1 ], $this->LanguageCode ) ); ?>",
+            "closes": "<?php echo htmlspecialchars( GetTranslatedText( $meta_schedule[ 2 ], $this->LanguageCode ) ); ?>",
+            <?php if ( $meta_schedule[ 3 ] !== '' ) { ?>
+            "validFrom": "<?php echo htmlspecialchars( GetTranslatedText( $meta_schedule[ 3 ], $this->LanguageCode ) ); ?>",
+            "validThrough": "<?php echo htmlspecialchars( GetTranslatedText( $meta_schedule[ 4 ], $this->LanguageCode ) ); ?>",
+            <?php } ?>
+        }<?php echo ( $meta_schedule_index + 1 < count( $meta_schedule_array ) ) ? ',' : ''; ?>
+    <?php } ?>
+    ],
+    "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "<?php echo htmlspecialchars( $meta_offer_name ); ?>",
+        "itemListElement": [
+            <?php foreach ( $meta_service_array as  $meta_service_index =>  $meta_service ) { ?>
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "<?php echo htmlspecialchars( GetTranslatedText( $meta_service[ 0 ], $this->LanguageCode ) ); ?>",
+                    "description": "<?php echo htmlspecialchars( GetTranslatedText( $meta_service[ 1 ], $this->LanguageCode ) ); ?>"
+                }
+            }<?php echo ( $meta_service_index + 1 < count( $meta_service_array ) ) ? ',' : ''; ?>
+            <?php } ?>
+        ]
+    },
+    "sameAs": [
             "<?php echo JoinArray( $meta_page_url_array, '", "' ); ?>"
-        ],
+    ]
 }
 </script>
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity":
-        [
-            <?php foreach ( $meta_faq_array as  $meta_faq ) { ?>
-                {
-                    "@type": "Question",
-                    "name": "<?php echo htmlspecialchars( GetTranslatedText( $meta_faq[ 0 ], $this->LanguageCode ) ); ?>",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "<?php echo htmlspecialchars( GetTranslatedText( $meta_faq[ 1 ], $this->LanguageCode ) ); ?>"
-                    }
-                },
-            <?php } ?>
-        ]
+    "mainEntity": [
+        <?php foreach ( $meta_faq_array as  $meta_faq_index =>  $meta_faq ) { ?>
+        {
+            "@type": "Question",
+            "name": "<?php echo htmlspecialchars( GetTranslatedText( $meta_faq[ 0 ], $this->LanguageCode ) ); ?>",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "<?php echo htmlspecialchars( GetTranslatedText( $meta_faq[ 1 ], $this->LanguageCode ) ); ?>"
+            }
+        }<?php echo ( $meta_faq_index + 1 < count( $meta_faq_array ) ) ? ',' : ''; ?>
+    <?php } ?>
+    ]
 }
 </script>
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "itemListElement":
-        [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "<?php echo htmlspecialchars( $meta_title ); ?>",
-                "item": "<?php echo htmlspecialchars( $meta_page_url ); ?>"
-            }
-        ]
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "<?php echo htmlspecialchars( $meta_title ); ?>",
+            "item": "<?php echo htmlspecialchars( $meta_page_url ); ?>"
+        }
+    ]
 }
 </script>
 <title>Spark Project | <?php echo htmlspecialchars( $meta_title ); ?></title>
 <link rel="canonical" href="<?php echo htmlspecialchars( $meta_page_url ); ?>">
 <?php foreach ( LanguageCodeArray as  $meta_language_code ) { ?>
     <?php if ( $meta_language_code === DefaultLanguageCode ) { ?>
-        <link rel="alternate" hreflang="x-default" href="https://www.spark-project.com/<?php echo htmlspecialchars( $route ); ?>"/>
+        <link rel="alternate" hreflang="x-default" href="<?php echo htmlspecialchars( $meta_base_url ); ?>/<?php echo htmlspecialchars( $route ); ?>"/>
     <?php } else { ?>
-        <link rel="alternate" hreflang="<?php echo htmlspecialchars( $meta_language_code ); ?>" href="https://www.spark-project.com/<?php echo htmlspecialchars( $meta_language_code ); ?>/<?php echo htmlspecialchars( $route ); ?>"/>
+        <link rel="alternate" hreflang="<?php echo htmlspecialchars( $meta_language_code ); ?>" href="<?php echo htmlspecialchars( $meta_base_url ); ?>/<?php echo htmlspecialchars( $meta_language_code ); ?>/<?php echo htmlspecialchars( $route ); ?>"/>
     <?php } ?>
 <?php } ?>
-<link rel="icon" href="https://www.spark-project.com/favicon.ico"/>
-<link rel="icon" sizes="512x512" href="https://www.spark-project.com/favicon-512x512.png"/>
-<link rel="apple-touch-icon" sizes="180x180" href="https://www.spark-project.com/favicon-180x180.png"/>
-<link rel="mask-icon" href="https://www.spark-project.com/favicon.svg" color="#FFFFFF"/>
-<link rel="manifest" href="https://www.spark-project.com/site.webmanifest"/>
+<link rel="icon" href="<?php echo htmlspecialchars( $meta_base_url ); ?>/favicon.ico"/>
+<link rel="icon" sizes="512x512" href="<?php echo htmlspecialchars( $meta_base_url ); ?>/favicon-512x512.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="<?php echo htmlspecialchars( $meta_base_url ); ?>/favicon-180x180.png"/>
+<link rel="mask-icon" href="<?php echo htmlspecialchars( $meta_base_url ); ?>/favicon.svg" color="#FFFFFF"/>
+<link rel="manifest" href="<?php echo htmlspecialchars( $meta_base_url ); ?>/site.webmanifest"/>
 <link rel="stylesheet" href="/static/style.css?v=<?php echo VersionTimestamp; ?>"/>
 <?php foreach ( $this->ImagePathArray as  $image_path ) { ?>
     <link rel="preload" href="<?php echo GetPreloadImagePath( $image_path ); ?>?v=<?php echo VersionTimestamp; ?>" as="image"/>

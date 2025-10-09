@@ -1,8 +1,10 @@
 <?
+    var meta_base_url = 'https://www.spark-project.com';
     var meta_title = 'Spark Project';
     var meta_description = '';
     var meta_image_path = '/favicon-512x512.png';
     var meta_author = 'Spark Project Team';
+    var meta_business_url = meta_base_url;
     var meta_business_name = 'Spark Project';
     var meta_business_description = 'Your tourism partner in Brussels';
     var meta_street_address = 'Atomium Place 1';
@@ -128,7 +130,7 @@
 
     if ( !HasPrefix( meta_image_path, 'http' ) )
     {
-        meta_image_path = 'https://www.spark-project.com' .. meta_image_path;
+        meta_image_path = meta_base_url .. meta_image_path;
     }
 
     if ( !HasPrefix( meta_page_url, 'http' ) )
@@ -137,16 +139,16 @@
         {
             if ( meta_page_url === '' )
             {
-                meta_page_url = 'https://www.spark-project.com';
+                meta_page_url = meta_base_url;
             }
             else
             {
-                meta_page_url = 'https://www.spark-project.com/' .. meta_page_url;
+                meta_page_url = meta_base_url .. '/' .. meta_page_url;
             }
         }
         else
         {
-            meta_page_url = 'https://www.spark-project.com/' .. .LanguageCode .. '/' .. meta_page_url;
+            meta_page_url = meta_base_url .. '/' .. .LanguageCode .. '/' .. meta_page_url;
         }
     }
 
@@ -195,139 +197,135 @@
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "<% GetTranslatedText( meta_title, .LanguageCode ) %>",
+    "description": "<% GetTranslatedText( meta_description, .LanguageCode ) %>",
+    "image": "<% meta_image_path %>",
+    "url": "<% meta_page_url %>"
+}
+</script>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "<% GetTranslatedText( meta_business_name, .LanguageCode ) %>",
     "description": "<% GetTranslatedText( meta_business_description, .LanguageCode ) %>",
-    "image": "<% meta_image_path %>",
-    "url": "<% meta_page_url %>",
-    "address":
-        {
-            "@type": "PostalAddress",
-            "addressCountry": "<% GetTranslatedText( meta_country_code, .LanguageCode ) %>",
-            "addressLocality": "<% GetTranslatedText( meta_city_name, .LanguageCode ) %>"
-        },
-    "geo":
-        {
+    "url": "<% meta_business_url %>",
+    "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "<% GetTranslatedText( meta_country_code, .LanguageCode ) %>",
+        "addressLocality": "<% GetTranslatedText( meta_city_name, .LanguageCode ) %>"
+    },
+    "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "<% GetTranslatedText( meta_latitude, .LanguageCode ) %>",
+        "longitude": "<% GetTranslatedText( meta_longitude, .LanguageCode ) %>"
+    },
+    "serviceArea": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
             "@type": "GeoCoordinates",
             "latitude": "<% GetTranslatedText( meta_latitude, .LanguageCode ) %>",
             "longitude": "<% GetTranslatedText( meta_longitude, .LanguageCode ) %>"
         },
-    "serviceArea":
-        {
-            "@type": "GeoCircle",
-            "geoMidpoint":
-            {
-                "@type": "GeoCoordinates",
-                "latitude": "<% GetTranslatedText( meta_latitude, .LanguageCode ) %>",
-                "longitude": "<% GetTranslatedText( meta_longitude, .LanguageCode ) %>"
-            },
-            "geoRadius": "<% GetTranslatedText( meta_radius, .LanguageCode ) %>"
-        },
+        "geoRadius": "<% GetTranslatedText( meta_radius, .LanguageCode ) %>"
+    },
     "telephone": "<% meta_contact_phone %>",
     "email": "<% meta_contact_email %>",
-    "contactPoint":
-        [
-            <? foreach ( var meta_contact; meta_contact_array ) { ?>
-                {
-                    "@type": "ContactPoint",
-                    "contactType": "<% GetTranslatedText( meta_contact[ 0 ], .LanguageCode ) %>",
-                    "name": "<% GetTranslatedText( meta_contact[ 1 ], .LanguageCode ) %>",
-                    "telephone": "<% GetTranslatedText( meta_contact[ 2 ], .LanguageCode ) %>",
-                    "email": "<% GetTranslatedText( meta_contact[ 3 ], .LanguageCode ) %>"
-                },
-            <? } ?>
-        ],
-    "openingHoursSpecification":
-        [
-            <? foreach ( var meta_schedule; meta_schedule_array ) { ?>
-                {
-                    "@type": "OpeningHoursSpecification",
-                    "dayOfWeek":
-                        [
-                            "<# JoinArray( meta_schedule[ 0 ], '", "' ) #>"
-                        ],
-                    "opens": "<% GetTranslatedText( meta_schedule[ 1 ], .LanguageCode ) %>",
-                    "closes": "<% GetTranslatedText( meta_schedule[ 2 ], .LanguageCode ) %>",
-                    <? if ( meta_schedule[ 3 ] !== '' ) { ?>
-                        "validFrom": "<% GetTranslatedText( meta_schedule[ 3 ], .LanguageCode ) %>",
-                        "validThrough": "<% GetTranslatedText( meta_schedule[ 4 ], .LanguageCode ) %>",
-                    <? } ?>
-                },
-            <? } ?>
-        ],
-    "hasOfferCatalog":
+    "contactPoint": [
+    <? foreach ( var meta_contact_index => var meta_contact; meta_contact_array ) { ?>
         {
-            "@type": "OfferCatalog",
-            "name": "<% meta_offer_name %>",
-            "itemListElement":
-                [
-                    <? foreach ( var meta_service; meta_service_array ) { ?>
-                        {
-                            "@type": "Offer",
-                            "itemOffered":
-                            {
-                                "@type": "Service",
-                                "name": "<% GetTranslatedText( meta_service[ 0 ], .LanguageCode ) %>",
-                                "description": "<% GetTranslatedText( meta_service[ 1 ], .LanguageCode ) %>"
-                            }
-                        },
-                    <? } ?>
-                ]
-        },
-    "sameAs":
-        [
+            "@type": "ContactPoint",
+            "contactType": "<% GetTranslatedText( meta_contact[ 0 ], .LanguageCode ) %>",
+            "name": "<% GetTranslatedText( meta_contact[ 1 ], .LanguageCode ) %>",
+            "telephone": "<% GetTranslatedText( meta_contact[ 2 ], .LanguageCode ) %>",
+            "email": "<% GetTranslatedText( meta_contact[ 3 ], .LanguageCode ) %>"
+        }<# ( meta_contact_index + 1 < count( meta_contact_array ) ) ? ',' : '' #>
+    <? } ?>
+    ],
+    "openingHoursSpecification": [
+    <? foreach ( var meta_schedule_index => var meta_schedule; meta_schedule_array ) { ?>
+        {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+                "<# JoinArray( meta_schedule[ 0 ], '", "' ) #>"
+            ],
+            "opens": "<% GetTranslatedText( meta_schedule[ 1 ], .LanguageCode ) %>",
+            "closes": "<% GetTranslatedText( meta_schedule[ 2 ], .LanguageCode ) %>",
+            <? if ( meta_schedule[ 3 ] !== '' ) { ?>
+            "validFrom": "<% GetTranslatedText( meta_schedule[ 3 ], .LanguageCode ) %>",
+            "validThrough": "<% GetTranslatedText( meta_schedule[ 4 ], .LanguageCode ) %>",
+            <? } ?>
+        }<# ( meta_schedule_index + 1 < count( meta_schedule_array ) ) ? ',' : '' #>
+    <? } ?>
+    ],
+    "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "<% meta_offer_name %>",
+        "itemListElement": [
+            <? foreach ( var meta_service_index => var meta_service; meta_service_array ) { ?>
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "<% GetTranslatedText( meta_service[ 0 ], .LanguageCode ) %>",
+                    "description": "<% GetTranslatedText( meta_service[ 1 ], .LanguageCode ) %>"
+                }
+            }<# ( meta_service_index + 1 < count( meta_service_array ) ) ? ',' : '' #>
+            <? } ?>
+        ]
+    },
+    "sameAs": [
             "<# JoinArray( meta_page_url_array, '", "' ) #>"
-        ],
+    ]
 }
 </script>
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity":
-        [
-            <? foreach ( var meta_faq; meta_faq_array ) { ?>
-                {
-                    "@type": "Question",
-                    "name": "<% GetTranslatedText( meta_faq[ 0 ], .LanguageCode ) %>",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "<% GetTranslatedText( meta_faq[ 1 ], .LanguageCode ) %>"
-                    }
-                },
-            <? } ?>
-        ]
+    "mainEntity": [
+        <? foreach ( var meta_faq_index => var meta_faq; meta_faq_array ) { ?>
+        {
+            "@type": "Question",
+            "name": "<% GetTranslatedText( meta_faq[ 0 ], .LanguageCode ) %>",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "<% GetTranslatedText( meta_faq[ 1 ], .LanguageCode ) %>"
+            }
+        }<# ( meta_faq_index + 1 < count( meta_faq_array ) ) ? ',' : '' #>
+    <? } ?>
+    ]
 }
 </script>
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "itemListElement":
-        [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "<% meta_title %>",
-                "item": "<% meta_page_url %>"
-            }
-        ]
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "<% meta_title %>",
+            "item": "<% meta_page_url %>"
+        }
+    ]
 }
 </script>
 <title>Spark Project | <% meta_title %></title>
 <link rel="canonical" href="<% meta_page_url %>">
 <? foreach ( var meta_language_code; LanguageCodeArray ) { ?>
     <? if ( meta_language_code === DefaultLanguageCode ) { ?>
-        <link rel="alternate" hreflang="x-default" href="https://www.spark-project.com/<% route %>"/>
+        <link rel="alternate" hreflang="x-default" href="<% meta_base_url %>/<% route %>"/>
     <? } else { ?>
-        <link rel="alternate" hreflang="<% meta_language_code %>" href="https://www.spark-project.com/<% meta_language_code %>/<% route %>"/>
+        <link rel="alternate" hreflang="<% meta_language_code %>" href="<% meta_base_url %>/<% meta_language_code %>/<% route %>"/>
     <? } ?>
 <? } ?>
-<link rel="icon" href="https://www.spark-project.com/favicon.ico"/>
-<link rel="icon" sizes="512x512" href="https://www.spark-project.com/favicon-512x512.png"/>
-<link rel="apple-touch-icon" sizes="180x180" href="https://www.spark-project.com/favicon-180x180.png"/>
-<link rel="mask-icon" href="https://www.spark-project.com/favicon.svg" color="#FFFFFF"/>
-<link rel="manifest" href="https://www.spark-project.com/site.webmanifest"/>
+<link rel="icon" href="<% meta_base_url %>/favicon.ico"/>
+<link rel="icon" sizes="512x512" href="<% meta_base_url %>/favicon-512x512.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="<% meta_base_url %>/favicon-180x180.png"/>
+<link rel="mask-icon" href="<% meta_base_url %>/favicon.svg" color="#FFFFFF"/>
+<link rel="manifest" href="<% meta_base_url %>/site.webmanifest"/>
 <link rel="stylesheet" href="/static/style.css?v=<# VersionTimestamp #>"/>
 <? foreach ( var image_path; .ImagePathArray ) { ?>
     <link rel="preload" href="<# GetPreloadImagePath( image_path ) #>?v=<# VersionTimestamp #>" as="image"/>
