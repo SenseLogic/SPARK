@@ -3,7 +3,7 @@
     var meta_title = 'Spark Project';
     var meta_description = '';
     var meta_image_path = '/favicon-512x512.png';
-    var meta_author = 'Spark Project Team';
+    var meta_author = 'Spark Project';
     var meta_business_url = meta_base_url;
     var meta_business_name = 'Spark Project';
     var meta_business_description = 'Your tourism partner in Brussels';
@@ -187,7 +187,7 @@
 <meta property="og:image" content="<% meta_image_path %>"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
-<meta property="og:image:alt" content=""/>
+<meta property="og:image:alt" content="<% meta_title %>"/>
 <meta property="og:locale" content="<% .LanguageCode %>"/>
 <? foreach ( var meta_language_code; LanguageCodeArray ) { ?>
     <? if ( meta_language_code !== .LanguageCode ) { ?>

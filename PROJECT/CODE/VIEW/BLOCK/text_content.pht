@@ -1,7 +1,12 @@
 <? if ( var block.Title !== '' ) { ?>
     <h3 class="block-title">
-        <# .GetProcessedText( block.Title ) #>
+        <# .GetProcessedMultilineText( block.Title ) #>
     </h3>
+<? } ?>
+<? if ( block.Teaser !== '' ) { ?>
+    <h4 class="block-teaser">
+        <# .GetProcessedMultilineText( block.Teaser ) #>
+    </h4>
 <? } ?>
 <? if ( block.Text !== '' ) { ?>
     <div class="block-text">

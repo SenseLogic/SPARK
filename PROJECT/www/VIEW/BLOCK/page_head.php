@@ -3,7 +3,7 @@
      $meta_title = 'Spark Project';
      $meta_description = '';
      $meta_image_path = '/favicon-512x512.png';
-     $meta_author = 'Spark Project Team';
+     $meta_author = 'Spark Project';
      $meta_business_url = $meta_base_url;
      $meta_business_name = 'Spark Project';
      $meta_business_description = 'Your tourism partner in Brussels';
@@ -187,7 +187,7 @@
 <meta property="og:image" content="<?php echo htmlspecialchars( $meta_image_path ); ?>"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
-<meta property="og:image:alt" content=""/>
+<meta property="og:image:alt" content="<?php echo htmlspecialchars( $meta_title ); ?>"/>
 <meta property="og:locale" content="<?php echo htmlspecialchars( $this->LanguageCode ); ?>"/>
 <?php foreach ( LanguageCodeArray as  $meta_language_code ) { ?>
     <?php if ( $meta_language_code !== $this->LanguageCode ) { ?>
