@@ -334,11 +334,11 @@
 
         if ( view_route === "" )
         {
-            SetUrl( "/" + language_code + "/" );
+            SetUrl( "/" + language_code );
         }
         else
         {
-            SetUrl( "/" + language_code + "/" + view_route + "/" );
+            SetUrl( "/" + language_code + "/" + view_route );
         }
     }
 </script>

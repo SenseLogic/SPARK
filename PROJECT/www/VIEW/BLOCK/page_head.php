@@ -113,7 +113,7 @@
 
         if ( $meta_image_path === '' )
         {
-            $meta_image_path = '/static/image/meta/preview.jpg';
+            $meta_image_path = '/static/image/home/heading.avif';
         }
 
         if ( $sub_route !== '' )
@@ -178,13 +178,13 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="<?php echo htmlspecialchars( $meta_title ); ?>"/>
 <meta name="twitter:description" content="<?php echo htmlspecialchars( $meta_description ); ?>"/>
-<meta name="twitter:image" content="<?php echo htmlspecialchars( $meta_image_path ); ?>"/>
+<meta name="twitter:image" content="<?php echo htmlspecialchars( $meta_image_path ); ?>.meta.jpg"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="Spark Project"/>
 <meta property="og:title" content="<?php echo htmlspecialchars( $meta_title ); ?>"/>
 <meta property="og:description" content="<?php echo htmlspecialchars( $meta_description ); ?>"/>
 <meta property="og:url" content="<?php echo htmlspecialchars( $meta_page_url ); ?>"/>
-<meta property="og:image" content="<?php echo htmlspecialchars( $meta_image_path ); ?>"/>
+<meta property="og:image" content="<?php echo htmlspecialchars( $meta_image_path ); ?>.meta.jpg"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
 <meta property="og:image:alt" content="<?php echo htmlspecialchars( $meta_title ); ?>"/>
@@ -200,7 +200,7 @@
     "@type": "WebPage",
     "name": "<?php echo htmlspecialchars( GetTranslatedText( $meta_title, $this->LanguageCode ) ); ?>",
     "description": "<?php echo htmlspecialchars( GetTranslatedText( $meta_description, $this->LanguageCode ) ); ?>",
-    "image": "<?php echo htmlspecialchars( $meta_image_path ); ?>",
+    "image": "<?php echo htmlspecialchars( $meta_image_path ); ?>.meta.jpg",
     "url": "<?php echo htmlspecialchars( $meta_page_url ); ?>"
 }
 </script>

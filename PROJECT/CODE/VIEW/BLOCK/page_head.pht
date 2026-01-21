@@ -113,7 +113,7 @@
 
         if ( meta_image_path === '' )
         {
-            meta_image_path = '/static/image/meta/preview.jpg';
+            meta_image_path = '/static/image/home/heading.avif';
         }
 
         if ( sub_route !== '' )
@@ -178,13 +178,13 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="<% meta_title %>"/>
 <meta name="twitter:description" content="<% meta_description %>"/>
-<meta name="twitter:image" content="<% meta_image_path %>"/>
+<meta name="twitter:image" content="<% meta_image_path %>.meta.jpg"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="Spark Project"/>
 <meta property="og:title" content="<% meta_title %>"/>
 <meta property="og:description" content="<% meta_description %>"/>
 <meta property="og:url" content="<% meta_page_url %>"/>
-<meta property="og:image" content="<% meta_image_path %>"/>
+<meta property="og:image" content="<% meta_image_path %>.meta.jpg"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
 <meta property="og:image:alt" content="<% meta_title %>"/>
@@ -200,7 +200,7 @@
     "@type": "WebPage",
     "name": "<% GetTranslatedText( meta_title, .LanguageCode ) %>",
     "description": "<% GetTranslatedText( meta_description, .LanguageCode ) %>",
-    "image": "<% meta_image_path %>",
+    "image": "<% meta_image_path %>.meta.jpg",
     "url": "<% meta_page_url %>"
 }
 </script>
