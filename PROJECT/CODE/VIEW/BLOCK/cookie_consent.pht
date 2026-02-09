@@ -546,7 +546,7 @@
     <div class="cookie-consent-dialog">
         <? if ( .BrowserLocation.IsEurope ) { ?>
             <div class="cookie-consent-dialog-header">
-                <img class="cookie-consent-dialog-header-image" src="/static/image/cookie_consent/logo.svg"/>
+                <img class="cookie-consent-dialog-header-image" src="/static/image/cookie_consent/logo.svg" alt="cookie consent logo image"/>
                 <div class="cookie-consent-dialog-header-title">
                     <# .GetProcessedTextBySlug( 'cookie-consent-dialog-european-title' ) #>
                 </div>
@@ -568,7 +568,7 @@
                     </div>
                     <div class="cookie-consent-dialog-setting">
                         <div class="cookie-consent-dialog-setting-title is-grayed" onclick="HandleCookieConsentDialogRequiredCookiesDescriptionButtonClickEvent()">
-                            <img class="cookie-consent-dialog-setting-title-image" src="/static/image/cookie_consent/plus_icon.svg"/>
+                            <img class="cookie-consent-dialog-setting-title-image" src="/static/image/cookie_consent/plus_icon.svg" alt="cookie consent plus icon image"/>
                             <# .GetProcessedTextBySlug( 'cookie-consent-dialog-european-required-cookies-title' ) #>
                         </div>
                         <div class="cookie-consent-dialog-setting-value">
@@ -580,7 +580,7 @@
                     </div>
                     <div class="cookie-consent-dialog-setting">
                         <div class="cookie-consent-dialog-setting-title" onclick="HandleCookieConsentDialogPerformanceCookiesDescriptionButtonClickEvent()">
-                            <img class="cookie-consent-dialog-setting-title-image" src="/static/image/cookie_consent/plus_icon.svg"/>
+                            <img class="cookie-consent-dialog-setting-title-image" src="/static/image/cookie_consent/plus_icon.svg" alt="cookie consent plus icon image"/>
                             <# .GetProcessedTextBySlug( 'cookie-consent-dialog-european-performance-cookies-title' ) #>
                         </div>
                         <div class="cookie-consent-dialog-setting-value">
@@ -595,7 +595,7 @@
                     </div>
                     <div class="cookie-consent-dialog-setting">
                         <div class="cookie-consent-dialog-setting-title" onclick="HandleCookieConsentDialogFunctionalCookiesDescriptionButtonClickEvent()">
-                            <img class="cookie-consent-dialog-setting-title-image" src="/static/image/cookie_consent/plus_icon.svg"/>
+                            <img class="cookie-consent-dialog-setting-title-image" src="/static/image/cookie_consent/plus_icon.svg" alt="cookie consent plus icon image"/>
                             <# .GetProcessedTextBySlug( 'cookie-consent-dialog-european-functional-cookies-title' ) #>
                         </div>
                         <div class="cookie-consent-dialog-setting-value">
@@ -610,7 +610,7 @@
                     </div>
                     <div class="cookie-consent-dialog-setting">
                         <div class="cookie-consent-dialog-setting-title" onclick="HandleCookieConsentDialogTargetingCookiesDescriptionButtonClickEvent()">
-                            <img class="cookie-consent-dialog-setting-title-image" src="/static/image/cookie_consent/plus_icon.svg"/>
+                            <img class="cookie-consent-dialog-setting-title-image" src="/static/image/cookie_consent/plus_icon.svg" alt="cookie consent plus icon image"/>
                             <# .GetProcessedTextBySlug( 'cookie-consent-dialog-european-targeting-cookies-title' ) #>
                         </div>
                         <div class="cookie-consent-dialog-setting-value">
@@ -635,7 +635,7 @@
             </div>
         <? } else if ( .BrowserLocation.IsNorthAmerica ) { ?>
             <div class="cookie-consent-dialog-header">
-                <img class="cookie-consent-dialog-header-image" src="/static/image/cookie_consent/logo.svg"/>
+                <img class="cookie-consent-dialog-header-image" src="/static/image/cookie_consent/logo.svg" alt="cookie consent logo image"/>
                 <div class="cookie-consent-dialog-header-title">
                     <# .GetProcessedTextBySlug( 'cookie-consent-dialog-american-title' ) #>
                 </div>
@@ -652,7 +652,7 @@
                     </div>
                     <div class="cookie-consent-dialog-setting">
                         <div class="cookie-consent-dialog-setting-title is-grayed" onclick="HandleCookieConsentDialogRequiredCookiesDescriptionButtonClickEvent()">
-                            <img class="cookie-consent-dialog-setting-title-image" src="/static/image/cookie_consent/plus_icon.svg"/>
+                            <img class="cookie-consent-dialog-setting-title-image" src="/static/image/cookie_consent/plus_icon.svg" alt="cookie consent plus icon image"/>
                             <# .GetProcessedTextBySlug( 'cookie-consent-dialog-american-required-cookies-title' ) #>
                         </div>
                         <div class="cookie-consent-dialog-setting-value">
@@ -664,7 +664,7 @@
                     </div>
                     <div class="cookie-consent-dialog-setting">
                         <div class="cookie-consent-dialog-setting-title" onclick="HandleCookieConsentDialogTrackingCookiesDescriptionButtonClickEvent()">
-                            <img class="cookie-consent-dialog-setting-title-image" src="/static/image/cookie_consent/plus_icon.svg"/>
+                            <img class="cookie-consent-dialog-setting-title-image" src="/static/image/cookie_consent/plus_icon.svg" alt="cookie consent plus icon image"/>
                             <# .GetProcessedTextBySlug( 'cookie-consent-dialog-american-tracking-cookies-title' ) #>
                         </div>
                         <div class="cookie-consent-dialog-setting-value">

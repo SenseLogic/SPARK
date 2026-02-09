@@ -133,7 +133,7 @@
         </div>
         <div class="contact-form-row">
             <input class="contact-form-input" name="Captcha" type="text" placeholder="<# .GetProcessedTextBySlug( 'contact-form-captcha-placeholder' ) #>"/>
-            <img class="contact-form-captcha-image" src="/captcha"/>
+            <img class="contact-form-captcha-image" src="/captcha" alt="captcha image"/>
         </div>
         <div class="contact-form-row">
             <div id="contact-form-send-button" class="contact-form-send-button" onclick="CancelEvent( event ); HandleContactFormSendButtonClickEvent()">
