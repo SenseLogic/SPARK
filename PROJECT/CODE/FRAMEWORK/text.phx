@@ -837,7 +837,7 @@ function GetBareText(
 
 function GetImageText(
     string image_path,
-    string medium_name = 'image'
+    array ignored_folder_path_array = [ '/static/image/base/', '/static/image/', '/upload/image/' ]
     )
 {
     return
@@ -845,23 +845,22 @@ function GetImageText(
             preg_replace(
                 '/\s+/',
                 ' ',
-                str_replace(
-                    [ ' static ', ' upload ', ' ' .. medium_name .. ' ' ],
+                preg_replace(
+                    '/[^\p{L}]+/u',
                     ' ',
-                    preg_replace(
-                        '/[^\p{L}]+/u',
-                        ' ',
+                    str_replace(
+                        ignored_folder_path_array,
+                        '/',
                         preg_replace(
                             '/\.[A-Za-z0-9]+$/i',
                             '',
-                            basename( image_path )
+                            image_path
                             )
                         )
                     )
                 )
             )
-        .. ' '
-        .. medium_name;
+        .. ' image';
 }
 
 // ~~

@@ -354,7 +354,7 @@ function CreateCoveredImage(
         }
 
          $copied_x = intval( ( $old_width - $copied_width ) / 2 );
-         $copied_y = intval( ( $old_height - $copied_height ) / 2 ),
+         $copied_y = intval( ( $old_height - $copied_height ) / 2 );
 
          $new_image = CreateImage( $new_width, $new_height, $image_has_alpha );
 
