@@ -198,48 +198,49 @@
 {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "<?php echo htmlspecialchars( GetTranslatedText( $meta_title, $this->LanguageCode ) ); ?>",
-    "description": "<?php echo htmlspecialchars( GetTranslatedText( $meta_description, $this->LanguageCode ) ); ?>",
-    "image": "<?php echo htmlspecialchars( $meta_image_path ); ?>.meta.jpg",
-    "url": "<?php echo htmlspecialchars( $meta_page_url ); ?>"
+    "name": <?php echo GetJsonText( GetTranslatedText( $meta_title, $this->LanguageCode ) ); ?>,
+    "description": <?php echo GetJsonText( GetTranslatedText( $meta_description, $this->LanguageCode ) ); ?>,
+    "image": <?php echo GetJsonText( $meta_image_path . '.meta.jpg' ); ?>,
+    "url": <?php echo GetJsonText( $meta_page_url ); ?>
 }
 </script>
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "<?php echo htmlspecialchars( GetTranslatedText( $meta_business_name, $this->LanguageCode ) ); ?>",
-    "description": "<?php echo htmlspecialchars( GetTranslatedText( $meta_business_description, $this->LanguageCode ) ); ?>",
-    "url": "<?php echo htmlspecialchars( $meta_business_url ); ?>",
+    "name": <?php echo GetJsonText( GetTranslatedText( $meta_business_name, $this->LanguageCode ) ); ?>,
+    "description": <?php echo GetJsonText( GetTranslatedText( $meta_business_description, $this->LanguageCode ) ); ?>,
+    "url": <?php echo GetJsonText( $meta_business_url ); ?>,
     "address": {
         "@type": "PostalAddress",
-        "addressCountry": "<?php echo htmlspecialchars( GetTranslatedText( $meta_country_code, $this->LanguageCode ) ); ?>",
-        "addressLocality": "<?php echo htmlspecialchars( GetTranslatedText( $meta_city_name, $this->LanguageCode ) ); ?>"
+        "streetAddress": <?php echo GetJsonText( GetTranslatedText( $meta_street_address, $this->LanguageCode ) ); ?>,
+        "addressCountry": <?php echo GetJsonText( GetTranslatedText( $meta_country_code, $this->LanguageCode ) ); ?>,
+        "addressLocality": <?php echo GetJsonText( GetTranslatedText( $meta_city_name, $this->LanguageCode ) ); ?>
     },
     "geo": {
         "@type": "GeoCoordinates",
-        "latitude": "<?php echo htmlspecialchars( GetTranslatedText( $meta_latitude, $this->LanguageCode ) ); ?>",
-        "longitude": "<?php echo htmlspecialchars( GetTranslatedText( $meta_longitude, $this->LanguageCode ) ); ?>"
+        "latitude": <?php echo GetJsonText( GetTranslatedText( $meta_latitude, $this->LanguageCode ) ); ?>,
+        "longitude": <?php echo GetJsonText( GetTranslatedText( $meta_longitude, $this->LanguageCode ) ); ?>
     },
     "serviceArea": {
         "@type": "GeoCircle",
         "geoMidpoint": {
             "@type": "GeoCoordinates",
-            "latitude": "<?php echo htmlspecialchars( GetTranslatedText( $meta_latitude, $this->LanguageCode ) ); ?>",
-            "longitude": "<?php echo htmlspecialchars( GetTranslatedText( $meta_longitude, $this->LanguageCode ) ); ?>"
+            "latitude": <?php echo GetJsonText( GetTranslatedText( $meta_latitude, $this->LanguageCode ) ); ?>,
+            "longitude": <?php echo GetJsonText( GetTranslatedText( $meta_longitude, $this->LanguageCode ) ); ?>
         },
-        "geoRadius": "<?php echo htmlspecialchars( GetTranslatedText( $meta_radius, $this->LanguageCode ) ); ?>"
+        "geoRadius": <?php echo GetJsonText( GetTranslatedText( $meta_radius, $this->LanguageCode ) ); ?>
     },
-    "telephone": "<?php echo htmlspecialchars( $meta_contact_phone ); ?>",
-    "email": "<?php echo htmlspecialchars( $meta_contact_email ); ?>",
+    "telephone": <?php echo GetJsonText( $meta_contact_phone ); ?>,
+    "email": <?php echo GetJsonText( $meta_contact_email ); ?>,
     "contactPoint": [
     <?php foreach ( $meta_contact_array as  $meta_contact_index =>  $meta_contact ) { ?>
         {
             "@type": "ContactPoint",
-            "contactType": "<?php echo htmlspecialchars( GetTranslatedText( $meta_contact[ 0 ], $this->LanguageCode ) ); ?>",
-            "name": "<?php echo htmlspecialchars( GetTranslatedText( $meta_contact[ 1 ], $this->LanguageCode ) ); ?>",
-            "telephone": "<?php echo htmlspecialchars( GetTranslatedText( $meta_contact[ 2 ], $this->LanguageCode ) ); ?>",
-            "email": "<?php echo htmlspecialchars( GetTranslatedText( $meta_contact[ 3 ], $this->LanguageCode ) ); ?>"
+            "contactType": <?php echo GetJsonText( GetTranslatedText( $meta_contact[ 0 ], $this->LanguageCode ) ); ?>,
+            "name": <?php echo GetJsonText( GetTranslatedText( $meta_contact[ 1 ], $this->LanguageCode ) ); ?>,
+            "telephone": <?php echo GetJsonText( GetTranslatedText( $meta_contact[ 2 ], $this->LanguageCode ) ); ?>,
+            "email": <?php echo GetJsonText( GetTranslatedText( $meta_contact[ 3 ], $this->LanguageCode ) ); ?>
         }<?php echo ( $meta_contact_index + 1 < count( $meta_contact_array ) ) ? ',' : ''; ?>
     <?php } ?>
     ],
@@ -250,26 +251,26 @@
             "dayOfWeek": [
                 "<?php echo JoinArray( $meta_schedule[ 0 ], '", "' ); ?>"
             ],
-            "opens": "<?php echo htmlspecialchars( GetTranslatedText( $meta_schedule[ 1 ], $this->LanguageCode ) ); ?>",
-            "closes": "<?php echo htmlspecialchars( GetTranslatedText( $meta_schedule[ 2 ], $this->LanguageCode ) ); ?>",
+            "opens": <?php echo GetJsonText( GetTranslatedText( $meta_schedule[ 1 ], $this->LanguageCode ) ); ?>,
+            "closes": <?php echo GetJsonText( GetTranslatedText( $meta_schedule[ 2 ], $this->LanguageCode ) ); ?>,
             <?php if ( $meta_schedule[ 3 ] !== '' ) { ?>
-            "validFrom": "<?php echo htmlspecialchars( GetTranslatedText( $meta_schedule[ 3 ], $this->LanguageCode ) ); ?>",
-            "validThrough": "<?php echo htmlspecialchars( GetTranslatedText( $meta_schedule[ 4 ], $this->LanguageCode ) ); ?>",
+            "validFrom": <?php echo GetJsonText( GetTranslatedText( $meta_schedule[ 3 ], $this->LanguageCode ) ); ?>,
+            "validThrough": <?php echo GetJsonText( GetTranslatedText( $meta_schedule[ 4 ], $this->LanguageCode ) ); ?>,
             <?php } ?>
         }<?php echo ( $meta_schedule_index + 1 < count( $meta_schedule_array ) ) ? ',' : ''; ?>
     <?php } ?>
     ],
     "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "<?php echo htmlspecialchars( $meta_offer_name ); ?>",
+        "name": <?php echo GetJsonText( $meta_offer_name ); ?>,
         "itemListElement": [
             <?php foreach ( $meta_service_array as  $meta_service_index =>  $meta_service ) { ?>
             {
                 "@type": "Offer",
                 "itemOffered": {
                     "@type": "Service",
-                    "name": "<?php echo htmlspecialchars( GetTranslatedText( $meta_service[ 0 ], $this->LanguageCode ) ); ?>",
-                    "description": "<?php echo htmlspecialchars( GetTranslatedText( $meta_service[ 1 ], $this->LanguageCode ) ); ?>"
+                    "name": <?php echo GetJsonText( GetTranslatedText( $meta_service[ 0 ], $this->LanguageCode ) ); ?>,
+                    "description": <?php echo GetJsonText( GetTranslatedText( $meta_service[ 1 ], $this->LanguageCode ) ); ?>
                 }
             }<?php echo ( $meta_service_index + 1 < count( $meta_service_array ) ) ? ',' : ''; ?>
             <?php } ?>
@@ -288,10 +289,10 @@
         <?php foreach ( $meta_faq_array as  $meta_faq_index =>  $meta_faq ) { ?>
         {
             "@type": "Question",
-            "name": "<?php echo htmlspecialchars( GetTranslatedText( $meta_faq[ 0 ], $this->LanguageCode ) ); ?>",
+            "name": <?php echo GetJsonText( GetTranslatedText( $meta_faq[ 0 ], $this->LanguageCode ) ); ?>,
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "<?php echo htmlspecialchars( GetTranslatedText( $meta_faq[ 1 ], $this->LanguageCode ) ); ?>"
+                "text": <?php echo GetJsonText( GetTranslatedText( $meta_faq[ 1 ], $this->LanguageCode ) ); ?>
             }
         }<?php echo ( $meta_faq_index + 1 < count( $meta_faq_array ) ) ? ',' : ''; ?>
     <?php } ?>
@@ -306,8 +307,8 @@
         {
             "@type": "ListItem",
             "position": 1,
-            "name": "<?php echo htmlspecialchars( $meta_title ); ?>",
-            "item": "<?php echo htmlspecialchars( $meta_page_url ); ?>"
+            "name": <?php echo GetJsonText( $meta_title ); ?>,
+            "item": <?php echo GetJsonText( $meta_page_url ); ?>
         }
     ]
 }

@@ -198,48 +198,49 @@
 {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "<% GetTranslatedText( meta_title, .LanguageCode ) %>",
-    "description": "<% GetTranslatedText( meta_description, .LanguageCode ) %>",
-    "image": "<% meta_image_path %>.meta.jpg",
-    "url": "<% meta_page_url %>"
+    "name": <# GetJsonText( GetTranslatedText( meta_title, .LanguageCode ) ) #>,
+    "description": <# GetJsonText( GetTranslatedText( meta_description, .LanguageCode ) ) #>,
+    "image": <# GetJsonText( meta_image_path .. '.meta.jpg' ) #>,
+    "url": <# GetJsonText( meta_page_url ) #>
 }
 </script>
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "<% GetTranslatedText( meta_business_name, .LanguageCode ) %>",
-    "description": "<% GetTranslatedText( meta_business_description, .LanguageCode ) %>",
-    "url": "<% meta_business_url %>",
+    "name": <# GetJsonText( GetTranslatedText( meta_business_name, .LanguageCode ) ) #>,
+    "description": <# GetJsonText( GetTranslatedText( meta_business_description, .LanguageCode ) ) #>,
+    "url": <# GetJsonText( meta_business_url ) #>,
     "address": {
         "@type": "PostalAddress",
-        "addressCountry": "<% GetTranslatedText( meta_country_code, .LanguageCode ) %>",
-        "addressLocality": "<% GetTranslatedText( meta_city_name, .LanguageCode ) %>"
+        "streetAddress": <# GetJsonText( GetTranslatedText( meta_street_address, .LanguageCode ) ) #>,
+        "addressCountry": <# GetJsonText( GetTranslatedText( meta_country_code, .LanguageCode ) ) #>,
+        "addressLocality": <# GetJsonText( GetTranslatedText( meta_city_name, .LanguageCode ) ) #>
     },
     "geo": {
         "@type": "GeoCoordinates",
-        "latitude": "<% GetTranslatedText( meta_latitude, .LanguageCode ) %>",
-        "longitude": "<% GetTranslatedText( meta_longitude, .LanguageCode ) %>"
+        "latitude": <# GetJsonText( GetTranslatedText( meta_latitude, .LanguageCode ) ) #>,
+        "longitude": <# GetJsonText( GetTranslatedText( meta_longitude, .LanguageCode ) ) #>
     },
     "serviceArea": {
         "@type": "GeoCircle",
         "geoMidpoint": {
             "@type": "GeoCoordinates",
-            "latitude": "<% GetTranslatedText( meta_latitude, .LanguageCode ) %>",
-            "longitude": "<% GetTranslatedText( meta_longitude, .LanguageCode ) %>"
+            "latitude": <# GetJsonText( GetTranslatedText( meta_latitude, .LanguageCode ) ) #>,
+            "longitude": <# GetJsonText( GetTranslatedText( meta_longitude, .LanguageCode ) ) #>
         },
-        "geoRadius": "<% GetTranslatedText( meta_radius, .LanguageCode ) %>"
+        "geoRadius": <# GetJsonText( GetTranslatedText( meta_radius, .LanguageCode ) ) #>
     },
-    "telephone": "<% meta_contact_phone %>",
-    "email": "<% meta_contact_email %>",
+    "telephone": <# GetJsonText( meta_contact_phone ) #>,
+    "email": <# GetJsonText( meta_contact_email ) #>,
     "contactPoint": [
     <? foreach ( var meta_contact_index => var meta_contact; meta_contact_array ) { ?>
         {
             "@type": "ContactPoint",
-            "contactType": "<% GetTranslatedText( meta_contact[ 0 ], .LanguageCode ) %>",
-            "name": "<% GetTranslatedText( meta_contact[ 1 ], .LanguageCode ) %>",
-            "telephone": "<% GetTranslatedText( meta_contact[ 2 ], .LanguageCode ) %>",
-            "email": "<% GetTranslatedText( meta_contact[ 3 ], .LanguageCode ) %>"
+            "contactType": <# GetJsonText( GetTranslatedText( meta_contact[ 0 ], .LanguageCode ) ) #>,
+            "name": <# GetJsonText( GetTranslatedText( meta_contact[ 1 ], .LanguageCode ) ) #>,
+            "telephone": <# GetJsonText( GetTranslatedText( meta_contact[ 2 ], .LanguageCode ) ) #>,
+            "email": <# GetJsonText( GetTranslatedText( meta_contact[ 3 ], .LanguageCode ) ) #>
         }<# ( meta_contact_index + 1 < count( meta_contact_array ) ) ? ',' : '' #>
     <? } ?>
     ],
@@ -250,26 +251,26 @@
             "dayOfWeek": [
                 "<# JoinArray( meta_schedule[ 0 ], '", "' ) #>"
             ],
-            "opens": "<% GetTranslatedText( meta_schedule[ 1 ], .LanguageCode ) %>",
-            "closes": "<% GetTranslatedText( meta_schedule[ 2 ], .LanguageCode ) %>",
+            "opens": <# GetJsonText( GetTranslatedText( meta_schedule[ 1 ], .LanguageCode ) ) #>,
+            "closes": <# GetJsonText( GetTranslatedText( meta_schedule[ 2 ], .LanguageCode ) ) #>,
             <? if ( meta_schedule[ 3 ] !== '' ) { ?>
-            "validFrom": "<% GetTranslatedText( meta_schedule[ 3 ], .LanguageCode ) %>",
-            "validThrough": "<% GetTranslatedText( meta_schedule[ 4 ], .LanguageCode ) %>",
+            "validFrom": <# GetJsonText( GetTranslatedText( meta_schedule[ 3 ], .LanguageCode ) ) #>,
+            "validThrough": <# GetJsonText( GetTranslatedText( meta_schedule[ 4 ], .LanguageCode ) ) #>,
             <? } ?>
         }<# ( meta_schedule_index + 1 < count( meta_schedule_array ) ) ? ',' : '' #>
     <? } ?>
     ],
     "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "<% meta_offer_name %>",
+        "name": <# GetJsonText( meta_offer_name ) #>,
         "itemListElement": [
             <? foreach ( var meta_service_index => var meta_service; meta_service_array ) { ?>
             {
                 "@type": "Offer",
                 "itemOffered": {
                     "@type": "Service",
-                    "name": "<% GetTranslatedText( meta_service[ 0 ], .LanguageCode ) %>",
-                    "description": "<% GetTranslatedText( meta_service[ 1 ], .LanguageCode ) %>"
+                    "name": <# GetJsonText( GetTranslatedText( meta_service[ 0 ], .LanguageCode ) ) #>,
+                    "description": <# GetJsonText( GetTranslatedText( meta_service[ 1 ], .LanguageCode ) ) #>
                 }
             }<# ( meta_service_index + 1 < count( meta_service_array ) ) ? ',' : '' #>
             <? } ?>
@@ -288,10 +289,10 @@
         <? foreach ( var meta_faq_index => var meta_faq; meta_faq_array ) { ?>
         {
             "@type": "Question",
-            "name": "<% GetTranslatedText( meta_faq[ 0 ], .LanguageCode ) %>",
+            "name": <# GetJsonText( GetTranslatedText( meta_faq[ 0 ], .LanguageCode ) ) #>,
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "<% GetTranslatedText( meta_faq[ 1 ], .LanguageCode ) %>"
+                "text": <# GetJsonText( GetTranslatedText( meta_faq[ 1 ], .LanguageCode ) ) #>
             }
         }<# ( meta_faq_index + 1 < count( meta_faq_array ) ) ? ',' : '' #>
     <? } ?>
@@ -306,8 +307,8 @@
         {
             "@type": "ListItem",
             "position": 1,
-            "name": "<% meta_title %>",
-            "item": "<% meta_page_url %>"
+            "name": <# GetJsonText( meta_title ) #>,
+            "item": <# GetJsonText( meta_page_url ) #>
         }
     ]
 }
