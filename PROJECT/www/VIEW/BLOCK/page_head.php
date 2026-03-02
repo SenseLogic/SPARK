@@ -160,10 +160,10 @@
 <meta name="title" content="<?php echo htmlspecialchars( $meta_title ); ?>"/>
 <meta name="description" content="<?php echo htmlspecialchars( $meta_description ); ?>"/>
 <meta name="author" content="<?php echo htmlspecialchars( $meta_author ); ?>">
-<meta name="geo.region" content="<?php echo htmlspecialchars( GetTranslatedText( $meta_country_code, $this->LanguageCode ) ); ?>"/>
-<meta name="geo.placename" content="<?php echo htmlspecialchars( GetTranslatedText( $meta_city_name, $this->LanguageCode ) ); ?>"/>
-<meta name="geo.position" content="<?php echo htmlspecialchars( GetTranslatedText( $meta_latitude, $this->LanguageCode ) ); ?>;<?php echo htmlspecialchars( GetTranslatedText( $meta_longitude, $this->LanguageCode ) ); ?>"/>
-<meta name="ICBM" content="<?php echo htmlspecialchars( GetTranslatedText( $meta_latitude, $this->LanguageCode ) ); ?>, <?php echo htmlspecialchars( GetTranslatedText( $meta_longitude, $this->LanguageCode ) ); ?>"/>
+<meta name="geo.region" content="<?php echo htmlspecialchars( $meta_country_code ); ?>"/>
+<meta name="geo.placename" content="<?php echo htmlspecialchars( $meta_city_name ); ?>"/>
+<meta name="geo.position" content="<?php echo htmlspecialchars( $meta_latitude ); ?>;<?php echo htmlspecialchars( $meta_longitude ); ?>"/>
+<meta name="ICBM" content="<?php echo htmlspecialchars( $meta_latitude ); ?>, <?php echo htmlspecialchars( $meta_longitude ); ?>"/>
 <meta name="format-detection" content="telephone=no"/>
 <meta name="mobile-web-app-capable" content="yes"/>
 <meta name="mobile-web-app-status-bar-style" content="black"/>
@@ -198,8 +198,8 @@
 {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": <?php echo GetJsonText( GetTranslatedText( $meta_title, $this->LanguageCode ) ); ?>,
-    "description": <?php echo GetJsonText( GetTranslatedText( $meta_description, $this->LanguageCode ) ); ?>,
+    "name": <?php echo GetJsonText( $meta_title ); ?>,
+    "description": <?php echo GetJsonText( $meta_description ); ?>,
     "image": <?php echo GetJsonText( $meta_image_path . '.meta.jpg' ); ?>,
     "url": <?php echo GetJsonText( $meta_page_url ); ?>
 }
@@ -208,28 +208,28 @@
 {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": <?php echo GetJsonText( GetTranslatedText( $meta_business_name, $this->LanguageCode ) ); ?>,
-    "description": <?php echo GetJsonText( GetTranslatedText( $meta_business_description, $this->LanguageCode ) ); ?>,
+    "name": <?php echo GetJsonText( $meta_business_name ); ?>,
+    "description": <?php echo GetJsonText( $meta_business_description ); ?>,
     "url": <?php echo GetJsonText( $meta_business_url ); ?>,
     "address": {
         "@type": "PostalAddress",
-        "streetAddress": <?php echo GetJsonText( GetTranslatedText( $meta_street_address, $this->LanguageCode ) ); ?>,
-        "addressCountry": <?php echo GetJsonText( GetTranslatedText( $meta_country_code, $this->LanguageCode ) ); ?>,
-        "addressLocality": <?php echo GetJsonText( GetTranslatedText( $meta_city_name, $this->LanguageCode ) ); ?>
+        "streetAddress": <?php echo GetJsonText( $meta_street_address ); ?>,
+        "addressCountry": <?php echo GetJsonText( $meta_country_code ); ?>,
+        "addressLocality": <?php echo GetJsonText( $meta_city_name ); ?>
     },
     "geo": {
         "@type": "GeoCoordinates",
-        "latitude": <?php echo GetJsonText( GetTranslatedText( $meta_latitude, $this->LanguageCode ) ); ?>,
-        "longitude": <?php echo GetJsonText( GetTranslatedText( $meta_longitude, $this->LanguageCode ) ); ?>
+        "latitude": <?php echo GetJsonText( $meta_latitude ); ?>,
+        "longitude": <?php echo GetJsonText( $meta_longitude ); ?>
     },
     "serviceArea": {
         "@type": "GeoCircle",
         "geoMidpoint": {
             "@type": "GeoCoordinates",
-            "latitude": <?php echo GetJsonText( GetTranslatedText( $meta_latitude, $this->LanguageCode ) ); ?>,
-            "longitude": <?php echo GetJsonText( GetTranslatedText( $meta_longitude, $this->LanguageCode ) ); ?>
+            "latitude": <?php echo GetJsonText( $meta_latitude ); ?>,
+            "longitude": <?php echo GetJsonText( $meta_longitude ); ?>
         },
-        "geoRadius": <?php echo GetJsonText( GetTranslatedText( $meta_radius, $this->LanguageCode ) ); ?>
+        "geoRadius": <?php echo GetJsonText( $meta_radius ); ?>
     },
     "telephone": <?php echo GetJsonText( $meta_contact_phone ); ?>,
     "email": <?php echo GetJsonText( $meta_contact_email ); ?>,
@@ -237,10 +237,10 @@
     <?php foreach ( $meta_contact_array as  $meta_contact_index =>  $meta_contact ) { ?>
         {
             "@type": "ContactPoint",
-            "contactType": <?php echo GetJsonText( GetTranslatedText( $meta_contact[ 0 ], $this->LanguageCode ) ); ?>,
-            "name": <?php echo GetJsonText( GetTranslatedText( $meta_contact[ 1 ], $this->LanguageCode ) ); ?>,
-            "telephone": <?php echo GetJsonText( GetTranslatedText( $meta_contact[ 2 ], $this->LanguageCode ) ); ?>,
-            "email": <?php echo GetJsonText( GetTranslatedText( $meta_contact[ 3 ], $this->LanguageCode ) ); ?>
+            "contactType": <?php echo GetJsonText( $meta_contact[ 0 ] ); ?>,
+            "name": <?php echo GetJsonText( $meta_contact[ 1 ] ); ?>,
+            "telephone": <?php echo GetJsonText( $meta_contact[ 2 ] ); ?>,
+            "email": <?php echo GetJsonText( $meta_contact[ 3 ] ); ?>
         }<?php echo ( $meta_contact_index + 1 < count( $meta_contact_array ) ) ? ',' : ''; ?>
     <?php } ?>
     ],
@@ -251,11 +251,11 @@
             "dayOfWeek": [
                 "<?php echo JoinArray( $meta_schedule[ 0 ], '", "' ); ?>"
             ],
-            "opens": <?php echo GetJsonText( GetTranslatedText( $meta_schedule[ 1 ], $this->LanguageCode ) ); ?>,
-            "closes": <?php echo GetJsonText( GetTranslatedText( $meta_schedule[ 2 ], $this->LanguageCode ) ); ?>,
+            "opens": <?php echo GetJsonText( $meta_schedule[ 1 ] ); ?>,
+            "closes": <?php echo GetJsonText( $meta_schedule[ 2 ] ); ?>,
             <?php if ( $meta_schedule[ 3 ] !== '' ) { ?>
-            "validFrom": <?php echo GetJsonText( GetTranslatedText( $meta_schedule[ 3 ], $this->LanguageCode ) ); ?>,
-            "validThrough": <?php echo GetJsonText( GetTranslatedText( $meta_schedule[ 4 ], $this->LanguageCode ) ); ?>,
+            "validFrom": <?php echo GetJsonText( $meta_schedule[ 3 ] ); ?>,
+            "validThrough": <?php echo GetJsonText( $meta_schedule[ 4 ] ); ?>,
             <?php } ?>
         }<?php echo ( $meta_schedule_index + 1 < count( $meta_schedule_array ) ) ? ',' : ''; ?>
     <?php } ?>
@@ -269,8 +269,8 @@
                 "@type": "Offer",
                 "itemOffered": {
                     "@type": "Service",
-                    "name": <?php echo GetJsonText( GetTranslatedText( $meta_service[ 0 ], $this->LanguageCode ) ); ?>,
-                    "description": <?php echo GetJsonText( GetTranslatedText( $meta_service[ 1 ], $this->LanguageCode ) ); ?>
+                    "name": <?php echo GetJsonText( $meta_service[ 0 ] ); ?>,
+                    "description": <?php echo GetJsonText( $meta_service[ 1 ] ); ?>
                 }
             }<?php echo ( $meta_service_index + 1 < count( $meta_service_array ) ) ? ',' : ''; ?>
             <?php } ?>
@@ -289,10 +289,10 @@
         <?php foreach ( $meta_faq_array as  $meta_faq_index =>  $meta_faq ) { ?>
         {
             "@type": "Question",
-            "name": <?php echo GetJsonText( GetTranslatedText( $meta_faq[ 0 ], $this->LanguageCode ) ); ?>,
+            "name": <?php echo GetJsonText( $meta_faq[ 0 ] ); ?>,
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": <?php echo GetJsonText( GetTranslatedText( $meta_faq[ 1 ], $this->LanguageCode ) ); ?>
+                "text": <?php echo GetJsonText( $meta_faq[ 1 ] ); ?>
             }
         }<?php echo ( $meta_faq_index + 1 < count( $meta_faq_array ) ) ? ',' : ''; ?>
     <?php } ?>
@@ -329,5 +329,5 @@
 <link rel="manifest" href="<?php echo htmlspecialchars( $meta_base_url ); ?>/site.webmanifest"/>
 <link rel="stylesheet" href="/static/style.css?v=<?php echo VersionTimestamp; ?>"/>
 <?php foreach ( $this->ImagePathArray as  $image_path ) { ?>
-    <link rel="preload" href="<?php echo GetPreloadImagePath( $image_path ); ?>?v=<?php echo VersionTimestamp; ?>" as="image"/>
+    <link rel="preload" href="<?php echo GetPreloadImagePath( GetTranslatedText( $image_path, $this->LanguageCode ) ); ?>?v=<?php echo VersionTimestamp; ?>" as="image"/>
 <?php } ?>

@@ -160,10 +160,10 @@
 <meta name="title" content="<% meta_title %>"/>
 <meta name="description" content="<% meta_description %>"/>
 <meta name="author" content="<% meta_author %>">
-<meta name="geo.region" content="<% GetTranslatedText( meta_country_code, .LanguageCode ) %>"/>
-<meta name="geo.placename" content="<% GetTranslatedText( meta_city_name, .LanguageCode ) %>"/>
-<meta name="geo.position" content="<% GetTranslatedText( meta_latitude, .LanguageCode ) %>;<% GetTranslatedText( meta_longitude, .LanguageCode ) %>"/>
-<meta name="ICBM" content="<% GetTranslatedText( meta_latitude, .LanguageCode ) %>, <% GetTranslatedText( meta_longitude, .LanguageCode ) %>"/>
+<meta name="geo.region" content="<% meta_country_code %>"/>
+<meta name="geo.placename" content="<% meta_city_name %>"/>
+<meta name="geo.position" content="<% meta_latitude %>;<% meta_longitude %>"/>
+<meta name="ICBM" content="<% meta_latitude %>, <% meta_longitude %>"/>
 <meta name="format-detection" content="telephone=no"/>
 <meta name="mobile-web-app-capable" content="yes"/>
 <meta name="mobile-web-app-status-bar-style" content="black"/>
@@ -198,8 +198,8 @@
 {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": <# GetJsonText( GetTranslatedText( meta_title, .LanguageCode ) ) #>,
-    "description": <# GetJsonText( GetTranslatedText( meta_description, .LanguageCode ) ) #>,
+    "name": <# GetJsonText( meta_title ) #>,
+    "description": <# GetJsonText( meta_description ) #>,
     "image": <# GetJsonText( meta_image_path .. '.meta.jpg' ) #>,
     "url": <# GetJsonText( meta_page_url ) #>
 }
@@ -208,28 +208,28 @@
 {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": <# GetJsonText( GetTranslatedText( meta_business_name, .LanguageCode ) ) #>,
-    "description": <# GetJsonText( GetTranslatedText( meta_business_description, .LanguageCode ) ) #>,
+    "name": <# GetJsonText( meta_business_name ) #>,
+    "description": <# GetJsonText( meta_business_description ) #>,
     "url": <# GetJsonText( meta_business_url ) #>,
     "address": {
         "@type": "PostalAddress",
-        "streetAddress": <# GetJsonText( GetTranslatedText( meta_street_address, .LanguageCode ) ) #>,
-        "addressCountry": <# GetJsonText( GetTranslatedText( meta_country_code, .LanguageCode ) ) #>,
-        "addressLocality": <# GetJsonText( GetTranslatedText( meta_city_name, .LanguageCode ) ) #>
+        "streetAddress": <# GetJsonText( meta_street_address ) #>,
+        "addressCountry": <# GetJsonText( meta_country_code ) #>,
+        "addressLocality": <# GetJsonText( meta_city_name ) #>
     },
     "geo": {
         "@type": "GeoCoordinates",
-        "latitude": <# GetJsonText( GetTranslatedText( meta_latitude, .LanguageCode ) ) #>,
-        "longitude": <# GetJsonText( GetTranslatedText( meta_longitude, .LanguageCode ) ) #>
+        "latitude": <# GetJsonText( meta_latitude ) #>,
+        "longitude": <# GetJsonText( meta_longitude ) #>
     },
     "serviceArea": {
         "@type": "GeoCircle",
         "geoMidpoint": {
             "@type": "GeoCoordinates",
-            "latitude": <# GetJsonText( GetTranslatedText( meta_latitude, .LanguageCode ) ) #>,
-            "longitude": <# GetJsonText( GetTranslatedText( meta_longitude, .LanguageCode ) ) #>
+            "latitude": <# GetJsonText( meta_latitude ) #>,
+            "longitude": <# GetJsonText( meta_longitude ) #>
         },
-        "geoRadius": <# GetJsonText( GetTranslatedText( meta_radius, .LanguageCode ) ) #>
+        "geoRadius": <# GetJsonText( meta_radius ) #>
     },
     "telephone": <# GetJsonText( meta_contact_phone ) #>,
     "email": <# GetJsonText( meta_contact_email ) #>,
@@ -237,10 +237,10 @@
     <? foreach ( var meta_contact_index => var meta_contact; meta_contact_array ) { ?>
         {
             "@type": "ContactPoint",
-            "contactType": <# GetJsonText( GetTranslatedText( meta_contact[ 0 ], .LanguageCode ) ) #>,
-            "name": <# GetJsonText( GetTranslatedText( meta_contact[ 1 ], .LanguageCode ) ) #>,
-            "telephone": <# GetJsonText( GetTranslatedText( meta_contact[ 2 ], .LanguageCode ) ) #>,
-            "email": <# GetJsonText( GetTranslatedText( meta_contact[ 3 ], .LanguageCode ) ) #>
+            "contactType": <# GetJsonText( meta_contact[ 0 ] ) #>,
+            "name": <# GetJsonText( meta_contact[ 1 ] ) #>,
+            "telephone": <# GetJsonText( meta_contact[ 2 ] ) #>,
+            "email": <# GetJsonText( meta_contact[ 3 ] ) #>
         }<# ( meta_contact_index + 1 < count( meta_contact_array ) ) ? ',' : '' #>
     <? } ?>
     ],
@@ -251,11 +251,11 @@
             "dayOfWeek": [
                 "<# JoinArray( meta_schedule[ 0 ], '", "' ) #>"
             ],
-            "opens": <# GetJsonText( GetTranslatedText( meta_schedule[ 1 ], .LanguageCode ) ) #>,
-            "closes": <# GetJsonText( GetTranslatedText( meta_schedule[ 2 ], .LanguageCode ) ) #>,
+            "opens": <# GetJsonText( meta_schedule[ 1 ] ) #>,
+            "closes": <# GetJsonText( meta_schedule[ 2 ] ) #>,
             <? if ( meta_schedule[ 3 ] !== '' ) { ?>
-            "validFrom": <# GetJsonText( GetTranslatedText( meta_schedule[ 3 ], .LanguageCode ) ) #>,
-            "validThrough": <# GetJsonText( GetTranslatedText( meta_schedule[ 4 ], .LanguageCode ) ) #>,
+            "validFrom": <# GetJsonText( meta_schedule[ 3 ] ) #>,
+            "validThrough": <# GetJsonText( meta_schedule[ 4 ] ) #>,
             <? } ?>
         }<# ( meta_schedule_index + 1 < count( meta_schedule_array ) ) ? ',' : '' #>
     <? } ?>
@@ -269,8 +269,8 @@
                 "@type": "Offer",
                 "itemOffered": {
                     "@type": "Service",
-                    "name": <# GetJsonText( GetTranslatedText( meta_service[ 0 ], .LanguageCode ) ) #>,
-                    "description": <# GetJsonText( GetTranslatedText( meta_service[ 1 ], .LanguageCode ) ) #>
+                    "name": <# GetJsonText( meta_service[ 0 ] ) #>,
+                    "description": <# GetJsonText( meta_service[ 1 ] ) #>
                 }
             }<# ( meta_service_index + 1 < count( meta_service_array ) ) ? ',' : '' #>
             <? } ?>
@@ -289,10 +289,10 @@
         <? foreach ( var meta_faq_index => var meta_faq; meta_faq_array ) { ?>
         {
             "@type": "Question",
-            "name": <# GetJsonText( GetTranslatedText( meta_faq[ 0 ], .LanguageCode ) ) #>,
+            "name": <# GetJsonText( meta_faq[ 0 ] ) #>,
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": <# GetJsonText( GetTranslatedText( meta_faq[ 1 ], .LanguageCode ) ) #>
+                "text": <# GetJsonText( meta_faq[ 1 ] ) #>
             }
         }<# ( meta_faq_index + 1 < count( meta_faq_array ) ) ? ',' : '' #>
     <? } ?>
@@ -329,5 +329,5 @@
 <link rel="manifest" href="<% meta_base_url %>/site.webmanifest"/>
 <link rel="stylesheet" href="/static/style.css?v=<# VersionTimestamp #>"/>
 <? foreach ( var image_path; .ImagePathArray ) { ?>
-    <link rel="preload" href="<# GetPreloadImagePath( image_path ) #>?v=<# VersionTimestamp #>" as="image"/>
+    <link rel="preload" href="<# GetPreloadImagePath( GetTranslatedText( image_path, .LanguageCode ) ) #>?v=<# VersionTimestamp #>" as="image"/>
 <? } ?>
