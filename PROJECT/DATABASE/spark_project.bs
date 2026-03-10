@@ -34,8 +34,8 @@ spark-project
         Teaser : STRING = "{{latin 1 2 5 10}}¨fr:{{latin 1 2 5 10}}" | optional, multilingual_text
         Text : STRING = "{{latin 2 4 5 10}}¨fr:{{latin 2 4 5 10}}" | optional, multilingual_text
         ImagePath : STRING = "/static/image/article/beach.avif|/static/image/article/california.avif|/static/image/article/clouds.avif|/static/image/article/road.avif|/static/image/article/sunset.avif|/static/image/article/tree.avif" | optional, multilingual_image
-        ImageVerticalPosition : STRING = "bottom|center|top" | enumeration "[ 'top', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'bottom']^[ 'Top', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Bottom' ]", default_value "center"
-        ImageHorizontalPosition : STRING = "left|center|right" | enumeration "[ 'left', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'right']^[ 'Left', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Right' ]", default_value "center"
+        ImageVerticalPosition : STRING = "bottom|center|top" | enumeration "[ 'top', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'bottom' ]^[ 'Top', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Bottom' ]", default_value "center"
+        ImageHorizontalPosition : STRING = "left|center|right" | enumeration "[ 'left', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'right' ]^[ 'Left', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Right' ]", default_value "center"
         ImageFit : STRING = "cover" | enumeration "[ 'cover', 'contain' ]^[ 'Cover', 'Contain' ]", default_value "cover"
         VideoPath : STRING = "/static/video/article/venice_1.mp4|/static/video/article/venice_2.mp4|/static/video/article/venice_3.mp4|/static/video/article/mountain.mp4" | optional, multilingual_video
         MetaTitle : STRING = "{{Title}}" | optional, multilingual
@@ -73,10 +73,10 @@ spark-project
         ImageTitleArray : LIST[ STRING ] = "{}" | optional, multilingual_text_list, default_value "[]"
         ImagePath : STRING = "/static/image/article/autumn.avif|/static/image/article/castle.avif|/static/image/article/drink.avif|/static/image/article/groynes.avif|/static/image/article/mountains.avif|/static/image/article/spring.avif" | optional, multilingual_image
         ImagePathArray : LIST[ STRING ] = "{}" | optional, image_list, default_value "[]"
-        ImageVerticalPosition : STRING = "bottom|center|top" | enumeration "[ 'top', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'bottom']^[ 'Top', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Bottom' ]", default_value "center"
-        ImageVerticalPositionArray : LIST[ STRING ] = "{}" | enumeration_list "[ 'top', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'bottom']^[ 'Top', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Bottom' ]", default_value "[]"
-        ImageHorizontalPosition : STRING = "left|center|right" | enumeration "[ 'left', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'right']^[ 'Left', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Right' ]", default_value "center"
-        ImageHorizontalPositionArray : LIST[ STRING ] = "{}" | enumeration_list "[ 'left', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'right']^[ 'Left', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Right' ]", default_value "[]"
+        ImageVerticalPosition : STRING = "bottom|center|top" | enumeration "[ 'top', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'bottom' ]^[ 'Top', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Bottom' ]", default_value "center"
+        ImageVerticalPositionArray : LIST[ STRING ] = "{}" | enumeration_list "[ 'top', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'bottom' ]^[ 'Top', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Bottom' ]", default_value "[]"
+        ImageHorizontalPosition : STRING = "left|center|right" | enumeration "[ 'left', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'right' ]^[ 'Left', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Right' ]", default_value "center"
+        ImageHorizontalPositionArray : LIST[ STRING ] = "{}" | enumeration_list "[ 'left', '10%', '20%', '30%', '40%', 'center', '60%', '70%', '80%', '90%', 'right' ]^[ 'Left', '10%', '20%', '30%', '40%', 'Center', '60%', '70%', '80%', '90%', 'Right' ]", default_value "[]"
         ImageFit : STRING = "cover" | enumeration "[ 'cover', 'contain' ]^[ 'Cover', 'Contain' ]", default_value "cover"
         VideoPath : STRING = "/static/video/article/venice_1.mp4|/static/video/article/venice_2.mp4|/static/video/article/venice_3.mp4|/static/video/article/mountain.mp4" | optional, multilingual_video
         VideoPathArray : LIST[ STRING ] = "{}" | optional, video_list, default_value "[]"

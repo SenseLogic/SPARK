@@ -13,7 +13,7 @@ function GetPreloadImagePath(
     string image_path
     )
 {
-    return str_replace( [ MediumImageExtension, SmallImageExtension ], '', image_path ) .. PreloadImageExtension;
+    return str_replace( [ HugeImageExtension, BigImageExtension, WideImageExtension, MediumImageExtension, SmallImageExtension, TinyImageExtension ], '', image_path ) .. PreloadImageExtension;
 }
 
 // ~~

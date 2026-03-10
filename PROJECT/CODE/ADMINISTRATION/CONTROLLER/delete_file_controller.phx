@@ -21,7 +21,7 @@ class DELETE_FILE_CONTROLLER extends CONTROLLER
         {
             if ( HasSuffix( file_path, ImageExtension ) )
             {
-                foreach ( var suffix; [ HugeImageExtension, BigImageExtension, LargeImageExtension, WideImageExtension, MediumImageExtension, SmallImageExtension, TinyImageExtension, PreloadImageExtension ] )
+                foreach ( var suffix; [ HugeImageExtension, BigImageExtension, LargeImageExtension, WideImageExtension, MediumImageExtension, SmallImageExtension, TinyImageExtension, PreloadImageExtension, '.meta.jpg' ] )
                 {
                     if ( FileExists( file_path .. suffix ) )
                     {
@@ -31,7 +31,17 @@ class DELETE_FILE_CONTROLLER extends CONTROLLER
             }
             else if ( HasSuffix( file_path, AlphaImageExtension ) )
             {
-                foreach ( suffix; [ HugeAlphaImageExtension, BigAlphaImageExtension, LargeAlphaImageExtension, WideAlphaImageExtension, MediumAlphaImageExtension, SmallAlphaImageExtension, TinyAlphaImageExtension, PreloadAlphaImageExtension ] )
+                foreach ( suffix; [ HugeAlphaImageExtension, BigAlphaImageExtension, LargeAlphaImageExtension, WideAlphaImageExtension, MediumAlphaImageExtension, SmallAlphaImageExtension, TinyAlphaImageExtension, PreloadAlphaImageExtension, '.meta.jpg' ] )
+                {
+                    if ( FileExists( file_path .. suffix ) )
+                    {
+                        RemoveFile( file_path .. suffix );
+                    }
+                }
+            }
+            else if ( HasSuffix( file_path, '.mp4' ) )
+            {
+                foreach ( suffix; [ '.small.mp4', '.wide.mp4' ] )
                 {
                     if ( FileExists( file_path .. suffix ) )
                     {
