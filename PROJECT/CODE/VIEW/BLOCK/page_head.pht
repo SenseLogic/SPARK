@@ -118,7 +118,7 @@
 
         if ( sub_route !== '' )
         {
-            var sub_route_index = array_search( sub_route, page.SubRouteArray, true );
+            var sub_route_index = array_search( sub_route, page.MetaSubRouteArray, true );
 
             if ( sub_route_index !== false )
             {
