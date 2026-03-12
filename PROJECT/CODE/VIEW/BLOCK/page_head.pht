@@ -116,7 +116,8 @@
             meta_image_path = '/static/image/home/heading.avif';
         }
 
-        if ( sub_route !== '' )
+        if ( sub_route !== ''
+             && isset( page.MetaSubRouteArray ) )
         {
             var sub_route_index = array_search( sub_route, page.MetaSubRouteArray, true );
 
