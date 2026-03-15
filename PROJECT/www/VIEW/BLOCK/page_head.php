@@ -83,19 +83,7 @@
             [ "Is there parking available near the Atomium?", "Yes. Paid parking is available near the Atomium, and additional parking spaces can be found around the Heysel area." ]
         ];
 
-     $sub_route_character_index = GetTextPosition( $this->Route, '/#' );
-
-    if ( $sub_route_character_index !== false )
-    {
-         $route = substr( $this->Route, 0, $sub_route_character_index );
-         $sub_route = substr( $this->Route, $sub_route_character_index );
-    }
-    else
-    {
-        $route = $this->Route;
-        $sub_route = '';
-    }
-
+     $route = $this->Route;
      $meta_page_url = $route;
 
     if ( $route === 'home' )
@@ -114,18 +102,6 @@
         if ( $meta_image_path === '' )
         {
             $meta_image_path = '/static/image/home/heading.avif';
-        }
-
-        if ( $sub_route !== ''
-             && isset( $page->MetaSubRouteArray ) )
-        {
-             $sub_route_index = array_search( $sub_route, $page->MetaSubRouteArray, true );
-
-            if ( $sub_route_index !== false )
-            {
-                $meta_title = GetTranslatedText( $page->MetaSubTitleArray[ $sub_route_index ], $this->LanguageCode );
-                $meta_description = GetTranslatedText( $page->MetaSubDescriptionArray[ $sub_route_index ], $this->LanguageCode );
-            }
         }
     }
 

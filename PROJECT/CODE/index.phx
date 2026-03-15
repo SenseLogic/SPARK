@@ -518,10 +518,7 @@ function Route(
                       && HasPostValue( 'VideoPath' )
                       && HasPostValue( 'MetaTitle' )
                       && HasPostValue( 'MetaDescription' )
-                      && HasPostValue( 'MetaImagePath' )
-                      && HasPostValue( 'MetaSubRouteArray' )
-                      && HasPostValue( 'MetaSubTitleArray' )
-                      && HasPostValue( 'MetaSubDescriptionArray' ) )
+                      && HasPostValue( 'MetaImagePath' ) )
             {
                 import 'ADMINISTRATION/CONTROLLER/do_add_page_controller.php';
             }
@@ -561,10 +558,7 @@ function Route(
                       && HasPostValue( 'VideoPath' )
                       && HasPostValue( 'MetaTitle' )
                       && HasPostValue( 'MetaDescription' )
-                      && HasPostValue( 'MetaImagePath' )
-                      && HasPostValue( 'MetaSubRouteArray' )
-                      && HasPostValue( 'MetaSubTitleArray' )
-                      && HasPostValue( 'MetaSubDescriptionArray' ) )
+                      && HasPostValue( 'MetaImagePath' ) )
             {
                 var page_id = path_value_array[ 3 ];
 

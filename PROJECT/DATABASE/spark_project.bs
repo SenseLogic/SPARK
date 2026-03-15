@@ -41,9 +41,6 @@ spark-project
         MetaTitle : STRING = "{{Title}}" | optional, multilingual
         MetaDescription : STRING = "{{Teaser}}" | optional, multilingual_text
         MetaImagePath : STRING = "{{ImagePath}}" | optional, multilingual_image
-        MetaSubRouteArray : LIST[ STRING ] = "{}" | optional, list, default_value "[]"
-        MetaSubTitleArray : LIST[ STRING ] = "{}" | optional, multilingual_list, default_value "[]"
-        MetaSubDescriptionArray : LIST[ STRING ] = "{}" | optional, multilingual_text_list, default_value "[]"
 
     BLOCK_TYPE | sorted, dropped, has_user_role, view_user_role author, edit_user_role author, add_user_role publisher, remove_user_role publisher
 

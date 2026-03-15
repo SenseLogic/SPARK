@@ -1067,7 +1067,7 @@ textarea {
   grid-template-columns: repeat(3, auto);
 }
 .page-table {
-  grid-template-columns: repeat(22, auto);
+  grid-template-columns: repeat(19, auto);
 }
 .block-type-table {
   grid-template-columns: repeat(3, auto);

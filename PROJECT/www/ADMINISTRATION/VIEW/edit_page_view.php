@@ -25,10 +25,7 @@
             video_path_field,
             meta_title_field,
             meta_description_field,
-            meta_image_path_field,
-            meta_sub_route_array_field,
-            meta_sub_title_array_field,
-            meta_sub_description_array_field;
+            meta_image_path_field;
 
         edit_page_form = document.EditPageForm;
         slug_field = edit_page_form.Slug;
@@ -49,9 +46,6 @@
         meta_title_field = edit_page_form.MetaTitle;
         meta_description_field = edit_page_form.MetaDescription;
         meta_image_path_field = edit_page_form.MetaImagePath;
-        meta_sub_route_array_field = edit_page_form.MetaSubRouteArray;
-        meta_sub_title_array_field = edit_page_form.MetaSubTitleArray;
-        meta_sub_description_array_field = edit_page_form.MetaSubDescriptionArray;
 
         slug_field.RemoveClass( "form-field-error" );
         route_field.RemoveClass( "form-field-error" );
@@ -71,9 +65,6 @@
         meta_title_field.RemoveClass( "form-field-error" );
         meta_description_field.RemoveClass( "form-field-error" );
         meta_image_path_field.RemoveClass( "form-field-error" );
-        meta_sub_route_array_field.RemoveClass( "form-field-error" );
-        meta_sub_title_array_field.RemoveClass( "form-field-error" );
-        meta_sub_description_array_field.RemoveClass( "form-field-error" );
 
         it_is_valid_edit_page_form = true;
 
@@ -256,24 +247,6 @@
                 </div>
                 <div class="form-field-value" data-is-column-value data-column-name="MetaImagePath">
                     <multilingual-image-path-input-component class="form-component" result-name="MetaImagePath" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->MetaImagePath ) ); ?>" error-image-path="/static/image/admin/missing_image.svg" upload-api-url="/admin/upload/image" delete-api-url="/admin/delete/file" language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-image-path-input-component>
-                </div>
-                <div class="form-field-name" data-is-column-title data-column-name="MetaSubRouteArray">
-                    <?php echo htmlspecialchars( GetTextBySlug( 'Meta Sub Route Array' ) ); ?> :
-                </div>
-                <div class="form-field-value" data-is-column-value data-column-name="MetaSubRouteArray">
-                    <input-list-component class="form-component" result-name="MetaSubRouteArray" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->MetaSubRouteArray ) ); ?>"></input-list-component>
-                </div>
-                <div class="form-field-name" data-is-column-title data-column-name="MetaSubTitleArray">
-                    <?php echo htmlspecialchars( GetTextBySlug( 'Meta Sub Title Array' ) ); ?> :
-                </div>
-                <div class="form-field-value" data-is-column-value data-column-name="MetaSubTitleArray">
-                    <multilingual-input-list-component class="form-component" result-name="MetaSubTitleArray" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->MetaSubTitleArray ) ); ?>" language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-input-list-component>
-                </div>
-                <div class="form-field-name" data-is-column-title data-column-name="MetaSubDescriptionArray">
-                    <?php echo htmlspecialchars( GetTextBySlug( 'Meta Sub Description Array' ) ); ?> :
-                </div>
-                <div class="form-field-value" data-is-column-value data-column-name="MetaSubDescriptionArray">
-                    <multilingual-text-input-list-component class="form-component" result-name="MetaSubDescriptionArray" result-value="<?php echo htmlspecialchars( GetValueText( $this->Page->MetaSubDescriptionArray ) ); ?>" language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-text-input-list-component>
                 </div>
                 <a class="justify-self-start form-button form-button-large cancel-button" href="<?php echo htmlspecialchars( GetParentRoute( null, '/admin/page' ) ); ?>">
                 </a>

@@ -70,15 +70,6 @@
                 <?php echo htmlspecialchars( GetTextBySlug( 'Meta Image Path' ) ); ?>
             </div>
             <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( GetTextBySlug( 'Meta Sub Route Array' ) ); ?>
-            </div>
-            <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( GetTextBySlug( 'Meta Sub Title Array' ) ); ?>
-            </div>
-            <div class="form-column-name sortable-table-column">
-                <?php echo htmlspecialchars( GetTextBySlug( 'Meta Sub Description Array' ) ); ?>
-            </div>
-            <div class="form-column-name sortable-table-column">
                 <?php echo htmlspecialchars( GetTextBySlug( 'Action' ) ); ?>
             </div>
             <?php foreach ( $this->PageArray as  $page ) { ?>
@@ -190,15 +181,6 @@
                     </div>
                     <div class="sortable-table-cell filter-cell">
                         <?php echo htmlspecialchars( GetValueText( $page->MetaImagePath ) ); ?>
-                    </div>
-                    <div class="sortable-table-cell filter-cell">
-                        <?php echo htmlspecialchars( GetValueText( $page->MetaSubRouteArray ) ); ?>
-                    </div>
-                    <div class="sortable-table-cell filter-cell">
-                        <?php echo htmlspecialchars( GetValueText( $page->MetaSubTitleArray ) ); ?>
-                    </div>
-                    <div class="sortable-table-cell filter-cell">
-                        <?php echo htmlspecialchars( GetValueText( $page->MetaSubDescriptionArray ) ); ?>
                     </div>
                     <div class="form-centered sortable-table-cell">
                         <a class="form-button view-button" href="/admin/page/view/<?php echo htmlspecialchars( $page->Id ); ?>">
@@ -328,24 +310,6 @@
                         </div>
                         <div class="form-field-value" data-is-column-value data-column-name="MetaImagePath">
                             <multilingual-image-path-input-component class="form-component" result-name="MetaImagePath" result-value="<?php echo htmlspecialchars( GetValueText( $page->MetaImagePath ) ); ?>" is-readonly error-image-path="/static/image/admin/missing_image.svg" upload-api-url="/admin/upload/image" delete-api-url="/admin/delete/file" language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-image-path-input-component>
-                        </div>
-                        <div class="form-field-name" data-is-column-title data-column-name="MetaSubRouteArray">
-                            <?php echo htmlspecialchars( GetTextBySlug( 'Meta Sub Route Array' ) ); ?> :
-                        </div>
-                        <div class="form-field-value" data-is-column-value data-column-name="MetaSubRouteArray">
-                            <input-list-component class="form-component" result-name="MetaSubRouteArray" result-value="<?php echo htmlspecialchars( GetValueText( $page->MetaSubRouteArray ) ); ?>" is-readonly></input-list-component>
-                        </div>
-                        <div class="form-field-name" data-is-column-title data-column-name="MetaSubTitleArray">
-                            <?php echo htmlspecialchars( GetTextBySlug( 'Meta Sub Title Array' ) ); ?> :
-                        </div>
-                        <div class="form-field-value" data-is-column-value data-column-name="MetaSubTitleArray">
-                            <multilingual-input-list-component class="form-component" result-name="MetaSubTitleArray" result-value="<?php echo htmlspecialchars( GetValueText( $page->MetaSubTitleArray ) ); ?>" is-readonly language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-input-list-component>
-                        </div>
-                        <div class="form-field-name" data-is-column-title data-column-name="MetaSubDescriptionArray">
-                            <?php echo htmlspecialchars( GetTextBySlug( 'Meta Sub Description Array' ) ); ?> :
-                        </div>
-                        <div class="form-field-value" data-is-column-value data-column-name="MetaSubDescriptionArray">
-                            <multilingual-text-input-list-component class="form-component" result-name="MetaSubDescriptionArray" result-value="<?php echo htmlspecialchars( GetValueText( $page->MetaSubDescriptionArray ) ); ?>" is-readonly language-tags="<?php echo htmlspecialchars( GetValueText( GetJsonText( LanguageTagArray ) ) ); ?>"></multilingual-text-input-list-component>
                         </div>
                     </div>
                     <div class="form-toolbar">
