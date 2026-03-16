@@ -1,6 +1,6 @@
 <?php
      $meta_base_url = 'https://www.spark-project.com';
-     $meta_title = 'Spark Project';
+     $meta_title = 'Home';
      $meta_description = '';
      $meta_image_path = '/favicon-512x512.png';
      $meta_author = 'Spark Project';
@@ -15,6 +15,14 @@
      $meta_latitude = '50.89472';
      $meta_longitude = '4.34111';
      $meta_radius = '50000';
+     $meta_area_array =
+        [
+            [ 'City', 'Brussels' ],
+            [ 'Country', 'Belgium' ],
+            [ 'Country', 'Germany' ],
+            [ 'Country', 'France' ],
+            [ 'Country', 'Netherlands' ]
+        ];
      $meta_offer_name = 'Touristic Services';
      $meta_service_array =
         [
@@ -134,7 +142,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>
-<meta name="title" content="<?php echo htmlspecialchars( $meta_title ); ?>"/>
+<meta name="title" content="<?php echo htmlspecialchars( $meta_title ); ?> | Spark Project"/>
 <meta name="description" content="<?php echo htmlspecialchars( $meta_description ); ?>"/>
 <meta name="author" content="<?php echo htmlspecialchars( $meta_author ); ?>">
 <meta name="geo.region" content="<?php echo htmlspecialchars( $meta_country_code ); ?>"/>
@@ -153,12 +161,12 @@
 <meta name="twitter:site" content="@sparkproject">
 <meta name="twitter:creator" content="@sparkproject">
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="<?php echo htmlspecialchars( $meta_title ); ?>"/>
+<meta name="twitter:title" content="<?php echo htmlspecialchars( $meta_title ); ?> | Spark Project"/>
 <meta name="twitter:description" content="<?php echo htmlspecialchars( $meta_description ); ?>"/>
 <meta name="twitter:image" content="<?php echo htmlspecialchars( $meta_image_path ); ?>.meta.jpg"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="Spark Project"/>
-<meta property="og:title" content="<?php echo htmlspecialchars( $meta_title ); ?>"/>
+<meta property="og:title" content="<?php echo htmlspecialchars( $meta_title ); ?> | Spark Project"/>
 <meta property="og:description" content="<?php echo htmlspecialchars( $meta_description ); ?>"/>
 <meta property="og:url" content="<?php echo htmlspecialchars( $meta_page_url ); ?>"/>
 <meta property="og:image" content="<?php echo htmlspecialchars( $meta_image_path ); ?>.meta.jpg"/>
@@ -175,7 +183,7 @@
 {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": <?php echo GetJsonText( $meta_title ); ?>,
+    "name": <?php echo GetJsonText( $meta_title . ' | Spark Project' ); ?>,
     "description": <?php echo GetJsonText( $meta_description ); ?>,
     "image": <?php echo GetJsonText( $meta_image_path . '.meta.jpg' ); ?>,
     "url": <?php echo GetJsonText( $meta_page_url ); ?>
@@ -208,6 +216,14 @@
         },
         "geoRadius": <?php echo GetJsonText( $meta_radius ); ?>
     },
+    "areaServed": [
+    <?php foreach ( $meta_area_array as  $meta_area_index =>  $meta_area ) { ?>
+        {
+            "@type": <?php echo GetJsonText( $meta_area[ 0 ] ); ?>,
+            "name": <?php echo GetJsonText( $meta_area[ 1 ] ); ?>
+        }<?php echo ( $meta_area_index + 1 < count( $meta_area_array ) ) ? ',' : ''; ?>
+    <?php } ?>
+    ],
     "telephone": <?php echo GetJsonText( $meta_contact_phone ); ?>,
     "email": <?php echo GetJsonText( $meta_contact_email ); ?>,
     "contactPoint": [
@@ -290,7 +306,7 @@
     ]
 }
 </script>
-<title>Spark Project | <?php echo htmlspecialchars( $meta_title ); ?></title>
+<title><?php echo htmlspecialchars( $meta_title ); ?> | Spark Project</title>
 <link rel="canonical" href="<?php echo htmlspecialchars( $meta_page_url ); ?>">
 <?php foreach ( LanguageCodeArray as  $meta_language_code ) { ?>
     <?php if ( $meta_language_code === DefaultLanguageCode ) { ?>

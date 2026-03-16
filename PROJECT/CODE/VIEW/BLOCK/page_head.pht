@@ -1,6 +1,6 @@
 <?
     var meta_base_url = 'https://www.spark-project.com';
-    var meta_title = 'Spark Project';
+    var meta_title = 'Home';
     var meta_description = '';
     var meta_image_path = '/favicon-512x512.png';
     var meta_author = 'Spark Project';
@@ -15,6 +15,14 @@
     var meta_latitude = '50.89472';
     var meta_longitude = '4.34111';
     var meta_radius = '50000';
+    var meta_area_array =
+        [
+            [ 'City', 'Brussels' ],
+            [ 'Country', 'Belgium' ],
+            [ 'Country', 'Germany' ],
+            [ 'Country', 'France' ],
+            [ 'Country', 'Netherlands' ]
+        ];
     var meta_offer_name = 'Touristic Services';
     var meta_service_array =
         [
@@ -134,7 +142,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>
-<meta name="title" content="<% meta_title %>"/>
+<meta name="title" content="<% meta_title %> | Spark Project"/>
 <meta name="description" content="<% meta_description %>"/>
 <meta name="author" content="<% meta_author %>">
 <meta name="geo.region" content="<% meta_country_code %>"/>
@@ -153,12 +161,12 @@
 <meta name="twitter:site" content="@sparkproject">
 <meta name="twitter:creator" content="@sparkproject">
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="<% meta_title %>"/>
+<meta name="twitter:title" content="<% meta_title %> | Spark Project"/>
 <meta name="twitter:description" content="<% meta_description %>"/>
 <meta name="twitter:image" content="<% meta_image_path %>.meta.jpg"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="Spark Project"/>
-<meta property="og:title" content="<% meta_title %>"/>
+<meta property="og:title" content="<% meta_title %> | Spark Project"/>
 <meta property="og:description" content="<% meta_description %>"/>
 <meta property="og:url" content="<% meta_page_url %>"/>
 <meta property="og:image" content="<% meta_image_path %>.meta.jpg"/>
@@ -175,7 +183,7 @@
 {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": <# GetJsonText( meta_title ) #>,
+    "name": <# GetJsonText( meta_title .. ' | Spark Project' ) #>,
     "description": <# GetJsonText( meta_description ) #>,
     "image": <# GetJsonText( meta_image_path .. '.meta.jpg' ) #>,
     "url": <# GetJsonText( meta_page_url ) #>
@@ -208,6 +216,14 @@
         },
         "geoRadius": <# GetJsonText( meta_radius ) #>
     },
+    "areaServed": [
+    <? foreach ( var meta_area_index => var meta_area; meta_area_array ) { ?>
+        {
+            "@type": <# GetJsonText( meta_area[ 0 ] ) #>,
+            "name": <# GetJsonText( meta_area[ 1 ] ) #>
+        }<# ( meta_area_index + 1 < count( meta_area_array ) ) ? ',' : '' #>
+    <? } ?>
+    ],
     "telephone": <# GetJsonText( meta_contact_phone ) #>,
     "email": <# GetJsonText( meta_contact_email ) #>,
     "contactPoint": [
@@ -290,7 +306,7 @@
     ]
 }
 </script>
-<title>Spark Project | <% meta_title %></title>
+<title><% meta_title %> | Spark Project</title>
 <link rel="canonical" href="<% meta_page_url %>">
 <? foreach ( var meta_language_code; LanguageCodeArray ) { ?>
     <? if ( meta_language_code === DefaultLanguageCode ) { ?>
