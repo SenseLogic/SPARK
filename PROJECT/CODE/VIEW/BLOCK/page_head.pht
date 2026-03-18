@@ -245,10 +245,9 @@
                 "<# JoinArray( meta_schedule[ 0 ], '", "' ) #>"
             ],
             "opens": <# GetJsonText( meta_schedule[ 1 ] ) #>,
-            "closes": <# GetJsonText( meta_schedule[ 2 ] ) #>,
-            <? if ( meta_schedule[ 3 ] !== '' ) { ?>
+            "closes": <# GetJsonText( meta_schedule[ 2 ] ) #><? if ( meta_schedule[ 3 ] !== '' ) { ?>,
             "validFrom": <# GetJsonText( meta_schedule[ 3 ] ) #>,
-            "validThrough": <# GetJsonText( meta_schedule[ 4 ] ) #>,
+            "validThrough": <# GetJsonText( meta_schedule[ 4 ] ) #>
             <? } ?>
         }<# ( meta_schedule_index + 1 < count( meta_schedule_array ) ) ? ',' : '' #>
     <? } ?>

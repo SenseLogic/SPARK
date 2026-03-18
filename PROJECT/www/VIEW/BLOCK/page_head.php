@@ -245,10 +245,9 @@
                 "<?php echo JoinArray( $meta_schedule[ 0 ], '", "' ); ?>"
             ],
             "opens": <?php echo GetJsonText( $meta_schedule[ 1 ] ); ?>,
-            "closes": <?php echo GetJsonText( $meta_schedule[ 2 ] ); ?>,
-            <?php if ( $meta_schedule[ 3 ] !== '' ) { ?>
+            "closes": <?php echo GetJsonText( $meta_schedule[ 2 ] ); ?><?php if ( $meta_schedule[ 3 ] !== '' ) { ?>,
             "validFrom": <?php echo GetJsonText( $meta_schedule[ 3 ] ); ?>,
-            "validThrough": <?php echo GetJsonText( $meta_schedule[ 4 ] ); ?>,
+            "validThrough": <?php echo GetJsonText( $meta_schedule[ 4 ] ); ?>
             <?php } ?>
         }<?php echo ( $meta_schedule_index + 1 < count( $meta_schedule_array ) ) ? ',' : ''; ?>
     <?php } ?>
